@@ -10,6 +10,27 @@ local function reference(ref)
   assert(type(ref.hash)=='string' and #ref.hash==64 and ref.hash:match('^[0-9a-f]+$'),
     'Native composition donor fingerprint is required')
 end
+local function selectedLayers(part)
+  if part.layers==nil then
+    assert(part.layerHashes==nil,'Layer fingerprints require an explicit layer selection')
+    return
+  end
+  local layers,hashes=part.layers,part.layerHashes
+  assert(type(layers)=='table' and #layers>=1 and #layers<=3 and type(hashes)=='table',
+    'Selected native layers and their fingerprints are required')
+  for key in pairs(layers)do
+    assert(integer(key,#layers) and key>=1,'Selected native layers must be a dense array')
+  end
+  local order,previous,selected={under=1,mid=2,over=3},0,{}
+  for _,name in ipairs(layers)do
+    assert(order[name] and order[name]>previous,'Selected native layers must be unique and in rendering order')
+    local hash=hashes[name]
+    assert(type(hash)=='string' and #hash==64 and hash:match('^[0-9a-f]+$'),
+      'Selected native layer fingerprint is required')
+    previous=order[name];selected[name]=true
+  end
+  for name in pairs(hashes)do assert(selected[name],'Unselected native layer fingerprint')end
+end
 local function image16(image)
   assert(image and type(image.getDimensions)=='function' and type(image.getPixel)=='function',
     'Native composition donor pixels are unavailable')
@@ -29,6 +50,9 @@ function Composition.new(ctx)
     'Native composition donor decoder is required')
   local donor=ctx.donor
   local factory=ctx.newImageData or love.image.newImageData
+  local hashImage=ctx.hashImage or function(image)
+    return love.data.encode('string','hex',love.data.hash('sha256',image:getString()))
+  end
   local self={}
   function self:cell(row)
     local ok,result=pcall(function()
@@ -44,6 +68,7 @@ function Composition.new(ctx)
         local part=parts[i]
         assert(type(part)=='table','Native composition part is required')
         reference(part.donor)
+        selectedLayers(part)
         local sx,sy,x,y=coordinate(part.srcX),coordinate(part.srcY),coordinate(part.x),coordinate(part.y)
         local w,h=part.w,part.h
         assert(integer(sx,15) and integer(sy,15) and integer(x,15) and integer(y,15)
@@ -51,17 +76,20 @@ function Composition.new(ctx)
           and sx+w<=16 and sy+h<=16 and x+w<=16 and y+h<=16,
           'Native composition rectangle exceeds its 16 pixel cell')
       end
-      local function flatten(ref)
+      local function flatten(ref,layers,hashes)
         local piece,why=donor:cell(ref)
         assert(piece,'Native composition donor failed: '..tostring(why))
         assert(piece.hash==ref.hash or piece.sourceHash==ref.hash,
           'Native composition donor fingerprint changed')
         assert(piece.under,'Native composition donor under layer is unavailable')
         local out=factory(16,16)
-        for _,name in ipairs({'under','mid','over'}) do
+        for _,name in ipairs(layers or {'under','mid','over'}) do
           local image=piece[name]
+          assert(not layers or image,'Selected native layer is unavailable: '..name)
           if image then
             image16(image)
+            assert(not layers or hashImage(image)==hashes[name],
+              'Selected native layer fingerprint changed: '..name)
             for y=0,15 do for x=0,15 do blend(out,x,y,image:getPixel(x,y)) end end
           end
         end
@@ -70,7 +98,7 @@ function Composition.new(ctx)
       local under=row.base and flatten(row.base) or factory(16,16)
       for i=1,#parts do
         local part=parts[i]
-        local source=flatten(part.donor)
+        local source=flatten(part.donor,part.layers,part.layerHashes)
         local sx,sy,x,y=coordinate(part.srcX),coordinate(part.srcY),coordinate(part.x),coordinate(part.y)
         for dy=0,part.h-1 do for dx=0,part.w-1 do
           blend(under,x+dx,y+dy,source:getPixel(sx+dx,sy+dy))

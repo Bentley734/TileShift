@@ -14,6 +14,9 @@ NAMES = {
     ("red", "PALLET_TOWN"): ("Red / Pallet Town", "Pallet", "Original monochrome"),
     ("crystal", "NEW_BARK_TOWN"): ("Crystal / New Bark Town", "NewBark", "Original Crystal DAY colors"),
     ("red", "VIRIDIAN_CITY"): ("Red / Viridian City", "Viridian", "Original monochrome"),
+    ("red", "ROUTE_1"): ("Red / Route 1", "Route1", "Original monochrome"),
+    ("red", "MT_MOON_1F"): ("Red / Mt. Moon 1F", "MtMoon", "Original monochrome"),
+    ("red", "SEAFOAM_ISLANDS_1F"): ("Red / Seafoam Islands 1F", "Seafoam", "Original monochrome"),
 }
 
 
@@ -47,7 +50,8 @@ def make(fixture: dict, output: Path) -> dict:
     body_font = ImageFont.truetype(str(font_dir / "arial.ttf"), 15)
     draw.text((padding, 13), "DEVELOPMENT — " + title, font=title_font, fill="#f5f7fa")
     complete = replaced == total
-    scope = "Fully retiled Pallet background." if complete and stem == "Pallet" else "This is a partial tileset replacement."
+    scope = (f"Fully retiled {'Pallet' if stem == 'Pallet' else 'Route 1'} background."
+             if complete and stem in ("Pallet", "Route1") else "This is a partial tileset replacement.")
     draw.text((padding, 42), "Actual native GPU background renders; nearest-neighbor pixels. " + scope, font=body_font, fill="#c4cdd8")
     status = "All background cells replaced." if complete else "Unresolved cells keep native art."
     draw.text((padding, 64), "Animation frame 0. Reviewed replacements only. " + status + " No actors rendered.", font=body_font, fill="#c4cdd8")

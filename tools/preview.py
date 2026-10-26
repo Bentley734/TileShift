@@ -10,6 +10,7 @@ from collections import Counter
 import copy
 import json
 from pathlib import Path
+import struct
 import zlib
 
 from PIL import Image, ImageChops, ImageDraw, ImageFont
@@ -95,9 +96,16 @@ def gen1_animation_tiles(cache, game, ts, sheet, tick=0):
     return tiles
 
 
-def native_donor(cache, ref, packed):
+def native_donor(cache, ref, packed, selected_layers=None, layer_hashes=None):
+    if ref.get("kind") == "field_object":
+        image = native_field_object(cache, ref, packed)
+        if selected_layers is None:
+            return image
+        decoded = {"under": image, "over": Image.new("RGBA", (16, 16))}
+    else:
+        decoded = None
     key = ref["game"], ref["tileset"]
-    if key not in packed:
+    if decoded is None and key not in packed:
         root = cache / ref["game"] / "data/generated/gba/native" / ref["tileset"]
         palette = catalog.read_palettes(root / "palettes.bin")
         mids, pixels, _ = catalog.read_idx(root / "mids.idx")
@@ -109,15 +117,26 @@ def native_donor(cache, ref, packed):
                 assert mids == more_mids
                 layers[layer] = more_pixels
         packed[key] = mids, palette, layers
-    mids, palette, layers = packed[key]
-    slot = mids.index(ref["id"])
+    if decoded is None:
+        mids, palette, layers = packed[key]
+        slot = mids.index(ref["id"])
+        decoded = {layer: catalog.rgba_native(pixels[slot * 256:(slot + 1) * 256], palette, layer != "under")
+                   for layer, pixels in layers.items()}
     out = Image.new("RGBA", (16, 16))
     for layer in ("under", "mid", "over"):
-        if layer in layers:
-            pixels = layers[layer][slot * 256:(slot + 1) * 256]
-            image = catalog.rgba_native(pixels, palette, layer != "under")
+        if layer in decoded:
+            out = Image.alpha_composite(out, decoded[layer])
+    assert ref.get("kind") == "field_object" or catalog.sha(out.tobytes()) == ref["hash"], "Donor pixel fingerprint changed"
+    if selected_layers is not None:
+        assert selected_layers and isinstance(layer_hashes, dict), "Selected layers need fingerprints"
+        assert selected_layers == [name for name in ("under", "mid", "over") if name in selected_layers]
+        assert set(layer_hashes) == set(selected_layers)
+        out = Image.new("RGBA", (16, 16))
+        for layer in selected_layers:
+            assert layer in decoded, "Selected native layer is unavailable"
+            image = decoded[layer]
+            assert catalog.sha(image.tobytes()) == layer_hashes[layer], "Selected native layer fingerprint changed"
             out = Image.alpha_composite(out, image)
-    assert catalog.sha(out.tobytes()) == ref["hash"], "Donor pixel fingerprint changed"
     return out
 
 
@@ -134,10 +153,36 @@ def asset_image(row, mod_root):
     return image
 
 
+def native_field_object(cache, ref, packed):
+    """Read a complete native16px field-object frame without runtime mounts."""
+    assert ref["game"] in ("ruby", "sapphire", "emerald", "firered", "leafgreen") and ref["tileset"] == "ow"
+    assert ref.get("quadrant") is None and ref.get("kind") == "field_object"
+    key = ("field_object", ref["game"], ref["id"], ref.get("frame", 0), ref["hash"], ref["metaHash"], ref["rgbaHash"])
+    if key in packed:
+        return packed[key]
+    root = cache / ref["game"] / "data/generated/gba/ow"
+    meta = (root / f"{ref['id']}.meta").read_bytes()
+    assert len(meta) == 120 and meta[:4] == b"SVOW" and meta[4] == 4, "Invalid native field-object metadata"
+    assert catalog.sha(meta) == ref["metaHash"], "Native field-object metadata changed"
+    gid, width, height, frames = struct.unpack_from("<4H", meta, 6)
+    assert gid == ref["id"] and width == 16 and height == 16 and 1 <= frames <= 256
+    frame = ref.get("frame", 0)
+    assert isinstance(frame, int) and 0 <= frame < frames, "Native field-object frame is unavailable"
+    raw = (root / f"{gid}.rgba").read_bytes()
+    if len(raw) != width * height * frames * 4:
+        raw = zlib.decompress(raw)
+    assert len(raw) == width * height * frames * 4, "Native field-object pixels are incomplete"
+    assert catalog.sha(raw) == ref["rgbaHash"], "Native field-object RGBA changed"
+    image = Image.frombytes("RGBA", (16, 16), raw[frame * 1024:(frame + 1) * 1024])
+    assert catalog.sha(image.tobytes()) == ref["hash"], "Native field-object pixels changed"
+    packed[key] = image
+    return image
+
+
 def native_water_frames(cache, row, packed):
     """Decode a reviewed native bank, keeping its original frame order."""
     ref, spec = row["donor"], row["animation"]
-    key = ("animation", ref["game"], ref["tileset"], ref["id"], spec["hash"], spec["manifestHash"])
+    key = ("animation", ref["game"], ref["tileset"], ref["id"], ref.get("hash"), json.dumps(spec, sort_keys=True))
     if key in packed:
         return packed[key]
     native_donor(cache, ref, packed)
@@ -170,31 +215,73 @@ def native_water_frames(cache, row, packed):
             assert catalog.sha(frames[0].tobytes()) == spec["frame0Hash"], "Native first animation frame changed"
         packed[key] = frames
         return frames
-    assert ref["game"] == "emerald" and ref["id"] == 52 and spec["bank"] == "general_water"
-    assert manifest["family"] == "rse"
-    bank = next(b for b in manifest["banks"] if b["name"] == spec["bank"])
-    assert bank["counter"] == "primary" and manifest["counters"]["primary"]["max"] == 256
-    assert bank["fn"] == "mod" and bank["kind"] == "tiles" and bank["frames"] == 8
-    assert bank["period"] == 16 and bank["phase"] == 1
-    index = bank["mids"].index(ref["id"])
-    assert bank["quads"][index] == 15 and not bank.get("overMids")
+    assert ref["game"] == "emerald" and manifest["family"] == "rse", "Unsupported RSE donor"
+    matching = [b for b in manifest["banks"] if b["name"] == spec["bank"]]
+    assert len(matching) == 1, "Missing or duplicate native animation bank"
+    bank = matching[0]
+    assert bank["fn"] == "mod" and bank["kind"] == "tiles", "Unsupported native animation schedule"
+    count, period, phase = bank["frames"], bank["period"], bank.get("phase", 0)
+    assert isinstance(count, int) and 2 <= count <= 256
+    assert isinstance(period, int) and period > 0 and isinstance(phase, int) and 0 <= phase < period
+    for field, actual in (("frames", count), ("period", period), ("phase", phase), ("counter", bank.get("counter"))):
+        assert field not in spec or spec[field] == actual, "Native animation timing changed"
+    if "counterMax" in spec:
+        assert manifest["counters"][bank["counter"]]["max"] == spec["counterMax"], "Native animation counter changed"
+    under_ids, over_ids = bank.get("mids", []), bank.get("overMids", [])
+    assert ref["id"] in under_ids or ref["id"] in over_ids, "Donor is not targeted by this animation bank"
+    assert list(under_ids).count(ref["id"]) <= 1 and list(over_ids).count(ref["id"]) <= 1
     assert all(ref["id"] not in b.get("mids", []) and ref["id"] not in b.get("overMids", [])
                for b in manifest["banks"] if b["name"] != spec["bank"])
-    raw = (root / bank["file"]).read_bytes()
-    expected = bank["frames"] * len(bank["mids"]) * 256
-    if len(raw) != expected:
-        raw = zlib.decompress(raw)
-    assert len(raw) == expected and catalog.sha(raw) == spec["hash"], "Native animation bank changed"
-    # No static upper/middle pixels may be left covering the animated interior.
-    for layer in ("mid", "over"):
-        mids, pixels, _ = catalog.read_idx(root / f"mids_{layer}.idx")
-        slot = mids.index(ref["id"])
-        assert not any(pixels[slot * 256:(slot + 1) * 256])
-    palette = catalog.read_palettes(root / "palettes.bin")
+    mids, palette, layers = packed[(ref["game"], ref["tileset"])]
+    slot = mids.index(ref["id"])
+    for other in manifest["banks"]:
+        if other is not bank and other.get("kind") == "palette" and "paletteSlot" in other:
+            for layer, pixels in layers.items():
+                assert not any(pixel // 16 == other["paletteSlot"] for pixel in pixels[slot * 256:(slot + 1) * 256]
+                               if layer == "under" or pixel != 0), "Donor also uses a palette animation"
+    base_under = catalog.rgba_native(layers["under"][slot * 256:(slot + 1) * 256], palette)
+    base_over = catalog.rgba_native(layers["over"][slot * 256:(slot + 1) * 256], palette, True) if "over" in layers else Image.new("RGBA", (16, 16))
+    blobs = []
+    for file, ids, masks, upper in ((bank.get("file"), under_ids, bank.get("quads"), False),
+                                    (bank.get("overFile"), over_ids, bank.get("overQuads"), True)):
+        if not file:
+            assert ref["id"] not in ids, "Native animation pixels are unavailable"
+            blobs.append(None)
+            continue
+        assert Path(file).name == file, "Native animation path escaped its tileset"
+        raw = (root / file).read_bytes()
+        expected = count * len(ids) * 256
+        if len(raw) != expected:
+            raw = zlib.decompress(raw)
+        assert len(raw) == expected, "Native animation bank pixels are incomplete"
+        blobs.append(raw)
+    assert blobs[0] is not None or blobs[1] is not None
+    assert catalog.sha(blobs[0] if blobs[0] is not None else blobs[1]) == spec["hash"], "Native animation bank changed"
+    if blobs[0] is not None and blobs[1] is not None:
+        assert catalog.sha(blobs[1]) == spec.get("overHash"), "Native over animation bank changed"
     frames = []
-    for frame in range(bank["frames"]):
-        offset = (frame * len(bank["mids"]) + index) * 256
-        frames.append(catalog.rgba_native(raw[offset:offset + 256], palette))
+    changed = False
+    for frame in range(count):
+        under, over = base_under.copy(), base_over.copy()
+        for image, raw, ids, masks, upper in ((under, blobs[0], under_ids, bank.get("quads"), False),
+                                               (over, blobs[1], over_ids, bank.get("overQuads"), True)):
+            if ref["id"] not in ids:
+                continue
+            index = ids.index(ref["id"])
+            mask = masks[index] if masks else 15
+            assert isinstance(mask, int) and 0 <= mask <= 15, "Invalid native animation quadrant mask"
+            changed = changed or mask != 0
+            if not upper and "quadMask" in spec:
+                assert spec["quadMask"] == mask, "Native animation coverage changed"
+            offset = (frame * len(ids) + index) * 256
+            piece = catalog.rgba_native(raw[offset:offset + 256], palette, upper)
+            for q in range(4):
+                if mask & (1 << q):
+                    x, y = q % 2 * 8, q // 2 * 8
+                    image.paste(piece.crop((x, y, x + 8, y + 8)), (x, y))
+        # Native under already contains BG1; no stale static middle layer.
+        frames.append(Image.alpha_composite(under, over))
+    assert changed, "Native bank does not change donor pixels"
     if spec.get("frame0Hash"):
         assert catalog.sha(frames[0].tobytes()) == spec["frame0Hash"], "Native first animation frame changed"
     packed[key] = frames
@@ -210,7 +297,8 @@ def replacement_image(cache, row, packed, mod_root):
         out = native_donor(cache, row["base"], packed).copy() if row.get("base") else Image.new("RGBA", (16, 16))
         for part in row["parts"]:
             sx, sy = part.get("srcX", 0), part.get("srcY", 0)
-            image = native_donor(cache, part["donor"], packed).crop((sx, sy, sx + part["w"], sy + part["h"]))
+            image = native_donor(cache, part["donor"], packed, part.get("layers"), part.get("layerHashes")).crop(
+                (sx, sy, sx + part["w"], sy + part["h"]))
             out.alpha_composite(image, (part.get("x", 0), part.get("y", 0)))
         return out
     image = asset_image(row, mod_root)
@@ -255,8 +343,9 @@ def verify(rows, cache, catalogs, mod_root):
         donors = [ref for ref in (row.get("donor"), row.get("base")) if ref]
         donors.extend(part["donor"] for part in row.get("parts", []))
         for donor in donors:
-            donor_id = f"{donor['game']}:{donor['tileset']}:{donor['id']}"
-            assert indices[donor["game"]][donor_id]["pixel_sha256"] == donor["hash"], f"Donor hash changed: {donor_id}"
+            if donor.get("kind") != "field_object":
+                donor_id = f"{donor['game']}:{donor['tileset']}:{donor['id']}"
+                assert indices[donor["game"]][donor_id]["pixel_sha256"] == donor["hash"], f"Donor hash changed: {donor_id}"
             native_donor(cache, donor, packed)
         if row.get("asset"):
             asset_image(row, mod_root)
@@ -334,7 +423,7 @@ def map_preview(cache, output, game, map_id, stem, rows, packed, scale, mod_root
     draw.text((left, 12), title, fill="white", font=font)
     draw.text((left, 40), "Native imported background-map preview; nearest-neighbor pixels. This is not a complete tileset replacement.", fill="#ced7e4", font=small)
     if any(r.get("animated") for r in selected.values()):
-        draw.text((left, 61), "Animated ocean water is shown at native frame0; the reviewed donor has8 native frames.", fill="#ced7e4", font=small)
+        draw.text((left, 61), "Native donor animations shown at frame 0.", fill="#ced7e4", font=small)
     source_label = "Original monochrome" if palettes is None else "Original Crystal DAY colors and native roof"
     draw.text((left, 82), source_label, fill="white", font=small)
     draw.text((left + display_w + gap, 82), "Gen 3 style — reviewed cells only", fill="white", font=small)
@@ -368,6 +457,7 @@ def main():
     parser.add_argument("--include-water", action="store_true", help="Include reviewed coastal water, shown at native animation frame0 and respecting map scope")
     parser.add_argument("--include-buildings", action="store_true", help="Include reviewed compact native Pallet buildings")
     parser.add_argument("--include-details", action="store_true", help="Include reviewed Pallet grass, flowers and fences")
+    parser.add_argument("--include-outdoors", action="store_true", help="Include reviewed additional Gen1/2 outdoor terrain")
     parser.add_argument("--tree-fixtures", action="store_true", help="Also render Route1 and Viridian tree map fixtures; requires --include-trees")
     args = parser.parse_args()
     rows = read_reviewed(args.reviewed)
@@ -382,7 +472,9 @@ def main():
         coast = args.reviewed.parent / "coasts.lua"
         if coast.exists():
             rows.extend(read_reviewed(coast))
-    for requested, name in ((args.include_buildings, "pallet_buildings.lua"), (args.include_details, "pallet_details.lua")):
+    for requested, name in ((args.include_buildings, "pallet_buildings.lua"), (args.include_details, "pallet_details.lua"),
+                            (args.include_outdoors, "gen1_outdoor.lua"), (args.include_outdoors, "gen2_outdoor.lua"),
+                            (args.include_outdoors, "gen1_caves.lua")):
         if requested and (args.reviewed.parent / name).exists():
             rows.extend(read_reviewed(args.reviewed.parent / name))
     keys = {(r["game"], r["style"], r["tileset"], r["id"], r["quadrant"], r.get("map")) for r in rows}

@@ -40,7 +40,7 @@ function Donor.new(ctx)
   local hash=ctx.hash or function(bytes)
     return love.data.encode('string','hex',love.data.hash('sha256',bytes))
   end
-  local modules,sheets,packs,animations={},{},{},{}
+  local modules,sheets,packs,animations,objects={},{},{},{},{}
   local self={}
   local function readFile(game,path,optional)
     assert(type(path)=='string' and not path:find('..',1,true) and
@@ -275,14 +275,52 @@ function Donor.new(ctx)
     result.sourceHash=result.hash
     return result
   end
+  local function fieldObject(ref)
+    assert(generations[ref.game]==3 and ref.tileset=='ow' and ref.quadrant==nil,
+      'Field-object donor needs a Gen3 ow reference without a quadrant')
+    assert(type(ref.metaHash)=='string' and type(ref.rgbaHash)=='string' and type(ref.hash)=='string',
+      'Field-object source fingerprints are required')
+    local identity=importIdentity(ref.game)
+    local key=ref.game..':'..ref.id..':'..identity
+    local cached=objects[key]
+    if not cached then
+      local root='data/generated/gba/ow/'..ref.id
+      local meta,rgba=readFile(ref.game,root..'.meta'),readFile(ref.game,root..'.rgba')
+      assert(#meta==120 and meta:sub(1,4)=='SVOW','Invalid field-object metadata')
+      assert(meta:byte(5)==4,'Unsupported field-object metadata version')
+      local function u16(position)return meta:byte(position)+meta:byte(position+1)*256 end
+      local id,w,h,frames=u16(7),u16(9),u16(11),u16(13)
+      assert(id==ref.id,'Field-object graphics ID changed')
+      assert(w==16 and h==16,'Field-object donor must have a complete 16 by 16 pixel canvas')
+      assert(integer(frames,256) and frames>0,'Invalid field-object frame count')
+      assert(#rgba==w*h*frames*4,'Field-object RGBA pixels are incomplete')
+      cached={meta=meta,rgba=rgba,frames=frames};objects[key]=cached
+    end
+    assert(hash(cached.meta)==ref.metaHash,'Field-object metadata fingerprint changed')
+    assert(hash(cached.rgba)==ref.rgbaHash,'Field-object RGBA fingerprint changed')
+    checkFiles(ref,{[ref.id..'.meta']=cached.meta,[ref.id..'.rgba']=cached.rgba})
+    local frame=ref.frame or 0
+    assert(integer(frame,cached.frames-1),'Field-object frame is unavailable')
+    local under,over=newData(16,16),newData(16,16)
+    local offset=frame*1024
+    for y=0,15 do for x=0,15 do
+      local i=offset+(y*16+x)*4+1
+      under:setPixel(x,y,cached.rgba:byte(i)/255,cached.rgba:byte(i+1)/255,
+        cached.rgba:byte(i+2)/255,cached.rgba:byte(i+3)/255)
+    end end
+    local fingerprint=hash(bytesFor(under))
+    return {game=ref.game,tileset=ref.tileset,id=ref.id,kind='field_object',frame=frame,
+      under=under,over=over,hash=fingerprint,sourceHash=fingerprint,cacheIdentity=identity}
+  end
   function self:cell(ref)
     local ok,result=pcall(function()
       assert(type(ref)=='table' and generations[ref.game],'Unknown donor cartridge')
       assert(validPart(ref.tileset),'Invalid donor tileset')
       assert(integer(ref.id,65535),'Invalid donor tile ID')
       assert(ref.quadrant==nil or integer(ref.quadrant,3),'Invalid donor quadrant')
+      assert(ref.kind==nil or ref.kind=='field_object','Unknown donor kind')
       local gen=generations[ref.game]
-      local out=gen==3 and native(ref) or gb(ref,gen)
+      local out=ref.kind=='field_object' and fieldObject(ref) or gen==3 and native(ref) or gb(ref,gen)
       assert(not ref.hash or out.hash==ref.hash,'Donor tile fingerprint changed')
       return out
     end)
@@ -458,7 +496,7 @@ function Donor.new(ctx)
     if not ok then return nil,tostring(result) end
     return result
   end
-  function self:invalidate() modules,sheets,packs,animations={},{},{},{} end
+  function self:invalidate() modules,sheets,packs,animations,objects={},{},{},{},{} end
   return self
 end
 return Donor

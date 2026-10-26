@@ -18,11 +18,35 @@ end
 local function integer(value,maximum)
   return type(value)=='number' and value>=0 and value%1==0 and value<=maximum
 end
+local function fingerprint(value)
+  return type(value)=='string' and #value==64 and value:match('^[0-9a-f]+$')~=nil
+end
+local function origin(ref)
+  if ref.kind==nil then return true end
+  return ref.kind=='field_object' and generations[ref.game]==3 and ref.tileset=='ow' and ref.quadrant==nil
+    and integer(ref.frame,65535) and fingerprint(ref.metaHash) and fingerprint(ref.rgbaHash)
+end
+local function selectedLayers(part)
+  if part.layers==nil then return part.layerHashes==nil end
+  local order={under=1,mid=2,over=3}
+  if type(part.layers)~='table' or #part.layers<1 or #part.layers>3
+    or type(part.layerHashes)~='table' then return false end
+  for key in pairs(part.layers)do
+    if not integer(key,#part.layers) or key==0 then return false end
+  end
+  local previous,selected=0,{}
+  for _,name in ipairs(part.layers)do
+    if not order[name] or order[name]<=previous or not fingerprint(part.layerHashes[name]) then return false end
+    previous=order[name];selected[name]=true
+  end
+  for name in pairs(part.layerHashes)do if not selected[name] then return false end end
+  return true
+end
 local function validRef(style,ref)
   return type(ref)=='table' and M.donorMatches(style,ref.game)
     and type(ref.tileset)=='string' and ref.tileset~='' and integer(ref.id,65535)
     and type(ref.hash)=='string' and #ref.hash==64 and ref.hash:match('^[0-9a-f]+$')~=nil
-    and (generations[ref.game]==3 or integer(ref.quadrant or 0,3))
+    and (generations[ref.game]==3 or integer(ref.quadrant or 0,3)) and origin(ref)
 end
 function M.validate(row)
   if type(row)~='table' then return nil,'mapping must be a table' end
@@ -41,6 +65,7 @@ function M.validate(row)
     if type(ref.tileset)~='string' or ref.tileset=='' or not integer(ref.id,65535) then return nil,'invalid donor tile reference' end
     if generations[ref.game]<3 and not integer(ref.quadrant or 0,3) then return nil,'invalid donor quadrant' end
     if type(ref.hash)~='string' or #ref.hash~=64 or not ref.hash:match('^[0-9a-f]+$') then return nil,'donor fingerprint required' end
+    if not origin(ref) then return nil,'invalid native donor origin' end
   elseif row.asset then
     if row.kind~='original' and row.kind~='third_party' then return nil,'asset origin must be identified' end
     local prefix=row.kind=='original' and 'original' or 'third_party'
@@ -51,7 +76,7 @@ function M.validate(row)
       if type(row.base)~='table' or not M.donorMatches(row.style,row.base.game)
         or type(row.base.tileset)~='string' or row.base.tileset=='' or not integer(row.base.id,65535)
         or type(row.base.hash)~='string' or #row.base.hash~=64 or not row.base.hash:match('^[0-9a-f]+$')
-        or (generations[row.base.game]<3 and not integer(row.base.quadrant or 0,3)) then return nil,'invalid asset ground reference' end
+        or (generations[row.base.game]<3 and not integer(row.base.quadrant or 0,3)) or not origin(row.base) then return nil,'invalid asset ground reference' end
     end
   elseif row.parts then
     if row.kind~='native_composite' then return nil,'native composition origin required' end
@@ -59,6 +84,7 @@ function M.validate(row)
     if row.base and not validRef(row.style,row.base) then return nil,'invalid composition ground reference' end
     for _,part in ipairs(row.parts) do
       if type(part)~='table' or not validRef(row.style,part.donor) then return nil,'invalid composition donor' end
+      if not selectedLayers(part) then return nil,'invalid composition layer selection or fingerprint' end
       local sx,sy,x,y,w,h=part.srcX or 0,part.srcY or 0,part.x or 0,part.y or 0,part.w,part.h
       if not integer(sx,15) or not integer(sy,15) or not integer(x,15) or not integer(y,15)
         or not integer(w,16) or w==0 or not integer(h,16) or h==0

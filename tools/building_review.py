@@ -41,6 +41,60 @@ def decode_layout(path):
             "file_sha256": catalog.sha(file_bytes), "decoded_sha256": catalog.sha(raw)}
 
 
+def roof_seam_review(args, candidates, before_ground, ground_ref, ground):
+    """Show every Pallet roof/background seam in the actual mapped context."""
+    mod = Path(__file__).resolve().parents[1]
+    native_map_path = args.cache / "red/data/generated/maps.lua"
+    native_map = catalog.read_lua(native_map_path)["PALLET_TOWN"]
+    mappings = []
+    for name in ("reviewed.lua", "trees.lua", "posts.lua", "water.lua", "coasts.lua", "pallet_buildings.lua", "pallet_details.lua"):
+        mappings.extend(preview.read_reviewed(mod / "mappings" / name))
+    selected = {}
+    for row in sorted(mappings, key=lambda r: bool(r.get("map"))):
+        if row["game"] == "red" and row["style"] == "gen3" and row["tileset"] == "OVERWORLD" and row.get("map", "PALLET_TOWN") == "PALLET_TOWN":
+            selected[row["id"], row["quadrant"]] = row
+    before = Image.new("RGBA", (native_map["width"] * 32, native_map["height"] * 32))
+    packed = {}
+    for pos, block in enumerate(native_map["blocks"]):
+        for q in range(4):
+            assert (block, q) in selected
+            cell = preview.replacement_image(args.cache, selected[block, q], packed, mod)
+            before.paste(cell, (pos % native_map["width"] * 32 + q % 2 * 16, pos // native_map["width"] * 32 + q // 2 * 16))
+    after = before.copy()
+    for name, x, y in (("home", 64, 48), ("home", 192, 48), ("lab", 160, 128)):
+        before.paste(before_ground[name], (x, y))
+        after.paste(candidates[name], (x, y))
+    changed = [(x, y) for y in range(after.height) for x in range(after.width) if before.getpixel((x, y)) != after.getpixel((x, y))]
+    assert len(changed) == 146
+    assert all(after.getpixel((x, y)) == ground.getpixel((x % 16, y % 16)) for x, y in changed)
+    after.save(args.output / "red-pallet-roof-ground-prototype.png")
+    before.save(args.output / "red-pallet-before-roof-ground.png")
+    canvas = Image.new("RGB", (1340, 1180), "#18202c")
+    draw = ImageDraw.Draw(canvas)
+    font = ImageFont.truetype("C:/Windows/Fonts/arial.ttf", 18)
+    small = ImageFont.truetype("C:/Windows/Fonts/arial.ttf", 15)
+    draw.text((16, 14), "PALLET ROOF CORNERS — exact Emerald ground beneath preserved native FireRed roof pixels", fill="white", font=font)
+    draw.text((16, 44), "Local background fixture. Only146 empty-corner pixels change across the two homes and lab; roof outlines, windows and doors are unchanged.", fill="#ced7e4", font=small)
+    for col, (label, image) in enumerate((("Before: pale FireRed corner ground", before), ("After: surrounding Emerald ground", after))):
+        draw.text((16 + col * 670, 79), label, fill="white", font=font)
+        canvas.paste(image.resize((640, 576), Image.Resampling.NEAREST), (16 + col * 670, 110))
+    for i, (label, x, y) in enumerate((("Trainer home: northwest", 56, 40), ("Trainer home: northeast", 112, 40),
+                                      ("Rival home: northwest", 184, 40), ("Rival home: northeast", 240, 40),
+                                      ("Oak lab: northwest", 152, 120), ("Oak lab: northeast", 240, 120))):
+        left, top = 16 + i % 3 * 440, 742 + i // 3 * 205
+        draw.text((left, top), label, fill="white", font=small)
+        for col, (tag, image) in enumerate((("before", before), ("after", after))):
+            draw.text((left + col * 150, top + 23), tag, fill="#ced7e4", font=small)
+            canvas.paste(image.crop((x, y, x + 32, y + 32)).resize((128, 128), Image.Resampling.NEAREST), (left + col * 150, top + 46))
+    canvas.save(args.output / "pallet-roof-ground-seams.png")
+    report = {"status": "native_roof_background_verified", "map": "PALLET_TOWN", "game": "red", "changed_pixels": len(changed),
+              "changed_background_pixels_all_match_adjacent_ground": True, "roof_pixels_changed": 0, "building_geometry_changed": False,
+              "ground_donor": ground_ref, "full_map_pixel_sha256": catalog.sha(after.tobytes()),
+              "source_map_sha256": catalog.sha(native_map_path.read_bytes()), "roof_part_layers": ["over"]}
+    (args.output / "pallet-roof-ground-seams.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
+    return report
+
+
 def frlg_references(args, source_records, source_crops):
     """Verify both remake imports and show their actual Kanto counterparts."""
     definitions = (
@@ -162,50 +216,70 @@ def compact_frlg_prototypes(args, frlg_report):
                 "door_source_rect": [48, 64, 16, 16], "door_target_rect": [32, 48, 16, 16],
                 "frame_source_rect": [48, 63, 16, 17], "frame_target_rect": [32, 47, 16, 17],
                 "context_source_rect": [40, 56, 32, 24], "context_target_rect": [24, 40, 32, 24],
-                "correctives": [("complete native entrance cap", [48, 63, 16, 1], [32, 47]),
-                                 ("clear conflicting awning end with native wall", [40, 62, 8, 2], [24, 46])],
+                "correctives": [("complete native entrance cap", [48, 63, 16, 1], [32, 47])],
                 "feature_rects": [("left circular vent1: complete visible glyph and shadow", [72, 50, 16, 12], [8, 34, 16, 12]),
                                   ("left circular vent2: complete visible glyph and shadow", [88, 50, 16, 12], [24, 34, 16, 12]),
                                   ("right circular vent1: complete visible glyph and shadow", [72, 50, 16, 12], [56, 34, 16, 12]),
                                   ("right circular vent2: complete visible glyph and shadow", [88, 50, 16, 12], [72, 34, 16, 12]),
-                                  ("left complete24px window body", [72, 64, 24, 16], [8, 48, 24, 16]),
-                                  ("left awning preserved16px span", [72, 62, 16, 2], [8, 46, 16, 2]),
-                                  ("right window and awning", [72, 56, 24, 24], [56, 40, 24, 24]),
+                                  ("left complete24x24 window and full awning including both corners", [72, 56, 24, 24], [8, 40, 24, 24]),
+                                  ("right complete24x24 window and full awning including both corners", [72, 56, 24, 24], [56, 40, 24, 24]),
                                   ("complete left facade frame", [0, 48, 8, 32], [0, 32, 8, 32]),
                                   ("left vent1 visible10px glyph", [72, 50, 16, 10], [8, 34, 16, 10]),
                                   ("left vent2 visible10px glyph", [88, 50, 16, 10], [24, 34, 16, 10]),
                                   ("whole chimney", [80, 8, 24, 32], [64, 0, 24, 32]),
-                                  ("complete entrance frame including native lintel", [48, 63, 16, 17], [32, 47, 16, 17]),
-                                  ("native wall clearance replacing conflicting awning end", [40, 62, 8, 2], [24, 46, 8, 2])],
-                "limits": "Visible vent glyphs, full window bodies, left frame and chimney are intact. Native16x1 cap plus8x2 wall strips restore the full entrance frame and remove the awning end conflicting with its left clearance. The layout context intentionally differs from the uncompressed building. Corrected facade and entrance visually approved2026-10-26."},
+                                  ("complete entrance frame including native lintel", [48, 63, 16, 17], [32, 47, 16, 17])],
+                "limits": "Both complete24x24 native window/awning rectangles, including their top-right corners, retain every pixel. The four vent glyphs, full left frame and chimney remain intact. One native16x1 strip restores the entrance cap. No wall cleanup covers either window; the left awning ends immediately beside the entrance without overlapping it. Original96x64 footprint and door-bottom anchor(40,64) are unchanged."},
     }
     records = {r["id"]: r for r in frlg_report["native_references"]}
     native_root = args.cache / "firered/data/generated/gba/native"
     layout_spec = catalog.read_lua(native_root / "manifest.lua")["layouts"]["FR_PALLET_TOWN"]
     layout = decode_layout(native_root / layout_spec["file"])
     catalog_rows = json.loads((args.catalog / "firered.json").read_text())["cells"]
-    mid_hash = {r["mid"]: r["pixel_sha256"] for r in catalog_rows if r["pair"] == layout_spec["pair"]}
-    candidates, candidate_images, entrance_reviews = [], {}, []
+    native_records = {r["mid"]: r for r in catalog_rows if r["pair"] == layout_spec["pair"]}
+    mid_hash = {mid: r["pixel_sha256"] for mid, r in native_records.items()}
+    over_ids, over_pixels, _ = catalog.read_idx(native_root / layout_spec["pair"] / "mids_over.idx")
+    native_palette = catalog.read_palettes(native_root / layout_spec["pair"] / "palettes.bin")
+    over_cells = {}
+    for mid, record in native_records.items():
+        slot = over_ids.index(mid)
+        over = catalog.rgba_native(over_pixels[slot * 256:(slot + 1) * 256], native_palette, True)
+        assert catalog.sha(over.tobytes()) == record["layer_sha256"]["over"]
+        over_cells[mid] = over
+    emerald_records = json.loads((args.catalog / "emerald.json").read_text())["cells"]
+    ground_record = next(r for r in emerald_records if r.get("pair") == "general__petalburg" and r["mid"] == 1)
+    ground_ref = {"game": "emerald", "tileset": "general__petalburg", "id": 1, "hash": ground_record["pixel_sha256"]}
+    ground = preview.native_donor(args.cache, ground_ref, {})
+    candidates, candidate_images, entrance_reviews, roof_reviews, before_ground_images = [], {}, [], [], {}
     for name, config in configs.items():
         record = records[config["source_id"]]
         source = Image.open(args.output / record["native_crop_file"]).convert("RGBA")
         target = Image.new("RGBA", tuple(config["target_size"]))
+        for gy in range(0, target.height, 16):
+            for gx in range(0, target.width, 16):
+                target.paste(ground, (gx, gy))
         parts = []
         source_x, source_y = record["native_pixel_rect_xywh"][:2]
         for dy, source_row in enumerate(config["row_sources"]):
             for dx, source_col in enumerate(config["column_sources"][dy]):
                 sr = 4 if name == "lab" and dy == 3 and 8 <= dx <= 10 else source_row
-                quad = source.crop((source_col * 8, sr * 8, source_col * 8 + 8, sr * 8 + 8))
-                target.paste(quad, (dx * 8, dy * 8))
-                assert target.crop((dx * 8, dy * 8, dx * 8 + 8, dy * 8 + 8)).tobytes() == quad.tobytes()
+                native_quad = source.crop((source_col * 8, sr * 8, source_col * 8 + 8, sr * 8 + 8))
                 gx, gy = source_x + source_col * 8, source_y + sr * 8
                 mx, my = gx // 16, gy // 16
                 mid = layout["mids"][my * layout["width"] + mx]
-                parts.append({"target_xy_px": [dx * 8, dy * 8], "source_crop_quad_xy": [source_col, sr],
+                roof = dy < (2 if name == "home" else 4)
+                quad = over_cells[mid].crop((gx % 16, gy % 16, gx % 16 + 8, gy % 16 + 8)) if roof else native_quad
+                if roof:
+                    assert all(p[3] in (0, 255) for p in quad.get_flattened_data())
+                    assert all(a == b for a, b in zip(quad.get_flattened_data(), native_quad.get_flattened_data()) if a[3])
+                target.alpha_composite(quad, (dx * 8, dy * 8))
+                part = {"target_xy_px": [dx * 8, dy * 8], "source_crop_quad_xy": [source_col, sr],
                               "donor": {"game": "firered", "tileset": layout_spec["pair"], "id": mid,
                                         "quadrant": (gy % 16 // 8) * 2 + gx % 16 // 8, "hash": mid_hash[mid]},
                               "srcX": gx % 16, "srcY": gy % 16, "w": 8, "h": 8,
-                              "quad_pixel_sha256": catalog.sha(quad.tobytes())})
+                              "quad_pixel_sha256": catalog.sha(quad.tobytes())}
+                if roof:
+                    part.update(layers=["over"], layerHashes={"over": native_records[mid]["layer_sha256"]["over"]})
+                parts.append(part)
         before_repair = target.copy()
         for label, source_rect, target_xy in config["correctives"]:
             sx, sy, width, height = source_rect
@@ -231,12 +305,32 @@ def compact_frlg_prototypes(args, frlg_report):
             feature_checks.append({"feature": label, "source_rect_xywh": source_rect,
                                    "target_rect_xywh": target_rect, "pixels_identical": identical})
         target.save(args.output / f"compact-frlg-{name}-prototype.png")
+        before_ground = target.copy()
+        roof_mask = Image.new("L", target.size)
+        for part in parts:
+            if not part.get("layers"):
+                continue
+            sx, sy = part["source_crop_quad_xy"]
+            tx, ty = part["target_xy_px"]
+            before_ground.paste(source.crop((sx * 8, sy * 8, sx * 8 + 8, sy * 8 + 8)), (tx, ty))
+            roof_mask.paste(over_cells[part["donor"]["id"]].crop((part["srcX"], part["srcY"], part["srcX"] + 8, part["srcY"] + 8)).getchannel("A"), (tx, ty))
+        differences = [(x, y) for y in range(target.height) for x in range(target.width) if before_ground.getpixel((x, y)) != target.getpixel((x, y))]
+        assert len(differences) == (72 if name == "home" else 2)
+        assert all(not roof_mask.getpixel((x, y)) and target.getpixel((x, y)) == ground.getpixel((x % 16, y % 16)) for x, y in differences)
+        before_ground.save(args.output / f"compact-frlg-{name}-before-roof-ground.png")
+        before_ground_images[name] = before_ground
+        roof_reviews.append({"id": name, "roof_parts": sum(bool(p.get("layers")) for p in parts),
+                             "selected_layers": ["over"], "selected_layer_hashes_checked": True,
+                             "changed_empty_background_pixels": len(differences), "changed_native_roof_pixels": 0,
+                             "all_changed_pixels_match_surrounding_ground": True, "ground_donor": ground_ref,
+                             "before_pixel_sha256": catalog.sha(before_ground.tobytes()), "after_pixel_sha256": catalog.sha(target.tobytes())})
         candidate_images[name] = target
         dr = config["door_target_rect"]
         candidates.append({"id": name, "status": "visually_approved", "size_px": config["target_size"],
                            "door_bottom_anchor_px": [dr[0] + dr[2] // 2, dr[1] + dr[3]],
                            "door_pixels_identical": True, "features_checked": feature_checks,
-                           "parts": parts, "native_8px_parts_copied": len(parts) - len(config["correctives"]),
+                           "parts": parts, "base": ground_ref, "roof_empty_background": roof_reviews[-1],
+                           "native_8px_parts_copied": len(parts) - len(config["correctives"]),
                            "native_corrective_strips_copied": len(config["correctives"]), "synthetic_pixels": 0,
                            "output_pixel_sha256": catalog.sha(target.tobytes()), "limits": config["limits"]})
         frame_source = source.crop(tuple((lambda r: (r[0], r[1], r[0] + r[2], r[1] + r[3]))(config["frame_source_rect"])))
@@ -253,6 +347,58 @@ def compact_frlg_prototypes(args, frlg_report):
                                  "different_complete_frame_pixels_after": differences_after,
                                  "native_strips": config["correctives"]})
         before_repair.save(args.output / f"compact-frlg-{name}-before-entrance-repair.png")
+    # Reproduce the previous destructive cleanup as a regression fixture. The
+    # full24x24 checks above deliberately include both awning corners rather
+    # than approving only the window body or a partial horizontal span.
+    lab_source = Image.open(args.output / records[configs["lab"]["source_id"]]["native_crop_file"]).convert("RGBA")
+    lab_after = candidate_images["lab"]
+    lab_before = lab_after.copy()
+    lab_before.paste(lab_source.crop((40, 62, 48, 64)), (24, 46))
+    lab_before.save(args.output / "compact-frlg-lab-before-window-corner-repair.png")
+    window_checks = []
+    for feature, source_rect, target_rect in configs["lab"]["feature_rects"]:
+        if "window" not in feature and "entrance" not in feature:
+            continue
+        original = region(lab_source, source_rect)
+        before = region(lab_before, target_rect)
+        after = region(lab_after, target_rect)
+        before_diff = sum(a != b for a, b in zip(Image.frombytes("RGBA", tuple(source_rect[2:]), original).get_flattened_data(),
+                                                Image.frombytes("RGBA", tuple(target_rect[2:]), before).get_flattened_data()))
+        after_diff = sum(a != b for a, b in zip(Image.frombytes("RGBA", tuple(source_rect[2:]), original).get_flattened_data(),
+                                               Image.frombytes("RGBA", tuple(target_rect[2:]), after).get_flattened_data()))
+        assert after_diff == 0
+        window_checks.append({"feature": feature, "source_rect_xywh": source_rect, "target_rect_xywh": target_rect,
+                              "native_pixel_differences_before": before_diff, "native_pixel_differences_after": after_diff})
+    changed_pixels = sum(a != b for a, b in zip(lab_before.get_flattened_data(), lab_after.get_flattened_data()))
+    assert changed_pixels == 16 and [c["native_pixel_differences_before"] for c in window_checks] == [16, 0, 0]
+    window_review = {"status": "complete_native_awnings_and_entrance_verified", "layout_changed": False,
+                     "synthetic_pixels": 0, "changed_rgba_pixels": changed_pixels,
+                     "before_pixel_sha256": catalog.sha(lab_before.tobytes()),
+                     "after_pixel_sha256": catalog.sha(lab_after.tobytes()), "protected_features": window_checks,
+                     "fix": "Omit the8x2 plain-wall overlay that erased the left awning's top-right corner. All16 restored pixels already belong to the base native window composition. No feature moves; no scale, footprint or door-anchor change."}
+    (args.output / "lab-window-corner-repair.json").write_text(json.dumps(window_review, indent=2), encoding="utf-8")
+    window_zoom = Image.new("RGB", (1440, 1010), "#18202c")
+    wd = ImageDraw.Draw(window_zoom)
+    wfont = ImageFont.truetype("C:/Windows/Fonts/arial.ttf", 18)
+    wsmall = ImageFont.truetype("C:/Windows/Fonts/arial.ttf", 15)
+    wd.text((16, 14), "LAB WINDOW CORNER REPAIR — complete native awnings and entrance, unchanged layout", fill="white", font=wfont)
+    wd.text((16, 44), "Exactly16 native pixels restored by removing one wall overlay. Both24x24 windows and the full16x17 lintel/door match native artwork.", fill="#ced7e4", font=wsmall)
+    for column, (label, image, rect) in enumerate((("Native FR/LG facade", lab_source, [0, 48, 112, 32]),
+                                                  ("Before: erased awning corner", lab_before, [0, 32, 96, 32]),
+                                                  ("After: full native window restored", lab_after, [0, 32, 96, 32]))):
+        x = 16 + column * 480
+        wd.text((x, 84), label, fill="white", font=wfont)
+        rx, ry, rw, rh = rect
+        window_zoom.paste(image.crop((rx, ry, rx + rw, ry + rh)).resize((rw * 4, rh * 4), Image.Resampling.NEAREST), (x, 116))
+    for row, (feature, source_rect, target_rect) in enumerate((configs["lab"]["feature_rects"][4], configs["lab"]["feature_rects"][-1])):
+        y = 330 + row * 335
+        wd.text((16, y - 34), ("LEFT: whole24x24 window + awning at8x" if row == 0 else "ENTRANCE: whole16x17 lintel + door at8x"), fill="#e5c68d", font=wfont)
+        for column, (image, rect) in enumerate(((lab_source, source_rect), (lab_before, target_rect), (lab_after, target_rect))):
+            rx, ry, rw, rh = rect
+            window_zoom.paste(image.crop((rx, ry, rx + rw, ry + rh)).resize((rw * 8, rh * 8), Image.Resampling.NEAREST), (16 + column * 480, y))
+    wd.text((16, 951), "Regression: left window16 differences before /0 after; right window0/0; complete entrance0/0. No window pixels are replaced by wall cleanup.", fill="#ced7e4", font=wsmall)
+    window_zoom.save(args.output / "lab-window-corner-repair.png")
+    seam_review = roof_seam_review(args, candidate_images, before_ground_images, ground_ref, ground)
     # Same source ID/quadrant may be used twice only when the desired art agrees.
     red_map = catalog.read_lua(args.cache / "red/data/generated/maps.lua")["PALLET_TOWN"]
     def source_keys(rect):
@@ -290,7 +436,7 @@ def compact_frlg_prototypes(args, frlg_report):
             ax = dx + anchor[0] * 4
             draw.polygon(((ax, baseline), (ax - 4, baseline + 11), (ax + 4, baseline + 11)), fill="#f2c36c")
             draw.text((col * 500 + 16, baseline + 19), f"{name}: {image.width}×{image.height}px; door-bottom{anchor}", fill="white", font=small)
-        note = "HOME APPROVED:48 native8px parts +2 native1px strips. Visible windows intact; actual16x17 entrance frame byte-exact." if name == "home" else "LAB APPROVED:96 native8px parts +native1px/2px strips. Four vents intact; actual16x17 frame and wall clearance byte-exact."
+        note = "HOME APPROVED:48 native8px parts +2 native1px strips. Visible windows intact; actual16x17 entrance frame byte-exact." if name == "home" else "LAB:96 native8px parts +1 native1px cap. Both full24x24 windows/awnings and whole16x17 entrance frame byte-exact."
         draw.text((16, baseline + 52), note, fill="#e5c68d", font=small)
     draw.text((16, 997), "Pallet source mapping feasibility:12 home keys and24 lab keys have no overlap; both homes share identical source keys and identical native remake art.", fill="#ced7e4", font=small)
     canvas.save(args.output / "compact-frlg-native-parts-review.png")
@@ -320,7 +466,8 @@ def compact_frlg_prototypes(args, frlg_report):
     report = {"status": "approved_frame_corrected_home_and_laboratory", "candidates": candidates,
               "source_key_collision_analysis": collision, "native_base_parts_are_copied_8px_quads": True,
               "native_corrective_strips_are_cropped_existing_pixels": True,
-              "entrance_reviews": entrance_reviews, "root_review_required": False}
+              "entrance_reviews": entrance_reviews, "window_corner_review": window_review,
+              "roof_background_reviews": roof_reviews, "pallet_roof_seams": seam_review, "root_review_required": False}
     (args.output / "compact-frlg-native-parts-review.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
     return report
 
@@ -342,7 +489,7 @@ def write_approved_buildings(args, compact):
         fingerprints = next(t["fingerprints"] for t in c["tilesets"] if t["tileset"] == "OVERWORLD")
         for name, source_rect, role, description in (
             ("home", [4, 3, 4, 3], "pallet_kanto_home", "Original64x48 footprint and door-bottom anchor(24,48), visible upper window glyphs/sills and lower24px window are preserved. The complete16x17 entrance including its1px lintel is byte-identical to native artwork; a second native wall strip removes the displaced lintel. Both Gen1 homes share these source keys; the native remake homes are pixel-identical."),
-            ("lab", [10, 8, 6, 4], "pallet_oak_laboratory", "Original96x64 footprint and door-bottom anchor(40,64), complete left frame, four full circular vent glyphs/shadows, both24px window bodies and whole24x32 chimney retain native pixels. The complete16x17 entrance frame is byte-identical; a native wall strip replaces the conflicting awning end to preserve entrance clearance."),
+            ("lab", [10, 8, 6, 4], "pallet_oak_laboratory", "Original96x64 footprint and door-bottom anchor(40,64), complete left frame, four full circular vent glyphs/shadows, both complete24x24 windows with full awnings/corners, and whole24x32 chimney retain native pixels. The complete16x17 entrance frame is byte-identical. One native lintel strip repairs the cap; no wall cleanup overwrites any window pixel."),
         ):
             if name not in approved:
                 continue
@@ -366,6 +513,9 @@ def write_approved_buildings(args, compact):
                         q = part["donor"].get("quadrant", 0)
                         parts.append({"donor": ref, "srcX": part.get("srcX", q % 2 * 8), "srcY": part.get("srcY", q // 2 * 8),
                                       "w": part.get("w", 8), "h": part.get("h", 8), "x": px % 16, "y": py % 16})
+                        for optional in ("layers", "layerHashes"):
+                            if optional in part:
+                                parts[-1][optional] = part[optional]
                     assert 4 <= len(parts) <= 6 and {(p["x"], p["y"]) for p in parts[:4]} == {(0, 0), (8, 0), (0, 8), (8, 8)}
                     cell = target.crop((tx * 16, ty * 16, tx * 16 + 16, ty * 16 + 16))
                     assert set(cell.getchannel("A").get_flattened_data()) == {255}
@@ -374,6 +524,9 @@ def write_approved_buildings(args, compact):
                                  "status": "reviewed", "sourceHash": source["grayscale_pixel_sha256"],
                                  "sourceFiles": fingerprints, "parts": parts, "compositionPixelHash": catalog.sha(cell.tobytes()),
                                  "evidence": "Actual native FireRed/LeafGreen Kanto counterpart, compacted solely from existing8px parts. Visually approved2026-10-26. " + description + " No painted pixels or arbitrary scaling. Scoped to Pallet Town; source footprint, collision, scripts and warp cells remain native."})
+                    if any(p.get("layers") for p in parts):
+                        rows[-1]["base"] = model["base"]
+                        rows[-1]["evidence"] += " Roof parts retain only their fingerprint-checked native over layer; transparent background corners reveal exact adjacent Emerald1 ground. All opaque roof/eave pixels are unchanged."
     def lua(value):
         if isinstance(value, str):
             return json.dumps(value)

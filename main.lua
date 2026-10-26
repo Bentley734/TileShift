@@ -7,7 +7,7 @@ return function(mod)
   if Runtime._tileShiftDispose then Runtime._tileShiftDispose() end
   local Mapping=readModule('lib/mapping.lua')
   local reviewed=readModule('mappings/reviewed.lua')
-  for _,path in ipairs({'mappings/trees.lua','mappings/posts.lua','mappings/water.lua','mappings/coasts.lua','mappings/pallet_buildings.lua','mappings/pallet_details.lua'}) do
+  for _,path in ipairs({'mappings/trees.lua','mappings/posts.lua','mappings/water.lua','mappings/coasts.lua','mappings/pallet_buildings.lua','mappings/pallet_details.lua','mappings/gen1_outdoor.lua','mappings/gen2_outdoor.lua','mappings/gen1_caves.lua'}) do
     local source=mod:read(path)
     if source then
       for _,row in ipairs(assert(load(source,'@tileshift/'..path))()) do reviewed[#reviewed+1]=row end

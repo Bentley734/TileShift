@@ -71,7 +71,9 @@ for _,gameId in ipairs(games)do
       return fixture.trees and 'return __tileMainFixture.trees' or nil
     end
     if path=='mappings/posts.lua' or path=='mappings/water.lua' or path=='mappings/coasts.lua'
-      or path=='mappings/pallet_buildings.lua' or path=='mappings/pallet_details.lua' then return nil end
+      or path=='mappings/pallet_buildings.lua' or path=='mappings/pallet_details.lua'
+      or path=='mappings/gen1_outdoor.lua' or path=='mappings/gen2_outdoor.lua'
+      or path=='mappings/gen1_caves.lua' then return nil end
     if path=='mappings/reviewed.lua' then
       return 'local out={} for i,row in ipairs(__tileMainFixture.reviewed)do out[i]=row end return out'
     end

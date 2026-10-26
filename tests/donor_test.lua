@@ -236,6 +236,66 @@ local flowerBlob={};for frame=0,4 do flowerBlob[#flowerBlob+1]=rgbaFrame(frame,2
 files['firered/data/generated/gba/native/PAIR/anim_flower.rgba']=flowerBlob
 local flower,err=reader:frames(classicRef,{bank='flower',hash=hash(flowerBlob),manifestHash=classicRecipe.manifestHash})
 assert(flower,err);eq(flower.ticks,16);eq(flower.phase,2);eq(flower.offset,2/60);eq(#flower.frames,5)
+-- Field-object donors read the neutral versioned SVOW/RGBA cache directly.
+-- Their complete 16px silhouette is preserved, including transparency.
+local function u16(n)return string.char(n%256,math.floor(n/256))end
+local objectRoot='emerald/data/generated/gba/ow/82'
+local objectMeta='SVOW'..string.char(4,1)..u16(82)..u16(16)..u16(16)..u16(2)..string.rep('\0',106)
+local objectFrame=string.char(0,0,0,0)..string.rep(string.char(17,85,204,255),255)
+local objectOther=string.rep(string.char(204,85,17,255),256)
+files[objectRoot..'.meta']=objectMeta;files[objectRoot..'.rgba']=objectFrame..objectOther
+local objectRef={game='emerald',kind='field_object',tileset='ow',id=82,frame=0,
+  hash=hash(objectFrame),metaHash=hash(objectMeta),rgbaHash=hash(objectFrame..objectOther)}
+local object,err=reader:cell(objectRef);assert(object,err)
+eq(object.under:getString(),objectFrame);eq(object.sourceHash,objectRef.hash)
+eq(object.hash,objectRef.hash);eq(object.frame,0);eq(object.kind,'field_object')
+r,g,b,a=object.under:getPixel(0,0);eq(a,0)
+r,g,b,a=object.under:getPixel(1,0);eq(r,17/255);eq(g,85/255);eq(b,204/255);eq(a,1)
+r,g,b,a=object.over:getPixel(1,0);eq(a,0);eq(object.mid,nil)
+local function objectReference(changes)
+  local ref={};for k,v in pairs(objectRef)do ref[k]=v end
+  for k,v in pairs(changes or {})do ref[k]=v end
+  return ref
+end
+local nextObject=assert(reader:cell(objectReference({frame=1,hash=hash(objectOther)})))
+eq(nextObject.under:getString(),objectOther,'frame-major object data uses the selected frame')
+local function objectFail(changes,message)
+  local failed,why=reader:cell(objectReference(changes));eq(failed,nil)
+  eq(why:find(message,1,true)~=nil,true,why)
+end
+objectFail({metaHash='stale'},'metadata fingerprint changed')
+objectFail({rgbaHash='stale'},'RGBA fingerprint changed')
+objectFail({hash='stale'},'tile fingerprint changed')
+objectFail({frame=2},'frame is unavailable');objectFail({frame=-1},'frame is unavailable')
+objectFail({frame=.5},'frame is unavailable')
+objectFail({game='gold'},'Gen3 ow reference');objectFail({tileset='PAIR'},'Gen3 ow reference')
+objectFail({quadrant=0},'Gen3 ow reference');objectFail({kind='unknown'},'Unknown donor kind')
+objectFail({cacheIdentity='stale'},'import identity changed')
+local missingHash=objectReference();missingHash.metaHash=nil
+local noObject,noObjectWhy=reader:cell(missingHash);eq(noObject,nil)
+eq(noObjectWhy:find('source fingerprints are required',1,true)~=nil,true)
+local function malformedObject(meta,rgba,message)
+  files[objectRoot..'.meta']=meta;files[objectRoot..'.rgba']=rgba;reader:invalidate()
+  objectFail({metaHash=hash(meta),rgbaHash=hash(rgba)},message)
+  files[objectRoot..'.meta']=objectMeta;files[objectRoot..'.rgba']=objectFrame..objectOther;reader:invalidate()
+end
+malformedObject('BAD!'..objectMeta:sub(5),objectFrame..objectOther,'Invalid field-object metadata')
+malformedObject(objectMeta:sub(1,4)..string.char(3)..objectMeta:sub(6),objectFrame..objectOther,'metadata version')
+malformedObject(objectMeta:sub(1,6)..u16(83)..objectMeta:sub(9),objectFrame..objectOther,'graphics ID changed')
+malformedObject(objectMeta:sub(1,8)..u16(32)..objectMeta:sub(11),objectFrame..objectOther,'complete 16 by 16')
+malformedObject(objectMeta:sub(1,10)..u16(32)..objectMeta:sub(13),objectFrame..objectOther,'complete 16 by 16')
+malformedObject(objectMeta:sub(1,12)..u16(0)..objectMeta:sub(15),objectFrame..objectOther,'frame count')
+malformedObject(objectMeta:sub(1,12)..u16(257)..objectMeta:sub(15),objectFrame..objectOther,'frame count')
+malformedObject(objectMeta,objectFrame,'RGBA pixels are incomplete')
+local checkedObject=assert(reader:cell(objectReference({fingerprints={['82.meta']=hash(objectMeta)}})))
+eq(checkedObject.cacheIdentity,hash('marker3\nmeta3'))
+objectFail({fingerprints={['82.meta']='stale'}},'Donor source changed')
+files['emerald/rom-cache.complete']='new-object-import'
+files[objectRoot..'.rgba']=objectOther..objectFrame
+local reimported,err=reader:cell(objectReference({hash=hash(objectOther),rgbaHash=hash(objectOther..objectFrame)}))
+assert(reimported,err);eq(reimported.under:getString(),objectOther,'reimport identity selects fresh object bytes')
+eq(reimported.cacheIdentity,hash('new-object-import\nmeta3'))
+files['emerald/rom-cache.complete']='marker3';files[objectRoot..'.rgba']=objectFrame..objectOther;reader:invalidate()
 for _,path in ipairs(reads)do
   local cartridge=path:match('^([^/]+)/')
   eq(cartridge=='red' or cartridge=='gold' or cartridge=='crystal' or cartridge=='emerald'

@@ -21,4 +21,3 @@ game and is not included with this artwork.
 
 The same compact tree also replaces the round Gen 1 town-boundary objects,
 following the user's choice to use FireRed/LeafGreen's tree interpretation.
-The earlier generated stone-post draft is no longer a production asset.

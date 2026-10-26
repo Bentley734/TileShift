@@ -6,13 +6,19 @@ import hashlib
 import json
 from pathlib import Path
 import zipfile
+from validate_gpu import runtime_fingerprint
 
 
 def main() -> None:
     root = Path(__file__).resolve().parents[1]
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, default=root / "build")
+    parser.add_argument("--gpu-report", type=Path, default=root.parent / ".work/tileshift-gpu/report.json")
     args = parser.parse_args()
+    proof = json.loads(args.gpu_report.read_text(encoding="utf-8"))
+    inputs = runtime_fingerprint(root)
+    assert proof["status"] == "passed", "Native GPU validation must pass before packaging"
+    assert proof["runtime_inputs"] == inputs, "Native GPU proof is stale; validate the current runtime files first"
     manifest = json.loads((root / "manifest.json").read_text(encoding="utf-8"))
     assert manifest["id"] == "tileshift"
     version = manifest["version"]
@@ -50,7 +56,8 @@ def main() -> None:
     checksum.write_text(f"{digest}  {archive.name}\n", encoding="utf-8")
     report = {"version": version, "archive": str(archive.resolve()),
               "bytes": archive.stat().st_size, "sha256": digest,
-              "files": expected, "zip_roundtrip_verified": True}
+              "files": expected, "zip_roundtrip_verified": True,
+              "validated_runtime_sha256": inputs["sha256"], "native_gpu_checks": proof["checks"]}
     (args.output / "package-verification.json").write_text(
         json.dumps(report, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({key: value for key, value in report.items() if key != "files"}, indent=2))

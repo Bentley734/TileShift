@@ -27,7 +27,7 @@ end
 LUA = r"""
 local CACHE,MOD,OUT=@CACHE@,@MOD@,@OUT@
 local G=love.graphics
-local report={status='running',theme='gen3',checks=0,fixtures={},warnings={},writes='private probe output only',
+local report={status='running',theme='gen3',checks=0,fixtures={},interactions={},warnings={},writes='private probe output only',
  limits='Native TileRenderer and Gen2 World background GPU methods plus a synthetic actor rectangle; no full gameplay or UI automation.',
  gpu_pixel_tolerance_bytes=1}
 local function read(path)
@@ -183,7 +183,9 @@ local function run()
  end
  local function eventSnapshot(map)
   return hash(tableString(map.def.warps or {})..tableString(map.def.signs or {})
-   ..tableString(map.def.objects or {}))
+   ..tableString(map.def.objects or {})..tableString(map.def.bgEvents or {})
+   ..tableString(map.def.coordEvents or {})..tableString(map.def.sceneScripts or {})
+   ..tableString(map.def.callbacks or {})..tableString(map.def.events or {})..tableString(map.def.scripts or {}))
  end
  local function requireCompletePallet(def,art)
   local c=coverage(def,art)
@@ -205,7 +207,180 @@ local function run()
   end end
   return checked
  end
+ local function verifyCoveredPixels(def,art,frame,game)
+  local checked=0
+  for by=0,def.height-1 do for bx=0,def.width-1 do
+   local block=art[def.blocks[by*def.width+bx+1]]
+   if block then
+    local expected=block.frames and block.frames[1] or block.image
+    for q=0,3 do if not block.coverage or block.coverage[q] then
+     local sx,sy=q%2*16,math.floor(q/2)*16
+     for y=0,15 do for x=0,15 do
+      equalPixel(frame,bx*32+sx+x,by*32+sy+y,expected,sx+x,sy+y,game..' reviewed GPU pixels changed')
+      checked=checked+1
+     end end
+    end end
+   end
+  end end
+  return checked
+ end
+ local graphicsDecoder,nativeCells
+ nativeCells={}
+ local function sourceDecoder()
+  if not graphicsDecoder then
+   local Decoder=assert(load(assert(read(MOD..'/lib/donor.lua'))))()
+   graphicsDecoder=Decoder.new()
+  end
+  return graphicsDecoder
+ end
+ local function nativeCellImage(ref,layers,layerHashes)
+  local key=tableString(ref)..tableString(layers)..tableString(layerHashes)
+  if nativeCells[key] then return nativeCells[key] end
+  local cell,why=sourceDecoder():cell(ref)
+  check(cell~=nil,'Independent native donor failed: '..tostring(why))
+  local textures={}
+  for _,name in ipairs(layers or {'under','mid','over'})do if cell[name] then
+   if layerHashes then check(hash(cell[name]:getString())==layerHashes[name],'Independent native layer fingerprint changed') end
+   local texture=G.newImage(cell[name]);texture:setFilter('nearest','nearest');textures[#textures+1]=texture
+  end end
+  local image=capture(16,16,function()for _,texture in ipairs(textures)do G.draw(texture,0,0)end end)
+  for _,texture in ipairs(textures)do texture:release()end
+  nativeCells[key]=image
+  return image
+ end
+ local function nativeComposition(row)
+  local textures,draws={},{}
+  local function add(ref,x,y,sx,sy,w,h,layers,hashes)
+   local texture=G.newImage(nativeCellImage(ref,layers,hashes));texture:setFilter('nearest','nearest')
+   textures[#textures+1]=texture
+   local quad=G.newQuad(sx or 0,sy or 0,w or 16,h or 16,16,16)
+   draws[#draws+1]={texture,quad,x or 0,y or 0}
+  end
+  if row.base then add(row.base)end
+  if row.donor then add(row.donor)end
+  for _,part in ipairs(row.parts or {})do
+   add(part.donor,part.x,part.y,part.srcX,part.srcY,part.w,part.h,part.layers,part.layerHashes)
+  end
+  local image=capture(16,16,function()
+   for _,draw in ipairs(draws)do G.draw(draw[1],draw[2],draw[3],draw[4])end
+  end)
+  for _,texture in ipairs(textures)do texture:release()end
+  return image
+ end
+ local function mappingRows(path)
+  local source=read(MOD..'/'..path)
+  return source and assert(load(source,'@probe/'..path))() or {}
+ end
+ local function sourceGeometry(map,cx,cy)
+  return {tile=map:cellTile(cx,cy),walkable=map:isWalkableCell(cx,cy),
+   water=map:isWaterCell(cx,cy),grass=map:isGrassCell(cx,cy)}
+ end
+ local function verifyGen1Terrain(game,def,map,frame)
+  local field=generated(game,'field');local ledges=field.ledges
+  local function canJump(standing,tile)
+   for _,ledge in ipairs(ledges or {})do
+    if ledge.facing=='down' and ledge.input=='down' and ledge.standingTile==standing
+      and ledge.ledgeTile==tile then return true end
+   end
+   return false
+  end
+  local proof={ledge_occurrences=0,walkable_stair_occurrences=0,pond_occurrences=0,
+   checked_native_pixels=0,source_ledge_rules_sha256=hash(tableString(ledges)),
+   limits='Native map/field interaction predicates are audited; no player or event simulation.'}
+  for _,row in ipairs(mappingRows('mappings/gen1_outdoor.lua'))do
+   if row.game==game and row.map==def.id and (row.role:find('south_ledge',1,true)
+    or row.role=='walkable_stairs_bottom_half' or row.role:find('freshwater_pond',1,true)) then
+    local expected=nativeComposition(row)
+    for pos,id in ipairs(def.blocks)do if id==row.id then
+     local cx=(pos-1)%def.width*2+row.quadrant%2
+     local cy=math.floor((pos-1)/def.width)*2+math.floor(row.quadrant/2)
+     for y=0,15 do for x=0,15 do
+      equalPixel(frame,cx*16+x,cy*16+y,expected,x,y,'Independent native terrain composition mismatch')
+      proof.checked_native_pixels=proof.checked_native_pixels+1
+     end end
+     local source=sourceGeometry(map,cx,cy)
+     if row.role:find('south_ledge',1,true) then
+      check(canJump(map:cellTile(cx,cy-1),source.tile),'Source south ledge lost its native down-hop predicate')
+      check(not source.walkable,'Source jump ledge unexpectedly became freely walkable')
+      proof.ledge_occurrences=proof.ledge_occurrences+1
+     elseif row.role=='walkable_stairs_bottom_half' then
+      check(source.tile==60 and source.walkable and not canJump(map:cellTile(cx,cy-1),source.tile),
+       'Walkable stairs were confused with a jump ledge')
+      proof.walkable_stair_occurrences=proof.walkable_stair_occurrences+1
+     else
+      check(source.water,'Freshwater pond lost its native water/shore predicate')
+      proof.pond_occurrences=proof.pond_occurrences+1
+     end
+    end end
+   end
+  end
+  return proof
+ end
+ local function verifyAnimationFrames(def,art,draw,bank,frames,phase)
+  local count=0
+  for _,block in pairs(art)do if block.frames and block.bank==bank then
+   check(#block.frames==frames and block.period==16/60 and block.offset==phase/60,'Native donor animation schedule changed')
+   count=count+1
+  end end
+  check(count>0,'Expected native animation bank is absent: '..bank)
+  local checkpoints={}
+  for f=0,frames do
+   -- Sample one native tick into each frame, then the complete repeated cycle.
+   local tick=phase+f*16+1;clock=tick/60
+   local image=draw();local sampled=0
+   for id,block in pairs(art)do if block.frames and block.bank==bank then
+    for pos,sourceId in ipairs(def.blocks)do if sourceId==id then
+     local bx,by=(pos-1)%def.width,math.floor((pos-1)/def.width)
+     for q,included in pairs(block.coverage)do if included then
+      for y=0,15 do for x=0,15 do
+       equalPixel(image,bx*32+q%2*16+x,by*32+math.floor(q/2)*16+y,
+        block.frames[f%frames+1],q%2*16+x,math.floor(q/2)*16+y,bank..' native GPU animation mismatch')
+      end end
+      sampled=sampled+1
+     end end
+    end end
+   end end
+   checkpoints[#checkpoints+1]={tick=tick,frame=f%frames,visible_cells_sampled=sampled}
+  end
+  clock=0
+  return {bank=bank,frames=frames,period_ticks=16,phase_ticks=phase,checkpoints=checkpoints}
+ end
  local nativeBuildingSources={}
+ local function verifyRoofBackground(candidate,actual)
+  local review=assert(candidate.roof_empty_background,'Approved roof background proof missing')
+  local base=nativeCellImage(assert(candidate.base))
+  local roofParts,opaque,empty,changed=0,0,0,0
+  for _,part in ipairs(candidate.parts)do if part.layers then
+   check(#part.layers==1 and part.layers[1]=='over','Roof proof expects original native over artwork')
+   local cell,why=sourceDecoder():cell(part.donor);check(cell~=nil,tostring(why))
+   check(hash(cell.over:getString())==part.layerHashes.over,'Original roof layer fingerprint changed')
+   local original=nativeCellImage(part.donor)
+   local sx=part.srcX or (part.donor.quadrant or 0)%2*8
+   local sy=part.srcY or math.floor((part.donor.quadrant or 0)/2)*8
+   local tx,ty=part.target_xy_px[1],part.target_xy_px[2]
+   for y=0,(part.h or 8)-1 do for x=0,(part.w or 8)-1 do
+    local _,_,_,a=cell.over:getPixel(sx+x,sy+y)
+    if a==0 then
+     equalPixel(actual,tx+x,ty+y,base,(tx+x)%16,(ty+y)%16,'Empty roof corner differs from surrounding Emerald ground')
+     local orr,org,orb=original:getPixel(sx+x,sy+y)
+     local br,bg,bb=base:getPixel((tx+x)%16,(ty+y)%16)
+     if orr~=br or org~=bg or orb~=bb then changed=changed+1 end
+     empty=empty+1
+    else
+     check(a==1,'Native roof unexpectedly contains translucent material')
+     equalPixel(actual,tx+x,ty+y,cell.over,sx+x,sy+y,'Opaque roof/eave pixel changed')
+     opaque=opaque+1
+    end
+   end end
+   roofParts=roofParts+1
+  end end
+  check(roofParts==review.roof_parts and changed==review.changed_empty_background_pixels,
+   'Roof corner/background review count changed')
+  check(review.changed_native_roof_pixels==0,'Approved roof proof permits modified roof pixels')
+  return {native_roof_parts=roofParts,opaque_roof_pixels_unchanged=opaque,
+   empty_pixels_match_emerald_ground=empty,changed_empty_background_pixels=changed,
+   ground_donor=candidate.base,roof_geometry_unchanged=true}
+ end
  local function nativeBuildingSource(kind,reviewRoot)
   if nativeBuildingSources[kind] then return nativeBuildingSources[kind] end
   local references=Json.decode(assert(read(reviewRoot..'gen1-vs-frlg-buildings-reference.json')))
@@ -271,7 +446,7 @@ local function run()
    -- against a GPU render of original native donor cells, independently of
    -- the compact prototype and its production composition rectangles.
    local source=nativeBuildingSource(building.kind,reviewRoot)
-   local features,entrances,clearances={},0,0
+   local features,entrances,clearances,windows={},0,0,{}
    for _,feature in ipairs(candidates[building.kind].features_checked)do
     local sr,tr=feature.source_rect_xywh,feature.target_rect_xywh
     check(sr[3]==tr[3] and sr[4]==tr[4],'Native feature crop was scaled')
@@ -286,15 +461,22 @@ local function run()
      entrances=entrances+1
     end
     if name:find('native wall clearance',1,true) then clearances=clearances+1 end
+    if building.kind=='lab' and tr[3]==24 and tr[4]==24 and tr[2]==40
+      and (tr[1]==8 or tr[1]==56) then windows[tr[1]]=true end
     features[#features+1]={feature=feature.feature,source_rect_xywh=sr,target_rect_xywh=tr,
      exact_native_gpu_pixels=true,rgba_sha256=hash(targetCrop:getString())}
    end
    check(entrances>0,'Approved building must include a complete native entrance context proof')
-   check(clearances>0,'Approved building must include its native wall clearance strip proof')
+   if building.kind=='home' then
+    check(clearances>0,'Approved home must include its native wall clearance strip proof')
+   else
+    check(windows[8] and windows[56],'Laboratory proof must include both complete 24 by 24 pixel windows and awnings')
+   end
    proofs[#proofs+1]={id=building.id,footprint_px={r[3]*16,r[4]*16},
     map_rect_cells=r,door_bottom_anchor_px={ax,ay},door_destination=door.destMap,
     exact_approved_native_pixels=true,rgba_sha256=hash(actual:getString()),
     native_features=features,native_source_gpu=source.readback,
+    roof_background=verifyRoofBackground(candidates[building.kind],actual),
     image=encodePng(actual,game..'-pallet-'..building.id..'-gpu.png')}
   end
   return proofs
@@ -449,6 +631,9 @@ local function run()
   end
   red.flower_animation={bank='flower',period_ticks=16,offset_ticks=2,frames=5,checkpoints=flowerChecks}
  end
+ red.water_all_frames=verifyAnimationFrames(def,art,function()
+  return capture(def.width*32,def.height*32,drawMap)
+ end,'water',8,1)
  red.collision_after=snapshot(map,1)
  check(red.collision_after==beforeCollision,'Gen1 collision, layout or tileset mutated')
  red.events_after=eventSnapshot(map)
@@ -497,6 +682,48 @@ local function run()
   report.fixtures[#report.fixtures+1]=fixture
  end
 
+ -- Route1 has its own ledges and walkable stair openings. Validate every
+ -- map pixel and original down-hop predicate on all three native imports.
+ for _,game in ipairs({'red','blue','yellow'})do
+  GV.set(game);assetGame=game;clock=0
+  local sourceMaps,sourceSets=generated(game,'maps'),generated(game,'tilesets')
+  local sourceDef=sourceMaps.ROUTE_1
+  local sourceMap=Map.new(sourceDef,sourceSets[sourceDef.tileset])
+  local routeRenderer=T.new(sourceMap,{maps=sourceMaps,tilesets=sourceSets})
+  local function drawRoute()
+   FX.clearTrueColor();FX.setPass('world')
+   routeRenderer:drawWindow(0,0,sourceDef.width*32,sourceDef.height*32)
+   FX.setPass(nil)
+  end
+  local mechanicsBefore,eventsBefore=snapshot(sourceMap,1),eventSnapshot(sourceMap)
+  local native=capture(sourceDef.width*32,sourceDef.height*32,drawRoute)
+  local routeMod=startMod(game,1)
+  local routeArt=assert(routeMod.exports.state:replacements(game,sourceDef.tileset,sourceDef))
+  check(routeMod.exports.state.rejected==0,game..' Route1 mapping was rejected')
+  local c=coverage(sourceDef,routeArt)
+  check(c.visible_cells==720 and c.replaced_occurrences==720 and c.preserved_native_occurrences==0,
+   'Route1 must replace all720 background cells')
+  local replaced=capture(sourceDef.width*32,sourceDef.height*32,drawRoute)
+  local terrain=verifyGen1Terrain(game,sourceDef,sourceMap,replaced)
+  check(terrain.ledge_occurrences==42 and terrain.walkable_stair_occurrences==2,'Route1 ledge/stair footprint changed')
+  local fixture={game=game,map=sourceDef.id,native_renderer='src.render.TileRenderer',
+   before=encodePng(native,game..'-route1-native-gpu.png'),
+   after=encodePng(replaced,game..'-route1-gen3-gpu.png'),coverage=c,
+   checked_donor_pixels=verifyPalletPixels(sourceDef,routeArt,replaced,game),outdoor=terrain,
+   accepted=routeMod.exports.state.accepted,collision_before=mechanicsBefore,events_before=eventsBefore}
+  fixture.flower_animation=verifyAnimationFrames(sourceDef,routeArt,function()
+   return capture(sourceDef.width*32,sourceDef.height*32,drawRoute)
+  end,'flower',5,2)
+  fixture.collision_after=snapshot(sourceMap,1);fixture.events_after=eventSnapshot(sourceMap)
+  check(fixture.collision_before==fixture.collision_after,game..' Route1 source collision/layout changed')
+  check(fixture.events_before==fixture.events_after,game..' Route1 source events changed')
+  routeMod.exports.dispose();clock=0
+  check(capture(sourceDef.width*32,sourceDef.height*32,drawRoute):getString()==native:getString(),
+   game..' Route1 cleanup changed native pixels')
+  fixture.cleanup_restored_native=true
+  report.fixtures[#report.fixtures+1]=fixture
+ end
+
  -- Optional map-only tree fixture uses the same real renderer and entry point.
  -- It also proves third-party alpha is composited over imported Emerald ground.
  local treeDef=maps.VIRIDIAN_CITY
@@ -504,6 +731,7 @@ local function run()
   GV.set('red');assetGame='red';clock=0
   local treeMap=Map.new(treeDef,sets[treeDef.tileset])
   local treeCollision=snapshot(treeMap,1)
+  local treeEvents=eventSnapshot(treeMap)
   local treeRenderer=T.new(treeMap,{maps=maps,tilesets=sets})
   local function drawTrees()
    FX.clearTrueColor();FX.setPass('world')
@@ -537,10 +765,19 @@ local function run()
    after=encodePng(replacedTree,'red-viridian-gen3-gpu.png'),
    collision_before=treeCollision,collision_after=snapshot(treeMap,1),
    accepted=treeMod.exports.state.accepted,coverage=coverage(treeDef,treeArt),
+   events_before=treeEvents,events_after=eventSnapshot(treeMap),
+   checked_donor_pixels=verifyCoveredPixels(treeDef,treeArt,replacedTree,'red Viridian'),
+   outdoor=verifyGen1Terrain('red',treeDef,treeMap,replacedTree),
    third_party_tree={opaque_pixels=treeOpaque,transparent_ground_pixels=treeTransparent,
     translucent_blended_pixels=treeTranslucent,
     credit='J-Treecko252; additional palette contributions credited to Zyxeion'}}
   check(treeFixture.collision_before==treeFixture.collision_after,'Viridian collision/layout changed')
+  check(treeFixture.events_before==treeFixture.events_after,'Viridian source events changed')
+  check(treeFixture.outdoor.pond_occurrences==24,'Viridian freshwater pond footprint changed')
+  clock=129/60
+  local pondLater=capture(treeDef.width*32,treeDef.height*32,drawTrees)
+  treeFixture.static_pond_after_129_ticks=verifyGen1Terrain('red',treeDef,treeMap,pondLater).pond_occurrences
+  clock=0
   treeMod.exports.dispose()
   local nativeAgain=capture(treeDef.width*32,treeDef.height*32,drawTrees)
   check(nativeAgain:getString()==nativeTree:getString(),'Viridian cleanup changed native GPU pixels')
@@ -548,52 +785,179 @@ local function run()
   report.fixtures[#report.fixtures+1]=treeFixture
  end
 
- -- Real Crystal World:bakeMapImage (native palette shader/attributes/roof).
- GV.set('crystal');assetGame='crystal'
+ -- Representative regional caves exercise the actual source maps and the
+ -- matching reviewed FR/LG palette families. Uncovered art remains native.
+ for _,spec in ipairs({{id='MT_MOON_1F',stem='mtmoon',minimum=943},
+  {id='SEAFOAM_ISLANDS_1F',stem='seafoam',minimum=473},
+  {id='DIGLETTS_CAVE_ROUTE_2',stem='diglett',minimum=25}})do
+  GV.set('red');assetGame='red';clock=0
+  local caveDef=maps[spec.id];check(caveDef~=nil,'Approved cave fixture is absent: '..spec.id)
+  local caveMap=Map.new(caveDef,sets[caveDef.tileset])
+  local caveRenderer=T.new(caveMap,{maps=maps,tilesets=sets})
+  local function drawCave()
+   FX.clearTrueColor();FX.setPass('world')
+   caveRenderer:drawWindow(0,0,caveDef.width*32,caveDef.height*32);FX.setPass(nil)
+  end
+  local mechanics,events=snapshot(caveMap,1),eventSnapshot(caveMap)
+  local native=capture(caveDef.width*32,caveDef.height*32,drawCave)
+  local caveMod=startMod('red',1)
+  local caveArt=assert(caveMod.exports.state:replacements('red',caveDef.tileset,caveDef))
+  check(caveMod.exports.state.rejected==0,'Cave mapping source/donor was rejected')
+  local afterCave=capture(caveDef.width*32,caveDef.height*32,drawCave)
+  local c=coverage(caveDef,caveArt)
+  check(c.replaced_occurrences>=spec.minimum,'Approved cave coverage decreased')
+  local fixture={game='red',map=caveDef.id,native_renderer='src.render.TileRenderer',coverage=c,
+   before=encodePng(native,'red-'..spec.stem..'-native-gpu.png'),
+   after=encodePng(afterCave,'red-'..spec.stem..'-gen3-gpu.png'),
+   checked_donor_pixels=verifyCoveredPixels(caveDef,caveArt,afterCave,'red '..spec.id),
+   accepted=caveMod.exports.state.accepted,collision_before=mechanics,collision_after=snapshot(caveMap,1),
+   events_before=events,events_after=eventSnapshot(caveMap)}
+  check(fixture.collision_before==fixture.collision_after,'Cave source collision/layout changed')
+  check(fixture.events_before==fixture.events_after,'Cave source warps/events changed')
+  caveMod.exports.dispose()
+  check(capture(caveDef.width*32,caveDef.height*32,drawCave):getString()==native:getString(),
+   'Cave cleanup did not restore original native GPU pixels')
+  fixture.cleanup_restored_native=true;report.fixtures[#report.fixtures+1]=fixture
+ end
+
+ -- Real Gold/Silver/Crystal World bake plus its actual drawAnimCells pass.
  local World=require('src.world.gen2.World')
  local Map2=require('src.world.gen2.Map')
- local maps2,sets2,pals=generated('crystal','maps'),generated('crystal','tilesets'),generated('crystal','palettes')
- local def2=maps2.NEW_BARK_TOWN
- local map2=Map2.new(def2,sets2[def2.tileset])
- local game={save={version='crystal',options={}},options={}}
- local world=setmetatable({game=game,maps=maps2,tilesets=sets2,palettes=pals,
-  roofs=generated('crystal','roofs'),atlasCache={},mapImages={},animCells={},bgSets={},daytime='DAY',
-  flickerPhase=1,camera={x=0,y=0},animClock=0,animTimer=0,neighbors={},map=map2,
-  viewW=def2.width*32,viewH=def2.height*32},{__index=World})
- local before2Collision=snapshot(map2,2)
- local nativeCanvas=world:bakeMapImage(map2,'DAY',1)
- check(nativeCanvas~=nil,'Crystal native map bake failed')
- local before2=nativeCanvas:newImageData()
- local mod2=startMod('crystal',2,world)
- local afterCanvas=world:bakeMapImage(map2,'DAY',1)
- local after2=afterCanvas:newImageData()
- local art2=assert(mod2.exports.state:replacements('crystal',def2.tileset,def2))
- check(mod2.exports.state.rejected==0,'Crystal reviewed mappings unexpectedly rejected')
- local palettePixels=0
- for id,block in pairs(art2)do
-  for q,included in pairs(block.coverage or {})do if included then
-   local wx,wy=findCell(def2,id,q)
-   if wx then
-    for y=0,15 do for x=0,15 do
-     equalPixel(after2,wx+x,wy+y,block.image,q%2*16+x,math.floor(q/2)*16+y,'Crystal donor quantized or positioned incorrectly')
-     palettePixels=palettePixels+1
-    end end
+ local function world2(game,mapId)
+  local sourceMaps,sourceSets=generated(game,'maps'),generated(game,'tilesets')
+  local def=sourceMaps[mapId];local map=Map2.new(def,sourceSets[def.tileset])
+  local host={save={version=game,options={}},options={}}
+  return setmetatable({game=host,maps=sourceMaps,tilesets=sourceSets,palettes=generated(game,'palettes'),
+   roofs=generated(game,'roofs'),atlasCache={},mapImages={},animCells={},bgSets={},blockEdits={},daytime='DAY',
+   flickerPhase=1,camera={x=0,y=0},animClock=0,animTimer=0,neighbors={},map=map,
+   viewW=def.width*32,viewH=def.height*32},{__index=World}),map,def
+ end
+ local function drawWorld2(world)
+  return capture(world.viewW,world.viewH,function()
+   G.draw(world.mapImage,0,0);world:drawAnimCells(world.map.id,0,0,1)
+  end)
+ end
+ local function verifyGen2Objects(game,def,map,frame)
+  local proof={native_tree_pairs=0,native_objects=0,native_pixels_checked=0}
+  for _,row in ipairs(mappingRows('mappings/gen2_outdoor.lua'))do
+   if row.game==game and (row.map==nil or row.map==def.id) then
+    local nativeObject=false
+    if row.donor and row.donor.kind=='field_object' then nativeObject=true end
+    for _,part in ipairs(row.parts or {})do if part.donor.kind=='field_object' then nativeObject=true end end
+    if row.role=='dense_conifer_crown' or nativeObject then
+     local expected=nativeComposition(row)
+     for pos,id in ipairs(def.blocks)do if id==row.id then
+      local cx=(pos-1)%def.width*2+row.quadrant%2
+      local cy=math.floor((pos-1)/def.width)*2+math.floor(row.quadrant/2)
+      for y=0,15 do for x=0,15 do
+       equalPixel(frame,cx*16+x,cy*16+y,expected,x,y,'Native Gen2 tree/object GPU pixels changed')
+       proof.native_pixels_checked=proof.native_pixels_checked+1
+      end end
+      if row.role=='dense_conifer_crown' then
+       local trunk=nativeCellImage({game='emerald',tileset='general__petalburg',id=22,
+        hash='c30bbf65a789a158df93d106697d0a9487b1e7c4ebdac76837d89f36c6eb8456'})
+       for y=0,15 do for x=0,15 do
+        equalPixel(frame,cx*16+x,(cy+1)*16+y,trunk,x,y,'Native16x32 tree trunk shifted, clipped or scaled')
+        proof.native_pixels_checked=proof.native_pixels_checked+1
+       end end
+       check(map:cellCollision(cx,cy)==7 and map:cellCollision(cx,cy+1)==7,'Native tree blocking geometry changed')
+       proof.native_tree_pairs=proof.native_tree_pairs+1
+      else proof.native_objects=proof.native_objects+1 end
+     end end
+    end
+   end
+  end
+  return proof
+ end
+ for _,game in ipairs({'gold','silver','crystal'})do
+  GV.set(game);assetGame=game;clock=0
+  local world,map2,def2=world2(game,'NEW_BARK_TOWN')
+  local mechanics,events=snapshot(map2,2),eventSnapshot(map2)
+  local nativeCanvas=assert(world:bakeMapImage(map2,'DAY',1),'Native NewBark map bake failed')
+  local native=nativeCanvas:newImageData()
+  local mod2=startMod(game,2,world)
+  world.mapImage=world:imageFor(map2.id)
+  local art=assert(mod2.exports.state:replacements(game,def2.tileset,def2))
+  local after2=drawWorld2(world)
+  check(mod2.exports.state.rejected==0,'NewBark reviewed mapping rejected')
+  local c=coverage(def2,art);check(c.replaced_occurrences>=294,'Approved NewBark coverage decreased')
+  local fixture={game=game,map=def2.id,native_renderer='src.world.gen2.World:bakeMapImage + drawAnimCells',
+   before=encodePng(native,game..'-newbark-native-gpu.png'),after=encodePng(after2,game..'-newbark-gen3-gpu.png'),
+   accepted=mod2.exports.state.accepted,checked_donor_pixels=verifyCoveredPixels(def2,art,after2,game),coverage=c,
+   native_palette_shader_available=require('src.render.GbcPalette').available(),
+   native_trees=verifyGen2Objects(game,def2,map2,after2),collision_before=mechanics,events_before=events}
+  check(fixture.native_trees.native_tree_pairs>0,'No native16x32 NewBark tree pair was sampled')
+  check(fixture.native_palette_shader_available,'Native Gen2 palette shader did not compile')
+  fixture.flower_all_frames=verifyAnimationFrames(def2,art,function()return drawWorld2(world)end,'general_flower',4,0)
+  fixture.water_all_frames=verifyAnimationFrames(def2,art,function()return drawWorld2(world)end,'general_water',8,1)
+  fixture.collision_after=snapshot(map2,2);fixture.events_after=eventSnapshot(map2)
+  check(fixture.collision_before==fixture.collision_after,'NewBark source collision/layout changed')
+  check(fixture.events_before==fixture.events_after,'NewBark source events changed')
+  mod2.exports.dispose();clock=0
+  check(world:bakeMapImage(map2,'DAY',1):newImageData():getString()==native:getString(),
+   'Gen2 cleanup did not restore native GPU bake')
+  fixture.cleanup_restored_native=true;report.fixtures[#report.fixtures+1]=fixture
+ end
+
+ -- Invoke the actual native Cut block swap on a private imported Route29.
+ -- Only neighbour construction is omitted: map refresh, cache invalidation,
+ -- attribute-grid rebuilding and the source collision swap run natively.
+ for _,game in ipairs({'gold','silver','crystal'})do
+  GV.set(game);assetGame=game;clock=0
+  local world,map2,def2=world2(game,'ROUTE_29')
+  local private={};for key,value in pairs(def2)do private[key]=value end
+  private.blocks={};for i,id in ipairs(def2.blocks)do private.blocks[i]=id end
+  def2=private;world.maps[def2.id]=def2;map2=Map2.new(def2,world.tilesets[def2.tileset]);world.map=map2
+  world.rebuildNeighbors=function(self)self.neighbors={}end
+  local FieldMoves=require('src.world.gen2.FieldMoves')
+  local replacement=FieldMoves.CUT_BLOCKS[def2.tileset][95]
+  check(replacement and replacement[1]==61 and replacement[2]==0,'Native Route29 Cut replacement changed')
+  local index
+  for i,id in ipairs(def2.blocks)do if id==95 then index=i;break end end
+  check(index~=nil,'Actual Route29 Cut-tree block95 is missing')
+  local bx,by=(index-1)%def2.width,math.floor((index-1)/def2.width)
+  local events=eventSnapshot(map2);local originalBlocks={};for i,id in ipairs(def2.blocks)do originalBlocks[i]=id end
+  local mod2=startMod(game,2,world)
+  world.mapImage=world:imageFor(map2.id)
+  local beforeCut=drawWorld2(world)
+  local sourceCollision=map2:cellCollision(bx*2+1,by*2+1)
+  local objectProof=verifyGen2Objects(game,def2,map2,beforeCut)
+  check(objectProof.native_objects>0,'Approved actual Cut-tree object mapping was not drawn')
+  check(world:replaceBlock(index,replacement[1]),'Actual native World:replaceBlock rejected Cut swap')
+  local afterCut=drawWorld2(world)
+  check(world.blockEdits[def2.id][index]==95,'Native Cut restoration record was lost')
+  for i,id in ipairs(def2.blocks)do check(id==(i==index and 61 or originalBlocks[i]),'Cut mutated an unrelated source block')end
+  local targetCollision=world.tilesets[def2.tileset].collision[62][4]
+  check(map2:cellCollision(bx*2+1,by*2+1)==targetCollision,'Cut collision did not become native replacement collision')
+  check(FieldMoves.CUT_BLOCKS[def2.tileset][map2:blockId(bx,by)]==nil,'Native Cut target still contains a Cut-tree block')
+  local fresh=world:bakeMapImage(map2,'DAY',1):newImageData()
+  for y=0,15 do for x=0,15 do
+   equalPixel(afterCut,bx*32+16+x,by*32+16+y,fresh,bx*32+16+x,by*32+16+y,
+    'Cut target retained stale object pixels instead of a fresh native replacement bake')
+  end end
+  check(eventSnapshot(map2)==events,'Cut graphic changed source warps/events')
+  local changed=0
+  for y=0,world.viewH-1 do for x=0,world.viewW-1 do
+   local ar,ag,ab,aa=beforeCut:getPixel(x,y);local br,bg,bb,ba=afterCut:getPixel(x,y)
+   if ar~=br or ag~=bg or ab~=bb or aa~=ba then
+    check(x>=bx*32 and x<(bx+1)*32 and y>=by*32 and y<(by+1)*32,'Cut repainted outside its source32px block')
+    changed=changed+1
    end
   end end
+  check(changed>0,'Cut left stale tree pixels in the native map cache')
+  local fixture={game=game,map=def2.id,test='native World.replaceBlock Cut removal',
+   source_block=95,replacement_block=61,block_index=index,cell={bx*2+1,by*2+1},
+   collision_before=sourceCollision,collision_after=targetCollision,changed_gpu_pixels=changed,
+   native_object_proof=objectProof,events_unchanged=true,unrelated_blocks_unchanged=true,
+   edited_cell_matches_fresh_native_refresh=true,cuttable_after=false,
+   before=encodePng(beforeCut,game..'-cut-tree-before-gpu.png'),
+   after=encodePng(afterCut,game..'-cut-tree-after-gpu.png')}
+  mod2.exports.dispose()
+  local expected=world:bakeMapImage(map2,'DAY',1):newImageData()
+  check(world:imageFor(map2.id):newImageData():getString()==expected:getString(),
+   'Cut cleanup retained mod graphics in the native replacement bake')
+  fixture.cleanup_restored_native=true;report.interactions[#report.interactions+1]=fixture
  end
- check(palettePixels>0,'No real Crystal donor color pixels sampled')
- local crystal={game='crystal',map=def2.id,native_renderer='src.world.gen2.World:bakeMapImage',
-  before=encodePng(before2,'crystal-newbark-native-gpu.png'),after=encodePng(after2,'crystal-newbark-gen3-gpu.png'),
-  accepted=mod2.exports.state.accepted,checked_donor_pixels=palettePixels,
-  native_palette_shader_available=require('src.render.GbcPalette').available(),
-  collision_before=before2Collision,collision_after=snapshot(map2,2),coverage=coverage(def2,art2)}
- check(crystal.native_palette_shader_available,'Native Crystal palette shader did not compile')
- check(crystal.collision_before==crystal.collision_after,'Gen2 collision/layout/tileset changed')
- mod2.exports.dispose()
- local restored2=world:bakeMapImage(map2,'DAY',1):newImageData()
- check(restored2:getString()==before2:getString(),'Gen2 cleanup did not restore native GPU bake')
- crystal.cleanup_restored_native=true
- report.fixtures[#report.fixtures+1]=crystal
  check(#report.warnings==0,'Probe reported rejected mapping warnings')
  report.status='passed'
  write('report.json',Json.encode(report))

@@ -117,4 +117,28 @@ eq(M.themes.gen3,3);eq(M.themes.emerald,nil);eq(M.themes.firered,nil)
 eq(M.generations.gen3,nil,'theme IDs are not cartridge IDs')
 local cartridgeStyle=clone(base);cartridgeStyle.style='emerald'
 eq(M.validate(cartridgeStyle),nil,'mapping data uses themes rather than legacy cartridge aliases')
+local object=clone(base)
+object.donor={kind='field_object',game='emerald',tileset='ow',id=82,frame=0,hash=b,metaHash=a,rgbaHash=b}
+eq(M.validate(object),true,'fingerprinted native cut-tree object is a valid donor')
+for _,change in ipairs({{kind='unknown'},{tileset='PAIR'},{quadrant=0},{frame=-1},{frame=.5},
+  {metaHash='bad'},{rgbaHash='bad'}})do
+  local bad=clone(object);for key,value in pairs(change)do bad.donor[key]=value end
+  eq(M.validate(bad),nil,'native objects require their exact origin, frame and blob fingerprints')
+end
+local layered=clone(base);layered.donor=nil;layered.kind='native_composite'
+layered.base=clone(base.donor)
+layered.parts={{donor=clone(base.donor),w=16,h=16,layers={'over'},layerHashes={over=b}}}
+eq(M.validate(layered),true,'fingerprinted native roof layer is accepted over ground')
+for _,change in ipairs({{layers={}},{layers={'bogus'},layerHashes={bogus=b}},
+  {layers={'over','mid'},layerHashes={over=b,mid=b}},
+  {layers={'over','over'}},{layers={'over',extra='mid'}},
+  {layerHashes={over='bad'}},{layerHashes={over=b,mid=a}}})do
+  local bad=clone(layered);for key,value in pairs(change)do bad.parts[1][key]=value end
+  eq(M.validate(bad),nil,'unverifiable or ambiguous layer selection is rejected')
+end
+local noHashes=clone(layered);noHashes.parts[1].layerHashes=nil;eq(M.validate(noHashes),nil)
+local noLayers=clone(layered);noLayers.parts[1].layers=nil;eq(M.validate(noLayers),nil)
+local objectPart=clone(layered);objectPart.parts[1].donor=clone(object.donor)
+objectPart.parts[1].layers=nil;objectPart.parts[1].layerHashes=nil
+eq(M.validate(objectPart),true,'object graphic can compose over original donor ground')
 print('PASS strict mapping validation: '..count..' assertions')

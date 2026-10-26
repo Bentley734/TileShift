@@ -156,4 +156,39 @@ eq(composer:cell(row({part(3,0,0,1,1,0,0)}))~=nil,true,'sourceHash decoder contr
 -- Sixteen bounded parts and edge coordinates are legal.
 local sixteen={};for i=1,16 do sixteen[i]=part(1,15,15,1,1,(i-1)%16,15)end
 eq(composer:cell(row(sixteen))~=nil,true)
+-- Roof art must retain its exact alpha mask while the selected ground shows
+-- through. The flattened donor fingerprint alone cannot protect that mask.
+local overSnapshot=snapshot(pieces[1].over)
+local layerComposer=Composition.new({donor=donor,newImageData=newData,
+  hashImage=function(image)return snapshot(image)==overSnapshot and hashC or hashB end})
+local roofPart=part(1,7,6,2,1,3,4)
+roofPart.layers={'over'};roofPart.layerHashes={over=hashC}
+local roof=assert(layerComposer:cell(row({roofPart},ref(2))))
+local combined=.5+baseAlpha*.5
+pixel(roof.under,3,4,br*baseAlpha*.5/combined,bg*baseAlpha*.5/combined,
+  (.5+bb*baseAlpha*.5)/combined,combined,'selected roof over the independent base')
+pixel(roof.under,4,4,4/15,4/15,.5,1,'transparent roof reveals ground')
+local function layerFails(changes,needle,reads)
+  local bad=part(1,0,0,16,16,0,0)
+  for key,value in pairs(changes)do bad[key]=value end
+  local n=#calls
+  local failed,why=layerComposer:cell(row({bad}))
+  eq(failed,nil);eq(why:find(needle,1,true)~=nil,true,why)
+  if not reads then eq(#calls,n,'invalid layer specification fails before reads')end
+end
+layerFails({layers={}},'fingerprints are required')
+layerFails({layers={'over'}},'fingerprints are required')
+layerFails({layerHashes={over=hashC}},'explicit layer selection')
+layerFails({layers={'unknown'},layerHashes={unknown=hashC}},'rendering order')
+layerFails({layers={'over','over'},layerHashes={over=hashC}},'rendering order')
+layerFails({layers={'over','mid'},layerHashes={over=hashC,mid=hashC}},'rendering order')
+layerFails({layers={'over',extra='mid'},layerHashes={over=hashC}},'dense array')
+layerFails({layers={'over'},layerHashes={over=hashC,mid=hashC}},'Unselected')
+layerFails({layers={'over'},layerHashes={over=hashC:sub(2)}},'fingerprint is required')
+layerFails({layers={'over'},layerHashes={over=hashB}},'fingerprint changed',true)
+pieces[1].over:setPixel(0,0,1,0,0,1)
+local missingRoof,maskError=layerComposer:cell(row({roofPart},ref(2)))
+eq(missingRoof,nil);eq(maskError:find('fingerprint changed',1,true)~=nil,true,
+  'alpha separation mutation rejected even while full donor fingerprint stays the same')
+pieces[1].over:setPixel(0,0,0,0,0,0)
 print('composition: '..count..' assertions passed')
