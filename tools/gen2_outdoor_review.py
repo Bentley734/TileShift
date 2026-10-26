@@ -236,7 +236,7 @@ def review_contact(cache, inventory, rows, output):
     image.save(output / "newbark-outdoor-candidates.png")
 
 
-def headbutt_contact(cache, inventory, output):
+def headbutt_contact(cache, inventory, output, approved=False):
     image = Image.new("RGB", (1100, 300), "#18202c")
     draw = ImageDraw.Draw(image)
     draw.text((15, 12), "New Bark small Headbutt tree vs native Gen3 cuttable-tree silhouettes", fill="white")
@@ -268,7 +268,9 @@ def headbutt_contact(cache, inventory, output):
         records.append({"game": game, "id": gid, "width": w, "height": h, "frames": frames,
                         "frame": 0, "alphaBounds": bounds, "metaHash": catalog.sha(meta),
                         "rgbaHash": catalog.sha(raw), "pixelHash": catalog.sha(frame.tobytes())})
-    draw.text((15, 275), "All silhouettes fit16x16. Source0x15 is Headbutt, not Cut; graphic choice needs explicit review. Source interaction stays native.", fill="#e5ce9a")
+    note = ("User selected Emerald82 native small-tree art. Source0x15 remains Headbutt; original interactions and screen shake stay native."
+            if approved else "All silhouettes fit16x16. Source0x15 is Headbutt, not Cut; graphic choice needs explicit review. Source interaction stays native.")
+    draw.text((15, 275), note, fill="#e5ce9a")
     image.save(output / "newbark-cuttable-tree-native.png")
     (output / "native-cuttable-tree-refs.json").write_text(json.dumps(records, indent=2), encoding="utf-8")
     return records
@@ -288,10 +290,11 @@ def headbutt_mappings(inventories, refs):
             assert cell["collision"] == 0x15
             rows.append({"game": inventory["game"], "style": "gen3", "map": MAP_ID, "tileset": inventory["tileset"],
                          "id": cell["id"], "quadrant": cell["quadrant"], "sourceHash": cell["sourceHash"],
-                         "sourceFiles": inventory["sourceFiles"], "role": "headbutt_small_tree", "status": "reviewed",
+                         "sourceFiles": inventory["sourceFiles"], "sourceCollision": cell["collision"],
+                         "role": "headbutt_small_tree", "status": "reviewed",
                          "kind": "native_composite", "base": base,
                          "parts": [{"donor": donor, "srcX": 0, "srcY": 0, "w": 16, "h": 16, "x": 0, "y": 0}],
-                         "evidence": f"Native New Bark small Headbutt-tree16px cells {cell['coordinates']}, source collision0x15 (Permissions.HEADBUTT_TREE, not Cut0x12/0x1a). Gen3 has no field Headbutt-tree mechanic. Reviewed compact visual treatment uses the complete16x16 Emerald cuttable-tree object82 frame0, alpha silhouette bbox(1,1,16,16), without clipping or scaling. Neutral SVOW4 metadata, full decodedRGBA and frame pixels are independently hashed. Alpha is composed over native Emerald1 ground. Original Headbutt interaction, encounters, blocking and native whole-frame earthquake shake remain source-owned; no donor mechanic is imported."})
+                         "evidence": f"Native New Bark small Headbutt-tree16px cells {cell['coordinates']}, source collision0x15 (Permissions.HEADBUTT_TREE, not Cut0x12/0x1a). Gen3 has no field Headbutt-tree mechanic. User selected the native Emerald small-tree visual treatment: complete16x16 cuttable-tree object82 frame0, alpha silhouette bbox(1,1,16,16), without clipping or scaling. Neutral SVOW4 metadata, full decodedRGBA and frame pixels are independently hashed. Alpha is composed over native Emerald1 ground. Original Headbutt interaction, encounters, blocking and native whole-frame earthquake shake remain source-owned; no donor mechanic is imported."})
     return rows
 
 
@@ -396,7 +399,8 @@ def main():
     parser.add_argument("--cache", type=Path, default=Path(os.environ["APPDATA"]) / "pokemon-love2d")
     parser.add_argument("--output", type=Path, default=WORKSPACE / ".work/tileshift-gen2-outdoor-review")
     parser.add_argument("--engine", type=Path, default=WORKSPACE / ".tools/engine-0395")
-    parser.add_argument("--include-headbutt-trees", action="store_true", help="Include the separately approved small Headbutt-tree visual treatment")
+    parser.add_argument("--include-headbutt-trees", action=argparse.BooleanOptionalAction, default=True,
+                        help="Include the approved small Headbutt-tree visual treatment (default: enabled)")
     parser.add_argument("--write-reviewed", action="store_true", help="Validate and write the approved map-scoped data file")
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=True)
@@ -407,7 +411,7 @@ def main():
     (args.output / "source-inventory.json").write_text(json.dumps(records, indent=2), encoding="utf-8")
     staged = candidates(args.cache, records)
     review_contact(args.cache, records[-1], staged, args.output)
-    object_refs = headbutt_contact(args.cache, records[-1], args.output)
+    object_refs = headbutt_contact(args.cache, records[-1], args.output, args.include_headbutt_trees)
     if args.include_headbutt_trees:
         staged.extend(headbutt_mappings(records, object_refs))
     (args.output / "candidate-mappings.json").write_text(json.dumps(staged, indent=2), encoding="utf-8")
@@ -418,8 +422,9 @@ def main():
         preserved = [row for row in preview.read_reviewed(target) if row["role"] not in owned_roles] if target.is_file() else []
         production = staged + preserved
         validation = validate_native(production, args, mod)
-        target.write_text("-- Reviewed New Bark Town terrain, trees and rocky coastline.\n"
-                          "-- Map-scoped Gold/Silver/Crystal; native Gen3 imports only. Source gameplay remains native.\nreturn {\n" +
+        target.write_text("-- Reviewed Gen2 outdoor terrain and interaction-tree graphics.\n"
+                          "-- New Bark terrain/Headbutt rows are map-scoped; verified Cut aliases retain original map use.\n"
+                          "-- Native Gen3 imports only. All source gameplay remains native.\nreturn {\n" +
                           "\n".join("  " + detail_review.lua(row) + "," for row in production) + "\n}\n", encoding="utf-8")
         (args.output / "native-validation.json").write_text(json.dumps(validation, indent=2), encoding="utf-8")
         print(json.dumps(validation))

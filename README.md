@@ -1,7 +1,7 @@
 # TileShift
 
 TileShift brings Gen 3 world art to Gen1Recomp with individually reviewed tile
-matches. Version 0.2.0 completely retiles the **Pallet Town and Route 1
+matches. Version 0.2.1 completely retiles the **Pallet Town and Route 1
 backgrounds in Red, Blue and Yellow**. Pallet includes compact houses and Oak's
 lab, trees, fences, signs, grass, animated flowers, water and shoreline. Route 1
 adds matching lawns, flowers, directional jump ledges and walkable steps.
@@ -20,7 +20,7 @@ art; separate cartridge styles and reverse conversions are future work.
 1. Import **Emerald and FireRed** into Gen1Recomp. TileShift reads native donor
    art from your own imports; neither ROMs nor extracted native artwork are
    bundled.
-2. Download `TileShift-v0.2.0.zip` from [the latest release](https://github.com/Bentley734/TileShift/releases/latest).
+2. Download `TileShift-v0.2.1.zip` from [the latest release](https://github.com/Bentley734/TileShift/releases/latest).
 3. Extract the `tileshift` folder into Gen1Recomp's `mods` directory, enable
    **TileShift**, and restart the game.
 4. Open Options and set **Tileset** to **Gen 3**. This is the default on a fresh
@@ -42,8 +42,9 @@ Roof corners show the same Emerald grass as the surrounding map, using native
 transparent roof layers. Both complete lab windows and awnings, including their
 top corners, are checked independently alongside the complete door frames.
 Actual Gen 2 Cut trees use the native FireRed sapling artwork at its complete
-16px size; source Cut behavior and removal remain native. Small Headbutt trees
-retain their original artwork in this release.
+16px size; source Cut behavior and removal remain native. New Bark's small
+Headbutt trees use the complete native Emerald small-tree artwork, keeping
+their original Headbutt eligibility, encounters, blocking and shake animation.
 
 Gen 1 town boundaries and compact forest trees use a 16px tree by **J-Treecko252**,
 with additional palette credit to **Zyxeion**, under the artist's permission.
@@ -61,7 +62,7 @@ unchanged. Tall grass keeps a foreground layer over the player's feet.
 | Pallet Town, Red/Blue/Yellow | 360/360 |
 | Route 1, Red/Blue/Yellow | 720/720 |
 | Viridian City, Red/Blue/Yellow | 1,242/1,440 |
-| New Bark Town, Gold/Silver/Crystal | 294/360 |
+| New Bark Town, Gold/Silver/Crystal | 304/360 |
 | Mt. Moon 1F, Red | 943/1,440 |
 | Seafoam Islands 1F, Red | 473/540 |
 

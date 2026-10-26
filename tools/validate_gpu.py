@@ -869,6 +869,92 @@ local function run()
   end
   return proof
  end
+ local function verifyHeadbutt(game,world,map,def,unshaken)
+  local Permissions=require('src.world.gen2.Permissions')
+  local FieldMoves=require('src.world.gen2.FieldMoves')
+  local positions,alpha={},{transparent=0,opaque=0,translucent=0}
+  local expectedSource
+  for _,row in ipairs(mappingRows('mappings/gen2_outdoor.lua'))do
+   if row.game==game and row.map==def.id and row.role=='headbutt_small_tree' then
+    check(row.base and row.base.game=='emerald' and row.base.id==1,'Headbutt tree ground donor changed')
+    check(#row.parts==1 and row.parts[1].donor.game=='emerald' and row.parts[1].donor.id==82
+     and row.parts[1].donor.kind=='field_object' and row.parts[1].donor.frame==0,
+     'Approved Emerald82 Headbutt visual source changed')
+    local expected=nativeComposition(row)
+    if not expectedSource then
+     expectedSource=row.parts[1].donor
+     local original,why=sourceDecoder():cell(expectedSource);check(original~=nil,tostring(why))
+     for y=0,15 do for x=0,15 do
+      local _,_,_,a=original.under:getPixel(x,y)
+      if a==0 then alpha.transparent=alpha.transparent+1
+      elseif a==1 then alpha.opaque=alpha.opaque+1 else alpha.translucent=alpha.translucent+1 end
+     end end
+    end
+    for pos,id in ipairs(def.blocks)do if id==row.id then
+     local cx=(pos-1)%def.width*2+row.quadrant%2
+     local cy=math.floor((pos-1)/def.width)*2+math.floor(row.quadrant/2)
+     local collision=map:cellCollision(cx,cy)
+     check(collision==0x15 and Permissions.isHeadbuttTree(collision) and World.isHeadbuttTree(collision),
+      'Small tree lost its native Headbutt-tree classification')
+     check(not Permissions.isCutTree(collision) and not map:isWalkableCell(cx,cy),
+      'Headbutt tree inherited donor Cut or walkable behavior')
+     local action=FieldMoves.headbuttFromMenu({facingColl=collision})
+     check(action.ok and action.action=='headbutt','Native Headbutt field-move eligibility changed')
+     for y=0,15 do for x=0,15 do
+      equalPixel(unshaken,cx*16+x,cy*16+y,expected,x,y,'Emerald82 alpha/ground composition changed')
+     end end
+     positions[#positions+1]={x=cx,y=cy,expected=expected}
+    end end
+   end
+  end
+  check(#positions==10 and alpha.transparent>0 and alpha.opaque>0,'Approved NewBark Headbutt footprint or meaningful alpha is missing')
+  local collisionBefore,eventsBefore=snapshot(map,2),eventSnapshot(map)
+  local savedText,savedSound,savedEncounter=world.showText,world.playSfx,world.tryHeadbutt
+  local textCalls,soundCalls,encounterCalls=0,0,0
+  world.showText=function(self,body,onDone)textCalls=textCalls+1;if onDone then onDone()end end
+  world.playSfx=function()soundCalls=soundCalls+1 end
+  local target=positions[1]
+  world.tryHeadbutt=function(self,x,y)
+   check(x==target.x and y==target.y,'Native Headbutt encounter hook received a different tree')
+   encounterCalls=encounterCalls+1;return 'nothing'
+  end
+  world:runHeadbutt(target.x,target.y,{nickname='GPU fixture'})
+  check(world.game.stringBuffer=='GPU fixture','Native Headbutt nickname preparation changed')
+  check(world.headbutt and world.headbutt.timer==32 and world.shake and world.shake.left==32
+   and world.shake.amplitude==2,'Native Headbutt did not start its32frame whole-frame shake')
+  local phases,shakeImages,final={},{},nil
+  clock=0
+  for tick=1,33 do
+   if world.shake then world:updateShake()end
+   world:updateHeadbutt()
+   local phase=world.shake and world.shake.phase or 0
+   world.camera.y=phase
+   local image=capture(world.viewW,world.viewH,function()world:drawGround(1)end)
+   for _,tree in ipairs(positions)do for y=0,15 do for x=0,15 do
+    equalPixel(image,tree.x*16+x,tree.y*16+y-phase,tree.expected,x,y,
+     'Native Headbutt ground shake erased, shifted or recolored replacement tree art')
+   end end end
+   phases[phase]=true
+   local phaseKey=tostring(phase)
+   if not shakeImages[phaseKey] then
+    shakeImages[phaseKey]=encodePng(image,game..'-headbutt-shake-'..phase..'-gpu.png')
+   end
+   final=image
+  end
+  world.camera.y=0
+  check(phases[-2] and phases[2] and phases[0],'Native Headbutt shake phases were not exercised')
+  check(world.headbutt==nil and world.shake==nil and encounterCalls==1 and soundCalls==1 and textCalls==2,
+   'Native Headbutt shake/encounter sequence did not complete normally')
+  check(final:getString()==unshaken:getString(),'Headbutt did not restore the unshifted custom background')
+  check(snapshot(map,2)==collisionBefore and eventSnapshot(map)==eventsBefore,'Headbutt changed source collision/layout/events')
+  world.showText,world.playSfx,world.tryHeadbutt=savedText,savedSound,savedEncounter
+  return {source_collision=0x15,native_headbutt_classification=true,native_cut_classification=false,
+   visible_trees=#positions,donor=expectedSource,alpha_pixels=alpha,
+   native_methods={'runHeadbutt','earthquake','updateShake','updateHeadbutt','drawGround'},
+   shake_frames=32,shake_amplitude=2,phases={-2,0,2},shake_images=shakeImages,
+   source_collision_events_unchanged=true,custom_art_preserved_during_shake=true,encounter_hook_calls=encounterCalls,
+   limits='Private native methods; text is acknowledged immediately, audio is recorded, encounter outcome is stubbed to nothing. No full gameplay/UI or wild battle simulation.'}
+ end
  for _,game in ipairs({'gold','silver','crystal'})do
   GV.set(game);assetGame=game;clock=0
   local world,map2,def2=world2(game,'NEW_BARK_TOWN')
@@ -880,7 +966,7 @@ local function run()
   local art=assert(mod2.exports.state:replacements(game,def2.tileset,def2))
   local after2=drawWorld2(world)
   check(mod2.exports.state.rejected==0,'NewBark reviewed mapping rejected')
-  local c=coverage(def2,art);check(c.replaced_occurrences>=294,'Approved NewBark coverage decreased')
+  local c=coverage(def2,art);check(c.visible_cells==360 and c.replaced_occurrences==304,'Approved NewBark Headbutt coverage must be304/360')
   local fixture={game=game,map=def2.id,native_renderer='src.world.gen2.World:bakeMapImage + drawAnimCells',
    before=encodePng(native,game..'-newbark-native-gpu.png'),after=encodePng(after2,game..'-newbark-gen3-gpu.png'),
    accepted=mod2.exports.state.accepted,checked_donor_pixels=verifyCoveredPixels(def2,art,after2,game),coverage=c,
@@ -890,6 +976,7 @@ local function run()
   check(fixture.native_palette_shader_available,'Native Gen2 palette shader did not compile')
   fixture.flower_all_frames=verifyAnimationFrames(def2,art,function()return drawWorld2(world)end,'general_flower',4,0)
   fixture.water_all_frames=verifyAnimationFrames(def2,art,function()return drawWorld2(world)end,'general_water',8,1)
+  fixture.headbutt=verifyHeadbutt(game,world,map2,def2,after2)
   fixture.collision_after=snapshot(map2,2);fixture.events_after=eventSnapshot(map2)
   check(fixture.collision_before==fixture.collision_after,'NewBark source collision/layout changed')
   check(fixture.events_before==fixture.events_after,'NewBark source events changed')
