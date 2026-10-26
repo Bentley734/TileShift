@@ -7,7 +7,13 @@ return function(mod)
   if Runtime._tileShiftDispose then Runtime._tileShiftDispose() end
   local Mapping=readModule('lib/mapping.lua')
   local reviewed=readModule('mappings/reviewed.lua')
-  for _,path in ipairs({'mappings/trees.lua','mappings/posts.lua','mappings/water.lua','mappings/coasts.lua','mappings/pallet_buildings.lua','mappings/pallet_details.lua','mappings/gen1_outdoor.lua','mappings/gen2_outdoor.lua','mappings/gen1_caves.lua'}) do
+  for _,path in ipairs({
+    'mappings/trees.lua','mappings/posts.lua','mappings/water.lua','mappings/coasts.lua',
+    'mappings/pallet_buildings.lua','mappings/pallet_details.lua',
+    'mappings/gen1_outdoor.lua','mappings/gen2_outdoor.lua','mappings/gen1_caves.lua',
+    'mappings/gen2_buildings.lua','mappings/gen1_extended.lua','mappings/gen2_outdoor_extended.lua',
+    'mappings/buildings_extended.lua','mappings/interiors.lua','mappings/gen2_caves.lua',
+  }) do
     local source=mod:read(path)
     if source then
       for _,row in ipairs(assert(load(source,'@tileshift/'..path))()) do reviewed[#reviewed+1]=row end
@@ -133,7 +139,7 @@ return function(mod)
     out=nextFn(game,out)
     if type(out)~='table' then return out end
     out[#out+1]={id='tileshift:style',label='TILESET',value=function()return styleNames[selection]end,step=persist}
-    out[#out+1]={id='tileshift:coverage',label='COVERAGE',value=function()return 'PALLET + PARTIAL' end,
+    out[#out+1]={id='tileshift:coverage',label='COVERAGE',value=function()return 'IN PROGRESS' end,
       step=function()return false end}
     return out
   end

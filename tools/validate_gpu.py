@@ -155,13 +155,18 @@ local function run()
    if def.blocks[by*def.width+bx+1]==id then return bx*32+(q%2)*16,by*32+math.floor(q/2)*16 end
   end end
  end
+ local function artAt(art,id,bx,by)
+  local block=art[id]
+  return block and block.positions and block.positions[bx..':'..by] or block
+ end
  local function coverage(def,art)
   local replaced,unique=0,{}
-  for _,id in ipairs(def.blocks)do
-   local block=art[id]
+  for index,id in ipairs(def.blocks)do
+   local bx,by=(index-1)%def.width,math.floor((index-1)/def.width)
+   local block=artAt(art,id,bx,by)
    for q=0,3 do
     if block and (not block.coverage or block.coverage[q])then
-     replaced=replaced+1;unique[id..':'..q]=true
+     replaced=replaced+1;unique[id..':'..q..(block~=art[id] and ':'..bx..':'..by or '')]=true
     end
    end
   end
@@ -199,7 +204,7 @@ local function run()
   -- building edges, against the exact frame-zero session output.
   for by=0,def.height-1 do for bx=0,def.width-1 do
    local id=def.blocks[by*def.width+bx+1]
-   local block=assert(art[id]);local expected=block.frames and block.frames[1] or block.image
+   local block=assert(artAt(art,id,bx,by));local expected=block.frames and block.frames[1] or block.image
    for y=0,31 do for x=0,31 do
     equalPixel(frame,bx*32+x,by*32+y,expected,x,y,game..' reviewed RGB/position mismatch')
     checked=checked+1
@@ -210,7 +215,7 @@ local function run()
  local function verifyCoveredPixels(def,art,frame,game)
   local checked=0
   for by=0,def.height-1 do for bx=0,def.width-1 do
-   local block=art[def.blocks[by*def.width+bx+1]]
+   local block=artAt(art,def.blocks[by*def.width+bx+1],bx,by)
    if block then
     local expected=block.frames and block.frames[1] or block.image
     for q=0,3 do if not block.coverage or block.coverage[q] then
@@ -837,6 +842,180 @@ local function run()
    G.draw(world.mapImage,0,0);world:drawAnimCells(world.map.id,0,0,1)
   end)
  end
+ local newBarkNativeSources={}
+ local function verifyNewBarkBuildings(game,def,art,frame)
+  local reviewRoot=MOD..'/../.work/tileshift-newbark-buildings/'
+  local review=Json.decode(assert(read(reviewRoot..'newbark-native-building-prototypes.json')))
+  check(review.status=='reviewed_buildings_activated' and review.production_rows==168,
+   'NewBark architecture review is incomplete')
+  local models={};for _,candidate in ipairs(review.candidates)do models[candidate.id]=candidate end
+  local function crop(image,r)
+   local out=love.image.newImageData(r[3],r[4]);out:paste(image,0,0,r[1],r[2],r[3],r[4]);return out
+  end
+  local function nativeSource(candidate)
+   if newBarkNativeSources[candidate.id] then return newBarkNativeSources[candidate.id] end
+   local n=candidate.native
+   local manifest=generated(n.game,'gba/native/manifest')
+   local spec=assert(manifest.layouts[n.map],'Original native building layout is missing')
+   check(spec.pair==n.pair,'Native building tileset pair changed')
+   local relative=n.game..'/data/generated/gba/native/'..spec.file
+   check(hash(assert(read(CACHE..'/'..relative)))==n.layout_file_sha256,'Native building layout file fingerprint changed')
+   local layout,why=require('src.import.gba.native_pack').decodeMidLayout(assert(cacheRead(relative)))
+   check(layout~=nil,'Original native building layout could not be decoded: '..tostring(why))
+   local r=n.rect_cells;local textures,mids={},{}
+   for y=0,r[4]-1 do for x=0,r[3]-1 do
+    local mid=assert(layout.cells[(r[2]+y)*layout.width+r[1]+x+1]).mid
+    mids[y*r[3]+x+1]=mid
+    if not textures[mid] then
+     local image=nativeCellImage({game=n.game,tileset=n.pair,id=mid})
+     textures[mid]=G.newImage(image);textures[mid]:setFilter('nearest','nearest')
+    end
+   end end
+   local image=capture(r[3]*16,r[4]*16,function()
+    for y=0,r[4]-1 do for x=0,r[3]-1 do G.draw(textures[mids[y*r[3]+x+1]],x*16,y*16)end end
+   end)
+   for _,texture in pairs(textures)do texture:release()end
+   check(hash(image:getString())==n.source_pixel_sha256,'Whole original native building GPU pixels changed')
+   -- Some unrelated Gen3 elevator warps contain unresolved nil destinations.
+   -- Decode only this original map's literal table with the safe data parser.
+   local warpSource=assert(cacheRead(n.game..'/data/generated/gba/warps.lua'))
+   local warpTable=assert(warpSource:match('\n  '..n.map..' = ({.-\n  })'),'Original native warp map is missing')
+   local warps=assert(Serializer.decode('return '..warpTable,{allowArray=true,allowComments=true}))
+   local door
+   for _,warp in ipairs(warps)do
+    if warp.destMap==n.destination then check(not door,'Duplicate native reference entrance');door=warp end
+   end
+   check(door and (door.x-r[1])*16+8==n.door_anchor[1]
+    and (door.y-r[2]+1)*16==n.door_anchor[2],'Original native reference door anchor changed')
+   local result={image=image,readback=encodePng(image,candidate.id..'-newbark-native-reference-gpu.png'),
+    game=n.game,map=n.map,layout_file_sha256=n.layout_file_sha256}
+   newBarkNativeSources[candidate.id]=result;return result
+  end
+  local function roofProof(candidate,actual,source)
+   local reviewed=assert(candidate.roof_background)
+   local base=nativeCellImage(candidate.base)
+   local roofHeight=(reviewed.native_roof_pixels_preserved+reviewed.empty_pixels_checked)/candidate.size_px[1]
+   check(roofHeight==math.floor(roofHeight),'Native roof mask area is not rectangular')
+   local empty,opaque,selected,seen,holes=0,0,0,{},{}
+   for _,part in ipairs(candidate.parts)do
+    local tx,ty=part.target_xy[1],part.target_xy[2]
+    if ty<roofHeight then
+     local original=nativeCellImage(part.donor)
+     local layer
+     if part.layers then
+      check(#part.layers==1 and part.layers[1]=='over','NewBark roof uses an unexpected native layer')
+      local cell,why=sourceDecoder():cell(part.donor);check(cell~=nil,tostring(why));layer=cell.over
+      check(hash(layer:getString())==part.layerHashes.over,'NewBark original roof alpha-layer hash changed')
+      selected=selected+1
+     end
+     for y=0,part.h-1 do for x=0,part.w-1 do
+      local px,py=tx+x,ty+y;local sx,sy=part.srcX+x,part.srcY+y
+      check(py<roofHeight and not seen[px..':'..py],'NewBark roof parts overlap or escape the approved mask')
+      seen[px..':'..py]=true
+      equalPixel(original,sx,sy,source.image,part.native_source_rect[1]+x,part.native_source_rect[2]+y,
+       'Roof part differs from the original complete native building')
+      local a=1;if layer then local lr,lg,lb;lr,lg,lb,a=layer:getPixel(sx,sy)end
+      if a==0 then
+       equalPixel(actual,px,py,base,px%16,py%16,'NewBark empty roof corner differs from the adjacent Emerald ground')
+       holes[px..':'..py]=true;empty=empty+1
+      else
+       check(a==1,'NewBark native roof contains unexpected semi-transparency')
+       equalPixel(actual,px,py,original,sx,sy,'NewBark opaque native roof or eave pixel changed')
+       opaque=opaque+1
+      end
+     end end
+    end
+   end
+   local expectedSelected={lab=37,player=21,ordinary=8}
+   check(selected==expectedSelected[candidate.id],'NewBark selected roof part count changed')
+   check(empty==reviewed.empty_pixels_checked and opaque==reviewed.native_roof_pixels_preserved,
+    'NewBark independent native roof mask count changed')
+   check(reviewed.native_roof_pixel_differences==0 and reviewed.all_empty_pixels_exact_local_ground,
+    'Approved NewBark roof review permits altered native pixels')
+   check(#reviewed.empty_pixel_positions==empty,'NewBark roof empty-position count changed')
+   for _,pos in ipairs(reviewed.empty_pixel_positions)do
+    check(holes[pos[1]..':'..pos[2]],'NewBark reviewed roof hole disagrees with native alpha')
+   end
+   return {selected_native_over_parts=selected,opaque_roof_pixels_unchanged=opaque,
+    empty_pixels_match_emerald_ground=empty,roof_height_px=roofHeight,ground_donor=candidate.base}
+  end
+  local proofs,occurrences,baseHashes={}, {},{}
+  for id,block in pairs(art)do if block.positions then baseHashes[id]=hash(block.image:getString())end end
+  for _,record in ipairs(review.source_records)do if record.game==game then
+   local kind=models[record.building] and record.building or 'ordinary';local candidate=assert(models[kind])
+   local r=record.source_rect_cells
+   check(r[3]*16==candidate.size_px[1] and r[4]*16==candidate.size_px[2],'NewBark source building footprint changed')
+   local actual=crop(frame,{r[1]*16,r[2]*16,r[3]*16,r[4]*16})
+   local expected=love.image.newImageData(love.filesystem.newFileData(
+    assert(read(reviewRoot..kind..'-compact-prototype.png')),kind..'.png'))
+   check(hash(expected:getString())==candidate.pixel_sha256,'Approved NewBark prototype fingerprint changed')
+   check(actual:getString()==expected:getString(),game..' '..record.building..' native GPU differs from the approved prototype')
+   local door
+   for _,warp in ipairs(def.warps or {})do if warp.destMap==record.destination then
+    check(not door,'Duplicate NewBark building warp');door=warp
+   end end
+   check(door and door.x==record.door_map_cell[1] and door.y==record.door_map_cell[2],
+    'NewBark original building warp moved')
+   local anchor={(door.x-r[1])*16+8,(door.y-r[2]+1)*16}
+   check(anchor[1]==record.door_anchor_px[1] and anchor[2]==record.door_anchor_px[2]
+    and anchor[1]==candidate.door_bottom_anchor_px[1] and anchor[2]==candidate.door_bottom_anchor_px[2],
+    'NewBark original building entrance anchor changed')
+   local source=nativeSource(candidate);local features={};local entrance,windows,dish=0,0,0
+   for _,feature in ipairs(candidate.features_checked)do
+    local sr,tr=feature.source_rect_xywh,feature.target_rect_xywh
+    check(sr[3]==tr[3] and sr[4]==tr[4],'NewBark native feature was scaled')
+    local targetCrop=crop(actual,tr);local sourceCrop=crop(source.image,sr)
+    check(targetCrop:getString()==sourceCrop:getString(),game..' '..record.building..' '..feature.feature..' has clipped or changed native pixels')
+    local label=feature.feature:lower()
+    if label:find('entrance',1,true)then
+     check((kind=='ordinary' and tr[3]==16 and tr[4]==17)or(kind~='ordinary' and tr[3]==32 and tr[4]==24),
+      'NewBark entrance proof omits its complete native frame');entrance=entrance+1
+    end
+    if label:find('window',1,true)then windows=windows+1 end
+    if label:find('satellite',1,true)then
+     check(tr[3]==32 and tr[4]==32,'NewBark lab proof clips the whole native dish');dish=dish+1
+    end
+    features[#features+1]={feature=feature.feature,source_rect_xywh=sr,target_rect_xywh=tr,
+     exact_native_gpu_pixels=true,rgba_sha256=hash(targetCrop:getString())}
+   end
+   check(entrance==1 and windows==(kind=='lab' and 2 or 1) and (kind~='lab' or dish==1),
+    'NewBark building proof omits a complete native entrance, window or dish')
+   for y=0,r[4]-1 do for x=0,r[3]-1 do
+    local cx,cy=r[1]+x,r[2]+y;local bx,by=math.floor(cx/2),math.floor(cy/2)
+    local id=def.blocks[by*def.width+bx+1];local q=cy%2*2+cx%2
+    local key=id..':'..q;local block=artAt(art,id,bx,by)
+    check(block and block~=art[id] and art[id].positions[bx..':'..by]==block,
+     'NewBark positioned building resolved generic or another building artwork')
+    occurrences[key]=occurrences[key] or {}
+    occurrences[key][record.building]={block=block,bx=bx,by=by,
+     pixels=crop(actual,{x*16,y*16,16,16}):getString()}
+   end end
+   proofs[#proofs+1]={id=record.building,kind=kind,map_rect_cells=r,door_destination=door.destMap,
+    door_bottom_anchor_px=anchor,exact_approved_native_pixels=true,rgba_sha256=hash(actual:getString()),
+    native_features=features,native_source_gpu=source.readback,roof_background=roofProof(candidate,actual,source),
+    image=encodePng(actual,game..'-newbark-'..record.building..'-gpu.png')}
+  end end
+  check(#proofs==4,'NewBark proof must cover all four buildings')
+  local shared,different,keys=0,0,{}
+  for _,key in ipairs(review.required_position_scope.source_shared_keys)do
+   local name=key[1]..':'..key[2];local pair=assert(occurrences[name]);local lab,player=pair.lab,pair.player
+   check(lab and player and lab.block~=player.block and (lab.bx~=player.bx or lab.by~=player.by),
+    'Lab/player shared source roof key bled across its position scope')
+   local pixelsDiffer=lab.pixels~=player.pixels;if pixelsDiffer then different=different+1 end
+   keys[#keys+1]={source_id=key[1],quadrant=key[2],lab_block={lab.bx,lab.by},player_block={player.bx,player.by},
+    distinct_position_records=true,distinct_gpu_pixels=pixelsDiffer};shared=shared+1
+  end
+  check(shared==12 and different>0,'NewBark GPU proof did not exercise distinct roofs sharing source keys')
+  for id,beforeHash in pairs(baseHashes)do
+   check(hash(art[id].image:getString())==beforeHash,'Positioned drawing mutated the generic source-key artwork')
+  end
+  local town
+  for _,candidate in ipairs(review.town_candidates)do if candidate.game==game then town=candidate end end
+  check(town and town.target_covered_cells==360 and hash(frame:getString())==town.candidate_pixel_sha256,
+   'Full NewBark GPU background differs from the independently reviewed 360-cell scene')
+  return {buildings=proofs,shared_roof_keys={checked=shared,distinct_gpu_graphics=different,keys=keys,
+   generic_art_unchanged=true},full_scene_exact=true,rgba_sha256=hash(frame:getString())}
+ end
  local function verifyGen2Objects(game,def,map,frame)
   local proof={native_tree_pairs=0,native_objects=0,native_pixels_checked=0}
   for _,row in ipairs(mappingRows('mappings/gen2_outdoor.lua'))do
@@ -966,10 +1145,11 @@ local function run()
   local art=assert(mod2.exports.state:replacements(game,def2.tileset,def2))
   local after2=drawWorld2(world)
   check(mod2.exports.state.rejected==0,'NewBark reviewed mapping rejected')
-  local c=coverage(def2,art);check(c.visible_cells==360 and c.replaced_occurrences==304,'Approved NewBark Headbutt coverage must be304/360')
+  local c=coverage(def2,art);check(c.visible_cells==360 and c.replaced_occurrences==360,'Complete NewBark background must replace360/360 cells')
   local fixture={game=game,map=def2.id,native_renderer='src.world.gen2.World:bakeMapImage + drawAnimCells',
    before=encodePng(native,game..'-newbark-native-gpu.png'),after=encodePng(after2,game..'-newbark-gen3-gpu.png'),
    accepted=mod2.exports.state.accepted,checked_donor_pixels=verifyCoveredPixels(def2,art,after2,game),coverage=c,
+   architecture=verifyNewBarkBuildings(game,def2,art,after2),
    native_palette_shader_available=require('src.render.GbcPalette').available(),
    native_trees=verifyGen2Objects(game,def2,map2,after2),collision_before=mechanics,events_before=events}
   check(fixture.native_trees.native_tree_pairs>0,'No native16x32 NewBark tree pair was sampled')

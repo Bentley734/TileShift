@@ -335,6 +335,11 @@ def verify(rows, cache, catalogs, mod_root):
                 source_maps[game] = catalog.read_lua(cache / game / "data/generated/maps.lua")
             scoped = source_maps[game][row["map"]]
             assert scoped["tileset"] == row["tileset"] and row["id"] in scoped["blocks"]
+            if "x" in row or "y" in row:
+                x, y = row["x"], row["y"]
+                assert 0 <= x < scoped["width"] * 2 and 0 <= y < scoped["height"] * 2
+                assert row["quadrant"] == y % 2 * 2 + x % 2
+                assert scoped["blocks"][y // 2 * scoped["width"] + x // 2] == row["id"], "Position source layout changed"
             if row.get("role") == "coastal_ocean_water_interior":
                 if row["map"] == "PALLET_TOWN":
                     assert scoped["connections"]["south"]["map"] == "ROUTE_21"
@@ -380,10 +385,13 @@ def map_preview(cache, output, game, map_id, stem, rows, packed, scale, mod_root
             spec = roofs["roofs"].get(name)
             if spec:
                 roof = Image.open(root / spec["image"])
-    selected = {}
+    selected, positioned = {}, {}
     for row in sorted(rows, key=lambda r: bool(r.get("map"))):
         if row["game"] == game and row["style"] == "gen3" and row["tileset"] == map_def["tileset"] and row.get("map", map_id) == map_id:
-            selected[(row["id"], row["quadrant"])] = row
+            if "x" in row:
+                positioned[(row["id"], row["quadrant"], row["x"], row["y"])] = row
+            else:
+                selected[(row["id"], row["quadrant"])] = row
     before = Image.new("RGBA", (map_def["width"] * 32, map_def["height"] * 32))
     after = before.copy()
     coverage, unique, by_role = 0, set(), Counter()
@@ -398,17 +406,18 @@ def map_preview(cache, output, game, map_id, stem, rows, packed, scale, mod_root
             original = source_cells[key]
             x, y = bx + q % 2 * 16, by + q // 2 * 16
             before.paste(original, (x, y))
-            replacement = selected.get(key)
+            replacement = positioned.get((*key, x // 16, y // 16), selected.get(key))
             if replacement:
                 # Verify raw grayscale pixels at the actual map block, separately
                 # from its scene palette and group-specific roof overlay.
                 raw_cell = native_cell(sheet, ts, block, q)
                 assert catalog.sha(raw_cell.tobytes()) == replacement["sourceHash"]
-                if key not in donor_cells:
-                    donor_cells[key] = replacement_image(cache, replacement, packed, mod_root)
-                after.paste(donor_cells[key], (x, y))
+                artwork_key = (*key, replacement.get("x"), replacement.get("y"))
+                if artwork_key not in donor_cells:
+                    donor_cells[artwork_key] = replacement_image(cache, replacement, packed, mod_root)
+                after.paste(donor_cells[artwork_key], (x, y))
                 coverage += 1
-                unique.add(key)
+                unique.add(artwork_key)
                 by_role[replacement["role"]] += 1
             else:
                 after.paste(original, (x, y))
@@ -430,7 +439,8 @@ def map_preview(cache, output, game, map_id, stem, rows, packed, scale, mod_root
     canvas.paste(before.resize((display_w, display_h), Image.Resampling.NEAREST), (left, top))
     canvas.paste(after.resize((display_w, display_h), Image.Resampling.NEAREST), (left + display_w + gap, top))
     draw.text((left, top + display_h + 14), f"Replaced {coverage}/{total} visible cells ({coverage/total:.1%}); {len(unique)} unique mappings. Remaining {total-coverage} cells keep native art. No actors rendered.", fill="#ced7e4", font=small)
-    credits = sorted({r["credit"] for r in selected.values() if r.get("credit") and (r["id"], r["quadrant"]) in unique})
+    credits = sorted({r["credit"] for r in [*selected.values(), *positioned.values()]
+                      if r.get("credit") and (r["id"], r["quadrant"], r.get("x"), r.get("y")) in unique})
     if credits:
         draw.text((left, top + display_h + 35), "Tree artwork: " + "; ".join(credits), fill="#ced7e4", font=small)
     path = output / f"{stem}-development.png"
@@ -472,12 +482,16 @@ def main():
         coast = args.reviewed.parent / "coasts.lua"
         if coast.exists():
             rows.extend(read_reviewed(coast))
-    for requested, name in ((args.include_buildings, "pallet_buildings.lua"), (args.include_details, "pallet_details.lua"),
+    for requested, name in ((args.include_buildings, "pallet_buildings.lua"), (args.include_buildings, "gen2_buildings.lua"),
+                            (args.include_buildings, "buildings_extended.lua"),
+                            (args.include_details, "pallet_details.lua"),
                             (args.include_outdoors, "gen1_outdoor.lua"), (args.include_outdoors, "gen2_outdoor.lua"),
-                            (args.include_outdoors, "gen1_caves.lua")):
+                            (args.include_outdoors, "gen1_caves.lua"), (args.include_outdoors, "gen1_extended.lua"),
+                            (args.include_outdoors, "gen2_outdoor_extended.lua"), (args.include_outdoors, "interiors.lua"),
+                            (args.include_outdoors, "gen2_caves.lua")):
         if requested and (args.reviewed.parent / name).exists():
             rows.extend(read_reviewed(args.reviewed.parent / name))
-    keys = {(r["game"], r["style"], r["tileset"], r["id"], r["quadrant"], r.get("map")) for r in rows}
+    keys = {(r["game"], r["style"], r["tileset"], r["id"], r["quadrant"], r.get("map"), r.get("x"), r.get("y")) for r in rows}
     assert len(keys) == len(rows), "Reviewed mapping files contain duplicate source cells"
     game_ids = {r["game"] for r in rows} | {ref["game"] for r in rows for ref in (r.get("donor"), r.get("base")) if ref}
     game_ids.update(part["donor"]["game"] for row in rows for part in row.get("parts", []))

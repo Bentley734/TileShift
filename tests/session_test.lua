@@ -251,4 +251,50 @@ eq(pooled.accepted,3);eq(pooled.rejected,0)
 for _,game in ipairs({'ruby','sapphire','emerald','firered','leafgreen'})do
   eq(pooled:replacements(game,'PAIR',def),nil,'native Gen3 host keeps original cartridge graphics')
 end
+-- Shared source blocks must have independent art at each reviewed occurrence.
+local function positioned(x,y,path)
+  local r=row(7,y%2*2+x%2);r.map='POSITIONED';r.x=x;r.y=y
+  r.donor=nil;r.kind='original';r.asset=path or 'assets/original/special.png'
+  return r
+end
+local yellowPath,bluePath='assets/original/special.png','assets/original/blue.png'
+local blue=fill(0,0,1,1)
+local positionDef={id='POSITIONED',width=2,height=1,blocks={7,7}}
+local perPosition,pwarns=make({row(7,0),row(7,3),positioned(0,0),positioned(1,1,bluePath),positioned(2,0,bluePath)},
+  {original=function(path)return path==bluePath and blue or original end})
+perPosition:select('gen3')
+local positionedArt=perPosition:replacements('red','OVERWORLD',positionDef)[7]
+local left,right=positionedArt.positions['0:0'],positionedArt.positions['1:0']
+eq(#pwarns,0);eq(perPosition.accepted,5)
+eq(select(1,positionedArt.image:getPixel(2,2)),1,'generic block keeps its red art')
+eq(select(2,left.image:getPixel(2,2)),1,'left occurrence gets yellow instead')
+eq(select(3,left.image:getPixel(18,18)),1,'another quadrant shares that occurrence variant')
+eq(select(3,right.image:getPixel(2,2)),1,'right occurrence independently gets blue')
+eq(select(1,right.image:getPixel(18,18)),1,'unmodified right quadrant inherits generic art')
+eq(left.image~=right.image,true);eq(left.image~=positionedArt.image,true)
+eq(positionDef.blocks[1],7);eq(positionDef.blocks[2],7,'logical map block IDs remain untouched')
+local nonPositioned=perPosition:replacements('red','OVERWORLD',{id='OTHER'})[7]
+eq(nonPositioned.positions,nil,'coordinate art cannot leak to another map')
+local mismatch,_,mismatchCalls=make({positioned(0,0)})
+mismatch:select('gen3')
+eq(next(mismatch:replacements('red','OVERWORLD',{id='POSITIONED',width=2,height=1,blocks={8,7}})),nil)
+eq(mismatch.rejected,1);eq(#mismatchCalls,0,'layout mismatch rejected before reading art')
+local outside,_,outsideCalls=make({positioned(4,0)})
+outside:select('gen3');eq(next(outside:replacements('red','OVERWORLD',positionDef)),nil)
+eq(#outsideCalls,0,'outside-map art never reaches decoder')
+local incomplete=positioned(0,0);incomplete.y=nil
+local malformed=make({incomplete});malformed:select('gen3')
+eq(next(malformed:replacements('red','OVERWORLD',positionDef)),nil,'invalid coordinates are contained')
+local animBase=row(7,0);animBase.animated=true
+animBase.animation={bank='general_water',hash=hashB,manifestHash=hashA}
+local animatedPosition=make({animBase,positioned(1,1)})
+animatedPosition:select('gen3')
+local animatedBlock=animatedPosition:replacements('red','OVERWORLD',positionDef)[7]
+local variant=animatedBlock.positions['0:0']
+eq(variant.bank,animatedBlock.bank);eq(variant.offset,animatedBlock.offset)
+eq(select(1,variant.frames[1]:getPixel(2,2)),.25,'generic animation frame0 inherited')
+eq(select(1,variant.frames[2]:getPixel(2,2)),.75,'generic animation frame1 inherited')
+eq(select(2,variant.frames[1]:getPixel(18,18)),1,'static positional quadrant retained in frame0')
+eq(select(2,variant.frames[2]:getPixel(18,18)),1,'static positional quadrant retained in frame1')
+eq(select(4,animatedBlock.frames[1]:getPixel(18,18)),0,'generic frame stays transparent outside coverage')
 print('PASS reviewed mapping session: '..count..' assertions')

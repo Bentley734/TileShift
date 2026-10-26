@@ -73,7 +73,10 @@ for _,gameId in ipairs(games)do
     if path=='mappings/posts.lua' or path=='mappings/water.lua' or path=='mappings/coasts.lua'
       or path=='mappings/pallet_buildings.lua' or path=='mappings/pallet_details.lua'
       or path=='mappings/gen1_outdoor.lua' or path=='mappings/gen2_outdoor.lua'
-      or path=='mappings/gen1_caves.lua' then return nil end
+      or path=='mappings/gen1_caves.lua' or path=='mappings/gen2_buildings.lua'
+      or path=='mappings/gen1_extended.lua' or path=='mappings/gen2_outdoor_extended.lua'
+      or path=='mappings/buildings_extended.lua' or path=='mappings/interiors.lua'
+      or path=='mappings/gen2_caves.lua' then return nil end
     if path=='mappings/reviewed.lua' then
       return 'local out={} for i,row in ipairs(__tileMainFixture.reviewed)do out[i]=row end return out'
     end
@@ -103,7 +106,7 @@ for _,gameId in ipairs(games)do
     eq(g,game);vanillaCalls=vanillaCalls+1;out[#out+1]={id='native'};return out
   end,game,{})
   eq(vanillaCalls,1);eq(#rows,3);eq(rows[1].id,'native');eq(rows[2].value(),'ORIGINAL')
-  eq(rows[3].label,'COVERAGE');eq(rows[3].value(),'PALLET + PARTIAL');eq(rows[3].step(),false)
+  eq(rows[3].label,'COVERAGE');eq(rows[3].value(),'IN PROGRESS');eq(rows[3].step(),false)
   eq(rows[2].step({game=game},1),false)
   eq(state.style,'gen3');eq(rows[2].value(),'GEN 3');eq(stored.style,2)
   eq(game.options.modOptions.tileshift.style,2);eq(game.save.options.modOptions.tileshift.style,2)

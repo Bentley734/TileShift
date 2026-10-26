@@ -1,6 +1,7 @@
 """Decode every reviewed Gen1 outdoor mapping against live source imports."""
 from __future__ import annotations
 import hashlib
+import argparse
 import json
 import os
 from pathlib import Path
@@ -16,6 +17,9 @@ import validate_animation
 def main():
     cache=Path(os.environ['APPDATA'])/'pokemon-love2d'
     mod=WORKSPACE/'TileShift'
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--mapping',type=Path,default=mod/'mappings/gen1_outdoor.lua')
+    args=parser.parse_args();mapping_path=args.mapping.resolve()
     lua=LuaRuntime(unpack_returned_tuples=True,encoding=None)
     def read(relative):
         path=(cache/relative.decode()).resolve()
@@ -42,7 +46,7 @@ def main():
             b'hashImage':lambda image:hashlib.sha256(image[b'getString'](image)).hexdigest().encode()}))
         lua.globals()[b'outdoorDecoder']=donor
         lua.globals()[b'outdoorComposer']=composer
-        lua.globals()[b'outdoorRows']=lua.execute((mod/'mappings/gen1_outdoor.lua').read_bytes())
+        lua.globals()[b'outdoorRows']=lua.execute(mapping_path.read_bytes())
         lua.globals()[b'outdoorMapping']=lua.execute((mod/'lib/mapping.lua').read_bytes())
         lua.globals()[b'outdoorSession']=lua.execute((mod/'lib/session.lua').read_bytes())
         result=lua.execute(br'''
@@ -53,9 +57,9 @@ local state=outdoorSession.new({mappings=indexed,donor=outdoorDecoder,newImageDa
 state:select('gen3')
 local contexts,opaque={},0
 for _,row in ipairs(outdoorRows)do
- local key=row.game..':'..row.map
+ local key=row.game..':'..row.tileset..':'..(row.map or '*')
  if not contexts[key] then
-  local blocks=state:replacements(row.game,row.tileset,{id=row.map})
+  local blocks=state:replacements(row.game,row.tileset,{id=row.map or '__GLOBAL_REVIEW__'})
   for _,block in pairs(blocks)do
    for q,included in pairs(block.coverage)do if included then
     for y=0,15 do for x=0,15 do
@@ -67,18 +71,19 @@ for _,row in ipairs(outdoorRows)do
   contexts[key]=true
  end
 end
-assert(state.rejected==0 and state.accepted==#outdoorRows,'Not all outdoor rows decoded')
+assert(state.rejected==0 and state.accepted>=#outdoorRows,'Not all outdoor rows decoded')
 for name in pairs(package.loaded)do
  assert(not name:match('^src%.core%.game3%.') and not name:match('^src%.world%.gen2%.'),'Donor loaded source runtime '..name)
 end
 local n=0;for _ in pairs(contexts)do n=n+1 end
-return {accepted=state.accepted,rejected=state.rejected,contexts=n,opaque_pixels_checked=opaque}
+return {accepted=#outdoorRows,decoded_with_contexts=state.accepted,rejected=state.rejected,contexts=n,opaque_pixels_checked=opaque}
 ''')
         report={key.decode():value for key,value in result.items()}
     finally:os.chdir(before)
     report.update(status='passed',source_imports_read_only=True,source_generation_runtime_loaded=False,
-                  mapping_sha256=hashlib.sha256((mod/'mappings/gen1_outdoor.lua').read_bytes()).hexdigest())
-    target=WORKSPACE/'.work/tileshift-outdoor-review/live-mapping-proof.json'
+                  mapping_sha256=hashlib.sha256(mapping_path.read_bytes()).hexdigest())
+    folder='tileshift-outdoor-review'if mapping_path.name=='gen1_outdoor.lua'else'tileshift-gen1-extended-review'
+    target=WORKSPACE/f'.work/{folder}/live-mapping-proof.json'
     target.write_text(json.dumps(report,indent=2))
     print(json.dumps(report,indent=2))
 

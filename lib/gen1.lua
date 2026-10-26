@@ -62,9 +62,10 @@ function G.install(ctx)
     return row and (type(row)~='table' or row.coverage==nil or
       row.coverage[math.floor((y%32)/16)*2+math.floor((x%32)/16)]==true)
   end
-  local function record(self,replacements,id)
+  local function record(self,replacements,id,bx,by)
     local row=replacements and replacements[id]
     if not row then return nil end
+    if type(row)=='table' and row.positions and bx~=nil and by~=nil then row=row.positions[bx..':'..by] or row end
     local ts=self.map.tileset
     local grass=ts and ts.grassTile
     local block=ts and ts.blocks and ts.blocks[id+1]
@@ -144,7 +145,7 @@ function G.install(ctx)
     plain(function()
       for by=y0,y1 do for bx=x0,x1 do
         local id=self.map:blockAt(bx,by)
-        local row=record(self,replacements,id)
+        local row=record(self,replacements,id,bx,by)
         if row then paintBlock(row,bx,by,cx,cy) end
       end end
     end)
@@ -177,7 +178,7 @@ function G.install(ctx)
     if not replacements then return native(self,x0,y0,x1,y1,cx,cy) end
     T.eachStripSpan(x0,y0,x1,y1,function(tx,ty,x,y,ox,oy,w,h)
       local bx,by=math.floor(tx/4),math.floor(ty/4)
-      local row=record(self,replacements,self.map:blockAt(bx,by))
+      local row=record(self,replacements,self.map:blockAt(bx,by),bx,by)
       if covered(row,tx%4*8,ty%4*8) then
         plain(function() painted(row,bx,by,cx,cy,tx%4*8+ox,ty%4*8+oy,w,h,true) end)
       else native(self,x,y,x+w,y+h,cx,cy) end
@@ -189,7 +190,8 @@ function G.install(ctx)
     local replacements=rows(self)
     if not replacements then return native(self,x0,y0,x1,y1,cx,cy,colors) end
     T.eachStripSpan(x0,y0,x1,y1,function(tx,ty,x,y,ox,oy,w,h)
-      local row=record(self,replacements,self.map:blockAt(math.floor(tx/4),math.floor(ty/4)))
+      local bx,by=math.floor(tx/4),math.floor(ty/4)
+      local row=record(self,replacements,self.map:blockAt(bx,by),bx,by)
       if not covered(row,tx%4*8,ty%4*8) then
         native(self,x,y,x+w,y+h,cx,cy,colors)
       end

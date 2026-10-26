@@ -141,4 +141,14 @@ local noLayers=clone(layered);noLayers.parts[1].layers=nil;eq(M.validate(noLayer
 local objectPart=clone(layered);objectPart.parts[1].donor=clone(object.donor)
 objectPart.parts[1].layers=nil;objectPart.parts[1].layerHashes=nil
 eq(M.validate(objectPart),true,'object graphic can compose over original donor ground')
+local positioned=clone(base);positioned.map='NEW_BARK_TOWN';positioned.x=0;positioned.y=0
+eq(M.validate(positioned),true,'map-cell position may distinguish a reused source graphic')
+local elsewhere=clone(positioned);elsewhere.x=2
+eq(M.key(positioned)~=M.key(elsewhere),true,'two occurrences have distinct mapping identities')
+for _,change in ipairs({{map=false},{x=-1},{x=.5},{x=65536},{y='0'},{quadrant=3},{game='ruby'}})do
+  local bad=clone(positioned);for key,value in pairs(change)do bad[key]=value end
+  eq(M.validate(bad),nil,'positional art requires a bounded, quadrant-aligned GB map position')
+end
+local unscoped=clone(positioned);unscoped.map=nil;eq(M.validate(unscoped),nil)
+local incomplete=clone(positioned);incomplete.y=nil;eq(M.validate(incomplete),nil)
 print('PASS strict mapping validation: '..count..' assertions')

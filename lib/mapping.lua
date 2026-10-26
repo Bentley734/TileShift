@@ -54,6 +54,12 @@ function M.validate(row)
   if type(row.tileset)~='string' or row.tileset=='' then return nil,'source tileset required' end
   if not integer(row.id,65535) then return nil,'invalid source tile ID' end
   if row.map~=nil and (type(row.map)~='string' or not row.map:match('^[%w_]+$')) then return nil,'invalid source map scope' end
+  if row.x~=nil or row.y~=nil then
+    if not row.map or generations[row.game]>=3 or not integer(row.x,65535) or not integer(row.y,65535) then
+      return nil,'position scope requires a GB map and two cell coordinates'
+    end
+    if row.quadrant~=(row.y%2)*2+row.x%2 then return nil,'position scope does not match source quadrant' end
+  end
   if generations[row.game]<3 and not integer(row.quadrant,3) then return nil,'GB mapping requires an explicit quadrant' end
   if type(row.role)~='string' or row.role=='' then return nil,'tile meaning required' end
   if row.status~='reviewed' then return nil,'mapping has not been visually reviewed' end
@@ -105,7 +111,8 @@ function M.validate(row)
   return true
 end
 function M.key(row)
-  return table.concat({row.game,row.style,row.tileset,tostring(row.id),row.quadrant==nil and '*' or tostring(row.quadrant),row.map or '*'},':')
+  return table.concat({row.game,row.style,row.tileset,tostring(row.id),row.quadrant==nil and '*' or tostring(row.quadrant),row.map or '*',
+    row.x==nil and '*' or tostring(row.x),row.y==nil and '*' or tostring(row.y)},':')
 end
 function M.index(rows)
   local out,errors={},{}

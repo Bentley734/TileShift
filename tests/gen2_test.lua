@@ -120,6 +120,26 @@ calls={};local partialBorder=world:borderImageFor('MAP')
 eq(#calls,2,'partial border draws source then donor quadrant')
 eq(calls[1].image,'native-border');eq(calls[2].image.source,frame2)
 calls={};eq(world:borderImageFor('MAP'),partialBorder);eq(#calls,0,'partial border composition cached')
+-- One reused block can receive different reviewed art at a single map position.
+local posBackground,posForeground=data('position-background'),data('position-foreground')
+art[1].positions={['0:0']={image=posBackground,foreground=posForeground,coverage={[1]=true}}}
+local previousBlock=def.blocks[3];def.blocks[3]=1
+calls={};world:bakeMapImage(map,'DAY')
+eq(#calls,3);eq(calls[1].image.source,posBackground,'first occurrence selects its variant')
+eq(calls[1].args[1].quad[1],16,'position variant has independent quadrant coverage')
+eq(calls[3].image.source,main,'same source block elsewhere keeps generic art')
+calls={};world:drawAnimCells('MAP',0,0,1)
+eq(#calls,1);eq(calls[1].image.source,frame2,'static positional art suppresses only its own generic animation')
+eq(calls[1].args[2],64,'other occurrence continues its own animation')
+local positionFiltered=world:animCellsFor(map,ts)
+eq(#positionFiltered[4].cells,2);eq(positionFiltered[4].cells[1],0,
+  'source animation filtering uses occurrence coverage instead of shared block coverage')
+calls={};world:blitBgOverRegionLocal(def,0,0,16,0,24,8,true,nil,1)
+eq(calls[1].image.source,posForeground,'position foreground follows the same occurrence')
+calls={};world:blitBgOverRegionLocal(def,0,0,80,0,88,8,true,nil,1)
+eq(calls[1].native,true,'other occurrence does not inherit position coverage')
+calls={};eq(world:borderImageFor('MAP'),partialBorder);eq(#calls,0,'position art never leaks into repeating border')
+def.blocks[3]=previousBlock;art[1].positions=nil
 world.mapImages[key]=canvas;world.animCells[key]=filtered;world.bgSets[key]=bg
 local borrowed=function()return 'later-mod'end
 World.borderImageFor=borrowed

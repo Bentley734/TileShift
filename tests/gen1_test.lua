@@ -316,5 +316,30 @@ owner=true
 reset();renderer:drawWindow(0,0,32,32)
 eq(#drawCalls,0,'closed retained link cannot reactivate released textures')
 stateRestored()
+-- Render-only per-occurrence choices cannot change the shared source IDs.
+local pdef={id='POSITIONED',tileset='TEST',width=2,height=1,blocks={4,4},borderBlock=4}
+local pmap={def=pdef,tileset=ts}
+function pmap:blockAt(bx,by)
+  if bx<0 or by<0 or bx>=2 or by>=1 then return 4 end
+  return self.def.blocks[by*2+bx+1]
+end
+local pr=setmetatable({map=pmap},{__index=T})
+local pbg,pfg=data('position-background'),data('position-foreground')
+local generic={image=phase1,foreground=front1,coverage={[3]=true},
+  positions={['0:0']={image=pbg,foreground=pfg,coverage={[0]=true}}}}
+local pclose=Adapter.install({renderer=T,palette=FX,graphics=G,version='red',
+  replacements=function()return {[4]=generic} end})
+reset();pr:drawWindow(0,0,64,32)
+eq(#drawCalls,2);eq(drawCalls[1].image.source,pbg,'position art selected at first occurrence')
+eq(drawCalls[2].image.source,phase1,'shared block at second occurrence retains generic art')
+eq(drawCalls[1].x,0);eq(drawCalls[2].x,48,'position coverage stays local')
+reset();pr:drawStripRaw(0,0,16,8,0,0)
+eq(#drawCalls,2);eq(drawCalls[1].image.source,pfg,'position foreground is selected by map coordinates')
+reset();pr:drawStripRaw(32,0,48,8,0,0)
+eq(#drawCalls,0,'position foreground cannot leak to generic occurrence');eq(#stripCalls,2)
+reset();pr:drawBorderFill(-32,0,32,32)
+eq(#drawCalls,1);eq(drawCalls[1].image.source,phase1,'border uses generic art without a position')
+eq(pdef.blocks[1],4);eq(pdef.blocks[2],4,'logical source block IDs untouched')
+pclose()
 print('PASS Gen 1 graphics adapter: '..count..' assertions')
 return count

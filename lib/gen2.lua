@@ -47,11 +47,12 @@ function Adapter.install(ctx)
     images[data] = image
     return image
   end
-  local function recordFor(self, def, blockId)
+  local function recordFor(self, def, blockId,bx,by)
     if not (def and def.tileset) then return nil end
     local all = ctx.replacements(version(), def.tileset, def)
     local art = all and all[blockId]
     if not art then return nil end
+    if type(art)=='table' and art.positions and bx~=nil and by~=nil then art=art.positions[bx..':'..by] or art end
     if art.getDimensions then art = {image=art} end
     if not art.image then return nil end
     local ts = self.tilesets and self.tilesets[def.tileset]
@@ -142,7 +143,7 @@ function Adapter.install(ctx)
           G.origin();G.setScissor()
           for by=0,map.height-1 do for bx=0,map.width-1 do
             local block=Border.blockFor(map.blocks[by*map.width+bx+1],map.borderBlock)
-            local art=recordFor(self,map.def,block)
+            local art=recordFor(self,map.def,block,bx,by)
             if art then drawBlock(art,artImage(art.image),bx*32,by*32) end
           end end
         end)
@@ -161,7 +162,7 @@ function Adapter.install(ctx)
         for i=1,#list.cells,2 do
           local x,y=list.cells[i],list.cells[i+1]
           local block=blockAt(map,x,y)
-          if block == nil or not covered(recordFor(self,map.def,block),x,y) then
+          if block == nil or not covered(recordFor(self,map.def,block,math.floor(x/32),math.floor(y/32)),x,y) then
             copy.cells[#copy.cells+1]=x;copy.cells[#copy.cells+1]=y
           end
         end
@@ -185,7 +186,7 @@ function Adapter.install(ctx)
       drawTrue(function()
         for by=firstY,lastY do for bx=firstX,lastX do
           local block=Border.blockFor(def.blocks[by*def.width+bx+1],def.borderBlock)
-          local art=recordFor(self,def,block)
+          local art=recordFor(self,def,block,bx,by)
           if art and art.frames and #art.frames>0 then
             local x,y=bx*32+ox-cam.x,by*32+oy-cam.y
             if x+32>=0 and y+32>=0 and x<=(self.viewW or 160)
@@ -245,7 +246,7 @@ function Adapter.install(ctx)
       for ty=math.floor(ry0/8)*8,math.floor((ry1-1)/8)*8,8 do
         for tx=math.floor(rx0/8)*8,math.floor((rx1-1)/8)*8,8 do
           local block=blockAt(map,tx,ty)
-          local art=block~=nil and recordFor(self,def,block)
+          local art=block~=nil and recordFor(self,def,block,math.floor(tx/32),math.floor(ty/32))
           local dx=math.floor(originX+(tx-rx0)*scale)
           local dy=math.floor(originY+(ty-ry0)*scale)
           if covered(art,tx,ty) then
@@ -282,7 +283,7 @@ function Adapter.install(ctx)
             local w,h=math.min(rx+16,tx+8)-x0,math.min(ry+8,ty+8)-y0
             if w>0 and h>0 then
               local block=blockAt(map,tx,ty)
-              local art=block~=nil and recordFor(self,map.def,block)
+              local art=block~=nil and recordFor(self,map.def,block,math.floor(tx/32),math.floor(ty/32))
               G.setShader()
               if covered(art,tx,ty) then
                 drawCrop(frameFor(self,art,true),x0%32,y0%32,w,h,

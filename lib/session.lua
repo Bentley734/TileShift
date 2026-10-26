@@ -39,6 +39,25 @@ function S.new(ctx)
     if not ok then return nil,tostring(result) end
     return result,err
   end
+  local function blankBlock()
+    return {image=factory(32,32),foreground=factory(32,32),coverage={}}
+  end
+  local function cloneBlock(block)
+    local out=blankBlock()
+    out.image:paste(block.image,0,0)
+    if block.foreground then out.foreground:paste(block.foreground,0,0) end
+    for q,value in pairs(block.coverage or {})do out.coverage[q]=value end
+    for _,name in ipairs({'frames','foregroundFrames'})do
+      if block[name] then
+        out[name]={}
+        for i,frame in ipairs(block[name])do
+          local copy=factory(32,32);copy:paste(frame,0,0);out[name][i]=copy
+        end
+      end
+    end
+    for _,name in ipairs({'period','ticks','bank','counter','offset'})do out[name]=block[name] end
+    return out
+  end
   function state:select(style)
     style=normalizeStyle(style)
     if style==self.style then return false end
@@ -62,13 +81,36 @@ function S.new(ctx)
     -- Context-specific equivalents override a generic reviewed mapping only
     -- in that map. Pairs iteration must never decide which artwork wins.
     table.sort(applicable,function(a,b)
+      if (a.x~=nil)~=(b.x~=nil) then return a.x==nil end
       if (a.map~=nil)~=(b.map~=nil) then return a.map==nil end
       if a.id~=b.id then return (tonumber(a.id) or -1)<(tonumber(b.id) or -1) end
       if a.quadrant~=b.quadrant then return (a.quadrant or -1)<(b.quadrant or -1) end
+      if a.y~=b.y then return tostring(a.y or '')<tostring(b.y or '') end
+      if a.x~=b.x then return tostring(a.x or '')<tostring(b.x or '') end
       return tostring(a.evidence or '')<tostring(b.evidence or '')
     end)
     for _,row in ipairs(applicable) do
         local ok,why=ctx.validate(row)
+        local position=ok and row.x~=nil and (math.floor(row.x/2)..':'..math.floor(row.y/2)) or nil
+        if ok and position then
+          if not (def and type(def.width)=='number' and type(def.height)=='number' and type(def.blocks)=='table'
+            and row.x<def.width*2 and row.y<def.height*2
+            and def.blocks[math.floor(row.y/2)*def.width+math.floor(row.x/2)+1]==row.id) then
+            ok=nil;why='Position-scoped source cell no longer matches the map layout'
+          end
+        end
+        local function targetBlock(create)
+          local base=rows[row.id]
+          if not base and create then base=blankBlock();rows[row.id]=base end
+          if not position or not base then return base end
+          if not base.positions then
+            if not create then return nil end
+            base.positions={}
+          end
+          local block=base.positions[position]
+          if not block and create then block=cloneBlock(base);base.positions[position]=block end
+          return block
+        end
         if ok and row.animated and (not row.animation or ctx.generations[game]==3) then
           ok=nil;why='Animated donor frames are still awaiting integration for this mapping'
         end
@@ -115,7 +157,8 @@ function S.new(ctx)
         end
         if piece and row.foreground and not ctx.foreground then piece=nil;pieceError='Foreground loader is unavailable' end
         if piece and sequence and ctx.generations[game]<3 then
-          local block=rows[row.id]
+          local block=targetBlock(false)
+          if not block and position then block=rows[row.id] end
           if block and block.frames and (block.bank~=sequence.bank or block.period~=sequence.period
             or #block.frames~=#sequence.frames or block.offset~=(sequence.offset or 0)
             or block.counter~=sequence.counter) then
@@ -127,11 +170,7 @@ function S.new(ctx)
             rows[row.id]={under=piece.under,over=piece.over,mid=piece.mid}
           else
             local q=row.quadrant or 0
-            local block=rows[row.id]
-            if not block then
-              block={image=factory(32,32),foreground=factory(32,32),coverage={}}
-              rows[row.id]=block
-            end
+            local block=targetBlock(true)
             local x,y=q%2*16,math.floor(q/2)*16
             local static=copyLayers(piece)
             if sequence and not block.frames then
