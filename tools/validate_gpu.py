@@ -27,7 +27,7 @@ end
 LUA = r"""
 local CACHE,MOD,OUT=@CACHE@,@MOD@,@OUT@
 local G=love.graphics
-local report={status='running',theme='gen3',checks=0,fixtures={},interactions={},warnings={},writes='private probe output only',
+local report={status='running',theme='gen3',checks=0,fixtures={},interactions={},lighting={},warnings={},writes='private probe output only',
  limits='Native TileRenderer and Gen2 World background GPU methods plus a synthetic actor rectangle; no full gameplay or UI automation.',
  gpu_pixel_tolerance_bytes=1}
 local function read(path)
@@ -1225,6 +1225,175 @@ local function run()
    'Cut cleanup retained mod graphics in the native replacement bake')
   fixture.cleanup_restored_native=true;report.interactions[#report.interactions+1]=fixture
  end
+ -- Native darkness is a palette/visibility mask over source pixels. Preserve
+ -- it exactly until the game's own Flash entry point changes the light state.
+ local function verifyGen1Flash(game)
+  GV.set(game);assetGame=game;clock=0
+  local oldMode=FX.mode;FX.mode='og'
+  local sourceMaps,sourceSets=generated(game,'maps'),generated(game,'tilesets')
+  local def=assert(sourceMaps.ROCK_TUNNEL_1F)
+  local map=Map.new(def,sourceSets[def.tileset])
+  local renderer=T.new(map,{maps=sourceMaps,tilesets=sourceSets})
+  local Overworld=require('src.world.OverworldController')
+  local state=setmetatable({map=map,dark=false},{__index=Overworld})
+  local function draw()
+   return capture(def.width*32,def.height*32,function()
+    FX.clearTrueColor();FX.setPass('world')
+    FX.setShadeMap(FX.darkWorld() and FX.DARK_BGP or nil)
+    local shader=FX.shader();check(shader~=nil,'Native Gen1 palette shader did not compile')
+    G.setShader(shader);FX.sendColors(shader,FX.GRAYS)
+    renderer:drawWindow(0,0,def.width*32,def.height*32)
+    G.setShader();FX.setPass(nil);FX.setShadeMap(nil)
+   end)
+  end
+  local mechanics,events=snapshot(map,1),eventSnapshot(map)
+  state:setDark(false);local nativeLit=draw()
+  state:setDark(true);local nativeDark=draw()
+  check(nativeDark:getString()~=nativeLit:getString(),'RockTunnel native darkness fixture is ineffective')
+  local mod=startMod(game,1)
+  local art=assert(mod.exports.state:replacements(game,def.tileset,def))
+  check(coverage(def,art).replaced_occurrences>0,'Dark RockTunnel has no reviewed art to test')
+  local dark=draw()
+  check(dark:getString()==nativeDark:getString(),'Gen1 donor art bypassed the native unlit source mask')
+  check(#FX.trueColorRects('world')==0,'Unlit Gen1 donor art marked a true-color bypass region')
+  -- Inject only the private game host and immediate text acknowledgement;
+  -- useFlashFieldMove, setDark and the real white-flash object stay native.
+  local TextBox=require('src.render.TextBox');local previousNew=TextBox.new
+  local textCalls,pushes=0,0
+  TextBox.new=function(host,text,onDone)textCalls=textCalls+1;return {acknowledge=onDone}end
+  local host={save={},data={text={}},stack={}}
+  host.stack.push=function(self,item)pushes=pushes+1;if item.acknowledge then item.acknowledge()end end
+  local upvalue,oldHost
+  for index=1,40 do
+   local name,value=debug.getupvalue(Overworld.useFlashFieldMove,index)
+   if not name then break end
+   if name=='Game' then upvalue,oldHost=index,value;break end
+  end
+  check(upvalue~=nil,'Native Flash game-host upvalue is unavailable')
+  debug.setupvalue(Overworld.useFlashFieldMove,upvalue,host)
+  check(state:useFlashFieldMove(),'Native Gen1 Flash entry point rejected the private fixture')
+  debug.setupvalue(Overworld.useFlashFieldMove,upvalue,oldHost);TextBox.new=previousNew
+  check(host.save.flashLit==true and state.dark==false and not FX.darkWorld() and FX.darkKey()=='',
+   'Native Gen1 Flash did not clear the world darkness state')
+  check(textCalls==1 and pushes==2,'Native Gen1 Flash text/white-flash sequence changed')
+  local lit=draw()
+  local checked=verifyCoveredPixels(def,art,lit,game..' postFlash RockTunnel')
+  check(lit:getString()~=nativeLit:getString() and #FX.trueColorRects('world')>0,
+   'Gen1 reviewed art did not return after native Flash')
+  check(snapshot(map,1)==mechanics and eventSnapshot(map)==events,'Gen1 Flash graphics changed source collision/warps/events')
+  mod.exports.dispose()
+  check(draw():getString()==nativeLit:getString(),'Gen1 Flash cleanup did not restore native lit pixels')
+  report.lighting[#report.lighting+1]={game=game,map=def.id,generation=1,
+   native_methods={'OverworldState.useFlashFieldMove','OverworldState.setDark','PaletteFX.sendColors','TileRenderer.drawWindow'},
+   native_unlit_exact=true,unlit_donor_bypass_rectangles=0,native_flash_flag_set=true,
+   checked_postflash_donor_pixels=checked,source_collision_events_unchanged=true,cleanup_restored_native=true,
+   native_unlit=encodePng(nativeDark,game..'-rocktunnel-native-dark-gpu.png'),
+   mod_unlit=encodePng(dark,game..'-rocktunnel-gen3-dark-gpu.png'),
+   post_flash=encodePng(lit,game..'-rocktunnel-gen3-flash-gpu.png'),
+   limits='Native source palette shader in monochrome mode. Private game-host upvalue and immediate text acknowledgement; no full gameplay/UI.'}
+  FX.mode=oldMode
+ end
+ for _,game in ipairs({'red','blue','yellow'})do verifyGen1Flash(game)end
+ local function verifyGen2Flash(game)
+  GV.set(game);assetGame=game;clock=0
+  local world,map,def=world2(game,'DARK_CAVE_VIOLET_ENTRANCE')
+  world.clockHour=12;world.flashUsed=false;world.flickerClock=0
+  world.rebuildNeighbors=function(self)self.neighbors={}end
+  local mechanics,events=snapshot(map,2),eventSnapshot(map)
+  local function sample(phase,timer)
+   world.daytime='DARK';world.flickerPhase=phase;world.animTimer=timer
+   world.mapImage=world:imageFor(map.id)
+   local frame=drawWorld2(world)
+   local border=world:borderImageFor(map.id)
+   local borderImage=border and capture(32,32,function()G.draw(border,0,0)end)
+   local priority=capture(world.viewW,world.viewH,function()
+    world:blitBgOverRegionLocal(def,0,0,0,0,world.viewW,world.viewH,true,nil,1)
+   end)
+   return {frame=frame,border=borderImage,priority=priority}
+  end
+  world.daytime='NITE';world.animTimer=0;world.mapImage=world:imageFor(map.id)
+  local nativeLit=drawWorld2(world)
+  local native={}
+  for phase=1,2 do for timer=0,7 do native[phase..':'..timer]=sample(phase,timer)end end
+  local cells=world:animCellsFor(map,world.tilesets[def.tileset]);local animated=0
+  for _,list in pairs(cells or {})do animated=animated+#list.cells/2 end
+  check(animated>0,'DarkCave fixture has no native animated cells')
+  local mod=startMod(game,2,world)
+  local art=assert(mod.exports.state:replacements(game,def.tileset,def))
+  local injected
+  if coverage(def,art).replaced_occurrences==0 then
+   -- The production dataset has no DarkCave rows yet. An explicitly private
+   -- replacement of one actual ordinary floor cell makes the darkness guard
+   -- observable without publishing an unreviewed mapping or editing imports.
+   local index
+   for pos,id in ipairs(def.blocks)do
+    local bx,by=(pos-1)%def.width,math.floor((pos-1)/def.width)
+    if id==9 and bx>1 and by>1 and bx<def.width-2 and by<def.height-2 then index=pos;break end
+   end
+   check(index~=nil,'Private DarkCave plain-floor block9 is unavailable')
+   local bx,by=(index-1)%def.width,math.floor((index-1)/def.width)
+   local sourceRef={game=game,tileset=def.tileset,id=9,quadrant=0,map=def.id,
+    hash='2cd3b53fec070a64035f079f2b7d76f8b61a42e5dffa4a39b4ec42ceefd603e3'}
+   local original,why=sourceDecoder():cell(sourceRef);check(original~=nil,tostring(why))
+   local sourceTiles=world.tilesets[def.tileset].blocks[10]
+   for _,n in ipairs({1,2,5,6})do check(sourceTiles[n]==22,'Private DarkCave source floor is not the reviewed plain22 graphic')end
+   check(map:cellCollision(bx*2,by*2)==0 and map:isWalkableCell(bx*2,by*2),
+    'Private DarkCave replacement is not an ordinary native walkable floor')
+   local donor={game='firered',tileset='general__rom_082d4bfc',id=641,
+    hash='e0e6ed6f56a255b27ee4a06ca075d597b61a463212899a806a5e19e3d5c99855'}
+   local floor=nativeCellImage(donor);local image=love.image.newImageData(32,32)
+   image:paste(floor,0,0,0,0,16,16)
+   local positioned={image=image,coverage={[0]=true}}
+   art={[9]={image=love.image.newImageData(32,32),coverage={},positions={[bx..':'..by]=positioned}}}
+   local previous=mod.exports.state.replacements
+   mod.exports.state.replacements=function(self,cart,tileset,mapDef)
+    if cart==game and tileset==def.tileset and mapDef and mapDef.id==def.id then return art end
+    return previous(self,cart,tileset,mapDef)
+   end
+   injected={scope='private GPU process only; no production mapping/import writes',source=sourceRef,
+    source_collision=0,source_8px_tiles={22,22,22,22},source_walkable=true,cell={bx*2,by*2},donor=donor,
+    image='one complete native16px cave-floor cell through the actual mod state/adapter'}
+  end
+  check(coverage(def,art).replaced_occurrences>0,'DarkCave has no donor-art fixture to test')
+  local checkpoints={}
+  for phase=1,2 do for timer=0,7 do
+   local expected=native[phase..':'..timer];local actual=sample(phase,timer)
+   check(actual.frame:getString()==expected.frame:getString(),'Gen2 donor art bypassed unlit native animation/flicker pixels')
+   check(actual.priority:getString()==expected.priority:getString(),'Gen2 unlit priority/feet blit changed native source pixels')
+   check((actual.border==nil)==(expected.border==nil),'Gen2 native unlit border availability changed')
+   if expected.border then check(actual.border:getString()==expected.border:getString(),'Gen2 unlit border changed native source pixels')end
+   checkpoints[#checkpoints+1]={flicker_phase=phase,animation_timer=timer,exact_native_gpu_pixels=true}
+  end end
+  world.flickerPhase=1;world.flickerClock=0;world.animTimer=0;world.mapImage=world:imageFor(map.id)
+  world:pollCaveFlicker();world:pollCaveFlicker()
+  check(world.flickerPhase==2 and drawWorld2(world):getString()==native['2:0'].frame:getString(),
+   'Native two-tick cave entrance flicker did not preserve unlit source pixels')
+  check(native['1:0'].frame:getString()~=nativeLit:getString(),'Gen2 native DARK and NITE fixture look identical')
+  local textCalls,soundCalls=0,0
+  world.showText=function(self,text,onDone)textCalls=textCalls+1;onDone()end
+  world.playSfx=function()soundCalls=soundCalls+1 end
+  world:runFlash({text='Private GPU Flash fixture'})
+  check(world.flashUsed==true and world.daytime=='NITE' and textCalls==1 and soundCalls==1,
+   'Native World.runFlash did not set the flag and restore NITE palettes')
+  world.animTimer=0;local lit=drawWorld2(world)
+  local checked=verifyCoveredPixels(def,art,lit,game..' postFlash DarkCave')
+  check(lit:getString()~=nativeLit:getString(),'Gen2 donor art did not return after native Flash')
+  check(snapshot(map,2)==mechanics and eventSnapshot(map)==events,'Gen2 Flash graphics changed source collision/warps/events')
+  mod.exports.dispose();world.mapImage=world:imageFor(map.id)
+  check(drawWorld2(world):getString()==nativeLit:getString(),'Gen2 Flash cleanup did not restore native NITE pixels')
+  report.lighting[#report.lighting+1]={game=game,map=def.id,generation=2,
+   native_methods={'World.runFlash','World.applyPalettes','World.refreshMapImages','World.pollCaveFlicker',
+    'World.drawAnimCells','World.borderImageFor','World.blitBgOverRegionLocal'},
+   native_unlit_exact=true,native_animated_cells=animated,unlit_checkpoints=checkpoints,
+   private_floor_fixture=injected,
+   native_flash_flag_set=true,postflash_daytime=world.daytime,checked_postflash_donor_pixels=checked,
+   source_collision_events_unchanged=true,cleanup_restored_native=true,
+   native_unlit=encodePng(native['1:0'].frame,game..'-darkcave-native-dark-gpu.png'),
+   native_unlit_flicker2=encodePng(native['2:0'].frame,game..'-darkcave-native-dark-flicker2-gpu.png'),
+   post_flash=encodePng(lit,game..'-darkcave-gen3-flash-gpu.png'),
+   limits='Native methods on private imported maps; text acknowledged immediately and audio recorded. No full gameplay/UI.'}
+ end
+ for _,game in ipairs({'gold','silver','crystal'})do verifyGen2Flash(game)end
  check(#report.warnings==0,'Probe reported rejected mapping warnings')
  report.status='passed'
  write('report.json',Json.encode(report))

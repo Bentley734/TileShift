@@ -36,7 +36,9 @@ function G.draw(im,q,x,y)
   drawCalls[#drawCalls+1]={image=im,quad=q,x=x,y=y,shader=shader,
     pixel=(im.source or im):sample(q.sx,q.sy)}
 end
-local FX={markTrueColor=function(x,y,w,h)marks[#marks+1]={x=x,y=y,w=w,h=h}end}
+local darkWorld,darkSuffix=false,''
+local FX={markTrueColor=function(x,y,w,h)marks[#marks+1]={x=x,y=y,w=w,h=h}end,
+  darkWorld=function()return darkWorld end,darkKey=function()return darkSuffix end}
 local T={}
 function T:drawWindow(cx,cy,w,h)
   nativeCalls[#nativeCalls+1]={kind='window',self=self,cx=cx,cy=cy,w=w,h=h}
@@ -233,6 +235,37 @@ ok,err=pcall(renderer.drawWindow,renderer,0,0,32,32)
 eq(ok,false);eq(tostring(err):find('fixture native failure',1,true)~=nil,true)
 stateRestored();renderer.failNative=nil
 
+-- Native FadePal2 remaps source shades rather than applying an RGB fade.
+-- Preserve its exact cave visibility until Flash clears the engine state.
+art[4].foregroundFrames={fg1,fg2}
+darkWorld,darkSuffix=true,'#dark'
+reset();renderer:drawWindow(0,0,32,32)
+eq(#nativeCalls,1);eq(#drawCalls,0,'unlit cave keeps native dark background and animations')
+eq(#marks,0,'unlit pixels never opt out of the native dark palette mask')
+reset();renderer:drawBorderFill(-32,0,32,32)
+eq(#nativeCalls,1);eq(#drawCalls,0,'unlit border keeps native darkness')
+reset();renderer:drawStripRaw(16,24,32,32,0,0)
+eq(#stripCalls,1,'unlit foreground delegates the whole region unchanged')
+eq(#drawCalls,0,'bright donor foreground cannot cross a dark sprite')
+reset();renderer:markStripRedraw(16,24,32,32,0,0,ramp)
+eq(#redrawCalls,1,'native dark foreground recolor remains active')
+eq(redrawCalls[1].ramp,ramp)
+eq(darkWorld,true,'adapter never uses Flash or edits light state')
+eq(darkSuffix,'#dark');stateRestored()
+-- Cache-key darkness is sufficient even if a renderer does not expose the
+-- flag getter; do not let full-color art bypass a dark atlas cache identity.
+darkWorld=false
+reset();renderer:drawWindow(0,0,32,32)
+eq(#drawCalls,0,'native darkKey also gates donor pixels')
+darkSuffix=''
+reset();renderer:drawWindow(0,0,32,32)
+eq(drawCalls[1].image.source,bg2,'Flash restores the current donor animation')
+eq(drawCalls[1].shader,nil,'lit donor art retains full RGB colors')
+reset();renderer:drawStripRaw(16,24,32,32,0,0)
+eq(drawCalls[1].image.source,fg2,'Flash restores matching donor foreground')
+eq(darkWorld,false);eq(darkSuffix,'');eq(def.blocks,sourceBlocks)
+eq(ts.blocks,sourceTileBlocks);stateRestored()
+
 local borrowed=data('borrowed')
 function borrowed:typeOf(name)return name=='Texture'end
 function borrowed:setFilter()end
@@ -340,6 +373,12 @@ eq(#drawCalls,0,'position foreground cannot leak to generic occurrence');eq(#str
 reset();pr:drawBorderFill(-32,0,32,32)
 eq(#drawCalls,1);eq(drawCalls[1].image.source,phase1,'border uses generic art without a position')
 eq(pdef.blocks[1],4);eq(pdef.blocks[2],4,'logical source block IDs untouched')
+darkWorld,darkSuffix=true,'#dark'
 pclose()
+eq(darkWorld,true,'unloading does not light the cave');eq(darkSuffix,'#dark')
+reset();pr:drawWindow(0,0,64,32)
+eq(#drawCalls,0,'cleanup in darkness restores the native renderer')
+eq(#marks,0,'cleanup cannot leave a truecolor mask over the dark cave')
+darkWorld,darkSuffix=false,''
 print('PASS Gen 1 graphics adapter: '..count..' assertions')
 return count

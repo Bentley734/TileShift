@@ -29,17 +29,19 @@ end
 local originalCells={ [4]={tile=4,slot=1,layer={kind='water'},cells={0,0,32,0,64,0}} }
 local nativeCalls=0
 local World={}
-function World:mapCacheKey(id)return id..'|DAY'end
-function World:bakeMapImage()
-  return {renderTo=function(_,fn)fn()end},'native-palettes'
+function World:mapCacheKey(id)return id..'|'..(self.daytime or 'DAY')end
+function World:bakeMapImage(map,daytime,flicker)
+  return {daytime=daytime,flicker=flicker,
+    renderTo=function(self,fn)self.rendered=true;fn()end},'native-palettes'
 end
 function World:animCellsFor() return originalCells end
-function World:drawAnimCells()nativeCalls=nativeCalls+1 end
+function World:drawAnimCells()nativeCalls=nativeCalls+1;return 'native-animation' end
 function World:borderImageFor()return 'native-border'end
-function World:blitBgOverRegionLocal(def,ox,oy,x0,y0)
-  calls[#calls+1]={native=true,x=x0,y=y0,ox=ox,oy=oy}
+function World:blitBgOverRegionLocal(def,ox,oy,x0,y0,x1,y1,keyed,filter,scale)
+  calls[#calls+1]={native=true,x=x0,y=y0,ox=ox,oy=oy,x1=x1,y1=y1,
+    keyed=keyed,filter=filter,scale=scale}
 end
-function World:drawGrassOverGoldSilver() nativeCalls=nativeCalls+1 end
+function World:drawGrassOverGoldSilver() nativeCalls=nativeCalls+1;return 'native-grass' end
 function World:grassAtlasFor()return self.atlas,self.tilesets.TEST end
 function World:bgTileAt()return 4 end
 function World:bgTileAttrAt(_,_,x) return {attr={priority=x==0}}end
@@ -140,11 +142,58 @@ calls={};world:blitBgOverRegionLocal(def,0,0,80,0,88,8,true,nil,1)
 eq(calls[1].native,true,'other occurrence does not inherit position coverage')
 calls={};eq(world:borderImageFor('MAP'),partialBorder);eq(#calls,0,'position art never leaks into repeating border')
 def.blocks[3]=previousBlock;art[1].positions=nil
+-- Native DARK contains a source-shade mask plus a two-phase cave entrance
+-- flicker. Neither the cached bake nor any live truecolor overlay may erase
+-- it. Use the bake's explicit daytime, not a possibly changing world field.
+world.daytime='NITE';world.flashUsed=false
+calls={};local darkCanvas,darkBg=world:bakeMapImage(map,'DARK',2)
+eq(darkCanvas.daytime,'DARK');eq(darkCanvas.flicker,2)
+eq(darkCanvas.rendered,nil,'unlit native bake is returned without donor repaint')
+eq(darkBg,'native-palettes');eq(#calls,0)
+world.daytime='DARK'
+local darkKey=world:mapCacheKey('MAP')
+eq(darkKey:find('MAP|DARK',1,true),1,'native light state remains in cache identity')
+calls={};local otherPhase=world:bakeMapImage(map,'DARK',1)
+eq(otherPhase.flicker,1);eq(otherPhase.rendered,nil);eq(#calls,0,
+  'both native entrance flicker phases remain untouched')
+eq(world:animCellsFor(map,ts),originalCells,'unlit native animation list is not filtered')
+local beforeNative=nativeCalls
+calls={};eq(world:drawAnimCells('MAP',3,7,2),'native-animation')
+eq(nativeCalls,beforeNative+1);eq(#calls,0,'unlit animation has no bright donor overlay')
+eq(world:borderImageFor('MAP'),'native-border','unlit border uses native palette and flicker')
+local priorityFilter=function()return true end
+calls={};world:blitBgOverRegionLocal(def,5,9,0,0,72,8,true,priorityFilter,2)
+eq(#calls,1,'unlit priority region delegates as one untouched native operation')
+eq(calls[1].native,true);eq(calls[1].x1,72);eq(calls[1].y1,8)
+eq(calls[1].keyed,true);eq(calls[1].filter,priorityFilter);eq(calls[1].scale,2)
+beforeNative=nativeCalls
+calls={};eq(world:drawGrassOverGoldSilver({inGrass=true,px=32,py=0},5,9,2),'native-grass')
+eq(nativeCalls,beforeNative+1);eq(#calls,0,'unlit GS foreground keeps its native dark palette')
+eq(world.daytime,'DARK');eq(world.flashUsed,false,'adapter cannot trigger Flash')
+eq(shader,'native-shader');eq(#stack,0)
+-- Model the native Flash callback resolving DARK to NITE. Existing native
+-- keys select another bake; donor pixels and live foreground return in RGB.
+world.flashUsed=true;world.daytime='NITE'
+eq(world:mapCacheKey('MAP')~=darkKey,true,'Flash selects the lit cache')
+calls={};local litCanvas=world:bakeMapImage(map,'NITE',1)
+eq(litCanvas.rendered,true);eq(#calls,2);eq(calls[1].image.source,main)
+eq(calls[1].shader,nil,'Flash restores truecolor rather than quantizing donor RGB')
+calls={};world:drawAnimCells('MAP',0,0,1)
+eq(calls[1].image.source,frame2,'Flash restores current donor animation frame')
+calls={};world:blitBgOverRegionLocal(def,0,0,32,0,40,8,true,nil,1)
+eq(calls[1].image.source,fore,'Flash restores donor priority foreground')
+calls={};world:drawGrassOverGoldSilver({inGrass=true,px=32,py=0},0,0,1)
+eq(calls[1].image.source,fore,'Flash restores donor GS foreground')
+eq(world.flashUsed,true);eq(world.daytime,'NITE')
+eq(map.blocks,def.blocks);eq(def.blocks[1],1);eq(ts.collision[3][1],0x18)
+eq(shader,'native-shader');eq(#stack,0)
 world.mapImages[key]=canvas;world.animCells[key]=filtered;world.bgSets[key]=bg
 local borrowed=function()return 'later-mod'end
 World.borderImageFor=borrowed
 local retained=World.blitBgOverRegionLocal
 close();close()
+eq(world.daytime,'NITE','cleanup preserves native Flash lighting')
+eq(world.flashUsed,true,'cleanup preserves native Flash flag')
 eq(World.borderImageFor,borrowed,'cleanup does not undo another mod wrapper')
 eq(World.bakeMapImage,originals.bakeMapImage);eq(World.animCellsFor,originals.animCellsFor)
 eq(world.mapImages[key],nil);eq(world.animCells[key],nil);eq(world.bgSets[key],nil)

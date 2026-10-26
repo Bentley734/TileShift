@@ -29,6 +29,12 @@ function G.install(ctx)
   end
   local function rows(self)
     if not active() or not self.map or not self.map.def then return nil end
+    -- FadePal2 hides the native cave through source-shade masks, including
+    -- animated and sprite-foot redraws. A full-color overlay cannot reproduce
+    -- that mask by dimming RGB uniformly. Keep the exact native unlit pixels
+    -- until the engine clears darkWorld after Flash; do not change its state.
+    if (FX.darkWorld and FX.darkWorld()) or
+        (FX.darkKey and FX.darkKey() ~= '') then return nil end
     return ctx.replacements(version(), self.map.def.tileset, self.map.def)
   end
   local function image(data)

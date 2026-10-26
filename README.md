@@ -1,7 +1,7 @@
 # TileShift
 
 TileShift brings Gen 3 world art to Gen1Recomp with individually reviewed tile
-matches. Version 0.3.0 completely retiles the **Pallet Town and Route 1
+matches. Version 0.3.1 completely retiles the **Pallet Town and Route 1
 backgrounds in Red, Blue and Yellow**, and **New Bark Town in Gold, Silver and
 Crystal**. Pallet includes compact houses and Oak's
 lab, trees, fences, signs, grass, animated flowers, water and shoreline. Route 1
@@ -22,7 +22,7 @@ art; separate cartridge styles and reverse conversions are future work.
 1. Import **Emerald and FireRed** into Gen1Recomp. TileShift reads native donor
    art from your own imports; neither ROMs nor extracted native artwork are
    bundled.
-2. Download `TileShift-v0.3.0.zip` from [the latest release](https://github.com/Bentley734/TileShift/releases/latest).
+2. Download `TileShift-v0.3.1.zip` from [the latest release](https://github.com/Bentley734/TileShift/releases/latest).
 3. Extract the `tileshift` folder into Gen1Recomp's `mods` directory, enable
    **TileShift**, and restart the game.
 4. Open Options and set **Tileset** to **Gen 3**. This is the default on a fresh
@@ -62,6 +62,9 @@ reference or credited asset, and review evidence. Unexpected source or donor
 pixels cause that mapping to be skipped. Unreviewed cells retain native art.
 Map layouts, collision, encounters, warps, scripts and save progression remain
 unchanged. Tall grass keeps a foreground layer over the player's feet.
+Unlit Flash caves retain the source game's exact darkness and entrance flicker;
+the selected artwork appears after Flash restores visibility. Bright donor
+graphics cannot bypass native darkness.
 
 | Background fixture | Reviewed cells |
 | --- | --- |

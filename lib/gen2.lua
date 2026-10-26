@@ -29,6 +29,12 @@ function Adapter.install(ctx)
   local function revision()
     return '|tileshift|' .. serial .. '|' .. tostring(ctx.revision and ctx.revision() or 0)
   end
+  local function unlit(self)
+    -- DARK is a source-pixel palette mask, not a uniform RGB multiplier.
+    -- The native bake also contains the blinking yellow entrance cue. Keep
+    -- that exact visibility until native Flash resolves the daytime to NITE.
+    return self.daytime == 'DARK'
+  end
   local function warn(key, message)
     if not warned[key] then
       warned[key] = true
@@ -137,7 +143,7 @@ function Adapter.install(ctx)
     return function(self,map,daytime,flicker)
       worlds[self]=true
       local canvas,bg=old(self,map,daytime,flicker)
-      if not canvas then return canvas,bg end
+      if not canvas or daytime == 'DARK' then return canvas,bg end
       canvas:renderTo(function()
         drawTrue(function()
           G.origin();G.setScissor()
@@ -154,6 +160,7 @@ function Adapter.install(ctx)
   wrap('animCellsFor',function(old)
     return function(self,map,tileset)
       local native=old(self,map,tileset)
+      if unlit(self) then return native end
       if not native then return nil end
       local result={}
       for tile,list in pairs(native) do
@@ -173,6 +180,7 @@ function Adapter.install(ctx)
   end)
   wrap('drawAnimCells',function(old)
     return function(self,mapId,ox,oy,s)
+      if unlit(self) then return old(self,mapId,ox,oy,s) end
       old(self,mapId,ox,oy,s)
       local def=self.maps and self.maps[mapId]
       if not def then return end
@@ -200,6 +208,7 @@ function Adapter.install(ctx)
   end)
   wrap('borderImageFor',function(old)
     return function(self,mapId)
+      if unlit(self) then return old(self,mapId) end
       local def=self.maps and self.maps[mapId]
       if not def then return old(self,mapId) end
       local fill=Border.fillBlock(def)
@@ -240,6 +249,9 @@ function Adapter.install(ctx)
   end)
   wrap('blitBgOverRegionLocal',function(old)
     return function(self,def,originX,originY,rx0,ry0,rx1,ry1,keyed,filter,scale)
+      if unlit(self) then
+        return old(self,def,originX,originY,rx0,ry0,rx1,ry1,keyed,filter,scale)
+      end
       local map=self.map
       if not map then return old(self,def,originX,originY,rx0,ry0,rx1,ry1,keyed,filter,scale) end
       scale=scale or 1
@@ -266,6 +278,7 @@ function Adapter.install(ctx)
   end)
   wrap('drawGrassOverGoldSilver',function(old)
     return function(self,entity,ox,oy,s)
+      if unlit(self) then return old(self,entity,ox,oy,s) end
       local map=self.map
       if not (entity and entity.inGrass and map) then return old(self,entity,ox,oy,s) end
       local atlas,tileset=self:grassAtlasFor(map.def)
