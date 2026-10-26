@@ -109,8 +109,12 @@ def validate_batch(rows,args,mod):
             b'hash':lambda raw:hashlib.sha256(raw).hexdigest().encode(),
             b'newImageData':runtime.globals()[b'makeData'],b'loadImage':load_image})
         decoder=runtime.execute((mod/'lib/donor.lua').read_bytes())[b'new'](ctx)
+        layer_hash_checks=[0]
+        def hash_image(image):
+            layer_hash_checks[0]+=1
+            return hashlib.sha256(image[b'getString'](image)).hexdigest().encode()
         composer=runtime.execute((mod/'lib/composition.lua').read_bytes())[b'new'](runtime.table_from({
-            b'donor':decoder,b'newImageData':runtime.globals()[b'makeData']}))
+            b'donor':decoder,b'newImageData':runtime.globals()[b'makeData'],b'hashImage':hash_image}))
         runtime.globals()[b'extRows']=runtime.execute(write_compact(rows,None)[0].encode())
         runtime.globals()[b'extMapping']=runtime.execute((mod/'lib/mapping.lua').read_bytes())
         runtime.globals()[b'extSession']=runtime.execute((mod/'lib/session.lua').read_bytes())
@@ -124,6 +128,15 @@ def validate_batch(rows,args,mod):
             image=Image.open(path).convert('RGBA');assert image.size==(16,16)
             return runtime.globals()[b'makeData'](16,16,b'rgba8',image.tobytes())
         runtime.globals()[b'extOriginal']=original_art
+        map_definitions={}
+        def source_definition(game,map_id):
+            if game not in map_definitions:
+                map_definitions[game]=runtime.execute((cache/game.decode()/'data/generated/maps.lua').read_bytes())
+            definition=map_definitions[game][map_id]
+            assert definition is not None,'Missing source map definition'
+            if definition[b'id'] is None:definition[b'id']=map_id
+            return definition
+        runtime.globals()[b'extDefinition']=source_definition
         accepted=runtime.execute(br'''
 local indexed,errors=extMapping.index(extRows);assert(#errors==0,table.concat(errors,'\n'))
 local foregrounds={}
@@ -147,7 +160,7 @@ local visited={}
 for _,row in ipairs(extRows)do
   local key=row.game..':'..row.tileset..':'..row.map
   if not visited[key] then
-    visited[key]=true;assert(state:replacements(row.game,row.tileset,{id=row.map}))
+    visited[key]=true;assert(state:replacements(row.game,row.tileset,extDefinition(row.game,row.map)))
   end
 end
 assert(state.rejected==0 and state.accepted==#extRows,'Extended terrain rows did not decode completely')
@@ -157,7 +170,8 @@ return state.accepted
             assert not name.startswith((b'src.core.game3.',b'src.world.gen2.')),name
         return {'rows_accepted':accepted,'rejected':0,'neutral_imports_only':True,
                 'all_explicit_source_and_donor_hashes_checked':True,
-                'foreground_sheets_hashed_and_native_foot_strip_selected':True}
+                'foreground_sheets_hashed_and_native_foot_strip_selected':True,
+                'selected_native_layer_hash_checks':layer_hash_checks[0]}
     finally:os.chdir(original)
 
 
@@ -181,7 +195,7 @@ def write_compact(rows,target):
             group_index[key]=len(groups);groups.append({**metadata,'cells':[]})
         groups[group_index[key]]['cells'].append([row['id'],row['quadrant'],row.get('sourceCells',[])])
     lua=gen2_outdoor_review.detail_review.lua
-    body='-- Reviewed map-scoped Gen2 outdoor expansion; immutable shared proof/artwork.\n'
+    body='-- Reviewed map-scoped Gen2 tile graphics; immutable shared proof/artwork.\n'
     body+='local files='+lua(origins)+'\nlocal art='+lua(artworks)+'\nlocal groups={}\n'
     body+='local function append(batch)for _,group in ipairs(batch)do groups[#groups+1]=group end end\n'
     # LuaJIT has a per-function constant limit. Separate bounded data chunks
@@ -210,6 +224,24 @@ return rows
             'source_file_records':len(origins),'bytes':len(body.encode())}
     if target is None:return body,stats
     target.write_text(body,encoding='utf-8')
+    stats['bytes']=target.stat().st_size
+    return stats
+
+
+def merge_reviewed(rows,target):
+    """Append explicitly approved rows without losing existing review batches."""
+    existing=preview.read_reviewed(target) if target.is_file() else []
+    key=lambda row:(row['game'],row['style'],row['tileset'],row['id'],row['quadrant'],row.get('map'),row.get('x'),row.get('y'))
+    indexed={key(row):row for row in existing};assert len(indexed)==len(existing)
+    added=0
+    for row in rows:
+        assert row['status']=='reviewed','Pending proposals cannot enter production mappings'
+        identity=key(row)
+        if identity in indexed:
+            assert indexed[identity]==row,'Conflicting replacement for an existing reviewed key'
+        else:indexed[identity]=row;added+=1
+    stats=write_compact(list(indexed.values()),target)
+    stats.update(previous_rows=len(existing),added_rows=added)
     return stats
 
 

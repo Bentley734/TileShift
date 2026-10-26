@@ -1,4 +1,4 @@
-"""Private inland-pond equivalence review; never writes production mappings."""
+"""Inland-pond review; explicit --write-reviewed merges the approved batch."""
 from __future__ import annotations
 import argparse
 import json
@@ -26,6 +26,7 @@ def main():
     parser.add_argument('--cache',type=Path,default=Path(os.environ['APPDATA'])/'pokemon-love2d')
     parser.add_argument('--engine',type=Path,default=WORKSPACE/'.tools/engine-0395')
     parser.add_argument('--output',type=Path,default=WORKSPACE/'.work/tileshift-gen2-water-review')
+    parser.add_argument('--write-reviewed',action='store_true',help='Merge the approved enclosed-pond batch after live checks')
     args=parser.parse_args();args.output.mkdir(exist_ok=True,parents=True)
     mod=WORKSPACE/'TileShift';old=ext.active_rows(mod)
     native={r['mid']:r for r in json.loads((WORKSPACE/'.work/tileshift-catalog/firered.json').read_text())['cells'] if r['pair']=='viridian_outdoor'}
@@ -75,6 +76,10 @@ def main():
     (args.output/'inland-pond-validation.json').write_text(json.dumps({'live':validation,'maps':coverage},indent=2),encoding='utf-8')
     for name in MAPS:preview.map_preview(args.cache,args.output,'crystal',name,f'pond-crystal-{name}',old+rows,packed,1,mod)
     print('Private pond rows',len(rows),'water cells',sum(r['new_pond_cells'] for r in coverage),validation)
+    if args.write_reviewed:
+        stats=ext.merge_reviewed(rows,mod/'mappings/gen2_outdoor_extended.lua')
+        (args.output/'activation.json').write_text(json.dumps(stats,indent=2),encoding='utf-8')
+        print('Approved inland-pond activation',stats)
 
 
 if __name__=='__main__':main()

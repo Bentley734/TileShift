@@ -323,19 +323,23 @@ local function run()
  end
  local function verifyAnimationFrames(def,art,draw,bank,frames,phase)
   local count=0
-  for _,block in pairs(art)do if block.frames and block.bank==bank then
+  for pos,id in ipairs(def.blocks)do
+   local block=artAt(art,id,(pos-1)%def.width,math.floor((pos-1)/def.width))
+   if block and block.frames and block.bank==bank then
    check(#block.frames==frames and block.period==16/60 and block.offset==phase/60,'Native donor animation schedule changed')
    count=count+1
-  end end
+   end
+  end
   check(count>0,'Expected native animation bank is absent: '..bank)
   local checkpoints={}
   for f=0,frames do
    -- Sample one native tick into each frame, then the complete repeated cycle.
    local tick=phase+f*16+1;clock=tick/60
    local image=draw();local sampled=0
-   for id,block in pairs(art)do if block.frames and block.bank==bank then
-    for pos,sourceId in ipairs(def.blocks)do if sourceId==id then
+   for pos,sourceId in ipairs(def.blocks)do
      local bx,by=(pos-1)%def.width,math.floor((pos-1)/def.width)
+     local block=artAt(art,sourceId,bx,by)
+     if block and block.frames and block.bank==bank then
      for q,included in pairs(block.coverage)do if included then
       for y=0,15 do for x=0,15 do
        equalPixel(image,bx*32+q%2*16+x,by*32+math.floor(q/2)*16+y,
@@ -343,8 +347,8 @@ local function run()
       end end
       sampled=sampled+1
      end end
-    end end
-   end end
+     end
+   end
    checkpoints[#checkpoints+1]={tick=tick,frame=f%frames,visible_cells_sampled=sampled}
   end
   clock=0
@@ -483,6 +487,109 @@ local function run()
     native_features=features,native_source_gpu=source.readback,
     roof_background=verifyRoofBackground(candidates[building.kind],actual),
     image=encodePng(actual,game..'-pallet-'..building.id..'-gpu.png')}
+  end
+  return proofs
+ end
+ local publicBuildingSources={}
+ local function verifyPublicBuildings(game,def,frame)
+  local proofs={}
+  local function crop(image,r)
+   local out=love.image.newImageData(r[3],r[4]);out:paste(image,0,0,r[1],r[2],r[3],r[4]);return out
+  end
+  local function nativeSource(n)
+   local key=tableString(n)
+   if publicBuildingSources[key]then return publicBuildingSources[key]end
+   local manifest=generated(n.game,'gba/native/manifest')
+   local spec=assert(manifest.layouts[n.map],'Public native building layout is missing')
+   check(spec.pair==n.pair,'Public building native pair changed')
+   local relative=n.game..'/data/generated/gba/native/'..spec.file
+   check(hash(assert(read(CACHE..'/'..relative)))==n.layout_file_sha256,'Public building native layout fingerprint changed')
+   local layout,why=require('src.import.gba.native_pack').decodeMidLayout(assert(cacheRead(relative)))
+   check(layout~=nil,tostring(why));local r=n.rect_cells;local textures,mids={},{}
+   for y=0,r[4]-1 do for x=0,r[3]-1 do
+    local mid=assert(layout.cells[(r[2]+y)*layout.width+r[1]+x+1]).mid
+    mids[y*r[3]+x+1]=mid
+    if not textures[mid]then textures[mid]=G.newImage(nativeCellImage({game=n.game,tileset=n.pair,id=mid}));textures[mid]:setFilter('nearest','nearest')end
+   end end
+   local image=capture(r[3]*16,r[4]*16,function()
+    for y=0,r[4]-1 do for x=0,r[3]-1 do G.draw(textures[mids[y*r[3]+x+1]],x*16,y*16)end end
+   end)
+   for _,texture in pairs(textures)do texture:release()end
+   check(hash(image:getString())==n.source_pixel_sha256,'Original public building GPU source crop changed')
+   if n.destination and n.door_anchor then
+    local bytes=assert(cacheRead(n.game..'/data/generated/gba/warps.lua'))
+    local literal=assert(bytes:match('\n  '..n.map..' = ({.-\n  })'))
+    local warps=assert(Serializer.decode('return '..literal,{allowArray=true,allowComments=true}))
+    local found=false
+    for _,w in ipairs(warps)do if w.destMap==n.destination then
+     if(w.x-r[1])*16+8==n.door_anchor[1]and(w.y-r[2]+1)*16==n.door_anchor[2]then found=true end
+    end end
+    check(found,'Original public building native entrance anchor changed')
+   end
+   local result={image=image,readback=encodePng(image,'public-native-'..n.source_pixel_sha256:sub(1,12)..'-reference-gpu.png')}
+   publicBuildingSources[key]=result;return result
+  end
+  for _,family in ipairs({{folder='tileshift-building-extended',file='architecture-native-prototypes.json',instances='source_buildings'},
+   {folder='tileshift-building-kanto',file='kanto-building-variants.json',instances='source_instances'}})do
+   local root=MOD..'/../.work/'..family.folder..'/'
+   local bytes=read(root..family.file)
+   if bytes then
+    local review=Json.decode(bytes)
+    for _,record in ipairs(review[family.instances])do if record.game==game and record.map==def.id then
+     local model=assert(review.templates[record.template]);local r=record.rect_cells
+     check(r[3]*16==model.size_px[1]and r[4]*16==model.size_px[2],'Public building source footprint changed')
+     local actual=crop(frame,{r[1]*16,r[2]*16,r[3]*16,r[4]*16})
+     local prototype=love.image.newImageData(love.filesystem.newFileData(
+      assert(read(root..record.template..'-compact-prototype.png')),record.template..'.png'))
+     check(hash(prototype:getString())==model.rgba_pixel_sha256,'Public building approved prototype fingerprint changed')
+     check(actual:getString()==prototype:getString(),game..' '..def.id..' '..record.template..' GPU output differs from the approved whole building')
+     local door
+     for _,w in ipairs(def.warps or {})do
+      if w.destMap==record.destination and(not record.door_map_cell or(w.x==record.door_map_cell[1]and w.y==record.door_map_cell[2]))then door=w;break end
+     end
+     check(door~=nil,'Public building original source entrance is missing')
+     local anchor={(door.x-r[1])*16+8,(door.y-r[2]+1)*16}
+     check(anchor[1]==record.door_bottom_anchor_px[1]and anchor[2]==record.door_bottom_anchor_px[2]
+      and anchor[1]==model.door_bottom_anchor_px[1]and anchor[2]==model.door_bottom_anchor_px[2],
+      'Public building source door/warp anchor moved')
+     local source=nativeSource(model.native);local features={}
+     for _,feature in ipairs(model.features_checked)do
+      local sr,tr=feature.source_rect_xywh,feature.target_rect_xywh
+      check(sr[3]==tr[3]and sr[4]==tr[4],'Public native feature was scaled')
+      local expected=crop(source.image,sr);local result=crop(actual,tr)
+      check(result:getString()==expected:getString(),game..' '..def.id..' '..record.template..' clips/changes '..feature.feature)
+      features[#features+1]={feature=feature.feature,source_rect_xywh=sr,target_rect_xywh=tr,
+       exact_original_native_gpu_pixels=true,rgba_sha256=hash(result:getString())}
+     end
+     check(#features>0,'Public building has no complete native feature proof')
+     local base=nativeCellImage(model.base);local holes,opaque=0,0
+     for _,part in ipairs(model.parts)do if part.layers then
+      check(#part.layers==1 and part.layers[1]=='over','Public building selected an unexpected roof layer')
+      local cell,why=sourceDecoder():cell(part.donor);check(cell~=nil,tostring(why))
+      check(hash(cell.over:getString())==part.layerHashes.over,'Public roof native alpha layer changed')
+      local tx,ty=part.target_xy[1],part.target_xy[2]
+      for y=0,part.h-1 do for x=0,part.w-1 do
+       local sx,sy=part.srcX+x,part.srcY+y;local _,_,_,alpha=cell.over:getPixel(sx,sy)
+       if alpha==0 then
+        equalPixel(actual,tx+x,ty+y,base,(tx+x)%16,(ty+y)%16,'Public roof empty corner is not the surrounding Emerald ground')
+        holes=holes+1
+       else
+        check(alpha==1,'Public native roof contains unexpected semi-transparency')
+        equalPixel(actual,tx+x,ty+y,cell.over,sx,sy,'Public native roof/eave pixel changed')
+        opaque=opaque+1
+       end
+      end end
+     end end
+     check(holes==model.roof_empty_pixels_checked and model.all_roof_empty_pixels_exact_ground
+      and model.native_roof_pixel_differences==0,'Public roof alpha-mask review count changed')
+     proofs[#proofs+1]={template=record.template,destination=record.destination,map_rect_cells=r,
+      source_door_bottom_anchor_px=anchor,whole_building_exact=true,rgba_sha256=hash(actual:getString()),
+      native_features=features,native_source_gpu=source.readback,
+      roof={empty_pixels_exact_emerald_ground=holes,opaque_native_selected_pixels_unchanged=opaque},
+      review_metadata_sha256=hash(bytes),
+      image=encodePng(actual,game..'-'..def.id..'-'..record.destination..'-building-gpu.png')}
+    end end
+   end
   end
   return proofs
  end
@@ -773,6 +880,7 @@ local function run()
    events_before=treeEvents,events_after=eventSnapshot(treeMap),
    checked_donor_pixels=verifyCoveredPixels(treeDef,treeArt,replacedTree,'red Viridian'),
    outdoor=verifyGen1Terrain('red',treeDef,treeMap,replacedTree),
+   architecture=verifyPublicBuildings('red',treeDef,replacedTree),
    third_party_tree={opaque_pixels=treeOpaque,transparent_ground_pixels=treeTransparent,
     translucent_blended_pixels=treeTranslucent,
     credit='J-Treecko252; additional palette contributions credited to Zyxeion'}}
@@ -825,6 +933,40 @@ local function run()
   fixture.cleanup_restored_native=true;report.fixtures[#report.fixtures+1]=fixture
  end
 
+ -- Additional Gen1 public architecture, a representative interior and the
+ -- newly reviewed compact barrier/water cells on their actual source maps.
+ for _,spec in ipairs({{id='CERULEAN_CITY',stem='cerulean',architecture=true},
+  {id='VIRIDIAN_MART',stem='viridianmart'},
+  {id='VICTORY_ROAD_1F',stem='victoryroad'},
+  {id='SEAFOAM_ISLANDS_B4F',stem='seafoamb4',water=true}})do
+  GV.set('red');assetGame='red';clock=0
+  local def=assert(maps[spec.id]);local map=Map.new(def,sets[def.tileset])
+  local renderer=T.new(map,{maps=maps,tilesets=sets})
+  local function draw()
+   return capture(def.width*32,def.height*32,function()
+    FX.clearTrueColor();FX.setPass('world');renderer:drawWindow(0,0,def.width*32,def.height*32);FX.setPass(nil)
+   end)
+  end
+  local mechanics,events=snapshot(map,1),eventSnapshot(map)
+  local native=draw();local mod=startMod('red',1)
+  local art=assert(mod.exports.state:replacements('red',def.tileset,def));local after=draw()
+  check(mod.exports.state.rejected==0,'Additional Gen1 fixture rejected reviewed art')
+  local fixture={game='red',map=def.id,native_renderer='src.render.TileRenderer',coverage=coverage(def,art),
+   accepted=mod.exports.state.accepted,checked_donor_pixels=verifyCoveredPixels(def,art,after,'red '..def.id),
+   before=encodePng(native,'red-'..spec.stem..'-native-gpu.png'),after=encodePng(after,'red-'..spec.stem..'-gen3-gpu.png'),
+   collision_before=mechanics,collision_after=snapshot(map,1),events_before=events,events_after=eventSnapshot(map)}
+  if spec.architecture then
+   fixture.architecture=verifyPublicBuildings('red',def,after)
+   check(#fixture.architecture>0,'Kanto wide-Gym/public architecture was not exercised')
+  end
+  if spec.water then fixture.water_all_frames=verifyAnimationFrames(def,art,draw,'water',8,1)end
+  check(fixture.collision_before==fixture.collision_after and fixture.events_before==fixture.events_after,
+   'Additional Gen1 fixture changed source collision/warps/events')
+  mod.exports.dispose();clock=0
+  check(draw():getString()==native:getString(),'Additional Gen1 cleanup failed to restore native pixels')
+  fixture.cleanup_restored_native=true;report.fixtures[#report.fixtures+1]=fixture
+ end
+
  -- Real Gold/Silver/Crystal World bake plus its actual drawAnimCells pass.
  local World=require('src.world.gen2.World')
  local Map2=require('src.world.gen2.Map')
@@ -841,6 +983,66 @@ local function run()
   return capture(world.viewW,world.viewH,function()
    G.draw(world.mapImage,0,0);world:drawAnimCells(world.map.id,0,0,1)
   end)
+ end
+ local function verifyGen2Ladders(game,def,map,frame)
+  local Permissions=require('src.world.gen2.Permissions')
+  local proof={ascending=0,descending=0,native_glyph_pixels_checked=0,background_pixels_checked=0,instances={}}
+  for _,row in ipairs(mappingRows('mappings/gen2_caves.lua'))do
+   if row.game==game and row.map==def.id and(row.role=='cave_ascending_ladder'or row.role=='cave_descending_ladder')then
+    local ascending=row.role=='cave_ascending_ladder';local glyphRef=assert(row.parts[1].donor)
+    local cell,why=sourceDecoder():cell(glyphRef);check(cell~=nil,tostring(why))
+    local glyph=nativeCellImage(glyphRef);local base=nativeCellImage(row.base)
+    local floorColors={}
+    if not ascending then
+     check(glyphRef.game=='firered'and glyphRef.id==645,'Descending ladder no longer uses the reviewed full native645 glyph')
+     local bytes=assert(cacheRead('firered/data/generated/gba/native/'..glyphRef.tileset..'/palettes.bin'))
+     local pack=require('src.import.gba.native_pack')
+     local palettes=pack.palsToRgb8(assert(pack.decodePalettes(bytes)))
+     for index=2,4 do local c=palettes[9][index];floorColors[c[1]..':'..c[2]..':'..c[3]]=true end
+    else
+     check(glyphRef.game=='emerald'and glyphRef.id==574 and cell.mid,'Ascending ladder lost its whole native574 middle layer')
+     check(hash(cell.mid:getString())==row.parts[1].layerHashes.mid,'Ascending ladder native layer fingerprint changed')
+    end
+    local function isGlyph(x,y)
+     if ascending then local _,_,_,a=cell.mid:getPixel(x,y);return a>0 end
+     local r,g,b=glyph:getPixel(x,y)
+     return not floorColors[math.floor(r*255+.5)..':'..math.floor(g*255+.5)..':'..math.floor(b*255+.5)]
+    end
+    local glyphCount=0;for y=0,15 do for x=0,15 do if isGlyph(x,y)then glyphCount=glyphCount+1 end end end
+    check(glyphCount==(ascending and 165 or 227),'Independent complete native ladder glyph mask changed')
+    for pos,id in ipairs(def.blocks)do if id==row.id then
+     local cx=(pos-1)%def.width*2+row.quadrant%2
+     local cy=math.floor((pos-1)/def.width)*2+math.floor(row.quadrant/2)
+     if row.x==nil or(row.x==cx and row.y==cy)then
+      local coll=map:cellCollision(cx,cy);local warp=map:warpAtCell(cx,cy)
+      check(coll==row.sourceCollision and Permissions.isWarpCollision(coll)and warp~=nil,
+       'Native source ladder collision or warp link changed')
+      local warpDef=warp.def or warp;local expectedWarp
+      for _,sourceWarp in ipairs(row.sourceWarps or {})do
+       if sourceWarp.x==cx and sourceWarp.y==cy then expectedWarp=sourceWarp;break end
+      end
+      check(expectedWarp and warpDef.destMap==expectedWarp.destMap and warpDef.destWarp==expectedWarp.destWarp,
+       'Native ladder destination differs from its independently reviewed source link')
+      for y=0,15 do for x=0,15 do
+       if isGlyph(x,y)then
+        equalPixel(frame,cx*16+x,cy*16+y,ascending and cell.mid or glyph,x,y,'Complete native ladder/rim pixel changed in the real host renderer')
+        proof.native_glyph_pixels_checked=proof.native_glyph_pixels_checked+1
+       else
+        equalPixel(frame,cx*16+x,cy*16+y,base,x,y,'Ladder outside floor differs from the approved regional plane')
+        proof.background_pixels_checked=proof.background_pixels_checked+1
+       end
+      end end
+      local direction=ascending and'ascending'or'descending';proof[direction]=proof[direction]+1
+      proof.instances[#proof.instances+1]={cell={cx,cy},direction=direction,source_collision=coll,
+       original_destination=warpDef.destMap,original_destination_warp=warpDef.destWarp,complete_native_glyph_pixels=glyphCount,
+       outside_pixels_match_regional_plane=true,
+       glyph_mask=ascending and'original native mid alpha'or'original palette9 glyph; only floor indexes2..4 excluded'}
+     end
+    end end
+   end
+  end
+  check(proof.ascending>0 and proof.descending>0,'Requested cave fixture did not exercise both complete ladder directions')
+  return proof
  end
  local newBarkNativeSources={}
  local function verifyNewBarkBuildings(game,def,art,frame)
@@ -1163,6 +1365,41 @@ local function run()
   mod2.exports.dispose();clock=0
   check(world:bakeMapImage(map2,'DAY',1):newImageData():getString()==native:getString(),
    'Gen2 cleanup did not restore native GPU bake')
+  fixture.cleanup_restored_native=true;report.fixtures[#report.fixtures+1]=fixture
+ end
+
+ -- Public Johto/Kanto architecture, a representative interior floor, and
+ -- complete up/down glyphs on their actual Union Cave/Ice Path source maps.
+ for _,spec in ipairs({{id='CHERRYGROVE_CITY',stem='cherrygrove',architecture=true},
+  {id='VIOLET_CITY',stem='violet',architecture=true},
+  {id='CERULEAN_CITY',stem='cerulean',architecture=true},
+  {id='ELMS_LAB',stem='elmslab'},
+  {id='UNION_CAVE_B1F',stem='unioncave',ladders=true},
+  {id='ICE_PATH_B1F',stem='icepath',ladders=true}})do
+  GV.set('crystal');assetGame='crystal';clock=0
+  local world,map,def=world2('crystal',spec.id);world.clockHour=12
+  world.daytime=require('src.world.gen2.Palettes').daytimeFor(def,12,false)
+  check(world.daytime~='DARK','Additional lit GPU fixture unexpectedly requires native Flash')
+  local function draw()return drawWorld2(world)end
+  world.mapImage=world:imageFor(map.id)
+  local native=draw();local mechanics,events=snapshot(map,2),eventSnapshot(map)
+  local mod=startMod('crystal',2,world);world.mapImage=world:imageFor(map.id)
+  local art=assert(mod.exports.state:replacements('crystal',def.tileset,def));local after=draw()
+  check(mod.exports.state.rejected==0,'Additional Gen2 fixture rejected reviewed art')
+  local fixture={game='crystal',map=def.id,native_renderer='src.world.gen2.World:imageFor + drawAnimCells',
+   coverage=coverage(def,art),accepted=mod.exports.state.accepted,source_daytime=world.daytime,source_animation_timer=0,
+   before=encodePng(native,'crystal-'..spec.stem..'-native-gpu.png'),after=encodePng(after,'crystal-'..spec.stem..'-gen3-gpu.png'),
+   checked_donor_pixels=verifyCoveredPixels(def,art,after,'crystal '..def.id),
+   collision_before=mechanics,collision_after=snapshot(map,2),events_before=events,events_after=eventSnapshot(map)}
+  if spec.architecture then
+   fixture.architecture=verifyPublicBuildings('crystal',def,after)
+   check(#fixture.architecture>0,'Public architecture GPU fixture contains no reviewed buildings')
+  end
+  if spec.ladders then fixture.complete_native_ladders=verifyGen2Ladders('crystal',def,map,after)end
+  check(fixture.collision_before==fixture.collision_after and fixture.events_before==fixture.events_after,
+   'Additional Gen2 fixture changed native collision/warps/events')
+  mod.exports.dispose();clock=0;world.mapImage=world:imageFor(map.id)
+  check(draw():getString()==native:getString(),'Additional Gen2 cleanup did not restore original native pixels')
   fixture.cleanup_restored_native=true;report.fixtures[#report.fixtures+1]=fixture
  end
 

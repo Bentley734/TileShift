@@ -37,15 +37,17 @@ CAVE_SIMPLE=(
 def write_groups(rows):
     groups={}
     for row in rows:
-        shared={k:v for k,v in row.items()if k not in('id','quadrant')}
+        shared={k:v for k,v in row.items()if k not in('id','quadrant','x','y')}
         key=json.dumps(shared,sort_keys=True,separators=(',',':'))
         if key not in groups:groups[key]={**shared,'cells':[]}
-        groups[key]['cells'].append([row['id'],row['quadrant']])
+        cell=[row['id'],row['quadrant']]
+        if 'x' in row:cell.extend([row['x'],row['y']])
+        groups[key]['cells'].append(cell)
     TARGET.write_text('-- Reviewed extended Gen1 terrain; complete runtime rows expand from exact-source alias groups.\nlocal groups={\n'
         +''.join('  '+review.lua_value(g)+',\n'for g in groups.values())
         +'}\nlocal rows={}\nfor _,group in ipairs(groups)do\n  for _,cell in ipairs(group.cells)do\n'
         +'    local row={}\n    for key,value in pairs(group)do if key~="cells"then row[key]=value end end\n'
-        +'    row.id,row.quadrant=cell[1],cell[2]\n    rows[#rows+1]=row\n  end\nend\nreturn rows\n',encoding='utf-8')
+        +'    row.id,row.quadrant,row.x,row.y=cell[1],cell[2],cell[3],cell[4]\n    rows[#rows+1]=row\n  end\nend\nreturn rows\n',encoding='utf-8')
 
 def existing_rows():
     return [r for p in(WORKSPACE/'TileShift/mappings').glob('*.lua')
@@ -189,8 +191,10 @@ def main():
     args=p.parse_args();OUTPUT.mkdir(parents=True,exist_ok=True)
     rows=existing_rows();proposals=repeated_terrain(rows);caves=simple_caves(rows)
     if args.activate_repeated_terrain:
+        generated_roles={row['role']for row in proposals+caves}
+        retained=[row for row in preview.read_reviewed(TARGET)if row['role']not in generated_roles]if TARGET.exists()else[]
         write_groups([row for row in proposals if GLOBAL_STAIRS_APPROVED or row['role']!='walkable_stairs_bottom_half']
-                     +([row for row in caves if row['role']not in CAVE_HELD_ROLES]if CAVE_SIMPLE_APPROVED else[]))
+                     +([row for row in caves if row['role']not in CAVE_HELD_ROLES]if CAVE_SIMPLE_APPROVED else[])+retained)
     active=rows+(preview.read_reviewed(TARGET)if TARGET.exists()else[])
     report=inventory(active)
     print(json.dumps({'proposed_repeated_terrain_rows':len(proposals),'proposed_simple_cave_rows':len(caves),

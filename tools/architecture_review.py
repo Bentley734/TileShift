@@ -231,10 +231,14 @@ def sprout_reference(args):
     return brief
 
 
-def staged_rows(args, models):
+def staged_rows(args, models, extra_instances=()):
     rows = []
     for game in ("gold", "silver", "crystal"):
-        for map_id, buildings in BUILDINGS.items():
+        selected_buildings = {key: list(value) for key, value in BUILDINGS.items()}
+        for extra in extra_instances:
+            if extra["game"] == game and extra["template"] in models:
+                selected_buildings.setdefault(extra["map"], []).append((extra["template"], extra["destination"], extra["source_rect_cells"]))
+        for map_id, buildings in selected_buildings.items():
             m, ts, sheet, _ = render_source(args.cache, game, map_id)
             root = args.cache / game
             fingerprints = {"metadata": catalog.sha((root / "data/generated/tilesets.lua").read_bytes()),
@@ -276,23 +280,34 @@ def staged_rows(args, models):
                         if any(p.get("layers") for p in parts):
                             row["base"] = model["base"]
                         rows.append(row)
-    assert len(rows) == 462 and len({(r["game"], r["map"], r["x"], r["y"]) for r in rows}) == 462
+    expected = 462 + sum(r["source_rect_cells"][2] * r["source_rect_cells"][3] for r in extra_instances if r["template"] in models)
+    assert len(rows) == expected and len({(r["game"], r["map"], r["x"], r["y"]) for r in rows}) == expected
+    rows.sort(key=lambda r: (r["game"], r["map"], r["y"], r["x"]))
     (args.output / "architecture-staged-rows.json").write_text(json.dumps(rows, indent=2), encoding="utf-8")
     if args.write_reviewed:
         target = WORKSPACE / "TileShift/mappings/buildings_extended.lua"
+        if target.exists():
+            old = preview.read_reviewed(target)
+            old_positions = {(r["game"], r["map"], r["x"], r["y"]) for r in old}
+            new_positions = {(r["game"], r["map"], r["x"], r["y"]) for r in rows}
+            assert old_positions <= new_positions, "Refusing to discard existing architecture; include all reviewed groups before writing"
         target.write_text("-- Reviewed complete native Gen3 public buildings and homes, with source warp/position proof.\nreturn {\n"
                           + "".join("  " + lua(row) + ",\n" for row in rows) + "}\n", encoding="utf-8")
     return rows
 
 
-def context_review(args, targets, candidate_rows):
+def context_review(args, targets, candidate_rows, extra_instances=()):
     mod = Path(__file__).resolve().parents[1]
     active = []
     for path in sorted((mod / "mappings").glob("*.lua")):
         if path.name != "buildings_extended.lua":
             active.extend(preview.read_reviewed(path))
     reports = []
-    for map_id, buildings in BUILDINGS.items():
+    selected_buildings = {key: list(value) for key, value in BUILDINGS.items()}
+    for extra in extra_instances:
+        if extra["game"] == "crystal" and extra["template"] in targets:
+            selected_buildings.setdefault(extra["map"], []).append((extra["template"], extra["destination"], extra["source_rect_cells"]))
+    for map_id, buildings in selected_buildings.items():
         m, ts, sheet, original = render_source(args.cache, "crystal", map_id)
         generic = {}
         positions = {}
@@ -377,7 +392,7 @@ def remaining_town_inventory(args):
                     choices = ("center",)
                 elif name.endswith("_MART"):
                     choices = ("mart",)
-                elif name.endswith("_GYM"):
+                elif name.endswith("_GYM") or name.endswith("_GYM_1F"):
                     choices = ("gym",)
                 else:
                     held.append({"game": game, "map": map_id, "destination": name, "reason": "Special building/gate function needs its own complete native counterpart review"})
@@ -409,6 +424,7 @@ def main():
     parser.add_argument("--output", type=Path, default=WORKSPACE / ".work/tileshift-building-extended")
     parser.add_argument("--write-reviewed", action="store_true", help="Activate only after visual review of this staged architecture batch")
     parser.add_argument("--approved-candidates", action="store_true", help="Record visual review in private candidate data without writing production mappings")
+    parser.add_argument("--include-verified-towns", action="store_true", help="Privately extend exact source-shape/warp reuse candidates across remaining towns; requires separate context review")
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=True)
     packed = {}
@@ -454,13 +470,15 @@ def main():
         canvas.save(args.output / f"architecture-native-prototypes-{sheet_index + 1}.png")
     complete_feature_sheets(args, native_images, images, models)
     sprout = sprout_reference(args)
-    rows = staged_rows(args, models)
-    contexts = context_review(args, images, rows)
     remaining = remaining_town_inventory(args)
+    extra_instances = json.loads((args.output / "remaining-town-architecture-inventory.json").read_text())["matched_source_instances"] if args.include_verified_towns else []
+    rows = staged_rows(args, models, extra_instances)
+    contexts = context_review(args, images, rows, extra_instances)
     report = {"status": "reviewed_batch_activated" if args.write_reviewed else "visually_reviewed_production_held" if args.approved_candidates else "private_candidates_not_activated", "source_buildings": source_records, "templates": models,
               "sprout_tower_original_art_brief": "sprout-tower-geometry-brief.json",
               "positioned_rows": len(rows), "contexts": contexts,
               "remaining_town_inventory": remaining,
+              "remaining_town_instances_included": len(extra_instances),
               "held": [{"map": "VIOLET_CITY", "destination": "SPROUT_TOWER_1F", "reason": "No proper Gen3 monastic pagoda counterpart identified; cemetery/ancient-pillar art would change function."},
                        {"map": "VIOLET_CITY", "destination": "ROUTE_31_VIOLET_GATE", "reason": "Side-entry gate needs separate complete entrance/orientation review."}]}
     (args.output / "architecture-native-prototypes.json").write_text(json.dumps(report, indent=2), encoding="utf-8")

@@ -2,7 +2,8 @@
 
 The native hop byte belongs to the ordinary ground before the refused step.
 This review maps only exact complete ground glyphs; neighboring cliff art and
-every native movement byte remain unchanged. No production data is written.
+every native movement byte remain unchanged. Production writes require the
+explicit --write-reviewed flag for the approved approach-ground batch.
 """
 from __future__ import annotations
 import argparse
@@ -26,6 +27,7 @@ def main():
     parser.add_argument('--cache',type=Path,default=Path(os.environ['APPDATA'])/'pokemon-love2d')
     parser.add_argument('--engine',type=Path,default=WORKSPACE/'.tools/engine-0395')
     parser.add_argument('--output',type=Path,default=WORKSPACE/'.work/tileshift-gen2-ledge-review')
+    parser.add_argument('--write-reviewed',action='store_true',help='Merge the approved approach-ground batch after live checks')
     args=parser.parse_args();args.output.mkdir(parents=True,exist_ok=True)
     before=Path.cwd()
     try:
@@ -98,6 +100,10 @@ def main():
     (args.output/'candidate-approach-rows.json').write_text(json.dumps(rows,indent=2),encoding='utf-8')
     (args.output/'validation.json').write_text(json.dumps({'live':validation,'maps':summaries},indent=2),encoding='utf-8')
     print('Private rows',len(rows),'source cells',sum(r['approach_cells'] for r in summaries),validation)
+    if args.write_reviewed:
+        stats=ext.merge_reviewed(rows,mod/'mappings/gen2_outdoor_extended.lua')
+        (args.output/'activation.json').write_text(json.dumps(stats,indent=2),encoding='utf-8')
+        print('Approved approach-ground activation',stats)
 
 
 if __name__=='__main__':main()
