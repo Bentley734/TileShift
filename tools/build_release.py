@@ -1,0 +1,60 @@
+"""Build and verify the installable TileShift ZIP; never include imported art."""
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+from pathlib import Path
+import zipfile
+
+
+def main() -> None:
+    root = Path(__file__).resolve().parents[1]
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output", type=Path, default=root / "build")
+    args = parser.parse_args()
+    manifest = json.loads((root / "manifest.json").read_text(encoding="utf-8"))
+    assert manifest["id"] == "tileshift"
+    version = manifest["version"]
+    assert version and all(c.isdigit() or c == "." for c in version)
+    files = [root / name for name in
+             ("manifest.json", "main.lua", "README.md", "CREDITS.md", "LICENSE")]
+    files += sorted((root / "lib").glob("*.lua"))
+    files += sorted((root / "mappings").glob("*.lua"))
+    # Only the credited, approved fan tree and its provenance are redistributed.
+    files += [root / "assets/third_party/j-treecko252" / name
+              for name in ("compact-tree.png", "provenance.json")]
+    provenance = json.loads(files[-1].read_text(encoding="utf-8"))
+    assert hashlib.sha256(files[-2].read_bytes()).hexdigest() == provenance["extraction"]["png_sha256"]
+    assert len(files) == len(set(files)) and all(path.is_file() for path in files)
+    args.output.mkdir(parents=True, exist_ok=True)
+    archive = args.output / f"TileShift-v{version}.zip"
+    expected = {}
+    with zipfile.ZipFile(archive, "w", zipfile.ZIP_DEFLATED, compresslevel=9) as bundle:
+        for path in files:
+            name = "tileshift/" + path.relative_to(root).as_posix()
+            content = path.read_bytes()
+            info = zipfile.ZipInfo(name, date_time=(2026, 1, 1, 0, 0, 0))
+            info.compress_type = zipfile.ZIP_DEFLATED
+            info.external_attr = 0o100644 << 16
+            bundle.writestr(info, content, compresslevel=9)
+            expected[name] = hashlib.sha256(content).hexdigest()
+    with zipfile.ZipFile(archive) as bundle:
+        assert bundle.testzip() is None
+        assert set(bundle.namelist()) == set(expected)
+        for name, digest in expected.items():
+            assert hashlib.sha256(bundle.read(name)).hexdigest() == digest
+        assert json.loads(bundle.read("tileshift/manifest.json"))["version"] == version
+    digest = hashlib.sha256(archive.read_bytes()).hexdigest()
+    checksum = archive.with_suffix(".zip.sha256")
+    checksum.write_text(f"{digest}  {archive.name}\n", encoding="utf-8")
+    report = {"version": version, "archive": str(archive.resolve()),
+              "bytes": archive.stat().st_size, "sha256": digest,
+              "files": expected, "zip_roundtrip_verified": True}
+    (args.output / "package-verification.json").write_text(
+        json.dumps(report, indent=2) + "\n", encoding="utf-8")
+    print(json.dumps({key: value for key, value in report.items() if key != "files"}, indent=2))
+
+
+if __name__ == "__main__":
+    main()

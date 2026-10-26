@@ -1,0 +1,49 @@
+{
+  "format": 1,
+  "asset": "compact-tree.png",
+  "title": "Compact round tree, candidate B4",
+  "author": "J-Treecko252",
+  "additional_palette_credit": "Zyxeion",
+  "source_title": "Tree Tiles Ver.02",
+  "source_url": "https://www.deviantart.com/j-treecko252/art/Tree-Tiles-Ver-02-884751013",
+  "permission": {
+    "type": "author permission with attribution",
+    "quote": "Free to Edit/Use, just give credit.",
+    "retrieved": "2026-10-26"
+  },
+  "source_sheet": {
+    "dimensions": [
+      256,
+      1856
+    ],
+    "file_sha256": "6eb7dd904de022295e6853b0a80bd22e213125bdb4d499fac8f133bdb5655f6f",
+    "redistributed": false
+  },
+  "source_crop": {
+    "x": 96,
+    "y": 1792,
+    "width": 32,
+    "height": 32,
+    "rgba_sha256": "16816d6a4ec172408a02763fd40f4db93a2421992591266b72df18d0c7ae59ac",
+    "png_sha256": "a8e96b1846719a37eb065b6bcbb5e46787f84143221f6cc2be4f79056199f9e6"
+  },
+  "extraction": {
+    "method": "Crop only the approved complete round tree, then remove exact duplicate 2x2 pixels by nearest-neighbor sampling. No repainting, palette changes or lossy resampling.",
+    "whole_sheet_2x2_blocks": 118784,
+    "whole_sheet_nonuniform_2x2_blocks": 0,
+    "output_dimensions": [
+      16,
+      16
+    ],
+    "rgba_sha256": "83b0a8ca3bf5ddffb32c494f60547f2384d5f31d7989d3a0e0f2eb4eae6ac305",
+    "png_sha256": "209fc50d6e20ece401fcc468af3a11f5d14b2923c4b21b208774f30adfd0b6cf",
+    "background": "original alpha transparency"
+  },
+  "review": {
+    "date": "2026-10-26",
+    "candidate": "B4",
+    "result": "Approved compact Gen 3 style complete tree with visible canopy and trunk; preserve footprint and source collision.",
+    "review_sheet": "compact-candidates-8x.png"
+  },
+  "distribution": "Only the extracted 16x16 tree is included; no complete artist sheet or ROM-derived ground is redistributed."
+}

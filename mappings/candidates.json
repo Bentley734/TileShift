@@ -1,0 +1,1636 @@
+{
+  "format": 1,
+  "status": "mixed_reviewed_and_pending",
+  "review_sheet": ".work/tileshift-review/emerald-candidates.png (generated locally by tools/review.py)",
+  "rows": [
+    {
+      "game": "red",
+      "style": "gen3",
+      "tileset": "OVERWORLD",
+      "id": 1,
+      "quadrant": 0,
+      "role": "open_grassy_ground",
+      "status": "reviewed",
+      "sourceHash": "deae6eaeadc73cc32f83331b16e73b6912022c06c4f08605fa0e489a18975428",
+      "donor": {
+        "game": "emerald",
+        "tileset": "general__petalburg",
+        "id": 1,
+        "hash": "1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1",
+        "layerHashes": {
+          "under": "1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1",
+          "mid": "1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1",
+          "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+        }
+      },
+      "sourceFiles": {
+        "metadata": "0c88e9ab0699a718f66d1ebb78ae7fe0c4bbc984a0dc8b9b18be542a0307b1d5",
+        "image": "7ed34ea824a79bf49520135c587d62182169b94855bf1958880778eb5c74f5c0",
+        "maps": "747230ee475113dda4d79df68ea96b3237c8c9022a80a57f43b9f3c5db707a0d"
+      },
+      "donorFiles": {
+        "anim_general_flower.idx": "8b70b6ca10c999ed05aacfc6dc5d58a813b11618279f8f6b121ce4bf743363af",
+        "anim_general_sand_water_edge.idx": "70175ef10db1e1867ace97f4c2dad6bc8506e91e6be79a8284248d92905b48a7",
+        "anim_general_water.idx": "30cade0f5c9b9b2d1f8f9176c32b0c58bdd7076e7b26d162ffc4db45e3b7c7e2",
+        "anim_general_waterfall.idx": "e896122b7403cd23ce7123b6f812240d039ad8e7f5150887a64cc426e8f59a4b",
+        "anim_manifest.lua": "fc4e1dba5d39f0979e8740854020f85a541760683fd8996f07259cbfe6057320",
+        "atlas_m_c4caabcecdcd081e.rgba": "5ae504e618d9ea00f54dcfddd3601f4c3b0f5f3a93743a77e60ee80d55c68cc1",
+        "atlas_o_77e289f599b5a7a7.rgba": "e86d1611c3842d4449cb18bb482c991a13bfa16296ecb7a5bd691dbb7e22b233",
+        "atlas_u_74b56079e9ef3cc5.rgba": "772c296d6e6ae4d26ecacb8031bb0b89cdebaab63a0049b044d6411c5df238e2",
+        "mids.idx": "8757f06b2ca9aa3782787d3aeb85d47a3b2c13991382d5f831250a76eca982dd",
+        "mids_mid.idx": "d84ff173625f69331d3ac1cb3fefe1e83de9ab5355820a2002e5ee73379f626e",
+        "mids_over.idx": "3e91bc371ee0d3a815b1810f7e49e8a355a6cd7de7c64917538383d55292b0fc",
+        "palettes.bin": "40e38ffa970541275470aea7f80714a4593afd5d6420d4a4fc782172c6321b0d",
+        "manifest": "857ca4a444bec9981bb199e8a8919574913c2815fb0bab520b2a9658f3c705fa",
+        "mid_index": "31c948bac28f2dae1b0e521f4bda01e9809896f8f7ab0bf019f750c257fd9d1a"
+      },
+      "evidence": "tools/review.py review sheet row 1: Complete flat ground. Native grass tufts become the Emerald ground texture. Visually approved 2026-10-26.",
+      "same_geometry": "16px complete interior or object; no cell-boundary transformation",
+      "aliases": [
+        {
+          "id": 1,
+          "quadrant": 0,
+          "sourceHash": "deae6eaeadc73cc32f83331b16e73b6912022c06c4f08605fa0e489a18975428"
+        },
+        {
+          "id": 1,
+          "quadrant": 3,
+          "sourceHash": "deae6eaeadc73cc32f83331b16e73b6912022c06c4f08605fa0e489a18975428"
+        },
+        {
+          "id": 28,
+          "quadrant": 0,
+          "sourceHash": "deae6eaeadc73cc32f83331b16e73b6912022c06c4f08605fa0e489a18975428"
+        },
+        {
+          "id": 56,
+          "quadrant": 0,
+          "sourceHash": "deae6eaeadc73cc32f83331b16e73b6912022c06c4f08605fa0e489a18975428"
+        },
+        {
+          "id": 57,
+          "quadrant": 0,
+          "sourceHash": "deae6eaeadc73cc32f83331b16e73b6912022c06c4f08605fa0e489a18975428"
+        }
+      ],
+      "alias_policy": "Same tileset, exact grayscale pixels, matching native behavior and priority; no cross-tileset inference."
+    },
+    {
+      "game": "red",
+      "style": "gen3",
+      "tileset": "OVERWORLD",
+      "id": 1,
+      "quadrant": 1,
+      "role": "open_grassy_ground",
+      "status": "reviewed",
+      "sourceHash": "5f4ecdb7b71c3e403983fe405cddcdc2f2576b655fdb3e80d94a6f7c32e58bc2",
+      "donor": {
+        "game": "emerald",
+        "tileset": "general__petalburg",
+        "id": 1,
+        "hash": "1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1",
+        "layerHashes": {
+          "under": "1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1",
+          "mid": "1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1",
+          "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+        }
+      },
+      "sourceFiles": {
+        "metadata": "0c88e9ab0699a718f66d1ebb78ae7fe0c4bbc984a0dc8b9b18be542a0307b1d5",
+        "image": "7ed34ea824a79bf49520135c587d62182169b94855bf1958880778eb5c74f5c0",
+        "maps": "747230ee475113dda4d79df68ea96b3237c8c9022a80a57f43b9f3c5db707a0d"
+      },
+      "donorFiles": {
+        "anim_general_flower.idx": "8b70b6ca10c999ed05aacfc6dc5d58a813b11618279f8f6b121ce4bf743363af",
+        "anim_general_sand_water_edge.idx": "70175ef10db1e1867ace97f4c2dad6bc8506e91e6be79a8284248d92905b48a7",
+        "anim_general_water.idx": "30cade0f5c9b9b2d1f8f9176c32b0c58bdd7076e7b26d162ffc4db45e3b7c7e2",
+        "anim_general_waterfall.idx": "e896122b7403cd23ce7123b6f812240d039ad8e7f5150887a64cc426e8f59a4b",
+        "anim_manifest.lua": "fc4e1dba5d39f0979e8740854020f85a541760683fd8996f07259cbfe6057320",
+        "atlas_m_c4caabcecdcd081e.rgba": "5ae504e618d9ea00f54dcfddd3601f4c3b0f5f3a93743a77e60ee80d55c68cc1",
+        "atlas_o_77e289f599b5a7a7.rgba": "e86d1611c3842d4449cb18bb482c991a13bfa16296ecb7a5bd691dbb7e22b233",
+        "atlas_u_74b56079e9ef3cc5.rgba": "772c296d6e6ae4d26ecacb8031bb0b89cdebaab63a0049b044d6411c5df238e2",
+        "mids.idx": "8757f06b2ca9aa3782787d3aeb85d47a3b2c13991382d5f831250a76eca982dd",
+        "mids_mid.idx": "d84ff173625f69331d3ac1cb3fefe1e83de9ab5355820a2002e5ee73379f626e",
+        "mids_over.idx": "3e91bc371ee0d3a815b1810f7e49e8a355a6cd7de7c64917538383d55292b0fc",
+        "palettes.bin": "40e38ffa970541275470aea7f80714a4593afd5d6420d4a4fc782172c6321b0d",
+        "manifest": "857ca4a444bec9981bb199e8a8919574913c2815fb0bab520b2a9658f3c705fa",
+        "mid_index": "31c948bac28f2dae1b0e521f4bda01e9809896f8f7ab0bf019f750c257fd9d1a"
+      },
+      "evidence": "tools/review.py review sheet row 2: Complete blank ground variant. Emerald adds its normal ground tufts; no border or object geometry changes. Visually approved 2026-10-26.",
+      "same_geometry": "16px complete interior or object; no cell-boundary transformation",
+      "aliases": [
+        {
+          "id": 1,
+          "quadrant": 1,
+          "sourceHash": "5f4ecdb7b71c3e403983fe405cddcdc2f2576b655fdb3e80d94a6f7c32e58bc2"
+        },
+        {
+          "id": 1,
+          "quadrant": 2,
+          "sourceHash": "5f4ecdb7b71c3e403983fe405cddcdc2f2576b655fdb3e80d94a6f7c32e58bc2"
+        },
+        {
+          "id": 27,
+          "quadrant": 1,
+          "sourceHash": "5f4ecdb7b71c3e403983fe405cddcdc2f2576b655fdb3e80d94a6f7c32e58bc2"
+        },
+        {
+          "id": 27,
+          "quadrant": 3,
+          "sourceHash": "5f4ecdb7b71c3e403983fe405cddcdc2f2576b655fdb3e80d94a6f7c32e58bc2"
+        },
+        {
+          "id": 28,
+          "quadrant": 1,
+          "sourceHash": "5f4ecdb7b71c3e403983fe405cddcdc2f2576b655fdb3e80d94a6f7c32e58bc2"
+        },
+        {
+          "id": 56,
+          "quadrant": 1,
+          "sourceHash": "5f4ecdb7b71c3e403983fe405cddcdc2f2576b655fdb3e80d94a6f7c32e58bc2"
+        },
+        {
+          "id": 57,
+          "quadrant": 1,
+          "sourceHash": "5f4ecdb7b71c3e403983fe405cddcdc2f2576b655fdb3e80d94a6f7c32e58bc2"
+        },
+        {
+          "id": 95,
+          "quadrant": 0,
+          "sourceHash": "5f4ecdb7b71c3e403983fe405cddcdc2f2576b655fdb3e80d94a6f7c32e58bc2"
+        },
+        {
+          "id": 95,
+          "quadrant": 2,
+          "sourceHash": "5f4ecdb7b71c3e403983fe405cddcdc2f2576b655fdb3e80d94a6f7c32e58bc2"
+        }
+      ],
+      "alias_policy": "Same tileset, exact grayscale pixels, matching native behavior and priority; no cross-tileset inference."
+    },
+    {
+      "game": "red",
+      "style": "gen3",
+      "tileset": "OVERWORLD",
+      "id": 11,
+      "quadrant": 0,
+      "role": "tall_grass",
+      "status": "reviewed",
+      "sourceHash": "30b25c3ee2d107aebbe520d089c164eeb41f42f3c78f91b75282580d2932efe9",
+      "donor": {
+        "game": "emerald",
+        "tileset": "general__petalburg",
+        "id": 13,
+        "hash": "292c51594070c8df892301b97636c4f0dde6cdef89158084356ed9feaed86920",
+        "layerHashes": {
+          "under": "292c51594070c8df892301b97636c4f0dde6cdef89158084356ed9feaed86920",
+          "mid": "292c51594070c8df892301b97636c4f0dde6cdef89158084356ed9feaed86920",
+          "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+        }
+      },
+      "sourceFiles": {
+        "metadata": "0c88e9ab0699a718f66d1ebb78ae7fe0c4bbc984a0dc8b9b18be542a0307b1d5",
+        "image": "7ed34ea824a79bf49520135c587d62182169b94855bf1958880778eb5c74f5c0",
+        "maps": "747230ee475113dda4d79df68ea96b3237c8c9022a80a57f43b9f3c5db707a0d"
+      },
+      "donorFiles": {
+        "anim_general_flower.idx": "8b70b6ca10c999ed05aacfc6dc5d58a813b11618279f8f6b121ce4bf743363af",
+        "anim_general_sand_water_edge.idx": "70175ef10db1e1867ace97f4c2dad6bc8506e91e6be79a8284248d92905b48a7",
+        "anim_general_water.idx": "30cade0f5c9b9b2d1f8f9176c32b0c58bdd7076e7b26d162ffc4db45e3b7c7e2",
+        "anim_general_waterfall.idx": "e896122b7403cd23ce7123b6f812240d039ad8e7f5150887a64cc426e8f59a4b",
+        "anim_manifest.lua": "fc4e1dba5d39f0979e8740854020f85a541760683fd8996f07259cbfe6057320",
+        "atlas_m_c4caabcecdcd081e.rgba": "5ae504e618d9ea00f54dcfddd3601f4c3b0f5f3a93743a77e60ee80d55c68cc1",
+        "atlas_o_77e289f599b5a7a7.rgba": "e86d1611c3842d4449cb18bb482c991a13bfa16296ecb7a5bd691dbb7e22b233",
+        "atlas_u_74b56079e9ef3cc5.rgba": "772c296d6e6ae4d26ecacb8031bb0b89cdebaab63a0049b044d6411c5df238e2",
+        "mids.idx": "8757f06b2ca9aa3782787d3aeb85d47a3b2c13991382d5f831250a76eca982dd",
+        "mids_mid.idx": "d84ff173625f69331d3ac1cb3fefe1e83de9ab5355820a2002e5ee73379f626e",
+        "mids_over.idx": "3e91bc371ee0d3a815b1810f7e49e8a355a6cd7de7c64917538383d55292b0fc",
+        "palettes.bin": "40e38ffa970541275470aea7f80714a4593afd5d6420d4a4fc782172c6321b0d",
+        "manifest": "857ca4a444bec9981bb199e8a8919574913c2815fb0bab520b2a9658f3c705fa",
+        "mid_index": "31c948bac28f2dae1b0e521f4bda01e9809896f8f7ab0bf019f750c257fd9d1a"
+      },
+      "evidence": "tools/review.py review sheet row 3: Complete tall-grass cell. Approved with exact native Emerald frame4 bottom8px feet cover; no invented mask. Visually approved 2026-10-26.",
+      "same_geometry": "16px complete interior or object; no cell-boundary transformation",
+      "aliases": [
+        {
+          "id": 11,
+          "quadrant": 0,
+          "sourceHash": "30b25c3ee2d107aebbe520d089c164eeb41f42f3c78f91b75282580d2932efe9"
+        },
+        {
+          "id": 11,
+          "quadrant": 1,
+          "sourceHash": "30b25c3ee2d107aebbe520d089c164eeb41f42f3c78f91b75282580d2932efe9"
+        },
+        {
+          "id": 11,
+          "quadrant": 2,
+          "sourceHash": "30b25c3ee2d107aebbe520d089c164eeb41f42f3c78f91b75282580d2932efe9"
+        },
+        {
+          "id": 11,
+          "quadrant": 3,
+          "sourceHash": "30b25c3ee2d107aebbe520d089c164eeb41f42f3c78f91b75282580d2932efe9"
+        }
+      ],
+      "alias_policy": "Same tileset, exact grayscale pixels, matching native behavior and priority; no cross-tileset inference.",
+      "occludes": true,
+      "foreground_candidate": {
+        "game": "emerald",
+        "file": "data/generated/gba/field_effects/tall_grass.rgba",
+        "frame": 4,
+        "crop": [
+          0,
+          8,
+          16,
+          8
+        ],
+        "placement": [
+          0,
+          8
+        ],
+        "format": "zlib compressed raw RGBA16x80",
+        "sha256": "e0c5a713c75ad8229538718afd87a9994574b87c2f980867b3bf0c80cf641c96",
+        "engine_evidence": "src/core/game3/field_effects.lua: quadsFront bottom8px, static frame4 for NPCs; FEET_H=8"
+      },
+      "foreground": {
+        "game": "emerald",
+        "effect": "tall_grass",
+        "hash": "47a417921b32c15d04df7998af22698fe86e6e753ad5740b9e41685d90b7a8d5"
+      }
+    },
+    {
+      "game": "red",
+      "style": "gen3",
+      "tileset": "OVERWORLD",
+      "id": 8,
+      "quadrant": 3,
+      "role": "freestanding_sign",
+      "status": "reviewed",
+      "sourceHash": "59dac4bb78d247e3cdb6890e4b3e6ba6e2772d8bd233017494ec25d5e630aade",
+      "donor": {
+        "game": "emerald",
+        "tileset": "general__petalburg",
+        "id": 3,
+        "hash": "1131b4c7f185d34ca16174853b585a6db4ef50b489901fa23bc0d43b4543eba4",
+        "layerHashes": {
+          "under": "1131b4c7f185d34ca16174853b585a6db4ef50b489901fa23bc0d43b4543eba4",
+          "mid": "1131b4c7f185d34ca16174853b585a6db4ef50b489901fa23bc0d43b4543eba4",
+          "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+        }
+      },
+      "sourceFiles": {
+        "metadata": "0c88e9ab0699a718f66d1ebb78ae7fe0c4bbc984a0dc8b9b18be542a0307b1d5",
+        "image": "7ed34ea824a79bf49520135c587d62182169b94855bf1958880778eb5c74f5c0",
+        "maps": "747230ee475113dda4d79df68ea96b3237c8c9022a80a57f43b9f3c5db707a0d"
+      },
+      "donorFiles": {
+        "anim_general_flower.idx": "8b70b6ca10c999ed05aacfc6dc5d58a813b11618279f8f6b121ce4bf743363af",
+        "anim_general_sand_water_edge.idx": "70175ef10db1e1867ace97f4c2dad6bc8506e91e6be79a8284248d92905b48a7",
+        "anim_general_water.idx": "30cade0f5c9b9b2d1f8f9176c32b0c58bdd7076e7b26d162ffc4db45e3b7c7e2",
+        "anim_general_waterfall.idx": "e896122b7403cd23ce7123b6f812240d039ad8e7f5150887a64cc426e8f59a4b",
+        "anim_manifest.lua": "fc4e1dba5d39f0979e8740854020f85a541760683fd8996f07259cbfe6057320",
+        "atlas_m_c4caabcecdcd081e.rgba": "5ae504e618d9ea00f54dcfddd3601f4c3b0f5f3a93743a77e60ee80d55c68cc1",
+        "atlas_o_77e289f599b5a7a7.rgba": "e86d1611c3842d4449cb18bb482c991a13bfa16296ecb7a5bd691dbb7e22b233",
+        "atlas_u_74b56079e9ef3cc5.rgba": "772c296d6e6ae4d26ecacb8031bb0b89cdebaab63a0049b044d6411c5df238e2",
+        "mids.idx": "8757f06b2ca9aa3782787d3aeb85d47a3b2c13991382d5f831250a76eca982dd",
+        "mids_mid.idx": "d84ff173625f69331d3ac1cb3fefe1e83de9ab5355820a2002e5ee73379f626e",
+        "mids_over.idx": "3e91bc371ee0d3a815b1810f7e49e8a355a6cd7de7c64917538383d55292b0fc",
+        "palettes.bin": "40e38ffa970541275470aea7f80714a4593afd5d6420d4a4fc782172c6321b0d",
+        "manifest": "857ca4a444bec9981bb199e8a8919574913c2815fb0bab520b2a9658f3c705fa",
+        "mid_index": "31c948bac28f2dae1b0e521f4bda01e9809896f8f7ab0bf019f750c257fd9d1a"
+      },
+      "evidence": "tools/review.py review sheet row 4: Both are complete 16px freestanding signboards with supports; source interaction remains native. Visually approved 2026-10-26.",
+      "same_geometry": "16px complete interior or object; no cell-boundary transformation",
+      "aliases": [
+        {
+          "id": 8,
+          "quadrant": 3,
+          "sourceHash": "59dac4bb78d247e3cdb6890e4b3e6ba6e2772d8bd233017494ec25d5e630aade"
+        },
+        {
+          "id": 86,
+          "quadrant": 3,
+          "sourceHash": "59dac4bb78d247e3cdb6890e4b3e6ba6e2772d8bd233017494ec25d5e630aade"
+        },
+        {
+          "id": 121,
+          "quadrant": 3,
+          "sourceHash": "59dac4bb78d247e3cdb6890e4b3e6ba6e2772d8bd233017494ec25d5e630aade"
+        }
+      ],
+      "alias_policy": "Same tileset, exact grayscale pixels, matching native behavior and priority; no cross-tileset inference."
+    },
+    {
+      "game": "red",
+      "style": "gen3",
+      "tileset": "OVERWORLD",
+      "id": 4,
+      "quadrant": 0,
+      "role": "open_water",
+      "status": "candidate",
+      "blocking_reason": "animation_integration_needed",
+      "sourceHash": "6289b19cbbf1e40a2cfb6a16c45c9b1caebf7fa665bcc1f10a22840a638b9822",
+      "donor": {
+        "game": "emerald",
+        "tileset": "general__petalburg",
+        "id": 161,
+        "hash": "08b65d6f3e0c2ad7d7d258e1304e6ed0135772f4917302848f0079472994ae86",
+        "layerHashes": {
+          "under": "08b65d6f3e0c2ad7d7d258e1304e6ed0135772f4917302848f0079472994ae86",
+          "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+          "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+        }
+      },
+      "sourceFiles": {
+        "metadata": "0c88e9ab0699a718f66d1ebb78ae7fe0c4bbc984a0dc8b9b18be542a0307b1d5",
+        "image": "7ed34ea824a79bf49520135c587d62182169b94855bf1958880778eb5c74f5c0",
+        "maps": "747230ee475113dda4d79df68ea96b3237c8c9022a80a57f43b9f3c5db707a0d"
+      },
+      "donorFiles": {
+        "anim_general_flower.idx": "8b70b6ca10c999ed05aacfc6dc5d58a813b11618279f8f6b121ce4bf743363af",
+        "anim_general_sand_water_edge.idx": "70175ef10db1e1867ace97f4c2dad6bc8506e91e6be79a8284248d92905b48a7",
+        "anim_general_water.idx": "30cade0f5c9b9b2d1f8f9176c32b0c58bdd7076e7b26d162ffc4db45e3b7c7e2",
+        "anim_general_waterfall.idx": "e896122b7403cd23ce7123b6f812240d039ad8e7f5150887a64cc426e8f59a4b",
+        "anim_manifest.lua": "fc4e1dba5d39f0979e8740854020f85a541760683fd8996f07259cbfe6057320",
+        "atlas_m_c4caabcecdcd081e.rgba": "5ae504e618d9ea00f54dcfddd3601f4c3b0f5f3a93743a77e60ee80d55c68cc1",
+        "atlas_o_77e289f599b5a7a7.rgba": "e86d1611c3842d4449cb18bb482c991a13bfa16296ecb7a5bd691dbb7e22b233",
+        "atlas_u_74b56079e9ef3cc5.rgba": "772c296d6e6ae4d26ecacb8031bb0b89cdebaab63a0049b044d6411c5df238e2",
+        "mids.idx": "8757f06b2ca9aa3782787d3aeb85d47a3b2c13991382d5f831250a76eca982dd",
+        "mids_mid.idx": "d84ff173625f69331d3ac1cb3fefe1e83de9ab5355820a2002e5ee73379f626e",
+        "mids_over.idx": "3e91bc371ee0d3a815b1810f7e49e8a355a6cd7de7c64917538383d55292b0fc",
+        "palettes.bin": "40e38ffa970541275470aea7f80714a4593afd5d6420d4a4fc782172c6321b0d",
+        "manifest": "857ca4a444bec9981bb199e8a8919574913c2815fb0bab520b2a9658f3c705fa",
+        "mid_index": "31c948bac28f2dae1b0e521f4bda01e9809896f8f7ab0bf019f750c257fd9d1a"
+      },
+      "evidence": "tools/review.py review sheet row 5: Both are complete water interiors, without a bank. This candidate must remain disabled until donor animation frames are supported.",
+      "same_geometry": "16px complete interior or object; no cell-boundary transformation",
+      "aliases": [
+        {
+          "id": 20,
+          "quadrant": 1,
+          "sourceHash": "6289b19cbbf1e40a2cfb6a16c45c9b1caebf7fa665bcc1f10a22840a638b9822"
+        },
+        {
+          "id": 21,
+          "quadrant": 0,
+          "sourceHash": "6289b19cbbf1e40a2cfb6a16c45c9b1caebf7fa665bcc1f10a22840a638b9822"
+        },
+        {
+          "id": 24,
+          "quadrant": 1,
+          "sourceHash": "6289b19cbbf1e40a2cfb6a16c45c9b1caebf7fa665bcc1f10a22840a638b9822"
+        },
+        {
+          "id": 24,
+          "quadrant": 3,
+          "sourceHash": "6289b19cbbf1e40a2cfb6a16c45c9b1caebf7fa665bcc1f10a22840a638b9822"
+        },
+        {
+          "id": 25,
+          "quadrant": 0,
+          "sourceHash": "6289b19cbbf1e40a2cfb6a16c45c9b1caebf7fa665bcc1f10a22840a638b9822"
+        },
+        {
+          "id": 25,
+          "quadrant": 2,
+          "sourceHash": "6289b19cbbf1e40a2cfb6a16c45c9b1caebf7fa665bcc1f10a22840a638b9822"
+        },
+        {
+          "id": 29,
+          "quadrant": 3,
+          "sourceHash": "6289b19cbbf1e40a2cfb6a16c45c9b1caebf7fa665bcc1f10a22840a638b9822"
+        },
+        {
+          "id": 30,
+          "quadrant": 2,
+          "sourceHash": "6289b19cbbf1e40a2cfb6a16c45c9b1caebf7fa665bcc1f10a22840a638b9822"
+        },
+        {
+          "id": 31,
+          "quadrant": 2,
+          "sourceHash": "6289b19cbbf1e40a2cfb6a16c45c9b1caebf7fa665bcc1f10a22840a638b9822"
+        },
+        {
+          "id": 31,
+          "quadrant": 3,
+          "sourceHash": "6289b19cbbf1e40a2cfb6a16c45c9b1caebf7fa665bcc1f10a22840a638b9822"
+        },
+        {
+          "id": 45,
+          "quadrant": 0,
+          "sourceHash": "6289b19cbbf1e40a2cfb6a16c45c9b1caebf7fa665bcc1f10a22840a638b9822"
+        },
+        {
+          "id": 45,
+          "quadrant": 2,
+          "sourceHash": "6289b19cbbf1e40a2cfb6a16c45c9b1caebf7fa665bcc1f10a22840a638b9822"
+        },
+        {
+          "id": 45,
+          "quadrant": 3,
+          "sourceHash": "6289b19cbbf1e40a2cfb6a16c45c9b1caebf7fa665bcc1f10a22840a638b9822"
+        },
+        {
+          "id": 46,
+          "quadrant": 1,
+          "sourceHash": "6289b19cbbf1e40a2cfb6a16c45c9b1caebf7fa665bcc1f10a22840a638b9822"
+        },
+        {
+          "id": 46,
+          "quadrant": 2,
+          "sourceHash": "6289b19cbbf1e40a2cfb6a16c45c9b1caebf7fa665bcc1f10a22840a638b9822"
+        },
+        {
+          "id": 46,
+          "quadrant": 3,
+          "sourceHash": "6289b19cbbf1e40a2cfb6a16c45c9b1caebf7fa665bcc1f10a22840a638b9822"
+        },
+        {
+          "id": 67,
+          "quadrant": 0,
+          "sourceHash": "6289b19cbbf1e40a2cfb6a16c45c9b1caebf7fa665bcc1f10a22840a638b9822"
+        },
+        {
+          "id": 67,
+          "quadrant": 1,
+          "sourceHash": "6289b19cbbf1e40a2cfb6a16c45c9b1caebf7fa665bcc1f10a22840a638b9822"
+        },
+        {
+          "id": 67,
+          "quadrant": 2,
+          "sourceHash": "6289b19cbbf1e40a2cfb6a16c45c9b1caebf7fa665bcc1f10a22840a638b9822"
+        },
+        {
+          "id": 67,
+          "quadrant": 3,
+          "sourceHash": "6289b19cbbf1e40a2cfb6a16c45c9b1caebf7fa665bcc1f10a22840a638b9822"
+        },
+        {
+          "id": 100,
+          "quadrant": 0,
+          "sourceHash": "6289b19cbbf1e40a2cfb6a16c45c9b1caebf7fa665bcc1f10a22840a638b9822"
+        },
+        {
+          "id": 100,
+          "quadrant": 2,
+          "sourceHash": "6289b19cbbf1e40a2cfb6a16c45c9b1caebf7fa665bcc1f10a22840a638b9822"
+        },
+        {
+          "id": 101,
+          "quadrant": 1,
+          "sourceHash": "6289b19cbbf1e40a2cfb6a16c45c9b1caebf7fa665bcc1f10a22840a638b9822"
+        },
+        {
+          "id": 101,
+          "quadrant": 3,
+          "sourceHash": "6289b19cbbf1e40a2cfb6a16c45c9b1caebf7fa665bcc1f10a22840a638b9822"
+        },
+        {
+          "id": 103,
+          "quadrant": 3,
+          "sourceHash": "6289b19cbbf1e40a2cfb6a16c45c9b1caebf7fa665bcc1f10a22840a638b9822"
+        },
+        {
+          "id": 106,
+          "quadrant": 2,
+          "sourceHash": "6289b19cbbf1e40a2cfb6a16c45c9b1caebf7fa665bcc1f10a22840a638b9822"
+        },
+        {
+          "id": 107,
+          "quadrant": 0,
+          "sourceHash": "6289b19cbbf1e40a2cfb6a16c45c9b1caebf7fa665bcc1f10a22840a638b9822"
+        },
+        {
+          "id": 107,
+          "quadrant": 1,
+          "sourceHash": "6289b19cbbf1e40a2cfb6a16c45c9b1caebf7fa665bcc1f10a22840a638b9822"
+        },
+        {
+          "id": 120,
+          "quadrant": 2,
+          "sourceHash": "6289b19cbbf1e40a2cfb6a16c45c9b1caebf7fa665bcc1f10a22840a638b9822"
+        },
+        {
+          "id": 120,
+          "quadrant": 3,
+          "sourceHash": "6289b19cbbf1e40a2cfb6a16c45c9b1caebf7fa665bcc1f10a22840a638b9822"
+        }
+      ],
+      "alias_policy": "Same tileset, exact grayscale pixels, matching native behavior and priority; no cross-tileset inference.",
+      "animated": true
+    },
+    {
+      "game": "crystal",
+      "style": "gen3",
+      "tileset": "TILESET_JOHTO",
+      "id": 1,
+      "quadrant": 0,
+      "role": "open_grassy_ground",
+      "status": "reviewed",
+      "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938",
+      "donor": {
+        "game": "emerald",
+        "tileset": "general__petalburg",
+        "id": 1,
+        "hash": "1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1",
+        "layerHashes": {
+          "under": "1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1",
+          "mid": "1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1",
+          "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+        }
+      },
+      "sourceFiles": {
+        "metadata": "0071b3599a4bf7682f07f433f8493159d105148d8b78ff06e77817ddb044c2a5",
+        "image": "69ad623ce4b79af12ee7bc524193bf71183b1b5f5d766d89a6fb0cc432a129f6",
+        "maps": "210b5527393c273c632572fd697aa89bec9c853526b58069a77a2acc8767ebf0"
+      },
+      "donorFiles": {
+        "anim_general_flower.idx": "8b70b6ca10c999ed05aacfc6dc5d58a813b11618279f8f6b121ce4bf743363af",
+        "anim_general_sand_water_edge.idx": "70175ef10db1e1867ace97f4c2dad6bc8506e91e6be79a8284248d92905b48a7",
+        "anim_general_water.idx": "30cade0f5c9b9b2d1f8f9176c32b0c58bdd7076e7b26d162ffc4db45e3b7c7e2",
+        "anim_general_waterfall.idx": "e896122b7403cd23ce7123b6f812240d039ad8e7f5150887a64cc426e8f59a4b",
+        "anim_manifest.lua": "fc4e1dba5d39f0979e8740854020f85a541760683fd8996f07259cbfe6057320",
+        "atlas_m_c4caabcecdcd081e.rgba": "5ae504e618d9ea00f54dcfddd3601f4c3b0f5f3a93743a77e60ee80d55c68cc1",
+        "atlas_o_77e289f599b5a7a7.rgba": "e86d1611c3842d4449cb18bb482c991a13bfa16296ecb7a5bd691dbb7e22b233",
+        "atlas_u_74b56079e9ef3cc5.rgba": "772c296d6e6ae4d26ecacb8031bb0b89cdebaab63a0049b044d6411c5df238e2",
+        "mids.idx": "8757f06b2ca9aa3782787d3aeb85d47a3b2c13991382d5f831250a76eca982dd",
+        "mids_mid.idx": "d84ff173625f69331d3ac1cb3fefe1e83de9ab5355820a2002e5ee73379f626e",
+        "mids_over.idx": "3e91bc371ee0d3a815b1810f7e49e8a355a6cd7de7c64917538383d55292b0fc",
+        "palettes.bin": "40e38ffa970541275470aea7f80714a4593afd5d6420d4a4fc782172c6321b0d",
+        "manifest": "857ca4a444bec9981bb199e8a8919574913c2815fb0bab520b2a9658f3c705fa",
+        "mid_index": "31c948bac28f2dae1b0e521f4bda01e9809896f8f7ab0bf019f750c257fd9d1a"
+      },
+      "evidence": "tools/review.py review sheet row 6: Complete flat ground without an edge or object; donor uses Emerald grass tufts. Visually approved 2026-10-26.",
+      "same_geometry": "16px complete interior or object; no cell-boundary transformation",
+      "aliases": [
+        {
+          "id": 1,
+          "quadrant": 0,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 1,
+          "quadrant": 1,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 1,
+          "quadrant": 2,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 1,
+          "quadrant": 3,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 11,
+          "quadrant": 1,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 11,
+          "quadrant": 3,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 12,
+          "quadrant": 0,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 12,
+          "quadrant": 1,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 13,
+          "quadrant": 0,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 13,
+          "quadrant": 1,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 14,
+          "quadrant": 0,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 14,
+          "quadrant": 2,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 64,
+          "quadrant": 3,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 65,
+          "quadrant": 2,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 65,
+          "quadrant": 3,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 66,
+          "quadrant": 2,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 68,
+          "quadrant": 1,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 68,
+          "quadrant": 3,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 69,
+          "quadrant": 1,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 69,
+          "quadrant": 2,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 69,
+          "quadrant": 3,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 70,
+          "quadrant": 0,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 70,
+          "quadrant": 2,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 72,
+          "quadrant": 1,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 73,
+          "quadrant": 0,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 73,
+          "quadrant": 1,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 74,
+          "quadrant": 0,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 90,
+          "quadrant": 1,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 90,
+          "quadrant": 3,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 116,
+          "quadrant": 2,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 116,
+          "quadrant": 3,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 117,
+          "quadrant": 2,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 117,
+          "quadrant": 3,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 120,
+          "quadrant": 0,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 120,
+          "quadrant": 1,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 120,
+          "quadrant": 2,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        }
+      ],
+      "alias_policy": "Same tileset, exact grayscale pixels, matching native behavior and priority; no cross-tileset inference."
+    },
+    {
+      "game": "crystal",
+      "style": "gen3",
+      "tileset": "TILESET_JOHTO",
+      "id": 3,
+      "quadrant": 0,
+      "role": "tall_grass",
+      "status": "reviewed",
+      "sourceHash": "8612b2ecfad7b386f8861da823cc3078de3cef699e1b83657beba12fbc2940af",
+      "donor": {
+        "game": "emerald",
+        "tileset": "general__petalburg",
+        "id": 13,
+        "hash": "292c51594070c8df892301b97636c4f0dde6cdef89158084356ed9feaed86920",
+        "layerHashes": {
+          "under": "292c51594070c8df892301b97636c4f0dde6cdef89158084356ed9feaed86920",
+          "mid": "292c51594070c8df892301b97636c4f0dde6cdef89158084356ed9feaed86920",
+          "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+        }
+      },
+      "sourceFiles": {
+        "metadata": "0071b3599a4bf7682f07f433f8493159d105148d8b78ff06e77817ddb044c2a5",
+        "image": "69ad623ce4b79af12ee7bc524193bf71183b1b5f5d766d89a6fb0cc432a129f6",
+        "maps": "210b5527393c273c632572fd697aa89bec9c853526b58069a77a2acc8767ebf0"
+      },
+      "donorFiles": {
+        "anim_general_flower.idx": "8b70b6ca10c999ed05aacfc6dc5d58a813b11618279f8f6b121ce4bf743363af",
+        "anim_general_sand_water_edge.idx": "70175ef10db1e1867ace97f4c2dad6bc8506e91e6be79a8284248d92905b48a7",
+        "anim_general_water.idx": "30cade0f5c9b9b2d1f8f9176c32b0c58bdd7076e7b26d162ffc4db45e3b7c7e2",
+        "anim_general_waterfall.idx": "e896122b7403cd23ce7123b6f812240d039ad8e7f5150887a64cc426e8f59a4b",
+        "anim_manifest.lua": "fc4e1dba5d39f0979e8740854020f85a541760683fd8996f07259cbfe6057320",
+        "atlas_m_c4caabcecdcd081e.rgba": "5ae504e618d9ea00f54dcfddd3601f4c3b0f5f3a93743a77e60ee80d55c68cc1",
+        "atlas_o_77e289f599b5a7a7.rgba": "e86d1611c3842d4449cb18bb482c991a13bfa16296ecb7a5bd691dbb7e22b233",
+        "atlas_u_74b56079e9ef3cc5.rgba": "772c296d6e6ae4d26ecacb8031bb0b89cdebaab63a0049b044d6411c5df238e2",
+        "mids.idx": "8757f06b2ca9aa3782787d3aeb85d47a3b2c13991382d5f831250a76eca982dd",
+        "mids_mid.idx": "d84ff173625f69331d3ac1cb3fefe1e83de9ab5355820a2002e5ee73379f626e",
+        "mids_over.idx": "3e91bc371ee0d3a815b1810f7e49e8a355a6cd7de7c64917538383d55292b0fc",
+        "palettes.bin": "40e38ffa970541275470aea7f80714a4593afd5d6420d4a4fc782172c6321b0d",
+        "manifest": "857ca4a444bec9981bb199e8a8919574913c2815fb0bab520b2a9658f3c705fa",
+        "mid_index": "31c948bac28f2dae1b0e521f4bda01e9809896f8f7ab0bf019f750c257fd9d1a"
+      },
+      "evidence": "tools/review.py review sheet row 7: Complete tall-grass cell. Approved with exact native Emerald frame4 bottom8px feet cover; no invented mask. Visually approved 2026-10-26.",
+      "same_geometry": "16px complete interior or object; no cell-boundary transformation",
+      "aliases": [
+        {
+          "id": 3,
+          "quadrant": 0,
+          "sourceHash": "8612b2ecfad7b386f8861da823cc3078de3cef699e1b83657beba12fbc2940af"
+        },
+        {
+          "id": 3,
+          "quadrant": 1,
+          "sourceHash": "8612b2ecfad7b386f8861da823cc3078de3cef699e1b83657beba12fbc2940af"
+        },
+        {
+          "id": 3,
+          "quadrant": 2,
+          "sourceHash": "8612b2ecfad7b386f8861da823cc3078de3cef699e1b83657beba12fbc2940af"
+        },
+        {
+          "id": 3,
+          "quadrant": 3,
+          "sourceHash": "8612b2ecfad7b386f8861da823cc3078de3cef699e1b83657beba12fbc2940af"
+        }
+      ],
+      "alias_policy": "Same tileset, exact grayscale pixels, matching native behavior and priority; no cross-tileset inference.",
+      "occludes": true,
+      "foreground_candidate": {
+        "game": "emerald",
+        "file": "data/generated/gba/field_effects/tall_grass.rgba",
+        "frame": 4,
+        "crop": [
+          0,
+          8,
+          16,
+          8
+        ],
+        "placement": [
+          0,
+          8
+        ],
+        "format": "zlib compressed raw RGBA16x80",
+        "sha256": "e0c5a713c75ad8229538718afd87a9994574b87c2f980867b3bf0c80cf641c96",
+        "engine_evidence": "src/core/game3/field_effects.lua: quadsFront bottom8px, static frame4 for NPCs; FEET_H=8"
+      },
+      "foreground": {
+        "game": "emerald",
+        "effect": "tall_grass",
+        "hash": "47a417921b32c15d04df7998af22698fe86e6e753ad5740b9e41685d90b7a8d5"
+      }
+    },
+    {
+      "game": "crystal",
+      "style": "gen3",
+      "tileset": "TILESET_JOHTO",
+      "id": 69,
+      "quadrant": 0,
+      "role": "freestanding_sign",
+      "status": "reviewed",
+      "sourceHash": "b6b16070541e5715cb3573a32cf8cc75370ab055060fc22e4649a7ee87ca59f9",
+      "donor": {
+        "game": "emerald",
+        "tileset": "general__petalburg",
+        "id": 3,
+        "hash": "1131b4c7f185d34ca16174853b585a6db4ef50b489901fa23bc0d43b4543eba4",
+        "layerHashes": {
+          "under": "1131b4c7f185d34ca16174853b585a6db4ef50b489901fa23bc0d43b4543eba4",
+          "mid": "1131b4c7f185d34ca16174853b585a6db4ef50b489901fa23bc0d43b4543eba4",
+          "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+        }
+      },
+      "sourceFiles": {
+        "metadata": "0071b3599a4bf7682f07f433f8493159d105148d8b78ff06e77817ddb044c2a5",
+        "image": "69ad623ce4b79af12ee7bc524193bf71183b1b5f5d766d89a6fb0cc432a129f6",
+        "maps": "210b5527393c273c632572fd697aa89bec9c853526b58069a77a2acc8767ebf0"
+      },
+      "donorFiles": {
+        "anim_general_flower.idx": "8b70b6ca10c999ed05aacfc6dc5d58a813b11618279f8f6b121ce4bf743363af",
+        "anim_general_sand_water_edge.idx": "70175ef10db1e1867ace97f4c2dad6bc8506e91e6be79a8284248d92905b48a7",
+        "anim_general_water.idx": "30cade0f5c9b9b2d1f8f9176c32b0c58bdd7076e7b26d162ffc4db45e3b7c7e2",
+        "anim_general_waterfall.idx": "e896122b7403cd23ce7123b6f812240d039ad8e7f5150887a64cc426e8f59a4b",
+        "anim_manifest.lua": "fc4e1dba5d39f0979e8740854020f85a541760683fd8996f07259cbfe6057320",
+        "atlas_m_c4caabcecdcd081e.rgba": "5ae504e618d9ea00f54dcfddd3601f4c3b0f5f3a93743a77e60ee80d55c68cc1",
+        "atlas_o_77e289f599b5a7a7.rgba": "e86d1611c3842d4449cb18bb482c991a13bfa16296ecb7a5bd691dbb7e22b233",
+        "atlas_u_74b56079e9ef3cc5.rgba": "772c296d6e6ae4d26ecacb8031bb0b89cdebaab63a0049b044d6411c5df238e2",
+        "mids.idx": "8757f06b2ca9aa3782787d3aeb85d47a3b2c13991382d5f831250a76eca982dd",
+        "mids_mid.idx": "d84ff173625f69331d3ac1cb3fefe1e83de9ab5355820a2002e5ee73379f626e",
+        "mids_over.idx": "3e91bc371ee0d3a815b1810f7e49e8a355a6cd7de7c64917538383d55292b0fc",
+        "palettes.bin": "40e38ffa970541275470aea7f80714a4593afd5d6420d4a4fc782172c6321b0d",
+        "manifest": "857ca4a444bec9981bb199e8a8919574913c2815fb0bab520b2a9658f3c705fa",
+        "mid_index": "31c948bac28f2dae1b0e521f4bda01e9809896f8f7ab0bf019f750c257fd9d1a"
+      },
+      "evidence": "tools/review.py review sheet row 8: Both are complete freestanding signboards; compare support positions and border proportions before approval. Visually approved 2026-10-26.",
+      "same_geometry": "16px complete interior or object; no cell-boundary transformation",
+      "aliases": [
+        {
+          "id": 69,
+          "quadrant": 0,
+          "sourceHash": "b6b16070541e5715cb3573a32cf8cc75370ab055060fc22e4649a7ee87ca59f9"
+        },
+        {
+          "id": 71,
+          "quadrant": 3,
+          "sourceHash": "b6b16070541e5715cb3573a32cf8cc75370ab055060fc22e4649a7ee87ca59f9"
+        },
+        {
+          "id": 120,
+          "quadrant": 3,
+          "sourceHash": "b6b16070541e5715cb3573a32cf8cc75370ab055060fc22e4649a7ee87ca59f9"
+        }
+      ],
+      "alias_policy": "Same tileset, exact grayscale pixels, matching native behavior and priority; no cross-tileset inference."
+    },
+    {
+      "game": "crystal",
+      "style": "gen3",
+      "tileset": "TILESET_JOHTO",
+      "id": 7,
+      "quadrant": 2,
+      "role": "open_water",
+      "status": "candidate",
+      "blocking_reason": "animation_integration_needed",
+      "sourceHash": "f650043edff2b82fb55454838ce31c9ec3ff001bef16fb08f29022a0abf44d65",
+      "donor": {
+        "game": "emerald",
+        "tileset": "general__petalburg",
+        "id": 161,
+        "hash": "08b65d6f3e0c2ad7d7d258e1304e6ed0135772f4917302848f0079472994ae86",
+        "layerHashes": {
+          "under": "08b65d6f3e0c2ad7d7d258e1304e6ed0135772f4917302848f0079472994ae86",
+          "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+          "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+        }
+      },
+      "sourceFiles": {
+        "metadata": "0071b3599a4bf7682f07f433f8493159d105148d8b78ff06e77817ddb044c2a5",
+        "image": "69ad623ce4b79af12ee7bc524193bf71183b1b5f5d766d89a6fb0cc432a129f6",
+        "maps": "210b5527393c273c632572fd697aa89bec9c853526b58069a77a2acc8767ebf0"
+      },
+      "donorFiles": {
+        "anim_general_flower.idx": "8b70b6ca10c999ed05aacfc6dc5d58a813b11618279f8f6b121ce4bf743363af",
+        "anim_general_sand_water_edge.idx": "70175ef10db1e1867ace97f4c2dad6bc8506e91e6be79a8284248d92905b48a7",
+        "anim_general_water.idx": "30cade0f5c9b9b2d1f8f9176c32b0c58bdd7076e7b26d162ffc4db45e3b7c7e2",
+        "anim_general_waterfall.idx": "e896122b7403cd23ce7123b6f812240d039ad8e7f5150887a64cc426e8f59a4b",
+        "anim_manifest.lua": "fc4e1dba5d39f0979e8740854020f85a541760683fd8996f07259cbfe6057320",
+        "atlas_m_c4caabcecdcd081e.rgba": "5ae504e618d9ea00f54dcfddd3601f4c3b0f5f3a93743a77e60ee80d55c68cc1",
+        "atlas_o_77e289f599b5a7a7.rgba": "e86d1611c3842d4449cb18bb482c991a13bfa16296ecb7a5bd691dbb7e22b233",
+        "atlas_u_74b56079e9ef3cc5.rgba": "772c296d6e6ae4d26ecacb8031bb0b89cdebaab63a0049b044d6411c5df238e2",
+        "mids.idx": "8757f06b2ca9aa3782787d3aeb85d47a3b2c13991382d5f831250a76eca982dd",
+        "mids_mid.idx": "d84ff173625f69331d3ac1cb3fefe1e83de9ab5355820a2002e5ee73379f626e",
+        "mids_over.idx": "3e91bc371ee0d3a815b1810f7e49e8a355a6cd7de7c64917538383d55292b0fc",
+        "palettes.bin": "40e38ffa970541275470aea7f80714a4593afd5d6420d4a4fc782172c6321b0d",
+        "manifest": "857ca4a444bec9981bb199e8a8919574913c2815fb0bab520b2a9658f3c705fa",
+        "mid_index": "31c948bac28f2dae1b0e521f4bda01e9809896f8f7ab0bf019f750c257fd9d1a"
+      },
+      "evidence": "tools/review.py review sheet row 9: Both are complete open-water cells, without a bank. Source collision0x29. Donor water animation still needs integration.",
+      "same_geometry": "16px complete interior or object; no cell-boundary transformation",
+      "aliases": [
+        {
+          "id": 7,
+          "quadrant": 2,
+          "sourceHash": "f650043edff2b82fb55454838ce31c9ec3ff001bef16fb08f29022a0abf44d65"
+        },
+        {
+          "id": 48,
+          "quadrant": 3,
+          "sourceHash": "f650043edff2b82fb55454838ce31c9ec3ff001bef16fb08f29022a0abf44d65"
+        },
+        {
+          "id": 49,
+          "quadrant": 2,
+          "sourceHash": "f650043edff2b82fb55454838ce31c9ec3ff001bef16fb08f29022a0abf44d65"
+        },
+        {
+          "id": 49,
+          "quadrant": 3,
+          "sourceHash": "f650043edff2b82fb55454838ce31c9ec3ff001bef16fb08f29022a0abf44d65"
+        },
+        {
+          "id": 50,
+          "quadrant": 2,
+          "sourceHash": "f650043edff2b82fb55454838ce31c9ec3ff001bef16fb08f29022a0abf44d65"
+        },
+        {
+          "id": 52,
+          "quadrant": 1,
+          "sourceHash": "f650043edff2b82fb55454838ce31c9ec3ff001bef16fb08f29022a0abf44d65"
+        },
+        {
+          "id": 52,
+          "quadrant": 3,
+          "sourceHash": "f650043edff2b82fb55454838ce31c9ec3ff001bef16fb08f29022a0abf44d65"
+        },
+        {
+          "id": 53,
+          "quadrant": 0,
+          "sourceHash": "f650043edff2b82fb55454838ce31c9ec3ff001bef16fb08f29022a0abf44d65"
+        },
+        {
+          "id": 53,
+          "quadrant": 1,
+          "sourceHash": "f650043edff2b82fb55454838ce31c9ec3ff001bef16fb08f29022a0abf44d65"
+        },
+        {
+          "id": 53,
+          "quadrant": 2,
+          "sourceHash": "f650043edff2b82fb55454838ce31c9ec3ff001bef16fb08f29022a0abf44d65"
+        },
+        {
+          "id": 53,
+          "quadrant": 3,
+          "sourceHash": "f650043edff2b82fb55454838ce31c9ec3ff001bef16fb08f29022a0abf44d65"
+        },
+        {
+          "id": 54,
+          "quadrant": 0,
+          "sourceHash": "f650043edff2b82fb55454838ce31c9ec3ff001bef16fb08f29022a0abf44d65"
+        },
+        {
+          "id": 54,
+          "quadrant": 2,
+          "sourceHash": "f650043edff2b82fb55454838ce31c9ec3ff001bef16fb08f29022a0abf44d65"
+        },
+        {
+          "id": 56,
+          "quadrant": 1,
+          "sourceHash": "f650043edff2b82fb55454838ce31c9ec3ff001bef16fb08f29022a0abf44d65"
+        },
+        {
+          "id": 57,
+          "quadrant": 0,
+          "sourceHash": "f650043edff2b82fb55454838ce31c9ec3ff001bef16fb08f29022a0abf44d65"
+        },
+        {
+          "id": 57,
+          "quadrant": 1,
+          "sourceHash": "f650043edff2b82fb55454838ce31c9ec3ff001bef16fb08f29022a0abf44d65"
+        },
+        {
+          "id": 58,
+          "quadrant": 0,
+          "sourceHash": "f650043edff2b82fb55454838ce31c9ec3ff001bef16fb08f29022a0abf44d65"
+        },
+        {
+          "id": 67,
+          "quadrant": 2,
+          "sourceHash": "f650043edff2b82fb55454838ce31c9ec3ff001bef16fb08f29022a0abf44d65"
+        },
+        {
+          "id": 67,
+          "quadrant": 3,
+          "sourceHash": "f650043edff2b82fb55454838ce31c9ec3ff001bef16fb08f29022a0abf44d65"
+        },
+        {
+          "id": 84,
+          "quadrant": 3,
+          "sourceHash": "f650043edff2b82fb55454838ce31c9ec3ff001bef16fb08f29022a0abf44d65"
+        },
+        {
+          "id": 85,
+          "quadrant": 2,
+          "sourceHash": "f650043edff2b82fb55454838ce31c9ec3ff001bef16fb08f29022a0abf44d65"
+        },
+        {
+          "id": 88,
+          "quadrant": 1,
+          "sourceHash": "f650043edff2b82fb55454838ce31c9ec3ff001bef16fb08f29022a0abf44d65"
+        },
+        {
+          "id": 88,
+          "quadrant": 3,
+          "sourceHash": "f650043edff2b82fb55454838ce31c9ec3ff001bef16fb08f29022a0abf44d65"
+        },
+        {
+          "id": 89,
+          "quadrant": 0,
+          "sourceHash": "f650043edff2b82fb55454838ce31c9ec3ff001bef16fb08f29022a0abf44d65"
+        },
+        {
+          "id": 89,
+          "quadrant": 2,
+          "sourceHash": "f650043edff2b82fb55454838ce31c9ec3ff001bef16fb08f29022a0abf44d65"
+        },
+        {
+          "id": 118,
+          "quadrant": 2,
+          "sourceHash": "f650043edff2b82fb55454838ce31c9ec3ff001bef16fb08f29022a0abf44d65"
+        },
+        {
+          "id": 118,
+          "quadrant": 3,
+          "sourceHash": "f650043edff2b82fb55454838ce31c9ec3ff001bef16fb08f29022a0abf44d65"
+        },
+        {
+          "id": 121,
+          "quadrant": 1,
+          "sourceHash": "f650043edff2b82fb55454838ce31c9ec3ff001bef16fb08f29022a0abf44d65"
+        },
+        {
+          "id": 121,
+          "quadrant": 2,
+          "sourceHash": "f650043edff2b82fb55454838ce31c9ec3ff001bef16fb08f29022a0abf44d65"
+        },
+        {
+          "id": 121,
+          "quadrant": 3,
+          "sourceHash": "f650043edff2b82fb55454838ce31c9ec3ff001bef16fb08f29022a0abf44d65"
+        },
+        {
+          "id": 122,
+          "quadrant": 0,
+          "sourceHash": "f650043edff2b82fb55454838ce31c9ec3ff001bef16fb08f29022a0abf44d65"
+        },
+        {
+          "id": 122,
+          "quadrant": 2,
+          "sourceHash": "f650043edff2b82fb55454838ce31c9ec3ff001bef16fb08f29022a0abf44d65"
+        },
+        {
+          "id": 122,
+          "quadrant": 3,
+          "sourceHash": "f650043edff2b82fb55454838ce31c9ec3ff001bef16fb08f29022a0abf44d65"
+        }
+      ],
+      "alias_policy": "Same tileset, exact grayscale pixels, matching native behavior and priority; no cross-tileset inference.",
+      "animated": true
+    },
+    {
+      "game": "yellow",
+      "style": "gen3",
+      "tileset": "OVERWORLD",
+      "id": 1,
+      "quadrant": 0,
+      "role": "open_grassy_ground",
+      "status": "reviewed",
+      "sourceHash": "4aa9c9143bfbcc8ee4a3305333913b4592b6a9a3471927e41b1a1f7fc0276f72",
+      "donor": {
+        "game": "emerald",
+        "tileset": "general__petalburg",
+        "id": 1,
+        "hash": "1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1",
+        "layerHashes": {
+          "under": "1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1",
+          "mid": "1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1",
+          "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+        }
+      },
+      "sourceFiles": {
+        "metadata": "5ab9e4659dc288389896334cb3f0cef372a70796cddb6f59c182a41391849c32",
+        "image": "5ca471616ea6f08baf3afeea7691cca4b9441d00c6bdf676a8428794044415e6",
+        "maps": "e926952399888dc032e2ca8e8a40205d4a1e73dc2c3036ec30449a65e5f3f55c"
+      },
+      "donorFiles": {
+        "anim_general_flower.idx": "8b70b6ca10c999ed05aacfc6dc5d58a813b11618279f8f6b121ce4bf743363af",
+        "anim_general_sand_water_edge.idx": "70175ef10db1e1867ace97f4c2dad6bc8506e91e6be79a8284248d92905b48a7",
+        "anim_general_water.idx": "30cade0f5c9b9b2d1f8f9176c32b0c58bdd7076e7b26d162ffc4db45e3b7c7e2",
+        "anim_general_waterfall.idx": "e896122b7403cd23ce7123b6f812240d039ad8e7f5150887a64cc426e8f59a4b",
+        "anim_manifest.lua": "fc4e1dba5d39f0979e8740854020f85a541760683fd8996f07259cbfe6057320",
+        "atlas_m_c4caabcecdcd081e.rgba": "5ae504e618d9ea00f54dcfddd3601f4c3b0f5f3a93743a77e60ee80d55c68cc1",
+        "atlas_o_77e289f599b5a7a7.rgba": "e86d1611c3842d4449cb18bb482c991a13bfa16296ecb7a5bd691dbb7e22b233",
+        "atlas_u_74b56079e9ef3cc5.rgba": "772c296d6e6ae4d26ecacb8031bb0b89cdebaab63a0049b044d6411c5df238e2",
+        "mids.idx": "8757f06b2ca9aa3782787d3aeb85d47a3b2c13991382d5f831250a76eca982dd",
+        "mids_mid.idx": "d84ff173625f69331d3ac1cb3fefe1e83de9ab5355820a2002e5ee73379f626e",
+        "mids_over.idx": "3e91bc371ee0d3a815b1810f7e49e8a355a6cd7de7c64917538383d55292b0fc",
+        "palettes.bin": "40e38ffa970541275470aea7f80714a4593afd5d6420d4a4fc782172c6321b0d",
+        "manifest": "857ca4a444bec9981bb199e8a8919574913c2815fb0bab520b2a9658f3c705fa",
+        "mid_index": "31c948bac28f2dae1b0e521f4bda01e9809896f8f7ab0bf019f750c257fd9d1a"
+      },
+      "evidence": "tools/review.py review sheet row 10: Yellow has a different tuft pattern from Red. It is still a complete ground interior without a border or object. Visually approved 2026-10-26.",
+      "same_geometry": "16px complete interior or object; no cell-boundary transformation",
+      "aliases": [
+        {
+          "id": 1,
+          "quadrant": 0,
+          "sourceHash": "4aa9c9143bfbcc8ee4a3305333913b4592b6a9a3471927e41b1a1f7fc0276f72"
+        },
+        {
+          "id": 1,
+          "quadrant": 3,
+          "sourceHash": "4aa9c9143bfbcc8ee4a3305333913b4592b6a9a3471927e41b1a1f7fc0276f72"
+        },
+        {
+          "id": 28,
+          "quadrant": 0,
+          "sourceHash": "4aa9c9143bfbcc8ee4a3305333913b4592b6a9a3471927e41b1a1f7fc0276f72"
+        },
+        {
+          "id": 56,
+          "quadrant": 0,
+          "sourceHash": "4aa9c9143bfbcc8ee4a3305333913b4592b6a9a3471927e41b1a1f7fc0276f72"
+        },
+        {
+          "id": 57,
+          "quadrant": 0,
+          "sourceHash": "4aa9c9143bfbcc8ee4a3305333913b4592b6a9a3471927e41b1a1f7fc0276f72"
+        }
+      ],
+      "alias_policy": "Same tileset, exact grayscale pixels, matching native behavior and priority; no cross-tileset inference."
+    },
+    {
+      "game": "yellow",
+      "style": "gen3",
+      "tileset": "OVERWORLD",
+      "id": 11,
+      "quadrant": 0,
+      "role": "tall_grass",
+      "status": "reviewed",
+      "sourceHash": "b8d224e477a58206fab27ab1d3c6f8b9ffda2cad7d19173319d08e5d47267c7d",
+      "donor": {
+        "game": "emerald",
+        "tileset": "general__petalburg",
+        "id": 13,
+        "hash": "292c51594070c8df892301b97636c4f0dde6cdef89158084356ed9feaed86920",
+        "layerHashes": {
+          "under": "292c51594070c8df892301b97636c4f0dde6cdef89158084356ed9feaed86920",
+          "mid": "292c51594070c8df892301b97636c4f0dde6cdef89158084356ed9feaed86920",
+          "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+        }
+      },
+      "sourceFiles": {
+        "metadata": "5ab9e4659dc288389896334cb3f0cef372a70796cddb6f59c182a41391849c32",
+        "image": "5ca471616ea6f08baf3afeea7691cca4b9441d00c6bdf676a8428794044415e6",
+        "maps": "e926952399888dc032e2ca8e8a40205d4a1e73dc2c3036ec30449a65e5f3f55c"
+      },
+      "donorFiles": {
+        "anim_general_flower.idx": "8b70b6ca10c999ed05aacfc6dc5d58a813b11618279f8f6b121ce4bf743363af",
+        "anim_general_sand_water_edge.idx": "70175ef10db1e1867ace97f4c2dad6bc8506e91e6be79a8284248d92905b48a7",
+        "anim_general_water.idx": "30cade0f5c9b9b2d1f8f9176c32b0c58bdd7076e7b26d162ffc4db45e3b7c7e2",
+        "anim_general_waterfall.idx": "e896122b7403cd23ce7123b6f812240d039ad8e7f5150887a64cc426e8f59a4b",
+        "anim_manifest.lua": "fc4e1dba5d39f0979e8740854020f85a541760683fd8996f07259cbfe6057320",
+        "atlas_m_c4caabcecdcd081e.rgba": "5ae504e618d9ea00f54dcfddd3601f4c3b0f5f3a93743a77e60ee80d55c68cc1",
+        "atlas_o_77e289f599b5a7a7.rgba": "e86d1611c3842d4449cb18bb482c991a13bfa16296ecb7a5bd691dbb7e22b233",
+        "atlas_u_74b56079e9ef3cc5.rgba": "772c296d6e6ae4d26ecacb8031bb0b89cdebaab63a0049b044d6411c5df238e2",
+        "mids.idx": "8757f06b2ca9aa3782787d3aeb85d47a3b2c13991382d5f831250a76eca982dd",
+        "mids_mid.idx": "d84ff173625f69331d3ac1cb3fefe1e83de9ab5355820a2002e5ee73379f626e",
+        "mids_over.idx": "3e91bc371ee0d3a815b1810f7e49e8a355a6cd7de7c64917538383d55292b0fc",
+        "palettes.bin": "40e38ffa970541275470aea7f80714a4593afd5d6420d4a4fc782172c6321b0d",
+        "manifest": "857ca4a444bec9981bb199e8a8919574913c2815fb0bab520b2a9658f3c705fa",
+        "mid_index": "31c948bac28f2dae1b0e521f4bda01e9809896f8f7ab0bf019f750c257fd9d1a"
+      },
+      "evidence": "tools/review.py review sheet row 11: Complete tall-grass cell. Approved with exact native Emerald frame4 bottom8px feet cover; no invented mask. Visually approved 2026-10-26.",
+      "same_geometry": "16px complete interior or object; no cell-boundary transformation",
+      "aliases": [
+        {
+          "id": 11,
+          "quadrant": 0,
+          "sourceHash": "b8d224e477a58206fab27ab1d3c6f8b9ffda2cad7d19173319d08e5d47267c7d"
+        },
+        {
+          "id": 11,
+          "quadrant": 1,
+          "sourceHash": "b8d224e477a58206fab27ab1d3c6f8b9ffda2cad7d19173319d08e5d47267c7d"
+        },
+        {
+          "id": 11,
+          "quadrant": 2,
+          "sourceHash": "b8d224e477a58206fab27ab1d3c6f8b9ffda2cad7d19173319d08e5d47267c7d"
+        },
+        {
+          "id": 11,
+          "quadrant": 3,
+          "sourceHash": "b8d224e477a58206fab27ab1d3c6f8b9ffda2cad7d19173319d08e5d47267c7d"
+        }
+      ],
+      "alias_policy": "Same tileset, exact grayscale pixels, matching native behavior and priority; no cross-tileset inference.",
+      "occludes": true,
+      "foreground_candidate": {
+        "game": "emerald",
+        "file": "data/generated/gba/field_effects/tall_grass.rgba",
+        "frame": 4,
+        "crop": [
+          0,
+          8,
+          16,
+          8
+        ],
+        "placement": [
+          0,
+          8
+        ],
+        "format": "zlib compressed raw RGBA16x80",
+        "sha256": "e0c5a713c75ad8229538718afd87a9994574b87c2f980867b3bf0c80cf641c96",
+        "engine_evidence": "src/core/game3/field_effects.lua: quadsFront bottom8px, static frame4 for NPCs; FEET_H=8"
+      },
+      "foreground": {
+        "game": "emerald",
+        "effect": "tall_grass",
+        "hash": "47a417921b32c15d04df7998af22698fe86e6e753ad5740b9e41685d90b7a8d5"
+      }
+    },
+    {
+      "game": "yellow",
+      "style": "gen3",
+      "tileset": "OVERWORLD",
+      "id": 8,
+      "quadrant": 3,
+      "role": "freestanding_sign",
+      "status": "reviewed",
+      "sourceHash": "ada31085ffbc9e27888f9214d64f2c0724c9dbf11d319a2f1ce3970605f9f5a5",
+      "donor": {
+        "game": "emerald",
+        "tileset": "general__petalburg",
+        "id": 3,
+        "hash": "1131b4c7f185d34ca16174853b585a6db4ef50b489901fa23bc0d43b4543eba4",
+        "layerHashes": {
+          "under": "1131b4c7f185d34ca16174853b585a6db4ef50b489901fa23bc0d43b4543eba4",
+          "mid": "1131b4c7f185d34ca16174853b585a6db4ef50b489901fa23bc0d43b4543eba4",
+          "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+        }
+      },
+      "sourceFiles": {
+        "metadata": "5ab9e4659dc288389896334cb3f0cef372a70796cddb6f59c182a41391849c32",
+        "image": "5ca471616ea6f08baf3afeea7691cca4b9441d00c6bdf676a8428794044415e6",
+        "maps": "e926952399888dc032e2ca8e8a40205d4a1e73dc2c3036ec30449a65e5f3f55c"
+      },
+      "donorFiles": {
+        "anim_general_flower.idx": "8b70b6ca10c999ed05aacfc6dc5d58a813b11618279f8f6b121ce4bf743363af",
+        "anim_general_sand_water_edge.idx": "70175ef10db1e1867ace97f4c2dad6bc8506e91e6be79a8284248d92905b48a7",
+        "anim_general_water.idx": "30cade0f5c9b9b2d1f8f9176c32b0c58bdd7076e7b26d162ffc4db45e3b7c7e2",
+        "anim_general_waterfall.idx": "e896122b7403cd23ce7123b6f812240d039ad8e7f5150887a64cc426e8f59a4b",
+        "anim_manifest.lua": "fc4e1dba5d39f0979e8740854020f85a541760683fd8996f07259cbfe6057320",
+        "atlas_m_c4caabcecdcd081e.rgba": "5ae504e618d9ea00f54dcfddd3601f4c3b0f5f3a93743a77e60ee80d55c68cc1",
+        "atlas_o_77e289f599b5a7a7.rgba": "e86d1611c3842d4449cb18bb482c991a13bfa16296ecb7a5bd691dbb7e22b233",
+        "atlas_u_74b56079e9ef3cc5.rgba": "772c296d6e6ae4d26ecacb8031bb0b89cdebaab63a0049b044d6411c5df238e2",
+        "mids.idx": "8757f06b2ca9aa3782787d3aeb85d47a3b2c13991382d5f831250a76eca982dd",
+        "mids_mid.idx": "d84ff173625f69331d3ac1cb3fefe1e83de9ab5355820a2002e5ee73379f626e",
+        "mids_over.idx": "3e91bc371ee0d3a815b1810f7e49e8a355a6cd7de7c64917538383d55292b0fc",
+        "palettes.bin": "40e38ffa970541275470aea7f80714a4593afd5d6420d4a4fc782172c6321b0d",
+        "manifest": "857ca4a444bec9981bb199e8a8919574913c2815fb0bab520b2a9658f3c705fa",
+        "mid_index": "31c948bac28f2dae1b0e521f4bda01e9809896f8f7ab0bf019f750c257fd9d1a"
+      },
+      "evidence": "tools/review.py review sheet row 12: Yellow's sign is a complete 16px signboard with two supports; reviewed separately from Red's different pixels. Visually approved 2026-10-26.",
+      "same_geometry": "16px complete interior or object; no cell-boundary transformation",
+      "aliases": [
+        {
+          "id": 8,
+          "quadrant": 3,
+          "sourceHash": "ada31085ffbc9e27888f9214d64f2c0724c9dbf11d319a2f1ce3970605f9f5a5"
+        },
+        {
+          "id": 86,
+          "quadrant": 3,
+          "sourceHash": "ada31085ffbc9e27888f9214d64f2c0724c9dbf11d319a2f1ce3970605f9f5a5"
+        },
+        {
+          "id": 121,
+          "quadrant": 3,
+          "sourceHash": "ada31085ffbc9e27888f9214d64f2c0724c9dbf11d319a2f1ce3970605f9f5a5"
+        }
+      ],
+      "alias_policy": "Same tileset, exact grayscale pixels, matching native behavior and priority; no cross-tileset inference."
+    },
+    {
+      "game": "red",
+      "style": "gen3",
+      "tileset": "OVERWORLD",
+      "id": 8,
+      "quadrant": 0,
+      "role": "open_grassy_ground",
+      "status": "reviewed",
+      "sourceHash": "bc046fd7fec9239fd6933afc501dda72d9a090392a0cf59c635c03d02614bc7b",
+      "donor": {
+        "game": "emerald",
+        "tileset": "general__petalburg",
+        "id": 1,
+        "hash": "1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1",
+        "layerHashes": {
+          "under": "1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1",
+          "mid": "1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1",
+          "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+        }
+      },
+      "sourceFiles": {
+        "metadata": "0c88e9ab0699a718f66d1ebb78ae7fe0c4bbc984a0dc8b9b18be542a0307b1d5",
+        "image": "7ed34ea824a79bf49520135c587d62182169b94855bf1958880778eb5c74f5c0",
+        "maps": "747230ee475113dda4d79df68ea96b3237c8c9022a80a57f43b9f3c5db707a0d"
+      },
+      "donorFiles": {
+        "anim_general_flower.idx": "8b70b6ca10c999ed05aacfc6dc5d58a813b11618279f8f6b121ce4bf743363af",
+        "anim_general_sand_water_edge.idx": "70175ef10db1e1867ace97f4c2dad6bc8506e91e6be79a8284248d92905b48a7",
+        "anim_general_water.idx": "30cade0f5c9b9b2d1f8f9176c32b0c58bdd7076e7b26d162ffc4db45e3b7c7e2",
+        "anim_general_waterfall.idx": "e896122b7403cd23ce7123b6f812240d039ad8e7f5150887a64cc426e8f59a4b",
+        "anim_manifest.lua": "fc4e1dba5d39f0979e8740854020f85a541760683fd8996f07259cbfe6057320",
+        "atlas_m_c4caabcecdcd081e.rgba": "5ae504e618d9ea00f54dcfddd3601f4c3b0f5f3a93743a77e60ee80d55c68cc1",
+        "atlas_o_77e289f599b5a7a7.rgba": "e86d1611c3842d4449cb18bb482c991a13bfa16296ecb7a5bd691dbb7e22b233",
+        "atlas_u_74b56079e9ef3cc5.rgba": "772c296d6e6ae4d26ecacb8031bb0b89cdebaab63a0049b044d6411c5df238e2",
+        "mids.idx": "8757f06b2ca9aa3782787d3aeb85d47a3b2c13991382d5f831250a76eca982dd",
+        "mids_mid.idx": "d84ff173625f69331d3ac1cb3fefe1e83de9ab5355820a2002e5ee73379f626e",
+        "mids_over.idx": "3e91bc371ee0d3a815b1810f7e49e8a355a6cd7de7c64917538383d55292b0fc",
+        "palettes.bin": "40e38ffa970541275470aea7f80714a4593afd5d6420d4a4fc782172c6321b0d",
+        "manifest": "857ca4a444bec9981bb199e8a8919574913c2815fb0bab520b2a9658f3c705fa",
+        "mid_index": "31c948bac28f2dae1b0e521f4bda01e9809896f8f7ab0bf019f750c257fd9d1a"
+      },
+      "evidence": "tools/review.py review sheet row 13: Complete ground with denser tufts: four native tile57 cells, all walkable. No building, bank or edge pixels. Visually approved 2026-10-26.",
+      "same_geometry": "16px complete interior or object; no cell-boundary transformation",
+      "aliases": [
+        {
+          "id": 8,
+          "quadrant": 0,
+          "sourceHash": "bc046fd7fec9239fd6933afc501dda72d9a090392a0cf59c635c03d02614bc7b"
+        },
+        {
+          "id": 8,
+          "quadrant": 1,
+          "sourceHash": "bc046fd7fec9239fd6933afc501dda72d9a090392a0cf59c635c03d02614bc7b"
+        },
+        {
+          "id": 8,
+          "quadrant": 2,
+          "sourceHash": "bc046fd7fec9239fd6933afc501dda72d9a090392a0cf59c635c03d02614bc7b"
+        },
+        {
+          "id": 26,
+          "quadrant": 0,
+          "sourceHash": "bc046fd7fec9239fd6933afc501dda72d9a090392a0cf59c635c03d02614bc7b"
+        },
+        {
+          "id": 26,
+          "quadrant": 1,
+          "sourceHash": "bc046fd7fec9239fd6933afc501dda72d9a090392a0cf59c635c03d02614bc7b"
+        },
+        {
+          "id": 49,
+          "quadrant": 0,
+          "sourceHash": "bc046fd7fec9239fd6933afc501dda72d9a090392a0cf59c635c03d02614bc7b"
+        },
+        {
+          "id": 49,
+          "quadrant": 1,
+          "sourceHash": "bc046fd7fec9239fd6933afc501dda72d9a090392a0cf59c635c03d02614bc7b"
+        },
+        {
+          "id": 49,
+          "quadrant": 2,
+          "sourceHash": "bc046fd7fec9239fd6933afc501dda72d9a090392a0cf59c635c03d02614bc7b"
+        },
+        {
+          "id": 49,
+          "quadrant": 3,
+          "sourceHash": "bc046fd7fec9239fd6933afc501dda72d9a090392a0cf59c635c03d02614bc7b"
+        },
+        {
+          "id": 71,
+          "quadrant": 0,
+          "sourceHash": "bc046fd7fec9239fd6933afc501dda72d9a090392a0cf59c635c03d02614bc7b"
+        },
+        {
+          "id": 71,
+          "quadrant": 2,
+          "sourceHash": "bc046fd7fec9239fd6933afc501dda72d9a090392a0cf59c635c03d02614bc7b"
+        },
+        {
+          "id": 75,
+          "quadrant": 0,
+          "sourceHash": "bc046fd7fec9239fd6933afc501dda72d9a090392a0cf59c635c03d02614bc7b"
+        },
+        {
+          "id": 86,
+          "quadrant": 0,
+          "sourceHash": "bc046fd7fec9239fd6933afc501dda72d9a090392a0cf59c635c03d02614bc7b"
+        },
+        {
+          "id": 86,
+          "quadrant": 1,
+          "sourceHash": "bc046fd7fec9239fd6933afc501dda72d9a090392a0cf59c635c03d02614bc7b"
+        },
+        {
+          "id": 92,
+          "quadrant": 0,
+          "sourceHash": "bc046fd7fec9239fd6933afc501dda72d9a090392a0cf59c635c03d02614bc7b"
+        },
+        {
+          "id": 92,
+          "quadrant": 1,
+          "sourceHash": "bc046fd7fec9239fd6933afc501dda72d9a090392a0cf59c635c03d02614bc7b"
+        },
+        {
+          "id": 97,
+          "quadrant": 0,
+          "sourceHash": "bc046fd7fec9239fd6933afc501dda72d9a090392a0cf59c635c03d02614bc7b"
+        },
+        {
+          "id": 97,
+          "quadrant": 1,
+          "sourceHash": "bc046fd7fec9239fd6933afc501dda72d9a090392a0cf59c635c03d02614bc7b"
+        },
+        {
+          "id": 119,
+          "quadrant": 0,
+          "sourceHash": "bc046fd7fec9239fd6933afc501dda72d9a090392a0cf59c635c03d02614bc7b"
+        },
+        {
+          "id": 119,
+          "quadrant": 1,
+          "sourceHash": "bc046fd7fec9239fd6933afc501dda72d9a090392a0cf59c635c03d02614bc7b"
+        }
+      ],
+      "alias_policy": "Same tileset, exact grayscale pixels, matching native behavior and priority; no cross-tileset inference."
+    },
+    {
+      "game": "yellow",
+      "style": "gen3",
+      "tileset": "OVERWORLD",
+      "id": 8,
+      "quadrant": 0,
+      "role": "open_grassy_ground",
+      "status": "reviewed",
+      "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938",
+      "donor": {
+        "game": "emerald",
+        "tileset": "general__petalburg",
+        "id": 1,
+        "hash": "1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1",
+        "layerHashes": {
+          "under": "1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1",
+          "mid": "1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1",
+          "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+        }
+      },
+      "sourceFiles": {
+        "metadata": "5ab9e4659dc288389896334cb3f0cef372a70796cddb6f59c182a41391849c32",
+        "image": "5ca471616ea6f08baf3afeea7691cca4b9441d00c6bdf676a8428794044415e6",
+        "maps": "e926952399888dc032e2ca8e8a40205d4a1e73dc2c3036ec30449a65e5f3f55c"
+      },
+      "donorFiles": {
+        "anim_general_flower.idx": "8b70b6ca10c999ed05aacfc6dc5d58a813b11618279f8f6b121ce4bf743363af",
+        "anim_general_sand_water_edge.idx": "70175ef10db1e1867ace97f4c2dad6bc8506e91e6be79a8284248d92905b48a7",
+        "anim_general_water.idx": "30cade0f5c9b9b2d1f8f9176c32b0c58bdd7076e7b26d162ffc4db45e3b7c7e2",
+        "anim_general_waterfall.idx": "e896122b7403cd23ce7123b6f812240d039ad8e7f5150887a64cc426e8f59a4b",
+        "anim_manifest.lua": "fc4e1dba5d39f0979e8740854020f85a541760683fd8996f07259cbfe6057320",
+        "atlas_m_c4caabcecdcd081e.rgba": "5ae504e618d9ea00f54dcfddd3601f4c3b0f5f3a93743a77e60ee80d55c68cc1",
+        "atlas_o_77e289f599b5a7a7.rgba": "e86d1611c3842d4449cb18bb482c991a13bfa16296ecb7a5bd691dbb7e22b233",
+        "atlas_u_74b56079e9ef3cc5.rgba": "772c296d6e6ae4d26ecacb8031bb0b89cdebaab63a0049b044d6411c5df238e2",
+        "mids.idx": "8757f06b2ca9aa3782787d3aeb85d47a3b2c13991382d5f831250a76eca982dd",
+        "mids_mid.idx": "d84ff173625f69331d3ac1cb3fefe1e83de9ab5355820a2002e5ee73379f626e",
+        "mids_over.idx": "3e91bc371ee0d3a815b1810f7e49e8a355a6cd7de7c64917538383d55292b0fc",
+        "palettes.bin": "40e38ffa970541275470aea7f80714a4593afd5d6420d4a4fc782172c6321b0d",
+        "manifest": "857ca4a444bec9981bb199e8a8919574913c2815fb0bab520b2a9658f3c705fa",
+        "mid_index": "31c948bac28f2dae1b0e521f4bda01e9809896f8f7ab0bf019f750c257fd9d1a"
+      },
+      "evidence": "tools/review.py review sheet row 14: Yellow's independently checked dense ground texture: four tile57 cells, all walkable. No building or shore geometry. Visually approved 2026-10-26.",
+      "same_geometry": "16px complete interior or object; no cell-boundary transformation",
+      "aliases": [
+        {
+          "id": 8,
+          "quadrant": 0,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 8,
+          "quadrant": 1,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 8,
+          "quadrant": 2,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 26,
+          "quadrant": 0,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 26,
+          "quadrant": 1,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 49,
+          "quadrant": 0,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 49,
+          "quadrant": 1,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 49,
+          "quadrant": 2,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 49,
+          "quadrant": 3,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 71,
+          "quadrant": 0,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 71,
+          "quadrant": 2,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 75,
+          "quadrant": 0,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 86,
+          "quadrant": 0,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 86,
+          "quadrant": 1,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 92,
+          "quadrant": 0,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 92,
+          "quadrant": 1,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 97,
+          "quadrant": 0,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 97,
+          "quadrant": 1,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 119,
+          "quadrant": 0,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        },
+        {
+          "id": 119,
+          "quadrant": 1,
+          "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938"
+        }
+      ],
+      "alias_policy": "Same tileset, exact grayscale pixels, matching native behavior and priority; no cross-tileset inference."
+    }
+  ]
+}

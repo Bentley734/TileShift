@@ -1,0 +1,18 @@
+{
+  "id": "tileshift",
+  "name": "TileShift",
+  "version": "0.1.0",
+  "api": 2,
+  "entry": "main.lua",
+  "games": ["red", "blue", "yellow", "gold", "silver", "crystal", "ruby", "sapphire", "emerald", "firered", "leafgreen"],
+  "profile": "overhaul",
+  "category": "VISUAL",
+  "priority": 125,
+  "game_version": ">=0.3.96 <0.4.0",
+  "permissions": ["engine_internals"],
+  "dependencies": [],
+  "conflicts": [],
+  "affects_link": false,
+  "github": "Bentley734/TileShift",
+  "description": "Gen 3 world art for Gen 1/2, with reviewed tile matches. Pallet Town backgrounds are complete in Red, Blue and Yellow; other maps remain partially converted."
+}

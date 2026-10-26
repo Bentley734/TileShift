@@ -1,0 +1,159 @@
+local root=assert(arg and arg[1],'TileShift directory required')
+local Composition=assert(loadfile(root..'/lib/composition.lua'))()
+local count=0
+local function eq(a,b,message)
+  count=count+1;assert(a==b,(message or 'mismatch')..': '..tostring(a)..' ~= '..tostring(b))
+end
+local function near(a,b,message)
+  count=count+1;assert(math.abs(a-b)<1e-9,(message or 'mismatch')..': '..tostring(a)..' ~= '..tostring(b))
+end
+local function newData(w,h)
+  local d={w=w,h=h,pixels={}}
+  function d:getDimensions()return self.w,self.h end
+  function d:getPixel(x,y)
+    assert(x%1==0 and y%1==0 and x>=0 and x<self.w and y>=0 and y<self.h,'Read outside image')
+    local p=self.pixels[y*self.w+x] or {0,0,0,0};return p[1],p[2],p[3],p[4]
+  end
+  function d:setPixel(x,y,r,g,b,a)
+    assert(x%1==0 and y%1==0 and x>=0 and x<self.w and y>=0 and y<self.h,'Write outside image')
+    self.pixels[y*self.w+x]={r,g,b,a}
+  end
+  return d
+end
+local hashA,hashB,hashC=string.rep('a',64),string.rep('b',64),string.rep('c',64)
+local function ref(id,hash)return {game='firered',tileset='PAIR',id=id,hash=hash or hashA}end
+local pieces={}
+for id=1,3 do
+  local p={hash=id==3 and hashB or hashA,under=newData(16,16),mid=newData(16,16),over=newData(16,16)}
+  for y=0,15 do for x=0,15 do
+    p.under:setPixel(x,y,x/15,y/15,id/4,1)
+  end end
+  pieces[id]=p
+end
+local calls={}
+local donor={}
+function donor:cell(reference)
+  calls[#calls+1]=reference
+  if reference.id==99 then error('decoder thrown failure') end
+  if reference.id==98 then return nil,'decoder rejected fingerprint' end
+  return pieces[reference.id]
+end
+local composer=Composition.new({donor=donor,newImageData=newData})
+local function row(parts,base)return {kind='native_composite',parts=parts,base=base}end
+local function part(id,sx,sy,w,h,x,y)
+  return {donor=ref(id),srcX=sx,srcY=sy,w=w,h=h,x=x,y=y}
+end
+local function pixel(image,x,y,r,g,b,a,label)
+  local ar,ag,ab,aa=image:getPixel(x,y)
+  near(ar,r,label);near(ag,g,label);near(ab,b,label);near(aa,a,label)
+end
+-- Asymmetric coordinates expose transposed crops, wrong source strides and
+-- accidental whole-cell copies. A later piece also tests overlap order.
+local first=part(1,9,2,3,5,1,10)
+local second=part(2,2,11,5,2,10,1)
+local overlap=part(2,14,13,1,1,2,12)
+local result,err=composer:cell(row({first,second,overlap}));assert(result,err)
+eq(#calls,3);eq(calls[1],first.donor,'exact reference reaches fingerprint decoder')
+for dy=0,4 do for dx=0,2 do
+  if not (dx==1 and dy==2) then pixel(result.under,1+dx,10+dy,(9+dx)/15,(2+dy)/15,1/4,1) end
+end end
+for dy=0,1 do for dx=0,4 do pixel(result.under,10+dx,1+dy,(2+dx)/15,(11+dy)/15,2/4,1)end end
+pixel(result.under,2,12,14/15,13/15,2/4,1,'last piece wins')
+pixel(result.under,0,10,0,0,0,0,'untouched cell is transparent')
+pixel(result.under,4,10,0,0,0,0,'crop right boundary')
+pixel(result.under,1,15,0,0,0,0,'crop bottom boundary')
+eq(result.mid,nil)
+for y=0,15 do for x=0,15 do pixel(result.over,x,y,0,0,0,0,'returned over stays transparent')end end
+
+-- Straight-alpha compositing must retain chroma even on transparent output.
+local p=pieces[1]
+p.under:setPixel(7,6,1,0,0,.5)
+p.mid:setPixel(7,6,0,1,0,.5)
+p.over:setPixel(7,6,0,0,1,.5)
+p.under:setPixel(8,6,.9,.8,.7,0)
+p.mid:setPixel(8,6,.6,.5,.4,0)
+p.over:setPixel(8,6,.3,.2,.1,0)
+local alphaRow=row({part(1,7,6,2,1,3,4)})
+local alpha=assert(composer:cell(alphaRow))
+pixel(alpha.under,3,4,1/7,2/7,4/7,7/8,'under then middle then over')
+pixel(alpha.under,4,4,0,0,0,0,'fully transparent source contributes no hidden RGB')
+pieces[2].under:setPixel(3,4,.25,.5,.75,.5)
+pieces[2].mid:setPixel(3,4,1,1,0,.5)
+local withBase=assert(composer:cell(row(alphaRow.parts,ref(2))))
+-- Base at (3,4): (0.75,5/6,0.25,0.75), followed by the
+-- flattened (1/7,2/7,4/7,7/8) piece. Compute independently.
+local baseAlpha=.5+.5*.5
+local br=(1*.5+.25*.5*.5)/baseAlpha
+local bg=(1*.5+.5*.5*.5)/baseAlpha
+local bb=(0*.5+.75*.5*.5)/baseAlpha
+local outAlpha=7/8+baseAlpha/8
+pixel(withBase.under,3,4,((1/7)*(7/8)+br*baseAlpha/8)/outAlpha,
+  ((2/7)*(7/8)+bg*baseAlpha/8)/outAlpha,((4/7)*(7/8)+bb*baseAlpha/8)/outAlpha,outAlpha,
+  'flattened source blends over flattened base')
+pixel(withBase.under,4,4,4/15,4/15,.5,1,'transparent piece preserves base')
+pixel(withBase.under,15,15,1,1,.5,1,'base covers entire output')
+
+local function snapshot(image)
+  local out={}
+  for y=0,15 do for x=0,15 do
+    local r,g,b,a=image:getPixel(x,y);out[#out+1]=table.concat({r,g,b,a},',')
+  end end
+  return table.concat(out,';')
+end
+local before={}
+for id=1,3 do for _,layer in ipairs({'under','mid','over'})do
+  before[id..layer]=snapshot(pieces[id][layer])
+end end
+local a=assert(composer:cell(row({part(1,0,0,16,16,0,0)},ref(2))))
+local b=assert(composer:cell(row({{donor=ref(1),w=16,h=16}})))
+eq(a.under~=b.under,true,'output image is newly owned')
+a.under:setPixel(0,0,.125,.25,.375,.5)
+for id=1,3 do for _,layer in ipairs({'under','mid','over'})do
+  eq(snapshot(pieces[id][layer]),before[id..layer],'source images are immutable')
+end end
+
+local function fails(input,expected,noReads)
+  local n=#calls
+  local failed,why=composer:cell(input)
+  eq(failed,nil);eq(type(why),'string')
+  eq(why:find(expected,1,true)~=nil,true,why)
+  if noReads then eq(#calls,n,'bad row rejected before any source reads')end
+end
+fails(nil,'row is required',true)
+fails({parts={first}},'row is required',true)
+fails(row({}),'1 to 16 parts',true)
+local seventeen={};for i=1,17 do seventeen[i]=first end
+fails(row(seventeen),'1 to 16 parts',true)
+fails(row({[1]=first,[3]=second}),'dense array',true)
+fails(row({first,extra=second}),'dense array',true)
+fails(row({false}),'part is required',true)
+fails(row({{w=8,h=8}}),'reference is required',true)
+local noHash=part(1,0,0,1,1,0,0);noHash.donor.hash=nil
+fails(row({noHash}),'fingerprint is required',true)
+local malformed=part(1,0,0,1,1,0,0);malformed.donor.hash=string.rep('Z',64)
+fails(row({malformed}),'fingerprint is required',true)
+fails(row({first},false),'reference is required',true)
+for _,change in ipairs({{srcX=-1},{srcY=16},{x=.5},{y=0/0},{srcX=math.huge},{srcX=false},{y='0'},
+  {w=0},{h=-1},{w=17},{h=.5},{srcX=9,w=8},{srcY=9,h=8},{x=9,w=8},{y=9,h=8},
+  {w=false},{h='8'}}) do
+  local bad=part(1,0,0,8,8,0,0)
+  for key,value in pairs(change)do bad[key]=value end
+  fails(row({first,bad}),'rectangle exceeds',true)
+end
+fails(row({part(98,0,0,1,1,0,0)}),'decoder rejected fingerprint')
+fails(row({part(99,0,0,1,1,0,0)}),'decoder thrown failure')
+fails(row({first},ref(98)),'decoder rejected fingerprint')
+fails(row({part(3,0,0,1,1,0,0)}),'fingerprint changed')
+fails(row({first},ref(3)),'fingerprint changed')
+pieces[3].hash=hashA;pieces[3].under=newData(15,16)
+fails(row({part(3,0,0,1,1,0,0)}),'16 by 16')
+pieces[3].under=nil
+fails(row({part(3,0,0,1,1,0,0)}),'under layer is unavailable')
+pieces[3].under=newData(16,16);pieces[3].mid={}
+fails(row({part(3,0,0,1,1,0,0)}),'pixels are unavailable')
+pieces[3].mid=nil;pieces[3].hash=nil;pieces[3].sourceHash=hashA
+eq(composer:cell(row({part(3,0,0,1,1,0,0)}))~=nil,true,'sourceHash decoder contract is accepted')
+-- Sixteen bounded parts and edge coordinates are legal.
+local sixteen={};for i=1,16 do sixteen[i]=part(1,15,15,1,1,(i-1)%16,15)end
+eq(composer:cell(row(sixteen))~=nil,true)
+print('composition: '..count..' assertions passed')
