@@ -1,9 +1,9 @@
 # TileShift
 
 TileShift brings Gen 3 world art to Gen1Recomp with individually reviewed tile
-matches. Version 0.5.0 completely retiles the **Pallet Town, Route 1 and
+matches. Version 0.6.0 completely retiles the **Pallet Town, Route 1 and
 Viridian Forest backgrounds in Red, Blue and Yellow**, all 19 maps using
-their cave tileset, and **New Bark Town in Gold, Silver and Crystal**.
+their cave tileset, and **New Bark Town and Violet City in Gold, Silver and Crystal**.
 Red's downstairs room, Blue's house and many ordinary Kanto homes are also
 fully retiled. Pallet includes compact houses and Oak's
 lab, trees, fences, signs, grass, animated flowers, water and shoreline. Route 1
@@ -18,7 +18,10 @@ towns. Gen 1 caves have reviewed floors, raised rock surfaces, directional walls
 stairs, ladders, animated water and switch-controlled Victory Road barriers.
 Gen 2 caves add regional rock surfaces, complete rock masses, correctly joined
 corners, ladders, and distinct snowy floors and slippery ice. Violet includes
-an original Sprout Tower composition built from native Gen 3 materials.
+an original Sprout Tower composition built from native Gen 3 materials,
+complete freshwater ponds, paving, raised ground and all building facades.
+Gold and Silver retain their taller school footprint; Crystal retains its
+shorter school and the original Headbutt-tree row above it.
 Fighting Dojos, Bike Shops, the Fan Club and coastal houses retain their
 complete entrances, windows and original footprints. Interior floors use the
 matching house, lab, clinic, shop, ship, museum, Gym or facility art. Reviewed
@@ -33,7 +36,7 @@ art; separate cartridge styles and reverse conversions are future work.
 1. Import **Emerald and FireRed** into Gen1Recomp. TileShift reads native donor
    art from your own imports; neither ROMs nor extracted native artwork are
    bundled.
-2. Download `TileShift-v0.5.0.zip` from [the latest release](https://github.com/Bentley734/TileShift/releases/latest).
+2. Download `TileShift-v0.6.0.zip` from [the latest release](https://github.com/Bentley734/TileShift/releases/latest).
 3. Extract the `tileshift` folder into Gen1Recomp's `mods` directory, enable
    **TileShift**, and restart the game.
 4. Open Options and set **Tileset** to **Gen 3**. This is the default on a fresh
@@ -88,7 +91,7 @@ graphics cannot bypass native darkness.
 | Red's House 1F and Blue's House, Red/Blue/Yellow | 64/64 each |
 | New Bark Town, Gold/Silver/Crystal | 360/360 |
 | Cherrygrove City, Crystal | 636/720 |
-| Violet City, Crystal | 1,271/1,440 |
+| Violet City, Gold/Silver/Crystal | 1,440/1,440 |
 | Mt. Moon 1F, Red | 1,440/1,440 |
 | Seafoam Islands 1F, Red | 540/540 |
 
@@ -97,8 +100,8 @@ Other cave floors can have different coverage; individual matches are scoped
 to the source map and the corresponding donor cave family.
 
 The complete map audit loads the actual mod and checks available replacements
-for all 1,791 imported Gen 1/2 maps. Version 0.5.0 covers 377,961 of 718,992
-initial background cells (52.6%), including 130 complete maps, with zero
+for all 1,791 imported Gen 1/2 maps. Version 0.6.0 covers 378,480 of 718,992
+initial background cells (52.6%), including 133 complete maps, with zero
 rejected mappings or warnings.
 This audit checks actual replacement availability and position scope; it does
 not render every map or constitute a full playthrough.
@@ -112,7 +115,7 @@ without a correct equivalent will need reviewed artwork in the selected style.
 The release is checked through the installed 0.3.96 loader for all eleven games,
 Lua regression fixtures, live-import fingerprint checks, native donor animation
 comparisons, and isolated native LOVE GPU rendering. This release passes
-8,894,522 checks across 32 background fixtures, including every native water
+9,734,648 checks across 34 background fixtures, including every native water
 frame behind the Fan Club and Route 12 roof corners. Pallet's Red/Blue/Yellow
 background fixtures and Gold/Silver/Crystal New Bark must replace all 360 visible 16px cells, and Route 1 all
 720 cells. Checks preserve native map and collision data, and restore original rendering when disabled. These

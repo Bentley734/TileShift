@@ -30,6 +30,8 @@ NAMES = {
     ("red", "VICTORY_ROAD_1F"): ("Red / Victory Road 1F", "VictoryRoad", "Original monochrome"),
     ("crystal", "CHERRYGROVE_CITY"): ("Crystal / Cherrygrove City", "Cherrygrove", "Original Crystal native colors"),
     ("crystal", "VIOLET_CITY"): ("Crystal / Violet City", "Violet", "Original Crystal native colors"),
+    ("gold", "VIOLET_CITY"): ("Gold / Violet City", "Gold-Violet", "Original Gold native colors"),
+    ("silver", "VIOLET_CITY"): ("Silver / Violet City", "Silver-Violet", "Original Silver native colors"),
     ("crystal", "CERULEAN_CITY"): ("Crystal / Cerulean City", "Crystal-Cerulean", "Original Crystal native colors"),
     ("crystal", "VERMILION_CITY"): ("Crystal / Vermilion City", "Crystal-Vermilion", "Original Crystal native colors"),
     ("crystal", "ROUTE_12"): ("Crystal / Route 12", "Crystal-Route12", "Original Crystal native colors"),
@@ -82,7 +84,7 @@ def make(fixture: dict, output: Path) -> dict:
              if complete else "This is a partial tileset replacement.")
     status = "All background cells replaced." if complete else "Unresolved cells keep native art."
     if fixture.get("source_daytime"):
-        source_label = f"Original Crystal native {fixture['source_daytime']} colors"
+        source_label = f"Original {fixture['game'].capitalize()} native {fixture['source_daytime']} colors"
     heading_lines = lines("DEVELOPMENT — " + title, title_font, width - padding * 2)
     info_lines = lines("Actual native GPU background renders; nearest-neighbor pixels. " + scope, body_font, width - padding * 2)
     status_lines = lines("Animation frame 0. Reviewed replacements only. " + status + " No actors rendered.", body_font, width - padding * 2)
