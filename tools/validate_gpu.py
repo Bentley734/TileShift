@@ -659,7 +659,8 @@ local function run()
    local out=love.image.newImageData(r[3],r[4]);out:paste(image,0,0,r[1],r[2],r[3],r[4]);return out
   end
 
-  for _,family in ipairs({{folder='tileshift-mahogany-finish',file='shop-model.json',instances='source_instances'},
+  for _,family in ipairs({{folder='tileshift-cianwood-finish',file='shop-model.json',instances='source_instances'},
+   {folder='tileshift-mahogany-finish',file='shop-model.json',instances='source_instances'},
    {folder='tileshift-building-extended',file='architecture-native-prototypes.json',instances='source_buildings'},
    {folder='tileshift-building-kanto',file='kanto-building-variants.json',instances='source_instances'},
    {folder='tileshift-violet-facade-review',file='decorative-native-model.json',instances='source_instances'},
@@ -2023,7 +2024,10 @@ local function run()
 
  -- Public Johto/Kanto architecture, a representative interior floor, and
  -- complete up/down glyphs on their actual Union Cave/Ice Path source maps.
- for _,spec in ipairs({{game='gold',id='MAHOGANY_TOWN',stem='mahogany',architecture=true,complete=true},
+ for _,spec in ipairs({{game='gold',id='CIANWOOD_CITY',stem='cianwood',architecture=true,complete=true,water=true},
+  {game='silver',id='CIANWOOD_CITY',stem='cianwood',architecture=true,complete=true,water=true},
+  {game='crystal',id='CIANWOOD_CITY',stem='cianwood',architecture=true,complete=true,water=true},
+  {game='gold',id='MAHOGANY_TOWN',stem='mahogany',architecture=true,complete=true},
   {game='silver',id='MAHOGANY_TOWN',stem='mahogany',architecture=true,complete=true},
   {game='crystal',id='MAHOGANY_TOWN',stem='mahogany',architecture=true,complete=true},
   {game='gold',id='GOLDENROD_CITY',stem='johto-goldenrod_city'},
@@ -2136,6 +2140,41 @@ local function run()
   end
   if spec.complete then check(fixture.coverage.replaced_occurrences==fixture.coverage.visible_cells,'Complete Violet fixture has unresolved art')end
   if spec.ladders then fixture.complete_native_ladders=verifyGen2Ladders(game,def,map,after)end
+  if spec.id=='CIANWOOD_CITY'and spec.complete then
+   local seaRows={}
+   for _,row in ipairs(mappingRows('mappings/cianwood.lua'))do
+    if row.game==game and row.role=='rocky_coast_sea_rock_barrier'then seaRows[#seaRows+1]=row end
+   end
+   check(#seaRows==(game=='crystal' and 44 or 25),'Cartridge-specific sea-rock footprint changed')
+   local turns=0
+   for _,row in ipairs(mappingRows('mappings/cianwood.lua'))do
+    if row.game==game and row.role=='cianwood_inward_rock_corner'then
+     local mid=row.id==110 and 125 or 123
+     check(#row.parts==1 and row.parts[1].donor.id==mid,'Inward cliff turn must use its full handed native corner')
+     local native=nativeCellImage(row.parts[1].donor,{'mid'},row.parts[1].layerHashes)
+     for y=0,15 do for x=0,15 do equalPixel(after,row.x*16+x,row.y*16+y,native,x,y,'Full Cianwood upward corner changed')end end
+     turns=turns+1
+    end
+   end
+   check(turns==(game=='crystal' and 6 or 5),'Original upward cliff corner positions changed')
+   fixture.complete_inward_cliff_turns=turns
+
+   local rock=nativeCellImage(seaRows[1].parts[1].donor,{'mid'},seaRows[1].parts[1].layerHashes)
+   for _,choice in ipairs({'ripple-blue','ripple-teal','ripple-olive','mixed'})do
+    mod.exports.flora:select('water',choice);mod.exports.state:invalidate();clock=0;world.mapImage=world:imageFor(map.id)
+    local selected=mod.exports.state:replacements(game,def.tileset,def)
+    for _,t in ipairs({0,.15,.3,.45})do
+     clock=t;local custom=draw();verifyCoveredPixels(def,selected,custom,game..' Cianwood '..choice)
+     for _,row in ipairs(seaRows)do for y=0,15 do for x=0,15 do
+      local _,_,_,a=rock:getPixel(x,y)
+      if a==1 then equalPixel(custom,row.x*16+x,row.y*16+y,rock,x,y,'Sea-rock pixels changed with water style')end
+     end end end
+    end
+   end
+   mod.exports.flora:select('water','default');mod.exports.state:invalidate();clock=0;world.mapImage=world:imageFor(map.id)
+   check(draw():getString()==after:getString(),'Cianwood default water did not restore')
+   fixture.sea_rocks={cells=#seaRows,opaque_pixels_per_rock=205,all_custom_water_choices_preserve_rock_pixels=true}
+  end
   if spec.id=='MAHOGANY_TOWN'then
    local home=love.image.newImageData(love.filesystem.newFileData(assert(read(MOD..'/../.work/tileshift-building-kanto/home32-compact-prototype.png')),'door.png'))
    for y=0,16 do for x=0,15 do equalPixel(after,9*16+x,15+y,home,16+x,15+y,'Gate complete native door frame cap changed')end end
