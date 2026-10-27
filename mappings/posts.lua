@@ -1,3 +1,4 @@
+-- Default one-cell tree revised: complete compact Emerald-style conifer; see assets/original/compact-conifer/provenance.json. Historical source-review evidence below remains recorded.
 -- Gen 1's round town-boundary objects use compact Gen 3 trees.
 -- The user approved following FR/LG's actual tree boundary on 2026-10-26.
 -- This supersedes the earlier stone-post interpretation and generated artwork.
@@ -16,11 +17,11 @@ for _,group in ipairs(groups) do
       game=group.game,style='gen3',tileset='OVERWORLD',id=cell[1],quadrant=cell[2],
       role='boundary_tree',status='reviewed',
       sourceHash=group.sourceHash,sourceFiles=group.sourceFiles,
-      kind='third_party',asset='assets/third_party/j-treecko252/compact-tree.png',
-      assetFileHash="209fc50d6e20ece401fcc468af3a11f5d14b2923c4b21b208774f30adfd0b6cf",
-      assetPixelHash="83b0a8ca3bf5ddffb32c494f60547f2384d5f31d7989d3a0e0f2eb4eae6ac305",
-      credit='J-Treecko252; additional palette contributions credited to Zyxeion',
-      sourceUrl='https://www.deviantart.com/j-treecko252/art/Tree-Tiles-Ver-02-884751013',
+      kind='original',asset='assets/original/compact-conifer/tree.png',
+      assetFileHash="99f45e9cf6a7e9b18249c75533b4ff7c964c2675811249f689fd4b4544f0f9b2",
+      assetPixelHash="24c0f42cd4f3f84917920659122e87443946b8618db591577197c9f39b1e0dba",
+      credit='Original compact Emerald-style conifer; built-in imagegen',
+      sourceUrl='https://github.com/Bentley734/TileShift/tree/main/assets/original/compact-conifer',
       base=base,
       evidence='The user approved compact Gen 3 trees following FireRed/LeafGreen after inspecting their actual Pallet outer-town tree boundary. This supersedes the earlier stone-post interpretation. These 44 aliases per cartridge have identical inspected source pixels; the complete native-size permitted fan tree fits the original 16px cell. Generated post artwork is no longer used. Source collision and scripts stay native.',
     }

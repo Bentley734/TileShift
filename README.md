@@ -1,7 +1,8 @@
 # TileShift
 
 TileShift brings Gen 3 world art to Gen1Recomp with individually reviewed tile
-matches. Version 0.15.1 corrects the animated ocean behind Olivine’s upper lighthouse.
+matches. Version 0.15.2 replaces the default one-cell tree with a complete compact
+version of the taller Emerald tree, retaining its pointed canopy and trunk.
 Olivine City is complete, including a new lighthouse, the cafe,
 port passage, railings and coherent animated coastline. The original lighthouse
 entrance and both base windows are preserved. Johto rock
@@ -43,7 +44,7 @@ art; separate cartridge styles and reverse conversions are future work.
 1. Import **Emerald and FireRed** into Gen1Recomp. TileShift reads native donor
    art from your own imports; neither ROMs nor extracted native artwork are
    bundled.
-2. Download `TileShift-v0.15.1.zip` from [the latest release](https://github.com/Bentley734/TileShift/releases/latest).
+2. Download `TileShift-v0.15.2.zip` from [the latest release](https://github.com/Bentley734/TileShift/releases/latest).
 3. Extract the `tileshift` folder into Gen1Recomp's `mods` directory, enable
    **TileShift**, and restart the game.
 4. Open Options and set **Tileset** to **Gen 3**. This is the default on a fresh
@@ -146,7 +147,7 @@ Other cave floors can have different coverage; individual matches are scoped
 to the source map and the corresponding donor cave family.
 
 The complete map audit loads the actual mod and checks available replacements
-for all 1,791 imported Gen 1/2 maps. Version 0.15.1 covers 399,423 of 718,992
+for all 1,791 imported Gen 1/2 maps. Version 0.15.2 covers 399,423 of 718,992
 initial background cells (55.6%), including 160 complete maps, with zero
 rejected mappings or warnings.
 This audit checks actual replacement availability and position scope; it does

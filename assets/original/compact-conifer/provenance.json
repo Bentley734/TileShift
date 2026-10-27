@@ -1,0 +1,26 @@
+{
+  "origin": "Original compact tree designed with built-in imagegen",
+  "prompt": "Create a NEW 16x16 logical-pixel compact version of the 16x32 Pokemon Emerald tree in reference image. Reference is STYLE AND SUBJECT ONLY. Genuinely transparent background. Keep the recognizable small pointed bright lime-green crown, two broad scalloped leaf tiers shaded with Emerald olive and forest green, tiny brown trunk and dark green foot shadow. Redesign proportions to fit one square tile with the complete treetop AND full trunk; do not crop the taller reference or squash it vertically. Entire tree inside logical x1..14,y0..15, trunk around x7..9,y13..15. Crisp large square pixel clusters, simple native GBA sprite with about10 colors, no antialiasing, no gradients, no smooth illustration. Show only one complete tree on transparent square canvas, no grass or ground rectangle or labels. Square sprite, 16x16 underlying grid, ideal enlarged by integer64 to1024x1024.",
+  "style_reference": "Own imported native Emerald general__petalburg14+22 complete16x32 tree, style only. No native bitmap redistributed.",
+  "source_file": "exec-4d6f60e9-c2c0-4fea-8f48-9059ddf51412.png",
+  "source_sha256": "bedb638fffbbbd361ce821da42463d1b8a57285836ec870619c3e477e3cb73e8",
+  "generated_size": [
+    1254,
+    1254
+  ],
+  "crop_xyxy": [
+    0,
+    0,
+    1248,
+    1248
+  ],
+  "integer_reduction": 78,
+  "runtime_size": [
+    16,
+    16
+  ],
+  "processing": "Redesigned square proportions; whole canopy and visible trunk retained, uniform78:1 nearest reduction, binary alpha128,12 colors including transparency without dithering. No fractional or runtime scaling.",
+  "files": {
+    "tree.png": "99f45e9cf6a7e9b18249c75533b4ff7c964c2675811249f689fd4b4544f0f9b2"
+  }
+}

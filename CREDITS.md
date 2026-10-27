@@ -83,3 +83,14 @@ windows and the original entry anchor, with uniform 7:1 nearest-neighbor
 reduction and no runtime scaling. The reference crop is not distributed.
 The prompt, processing record and hashes are in
 assets/original/olivine-lighthouse/provenance.json.
+
+## Original compact conifer
+
+The default one-cell tree is an original compact redesign of the complete
+taller Emerald tree, made with the built-in image-generation tool. Its pointed
+canopy and trunk fit a16×16 cell. The full sprite uses uniform78:1 integer
+nearest-neighbor reduction, binary transparency and a12-color palette.
+The prompt, processing record and hashes are saved in
+assets/original/compact-conifer/provenance.json.
+The previous J-Treecko252 tree remains credited and packaged as historical
+artwork; the default now uses this original compact conifer.

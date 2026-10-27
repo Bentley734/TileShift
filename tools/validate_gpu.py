@@ -1226,7 +1226,7 @@ local function run()
  local px,py=findCell(def,77,1)
  check(px~=nil,'Actual Pallet legacy boundary-tree fixture missing')
  local boundaryTree=love.image.newImageData(love.filesystem.newFileData(
-  assert(read(MOD..'/assets/third_party/j-treecko252/compact-tree.png')),'boundary-tree.png'))
+  assert(read(MOD..'/assets/original/compact-conifer/tree.png')),'boundary-tree.png'))
  local Donor=assert(load(assert(read(MOD..'/lib/donor.lua'))))()
  local donor=Donor.new()
  local ground=donor:cell({game='emerald',tileset='general__petalburg',id=1}).under
@@ -1242,10 +1242,10 @@ local function run()
   elseif alpha<1 then translucent=translucent+1
   else opaque=opaque+1 end
  end end
- check(opaque>0 and transparent>0 and translucent>0,'Boundary tree alpha fixture is not meaningful')
+ check(opaque>0 and transparent>0 and translucent==0,'Boundary tree alpha fixture is not meaningful')
  red.boundary_tree={transparent_ground_pixels=transparent,opaque_pixels=opaque,
   translucent_blended_pixels=translucent,
-  credit='J-Treecko252; additional palette contributions credited to Zyxeion',
+  credit='Original compact Emerald-style conifer; built-in imagegen',
   source_cell='Legacy Pallet boundary cell 77:1; compact Gen3 tree confirmed by the user'}
 
  -- Actual native drawStripRaw over a synthetic magenta actor, with imported
@@ -1513,7 +1513,7 @@ local function run()
   local tx,ty=findCell(treeDef,15,0)
   check(tx~=nil,'Viridian native tree-wall fixture missing')
   local compact=love.image.newImageData(love.filesystem.newFileData(
-   assert(read(MOD..'/assets/third_party/j-treecko252/compact-tree.png')),'compact-tree.png'))
+   assert(read(MOD..'/assets/original/compact-conifer/tree.png')),'compact-tree.png'))
   local treeOpaque,treeTransparent,treeTranslucent=0,0,0
   local expectedTree=love.image.newImageData(16,16)
   for y=0,15 do for x=0,15 do
@@ -1536,9 +1536,9 @@ local function run()
    checked_donor_pixels=verifyCoveredPixels(treeDef,treeArt,replacedTree,'red Viridian'),
    outdoor=verifyGen1Terrain('red',treeDef,treeMap,replacedTree),
    architecture=verifyPublicBuildings('red',treeDef,replacedTree),
-   third_party_tree={opaque_pixels=treeOpaque,transparent_ground_pixels=treeTransparent,
+   original_compact_tree={opaque_pixels=treeOpaque,transparent_ground_pixels=treeTransparent,
     translucent_blended_pixels=treeTranslucent,
-    credit='J-Treecko252; additional palette contributions credited to Zyxeion'}}
+    credit='Original compact Emerald-style conifer; built-in imagegen'}}
   check(treeFixture.collision_before==treeFixture.collision_after,'Viridian collision/layout changed')
   check(treeFixture.events_before==treeFixture.events_after,'Viridian source events changed')
   check(treeFixture.outdoor.pond_occurrences==24,'Viridian freshwater pond footprint changed')
