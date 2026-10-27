@@ -78,6 +78,18 @@ function M.validate(row)
     if not fingerprint(row.sourceFiles.metadata) or not fingerprint(row.sourceFiles.image)
       or not fingerprint(row.sourceFiles.maps) then return nil,'source metadata, image and map fingerprints are required' end
   end
+  if row.artOverlay~=nil then
+    local overlay=row.artOverlay
+    if type(overlay)~='table' or type(overlay.asset)~='string'
+      or not overlay.asset:match('^assets/original/[%w_/%-%.]+%.png$')
+      or overlay.asset:find('..',1,true) or not fingerprint(overlay.hash)
+      or type(overlay.preserveRects)~='table' then return nil,'invalid original artwork overlay' end
+    for _,rect in ipairs(overlay.preserveRects)do
+      if type(rect)~='table' or #rect~=4 or not integer(rect[1],15) or not integer(rect[2],15)
+        or not integer(rect[3],16) or not integer(rect[4],16) or rect[3]==0 or rect[4]==0
+        or rect[1]+rect[3]>16 or rect[2]+rect[4]>16 then return nil,'invalid retained native rectangle' end
+    end
+  end
   local ref=row.donor
   if ref then
     if type(ref)~='table' or not M.donorMatches(row.style,ref.game) then return nil,'donor does not match selected style' end

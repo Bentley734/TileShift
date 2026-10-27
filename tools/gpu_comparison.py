@@ -85,11 +85,12 @@ def make(fixture: dict, output: Path) -> dict:
     status = "All background cells replaced." if complete else "Unresolved cells keep native art."
     if fixture.get("source_daytime"):
         source_label = f"Original {fixture['game'].capitalize()} native {fixture['source_daytime']} colors"
+    source_label = fixture.get('comparison_before_label', source_label)
     heading_lines = lines("DEVELOPMENT — " + title, title_font, width - padding * 2)
     info_lines = lines("Actual native GPU background renders; nearest-neighbor pixels. " + scope, body_font, width - padding * 2)
     status_lines = lines("Animation frame 0. Reviewed replacements only. " + status + " No actors rendered.", body_font, width - padding * 2)
     left_labels = lines(source_label, body_font, size[0])
-    right_labels = lines("Gen 3 style — reviewed cells only", body_font, size[0])
+    right_labels = lines(fixture.get('comparison_after_label', "Gen 3 style — reviewed cells only"), body_font, size[0])
     labels_y = 13 + len(heading_lines) * 25 + 4 + len(info_lines) * 18 + 4 + len(status_lines) * 18 + 4
     top = labels_y + max(len(left_labels), len(right_labels)) * 18 + 12
     native_status = f"Remaining {preserved} cells keep native art. " if preserved else ""

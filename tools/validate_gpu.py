@@ -122,7 +122,7 @@ local function run()
   GV.set(game);assetGame=game
   local hooks,events=Hooks.new(),Events.new();Runtime.install(events,hooks,{})
   local mod={id='tileshift',generation=generation,exports={},game={world=world},
-   options={define=function()end,get=function()return 2 end},
+   options={define=function()end,get=function(_,key)return key=='style' and 2 or 1 end},
    save={get=function()end,set=function()error('unexpected persistence write')end},
    log={warn=function(_,fmt,s)report.warnings[#report.warnings+1]=s or fmt end},
    assets={path=function(_,path)return love.filesystem.newFileData(assert(read(MOD..'/'..path)),path:match('[^/]+$'))end},
@@ -830,6 +830,36 @@ local function run()
   check(def.id==model.source_map,'Sprout GPU fixture uses the wrong source map')
   local actual=love.image.newImageData(r[3]*16,r[4]*16)
   actual:paste(frame,0,0,r[1]*16,r[2]*16,r[3]*16,r[4]*16)
+  local overlays={}
+  for _,row in ipairs(mappingRows('mappings/buildings_extended.lua'))do
+   if row.game==game and row.map==def.id and row.role=='architecture_sprout_pagoda' and row.artOverlay then overlays[#overlays+1]=row end
+  end
+  if #overlays>0 then
+   check(#overlays==20,'Generated Sprout must retain its complete4x5 source footprint')
+   local whole=love.image.newImageData(love.filesystem.newFileData(assert(read(MOD..'/assets/original/sprout-tower/tower.png')),'tower.png'))
+   check(whole:getWidth()==64 and whole:getHeight()==80,'Generated tower footprint changed')
+   local ground=nativeCellImage(overlays[1].base)
+   local previous=love.image.newImageData(love.filesystem.newFileData(assert(read(folder..'sprout_pagoda-compact-prototype.png')),'previous.png'))
+   local retained=0
+   for y=0,79 do for x=0,63 do
+    local expected,ex,ey=whole,x,y
+    if y>=64 and (x<8 or x>=56) then expected,ex,ey=previous,x,y;retained=retained+1
+    else
+     local rr,gg,bb,aa=whole:getPixel(x,y)
+     local gr,ggg,gb,ga=ground:getPixel(x%16,y%16)
+     local pixel=love.image.newImageData(1,1)
+     pixel:setPixel(0,0,rr*aa+gr*(1-aa),gg*aa+ggg*(1-aa),bb*aa+gb*(1-aa),aa+ga*(1-aa))
+     expected,ex,ey=pixel,0,0
+    end
+    equalPixel(actual,x,y,expected,ex,ey,'Generated Sprout or its retained native ledges changed')
+   end end
+   local door
+   for _,warp in ipairs(def.warps or{})do if warp.destMap=='SPROUT_TOWER_1F' then door=warp;break end end
+   check(door and door.x==23 and door.y==5,'Generated tower entrance moved away from source warp')
+   return {artwork='User Gemini references refined with built-in imagegen',whole_approved_building_exact=true,
+    retained_native_ledge_pixels=retained,source_warp_anchor={24,80},rgba_sha256=hash(actual:getString()),
+    image=encodePng(actual,game..'-sprout-refined-gpu.png')}
+  end
   check(hash(actual:getString())==model.final_compiled_rgba_sha256,'Sprout complete approved architecture changed')
   local prototype=love.image.newImageData(love.filesystem.newFileData(assert(read(folder..'sprout_pagoda-compact-prototype.png')),'sprout.png'))
   check(actual:getString()==prototype:getString(),'Sprout whole GPU building differs from approved native-material prototype')
@@ -1081,6 +1111,52 @@ local function run()
  check(red.collision_after==beforeCollision,'Gen1 collision, layout or tileset mutated')
  red.events_after=eventSnapshot(map)
  check(red.events_after==beforeEvents,'Red source warps, signs or objects changed')
+ report.customizations={}
+ local flora=mod.exports.flora
+ local catalog=assert(load(assert(read(MOD..'/lib/flora_catalog.lua'))))()
+ for _,category in ipairs({'trees','flowers','grass'})do
+  local entries=catalog[category]
+  local atlas=capture(960,math.ceil(#entries/12)*104+32,function()
+   G.clear(.09,.12,.15,1);G.print(category:upper()..' — USER SHEET DESIGNS AT NATIVE 16PX',12,8)
+   for i,entry in ipairs(entries)do
+    local sprite=flora:sprite(entry);local image=G.newImage(sprite);image:setFilter('nearest','nearest')
+    local x=(i-1)%12*80+8;local y=math.floor((i-1)/12)*104+32
+    G.setColor(.35,.65,.49,1);G.rectangle('fill',x,y,64,64);G.setColor(1,1,1,1)
+    G.draw(image,x,y,0,4,4);G.print(entry.label,x,y+67)
+    check(sprite:getWidth()==16 and sprite:getHeight()==16,'Flora escaped native cell dimensions')
+   end
+  end)
+  report.customizations[#report.customizations+1]={category=category,designs=#entries,
+   contact_sheet=encodePng(atlas,'flora-'..category..'-contact.png')}
+ end
+ for _,selection in ipairs({
+  {id='new-boundary',trees='natural-1-1'},
+  {id='clear-shallows',water='clear-shallows'},
+  {id='clear-deep',water='clear-deep'},
+  {id='ripple-blue',water='ripple-blue'},
+  {id='mixed',trees='mixed',flowers='mixed',grass='mixed',water='mixed'},
+ })do
+  for _,category in ipairs({'trees','flowers','grass','water'})do
+   flora:select(category,selection[category] or 'default')
+  end
+  mod.exports.state:invalidate();clock=0
+  local customArt=mod.exports.state:replacements('red',def.tileset,def)
+  check(mod.exports.state.rejected==0,'Custom artwork rejected a guarded source mapping')
+  local custom=capture(def.width*32,def.height*32,drawMap)
+  local checked=verifyCoveredPixels(def,customArt,custom,'Pallet custom '..selection.id)
+  check(snapshot(map,1)==beforeCollision and eventSnapshot(map)==beforeEvents,'Custom artwork changed Pallet gameplay')
+  if selection.water=='ripple-blue' then
+   clock=17/60
+   check(capture(def.width*32,def.height*32,drawMap):getString()~=custom:getString(),'Selected ripple water did not animate')
+  end
+  local bytes=custom:getString()
+  mod.exports.state:invalidate();clock=0
+  mod.exports.state:replacements('red',def.tileset,def)
+  check(capture(def.width*32,def.height*32,drawMap):getString()==bytes,'Mixed/custom artwork changed after rebuilding the map')
+  report.customizations[#report.customizations+1]={id=selection.id,game='red',map=def.id,
+   before=red.after,after=encodePng(custom,'red-pallet-'..selection.id..'-gpu.png'),coverage=palletCoverage,
+   checked_gpu_pixels=checked,source_collision_events_unchanged=true,stable_after_map_rebuild=true}
+ end
  mod.exports.dispose();clock=0
  local restored=capture(def.width*32,def.height*32,drawMap)
  check(restored:getString()==before:getString(),'Gen1 cleanup did not restore native GPU background')
@@ -1748,6 +1824,24 @@ local function run()
   if spec.animated_buildings then fixture.animated_buildings=verifyAnimatedBuildings(game,def,draw)end
   check(fixture.collision_before==fixture.collision_after and fixture.events_before==fixture.events_after,
    'Additional Gen2 fixture changed native collision/warps/events')
+  if spec.id=='VIOLET_CITY' then
+   for _,category in ipairs({'trees','flowers','grass','water'})do mod.exports.flora:select(category,'mixed')end
+   mod.exports.state:invalidate();clock=0;world.mapImage=world:imageFor(map.id)
+   local customArt=mod.exports.state:replacements(game,def.tileset,def)
+   local custom=draw()
+   local checked=verifyCoveredPixels(def,customArt,custom,game..' mixed Violet')
+   check(mod.exports.state.rejected==0,'Mixed Gen2 customization rejected reviewed mappings')
+   check(snapshot(map,2)==mechanics and eventSnapshot(map)==events,'Mixed Gen2 artwork changed source gameplay')
+   local saved=custom:getString()
+   mod.exports.state:invalidate();world.mapImage=world:imageFor(map.id)
+   check(draw():getString()==saved,'Mixed Gen2 artwork changed on map revisit')
+   for _,category in ipairs({'trees','flowers','grass','water'})do mod.exports.flora:select(category,'default')end
+   mod.exports.state:invalidate();world.mapImage=world:imageFor(map.id)
+   check(draw():getString()==after:getString(),'Default Gen2 options did not restore exact reviewed artwork')
+   report.customizations[#report.customizations+1]={id=game..'-violet-mixed',game=game,map=def.id,
+    before=fixture.after,after=encodePng(custom,game..'-violet-mixed-gpu.png'),coverage=fixture.coverage,
+    checked_gpu_pixels=checked,source_collision_events_unchanged=true,stable_after_map_rebuild=true}
+  end
   mod.exports.dispose();clock=0;world.mapImage=world:imageFor(map.id)
   check(draw():getString()==native:getString(),'Additional Gen2 cleanup did not restore original native pixels')
   fixture.cleanup_restored_native=true;report.fixtures[#report.fixtures+1]=fixture
@@ -2056,7 +2150,7 @@ def main() -> int:
         "read_only_imports": str(cache), "output": str(output),
         "runtime_inputs": runtime_inputs,
     }
-    payload = cache / "updates/gen1recomp-0.3.96.love"
+    payload = cache / "updates/gen1recomp-0.3.97.love"
     native_paths = (
         "src/render/TileRenderer.lua", "src/world/gen2/World.lua",
         "src/world/Map.lua", "src/world/gen2/Map.lua",
@@ -2072,7 +2166,7 @@ def main() -> int:
         metadata["reference_payload"] = str(payload)
         metadata["reference_payload_renderer_matches"] = matches
         if not all(matches.values()):
-            parser.error("The private native renderer source differs from installed 0.3.96")
+            parser.error("The private native renderer source differs from installed 0.3.97")
     (output / "invocation.json").write_text(json.dumps(metadata, indent=2), encoding="utf-8")
     script = (
         "$p=Start-Process -WindowStyle Hidden -FilePath " + ps_quote(str(love))

@@ -1,0 +1,25 @@
+{
+  "title": "Next Animated Water Tiles",
+  "artist": "Magiscarf",
+  "credits": [
+    "Magiscarf"
+  ],
+  "source_url": "https://www.deviantart.com/magiscarf/art/Next-Animated-Water-Tiles-830567034",
+  "checked": "2026-10-27",
+  "terms": "Non-commercial use only; page image metadata specifies CC BY-NC-SA3.0",
+  "description": "<div>These are for <b>non-commercial use only</b>. I'll be adding the frames individually as soon as I can. Animating in photoshop is a pain.</div><div><br /></div><div>I'll also be adding them to this new tilesheet: <a href=\"https://www.deviantart.com/magiscarf/art/Revamped-Tiles-829482346\">www.deviantart.com/magiscarf/a&hellip;</a><br /></div>",
+  "files": {
+    "water-frame-1.png": "3ff6a61cea580bc856579f1d5dc331dce567a1ec4bee7f85ba5e26511d9c6c17",
+    "water-frame-2.png": "14658a009e46c7f407f0d6f568d313c1421b0ebce84f19ec98daefd931726316",
+    "water-frame-3.png": "5caf10de75bda3f8f99384a1fbf909b20c46d9e687550c222ea0dd07a32969ae",
+    "water-frame-4.png": "313cd2c3ba43e0b6f6d9dc7cd6a051df7ba2952090cddf496d982eb869f3450a",
+    "water-frame-5.png": "a8d5fe828df89bad15662da8f1e94777102fbe2934dc18d8ff8df4b4a75c7dad",
+    "water-frame-6.png": "313cd2c3ba43e0b6f6d9dc7cd6a051df7ba2952090cddf496d982eb869f3450a",
+    "water-frame-7.png": "5caf10de75bda3f8f99384a1fbf909b20c46d9e687550c222ea0dd07a32969ae",
+    "water-frame-8.png": "14658a009e46c7f407f0d6f568d313c1421b0ebce84f19ec98daefd931726316"
+  },
+  "usage": "Native16x16 surface sample; original map bank silhouettes and foam remain. No invented animation frames.",
+  "derivation": "Eight GIF frames decoded losslessly toRGBA PNG, no cropping, resizing, recoloring or drawn pixels. Fullsource duration100ms perframe; mapped native bank schedules remain in use where present.",
+  "license": "https://creativecommons.org/licenses/by-nc-sa/3.0/",
+  "source_gif_sha256": "0a31a963b1616090383f44a4ae3b38c0b6bb2ccccd83d990fd504b9a9fe2f771"
+}

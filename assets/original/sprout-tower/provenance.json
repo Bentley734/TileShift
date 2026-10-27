@@ -1,0 +1,68 @@
+{
+  "origin": "Built-in imagegen, based on two user-supplied Gemini images",
+  "source_references": [
+    "Gemini_Generated_Image_h9vcnxh9vcnxh9vc.jpg",
+    "Gemini_Generated_Image_z2nypgz2nypgz2ny.jpg"
+  ],
+  "generated_source_sha256": "b70a92f5f2f55f639bdcde54e18e2a3bb210834401fb029e812fa6b46a96bdfa",
+  "size_px": [
+    64,
+    80
+  ],
+  "source_map": "VIOLET_CITY",
+  "source_rect_cells": [
+    22,
+    1,
+    4,
+    5
+  ],
+  "native_ledge_rectangles_preserved": [
+    [
+      0,
+      64,
+      8,
+      16
+    ],
+    [
+      56,
+      64,
+      8,
+      16
+    ]
+  ],
+  "lower_facade_box_px": [
+    8,
+    63,
+    48,
+    17
+  ],
+  "original_entrance_cell": [
+    23,
+    5
+  ],
+  "processing": "Crop, nearest-neighbor reduction of complete upper/lower components, lossless16px tile packing; no drawn pixels or source gameplay edits",
+  "prompt": "Refine only the reference Sprout Tower, three stories, warm brown tiled upper hip roof and two narrow eaves, cream walls, dark barred windows, wooden posts and full left-of-center entrance; transparent background, no trees, ledges, paths, signs or scenery. Fit logical64x80 footprint, door in bottom cell x16..31.",
+  "files": {
+    "cell-0-0.png": "dc02412f47b86fc738e17851fedcb007de25140cf609c4bb357e040311f7b457",
+    "cell-0-1.png": "caf42725aea894427355bd0914c3489fa75aaa6f97172aac9681d19f64fd0966",
+    "cell-0-2.png": "11755788d7dd3ae3067d826fa2f4b65790f881d9756af02331f2a7b60d20bf99",
+    "cell-0-3.png": "c808c2cccb664d9cdd0a5eba629587c95c490a4bb37492f31bda5473b28f77bb",
+    "cell-0-4.png": "9ed9e8b4c8eaa086db5591d529f6b5d1b600bb58f0dd5826be7b838632989728",
+    "cell-1-0.png": "109e5b930040eea63d98bb6cded60fb4607bae47e4e57cab0a22c4c0414faa49",
+    "cell-1-1.png": "f4df145cab3159268c0e0dd6d26d0385369fcbe036a6fdf2bb969cecdaa4833f",
+    "cell-1-2.png": "f65d96e69d6892f4809fcdfc76e4bb3794f01364905ead7a45bc197c6856526a",
+    "cell-1-3.png": "0d91ecaf9489883bf0210c5a053d1970d7ef69bbadf5dde18410d9c5e5ba520e",
+    "cell-1-4.png": "bc35eeed8e9cf03ab32ff4107b6116b46bd2ca737a692c2e4933bd6dbd4714b2",
+    "cell-2-0.png": "0737515ec4b4a9c04ae17ce3a5222ed5f73b83a4e98582946f265c2237fa1893",
+    "cell-2-1.png": "735d8ff1887f755a0dff9683c1a4553ba9cb6b1f77394520cd845919b30999d1",
+    "cell-2-2.png": "5a0522178021c58c45aeea9af1244b06d56be32d53dff59faf0d2002ca331109",
+    "cell-2-3.png": "b5fb5440a5270ac64fedb4fc94d86fe65ef83a782995c83e042c5259bb1194c0",
+    "cell-2-4.png": "17aa9ebb0b52268d721f6d74b72a820caedb2264eef8b25c29b759582f554846",
+    "cell-3-0.png": "5d09f6092e694120c6104e48be55194925b0cab8b6453b445356f3f51cf91d19",
+    "cell-3-1.png": "10e4a65ec520340b7611bf1765e0c8871ac4ff9d2ed6b9f95365a55bb7684c37",
+    "cell-3-2.png": "789a675f3ec622c981a841a2756fdffbfb7c956c6a2b1866689389a7acc00358",
+    "cell-3-3.png": "c7d1499479e57ceb56d684a4eaa9d227b993684e7cdf27b572d9e99f89470efc",
+    "cell-3-4.png": "637b74c30926e9267af9c4647f61fa7400819c04add0ba2198f1160a7ffc406a",
+    "tower.png": "5fcc4a977c52e089ea5d735a3e3e3fc78d4e8bbb0077d96c322a232f1a36bc59"
+  }
+}

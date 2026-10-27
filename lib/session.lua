@@ -65,7 +65,13 @@ function S.new(ctx)
     self.style=style;self.revision=self.revision+1
     cache={};sourceIdentities={};self.accepted=0;self.rejected=0
     donor:invalidate()
+    if ctx.invalidateCustomization then ctx.invalidateCustomization() end
     return true
+  end
+  function state:invalidate()
+    cache={};sourceIdentities={};self.accepted=0;self.rejected=0
+    self.revision=self.revision+1;donor:invalidate()
+    if ctx.invalidateCustomization then ctx.invalidateCustomization() end
   end
   function state:replacements(game,tileset,def)
     if self.style=='original' or self.style==game
@@ -77,6 +83,7 @@ function S.new(ctx)
       if previous~=nil and previous~=current then
         cache={};self.accepted=0;self.rejected=0;self.revision=self.revision+1
         donor:invalidate()
+        if ctx.invalidateCustomization then ctx.invalidateCustomization() end
       end
       sourceIdentities[game]=current
       if not identity then warn('TileShift source import identity is unavailable: '..tostring(why));return{}end
@@ -100,6 +107,7 @@ function S.new(ctx)
       if a.x~=b.x then return tostring(a.x or '')<tostring(b.x or '') end
       return tostring(a.evidence or '')<tostring(b.evidence or '')
     end)
+    if ctx.customizeRows then applicable=ctx.customizeRows(applicable,game,def) end
     for _,row in ipairs(applicable) do
         local ok,why=ctx.validate(row)
         local position=ok and row.x~=nil and (math.floor(row.x/2)..':'..math.floor(row.y/2)) or nil
@@ -169,12 +177,33 @@ function S.new(ctx)
             else piece=nil;pieceError=pieceError or 'Invalid donor animation sequence' end
           end
         end
-        if piece and row.foreground and ctx.foreground then
+        if piece and row.artOverlay then
+          local image,err=tryCall(ctx.original,row.artOverlay.asset,row.artOverlay.hash)
+          if image and row.base then
+            local base,why=tryCall(donor.cell,donor,row.base)
+            if base then
+              local original=copyLayers(piece)
+              local final=copyLayers({under=copyLayers(base),over=image})
+              for _,rect in ipairs(row.artOverlay.preserveRects)do
+                final:paste(original,rect[1],rect[2],rect[1],rect[2],rect[3],rect[4])
+              end
+              piece={under=final};sequence=nil
+            else piece=nil;pieceError=why end
+          else piece=nil;pieceError=err or 'Original artwork overlay requires a reviewed native ground' end
+        end
+        if piece and row._floraEntry and row._floraCategory~='water' and ctx.floraPiece then
+          piece,pieceError=tryCall(ctx.floraPiece,row);sequence=nil
+        end
+        if piece and row.foreground and ctx.foreground and (not row._floraEntry or row._floraCategory=='water') then
           local foreground,err=tryCall(ctx.foreground,row.foreground)
           piece={under=piece.under,mid=piece.mid,over=piece.over,foreground=foreground}
           if not foreground then piece=nil;pieceError=err end
         end
-        if piece and row.foreground and not ctx.foreground then piece=nil;pieceError='Foreground loader is unavailable' end
+        if piece and row.foreground and not ctx.foreground and not row._floraEntry then piece=nil;pieceError='Foreground loader is unavailable' end
+        if piece and ctx.finishPiece and row._floraCategory=='water' then
+          local ok,custom,frames=pcall(ctx.finishPiece,row,piece,sequence)
+          if ok then piece,sequence=custom,frames else piece=nil;pieceError=tostring(custom) end
+        end
         if piece and sequence and ctx.generations[game]<3 then
           local block=targetBlock(false)
           if not block and position then block=rows[row.id] end

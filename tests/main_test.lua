@@ -35,6 +35,7 @@ for _,gameId in ipairs(games)do
     if style==self.style then return false end
     self.style=style;self.revision=self.revision+1;return true
   end
+  function state:invalidate()self.revision=self.revision+1 end
   function state:replacements(v,tileset,def)return {version=v,tileset=tileset,def=def,style=self.style}end
   fixture.decoder={invalidate=function()fixture.invalidations=fixture.invalidations+1 end}
   fixture.donor={new=function(ctx)fixture.donorCtx=ctx;return fixture.decoder end}
@@ -73,6 +74,9 @@ for _,gameId in ipairs(games)do
     end},log={warn=function()end}}
   function mod:read(path)
     fixture.reads[#fixture.reads+1]=path
+    if path=='lib/flora.lua' or path=='lib/flora_catalog.lua' or path=='lib/water_styles.lua' then
+      local file=assert(io.open(root..'/'..path,'rb'));local source=file:read('*a');file:close();return source
+    end
     if path=='mappings/trees.lua' then
       return fixture.trees and 'return __tileMainFixture.trees' or nil
     end
@@ -119,8 +123,10 @@ for _,gameId in ipairs(games)do
   local rows=hooks['ui.options.rows'](function(g,out)
     eq(g,game);vanillaCalls=vanillaCalls+1;out[#out+1]={id='native'};return out
   end,game,{})
-  eq(vanillaCalls,1);eq(#rows,3);eq(rows[1].id,'native');eq(rows[2].value(),'ORIGINAL')
-  eq(rows[3].label,'COVERAGE');eq(rows[3].value(),'IN PROGRESS');eq(rows[3].step(),false)
+  eq(vanillaCalls,1);eq(#rows,7);eq(rows[1].id,'native');eq(rows[2].value(),'ORIGINAL')
+  eq(rows[7].label,'COVERAGE');eq(rows[7].value(),'IN PROGRESS');eq(rows[7].step(),false)
+  eq(rows[3].label,'TREES');eq(rows[4].label,'FLOWERS');eq(rows[5].label,'TALL GRASS');eq(rows[6].label,'WATER')
+  eq(rows[3].value(),'DEFAULT');eq(schemas[5].key,'flora_water');eq(#schemas[5].choices,8)
   eq(rows[2].step({game=game},1),false)
   eq(state.style,'gen3');eq(rows[2].value(),'GEN 3');eq(stored.style,2)
   eq(game.options.modOptions.tileshift.style,2);eq(game.save.options.modOptions.tileshift.style,2)

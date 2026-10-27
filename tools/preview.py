@@ -324,7 +324,7 @@ def native_water_frames(cache, row, packed):
     return frames
 
 
-def replacement_frames(cache, row, packed, mod_root):
+def _replacement_frames_base(cache, row, packed, mod_root):
     """Compose every native background frame without mutating cached art."""
     if row.get("donor"):
         if row.get("animated"):
@@ -352,6 +352,21 @@ def replacement_frames(cache, row, packed, mod_root):
     if row.get("base"):
         return [Image.alpha_composite(native_donor(cache, row["base"], packed), image)]
     return [image]
+
+
+def replacement_frames(cache, row, packed, mod_root):
+    frames = _replacement_frames_base(cache, row, packed, mod_root)
+    if not row.get('artOverlay'):
+        return frames
+    overlay = row['artOverlay']
+    path = mod_root / overlay['asset']
+    assert catalog.sha(path.read_bytes()) == overlay['hash'], 'Original overlay artwork changed'
+    sprite = Image.open(path).convert('RGBA')
+    assert sprite.size == (16, 16)
+    final = Image.alpha_composite(native_donor(cache, row['base'], packed), sprite)
+    for x, y, w, h in overlay['preserveRects']:
+        final.paste(frames[0].crop((x, y, x + w, y + h)), (x, y))
+    return [final]
 
 
 def replacement_image(cache, row, packed, mod_root):

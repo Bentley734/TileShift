@@ -1,0 +1,11 @@
+{
+  "origin": "User-supplied Gemini-generated artwork, supplied2026-10-27",
+  "permission": "User authorized use in TileShift and requested selectable trees, flowers and grasses",
+  "files": {
+    "botanical.jpg": "688e4362c75aa1c99209ac1bba7bd4429b57babc17c7c67632eb7e8587c6c642",
+    "natural.jpg": "a58e3890072974c7854e6c013b89f8ce191ff7d6279271f855fea63bcf9f5496"
+  },
+  "coordinates": "Stable selection IDs are sheet-row-column, not the repeated printed labels",
+  "decoding": "Runtime nearest-neighbor sampling to16x16; mint backgrounds masked in runtime image decoder; original JPEG files unchanged",
+  "excluded": "Crystals, logs, mushrooms, cacti, lily pads and unrelated scenery are not added to the three foliage selectors"
+}

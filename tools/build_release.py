@@ -27,11 +27,20 @@ def main() -> None:
              ("manifest.json", "main.lua", "README.md", "CREDITS.md", "LICENSE")]
     files += sorted((root / "lib").glob("*.lua"))
     files += sorted((root / "mappings").glob("*.lua"))
-    # Only the credited, approved fan tree and its provenance are redistributed.
-    files += [root / "assets/third_party/j-treecko252" / name
-              for name in ("compact-tree.png", "provenance.json")]
-    provenance = json.loads(files[-1].read_text(encoding="utf-8"))
-    assert hashlib.sha256(files[-2].read_bytes()).hexdigest() == provenance["extraction"]["png_sha256"]
+    asset_files = sorted(path for path in (root / 'assets').rglob('*') if path.is_file())
+    allowed = ('third_party/j-treecko252/', 'third_party/peekychew/',
+               'third_party/magiscarf/', 'user_flora/', 'original/sprout-tower/')
+    for path in asset_files:
+        assert path.relative_to(root / 'assets').as_posix().startswith(allowed), 'Unreviewed asset folder'
+        assert path.suffix in ('.png', '.jpg', '.json', '.txt'), 'Unreviewed asset format'
+    for folder in ('user_flora', 'third_party/peekychew', 'third_party/magiscarf', 'original/sprout-tower'):
+        provenance = json.loads((root / 'assets' / folder / 'provenance.json').read_text(encoding='utf-8'))
+        for name, digest in provenance['files'].items():
+            assert hashlib.sha256((root / 'assets' / folder / name).read_bytes()).hexdigest() == digest, 'Artwork provenance fingerprint changed'
+    fan = root / 'assets/third_party/j-treecko252'
+    provenance = json.loads((fan / 'provenance.json').read_text(encoding='utf-8'))
+    assert hashlib.sha256((fan / 'compact-tree.png').read_bytes()).hexdigest() == provenance['extraction']['png_sha256']
+    files += asset_files
     assert len(files) == len(set(files)) and all(path.is_file() for path in files)
     args.output.mkdir(parents=True, exist_ok=True)
     archive = args.output / f"TileShift-v{version}.zip"

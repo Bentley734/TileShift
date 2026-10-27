@@ -1,7 +1,7 @@
 # TileShift
 
 TileShift brings Gen 3 world art to Gen1Recomp with individually reviewed tile
-matches. Version 0.6.0 completely retiles the **Pallet Town, Route 1 and
+matches. Version 0.7.0 adds selectable foliage and water and completely retiles the **Pallet Town, Route 1 and
 Viridian Forest backgrounds in Red, Blue and Yellow**, all 19 maps using
 their cave tileset, and **New Bark Town and Violet City in Gold, Silver and Crystal**.
 Red's downstairs room, Blue's house and many ordinary Kanto homes are also
@@ -18,7 +18,7 @@ towns. Gen 1 caves have reviewed floors, raised rock surfaces, directional walls
 stairs, ladders, animated water and switch-controlled Victory Road barriers.
 Gen 2 caves add regional rock surfaces, complete rock masses, correctly joined
 corners, ladders, and distinct snowy floors and slippery ice. Violet includes
-an original Sprout Tower composition built from native Gen 3 materials,
+a Sprout Tower facade refined from the user's supplied pagoda design,
 complete freshwater ponds, paving, raised ground and all building facades.
 Gold and Silver retain their taller school footprint; Crystal retains its
 shorter school and the original Headbutt-tree row above it.
@@ -36,13 +36,13 @@ art; separate cartridge styles and reverse conversions are future work.
 1. Import **Emerald and FireRed** into Gen1Recomp. TileShift reads native donor
    art from your own imports; neither ROMs nor extracted native artwork are
    bundled.
-2. Download `TileShift-v0.6.0.zip` from [the latest release](https://github.com/Bentley734/TileShift/releases/latest).
+2. Download `TileShift-v0.7.0.zip` from [the latest release](https://github.com/Bentley734/TileShift/releases/latest).
 3. Extract the `tileshift` folder into Gen1Recomp's `mods` directory, enable
    **TileShift**, and restart the game.
 4. Open Options and set **Tileset** to **Gen 3**. This is the default on a fresh
    installation; **Original** restores the host game's art.
 
-Requires **Gen1Recomp 0.3.96**, within the 0.3.x series. Reviewed replacements
+Requires **Gen1Recomp 0.3.96 or newer**, within the 0.3.x series; also validated on 0.3.97. Reviewed replacements
 currently target Red, Blue, Yellow, Gold, Silver and Crystal. The mod can load
 under all eleven supported games; Gen 3 hosts keep their native art with the
 Gen 3 style selected. Missing or changed donor cells are skipped, leaving the
@@ -50,10 +50,36 @@ host artwork visible.
 
 ## Artwork and matching
 
+### Selectable trees, flowers, grass and water
+
+Options and the mod manager expose **Trees**, **Flowers**, **Tall Grass** and
+**Water** independently. Each offers **Default**, individual designs,
+**Random** (one design for the session) and **Mixed** (stable variation when
+revisiting a map). There are 87 tree/shrub choices, 55 flower choices,
+12 grass choices and five water choices. Sheet designs are labeled `N/B R# C#`
+by sheet, row and column. Only reviewed single-cell decorative trees change;
+full forest canopies, Cut trees, Headbutt trees and berry events retain their
+distinct artwork and original behavior. Tall Grass changes encounter-grass
+art; ordinary lawns remain distinct.
+
+Water offers PeekyChew's **Clear Shallows / Clear Deep** and Magiscarf's
+**Ripple Blue / Teal / Olive**. Mixed water chooses by connected body within
+each reviewed map; reviewed coastal bodies share one ocean choice. Existing
+bank silhouettes, grey rocks and white foam stay native while the water
+surface changes. Over-water building parts are protected, including blue
+windows. Water appearance never changes Surf, fishing, depth or encounters.
+Only already-reviewed water mappings participate; unresolved tiles remain native.
+
+The default artwork stays available, and **Original** restores the host
+game's complete artwork regardless of custom selections. See the asset
+credits and provenance for the user-supplied/generated and third-party designs.
+
 Pallet's buildings use native FireRed pieces rearranged to fit the original
 Gen 1 footprints. Door leaves and their complete lintels retain their native
-pixels, and entrances stay at the original warp positions. No building art is
-scaled. Water, shoreline and flowers use verified native animation frames.
+pixels, and entrances stay at the original warp positions. Native building pieces
+retain their pixel size. The supplied Sprout Tower design is separately fitted to its original
+64×80 footprint, retaining the complete lower entrance between the unchanged
+native side ledges. Default water, shoreline and flowers use verified native animation frames.
 Roof corners show the surrounding grass or native animated coastal water,
 using native transparent roof layers. Both complete lab windows and awnings, including their
 top corners, are checked independently alongside the complete door frames.
@@ -69,7 +95,8 @@ their original Headbutt eligibility, encounters, blocking and shake animation.
 Gen 1 town boundaries and compact forest trees use a 16px tree by **J-Treecko252**,
 with additional palette credit to **Zyxeion**, under the artist's permission.
 See [CREDITS.md](CREDITS.md). This follows the remake's tree interpretation of
-the round Gen 1 boundary objects. No generated artwork is included in this release.
+the round Gen 1 boundary objects. Optional foliage and the refined tower now
+include the user-supplied/generated artwork described above.
 
 Every mapping records a source fingerprint, semantic role, reviewed donor
 reference or credited asset, and review evidence. Source metadata, map files
@@ -90,7 +117,7 @@ graphics cannot bypass native darkness.
 | Viridian Forest, Red/Blue/Yellow | 1,632/1,632 |
 | Red's House 1F and Blue's House, Red/Blue/Yellow | 64/64 each |
 | New Bark Town, Gold/Silver/Crystal | 360/360 |
-| Cherrygrove City, Crystal | 636/720 |
+| Cherrygrove City, Gold/Silver/Crystal | 644/720 |
 | Violet City, Gold/Silver/Crystal | 1,440/1,440 |
 | Mt. Moon 1F, Red | 1,440/1,440 |
 | Seafoam Islands 1F, Red | 540/540 |
@@ -100,7 +127,7 @@ Other cave floors can have different coverage; individual matches are scoped
 to the source map and the corresponding donor cave family.
 
 The complete map audit loads the actual mod and checks available replacements
-for all 1,791 imported Gen 1/2 maps. Version 0.6.0 covers 378,480 of 718,992
+for all 1,791 imported Gen 1/2 maps. Version 0.7.0 covers 378,504 of 718,992
 initial background cells (52.6%), including 133 complete maps, with zero
 rejected mappings or warnings.
 This audit checks actual replacement availability and position scope; it does
@@ -112,10 +139,11 @@ without a correct equivalent will need reviewed artwork in the selected style.
 
 ## Validation and development
 
-The release is checked through the installed 0.3.96 loader for all eleven games,
+The release is checked through the installed 0.3.97 loader for all eleven games,
 Lua regression fixtures, live-import fingerprint checks, native donor animation
 comparisons, and isolated native LOVE GPU rendering. This release passes
-9,734,648 checks across 34 background fixtures, including every native water
+11,307,922 checks across 34 default background fixtures plus custom artwork
+comparisons, including every native water
 frame behind the Fan Club and Route 12 roof corners. Pallet's Red/Blue/Yellow
 background fixtures and Gold/Silver/Crystal New Bark must replace all 360 visible 16px cells, and Route 1 all
 720 cells. Checks preserve native map and collision data, and restore original rendering when disabled. These
@@ -125,7 +153,7 @@ From the parent workspace:
 
 ```text
 python TileShift/tests/run.py
-python TileShift/tools/validate_boot.py --payload PATH_TO_0.3.96.love
+python TileShift/tools/validate_boot.py --payload PATH_TO_0.3.97.love
 python TileShift/tools/preview.py --include-trees --include-posts --include-water --include-details --include-buildings --include-outdoors --tree-fixtures
 python TileShift/tools/validate_animation.py --game firered
 python TileShift/tools/validate_animation.py --game leafgreen
