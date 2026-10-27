@@ -945,6 +945,33 @@ local function run()
    proof.originalSourceWarps={upstairs=1,exits=2,destination='REDS_HOUSE_2F',unchanged=true}
    return proof
  end
+ local function verifyAzaleaWell(game,def,frame)
+  local whole=love.image.newImageData(love.filesystem.newFileData(assert(read(MOD..'/assets/original/slowpoke-well/well.png')),'well.png'))
+  check(whole:getWidth()==48 and whole:getHeight()==48,'Well must retain its native3x3 footprint')
+  local rows={}
+  for _,row in ipairs(mappingRows('mappings/azalea.lua'))do
+   if row.game==game and row.role=='azalea_slowpoke_well'then rows[#rows+1]=row end
+  end
+  check(#rows==9,'Well must have exactly9 source cells')
+  local ground=nativeCellImage(rows[1].base)
+  local expected=capture(48,48,function()
+   local bg=G.newImage(ground);local top=G.newImage(whole)
+   for y=0,2 do for x=0,2 do G.draw(bg,x*16,y*16)end end
+   G.draw(top,0,0);bg:release();top:release()
+  end)
+  for y=0,47 do for x=0,47 do equalPixel(frame,30*16+x,6*16+y,expected,x,y,'Whole original well composition changed')end end
+  local entrance=false
+  for _,warp in ipairs(def.warps or{})do
+   if warp.x==31 and warp.y==7 then check(warp.destMap=='SLOWPOKE_WELL_B1F','Well entrance destination changed');entrance=true end
+  end
+  check(entrance,'Native well entrance missing')
+  for _,row in ipairs(rows)do
+   check(row.x>=30 and row.x<=32 and row.y>=6 and row.y<=8,'Well overhangs original footprint')
+   local want=(row.x==31 and row.y==7)and 123 or(row.x==31 and row.y==8)and 0 or 7
+   check(row.sourceCollision==want,'Well source collision/step layout changed')
+  end
+  return {whole_sprite_checked_pixels=2304,footprint={30,6,3,3},entrance={31,7},steps={31,8},source_warp_unchanged=true}
+ end
  local function verifySprout(game,def,frame)
   local folder=MOD..'/../.work/tileshift-sprout-native-material/sloped-roof-hybrid/'
   local bytes=assert(read(folder..'sprout-original-native-material-model.json'))
@@ -1955,7 +1982,10 @@ local function run()
 
  -- Public Johto/Kanto architecture, a representative interior floor, and
  -- complete up/down glyphs on their actual Union Cave/Ice Path source maps.
- for _,spec in ipairs({{id='CHERRYGROVE_CITY',stem='cherrygrove',architecture=true,complete=true,water=true},
+ for _,spec in ipairs({{id='AZALEA_TOWN',stem='azalea',complete=true},
+  {game='gold',id='AZALEA_TOWN',stem='azalea',complete=true},
+  {game='silver',id='AZALEA_TOWN',stem='azalea',complete=true},
+  {id='CHERRYGROVE_CITY',stem='cherrygrove',architecture=true,complete=true,water=true},
   {game='gold',id='CHERRYGROVE_CITY',stem='cherrygrove',architecture=true,complete=true,water=true},
   {game='silver',id='CHERRYGROVE_CITY',stem='cherrygrove',architecture=true,complete=true,water=true},
   {id='ILEX_FOREST',stem='ilex'},
@@ -1992,6 +2022,7 @@ local function run()
   end
   if spec.complete then check(fixture.coverage.replaced_occurrences==fixture.coverage.visible_cells,'Complete Violet fixture has unresolved art')end
   if spec.ladders then fixture.complete_native_ladders=verifyGen2Ladders(game,def,map,after)end
+  if spec.id=='AZALEA_TOWN'then fixture.well=verifyAzaleaWell(game,def,after)end
   if spec.id=='VIOLET_CITY'then fixture.sprout=verifySprout(game,def,after)end
   if spec.water then fixture.water_all_frames=verifyAnimationFrames(def,art,draw,'general_water',8,1)end
   if spec.id=='ILEX_FOREST' then

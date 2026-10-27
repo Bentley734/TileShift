@@ -86,7 +86,7 @@ for _,gameId in ipairs(games)do
       or path=='mappings/pallet_buildings.lua' or path=='mappings/pallet_details.lua'
       or path=='mappings/gen1_outdoor.lua' or path=='mappings/gen2_outdoor.lua'
       or path=='mappings/gen1_caves.lua' or path=='mappings/gen2_buildings.lua'
-      or path=='mappings/gen1_extended.lua' or path=='mappings/gen2_outdoor_extended.lua'
+      or path=='mappings/gen1_extended.lua' or path=='mappings/gen2_outdoor_extended.lua' or path=='mappings/azalea.lua'
       or path=='mappings/buildings_extended.lua' or path=='mappings/interiors.lua'
       or path=='mappings/gen2_caves.lua' then return nil end
     if path=='mappings/reviewed.lua' then

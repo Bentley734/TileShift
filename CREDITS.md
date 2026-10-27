@@ -64,3 +64,12 @@ reduction and palette cleanup. No fractional runtime scaling is used. The blue
 flowers were revised to upright ground flowers. Full processing records and
 final hashes are in assets/original/flora/provenance.json. Custom flora uses
 four integer-pixel wind frames, with roots and tree trunks anchored.
+
+## Original Slowpoke Well
+
+The new 48×48 well was generated with the built-in image-generation tool and
+finalized by integer nearest-neighbor reduction. It was designed for the original
+Gen 2 3×3 footprint, with its entrance and steps unchanged.
+MetalFlygon08’s [Gen 3 Johto artwork](https://www.reddit.com/r/PokemonRMXP/comments/yf90qb/full_johto_gen_3_tileset_tile_set_at_the_bottom/)
+provided the style reference; its well bitmap is not distributed. The prompt,
+processing details and asset hashes are in assets/original/slowpoke-well/provenance.json.

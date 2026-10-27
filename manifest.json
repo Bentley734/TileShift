@@ -1,7 +1,7 @@
 {
   "id": "tileshift",
   "name": "TileShift",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "api": 2,
   "entry": "main.lua",
   "games": ["red", "blue", "yellow", "gold", "silver", "crystal", "ruby", "sapphire", "emerald", "firered", "leafgreen"],
@@ -14,5 +14,5 @@
   "conflicts": [],
   "affects_link": false,
   "github": "Bentley734/TileShift",
-  "description": "Gen 3 world art for Gen 1/2, with selectable trees, flowers, grass and water, Random and Mixed modes, and a refined Sprout Tower. Complete Pallet, Route 1, Viridian Forest, Gen 1 caves, New Bark, Cherrygrove and Violet backgrounds. Other maps remain in progress."
+  "description": "Gen 3 world art for Gen 1/2, with selectable trees, flowers, grass and water, Random and Mixed modes, and a refined Sprout Tower. Complete Pallet, Route 1, Viridian Forest, Gen 1 caves, New Bark, Cherrygrove, Violet and Azalea backgrounds. Other maps remain in progress."
 }

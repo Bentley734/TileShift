@@ -1,0 +1,59 @@
+{
+  "origin": "New original project design made with built-in imagegen",
+  "user_choice": "Create a new3x3 well in the same Gen3 style; do not squash the existing3x4 well",
+  "style_reference": "MetalFlygon08 / SkidMarc25 Johto well, reference only",
+  "reference_url": "https://imgur.com/gallery/testing-out-gen-3-style-tiles-johto-6A43Cji",
+  "creator_post": "https://www.reddit.com/r/PokemonRMXP/comments/yf90qb/full_johto_gen_3_tileset_tile_set_at_the_bottom/",
+  "source_file": "exec-7f61d3b8-7e15-44dd-b949-bd4246f3e0f6.png",
+  "source_sha256": "ebab9cfa8003f2aa9991bf248c315f89f0c840c10b850587eb04a68403914741",
+  "prompt": "Create a NEW compact 3x3-tile Slowpoke Well exterior sprite for a Pokemon Emerald/FireRed-style Johto overworld. Reference image is style and subject reference only; redesign from scratch for a square48x48 logical-pixel footprint. Transparent background, crisp GBA pixel art, no scenery, grass, soil, labels or text. Pale mossy yellow-grey stone, olive-grey masonry, slate outlines, black shaft, short muted golden-olive ladder, pale stone steps. Complete stone rim in the upper third; centered16x16 entrance in the middle tile; two or three complete steps in the bottom center tile. Keep all corners and side walls inside the square. No bucket, crank, pump, roof, characters or ornaments. Enlarged hard square pixels with transparent margins, intended for integer reduction to48x48.",
+  "generated_size": [
+    1254,
+    1254
+  ],
+  "visible_alpha_bounds": [
+    195,
+    177,
+    1059,
+    1081
+  ],
+  "crop_xyxy": [
+    147,
+    147,
+    1107,
+    1107
+  ],
+  "integer_reduction": 20,
+  "runtime_size": [
+    48,
+    48
+  ],
+  "processing": "Whole visible design retained. Transparent-matte noise below128 discarded; uniform20:1 nearest-neighbor reduction,16 colors incl transparency, no dithering. Runtime sprites are never resized.",
+  "source_map": "AZALEA_TOWN",
+  "source_rect_cells": [
+    30,
+    6,
+    3,
+    3
+  ],
+  "unchanged_entrance_cell": [
+    31,
+    7
+  ],
+  "unchanged_step_cell": [
+    31,
+    8
+  ],
+  "files": {
+    "cell-0-0.png": "d160affb3e804287465a933dcfd5fd9189f847fe7e47519d14532231f12ed579",
+    "cell-0-1.png": "20e00f7491caebe9da02de95b9f149019cd9a9c778fc5f1bcdd262aa3e27b930",
+    "cell-0-2.png": "0fdcbf221685c96a0417dc925d3e67a65dec5d9efebbf37c3554568ad72ad927",
+    "cell-1-0.png": "98c96302a74b077052233f2b5e32678b2f25ebfa0d537aacaef94cd075594ebf",
+    "cell-1-1.png": "e635953a6dba50a453b28888f169f01e514b8c31d80be322e3a9bc191116d4e1",
+    "cell-1-2.png": "f1dd04aa03e6303c75eddf5f09d526744a13d03cb1045f58c4f60d8b488178b8",
+    "cell-2-0.png": "67d19590830d10167a3ad31adec569e214d1f6ac872cc5a42ced6d055f4d6aaf",
+    "cell-2-1.png": "f2ad94eee0553b0584506d07510d8b5257af141919346d7e91a4e03337329b3c",
+    "cell-2-2.png": "58a424a03f88b9a29e1cbe341097d4f42b378e5744f878f2a6bc803aab6fe0f4",
+    "well.png": "c1c4d610c2663d1a3e59e87ab4ae26bd407096cb57e7f558f76a2ba23f7d55bd"
+  }
+}
