@@ -23,6 +23,10 @@ local function fingerprint(value)
 end
 local function origin(ref)
   if ref.kind==nil then return true end
+  if ref.kind=='field_effect' then
+    return generations[ref.game]==3 and ref.tileset=='arrow' and ref.quadrant==nil and ref.frame==nil
+      and integer(ref.id,7) and fingerprint(ref.metaHash) and fingerprint(ref.rgbaHash)
+  end
   return ref.kind=='field_object' and generations[ref.game]==3 and ref.tileset=='ow' and ref.quadrant==nil
     and integer(ref.frame,65535) and fingerprint(ref.metaHash) and fingerprint(ref.rgbaHash)
 end
@@ -65,6 +69,15 @@ function M.validate(row)
   if row.status~='reviewed' then return nil,'mapping has not been visually reviewed' end
   if type(row.evidence)~='string' or row.evidence=='' then return nil,'review evidence required' end
   if type(row.sourceHash)~='string' or #row.sourceHash~=64 or not row.sourceHash:match('^[0-9a-f]+$') then return nil,'source fingerprint required' end
+  if row.sourceFiles~=nil then
+    if generations[row.game]>=3 or type(row.sourceFiles)~='table' then return nil,'source file fingerprints require a GB source' end
+    local known={metadata=true,image=true,maps=true,palettes=true,roofs=true}
+    for name,value in pairs(row.sourceFiles)do
+      if not known[name] or not fingerprint(value) then return nil,'invalid source file fingerprint' end
+    end
+    if not fingerprint(row.sourceFiles.metadata) or not fingerprint(row.sourceFiles.image)
+      or not fingerprint(row.sourceFiles.maps) then return nil,'source metadata, image and map fingerprints are required' end
+  end
   local ref=row.donor
   if ref then
     if type(ref)~='table' or not M.donorMatches(row.style,ref.game) then return nil,'donor does not match selected style' end
@@ -87,8 +100,12 @@ function M.validate(row)
   elseif row.parts then
     if row.kind~='native_composite' then return nil,'native composition origin required' end
     if type(row.parts)~='table' or #row.parts<1 or #row.parts>16 then return nil,'invalid native composition parts' end
+    for key in pairs(row.parts)do
+      if not integer(key,#row.parts) or key==0 then return nil,'native composition parts must be a dense array' end
+    end
     if row.base and not validRef(row.style,row.base) then return nil,'invalid composition ground reference' end
-    for _,part in ipairs(row.parts) do
+    for i=1,#row.parts do
+      local part=row.parts[i]
       if type(part)~='table' or not validRef(row.style,part.donor) then return nil,'invalid composition donor' end
       if not selectedLayers(part) then return nil,'invalid composition layer selection or fingerprint' end
       local sx,sy,x,y,w,h=part.srcX or 0,part.srcY or 0,part.x or 0,part.y or 0,part.w,part.h
@@ -99,12 +116,20 @@ function M.validate(row)
   else return nil,'donor, native composition or original artwork required' end
   if ref and row.asset then return nil,'mapping must have exactly one artwork source' end
   if row.parts and (ref or row.asset) then return nil,'mapping must have exactly one artwork source' end
+  if row.animated~=nil and type(row.animated)~='boolean' then return nil,'invalid animated tile flag' end
   if row.animated then
     local animation=row.animation
+    local animatedRef=ref or (row.parts and row.base)
+    if row.parts and (generations[row.game]>=3 or not row.base or not animation or row.base.kind~=nil) then
+      return nil,'animated composition requires a GB host and fingerprint-checked metatile base bank'
+    end
     if animation then
-      if not ref or generations[ref.game]~=3 or type(animation.bank)~='string' or not animation.bank:match('^[%w_]+$')
+      if type(animation)~='table' or not animatedRef or animatedRef.kind~=nil or generations[animatedRef.game]~=3
+        or type(animation.bank)~='string' or not animation.bank:match('^[%w_]+$')
         or type(animation.hash)~='string' or #animation.hash~=64 or not animation.hash:match('^[0-9a-f]+$')
-        or type(animation.manifestHash)~='string' or #animation.manifestHash~=64 or not animation.manifestHash:match('^[0-9a-f]+$') then return nil,'animated tile needs a fingerprint-checked donor bank' end
+        or type(animation.manifestHash)~='string' or #animation.manifestHash~=64 or not animation.manifestHash:match('^[0-9a-f]+$')
+        or (animation.overHash~=nil and not fingerprint(animation.overHash))
+        or (animation.frame0Hash~=nil and not fingerprint(animation.frame0Hash)) then return nil,'animated tile needs a fingerprint-checked donor bank' end
     elseif not row.frames or #row.frames<2 then return nil,'animated tile needs reviewed animation frames' end
   end
   if row.occludes and not row.foreground then return nil,'occluding tile needs a foreground mask' end

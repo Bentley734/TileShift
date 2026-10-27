@@ -191,4 +191,95 @@ local missingRoof,maskError=layerComposer:cell(row({roofPart},ref(2)))
 eq(missingRoof,nil);eq(maskError:find('fingerprint changed',1,true)~=nil,true,
   'alpha separation mutation rejected even while full donor fingerprint stays the same')
 pieces[1].over:setPixel(0,0,0,0,0,0)
+-- A static roof crop overlays every native water frame. Deliberately use
+-- asymmetric source/destination coordinates and mixed alpha so the exposed
+-- water, native chroma and selected static layer can be checked independently.
+local nativeFrames={}
+for i=1,8 do
+  local base={under=newData(16,16),over=newData(16,16)}
+  for y=0,15 do for x=0,15 do base.under:setPixel(x,y,i/8,x/15,y/15,1)end end
+  nativeFrames[i]=base
+end
+local roofPiece={hash=hashB,under=newData(16,16),over=newData(16,16)}
+for y=3,7 do for x=2,5 do roofPiece.over:setPixel(x,y,.9,.2,.1,(x+y)%3/2)end end
+local reads,frameReads=0,0
+local animatedDonor={cell=function(_,r)
+  reads=reads+1
+  if r.id==10 then return {hash=hashA,under=nativeFrames[1].under,over=nativeFrames[1].over}end
+  return roofPiece
+end,frames=function(_,r,spec)
+  frameReads=frameReads+1;eq(r.id,10);eq(spec.bank,'water')
+  if spec.hash~=hashB then return nil,'bank fingerprint changed'end
+  return {frames=nativeFrames,bank='water',counter='global',ticks=16,period=16/60,phase=1,offset=1/60,identity='native fixture'}
+end}
+local animatedComposer=Composition.new({donor=animatedDonor,newImageData=newData,
+  hashImage=function(image)return image==roofPiece.over and hashB or hashC end})
+local animatedRoof={game='red',kind='native_composite',animated=true,
+  base=ref(10),animation={bank='water',hash=hashB,manifestHash=hashA,frame0Hash=hashC},
+  parts={{donor=ref(20,hashB),srcX=2,srcY=3,w=4,h=5,x=7,y=8,layers={'over'},layerHashes={over=hashB}}}}
+local nativeBefore={};for i,p in ipairs(nativeFrames)do nativeBefore[i]=snapshot(p.under)end
+local roofBefore=snapshot(roofPiece.over)
+local animated=assert(animatedComposer:frames(animatedRoof))
+eq(reads,2,'base and static donor decoded once');eq(frameReads,1);eq(#animated.frames,8)
+for _,key in ipairs({'bank','counter','ticks','period','phase','offset','identity'})do
+  local expected={bank='water',counter='global',ticks=16,period=16/60,phase=1,offset=1/60,identity='native fixture'}
+  eq(animated[key],expected[key],'native animation metadata preserved')
+end
+for i,p in ipairs(animated.frames)do
+  pixel(p.under,0,0,i/8,0,0,1,'outside roof retains each native water frame')
+  pixel(p.under,7,8,.9,.2,.1,1,'opaque roof stays static')
+  pixel(p.under,8,8,i/8,8/15,8/15,1,'transparent selected roof reveals current water')
+  pixel(p.under,8,9,.9*.5+i/8*.5,.2*.5+8/15*.5,.1*.5+9/15*.5,1,'semi-alpha roof blends over each frame')
+  pixel(p.over,7,8,0,0,0,0,'composed output owns no stale over layer')
+  eq(snapshot(nativeFrames[i].under),nativeBefore[i],'native animation images are immutable')
+end
+eq(snapshot(roofPiece.over),roofBefore,'static selected donor remains immutable')
+animated.frames[1].under:setPixel(0,0,1,1,1,1)
+pixel(animated.frames[2].under,0,0,2/8,0,0,1,'output frames own independent pixels')
+eq(snapshot(nativeFrames[1].under),nativeBefore[1],'output cannot mutate native frame0')
+local function clone(value)
+  if type(value)~='table'then return value end
+  local copy={};for k,v in pairs(value)do copy[k]=clone(v)end;return copy
+end
+local function animationFails(change,needle)
+  local bad=clone(animatedRoof);change(bad)
+  local out,why=animatedComposer:frames(bad)
+  eq(out,nil);eq(type(why),'string');eq(why:find(needle,1,true)~=nil,true,why)
+end
+animationFails(function(r)r.game='emerald'end,'GB host')
+animationFails(function(r)r.animated=nil end,'GB host')
+animationFails(function(r)r.base=nil end,'metatile base')
+animationFails(function(r)r.base.hash=hashB end,'fingerprint changed')
+animationFails(function(r)r.animation.hash=hashC end,'bank fingerprint changed')
+animationFails(function(r)r.animation.frame0Hash=hashA end,'base frame fingerprint changed')
+animationFails(function(r)r.parts[1].layerHashes.over=hashC end,'layer fingerprint changed')
+animationFails(function(r)r.parts[1].w=17 end,'rectangle exceeds')
+animationFails(function(r)r.donor=ref(1)end,'one artwork source')
+local originalSequence=animatedDonor.frames
+animatedDonor.frames=function()return {frames={nativeFrames[1]},period=16/60}end
+animationFails(function()end,'sequence is invalid')
+animatedDonor.frames=function(self,r,spec)
+  local sequence=originalSequence(self,r,spec)
+  sequence.frames={nativeFrames[1],nativeFrames[2],extra=nativeFrames[3]};return sequence
+end
+animationFails(function()end,'dense array')
+animatedDonor.frames=function()return {frames=nativeFrames,period=0/0}end
+animationFails(function()end,'sequence is invalid')
+animatedDonor.frames=function()error('native bank missing')end
+animationFails(function()end,'native bank missing')
+animatedDonor.frames=function(self,r,spec)
+  local sequence=originalSequence(self,r,spec);sequence.bank='flower';return sequence
+end
+animationFails(function()end,'sequence is invalid')
+animatedDonor.frames=function(self,r,spec)
+  local sequence=originalSequence(self,r,spec);sequence.offset=0;return sequence
+end
+animationFails(function()end,'sequence is invalid')
+animatedDonor.frames=function(self,r,spec)
+  local sequence=originalSequence(self,r,spec);sequence.frames={nativeFrames[1],{under=newData(15,16)}};return sequence
+end
+animationFails(function()end,'16 by 16')
+animatedDonor.frames=nil
+animationFails(function()end,'animation decoder is unavailable')
+animatedDonor.frames=originalSequence
 print('composition: '..count..' assertions passed')

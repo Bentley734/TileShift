@@ -36,7 +36,13 @@ for _,gameId in ipairs(games)do
     self.style=style;self.revision=self.revision+1;return true
   end
   function state:replacements(v,tileset,def)return {version=v,tileset=tileset,def=def,style=self.style}end
-  fixture.donor={new=function()return {invalidate=function()fixture.invalidations=fixture.invalidations+1 end}end}
+  fixture.decoder={invalidate=function()fixture.invalidations=fixture.invalidations+1 end}
+  fixture.donor={new=function(ctx)fixture.donorCtx=ctx;return fixture.decoder end}
+  fixture.composition={new=function(ctx)
+    fixture.composerCreations=(fixture.composerCreations or 0)+1;fixture.composerCtx=ctx
+    return {cell=function(_,row)fixture.staticRow=row;return 'static composition'end,
+      frames=function(_,row)fixture.animatedRow=row;return 'animated composition'end}
+  end}
   fixture.session={new=function(ctx)fixture.sessionCtx=ctx;return state end}
   for gen=1,3 do
     local selectedGen=gen
@@ -47,7 +53,7 @@ for _,gameId in ipairs(games)do
   end
   _G.__tileMainFixture=fixture
   local modules={['lib/mapping.lua']='mapping',['mappings/reviewed.lua']='reviewed',
-    ['lib/donor.lua']='donor',['lib/session.lua']='session'}
+    ['lib/donor.lua']='donor',['lib/session.lua']='session',['lib/composition.lua']='composition'}
   local stored,schemas,hooks,listeners={},nil,{},{}
   local function emit(name,payload)
     for _,fn in ipairs(listeners[name] or {})do fn(payload)end
@@ -86,6 +92,14 @@ for _,gameId in ipairs(games)do
     return 'return __tileMainFixture.adapters['..gen..']'
   end
   entry(mod)
+  eq(fixture.composerCreations,nil,'native compositor stays lazy at startup')
+  local compositionRow={kind='native_composite'}
+  eq(fixture.sessionCtx.composeFrames(compositionRow),'animated composition','main dispatches animated composite through frames API')
+  eq(fixture.animatedRow,compositionRow);eq(fixture.composerCreations,1)
+  eq(fixture.sessionCtx.compose(compositionRow),'static composition')
+  eq(fixture.staticRow,compositionRow);eq(fixture.composerCreations,1,'static and animated paths share the lazy compositor')
+  eq(fixture.composerCtx.donor,fixture.decoder);eq(type(fixture.composerCtx.newImageData),'function')
+  eq(type(fixture.donorCtx.identityToken),'function');eq(fixture.donorCtx.identityToken(),0,'import digest cache begins in its first frame')
   eq(fixture.installed,generation,'only active generation adapter installed')
   eq(next(fixture.sessionCtx.mappings),nil,'optional missing tree module leaves reviewed set usable')
   eq(fixture.adapterCtx.version(),gameId)
@@ -123,6 +137,7 @@ for _,gameId in ipairs(games)do
   eq(mod.exports.select('original'),true)
   local value=hooks['core.update'](function(g,dt)eq(g,game);eq(dt,.25);return 'updated'end,game,.25)
   eq(value,'updated')
+  eq(fixture.donorCtx.identityToken(),1,'each native update advances the identity sampling token')
   if generation==2 then
     eq(game.world.mapImage,'native-CURRENT');eq(game.world.neighbors[1].image,'native-NEIGHBOR')
   end

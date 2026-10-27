@@ -40,7 +40,7 @@ function Donor.new(ctx)
   local hash=ctx.hash or function(bytes)
     return love.data.encode('string','hex',love.data.hash('sha256',bytes))
   end
-  local modules,sheets,packs,animations,objects={},{},{},{},{}
+  local modules,sheets,packs,animations,objects,effects,sourceFileHashes,identities={},{},{},{},{},{},{},{}
   local self={}
   local function readFile(game,path,optional)
     assert(type(path)=='string' and not path:find('..',1,true) and
@@ -71,9 +71,14 @@ function Donor.new(ctx)
     return data,bytes
   end
   local function importIdentity(game)
+    local token=type(ctx.identityToken)=='function' and ctx.identityToken() or nil
+    local cached=identities[game]
+    if token~=nil and cached and cached.token==token then return cached.value end
     local marker=readFile(game,'rom-cache.complete',true) or ''
     local meta=generations[game]==3 and (readFile(game,'data/generated/gba/meta.json',true) or '') or ''
-    return hash(marker..'\n'..meta)
+    local value=hash(marker..'\n'..meta)
+    if token~=nil then identities[game]={token=token,value=value}end
+    return value
   end
   local function checkFiles(ref,files)
     if ref.cacheIdentity then
@@ -83,6 +88,38 @@ function Donor.new(ctx)
       assert(files[name],'Unknown donor fingerprint file: '..tostring(name))
       assert(hash(files[name])==expected,'Donor source changed: '..name)
     end
+  end
+  local function sourceFiles(ref)
+    local expected=ref.sourceFiles
+    if expected==nil then return end
+    assert(generations[ref.game]<3 and type(expected)=='table','Source file fingerprints require a GB source')
+    local known={metadata='data/generated/tilesets.lua',maps='data/generated/maps.lua',
+      palettes='data/generated/palettes.lua',roofs='data/generated/roofs.lua',image=true}
+    local function fingerprint(value)
+      return type(value)=='string' and #value==64 and value:match('^[0-9a-f]+$')~=nil
+    end
+    for name,value in pairs(expected)do
+      assert(known[name] and fingerprint(value),'Invalid source file fingerprint: '..tostring(name))
+    end
+    assert(fingerprint(expected.metadata) and fingerprint(expected.image) and fingerprint(expected.maps),
+      'Source metadata, image and map fingerprints are required')
+    local identity=importIdentity(ref.game)
+    local function verify(name,path)
+      local key=ref.game..':'..identity..':'..path
+      local actual=sourceFileHashes[key]
+      if not actual then actual=hash(readFile(ref.game,path));sourceFileHashes[key]=actual end
+      assert(actual==expected[name],'Source file fingerprint changed: '..name)
+    end
+    -- Behavior/8px attributes are fingerprinted before parsing or loading any
+    -- source picture. The image path belongs to that checked native metadata.
+    verify('metadata',known.metadata)
+    local sets=module(ref.game,known.metadata)
+    local ts=sets[ref.tileset]
+    assert(type(ts)=='table' and type(ts.image)=='string'
+      and ts.image:match('^assets/generated/tilesets/[%w_%-]+%.png$'),
+      'Invalid source tileset image path')
+    verify('maps',known.maps);verify('image',ts.image)
+    for _,name in ipairs({'palettes','roofs'})do if expected[name]then verify(name,known[name])end end
   end
   local function bytesFor(image)
     if image.getString then return image:getString() end
@@ -157,6 +194,7 @@ function Donor.new(ctx)
     return {palette=slot,vramBank=bank}
   end
   local function gb(ref,gen)
+    sourceFiles(ref)
     local sets,setBytes=module(ref.game,'data/generated/tilesets.lua')
     local ts=sets[ref.tileset]
     assert(ts and ts.blocks,'Donor tileset is unavailable: '..ref.tileset)
@@ -312,15 +350,61 @@ function Donor.new(ctx)
     return {game=ref.game,tileset=ref.tileset,id=ref.id,kind='field_object',frame=frame,
       under=under,over=over,hash=fingerprint,sourceHash=fingerprint,cacheIdentity=identity}
   end
+  -- The named arrow effect is a reviewed static frame, not a gameplay effect
+  -- or an animation bank. Its ID is the native frame index on the eight-frame
+  -- vertical sheet. Small native canvases are only padded, never resized.
+  local function fieldEffect(ref)
+    assert(generations[ref.game]==3 and ref.tileset=='arrow' and ref.quadrant==nil and ref.frame==nil,
+      'Field-effect donor needs a named Gen3 arrow reference without a quadrant or frame override')
+    assert(integer(ref.id,7),'Field-effect arrow frame is unavailable')
+    assert(type(ref.metaHash)=='string' and type(ref.rgbaHash)=='string' and type(ref.hash)=='string',
+      'Field-effect metadata, sheet and frame fingerprints are required')
+    local identity=importIdentity(ref.game)
+    local key=ref.game..':arrow:'..identity
+    local cached=effects[key]
+    if not cached then
+      local root='data/generated/gba/field_effects/arrow'
+      local meta,rgba=readFile(ref.game,root..'.meta'),readFile(ref.game,root..'.rgba')
+      assert(hash(meta)==ref.metaHash,'Field-effect metadata fingerprint changed')
+      assert(hash(rgba)==ref.rgbaHash,'Field-effect RGBA sheet fingerprint changed')
+      assert(#meta<=4096,'Field-effect metadata is too large')
+      local dimensions,why=decode(meta,LIMITS)
+      assert(type(dimensions)=='table','Invalid field-effect metadata: '..tostring(why))
+      local w,h,frames=dimensions.fw,dimensions.fh,dimensions.frames
+      assert(dimensions.format==2 and type(dimensions.indexed)=='boolean',
+        'Unsupported field-effect pixel format')
+      assert(integer(w,16) and w>0 and integer(h,16) and h>0 and frames==8
+        and dimensions.w==w and dimensions.h==h*frames,
+        'Field-effect arrow needs eight complete native frames no larger than16 by16')
+      assert(#rgba==w*h*frames*4,'Field-effect RGBA pixels are incomplete')
+      cached={meta=meta,rgba=rgba,w=w,h=h};effects[key]=cached
+    end
+    assert(hash(cached.meta)==ref.metaHash,'Field-effect metadata fingerprint changed')
+    assert(hash(cached.rgba)==ref.rgbaHash,'Field-effect RGBA sheet fingerprint changed')
+    checkFiles(ref,{['arrow.meta']=cached.meta,['arrow.rgba']=cached.rgba})
+    local under,over=newData(16,16),newData(16,16)
+    local dx,dy=math.floor((16-cached.w)/2),math.floor((16-cached.h)/2)
+    local offset=ref.id*cached.w*cached.h*4
+    for y=0,cached.h-1 do for x=0,cached.w-1 do
+      local i=offset+(y*cached.w+x)*4+1
+      under:setPixel(dx+x,dy+y,cached.rgba:byte(i)/255,cached.rgba:byte(i+1)/255,
+        cached.rgba:byte(i+2)/255,cached.rgba:byte(i+3)/255)
+    end end
+    local fingerprint=hash(bytesFor(under))
+    return {game=ref.game,kind='field_effect',tileset='arrow',id=ref.id,frame=ref.id,
+      under=under,over=over,hash=fingerprint,sourceHash=fingerprint,cacheIdentity=identity}
+  end
   function self:cell(ref)
     local ok,result=pcall(function()
       assert(type(ref)=='table' and generations[ref.game],'Unknown donor cartridge')
       assert(validPart(ref.tileset),'Invalid donor tileset')
       assert(integer(ref.id,65535),'Invalid donor tile ID')
       assert(ref.quadrant==nil or integer(ref.quadrant,3),'Invalid donor quadrant')
-      assert(ref.kind==nil or ref.kind=='field_object','Unknown donor kind')
+      assert(ref.kind==nil or ref.kind=='field_object' or ref.kind=='field_effect','Unknown donor kind')
       local gen=generations[ref.game]
-      local out=ref.kind=='field_object' and fieldObject(ref) or gen==3 and native(ref) or gb(ref,gen)
+      assert(ref.sourceFiles==nil or gen<3,'Source file fingerprints require a GB source')
+      local out=ref.kind=='field_object' and fieldObject(ref) or ref.kind=='field_effect' and fieldEffect(ref)
+        or gen==3 and native(ref) or gb(ref,gen)
       assert(not ref.hash or out.hash==ref.hash,'Donor tile fingerprint changed')
       return out
     end)
@@ -334,6 +418,7 @@ function Donor.new(ctx)
     local ok,result=pcall(function()
       assert(type(ref)=='table' and (ref.game=='emerald' or ref.game=='firered' or ref.game=='leafgreen'),
         'Animated donor cartridge is unsupported')
+      assert(ref.kind==nil,'Native animation banks require a metatile donor')
       assert(type(spec)=='table' and validPart(spec.bank),'Animation bank is required')
       assert(type(spec.hash)=='string' and type(spec.manifestHash)=='string',
         'Animation source fingerprints are required')
@@ -496,7 +581,15 @@ function Donor.new(ctx)
     if not ok then return nil,tostring(result) end
     return result
   end
-  function self:invalidate() modules,sheets,packs,animations,objects={},{},{},{},{} end
+  function self:sourceIdentity(game)
+    local ok,result=pcall(function()
+      assert(generations[game] and generations[game]<3,'Source import identity requires a GB cartridge')
+      return importIdentity(game)
+    end)
+    if not ok then return nil,tostring(result)end
+    return result
+  end
+  function self:invalidate() modules,sheets,packs,animations,objects,effects,sourceFileHashes,identities={},{},{},{},{},{},{},{} end
   return self
 end
 return Donor

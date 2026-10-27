@@ -97,8 +97,8 @@ def gen1_animation_tiles(cache, game, ts, sheet, tick=0):
 
 
 def native_donor(cache, ref, packed, selected_layers=None, layer_hashes=None):
-    if ref.get("kind") == "field_object":
-        image = native_field_object(cache, ref, packed)
+    if ref.get("kind") in ("field_object", "field_effect"):
+        image = native_field_object(cache, ref, packed) if ref["kind"] == "field_object" else native_field_effect(cache, ref, packed)
         if selected_layers is None:
             return image
         decoded = {"under": image, "over": Image.new("RGBA", (16, 16))}
@@ -126,7 +126,7 @@ def native_donor(cache, ref, packed, selected_layers=None, layer_hashes=None):
     for layer in ("under", "mid", "over"):
         if layer in decoded:
             out = Image.alpha_composite(out, decoded[layer])
-    assert ref.get("kind") == "field_object" or catalog.sha(out.tobytes()) == ref["hash"], "Donor pixel fingerprint changed"
+    assert ref.get("kind") in ("field_object", "field_effect") or catalog.sha(out.tobytes()) == ref["hash"], "Donor pixel fingerprint changed"
     if selected_layers is not None:
         assert selected_layers and isinstance(layer_hashes, dict), "Selected layers need fingerprints"
         assert selected_layers == [name for name in ("under", "mid", "over") if name in selected_layers]
@@ -179,9 +179,45 @@ def native_field_object(cache, ref, packed):
     return image
 
 
+def native_field_effect(cache, ref, packed):
+    """Read only the bounded, fingerprinted native directional-arrow sheet."""
+    assert ref.get("kind") == "field_effect" and ref["game"] in ("ruby", "sapphire", "emerald", "firered", "leafgreen")
+    assert ref["tileset"] == "arrow" and type(ref["id"]) is int and 0 <= ref["id"] < 8
+    assert ref.get("frame") is None and ref.get("quadrant") is None
+    for field in ("metaHash", "rgbaHash", "hash"):
+        value = ref.get(field)
+        assert isinstance(value, str) and len(value) == 64 and all(c in "0123456789abcdef" for c in value)
+    key = ("field_effect", ref["game"], ref["tileset"], ref["id"], ref["metaHash"], ref["rgbaHash"], ref["hash"])
+    if key in packed:
+        return packed[key]
+    root = cache / ref["game"] / "data/generated/gba/field_effects"
+    meta = (root / "arrow.meta").read_bytes()
+    assert catalog.sha(meta) == ref["metaHash"], "Native arrow metadata fingerprint changed"
+    dimensions = catalog.read_lua(root / "arrow.meta")
+    w, h, fw, fh = (dimensions.get(field) for field in ("w", "h", "fw", "fh"))
+    assert all(type(value) is int for value in (w, h, fw, fh))
+    assert dimensions.get("format") == 2 and type(dimensions.get("indexed")) is bool and dimensions.get("frames") == 8
+    assert 1 <= fw <= 16 and 1 <= fh <= 16 and w == fw and h == fh * 8
+    raw = (root / "arrow.rgba").read_bytes()
+    if len(raw) != w * h * 4:
+        raw = zlib.decompress(raw)
+    assert len(raw) == w * h * 4 and catalog.sha(raw) == ref["rgbaHash"], "Native arrow sheet fingerprint changed"
+    offset = ref["id"] * fw * fh * 4
+    original = Image.frombytes("RGBA", (fw, fh), raw[offset:offset + fw * fh * 4])
+    image = Image.new("RGBA", (16, 16))
+    image.paste(original, ((16 - fw) // 2, (16 - fh) // 2))
+    assert catalog.sha(image.tobytes()) == ref["hash"], "Native arrow frame fingerprint changed"
+    packed[key] = image
+    return image
+
+
 def native_water_frames(cache, row, packed):
     """Decode a reviewed native bank, keeping its original frame order."""
-    ref, spec = row["donor"], row["animation"]
+    ref = row.get("donor")
+    if ref is None:
+        assert row.get("kind") == "native_composite" and row.get("parts") and row.get("base"), "Animated composition needs a native base"
+        ref = row["base"]
+    spec = row["animation"]
     key = ("animation", ref["game"], ref["tileset"], ref["id"], ref.get("hash"), json.dumps(spec, sort_keys=True))
     if key in packed:
         return packed[key]
@@ -288,23 +324,38 @@ def native_water_frames(cache, row, packed):
     return frames
 
 
-def replacement_image(cache, row, packed, mod_root):
+def replacement_frames(cache, row, packed, mod_root):
+    """Compose every native background frame without mutating cached art."""
     if row.get("donor"):
         if row.get("animated"):
-            return native_water_frames(cache, row, packed)[0]
-        return native_donor(cache, row["donor"], packed)
+            return native_water_frames(cache, row, packed)
+        return [native_donor(cache, row["donor"], packed)]
     if row.get("parts"):
-        out = native_donor(cache, row["base"], packed).copy() if row.get("base") else Image.new("RGBA", (16, 16))
+        if row.get("animated"):
+            bases = native_water_frames(cache, row, packed)
+        else:
+            bases = [native_donor(cache, row["base"], packed) if row.get("base") else Image.new("RGBA", (16, 16))]
+        parts = []
         for part in row["parts"]:
             sx, sy = part.get("srcX", 0), part.get("srcY", 0)
             image = native_donor(cache, part["donor"], packed, part.get("layers"), part.get("layerHashes")).crop(
                 (sx, sy, sx + part["w"], sy + part["h"]))
-            out.alpha_composite(image, (part.get("x", 0), part.get("y", 0)))
-        return out
+            parts.append((image, (part.get("x", 0), part.get("y", 0))))
+        frames = []
+        for base in bases:
+            out = base.copy()
+            for image, xy in parts:
+                out.alpha_composite(image, xy)
+            frames.append(out)
+        return frames
     image = asset_image(row, mod_root)
     if row.get("base"):
-        return Image.alpha_composite(native_donor(cache, row["base"], packed), image)
-    return image
+        return [Image.alpha_composite(native_donor(cache, row["base"], packed), image)]
+    return [image]
+
+
+def replacement_image(cache, row, packed, mod_root):
+    return replacement_frames(cache, row, packed, mod_root)[0]
 
 
 def verify(rows, cache, catalogs, mod_root):
@@ -312,6 +363,7 @@ def verify(rows, cache, catalogs, mod_root):
     for game, payload in catalogs.items():
         indices[game] = {r["id"]: r for r in payload["cells"]}
     checked, source_sets, source_sheets, source_maps, packed = 0, {}, {}, {}, {}
+    source_file_hashes = {}
     for row in rows:
         assert row["status"] == "reviewed"
         source_id = f"{row['game']}:{row['tileset']}:{row['id']}:{row['quadrant']}"
@@ -324,6 +376,14 @@ def verify(rows, cache, catalogs, mod_root):
         if game not in source_sets:
             source_sets[game] = catalog.read_lua(cache / game / "data/generated/tilesets.lua")
         ts = source_sets[game][row["tileset"]]
+        paths = {"metadata": "data/generated/tilesets.lua", "image": ts["image"], "maps": "data/generated/maps.lua",
+                 "palettes": "data/generated/palettes.lua", "roofs": "data/generated/roofs.lua"}
+        for field, expected in row.get("sourceFiles", {}).items():
+            assert field in paths, "Unrecognized source-file proof key"
+            path = cache / game / paths[field]
+            if path not in source_file_hashes:
+                source_file_hashes[path] = catalog.sha(path.read_bytes())
+            assert source_file_hashes[path] == expected, "Source import file fingerprint changed: " + field
         source_key = game, row["tileset"]
         if source_key not in source_sheets:
             source_sheets[source_key] = Image.open(cache / game / ts["image"])
@@ -340,15 +400,39 @@ def verify(rows, cache, catalogs, mod_root):
                 assert 0 <= x < scoped["width"] * 2 and 0 <= y < scoped["height"] * 2
                 assert row["quadrant"] == y % 2 * 2 + x % 2
                 assert scoped["blocks"][y // 2 * scoped["width"] + x // 2] == row["id"], "Position source layout changed"
-            if row.get("role") == "coastal_ocean_water_interior":
+            if row.get("role") == "coastal_ocean_water_interior" or row.get("sourceOceanBounds") is not None:
                 if row["map"] == "PALLET_TOWN":
-                    assert scoped["connections"]["south"]["map"] == "ROUTE_21"
-                else:
+                    connection_key = "map" if game in ("red", "blue", "yellow") else "mapId"
+                    assert scoped["connections"]["south"][connection_key] == "ROUTE_21"
+                elif row["map"] == "NEW_BARK_TOWN":
                     assert row["map"] == "NEW_BARK_TOWN" and scoped["connections"]["east"]["mapId"] == "ROUTE_27"
+                else:
+                    marine_scopes = {
+                        "CHERRYGROVE_CITY": ([0, 4, 17, 17], {"north": "ROUTE_30", "east": "ROUTE_29"}),
+                        "ROUTE_34": ([0, 0, 7, 43], {"north": "GOLDENROD_CITY", "east": "AZALEA_TOWN"}),
+                        "ROUTE_40": ([0, 0, 19, 35], {"south": "ROUTE_41", "east": "OLIVINE_CITY"}),
+                        "ROUTE_41": ([0, 0, 49, 53], {"north": "ROUTE_40", "west": "CIANWOOD_CITY"}),
+                        "CIANWOOD_CITY": ([0, 0, 29, 53], {"east": "ROUTE_41"}),
+                        "OLIVINE_CITY": ([0, 14, 39, 35], {"north": "ROUTE_39", "west": "ROUTE_40"}),
+                    }
+                    assert game in ("gold", "silver", "crystal") and row["map"] in marine_scopes, "Unreviewed marine map scope"
+                    bounds, connections = marine_scopes[row["map"]]
+                    assert row.get("sourceOceanBounds") == bounds, "Ocean-region bounds changed"
+                    for direction, destination in connections.items():
+                        assert scoped["connections"][direction]["mapId"] == destination, "Marine map connection changed"
+                    if "x" in row:
+                        coordinates = [(row["x"], row["y"])]
+                    else:
+                        coordinates = [(i % scoped["width"] * 2 + row["quadrant"] % 2,
+                                        i // scoped["width"] * 2 + row["quadrant"] // 2)
+                                       for i, bid in enumerate(scoped["blocks"]) if bid == row["id"]]
+                    assert coordinates and all(bounds[0] <= x <= bounds[2] and bounds[1] <= y <= bounds[3]
+                                               for x, y in coordinates), "Ocean artwork would cover excluded inland water"
+                    assert sorted(map(tuple, row["sourceCells"])) == sorted(coordinates), "Ocean-region occurrence proof changed"
         donors = [ref for ref in (row.get("donor"), row.get("base")) if ref]
         donors.extend(part["donor"] for part in row.get("parts", []))
         for donor in donors:
-            if donor.get("kind") != "field_object":
+            if donor.get("kind") not in ("field_object", "field_effect"):
                 donor_id = f"{donor['game']}:{donor['tileset']}:{donor['id']}"
                 assert indices[donor["game"]][donor_id]["pixel_sha256"] == donor["hash"], f"Donor hash changed: {donor_id}"
             native_donor(cache, donor, packed)
@@ -358,6 +442,9 @@ def verify(rows, cache, catalogs, mod_root):
                 assert row.get("credit") and row.get("sourceUrl"), "Third-party attribution missing"
         if row.get("animated"):
             native_water_frames(cache, row, packed)
+            if row.get("parts"):
+                composed = replacement_frames(cache, row, packed, mod_root)
+                assert all(frame.size == (16, 16) and frame.getchannel("A").getextrema() == (255, 255) for frame in composed), "Animated composite frame is incomplete"
         if row.get("foreground"):
             ref = row["foreground"]
             raw = (cache / ref["game"] / f"data/generated/gba/field_effects/{ref['effect']}.rgba").read_bytes()

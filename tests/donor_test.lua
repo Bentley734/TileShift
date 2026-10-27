@@ -296,6 +296,152 @@ local reimported,err=reader:cell(objectReference({hash=hash(objectOther),rgbaHas
 assert(reimported,err);eq(reimported.under:getString(),objectOther,'reimport identity selects fresh object bytes')
 eq(reimported.cacheIdentity,hash('new-object-import\nmeta3'))
 files['emerald/rom-cache.complete']='marker3';files[objectRoot..'.rgba']=objectFrame..objectOther;reader:invalidate()
+-- Static arrows use only their named neutral RGBA cache and metadata. The
+-- native frame index, complete sheet and exact16px output are fingerprinted.
+local arrowRoot='firered/data/generated/gba/field_effects/arrow'
+local arrowMeta={w=16,h=128,fw=16,fh=16,frames=8,indexed=false,format=2}
+module('firered','data/generated/gba/field_effects/arrow.meta',arrowMeta)
+local arrowMetaBytes=files[arrowRoot..'.meta'];local arrowFrames={}
+for frame=0,7 do
+  local bytes={}
+  for y=0,15 do for x=0,15 do
+    bytes[#bytes+1]=string.char(frame*17,x*13,y*11,(x==0 and y==0)and 0 or(x==2 and y==3)and 128 or 255)
+  end end
+  arrowFrames[#arrowFrames+1]=table.concat(bytes)
+end
+local arrowBlob=table.concat(arrowFrames);files[arrowRoot..'.rgba']=arrowBlob
+local arrowRef={game='firered',kind='field_effect',tileset='arrow',id=0,
+  hash=hash(arrowFrames[1]),metaHash=hash(arrowMetaBytes),rgbaHash=hash(arrowBlob)}
+local function arrowReference(changes)
+  local ref={};for k,v in pairs(arrowRef)do ref[k]=v end
+  for k,v in pairs(changes or {})do ref[k]=v end;return ref
+end
+for frame=0,7 do
+  local effect=assert(reader:cell(arrowReference({id=frame,hash=hash(arrowFrames[frame+1])})))
+  eq(effect.under:getString(),arrowFrames[frame+1],'entire native frameRGBA, including hidden transparent RGB, is unchanged')
+  eq(effect.sourceHash,hash(arrowFrames[frame+1]));eq(effect.kind,'field_effect');eq(effect.frame,frame)
+  eq(select(4,effect.over:getPixel(2,3)),0)
+end
+local function arrowFail(changes,message)
+  local failed,why=reader:cell(arrowReference(changes));eq(failed,nil)
+  eq(why:find(message,1,true)~=nil,true,why)
+end
+arrowFail({metaHash='stale'},'metadata fingerprint changed')
+arrowFail({rgbaHash='stale'},'sheet fingerprint changed')
+arrowFail({hash='stale'},'tile fingerprint changed')
+arrowFail({id=8},'frame is unavailable');arrowFail({game='gold'},'named Gen3 arrow reference')
+arrowFail({tileset='cut_grass'},'named Gen3 arrow reference')
+arrowFail({quadrant=0},'without a quadrant');arrowFail({frame=0},'frame override')
+arrowFail({cacheIdentity='stale'},'import identity changed')
+local missingArrow=arrowReference();missingArrow.metaHash=nil
+local missing,why=reader:cell(missingArrow);eq(missing,nil);eq(why:find('fingerprints are required',1,true)~=nil,true)
+local function malformedArrow(changes,blob,message)
+  local meta={};for k,v in pairs(arrowMeta)do meta[k]=v end
+  for k,v in pairs(changes)do meta[k]=v end
+  decoded[arrowMetaBytes]=meta;files[arrowRoot..'.rgba']=blob or arrowBlob;reader:invalidate()
+  arrowFail({rgbaHash=hash(blob or arrowBlob)},message)
+  decoded[arrowMetaBytes]=arrowMeta;files[arrowRoot..'.rgba']=arrowBlob;reader:invalidate()
+end
+for _,changes in ipairs({{fw=0},{fw=17},{fh=17},{w=15},{h=127},{frames=0},{frames=7},{frames=9}})do
+  malformedArrow(changes,nil,'eight complete native frames')
+end
+malformedArrow({format=1},nil,'pixel format');malformedArrow({indexed='true'},nil,'pixel format')
+malformedArrow({},arrowBlob:sub(2),'RGBA pixels are incomplete')
+local small={w=8,h=64,fw=8,fh=8,frames=8,indexed=true,format=2}
+local smallFrame=string.rep(string.char(23,67,199,255),64)
+decoded[arrowMetaBytes]=small;files[arrowRoot..'.rgba']=string.rep(smallFrame,8);reader:invalidate()
+local padded=newData(16,16)
+for y=0,7 do for x=0,7 do padded:setPixel(x+4,y+4,23/255,67/255,199/255,1)end end
+local smallEffect=assert(reader:cell(arrowReference({hash=hash(padded:getString()),rgbaHash=hash(files[arrowRoot..'.rgba'])})))
+eq(smallEffect.under:getString(),padded:getString(),'smaller native canvas is centered with transparent padding, never scaled')
+decoded[arrowMetaBytes]=arrowMeta;files[arrowRoot..'.rgba']=arrowBlob;reader:invalidate()
+local checkedArrow=assert(reader:cell(arrowReference({fingerprints={['arrow.meta']=hash(arrowMetaBytes),['arrow.rgba']=hash(arrowBlob)}})))
+eq(checkedArrow.under:getString(),arrowFrames[1])
+local noAnimation,animationError=reader:frames(arrowRef,{bank='water',hash='x',manifestHash='y'})
+eq(noAnimation,nil);eq(animationError:find('metatile donor',1,true)~=nil,true,'effect frame cannot start a tile-bank timeline')
+-- Source file guards protect behavior and event data even when the pixels
+-- decode identically. Hashes are cached per import identity and invalidation.
+local function sourceHash(bytes)
+  return string.rep('0',56)..string.format('%08x',tonumber(hash(bytes):sub(5)))
+end
+local sourceReads,sourceImages={},0
+local guardedReader=Donor.new({read=function(path)sourceReads[path]=(sourceReads[path]or 0)+1;return files[path]end,
+ decode=function(bytes)return decoded[bytes]end,prefix=function(game)return game..'/'end,
+ newImageData=newData,loadImage=function()sourceImages=sourceImages+1;return sheet end,
+ hash=sourceHash,nativePack=nativePack})
+local metadataPath='red/data/generated/tilesets.lua'
+local mapsPath='red/data/generated/maps.lua'
+local imagePath='red/assets/generated/test.png'
+-- Use the strict native image namespace required by recorded source guards.
+local oldImageName=tilesets.TEST.image;tilesets.TEST.image='assets/generated/tilesets/test.png'
+local sourceImagePath='red/'..tilesets.TEST.image;files[sourceImagePath]=files[imagePath]
+local guards={metadata=sourceHash(files[metadataPath]),maps=sourceHash(files[mapsPath]),image=sourceHash(files[sourceImagePath])}
+local guardedRef={game='red',tileset='TEST',id=0,quadrant=0,hashOnly=true,sourceFiles=guards}
+local verified=assert(guardedReader:cell(guardedRef));local unchangedPixels=verified.hash
+local counts={};for k,v in pairs(sourceReads)do counts[k]=v end
+assert(guardedReader:cell(guardedRef))
+eq(sourceReads[mapsPath],counts[mapsPath],'map bytes hashed once per import identity')
+eq(sourceReads[sourceImagePath],counts[sourceImagePath],'image hash and image decode cached')
+eq(sourceImages,1)
+local function sourceFailure(name,newBytes)
+  local path=name=='metadata'and metadataPath or name=='maps'and mapsPath or sourceImagePath
+  local previous=files[path];files[path]=newBytes;decoded[newBytes]=decoded[previous]
+  guardedReader:invalidate();local before=sourceImages
+  local failed,why=guardedReader:cell(guardedRef);eq(failed,nil)
+  eq(why:find('Source file fingerprint changed: '..name,1,true)~=nil,true,why)
+  eq(sourceImages,before,'changed source is rejected before loading any source picture')
+  local legacy={game='red',tileset='TEST',id=0,quadrant=0,hashOnly=true}
+  eq(assert(guardedReader:cell(legacy)).hash,unchangedPixels,'changed source bytes can leave all decoded pixels identical')
+  files[path]=previous;guardedReader:invalidate()
+end
+local previousWalkable=tilesets.TEST.walkable;tilesets.TEST.walkable={255}
+sourceFailure('metadata','changed-walkability-metadata')
+tilesets.TEST.walkable=previousWalkable
+local sourceMapTable=decoded[files[mapsPath]];local previousEvents=sourceMapTable.TEST_MAP.coordEvents
+sourceMapTable.TEST_MAP.coordEvents={{x=1,y=1,flag='different-event'}}
+sourceFailure('maps','changed-source-event-map')
+sourceMapTable.TEST_MAP.coordEvents=previousEvents
+sourceFailure('image','different-PNG-encoding-with-identical-pixels')
+assert(guardedReader:cell(guardedRef))
+local previousMarker=files['red/rom-cache.complete'];local previousMaps=files[mapsPath]
+files['red/rom-cache.complete']='new-source-import';files[mapsPath]='different-import-map-bytes'
+local rechecked,why=guardedReader:cell(guardedRef)
+eq(rechecked,nil);eq(why:find('fingerprint changed: maps',1,true)~=nil,true,'new import identity cannot reuse old raw-file hashes')
+files['red/rom-cache.complete']=previousMarker;files[mapsPath]=previousMaps;guardedReader:invalidate()
+local optional={};for k,v in pairs(guards)do optional[k]=v end
+optional.palettes=sourceHash(files['red/data/generated/palettes.lua'])
+module('red','data/generated/roofs.lua',{roofs={}});optional.roofs=sourceHash(files['red/data/generated/roofs.lua'])
+guardedRef.sourceFiles=optional;assert(guardedReader:cell(guardedRef))
+for _,name in ipairs({'palettes','roofs'})do
+  local path='red/data/generated/'..name..'.lua';local bytes=files[path]
+  files[path]=bytes..'-changed';guardedReader:invalidate()
+  local before=sourceImages;local failed,why=guardedReader:cell(guardedRef)
+  eq(failed,nil);eq(why:find('fingerprint changed: '..name,1,true)~=nil,true);eq(sourceImages,before)
+  files[path]=bytes;guardedReader:invalidate()
+end
+guardedRef.sourceFiles=guards
+local removed=files[mapsPath];files[mapsPath]=nil;guardedReader:invalidate()
+local failed,why=guardedReader:cell(guardedRef);eq(failed,nil);eq(why:find('import missing',1,true)~=nil,true)
+files[mapsPath]=removed;guardedReader:invalidate()
+guards.unknown=guards.maps
+failed,why=guardedReader:cell(guardedRef);eq(failed,nil);eq(why:find('Invalid source file fingerprint',1,true)~=nil,true)
+guards.unknown=nil;tilesets.TEST.image=oldImageName
+local identityToken,markerReads=0,0
+local batched=Donor.new({read=function(path)
+ if path=='red/rom-cache.complete'then markerReads=markerReads+1 end
+ return files[path]
+end,decode=function(bytes)return decoded[bytes]end,prefix=function(game)return game..'/'end,
+ newImageData=newData,hash=sourceHash,identityToken=function()return identityToken end})
+local firstIdentity=assert(batched:sourceIdentity('red'))
+for i=1,200 do eq(batched:sourceIdentity('red'),firstIdentity,'same update reuses its import marker digest')end
+eq(markerReads,1,'visible blocks do not reopen the import marker')
+local oldMarker=files['red/rom-cache.complete'];files['red/rom-cache.complete']='next-frame-import'
+identityToken=identityToken+1
+eq(batched:sourceIdentity('red')~=firstIdentity,true,'next update observes a changed import')
+eq(markerReads,2)
+batched:invalidate();assert(batched:sourceIdentity('red'))
+eq(markerReads,3,'explicit invalidation drops the token cache immediately')
+files['red/rom-cache.complete']=oldMarker
 for _,path in ipairs(reads)do
   local cartridge=path:match('^([^/]+)/')
   eq(cartridge=='red' or cartridge=='gold' or cartridge=='crystal' or cartridge=='emerald'

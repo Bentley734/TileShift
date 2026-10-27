@@ -8,7 +8,7 @@ function S.new(ctx)
     if ctx.normalizeStyle then return ctx.normalizeStyle(style) end
     return ctx.generations[style]==3 and 'gen3' or style
   end
-  local warnings,cache={},{}
+  local warnings,cache,sourceIdentities={},{},{}
   local state={style='original',revision=0,accepted=0,rejected=0}
   local function warn(message)
     if not warnings[message] then
@@ -63,13 +63,24 @@ function S.new(ctx)
     if style==self.style then return false end
     assert(style=='original' or themes[style],'Unknown TileShift style')
     self.style=style;self.revision=self.revision+1
-    cache={};self.accepted=0;self.rejected=0
+    cache={};sourceIdentities={};self.accepted=0;self.rejected=0
     donor:invalidate()
     return true
   end
   function state:replacements(game,tileset,def)
     if self.style=='original' or self.style==game
       or (self.style=='gen3' and ctx.generations[game]==3) then return nil end
+    if type(donor.sourceIdentity)=='function'then
+      local identity,why=tryCall(donor.sourceIdentity,donor,game)
+      local previous=sourceIdentities[game]
+      local current=identity or false
+      if previous~=nil and previous~=current then
+        cache={};self.accepted=0;self.rejected=0;self.revision=self.revision+1
+        donor:invalidate()
+      end
+      sourceIdentities[game]=current
+      if not identity then warn('TileShift source import identity is unavailable: '..tostring(why));return{}end
+    end
     local key=table.concat({game,self.style,tileset,def and (def.id or def.name) or ''},':')
     if cache[key] then return cache[key] end
     local rows={};cache[key]=rows
@@ -118,7 +129,7 @@ function S.new(ctx)
         if ok then
           local generation=ctx.generations[game]
           local sourceRef={game=game,tileset=tileset,id=row.id,quadrant=row.quadrant,
-            hash=row.sourceHash,hashOnly=true,map=row.sourceMap,monochrome=true}
+            hash=row.sourceHash,hashOnly=true,map=row.sourceMap,monochrome=true,sourceFiles=row.sourceFiles}
           if generation==2 and not sourceRef.map then sourceRef.map=def end
           source,sourceError=tryCall(donor.cell,donor,sourceRef)
         end
@@ -126,7 +137,15 @@ function S.new(ctx)
         if source then
           if row.donor then piece,pieceError=tryCall(donor.cell,donor,row.donor)
           elseif row.parts then
-            if ctx.compose then piece,pieceError=tryCall(ctx.compose,row)
+            if row.animated then
+              if ctx.composeFrames then
+                sequence,pieceError=tryCall(ctx.composeFrames,row)
+                if sequence and type(sequence.frames)=='table' and #sequence.frames>=2
+                  and type(sequence.period)=='number' and sequence.period>0 and sequence.period<math.huge then
+                  piece=sequence.frames[1]
+                else sequence=nil;pieceError=pieceError or 'Invalid native composition animation sequence' end
+              else pieceError='Native composition animation service is unavailable' end
+            elseif ctx.compose then piece,pieceError=tryCall(ctx.compose,row)
             else pieceError='Native composition service is unavailable' end
           elseif row.asset then
             local image,err=tryCall(ctx.original,row.asset,row.assetFileHash)
@@ -140,7 +159,7 @@ function S.new(ctx)
             else pieceError=err or ('Missing original asset '..row.asset) end
           end
         end
-        if piece and row.animated then
+        if piece and row.animated and not row.parts then
           if type(donor.frames)~='function' then piece=nil;pieceError='Donor animation decoder is unavailable'
           else
             sequence,pieceError=tryCall(donor.frames,donor,row.donor,row.animation)

@@ -16,7 +16,26 @@ NAMES = {
     ("red", "VIRIDIAN_CITY"): ("Red / Viridian City", "Viridian", "Original monochrome"),
     ("red", "ROUTE_1"): ("Red / Route 1", "Route1", "Original monochrome"),
     ("red", "MT_MOON_1F"): ("Red / Mt. Moon 1F", "MtMoon", "Original monochrome"),
+    ("red", "MT_MOON_B2F"): ("Red / Mt. Moon B2F", "MtMoonB2", "Original monochrome"),
+    ("red", "VIRIDIAN_FOREST"): ("Red / Viridian Forest", "ViridianForest", "Original monochrome"),
+    ("red", "SAFARI_ZONE_WEST"): ("Red / Safari Zone West", "SafariWest", "Original monochrome"),
+    ("red", "REDS_HOUSE_1F"): ("Red / Red's House 1F", "RedsHouse", "Original monochrome"),
+    ("red", "BLUES_HOUSE"): ("Red / Blue's House", "BluesHouse", "Original monochrome"),
+    ("red", "VERMILION_CITY"): ("Red / Vermilion City", "Vermilion", "Original monochrome"),
+    ("red", "ROUTE_12"): ("Red / Route 12", "Route12", "Original monochrome"),
     ("red", "SEAFOAM_ISLANDS_1F"): ("Red / Seafoam Islands 1F", "Seafoam", "Original monochrome"),
+    ("red", "SEAFOAM_ISLANDS_B4F"): ("Red / Seafoam Islands B4F", "SeafoamB4", "Original monochrome"),
+    ("red", "CERULEAN_CITY"): ("Red / Cerulean City", "Cerulean", "Original monochrome"),
+    ("red", "VIRIDIAN_MART"): ("Red / Viridian Mart", "ViridianMart", "Original monochrome"),
+    ("red", "VICTORY_ROAD_1F"): ("Red / Victory Road 1F", "VictoryRoad", "Original monochrome"),
+    ("crystal", "CHERRYGROVE_CITY"): ("Crystal / Cherrygrove City", "Cherrygrove", "Original Crystal native colors"),
+    ("crystal", "VIOLET_CITY"): ("Crystal / Violet City", "Violet", "Original Crystal native colors"),
+    ("crystal", "CERULEAN_CITY"): ("Crystal / Cerulean City", "Crystal-Cerulean", "Original Crystal native colors"),
+    ("crystal", "VERMILION_CITY"): ("Crystal / Vermilion City", "Crystal-Vermilion", "Original Crystal native colors"),
+    ("crystal", "ROUTE_12"): ("Crystal / Route 12", "Crystal-Route12", "Original Crystal native colors"),
+    ("crystal", "ELMS_LAB"): ("Crystal / Elm's Lab", "ElmsLab", "Original Crystal native colors"),
+    ("crystal", "UNION_CAVE_B1F"): ("Crystal / Union Cave B1F", "UnionCave", "Original Crystal native colors"),
+    ("crystal", "ICE_PATH_B1F"): ("Crystal / Ice Path B1F", "IcePath", "Original Crystal native colors"),
 }
 
 
@@ -39,35 +58,69 @@ def make(fixture: dict, output: Path) -> dict:
     replaced, total = coverage["replaced_occurrences"], coverage["visible_cells"]
     preserved = coverage["preserved_native_occurrences"]
     assert replaced + preserved == total
-    scale, padding, gap, top, bottom = 2, 18, 20, 116, 56
+    scale, padding, gap = 2, 18, 20
     size = (before.width * scale, before.height * scale)
     left = before.resize(size, Image.Resampling.NEAREST)
     right = after.resize(size, Image.Resampling.NEAREST)
-    canvas = Image.new("RGB", (padding * 2 + gap + size[0] * 2, top + size[1] + bottom), "#18212b")
-    draw = ImageDraw.Draw(canvas)
     font_dir = Path("C:/Windows/Fonts")
     title_font = ImageFont.truetype(str(font_dir / "arial.ttf"), 20)
     body_font = ImageFont.truetype(str(font_dir / "arial.ttf"), 15)
-    draw.text((padding, 13), "DEVELOPMENT — " + title, font=title_font, fill="#f5f7fa")
+    width = padding * 2 + gap + size[0] * 2
+    def lines(text: str, font, available: int) -> list[str]:
+        result, current = [], ""
+        for word in text.split():
+            candidate = (current + " " + word).strip()
+            if current and font.getlength(candidate) > available:
+                result.append(current)
+                current = word
+            else:
+                current = candidate
+        return result + ([current] if current else [])
+
     complete = replaced == total
-    complete_names = {"Pallet": "Pallet", "Route1": "Route 1", "NewBark": "New Bark Town"}
-    scope = (f"Fully retiled {complete_names[stem]} background."
-             if complete and stem in complete_names else "This is a partial tileset replacement.")
-    draw.text((padding, 42), "Actual native GPU background renders; nearest-neighbor pixels. " + scope, font=body_font, fill="#c4cdd8")
+    scope = (f"Fully retiled {title.split(' / ', 1)[1]} background."
+             if complete else "This is a partial tileset replacement.")
     status = "All background cells replaced." if complete else "Unresolved cells keep native art."
-    draw.text((padding, 64), "Animation frame 0. Reviewed replacements only. " + status + " No actors rendered.", font=body_font, fill="#c4cdd8")
-    draw.text((padding, 86), source_label, font=body_font, fill="#f5f7fa")
-    rx = padding + size[0] + gap
-    draw.text((rx, 86), "Gen 3 style — reviewed cells only", font=body_font, fill="#f5f7fa")
-    canvas.paste(left, (padding, top))
-    canvas.paste(right, (rx, top))
+    if fixture.get("source_daytime"):
+        source_label = f"Original Crystal native {fixture['source_daytime']} colors"
+    heading_lines = lines("DEVELOPMENT — " + title, title_font, width - padding * 2)
+    info_lines = lines("Actual native GPU background renders; nearest-neighbor pixels. " + scope, body_font, width - padding * 2)
+    status_lines = lines("Animation frame 0. Reviewed replacements only. " + status + " No actors rendered.", body_font, width - padding * 2)
+    left_labels = lines(source_label, body_font, size[0])
+    right_labels = lines("Gen 3 style — reviewed cells only", body_font, size[0])
+    labels_y = 13 + len(heading_lines) * 25 + 4 + len(info_lines) * 18 + 4 + len(status_lines) * 18 + 4
+    top = labels_y + max(len(left_labels), len(right_labels)) * 18 + 12
     native_status = f"Remaining {preserved} cells keep native art. " if preserved else ""
     caption = (f"Replaced {replaced}/{total} visible cells ({replaced / total:.1%}); "
                f"{coverage['unique_mappings_used']} unique mappings. {native_status}No actors rendered.")
-    draw.text((padding, top + size[1] + 15), caption, font=body_font, fill="#c4cdd8")
+    caption_lines = lines(caption, body_font, width - padding * 2)
     credit = (fixture.get("third_party_tree") or fixture.get("boundary_tree") or {}).get("credit")
-    if credit:
-        draw.text((padding, top + size[1] + 35), "Compact tree: " + credit + ".", font=body_font, fill="#c4cdd8")
+    credit_lines = lines("Compact tree: " + credit + ".", body_font, width - padding * 2) if credit else []
+    bottom = max(56, 15 + len(caption_lines) * 18 + (2 + len(credit_lines) * 18 if credit_lines else 0) + 3)
+    canvas = Image.new("RGB", (width, top + size[1] + bottom), "#18212b")
+    draw = ImageDraw.Draw(canvas)
+    y = 13
+    for group, font, step, color in ((heading_lines, title_font, 25, "#f5f7fa"),
+                                    (info_lines, body_font, 18, "#c4cdd8"),
+                                    (status_lines, body_font, 18, "#c4cdd8")):
+        for line in group:
+            draw.text((padding, y), line, font=font, fill=color)
+            y += step
+        y += 4
+    rx = padding + size[0] + gap
+    for x, group in ((padding, left_labels), (rx, right_labels)):
+        for i, line in enumerate(group):
+            draw.text((x, labels_y + i * 18), line, font=body_font, fill="#f5f7fa")
+    canvas.paste(left, (padding, top))
+    canvas.paste(right, (rx, top))
+    y = top + size[1] + 15
+    for line in caption_lines:
+        draw.text((padding, y), line, font=body_font, fill="#c4cdd8")
+        y += 18
+    y += 2
+    for line in credit_lines:
+        draw.text((padding, y), line, font=body_font, fill="#c4cdd8")
+        y += 18
     target = output / f"TileShift-Gen3-{stem}-comparison.png"
     canvas.save(target)
     # Verify saved panels, not just intermediate images, against exact GPU RGB.

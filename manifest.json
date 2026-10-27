@@ -1,7 +1,7 @@
 {
   "id": "tileshift",
   "name": "TileShift",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "api": 2,
   "entry": "main.lua",
   "games": ["red", "blue", "yellow", "gold", "silver", "crystal", "ruby", "sapphire", "emerald", "firered", "leafgreen"],
@@ -14,5 +14,5 @@
   "conflicts": [],
   "affects_link": false,
   "github": "Bentley734/TileShift",
-  "description": "Gen 3 world art for Gen 1/2. Complete Pallet Town and Route 1 in Red/Blue/Yellow, and New Bark in Gold/Silver/Crystal. Remaining maps are in progress."
+  "description": "Gen 3 world art for Gen 1/2. Complete Pallet Town, Route 1, Viridian Forest and the Gen 1 cave tileset, plus New Bark Town. Reviewed houses, coasts and interiors continue across both regions. Remaining maps are in progress."
 }

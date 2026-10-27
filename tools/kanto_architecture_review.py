@@ -176,7 +176,7 @@ def positioned_rows(args, models, instances):
                             if optional in part:
                                 value[optional] = part[optional]
                         parts.append(value)
-                assert len(parts) == 4
+                assert 1 <= len(parts) <= 16
                 row = {"game": game, "style": "gen3", "map": map_id, "x": xx, "y": yy,
                        "tileset": m["tileset"], "id": bid, "quadrant": q,
                        "sourceHash": source["grayscale_pixel_sha256"], "sourceFiles": files,
@@ -185,7 +185,7 @@ def positioned_rows(args, models, instances):
                        "compositionPixelHash": catalog.sha(rectangle(target, (x * 16, y * 16, 16, 16)).tobytes()),
                        "evidence": model["notes"] + " Actual source destination:" + record["destination"]
                                    + ". Own-cartridge complete source shape, destination function and original warp anchor verified. Whole native windows, frame caps, signs and entrance features pass exact-pixel assertions. Roof empty areas use selected native alpha over exact cell-local Emerald1 ground. No scaling or map/collision/script changes."}
-                if any(p.get("layers") for p in parts):
+                if model.get("always_base") or any(p.get("layers") for p in parts):
                     row["base"] = model["base"]
                 rows.append(row)
     rows.sort(key=lambda r: (r["game"], r["map"], r["y"], r["x"]))
@@ -195,6 +195,21 @@ def positioned_rows(args, models, instances):
         target = WORKSPACE / "TileShift/mappings/buildings_extended.lua"
         current = preview.read_reviewed(target)
         replacements = {(r["game"], r["map"], r["x"], r["y"]): r for r in rows}
+        existing_index = {(r["game"], r["map"], r["x"], r["y"]): r for r in current}
+        existing_keys = {(r["game"], r["map"], r["x"], r["y"]) for r in current}
+        same_existing = all(existing_index[key] == row for key, row in replacements.items() if key in existing_index)
+        new_rows = [row for key, row in replacements.items() if key not in existing_keys]
+        if same_existing and not new_rows:
+            return rows
+        if same_existing and target.read_text(encoding="utf-8").rstrip().endswith("return rows"):
+            # New disjoint instances append bounded chunks without rewriting
+            # thousands of already-reviewed literal rows or their key order.
+            text = target.read_text(encoding="utf-8").rstrip()
+            text = text[:-len("return rows")]
+            for start in range(0, len(new_rows), 500):
+                text += "add((function() return {\n" + "".join("  " + common.lua(row) + ",\n" for row in new_rows[start:start + 500]) + "} end)())\n"
+            target.write_text(text + "return rows\n", encoding="utf-8")
+            return rows
         for row in current:
             replacements.setdefault((row["game"], row["map"], row["x"], row["y"]), row)
         combined = sorted(replacements.values(), key=lambda r: (r["game"], r["map"], r["y"], r["x"]))

@@ -86,6 +86,16 @@ def source_image(cache,game,data,cell,definition):
 
 
 def validate_batch(rows,args,mod):
+    # A complete native family, not similar-looking isolated crops, defines
+    # these reviewed roles. Reject the old lower-corner-as-straight-side error
+    # before asking the runtime to decode any candidate or production batch.
+    emerald_cave_roles={'cave_rock_mass_west_side':528,'cave_rock_mass_east_side':530,
+        'cave_convex_northwest':520,'cave_convex_northeast':522,
+        'cave_convex_southwest':536,'cave_convex_southeast':538}
+    for row in rows:
+        ref=row.get('donor',{})
+        if ref.get('game')=='emerald' and ref.get('tileset')=='general__cave' and row['role'] in emerald_cave_roles:
+            assert ref['id']==emerald_cave_roles[row['role']],('Native cave topology mismatch',row['role'],ref['id'])
     from lupa.luajit21 import LuaRuntime
     import zlib
     from validate_animation import IMAGE_FIXTURE

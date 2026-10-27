@@ -54,9 +54,9 @@ function Composition.new(ctx)
     return love.data.encode('string','hex',love.data.hash('sha256',image:getString()))
   end
   local self={}
-  function self:cell(row)
-    local ok,result=pcall(function()
+  local function validate(row)
       assert(type(row)=='table' and row.kind=='native_composite','Native composition row is required')
+      assert(row.donor==nil and row.asset==nil,'Native composition must have exactly one artwork source')
       local parts=row.parts
       assert(type(parts)=='table' and #parts>=1 and #parts<=16,'Native composition needs 1 to 16 parts')
       for key in pairs(parts) do
@@ -76,11 +76,9 @@ function Composition.new(ctx)
           and sx+w<=16 and sy+h<=16 and x+w<=16 and y+h<=16,
           'Native composition rectangle exceeds its 16 pixel cell')
       end
-      local function flatten(ref,layers,hashes)
-        local piece,why=donor:cell(ref)
-        assert(piece,'Native composition donor failed: '..tostring(why))
-        assert(piece.hash==ref.hash or piece.sourceHash==ref.hash,
-          'Native composition donor fingerprint changed')
+  end
+  local function flatten(piece,layers,hashes)
+        assert(type(piece)=='table','Native composition frame is unavailable')
         assert(piece.under,'Native composition donor under layer is unavailable')
         local out=factory(16,16)
         for _,name in ipairs(layers or {'under','mid','over'}) do
@@ -94,19 +92,74 @@ function Composition.new(ctx)
           end
         end
         return out
-      end
-      local under=row.base and flatten(row.base) or factory(16,16)
-      for i=1,#parts do
-        local part=parts[i]
-        local source=flatten(part.donor,part.layers,part.layerHashes)
+  end
+  local function decoded(ref,layers,hashes)
+    local piece,why=donor:cell(ref)
+    assert(piece,'Native composition donor failed: '..tostring(why))
+    assert(piece.hash==ref.hash or piece.sourceHash==ref.hash,
+      'Native composition donor fingerprint changed')
+    return flatten(piece,layers,hashes)
+  end
+  local function prepare(row)
+    local sources={}
+    for i,part in ipairs(row.parts)do sources[i]=decoded(part.donor,part.layers,part.layerHashes)end
+    return sources
+  end
+  local function compose(row,under,sources)
+      for i,part in ipairs(row.parts) do
+        local source=sources[i]
         local sx,sy,x,y=coordinate(part.srcX),coordinate(part.srcY),coordinate(part.x),coordinate(part.y)
         for dy=0,part.h-1 do for dx=0,part.w-1 do
           blend(under,x+dx,y+dy,source:getPixel(sx+dx,sy+dy))
         end end
       end
       return {under=under,over=factory(16,16)}
+  end
+  function self:cell(row)
+    local ok,result=pcall(function()
+      validate(row)
+      local under=row.base and decoded(row.base) or factory(16,16)
+      return compose(row,under,prepare(row))
     end)
     if not ok then return nil,tostring(result) end
+    return result
+  end
+  function self:frames(row)
+    local ok,result=pcall(function()
+      validate(row)
+      local gb={red=true,blue=true,yellow=true,gold=true,silver=true,crystal=true}
+      assert(gb[row.game] and row.animated==true and type(row.animation)=='table',
+        'Animated native composition requires a GB host and reviewed animation bank')
+      assert(row.base and row.base.kind==nil,'Animated native composition requires a metatile base')
+      assert(type(donor.frames)=='function','Native composition animation decoder is unavailable')
+      -- Recheck the complete base reference even when the decoder has cached
+      -- its bank. Donor.frames verifies the manifest/bank and native schedule.
+      decoded(row.base)
+      local sequence,why=donor:frames(row.base,row.animation)
+      assert(sequence,'Native composition animation failed: '..tostring(why))
+      assert(type(sequence.frames)=='table' and #sequence.frames>=2 and #sequence.frames<=256
+        and type(sequence.ticks)=='number' and integer(sequence.ticks,65535) and sequence.ticks>0
+        and sequence.period==sequence.ticks/60 and sequence.bank==row.animation.bank
+        and integer(sequence.phase,sequence.ticks-1) and sequence.offset==sequence.phase/60
+        and (sequence.counter=='global' or sequence.counter=='primary' or sequence.counter=='secondary'),
+        'Native composition animation sequence is invalid')
+      for key in pairs(sequence.frames)do
+        assert(integer(key,#sequence.frames) and key>=1,'Native composition frames must be a dense array')
+      end
+      local sources=prepare(row)
+      local output={frames={}}
+      for key,value in pairs(sequence)do if key~='frames'then output[key]=value end end
+      for i=1,#sequence.frames do
+        local piece=sequence.frames[i]
+        local under=flatten(piece)
+        if i==1 and row.animation.frame0Hash then
+          assert(hashImage(under)==row.animation.frame0Hash,'Native composition base frame fingerprint changed')
+        end
+        output.frames[i]=compose(row,under,sources)
+      end
+      return output
+    end)
+    if not ok then return nil,tostring(result)end
     return result
   end
   return self

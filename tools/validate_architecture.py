@@ -108,7 +108,8 @@ local index,errors=architectureMapping.index(architectureRows)
 assert(#errors==0,table.concat(errors,'\n'))
 local state=architectureSession.new({mappings=index,donor=architectureDecoder,newImageData=makeData,
  generations=architectureMapping.generations,validate=architectureMapping.validate,
- compose=function(row)return architectureComposer:cell(row)end,warn=function(message)error(message)end})
+ compose=function(row)return architectureComposer:cell(row)end,
+ composeFrames=function(row)return architectureComposer:frames(row)end,warn=function(message)error(message)end})
 state:select('gen3')
 local maps,contexts,scenes,compositionCount,sessionCount={},{},{},0,0
 for _,row in ipairs(architectureRows)do

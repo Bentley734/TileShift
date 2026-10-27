@@ -5,6 +5,8 @@ maps, neutral donors and real Composition/Session code are used; maps are not
 GPU-rasterized. Initial used cell coverage resolves actual position variants.
 """
 from pathlib import Path
+import argparse
+import json
 import sys
 import validate_gpu
 
@@ -16,7 +18,7 @@ COVERAGE = r"""
  report.totals={maps=0,source_cells=0,replaced_cells=0,remaining_cells=0,complete_maps=0,
   accepted_decodes=0,rejected_decodes=0,positioned_source_cells=0}
  local checkedModules={}
- for _,game in ipairs({'red','blue','yellow','gold','silver','crystal'})do
+ for _,game in ipairs(coverageGames)do
   local generation=(game=='red'or game=='blue'or game=='yellow')and 1 or 2
   local mod=startMod(game,generation)
   local state=mod.exports.state
@@ -29,7 +31,7 @@ COVERAGE = r"""
   for id,def in pairs(maps)do
    if type(id)=='string'and type(def)=='table'and type(def.tileset)=='string'
     and type(def.width)=='number'and def.width>0 and type(def.height)=='number'and def.height>0
-    and type(def.blocks)=='table'then names[#names+1]=id end
+    and type(def.blocks)=='table'and(not coverageTilesets or coverageTilesets[def.tileset])then names[#names+1]=id end
   end
   table.sort(names,function(a,b)
    local x,y=maps[a].tileset,maps[b].tileset
@@ -101,12 +103,25 @@ COVERAGE = r"""
  report.totals.fraction=report.totals.replaced_cells/report.totals.source_cells
  report.status=report.totals.rejected_decodes==0 and #report.warnings==0 and 'passed'or'failed'
  if report.status~='passed'then report.error='Actual Session rejected source/donor rows; inspect map rejection deltas and warnings.'end
+ if coverageRequireComplete and report.totals.remaining_cells>0 then
+  report.status='failed';report.error='Requested complete coverage has remaining source cells.'
+ end
  write('report.json',Json.encode(report))
 end
 """
 
 
 def main() -> int:
+    filters=argparse.ArgumentParser(add_help=False)
+    filters.add_argument('--games',default='red,blue,yellow,gold,silver,crystal')
+    filters.add_argument('--tilesets',default=None)
+    filters.add_argument('--require-complete',action='store_true')
+    args,remaining=filters.parse_known_args()
+    games=args.games.split(',')
+    assert games and len(set(games))==len(games)and all(g in ('red','blue','yellow','gold','silver','crystal')for g in games)
+    tilesets=args.tilesets.split(',')if args.tilesets else None
+    assert not tilesets or all(t and t.replace('_','').isalnum()for t in tilesets)
+    sys.argv=[sys.argv[0],*remaining]
     base = validate_gpu.LUA
     prefix = base[:base.index(" -- Native Gen1 TileRenderer on real Red Pallet Town.")]
     old = "function mod:read(path)return read(MOD..'/'..path)end"
@@ -119,7 +134,12 @@ def main() -> int:
 end"""
     assert old in prefix
     prefix = prefix.replace(old, new)
-    validate_gpu.LUA = prefix + COVERAGE + base[base.index("\nfunction love.load()") :]
+    game_lua='{'+','.join(json.dumps(g)for g in games)+'}'
+    sets_lua='{'+','.join('['+json.dumps(t)+']=true'for t in tilesets)+'}'if tilesets else'nil'
+    settings='\n local coverageGames='+game_lua+'\n local coverageTilesets='+sets_lua+'\n local coverageRequireComplete='+str(args.require_complete).lower()+'\n'
+    audit=COVERAGE.replace(" report.type='authoritative main/Session all-map coverage'",
+         settings+" report.type='authoritative main/Session all-map coverage'\n report.filters={games=coverageGames,tilesets=coverageTilesets,require_complete=coverageRequireComplete}")
+    validate_gpu.LUA = prefix + audit + base[base.index("\nfunction love.load()") :]
     if "--output" not in sys.argv:
         sys.argv.extend(["--output", str(Path(__file__).resolve().parents[2] / ".work/tileshift-runtime-coverage")])
     return validate_gpu.main()

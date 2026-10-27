@@ -21,6 +21,8 @@ def main():
     parser.add_argument('--mapping',type=Path,default=mod/'mappings/gen1_outdoor.lua')
     args=parser.parse_args();mapping_path=args.mapping.resolve()
     lua=LuaRuntime(unpack_returned_tuples=True,encoding=None)
+    foregrounds={}
+    assets={}
     def read(relative):
         path=(cache/relative.decode()).resolve()
         assert path.is_relative_to(cache)
@@ -33,6 +35,29 @@ def main():
     def load_image(relative,_raw):
         image=Image.open(cache/relative.decode()).convert('RGBA')
         return lua.globals()[b'makeData'](image.width,image.height,b'rgba8',image.tobytes())
+    def foreground(ref):
+        key=ref[b'game'],ref[b'effect'],ref[b'hash']
+        if key not in foregrounds:
+            assert key[1]==b'tall_grass'
+            raw=read(key[0]+b'/data/generated/gba/field_effects/tall_grass.rgba')
+            assert raw and len(raw)==5120 and hashlib.sha256(raw).hexdigest().encode()==key[2]
+            # All five frames are native; the approved steady foot-cover uses
+            # exactly frame4's bottom8 rows, as the production main does.
+            frames=[hashlib.sha256(raw[i*1024:(i+1)*1024]).hexdigest()for i in range(5)]
+            sheet=lua.globals()[b'makeData'](16,80,b'rgba8',raw)
+            image=lua.globals()[b'makeData'](16,16)
+            image[b'paste'](image,sheet,0,8,0,72,16,8)
+            foregrounds[key]=(image,frames)
+        return foregrounds[key][0]
+    def asset(relative,expected):
+        key=relative,expected
+        if key not in assets:
+            path=(mod/relative.decode()).resolve()
+            assert path.is_relative_to(mod)and path.is_file()
+            assert expected and hashlib.sha256(path.read_bytes()).hexdigest().encode()==expected
+            image=Image.open(path).convert('RGBA');assert image.size==(16,16)
+            assets[key]=lua.globals()[b'makeData'](16,16,b'rgba8',image.tobytes())
+        return assets[key]
     before=Path.cwd()
     try:
         os.chdir(WORKSPACE/'.tools/engine-0395')
@@ -48,15 +73,19 @@ def main():
         lua.globals()[b'outdoorComposer']=composer
         lua.globals()[b'outdoorRows']=lua.execute(mapping_path.read_bytes())
         lua.globals()[b'outdoorSourceRead']=read
+        lua.globals()[b'outdoorForeground']=foreground
+        lua.globals()[b'outdoorAsset']=asset
         lua.globals()[b'outdoorMapping']=lua.execute((mod/'lib/mapping.lua').read_bytes())
         lua.globals()[b'outdoorSession']=lua.execute((mod/'lib/session.lua').read_bytes())
         result=lua.execute(br'''
 local indexed,errors=outdoorMapping.index(outdoorRows);assert(#errors==0,table.concat(errors,'\n'))
 local state=outdoorSession.new({mappings=indexed,donor=outdoorDecoder,newImageData=makeData,
  generations=outdoorMapping.generations,validate=outdoorMapping.validate,
- compose=function(row)return outdoorComposer:cell(row)end,warn=function(message)error(message)end})
+ compose=function(row)return outdoorComposer:cell(row)end,
+ composeFrames=function(row)return outdoorComposer:frames(row)end,
+ foreground=outdoorForeground,original=outdoorAsset,warn=function(message)error(message)end})
 state:select('gen3')
-local contexts,opaque,positioned,frameImages,sourceMaps={},0,0,0,{}
+local contexts,opaque,positioned,frameImages,foregroundPixels,sourceMaps={},0,0,0,0,{}
 local function definition(row)
  if not row.map then return {id='__GLOBAL_REVIEW__'}end
  if not sourceMaps[row.game]then
@@ -98,6 +127,17 @@ for _,row in ipairs(outdoorRows)do
   local variant=assert(block.positions and block.positions[bx..':'..by],'Positioned art was not published')
   assert(variant.coverage[row.quadrant],'Positioned source quadrant was not covered');positioned=positioned+1
  end
+ if row.foreground then
+  local block=assert(contexts[key][row.id])
+  if row.x~=nil then block=assert(block.positions[math.floor(row.x/2)..':'..math.floor(row.y/2)])end
+  local expected=outdoorForeground(row.foreground)
+  for y=0,15 do for x=0,15 do
+   local r,g,b,a=expected:getPixel(x,y)
+   local rr,gg,bb,aa=block.foreground:getPixel(row.quadrant%2*16+x,math.floor(row.quadrant/2)*16+y)
+   assert(r==rr and g==gg and b==bb and a==aa,'Session changed native grass foot-cover pixels')
+   foregroundPixels=foregroundPixels+1
+  end end
+ end
 end
 assert(state.rejected==0 and state.accepted>=#outdoorRows,'Not all outdoor rows decoded')
 for name in pairs(package.loaded)do
@@ -105,11 +145,14 @@ for name in pairs(package.loaded)do
 end
 local n=0;for _ in pairs(contexts)do n=n+1 end
 return {accepted=#outdoorRows,decoded_with_contexts=state.accepted,rejected=state.rejected,contexts=n,
- opaque_pixels_checked=opaque,positioned_source_cells_checked=positioned,native_animation_frame_images_checked=frameImages}
+ opaque_pixels_checked=opaque,positioned_source_cells_checked=positioned,native_animation_frame_images_checked=frameImages,
+ native_foot_cover_pixels_checked=foregroundPixels}
 ''')
         report={key.decode():value for key,value in result.items()}
     finally:os.chdir(before)
     report.update(status='passed',source_imports_read_only=True,source_generation_runtime_loaded=False,
+                  native_foreground_effects_decoded=len(foregrounds),native_foreground_frames_hash_checked=len(foregrounds)*5,
+                  fingerprint_checked_local_assets=len(assets),
                   mapping_sha256=hashlib.sha256(mapping_path.read_bytes()).hexdigest())
     folder='tileshift-outdoor-review'if mapping_path.name=='gen1_outdoor.lua'else'tileshift-gen1-extended-review'
     target=WORKSPACE/f'.work/{folder}/live-mapping-proof.json'

@@ -263,6 +263,13 @@ local function run()
   end
   if row.base then add(row.base)end
   if row.donor then add(row.donor)end
+  if row.asset then
+   local bytes=assert(read(MOD..'/'..row.asset))
+   check(hash(bytes)==row.assetFileHash,'Independent local art fingerprint changed')
+   local texture=G.newImage(love.filesystem.newFileData(bytes,row.asset:match('[^/]+$')))
+   texture:setFilter('nearest','nearest');textures[#textures+1]=texture
+   draws[#draws+1]={texture,G.newQuad(0,0,16,16,16,16),0,0}
+  end
   for _,part in ipairs(row.parts or {})do
    add(part.donor,part.x,part.y,part.srcX,part.srcY,part.w,part.h,part.layers,part.layerHashes)
   end
@@ -491,44 +498,45 @@ local function run()
   return proofs
  end
  local publicBuildingSources={}
+ local function nativeBuildingSource(n)
+  local key=tableString(n)
+  if publicBuildingSources[key]then return publicBuildingSources[key]end
+  local manifest=generated(n.game,'gba/native/manifest')
+  local spec=assert(manifest.layouts[n.map],'Public native building layout is missing')
+  check(spec.pair==n.pair,'Public building native pair changed')
+  local relative=n.game..'/data/generated/gba/native/'..spec.file
+  check(hash(assert(read(CACHE..'/'..relative)))==n.layout_file_sha256,'Public building native layout fingerprint changed')
+  local layout,why=require('src.import.gba.native_pack').decodeMidLayout(assert(cacheRead(relative)))
+  check(layout~=nil,tostring(why));local r=n.rect_cells;local textures,mids={},{}
+  for y=0,r[4]-1 do for x=0,r[3]-1 do
+   local mid=assert(layout.cells[(r[2]+y)*layout.width+r[1]+x+1]).mid
+   mids[y*r[3]+x+1]=mid
+   if not textures[mid]then textures[mid]=G.newImage(nativeCellImage({game=n.game,tileset=n.pair,id=mid}));textures[mid]:setFilter('nearest','nearest')end
+  end end
+  local image=capture(r[3]*16,r[4]*16,function()
+   for y=0,r[4]-1 do for x=0,r[3]-1 do G.draw(textures[mids[y*r[3]+x+1]],x*16,y*16)end end
+  end)
+  for _,texture in pairs(textures)do texture:release()end
+  check(hash(image:getString())==n.source_pixel_sha256,'Original public building GPU source crop changed')
+  if n.destination and n.door_anchor then
+   local bytes=assert(cacheRead(n.game..'/data/generated/gba/warps.lua'))
+   local literal=assert(bytes:match('\n  '..n.map..' = ({.-\n  })'))
+   local warps=assert(Serializer.decode('return '..literal,{allowArray=true,allowComments=true}))
+   local found=false
+   for _,w in ipairs(warps)do if w.destMap==n.destination then
+    if(w.x-r[1])*16+8==n.door_anchor[1]and(w.y-r[2]+1)*16==n.door_anchor[2]then found=true end
+   end end
+   check(found,'Original public building native entrance anchor changed')
+  end
+  local result={image=image,readback=encodePng(image,'public-native-'..n.source_pixel_sha256:sub(1,12)..'-reference-gpu.png')}
+  publicBuildingSources[key]=result;return result
+ end
  local function verifyPublicBuildings(game,def,frame)
   local proofs={}
   local function crop(image,r)
    local out=love.image.newImageData(r[3],r[4]);out:paste(image,0,0,r[1],r[2],r[3],r[4]);return out
   end
-  local function nativeSource(n)
-   local key=tableString(n)
-   if publicBuildingSources[key]then return publicBuildingSources[key]end
-   local manifest=generated(n.game,'gba/native/manifest')
-   local spec=assert(manifest.layouts[n.map],'Public native building layout is missing')
-   check(spec.pair==n.pair,'Public building native pair changed')
-   local relative=n.game..'/data/generated/gba/native/'..spec.file
-   check(hash(assert(read(CACHE..'/'..relative)))==n.layout_file_sha256,'Public building native layout fingerprint changed')
-   local layout,why=require('src.import.gba.native_pack').decodeMidLayout(assert(cacheRead(relative)))
-   check(layout~=nil,tostring(why));local r=n.rect_cells;local textures,mids={},{}
-   for y=0,r[4]-1 do for x=0,r[3]-1 do
-    local mid=assert(layout.cells[(r[2]+y)*layout.width+r[1]+x+1]).mid
-    mids[y*r[3]+x+1]=mid
-    if not textures[mid]then textures[mid]=G.newImage(nativeCellImage({game=n.game,tileset=n.pair,id=mid}));textures[mid]:setFilter('nearest','nearest')end
-   end end
-   local image=capture(r[3]*16,r[4]*16,function()
-    for y=0,r[4]-1 do for x=0,r[3]-1 do G.draw(textures[mids[y*r[3]+x+1]],x*16,y*16)end end
-   end)
-   for _,texture in pairs(textures)do texture:release()end
-   check(hash(image:getString())==n.source_pixel_sha256,'Original public building GPU source crop changed')
-   if n.destination and n.door_anchor then
-    local bytes=assert(cacheRead(n.game..'/data/generated/gba/warps.lua'))
-    local literal=assert(bytes:match('\n  '..n.map..' = ({.-\n  })'))
-    local warps=assert(Serializer.decode('return '..literal,{allowArray=true,allowComments=true}))
-    local found=false
-    for _,w in ipairs(warps)do if w.destMap==n.destination then
-     if(w.x-r[1])*16+8==n.door_anchor[1]and(w.y-r[2]+1)*16==n.door_anchor[2]then found=true end
-    end end
-    check(found,'Original public building native entrance anchor changed')
-   end
-   local result={image=image,readback=encodePng(image,'public-native-'..n.source_pixel_sha256:sub(1,12)..'-reference-gpu.png')}
-   publicBuildingSources[key]=result;return result
-  end
+
   for _,family in ipairs({{folder='tileshift-building-extended',file='architecture-native-prototypes.json',instances='source_buildings'},
    {folder='tileshift-building-kanto',file='kanto-building-variants.json',instances='source_instances'}})do
    local root=MOD..'/../.work/'..family.folder..'/'
@@ -552,7 +560,7 @@ local function run()
      check(anchor[1]==record.door_bottom_anchor_px[1]and anchor[2]==record.door_bottom_anchor_px[2]
       and anchor[1]==model.door_bottom_anchor_px[1]and anchor[2]==model.door_bottom_anchor_px[2],
       'Public building source door/warp anchor moved')
-     local source=nativeSource(model.native);local features={}
+     local source=nativeBuildingSource(model.native);local features={}
      for _,feature in ipairs(model.features_checked)do
       local sr,tr=feature.source_rect_xywh,feature.target_rect_xywh
       check(sr[3]==tr[3]and sr[4]==tr[4],'Public native feature was scaled')
@@ -592,6 +600,298 @@ local function run()
    end
   end
   return proofs
+ end
+
+ local function verifyAnimatedBuildings(game,def,draw)
+  local folder=MOD..'/../.work/'
+  local fan=Json.decode(assert(read(folder..'tileshift-special-buildings/fanclub-activation/fanclub-expected-frame-hashes.json')))
+  local route=Json.decode(assert(read(folder..'tileshift-route12-houses/route12-coastal-house-model.json')))
+  local selected={}
+  for _,row in ipairs(mappingRows('mappings/buildings_extended.lua'))do
+   if row.game==game and row.map==def.id and row.x~=nil then
+    local key=game..':'..def.id..':'..row.x..':'..row.y
+    if fan[key]then selected[#selected+1]={row=row,hashes=fan[key]}end
+    if def.id=='ROUTE_12'then
+     for _,instance in ipairs(route.source_instances)do
+      if instance.game==game and instance.map==def.id then
+       local r=instance.rect_cells
+       if row.x>=r[1]and row.x<r[1]+r[3]and row.y>=r[2]and row.y<r[2]+r[4]then
+        selected[#selected+1]={row=row,rect=r}
+       end
+      end
+     end
+    end
+   end
+  end
+  check(#selected>0,'No approved animated-building context selected')
+  local results={}
+  for f=0,7 do
+   clock=(f*16+2)/60
+   local actual=draw();local expected
+   if def.id=='ROUTE_12'then
+    local path=folder..'tileshift-route12-houses/route12-native-frame-'..f..'.png'
+    expected=love.image.newImageData(love.filesystem.newFileData(assert(read(path)),'route12.png'))
+    check(hash(expected:getString())==route.template.whole_building_frame_rgba_sha256[f+1],
+     'Independent whole coastal-house prototype changed')
+   end
+   for _,entry in ipairs(selected)do
+    local row=entry.row
+    local cell=love.image.newImageData(16,16)
+    cell:paste(actual,0,0,row.x*16,row.y*16,16,16)
+    if entry.hashes then
+     check(hash(cell:getString())==entry.hashes[#entry.hashes==1 and 1 or f+1],
+      'GPU Fan Club roof/wall differs from independently reviewed native frame')
+    else
+     local r=entry.rect
+     for y=0,15 do for x=0,15 do
+      equalPixel(cell,x,y,expected,(row.x-r[1])*16+x,(row.y-r[2])*16+y,
+       'GPU coastal roof/frame differs from complete native prototype')
+     end end
+    end
+   end
+   results[#results+1]={frame=f,cells=#selected,tick=f*16+2}
+  end
+  clock=0
+  return {complete_native_frames=8,static_facades_and_animated_roof_corners=true,checkpoints=results}
+ end
+ local function verifyHousehold(game,def,frame)
+   check(game=='red' and def.id=='REDS_HOUSE_1F','Household probe requires the original Red home')
+   local fw,fh=frame:getDimensions()
+   check(fw==128 and fh==128,'Household frame must use unscaled source-map coordinates')
+   local sourceBefore=Json.encode(def)
+   local byRole,refs={},{ }
+   local function add(ref)
+     if ref then refs[ref.game..':'..ref.tileset..':'..ref.id]=ref end
+   end
+   for _,row in ipairs(mappingRows('mappings/interiors.lua'))do
+     if row.game==game and row.map==def.id and row.x~=nil and row.role:match('^household_')then
+       byRole[row.role]=byRole[row.role]or{};byRole[row.role][#byRole[row.role]+1]=row
+       add(row.donor);add(row.base)
+       for _,part in ipairs(row.parts or{})do add(part.donor)end
+     end
+   end
+   local images={}
+   local function tile(id,cartridge,tileset)
+     cartridge,tileset=cartridge or'firered',tileset or'player_house'
+     local key=cartridge..':'..tileset..':'..id
+     check(refs[key]~=nil,'Required complete-frame native reference is absent: '..key)
+     if not images[key]then images[key]=nativeCellImage(refs[key])end
+     return images[key]
+   end
+   local function at(row,x,y,image,sx,sy,label)
+     equalPixel(frame,row.x*16+x,row.y*16+y,image,sx,sy,label)
+   end
+   local function wall(row,x,y,label)
+     at(row,x,y,tile(y<8 and 32 or 40),x,y,label)
+   end
+   local function rows(role,count)
+     local found=byRole['household_'..role]or{}
+     check(#found==count,'Unexpected complete household feature count: '..role)
+     return found
+   end
+   local proof={}
+   local televisions=rows('television',1)
+   for _,row in ipairs(televisions)do
+     local n,outside=0,0
+     for y=0,15 do for x=0,15 do
+       local image,sy
+       if y==0 and x>=3 and x<=12 then image,sy=tile(45),13
+       elseif y==1 and x>=2 and x<=13 then image,sy=tile(45),14
+       elseif y==2 then image,sy=tile(45),15
+       elseif y>=3 and y<=4 then image,sy=tile(53),y-3
+       elseif y>=5 and y<=14 then image,sy=tile(53),y+1
+       elseif y==15 then image,sy=tile(61),0 end
+       if image then at(row,x,y,image,x,sy,'Complete TV cap, screen, bevel and controls');n=n+1
+       else at(row,x,y,tile(1),x,y,'TV outside cap retains exact room wood');outside=outside+1 end
+     end end
+     check(n==246 and outside==10,'Complete TV glyph/wood footprint changed')
+     for y=2,5 do for x=0,15 do
+       equalPixel(tile(53),x,y,tile(53),x,1,'Only identical blank TV perspective rows were omitted')
+     end end
+   end
+   proof.television={features=1,retainedNativePixels=246,outsideWoodPixels=10,removedIdenticalRows=4,nativeHeight=20,targetHeight=16}
+   for _,row in ipairs(rows('window',3))do
+     local n,outside=0,0
+     for y=0,15 do for x=0,15 do
+       local image,sy
+       if y==2 and x<=14 then image,sy=tile(542,'emerald','building__brendans_mays_house'),8
+       elseif y>=3 and y<=9 then image,sy=tile(542,'emerald','building__brendans_mays_house'),y+6
+       elseif y>=10 and y<=12 then image,sy=tile(550,'emerald','building__brendans_mays_house'),y-10
+       elseif y==13 and x>=1 then image,sy=tile(550,'emerald','building__brendans_mays_house'),3 end
+       if image then at(row,x,y,image,x,sy,'Complete native window frame, glass and highlight');n=n+1
+       else wall(row,x,y,'All window outside pixels retain compact native wall');outside=outside+1 end
+     end end
+     check(n==190 and outside==66,'Complete window glyph/wall footprint changed')
+   end
+   proof.window={features=3,retainedNativePixelsPerFeature=190,outsideWallPixelsPerFeature=66,nativeSize={16,12}}
+   local bookcases=rows('bookcase_head',2);local bases=rows('bookcase_base',2)
+   for _,row in ipairs(bookcases)do
+     local base
+     for _,candidate in ipairs(bases)do if candidate.x==row.x and candidate.y==row.y+1 then base=candidate end end
+     check(base~=nil,'Complete native bookcase lower cell is missing')
+     local n,outside=0,0
+     for y=0,31 do for x=0,15 do
+       local included=y>=5 or(y==0 and((x>=1 and x<=4)or(x>=11 and x<=14)))
+         or(y==1 and x>=1 and x<=14)or(y>=2 and y<=4 and x>=1)
+       local target=y<16 and row or base
+       if included then
+         local sy=y<5 and y+11 or y+16
+         local ids={{43,44},{51,52},{59,60}}
+         local id=ids[math.floor(sy/16)+1][x<8 and 1 or 2]
+         at(target,x,y%16,tile(id),x,sy%16,'Complete bookcase cap, shelves, lower frame and all native shadow');n=n+1
+       else wall(target,x,y%16,'Bookcase outside cap retains compact wall');outside=outside+1 end
+     end end
+     check(n==499 and outside==13,'Complete bookcase glyph/wall footprint changed')
+     for y=0,4 do for x=0,15 do
+       local image=tile(x<8 and 51 or 52)
+       equalPixel(image,x,y,image,x,0,'Only identical blank bookcase panel rows were omitted')
+     end end
+   end
+   proof.bookcase={features=2,retainedNativePixelsPerFeature=499,outsideWallPixelsPerFeature=13,removedIdenticalRows=5,nativeHeight=37,targetHeight=32,fullFloorShadowRetained=true}
+   local left,right=rows('rug_left',1)[1],rows('rug_right',1)[1]
+   check(right.x==left.x+1 and right.y==left.y,'Entry mat must remain one complete32px source profile')
+   local mat=0
+   for y=0,15 do for x=0,31 do
+     local target=x<16 and left or right
+     if x>=3 and x<=28 then
+       local sx,sy=x+8,y+4
+       local id=18+math.floor(sx/16)+math.floor(sy/16)*8
+       at(target,x%16,y,tile(id),sx%16,sy%16,'Complete26px native entry mat including border and lower shadow');mat=mat+1
+     else at(target,x%16,y,tile(1),x%16,y,'Entry-mat outside pixels retain room wood')end
+   end end
+   check(mat==416,'Complete entry mat pixel count changed')
+   proof.entryMat={nativePixels=416,width=26,height=16,sourceWidth=32}
+   local masks={chair_left={75,2,149},chair_right={78,2,149},table_nw={76,1,224},
+     table_ne={77,1,224},table_sw={84,1,229},table_se={85,1,229}}
+   local furniture=0
+   for role,spec in pairs(masks)do
+     for _,row in ipairs(rows(role,spec[2]))do
+       local part=row.parts and row.parts[1]
+       check(part and #row.parts==1 and part.donor.id==spec[1]and part.layers[1]=='mid',
+         'Furniture must use the complete reviewed native middle layer')
+       local glyph=nativeCellImage(part.donor,part.layers,part.layerHashes);local n=0
+       for y=0,15 do for x=0,15 do
+         local _,_,_,a=glyph:getPixel(x,y)
+         if a>0 then at(row,x,y,glyph,x,y,'Complete native chair/table silhouette');n=n+1
+         else at(row,x,y,tile(1),x,y,'Chair/table outside pixels retain native room wood')end
+       end end
+       check(n==spec[3],'Complete native chair/table mask count changed');furniture=furniture+n
+     end
+   end
+   proof.furniture={chairPixelsPerFeature=149,chairs=4,completeTablePixels=906,checkedNativePixels=furniture}
+   local stair=rows('upstairs',1)[1];local native=nativeCellImage(stair.donor)
+   for y=0,15 do for x=0,15 do at(stair,x,y,native,x,y,'Complete native upstairs glyph')end end
+   local up,exits=0,0
+   for _,warp in ipairs(def.warps or{})do
+     if warp.x==stair.x and warp.y==stair.y then
+       check(warp.destMap=='REDS_HOUSE_2F'and warp.destWarp==1,'Original upstairs destination changed');up=up+1
+     elseif warp.destMap=='LAST_MAP'then exits=exits+1 end
+   end
+   check(up==1 and exits==2 and #(def.warps or{})==3,'Original household up/exit warp layout changed')
+   check(Json.encode(def)==sourceBefore,'Household proof must not change the original source map')
+   proof.originalSourceWarps={upstairs=1,exits=2,destination='REDS_HOUSE_2F',unchanged=true}
+   return proof
+ end
+ local function verifySprout(game,def,frame)
+  local folder=MOD..'/../.work/tileshift-sprout-native-material/sloped-roof-hybrid/'
+  local bytes=assert(read(folder..'sprout-original-native-material-model.json'))
+  local model=Json.decode(bytes);local r=model.source_rect_cells
+  check(def.id==model.source_map,'Sprout GPU fixture uses the wrong source map')
+  local actual=love.image.newImageData(r[3]*16,r[4]*16)
+  actual:paste(frame,0,0,r[1]*16,r[2]*16,r[3]*16,r[4]*16)
+  check(hash(actual:getString())==model.final_compiled_rgba_sha256,'Sprout complete approved architecture changed')
+  local prototype=love.image.newImageData(love.filesystem.newFileData(assert(read(folder..'sprout_pagoda-compact-prototype.png')),'sprout.png'))
+  check(actual:getString()==prototype:getString(),'Sprout whole GPU building differs from approved native-material prototype')
+  local features={}
+  for _,feature in ipairs(model.features_checked)do
+   local source=nativeBuildingSource(assert(model.native_materials[feature.native_source]))
+   local sr,tr=feature.source_rect_xywh,feature.target_rect_xywh
+   check(sr[3]==tr[3]and sr[4]==tr[4],'Sprout complete native feature was scaled')
+   for y=0,tr[4]-1 do for x=0,tr[3]-1 do
+    equalPixel(actual,tr[1]+x,tr[2]+y,source.image,sr[1]+x,sr[2]+y,'Sprout native complete frame/window changed')
+   end end
+   features[#features+1]={feature=feature.feature,source=feature.native_source,
+    source_rect_xywh=sr,target_rect_xywh=tr,exact_native_gpu_pixels=true}
+  end
+  check(#features==6,'Sprout must retain all five whole window units and its complete entrance')
+  local strips={}
+  for i,reference in ipairs(model.approved_outdoor_platform_references)do
+   local target=assert(model.preserved_terrain_strips[i]);local image=nativeCellImage(reference.donor)
+   local manifest=generated(reference.donor.game,'gba/native/manifest')
+   local spec=assert(manifest.layouts[reference.nativeMap]);check(spec.pair==reference.donor.tileset,'Sprout outdoor material family changed')
+   local layout=assert(require('src.import.gba.native_pack').decodeMidLayout(assert(cacheRead(reference.donor.game..'/data/generated/gba/native/'..spec.file))))
+   local position=reference.nativeCell
+   check(layout.cells[position[2]*layout.width+position[1]+1].mid==reference.donor.id,'Sprout side material is not the actual reviewed outdoor face')
+   local crop=love.image.newImageData(reference.w,reference.h)
+   crop:paste(image,0,0,reference.srcX,reference.srcY,reference.w,reference.h)
+   check(hash(crop:getString())==reference.stripPixelHash,'Sprout complete outdoor strip changed')
+   for y=0,target[4]-1 do for x=0,target[3]-1 do
+    equalPixel(actual,target[1]+x,target[2]+y,crop,x,y,'Sprout terrain strip differs from native outdoor material')
+   end end
+   strips[#strips+1]={role=reference.role,exact_native_gpu_pixels=true,target=target}
+  end
+  local door
+  for _,w in ipairs(def.warps or{})do if w.destMap=='SPROUT_TOWER_1F'then door=w;break end end
+  check(door and(door.x-r[1])*16+8==24 and(door.y-r[2]+1)*16==80,'Sprout original source entrance anchor changed')
+  return {whole_approved_building_exact=true,rgba_sha256=hash(actual:getString()),native_features=features,
+   outdoor_platform_strips=strips,source_warp_anchor={24,80},review_metadata_sha256=hash(bytes),
+   image=encodePng(actual,game..'-sprout-native-material-gpu.png')}
+ end
+ local function verifyForest(game,def,map,art,renderer,FX)
+  local checked,whole,boundary,arrows,cache=0,0,0,0,{}
+  for _,row in ipairs(mappingRows('mappings/gen1_extended.lua'))do
+   if row.game==game and row.map==def.id and row.tileset=='FOREST'and
+    (row.role:find('forest_whole_broadleaf_tree_',1,true)or row.asset or row.role:find('forest_static_direction_marker_',1,true))then
+    local key=tableString({base=row.base,donor=row.donor,parts=row.parts,asset=row.asset,assetFileHash=row.assetFileHash})
+    if not cache[key]then cache[key]=nativeComposition(row)end
+    local expected=cache[key]
+    for pos,id in ipairs(def.blocks)do if id==row.id then
+     local cx=(pos-1)%def.width*2+row.quadrant%2;local cy=math.floor((pos-1)/def.width)*2+math.floor(row.quadrant/2)
+     if row.x==nil or(row.x==cx and row.y==cy)then
+      local block=artAt(art,id,math.floor(cx/2),math.floor(cy/2));check(block and block.coverage[row.quadrant],'Forest reviewed feature was not published')
+      for y=0,15 do for x=0,15 do
+       equalPixel(block.image,row.quadrant%2*16+x,math.floor(row.quadrant/2)*16+y,expected,x,y,'Independent forest native feature changed')
+       checked=checked+1
+      end end
+      if row.role:find('forest_whole_broadleaf_tree_',1,true)then whole=whole+1
+      elseif row.asset then boundary=boundary+1 else arrows=arrows+1 end
+     end
+    end end
+   end
+  end
+  check(whole>0 and whole%4==0 and boundary>0,'Forest whole tree neighborhoods were not exercised')
+  local gx,gy,q,front
+  for pos,id in ipairs(def.blocks)do if not gx then
+   local block=artAt(art,id,(pos-1)%def.width,math.floor((pos-1)/def.width))
+   if block then for quadrant=0,3 do
+    local cx=(pos-1)%def.width*2+quadrant%2;local cy=math.floor((pos-1)/def.width)*2+math.floor(quadrant/2)
+    if block.coverage[quadrant]and map:cellTile(cx,cy)==32 then
+     gx,gy,q,front=cx*16,cy*16,quadrant,block.foreground;break
+    end
+   end end
+  end end
+  check(gx~=nil,'Forest native grass fixture is missing')
+  local sheet=love.image.newImageData(16,80,'rgba8',assert(cacheRead('firered/data/generated/gba/field_effects/tall_grass.rgba')))
+  local actor=capture(48,48,function()
+   FX.clearTrueColor();renderer:drawWindow(gx-16,gy-16,48,48)
+   G.setShader();G.setColor(1,0,1,1);G.rectangle('fill',16,16,16,16);G.setColor(1,1,1,1)
+   renderer:drawStripRaw(gx,gy+8,gx+16,gy+16,gx-16,gy-16)
+  end)
+  local expected=love.image.newImageData(16,16);local cover,gaps=0,0
+  for y=0,15 do for x=0,15 do
+   local r,g,b,a=0,0,0,0
+   if y>=8 then r,g,b,a=sheet:getPixel(x,64+y)end
+   local fr,fg,fb,fa=front:getPixel(q%2*16+x,math.floor(q/2)*16+y)
+   check(a==fa and(a==0 or(r==fr and g==fg and b==fb)),'Forest foot mask differs from complete native FR grass frame4')
+   if a>0 then expected:setPixel(x,y,r,g,b,1);cover=cover+1
+   else expected:setPixel(x,y,1,0,1,1);gaps=gaps+1 end
+   equalPixel(actor,16+x,16+y,expected,x,y,'Forest native grass foot-cover GPU mismatch')
+  end end
+  check(cover>0 and gaps>0,'Forest actor proof lacks grass and open pixels')
+  return {independent_native_pixels=checked,complete_native32px_trees=whole/4,compact_boundary_cells=boundary,
+   static_native_direction_cues=arrows,native_grass_actor={covered=cover,visible_actor=gaps,
+    image=encodePng(actor,game..'-'..def.id..'-native-grass-actor-gpu.png'),
+    limits='Synthetic16px magenta actor; actual native FR frame4 feet mask and TileRenderer.drawStripRaw.'}}
  end
 
  -- Native Gen1 TileRenderer on real Red Pallet Town.
@@ -899,10 +1199,11 @@ local function run()
  end
 
  -- Representative regional caves exercise the actual source maps and the
- -- matching reviewed FR/LG palette families. Uncovered art remains native.
- for _,spec in ipairs({{id='MT_MOON_1F',stem='mtmoon',minimum=943},
-  {id='SEAFOAM_ISLANDS_1F',stem='seafoam',minimum=473},
-  {id='DIGLETTS_CAVE_ROUTE_2',stem='diglett',minimum=25}})do
+ -- matching reviewed FR/LG palette families. All CAVERN cells are reviewed.
+ for _,spec in ipairs({{id='MT_MOON_1F',stem='mtmoon'},
+  {id='MT_MOON_B2F',stem='mtmoonb2'},
+  {id='SEAFOAM_ISLANDS_1F',stem='seafoam'},
+  {id='DIGLETTS_CAVE_ROUTE_2',stem='diglett'}})do
   GV.set('red');assetGame='red';clock=0
   local caveDef=maps[spec.id];check(caveDef~=nil,'Approved cave fixture is absent: '..spec.id)
   local caveMap=Map.new(caveDef,sets[caveDef.tileset])
@@ -918,7 +1219,7 @@ local function run()
   check(caveMod.exports.state.rejected==0,'Cave mapping source/donor was rejected')
   local afterCave=capture(caveDef.width*32,caveDef.height*32,drawCave)
   local c=coverage(caveDef,caveArt)
-  check(c.replaced_occurrences>=spec.minimum,'Approved cave coverage decreased')
+  check(c.replaced_occurrences==c.visible_cells and c.preserved_native_occurrences==0,'Complete cave fixture has unresolved graphics')
   local fixture={game='red',map=caveDef.id,native_renderer='src.render.TileRenderer',coverage=c,
    before=encodePng(native,'red-'..spec.stem..'-native-gpu.png'),
    after=encodePng(afterCave,'red-'..spec.stem..'-gen3-gpu.png'),
@@ -936,6 +1237,12 @@ local function run()
  -- Additional Gen1 public architecture, a representative interior and the
  -- newly reviewed compact barrier/water cells on their actual source maps.
  for _,spec in ipairs({{id='CERULEAN_CITY',stem='cerulean',architecture=true},
+  {id='VERMILION_CITY',stem='vermilion',animated_buildings=true},
+  {id='ROUTE_12',stem='route12',animated_buildings=true},
+  {id='REDS_HOUSE_1F',stem='redshouse',household=true,complete=true},
+  {id='BLUES_HOUSE',stem='blueshouse',complete=true},
+  {id='VIRIDIAN_FOREST',stem='viridianforest',forest=true,complete=true},
+  {id='SAFARI_ZONE_WEST',stem='safariwest',forest=true},
   {id='VIRIDIAN_MART',stem='viridianmart'},
   {id='VICTORY_ROAD_1F',stem='victoryroad'},
   {id='SEAFOAM_ISLANDS_B4F',stem='seafoamb4',water=true}})do
@@ -955,11 +1262,15 @@ local function run()
    accepted=mod.exports.state.accepted,checked_donor_pixels=verifyCoveredPixels(def,art,after,'red '..def.id),
    before=encodePng(native,'red-'..spec.stem..'-native-gpu.png'),after=encodePng(after,'red-'..spec.stem..'-gen3-gpu.png'),
    collision_before=mechanics,collision_after=snapshot(map,1),events_before=events,events_after=eventSnapshot(map)}
+  if spec.complete then check(fixture.coverage.replaced_occurrences==fixture.coverage.visible_cells,'Complete Gen1 fixture has unresolved background art')end
   if spec.architecture then
    fixture.architecture=verifyPublicBuildings('red',def,after)
    check(#fixture.architecture>0,'Kanto wide-Gym/public architecture was not exercised')
   end
   if spec.water then fixture.water_all_frames=verifyAnimationFrames(def,art,draw,'water',8,1)end
+  if spec.forest then fixture.forest=verifyForest('red',def,map,art,renderer,FX)end
+  if spec.household then fixture.household=verifyHousehold('red',def,after)end
+  if spec.animated_buildings then fixture.animated_buildings=verifyAnimatedBuildings('red',def,draw)end
   check(fixture.collision_before==fixture.collision_after and fixture.events_before==fixture.events_after,
    'Additional Gen1 fixture changed source collision/warps/events')
   mod.exports.dispose();clock=0
@@ -1373,6 +1684,8 @@ local function run()
  for _,spec in ipairs({{id='CHERRYGROVE_CITY',stem='cherrygrove',architecture=true},
   {id='VIOLET_CITY',stem='violet',architecture=true},
   {id='CERULEAN_CITY',stem='cerulean',architecture=true},
+  {id='VERMILION_CITY',stem='vermilion',animated_buildings=true},
+  {id='ROUTE_12',stem='route12',animated_buildings=true},
   {id='ELMS_LAB',stem='elmslab'},
   {id='UNION_CAVE_B1F',stem='unioncave',ladders=true},
   {id='ICE_PATH_B1F',stem='icepath',ladders=true}})do
@@ -1396,6 +1709,8 @@ local function run()
    check(#fixture.architecture>0,'Public architecture GPU fixture contains no reviewed buildings')
   end
   if spec.ladders then fixture.complete_native_ladders=verifyGen2Ladders('crystal',def,map,after)end
+  if spec.id=='VIOLET_CITY'then fixture.sprout=verifySprout('crystal',def,after)end
+  if spec.animated_buildings then fixture.animated_buildings=verifyAnimatedBuildings('crystal',def,draw)end
   check(fixture.collision_before==fixture.collision_after and fixture.events_before==fixture.events_after,
    'Additional Gen2 fixture changed native collision/warps/events')
   mod.exports.dispose();clock=0;world.mapImage=world:imageFor(map.id)

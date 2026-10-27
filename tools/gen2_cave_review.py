@@ -47,8 +47,8 @@ TERRAIN_ROLES=(('cave_rock_floor',(2,0),(24,3),(1,1,1,1),0x00,641,513),
                ('cave_raised_rock_plateau_top',(9,0),(9,0),(22,22,22,22),0x00,657,529),
                ('cave_raised_rock_mass_front',(13,2),(13,2),(38,38,38,38),0x07,665,537))
 EDGE_ROLES=(('cave_raised_plateau_north_rim',(4,1),(4,1),(36,36,22,22),0xb2,649,521),
-            ('cave_rock_mass_west_side',(4,2),(12,0),(21,21,21,21),0x07,656,536),
-            ('cave_rock_mass_east_side',(10,1),(14,1),(23,23,23,23),0x07,658,538),
+            ('cave_rock_mass_west_side',(4,2),(12,0),(21,21,21,21),0x07,656,528),
+            ('cave_rock_mass_east_side',(10,1),(14,1),(23,23,23,23),0x07,658,530),
             ('cave_fixed_small_boulder',(28,0),(24,0),(12,13,28,29),0x07,642,514))
 
 
@@ -156,7 +156,7 @@ def terrain_candidates(args,edges=False):
                                      'contextKind':'same Kanto cave' if donor_game=='firered' else 'Hoenn natural-cave equivalent'},
                     'donor':{'game':donor_game,'tileset':spec['pair'],'id':mid,'hash':record['pixel_sha256']},
                     'evidence':'Proposed complete16px floor, walkable raised-rock plateau top, or blocked vertical rock-mass front. Explicit map scope; exact source pixels, collision, palette slots and per8px priority checked against the displayed seed. The target is used in the actual named Gen3 cave reference. Source floor/raised mass geometry is retained. Side walls, diagonal banks, water, ladders, exits, ice and puzzles remain held. Before native Flash, original darkness and entrance flicker remain intact.'}
-                if edges:row['evidence']='Proposed complete16px north rim, west/east vertical wall side, or fixed small boulder. Native source north-rim0xb2 blocks upward crossing, as does the target north rim. Source/native3x3 contexts show handedness. Exact source pixels, collision, palette slots and per8px priority checked, with explicit map scope. No diagonal, corner, water, ladder, exit or puzzle is inferred; native geometry and behavior remain unchanged.'
+                if edges:row['evidence']='Proposed complete16px north rim, west/east vertical wall side, or fixed small boulder. Native source north-rim0xb2 blocks upward crossing, as does the target north rim. Source/native3x3 contexts show handedness. The complete Emerald family is520/521/522 north,528/529/530 middle,536/537/538 south: continuous west/east sides use528/530, never the lower corners536/538. Exact source pixels, collision, palette slots and per8px priority checked, with explicit map scope. No diagonal, corner, water, ladder, exit or puzzle is inferred; native geometry and behavior remain unchanged.'
                 candidates.append(row)
                 if game=='crystal':samples.setdefault((ts,spec['pair'],role),(row,cell,data,definition))
     canvas=Image.new('RGB',(1340,72+len(samples)*134),'#18202c');draw=ImageDraw.Draw(canvas)

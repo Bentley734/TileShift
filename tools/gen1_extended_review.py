@@ -65,26 +65,29 @@ def write_contact(path,heading,entries,cols=6):
         d.multiline_text((x,y+84),entry['label'],font=font,fill='white',spacing=2)
     canvas.save(path)
 
-def inventory(rows):
+def inventory(rows,tilesets=('OVERWORLD','CAVERN','FOREST','PLATEAU')):
     maps=catalog.read_lua(CACHE/'red/data/generated/maps.lua')
     sets=catalog.read_lua(CACHE/'red/data/generated/tilesets.lua')
     cells=json.loads((WORKSPACE/'.work/tileshift-catalog/red.json').read_text())['cells']
     report={}
-    for tileset in('OVERWORLD','CAVERN'):
+    for tileset in tilesets:
         index={(r['block_id'],r['quadrant']):r for r in cells if r['tileset']==tileset}
         groups=defaultdict(lambda:{'occurrences':0,'unmapped':0,'contexts':[],'keys':set()})
         for name,m in maps.items():
             if not isinstance(m,dict)or m.get('tileset')!=tileset:continue
-            selected={(r['id'],r['quadrant'])for r in rows if r['game']=='red'and r['tileset']==tileset and r.get('map',name)==name}
+            applicable=[r for r in rows if r['game']=='red'and r['tileset']==tileset and r.get('map',name)==name]
+            selected={(r['id'],r['quadrant'])for r in applicable if r.get('x')is None}
+            positioned={(r['id'],r['quadrant'],r['x'],r['y'])for r in applicable if r.get('x')is not None}
             for pos,bid in enumerate(m['blocks']):
                 for q in range(4):
-                    cell=index[bid,q];g=groups[cell['grayscale_pixel_sha256']]
+                    cell=index[bid,q];g=groups[cell['grayscale_pixel_sha256'],review.behavior_key(cell)]
                     g['occurrences']+=1;g['keys'].add((bid,q))
-                    if(bid,q)not in selected:
+                    x,y=pos%m['width']*2+q%2,pos//m['width']*2+q//2
+                    if(bid,q)not in selected and(bid,q,x,y)not in positioned:
                         g['unmapped']+=1
-                        if len(g['contexts'])<12:g['contexts'].append({'map':name,'cell':[pos%m['width']*2+q%2,pos//m['width']*2+q//2],'source':[bid,q]})
+                        if len(g['contexts'])<12:g['contexts'].append({'map':name,'cell':[x,y],'source':[bid,q]})
         ordered=[];pictures=[];ts=sets[tileset];atlas=Image.open(CACHE/'red'/ts['image'])
-        for n,(fingerprint,g)in enumerate(sorted(groups.items(),key=lambda item:-item[1]['unmapped'])):
+        for n,((fingerprint,behavior),g)in enumerate(sorted(groups.items(),key=lambda item:-item[1]['unmapped'])):
             seed=sorted(g['keys'])[0];cell=index[seed]
             row={**g,'number':n,'hash':fingerprint,'seed':seed,'keys':sorted(g['keys']),
                  'tiles':cell['tiles'],'walkable':cell['walkable_tiles'],'warp':cell['warp_tile_present']}

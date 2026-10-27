@@ -27,7 +27,8 @@ DIRECTIONS=((20,1,649,'cave_north_mass_edge'),(20,2,656,'cave_west_mass_face'),(
             (23,2,656,'cave_west_half_face'),(23,3,658,'cave_east_half_face'),(32,3,665,'cave_south_half_face'),
             (20,0,648,'cave_large_nw_corner'),(22,1,650,'cave_large_ne_corner'),
             (28,2,664,'cave_large_sw_corner'),(30,3,666,'cave_large_se_corner'),
-            (43,2,667,'cave_inner_sw_corner'),(44,3,668,'cave_inner_se_corner'))
+            (43,2,667,'cave_inner_sw_corner'),(44,3,668,'cave_inner_se_corner'),
+            (76,0,643,'cave_jagged_fixed_rock_cluster'))
 APPROVED_ROLES.update(s[3]for s in DIRECTIONS)
 APPROVED_ROLES.update({'cave_compact_plateau_corner_'+str(q)for q in range(4)})
 APPROVED_ROLES.update({'cave_cerulean_rock_stairs','cave_plain_water','cave_victory_barrier_compact','cave_victory_barrier_head','cave_victory_barrier_foot'})
@@ -295,6 +296,21 @@ def approved_geometry():
                         row['parts']=[{'donor':ref(i),'srcX':sx,'srcY':sy,'w':w,'h':h,'x':x,'y':y}for i,sx,sy,w,h,x,y in pieces]
                         row['evidence']+=' Source mixed top/face material footprint remains exactly8px per half: native657 fills only the original flat8px area. The east standing cell retains a full8px flat region instead of widening a wall under the player.'
                         row['compositionPixelHash']=catalog.sha(preview.replacement_image(CACHE,row,packed,ROOT/'TileShift').tobytes())
+                    elif role=='cave_jagged_fixed_rock_cluster':
+                        assert seed['tiles']==[12,13,28,29]and seed['walkable_tiles']==[False]*4
+                        assert not seed['warp_tile_present']and not seed['grass_tile_present']
+                        reviewed=json.loads((OUT/'cave-jagged76-native643-proof.json').read_text())
+                        context=next(p for p in reviewed['native_contexts']if p['donor']['tileset']==pair)
+                        assert context['donor']==ref(643)and context['native_collision_values']==[7]
+                        spec=manifest['layouts'][context['map']]
+                        raw=(native_root/spec['file']).read_bytes()
+                        if raw[:4]!=b'SVML':raw=zlib.decompress(raw)
+                        width=int.from_bytes(raw[6:8],'little');offset=16+raw[14]*raw[15]*2
+                        for cx,cy in context['actual_positions']:
+                            p=offset+(cy*width+cx)*4
+                            assert int.from_bytes(raw[p:p+2],'little')==643 and raw[p+2]==7
+                        row['nativeContext']={'map':context['map'],'pair':pair,'normalizedCollision':7}
+                        row['evidence']='Visually approved complete native regional643 fixed jagged rock cluster. Exact source raw12,13,28,29, all four8px materials blocked, no grass/warp/hole flag; only actual matching source uses are aliased. Actual native regional MtMoon/Seafoam/Cerulean/RockTunnel643 placements and normalized collision7 are independently checked. No hole646, movable Strength boulder or Victory Road barrier inference. Original source collision, events, rock footprint and cave-family palette remain unchanged.'
                     elif role=='cave_cerulean_rock_stairs':
                         assert seed['tiles']==[21,22,21,22]and seed['walkable_tiles']==[True,False,True,False]
                         row['evidence']='Visually reviewed complete native Cerulean145 MB_ROCK_STAIRS, actually used on corresponding native Cerulean1F/B1F. The complete source16px staircase has left8px stair-collision material21 walkable and right8px edge material22 blocked; the authoritative bottom-left source collision remains walkable. Original paths, steps, warps and per8px/source-cell movement remain unchanged.'

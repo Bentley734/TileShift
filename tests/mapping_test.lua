@@ -151,4 +151,40 @@ for _,change in ipairs({{map=false},{x=-1},{x=.5},{x=65536},{y='0'},{quadrant=3}
 end
 local unscoped=clone(positioned);unscoped.map=nil;eq(M.validate(unscoped),nil)
 local incomplete=clone(positioned);incomplete.y=nil;eq(M.validate(incomplete),nil)
+local wetRoof=clone(layered);wetRoof.animated=true;wetRoof.animation=clone(bank.animation)
+eq(M.validate(wetRoof),true,'a native roof may compose over a fingerprinted animated native base')
+for _,game in ipairs({'red','blue','yellow','gold','silver','crystal'})do
+  local supported=clone(wetRoof);supported.game=game;eq(M.validate(supported),true,'animated composition GB host '..game)
+end
+for _,change in ipairs({{game='ruby'},{base=false},{animation=false},{donor=clone(base.donor)},
+  {asset='assets/original/extra.png'},{parts={wetRoof.parts[1],extra=wetRoof.parts[1]}}})do
+  local bad=clone(wetRoof);for key,value in pairs(change)do bad[key]=value end
+  eq(M.validate(bad),nil,'animated composites retain GB scope and a single explicit artwork source')
+end
+for _,key in ipairs({'hash','manifestHash','overHash','frame0Hash'})do
+  local bad=clone(wetRoof);bad.animation[key]='changed';eq(M.validate(bad),nil,'animation fingerprints remain required: '..key)
+end
+local noBase=clone(wetRoof);noBase.base=nil;eq(M.validate(noBase),nil,'animated parts require their own base')
+local noBank=clone(wetRoof);noBank.animation=nil;noBank.frames={1,2};eq(M.validate(noBank),nil,'fabricated frames cannot replace the native base bank')
+local objectBase=clone(wetRoof);objectBase.base=clone(object.donor);eq(M.validate(objectBase),nil,'animated base must be a metatile, not an object frame')
+local arrow=clone(base)
+arrow.donor={game='firered',kind='field_effect',tileset='arrow',id=0,metaHash=a,rgbaHash=b,hash=b}
+eq(M.validate(arrow),true,'named native static arrow frame is an explicit graphics source')
+for _,change in ipairs({{kind='effect'},{tileset='tall_grass'},{id=8},{id=-1},{id=.5},{frame=0},{quadrant=0},
+  {metaHash='stale'},{rgbaHash='stale'},{game='gold'}})do
+  local bad=clone(arrow);for key,value in pairs(change)do bad.donor[key]=value end
+  eq(M.validate(bad),nil,'arrow references require the exact name, native frame and both source fingerprints')
+end
+local arrowPart=clone(layered);arrowPart.parts={{donor=clone(arrow.donor),w=16,h=16}}
+eq(M.validate(arrowPart),true,'transparent static arrow may overlay native ground')
+local blinking=clone(arrow);blinking.animated=true;blinking.animation=clone(bank.animation)
+eq(M.validate(blinking),nil,'static effect frames never acquire a native tile-bank animation')
+local guarded=clone(base);guarded.sourceFiles={metadata=a,image=b,maps=a,palettes=b,roofs=a}
+eq(M.validate(guarded),true,'recorded source file fingerprints include optional palette and roof tables')
+for _,change in ipairs({{sourceFiles=false},{sourceFiles={}},{game='ruby'},
+  {sourceFiles={metadata=a,image=b}},{sourceFiles={metadata=a,image=b,maps=a,unknown=b}},
+  {sourceFiles={metadata=a,image=b,maps=a,roofs='stale'}}})do
+  local bad=clone(guarded);for key,value in pairs(change)do bad[key]=value end
+  eq(M.validate(bad),nil,'provided source guards are complete, known and fingerprinted')
+end
 print('PASS strict mapping validation: '..count..' assertions')

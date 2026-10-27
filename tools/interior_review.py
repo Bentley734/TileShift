@@ -190,7 +190,10 @@ def reviewed_floors(imports, output, references, activate=False):
     (output / "reviewed-floor-rows.json").write_text(json.dumps(rows, indent=2), encoding="utf-8")
     (output / "reviewed-floor-scope-proof.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
     target = WORKSPACE / "TileShift/mappings/interiors.lua" if activate else output / "reviewed-floors.lua"
-    write_rows(rows, target)
+    if activate:
+        merge_reviewed(rows, target)
+    else:
+        write_rows(rows, target)
     print("Reviewed room-floor rows:", len(rows), "maps:", len(scopes), "held variant maps:", len(held), "activated:", activate)
     return rows
 
@@ -220,6 +223,22 @@ return rows
     expanded = catalog.plain(catalog.LUA.execute(body))
     assert expanded == rows, "Compact interior references changed expanded rows"
     target.write_text(body, encoding="utf-8")
+
+
+def merge_reviewed(rows, target):
+    """Keep previously approved furniture and regional floor batches intact."""
+    previous = preview.read_reviewed(target) if target.is_file() else []
+    def key(row):
+        return (row["game"], row["style"], row["tileset"], row["id"], row["quadrant"], row.get("map"), row.get("x"), row.get("y"))
+    indexed = {key(row): row for row in previous}
+    assert len(indexed) == len(previous)
+    for row in rows:
+        assert row["status"] == "reviewed", "Pending interior references cannot enter production"
+        identity = key(row)
+        assert identity not in indexed or indexed[identity] == row, "Conflicting reviewed interior key"
+        indexed[identity] = row
+    write_rows(list(indexed.values()), target)
+    return {"previous": len(previous), "added": len(indexed) - len(previous), "total": len(indexed)}
 
 
 class Imports:

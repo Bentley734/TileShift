@@ -297,4 +297,101 @@ eq(select(1,variant.frames[2]:getPixel(2,2)),.75,'generic animation frame1 inher
 eq(select(2,variant.frames[1]:getPixel(18,18)),1,'static positional quadrant retained in frame0')
 eq(select(2,variant.frames[2]:getPixel(18,18)),1,'static positional quadrant retained in frame1')
 eq(select(4,animatedBlock.frames[1]:getPixel(18,18)),0,'generic frame stays transparent outside coverage')
+local wetRoof=positioned(1,1)
+wetRoof.kind='native_composite';wetRoof.asset=nil
+wetRoof.base={game='firered',tileset='OCEAN',id=299,hash=hashB}
+wetRoof.parts={{donor={game='emerald',tileset='ROOF',id=4,hash=hashB},w=16,h=16}}
+wetRoof.animated=true;wetRoof.animation={bank='general_water',hash=hashB,manifestHash=hashA}
+local composeFramesCalls=0
+local function composeRoof(r)
+  composeFramesCalls=composeFramesCalls+1;eq(r,wetRoof,'full composition reaches animation service')
+  local frames={}
+  for i=1,2 do
+    local under=fill(0,0,i/2,1);under:setPixel(0,0,1,1,0,1)
+    frames[i]={under=under,over=newData(16,16)}
+  end
+  return {frames=frames,bank='general_water',counter='primary',ticks=16,period=16/60,offset=1/60}
+end
+local roofState,roofWarnings=make({wetRoof,row(7,2),animBase},{composeFrames=composeRoof,
+  compose=function()error('animated composition reached static service')end})
+roofState:select('gen3')
+local roofBlock=roofState:replacements('red','OVERWORLD',positionDef)[7]
+local roofVariant=roofBlock.positions['0:0']
+eq(#roofWarnings,0);eq(roofState.accepted,3);eq(roofState.rejected,0);eq(composeFramesCalls,1)
+eq(roofVariant.bank,roofBlock.bank);eq(roofVariant.period,16/60);eq(roofVariant.offset,1/60)
+eq(#roofVariant.frames,2);eq(roofVariant.coverage[3],true);eq(roofBlock.coverage[3],nil)
+for i=1,2 do
+  eq(select(1,roofVariant.frames[i]:getPixel(0,0)),i==1 and .25 or .75,'generic water inherited by positioned roof')
+  eq(select(1,roofVariant.frames[i]:getPixel(16,16)),1,'opaque positioned roof stays static')
+  eq(select(3,roofVariant.frames[i]:getPixel(18,18)),i/2,'exposed positioned water changes in every frame')
+  eq(select(1,roofVariant.frames[i]:getPixel(1,17)),1,'static neighboring quadrant inherited by every roof frame')
+  eq(select(4,roofBlock.frames[i]:getPixel(18,18)),0,'other occurrence cannot inherit positioned roof pixels')
+end
+eq(positionDef.blocks[1],7);eq(positionDef.blocks[2],7,'animated art never changes logical blocks')
+local cachedRoof=roofState:replacements('red','OVERWORLD',positionDef)[7]
+eq(cachedRoof,roofBlock);eq(composeFramesCalls,1,'sequence cached with source context')
+roofState:select('original');eq(roofState:replacements('red','OVERWORLD',positionDef),nil)
+roofState:select('gen3');eq(roofState:replacements('red','OVERWORLD',positionDef)[7]~=roofBlock,true,'theme cleanup drops animated composite images')
+local unavailable,unavailableWarnings=make({wetRoof},{compose=function()error('must not freeze animated roof')end})
+unavailable:select('gen3');eq(next(unavailable:replacements('red','OVERWORLD',positionDef)),nil)
+eq(unavailable.rejected,1);eq(unavailableWarnings[1]:find('animation service is unavailable',1,true)~=nil,true)
+for _,service in ipairs({function()return nil,'changed bank fingerprint'end,function()error('missing bank pixels')end,
+  function()return {frames={},period=16/60}end})do
+  local failed,failedWarnings=make({wetRoof},{composeFrames=service})
+  failed:select('gen3');eq(next(failed:replacements('red','OVERWORLD',positionDef)),nil,'failed bank never publishes a static first frame')
+  eq(failed.rejected,1);eq(#failedWarnings,1)
+end
+local incompatible,conflictWarnings=make({animBase,wetRoof},{composeFrames=function()
+  local sequence=composeRoof(wetRoof);sequence.bank='other';return sequence
+end})
+incompatible:select('gen3')
+local conflict=incompatible:replacements('red','OVERWORLD',positionDef)[7]
+eq(incompatible.accepted,1);eq(incompatible.rejected,1);eq(conflict.positions,nil,'incompatible cycle creates no partial position variant')
+eq(conflictWarnings[1]:find('Different animation cycles',1,true)~=nil,true)
+local guardedSource=row(27,0)
+guardedSource.sourceFiles={metadata=hashA,image=hashB,maps=hashC}
+local guardedState,_,guardedCalls=make({guardedSource});guardedState:select('gen3')
+guardedState:replacements('red','OVERWORLD',def)
+eq(guardedCalls[1].sourceFiles,guardedSource.sourceFiles,'all recorded source guards reach GB source validation unchanged')
+for _,name in ipairs({'metadata','maps','image','palettes','roofs'})do
+  local sourceReads,artReads,composeReads,frameReads=0,0,0,0
+  local rejected=make({wetRoof},{donor={invalidate=function()end,
+    cell=function(_,ref)
+      if ref.hashOnly then sourceReads=sourceReads+1;return nil,'Source file fingerprint changed: '..name end
+      artReads=artReads+1;error('artwork decoded after source failure')
+    end,frames=function()frameReads=frameReads+1;error('native bank decoded after source failure')end},
+    compose=function()composeReads=composeReads+1;error('static composition after source failure')end,
+    composeFrames=function()composeReads=composeReads+1;error('animated composition after source failure')end})
+  rejected:select('gen3');eq(next(rejected:replacements('red','OVERWORLD',positionDef)),nil)
+  eq(sourceReads,1);eq(artReads,0);eq(composeReads,0);eq(frameReads,0)
+  eq(rejected.accepted,0);eq(rejected.rejected,1,'source change fails closed before any donor/composition service')
+end
+local identity,sourceGood,identityInvalidations='import1',true,0
+local identityDecoder={sourceIdentity=function()return identity,'missing import marker'end,
+  invalidate=function()identityInvalidations=identityInvalidations+1 end,
+  cell=function(_,ref)
+    if ref.hashOnly then
+      if not sourceGood then return nil,'Source file fingerprint changed: metadata'end
+      return {under=fill(.5,.5,.5,1)}
+    end
+    return {under=fill(1,0,0,1)}
+  end}
+local identityState=make({guardedSource},{donor=identityDecoder});identityState:select('gen3')
+local firstImport=identityState:replacements('red','OVERWORLD',def)
+local initialRevision=identityState.revision
+eq(identityState:replacements('red','OVERWORLD',def),firstImport,'same import reuses its verified art cache')
+identity='import2';sourceGood=false
+local changedImport=identityState:replacements('red','OVERWORLD',def)
+eq(next(changedImport),nil,'new import cannot reuse old composed art after metadata changed')
+eq(identityState.revision,initialRevision+1,'native renderer refreshes after import identity change')
+eq(identityState.accepted,0);eq(identityState.rejected,1);eq(identityInvalidations,2)
+identity=nil
+eq(next(identityState:replacements('red','OVERWORLD',def)),nil,'unavailable identity fails closed')
+eq(identityState.revision,initialRevision+2)
+eq(next(identityState:replacements('red','OVERWORLD',def)),nil)
+eq(identityState.revision,initialRevision+2,'persistent identity failure does not invalidate every frame')
+identity='import3';sourceGood=true
+local recovered=identityState:replacements('red','OVERWORLD',def)
+eq(recovered[27]~=nil,true);eq(identityState.revision,initialRevision+3)
+eq(identityState.accepted,1);eq(identityState.rejected,0,'fresh import guard recovery owns a fresh cache')
 print('PASS reviewed mapping session: '..count..' assertions')

@@ -22,14 +22,19 @@ return function(mod)
   local indexed,errors=Mapping.index(reviewed)
   assert(#errors==0,table.concat(errors,'\n'))
   local Donor=readModule('lib/donor.lua')
-  local decoder=Donor.new()
+  -- Render paths may resolve the same rows once per visible block. Sample
+  -- import identities once per update instead of reopening marker files there.
+  local identityToken=0
+  local decoder=Donor.new({identityToken=function()return identityToken end})
   local nativeFS=require('src.import.CacheFs')
   local function newData(w,h) return love.image.newImageData(w,h) end
   local composer
-  local function compose(row)
+  local function getComposer()
     if not composer then composer=readModule('lib/composition.lua').new({donor=decoder,newImageData=newData}) end
-    return composer:cell(row)
+    return composer
   end
+  local function compose(row)return getComposer():cell(row)end
+  local function composeFrames(row)return getComposer():frames(row)end
   local originals,effects={},{}
   local function original(path,expectedHash)
     local key=path..':'..tostring(expectedHash or '')
@@ -67,7 +72,8 @@ return function(mod)
   local state=readModule('lib/session.lua').new({mappings=indexed,donor=decoder,
     newImageData=newData,generations=Mapping.generations,themes=Mapping.themes,
     normalizeStyle=Mapping.normalizeStyle,validate=Mapping.validate,
-    original=original,foreground=foreground,compose=compose,warn=function(s)mod.log:warn('%s',s)end})
+    original=original,foreground=foreground,compose=compose,composeFrames=composeFrames,
+    warn=function(s)mod.log:warn('%s',s)end})
   local styleNames={'ORIGINAL','GEN 3'}
   local styleIds={'original','gen3'}
   local styleChoices={}
@@ -95,6 +101,7 @@ return function(mod)
     end
   end
   callback=function(nextFn,game,dt)
+    identityToken=identityToken+1
     if lastRevision~=state.revision then refresh(game);lastRevision=state.revision end
     return nextFn(game,dt)
   end
