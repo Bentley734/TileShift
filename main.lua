@@ -12,7 +12,7 @@ return function(mod)
     'mappings/trees.lua','mappings/posts.lua','mappings/cut_trees.lua','mappings/water.lua','mappings/coasts.lua',
     'mappings/pallet_buildings.lua','mappings/pallet_details.lua',
     'mappings/gen1_outdoor.lua','mappings/gen2_outdoor.lua','mappings/gen1_caves.lua',
-    'mappings/gen2_buildings.lua','mappings/gen1_extended.lua','mappings/gen2_outdoor_extended.lua','mappings/azalea.lua','mappings/viridian.lua','mappings/gen2_pallet.lua','mappings/mahogany.lua','mappings/johto_terrain.lua','mappings/cianwood.lua',
+    'mappings/gen2_buildings.lua','mappings/gen1_extended.lua','mappings/gen2_outdoor_extended.lua','mappings/azalea.lua','mappings/viridian.lua','mappings/gen2_pallet.lua','mappings/mahogany.lua','mappings/johto_terrain.lua','mappings/cianwood.lua','mappings/olivine.lua',
     'mappings/buildings_extended.lua','mappings/interiors.lua','mappings/gen2_caves.lua',
   }) do
     local source=mod:read(path)

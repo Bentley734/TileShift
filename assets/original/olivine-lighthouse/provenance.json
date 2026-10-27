@@ -1,0 +1,122 @@
+{
+  "origin": "Original new design made with built-in imagegen",
+  "user_choice": "New64px lighthouse in suppliedGen3 style, both base windows retained",
+  "prompt": "Create a NEW Pokemon Emerald/FireRed GBA pixel-art Olivine lighthouse exterior sprite. The attached small lighthouse is a STYLE AND SUBJECT REFERENCE ONLY; redesign the tower for a very tall narrow 64x224 logical pixel footprint, silhouette aspect ratio 2:7, with genuinely transparent background and clear margins. Ideally use a 512x1792 or equivalent portrait canvas, crisp enlarged square pixel clusters for integer nearest-neighbor reduction. Entire tower visible from lamp dome to base, no scenery, ground, people, labels or text. Match reference's blue-white pale stone, cyan glass, muted navy outlines and brass/tan trim. A round cylindrical lighthouse with a small rounded cyan beacon dome and a complete lamp gallery, then a tall narrow shaft with five stacked complete cyan window tiers separated by tan horizontal circular bands, then a compact rectangular pale blue/white base. Both complete base windows must fit inside the 64px width, one to either side of a complete 16px-wide doorway; full doorway frame and top lintel, no missing window-frame corners. Doorway must be offset slightly left: door center is at x=24 of the 64px logical width and its bottom is at y=224. The left base window can be 8px wide and the right one 16px wide so both and the door fit without squeezing. Keep the tower slender with its cylinder inside the width and no projecting parts beyond the footprint. Symmetric cylindrical upper tower, orthographic overhead Pokemon building viewpoint, no perspective tilt. Native-looking limited GBA palette and sharply aligned pixel clusters, no antialiasing, no gradients, no drop-shadow outside the footprint. New design with both intact base windows and an intact door, do not resize the reference lighthouse.",
+  "style_reference": "MetalFlygon08 / SkidMarc25 Johto lighthouse, style only",
+  "reference_url": "https://imgur.com/gallery/testing-out-gen-3-style-tiles-johto-6A43Cji",
+  "creator_post": "https://www.reddit.com/r/PokemonRMXP/comments/yf90qb/full_johto_gen_3_tileset_tile_set_at_the_bottom/",
+  "reference_atlas_native_crop_xyxy": [
+    0,
+    5048,
+    80,
+    5184
+  ],
+  "source_file": "exec-be2a7d6b-b884-48fb-a1d1-0d2b665cde21.png",
+  "source_sha256": "989422d2191d1fbaf5d2cd439e502d353f5f88180c7ab6d6c20ea74596970cf2",
+  "generated_size": [
+    948,
+    1659
+  ],
+  "visible_alpha_bounds": [
+    282,
+    63,
+    667,
+    1610
+  ],
+  "crop_xyxy": [
+    279,
+    42,
+    727,
+    1610
+  ],
+  "integer_reduction": 7,
+  "runtime_size": [
+    64,
+    224
+  ],
+  "processing": "Whole visible design retained; transparent matte below128 removed; uniform7:1 nearest reduction,32 colors including transparency, no dithering, no fractional or runtime scaling. Crop aligns complete doorway with original logicalx24 anchor.",
+  "source_map": "OLIVINE_CITY",
+  "source_rect_cells": [
+    28,
+    14,
+    4,
+    14
+  ],
+  "original_entrance_cell": [
+    29,
+    27
+  ],
+  "door_window_probe_xy": [
+    [
+      24,
+      219
+    ],
+    [
+      9,
+      212
+    ],
+    [
+      43,
+      212
+    ]
+  ],
+  "files": {
+    "cell-0-0.png": "3e3d92ba2090f63bf001ad351458ba41bf0fcf754a465da3e4b93c0dd48e9f4c",
+    "cell-1-0.png": "bc6c3f5dce8d2b98eb7f31a8cb9d28f3b9f93bb00d7f6ccfe8529b994a115c37",
+    "cell-2-0.png": "8f450dc3941c05212be75bc94a6c8e4b78e38b6b42b8132777a9b3f36dc76369",
+    "cell-3-0.png": "232c2eac760eae604f9dd43352c0b272396b7cfaf220081b54583b6d0cbc2320",
+    "cell-0-1.png": "4d48547562b0a97655745979dada5696eb5c75d062225ff621c6d96d69cd95e7",
+    "cell-1-1.png": "33331a19f301e8d631e3390372e43fcd0f0f9dcaafd2a593e5c41fe914bda27d",
+    "cell-2-1.png": "38ca4e954d5e5d208d44fdceb0fada454d2515cd04b9539fe778fdd6111a5866",
+    "cell-3-1.png": "232c2eac760eae604f9dd43352c0b272396b7cfaf220081b54583b6d0cbc2320",
+    "cell-0-2.png": "4e7be9a646c3bd53a5173cb5df30ac5063876d8c69a9cb624d47f1cf11b2d77a",
+    "cell-1-2.png": "41094f82caa1b5c540b760f09936df2785c2c0650f4e2c4b0473521760b9fb77",
+    "cell-2-2.png": "aac3aea9be27e1f8060e29ca192b6aeec3e078bbb3d1799f684f68d2acb84527",
+    "cell-3-2.png": "2f1a2648adc5482d9c494ee4535c1fbb5557ce2ccfff089a2a0075901606e46c",
+    "cell-0-3.png": "a2a19abdaf1d6e38169fac0ecb670b9a0c6510d3398b47958f75c53828ff20e5",
+    "cell-1-3.png": "ada552b657eedab1cf66aeef22522206ab85f5e07d208e9afff1a458974242f6",
+    "cell-2-3.png": "e3324242501f05c1c3ddc410b7fae0af70a73b480f19283437f14517a6f546de",
+    "cell-3-3.png": "1d9c2c7b68418b0044676d1ff184a657afaa241ff643d9b8e1b2f80fbce59a4f",
+    "cell-0-4.png": "38ff05cc30e0ef9b4e8c6be26ed3c354640d56236d828fe7d0028a176a896e02",
+    "cell-1-4.png": "e04ff31380552586479ecc337b700e342ee99d495626badc105b2a2eb8df6714",
+    "cell-2-4.png": "e30836769ba8e1c5b6ef232be55ab3f4425b51b4b60292c08d89c272437800e7",
+    "cell-3-4.png": "232c2eac760eae604f9dd43352c0b272396b7cfaf220081b54583b6d0cbc2320",
+    "cell-0-5.png": "7ecf7d01fcf35168c31816b913a2d9efec6066804247ba2e9f483eb77c0b13c1",
+    "cell-1-5.png": "b0560a71af77e942e2061b2101b1a11dfa57bdbcecbd0d55c20ca0576af9c7b7",
+    "cell-2-5.png": "d40b1adecbba7b5933f305736a310c9f3fb03af602de90d7cb1b70b0c980ec5b",
+    "cell-3-5.png": "232c2eac760eae604f9dd43352c0b272396b7cfaf220081b54583b6d0cbc2320",
+    "cell-0-6.png": "c2e81990f6913e3e24bbb01d227450da75fb0f103558c46f5a08be8f594a566c",
+    "cell-1-6.png": "8214e89fcd9aff2d80b6f2074ced8b6c46b9d337af04023074f15d989d502d07",
+    "cell-2-6.png": "536fcb4e68ce375e2fd28daa96dad76dcb281bbf0c9aa71117635d2b361ae712",
+    "cell-3-6.png": "232c2eac760eae604f9dd43352c0b272396b7cfaf220081b54583b6d0cbc2320",
+    "cell-0-7.png": "b58b4ab099620f362fbcb601e26c5c1574022c910f5f23d07e8dc529aeab7d7c",
+    "cell-1-7.png": "ebab3a6f0c09f9867cccb19227e3d8f03dca4dc12d97986a04b6d18077753cde",
+    "cell-2-7.png": "757b887f872c5e1e4d28e4c19d12f44a095a037311a1f6d85f4f9e7746bccc84",
+    "cell-3-7.png": "232c2eac760eae604f9dd43352c0b272396b7cfaf220081b54583b6d0cbc2320",
+    "cell-0-8.png": "e3680d9b6f731af76202bb5dec8ab9cae4d9cfb353446b7b4b3d8cbc3350439b",
+    "cell-1-8.png": "dcacb7617962e3cd102ef88ef72361ffc4be98e21928faa0d7e041c7d8f7b6ce",
+    "cell-2-8.png": "27f7b1ceb19bb59eca209bbb4c0dda766d43031392785de87300ea4a433c97b1",
+    "cell-3-8.png": "232c2eac760eae604f9dd43352c0b272396b7cfaf220081b54583b6d0cbc2320",
+    "cell-0-9.png": "b59074cb70d628983c510e0142ca2cfcb115ac3f607ea5c7c0b6a769278517fa",
+    "cell-1-9.png": "8c0cdad4b4f60a6b2de0e234866bf67c3f9af96e0d4c54d4bdeb2c0e0cf2caf3",
+    "cell-2-9.png": "db40d6ddf957f42b556a2e8385806c4f7f234d2c75a38136e6e6ed5fb2f906ac",
+    "cell-3-9.png": "232c2eac760eae604f9dd43352c0b272396b7cfaf220081b54583b6d0cbc2320",
+    "cell-0-10.png": "5af31b1e29667c6c62b15da90c915c078d4eee82c0ccb132fdebbf52b7cf3663",
+    "cell-1-10.png": "8d03defdac350928fa18287b3d4b9326473eb686bed70faf3b488276e094ded5",
+    "cell-2-10.png": "8309a16c084a9881834553c5b87fd36c622e8425eb7a21ad96a11cc0714c21d1",
+    "cell-3-10.png": "232c2eac760eae604f9dd43352c0b272396b7cfaf220081b54583b6d0cbc2320",
+    "cell-0-11.png": "d8f84d6e79a5d505b34a628a1257fd4a51abbe690c903d1d92283864acbddfd6",
+    "cell-1-11.png": "3e36e84716c18ad5e8caaaa859f08f404b93663c707c86e411685dae2cad5c54",
+    "cell-2-11.png": "302a2eab41aa4ac33221542aba5d86472ea8b3e66e6c3234184e46f19af683ba",
+    "cell-3-11.png": "93b49db40943cd060914c07f0090e67a8dfa321358117c3ea4e4f923e6967a25",
+    "cell-0-12.png": "5f0d71d6af7e87bc541323f4925b0b24e8624ae7aa3f1624cf6d593676d5cf19",
+    "cell-1-12.png": "8a7d0540cf58d8dad330c3ece478f1bac2dd499ae98a986610ac13837e091cb2",
+    "cell-2-12.png": "28488bb69785e5a0bcad92b5b2a64afd107cbcecdd5fc5db0d5884ac56b1ae34",
+    "cell-3-12.png": "2220194c3098188ff1c7b3dbb3b28b4590a89b011c51b4f192406eac038d1212",
+    "cell-0-13.png": "1803495a6f1a88706f45041e13dc6a88a9afe594a5f8f9275cd52f56123b45b3",
+    "cell-1-13.png": "533b1fa46bf94fceda2f2701da46f3c382f6316ea9445b5b82a11fc84cf855af",
+    "cell-2-13.png": "ec5fa74181ec86ba772cf9d57b0fe18a899fdb48e447f30345a00b287283ae0e",
+    "cell-3-13.png": "300ca1b61bccce91c1c498d5776e5d0b7596cf9c60f29f806f6139c5c0610617",
+    "lighthouse.png": "2a64fd1833e4eaa6bd8f4df8dc17545899579052a6f2c6a1851ae62b58bd831b"
+  }
+}

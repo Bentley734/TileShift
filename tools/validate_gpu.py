@@ -659,7 +659,8 @@ local function run()
    local out=love.image.newImageData(r[3],r[4]);out:paste(image,0,0,r[1],r[2],r[3],r[4]);return out
   end
 
-  for _,family in ipairs({{folder='tileshift-cianwood-finish',file='shop-model.json',instances='source_instances'},
+  for _,family in ipairs({{folder='tileshift-olivine-finish',file='cafe-model.json',instances='source_instances'},
+   {folder='tileshift-cianwood-finish',file='shop-model.json',instances='source_instances'},
    {folder='tileshift-mahogany-finish',file='shop-model.json',instances='source_instances'},
    {folder='tileshift-building-extended',file='architecture-native-prototypes.json',instances='source_buildings'},
    {folder='tileshift-building-kanto',file='kanto-building-variants.json',instances='source_instances'},
@@ -973,6 +974,52 @@ local function run()
    check(row.sourceCollision==want,'Well source collision/step layout changed')
   end
   return {whole_sprite_checked_pixels=2304,footprint={30,6,3,3},entrance={31,7},steps={31,8},source_warp_unchanged=true}
+ end
+ local function verifyOlivine(game,def,frame)
+  local ground=nativeCellImage({game='emerald',tileset='general__petalburg',id=1,hash='1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1'})
+  local whole=love.image.newImageData(love.filesystem.newFileData(assert(read(MOD..'/assets/original/olivine-lighthouse/lighthouse.png')),'lighthouse.png'))
+  check(whole:getWidth()==64 and whole:getHeight()==224,'Lighthouse original4x14 footprint changed')
+  local expected=capture(64,224,function()
+   local bg,top=G.newImage(ground),G.newImage(whole)
+   for y=0,13 do for x=0,3 do G.draw(bg,x*16,y*16)end end
+   G.draw(top,0,0);bg:release();top:release()
+  end)
+  for y=0,223 do for x=0,63 do equalPixel(frame,28*16+x,14*16+y,expected,x,y,'Complete original lighthouse changed')end end
+  for _,xy in ipairs({{24,219},{9,212},{43,212}})do local _,_,_,a=whole:getPixel(xy[1],xy[2]);check(a==1,'Original lighthouse doorway/window silhouette missing')end
+  local model=Json.decode(assert(read(MOD..'/../.work/tileshift-olivine-finish/port-model.json')))
+  check(model.size_px[1]==64 and model.size_px[2]==64 and model.painted_south_door==false,'Port must keep its closed south facade')
+  local port=capture(64,64,function()
+   local bg=G.newImage(ground);for y=0,3 do for x=0,3 do G.draw(bg,x*16,y*16)end end;bg:release()
+   for _,p in ipairs(model.native_parts)do
+    local tex=G.newImage(nativeCellImage(p.donor,p.layers,p.layerHashes));G.draw(tex,p.target_xy[1],p.target_xy[2]);tex:release()
+   end
+  end)
+  for y=0,63 do for x=0,63 do equalPixel(frame,18*16+x,28*16+y,port,x,y,'Complete closed port facade/eaves changed')end end
+  local lighthouse,portWarps=false,0
+  for _,w in ipairs(def.warps or{})do
+   if w.destMap=='OLIVINE_LIGHTHOUSE_1F'then check(w.x==29 and w.y==27,'Lighthouse entrance moved');lighthouse=true end
+   if w.destMap=='OLIVINE_PORT_PASSAGE'then check((w.x==19 or w.x==20)and w.y==27 and w.destWarp==w.x-18,'Rear port entrance moved');portWarps=portWarps+1 end
+   check(not(w.x>=18 and w.x<=21 and w.y>=28 and w.y<=31),'Closed port front gained an entrance')
+  end
+  check(lighthouse and portWarps==2,'Original Olivine destinations missing')
+  local railings,vertical,assetCells,arrows=0,0,0,0
+  for _,row in ipairs(mappingRows('mappings/olivine.lua'))do if row.game==game then
+   if row.role=='olivine_original_lighthouse'then assetCells=assetCells+1 end
+   if row.role=='olivine_port_down_warp_marker'then
+    local ref=row.parts[1].donor;check(ref.kind=='field_effect'and ref.id==2 and row.sourceCollision==112,'Port must use its original downward warp direction');arrows=arrows+1
+   end
+   if row.role=='olivine_metal_railing'then
+    local p=row.parts[1];local plane=nativeCellImage(p.donor,p.layers,p.layerHashes);local count=0
+    if p.donor.id==244 or p.donor.id==245 then check(#p.layers==1 and p.layers[1]=='over','Vertical rail must select its visible native plane');vertical=vertical+1 end
+    for y=0,15 do for x=0,15 do local _,_,_,a=plane:getPixel(x,y)
+     if a==1 then equalPixel(frame,row.x*16+x,row.y*16+y,plane,x,y,'Native railing disappeared or changed');count=count+1 end
+    end end
+    check(count>0,'A complete railing cannot be invisible');railings=railings+1
+   end
+  end end
+  check(assetCells==56 and railings==67 and vertical==33 and arrows==2,'Olivine whole feature/source footprint changed')
+  return {whole_lighthouse_pixels=14336,lighthouse_cells=56,both_base_windows_and_full_door_retained=true,
+   entrance={29,27},port_rear_entrances={{19,27},{20,27}},closed_port_facade_pixels=4096,railings=railings,visible_vertical_railings=vertical,downward_markers=arrows}
  end
  local function verifySprout(game,def,frame)
   local folder=MOD..'/../.work/tileshift-sprout-native-material/sloped-roof-hybrid/'
@@ -2024,7 +2071,10 @@ local function run()
 
  -- Public Johto/Kanto architecture, a representative interior floor, and
  -- complete up/down glyphs on their actual Union Cave/Ice Path source maps.
- for _,spec in ipairs({{game='gold',id='CIANWOOD_CITY',stem='cianwood',architecture=true,complete=true,water=true},
+ for _,spec in ipairs({{game='gold',id='OLIVINE_CITY',stem='olivine',architecture=true,complete=true,water=true},
+  {game='silver',id='OLIVINE_CITY',stem='olivine',architecture=true,complete=true,water=true},
+  {game='crystal',id='OLIVINE_CITY',stem='olivine',architecture=true,complete=true,water=true},
+  {game='gold',id='CIANWOOD_CITY',stem='cianwood',architecture=true,complete=true,water=true},
   {game='silver',id='CIANWOOD_CITY',stem='cianwood',architecture=true,complete=true,water=true},
   {game='crystal',id='CIANWOOD_CITY',stem='cianwood',architecture=true,complete=true,water=true},
   {game='gold',id='MAHOGANY_TOWN',stem='mahogany',architecture=true,complete=true},
@@ -2140,6 +2190,7 @@ local function run()
   end
   if spec.complete then check(fixture.coverage.replaced_occurrences==fixture.coverage.visible_cells,'Complete Violet fixture has unresolved art')end
   if spec.ladders then fixture.complete_native_ladders=verifyGen2Ladders(game,def,map,after)end
+  if spec.id=='OLIVINE_CITY'and spec.complete then fixture.olivine=verifyOlivine(game,def,after)end
   if spec.id=='CIANWOOD_CITY'and spec.complete then
    local seaRows={}
    for _,row in ipairs(mappingRows('mappings/cianwood.lua'))do

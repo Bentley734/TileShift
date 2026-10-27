@@ -73,3 +73,13 @@ Gen 2 3×3 footprint, with its entrance and steps unchanged.
 MetalFlygon08’s [Gen 3 Johto artwork](https://www.reddit.com/r/PokemonRMXP/comments/yf90qb/full_johto_gen_3_tileset_tile_set_at_the_bottom/)
 provided the style reference; its well bitmap is not distributed. The prompt,
 processing details and asset hashes are in assets/original/slowpoke-well/provenance.json.
+
+## Original Olivine lighthouse
+
+The new 64×224 lighthouse was made with the built-in image-generation tool.
+MetalFlygon08’s [Gen 3 Johto sheet](https://www.reddit.com/r/PokemonRMXP/comments/yf90qb/full_johto_gen_3_tileset_tile_set_at_the_bottom/)
+provided a style reference only. The complete new design retains both base
+windows and the original entry anchor, with uniform 7:1 nearest-neighbor
+reduction and no runtime scaling. The reference crop is not distributed.
+The prompt, processing record and hashes are in
+assets/original/olivine-lighthouse/provenance.json.

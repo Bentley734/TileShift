@@ -1,0 +1,88 @@
+"""Review complete Olivine exteriors and finalize its original64x224 lighthouse."""
+import argparse,copy,hashlib,json,os
+from pathlib import Path
+from types import SimpleNamespace
+from PIL import Image
+import catalog,preview,gen2_extended_review as e,architecture_review as arch,kanto_architecture_review as k
+from interior_review import Imports
+from building_review import decode_layout
+from newbark_building_review import native_reference,lua
+ROOT=Path(__file__).resolve().parents[1]
+PROMPT='Create a NEW Pokemon Emerald/FireRed GBA pixel-art Olivine lighthouse exterior sprite. The attached small lighthouse is a STYLE AND SUBJECT REFERENCE ONLY; redesign the tower for a very tall narrow 64x224 logical pixel footprint, silhouette aspect ratio 2:7, with genuinely transparent background and clear margins. Ideally use a 512x1792 or equivalent portrait canvas, crisp enlarged square pixel clusters for integer nearest-neighbor reduction. Entire tower visible from lamp dome to base, no scenery, ground, people, labels or text. Match reference\'s blue-white pale stone, cyan glass, muted navy outlines and brass/tan trim. A round cylindrical lighthouse with a small rounded cyan beacon dome and a complete lamp gallery, then a tall narrow shaft with five stacked complete cyan window tiers separated by tan horizontal circular bands, then a compact rectangular pale blue/white base. Both complete base windows must fit inside the 64px width, one to either side of a complete 16px-wide doorway; full doorway frame and top lintel, no missing window-frame corners. Doorway must be offset slightly left: door center is at x=24 of the 64px logical width and its bottom is at y=224. The left base window can be 8px wide and the right one 16px wide so both and the door fit without squeezing. Keep the tower slender with its cylinder inside the width and no projecting parts beyond the footprint. Symmetric cylindrical upper tower, orthographic overhead Pokemon building viewpoint, no perspective tilt. Native-looking limited GBA palette and sharply aligned pixel clusters, no antialiasing, no gradients, no drop-shadow outside the footprint. New design with both intact base windows and an intact door, do not resize the reference lighthouse.'
+
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def finalize(source):
+ folder=ROOT/'assets/original/olivine-lighthouse';folder.mkdir(parents=True,exist_ok=True);im=Image.open(source).convert('RGBA');assert im.size==(948,1659);alpha=im.getchannel('A').point(lambda a:255 if a>=128 else 0);bounds=alpha.getbbox();box=(279,42,727,1610);assert bounds and box[0]<=bounds[0]and box[1]<=bounds[1]and box[2]>=bounds[2]and box[3]>=bounds[3];im.putalpha(alpha);im=im.crop(box).resize((64,224),Image.Resampling.NEAREST).quantize(colors=32,method=Image.Quantize.FASTOCTREE,dither=Image.Dither.NONE).convert('RGBA');assert im.getchannel('A').getextrema()==(0,255);assert im.getpixel((24,219))[3]==255 and im.getpixel((9,212))[3]==255 and im.getpixel((43,212))[3]==255;im.save(folder/'lighthouse.png');files={};assets={}
+ for y in range(14):
+  for x in range(4):
+   p=folder/f'cell-{x}-{y}.png';im.crop((x*16,y*16,x*16+16,y*16+16)).save(p);assets[x,y]={'asset':p.relative_to(ROOT).as_posix(),'assetFileHash':sha(p)};files[p.name]=sha(p)
+ files['lighthouse.png']=sha(folder/'lighthouse.png');provenance={'origin':'Original new design made with built-in imagegen','user_choice':'New64px lighthouse in suppliedGen3 style, both base windows retained','prompt':PROMPT,'style_reference':'MetalFlygon08 / SkidMarc25 Johto lighthouse, style only','reference_url':'https://imgur.com/gallery/testing-out-gen-3-style-tiles-johto-6A43Cji','creator_post':'https://www.reddit.com/r/PokemonRMXP/comments/yf90qb/full_johto_gen_3_tileset_tile_set_at_the_bottom/','reference_atlas_native_crop_xyxy':[0,5048,80,5184],'source_file':source.name,'source_sha256':sha(source),'generated_size':[948,1659],'visible_alpha_bounds':bounds,'crop_xyxy':box,'integer_reduction':7,'runtime_size':[64,224],'processing':'Whole visible design retained; transparent matte below128 removed; uniform7:1 nearest reduction,32 colors including transparency, no dithering, no fractional or runtime scaling. Crop aligns complete doorway with original logicalx24 anchor.','source_map':'OLIVINE_CITY','source_rect_cells':[28,14,4,14],'original_entrance_cell':[29,27],'door_window_probe_xy':[[24,219],[9,212],[43,212]],'files':files};(folder/'provenance.json').write_text(json.dumps(provenance,indent=2)+'\n',encoding='utf-8');return assets
+
+def main():
+ parser=argparse.ArgumentParser();parser.add_argument('--source',type=Path,required=True);parser.add_argument('--activate',action='store_true');args=parser.parse_args();assets=finalize(args.source.resolve());cache=Path(os.environ['APPDATA'])/'pokemon-love2d';out=ROOT.parent/'.work/tileshift-olivine-finish';out.mkdir(exist_ok=True);im=Imports(cache,ROOT.parent/'.work/tileshift-catalog');packed=im.packed
+ active=[r for path in(ROOT/'mappings').glob('*.lua')if path.name!='olivine.lua'for r in preview.read_reviewed(path)];ground=copy.deepcopy(next(r['base']for r in active if r.get('base',{}).get('tileset')=='general__petalburg'and r['base']['id']==1));ocean=next(r for r in active if r['role']=='coastal_ocean_water_interior'and r.get('map')=='OLIVINE_CITY');stage=SimpleNamespace(cache=cache,catalog=ROOT.parent/'.work/tileshift-catalog',output=out,approved_candidates=True,write_reviewed=False)
+ cfg={'native':('firered','FR_CELADON_CITY','FR_CELADON_CITY_RESTAURANT',(36,25,4,5)),'size':(64,64),'rows':(1,2,3,5,6,7,8,9),'roof_rows':4,'roof_columns':tuple(range(8)),'facade_columns':tuple(range(8)),'force_over_rows':(0,),'anchor':(24,64),'features':(('complete native restaurant chimney and rim',(32,8,24,24),(32,0,24,24)),('complete native restaurant facade, door and both window stacks',(0,48,64,32),(0,32,64,32)),('complete entrance frame with upper cap',(8,55,32,25),(8,39,32,25))),'notes':'Actual FireRed Celadon restaurant used for Olivine Cafe. One empty top band and one repeated plain roof band omitted; entire chimney, lower eave, complete facade, window stacks and full doorway remain unscaled. Original Olivine entrance7,21 preserved.'}
+ native_image,native=native_reference(stage,'cafe64',cfg,packed);_,model=arch.compose(stage,'cafe64',cfg,native_image,native,preview.native_donor(cache,ground,packed),ground,packed);instances=[{'game':g,'map':'OLIVINE_CITY','template':'cafe64','rect_cells':[6,18,4,4],'door_map_cell':[7,21],'door_bottom_anchor_px':[24,64],'destination':'OLIVINE_CAFE'}for g in e.GAMES];rows=k.positioned_rows(stage,{'cafe64':model},instances)
+ for r in rows:r['sourceCells']=[[r['x'],r['y']]]
+ (out/'cafe-model.json').write_text(json.dumps({'templates':{'cafe64':model},'source_instances':instances},indent=2),encoding='utf-8')
+ def ref(mid,game='emerald',pair='general__petalburg'):
+  c=im.cell_index(game)[pair,mid];return {'game':game,'tileset':pair,'id':mid,'hash':c['pixel_sha256']}
+ def part(mid,game='firered',pair='pewter_outdoor',layers=('mid',)):
+  c=im.cell_index(game)[pair,mid];return {'donor':ref(mid,game,pair),'layers':list(layers),'layerHashes':{n:c['layer_sha256'][n]for n in layers},'srcX':0,'srcY':0,'w':16,'h':16,'x':0,'y':0}
+ animations={}
+ def animation(mid):
+  if mid not in animations:
+   r=copy.deepcopy(ocean);r['donor']=ref(mid);r['animation'].pop('frame0Hash',None);bank=next(b for b in im.table('emerald','gba/native/general__petalburg/anim_manifest')['banks']if b['name']=='general_water');r['animation']['quadMask']=bank['quads'][bank['mids'].index(mid)];frames=preview.native_water_frames(cache,r,packed);r['animation']['frame0Hash']=catalog.sha(frames[0].tobytes());animations[mid]=r['animation']
+  return copy.deepcopy(animations[mid])
+ # Keep the whole ocean on one native coastal family rather than mixing variants.
+ updates=[]
+ for old in active:
+  if old.get('map')=='OLIVINE_CITY'and old.get('donor',{}).get('game')=='emerald'and old['donor']['id']in(52,44)and old['role']in('coastal_ocean_water_interior','rocky_coast_west'):
+   r=copy.deepcopy(old);mid={52:368,44:400}[old['donor']['id']];r['donor']=ref(mid);r['animation']=animation(mid);r['evidence']+=' Reviewed coherent Olivine coast: the matching368 water and400 west wall join the existing392/393 north bank and new394/402/408/410 turns; all8 native frames and original ocean phase remain checked.';updates.append(r)
+ def key(r):return tuple(r.get(k)for k in('game','style','tileset','map','id','quadrant','x','y'))
+ changed={key(r):r for r in updates};active=[changed.get(key(r),r)for r in active]
+ gate=im.table('firered','gba/native/manifest')['layouts']['FR_ROUTE_15'];layout=decode_layout(cache/'firered/data/generated/gba/native'/gate['file']);arrow=copy.deepcopy(next(p['donor']for r in active for p in r.get('parts',[])if p['donor'].get('kind')=='field_effect'and p['donor'].get('id')==6));arrow['id']=2
+ import zlib
+ froot=cache/'firered/data/generated/gba/field_effects';meta=catalog.read_lua(froot/'arrow.meta');raw=(froot/'arrow.rgba').read_bytes();raw=raw if len(raw)==meta['w']*meta['h']*4 else zlib.decompress(raw);fw,fh=meta['fw'],meta['fh'];piece=Image.frombytes('RGBA',(fw,fh),raw[2*fw*fh*4:3*fw*fh*4]);arr=Image.new('RGBA',(16,16));arr.paste(piece,((16-fw)//2,(16-fh)//2));arrow['hash']=catalog.sha(arr.tobytes())
+ port_parts=[]
+ for ty,ny in enumerate((8,10,11,12)):
+  for tx,nx in enumerate((10,11,14,15)):
+   mid=layout['mids'][ny*layout['width']+nx];port_parts.append({'target_xy':[tx*16,ty*16],'native_xy':[nx,ny],**part(mid,pair=gate['pair'],layers=('over',)if ty<2 else('mid','over'))})
+ (out/'port-model.json').write_text(json.dumps({'source_map':'FR_ROUTE_15','source_pair':gate['pair'],'layout_file_sha256':layout['file_sha256'],'size_px':[64,64],'rect_cells':[18,28,4,4],'native_parts':port_parts,'source_rear_warps':[[19,27,1],[20,27,2]],'painted_south_door':False},indent=2),encoding='utf-8')
+ for game in e.GAMES:
+  data=e.source(cache,game);m=data['maps']['OLIVINE_CITY'];sel=[r for r in active if r['game']==game and r['tileset']==m['tileset']and r.get('map','OLIVINE_CITY')=='OLIVINE_CITY'];gen={(r['id'],r['quadrant'])for r in sel if r.get('x')is None};pos={(r['id'],r['quadrant'],r['x'],r['y'])for r in sel if r.get('x')is not None};sea=next(r for r in active if r['game']==game and r['role']=='rocky_coast_sea_rock_barrier');outcrops={q:next(r for r in active if r['game']==game and r['role']=='rocky_coast_whole_outcrop_'+str(q))for q in range(4)}
+  for j,bid in enumerate(m['blocks']):
+   for q in range(4):
+    x,y=j%m['width']*2+q%2,j//m['width']*2+q//2
+    if(bid,q)in gen or(bid,q,x,y)in pos or(6<=x<=9 and 18<=y<=21):continue
+    c=e.cell_info(cache,game,data,m['tileset'],bid,q);tiles=tuple(c['tiles']);r={'game':game,'style':'gen3','map':'OLIVINE_CITY','tileset':m['tileset'],'id':bid,'quadrant':q,'x':x,'y':y,'sourceCells':[[x,y]],'sourceHash':c['sourceHash'],'sourceFiles':data['fingerprints'][m['tileset']],'sourceCollision':c['collision'],'sourcePalettes':[z.get('palette',1)for z in c['attributes']],'sourcePriority':[bool(z.get('priority'))for z in c['attributes']],'status':'reviewed'}
+    if 28<=x<=31 and 14<=y<=27:
+     assert c['collision']==(113 if(x,y)==(29,27)else 7);r.update(kind='original',base=copy.deepcopy(ground),role='olivine_original_lighthouse',evidence='User chose a new64px-wide Gen3-style lighthouse with both base windows. Complete64x224 original design fits source4x14 footprint, source doorway29,27 stays aligned with logicalx24. Full lamp, five window tiers, both intact base windows and full door frame retained by uniform7:1 nearest reduction; no fractional or runtime scaling. Transparent exterior pixels use matching Emerald1 ground. Original entry, blocking, NPCs and scripts stay native.',**assets[x-28,y-14])
+    elif 18<=x<=21 and 28<=y<=31:
+     tx,ty=x-18,y-28;nx=(10,11,14,15)[tx];ny=(8,10,11,12)[ty];mid=layout['mids'][ny*layout['width']+nx];r.update(kind='native_composite',base=copy.deepcopy(ground),parts=[part(mid,pair=gate['pair'],layers=('over',)if ty<2 else('mid','over'))],role='olivine_port_closed_front',evidence='Reviewed maritime passage facade: full native FRRoute15 gate roof/eaves, window band and closed brick front,64x64 source footprint. Repeated roof band and complete repeating central columns omitted, no scaling. Original port entry is the two DOWN warp carpets19,27 and20,27 behind the north roof; no south doorway or new warp is painted or created.')
+    elif tiles in ((6,74,6,74),(74,6,74,6),(90,90,89,89)):
+     mid={(6,74,6,74):245,(74,6,74,6):244,(90,90,89,89):231}[tiles];assert c['collision']==7;r.update(kind='native_composite',base=copy.deepcopy(ground),parts=[part(mid,pair=gate['pair'],layers=('over',) if mid in(244,245) else ('mid',))],role='olivine_metal_railing',evidence='Reviewed native FR metal railing: complete horizontal231 or left/right vertical244/245 at the original source fence position and handed8px side. Native caps, rails and shadows stay intact and unscaled; imported grass is replaced only beneath transparent fence pixels with matching Emerald1 ground. Original blocking and all adjacent walkways unchanged.')
+    elif tiles==(64,64,64,64):
+     assert c['collision']==112 and(x,y)in((19,27),(20,27));r.update(kind='native_composite',base=copy.deepcopy(ground),parts=[{'donor':copy.deepcopy(arrow),'srcX':0,'srcY':0,'w':16,'h':16,'x':0,'y':0}],role='olivine_port_down_warp_marker',evidence='Complete native FR DOWN arrow frame2 at the original COLL_WARP_CARPET_DOWN0x70 port transition; source warps19,27/20,27 retain their original passage destinations1/2. Full native silhouette, no scaling, no added front-door warp.')
+    elif bid==10:
+     seed=outcrops[q];assert e.identity(c)==e.identity(e.cell_info(cache,game,data,seed['tileset'],seed['id'],seed['quadrant']));r.update(kind='native_composite',base=ref(368),parts=copy.deepcopy(seed['parts']),animated=True,animation=animation(368),role='rocky_coast_whole_outcrop_'+str(q),sourceOceanBounds=[0,14,39,35],evidence='Reviewed complete32x32 Olivine rock outcrop: exact source shape/collision/palette/priority match the approved Cherrygrove outcrop. Four complete native FR104/106/120/122 convex rock quadrants on coherent8-frame Emerald368 ocean; all blocking, map geometry and marine interactions stay native.')
+    elif tiles==(88,88,88,88):
+     assert c['collision']==39;r.update(kind='native_composite',base=ref(368),parts=copy.deepcopy(sea['parts']),animated=True,animation=animation(368),role='rocky_coast_sea_rock_barrier',sourceOceanBounds=[0,14,39,35],evidence='Reviewed permanent Olivine sea-rock barrier: full original source16px glyph remains blocked0x27. Complete native Emerald404 rock plane retains205 opaque pixels; only51 exterior pixels show matching8-frame ocean. Whole rock silhouette, source Surf/fishing/encounters/warps unchanged.')
+    else:
+     mid={(20,59,20,59):402,(20,75,20,20):410,(77,20,20,20):408,(76,93,20,59):394}.get(tiles);assert mid is not None and c['collision']==41,(game,bid,q,x,y,tiles,c['collision']);r.update(donor=ref(mid),animated=True,animation=animation(mid),role='olivine_coastal_turn_'+str(mid),sourceOceanBounds=[0,14,39,35],evidence='Reviewed coherent native Emerald coastal direction:402 east wall,394 northeast convex shore,408/410 inward turns. Full original source shape and handedness checked at the actual harbour bank, with matching392/393/400 edges and368 water. All8 native frames retained, no cropping/scaling; source water0x29, marine encounters and events stay native.')
+    if r['role']=='olivine_metal_railing':
+     p=r['parts'][0];plane=preview.native_donor(cache,p['donor'],packed,p['layers'],p['layerHashes']);assert plane.getchannel('A').getbbox(),'A complete railing must have visible native pixels'
+    if r.get('parts')or r.get('asset'):r['compositionPixelHash']=catalog.sha(preview.replacement_image(cache,r,packed,ROOT).tobytes())
+    rows.append(r)
+  assert any(w['x']==29 and w['y']==27 and w['destMap']=='OLIVINE_LIGHTHOUSE_1F'for w in m['warps'])
+  for x,destWarp in((19,1),(20,2)):assert any(w['x']==x and w['y']==27 and w['destMap']=='OLIVINE_PORT_PASSAGE'and w['destWarp']==destWarp for w in m['warps'])
+  report=preview.map_preview(cache,out,game,'OLIVINE_CITY',game+'-complete',active+rows,packed,2,ROOT);assert report['replaced_occurrences']==report['visible_cells']==1440
+ live=e.validate_batch(rows+updates,SimpleNamespace(cache=cache,engine=ROOT.parent/'.tools/engine-0395',output=out),ROOT);(out/'candidates.json').write_text(json.dumps(rows,indent=2),encoding='utf-8');(out/'family-updates.json').write_text(json.dumps(updates,indent=2),encoding='utf-8');(out/'proof.json').write_text(json.dumps({'new_rows':len(rows),'family_updates':len(updates),'live':live},indent=2),encoding='utf-8')
+ if args.activate:
+  text='-- Reviewed complete Olivine cafe, harbour, ocean and original lighthouse.\nlocal rows={}\nlocal function add(batch)for _,r in ipairs(batch)do rows[#rows+1]=r end end\n'
+  for n in range(0,len(rows),20):text+='add((function()return '+lua(rows[n:n+20])+' end)())\n'
+  (ROOT/'mappings/olivine.lua').write_text(text+'return rows\n',encoding='utf-8')
+  # Replace only the old coastal family rows in their existing module.
+  target=ROOT/'mappings/gen2_outdoor_extended.lua';old=preview.read_reviewed(target);new=[changed.get(key(r),r)for r in old];assert sum(a!=b for a,b in zip(old,new))==len(updates);target.write_bytes(e.write_compact(new,None)[0].encode())
+ print(json.dumps({'rows':len(rows),'updates':len(updates),'live':live,'coverage':'1440/1440 each GSC','activated':args.activate}))
+if __name__=='__main__':main()

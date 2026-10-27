@@ -11,6 +11,7 @@ from validate_gpu import runtime_fingerprint
 
 
 NAMES = {
+    ("crystal", "OLIVINE_CITY"): ("Crystal / Olivine City", "Olivine", "Original Crystal native colors"),
     ("crystal", "CIANWOOD_CITY"): ("Crystal / Cianwood City", "Cianwood", "Original Crystal native colors"),
     ("crystal", "MAHOGANY_TOWN"): ("Crystal / Mahogany Town", "Mahogany", "Original Crystal native colors"),
     ("crystal", "PALLET_TOWN"): ("Crystal / Pallet Town", "Crystal-Pallet", "Original Crystal native colors"),
