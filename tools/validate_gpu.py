@@ -1521,6 +1521,46 @@ local function run()
   fixture.cleanup_restored_native=true;report.fixtures[#report.fixtures+1]=fixture
  end
 
+ -- Complete Viridian background on every independently imported Gen1 cartridge.
+ for _,game in ipairs({'red','blue','yellow'})do
+  GV.set(game);assetGame=game;clock=0
+  local sourceMaps,sourceSets=generated(game,'maps'),generated(game,'tilesets')
+  local def=sourceMaps.VIRIDIAN_CITY;local map=Map.new(def,sourceSets[def.tileset])
+  local renderer=T.new(map,{maps=sourceMaps,tilesets=sourceSets})
+  local function draw()return capture(def.width*32,def.height*32,function()
+   FX.clearTrueColor();FX.setPass('world');renderer:drawWindow(0,0,def.width*32,def.height*32);FX.setPass(nil)
+  end)end
+  local native=draw();local mechanics,events=snapshot(map,1),eventSnapshot(map)
+  local mod=startMod(game,1);local art=assert(mod.exports.state:replacements(game,def.tileset,def));local after=draw()
+  local c=coverage(def,art);check(c.replaced_occurrences==1440 and c.visible_cells==1440,'Viridian must be completely retiled')
+  check(mod.exports.state.rejected==0,'Viridian source/donor rejected')
+  local prototype=love.image.newImageData(love.filesystem.newFileData(assert(read(MOD..'/../.work/tileshift-building-kanto/home32-compact-prototype.png')),'school.png'))
+  check(prototype:getWidth()==64 and prototype:getHeight()==32,'Schoolhouse footprint changed')
+  for y=0,31 do for x=0,63 do equalPixel(after,20*16+x,14*16+y,prototype,x,y,'Complete schoolhouse roof/window/door frame changed')end end
+  local door=false
+  for _,w in ipairs(def.warps or{})do if w.destMap=='VIRIDIAN_SCHOOL_HOUSE'then check(w.x==21 and w.y==15,'School entrance moved');door=true end end
+  check(door,'School destination missing')
+  local mids={[44]={113,113,113,113},[41]={113,114,113,114},[87]={113,113,121,121},[37]={113,114,121,122},[63]={105,105,113,113},[59]={105,106,113,114}}
+  local n=0
+  for _,row in ipairs(mappingRows('mappings/viridian.lua'))do if row.game==game and row.role=='viridian_complete_western_cliff'then
+   check(row.parts[1].donor.id==mids[row.id][row.quadrant+1],'Western cliff direction changed')
+   local donor=nativeCellImage(row.parts[1].donor,{'mid'},row.parts[1].layerHashes)
+   for y=0,15 do for x=0,15 do local _,_,_,a=donor:getPixel(x,y)
+    if a==1 then equalPixel(after,row.x*16+x,row.y*16+y,donor,x,y,'Complete native cliff feature changed')end
+   end end
+   n=n+1
+  end end
+  check(n==124,'Viridian cliff footprint changed')
+  verifyCoveredPixels(def,art,after,game..' complete Viridian')
+  check(snapshot(map,1)==mechanics and eventSnapshot(map)==events,'Viridian native mechanics changed')
+  local fixture={game=game,map=def.id,native_renderer='src.render.TileRenderer',coverage=c,
+   before=encodePng(native,game..'-viridian-complete-native-gpu.png'),after=encodePng(after,game..'-viridian-complete-gen3-gpu.png'),
+   collision_before=mechanics,collision_after=snapshot(map,1),events_before=events,events_after=eventSnapshot(map),
+   schoolhouse={complete_sprite_pixels=2048,entrance={21,15},source_warp_unchanged=true},cliff_cells=n}
+  mod.exports.dispose();check(draw():getString()==native:getString(),'Viridian cleanup failed');fixture.cleanup_restored_native=true
+  report.fixtures[#report.fixtures+1]=fixture
+ end
+
  -- Additional Gen1 public architecture, a representative interior and the
  -- newly reviewed compact barrier/water cells on their actual source maps.
  for _,spec in ipairs({{id='CERULEAN_CITY',stem='cerulean',architecture=true},

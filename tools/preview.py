@@ -589,7 +589,7 @@ def main():
                             (args.include_details, "pallet_details.lua"),
                             (args.include_outdoors, "gen1_outdoor.lua"), (args.include_outdoors, "gen2_outdoor.lua"),
                             (args.include_outdoors, "gen1_caves.lua"), (args.include_outdoors, "gen1_extended.lua"),
-                            (args.include_outdoors, "gen2_outdoor_extended.lua"), (args.include_outdoors, "azalea.lua"), (args.include_outdoors, "interiors.lua"),
+                            (args.include_outdoors, "gen2_outdoor_extended.lua"), (args.include_outdoors, "azalea.lua"), (args.include_outdoors, "viridian.lua"), (args.include_outdoors, "interiors.lua"),
                             (args.include_outdoors, "gen2_caves.lua")):
         if requested and (args.reviewed.parent / name).exists():
             rows.extend(read_reviewed(args.reviewed.parent / name))
