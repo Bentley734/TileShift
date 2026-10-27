@@ -5,8 +5,7 @@
 The two JPEGs in `assets/user_flora` were supplied by the user as Gemini-generated
 artwork, with explicit permission to include the designs as selectable trees,
 flowers and grasses. Their original bytes are preserved; the runtime samples
-16×16 cells and removes their mint backgrounds. Stable selection labels use
-sheet initials, row and column because the printed IDs repeat.
+16×16 cells and removes their mint backgrounds. Designs use simple numbered selection labels; stable internal IDs preserve saved choices.
 
 Sprout Tower uses the user's Gemini design and assembled reference, refined
 with the built-in image-generation tool. Complete upper and lower components
@@ -16,12 +15,6 @@ the prompt, dimensions and fingerprints. No generated scenery is used.
 
 ## Selectable water
 
-**Beach and Sea Tiles** by **PeekyChew**, also crediting **EVoLiNa** and
-**The-Red-eX**, supplies the clear shallow/deep water surfaces. The artist
-released the tiles for others to use; the user's resource index specifies
-noncommercial use and attribution.
-[Original source](https://www.deviantart.com/peekychew/art/Beach-and-Sea-Tiles-642129192).
-
 **Next Animated Water Tiles** by **Magiscarf** supplies blue, teal and olive
 ripples. The artist specifies noncommercial use; the page's image metadata
 licenses the artwork under [CC BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/).
@@ -29,6 +22,10 @@ Eight original GIF frames are decoded losslessly into PNGs. Existing native
 water/shore schedules remain in use where present; otherwise frames use the
 original 100ms period. No animation frames are invented.
 [Original source](https://www.deviantart.com/magiscarf/art/Next-Animated-Water-Tiles-830567034).
+
+The static PeekyChew water options and their bundled source sheet were removed
+in v0.8.0 at the user's request. Earlier v0.7.0 assets retain the credits in
+that release's provenance and CREDITS file.
 
 These artworks retain their respective terms and are excluded from the MIT
 license for TileShift's code. Full credits, permission evidence, processing
@@ -57,3 +54,13 @@ game and is not included with this artwork.
 
 The same compact tree also replaces the round Gen 1 town-boundary objects,
 following the user's choice to use FireRed/LeafGreen's tree interpretation.
+
+## Original foliage
+
+The native 16x16 grasses and ground flowers, and complete 32x32 oak and pine,
+are original project designs generated with the built-in image-generation tool.
+Their complete visible silhouettes were cropped before integer nearest-neighbor
+reduction and palette cleanup. No fractional runtime scaling is used. The blue
+flowers were revised to upright ground flowers. Full processing records and
+final hashes are in assets/original/flora/provenance.json. Custom flora uses
+four integer-pixel wind frames, with roots and tree trunks anchored.

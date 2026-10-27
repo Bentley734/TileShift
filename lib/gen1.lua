@@ -47,9 +47,10 @@ function G.install(ctx)
     end
     return images[data]
   end
-  local function art(row, foreground)
+  local function art(row, foreground, q)
     if not row then return nil end
     if type(row)=='table' and row.image then
+      if row.cellAnimations and row.cellAnimations[q] then row=row.cellAnimations[q] end
       local frames
       if foreground then frames=row.foregroundFrames else frames=row.frames end
       if frames and #frames>0 then
@@ -94,7 +95,7 @@ function G.install(ctx)
     return row
   end
   local function painted(row, bx, by, cx, cy, sx, sy, sw, sh, foreground)
-    local img = art(row, foreground)
+    local img = art(row, foreground, math.floor((sy or 0)/16)*2+math.floor((sx or 0)/16))
     if not img then return false end
     sx, sy, sw, sh = sx or 0, sy or 0, sw or 32, sh or 32
     local w,h=img:getDimensions()

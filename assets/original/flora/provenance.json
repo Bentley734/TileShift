@@ -1,0 +1,197 @@
+{
+  "origin": "Original project designs generated with the built-in imagegen tool",
+  "processing": "Center crop contains every alpha>=128 plant pixel. Generated transparent-matte noise below128 is discarded. Nearest-neighbor reduction uses integer factors only; colors quantized to16 incl transparency without dithering. Complete canopies, petals, stems and roots retained. Native runtime PNGs are never resized.",
+  "animation": "Four integer-pixel wind frames. Flower and grass roots remain anchored; tree trunks stay fixed. Whole32px trees sway before splitting into quadrants. Grass foregrounds use the matching wind frame.",
+  "records": [
+    {
+      "id": "johto-meadow-grass",
+      "label": "JOHTO MEADOW",
+      "category": "grass",
+      "size": 16,
+      "source_file": "exec-bf660b60-f0e1-414a-9484-94b1a3cd9200.png",
+      "source_sha256": "80e59c28273b43f2e549c53b8d21ef89f842da40728b429be4bb607aa1087e84",
+      "crop_xyxy": [
+        115,
+        115,
+        1139,
+        1139
+      ],
+      "visible_alpha_bounds": [
+        235,
+        274,
+        1019,
+        980
+      ],
+      "integer_reduction": 64,
+      "final_alpha_bounds": [
+        2,
+        2,
+        14,
+        14
+      ],
+      "prompt": "Dense pointed meadow encounter grass, lime highlights, emerald blades, dark roots; native16px whole-pixel design.",
+      "png_sha256": "eaa0d6e01331e9e56c200fd9bcd398253bc0d5996819a1cd328751f5247ee394"
+    },
+    {
+      "id": "johto-clover-grass",
+      "label": "JOHTO CLOVER",
+      "category": "grass",
+      "size": 16,
+      "source_file": "exec-283f6d0a-8115-4e0b-9b9d-4e0788450c92.png",
+      "source_sha256": "0d66f4e273c13c763f426f1adc1e74e59db07184f23bd3453198fb9287bd535f",
+      "crop_xyxy": [
+        115,
+        115,
+        1139,
+        1139
+      ],
+      "visible_alpha_bounds": [
+        157,
+        274,
+        1137,
+        1058
+      ],
+      "integer_reduction": 64,
+      "final_alpha_bounds": [
+        1,
+        2,
+        16,
+        15
+      ],
+      "prompt": "Dense wild encounter grass with rounded clover leaves between upright blades; native16px whole-pixel design.",
+      "png_sha256": "7e0591bcfd722b248c3b539e7f92061ffff01f7a007673ffb1b271313efaa733"
+    },
+    {
+      "id": "johto-red-flowers",
+      "label": "JOHTO RED BLOOMS",
+      "category": "flowers",
+      "size": 16,
+      "source_file": "exec-cb3073d3-b9f8-422a-b590-f6600ed1e467.png",
+      "source_sha256": "80dd87331e91868d8f0ff97d838d649522a44fe3ef66c051f47498fdd861550a",
+      "crop_xyxy": [
+        115,
+        115,
+        1139,
+        1139
+      ],
+      "visible_alpha_bounds": [
+        255,
+        290,
+        1024,
+        1074
+      ],
+      "integer_reduction": 64,
+      "final_alpha_bounds": [
+        2,
+        3,
+        14,
+        15
+      ],
+      "prompt": "Three red five-petal ground flowers with golden centers and short green stems; native16px whole-pixel design.",
+      "png_sha256": "a969ba4de9f92d4d7316445110f61757d92b59cbed12b37feaca1ac134459158"
+    },
+    {
+      "id": "johto-blue-ground-flowers",
+      "label": "JOHTO BLUE CUPS",
+      "category": "flowers",
+      "size": 16,
+      "source_file": "exec-2631c6b8-22e8-4abf-b55c-b21a7f22aa20.png",
+      "source_sha256": "df7c9c5b80ff9d2c3b48e75e036054db8d87e534a35a4dd7c1e349e2f8e02f63",
+      "crop_xyxy": [
+        243,
+        243,
+        1011,
+        1011
+      ],
+      "visible_alpha_bounds": [
+        354,
+        407,
+        902,
+        968
+      ],
+      "integer_reduction": 48,
+      "final_alpha_bounds": [
+        2,
+        3,
+        14,
+        15
+      ],
+      "prompt": "Refine the blue-violet/lilac reference into three UPRIGHT ground flowers, short stems, leaves below near the soil; no hanging pose. Native16px whole-pixel design.",
+      "png_sha256": "e732ec36992977fa9ca264b5fda7d865803db2f366dc59b51c1cd36f187cea93"
+    },
+    {
+      "id": "johto-oak32",
+      "label": "JOHTO OAK",
+      "category": "big_trees",
+      "size": 32,
+      "source_file": "exec-b8f6bcf2-cd78-465f-b32d-caa31cfb7ed5.png",
+      "source_sha256": "998645abfa35bf080788ee381de66438efdbd6d23945a2435f2e91627e5918e3",
+      "crop_xyxy": [
+        115,
+        115,
+        1139,
+        1139
+      ],
+      "visible_alpha_bounds": [
+        183,
+        208,
+        1076,
+        1106
+      ],
+      "integer_reduction": 32,
+      "final_alpha_bounds": [
+        2,
+        3,
+        30,
+        31
+      ],
+      "prompt": "Complete compact Gen3/Johto forest oak: domed green canopy, visible short brown trunk and roots, native32x32, full canopy and roots inside the2x2 tile footprint.",
+      "png_sha256": "2c102ae76940fdeee6c32efb02d8a06700dab8ba79849db2264fce41c4acfc07"
+    },
+    {
+      "id": "johto-pine32",
+      "label": "JOHTO PINE",
+      "category": "big_trees",
+      "size": 32,
+      "source_file": "exec-d2846d15-a5d4-432b-b0fc-9e5cab06d442.png",
+      "source_sha256": "0d4e37ea7947df3b8ddf138e5bbcd8c9fd80ef38db0518b7e2d011f0f6333958",
+      "crop_xyxy": [
+        243,
+        243,
+        1011,
+        1011
+      ],
+      "visible_alpha_bounds": [
+        353,
+        328,
+        902,
+        990
+      ],
+      "integer_reduction": 24,
+      "final_alpha_bounds": [
+        5,
+        4,
+        27,
+        31
+      ],
+      "prompt": "Complete compact Gen3/Johto conifer: three jade-green tiers, full top tip, trunk and roots, native32x32 inside the2x2 tile footprint.",
+      "png_sha256": "179937f5c631c898741fc97eb539948e655135901356d39878e5474e11a3ae6c"
+    }
+  ],
+  "files": {
+    "johto-blue-ground-flowers.png": "e732ec36992977fa9ca264b5fda7d865803db2f366dc59b51c1cd36f187cea93",
+    "johto-clover-grass.png": "7e0591bcfd722b248c3b539e7f92061ffff01f7a007673ffb1b271313efaa733",
+    "johto-meadow-grass.png": "eaa0d6e01331e9e56c200fd9bcd398253bc0d5996819a1cd328751f5247ee394",
+    "johto-oak32-q0.png": "b071d8aeed0eebbeac16ded6ffd4ed07635a0f8cb7169a9cf93c0d55c21a2a17",
+    "johto-oak32-q1.png": "6a20536a3757af657d423227c664db3f09481926fb7639f25a730b7e0b4abe5a",
+    "johto-oak32-q2.png": "bc2bdf47c795d9e34f641a74d46f534c7425c88d72024ce3b7c9029191444863",
+    "johto-oak32-q3.png": "20d5661a9e050b7fce7289855ff1cbdbb652ac293893d1e1ee9e4a7a20bde4d1",
+    "johto-oak32.png": "2c102ae76940fdeee6c32efb02d8a06700dab8ba79849db2264fce41c4acfc07",
+    "johto-pine32-q0.png": "0665f165d969aef8e2509158cce3e14127683920b4e512abdfe558e8ed9c080f",
+    "johto-pine32-q1.png": "3161b729977336e0f63fcd3e1fe2890f199159bd36a54e24d4ecc285bd27b801",
+    "johto-pine32-q2.png": "4bbaa0c9079048976f4937e809f708749c0816764f1281fbfa47897fc7e5ef70",
+    "johto-pine32-q3.png": "be309a7990430b644f3ac696a89002c4f5e09708afc2df06d82798ff34c7963a",
+    "johto-pine32.png": "179937f5c631c898741fc97eb539948e655135901356d39878e5474e11a3ae6c",
+    "johto-red-flowers.png": "a969ba4de9f92d4d7316445110f61757d92b59cbed12b37feaca1ac134459158"
+  }
+}

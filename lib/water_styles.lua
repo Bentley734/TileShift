@@ -18,12 +18,8 @@ function W.new(ctx)
   local key=entry.id..':'..frame
   if tiles[key] then return tiles[key] end
   local path,hash,w,h
-  if entry.sheet=='peekychew' then
-   path='assets/third_party/peekychew/beach-and-sea.png'
-   hash='89359d223cf7891a6581c1d593644805c2f10b59e474f521686c7f74d3d008cc';w,h=512,176
-  else
-   path='assets/third_party/magiscarf/water-frame-'..frame..'.png';hash=rippleHashes[frame];w,h=464,208
-  end
+  assert(entry.sheet=='magiscarf','Only animated custom water is selectable')
+  path='assets/third_party/magiscarf/water-frame-'..frame..'.png';hash=rippleHashes[frame];w,h=464,208
   if not sheets[path] then
    local image=assert(ctx.image(path,hash))
    local iw,ih=image:getDimensions();assert(iw==w and ih==h,'Water artwork dimensions changed')
@@ -71,11 +67,10 @@ function W.new(ctx)
     end end end
    end
   end
-  local count=sequence and #sequence.frames or (entry.sheet=='magiscarf' and 8 or 1)
+  local count=sequence and #sequence.frames or 8
   local frames={}
   for i=1,count do frames[i]=paint(sequence and sequence.frames[i] or piece,
-   tile(entry,entry.sheet=='magiscarf' and (i-1)%8+1 or 1),protected) end
-  if count==1 then return frames[1],nil end
+   tile(entry,(i-1)%8+1),protected) end
   local result={frames=frames,period=sequence and sequence.period or .1}
   if sequence then for _,name in ipairs({'ticks','bank','counter','offset'})do result[name]=sequence[name] end end
   return frames[1],result

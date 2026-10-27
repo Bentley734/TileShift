@@ -102,7 +102,7 @@ managerRows[1].step(host,1)
 assert(exported.state.style=='gen3','mod-manager change did not apply art live')
 assert(host.save.options.modOptions.tileshift.style==2,'mod-manager choice was not persisted')
 assert(managerRows[1].value()=='GEN 3')
-for i,key in ipairs({'flora_trees','flora_flowers','flora_grass','flora_water'})do
+for i,key in ipairs({'flora_trees','flora_big_trees','flora_cut_trees','flora_flowers','flora_grass','flora_water'})do
  local index=i+1
  assert(schema[index].key==key and schema[index].type=='choice','custom artwork schema missing')
  local beforeRevision=exported.state.revision
@@ -112,6 +112,18 @@ for i,key in ipairs({'flora_trees','flora_flowers','flora_grass','flora_water'})
  assert(host.save.options.modOptions.tileshift[key]==3,'custom artwork choice did not persist')
  manager:setOption('tileshift',key,1)
 end
+assert(#schema[7].choices==6,'Static custom water options must be absent')
+for value,id in pairs({[6]='ripple-blue',[7]='ripple-teal',[8]='ripple-olive',[4]='default',[5]='default'})do
+ manager:setOption('tileshift','flora_water',value)
+ assert(exported.flora.selected.water==id,'Existing water preference changed during option removal')
+end
+manager:setOption('tileshift','flora_water',6)
+local waterRow=option(manager:buildOptionRows({id='tileshift'},schema),'flora_water')
+assert(waterRow.value()=='1','Sparse stored water IDs are not shown correctly')
+waterRow.step(host,1)
+assert(exported.flora.selected.water=='ripple-teal' and host.save.options.modOptions.tileshift.flora_water==7,
+ 'Water step did not retain its existing stored ID')
+manager:setOption('tileshift','flora_water',1)
 managerRows[1].step(host,-1)
 assert(exported.state.style=='original','mod-manager return to original did not apply live')
 assert(#loader.errors==0,table.concat(loader.errors,'\n'))
@@ -164,7 +176,7 @@ end
 local SaveData=require('src.core.SaveData')
 local persisted=SaveData.loadOptions(fs)
 persisted.modOptions=persisted.modOptions or {}
-persisted.modOptions.tileshift={style=1}
+persisted.modOptions.tileshift={style=1,flora_water=6}
 assert(SaveData.saveOptions(persisted,fs),'in-memory Original preference did not save')
 local restoredLoader=Loader.new({fs=fs,generation=GV.generation(),version=selectedVersion,dev=false})
 local restoredHost={generation=GV.generation(),options=persisted,save={options=persisted},mods=restoredLoader,
@@ -175,6 +187,7 @@ restoredLoader:load(restoredData)
 assert(#restoredLoader.errors==0,table.concat(restoredLoader.errors,'\n'))
 local restored=assert(restoredLoader.exports.tileshift)
 assert(restored.state.style=='original','persisted Original choice was replaced by the fresh default')
+assert(restored.flora.selected.water=='ripple-blue','v0.7.0 animated water choice did not survive a fresh Loader boot')
 local restoredRows=restoredLoader.hooks:call('ui.options.rows',function(_,out)return out end,restoredHost,{})
 assert(option(restoredRows,'tileshift:style').value()=='ORIGINAL')
 assert(Serializer.encode(restoredData.maps)==before,'source maps changed on saved-preference reload')

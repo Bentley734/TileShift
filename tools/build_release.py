@@ -28,12 +28,12 @@ def main() -> None:
     files += sorted((root / "lib").glob("*.lua"))
     files += sorted((root / "mappings").glob("*.lua"))
     asset_files = sorted(path for path in (root / 'assets').rglob('*') if path.is_file())
-    allowed = ('third_party/j-treecko252/', 'third_party/peekychew/',
-               'third_party/magiscarf/', 'user_flora/', 'original/sprout-tower/')
+    allowed = ('third_party/j-treecko252/',
+               'third_party/magiscarf/', 'user_flora/', 'original/sprout-tower/', 'original/flora/')
     for path in asset_files:
         assert path.relative_to(root / 'assets').as_posix().startswith(allowed), 'Unreviewed asset folder'
         assert path.suffix in ('.png', '.jpg', '.json', '.txt'), 'Unreviewed asset format'
-    for folder in ('user_flora', 'third_party/peekychew', 'third_party/magiscarf', 'original/sprout-tower'):
+    for folder in ('user_flora', 'third_party/magiscarf', 'original/sprout-tower', 'original/flora'):
         provenance = json.loads((root / 'assets' / folder / 'provenance.json').read_text(encoding='utf-8'))
         for name, digest in provenance['files'].items():
             assert hashlib.sha256((root / 'assets' / folder / name).read_bytes()).hexdigest() == digest, 'Artwork provenance fingerprint changed'

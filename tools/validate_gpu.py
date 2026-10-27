@@ -1,4 +1,4 @@
-"""Validate TileShift with native LÖVE GPU renderers in a private probe process.
+"""Validate TileShift with native LÃ–VE GPU renderers in a private probe process.
 
 The launcher, installed mods and game saves are never changed. Imported cache
 files are read only. The probe uses its own identity and writes PNG readbacks
@@ -122,7 +122,7 @@ local function run()
   GV.set(game);assetGame=game
   local hooks,events=Hooks.new(),Events.new();Runtime.install(events,hooks,{})
   local mod={id='tileshift',generation=generation,exports={},game={world=world},
-   options={define=function()end,get=function(_,key)return key=='style' and 2 or 1 end},
+   options={define=function()end,get=function(_,key)return key=='style' and 2 or (key:match('^speed_') and 3 or 1) end},
    save={get=function()end,set=function()error('unexpected persistence write')end},
    log={warn=function(_,fmt,s)report.warnings[#report.warnings+1]=s or fmt end},
    assets={path=function(_,path)return love.filesystem.newFileData(assert(read(MOD..'/'..path)),path:match('[^/]+$'))end},
@@ -175,6 +175,19 @@ local function run()
    preserved_native_occurrences=def.width*def.height*4-replaced,unique_mappings_used=count,
    animation_frame=0,actors_rendered=false,source='actual session replacement coverage on native imported map'}
  end
+ local function verifyUnchangedGround(map,before,after,label)
+  local cells=0
+  for y=0,map.heightCells-1 do for x=0,map.widthCells-1 do
+   if map:isWalkableCell(x,y) or map:isGrassCell(x,y) then
+    for py=0,15 do for px=0,15 do
+     equalPixel(after,x*16+px,y*16+py,before,x*16+px,y*16+py,label..' changed non-tree ground pixels')
+    end end
+    cells=cells+1
+   end
+  end end
+  check(cells>0,label..' has no ground samples')
+  return cells
+ end
  local function snapshot(map,generation)
   local out={}
   for cy=0,map.heightCells-1 do for cx=0,map.widthCells-1 do
@@ -217,8 +230,9 @@ local function run()
   for by=0,def.height-1 do for bx=0,def.width-1 do
    local block=artAt(art,def.blocks[by*def.width+bx+1],bx,by)
    if block then
-    local expected=block.frames and block.frames[1] or block.image
     for q=0,3 do if not block.coverage or block.coverage[q] then
+     local sequence=block.cellAnimations and block.cellAnimations[q] or block
+     local expected=sequence.frames and sequence.frames[math.floor(math.max(0,clock-(sequence.offset or 0))/(sequence.period or .2))%#sequence.frames+1] or block.image
      local sx,sy=q%2*16,math.floor(q/2)*16
      for y=0,15 do for x=0,15 do
       equalPixel(frame,bx*32+sx+x,by*32+sy+y,expected,sx+x,sy+y,game..' reviewed GPU pixels changed')
@@ -1117,12 +1131,12 @@ local function run()
  for _,category in ipairs({'trees','flowers','grass'})do
   local entries=catalog[category]
   local atlas=capture(960,math.ceil(#entries/12)*104+32,function()
-   G.clear(.09,.12,.15,1);G.print(category:upper()..' — USER SHEET DESIGNS AT NATIVE 16PX',12,8)
+   G.clear(.09,.12,.15,1);G.print(category:upper()..' â€” USER SHEET DESIGNS AT NATIVE 16PX',12,8)
    for i,entry in ipairs(entries)do
     local sprite=flora:sprite(entry);local image=G.newImage(sprite);image:setFilter('nearest','nearest')
     local x=(i-1)%12*80+8;local y=math.floor((i-1)/12)*104+32
     G.setColor(.35,.65,.49,1);G.rectangle('fill',x,y,64,64);G.setColor(1,1,1,1)
-    G.draw(image,x,y,0,4,4);G.print(entry.label,x,y+67)
+    G.draw(image,x,y,0,4,4);G.print(tostring(i),x,y+67)
     check(sprite:getWidth()==16 and sprite:getHeight()==16,'Flora escaped native cell dimensions')
    end
   end)
@@ -1131,9 +1145,10 @@ local function run()
  end
  for _,selection in ipairs({
   {id='new-boundary',trees='natural-1-1'},
-  {id='clear-shallows',water='clear-shallows'},
-  {id='clear-deep',water='clear-deep'},
+  {id='trees-mixed-only',trees='mixed'},
   {id='ripple-blue',water='ripple-blue'},
+  {id='ripple-teal',water='ripple-teal'},
+  {id='ripple-olive',water='ripple-olive'},
   {id='mixed',trees='mixed',flowers='mixed',grass='mixed',water='mixed'},
  })do
   for _,category in ipairs({'trees','flowers','grass','water'})do
@@ -1145,9 +1160,36 @@ local function run()
   local custom=capture(def.width*32,def.height*32,drawMap)
   local checked=verifyCoveredPixels(def,customArt,custom,'Pallet custom '..selection.id)
   check(snapshot(map,1)==beforeCollision and eventSnapshot(map)==beforeEvents,'Custom artwork changed Pallet gameplay')
-  if selection.water=='ripple-blue' then
+  local groundChecked
+  if selection.id=='trees-mixed-only' then groundChecked=verifyUnchangedGround(map,after,custom,'Pallet Mixed trees') end
+  if selection.water and selection.water~='mixed' then
    clock=17/60
    check(capture(def.width*32,def.height*32,drawMap):getString()~=custom:getString(),'Selected ripple water did not animate')
+  end
+  if selection.id=='mixed' then
+   local animation={encodePng(custom,'red-pallet-wind-1.png')}
+   for i,t in ipairs({.21,.41,.71,1.06})do
+    clock=t
+    local moving=capture(def.width*32,def.height*32,drawMap)
+    checked=checked+verifyCoveredPixels(def,customArt,moving,'Pallet independent wind '..i)
+    check(moving:getString()~=custom:getString(),'Mixed flora animation did not move')
+    animation[#animation+1]=encodePng(moving,'red-pallet-wind-'..(i+1)..'.png')
+   end
+   report.wind_frames=animation
+   for _,rate in ipairs({0,.5,1,2})do
+    for _,group in ipairs({'trees','flowers','grass','water'})do flora:speed(group,rate) end
+    mod.exports.state:invalidate();clock=0
+    local speedArt=mod.exports.state:replacements('red',def.tileset,def)
+    local initial=capture(def.width*32,def.height*32,drawMap)
+    for _,t in ipairs({.22,.72})do
+     clock=t;local frame=capture(def.width*32,def.height*32,drawMap)
+     checked=checked+verifyCoveredPixels(def,speedArt,frame,'Pallet speed '..rate)
+     if rate==0 then check(frame:getString()==initial:getString(),'Off speed still animated') end
+    end
+   end
+   for _,group in ipairs({'trees','flowers','grass','water'})do flora:speed(group,1) end
+   mod.exports.state:invalidate()
+
   end
   local bytes=custom:getString()
   mod.exports.state:invalidate();clock=0
@@ -1155,7 +1197,8 @@ local function run()
   check(capture(def.width*32,def.height*32,drawMap):getString()==bytes,'Mixed/custom artwork changed after rebuilding the map')
   report.customizations[#report.customizations+1]={id=selection.id,game='red',map=def.id,
    before=red.after,after=encodePng(custom,'red-pallet-'..selection.id..'-gpu.png'),coverage=palletCoverage,
-   checked_gpu_pixels=checked,source_collision_events_unchanged=true,stable_after_map_rebuild=true}
+   checked_gpu_pixels=checked,source_collision_events_unchanged=true,stable_after_map_rebuild=true,
+   unchanged_walkable_ground_cells=groundChecked}
  end
  mod.exports.dispose();clock=0
  local restored=capture(def.width*32,def.height*32,drawMap)
@@ -1376,6 +1419,18 @@ local function run()
   end
   if spec.water then fixture.water_all_frames=verifyAnimationFrames(def,art,draw,'water',8,1)end
   if spec.forest then fixture.forest=verifyForest('red',def,map,art,renderer,FX)end
+  if spec.id=='VIRIDIAN_FOREST' then
+   for _,choice in ipairs({'default','mixed','johto-pine32'})do
+    mod.exports.flora:select('big_trees',choice);mod.exports.state:invalidate();clock=0
+    local selected=mod.exports.state:replacements('red',def.tileset,def)
+    for _,t in ipairs({0,.36,.71,1.06})do
+     clock=t;local frame=draw()
+     verifyCoveredPixels(def,selected,frame,'Whole Big Trees '..choice)
+     if t==.36 then encodePng(frame,'red-forest-big-'..choice..'-wind.png') end
+    end
+   end
+   mod.exports.flora:select('big_trees','default');mod.exports.state:invalidate();clock=0
+  end
   if spec.household then fixture.household=verifyHousehold('red',def,after)end
   if spec.animated_buildings then fixture.animated_buildings=verifyAnimatedBuildings('red',def,draw)end
   check(fixture.collision_before==fixture.collision_after and fixture.events_before==fixture.events_after,
@@ -1832,6 +1887,10 @@ local function run()
    local checked=verifyCoveredPixels(def,customArt,custom,game..' mixed Violet')
    check(mod.exports.state.rejected==0,'Mixed Gen2 customization rejected reviewed mappings')
    check(snapshot(map,2)==mechanics and eventSnapshot(map)==events,'Mixed Gen2 artwork changed source gameplay')
+   for _,t in ipairs({.21,.41,.71,1.06})do
+    clock=t;checked=checked+verifyCoveredPixels(def,customArt,draw(),game..' independent flora wind')
+   end
+   clock=0
    local saved=custom:getString()
    mod.exports.state:invalidate();world.mapImage=world:imageFor(map.id)
    check(draw():getString()==saved,'Mixed Gen2 artwork changed on map revisit')
@@ -1841,6 +1900,13 @@ local function run()
    report.customizations[#report.customizations+1]={id=game..'-violet-mixed',game=game,map=def.id,
     before=fixture.after,after=encodePng(custom,game..'-violet-mixed-gpu.png'),coverage=fixture.coverage,
     checked_gpu_pixels=checked,source_collision_events_unchanged=true,stable_after_map_rebuild=true}
+   mod.exports.flora:select('trees','mixed');mod.exports.state:invalidate();world.mapImage=world:imageFor(map.id)
+   local treesOnly=draw()
+   local groundChecked=verifyUnchangedGround(map,after,treesOnly,game..' Violet Mixed trees')
+   report.customizations[#report.customizations+1]={id=game..'-violet-trees-only',game=game,map=def.id,
+    before=fixture.after,after=encodePng(treesOnly,game..'-violet-trees-only-gpu.png'),coverage=fixture.coverage,
+    unchanged_walkable_ground_cells=groundChecked}
+   mod.exports.flora:select('trees','default');mod.exports.state:invalidate();world.mapImage=world:imageFor(map.id)
   end
   mod.exports.dispose();clock=0;world.mapImage=world:imageFor(map.id)
   check(draw():getString()==native:getString(),'Additional Gen2 cleanup did not restore original native pixels')
@@ -2125,7 +2191,7 @@ def main() -> int:
     args = parser.parse_args()
     engine, love, cache, output = (p.resolve() for p in (args.engine, args.love, args.cache, args.output))
     if not love.is_file() or not (engine / "src/render/TileRenderer.lua").is_file():
-        parser.error("The native LÖVE executable and engine source must exist")
+        parser.error("The native LÃ–VE executable and engine source must exist")
     output.mkdir(parents=True, exist_ok=True)
     # A failed launch must never reuse an earlier successful report.
     for name in ("report.json", "error.txt"):

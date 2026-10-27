@@ -80,7 +80,8 @@ function Adapter.install(ctx)
     return art and (art.coverage==nil or
       art.coverage[math.floor((y%32)/16)*2+math.floor((x%32)/16)]==true)
   end
-  local function frameFor(self, art, foreground)
+  local function frameFor(self, art, foreground, q)
+    if art.cellAnimations and art.cellAnimations[q] then art=art.cellAnimations[q] end
     local frames = foreground and art.foregroundFrames or art.frames
     if frames and #frames > 0 then
       local t = ctx.time and ctx.time(self) or
@@ -111,12 +112,12 @@ function Adapter.install(ctx)
     G.pop()
     if not ok then error(err,0) end
   end
-  local function drawBlock(art,img,x,y,s)
+  local function drawBlock(art,img,x,y,s,self)
     if not art.coverage then G.draw(img,x,y,0,s or 1,s or 1);return end
     for quadrant=0,3 do
       if art.coverage[quadrant] then
         local sx,sy=quadrant%2*16,math.floor(quadrant/2)*16
-        drawCrop(img,sx,sy,16,16,x+sx*(s or 1),y+sy*(s or 1),s)
+        drawCrop(self and frameFor(self,art,false,quadrant) or img,sx,sy,16,16,x+sx*(s or 1),y+sy*(s or 1),s)
       end
     end
   end
@@ -199,7 +200,7 @@ function Adapter.install(ctx)
             local x,y=bx*32+ox-cam.x,by*32+oy-cam.y
             if x+32>=0 and y+32>=0 and x<=(self.viewW or 160)
                 and y<=(self.viewH or 144) then
-              drawBlock(art,frameFor(self,art,false),math.floor(x*s),math.floor(y*s),s)
+              drawBlock(art,frameFor(self,art,false),math.floor(x*s),math.floor(y*s),s,self)
             end
           end
         end end
@@ -226,7 +227,14 @@ function Adapter.install(ctx)
         if not bySource then bySource={};borderComposites[image]=bySource end
         local byRevision=bySource[native]
         if not byRevision then byRevision={};bySource[native]=byRevision end
-        local key=revision()
+        local key=tostring(revision())
+        for q=0,3 do
+          local cell=art.cellAnimations and art.cellAnimations[q]
+          if cell then
+            local t=ctx.time and ctx.time(self) or (love and love.timer and love.timer.getTime and love.timer.getTime()) or 0
+            key=key..':'..math.floor(math.max(0,t-(cell.offset or 0))/(cell.period or .2))%#cell.frames
+          end
+        end
         local composite=byRevision[key]
         if not composite then
           local create=ctx.newCanvas or require('src.render.PixelCanvas').new
@@ -234,7 +242,7 @@ function Adapter.install(ctx)
           composite:renderTo(function()
             drawTrue(function()
               G.origin();G.setScissor();G.clear(0,0,0,0)
-              G.draw(native,0,0);drawBlock(art,image,0,0)
+              G.draw(native,0,0);drawBlock(art,image,0,0,nil,self)
             end)
           end)
           composite:setFilter('nearest','nearest')
@@ -266,7 +274,7 @@ function Adapter.install(ctx)
             local info=self:bgTileAttrAt(map,ts,tx,ty)
             if info and (not filter or filter(info)) then
               drawTrue(function()
-                drawCrop(frameFor(self,art,keyed),tx%32,ty%32,8,8,dx,dy,scale)
+                drawCrop(frameFor(self,art,keyed,math.floor((ty%32)/16)*2+math.floor((tx%32)/16)),tx%32,ty%32,8,8,dx,dy,scale)
               end)
             end
           else
@@ -299,7 +307,7 @@ function Adapter.install(ctx)
               local art=block~=nil and recordFor(self,map.def,block,math.floor(tx/32),math.floor(ty/32))
               G.setShader()
               if covered(art,tx,ty) then
-                drawCrop(frameFor(self,art,true),x0%32,y0%32,w,h,
+                drawCrop(frameFor(self,art,true,math.floor((y0%32)/16)*2+math.floor((x0%32)/16)),x0%32,y0%32,w,h,
                   math.floor(ox+x0*s),math.floor(oy+y0*s),s)
               else
                 local colors=bg and Palette.available() and bg[palettes and palettes[tile+1] or 1]

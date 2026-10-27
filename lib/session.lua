@@ -56,6 +56,10 @@ function S.new(ctx)
       end
     end
     for _,name in ipairs({'period','ticks','bank','counter','offset'})do out[name]=block[name] end
+    if block.cellAnimations then
+      out.cellAnimations={}
+      for q,sequence in pairs(block.cellAnimations)do out.cellAnimations[q]=sequence end
+    end
     return out
   end
   function state:select(style)
@@ -192,7 +196,9 @@ function S.new(ctx)
           else piece=nil;pieceError=err or 'Original artwork overlay requires a reviewed native ground' end
         end
         if piece and row._floraEntry and row._floraCategory~='water' and ctx.floraPiece then
-          piece,pieceError=tryCall(ctx.floraPiece,row);sequence=nil
+          local ok,custom,frames=pcall(ctx.floraPiece,row)
+          if ok then piece,sequence=custom,frames
+          else piece=nil;sequence=nil;pieceError=tostring(custom) end
         end
         if piece and row.foreground and ctx.foreground and (not row._floraEntry or row._floraCategory=='water') then
           local foreground,err=tryCall(ctx.foreground,row.foreground)
@@ -204,15 +210,7 @@ function S.new(ctx)
           local ok,custom,frames=pcall(ctx.finishPiece,row,piece,sequence)
           if ok then piece,sequence=custom,frames else piece=nil;pieceError=tostring(custom) end
         end
-        if piece and sequence and ctx.generations[game]<3 then
-          local block=targetBlock(false)
-          if not block and position then block=rows[row.id] end
-          if block and block.frames and (block.bank~=sequence.bank or block.period~=sequence.period
-            or #block.frames~=#sequence.frames or block.offset~=(sequence.offset or 0)
-            or block.counter~=sequence.counter) then
-            piece=nil;pieceError='Different animation cycles share one source block'
-          end
-        end
+        if piece and sequence and ctx.animationTiming then sequence=ctx.animationTiming(row,sequence) end
         if piece then
           if ctx.generations[game]==3 then
             rows[row.id]={under=piece.under,over=piece.over,mid=piece.mid}
@@ -221,6 +219,17 @@ function S.new(ctx)
             local block=targetBlock(true)
             local x,y=q%2*16,math.floor(q/2)*16
             local static=copyLayers(piece)
+            block.cellAnimations=block.cellAnimations or {}
+            block.cellAnimations[q]=nil
+            if sequence then
+              local cell={frames={},foregroundFrames={},period=sequence.period,offset=sequence.offset or 0}
+              for i,part in ipairs(sequence.frames)do
+                local frame=factory(32,32);frame:paste(copyLayers(part),x,y);cell.frames[i]=frame
+                local front=factory(32,32);front:paste(part.foreground or piece.foreground or factory(16,16),x,y)
+                cell.foregroundFrames[i]=front
+              end
+              block.cellAnimations[q]=cell
+            end
             if sequence and not block.frames then
               block.frames={}
               for i=1,#sequence.frames do
@@ -233,7 +242,7 @@ function S.new(ctx)
             block.image:paste(static,x,y)
             if block.frames then
               for i,frame in ipairs(block.frames) do
-                frame:paste(sequence and copyLayers(sequence.frames[i]) or static,x,y)
+                frame:paste(sequence and copyLayers(sequence.frames[(i-1)%#sequence.frames+1]) or static,x,y)
               end
             end
             block.foreground:paste(piece.foreground or factory(16,16),x,y)

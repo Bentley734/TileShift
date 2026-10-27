@@ -204,9 +204,11 @@ local slow=row(15,3);slow.animated=true
 slow.animation={bank='slow',hash=hashB,manifestHash=hashA}
 local incompatible,cycleWarnings=make({slow,wet});incompatible:select('gen3')
 local compatibleOnly=incompatible:replacements('red','OVERWORLD',def)[15]
-eq(compatibleOnly.coverage[0],true);eq(compatibleOnly.coverage[3],nil)
-eq(incompatible.accepted,1);eq(incompatible.rejected,1)
-eq(cycleWarnings[1]:find('Different animation cycles',1,true)~=nil,true)
+eq(compatibleOnly.coverage[0],true);eq(compatibleOnly.coverage[3],true)
+eq(incompatible.accepted,2);eq(incompatible.rejected,0)
+eq(#cycleWarnings,0)
+eq(compatibleOnly.cellAnimations[0].period,16/60)
+eq(compatibleOnly.cellAnimations[3]~=nil,true)
 local staleAnimation=row(16,0);staleAnimation.animated=true
 staleAnimation.animation={bank='general_water',hash=hashC,manifestHash=hashA}
 local staleSequence,sequenceWarnings=make({staleAnimation});staleSequence:select('gen3')
@@ -346,8 +348,8 @@ local incompatible,conflictWarnings=make({animBase,wetRoof},{composeFrames=funct
 end})
 incompatible:select('gen3')
 local conflict=incompatible:replacements('red','OVERWORLD',positionDef)[7]
-eq(incompatible.accepted,1);eq(incompatible.rejected,1);eq(conflict.positions,nil,'incompatible cycle creates no partial position variant')
-eq(conflictWarnings[1]:find('Different animation cycles',1,true)~=nil,true)
+eq(incompatible.accepted,2);eq(incompatible.rejected,0);eq(conflict.positions~=nil,true,'position variant supports independent cycles')
+eq(#conflictWarnings,0)
 local guardedSource=row(27,0)
 guardedSource.sourceFiles={metadata=hashA,image=hashB,maps=hashC}
 local guardedState,_,guardedCalls=make({guardedSource});guardedState:select('gen3')

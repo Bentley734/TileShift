@@ -80,7 +80,7 @@ for _,gameId in ipairs(games)do
     if path=='mappings/trees.lua' then
       return fixture.trees and 'return __tileMainFixture.trees' or nil
     end
-    if path=='mappings/posts.lua' or path=='mappings/water.lua' or path=='mappings/coasts.lua'
+    if path=='mappings/posts.lua' or path=='mappings/cut_trees.lua' or path=='mappings/water.lua' or path=='mappings/coasts.lua'
       or path=='mappings/pallet_buildings.lua' or path=='mappings/pallet_details.lua'
       or path=='mappings/gen1_outdoor.lua' or path=='mappings/gen2_outdoor.lua'
       or path=='mappings/gen1_caves.lua' or path=='mappings/gen2_buildings.lua'
@@ -123,10 +123,16 @@ for _,gameId in ipairs(games)do
   local rows=hooks['ui.options.rows'](function(g,out)
     eq(g,game);vanillaCalls=vanillaCalls+1;out[#out+1]={id='native'};return out
   end,game,{})
-  eq(vanillaCalls,1);eq(#rows,7);eq(rows[1].id,'native');eq(rows[2].value(),'ORIGINAL')
-  eq(rows[7].label,'COVERAGE');eq(rows[7].value(),'IN PROGRESS');eq(rows[7].step(),false)
-  eq(rows[3].label,'TREES');eq(rows[4].label,'FLOWERS');eq(rows[5].label,'TALL GRASS');eq(rows[6].label,'WATER')
-  eq(rows[3].value(),'DEFAULT');eq(schemas[5].key,'flora_water');eq(#schemas[5].choices,8)
+  eq(vanillaCalls,1);eq(#rows,13);eq(rows[1].id,'native');eq(rows[2].value(),'ORIGINAL')
+  eq(rows[13].label,'COVERAGE');eq(rows[13].value(),'IN PROGRESS');eq(rows[13].step(),false)
+  eq(rows[3].label,'TREES');eq(rows[4].label,'BIG TREES');eq(rows[5].label,'CUT TREES')
+  eq(rows[6].label,'FLOWERS');eq(rows[7].label,'TALL GRASS');eq(rows[8].label,'WATER')
+  eq(rows[9].label,'TREES SPEED');eq(rows[10].label,'FLOWERS SPEED')
+  eq(rows[11].label,'GRASS SPEED');eq(rows[12].label,'WATER SPEED')
+  eq(rows[9].value(),'OFF');rows[9].step({game=game},1)
+  eq(rows[9].value(),'SLOW');eq(stored.speed_trees,2);eq(game.writes,1);game.writes=0
+  eq(rows[3].value(),'DEFAULT');eq(schemas[7].key,'flora_water');eq(#schemas[7].choices,6)
+  eq(schemas[7].choices[4][2],6,'animated blue water keeps its existing stored ID')
   eq(rows[2].step({game=game},1),false)
   eq(state.style,'gen3');eq(rows[2].value(),'GEN 3');eq(stored.style,2)
   eq(game.options.modOptions.tileshift.style,2);eq(game.save.options.modOptions.tileshift.style,2)

@@ -15,7 +15,6 @@ end
 local reads=0
 local water=W.new({newImageData=image,image=function(path,expected)
  reads=reads+1;eq(#expected,64)
- if path:find('peekychew',1,true) then return image(512,176,{.3,.7,.6,1})end
  local n=assert(tonumber(path:match('frame%-(%d+)')))
  return image(464,208,{n/10,.8,.9,1})
 end,donor={cell=function()return {mid=image(16,16,{.1,.2,.9,1})}end}})
@@ -24,16 +23,15 @@ native:setPixel(0,0,.5,.4,.2,1) -- bank
 native:setPixel(1,0,.4,.45,.5,1) -- grey rock
 native:setPixel(2,0,1,1,1,1) -- foam
 local piece={under=native}
-local clear={id='clear',sheet='peekychew',x=224,y=64}
-local result,sequence=water:finish(clear,piece)
-eq(sequence,nil,'static author artwork stays static')
+local ripple={id='ripple',sheet='magiscarf',x=64,y=32}
+local result,sequence=water:finish(ripple,piece)
+eq(#sequence.frames,8,'all custom water has eight real animation frames')
 for x=0,2 do
  local r,g,b,a=native:getPixel(x,0);local rr,gg,bb,aa=result.under:getPixel(x,0)
  eq(r,rr,'bank/rock/foam retained');eq(g,gg);eq(b,bb);eq(a,aa)
 end
-local r,g,b=result.under:getPixel(3,0);eq(r,.3);eq(g,.7);eq(b,.6)
+local r,g,b=result.under:getPixel(3,0);eq(r,.1);eq(g,.8);eq(b,.9)
 eq(native:getPixel(3,0),.05,'shared native donor was not painted into')
-local ripple={id='ripple',sheet='magiscarf',x=64,y=32}
 local _,animated=water:finish(ripple,piece)
 eq(#animated.frames,8);eq(animated.period,.1)
 eq(animated.frames[1].under:getPixel(3,0),.1);eq(animated.frames[8].under:getPixel(3,0),.8)
@@ -42,6 +40,6 @@ local _,retained=water:finish(ripple,piece,nativeSequence)
 eq(retained.period,16/60);eq(retained.bank,'water');eq(retained.offset,1/60)
 eq(nativeSequence.frames[1],piece,'native cached sequence remains untouched')
 -- A blue window in an over-water building must never become a water surface.
-local guarded=water:finish(clear,piece,nil,{parts={{donor={},layers={'mid'},x=3,y=0,w=1,h=1}}})
+local guarded=water:finish(ripple,piece,nil,{parts={{donor={},layers={'mid'},x=3,y=0,w=1,h=1}}})
 eq(guarded.under:getPixel(3,0),.05,'native facade pixels protected even when blue')
 print('water style checks: '..checks)

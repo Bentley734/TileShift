@@ -1104,4 +1104,18 @@ for _,group in ipairs(groups)do
     rows[#rows+1]=row
   end
 end
+-- Complete Big Trees override: a complete32px sprite replaces the incomplete FR2x3 fragments.
+local completeTreeCells={[0]={["asset"]="assets/original/flora/johto-oak32-q0.png",["hash"]="b071d8aeed0eebbeac16ded6ffd4ed07635a0f8cb7169a9cf93c0d55c21a2a17"},[1]={["asset"]="assets/original/flora/johto-oak32-q1.png",["hash"]="6a20536a3757af657d423227c664db3f09481926fb7639f25a730b7e0b4abe5a"},[2]={["asset"]="assets/original/flora/johto-oak32-q2.png",["hash"]="bc2bdf47c795d9e34f641a74d46f534c7425c88d72024ce3b7c9029191444863"},[3]={["asset"]="assets/original/flora/johto-oak32-q3.png",["hash"]="20d5661a9e050b7fce7289855ff1cbdbb652ac293893d1e1ee9e4a7a20bde4d1"}}
+local forestMapGround={["SAFARI_ZONE_CENTER"]={["game"]="firered",["tileset"]="general__rom_082d4b54",["id"]=1,["hash"]="fd831cddaec923ae603b552833a9be282af7d55b0f32b1cd46fef4d700ae2be6"},["SAFARI_ZONE_EAST"]={["game"]="firered",["tileset"]="general__rom_082d4b54",["id"]=1,["hash"]="fd831cddaec923ae603b552833a9be282af7d55b0f32b1cd46fef4d700ae2be6"},["SAFARI_ZONE_NORTH"]={["game"]="firered",["tileset"]="general__rom_082d4b54",["id"]=1,["hash"]="fd831cddaec923ae603b552833a9be282af7d55b0f32b1cd46fef4d700ae2be6"},["SAFARI_ZONE_WEST"]={["game"]="firered",["tileset"]="general__rom_082d4b54",["id"]=1,["hash"]="fd831cddaec923ae603b552833a9be282af7d55b0f32b1cd46fef4d700ae2be6"},["VIRIDIAN_FOREST"]={["game"]="firered",["tileset"]="general__rom_082d4dc4",["id"]=1,["hash"]="fd831cddaec923ae603b552833a9be282af7d55b0f32b1cd46fef4d700ae2be6"}}
+local forestGrounds={}
+for _,row in ipairs(rows)do if row.role=="forest_boundary_small_tree" and row.base then forestGrounds[row.game..":"..row.map]=row.base end end
+for _,row in ipairs(rows)do
+ local part=row.role:match("^forest_whole_broadleaf_tree_([0-3])$")
+ if part then
+  local cell=completeTreeCells[tonumber(part)]
+  row.donor=nil;row.kind="original";row.asset=cell.asset;row.assetFileHash=cell.hash
+  row.base=assert(forestGrounds[row.game..":"..row.map] or forestMapGround[row.map],"Missing native forest ground")
+  row.evidence="Reviewed complete32x32 Johto Oak sprite, all four16px quadrants retained with complete canopy, trunk and roots. Replaces the former incomplete FireRed2x3 tree fragments. Native forest ground is taken from the separately reviewed source/remake context. Every original source2x2 neighbourhood, position, source-file and source-pixel hash remains guarded; original FOREST collision and Cut restrictions remain native. Big Trees offers alternative complete32px designs and chooses once per full tree."
+ end
+end
 return rows

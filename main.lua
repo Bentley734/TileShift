@@ -8,7 +8,7 @@ return function(mod)
   local Mapping=readModule('lib/mapping.lua')
   local reviewed=readModule('mappings/reviewed.lua')
   for _,path in ipairs({
-    'mappings/trees.lua','mappings/posts.lua','mappings/water.lua','mappings/coasts.lua',
+    'mappings/trees.lua','mappings/posts.lua','mappings/cut_trees.lua','mappings/water.lua','mappings/coasts.lua',
     'mappings/pallet_buildings.lua','mappings/pallet_details.lua',
     'mappings/gen1_outdoor.lua','mappings/gen2_outdoor.lua','mappings/gen1_caves.lua',
     'mappings/gen2_buildings.lua','mappings/gen1_extended.lua','mappings/gen2_outdoor_extended.lua',
@@ -76,21 +76,23 @@ return function(mod)
     return love.image.newImageData(mod.assets:path(path))
   end
   local waterStyles=readModule('lib/water_styles.lua').new({image=checkedSheet,newImageData=newData,donor=decoder})
+  local function nativeSprite(ref)
+    local piece=assert(decoder:cell(ref));local out=newData(16,16)
+    for _,name in ipairs({'under','mid','over'})do if piece[name] then
+      for y=0,15 do for x=0,15 do
+        local r,g,b,a=piece[name]:getPixel(x,y)
+        if a>0 then out:setPixel(x,y,r,g,b,a) end
+      end end
+    end end
+    return out
+  end
   local flora=readModule('lib/flora.lua').new({catalog=readModule('lib/flora_catalog.lua'),
     seed=love.timer and math.floor(love.timer.getTime()*1000000) or 1,
     newImageData=newData,
     sheet=checkedSheet,
+    nativeSprite=nativeSprite,foreground=foreground,
     water=function(entry,piece,sequence,row)return waterStyles:finish(entry,piece,sequence,row)end,
-    base=function(ref)
-      local piece=assert(decoder:cell(ref));local out=newData(16,16)
-      for _,name in ipairs({'under','mid','over'})do if piece[name] then
-        for y=0,15 do for x=0,15 do
-          local r,g,b,a=piece[name]:getPixel(x,y)
-          if a>0 then out:setPixel(x,y,r,g,b,a) end
-        end end
-      end end
-      return out
-    end})
+    base=nativeSprite})
   local state=readModule('lib/session.lua').new({mappings=indexed,donor=decoder,
     newImageData=newData,generations=Mapping.generations,themes=Mapping.themes,
     normalizeStyle=Mapping.normalizeStyle,validate=Mapping.validate,
@@ -98,6 +100,7 @@ return function(mod)
     customizeRows=function(rows,game,def)return flora:rows(rows,game,def)end,
     floraPiece=function(row)return flora:piece(row)end,
     finishPiece=function(row,piece,sequence)return flora:finish(row,piece,sequence)end,
+    animationTiming=function(row,sequence)return flora:timing(row,sequence)end,
     invalidateCustomization=function()flora:invalidate()end,
     warn=function(s)mod.log:warn('%s',s)end})
   local styleNames={'ORIGINAL','GEN 3'}
@@ -108,18 +111,34 @@ return function(mod)
   local selection=tonumber(mod.options:get('style')) or tonumber(mod.save:get('style')) or 2
   local floraOptions={}
   local schema={{key='style',label='TILESET',type='choice',choices=styleChoices,default=2}}
-  for _,category in ipairs({'trees','flowers','grass','water'})do
+  local floraLabels={trees='TREES',big_trees='BIG TREES',cut_trees='CUT TREES',flowers='FLOWERS',grass='TALL GRASS',water='WATER'}
+  for _,category in ipairs({'trees','big_trees','cut_trees','flowers','grass','water'})do
     local choices=flora:choices(category)
     local option={category=category,key='flora_'..category,choices=choices,selection=1}
     local stored=tonumber(mod.options:get(option.key)) or tonumber(mod.save:get(option.key)) or 1
     if stored==stored and stored~=math.huge and stored~=-math.huge then
-      option.selection=math.max(1,math.min(#choices,math.floor(stored)))
+      if category=='water' then
+        for i,choice in ipairs(choices)do if choice[3]==stored then option.selection=i;break end end
+      else option.selection=math.max(1,math.min(#choices,math.floor(stored))) end
     end
     flora:select(category,choices[option.selection][2])
-    local numeric={} for i,choice in ipairs(choices)do numeric[i]={choice[1],i} end
-    schema[#schema+1]={key=option.key,label=category=='grass' and 'TALL GRASS' or category:upper(),
+    local numeric={} for i,choice in ipairs(choices)do numeric[i]={choice[1],choice[3]} end
+    schema[#schema+1]={key=option.key,label=floraLabels[category],
       type='choice',choices=numeric,default=1}
     floraOptions[#floraOptions+1]=option
+  end
+  local speedChoices={{'OFF',0,1},{'SLOW',.5,2},{'NORMAL',1,3},{'FAST',2,4}}
+  for _,group in ipairs({'trees','flowers','grass','water'})do
+    local key='speed_'..group
+    local selected=tonumber(mod.options:get(key)) or tonumber(mod.save:get(key)) or 3
+    if selected~=selected or selected==math.huge or selected==-math.huge then selected=3 end
+    selected=math.max(1,math.min(4,math.floor(selected)))
+    flora:speed(group,speedChoices[selected][2])
+    local label=(group=='grass' and 'GRASS' or floraLabels[group])..' SPEED'
+    local option={category=key,speed=group,key=key,choices=speedChoices,selection=selected}
+    floraLabels[key]=label;floraOptions[#floraOptions+1]=option
+    schema[#schema+1]={key=key,label=label,type='choice',
+      choices={{'OFF',1},{'SLOW',2},{'NORMAL',3},{'FAST',4}},default=3}
   end
   mod.options:define(schema)
   selection=math.max(1,math.min(#styleIds,math.floor(selection)))
@@ -160,12 +179,20 @@ return function(mod)
     if Runtime._tileShiftDispose==dispose then Runtime._tileShiftDispose=nil end
   end
   Runtime._tileShiftDispose=dispose
-  local function applyFlora(option,value)
+  local function applyFlora(option,value,asIndex)
     value=tonumber(value)
     if not value or value~=value or value==math.huge or value==-math.huge then return false end
-    option.selection=math.max(1,math.min(#option.choices,math.floor(value)))
-    if flora:select(option.category,option.choices[option.selection][2]) then state:invalidate() end
-    mod.save:set(option.key,option.selection)
+    if asIndex or option.category~='water' then
+      option.selection=math.max(1,math.min(#option.choices,math.floor(value)))
+    else
+      option.selection=1
+      for i,choice in ipairs(option.choices)do if choice[3]==value then option.selection=i;break end end
+    end
+    local changed
+    if option.speed then changed=flora:speed(option.speed,option.choices[option.selection][2])
+    else changed=flora:select(option.category,option.choices[option.selection][2]) end
+    if changed then state:invalidate() end
+    mod.save:set(option.key,option.choices[option.selection][3])
     refresh(mod.game);lastRevision=state.revision
     return true
   end
@@ -200,16 +227,16 @@ return function(mod)
     out[#out+1]={id='tileshift:style',label='TILESET',value=function()return styleNames[selection]end,step=persist}
     for _,item in ipairs(floraOptions)do
       local option=item
-      out[#out+1]={id='tileshift:'..option.key,label=option.category=='grass' and 'TALL GRASS' or option.category:upper(),
+      out[#out+1]={id='tileshift:'..option.key,label=floraLabels[option.category],
         value=function()return option.choices[option.selection][1]end,
         step=function(ctx,dir)
           local value=1+(option.selection-1+(dir and dir<0 and -1 or 1))%#option.choices
-          applyFlora(option,value)
+          applyFlora(option,value,true)
           local game=(ctx and ctx.game) or ctx or mod.game
           if game then
             local options=game.options or (game.save and game.save.options) or {}
             options.modOptions=options.modOptions or {};options.modOptions[mod.id]=options.modOptions[mod.id] or {}
-            options.modOptions[mod.id][option.key]=option.selection
+            options.modOptions[mod.id][option.key]=option.choices[option.selection][3]
             if game.mods then game.mods.modOptions[mod.id]=options.modOptions[mod.id] end
             if game.save and game.save.options then game.save.options.modOptions=options.modOptions end
             if game.writeOptions then game:writeOptions() end
