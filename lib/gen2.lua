@@ -26,8 +26,13 @@ function Adapter.install(ctx)
   local images, quads = setmetatable({}, {__mode='k'}), setmetatable({}, {__mode='k'})
   local borderComposites, ownedCanvases = setmetatable({}, {__mode='k'}), {}
   local warned, serial = {}, tostring({})
+  local lastRevision,revisionSuffix
   local function revision()
-    return '|tileshift|' .. serial .. '|' .. tostring(ctx.revision and ctx.revision() or 0)
+    local current=ctx.revision and ctx.revision() or 0
+    if current~=lastRevision then
+      lastRevision=current;revisionSuffix='|tileshift|'..serial..'|'..tostring(current)
+    end
+    return revisionSuffix
   end
   local function unlit(self)
     -- DARK is a source-pixel palette mask, not a uniform RGB multiplier.
@@ -58,7 +63,10 @@ function Adapter.install(ctx)
     local all = ctx.replacements(version(), def.tileset, def)
     local art = all and all[blockId]
     if not art then return nil end
-    if type(art)=='table' and art.positions and bx~=nil and by~=nil then art=art.positions[bx..':'..by] or art end
+    if type(art)=='table' and bx~=nil and by~=nil then
+      if art.positionRows then art=art.positionRows[by*def.width+bx] or art
+      elseif art.positions then art=art.positions[bx..':'..by] or art end
+    end
     if art.getDimensions then art = {image=art} end
     if not art.image then return nil end
     local ts = self.tilesets and self.tilesets[def.tileset]
@@ -80,12 +88,16 @@ function Adapter.install(ctx)
     return art and (art.coverage==nil or
       art.coverage[math.floor((y%32)/16)*2+math.floor((x%32)/16)]==true)
   end
-  local function frameFor(self, art, foreground, q)
+  local function frameFor(self, art, foreground, q, bx, by)
     if art.cellAnimations and art.cellAnimations[q] then art=art.cellAnimations[q] end
     local frames = foreground and art.foregroundFrames or art.frames
     if frames and #frames > 0 then
       local t = ctx.time and ctx.time(self) or
         (love and love.timer and love.timer.getTime and love.timer.getTime()) or 0
+      if art.category=='grass' and ctx.grassTime and bx~=nil then
+        t=ctx.grassTime(art.mapId,bx*2+q%2,by*2+math.floor(q/2),t)
+        if t==nil then return artImage(frames[1])end
+      end
       return artImage(frames[math.floor(math.max(0,t-(art.offset or 0)) / (art.period or .2)) % #frames + 1])
     end
     return artImage(foreground and art.foreground or art.image)
@@ -112,12 +124,43 @@ function Adapter.install(ctx)
     G.pop()
     if not ok then error(err,0) end
   end
-  local function drawBlock(art,img,x,y,s,self)
+  local function drawBlock(art,img,x,y,s,self,bx,by)
     if not art.coverage then G.draw(img,x,y,0,s or 1,s or 1);return end
     for quadrant=0,3 do
       if art.coverage[quadrant] then
         local sx,sy=quadrant%2*16,math.floor(quadrant/2)*16
-        drawCrop(self and frameFor(self,art,false,quadrant) or img,sx,sy,16,16,x+sx*(s or 1),y+sy*(s or 1),s)
+        drawCrop(self and frameFor(self,art,false,quadrant,bx,by) or img,sx,sy,16,16,x+sx*(s or 1),y+sy*(s or 1),s)
+      end
+    end
+  end
+  ctx.drawVegetation=function(map,entity,ox,oy,s,moved,now,world)
+    if closed or not world or unlit(world) or entity.jumping then return end
+    local def=map.def;local py=entity.py+(entity.spriteYOffset or 0)
+    local sprite=entity.sprite
+    local fw,fh=sprite and sprite.frameWidth or 16,sprite and sprite.frameHeight or 16
+    local ax,ay=sprite and sprite.anchorX or fw/2,sprite and sprite.anchorY or fh
+    local x0=math.floor(entity.px+8-ax)
+    local y0=math.floor(py+12-ay)+math.max(0,fh-8)
+    local x1,y1=x0+fw,y0+math.min(8,fh)
+    for ty=math.floor(y0/8)*8,math.floor((y1-1)/8)*8,8 do
+      for tx=math.floor(x0/8)*8,math.floor((x1-1)/8)*8,8 do
+        local bx,by=math.floor(tx/32),math.floor(ty/32)
+        local id=blockAt(map,tx,ty)
+        local art=id and recordFor(world,def,id,bx,by)
+        local q=math.floor((ty%32)/16)*2+math.floor((tx%32)/16)
+        local group=art and art.vegetation and art.vegetation[q]
+        if group=='grass' or group=='flowers' then
+          local sequence=art.cellAnimations and art.cellAnimations[q]
+          if group=='grass' and moved and sequence and ctx.disturb then
+            ctx.disturb(art.mapId,math.floor(tx/16),math.floor(ty/16),now,(sequence.period or .2)*#sequence.frames)
+          end
+          local xx,yy=math.max(x0,tx),math.max(y0,ty)
+          G.push('all');G.setShader();G.setColor(1,1,1,1)
+          drawCrop(frameFor(world,art,true,q,bx,by),xx%32,yy%32,
+            math.min(x1,tx+8)-xx,math.min(y1,ty+8)-yy,
+            math.floor(ox+xx*s),math.floor(oy+yy*s),s)
+          G.pop()
+        end
       end
     end
   end
@@ -200,7 +243,7 @@ function Adapter.install(ctx)
             local x,y=bx*32+ox-cam.x,by*32+oy-cam.y
             if x+32>=0 and y+32>=0 and x<=(self.viewW or 160)
                 and y<=(self.viewH or 144) then
-              drawBlock(art,frameFor(self,art,false),math.floor(x*s),math.floor(y*s),s,self)
+              drawBlock(art,frameFor(self,art,false),math.floor(x*s),math.floor(y*s),s,self,bx,by)
             end
           end
         end end
@@ -274,7 +317,7 @@ function Adapter.install(ctx)
             local info=self:bgTileAttrAt(map,ts,tx,ty)
             if info and (not filter or filter(info)) then
               drawTrue(function()
-                drawCrop(frameFor(self,art,keyed,math.floor((ty%32)/16)*2+math.floor((tx%32)/16)),tx%32,ty%32,8,8,dx,dy,scale)
+                drawCrop(frameFor(self,art,keyed,math.floor((ty%32)/16)*2+math.floor((tx%32)/16),math.floor(tx/32),math.floor(ty/32)),tx%32,ty%32,8,8,dx,dy,scale)
               end)
             end
           else
@@ -307,7 +350,7 @@ function Adapter.install(ctx)
               local art=block~=nil and recordFor(self,map.def,block,math.floor(tx/32),math.floor(ty/32))
               G.setShader()
               if covered(art,tx,ty) then
-                drawCrop(frameFor(self,art,true,math.floor((y0%32)/16)*2+math.floor((x0%32)/16)),x0%32,y0%32,w,h,
+                drawCrop(frameFor(self,art,true,math.floor((y0%32)/16)*2+math.floor((x0%32)/16),math.floor(tx/32),math.floor(ty/32)),x0%32,y0%32,w,h,
                   math.floor(ox+x0*s),math.floor(oy+y0*s),s)
               else
                 local colors=bg and Palette.available() and bg[palettes and palettes[tile+1] or 1]
@@ -322,6 +365,18 @@ function Adapter.install(ctx)
         end
       end
       G.pop()
+    end
+  end)
+  wrap('drawGrassShake',function(old)
+    return function(self,entity,...)
+      if entity and self.map and not unlit(self) then
+        local x,y=entity.px or 0,entity.py or 0
+        local id=blockAt(self.map,x+8,y+8)
+        local row=id and recordFor(self,self.map.def,id,math.floor((x+8)/32),math.floor((y+8)/32))
+        local q=math.floor(((y+8)%32)/16)*2+math.floor(((x+8)%32)/16)
+        if row and row.vegetation and row.vegetation[q]=='grass' then return end
+      end
+      return old(self,entity,...)
     end
   end)
   wrap('draw',function(old)

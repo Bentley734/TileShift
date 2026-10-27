@@ -47,7 +47,7 @@ function G.install(ctx)
     end
     return images[data]
   end
-  local function art(row, foreground, q)
+  local function art(row, foreground, q, bx, by)
     if not row then return nil end
     if type(row)=='table' and row.image then
       if row.cellAnimations and row.cellAnimations[q] then row=row.cellAnimations[q] end
@@ -56,6 +56,10 @@ function G.install(ctx)
       if frames and #frames>0 then
         local now = ctx.time and ctx.time() or
           (love and love.timer and love.timer.getTime and love.timer.getTime()) or 0
+        if row.category=='grass' and ctx.grassTime and bx~=nil then
+          now=ctx.grassTime(row.mapId,bx*2+q%2,by*2+math.floor(q/2),now)
+          if now==nil then return image(frames[1])end
+        end
         local period=row.period or .2
         assert(type(period)=='number' and period>0,'TileShift animation period must be positive')
         return image(frames[math.floor(math.max(0,now-(row.offset or 0)) / period) % #frames + 1])
@@ -72,7 +76,10 @@ function G.install(ctx)
   local function record(self,replacements,id,bx,by)
     local row=replacements and replacements[id]
     if not row then return nil end
-    if type(row)=='table' and row.positions and bx~=nil and by~=nil then row=row.positions[bx..':'..by] or row end
+    if type(row)=='table' and bx~=nil and by~=nil then
+      if row.positionRows then row=row.positionRows[by*self.map.def.width+bx] or row
+      elseif row.positions then row=row.positions[bx..':'..by] or row end
+    end
     local ts=self.map.tileset
     local grass=ts and ts.grassTile
     local block=ts and ts.blocks and ts.blocks[id+1]
@@ -95,7 +102,7 @@ function G.install(ctx)
     return row
   end
   local function painted(row, bx, by, cx, cy, sx, sy, sw, sh, foreground)
-    local img = art(row, foreground, math.floor((sy or 0)/16)*2+math.floor((sx or 0)/16))
+    local img = art(row, foreground, math.floor((sy or 0)/16)*2+math.floor((sx or 0)/16),bx,by)
     if not img then return false end
     sx, sy, sw, sh = sx or 0, sy or 0, sw or 32, sh or 32
     local w,h=img:getDimensions()
@@ -107,8 +114,38 @@ function G.install(ctx)
     local q=byImage[key]
     if not q then q=graphics.newQuad(sx,sy,sw,sh,w,h);byImage[key]=q end
     graphics.draw(img,q,x,y)
+    if foreground and FX.markSpriteRedraw and FX.usesSpriteObp and FX.usesSpriteObp() then
+      FX.markSpriteRedraw(img,q,x,y,1)
+    end
     if FX.markTrueColor then FX.markTrueColor(x,y,sw,sh) end
     return true
+  end
+  ctx.drawVegetation=function(map,entity,camX,camY,scale,moved,now)
+    if closed or not map.renderer or entity.jumping or entity.hopShadowY then return end
+    local renderer=map.renderer;local replacements=rows(renderer)
+    if not replacements then return end
+    local x0,y0,x1,y1
+    if T.feetStrip then x0,y0,x1,y1=T.feetStrip(entity.px,entity.py,entity.sprite)
+    else x0,y0,x1,y1=entity.px,entity.py+4,entity.px+16,entity.py+12 end
+    for ty=math.floor(y0/8)*8,math.floor((y1-1)/8)*8,8 do
+      for tx=math.floor(x0/8)*8,math.floor((x1-1)/8)*8,8 do
+        local bx,by=math.floor(tx/32),math.floor(ty/32)
+        local row=record(renderer,replacements,map:blockAt(bx,by),bx,by)
+        local q=math.floor((ty%32)/16)*2+math.floor((tx%32)/16)
+        local group=row and row.vegetation and row.vegetation[q]
+        if group=='grass' or group=='flowers' then
+          local sequence=row.cellAnimations and row.cellAnimations[q]
+          if group=='grass' and moved and sequence and ctx.disturb then
+            ctx.disturb(row.mapId,math.floor(tx/16),math.floor(ty/16),now,(sequence.period or .2)*#sequence.frames)
+          end
+          local xx,yy=math.max(x0,tx),math.max(y0,ty)
+          local w,h=math.min(x1,tx+8)-xx,math.min(y1,ty+8)-yy
+          graphics.push('all');graphics.setShader();graphics.setColor(1,1,1,1)
+          painted(row,bx,by,camX,camY,xx%32,yy%32,w,h,true)
+          graphics.pop()
+        end
+      end
+    end
   end
   local function paintBlock(row,bx,by,cx,cy)
     if type(row)~='table' or row.coverage==nil then

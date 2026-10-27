@@ -4,9 +4,14 @@ local roles={boundary_tree='trees',dense_round_tree='trees',forest_boundary_smal
   forest_safari_round_boundary_tree='trees',
   decorative_flower_northwest='flowers',decorative_flower_southeast='flowers',
   tall_grass='grass',forest_tall_grass='grass',cuttable_small_tree='cut_trees'}
+local treeParts={dense_forest_tree_northwest=0,dense_forest_tree_northeast=1,
+  dense_forest_tree_southwest=2,dense_forest_tree_southeast=3}
+local function treePart(row)
+  return treeParts[row.role] or (type(row.role)=='string' and tonumber(row.role:match('^forest_whole_broadleaf_tree_([0-3])$'))) or nil
+end
 local function category(row)
   local role=row.role
-  if type(role)=='string' and role:match('^forest_whole_broadleaf_tree_[0-3]$') then return 'big_trees' end
+  if treePart(row)~=nil then return 'big_trees' end
   if row.parts and row.base and row.animated and row.animation
     and type(row.animation.bank)=='string' and row.animation.bank:find('water',1,true) then return 'water' end
   if type(role)=='string' and (role:match('^coastal_rock_shore_') or role:match('^rocky_coast_')
@@ -79,44 +84,56 @@ function F.new(ctx)
       local target=row.x==nil and out or (isGenerated and generated or scoped)
       target[#target+1]=row
     end
-    local bodies={}
-    if self.selected.water=='mixed' and def and def.width and def.blocks then
+    local bodies,borderBodies={},{}
+    local mixed=false
+    for _,value in pairs(self.selected)do if value=='mixed' then mixed=true end end
+    if mixed and def and def.width and def.height and def.blocks then
+      local width,height=def.width*2,def.height*2
       local occupied={}
-      -- Build connected components from the final semantic row per source cell.
-      -- Deterministic row-major seeds keep pairs iteration out of the result.
       local function mark(row,x,y)
-        local key=y*def.width*2+x
-        if category(row)=='water' then
-          local marine=row.role:find('coast',1,true)~=nil or row.sourceOceanBounds~=nil
-            or (row.parts and row.animated and row.base)
-          occupied[key]={x,y,marine}
+        local group=row and category(row)
+        local key=y*width+x
+        if group and self.selected[group]=='mixed' then
+          local marine=group=='water' and (row.role:find('coast',1,true)~=nil
+            or row.sourceOceanBounds~=nil or (row.parts and row.animated and row.base))
+          occupied[key]={group=group,marine=marine,row=row}
         else occupied[key]=nil end
       end
-      -- Populate generic cells first, then let scoped overrides win.
-      for _,row in ipairs(rows)do if row.x==nil then
-        for index,id in ipairs(def.blocks)do if id==row.id then
-          mark(row,(index-1)%def.width*2+row.quadrant%2,
-            math.floor((index-1)/def.width)*2+math.floor(row.quadrant/2))
-        end end
+      -- Resolve actual cells before grouping: dry/scoped overrides break patches.
+      for index,id in ipairs(def.blocks)do for q=0,3 do
+        mark(finalGeneric[id..':'..q],(index-1)%def.width*2+q%2,
+          math.floor((index-1)/def.width)*2+math.floor(q/2))
       end end
       for _,row in ipairs(rows)do if row.x~=nil then mark(row,row.x,row.y) end end
-      local width=def.width*2
-      for y=0,(def.height or 0)*2-1 do for x=0,width-1 do
+      -- Edge and corner contacts form one area. Row-major anchors are stable
+      -- across map rebuilds and do not depend on table iteration order.
+      for y=0,height-1 do for x=0,width-1 do
         local key=y*width+x
         if occupied[key] and not bodies[key] then
-          local anchor=x..':'..y;local queue={{x,y}};bodies[key]=anchor;local head=1;local ocean=false
+          local group=occupied[key].group
+          local anchor=x..':'..y;local queue={key};local head=1;local ocean=false
+          bodies[key]=anchor
           while head<=#queue do
             local point=queue[head];head=head+1
-            ocean=ocean or occupied[point[2]*width+point[1]][3]
-            for _,offset in ipairs({{-1,0},{1,0},{0,-1},{0,1}})do
-              local nx,ny=point[1]+offset[1],point[2]+offset[2]
-              local nkey=ny*width+nx
-              if nx>=0 and nx<width and ny>=0 and ny<(def.height or 0)*2 and occupied[nkey] and not bodies[nkey] then
-                bodies[nkey]=anchor;queue[#queue+1]={nx,ny}
+            local px,py=point%width,math.floor(point/width)
+            ocean=ocean or occupied[point].marine
+            for dy=-1,1 do for dx=-1,1 do if dx~=0 or dy~=0 then
+              local nx,ny=px+dx,py+dy;local neighbour=ny*width+nx
+              if nx>=0 and nx<width and ny>=0 and ny<height and occupied[neighbour]
+                and occupied[neighbour].group==group and not bodies[neighbour] then
+                bodies[neighbour]=anchor;queue[#queue+1]=neighbour
               end
+            end end end
+          end
+          if ocean then anchor='world-ocean' end
+          for _,point in ipairs(queue)do
+            bodies[point]=anchor
+            local px,py=point%width,math.floor(point/width)
+            if px==0 or py==0 or px==width-1 or py==height-1 then
+              local row=occupied[point].row;local border=row.id..':'..row.quadrant
+              borderBodies[border]=borderBodies[border] or anchor
             end
           end
-          if ocean then for _,point in ipairs(queue)do bodies[point[2]*width+point[1]]='world-ocean' end end
         end
       end end
     end
@@ -130,21 +147,21 @@ function F.new(ctx)
           if x~=nil then copy.map=def.id;copy.x=x;copy.y=y end
           local key=game..':'..tostring(def and def.id or row.map)..':'..tostring(x or row.id)..':'..tostring(y or row.quadrant)
           if group=='big_trees' then
-            local quadrant=assert(tonumber(row.role:match('_(%d)$')))
+            local quadrant=assert(treePart(row))
             key=game..':'..tostring(def and def.id or row.map)..':'..
               tostring(x and x-quadrant%2 or 'border')..':'..tostring(y and y-math.floor(quadrant/2) or 'border')
           end
-          if group=='water' and def then
-            local marine=row.role:find('coast',1,true)~=nil or row.sourceOceanBounds~=nil
-              or (row.parts and row.animated and row.base)
-            local body=x~=nil and bodies[y*def.width*2+x] or (marine and 'world-ocean' or 'border')
-            key=body=='world-ocean' and 'connected-world-ocean' or game..':'..def.id..':'..tostring(body)
+          if value=='mixed' and def then
+            local body=x~=nil and bodies[y*def.width*2+x] or borderBodies[row.id..':'..row.quadrant]
+            if not body and group=='water' and (row.role:find('coast',1,true) or row.sourceOceanBounds) then body='world-ocean' end
+            key=body=='world-ocean' and 'connected-world-ocean' or
+              game..':'..def.id..':'..group..':'..tostring(body or 'border')
           end
           copy._floraEntry=self:entry(group,key);copy._floraCategory=group
           push(copy,row.x==nil and x~=nil)
         end
         -- Keep the generic block for border rendering. Positional clones give
-        -- repeated occurrences of one source block independent mixed choices.
+        -- each connected area of repeated source blocks its shared Mixed choice.
         append(row.x,row.y)
         if value=='mixed' and row.x==nil and finalGeneric[row.id..':'..row.quadrant]==row
           and def and type(def.blocks)=='table'
@@ -207,13 +224,15 @@ function F.new(ctx)
     local entry=row._floraEntry
     if not entry then return nil end
     local sprite=self:sprite(entry)
-    local quadrant=row._floraCategory=='big_trees' and assert(tonumber(row.role:match('_(%d)$'))) or 0
+    local quadrant=row._floraCategory=='big_trees' and assert(treePart(row)) or 0
     local sx,sy=quadrant%2*16,math.floor(quadrant/2)*16
     local baseRef=row.base or catalog.base
     local groundKey=baseRef.game..':'..baseRef.tileset..':'..baseRef.id..':'..baseRef.hash
     if not grounds[groundKey] then grounds[groundKey]=assert(ctx.base(baseRef)) end
     local base=grounds[groundKey]
     local category=row._floraCategory
+    local opaquePattern=category=='grass' and entry.sheet=='natural' and entry.row==2 and (entry.column==2 or entry.column==4)
+    local grassMask=opaquePattern and row.foreground and assert(ctx.foreground(row.foreground))
     if category=='flowers' or category=='grass' or category=='trees' or category=='big_trees' or category=='cut_trees' then
       local size=select(1,sprite:getDimensions())
       local bottom=-1
@@ -241,8 +260,16 @@ function F.new(ctx)
           if a>0 then blend(frame,x,y,r,g,b,a) end
         end end
         local foreground
-        if category=='grass' then
+        if category=='grass' or category=='flowers' then
           foreground=ctx.newImageData(16,16);foreground:paste(wind,0,8,0,8,16,8)
+          if grassMask then
+            for y=8,15 do for x=0,15 do
+              local shift=y>=anchored and 0 or offset
+              local _,_,_,maskAlpha=grassMask:getPixel((x-shift)%16,y)
+              local r,g,b,a=wind:getPixel(x,y)
+              foreground:setPixel(x,y,r,g,b,a*maskAlpha)
+            end end
+          end
         end
         frames[i]={under=frame,foreground=foreground}
       end
@@ -260,6 +287,34 @@ function F.new(ctx)
       else foreground=ctx.newImageData(16,16);foreground:paste(sprite,0,8,0,8,16,8) end
     end
     return {under=out,foreground=foreground}
+  end
+  function self:category(row)return category(row)end
+  function self:decorate(row,piece,sequence)
+    if category(row)~='flowers' or piece.foreground then return piece,sequence end
+    local function front(part)
+      local flattened=ctx.newImageData(16,16)
+      for _,layer in ipairs({'under','mid','over'})do if part[layer] then
+        for y=0,15 do for x=0,15 do
+          local r,g,b,a=part[layer]:getPixel(x,y)
+          if a>0 then blend(flattened,x,y,r,g,b,a)end
+        end end
+      end end
+      local br,bg,bb=flattened:getPixel(0,0)
+      local foreground=ctx.newImageData(16,16)
+      for y=8,15 do for x=0,15 do
+        local r,g,b,a=flattened:getPixel(x,y)
+        if a>0 and (r~=br or g~=bg or b~=bb)then foreground:setPixel(x,y,r,g,b,a)end
+      end end
+      local out={}for k,v in pairs(part)do out[k]=v end
+      out.foreground=foreground;return out
+    end
+    piece=front(piece)
+    if sequence then
+      local copy={}for k,v in pairs(sequence)do copy[k]=v end
+      copy.frames={};for i,frame in ipairs(sequence.frames)do copy.frames[i]=front(frame)end
+      sequence=copy
+    end
+    return piece,sequence
   end
   function self:finish(row,piece,sequence)
     if row._floraCategory~='water' then return piece,sequence end

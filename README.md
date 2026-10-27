@@ -1,10 +1,11 @@
 # TileShift
 
 TileShift brings Gen 3 world art to Gen1Recomp with individually reviewed tile
-matches. Version 0.8.0 fixes Mixed trees affecting neighbouring grass and offers
-only animated custom water. It completely retiles the **Pallet Town, Route 1 and
+matches. Version 0.9.0 groups Mixed designs by connected areas, adds walk-triggered
+grass and plant foregrounds around character feet, and reduces rendering cache
+overhead. Custom water choices are animated. It completely retiles the **Pallet Town, Route 1 and
 Viridian Forest backgrounds in Red, Blue and Yellow**, all 19 maps using
-their cave tileset, and **New Bark Town and Violet City in Gold, Silver and Crystal**.
+their cave tileset, and **New Bark Town, Cherrygrove City and Violet City in Gold, Silver and Crystal**.
 Red's downstairs room, Blue's house and many ordinary Kanto homes are also
 fully retiled. Pallet includes compact houses and Oak's
 lab, trees, fences, signs, grass, animated flowers, water and shoreline. Route 1
@@ -18,7 +19,8 @@ Reviewed public buildings and homes now extend through more Johto and Kanto
 towns. Gen 1 caves have reviewed floors, raised rock surfaces, directional walls,
 stairs, ladders, animated water and switch-controlled Victory Road barriers.
 Gen 2 caves add regional rock surfaces, complete rock masses, correctly joined
-corners, ladders, and distinct snowy floors and slippery ice. Violet includes
+corners, ladders, and distinct snowy floors and slippery ice. Cherrygrove has complete shoreline corners, animated sea-rock barriers,
+blocked outcrops and its separate walkable island surface. Violet includes
 a Sprout Tower facade refined from the user's supplied pagoda design,
 complete freshwater ponds, paving, raised ground and all building facades.
 Gold and Silver retain their taller school footprint; Crystal retains its
@@ -37,7 +39,7 @@ art; separate cartridge styles and reverse conversions are future work.
 1. Import **Emerald and FireRed** into Gen1Recomp. TileShift reads native donor
    art from your own imports; neither ROMs nor extracted native artwork are
    bundled.
-2. Download `TileShift-v0.8.0.zip` from [the latest release](https://github.com/Bentley734/TileShift/releases/latest).
+2. Download `TileShift-v0.9.0.zip` from [the latest release](https://github.com/Bentley734/TileShift/releases/latest).
 3. Extract the `tileshift` folder into Gen1Recomp's `mods` directory, enable
    **TileShift**, and restart the game.
 4. Open Options and set **Tileset** to **Gen 3**. This is the default on a fresh
@@ -55,8 +57,8 @@ host artwork visible.
 
 Options and the mod manager expose **Trees**, **Big Trees**, **Cut Trees**,
 **Flowers**, **Tall Grass** and **Water** independently. Each offers **Default**,
-numbered designs, **Random** (one design for the session) and **Mixed** (stable
-variation when revisiting a map). There are 87 small-tree/shrub choices, 89 Big
+numbered designs, **Random** (one design for the session) and **Mixed** (one stable style per connected area). Edge- and corner-touching
+tiles in the same category share one design; separate patches can vary. There are 87 small-tree/shrub choices, 89 Big
 Trees, 89 Cut Trees, 57 flowers, 14 grass designs and three animated water choices.
 Big Trees select one complete 32x32 design per tree, including in Mixed mode.
 Custom flowers and grass animate with anchored roots; custom tree leaves sway
@@ -64,6 +66,11 @@ above fixed trunks. Grass foregrounds follow the same animation around actors.
 Separate **Trees Speed**, **Flowers Speed**, **Grass Speed** and **Water Speed**
 controls offer **Off**, **Slow**, **Normal** and **Fast**. Off keeps the selected
 artwork still. Tree speed applies to small, Big and Cut Trees together.
+**Grass Motion** offers **Always** and **On Walk** (when walked through). In the latter,
+only disturbed grass cells animate and then settle. Grass and flower foregrounds
+cover characters’ feet with their own matching plant pixels, retaining visible
+gaps between leaves. Player, NPC, follower and overworld-wild draws share this
+foreground pass. Original collisions and encounters remain unchanged.
 Headbutt trees retain their distinct artwork. Cut behavior, encounters and other
 source gameplay remain unchanged. Tall Grass changes encounter-grass art;
 ordinary lawns remain distinct.
@@ -135,8 +142,8 @@ Other cave floors can have different coverage; individual matches are scoped
 to the source map and the corresponding donor cave family.
 
 The complete map audit loads the actual mod and checks available replacements
-for all 1,791 imported Gen 1/2 maps. Version 0.8.0 covers 378,600 of 718,992
-initial background cells (52.6%), including 133 complete maps, with zero
+for all 1,791 imported Gen 1/2 maps. Version 0.9.0 covers 378,828 of 718,992
+initial background cells (52.7%), including 136 complete maps, with zero
 rejected mappings or warnings.
 This audit checks actual replacement availability and position scope; it does
 not render every map or constitute a full playthrough.
@@ -145,12 +152,21 @@ The longer-term goal includes Gen 1/2 themes and conversions between games.
 Red/Blue artwork will use the original four-shade monochrome palette. Features
 without a correct equivalent will need reviewed artwork in the selected style.
 
+## Performance
+
+Warm map lookups reuse indexed map tables without rebuilding row lists or
+allocating cache keys. Ownership uses the engine's constant-time owner epoch;
+import-marker polling runs once per second outside rendering. Cosmetic choices
+retain the donor decoder cache. Connected-area grouping runs only when a map's
+visual replacements are built. Actor bindings inspect list identity/count and
+appended entries; unchanged frames do not run another full entity scan.
+
 ## Validation and development
 
 The release is checked through the installed 0.3.97 loader for all eleven games,
 Lua regression fixtures, live-import fingerprint checks, native donor animation
 comparisons, and isolated native LOVE GPU rendering. This release passes
-22,342,313 checks across 34 default background fixtures plus custom artwork
+39,374,673 checks across 39 default background fixtures plus custom artwork
 comparisons, including every native water
 frame behind the Fan Club and Route 12 roof corners. Pallet's Red/Blue/Yellow
 background fixtures and Gold/Silver/Crystal New Bark must replace all 360 visible 16px cells, and Route 1 all

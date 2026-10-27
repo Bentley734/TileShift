@@ -9,6 +9,29 @@ function S.new(ctx)
     return ctx.generations[style]==3 and 'gen3' or style
   end
   local warnings,cache,sourceIdentities={},{},{}
+  local empty={}
+  local byContext={}
+  for _,row in pairs(mappings)do if type(row)=='table' and row.game and row.style and row.tileset then
+    local games=byContext[row.game] or {};byContext[row.game]=games
+    local styles=games[row.style] or {};games[row.style]=styles
+    local bucket=styles[row.tileset] or {generic={},maps={}};styles[row.tileset]=bucket
+    local list=bucket.generic
+    if row.map then list=bucket.maps[row.map] or {};bucket.maps[row.map]=list end
+    list[#list+1]=row
+  end end
+  local function rowOrder(a,b)
+    if (a.x~=nil)~=(b.x~=nil) then return a.x==nil end
+    if a.id~=b.id then return (tonumber(a.id) or -1)<(tonumber(b.id) or -1) end
+    if a.quadrant~=b.quadrant then return (a.quadrant or -1)<(b.quadrant or -1) end
+    if a.y~=b.y then return tostring(a.y or '')<tostring(b.y or '') end
+    if a.x~=b.x then return tostring(a.x or '')<tostring(b.x or '') end
+    return tostring(a.evidence or '')<tostring(b.evidence or '')
+  end
+  for _,games in pairs(byContext)do for _,styles in pairs(games)do for _,bucket in pairs(styles)do
+    table.sort(bucket.generic,rowOrder)
+    for _,list in pairs(bucket.maps)do table.sort(list,rowOrder)end
+  end end end
+
   local state={style='original',revision=0,accepted=0,rejected=0}
   local function warn(message)
     if not warnings[message] then
@@ -40,13 +63,15 @@ function S.new(ctx)
     return result,err
   end
   local function blankBlock()
-    return {image=factory(32,32),foreground=factory(32,32),coverage={}}
+    return {image=factory(32,32),foreground=factory(32,32),coverage={},vegetation={}}
   end
   local function cloneBlock(block)
     local out=blankBlock()
     out.image:paste(block.image,0,0)
     if block.foreground then out.foreground:paste(block.foreground,0,0) end
     for q,value in pairs(block.coverage or {})do out.coverage[q]=value end
+    for q,value in pairs(block.vegetation or {})do out.vegetation[q]=value end
+    out.mapId=block.mapId
     for _,name in ipairs({'frames','foregroundFrames'})do
       if block[name] then
         out[name]={}
@@ -77,9 +102,11 @@ function S.new(ctx)
     self.revision=self.revision+1;donor:invalidate()
     if ctx.invalidateCustomization then ctx.invalidateCustomization() end
   end
-  function state:replacements(game,tileset,def)
-    if self.style=='original' or self.style==game
-      or (self.style=='gen3' and ctx.generations[game]==3) then return nil end
+  function state:invalidateVisual()
+    cache={};self.accepted=0;self.rejected=0;self.revision=self.revision+1
+  end
+  -- Polled by the update hook, never by a warm rendering lookup.
+  function state:checkSource(game)
     if type(donor.sourceIdentity)=='function'then
       local identity,why=tryCall(donor.sourceIdentity,donor,game)
       local previous=sourceIdentities[game]
@@ -90,27 +117,29 @@ function S.new(ctx)
         if ctx.invalidateCustomization then ctx.invalidateCustomization() end
       end
       sourceIdentities[game]=current
-      if not identity then warn('TileShift source import identity is unavailable: '..tostring(why));return{}end
+      if not identity then warn('TileShift source import identity is unavailable: '..tostring(why));return false end
     end
-    local key=table.concat({game,self.style,tileset,def and (def.id or def.name) or ''},':')
-    if cache[key] then return cache[key] end
-    local rows={};cache[key]=rows
+    return true
+  end
+  function state:replacements(game,tileset,def)
+    if self.style=='original' or self.style==game
+      or (self.style=='gen3' and ctx.generations[game]==3) then return nil end
+    local maps=cache[game] and cache[game][tileset]
+    local mapKey=def or false
+    if maps and maps[mapKey] then return maps[mapKey] end
+    if sourceIdentities[game]==nil then self:checkSource(game) end
+    if sourceIdentities[game]==false then return empty end
+    local games=cache[game]
+    if not games then games={};cache[game]=games end
+    maps=games[tileset]
+    if not maps then maps={};games[tileset]=maps end
+    local rows={};maps[mapKey]=rows
     local applicable={}
-    for _,row in pairs(mappings) do
-      if type(row)=='table' and row.game==game and row.style==self.style and row.tileset==tileset
-        and (row.map==nil or (def and row.map==def.id)) then applicable[#applicable+1]=row end
+    local bucket=byContext[game] and byContext[game][self.style] and byContext[game][self.style][tileset]
+    if bucket then
+      for _,row in ipairs(bucket.generic)do applicable[#applicable+1]=row end
+      for _,row in ipairs(bucket.maps[def and def.id] or empty)do applicable[#applicable+1]=row end
     end
-    -- Context-specific equivalents override a generic reviewed mapping only
-    -- in that map. Pairs iteration must never decide which artwork wins.
-    table.sort(applicable,function(a,b)
-      if (a.x~=nil)~=(b.x~=nil) then return a.x==nil end
-      if (a.map~=nil)~=(b.map~=nil) then return a.map==nil end
-      if a.id~=b.id then return (tonumber(a.id) or -1)<(tonumber(b.id) or -1) end
-      if a.quadrant~=b.quadrant then return (a.quadrant or -1)<(b.quadrant or -1) end
-      if a.y~=b.y then return tostring(a.y or '')<tostring(b.y or '') end
-      if a.x~=b.x then return tostring(a.x or '')<tostring(b.x or '') end
-      return tostring(a.evidence or '')<tostring(b.evidence or '')
-    end)
     if ctx.customizeRows then applicable=ctx.customizeRows(applicable,game,def) end
     for _,row in ipairs(applicable) do
         local ok,why=ctx.validate(row)
@@ -124,14 +153,18 @@ function S.new(ctx)
         end
         local function targetBlock(create)
           local base=rows[row.id]
-          if not base and create then base=blankBlock();rows[row.id]=base end
+          if not base and create then base=blankBlock();base.mapId=def and def.id;rows[row.id]=base end
           if not position or not base then return base end
           if not base.positions then
             if not create then return nil end
             base.positions={}
           end
           local block=base.positions[position]
-          if not block and create then block=cloneBlock(base);base.positions[position]=block end
+          if not block and create then
+            block=cloneBlock(base);base.positions[position]=block
+            base.positionRows=base.positionRows or {}
+            base.positionRows[math.floor(row.y/2)*def.width+math.floor(row.x/2)]=block
+          end
           return block
         end
         if ok and row.animated and (not row.animation or ctx.generations[game]==3) then
@@ -210,6 +243,9 @@ function S.new(ctx)
           local ok,custom,frames=pcall(ctx.finishPiece,row,piece,sequence)
           if ok then piece,sequence=custom,frames else piece=nil;pieceError=tostring(custom) end
         end
+        if piece and ctx.decorateVegetation then
+          piece,sequence=ctx.decorateVegetation(row,piece,sequence)
+        end
         if piece and sequence and ctx.animationTiming then sequence=ctx.animationTiming(row,sequence) end
         if piece then
           if ctx.generations[game]==3 then
@@ -219,10 +255,12 @@ function S.new(ctx)
             local block=targetBlock(true)
             local x,y=q%2*16,math.floor(q/2)*16
             local static=copyLayers(piece)
+            local vegetation=ctx.vegetationCategory and ctx.vegetationCategory(row)
+            block.vegetation[q]=vegetation
             block.cellAnimations=block.cellAnimations or {}
             block.cellAnimations[q]=nil
             if sequence then
-              local cell={frames={},foregroundFrames={},period=sequence.period,offset=sequence.offset or 0}
+              local cell={frames={},foregroundFrames={},period=sequence.period,offset=sequence.offset or 0,category=vegetation,mapId=block.mapId}
               for i,part in ipairs(sequence.frames)do
                 local frame=factory(32,32);frame:paste(copyLayers(part),x,y);cell.frames[i]=frame
                 local front=factory(32,32);front:paste(part.foreground or piece.foreground or factory(16,16),x,y)

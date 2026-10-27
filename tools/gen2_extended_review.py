@@ -164,7 +164,8 @@ local function foreground(ref)
 end
 local state=extSession.new({mappings=indexed,donor=extDecoder,newImageData=makeData,
   generations=extMapping.generations,validate=extMapping.validate,foreground=foreground,original=extOriginal,
-  compose=function(row)return extComposer:cell(row)end,warn=function(message)error(message)end})
+  compose=function(row)return extComposer:cell(row)end,
+  composeFrames=function(row)return extComposer:frames(row)end,warn=function(message)error(message)end})
 state:select('gen3')
 local visited={}
 for _,row in ipairs(extRows)do
@@ -292,6 +293,14 @@ def main():
                           'sourceHash':cell['sourceHash'],'sourceFiles':data['fingerprints'][ts_name],
                           'donor':{'game':donor_game,'tileset':pair,'id':mid,'hash':record['pixel_sha256']},
                           'evidence':'Complete native Gen3 tree, separately compared with the exact complete source footprint.'}
+                if ts_name=='TILESET_FOREST':
+                    asset=mod/'assets/original/flora'/f'johto-oak32-q{q}.png'
+                    base=next(r for r in donor_catalogs['emerald']['cells'] if r['pair']=='general__petalburg' and r['mid']==1)
+                    template.pop('donor')
+                    template.update(kind='original',asset=asset.relative_to(mod).as_posix(),
+                        assetFileHash=hashlib.sha256(asset.read_bytes()).hexdigest(),
+                        base={'game':'emerald','tileset':'general__petalburg','id':1,'hash':base['pixel_sha256']},
+                        evidence='Complete original32px Johto Oak, all four16px cells retained over the reviewed Emerald forest lawn.')
                 known[identity(cell)]=template
                 if ts_name=='TILESET_FOREST':forest_shapes[q]=identity(cell)
             for q,shape in forest_shapes.items():geometry[shape]=(q,forest_shapes)
@@ -368,7 +377,7 @@ def main():
                     if template['role'] in ('dense_conifer_crown','dense_conifer_trunk'):
                         row['evidence']+='Every occurrence has its matching crown/trunk neighbor, preserving the complete16x32 source tree footprint. '
                     if template['role'].startswith('dense_forest_tree_'):
-                        row['evidence']+='Every occurrence belongs to the complete matching2x2 source tree. Native FR28/29+36/37 retains one full32x32 broadleaf tree, including canopy corners and trunk, without clipping or resizing. '
+                        row['evidence']+='Every occurrence belongs to the complete matching2x2 source tree. Complete original32px Johto Oak retains canopy corners, trunk and roots; all four16px quadrants stay joined without fractional scaling. '
                     if template['role']=='headbutt_small_tree':
                         row['evidence']+='User chose native Emerald82 art for these complete16px Headbutt trees; source Headbutt encounters, blocking and whole-frame shake stay native. '
                     if template['role']=='boundary_tree':

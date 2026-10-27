@@ -24,6 +24,7 @@ local games={'red','blue','yellow','gold','silver','crystal','ruby','sapphire','
 for _,gameId in ipairs(games)do
   local generation=selections[gameId]
   local runtime={hooks={chains={}}}
+  if gameId=='red' then runtime.hooks.epoch=0;runtime.hooks.ownerEpoch=function(self)return self.epoch end end
   local gv={get=function()return gameId end,cachePrefix=function(v)return v..'/'end}
   package.loaded['src.core.GameVersion']=gv;package.loaded['src.mods.Runtime']=runtime
   package.loaded['src.import.CacheFs']={readAt=function(path)
@@ -36,6 +37,7 @@ for _,gameId in ipairs(games)do
     self.style=style;self.revision=self.revision+1;return true
   end
   function state:invalidate()self.revision=self.revision+1 end
+  function state:checkSource()fixture.polls=(fixture.polls or 0)+1 end
   function state:replacements(v,tileset,def)return {version=v,tileset=tileset,def=def,style=self.style}end
   fixture.decoder={invalidate=function()fixture.invalidations=fixture.invalidations+1 end}
   fixture.donor={new=function(ctx)fixture.donorCtx=ctx;return fixture.decoder end}
@@ -74,7 +76,7 @@ for _,gameId in ipairs(games)do
     end},log={warn=function()end}}
   function mod:read(path)
     fixture.reads[#fixture.reads+1]=path
-    if path=='lib/flora.lua' or path=='lib/flora_catalog.lua' or path=='lib/water_styles.lua' then
+    if path=='lib/vegetation.lua' or path=='lib/flora.lua' or path=='lib/flora_catalog.lua' or path=='lib/water_styles.lua' then
       local file=assert(io.open(root..'/'..path,'rb'));local source=file:read('*a');file:close();return source
     end
     if path=='mappings/trees.lua' then
@@ -108,6 +110,12 @@ for _,gameId in ipairs(games)do
   eq(next(fixture.sessionCtx.mappings),nil,'optional missing tree module leaves reviewed set usable')
   eq(fixture.adapterCtx.version(),gameId)
   eq(fixture.adapterCtx.active(),true,'active hook marks ownership')
+  if runtime.hooks.ownerEpoch then
+    local chains=runtime.hooks.chains
+    runtime.hooks.chains=setmetatable({},{__index=function()error('render must not scan hook chains')end})
+    eq(fixture.adapterCtx.active(),true,'ownership epochs avoid hook-chain access')
+    runtime.hooks.chains=chains
+  end
   eq(mod.exports.state,state);eq(state.style,'original');eq(schemas[1].key,'style')
   eq(schemas[1].default,2);eq(schemas[1].type,'choice');eq(#schemas[1].choices,2)
   eq(schemas[1].choices[1][1],'ORIGINAL');eq(schemas[1].choices[1][2],1)
@@ -123,8 +131,8 @@ for _,gameId in ipairs(games)do
   local rows=hooks['ui.options.rows'](function(g,out)
     eq(g,game);vanillaCalls=vanillaCalls+1;out[#out+1]={id='native'};return out
   end,game,{})
-  eq(vanillaCalls,1);eq(#rows,13);eq(rows[1].id,'native');eq(rows[2].value(),'ORIGINAL')
-  eq(rows[13].label,'COVERAGE');eq(rows[13].value(),'IN PROGRESS');eq(rows[13].step(),false)
+  eq(vanillaCalls,1);eq(#rows,14);eq(rows[1].id,'native');eq(rows[2].value(),'ORIGINAL')
+  eq(rows[14].label,'COVERAGE');eq(rows[14].value(),'IN PROGRESS');eq(rows[14].step(),false)
   eq(rows[3].label,'TREES');eq(rows[4].label,'BIG TREES');eq(rows[5].label,'CUT TREES')
   eq(rows[6].label,'FLOWERS');eq(rows[7].label,'TALL GRASS');eq(rows[8].label,'WATER')
   eq(rows[9].label,'TREES SPEED');eq(rows[10].label,'FLOWERS SPEED')
@@ -149,7 +157,7 @@ for _,gameId in ipairs(games)do
   eq(mod.exports.select('original'),true)
   local value=hooks['core.update'](function(g,dt)eq(g,game);eq(dt,.25);return 'updated'end,game,.25)
   eq(value,'updated')
-  eq(fixture.donorCtx.identityToken(),1,'each native update advances the identity sampling token')
+  eq(fixture.donorCtx.identityToken(),0,'ordinary updates do not reopen import markers')
   if generation==2 then
     eq(game.world.mapImage,'native-CURRENT');eq(game.world.neighbors[1].image,'native-NEIGHBOR')
   end
@@ -161,6 +169,9 @@ for _,gameId in ipairs(games)do
   emit('mod.options_changed',{mod='tileshift',key='style',value=2})
   eq(state.style,'gen3','mod-manager option event applies art selection immediately')
   eq(stored.style,2);eq(rows[2].value(),'GEN 3')
+  for i=1,4 do hooks['core.update'](function()end,game,.25)end
+  eq(fixture.polls or 0,generation<3 and 1 or 0,'imports are polled once per second, never per draw')
+  eq(rows[13].label,'GRASS MOTION');eq(rows[13].value(),'ALWAYS')
   if generation==2 then
     eq(game.world.mapImage,'native-CURRENT','manager option refreshes cached Gen2 buffer')
     eq(game.world.neighbors[1].image,'native-NEIGHBOR')
@@ -177,6 +188,7 @@ for _,gameId in ipairs(games)do
   eq(stale,nil,'a cached foreground must not bypass the next mapping fingerprint')
   eq(staleWhy,'Native grass effect fingerprint changed')
   runtime.hooks.chains['core.update']={}
+  if runtime.hooks.ownerEpoch then runtime.hooks.epoch=runtime.hooks.epoch+1 end
   eq(fixture.adapterCtx.active(),false,'removed hook loses ownership')
   eq(fixture.adapterCtx.replacements(gameId,'TEST'),nil,'deactivated mod supplies no art')
   emit('mod.options_changed',{mod='tileshift',key='style',value=3})

@@ -68,7 +68,9 @@ local function run()
  local CacheFs=require('src.import.CacheFs')
  local nativeData=love.image.newImageData
  local assetGame='red'
+ local importReads=0
  local function cacheRead(relative)
+  importReads=importReads+1
   assert(not relative:find('..',1,true) and relative:sub(1,1)~='/' and not relative:find(':',1,true),'invalid private import path')
   return Blob.decode(relative,read(CACHE..'/'..relative))
  end
@@ -242,6 +244,112 @@ local function run()
    end
   end end
   return checked
+ end
+ local function verifyPlantActors(mod,def,map,draw,renderer,world)
+  local flora=mod.exports.flora
+  local catalog=assert(load(assert(read(MOD..'/lib/flora_catalog.lua'))))()
+  flora:select('grass',catalog.grass[#catalog.grass].id)
+  flora:select('flowers',catalog.flowers[#catalog.flowers].id)
+  mod.exports.state:invalidateVisual();clock=0
+  if world then world.mapImage=world:imageFor(map.id)end
+  local art=mod.exports.state:replacements(GV.get(),def.tileset,def)
+  local found={}
+  for by=0,def.height-1 do for bx=0,def.width-1 do
+   local block=artAt(art,def.blocks[by*def.width+bx+1],bx,by)
+   if block then for q,group in pairs(block.vegetation or {})do
+    if (group=='grass' or group=='flowers') and not found[group] then
+     found[group]={x=bx*32+q%2*16,y=by*32+math.floor(q/2)*16,q=q,block=block}
+    end
+   end end
+  end end
+  check(found.grass or found.flowers,'Plant actor fixture needs grass or flowers')
+  local savedRenderer=map.renderer;if renderer then map.renderer=renderer end
+  local FX=require('src.render.PaletteFX')
+  local savedMode=FX.mode;if renderer then FX.mode='ogred' end
+  local replay=renderer and FX.usesSpriteObp() or false
+  local checks,proof,changed=0,{},0
+  for _,group in ipairs({'grass','flowers'})do if found[group] then
+   local cell=found[group];clock=0
+   local background=G.newImage(draw());background:setFilter('nearest','nearest')
+   local bodyData=love.image.newImageData(16,16);bodyData:mapPixel(function()return 1,0,1,1 end)
+   local body=G.newImage(bodyData)
+   local top=G.newQuad(0,0,16,8,16,16);local bottom=G.newQuad(0,8,16,8,16,16)
+
+   for _,kind in ipairs({'player','wild','follower','npc'})do
+    local actor={px=cell.x,py=cell.y+4,inGrass=group=='grass',moving=false}
+    actor.draw=function(e,ox,oy,scale,oamRow)
+     G.setColor(1,1,1,1)
+     if oamRow=='top' then G.draw(body,top,e.px,e.py-4)
+     elseif oamRow=='bottom' then G.draw(body,bottom,e.px,e.py+4)
+     else G.draw(body,e.px,e.py-4)end
+     if replay then FX.markSpriteRedraw(body,nil,e.px,e.py-4,1)end
+    end
+    local scene={map=map,entities={actor},player=actor,tilesets=world and world.tilesets}
+    mod.exports.vegetation:bind(scene)
+    local image=capture(def.width*32,def.height*32,function()
+     G.draw(background,0,0)
+     if renderer then FX.clearSpriteRedraws();FX.setPass('world')end
+     if world then
+      world:drawPersonEntry({entity=actor,sx=0,sy=0,ox=0,oy=0,
+       drawSprite=function(row,ox,oy,scale)actor:draw(ox,oy,scale,row)end},1)
+     else actor:draw(0,0,1)end
+     if renderer then
+      FX.setPass(nil)
+      for _,r in ipairs(FX.spriteRedraws())do
+       G.setShader();G.setColor(1,1,1,1)
+       if r.quad then G.draw(r.image,r.quad,r.x,r.y,0,r.sx or 1,1)
+       else G.draw(r.image,r.x,r.y,0,r.sx or 1,1)end
+      end
+     end
+    end)
+    local frame=cell.block.cellAnimations[cell.q].foregroundFrames[1]
+    local expected=love.image.newImageData(16,16);local hidden,visible=0,0
+    for y=0,15 do for x=0,15 do
+     local r,g,b,a=frame:getPixel(cell.q%2*16+x,math.floor(cell.q/2)*16+y)
+     if y<8 then a=0 end
+     expected:setPixel(x,y,r*a+1-a,g*a,b*a+1-a,1)
+     equalPixel(image,cell.x+x,cell.y+y,expected,x,y,kind..' must walk through '..group)
+     checks=checks+1;if a>0 then hidden=hidden+1 else visible=visible+1 end
+    end end
+    check(hidden>0 and visible>0,'Plant foreground must retain both leaves and visible actor gaps')
+    if kind=='player' then proof[group]=encodePng(image,GV.get()..'-'..group..'-walk-through-gpu.png')end
+   end
+   if renderer then FX.clearSpriteRedraws()end
+   body:release();background:release()
+  end end
+  -- Walk-triggered grass stays static before contact and settles afterwards.
+  if found.grass then
+  mod.exports.vegetation:setMode('walked');clock=0
+  local still=draw();clock=.21;local idle=draw();local cell=found.grass
+  for y=0,15 do for x=0,15 do equalPixel(idle,cell.x+x,cell.y+y,still,cell.x+x,cell.y+y,'Untouched grass animated')end end
+  mod.exports.vegetation:touch(def.id,cell.x/16,cell.y/16,.21,.8)
+  clock=.42;local disturbed=draw();changed=0
+  for y=0,15 do for x=0,15 do
+   local r,g,b=still:getPixel(cell.x+x,cell.y+y)
+   local rr,gg,bb=disturbed:getPixel(cell.x+x,cell.y+y)
+   if r~=rr or g~=gg or b~=bb then changed=changed+1 end
+  end end
+  check(changed>0,'Walking through custom grass did not animate that cell')
+  clock=2;local settled=draw()
+  for y=0,15 do for x=0,15 do equalPixel(settled,cell.x+x,cell.y+y,still,cell.x+x,cell.y+y,'Grass did not settle after walking')end end
+  end
+  mod.exports.vegetation:setMode('always')
+  flora:select('grass','default');flora:select('flowers','default')
+  mod.exports.state:invalidateVisual();clock=0;if world then world.mapImage=world:imageFor(map.id)end
+  map.renderer=savedRenderer;FX.mode=savedMode
+  return {foreground_pixel_checks=checks,actors={'player','wild','follower','npc'},
+   gen1_sprite_replay_keeps_foreground=replay,custom_grass_untouched_stays_still=found.grass~=nil,disturbed_pixels=changed,settles_after_contact=found.grass~=nil,images=proof,
+   scope='Synthetic opaque actor bodies through the common entity bridge, real Gen1 OBJ replay and native Gen2 World.drawPersonEntry; original source collision/events retained.'}
+ end
+ local function verifyWarmDraws(mod,draw,label)
+  draw()
+  local reads,accepted=importReads,mod.exports.state.accepted
+  for i=1,120 do clock=i/60;draw()end
+  clock=0
+  check(importReads==reads,label..' steady draws performed import file reads')
+  check(mod.exports.state.accepted==accepted,label..' steady draws rebuilt reviewed rows')
+  return {frames=120,import_file_reads=importReads-reads,mapping_rebuilds=0,
+   scope='Real native background rendering, after warmup; graphics readback fixtures are not an FPS benchmark.'}
  end
  local graphicsDecoder,nativeCells
  nativeCells={}
@@ -1125,6 +1233,7 @@ local function run()
  check(red.collision_after==beforeCollision,'Gen1 collision, layout or tileset mutated')
  red.events_after=eventSnapshot(map)
  check(red.events_after==beforeEvents,'Red source warps, signs or objects changed')
+ report.performance={gen1=verifyWarmDraws(mod,function()return capture(def.width*32,def.height*32,drawMap)end,'Gen1')}
  report.customizations={}
  local flora=mod.exports.flora
  local catalog=assert(load(assert(read(MOD..'/lib/flora_catalog.lua'))))()
@@ -1276,6 +1385,7 @@ local function run()
   fixture.flower_animation=verifyAnimationFrames(sourceDef,routeArt,function()
    return capture(sourceDef.width*32,sourceDef.height*32,drawRoute)
   end,'flower',5,2)
+  fixture.plant_actors=verifyPlantActors(routeMod,sourceDef,sourceMap,function()return capture(sourceDef.width*32,sourceDef.height*32,drawRoute)end,routeRenderer)
   fixture.collision_after=snapshot(sourceMap,1);fixture.events_after=eventSnapshot(sourceMap)
   check(fixture.collision_before==fixture.collision_after,game..' Route1 source collision/layout changed')
   check(fixture.events_before==fixture.events_after,game..' Route1 source events changed')
@@ -1831,7 +1941,9 @@ local function run()
   check(fixture.native_palette_shader_available,'Native Gen2 palette shader did not compile')
   fixture.flower_all_frames=verifyAnimationFrames(def2,art,function()return drawWorld2(world)end,'general_flower',4,0)
   fixture.water_all_frames=verifyAnimationFrames(def2,art,function()return drawWorld2(world)end,'general_water',8,1)
+  fixture.warm_draws=verifyWarmDraws(mod2,function()return drawWorld2(world)end,game)
   fixture.headbutt=verifyHeadbutt(game,world,map2,def2,after2)
+  fixture.plant_actors=verifyPlantActors(mod2,def2,map2,function()return drawWorld2(world)end,nil,world)
   fixture.collision_after=snapshot(map2,2);fixture.events_after=eventSnapshot(map2)
   check(fixture.collision_before==fixture.collision_after,'NewBark source collision/layout changed')
   check(fixture.events_before==fixture.events_after,'NewBark source events changed')
@@ -1843,7 +1955,12 @@ local function run()
 
  -- Public Johto/Kanto architecture, a representative interior floor, and
  -- complete up/down glyphs on their actual Union Cave/Ice Path source maps.
- for _,spec in ipairs({{id='CHERRYGROVE_CITY',stem='cherrygrove',architecture=true},
+ for _,spec in ipairs({{id='CHERRYGROVE_CITY',stem='cherrygrove',architecture=true,complete=true,water=true},
+  {game='gold',id='CHERRYGROVE_CITY',stem='cherrygrove',architecture=true,complete=true,water=true},
+  {game='silver',id='CHERRYGROVE_CITY',stem='cherrygrove',architecture=true,complete=true,water=true},
+  {id='ILEX_FOREST',stem='ilex'},
+  {game='gold',id='ILEX_FOREST',stem='ilex'},
+  {game='silver',id='ILEX_FOREST',stem='ilex'},
   {id='VIOLET_CITY',stem='violet',architecture=true,complete=true},
   {game='gold',id='VIOLET_CITY',stem='violet',architecture=true,complete=true},
   {game='silver',id='VIOLET_CITY',stem='violet',architecture=true,complete=true},
@@ -1876,6 +1993,17 @@ local function run()
   if spec.complete then check(fixture.coverage.replaced_occurrences==fixture.coverage.visible_cells,'Complete Violet fixture has unresolved art')end
   if spec.ladders then fixture.complete_native_ladders=verifyGen2Ladders(game,def,map,after)end
   if spec.id=='VIOLET_CITY'then fixture.sprout=verifySprout(game,def,after)end
+  if spec.water then fixture.water_all_frames=verifyAnimationFrames(def,art,draw,'general_water',8,1)end
+  if spec.id=='ILEX_FOREST' then
+   for _,choice in ipairs({'default','mixed','johto-pine32'})do
+    mod.exports.flora:select('big_trees',choice);mod.exports.state:invalidate();clock=0;world.mapImage=world:imageFor(map.id)
+    local selected=mod.exports.state:replacements(game,def.tileset,def)
+    for _,t in ipairs({0,.36,.71,1.06})do
+     clock=t;verifyCoveredPixels(def,selected,draw(),game..' complete Ilex trees '..choice)
+    end
+   end
+   mod.exports.flora:select('big_trees','default');mod.exports.state:invalidate();clock=0;world.mapImage=world:imageFor(map.id)
+  end
   if spec.animated_buildings then fixture.animated_buildings=verifyAnimatedBuildings(game,def,draw)end
   check(fixture.collision_before==fixture.collision_after and fixture.events_before==fixture.events_after,
    'Additional Gen2 fixture changed native collision/warps/events')
@@ -1933,6 +2061,8 @@ local function run()
   local events=eventSnapshot(map2);local originalBlocks={};for i,id in ipairs(def2.blocks)do originalBlocks[i]=id end
   local mod2=startMod(game,2,world)
   world.mapImage=world:imageFor(map2.id)
+  report.plant_actors=report.plant_actors or {}
+  report.plant_actors[#report.plant_actors+1]=verifyPlantActors(mod2,def2,map2,function()return drawWorld2(world)end,nil,world)
   local beforeCut=drawWorld2(world)
   local sourceCollision=map2:cellCollision(bx*2+1,by*2+1)
   local objectProof=verifyGen2Objects(game,def2,map2,beforeCut)

@@ -1,4 +1,5 @@
 return function(mod)
+  local callback,dispose,disposed,stopOptions,ownerBus,ownerEpoch,owned,adapterContext,state
   local function readModule(path)
     return assert(load(assert(mod:read(path)), '@tileshift/'..path))()
   end
@@ -22,8 +23,7 @@ return function(mod)
   local indexed,errors=Mapping.index(reviewed)
   assert(#errors==0,table.concat(errors,'\n'))
   local Donor=readModule('lib/donor.lua')
-  -- Render paths may resolve the same rows once per visible block. Sample
-  -- import identities once per update instead of reopening marker files there.
+  -- Import checks run on a throttled update poll, never on warm render lookups.
   local identityToken=0
   local decoder=Donor.new({identityToken=function()return identityToken end})
   local nativeFS=require('src.import.CacheFs')
@@ -93,7 +93,11 @@ return function(mod)
     nativeSprite=nativeSprite,foreground=foreground,
     water=function(entry,piece,sequence,row)return waterStyles:finish(entry,piece,sequence,row)end,
     base=nativeSprite})
-  local state=readModule('lib/session.lua').new({mappings=indexed,donor=decoder,
+  local vegetation=readModule('lib/vegetation.lua').new({
+    active=function()return state and state.style~='original' and owned and owned()end,
+    time=function()return love.timer and love.timer.getTime() or 0 end,
+    draw=function(...)if adapterContext and adapterContext.drawVegetation then return adapterContext.drawVegetation(...)end end})
+  state=readModule('lib/session.lua').new({mappings=indexed,donor=decoder,
     newImageData=newData,generations=Mapping.generations,themes=Mapping.themes,
     normalizeStyle=Mapping.normalizeStyle,validate=Mapping.validate,
     original=original,foreground=foreground,compose=compose,composeFrames=composeFrames,
@@ -101,6 +105,8 @@ return function(mod)
     floraPiece=function(row)return flora:piece(row)end,
     finishPiece=function(row,piece,sequence)return flora:finish(row,piece,sequence)end,
     animationTiming=function(row,sequence)return flora:timing(row,sequence)end,
+    decorateVegetation=function(row,piece,sequence)return flora:decorate(row,piece,sequence)end,
+    vegetationCategory=function(row)return flora:category(row)end,
     invalidateCustomization=function()flora:invalidate()end,
     warn=function(s)mod.log:warn('%s',s)end})
   local styleNames={'ORIGINAL','GEN 3'}
@@ -140,12 +146,21 @@ return function(mod)
     schema[#schema+1]={key=key,label=label,type='choice',
       choices={{'OFF',1},{'SLOW',2},{'NORMAL',3},{'FAST',4}},default=3}
   end
+  local motionChoices={{'ALWAYS','always',1},{'ON WALK','walked',2}}
+  local motion=tonumber(mod.options:get('grass_motion')) or tonumber(mod.save:get('grass_motion')) or 1
+  motion=motion==2 and 2 or 1;vegetation:setMode(motionChoices[motion][2])
+  floraLabels.grass_motion='GRASS MOTION'
+  floraOptions[#floraOptions+1]={category='grass_motion',key='grass_motion',motion=true,choices=motionChoices,selection=motion}
+  schema[#schema+1]={key='grass_motion',label='GRASS MOTION',type='choice',choices={{'ALWAYS',1},{'ON WALK',2}},default=1}
   mod.options:define(schema)
   selection=math.max(1,math.min(#styleIds,math.floor(selection)))
   state:select(styleIds[selection])
-  local callback,dispose,disposed,stopOptions
-  local function owned()
+  owned=function()
     if disposed then return false end
+    if ownerBus and ownerBus.ownerEpoch then
+      return Runtime.hooks==ownerBus and ownerBus:ownerEpoch(mod.id)==ownerEpoch
+    end
+    -- Compatibility fallback for engines without ownership epochs.
     local hooks=Runtime.hooks and Runtime.hooks.chains
     for _,entry in ipairs(hooks and hooks['core.update'] or {}) do
       if entry.owner==mod.id and entry.callback==callback then return true end
@@ -160,21 +175,37 @@ return function(mod)
       for _,neighbor in ipairs(world.neighbors or {}) do neighbor.image=world:imageFor(neighbor.id) end
     end
   end
+  local function afterUpdate(game,...)
+    if state.style~='original' and mod.generation<3 then vegetation:bind(mod.generation==1 and (game.overworld or game.world) or game.world)end
+    return ...
+  end
+  local pollElapsed=0
   callback=function(nextFn,game,dt)
-    identityToken=identityToken+1
+    pollElapsed=pollElapsed+(dt or 0)
+    if pollElapsed>=1 then
+      pollElapsed=pollElapsed%1
+      if state.style~='original' and mod.generation<3 and state.checkSource then
+        identityToken=identityToken+1;state:checkSource(GV.get())
+      end
+    end
     if lastRevision~=state.revision then refresh(game);lastRevision=state.revision end
-    return nextFn(game,dt)
+    return afterUpdate(game,nextFn(game,dt))
   end
   mod.hooks:wrap('core.update',callback,125)
+  ownerBus=Runtime.hooks
+  if ownerBus and ownerBus.ownerEpoch then ownerEpoch=ownerBus:ownerEpoch(mod.id)end
   local adapter=readModule('lib/gen'..mod.generation..'.lua')
-  local close=adapter.install({version=GV.get,revision=function()return state.revision end,active=owned,
+  adapterContext={version=GV.get,revision=function()return state.revision end,active=owned,
+    grassTime=function(map,x,y,now)return vegetation:time(map,x,y,now)end,
+    disturb=function(map,x,y,now,duration)return vegetation:touch(map,x,y,now,duration)end,
     replacements=function(game,tileset,def)
       if not owned() then return nil end
       return state:replacements(game,tileset,def)
-    end,warn=function(s)mod.log:warn('%s',s)end})
+    end,warn=function(s)mod.log:warn('%s',s)end}
+  local close=adapter.install(adapterContext)
   dispose=function()
     if disposed then return end
-    disposed=true;close();decoder:invalidate()
+    disposed=true;vegetation:dispose();close();decoder:invalidate()
     if stopOptions then stopOptions();stopOptions=nil end
     if Runtime._tileShiftDispose==dispose then Runtime._tileShiftDispose=nil end
   end
@@ -189,9 +220,12 @@ return function(mod)
       for i,choice in ipairs(option.choices)do if choice[3]==value then option.selection=i;break end end
     end
     local changed
-    if option.speed then changed=flora:speed(option.speed,option.choices[option.selection][2])
+    if option.motion then changed=vegetation:setMode(option.choices[option.selection][2])
+    elseif option.speed then changed=flora:speed(option.speed,option.choices[option.selection][2])
     else changed=flora:select(option.category,option.choices[option.selection][2]) end
-    if changed then state:invalidate() end
+    if changed then
+      if state.invalidateVisual then state:invalidateVisual() else state:invalidate() end
+    end
     mod.save:set(option.key,option.choices[option.selection][3])
     refresh(mod.game);lastRevision=state.revision
     return true
@@ -252,6 +286,8 @@ return function(mod)
   mod.hooks:wrap('ui.options.rows',addOptions,125)
   mod.exports.state=state
   mod.exports.flora=flora
+  mod.exports.vegetation=vegetation
+  mod.exports.drawVegetation=function(...)if adapterContext.drawVegetation then return adapterContext.drawVegetation(...)end end
   mod.exports.dispose=dispose
   mod.exports.select=function(style)
     style=Mapping.normalizeStyle(style)

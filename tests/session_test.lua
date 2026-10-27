@@ -368,8 +368,8 @@ for _,name in ipairs({'metadata','maps','image','palettes','roofs'})do
   eq(sourceReads,1);eq(artReads,0);eq(composeReads,0);eq(frameReads,0)
   eq(rejected.accepted,0);eq(rejected.rejected,1,'source change fails closed before any donor/composition service')
 end
-local identity,sourceGood,identityInvalidations='import1',true,0
-local identityDecoder={sourceIdentity=function()return identity,'missing import marker'end,
+local identity,sourceGood,identityInvalidations,identityReads='import1',true,0,0
+local identityDecoder={sourceIdentity=function()identityReads=identityReads+1;return identity,'missing import marker'end,
   invalidate=function()identityInvalidations=identityInvalidations+1 end,
   cell=function(_,ref)
     if ref.hashOnly then
@@ -381,18 +381,20 @@ local identityDecoder={sourceIdentity=function()return identity,'missing import 
 local identityState=make({guardedSource},{donor=identityDecoder});identityState:select('gen3')
 local firstImport=identityState:replacements('red','OVERWORLD',def)
 local initialRevision=identityState.revision
+for i=1,1000 do eq(identityState:replacements('red','OVERWORLD',def),firstImport)end
+eq(identityReads,1,'warm draws never poll imports or rebuild rows')
 eq(identityState:replacements('red','OVERWORLD',def),firstImport,'same import reuses its verified art cache')
-identity='import2';sourceGood=false
+identity='import2';sourceGood=false;identityState:checkSource('red')
 local changedImport=identityState:replacements('red','OVERWORLD',def)
 eq(next(changedImport),nil,'new import cannot reuse old composed art after metadata changed')
 eq(identityState.revision,initialRevision+1,'native renderer refreshes after import identity change')
 eq(identityState.accepted,0);eq(identityState.rejected,1);eq(identityInvalidations,2)
-identity=nil
+identity=nil;identityState:checkSource('red')
 eq(next(identityState:replacements('red','OVERWORLD',def)),nil,'unavailable identity fails closed')
 eq(identityState.revision,initialRevision+2)
 eq(next(identityState:replacements('red','OVERWORLD',def)),nil)
 eq(identityState.revision,initialRevision+2,'persistent identity failure does not invalidate every frame')
-identity='import3';sourceGood=true
+identity='import3';sourceGood=true;identityState:checkSource('red')
 local recovered=identityState:replacements('red','OVERWORLD',def)
 eq(recovered[27]~=nil,true);eq(identityState.revision,initialRevision+3)
 eq(identityState.accepted,1);eq(identityState.rejected,0,'fresh import guard recovery owns a fresh cache')

@@ -51,6 +51,12 @@ for q=0,3 do whole[q+1]={id=77,quadrant=(1+math.floor(q/2))%2*2+(1+q%2)%2,
  x=1+q%2,y=1+math.floor(q/2),map='FOREST',role='forest_whole_broadleaf_tree_'..q}end
 local treeRows=f:rows(whole,'red',{id='FOREST',width=4,height=4,blocks={}})
 for i=2,4 do eq(treeRows[i]._floraEntry.id,treeRows[1]._floraEntry.id,'one complete tree cannot mix quadrant designs')end
+local ilex={}
+for q,name in ipairs({'northwest','northeast','southwest','southeast'})do
+ ilex[q]={id=5,quadrant=q-1,x=(q-1)%2,y=math.floor((q-1)/2),map='ILEX_FOREST',role='dense_forest_tree_'..name}
+end
+local ilexRows=f:rows(ilex,'gold',{id='ILEX_FOREST',width=1,height=1,blocks={5}})
+for i=2,4 do eq(ilexRows[i]._floraEntry.id,ilexRows[1]._floraEntry.id,'Ilex Big Trees share one whole design') end
 local cut={id=95,quadrant=0,role='cuttable_small_tree'}
 f:select('cut_trees','native-cut-emerald')
 eq(f:rows({cut,special},'crystal',def)[1]._floraEntry.donor.game,'emerald')
@@ -142,4 +148,32 @@ wind:speed('trees',.5)
 eq(wind:timing({role='forest_whole_broadleaf_tree_3'},sequence).period,.4)
 eq(wind:timing({role='cuttable_small_tree'},sequence).period,.4)
 eq(wind:timing({role='headbutt_small_tree'},sequence),sequence,'unrelated native events keep native timing')
+-- Mixed areas include edge/corner contacts and preserve dry scoped breaks.
+for _,case in ipairs({{'trees','boundary_tree'},{'flowers','decorative_flower_northwest'},
+ {'grass','tall_grass'},{'water','freshwater_pond_interior'}})do
+ local f=new(42);f:select(case[1],'mixed')
+ local rows={}
+ for _,xy in ipairs({{0,0},{1,0},{2,1},{6,0},{6,1}})do
+  rows[#rows+1]={id=1,quadrant=xy[2]%2*2+xy[1]%2,x=xy[1],y=xy[2],map='PATCHES',role=case[2]}
+ end
+ local result=f:rows(rows,'red',{id='PATCHES',width=4,height=1,blocks={1,1,1,1}})
+ eq(result[1]._floraEntry.id,result[2]._floraEntry.id,'edge-touching tiles share one style')
+ eq(result[2]._floraEntry.id,result[3]._floraEntry.id,'corner-touching tiles share one style')
+ eq(result[4]._floraEntry.id,result[5]._floraEntry.id,'separate connected patch is internally consistent')
+end
+-- Opaque grass textures use native leaf-shaped alpha instead of hiding feet
+-- behind a solid rectangle of green ground.
+local mask=image(16,16)
+for y=8,15 do for x=0,15 do if x%2==0 then mask:setPixel(x,y,1,1,1,1)end end end
+local patterned=F.new({catalog=C,newImageData=image,base=function()return image(16,16,true)end,
+ foreground=function()return mask end,
+ sheet=function()return {getDimensions=function()return 2400,1792 end,getPixel=function()return .2,.6,.3,1 end}end})
+local _,frames=patterned:piece({_floraEntry=C.grass[3],_floraCategory='grass',foreground={effect='fixture'}})
+for _,frame in ipairs(frames.frames)do
+ local visible,covered=0,0
+ for y=8,15 do for x=0,15 do local _,_,_,a=frame.foreground:getPixel(x,y)
+  if a==0 then visible=visible+1 else covered=covered+1 end
+ end end
+ eq(visible,64,'texture has transparent gaps between native leaf shapes');eq(covered,64)
+end
 print('flora selection checks: '..count)
