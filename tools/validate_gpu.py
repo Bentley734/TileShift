@@ -659,7 +659,8 @@ local function run()
    local out=love.image.newImageData(r[3],r[4]);out:paste(image,0,0,r[1],r[2],r[3],r[4]);return out
   end
 
-  for _,family in ipairs({{folder='tileshift-building-extended',file='architecture-native-prototypes.json',instances='source_buildings'},
+  for _,family in ipairs({{folder='tileshift-mahogany-finish',file='shop-model.json',instances='source_instances'},
+   {folder='tileshift-building-extended',file='architecture-native-prototypes.json',instances='source_buildings'},
    {folder='tileshift-building-kanto',file='kanto-building-variants.json',instances='source_instances'},
    {folder='tileshift-violet-facade-review',file='decorative-native-model.json',instances='source_instances'},
    {folder='tileshift-violet-school-review',file='school-tall-model.json',instances='source_instances'}})do
@@ -2022,7 +2023,77 @@ local function run()
 
  -- Public Johto/Kanto architecture, a representative interior floor, and
  -- complete up/down glyphs on their actual Union Cave/Ice Path source maps.
- for _,spec in ipairs({{id='PALLET_TOWN',stem='pallet',complete=true},
+ for _,spec in ipairs({{game='gold',id='MAHOGANY_TOWN',stem='mahogany',architecture=true,complete=true},
+  {game='silver',id='MAHOGANY_TOWN',stem='mahogany',architecture=true,complete=true},
+  {game='crystal',id='MAHOGANY_TOWN',stem='mahogany',architecture=true,complete=true},
+  {game='gold',id='GOLDENROD_CITY',stem='johto-goldenrod_city'},
+  {game='gold',id='ECRUTEAK_CITY',stem='johto-ecruteak_city'},
+  {game='gold',id='CIANWOOD_CITY',stem='johto-cianwood_city'},
+  {game='gold',id='BLACKTHORN_CITY',stem='johto-blackthorn_city'},
+  {game='gold',id='LAKE_OF_RAGE',stem='johto-lake_of_rage'},
+  {game='gold',id='RUINS_OF_ALPH_OUTSIDE',stem='johto-ruins_of_alph_outside'},
+  {game='gold',id='SILVER_CAVE_OUTSIDE',stem='johto-silver_cave_outside'},
+  {game='gold',id='ROUTE_29',stem='johto-route_29'},
+  {game='gold',id='ROUTE_30',stem='johto-route_30',complete=true},
+  {game='gold',id='ROUTE_31',stem='johto-route_31'},
+  {game='gold',id='ROUTE_32',stem='johto-route_32'},
+  {game='gold',id='ROUTE_33',stem='johto-route_33'},
+  {game='gold',id='ROUTE_37',stem='johto-route_37',complete=true},
+  {game='gold',id='ROUTE_38',stem='johto-route_38'},
+  {game='gold',id='ROUTE_39',stem='johto-route_39'},
+  {game='gold',id='ROUTE_40',stem='johto-route_40'},
+  {game='gold',id='ROUTE_41',stem='johto-route_41'},
+  {game='gold',id='ROUTE_42',stem='johto-route_42'},
+  {game='gold',id='ROUTE_43',stem='johto-route_43'},
+  {game='gold',id='ROUTE_44',stem='johto-route_44'},
+  {game='gold',id='ROUTE_45',stem='johto-route_45'},
+  {game='gold',id='ROUTE_46',stem='johto-route_46'},
+  {game='silver',id='GOLDENROD_CITY',stem='johto-goldenrod_city'},
+  {game='silver',id='ECRUTEAK_CITY',stem='johto-ecruteak_city'},
+  {game='silver',id='CIANWOOD_CITY',stem='johto-cianwood_city'},
+  {game='silver',id='BLACKTHORN_CITY',stem='johto-blackthorn_city'},
+  {game='silver',id='LAKE_OF_RAGE',stem='johto-lake_of_rage'},
+  {game='silver',id='RUINS_OF_ALPH_OUTSIDE',stem='johto-ruins_of_alph_outside'},
+  {game='silver',id='SILVER_CAVE_OUTSIDE',stem='johto-silver_cave_outside'},
+  {game='silver',id='ROUTE_29',stem='johto-route_29'},
+  {game='silver',id='ROUTE_30',stem='johto-route_30',complete=true},
+  {game='silver',id='ROUTE_31',stem='johto-route_31'},
+  {game='silver',id='ROUTE_32',stem='johto-route_32'},
+  {game='silver',id='ROUTE_33',stem='johto-route_33'},
+  {game='silver',id='ROUTE_37',stem='johto-route_37',complete=true},
+  {game='silver',id='ROUTE_38',stem='johto-route_38'},
+  {game='silver',id='ROUTE_39',stem='johto-route_39'},
+  {game='silver',id='ROUTE_40',stem='johto-route_40'},
+  {game='silver',id='ROUTE_41',stem='johto-route_41'},
+  {game='silver',id='ROUTE_42',stem='johto-route_42'},
+  {game='silver',id='ROUTE_43',stem='johto-route_43'},
+  {game='silver',id='ROUTE_44',stem='johto-route_44'},
+  {game='silver',id='ROUTE_45',stem='johto-route_45'},
+  {game='silver',id='ROUTE_46',stem='johto-route_46'},
+  {game='crystal',id='GOLDENROD_CITY',stem='johto-goldenrod_city'},
+  {game='crystal',id='ECRUTEAK_CITY',stem='johto-ecruteak_city'},
+  {game='crystal',id='CIANWOOD_CITY',stem='johto-cianwood_city'},
+  {game='crystal',id='BLACKTHORN_CITY',stem='johto-blackthorn_city'},
+  {game='crystal',id='LAKE_OF_RAGE',stem='johto-lake_of_rage'},
+  {game='crystal',id='RUINS_OF_ALPH_OUTSIDE',stem='johto-ruins_of_alph_outside'},
+  {game='crystal',id='SILVER_CAVE_OUTSIDE',stem='johto-silver_cave_outside'},
+  {game='crystal',id='ROUTE_29',stem='johto-route_29'},
+  {game='crystal',id='ROUTE_30',stem='johto-route_30',complete=true},
+  {game='crystal',id='ROUTE_31',stem='johto-route_31'},
+  {game='crystal',id='ROUTE_32',stem='johto-route_32'},
+  {game='crystal',id='ROUTE_33',stem='johto-route_33'},
+  {game='crystal',id='ROUTE_36',stem='johto-route_36'},
+  {game='crystal',id='ROUTE_37',stem='johto-route_37',complete=true},
+  {game='crystal',id='ROUTE_38',stem='johto-route_38'},
+  {game='crystal',id='ROUTE_39',stem='johto-route_39'},
+  {game='crystal',id='ROUTE_40',stem='johto-route_40'},
+  {game='crystal',id='ROUTE_41',stem='johto-route_41'},
+  {game='crystal',id='ROUTE_42',stem='johto-route_42'},
+  {game='crystal',id='ROUTE_43',stem='johto-route_43'},
+  {game='crystal',id='ROUTE_44',stem='johto-route_44'},
+  {game='crystal',id='ROUTE_45',stem='johto-route_45'},
+  {game='crystal',id='ROUTE_46',stem='johto-route_46'},
+  {id='PALLET_TOWN',stem='pallet',complete=true},
   {game='gold',id='PALLET_TOWN',stem='pallet',complete=true},
   {game='silver',id='PALLET_TOWN',stem='pallet',complete=true},
   {id='AZALEA_TOWN',stem='azalea',complete=true},
@@ -2065,6 +2136,17 @@ local function run()
   end
   if spec.complete then check(fixture.coverage.replaced_occurrences==fixture.coverage.visible_cells,'Complete Violet fixture has unresolved art')end
   if spec.ladders then fixture.complete_native_ladders=verifyGen2Ladders(game,def,map,after)end
+  if spec.id=='MAHOGANY_TOWN'then
+   local home=love.image.newImageData(love.filesystem.newFileData(assert(read(MOD..'/../.work/tileshift-building-kanto/home32-compact-prototype.png')),'door.png'))
+   for y=0,16 do for x=0,15 do equalPixel(after,9*16+x,15+y,home,16+x,15+y,'Gate complete native door frame cap changed')end end
+   local gate,shop=false,false
+   for _,w in ipairs(def.warps or{})do
+    if w.destMap=='ROUTE_43_MAHOGANY_GATE'then check(w.x==9 and w.y==1,'Mahogany gate warp moved');gate=true end
+    if w.destMap=='MAHOGANY_MART_1F'then check(w.x==11 and w.y==7,'Disguised shop warp moved');shop=true end
+   end
+   check(gate and shop,'Mahogany native gate/shop destination missing')
+   fixture.original_entrances={gate={9,1},shop={11,7},full_gate_door_frame_pixels=272}
+  end
   if spec.id=='PALLET_TOWN'then fixture.buildings=verifyBuildings(def,after,game)end
   if spec.id=='AZALEA_TOWN'then fixture.well=verifyAzaleaWell(game,def,after)end
   if spec.id=='VIOLET_CITY'then fixture.sprout=verifySprout(game,def,after)end
