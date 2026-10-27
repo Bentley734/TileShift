@@ -2022,7 +2022,10 @@ local function run()
 
  -- Public Johto/Kanto architecture, a representative interior floor, and
  -- complete up/down glyphs on their actual Union Cave/Ice Path source maps.
- for _,spec in ipairs({{id='AZALEA_TOWN',stem='azalea',complete=true},
+ for _,spec in ipairs({{id='PALLET_TOWN',stem='pallet',complete=true},
+  {game='gold',id='PALLET_TOWN',stem='pallet',complete=true},
+  {game='silver',id='PALLET_TOWN',stem='pallet',complete=true},
+  {id='AZALEA_TOWN',stem='azalea',complete=true},
   {game='gold',id='AZALEA_TOWN',stem='azalea',complete=true},
   {game='silver',id='AZALEA_TOWN',stem='azalea',complete=true},
   {id='CHERRYGROVE_CITY',stem='cherrygrove',architecture=true,complete=true,water=true},
@@ -2062,6 +2065,7 @@ local function run()
   end
   if spec.complete then check(fixture.coverage.replaced_occurrences==fixture.coverage.visible_cells,'Complete Violet fixture has unresolved art')end
   if spec.ladders then fixture.complete_native_ladders=verifyGen2Ladders(game,def,map,after)end
+  if spec.id=='PALLET_TOWN'then fixture.buildings=verifyBuildings(def,after,game)end
   if spec.id=='AZALEA_TOWN'then fixture.well=verifyAzaleaWell(game,def,after)end
   if spec.id=='VIOLET_CITY'then fixture.sprout=verifySprout(game,def,after)end
   if spec.water then fixture.water_all_frames=verifyAnimationFrames(def,art,draw,'general_water',8,1)end
