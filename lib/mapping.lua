@@ -131,8 +131,8 @@ function M.validate(row)
   if row.animated~=nil and type(row.animated)~='boolean' then return nil,'invalid animated tile flag' end
   if row.animated then
     local animation=row.animation
-    local animatedRef=ref or (row.parts and row.base)
-    if row.parts and (generations[row.game]>=3 or not row.base or not animation or row.base.kind~=nil) then
+    local animatedRef=ref or ((row.parts or row.asset) and row.base)
+    if (row.parts or row.asset) and (generations[row.game]>=3 or not row.base or not animation or row.base.kind~=nil) then
       return nil,'animated composition requires a GB host and fingerprint-checked metatile base bank'
     end
     if animation then

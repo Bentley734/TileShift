@@ -42,4 +42,12 @@ eq(nativeSequence.frames[1],piece,'native cached sequence remains untouched')
 -- A blue window in an over-water building must never become a water surface.
 local guarded=water:finish(ripple,piece,nil,{parts={{donor={},layers={'mid'},x=3,y=0,w=1,h=1}}})
 eq(guarded.under:getPixel(3,0),.05,'native facade pixels protected even when blue')
+local glass=image(16,16);glass:setPixel(3,0,.05,.3,.8,1)
+local _,assetWater=water:finish(ripple,{under=native,over=glass},nativeSequence,{asset='assets/original/fixture.png'})
+for i,frame in ipairs(assetWater.frames)do
+ local rr,gg,bb,aa=frame.under:getPixel(3,0);eq(rr,.05,'blue original window cannot become ripple water');eq(gg,.3);eq(bb,.8);eq(aa,1)
+ eq(frame.under:getPixel(4,0),i/10,'transparent original pixels reveal animated custom water')
+end
+local _,_,_,untouched=glass:getPixel(4,0);eq(untouched,0,'shared original sprite remains transparent')
+
 print('water style checks: '..checks)

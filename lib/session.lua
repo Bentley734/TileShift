@@ -198,13 +198,25 @@ function S.new(ctx)
               piece={under=image,over=factory(16,16)}
               if row.base then
                 local base,baseError=tryCall(donor.cell,donor,row.base)
-                if base then piece={under=copyLayers({under=copyLayers(base),over=image}),over=factory(16,16)}
+                if base then
+                  if row.animated then
+                    local native,err=tryCall(donor.frames,donor,row.base,row.animation)
+                    if native and type(native.frames)=='table' and #native.frames>=2
+                      and type(native.period)=='number' and native.period>0 and native.period<math.huge then
+                      sequence={frames={}}
+                      for key,value in pairs(native)do if key~='frames'then sequence[key]=value end end
+                      for i,frame in ipairs(native.frames)do
+                        sequence.frames[i]={under=copyLayers(frame),over=image}
+                      end
+                      piece=sequence.frames[1]
+                    else piece=nil;pieceError=err or 'Invalid original asset background animation' end
+                  else piece={under=copyLayers({under=copyLayers(base),over=image}),over=factory(16,16)} end
                 else piece=nil;pieceError=baseError end
               end
             else pieceError=err or ('Missing original asset '..row.asset) end
           end
         end
-        if piece and row.animated and not row.parts then
+        if piece and row.animated and not row.parts and not row.asset then
           if type(donor.frames)~='function' then piece=nil;pieceError='Donor animation decoder is unavailable'
           else
             sequence,pieceError=tryCall(donor.frames,donor,row.donor,row.animation)

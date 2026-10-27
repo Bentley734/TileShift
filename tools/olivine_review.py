@@ -58,6 +58,12 @@ def main():
     c=e.cell_info(cache,game,data,m['tileset'],bid,q);tiles=tuple(c['tiles']);r={'game':game,'style':'gen3','map':'OLIVINE_CITY','tileset':m['tileset'],'id':bid,'quadrant':q,'x':x,'y':y,'sourceCells':[[x,y]],'sourceHash':c['sourceHash'],'sourceFiles':data['fingerprints'][m['tileset']],'sourceCollision':c['collision'],'sourcePalettes':[z.get('palette',1)for z in c['attributes']],'sourcePriority':[bool(z.get('priority'))for z in c['attributes']],'status':'reviewed'}
     if 28<=x<=31 and 14<=y<=27:
      assert c['collision']==(113 if(x,y)==(29,27)else 7);r.update(kind='original',base=copy.deepcopy(ground),role='olivine_original_lighthouse',evidence='User chose a new64px-wide Gen3-style lighthouse with both base windows. Complete64x224 original design fits source4x14 footprint, source doorway29,27 stays aligned with logicalx24. Full lamp, five window tiers, both intact base windows and full door frame retained by uniform7:1 nearest reduction; no fractional or runtime scaling. Transparent exterior pixels use matching Emerald1 ground. Original entry, blocking, NPCs and scripts stay native.',**assets[x-28,y-14])
+     if y<22:
+      r['base']=ref(393 if y==14 else 368)
+      # Animate only tiles whose transparent pixels actually reveal the ocean.
+      if Image.open(ROOT/r['asset']).getextrema()[3][0]<255:
+       r.update(animated=True,animation=animation(r['base']['id']),sourceOceanBounds=[0,14,39,35])
+      r['evidence']+=' Upper background follows the original adjacent shoreline: native393 north bank at row14, animated368 ocean through row21; island grass starts at row22. Only the background changes, with original lighthouse pixels and all collisions retained.'
     elif 18<=x<=21 and 28<=y<=31:
      tx,ty=x-18,y-28;nx=(10,11,14,15)[tx];ny=(8,10,11,12)[ty];mid=layout['mids'][ny*layout['width']+nx];r.update(kind='native_composite',base=copy.deepcopy(ground),parts=[part(mid,pair=gate['pair'],layers=('over',)if ty<2 else('mid','over'))],role='olivine_port_closed_front',evidence='Reviewed maritime passage facade: full native FRRoute15 gate roof/eaves, window band and closed brick front,64x64 source footprint. Repeated roof band and complete repeating central columns omitted, no scaling. Original port entry is the two DOWN warp carpets19,27 and20,27 behind the north roof; no south doorway or new warp is painted or created.')
     elif tiles in ((6,74,6,74),(74,6,74,6),(90,90,89,89)):
@@ -83,6 +89,7 @@ def main():
   for n in range(0,len(rows),20):text+='add((function()return '+lua(rows[n:n+20])+' end)())\n'
   (ROOT/'mappings/olivine.lua').write_text(text+'return rows\n',encoding='utf-8')
   # Replace only the old coastal family rows in their existing module.
-  target=ROOT/'mappings/gen2_outdoor_extended.lua';old=preview.read_reviewed(target);new=[changed.get(key(r),r)for r in old];assert sum(a!=b for a,b in zip(old,new))==len(updates);target.write_bytes(e.write_compact(new,None)[0].encode())
+  target=ROOT/'mappings/gen2_outdoor_extended.lua';old=preview.read_reviewed(target);new=[changed.get(key(r),r)for r in old];assert sum(a!=b for a,b in zip(old,new))==len(updates);
+  if updates:target.write_bytes(e.write_compact(new,None)[0].encode())
  print(json.dumps({'rows':len(rows),'updates':len(updates),'live':live,'coverage':'1440/1440 each GSC','activated':args.activate}))
 if __name__=='__main__':main()

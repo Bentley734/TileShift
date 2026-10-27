@@ -979,10 +979,29 @@ local function run()
   local ground=nativeCellImage({game='emerald',tileset='general__petalburg',id=1,hash='1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1'})
   local whole=love.image.newImageData(love.filesystem.newFileData(assert(read(MOD..'/assets/original/olivine-lighthouse/lighthouse.png')),'lighthouse.png'))
   check(whole:getWidth()==64 and whole:getHeight()==224,'Lighthouse original4x14 footprint changed')
+  local backgrounds={}
+  for _,row in ipairs(mappingRows('mappings/olivine.lua'))do
+   if row.game==game and row.role=='olivine_original_lighthouse'and row.y<22 then
+    local mid=row.y==14 and 393 or 368
+    check(row.base.id==mid,'Upper lighthouse must follow its original adjacent ocean/shore')
+    if row.animated and not backgrounds[mid]then
+     local sequence,why=sourceDecoder():frames(row.base,row.animation);check(sequence~=nil,tostring(why))
+     backgrounds[mid]=capture(16,16,function()
+      for _,layer in ipairs({'under','mid','over'})do if sequence.frames[1][layer]then
+       local texture=G.newImage(sequence.frames[1][layer]);G.draw(texture,0,0);texture:release()
+      end end
+     end)
+    end
+   end
+  end
+  check(backgrounds[393]and backgrounds[368],'Animated lighthouse background family missing')
   local expected=capture(64,224,function()
-   local bg,top=G.newImage(ground),G.newImage(whole)
-   for y=0,13 do for x=0,3 do G.draw(bg,x*16,y*16)end end
-   G.draw(top,0,0);bg:release();top:release()
+   local top=G.newImage(whole)
+   for y=0,13 do
+    local bg=G.newImage(y==0 and backgrounds[393]or y<8 and backgrounds[368]or ground)
+    for x=0,3 do G.draw(bg,x*16,y*16)end;bg:release()
+   end
+   G.draw(top,0,0);top:release()
   end)
   for y=0,223 do for x=0,63 do equalPixel(frame,28*16+x,14*16+y,expected,x,y,'Complete original lighthouse changed')end end
   for _,xy in ipairs({{24,219},{9,212},{43,212}})do local _,_,_,a=whole:getPixel(xy[1],xy[2]);check(a==1,'Original lighthouse doorway/window silhouette missing')end
@@ -1426,7 +1445,7 @@ local function run()
   local again=capture(sourceDef.width*32,sourceDef.height*32,drawSource)
   check(again:getString()==native:getString(),game..' cleanup changed native GPU pixels')
   fixture.cleanup_restored_native=true
-  report.fixtures[#report.fixtures+1]=fixture
+  report.fixtures[#report.fixtures+1]=fixture;write('progress.json',Json.encode({fixtures=#report.fixtures,checks=report.checks,game=fixture.game,map=fixture.map}))
  end
 
  -- Route1 has its own ledges and walkable stair openings. Validate every
@@ -1469,7 +1488,7 @@ local function run()
   check(capture(sourceDef.width*32,sourceDef.height*32,drawRoute):getString()==native:getString(),
    game..' Route1 cleanup changed native pixels')
   fixture.cleanup_restored_native=true
-  report.fixtures[#report.fixtures+1]=fixture
+  report.fixtures[#report.fixtures+1]=fixture;write('progress.json',Json.encode({fixtures=#report.fixtures,checks=report.checks,game=fixture.game,map=fixture.map}))
  end
 
  -- Optional map-only tree fixture uses the same real renderer and entry point.
@@ -1567,7 +1586,7 @@ local function run()
   caveMod.exports.dispose()
   check(capture(caveDef.width*32,caveDef.height*32,drawCave):getString()==native:getString(),
    'Cave cleanup did not restore original native GPU pixels')
-  fixture.cleanup_restored_native=true;report.fixtures[#report.fixtures+1]=fixture
+  fixture.cleanup_restored_native=true;report.fixtures[#report.fixtures+1]=fixture;write('progress.json',Json.encode({fixtures=#report.fixtures,checks=report.checks,game=fixture.game,map=fixture.map}))
  end
 
  -- Complete Viridian background on every independently imported Gen1 cartridge.
@@ -1607,7 +1626,7 @@ local function run()
    collision_before=mechanics,collision_after=snapshot(map,1),events_before=events,events_after=eventSnapshot(map),
    schoolhouse={complete_sprite_pixels=2048,entrance={21,15},source_warp_unchanged=true},cliff_cells=n}
   mod.exports.dispose();check(draw():getString()==native:getString(),'Viridian cleanup failed');fixture.cleanup_restored_native=true
-  report.fixtures[#report.fixtures+1]=fixture
+  report.fixtures[#report.fixtures+1]=fixture;write('progress.json',Json.encode({fixtures=#report.fixtures,checks=report.checks,game=fixture.game,map=fixture.map}))
  end
 
  -- Additional Gen1 public architecture, a representative interior and the
@@ -1663,7 +1682,7 @@ local function run()
    'Additional Gen1 fixture changed source collision/warps/events')
   mod.exports.dispose();clock=0
   check(draw():getString()==native:getString(),'Additional Gen1 cleanup failed to restore native pixels')
-  fixture.cleanup_restored_native=true;report.fixtures[#report.fixtures+1]=fixture
+  fixture.cleanup_restored_native=true;report.fixtures[#report.fixtures+1]=fixture;write('progress.json',Json.encode({fixtures=#report.fixtures,checks=report.checks,game=fixture.game,map=fixture.map}))
  end
 
  -- Real Gold/Silver/Crystal World bake plus its actual drawAnimCells pass.
@@ -2066,7 +2085,7 @@ local function run()
   mod2.exports.dispose();clock=0
   check(world:bakeMapImage(map2,'DAY',1):newImageData():getString()==native:getString(),
    'Gen2 cleanup did not restore native GPU bake')
-  fixture.cleanup_restored_native=true;report.fixtures[#report.fixtures+1]=fixture
+  fixture.cleanup_restored_native=true;report.fixtures[#report.fixtures+1]=fixture;write('progress.json',Json.encode({fixtures=#report.fixtures,checks=report.checks,game=fixture.game,map=fixture.map}))
  end
 
  -- Public Johto/Kanto architecture, a representative interior floor, and
@@ -2190,7 +2209,25 @@ local function run()
   end
   if spec.complete then check(fixture.coverage.replaced_occurrences==fixture.coverage.visible_cells,'Complete Violet fixture has unresolved art')end
   if spec.ladders then fixture.complete_native_ladders=verifyGen2Ladders(game,def,map,after)end
-  if spec.id=='OLIVINE_CITY'and spec.complete then fixture.olivine=verifyOlivine(game,def,after)end
+  if spec.id=='OLIVINE_CITY'and spec.complete then
+   fixture.olivine=verifyOlivine(game,def,after)
+   local lighthouse=love.image.newImageData(love.filesystem.newFileData(assert(read(MOD..'/assets/original/olivine-lighthouse/lighthouse.png')),'lighthouse.png'))
+   local grass=nativeCellImage({game='emerald',tileset='general__petalburg',id=1,hash='1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1'})
+   for _,choice in ipairs({'ripple-blue','ripple-teal','ripple-olive','mixed'})do
+    mod.exports.flora:select('water',choice);mod.exports.state:invalidate();clock=0;world.mapImage=world:imageFor(map.id)
+    local selected=mod.exports.state:replacements(game,def.tileset,def)
+    for _,t in ipairs({0,.27})do
+     clock=t;local image=draw();verifyCoveredPixels(def,selected,image,game..' lighthouse water '..choice)
+     for y=0,223 do for x=0,63 do local _,_,_,a=lighthouse:getPixel(x,y)
+      if a==1 then equalPixel(image,28*16+x,14*16+y,lighthouse,x,y,'Lighthouse glass/art recolored by water style')
+      elseif y>=128 then equalPixel(image,28*16+x,14*16+y,grass,x%16,y%16,'Lighthouse island grass changed with water style')end
+     end end
+    end
+   end
+   mod.exports.flora:select('water','default');mod.exports.state:invalidate();clock=0;world.mapImage=world:imageFor(map.id)
+   check(draw():getString()==after:getString(),'Lighthouse default ocean did not restore')
+   fixture.olivine.animated_upper_water_all_styles_preserve_original_pixels=true
+  end
   if spec.id=='CIANWOOD_CITY'and spec.complete then
    local seaRows={}
    for _,row in ipairs(mappingRows('mappings/cianwood.lua'))do
@@ -2285,7 +2322,7 @@ local function run()
   end
   mod.exports.dispose();clock=0;world.mapImage=world:imageFor(map.id)
   check(draw():getString()==native:getString(),'Additional Gen2 cleanup did not restore original native pixels')
-  fixture.cleanup_restored_native=true;report.fixtures[#report.fixtures+1]=fixture
+  fixture.cleanup_restored_native=true;report.fixtures[#report.fixtures+1]=fixture;write('progress.json',Json.encode({fixtures=#report.fixtures,checks=report.checks,game=fixture.game,map=fixture.map}))
  end
 
  -- Invoke the actual native Cut block swap on a private imported Route29.
@@ -2571,7 +2608,7 @@ def main() -> int:
         parser.error("The native LÃ–VE executable and engine source must exist")
     output.mkdir(parents=True, exist_ok=True)
     # A failed launch must never reuse an earlier successful report.
-    for name in ("report.json", "error.txt"):
+    for name in ("report.json", "error.txt", "progress.json"):
         (output / name).unlink(missing_ok=True)
     runtime_inputs = runtime_fingerprint(mod_root)
     source = LUA.replace("@CACHE@", json.dumps(cache.as_posix())).replace(

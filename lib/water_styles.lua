@@ -57,6 +57,13 @@ function W.new(ctx)
  local self={}
  function self:finish(entry,piece,sequence,row)
   local protected={}
+  -- Original building pixels, including blue glass, are never water pixels.
+  if row and row.asset and piece.over then
+   for y=0,15 do for x=0,15 do
+    local _,_,_,a=piece.over:getPixel(x,y)
+    if a>0 then protected[y*16+x]=true end
+   end end
+  end
   for _,part in ipairs(row and row.parts or {})do
    local source=assert(ctx.donor:cell(part.donor))
    for _,name in ipairs(part.layers or {'under','mid','over'})do

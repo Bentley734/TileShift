@@ -12,7 +12,7 @@ end
 local function category(row)
   local role=row.role
   if treePart(row)~=nil then return 'big_trees' end
-  if row.parts and row.base and row.animated and row.animation
+  if (row.parts or row.asset) and row.base and row.animated and row.animation
     and type(row.animation.bank)=='string' and row.animation.bank:find('water',1,true) then return 'water' end
   if type(role)=='string' and (role:match('^coastal_rock_shore_') or role:match('^rocky_coast_')
     or role:match('^freshwater_pond_') or role=='coastal_ocean_water_interior' or role=='cave_plain_water') then return 'water' end

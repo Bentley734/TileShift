@@ -215,7 +215,7 @@ def native_water_frames(cache, row, packed):
     """Decode a reviewed native bank, keeping its original frame order."""
     ref = row.get("donor")
     if ref is None:
-        assert row.get("kind") == "native_composite" and row.get("parts") and row.get("base"), "Animated composition needs a native base"
+        assert ((row.get("kind") == "native_composite" and row.get("parts")) or row.get("asset")) and row.get("base"), "Animated artwork needs a native base"
         ref = row["base"]
     spec = row["animation"]
     key = ("animation", ref["game"], ref["tileset"], ref["id"], ref.get("hash"), json.dumps(spec, sort_keys=True))
@@ -350,7 +350,8 @@ def _replacement_frames_base(cache, row, packed, mod_root):
         return frames
     image = asset_image(row, mod_root)
     if row.get("base"):
-        return [Image.alpha_composite(native_donor(cache, row["base"], packed), image)]
+        bases = native_water_frames(cache, row, packed) if row.get("animated") else [native_donor(cache, row["base"], packed)]
+        return [Image.alpha_composite(base, image) for base in bases]
     return [image]
 
 

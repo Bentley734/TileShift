@@ -176,4 +176,11 @@ for _,frame in ipairs(frames.frames)do
  end end
  eq(visible,64,'texture has transparent gaps between native leaf shapes');eq(covered,64)
 end
+local waterOriginal={game='red',style='gen3',id=77,quadrant=0,x=0,y=0,map='COAST',role='lighthouse',asset='assets/original/fixture.png',base={game='emerald'},animated=true,animation={bank='general_water'},sourceOceanBounds={0,0,3,1}}
+local oceanNeighbour={game='red',style='gen3',id=77,quadrant=1,x=1,y=0,map='COAST',role='coastal_ocean_water_interior',donor={},sourceOceanBounds={0,0,3,1}}
+local waterOptions=new(19);waterOptions:select('water','mixed')
+eq(waterOptions:category(waterOriginal),'water','over-water original uses the water speed/style controls')
+local grouped=waterOptions:rows({waterOriginal,oceanNeighbour},'red',{id='COAST',width=2,height=1,blocks={77,77}})
+eq(grouped[1]._floraEntry,grouped[2]._floraEntry,'original background joins the surrounding Mixed ocean style')
+
 print('flora selection checks: '..count)

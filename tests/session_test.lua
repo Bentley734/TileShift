@@ -398,4 +398,31 @@ identity='import3';sourceGood=true;identityState:checkSource('red')
 local recovered=identityState:replacements('red','OVERWORLD',def)
 eq(recovered[27]~=nil,true);eq(identityState.revision,initialRevision+3)
 eq(identityState.accepted,1);eq(identityState.rejected,0,'fresh import guard recovery owns a fresh cache')
+-- Original blue artwork stays fixed while its transparent background animates.
+local glass=newData(16,16);glass:setPixel(0,0,.05,.3,.9,1)
+local onWater=row(41,0);onWater.base=onWater.donor;onWater.donor=nil
+onWater.kind='original';onWater.asset='assets/original/fixture.png';onWater.assetFileHash=hashB
+onWater.animated=true;onWater.animation=recipe
+local loads,allocations=0,0
+local assetState,assetWarnings,assetCalls=make({onWater},{original=function(path,expected)
+ loads=loads+1;eq(path,onWater.asset);eq(expected,hashB);return glass
+end,newImageData=function(w,h)allocations=allocations+1;return newData(w,h)end})
+assetState:select('gen3');local assetRows=assetState:replacements('red','OVERWORLD',def)
+local animatedAsset=assetRows[41];eq(#assetWarnings,0);eq(assetState.accepted,1);eq(#animatedAsset.frames,2)
+for _,frame in ipairs(animatedAsset.frames)do
+ local rr,gg,bb,aa=frame:getPixel(0,0);eq(rr,.05);eq(gg,.3);eq(bb,.9);eq(aa,1,'blue window is preserved')
+end
+eq(animatedAsset.frames[1]:getPixel(1,0),.25,'first native background frame visible')
+eq(animatedAsset.frames[2]:getPixel(1,0),.75,'second native background frame visible')
+local _,_,_,emptyAlpha=glass:getPixel(1,0);eq(emptyAlpha,0,'original transparency was not painted into')
+local warmAllocations,warmCalls=allocations,#assetCalls
+for _=1,100 do eq(assetState:replacements('red','OVERWORLD',def),assetRows)end
+eq(loads,1);eq(allocations,warmAllocations,'warm asset animation does not rebuild frames')
+eq(#assetCalls,warmCalls,'warm asset animation does not read imports')
+local staleAsset={};for key,value in pairs(onWater)do staleAsset[key]=value end
+staleAsset.animation={bank='general_water',hash=hashC,manifestHash=hashA}
+local staleAssetState,staleAssetWarnings=make({staleAsset},{original=function()return glass end})
+staleAssetState:select('gen3');staleAssetState:replacements('red','OVERWORLD',def)
+eq(staleAssetState.rejected,1,'stale original background bank is rejected');eq(#staleAssetWarnings,1)
+
 print('PASS reviewed mapping session: '..count..' assertions')

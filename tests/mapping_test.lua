@@ -187,4 +187,12 @@ for _,change in ipairs({{sourceFiles=false},{sourceFiles={}},{game='ruby'},
   local bad=clone(guarded);for key,value in pairs(change)do bad[key]=value end
   eq(M.validate(bad),nil,'provided source guards are complete, known and fingerprinted')
 end
+local wetAsset=clone(base);wetAsset.base=wetAsset.donor;wetAsset.donor=nil
+wetAsset.kind='original';wetAsset.asset='assets/original/fixture.png';wetAsset.assetFileHash=b
+wetAsset.animated=true;wetAsset.animation={bank='general_water',hash=b,manifestHash=a}
+eq(M.validate(wetAsset),true,'fingerprinted native animation beneath an original asset is valid')
+local noAssetBase=clone(wetAsset);noAssetBase.base=nil
+eq(M.validate(noAssetBase),nil,'animated original artwork requires its native base')
+local badAssetBank=clone(wetAsset);badAssetBank.animation.manifestHash='stale'
+eq(M.validate(badAssetBank),nil,'animated original artwork requires a bank fingerprint')
 print('PASS strict mapping validation: '..count..' assertions')
