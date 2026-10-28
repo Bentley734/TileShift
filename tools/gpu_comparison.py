@@ -78,6 +78,12 @@ for _map in ('PLAYERS_HOUSE_1F', 'PLAYERS_HOUSE_2F', 'EARLS_POKEMON_ACADEMY', 'K
     NAMES['crystal', _map] = ('Crystal / ' + _map.replace('_', ' ').title(), 'Johto-' + _map.title().replace('_', ''), 'Original Crystal native colors')
 
 
+# All completed Gen1 towns and representative interior GPU fixtures.
+for _game in ('red', 'blue', 'yellow'):
+    for _map in ('PEWTER_CITY', 'LAVENDER_TOWN', 'CELADON_CITY', 'FUCHSIA_CITY', 'SAFFRON_CITY', 'CINNABAR_ISLAND', 'INDIGO_PLATEAU', 'ROUTE_2', 'ROUTE_3', 'ROUTE_9', 'ROUTE_10', 'ROUTE_17', 'ROUTE_19', 'ROUTE_20', 'ROUTE_21', 'ROUTE_23', 'ROUTE_24', 'ROUTE_25', 'SAFARI_ZONE_NORTH', 'SAFARI_ZONE_EAST', 'SAFARI_ZONE_CENTER', 'REDS_HOUSE_2F', 'CERULEAN_TRASHED_HOUSE', 'OAKS_LAB', 'CINNABAR_LAB', 'POKEMON_FAN_CLUB', 'GAME_CORNER', 'CELADON_MART_3F', 'CELADON_MART_ROOF', 'CELADON_MART_ELEVATOR', 'CELADON_HOTEL', 'VIRIDIAN_POKECENTER', 'ROUTE_11_GATE_1F', 'ROUTE_22_GATE', 'UNDERGROUND_PATH_NORTH_SOUTH', 'SILPH_CO_3F', 'SILPH_CO_11F', 'ROCKET_HIDEOUT_B2F', 'POWER_PLANT', 'POKEMON_MANSION_1F', 'MUSEUM_1F', 'MUSEUM_2F', 'POKEMON_TOWER_3F', 'LANCES_ROOM', 'SAFFRON_GYM', 'VERMILION_GYM', 'CELADON_GYM', 'SS_ANNE_1F', 'SS_ANNE_KITCHEN', 'SS_ANNE_1F_ROOMS', 'SS_ANNE_B1F_ROOMS', 'SS_ANNE_CAPTAINS_ROOM', 'VERMILION_DOCK', 'SUMMER_BEACH_HOUSE'):
+        NAMES.setdefault((_game, _map), (_game.capitalize() + ' / ' + _map.replace('_', ' ').title(), _game.capitalize() + '-' + _map.title().replace('_', ''), 'Original monochrome'))
+
+
 def readback(ref: dict) -> Image.Image:
     path = Path(ref["path"])
     image = Image.open(path).convert("RGBA")
@@ -180,14 +186,18 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--report", type=Path, default=workspace / ".work/tileshift-gpu/report.json")
     parser.add_argument("--output", type=Path, default=workspace)
+    parser.add_argument("--games", help="Optional comma-separated cartridge IDs to include")
     args = parser.parse_args()
     report = json.loads(args.report.read_text(encoding="utf-8"))
     assert report["status"] == "passed", "Native GPU probe must pass before creating comparisons"
     assert report.get("theme") == "gen3", "Re-run the GPU probe after the pooled Gen3 theme migration"
     assert report.get("runtime_inputs") == runtime_fingerprint(Path(__file__).resolve().parents[1]), "Runtime files changed since GPU validation; rerun the probe"
+    games = set(args.games.split(",")) if args.games else None
+    if games is not None:
+        assert games and games <= {"red", "blue", "yellow", "gold", "silver", "crystal"}, "Unsupported comparison game"
     args.output.mkdir(parents=True, exist_ok=True)
     results = [make(fixture, args.output.resolve()) for fixture in report["fixtures"]
-               if (fixture["game"], fixture["map"]) in NAMES]
+               if (fixture["game"], fixture["map"]) in NAMES and (games is None or fixture["game"] in games)]
     assert results, "No supported native GPU map fixtures found"
     verification = {"source": str(args.report.resolve()), "gpu_checks": report["checks"],
                     "runtime_inputs_sha256": report["runtime_inputs"]["sha256"], "comparisons": results}

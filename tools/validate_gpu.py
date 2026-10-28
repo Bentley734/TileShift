@@ -1847,17 +1847,82 @@ local function run()
 
  -- Additional Gen1 public architecture, a representative interior and the
  -- newly reviewed compact barrier/water cells on their actual source maps.
- for _,spec in ipairs({{id='CERULEAN_CITY',stem='cerulean',architecture=true},
-  {id='VERMILION_CITY',stem='vermilion',animated_buildings=true},
-  {id='ROUTE_12',stem='route12',animated_buildings=true},
+ for _,spec in ipairs({{id='CERULEAN_CITY',stem='cerulean',architecture=true,complete=true},
+  {id='VERMILION_CITY',stem='vermilion',animated_buildings=true,complete=true},
+  {id='ROUTE_12',stem='route12',animated_buildings=true,complete=true},
   {id='REDS_HOUSE_1F',stem='redshouse',household=true,complete=true},
   {id='BLUES_HOUSE',stem='blueshouse',complete=true},
   {id='VIRIDIAN_FOREST',stem='viridianforest',forest=true,complete=true},
-  {id='SAFARI_ZONE_WEST',stem='safariwest',forest=true},
-  {id='VIRIDIAN_MART',stem='viridianmart'},
+  {id='SAFARI_ZONE_WEST',stem='safariwest',forest=true,complete=true},
+  {id='VIRIDIAN_MART',stem='viridianmart',complete=true},
   {id='VICTORY_ROAD_1F',stem='victoryroad'},
-  {id='SEAFOAM_ISLANDS_B4F',stem='seafoamb4',water=true}})do
-  GV.set('red');assetGame='red';clock=0
+  {id='SEAFOAM_ISLANDS_B4F',stem='seafoamb4',water=true},
+  {id='PEWTER_CITY',stem='kanto-pewter_city',complete=true},
+  {id='LAVENDER_TOWN',stem='kanto-lavender_town',complete=true},
+  {id='CELADON_CITY',stem='kanto-celadon_city',complete=true},
+  {id='FUCHSIA_CITY',stem='kanto-fuchsia_city',complete=true},
+  {id='SAFFRON_CITY',stem='kanto-saffron_city',complete=true},
+  {id='CINNABAR_ISLAND',stem='kanto-cinnabar_island',complete=true},
+  {id='INDIGO_PLATEAU',stem='kanto-indigo_plateau',complete=true},
+  {id='ROUTE_2',stem='kanto-route_2',complete=true},
+  {id='ROUTE_3',stem='kanto-route_3',complete=true},
+  {id='ROUTE_9',stem='kanto-route_9',complete=true},
+  {id='ROUTE_10',stem='kanto-route_10',complete=true},
+  {id='ROUTE_17',stem='kanto-route_17',complete=true},
+  {id='ROUTE_19',stem='kanto-route_19',complete=true},
+  {id='ROUTE_20',stem='kanto-route_20',complete=true},
+  {id='ROUTE_21',stem='kanto-route_21',complete=true},
+  {id='ROUTE_23',stem='kanto-route_23',complete=true},
+  {id='ROUTE_24',stem='kanto-route_24',complete=true},
+  {id='ROUTE_25',stem='kanto-route_25',complete=true},
+  {id='SAFARI_ZONE_NORTH',stem='kanto-safari_zone_north',complete=true},
+  {id='SAFARI_ZONE_EAST',stem='kanto-safari_zone_east',complete=true},
+  {id='SAFARI_ZONE_CENTER',stem='kanto-safari_zone_center',complete=true},
+  {id='REDS_HOUSE_2F',stem='kanto-reds_house_2f',complete=true},
+  {id='CERULEAN_TRASHED_HOUSE',stem='kanto-cerulean_trashed_house',complete=true},
+  {id='OAKS_LAB',stem='kanto-oaks_lab',complete=true},
+  {id='CINNABAR_LAB',stem='kanto-cinnabar_lab',complete=true},
+  {id='POKEMON_FAN_CLUB',stem='kanto-pokemon_fan_club',complete=true},
+  {id='GAME_CORNER',stem='kanto-game_corner',complete=true},
+  {id='CELADON_MART_3F',stem='kanto-celadon_mart_3f',complete=true},
+  {id='CELADON_MART_ROOF',stem='kanto-celadon_mart_roof',complete=true},
+  {id='CELADON_MART_ELEVATOR',stem='kanto-celadon_mart_elevator',complete=true},
+  {id='CELADON_HOTEL',stem='kanto-celadon_hotel',complete=true},
+  {id='VIRIDIAN_POKECENTER',stem='kanto-viridian_pokecenter',complete=true},
+  {id='ROUTE_11_GATE_1F',stem='kanto-route_11_gate_1f',complete=true},
+  {id='ROUTE_22_GATE',stem='kanto-route_22_gate',complete=true},
+  {id='UNDERGROUND_PATH_NORTH_SOUTH',stem='kanto-underground_path_north_south',complete=true},
+  {id='SILPH_CO_3F',stem='kanto-silph_co_3f',complete=true},
+  {id='SILPH_CO_11F',stem='kanto-silph_co_11f',complete=true},
+  {id='ROCKET_HIDEOUT_B2F',stem='kanto-rocket_hideout_b2f',complete=true},
+  {id='POWER_PLANT',stem='kanto-power_plant',complete=true},
+  {id='POKEMON_MANSION_1F',stem='kanto-pokemon_mansion_1f',complete=true},
+  {id='MUSEUM_1F',stem='kanto-museum_1f',complete=true},
+  {id='MUSEUM_2F',stem='kanto-museum_2f',complete=true},
+  {id='POKEMON_TOWER_3F',stem='kanto-pokemon_tower_3f',complete=true},
+  {id='LANCES_ROOM',stem='kanto-lances_room',complete=true},
+  {id='SAFFRON_GYM',stem='kanto-saffron_gym',complete=true},
+  {id='VERMILION_GYM',stem='kanto-vermilion_gym',complete=true},
+  {id='CELADON_GYM',stem='kanto-celadon_gym',complete=true},
+  {id='SS_ANNE_1F',stem='kanto-ss_anne_1f',complete=true},
+  {id='SS_ANNE_KITCHEN',stem='kanto-ss_anne_kitchen',complete=true},
+  {id='SS_ANNE_1F_ROOMS',stem='kanto-ss_anne_1f_rooms',complete=true},
+  {id='SS_ANNE_B1F_ROOMS',stem='kanto-ss_anne_b1f_rooms',complete=true},
+  {id='SS_ANNE_CAPTAINS_ROOM',stem='kanto-ss_anne_captains_room',complete=true},
+  {id='VERMILION_DOCK',stem='kanto-vermilion_dock',complete=true},
+  {game='blue',id='PEWTER_CITY',stem='kanto-pewter_city',complete=true},
+  {game='blue',id='CELADON_CITY',stem='kanto-celadon_city',complete=true},
+  {game='blue',id='INDIGO_PLATEAU',stem='kanto-indigo_plateau',complete=true},
+  {game='blue',id='SAFARI_ZONE_CENTER',stem='kanto-safari_zone_center',complete=true},
+  {game='blue',id='SS_ANNE_1F',stem='kanto-ss_anne_1f',complete=true},
+  {game='yellow',id='PEWTER_CITY',stem='kanto-pewter_city',complete=true},
+  {game='yellow',id='CELADON_CITY',stem='kanto-celadon_city',complete=true},
+  {game='yellow',id='INDIGO_PLATEAU',stem='kanto-indigo_plateau',complete=true},
+  {game='yellow',id='SAFARI_ZONE_CENTER',stem='kanto-safari_zone_center',complete=true},
+  {game='yellow',id='SS_ANNE_1F',stem='kanto-ss_anne_1f',complete=true},
+  {game='yellow',id='SUMMER_BEACH_HOUSE',stem='kanto-summerbeach',complete=true}})do
+  local game=spec.game or'red';GV.set(game);assetGame=game;clock=0
+  local maps,sets=generated(game,'maps'),generated(game,'tilesets')
   local def=assert(maps[spec.id]);local map=Map.new(def,sets[def.tileset])
   local renderer=T.new(map,{maps=maps,tilesets=sets})
   local function draw()
@@ -1866,24 +1931,24 @@ local function run()
    end)
   end
   local mechanics,events=snapshot(map,1),eventSnapshot(map)
-  local native=draw();local mod=startMod('red',1)
-  local art=assert(mod.exports.state:replacements('red',def.tileset,def));local after=draw()
+  local native=draw();local mod=startMod(game,1)
+  local art=assert(mod.exports.state:replacements(game,def.tileset,def));local after=draw()
   check(mod.exports.state.rejected==0,'Additional Gen1 fixture rejected reviewed art')
-  local fixture={game='red',map=def.id,native_renderer='src.render.TileRenderer',coverage=coverage(def,art),
-   accepted=mod.exports.state.accepted,checked_donor_pixels=verifyCoveredPixels(def,art,after,'red '..def.id),
-   before=encodePng(native,'red-'..spec.stem..'-native-gpu.png'),after=encodePng(after,'red-'..spec.stem..'-gen3-gpu.png'),
+  local fixture={game=game,map=def.id,native_renderer='src.render.TileRenderer',coverage=coverage(def,art),
+   accepted=mod.exports.state.accepted,checked_donor_pixels=verifyCoveredPixels(def,art,after,game..' '..def.id),
+   before=encodePng(native,game..'-'..spec.stem..'-native-gpu.png'),after=encodePng(after,game..'-'..spec.stem..'-gen3-gpu.png'),
    collision_before=mechanics,collision_after=snapshot(map,1),events_before=events,events_after=eventSnapshot(map)}
   if spec.complete then check(fixture.coverage.replaced_occurrences==fixture.coverage.visible_cells,'Complete Gen1 fixture has unresolved background art')end
   if spec.architecture then
-   fixture.architecture=verifyPublicBuildings('red',def,after)
+   fixture.architecture=verifyPublicBuildings(game,def,after)
    check(#fixture.architecture>0,'Kanto wide-Gym/public architecture was not exercised')
   end
   if spec.water then fixture.water_all_frames=verifyAnimationFrames(def,art,draw,'water',8,1)end
-  if spec.forest then fixture.forest=verifyForest('red',def,map,art,renderer,FX)end
+  if spec.forest then fixture.forest=verifyForest(game,def,map,art,renderer,FX)end
   if spec.id=='VIRIDIAN_FOREST' then
    for _,choice in ipairs({'default','mixed','johto-pine32'})do
     mod.exports.flora:select('big_trees',choice);mod.exports.state:invalidate();clock=0
-    local selected=mod.exports.state:replacements('red',def.tileset,def)
+    local selected=mod.exports.state:replacements(game,def.tileset,def)
     for _,t in ipairs({0,.36,.71,1.06})do
      clock=t;local frame=draw()
      verifyCoveredPixels(def,selected,frame,'Whole Big Trees '..choice)
@@ -1892,8 +1957,8 @@ local function run()
    end
    mod.exports.flora:select('big_trees','default');mod.exports.state:invalidate();clock=0
   end
-  if spec.household then fixture.household=verifyHousehold('red',def,after)end
-  if spec.animated_buildings then fixture.animated_buildings=verifyAnimatedBuildings('red',def,draw)end
+  if spec.household then fixture.household=verifyHousehold(game,def,after)end
+  if spec.animated_buildings then fixture.animated_buildings=verifyAnimatedBuildings(game,def,draw)end
   check(fixture.collision_before==fixture.collision_after and fixture.events_before==fixture.events_after,
    'Additional Gen1 fixture changed source collision/warps/events')
   mod.exports.dispose();clock=0

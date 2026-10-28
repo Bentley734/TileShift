@@ -1,18 +1,22 @@
 # TileShift
 
 TileShift brings Gen 3 world art to Gen1Recomp with individually reviewed tile
-matches. Version 0.24.0 completes Johto's backgrounds across Gold, Silver and
-Crystal: all 612 map variants and 263,308 cells pass the actual mapping checks.
-This includes caves, houses, Centers, gates, shops, gyms, towers, lighthouse,
-casino, port and other interiors. Battle Tower keeps complete
-native windows and a wider facade with transparent side edges. Source
-layouts, collision, warps, puzzle rules and interactions stay unchanged.
+matches. Version 0.25.0 completes the backgrounds of **every Red, Blue and Yellow
+map: 667 map variants and 284,740 cells**. All Kanto towns, routes, Safari Zone,
+caves, houses, Centers, shops, gates, laboratories, gyms, Pokemon Tower, museums,
+Rocket/Silph facilities and the S.S. Anne are covered, including Yellow's beach
+house. Johto remains complete across Gold, Silver and Crystal: 612 map variants
+and 263,308 cells. Source layouts, collision, warps, puzzle rules and interactions
+stay unchanged; characters and Pokemon sprites retain their original artwork.
 
-Unique Johto objects without exact Gen3 counterparts keep every original
-pixel and receive matching Gen3 colors: Unown inscriptions and puzzle
-details, the Magnet Train, Fast Ship, studio microphones/score sheets and
-the Dragon Shrine mural. Their symbols, shapes and gameplay stay intact.
-Recoloring runs once when the checked map artwork is built and cached.
+Native Gen3 counterparts keep their original pixel size and complete frames,
+window panels, doorways, furniture and statue silhouettes. Unique objects
+without suitable counterparts retain every original pixel in matching Gen3
+colors, including Kanto's fossil displays, laboratory instruments and League
+monument details, plus Johto's Unown inscriptions, Magnet Train, studio
+microphones and Dragon Shrine mural. Recoloring runs once when checked map
+artwork is built and cached. Imported native pixels are read from your own game
+imports and are not bundled in the mod.
 
 Gen 2 Pokemon Centers retain selectable compact/expanded designs. Bell Tower uses the supplied original reference.
 Its partial side tiles preserve the trees, ground and native map border underneath;
@@ -58,7 +62,7 @@ Johto Routes 29 through 46 are completely retiled
 in Gold, Silver and Crystal. Original gate entrances, cave destinations,
 encounters and source movement rules are retained.
 
-**Other Gen 1/2 maps remain partially converted.** Viridian now includes its
+**Gen 2 areas outside Johto remain partially converted.** Viridian now includes its
 freshwater pond, lawns, flowers, fences and ledges. New Bark has complete Gen 3
 buildings, forest trees, grass, animated flowers and coastline. Reviewed ground,
 trees, flowers, signs and grass now extend through many more Johto and Kanto maps.
@@ -76,8 +80,8 @@ Fighting Dojos, Bike Shops, the Fan Club and coastal houses retain their
 complete entrances, windows and original footprints. Interior floors use the
 matching house, lab, clinic, shop, ship, museum, Gym or facility art. Reviewed
 household furniture keeps complete frames, shelves, paintings and plant crowns.
-Other furniture and many regional features still use
-their original art. Characters and Pokemon sprites are
+Unique regional features without suitable counterparts retain
+their complete original shapes in matching Gen3 colors. Characters and Pokemon sprites are
 unchanged. The single **Gen 3** style combines Emerald and FireRed/LeafGreen
 art; separate cartridge styles and reverse conversions are future work.
 
@@ -86,7 +90,7 @@ art; separate cartridge styles and reverse conversions are future work.
 1. Import **Emerald and FireRed** into Gen1Recomp. TileShift reads native donor
    art from your own imports; neither ROMs nor extracted native artwork are
    bundled.
-2. Download `TileShift-v0.24.0.zip` from [the latest release](https://github.com/Bentley734/TileShift/releases/latest).
+2. Download `TileShift-v0.25.0.zip` from [the latest release](https://github.com/Bentley734/TileShift/releases/latest).
 3. Extract the `tileshift` folder into Gen1Recomp's `mods` directory, enable
    **TileShift**, and restart the game.
 4. Open Options and set **Tileset** to **Gen 3**. This is the default on a fresh
@@ -171,29 +175,15 @@ Unlit Flash caves retain the source game's exact darkness and entrance flicker;
 the selected artwork appears after Flash restores visibility. Bright donor
 graphics cannot bypass native darkness.
 
-| Background fixture | Reviewed cells |
-| --- | --- |
-| Pallet Town, Red/Blue/Yellow | 360/360 |
-| Route 1, Red/Blue/Yellow | 720/720 |
-| Viridian City, Red/Blue/Yellow | 1,306/1,440 |
-| Viridian Forest, Red/Blue/Yellow | 1,632/1,632 |
-| Red's House 1F and Blue's House, Red/Blue/Yellow | 64/64 each |
-| New Bark Town, Gold/Silver/Crystal | 360/360 |
-| Cherrygrove City, Gold/Silver/Crystal | 644/720 |
-| Violet City, Gold/Silver/Crystal | 1,440/1,440 |
-| Mt. Moon 1F, Red | 1,440/1,440 |
-| Seafoam Islands 1F, Red | 540/540 |
+| Completed background scope | Reviewed cells | Map variants |
+| --- | --- | --- |
+| Red, Blue and Yellow, every map | 284,740/284,740 | 667/667 |
+| Gold, Silver and Crystal, Johto | 263,308/263,308 | 612/612 |
 
-Many Gen 2 cave entrances, water edges and regional features remain native.
-Other cave floors can have different coverage; individual matches are scoped
-to the source map and the corresponding donor cave family.
-
-The complete map audit loads the actual mod and checks available replacements
-for all 1,791 imported Gen 1/2 maps. Version 0.21.0 covers 405,655 of 718,992
-initial background cells (56.4%), including 202 complete maps, with zero
-rejected mappings or warnings.
-This audit checks actual replacement availability and position scope; it does
-not render every map or constitute a full playthrough.
+Gen2 Kanto remains in progress. All replacement matches are scoped to their
+original source map and native donor family. The complete map audit loads the
+actual mod and checks replacement availability, source fingerprints and
+position scope; it does not render every map or constitute a full playthrough.
 
 The longer-term goal includes Gen 1/2 themes and conversions between games.
 Red/Blue artwork will use the original four-shade monochrome palette. Features
@@ -212,13 +202,15 @@ appended entries; unchanged frames do not run another full entity scan.
 
 The release is checked through the installed 0.3.97 loader for all eleven games,
 Lua regression fixtures, live-import fingerprint checks, native donor animation
-comparisons, and isolated native LOVE GPU rendering. This release passes
-39,374,673 checks across 39 default background fixtures plus custom artwork
-comparisons, including every native water
-frame behind the Fan Club and Route 12 roof corners. Pallet's Red/Blue/Yellow
-background fixtures and Gold/Silver/Crystal New Bark must replace all 360 visible 16px cells, and Route 1 all
-720 cells. Checks preserve native map and collision data, and restore original rendering when disabled. These
-checks are background-render fixtures, not full interactive playthroughs.
+comparisons, and isolated native LOVE GPU rendering. Version 0.25.0 passes
+36 Lua suite runs across three runtimes and 188,601,742 checks across 248 native
+GPU scenes. This release verifies
+all completed Gen1 and Johto map variants, native donor animation frames,
+source fingerprints, collision/events, cleanup restoration, decorative
+transparency and plant foreground behavior. The GPU suite exercises all Kanto
+towns and representative routes, homes, shops, laboratories, gyms, tower,
+ship and facility interiors in the actual native renderer. These are background
+and mechanics fixtures, not full interactive playthroughs.
 
 From the parent workspace:
 
@@ -228,7 +220,9 @@ python TileShift/tools/validate_boot.py --payload PATH_TO_0.3.97.love
 python TileShift/tools/preview.py --include-trees --include-posts --include-water --include-details --include-buildings --include-outdoors --tree-fixtures
 python TileShift/tools/validate_animation.py --game firered
 python TileShift/tools/validate_animation.py --game leafgreen
-python TileShift/tools/validate_gpu.py
+python TileShift/tools/validate_gpu.py --timeout 900
+python TileShift/tools/validate_coverage.py --games red,blue,yellow --require-complete --timeout 900
+python TileShift/tools/validate_source_palettes.py
 python TileShift/tools/gpu_comparison.py
 python TileShift/tools/build_release.py
 ```

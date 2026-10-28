@@ -181,3 +181,15 @@ Unique Unown inscriptions and unmatched transport/studio details use the
 user-requested native-pixel palette recoloring. Their original imported source
 pixels remain in the player's cache; only color values and fingerprinted mapping
 references are packaged.
+
+## Kanto completion
+
+Red, Blue and Yellow backgrounds use checked native Emerald/FireRed references
+for towns, routes, Safari Zone, homes, clinics, shops, gates, laboratories,
+facilities, gyms, museums and the S.S. Anne. Complete objects retain their
+native pixel size and frames. Only repeating roof, wall, cabinet and floor
+sections are rearranged to preserve the original map footprint and entrances.
+Unique fossil displays, ship fittings, compact laboratory instruments, League
+monument details and unmatched symbols retain the original imported geometry
+in user-approved Gen3 colors. Only palettes and source fingerprints are
+packaged; their imported pixels remain in the player's cache.
