@@ -11,6 +11,14 @@ from validate_gpu import runtime_fingerprint
 
 
 NAMES = {
+    ("crystal", "ROUTE_31"): ("Crystal / Route 31", "Route31", "Original Crystal native colors"),
+    ("crystal", "ROUTE_33"): ("Crystal / Route 33", "Route33", "Original Crystal native colors"),
+    ("crystal", "ROUTE_36"): ("Crystal / Route 36", "Route36", "Original Crystal native colors"),
+    ("crystal", "ROUTE_42"): ("Crystal / Route 42", "Route42", "Original Crystal native colors"),
+    ("crystal", "ROUTE_43"): ("Crystal / Route 43", "Route43", "Original Crystal native colors"),
+    ("crystal", "ROUTE_44"): ("Crystal / Route 44", "Route44", "Original Crystal native colors"),
+    ("crystal", "ROUTE_45"): ("Crystal / Route 45", "Route45", "Original Crystal native colors"),
+    ("crystal", "ROUTE_46"): ("Crystal / Route 46", "Route46", "Original Crystal native colors"),
     ("crystal", "SILVER_CAVE_OUTSIDE"): ("Crystal / Mt. Silver Outside", "MtSilver", "Original Crystal native colors"),
     ("crystal", "BLACKTHORN_CITY"): ("Crystal / Blackthorn City", "Blackthorn", "Original Crystal native colors"),
     ("crystal", "LAKE_OF_RAGE"): ("Crystal / Lake of Rage", "LakeOfRage", "Original Crystal native colors"),

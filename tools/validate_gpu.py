@@ -2216,19 +2216,20 @@ local function run()
   {game='gold',id='SILVER_CAVE_OUTSIDE',stem='johto-silver_cave_outside',complete=true,water=true},
   {game='gold',id='ROUTE_29',stem='johto-route_29'},
   {game='gold',id='ROUTE_30',stem='johto-route_30',complete=true},
-  {game='gold',id='ROUTE_31',stem='johto-route_31'},
+  {game='gold',id='ROUTE_31',stem='johto-route_31',complete=true,water=true},
   {game='gold',id='ROUTE_32',stem='johto-route_32'},
-  {game='gold',id='ROUTE_33',stem='johto-route_33'},
+  {game='gold',id='ROUTE_33',stem='johto-route_33',complete=true},
+{game='gold',id='ROUTE_36',stem='johto-route_36',complete=true},
   {game='gold',id='ROUTE_37',stem='johto-route_37',complete=true},
   {game='gold',id='ROUTE_38',stem='johto-route_38'},
   {game='gold',id='ROUTE_39',stem='johto-route_39'},
   {game='gold',id='ROUTE_40',stem='johto-route_40'},
   {game='gold',id='ROUTE_41',stem='johto-route_41'},
-  {game='gold',id='ROUTE_42',stem='johto-route_42'},
-  {game='gold',id='ROUTE_43',stem='johto-route_43'},
-  {game='gold',id='ROUTE_44',stem='johto-route_44'},
-  {game='gold',id='ROUTE_45',stem='johto-route_45'},
-  {game='gold',id='ROUTE_46',stem='johto-route_46'},
+  {game='gold',id='ROUTE_42',stem='johto-route_42',complete=true,water=true},
+  {game='gold',id='ROUTE_43',stem='johto-route_43',complete=true,water=true},
+  {game='gold',id='ROUTE_44',stem='johto-route_44',complete=true,water=true},
+  {game='gold',id='ROUTE_45',stem='johto-route_45',complete=true,water=true},
+  {game='gold',id='ROUTE_46',stem='johto-route_46',complete=true},
   {game='silver',id='GOLDENROD_CITY',stem='johto-goldenrod_city'},
   {game='silver',id='ECRUTEAK_CITY',stem='johto-ecruteak_city'},
   {game='silver',id='CIANWOOD_CITY',stem='johto-cianwood_city'},
@@ -2238,19 +2239,20 @@ local function run()
   {game='silver',id='SILVER_CAVE_OUTSIDE',stem='johto-silver_cave_outside',complete=true,water=true},
   {game='silver',id='ROUTE_29',stem='johto-route_29'},
   {game='silver',id='ROUTE_30',stem='johto-route_30',complete=true},
-  {game='silver',id='ROUTE_31',stem='johto-route_31'},
+  {game='silver',id='ROUTE_31',stem='johto-route_31',complete=true,water=true},
   {game='silver',id='ROUTE_32',stem='johto-route_32'},
-  {game='silver',id='ROUTE_33',stem='johto-route_33'},
+  {game='silver',id='ROUTE_33',stem='johto-route_33',complete=true},
+{game='silver',id='ROUTE_36',stem='johto-route_36',complete=true},
   {game='silver',id='ROUTE_37',stem='johto-route_37',complete=true},
   {game='silver',id='ROUTE_38',stem='johto-route_38'},
   {game='silver',id='ROUTE_39',stem='johto-route_39'},
   {game='silver',id='ROUTE_40',stem='johto-route_40'},
   {game='silver',id='ROUTE_41',stem='johto-route_41'},
-  {game='silver',id='ROUTE_42',stem='johto-route_42'},
-  {game='silver',id='ROUTE_43',stem='johto-route_43'},
-  {game='silver',id='ROUTE_44',stem='johto-route_44'},
-  {game='silver',id='ROUTE_45',stem='johto-route_45'},
-  {game='silver',id='ROUTE_46',stem='johto-route_46'},
+  {game='silver',id='ROUTE_42',stem='johto-route_42',complete=true,water=true},
+  {game='silver',id='ROUTE_43',stem='johto-route_43',complete=true,water=true},
+  {game='silver',id='ROUTE_44',stem='johto-route_44',complete=true,water=true},
+  {game='silver',id='ROUTE_45',stem='johto-route_45',complete=true,water=true},
+  {game='silver',id='ROUTE_46',stem='johto-route_46',complete=true},
   {game='crystal',id='GOLDENROD_CITY',stem='johto-goldenrod_city'},
   {game='crystal',id='ECRUTEAK_CITY',stem='johto-ecruteak_city'},
   {game='crystal',id='CIANWOOD_CITY',stem='johto-cianwood_city'},
@@ -2260,20 +2262,20 @@ local function run()
   {game='crystal',id='SILVER_CAVE_OUTSIDE',stem='johto-silver_cave_outside',complete=true,water=true},
   {game='crystal',id='ROUTE_29',stem='johto-route_29'},
   {game='crystal',id='ROUTE_30',stem='johto-route_30',complete=true},
-  {game='crystal',id='ROUTE_31',stem='johto-route_31'},
+  {game='crystal',id='ROUTE_31',stem='johto-route_31',complete=true,water=true},
   {game='crystal',id='ROUTE_32',stem='johto-route_32'},
-  {game='crystal',id='ROUTE_33',stem='johto-route_33'},
-  {game='crystal',id='ROUTE_36',stem='johto-route_36'},
+  {game='crystal',id='ROUTE_33',stem='johto-route_33',complete=true},
+  {game='crystal',id='ROUTE_36',stem='johto-route_36',complete=true},
   {game='crystal',id='ROUTE_37',stem='johto-route_37',complete=true},
   {game='crystal',id='ROUTE_38',stem='johto-route_38'},
   {game='crystal',id='ROUTE_39',stem='johto-route_39'},
   {game='crystal',id='ROUTE_40',stem='johto-route_40'},
   {game='crystal',id='ROUTE_41',stem='johto-route_41'},
-  {game='crystal',id='ROUTE_42',stem='johto-route_42'},
-  {game='crystal',id='ROUTE_43',stem='johto-route_43'},
-  {game='crystal',id='ROUTE_44',stem='johto-route_44'},
-  {game='crystal',id='ROUTE_45',stem='johto-route_45'},
-  {game='crystal',id='ROUTE_46',stem='johto-route_46'},
+  {game='crystal',id='ROUTE_42',stem='johto-route_42',complete=true,water=true},
+  {game='crystal',id='ROUTE_43',stem='johto-route_43',complete=true,water=true},
+  {game='crystal',id='ROUTE_44',stem='johto-route_44',complete=true,water=true},
+  {game='crystal',id='ROUTE_45',stem='johto-route_45',complete=true,water=true},
+  {game='crystal',id='ROUTE_46',stem='johto-route_46',complete=true},
   {id='PALLET_TOWN',stem='pallet',complete=true},
   {game='gold',id='PALLET_TOWN',stem='pallet',complete=true},
   {game='silver',id='PALLET_TOWN',stem='pallet',complete=true},
@@ -2315,7 +2317,33 @@ local function run()
    fixture.architecture=verifyPublicBuildings(game,def,after)
    check(#fixture.architecture>0,'Public architecture GPU fixture contains no reviewed buildings')
   end
-  if spec.complete then check(fixture.coverage.replaced_occurrences==fixture.coverage.visible_cells,'Complete Violet fixture has unresolved art')end
+  if spec.complete then check(fixture.coverage.replaced_occurrences==fixture.coverage.visible_cells,'Complete Gen2 fixture has unresolved art')end
+  local routeCaves={ROUTE_31=1,ROUTE_33=1,ROUTE_36=0,ROUTE_42=3,ROUTE_43=0,ROUTE_44=1,ROUTE_45=1,ROUTE_46=1}
+  if spec.complete and routeCaves[spec.id]~=nil then
+   local mouths,sideJambs,downMarkers=0,0,0
+   local mouth=nativeCellImage({game='firered',tileset='general__rom_082d4af4',id=169,hash='d8ad64cabb388d76f36f8d1d39dcd0567de21348e20893da16e79652c1765d0a'})
+   for _,r in ipairs(mappingRows('mappings/johto_route_details.lua'))do if r.game==game and r.map==spec.id then
+    local bid=def.blocks[math.floor(r.y/2)*def.width+math.floor(r.x/2)+1];local q=r.y%2*2+r.x%2
+    check(world.tilesets[def.tileset].collision[bid+1][q+1]==r.sourceCollision,'Route entrance permission changed')
+    if r.sourceDestination then
+     local found=false;for _,w in ipairs(def.warps or{})do if w.x==r.x and w.y==r.y and w.destMap==r.sourceDestination then found=true end end
+     check(found,'Route entrance original destination changed')
+    end
+    if r.role=='johto_route_native_cave_entrance'then
+     check(r.sourceCollision==123,'Route cave lost its original permission')
+     for y=0,15 do for x=0,15 do equalPixel(after,r.x*16+x,r.y*16+y,mouth,x,y,'Complete native route cave jamb/frame changed')end end
+     mouths=mouths+1
+    elseif r.role=='johto_route_side_gate_entrance'then
+     check(r.sourceCollision==118 and r.parts[1].donor.id==324+r.y%2*8,'Paired native side-gate jambs lost their top/bottom orientation')
+     sideJambs=sideJambs+1
+    elseif r.role=='johto_route_down_gate_marker'then
+     check(r.sourceCollision==112 and r.animated==nil and r.parts[1].donor.kind=='field_effect'and r.parts[1].donor.id==2,'Original DOWN gate carpet lost its static native downward marker')
+     downMarkers=downMarkers+1
+    end
+   end end
+   check(mouths==routeCaves[spec.id],'Complete route cave entrance count changed')
+   fixture.route_details={native_cave_mouths=mouths,paired_native_side_jamb_cells=sideJambs,static_down_gate_markers=downMarkers,source_destinations_preserved=true}
+  end
   if spec.ladders then fixture.complete_native_ladders=verifyGen2Ladders(game,def,map,after)end
   if(spec.id=='BLACKTHORN_CITY'or spec.id=='SILVER_CAVE_OUTSIDE')and spec.complete then
    local mouth=nativeCellImage({game='firered',tileset='general__rom_082d4af4',id=169,hash='d8ad64cabb388d76f36f8d1d39dcd0567de21348e20893da16e79652c1765d0a'})
