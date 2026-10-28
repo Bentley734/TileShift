@@ -353,7 +353,12 @@ def _replacement_frames_base(cache, row, packed, mod_root):
     image = asset_image(row, mod_root)
     if row.get("base"):
         bases = native_water_frames(cache, row, packed) if row.get("animated") else [native_donor(cache, row["base"], packed)]
-        return [Image.alpha_composite(base, image) for base in bases]
+        if row.get('assetFrames'):
+            assert len(row['assetFrames']) == len(bases), 'Overlay animation frame count changed'
+            overlays = [asset_image({**row, 'asset': f['asset'], 'assetFileHash': f['hash']}, mod_root) for f in row['assetFrames']]
+        else:
+            overlays = [image] * len(bases)
+        return [Image.alpha_composite(base, overlay) for base, overlay in zip(bases, overlays)]
     return [image]
 
 
@@ -535,7 +540,7 @@ def map_preview(cache, output, game, map_id, stem, rows, packed, scale, mod_root
         extra_path = mod_root / 'lib/center_mart_roofs.lua'
         if extra_path.exists():
             roof_rows += read_reviewed(extra_path)
-        for name in ('goldenrod_roofs.lua', 'pallet_roofs.lua'):
+        for name in ('goldenrod_roofs.lua', 'pallet_roofs.lua', 'johto_roofs.lua'):
             extra_path = mod_root / 'lib' / name
             if extra_path.exists():
                 roof_rows += read_reviewed(extra_path)
@@ -612,7 +617,7 @@ def main():
         if coast.exists():
             rows.extend(read_reviewed(coast))
     for requested, name in ((args.include_buildings, "pallet_buildings.lua"), (args.include_buildings, "gen2_buildings.lua"),
-                            (args.include_buildings, "buildings_extended.lua"), (args.include_buildings, "building_overhangs.lua"), (args.include_buildings, "pallet_overhangs.lua"), (args.include_buildings, "goldenrod.lua"),
+                            (args.include_buildings, "buildings_extended.lua"), (args.include_buildings, "building_overhangs.lua"), (args.include_buildings, "pallet_overhangs.lua"), (args.include_buildings, "goldenrod.lua"), (args.include_outdoors, "johto_remaining.lua"), (args.include_outdoors, "park.lua"),
                             (args.include_details, "pallet_details.lua"),
                             (args.include_outdoors, "gen1_outdoor.lua"), (args.include_outdoors, "gen2_outdoor.lua"),
                             (args.include_outdoors, "gen1_caves.lua"), (args.include_outdoors, "gen1_extended.lua"),

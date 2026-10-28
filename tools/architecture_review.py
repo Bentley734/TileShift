@@ -88,7 +88,8 @@ def render_source(cache, game, map_id):
     if m["tileset"] in ("TILESET_JOHTO", "TILESET_JOHTO_MODERN"):
         roofs = catalog.read_lua(root / "data/generated/roofs.lua")
         roof_name = catalog.dict_at(roofs["mapGroupRoofs"], m["group"])
-        roof = Image.open(root / roofs["roofs"][roof_name]["image"])
+        if roof_name is not None:
+            roof = Image.open(root / roofs["roofs"][roof_name]["image"])
     image = Image.new("RGBA", (m["width"] * 32, m["height"] * 32))
     for pos, bid in enumerate(m["blocks"]):
         for q in range(4):

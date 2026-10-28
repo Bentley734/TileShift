@@ -135,6 +135,13 @@ for _,row in ipairs(mixed)do if row.x then
 end end
 local different=0;for _ in pairs(used)do different=different+1 end
 assert(different>1,'isolated water bodies should offer style variation')
+local baseline={}
+for _,row in ipairs(mixed)do if row.x then baseline[row.y*40+row.x]=row._floraEntry.id end end
+for _,row in ipairs(waterRows)do row.parts={};row.base={};row.animated=true;row.animation={bank='general_water'}end
+local decorated=water:rows(waterRows,'gold',{id='PONDS',width=20,height=1,blocks=blocks})
+for _,row in ipairs(decorated)do if row.x then
+ eq(row._floraEntry.id,baseline[row.y*40+row.x],'inland basin parts must not merge isolated ponds into the world ocean')
+end end
 -- Speed changes only timing, never source frames, choices or native recipes.
 local sequence={frames={{under='first'},{under='second'}},period=.2,offset=.1,bank='fixture'}
 local grassRow={role='tall_grass'}

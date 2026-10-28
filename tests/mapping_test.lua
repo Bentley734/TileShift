@@ -195,4 +195,13 @@ local noAssetBase=clone(wetAsset);noAssetBase.base=nil
 eq(M.validate(noAssetBase),nil,'animated original artwork requires its native base')
 local badAssetBank=clone(wetAsset);badAssetBank.animation.manifestHash='stale'
 eq(M.validate(badAssetBank),nil,'animated original artwork requires a bank fingerprint')
+local foam=clone(wetAsset)
+foam.assetFrames={{asset=foam.asset,hash=foam.assetFileHash},{asset='assets/original/phase2.png',hash=a}}
+eq(M.validate(foam),true,'original overlay phases have checked paths and hashes')
+for _,mutate in ipairs({function(r)r.assetFrames[1].hash=a end,
+ function(r)r.assetFrames[2].hash='stale'end,function(r)r.assetFrames[2].asset='assets/original/../escape.png'end,
+ function(r)r.assetFrames[4]=r.assetFrames[2]end,function(r)r.animated=false end,
+ function(r)r.assetFrames={}end})do
+ local bad=clone(foam);mutate(bad);eq(M.validate(bad),nil,'invalid overlay phases fail closed')
+end
 print('PASS strict mapping validation: '..count..' assertions')

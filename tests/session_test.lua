@@ -425,4 +425,25 @@ local staleAssetState,staleAssetWarnings=make({staleAsset},{original=function()r
 staleAssetState:select('gen3');staleAssetState:replacements('red','OVERWORLD',def)
 eq(staleAssetState.rejected,1,'stale original background bank is rejected');eq(#staleAssetWarnings,1)
 
+-- Whirlpool foam can advance while sharing the exact native water schedule.
+local swirl={};for k,v in pairs(onWater)do swirl[k]=v end
+swirl.assetFrames={{asset=swirl.asset,hash=hashB},{asset='assets/original/phase2.png',hash=hashC}}
+local nextFoam=newData(16,16);nextFoam:setPixel(0,0,.9,.95,1,1)
+local swirlLoads=0
+local swirlState,swirlWarnings=make({swirl},{original=function(path,expected)
+ swirlLoads=swirlLoads+1
+ if path==swirl.asset then eq(expected,hashB);return glass end
+ eq(path,'assets/original/phase2.png');eq(expected,hashC);return nextFoam
+end})
+swirlState:select('gen3');local swirlRows=swirlState:replacements('red','OVERWORLD',def)
+eq(#swirlWarnings,0);eq(swirlState.accepted,1);eq(swirlLoads,2)
+eq(swirlRows[41].frames[1]:getPixel(0,0),.05);eq(swirlRows[41].frames[2]:getPixel(0,0),.9)
+eq(swirlRows[41].frames[2]:getPixel(1,0),.75,'rotating foam retains the second native water frame')
+for i=1,100 do eq(swirlState:replacements('red','OVERWORLD',def),swirlRows)end
+eq(swirlLoads,2,'overlay animation assets stay cached on warm frames')
+local wrongCount={};for k,v in pairs(swirl)do wrongCount[k]=v end
+wrongCount.assetFrames={swirl.assetFrames[1],swirl.assetFrames[2],swirl.assetFrames[2]}
+local badSwirl,badWarnings=make({wrongCount},{original=function()return glass end})
+badSwirl:select('gen3');badSwirl:replacements('red','OVERWORLD',def)
+eq(badSwirl.rejected,1);eq(#badWarnings,1,'changed native bank length fails closed')
 print('PASS reviewed mapping session: '..count..' assertions')

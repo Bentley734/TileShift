@@ -1,8 +1,11 @@
 # TileShift
 
 TileShift brings Gen 3 world art to Gen1Recomp with individually reviewed tile
-matches. Version 0.22.0 completes Goldenrod, adds selectable compact/expanded
-Gen 2 Pokemon Centers and enlarges Pallet architecture. Bell Tower uses the supplied original reference.
+matches. Version 0.23.0 completes Ilex Forest, National Park (including the
+Bug Contest map), Ruins of Alph Outside and Routes 32, 34, 38, 39, 40 and 41
+in Gold, Silver and Crystal. This includes native-scale gates, the daycare,
+Moomoo Farm buildings, fishing piers and animated whirlpools.
+Gen 2 Pokemon Centers retain selectable compact/expanded designs. Bell Tower uses the supplied original reference.
 Its partial side tiles preserve the trees, ground and native map border underneath;
 the original entrance and collision footprint stay unchanged.
 Goldenrod uses the actual MetalFlygon08 Johto Gen3 Game Corner artwork,
@@ -42,7 +45,7 @@ Red's downstairs room, Blue's house and many ordinary Kanto homes are also
 fully retiled. Pallet includes compact houses and Oak's
 lab, trees, fences, signs, grass, animated flowers, water and shoreline. Route 1
 adds matching lawns, flowers, directional jump ledges and walkable steps.
-Johto Routes 29, 30, 31, 33, 35, 36, 37, 42, 43, 44, 45 and 46 are completely retiled
+Johto Routes 29 through 46 are completely retiled
 in Gold, Silver and Crystal. Original gate entrances, cave destinations,
 encounters and source movement rules are retained.
 

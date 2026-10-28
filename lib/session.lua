@@ -203,12 +203,21 @@ function S.new(ctx)
                     local native,err=tryCall(donor.frames,donor,row.base,row.animation)
                     if native and type(native.frames)=='table' and #native.frames>=2
                       and type(native.period)=='number' and native.period>0 and native.period<math.huge then
-                      sequence={frames={}}
-                      for key,value in pairs(native)do if key~='frames'then sequence[key]=value end end
-                      for i,frame in ipairs(native.frames)do
-                        sequence.frames[i]={under=copyLayers(frame),over=image}
+                      if row.assetFrames and #row.assetFrames~=#native.frames then
+                        piece=nil;pieceError='Original overlay frame count differs from its native water bank'
+                      else
+                        sequence={frames={}}
+                        for key,value in pairs(native)do if key~='frames'then sequence[key]=value end end
+                        for i,frame in ipairs(native.frames)do
+                          local overlay=image
+                          if row.assetFrames and i>1 then
+                            local ref=row.assetFrames[i];overlay,err=tryCall(ctx.original,ref.asset,ref.hash)
+                          end
+                          if not overlay then piece=nil;sequence=nil;pieceError=err or'Missing overlay animation frame';break end
+                          sequence.frames[i]={under=copyLayers(frame),over=overlay}
+                        end
+                        if sequence then piece=sequence.frames[1]end
                       end
-                      piece=sequence.frames[1]
                     else piece=nil;pieceError=err or 'Invalid original asset background animation' end
                   else piece={under=copyLayers({under=copyLayers(base),over=image}),over=factory(16,16)} end
                 else piece=nil;pieceError=baseError end

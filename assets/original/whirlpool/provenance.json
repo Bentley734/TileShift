@@ -1,0 +1,39 @@
+{
+  "origin": "Original transparent whirlpool foam generated with built-in imagegen. Native ocean remains visible through the spiral.",
+  "source_file": "exec-66428175-0966-43cf-a02d-55c5a11be083.png",
+  "source_sha256": "729190ff1125f49d75dc0f86e3f77ff9f89cdaa4e46f7ed36043d397ef762a8a",
+  "source_size": [
+    1254,
+    1254
+  ],
+  "visible_bounds": [
+    332,
+    352,
+    921,
+    959
+  ],
+  "crop": [
+    322,
+    351,
+    930,
+    959
+  ],
+  "integer_reduction": 38,
+  "final_size": [
+    16,
+    16
+  ],
+  "animation": "Eight phases: four exact clockwise quarter-turn orientations, each held for two native water frames. No interpolated rotation.",
+  "binary_alpha": true,
+  "no_collision_or_event_changes": true,
+  "files": {
+    "foam-0.png": "f9510f6d3a6922283a1a68ec4c17e72506241c3f491cd49b0a2104336ebe4952",
+    "foam-1.png": "f9510f6d3a6922283a1a68ec4c17e72506241c3f491cd49b0a2104336ebe4952",
+    "foam-2.png": "e1e693130e189bd773981bfa112a3cec3f93fcdf644b52d3b782ebec9ba5b6b9",
+    "foam-3.png": "e1e693130e189bd773981bfa112a3cec3f93fcdf644b52d3b782ebec9ba5b6b9",
+    "foam-4.png": "c5b6395e97e5ecb782edf5ae28ab09da5918fbdf68fc57b95bb7ce878072ce92",
+    "foam-5.png": "c5b6395e97e5ecb782edf5ae28ab09da5918fbdf68fc57b95bb7ce878072ce92",
+    "foam-6.png": "80a4ce3fed2759ae3d17062e4794b338833f7040d034b80c881f319934a8918e",
+    "foam-7.png": "80a4ce3fed2759ae3d17062e4794b338833f7040d034b80c881f319934a8918e"
+  }
+}

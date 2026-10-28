@@ -1,18 +1,32 @@
 {
   "id": "tileshift",
   "name": "TileShift",
-  "version": "0.22.0",
+  "version": "0.23.0",
   "api": 2,
   "entry": "main.lua",
-  "games": ["red", "blue", "yellow", "gold", "silver", "crystal", "ruby", "sapphire", "emerald", "firered", "leafgreen"],
+  "games": [
+    "red",
+    "blue",
+    "yellow",
+    "gold",
+    "silver",
+    "crystal",
+    "ruby",
+    "sapphire",
+    "emerald",
+    "firered",
+    "leafgreen"
+  ],
   "profile": "overhaul",
   "category": "VISUAL",
   "priority": 125,
   "game_version": ">=0.3.96 <0.4.0",
-  "permissions": ["engine_internals"],
+  "permissions": [
+    "engine_internals"
+  ],
   "dependencies": [],
   "conflicts": [],
   "affects_link": false,
   "github": "Bentley734/TileShift",
-  "description": "Gen 3 world art for Gen 1/2, with selectable trees, flowers, grass and animated water. Complete Pallet, Viridian, Route 1, Viridian Forest, Gen 1 caves, New Bark, Cherrygrove, Violet, Azalea, Mahogany, Cianwood, Olivine, Ecruteak, Blackthorn, Goldenrod, Lake of Rage and Mt. Silver Outside backgrounds. Johto Routes 29,30,31,33,35,36,37,42,43,44,45,46 are complete. Gen 2 Pokemon Centers offer Compact and redesigned Expanded versions. Pallet houses/lab and Gen 2 Marts have native-scale roof overhangs. Other maps remain in progress."
+  "description": "Gen 3 world art for Gen 1/2, with selectable trees, flowers, grass and animated water. Complete Pallet, Viridian, Route 1, Viridian Forest, Gen 1 caves, New Bark, Cherrygrove, Violet, Azalea, Mahogany, Cianwood, Olivine, Ecruteak, Blackthorn, Goldenrod, Lake of Rage and Mt. Silver Outside backgrounds. Johto Routes 29-46 are complete. Gen 2 Pokemon Centers offer Compact and redesigned Expanded versions. Pallet houses/lab and Gen 2 Marts have native-scale roof overhangs. Ilex Forest, Ruins of Alph Outside and both National Park variants are complete. Other maps remain in progress."
 }

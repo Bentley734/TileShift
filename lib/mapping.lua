@@ -128,6 +128,22 @@ function M.validate(row)
   else return nil,'donor, native composition or original artwork required' end
   if ref and row.asset then return nil,'mapping must have exactly one artwork source' end
   if row.parts and (ref or row.asset) then return nil,'mapping must have exactly one artwork source' end
+  if row.assetFrames~=nil then
+    if not row.asset or row.kind~='original'or row.animated~=true or type(row.assetFrames)~='table'
+      or #row.assetFrames<2 or #row.assetFrames>16 then return nil,'invalid original overlay animation' end
+    for key in pairs(row.assetFrames)do
+      if not integer(key,#row.assetFrames)or key==0 then return nil,'overlay frames must be a dense array' end
+    end
+    for i=1,#row.assetFrames do
+      local frame=row.assetFrames[i]
+      if type(frame)~='table'or type(frame.asset)~='string'
+        or not frame.asset:match('^assets/original/[%w_/%-%.]+%.png$')or frame.asset:find('..',1,true)
+        or not fingerprint(frame.hash)then return nil,'invalid overlay animation fingerprint' end
+    end
+    if row.assetFrames[1].asset~=row.asset or row.assetFrames[1].hash~=row.assetFileHash then
+      return nil,'overlay animation must start with its checked original asset'
+    end
+  end
   if row.animated~=nil and type(row.animated)~='boolean' then return nil,'invalid animated tile flag' end
   if row.animated then
     local animation=row.animation

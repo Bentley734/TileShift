@@ -94,7 +94,7 @@ function F.new(ctx)
         local group=row and category(row)
         local key=y*width+x
         if group and self.selected[group]=='mixed' then
-          local marine=group=='water' and (row.role:find('coast',1,true)~=nil
+          local marine=group=='water' and not row.role:match('^freshwater_pond_') and (row.role:find('coast',1,true)~=nil
             or row.sourceOceanBounds~=nil or (row.parts and row.animated and row.base))
           occupied[key]={group=group,marine=marine,row=row}
         else occupied[key]=nil end

@@ -1,0 +1,40 @@
+{
+  "origin": "Original artwork generated with built-in imagegen for the Ilex Forest wayside Celebi altar. Not a walk-in building.",
+  "source_file": "exec-b5b9ab01-e8a2-4902-8379-61cb4743bcb5.png",
+  "source_sha256": "0aa0777607fe5816e4922c538391d2a0dfa613f56df3bfbcdf1b81ee97f0ad54",
+  "source_size": [
+    887,
+    1774
+  ],
+  "visible_bounds": [
+    167,
+    353,
+    721,
+    1387
+  ],
+  "integer_reduction": 35,
+  "crop": [
+    164,
+    267,
+    724,
+    1387
+  ],
+  "final_size": [
+    16,
+    32
+  ],
+  "binary_alpha": 128,
+  "colors": 24,
+  "dither": false,
+  "all_visible_original_art_in_crop": true,
+  "original_map_anchor": [
+    8,
+    22
+  ],
+  "no_collision_or_event_changes": true,
+  "files": {
+    "shrine.png": "1724b7c232e4ac1c4f6982d44b2bf0eeb1d2235705fd3763308897ed61b7fdba",
+    "cell-0.png": "c52c569f3c73391d009379a0ec5b44ec63cf118838149f63506a3e87a63e8271",
+    "cell-1.png": "a4733d588dbb4363f12ef68c531c8169d4342c2a3fcb45fc22c6ad5226b8334f"
+  }
+}

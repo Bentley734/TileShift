@@ -49,5 +49,12 @@ for i,frame in ipairs(assetWater.frames)do
  eq(frame.under:getPixel(4,0),i/10,'transparent original pixels reveal animated custom water')
 end
 local _,_,_,untouched=glass:getPixel(4,0);eq(untouched,0,'shared original sprite remains transparent')
+local foam1,foam2=image(16,16),image(16,16)
+foam1:setPixel(3,0,.1,.4,.9,1);foam2:setPixel(4,0,.1,.4,.9,1)
+local phases={frames={{under=native,over=foam1},{under=native,over=foam2}},period=.1}
+local _,moving=water:finish(ripple,phases.frames[1],phases,{asset='assets/original/foam.png'})
+eq(moving.frames[1].under:getPixel(3,0),.1,'current blue foam remains intact')
+eq(moving.frames[2].under:getPixel(3,0),.2,'water behind departed foam receives selected second phase')
+eq(moving.frames[2].under:getPixel(4,0),.1,'second foam position remains intact')
 
 print('water style checks: '..checks)

@@ -13,7 +13,7 @@ return function(mod)
     'mappings/pallet_buildings.lua','mappings/pallet_details.lua',
     'mappings/gen1_outdoor.lua','mappings/gen2_outdoor.lua','mappings/gen1_caves.lua',
     'mappings/gen2_buildings.lua','mappings/gen1_extended.lua','mappings/gen2_outdoor_extended.lua','mappings/azalea.lua','mappings/viridian.lua','mappings/gen2_pallet.lua','mappings/mahogany.lua','mappings/johto_terrain.lua','mappings/cianwood.lua','mappings/olivine.lua','mappings/ecruteak.lua','mappings/north_johto.lua','mappings/silver_cave_outside.lua','mappings/johto_terrain_repeats.lua','mappings/johto_route_details.lua','mappings/goldenrod_arcade.lua',
-    'mappings/buildings_extended.lua','mappings/building_overhangs.lua','mappings/goldenrod.lua','mappings/pallet_overhangs.lua','mappings/interiors.lua','mappings/gen2_caves.lua',
+    'mappings/buildings_extended.lua','mappings/building_overhangs.lua','mappings/goldenrod.lua','mappings/pallet_overhangs.lua','mappings/johto_remaining.lua','mappings/park.lua','mappings/interiors.lua','mappings/gen2_caves.lua',
   }) do
     local source=mod:read(path)
     if source then
@@ -227,6 +227,7 @@ return function(mod)
   for _,row in ipairs(readModule('lib/center_mart_roofs.lua'))do decorationRows[#decorationRows+1]=row end
   for _,row in ipairs(readModule('lib/goldenrod_roofs.lua'))do decorationRows[#decorationRows+1]=row end
   for _,row in ipairs(readModule('lib/pallet_roofs.lua'))do decorationRows[#decorationRows+1]=row end
+  for _,row in ipairs(readModule('lib/johto_roofs.lua'))do decorationRows[#decorationRows+1]=row end
   roofs=readModule('lib/roofs.lua').new({rows=decorationRows,validate=Mapping.validate,
     donor=decoder,original=original,compose=compose,version=GV.get,revision=function()return state.revision end,
     markTrueColor=function(x,y,w,h)

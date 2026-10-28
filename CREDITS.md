@@ -146,3 +146,22 @@ dithering. The native Emerald roof is assembled separately from fingerprinted
 donor references and is not regenerated. The original compact native building
 remains selectable. Processing and hashes are recorded in
 assets/original/center-expanded/provenance.json.
+
+## Ilex Forest, National Park and Route 32
+
+The shrine, park bench and transparent animated whirlpool foam are original
+artwork made with the built-in image-generation tool, normalized with uniform
+integer nearest-neighbour reduction and binary alpha. Their complete visible
+silhouettes, processing details and hashes are recorded in the corresponding
+assets/original provenance files. Whirlpool phases use exact quarter turns.
+
+National Park uses MetalFlygon08's complete native40x45 fountain at1:1 scale,
+under the same author permission cited above. No part of its base is cropped.
+The fountain and basin keep all original source movement permissions.
+
+Route32 uses native16x16 wooden pier boards from Peekychew's public standard
+route sheet, supplied and explicitly authorized by the user. Artist:
+https://www.deviantart.com/peekychew . Source hash, unscaled crop, edge recipe
+and output hashes are recorded in assets/third_party/peekychew/provenance.json.
+Other native Gen3 graphics remain fingerprinted references to the player's
+own imports, rather than redistributed ROM artwork.

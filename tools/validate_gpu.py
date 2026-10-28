@@ -239,7 +239,7 @@ local function run()
   local game=GV.get();local key=game..':'..def.id
   if roofPixelCache[key]then return roofPixelCache[key]end
   local cells={};roofPixelCache[key]=cells
-  for _,file in ipairs({'lib/roof_catalog.lua','lib/side_catalog.lua','lib/center_mart_roofs.lua','lib/goldenrod_roofs.lua','lib/pallet_roofs.lua'})do
+  for _,file in ipairs({'lib/roof_catalog.lua','lib/side_catalog.lua','lib/center_mart_roofs.lua','lib/goldenrod_roofs.lua','lib/pallet_roofs.lua','lib/johto_roofs.lua'})do
    local source=read(MOD..'/'..file)
    for _,row in ipairs(source and assert(load(source))()or{})do
    if row.game==game and row.map==def.id then
@@ -2323,20 +2323,20 @@ local function run()
   {game='gold',id='CIANWOOD_CITY',stem='johto-cianwood_city'},
   {game='gold',id='BLACKTHORN_CITY',stem='johto-blackthorn_city',complete=true,water=true},
   {game='gold',id='LAKE_OF_RAGE',stem='johto-lake_of_rage',complete=true,water=true},
-  {game='gold',id='RUINS_OF_ALPH_OUTSIDE',stem='johto-ruins_of_alph_outside'},
+  {game='gold',id='RUINS_OF_ALPH_OUTSIDE',stem='johto-ruins_of_alph_outside',complete=true,water=true},
   {game='gold',id='SILVER_CAVE_OUTSIDE',stem='johto-silver_cave_outside',complete=true,water=true},
   {game='gold',id='ROUTE_29',stem='johto-route_29',complete=true},
   {game='gold',id='ROUTE_30',stem='johto-route_30',complete=true},
   {game='gold',id='ROUTE_31',stem='johto-route_31',complete=true,water=true},
-  {game='gold',id='ROUTE_32',stem='johto-route_32'},
+  {game='gold',id='ROUTE_32',stem='johto-route_32',complete=true,water=true},
   {game='gold',id='ROUTE_33',stem='johto-route_33',complete=true},
 {game='gold',id='ROUTE_35',stem='johto-route_35',complete=true,water=true},
   {game='gold',id='ROUTE_36',stem='johto-route_36',complete=true},
   {game='gold',id='ROUTE_37',stem='johto-route_37',complete=true},
-  {game='gold',id='ROUTE_38',stem='johto-route_38'},
-  {game='gold',id='ROUTE_39',stem='johto-route_39'},
-  {game='gold',id='ROUTE_40',stem='johto-route_40'},
-  {game='gold',id='ROUTE_41',stem='johto-route_41'},
+  {game='gold',id='ROUTE_38',stem='johto-route_38',complete=true},
+  {game='gold',id='ROUTE_39',stem='johto-route_39',complete=true},
+  {game='gold',id='ROUTE_40',stem='johto-route_40',complete=true,water=true},
+  {game='gold',id='ROUTE_41',stem='johto-route_41',complete=true,water=true},
   {game='gold',id='ROUTE_42',stem='johto-route_42',complete=true,water=true},
   {game='gold',id='ROUTE_43',stem='johto-route_43',complete=true,water=true},
   {game='gold',id='ROUTE_44',stem='johto-route_44',complete=true,water=true},
@@ -2347,20 +2347,20 @@ local function run()
   {game='silver',id='CIANWOOD_CITY',stem='johto-cianwood_city'},
   {game='silver',id='BLACKTHORN_CITY',stem='johto-blackthorn_city',complete=true,water=true},
   {game='silver',id='LAKE_OF_RAGE',stem='johto-lake_of_rage',complete=true,water=true},
-  {game='silver',id='RUINS_OF_ALPH_OUTSIDE',stem='johto-ruins_of_alph_outside'},
+  {game='silver',id='RUINS_OF_ALPH_OUTSIDE',stem='johto-ruins_of_alph_outside',complete=true,water=true},
   {game='silver',id='SILVER_CAVE_OUTSIDE',stem='johto-silver_cave_outside',complete=true,water=true},
   {game='silver',id='ROUTE_29',stem='johto-route_29',complete=true},
   {game='silver',id='ROUTE_30',stem='johto-route_30',complete=true},
   {game='silver',id='ROUTE_31',stem='johto-route_31',complete=true,water=true},
-  {game='silver',id='ROUTE_32',stem='johto-route_32'},
+  {game='silver',id='ROUTE_32',stem='johto-route_32',complete=true,water=true},
   {game='silver',id='ROUTE_33',stem='johto-route_33',complete=true},
 {game='silver',id='ROUTE_35',stem='johto-route_35',complete=true,water=true},
   {game='silver',id='ROUTE_36',stem='johto-route_36',complete=true},
   {game='silver',id='ROUTE_37',stem='johto-route_37',complete=true},
-  {game='silver',id='ROUTE_38',stem='johto-route_38'},
-  {game='silver',id='ROUTE_39',stem='johto-route_39'},
-  {game='silver',id='ROUTE_40',stem='johto-route_40'},
-  {game='silver',id='ROUTE_41',stem='johto-route_41'},
+  {game='silver',id='ROUTE_38',stem='johto-route_38',complete=true},
+  {game='silver',id='ROUTE_39',stem='johto-route_39',complete=true},
+  {game='silver',id='ROUTE_40',stem='johto-route_40',complete=true,water=true},
+  {game='silver',id='ROUTE_41',stem='johto-route_41',complete=true,water=true},
   {game='silver',id='ROUTE_42',stem='johto-route_42',complete=true,water=true},
   {game='silver',id='ROUTE_43',stem='johto-route_43',complete=true,water=true},
   {game='silver',id='ROUTE_44',stem='johto-route_44',complete=true,water=true},
@@ -2371,20 +2371,20 @@ local function run()
   {game='crystal',id='CIANWOOD_CITY',stem='johto-cianwood_city'},
   {game='crystal',id='BLACKTHORN_CITY',stem='johto-blackthorn_city',complete=true,water=true},
   {game='crystal',id='LAKE_OF_RAGE',stem='johto-lake_of_rage',complete=true,water=true},
-  {game='crystal',id='RUINS_OF_ALPH_OUTSIDE',stem='johto-ruins_of_alph_outside'},
+  {game='crystal',id='RUINS_OF_ALPH_OUTSIDE',stem='johto-ruins_of_alph_outside',complete=true,water=true},
   {game='crystal',id='SILVER_CAVE_OUTSIDE',stem='johto-silver_cave_outside',complete=true,water=true},
   {game='crystal',id='ROUTE_29',stem='johto-route_29',complete=true},
   {game='crystal',id='ROUTE_30',stem='johto-route_30',complete=true},
   {game='crystal',id='ROUTE_31',stem='johto-route_31',complete=true,water=true},
-  {game='crystal',id='ROUTE_32',stem='johto-route_32'},
+  {game='crystal',id='ROUTE_32',stem='johto-route_32',complete=true,water=true},
   {game='crystal',id='ROUTE_33',stem='johto-route_33',complete=true},
   {game='crystal',id='ROUTE_35',stem='johto-route_35',complete=true,water=true},
   {game='crystal',id='ROUTE_36',stem='johto-route_36',complete=true},
   {game='crystal',id='ROUTE_37',stem='johto-route_37',complete=true},
-  {game='crystal',id='ROUTE_38',stem='johto-route_38'},
-  {game='crystal',id='ROUTE_39',stem='johto-route_39'},
-  {game='crystal',id='ROUTE_40',stem='johto-route_40'},
-  {game='crystal',id='ROUTE_41',stem='johto-route_41'},
+  {game='crystal',id='ROUTE_38',stem='johto-route_38',complete=true},
+  {game='crystal',id='ROUTE_39',stem='johto-route_39',complete=true},
+  {game='crystal',id='ROUTE_40',stem='johto-route_40',complete=true,water=true},
+  {game='crystal',id='ROUTE_41',stem='johto-route_41',complete=true,water=true},
   {game='crystal',id='ROUTE_42',stem='johto-route_42',complete=true,water=true},
   {game='crystal',id='ROUTE_43',stem='johto-route_43',complete=true,water=true},
   {game='crystal',id='ROUTE_44',stem='johto-route_44',complete=true,water=true},
@@ -2399,9 +2399,18 @@ local function run()
   {id='CHERRYGROVE_CITY',stem='cherrygrove',architecture=true,complete=true,water=true},
   {game='gold',id='CHERRYGROVE_CITY',stem='cherrygrove',architecture=true,complete=true,water=true},
   {game='silver',id='CHERRYGROVE_CITY',stem='cherrygrove',architecture=true,complete=true,water=true},
-  {id='ILEX_FOREST',stem='ilex'},
-  {game='gold',id='ILEX_FOREST',stem='ilex'},
-  {game='silver',id='ILEX_FOREST',stem='ilex'},
+  {game='gold',id='ROUTE_34',stem='route_34',complete=true,water=true},
+  {game='gold',id='NATIONAL_PARK',stem='national_park',complete=true,water=true},
+  {game='gold',id='NATIONAL_PARK_BUG_CONTEST',stem='national_park_bug_contest',complete=true,water=true},
+  {game='silver',id='ROUTE_34',stem='route_34',complete=true,water=true},
+  {game='silver',id='NATIONAL_PARK',stem='national_park',complete=true,water=true},
+  {game='silver',id='NATIONAL_PARK_BUG_CONTEST',stem='national_park_bug_contest',complete=true,water=true},
+  {game='crystal',id='ROUTE_34',stem='route_34',complete=true,water=true},
+  {game='crystal',id='NATIONAL_PARK',stem='national_park',complete=true,water=true},
+  {game='crystal',id='NATIONAL_PARK_BUG_CONTEST',stem='national_park_bug_contest',complete=true,water=true},
+  {id='ILEX_FOREST',stem='ilex',complete=true,water=true},
+  {game='gold',id='ILEX_FOREST',stem='ilex',complete=true,water=true},
+  {game='silver',id='ILEX_FOREST',stem='ilex',complete=true,water=true},
   {id='VIOLET_CITY',stem='violet',architecture=true,complete=true},
   {game='gold',id='VIOLET_CITY',stem='violet',architecture=true,complete=true},
   {game='silver',id='VIOLET_CITY',stem='violet',architecture=true,complete=true},
@@ -2453,6 +2462,35 @@ local function run()
    local bid=def.blocks[math.floor(21/2)*def.width+math.floor(14/2)+1]
    check(world.tilesets[def.tileset].collision[bid+1][3]==113,'Original Goldenrod arcade door permission changed')
    fixture.goldenrod_arcade={whole_building_pixels=6144,unscaled_source_retained=true,width=96,height=64,door_x=14,door_y=21,source_destination_preserved=true}
+  end
+  if spec.id=='ROUTE_41'then
+   local whirlpools=0
+   for _,r in ipairs(mappingRows('mappings/johto_remaining.lua'))do if r.game==game and r.map==spec.id and r.sourceCollision==36 then
+    check(r.role=='rocky_coast_whirlpool'and #r.assetFrames==8,'Whirlpool lost checked overlay phases')
+    local bid=def.blocks[math.floor(r.y/2)*def.width+math.floor(r.x/2)+1]
+    check(world.tilesets[def.tileset].collision[bid+1][r.y%2*2+r.x%2+1]==36,'Whirlpool requirement changed')
+    whirlpools=whirlpools+1
+   end end
+   check(whirlpools==4,'Route41 original whirlpool count changed')
+   for _,style in ipairs({'mixed','ripple-blue'})do
+    mod.exports.flora:select('water',style);mod.exports.state:invalidate();clock=0;world.mapImage=world:imageFor(map.id)
+    local selected=mod.exports.state:replacements(game,def.tileset,def)
+    for _,t in ipairs({0,.27,.54,.81,1.08,1.35,1.62,1.89})do clock=t;verifyCoveredPixels(def,selected,draw(),game..' whirlpool '..style)end
+   end
+   mod.exports.flora:select('water','default');mod.exports.state:invalidate();clock=0;world.mapImage=world:imageFor(map.id)
+   fixture.original_whirlpools=whirlpools
+  end
+  if spec.id=='NATIONAL_PARK'or spec.id=='NATIONAL_PARK_BUG_CONTEST'then
+   local regular,long,basin=0,0,0
+   for _,r in ipairs(mappingRows('mappings/park.lua'))do if r.game==game and r.map==spec.id then
+    if r.role=='tall_grass'then
+     check(r.occludes and r.foreground.effect=='tall_grass','Park grass lost actor foot occlusion')
+     if r.sourceCollision==20 then check(r.donor.id==21,'Long grass counterpart changed');long=long+1
+     elseif r.sourceCollision==24 then check(r.donor.id==13,'Regular grass counterpart changed');regular=regular+1 end
+    elseif r.role:match('^freshwater_pond_')then check(r.sourceOceanBounds==nil,'Park basin joined world ocean');basin=basin+1 end
+   end end
+   check(regular>0 and long>0 and basin>0,'Park distinct grass families or basin missing')
+   fixture.park={regular_grass=regular,long_grass=long,inland_basin=basin,original_contest_events_preserved=true}
   end
   local routeCaves={ROUTE_29=0,ROUTE_35=0,ROUTE_31=1,ROUTE_33=1,ROUTE_36=0,ROUTE_42=3,ROUTE_43=0,ROUTE_44=1,ROUTE_45=1,ROUTE_46=1}
   if spec.complete and routeCaves[spec.id]~=nil then
@@ -2575,6 +2613,15 @@ local function run()
   if spec.id=='VIOLET_CITY'then fixture.sprout=verifySprout(game,def,after)end
   if spec.water then fixture.water_all_frames=verifyAnimationFrames(def,art,draw,'general_water',8,1)end
   if spec.id=='ILEX_FOREST' then
+   local pond=0
+   for _,r in ipairs(mappingRows('mappings/johto_remaining.lua'))do if r.game==game and r.map==spec.id and r.role=='freshwater_pond_ilex'then
+    local mid=r.y==8 and(r.x==4 and 392 or r.x==9 and 394 or 393)
+     or(r.x==4 and 400 or(r.x==9 or(r.y>=12 and r.x==7))and 402 or 368)
+    check(r.sourceCollision==41 and r.animated and r.donor.id==mid and r.sourceOceanBounds==nil,
+     'Ilex pond must use a straight north bank, distinct corners and animated water throughout')
+    pond=pond+1
+   end end
+   check(pond==32,'Ilex complete native pond family missing');fixture.ilex_pond_cells=pond
    for _,choice in ipairs({'default','mixed','johto-pine32'})do
     mod.exports.flora:select('big_trees',choice);mod.exports.state:invalidate();clock=0;world.mapImage=world:imageFor(map.id)
     local selected=mod.exports.state:replacements(game,def.tileset,def)

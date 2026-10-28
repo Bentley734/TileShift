@@ -42,12 +42,14 @@ function W.new(ctx)
   end end
   return out
  end
- local function paint(piece,surface,protected)
+ local function paint(piece,surface,protected,overlay)
   local out=flatten(piece)
   for y=0,15 do for x=0,15 do
    local r,g,b,a=out:getPixel(x,y)
    -- Grey rocks, white foam, grass and brown banks are outside this mask.
-   if not protected[y*16+x] and a>0 and b-r>48/255 and b-g>8/255 then
+   local overlayAlpha=0
+   if overlay then local _,_,_,oa=overlay:getPixel(x,y);overlayAlpha=oa end
+   if not protected[y*16+x] and overlayAlpha==0 and a>0 and b-r>48/255 and b-g>8/255 then
     local sr,sg,sb,sa=surface:getPixel(x,y)
     if sa>0 then out:setPixel(x,y,sr,sg,sb,a) end
    end
@@ -57,13 +59,8 @@ function W.new(ctx)
  local self={}
  function self:finish(entry,piece,sequence,row)
   local protected={}
-  -- Original building pixels, including blue glass, are never water pixels.
-  if row and row.asset and piece.over then
-   for y=0,15 do for x=0,15 do
-    local _,_,_,a=piece.over:getPixel(x,y)
-    if a>0 then protected[y*16+x]=true end
-   end end
-  end
+  -- Native land parts are fixed; original overlay protection follows each
+  -- phase so moving foam does not leave unstyled water in its old position.
   for _,part in ipairs(row and row.parts or {})do
    local source=assert(ctx.donor:cell(part.donor))
    for _,name in ipairs(part.layers or {'under','mid','over'})do
@@ -76,8 +73,11 @@ function W.new(ctx)
   end
   local count=sequence and #sequence.frames or 8
   local frames={}
-  for i=1,count do frames[i]=paint(sequence and sequence.frames[i] or piece,
-   tile(entry,(i-1)%8+1),protected) end
+  for i=1,count do
+   local frame=sequence and sequence.frames[i] or piece
+   frames[i]=paint(frame,tile(entry,(i-1)%8+1),protected,
+    row and row.asset and(frame.over or piece.over))
+  end
   local result={frames=frames,period=sequence and sequence.period or .1}
   if sequence then for _,name in ipairs({'ticks','bank','counter','offset'})do result[name]=sequence[name] end end
   return frames[1],result

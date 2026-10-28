@@ -1,0 +1,33 @@
+{
+  "origin": "Original Gen3-style outdoor park bench generated with built-in imagegen.",
+  "source_file": "exec-0c086296-0491-40a8-96b1-ffc933256eaa.png",
+  "source_sha256": "1d20076e916aaa7421611714a50e8dce136ab96aa0a64ee8bde80ac6b6553161",
+  "visible_bounds": [
+    92,
+    191,
+    1356,
+    897
+  ],
+  "crop": [
+    84,
+    -63,
+    1364,
+    897
+  ],
+  "integer_reduction": 40,
+  "final_size": [
+    32,
+    24
+  ],
+  "canvas": [
+    32,
+    32
+  ],
+  "all_visible_art_preserved": true,
+  "files": {
+    "cell-0.png": "05217e29e8abcfa2c5de9b9d2b62418f003c070cdcb3654c566e164cb0c46a60",
+    "cell-1.png": "528be04cac18e8041be6ea17ebeda42f1dd0b4321d61b3b816ad1602b3bc5cc9",
+    "cell-2.png": "94557b5c8bf04cc558ebc1f397727f145b94392853d57aaa284929286ab6fc63",
+    "cell-3.png": "5fc3c8984f79eed325a054ad1620c869ba7904ca415cbb81310230dd20dcfc8d"
+  }
+}

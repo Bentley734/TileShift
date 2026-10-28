@@ -1,0 +1,24 @@
+{
+  "artist": "Peekychew",
+  "source_url": "https://www.deviantart.com/peekychew",
+  "source_file": "public_tileset_dump_4_4_standard_route_by_peekychew_ddp9chb.png",
+  "source_sha256": "c0717b2bb3180d73966e5beb3edf862e8dacf57310e1f0d34fcc2a52dec86788",
+  "authorization": "User supplied this public route asset sheet and explicitly authorized its use for fences, steps and other useful assets.",
+  "crop": [
+    272,
+    160,
+    288,
+    176
+  ],
+  "size": [
+    16,
+    16
+  ],
+  "scale": 1,
+  "edge": "Upper8px board strip; transparent lower8px reveals the same animated sea as adjoining water.",
+  "purpose": "Unscaled complete wooden-board pattern for Route32 fishing piers. Source ladder/walk permissions and all original fishing positions remain unchanged.",
+  "files": {
+    "pier-boards.png": "b04f833a91ea14205491266b579ab98dd37464a6af7237e0c7f0d8c9b3b05564",
+    "pier-edge.png": "f8728f815cc5b53c803fc97e4fbe807cb058818f1b6eafa2b7a12e16e191d33b"
+  }
+}
