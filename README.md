@@ -1,7 +1,9 @@
 # TileShift
 
 TileShift brings Gen 3 world art to Gen1Recomp with individually reviewed tile
-matches. Version 0.19.0 completes eight more Johto routes, including full native gates,
+matches. Version 0.20.0 adds the actual MetalFlygon08 Johto Gen3 Game Corner artwork,
+with complete original pixels and a full96x64 building footprint. Goldenrod
+remains in progress. Johto route replacements include full native gates,
 cave entrances, animated inland banks and thin cliff edges.
 Mt. Silver Outside is complete, including its cliff family,
 animated freshwater shoreline and original cave entrance. Blackthorn City and
@@ -23,7 +25,7 @@ Red's downstairs room, Blue's house and many ordinary Kanto homes are also
 fully retiled. Pallet includes compact houses and Oak's
 lab, trees, fences, signs, grass, animated flowers, water and shoreline. Route 1
 adds matching lawns, flowers, directional jump ledges and walkable steps.
-Johto Routes 30, 31, 33, 36, 37, 42, 43, 44, 45 and 46 are completely retiled
+Johto Routes 29, 30, 31, 33, 35, 36, 37, 42, 43, 44, 45 and 46 are completely retiled
 in Gold, Silver and Crystal. Original gate entrances, cave destinations,
 encounters and source movement rules are retained.
 
@@ -55,7 +57,7 @@ art; separate cartridge styles and reverse conversions are future work.
 1. Import **Emerald and FireRed** into Gen1Recomp. TileShift reads native donor
    art from your own imports; neither ROMs nor extracted native artwork are
    bundled.
-2. Download `TileShift-v0.19.0.zip` from [the latest release](https://github.com/Bentley734/TileShift/releases/latest).
+2. Download `TileShift-v0.20.0.zip` from [the latest release](https://github.com/Bentley734/TileShift/releases/latest).
 3. Extract the `tileshift` folder into Gen1Recomp's `mods` directory, enable
    **TileShift**, and restart the game.
 4. Open Options and set **Tileset** to **Gen 3**. This is the default on a fresh
@@ -158,8 +160,8 @@ Other cave floors can have different coverage; individual matches are scoped
 to the source map and the corresponding donor cave family.
 
 The complete map audit loads the actual mod and checks available replacements
-for all 1,791 imported Gen 1/2 maps. Version 0.19.0 covers 405,229 of 718,992
-initial background cells (56.4%), including 196 complete maps, with zero
+for all 1,791 imported Gen 1/2 maps. Version 0.20.0 covers 405,655 of 718,992
+initial background cells (56.4%), including 202 complete maps, with zero
 rejected mappings or warnings.
 This audit checks actual replacement availability and position scope; it does
 not render every map or constitute a full playthrough.

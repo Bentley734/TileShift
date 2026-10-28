@@ -11,6 +11,8 @@ from validate_gpu import runtime_fingerprint
 
 
 NAMES = {
+    ("crystal", "ROUTE_29"): ("Crystal / Route 29", "Route29", "Original Crystal native colors"),
+    ("crystal", "ROUTE_35"): ("Crystal / Route 35", "Route35", "Original Crystal native colors"),
     ("crystal", "ROUTE_31"): ("Crystal / Route 31", "Route31", "Original Crystal native colors"),
     ("crystal", "ROUTE_33"): ("Crystal / Route 33", "Route33", "Original Crystal native colors"),
     ("crystal", "ROUTE_36"): ("Crystal / Route 36", "Route36", "Original Crystal native colors"),

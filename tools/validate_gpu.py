@@ -2214,12 +2214,13 @@ local function run()
   {game='gold',id='LAKE_OF_RAGE',stem='johto-lake_of_rage',complete=true,water=true},
   {game='gold',id='RUINS_OF_ALPH_OUTSIDE',stem='johto-ruins_of_alph_outside'},
   {game='gold',id='SILVER_CAVE_OUTSIDE',stem='johto-silver_cave_outside',complete=true,water=true},
-  {game='gold',id='ROUTE_29',stem='johto-route_29'},
+  {game='gold',id='ROUTE_29',stem='johto-route_29',complete=true},
   {game='gold',id='ROUTE_30',stem='johto-route_30',complete=true},
   {game='gold',id='ROUTE_31',stem='johto-route_31',complete=true,water=true},
   {game='gold',id='ROUTE_32',stem='johto-route_32'},
   {game='gold',id='ROUTE_33',stem='johto-route_33',complete=true},
-{game='gold',id='ROUTE_36',stem='johto-route_36',complete=true},
+{game='gold',id='ROUTE_35',stem='johto-route_35',complete=true,water=true},
+  {game='gold',id='ROUTE_36',stem='johto-route_36',complete=true},
   {game='gold',id='ROUTE_37',stem='johto-route_37',complete=true},
   {game='gold',id='ROUTE_38',stem='johto-route_38'},
   {game='gold',id='ROUTE_39',stem='johto-route_39'},
@@ -2237,12 +2238,13 @@ local function run()
   {game='silver',id='LAKE_OF_RAGE',stem='johto-lake_of_rage',complete=true,water=true},
   {game='silver',id='RUINS_OF_ALPH_OUTSIDE',stem='johto-ruins_of_alph_outside'},
   {game='silver',id='SILVER_CAVE_OUTSIDE',stem='johto-silver_cave_outside',complete=true,water=true},
-  {game='silver',id='ROUTE_29',stem='johto-route_29'},
+  {game='silver',id='ROUTE_29',stem='johto-route_29',complete=true},
   {game='silver',id='ROUTE_30',stem='johto-route_30',complete=true},
   {game='silver',id='ROUTE_31',stem='johto-route_31',complete=true,water=true},
   {game='silver',id='ROUTE_32',stem='johto-route_32'},
   {game='silver',id='ROUTE_33',stem='johto-route_33',complete=true},
-{game='silver',id='ROUTE_36',stem='johto-route_36',complete=true},
+{game='silver',id='ROUTE_35',stem='johto-route_35',complete=true,water=true},
+  {game='silver',id='ROUTE_36',stem='johto-route_36',complete=true},
   {game='silver',id='ROUTE_37',stem='johto-route_37',complete=true},
   {game='silver',id='ROUTE_38',stem='johto-route_38'},
   {game='silver',id='ROUTE_39',stem='johto-route_39'},
@@ -2260,11 +2262,12 @@ local function run()
   {game='crystal',id='LAKE_OF_RAGE',stem='johto-lake_of_rage',complete=true,water=true},
   {game='crystal',id='RUINS_OF_ALPH_OUTSIDE',stem='johto-ruins_of_alph_outside'},
   {game='crystal',id='SILVER_CAVE_OUTSIDE',stem='johto-silver_cave_outside',complete=true,water=true},
-  {game='crystal',id='ROUTE_29',stem='johto-route_29'},
+  {game='crystal',id='ROUTE_29',stem='johto-route_29',complete=true},
   {game='crystal',id='ROUTE_30',stem='johto-route_30',complete=true},
   {game='crystal',id='ROUTE_31',stem='johto-route_31',complete=true,water=true},
   {game='crystal',id='ROUTE_32',stem='johto-route_32'},
   {game='crystal',id='ROUTE_33',stem='johto-route_33',complete=true},
+  {game='crystal',id='ROUTE_35',stem='johto-route_35',complete=true,water=true},
   {game='crystal',id='ROUTE_36',stem='johto-route_36',complete=true},
   {game='crystal',id='ROUTE_37',stem='johto-route_37',complete=true},
   {game='crystal',id='ROUTE_38',stem='johto-route_38'},
@@ -2318,7 +2321,28 @@ local function run()
    check(#fixture.architecture>0,'Public architecture GPU fixture contains no reviewed buildings')
   end
   if spec.complete then check(fixture.coverage.replaced_occurrences==fixture.coverage.visible_cells,'Complete Gen2 fixture has unresolved art')end
-  local routeCaves={ROUTE_31=1,ROUTE_33=1,ROUTE_36=0,ROUTE_42=3,ROUTE_43=0,ROUTE_44=1,ROUTE_45=1,ROUTE_46=1}
+  if spec.id=='GOLDENROD_CITY'then
+   local folder=MOD..'/assets/third_party/metalflygon08/'
+   local source=love.image.newImageData(love.filesystem.newFileData(assert(read(folder..'game-corner-source.png')),'arcade-source.png'))
+   local full=love.image.newImageData(love.filesystem.newFileData(assert(read(folder..'game-corner.png')),'arcade.png'))
+   check(source:getWidth()==80 and source:getHeight()==64 and full:getWidth()==96 and full:getHeight()==64,'Native arcade footprint changed')
+   local lawn=nativeCellImage({game='emerald',tileset='general__petalburg',id=1,hash='1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1'})
+   local entrance=nativeCellImage({game='emerald',tileset='general__mauville',id=723,hash='78d060b845ef3fa64703f529e2a7f595a182290ae87c4721f7f0cabf89554443'})
+   local expected=love.image.newImageData(96,64)
+   for y=0,63 do for x=0,95 do
+    equalPixel(full,x,y,source,x<72 and x or x-16,y,'Native arcade source feature was scaled, cropped or altered')
+    local r,g,b,a=full:getPixel(x,y);check(a==0 or a==1,'Native arcade acquired resampled alpha')
+    if a==0 then r,g,b,a=(x>=32 and x<48 and y>=48 and entrance or lawn):getPixel(x%16,y%16)end
+    expected:setPixel(x,y,r,g,b,a)
+    equalPixel(after,12*16+x,18*16+y,expected,x,y,'Full native arcade or correct roof/door background changed')
+   end end
+   local found=false;for _,w in ipairs(def.warps or{})do if w.x==14 and w.y==21 and w.destMap=='GOLDENROD_GAME_CORNER'then found=true end end
+   check(found,'Original Goldenrod arcade entrance changed')
+   local bid=def.blocks[math.floor(21/2)*def.width+math.floor(14/2)+1]
+   check(world.tilesets[def.tileset].collision[bid+1][3]==113,'Original Goldenrod arcade door permission changed')
+   fixture.goldenrod_arcade={whole_building_pixels=6144,unscaled_source_retained=true,width=96,height=64,door_x=14,door_y=21,source_destination_preserved=true}
+  end
+  local routeCaves={ROUTE_29=0,ROUTE_35=0,ROUTE_31=1,ROUTE_33=1,ROUTE_36=0,ROUTE_42=3,ROUTE_43=0,ROUTE_44=1,ROUTE_45=1,ROUTE_46=1}
   if spec.complete and routeCaves[spec.id]~=nil then
    local mouths,sideJambs,downMarkers=0,0,0
    local mouth=nativeCellImage({game='firered',tileset='general__rom_082d4af4',id=169,hash='d8ad64cabb388d76f36f8d1d39dcd0567de21348e20893da16e79652c1765d0a'})

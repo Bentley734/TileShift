@@ -107,3 +107,15 @@ Existing trees remain underneath; source collisions and interactions stay unchan
 Only plain exterior columns are repeated to match the original building width.
 Prompts, source hashes, processing steps and final asset hashes are in
 assets/original/ecruteak-v2/provenance.json.
+
+## MetalFlygon08 Johto Game Corner
+
+The Goldenrod Game Corner uses MetalFlygon08’s actual Johto Gen3 artwork
+from https://imgur.com/gallery/testing-out-gen-3-style-tiles-johto-6A43Cji .
+The author states that the tileset is free to use and prefers MetalFlygon08
+for credit: https://www.reddit.com/r/PokemonRMXP/comments/yf90qb/full_johto_gen_3_tileset_tile_set_at_the_bottom/ .
+All original80x64 pixels are retained at1:1 scale. One complete16px
+roof/window/wall section repeats to match the original96x64 map footprint;
+the entrance stays at40,64. No generated arcade artwork is included.
+Crop coordinates, source columns, permission links and hashes are recorded
+in assets/third_party/metalflygon08/provenance.json.

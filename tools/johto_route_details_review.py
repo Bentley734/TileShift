@@ -1,4 +1,4 @@
-"""Finish eight Johto routes with complete native gates, portals and cliff edges."""
+"""Finish ten Johto routes with complete native gates, portals and cliff edges."""
 import argparse,copy,json,os
 from pathlib import Path
 from types import SimpleNamespace
@@ -7,8 +7,9 @@ import catalog,preview,gen2_extended_review as e
 from interior_review import Imports
 from newbark_building_review import lua
 ROOT=Path(__file__).resolve().parents[1]
-MAPS=('ROUTE_31','ROUTE_33','ROUTE_36','ROUTE_42','ROUTE_43','ROUTE_44','ROUTE_45','ROUTE_46')
-GATES={'ROUTE_31':[(0,4,'side')],'ROUTE_36':[(14,6,'side'),(46,14,'front')],
+MAPS=('ROUTE_29','ROUTE_31','ROUTE_33','ROUTE_35','ROUTE_36','ROUTE_42','ROUTE_43','ROUTE_44','ROUTE_45','ROUTE_46')
+GATES={'ROUTE_29':[(26,0,'front_only')],'ROUTE_31':[(0,4,'side')],
+ 'ROUTE_35':[(2,2,'front'),(8,34,'back')],'ROUTE_36':[(14,6,'side'),(46,14,'front')],
  'ROUTE_43':[(16,32,'front'),(8,52,'back')],'ROUTE_46':[(6,34,'back')]}
 CAVES={'ROUTE_31':{(34,5):'DARK_CAVE_VIOLET_ENTRANCE'},'ROUTE_33':{(11,9):'UNION_CAVE_1F'},
  'ROUTE_42':{(10,5):'MOUNT_MORTAR_1F_OUTSIDE',(28,9):'MOUNT_MORTAR_1F_OUTSIDE',(46,7):'MOUNT_MORTAR_1F_OUTSIDE'},
@@ -40,9 +41,9 @@ def main():
    generic={(r['id'],r['quadrant'])for r in sel if r.get('x')is None};positioned={(r['id'],r['quadrant'],r['x'],r['y'])for r in sel if r.get('x')is not None};added=[]
    gate={}
    for ox,oy,kind in GATES.get(name,[]):
-    h=2 if kind=='back'else 4
+    h=2 if kind in('back','front_only')else 4
     for dy in range(h):
-     for dx in range(4):gate[ox+dx,oy+dy]=(front[dx,dy-2]if kind=='front'and dy>=2 else closed[dx,dy],kind)
+     for dx in range(4):gate[ox+dx,oy+dy]=(front[dx,dy]if kind=='front_only'else front[dx,dy-2]if kind=='front'and dy>=2 else closed[dx,dy],kind)
    for j,bid in enumerate(m['blocks']):
     for q in range(4):
      x,y=j%m['width']*2+q%2,j//m['width']*2+q//2
@@ -58,6 +59,12 @@ def main():
      elif c['collision']==112:
       assert raw==[64]*4;warp=next(w for w in m['warps']if w['x']==x and w['y']==y);assert'GATE'in warp['destMap'];r.update(art_fields(down),role='johto_route_down_gate_marker',sourceDestination=warp['destMap'])
      elif e.identity(c)in fences:r.update(art_fields(fences[e.identity(c)]),role='johto_route_complete_metal_fence')
+     elif raw==[90,90,74,89]and c['collision']==7:
+      # The complete horizontal panel has a terminal at each end. The
+      # following left-post cell joins its left terminal, as the reviewed
+      # Ecruteak right corner joins the same panel's right terminal.
+      seed=next(z for z in active if z['game']==game and z['role']=='ecruteak_native_metal_fence'and e.cell_info(cache,game,data,z['tileset'],z['id'],z['quadrant'])['tiles']==[90,90,89,74])
+      r.update(art_fields(seed),role='johto_route_complete_left_fence_turn')
      else:
       r.update(kind='native_composite',base=copy.deepcopy(ground),role='johto_route_thin_cliff')
       if raw in([6,61,6,61],[5,61,5,61]):r['parts']=[part(114,8,0,8,0,8,16)]
@@ -86,7 +93,7 @@ def main():
  for n,(label,im)in enumerate(patches):x,y=n%5*200,n//5*240;sheet.paste(im.resize((im.width*2,im.height*2),Image.Resampling.NEAREST),(x,y+20));draw.text((x,y),label,fill='white')
  sheet.save(out/'gate-cave-contexts.png')
  if args.activate:
-  text='-- Complete eight Johto routes: approved full native gates, portals and terrain.\nlocal rows={}\nlocal function add(batch)for _,r in ipairs(batch)do rows[#rows+1]=r end end\n'
+  text='-- Complete ten Johto routes: approved full native gates, portals and terrain.\nlocal rows={}\nlocal function add(batch)for _,r in ipairs(batch)do rows[#rows+1]=r end end\n'
   for n in range(0,len(rows),20):text+='add((function()return '+lua(rows[n:n+20])+' end)())\n'
   (ROOT/'mappings/johto_route_details.lua').write_bytes((text+'return rows\n').encode())
  print(json.dumps({'rows':len(rows),'maps':stats,'live':live,'activated':args.activate}))
