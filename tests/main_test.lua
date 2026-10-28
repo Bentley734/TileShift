@@ -76,7 +76,7 @@ for _,gameId in ipairs(games)do
     end},log={warn=function()end}}
   function mod:read(path)
     fixture.reads[#fixture.reads+1]=path
-    if path=='lib/roof_catalog.lua'then return 'return{}'end
+    if path=='lib/roof_catalog.lua'or path=='lib/side_catalog.lua'then return 'return{}'end
     if path=='lib/roofs.lua' or path=='lib/vegetation.lua' or path=='lib/flora.lua' or path=='lib/flora_catalog.lua' or path=='lib/water_styles.lua' then
       local file=assert(io.open(root..'/'..path,'rb'));local source=file:read('*a');file:close();return source
     end

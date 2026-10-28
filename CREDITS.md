@@ -119,3 +119,14 @@ roof/window/wall section repeats to match the original96x64 map footprint;
 the entrance stays at40,64. No generated arcade artwork is included.
 Crop coordinates, source columns, permission links and hashes are recorded
 in assets/third_party/metalflygon08/provenance.json.
+
+## Wider Bell Tower reference
+
+Bell Tower now uses the same original generated artwork that the user supplied
+again as the desired reference, with uniform9:1 integer nearest-neighbour
+reduction and binary transparency. Its visible width grows to78 pixels,
+with a96px canvas containing transparent portions in the two adjacent tiles.
+The original64px collision footprint and doorway remain unchanged. The tower
+continues north beyond the original map edge. The reference hash, crop,
+palette processing and asset hashes are recorded in
+assets/original/bell-wide/provenance.json.

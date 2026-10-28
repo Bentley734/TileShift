@@ -1,14 +1,28 @@
--- One decorative row above a building. Never modifies source tiles or collision.
+-- Bounded decorative roof/sides. Never modifies source tiles or collision.
 local R={}
 function R.new(ctx)
   local G=ctx.graphics or love.graphics
   local groups,cache,textures={},{},{}
   local closed,revision,quad=false,nil,nil
   for _,row in ipairs(ctx.rows or{})do
-    assert(ctx.validate(row),'Invalid reviewed roof overhang')
+    -- A side may render outside the map-image canvas; validate its real
+    -- fingerprint anchor with the same strict mapping validator. This copy
+    -- is made once at construction, never in the draw/update path.
+    local checked=row
+    if row.side then checked={};for k,v in pairs(row)do checked[k]=v end;checked.x=row.sourceX end
+    assert(ctx.validate(checked),'Invalid reviewed decorative tile')
+    local side=row.side=='left'or row.side=='right'
+    local boundedSide=side and type(row.buildingX)=='number'and type(row.buildingY)=='number'
+      and type(row.buildingW)=='number'and type(row.buildingH)=='number'
+      and row.buildingX>=0 and row.buildingY>=0 and row.buildingW>0 and row.buildingH>0
+      and row.buildingX%1==0 and row.buildingY%1==0 and row.buildingW%1==0 and row.buildingH%1==0
+      and row.x==(row.side=='left'and row.buildingX-1 or row.buildingX+row.buildingW)
+      and row.y>=row.buildingY and row.y<row.buildingY+row.buildingH
+      and type(row.sourceX)=='number'and row.sourceX%1==0
+    local above=row.side==nil and row.buildingY==row.y+1
     assert((row.game=='gold'or row.game=='silver'or row.game=='crystal')and row.style=='gen3'
-      and row.kind=='original'and row.map and row.x and row.y and row.buildingY==row.y+1,
-      'Roof must occupy only the single row above its original building')
+      and row.kind=='original'and row.map and row.x and row.y and(above or boundedSide),
+      'Decoration must occupy one upper row or one adjacent side column')
     local games=groups[row.game]or{};groups[row.game]=games
     local maps=games[row.map]or{};games[row.map]=maps
     maps[#maps+1]=row
@@ -26,10 +40,17 @@ function R.new(ctx)
     for i=1,list and #list or 0 do
       local row=list[i]
       local ok,data=pcall(function()
-        assert(row.tileset==def.tileset and row.x>=0 and row.y>=0
-          and row.x<def.width*2 and row.y<def.height*2,'Roof lies outside source map')
-        local bid=def.blocks[math.floor(row.y/2)*def.width+math.floor(row.x/2)+1]
-        assert(bid==row.id and row.quadrant==row.y%2*2+row.x%2,'Roof source position changed')
+        local sx=row.x
+        if row.side then
+          assert(row.buildingX+row.buildingW<=def.width*2 and row.buildingY+row.buildingH<=def.height*2,
+            'Decorative building footprint lies outside source map')
+          sx=math.max(0,math.min(def.width*2-1,row.x))
+          assert(row.sourceX==sx,'Decorative side anchor changed')
+        end
+        assert(row.tileset==def.tileset and sx>=0 and row.y>=0
+          and sx<def.width*2 and row.y<def.height*2,'Decoration lies outside checked source map')
+        local bid=def.blocks[math.floor(row.y/2)*def.width+math.floor(sx/2)+1]
+        assert(bid==row.id and row.quadrant==row.y%2*2+sx%2,'Decoration source position changed')
         local source,why=ctx.donor:cell({game=game,tileset=row.tileset,id=row.id,
           quadrant=row.quadrant,hash=row.sourceHash,hashOnly=true,map=def,
           monochrome=true,sourceFiles=row.sourceFiles})

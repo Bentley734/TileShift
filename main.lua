@@ -197,7 +197,9 @@ return function(mod)
   mod.hooks:wrap('core.update',callback,125)
   ownerBus=Runtime.hooks
   if ownerBus and ownerBus.ownerEpoch then ownerEpoch=ownerBus:ownerEpoch(mod.id)end
-  roofs=readModule('lib/roofs.lua').new({rows=readModule('lib/roof_catalog.lua'),validate=Mapping.validate,
+  local decorationRows=readModule('lib/roof_catalog.lua')
+  for _,row in ipairs(readModule('lib/side_catalog.lua'))do decorationRows[#decorationRows+1]=row end
+  roofs=readModule('lib/roofs.lua').new({rows=decorationRows,validate=Mapping.validate,
     donor=decoder,original=original,version=GV.get,revision=function()return state.revision end,
     active=function()return state.style=='gen3'and mod.generation==2 and owned()end,
     warn=function(s)mod.log:warn('%s',s)end})

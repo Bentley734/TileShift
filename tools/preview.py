@@ -527,10 +527,19 @@ def map_preview(cache, output, game, map_id, stem, rows, packed, scale, mod_root
     roof_path = mod_root / "lib/roof_catalog.lua"
     if roof_rows is None:
         roof_rows = read_reviewed(roof_path) if roof_path.exists() else []
+        side_path = mod_root / "lib/side_catalog.lua"
+        if side_path.exists():
+            roof_rows += read_reviewed(side_path)
     for overlay in roof_rows:
         if overlay["game"] == game and overlay["map"] == map_id:
-            assert overlay["y"] + 1 == overlay["buildingY"]
-            after.alpha_composite(asset_image(overlay, mod_root), (overlay["x"] * 16, overlay["y"] * 16))
+            if overlay.get("side"):
+                assert overlay["side"] in ("left", "right")
+                assert overlay["x"] == overlay["buildingX"] + (-1 if overlay["side"] == "left" else overlay["buildingW"])
+                assert overlay["buildingY"] <= overlay["y"] < overlay["buildingY"] + overlay["buildingH"]
+            else:
+                assert overlay["y"] + 1 == overlay["buildingY"]
+            if overlay["x"] * 16 < after.width:
+                after.alpha_composite(asset_image(overlay, mod_root), (overlay["x"] * 16, overlay["y"] * 16))
     total = len(catalog.lua_array(map_def["blocks"])) * 4
     display_w, display_h = before.width * scale, before.height * scale
     gap, left, top = 20, 18, 116

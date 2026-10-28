@@ -1,0 +1,99 @@
+{
+  "origin": "The user supplied the original generated Bell Tower reference again and requested its proportions, wider eaves, complete window panels and transparent partial side tiles. This is the same original source image used for the earlier tower; no new image generation or lateral stretching.",
+  "source_sha256": "d20d9068b22a5194e12b56208e9ed215c0846b7e2c1d3a051b2e09261af2642d",
+  "source_size": [
+    887,
+    1774
+  ],
+  "crop_xyxy": [
+    0,
+    622,
+    864,
+    1774
+  ],
+  "integer_reduction": 9,
+  "final_size": [
+    96,
+    128
+  ],
+  "alpha_bounds": [
+    8,
+    0,
+    86,
+    128
+  ],
+  "visible_width": 78,
+  "old_core_width": 64,
+  "map_origin_cell": [
+    35,
+    0
+  ],
+  "unchanged_collision_rect_cells": [
+    36,
+    0,
+    4,
+    8
+  ],
+  "door_bottom_anchor_px": [
+    40,
+    128
+  ],
+  "original_entrance_cell": [
+    37,
+    7
+  ],
+  "rgba_sha256": "9dbdb2b0dfc26a15228e817ebb3eea5abfc02c53f015cacb5504cdfe033f6804",
+  "core_rgba_sha256": "893d592078ba8a64eb6f9e67c4edba21fd0495309343abb6b78d9613626facf5",
+  "processing": "Uniform9:1 integer nearest-neighbour reduction, binary alpha128,40 colors without dithering. The original tower continues beyond the north map edge, so its original visible vertical map span is retained. No aspect-ratio change, window splicing, repeated columns or added collision. Only partial decorative side columns extend beyond the original source footprint; genuine unused alpha remains transparent.",
+  "files": {
+    "bell.png": "dc07c386bef4ec309f7f5da787e34631f3acbd0e2311bc55267f55e6f1bc7b83",
+    "cell-0-0.png": "0224fa4b7e38df24f8c1ec6137e874737c5ae54129ebf662bbc158272df2e886",
+    "cell-1-0.png": "1577573b7d286a2e667149ee5d46f2e8de13b7c980d4796342e20a65d9d9f811",
+    "cell-2-0.png": "71f12279e6ec2b5c9bc3f5ece90f152a5505df78a664cbc7693108582553aa7b",
+    "cell-3-0.png": "2cf79bddab1310da66e4c5e05c040e529d35e7b6194589133dd362686029c9f7",
+    "cell-4-0.png": "17448700eb0656d25a73d103fdb9d23b8d57d08069e66d4cc282f22aff363466",
+    "cell-5-0.png": "34f339a9e2ed1ad43cb7e9892955937e3c2798817f49b1df5d4642ac5354e456",
+    "cell-0-1.png": "473dffafac6a51ee008b9f0b8de6d9a723522b77ff970fa41e771ed06b217a48",
+    "cell-1-1.png": "3a0724186183daf0691e7561e0564b32747661d7808cc2ba8d16b7a4bab1e779",
+    "cell-2-1.png": "92ff46c793268b4f2e99a3633d21fb9f0fcbed4fce58c42107bfc98b0b098e5d",
+    "cell-3-1.png": "69b6817a3f989c11b06a940deb4260eb1f7eb30019a7556d384c0605c53435c5",
+    "cell-4-1.png": "f926305a3d6c930892dd6e3e920cc294ab661e99a150f9f27059c6174ed43e9c",
+    "cell-5-1.png": "a378d3dce523b40059fe696bed346ade336554e3b3a47636822b63d3788b37df",
+    "cell-0-2.png": "9ad374709ae75930dfe6f22d44665c34cb76624756822c6f7153a4e8bb11ffc3",
+    "cell-1-2.png": "25796900795a652cf018a88188b65fc2777554cb2cb1b89abe3bb38ebdf4d532",
+    "cell-2-2.png": "0d5b8b2691f382fe12e754885d3f26f19a2e4e350f716fe44992caa59b449fcd",
+    "cell-3-2.png": "aefe15a4c69c690552893d887eeaf2e0e48ca5db566dfa89c14c6ff043b07eb1",
+    "cell-4-2.png": "6b5a3fe19eb74ed1a58c610aec31951d33b85379954fc1ae67817bcce8f4b58c",
+    "cell-5-2.png": "1aaee8ac50d913b77ca1a6106535309d0700717d72f09bf9bd443ad620a9981e",
+    "cell-0-3.png": "a013f6606abf8e15f46c6bc8dc1218ec8559b6a86a6f5db15ecf9c2a90faec16",
+    "cell-1-3.png": "17b9ed3779b1cf6b4157fe04ea9a7abb433749735fdd93e9b19d2d3621df5174",
+    "cell-2-3.png": "df07a2bb3572816ec2d9243200537bc99b89ad7a6b48b85f0fa02729933b4bab",
+    "cell-3-3.png": "2e4e31b9ae70e2cb284a560d97cc768dfbc142553a542cc2e399277c22bc369f",
+    "cell-4-3.png": "c01da98dfdb0d9761a68927a373f88d6a82b93874aff8391e17bb6b18a0e8779",
+    "cell-5-3.png": "42f43a7ea848c223839aa4be64bbf9c4923ea8699c432761e400da4f337371d5",
+    "cell-0-4.png": "0e4acb23b1d792959ae3cbddaa54ac252a73adfb95c13ba93890b69e400a04ef",
+    "cell-1-4.png": "c4da0b60283588bb639e22a181cad98d021d4d159bfe7817000fc5a21c81e986",
+    "cell-2-4.png": "d435b7264326e8f637e85d3a957e106c9bf1f3a376565fb44c3f895325fbbd5b",
+    "cell-3-4.png": "fa29a1afb2a7a9174e00deb99fcb429ea56f66897243f110700e5dbbe0a32af3",
+    "cell-4-4.png": "fc41eb24c1791581621b46a89465b433f17584b908fb6bd5cc4601fc5df213d4",
+    "cell-5-4.png": "9bde1bf8bbb07a08125d3633b85f264b4ab4d277cde6faca5345db4ee95ca986",
+    "cell-0-5.png": "9842b20b5b2784f8308e4889ff33a1734ea31b39b76ce187cad71d8b765bb131",
+    "cell-1-5.png": "970b6ba1fdf2da844dc247e8fa6c39da430dbe455ab7502118443ff109a8dad8",
+    "cell-2-5.png": "bfb9bf3cd4c0f4eff098d234f7cc4f1de8fbf51a9bf0a04d89aed6604ef7312a",
+    "cell-3-5.png": "42db57dc5615c7a8f337e014fe8a61cc3fde42d1c3f4b7620e8d5fe05a15146e",
+    "cell-4-5.png": "2db463a561d7f898094bb0ecd6cd6da7fe1ecfd6464facbdbef93dd8c0720c25",
+    "cell-5-5.png": "97b0ef25f4aa9419b6e9dba75fcd80c2de214136b2bf886079178c30ec1c844a",
+    "cell-0-6.png": "d09a4018c68b44e4ab294156a5898c82a065114e927bdd0e2be5f1009c172f2c",
+    "cell-1-6.png": "694a65cb971cfa18d337bb2ac5a22a5a7a5f5b3fb501a4078a8eb9e51a165153",
+    "cell-2-6.png": "ac3e78608fceccae0b809bf497bc18938e64f2e487ce64e9eb326df3ba97101c",
+    "cell-3-6.png": "daa3d03fd06a0e55ad4309258d7885085cb1e49b2fd594a6520d3b6135f20bfc",
+    "cell-4-6.png": "ebc429ca9254dffeb1ebdd68d1724e4b40a7515581b3e3b8c350326f74b574b1",
+    "cell-5-6.png": "c8a157c8f741dac6ffaff6324599fd2a2659fafca8581163c2275a08c90253b8",
+    "cell-0-7.png": "1d2c08cdc6fe914596d3e90345759498f1972eed8c903a4e533b079b8e4db282",
+    "cell-1-7.png": "ddb6ce7d65abf69b674d080943bd86b630f2254c819ec48786fab1d1d7c8201f",
+    "cell-2-7.png": "27625d7501bac4d6f41e82b404f0b14f99750c59c29d09a2d98eb44ab66644f7",
+    "cell-3-7.png": "494959844b774ae0da0ef6a7cbb5afdbde09ee03c3c22d526dc000c83d6456ab",
+    "cell-4-7.png": "f0792a9efbe488db9e7248613440b395ce0d01dd06a94d7a3e0c84eddf9f98da",
+    "cell-5-7.png": "34c1a61721e19512113d68e16482dcc1c730f858d8a5e096f10f545a0065434f"
+  }
+}

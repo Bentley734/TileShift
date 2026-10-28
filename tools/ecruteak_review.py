@@ -80,5 +80,10 @@ def main():
   text='-- Complete Ecruteak: original reference-led Gen3 buildings and reviewed native terrain.\nlocal rows={}\nlocal function add(batch)for _,r in ipairs(batch)do rows[#rows+1]=r end end\n'
   for n in range(0,len(rows),20):text+='add((function()return '+lua(rows[n:n+20])+' end)())\n'
   (ROOT/'mappings/ecruteak.lua').write_bytes((text+'return rows\n').encode())
+ if args.activate and(ROOT/'assets/original/bell-wide/provenance.json').exists():
+  # Preserve the later user-approved side extension when regenerating other
+  # Ecruteak buildings. Reuse its checked final art; never revert to Bell v2.
+  import subprocess,sys
+  subprocess.run([sys.executable,str(ROOT/'tools/bell_width_review.py'),'--activate','--reuse-assets'],cwd=ROOT,check=True)
  print(json.dumps({'rows':len(rows),'live':live,'coverage':'1440/1440 each GSC','activated':args.activate}))
 if __name__=='__main__':main()

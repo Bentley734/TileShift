@@ -232,11 +232,13 @@ local function run()
   local game=GV.get();local key=game..':'..def.id
   if roofPixelCache[key]then return roofPixelCache[key]end
   local cells={};roofPixelCache[key]=cells
-  local source=read(MOD..'/lib/roof_catalog.lua')
-  for _,row in ipairs(source and assert(load(source))()or{})do
+  for _,file in ipairs({'lib/roof_catalog.lua','lib/side_catalog.lua'})do
+   local source=read(MOD..'/'..file)
+   for _,row in ipairs(source and assert(load(source))()or{})do
    if row.game==game and row.map==def.id then
     local bytes=assert(read(MOD..'/'..row.asset));check(hash(bytes)==row.assetFileHash,'Roof PNG fingerprint changed')
     cells[row.y*65536+row.x]=love.image.newImageData(love.filesystem.newFileData(bytes,'roof.png'))
+   end
    end
   end
   return cells
@@ -997,13 +999,16 @@ local function run()
   local function crop(image,r)local out=love.image.newImageData(r[3],r[4]);out:paste(image,0,0,r[1],r[2],r[3],r[4]);return out end
   local proof=Json.decode(assert(read(MOD..'/../.work/tileshift-ecruteak-finish/v2-building-model.json')))
   local provenance=Json.decode(assert(read(MOD..'/assets/original/ecruteak-v2/provenance.json')))
+  local wideProof=Json.decode(assert(read(MOD..'/assets/original/bell-wide/provenance.json')))
+  local wideSprite=love.image.newImageData(love.filesystem.newFileData(assert(read(MOD..'/assets/original/bell-wide/bell.png')),'wide-bell.png'))
+  check(wideSprite:getWidth()==96 and wideSprite:getHeight()==128 and hash(wideSprite:getString())==wideProof.rgba_sha256,'Wider Bell reference changed')
   local ground=nativeCellImage({game='emerald',tileset='general__petalburg',id=1,hash='1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1'})
   local count,closed,warps,pixels=0,0,0,0
   for _,record in ipairs(proof.instances)do if record.game==game then
    local name,box=record.art,record.draw_rect
-   local sprite=love.image.newImageData(love.filesystem.newFileData(assert(read(MOD..'/assets/original/ecruteak-v2/'..name..'/'..name..'.png')),name..'.png'))
+   local sprite=name=='bell'and crop(wideSprite,{16,0,64,128})or love.image.newImageData(love.filesystem.newFileData(assert(read(MOD..'/assets/original/ecruteak-v2/'..name..'/'..name..'.png')),name..'.png'))
    check(sprite:getWidth()==box[3]*16 and sprite:getHeight()==box[4]*16,'Ecruteak landmark footprint changed')
-   check(hash(sprite:getString())==record.rgba_sha256,'Approved Ecruteak whole-sprite pixels changed')
+   check(hash(sprite:getString())==(name=='bell'and wideProof.core_rgba_sha256 or record.rgba_sha256),'Approved Ecruteak whole-sprite pixels changed')
    local expected=capture(sprite:getWidth(),sprite:getHeight(),function()
     G.draw(world.mapImage,-box[1]*16,-box[2]*16)
     local top=G.newImage(sprite);G.draw(top,0,0);top:release()
@@ -1023,7 +1028,7 @@ local function run()
     local _,_,_,alpha=sprite:getPixel(a[1],sprite:getHeight()-2);check(alpha==1,'Ecruteak full doorway/base is missing at original entrance')
     warps=warps+1
    else closed=closed+1 end
-   local process=provenance.artwork[name]
+   local process=name=='bell'and wideProof or provenance.artwork[name]
    check(process.integer_reduction>=1 and process.integer_reduction%1==0,'Ecruteak artwork used fractional scaling')
    for y=0,sprite:getHeight()-1 do for x=0,sprite:getWidth()-1 do local _,_,_,a=sprite:getPixel(x,y);check(a==0 or a==1,'Ecruteak sprite has smoothed alpha');pixels=pixels+1 end end
    count=count+1
@@ -1077,7 +1082,58 @@ local function run()
   end
   world.player,world.npcs,world.entities=savedPlayer,savedNpcs,savedEntities
   mod.exports.vegetation:bind(world);body:release();background:release()
-  return {complete_original_buildings=count,closed_facades=closed,original_entrances=warps,original_sprite_pixels=pixels,pond_rows=pond,walkable_tower_approaches=steps,crystal_step_art=game=='crystal',decorative_roof_cells=headbutt,actor_occlusion_pixels=actorChecks,underlying_headbutt_interactions_unchanged=true}
+  -- Use the real native border renderer: the right decorative strip extends
+  -- beyond the map-image canvas. Verify both side alpha masks against an
+  -- otherwise identical frame with decorations temporarily hidden.
+  local savedW,savedH,savedCamera,savedNeighbors=world.viewW,world.viewH,world.camera,world.neighbors
+  world.viewW,world.viewH,world.camera,world.neighbors=160,144,{x=544,y=0},{}
+  local drawDecorations=mod.exports.roofs.map
+  mod.exports.roofs.map=function()end
+  local under=capture(160,144,function()world:drawGround(1)end)
+  mod.exports.roofs.map=drawDecorations
+  local decorated=capture(160,144,function()world:drawGround(1)end)
+  local sideRows=assert(load(assert(read(MOD..'/lib/side_catalog.lua'))))()
+  local opaqueSide,transparentSide,sideCount=0,0,0
+  local picks={}
+  for _,r in ipairs(sideRows)do if r.game==game then
+   check(r.map=='ECRUTEAK_CITY'and r.buildingX==36 and r.buildingY==0 and r.buildingW==4 and r.buildingH==8,'Bell collision footprint changed')
+   check(r.x==(r.side=='left'and 35 or 40)and r.sourceX==(r.side=='left'and 35 or 39),'Bell side lost its real source anchor')
+   local data=love.image.newImageData(love.filesystem.newFileData(assert(read(MOD..'/'..r.asset)),'bell-side.png'))
+   local px,py=r.x*16-world.camera.x,r.y*16
+   for y=0,15 do for x=0,15 do local _,_,_,a=data:getPixel(x,y)
+    check(a==0 or a==1,'Bell side alpha was smoothed')
+    if a==1 then equalPixel(decorated,px+x,py+y,data,x,y,'Wider Bell side missing, including beyond the map edge');opaqueSide=opaqueSide+1
+    else equalPixel(decorated,px+x,py+y,under,px+x,py+y,'Unused Bell side pixels overwrote original trees or native map border');transparentSide=transparentSide+1 end
+   end end
+   if r.y==4 then picks[#picks+1]={row=r,data=data}end
+   sideCount=sideCount+1
+  end end
+  check(sideCount==16 and opaqueSide>0 and transparentSide>0 and#picks==2,'Both partial Bell side columns must be present')
+  for y=0,127 do for x=0,95 do local _,_,_,a=wideSprite:getPixel(x,y)
+   if a==1 then equalPixel(decorated,16+x,y,wideSprite,x,y,'Wider reference architecture shifted or changed')end
+  end end
+  local contextImage=encodePng(decorated,game..'-ecruteak-wide-bell-context-gpu.png')
+  local sideActorPixels=0
+  local sideBody=G.newImage(bodyData);local sideBackground=G.newImage(decorated)
+  for _,pick in ipairs(picks)do for _,kind in ipairs({'player','wild','follower','npc'})do
+   local r=pick.row
+   local actor={px=r.x*16,py=r.y*16+4,sprite={frameWidth=16,frameHeight=16,anchorX=8,anchorY=16}}
+   actor.draw=function(e,ox,oy,s)G.draw(sideBody,ox+e.px*s,oy+(e.py-4)*s,0,s,s)end
+   world.player=kind=='player'and actor or nil;world.npcs=kind=='npc'and{actor}or{}
+   world.entities=(kind=='wild'or kind=='follower')and{actor}or{}
+   mod.exports.vegetation:bind(world)
+   local actual=capture(160,144,function()G.draw(sideBackground,0,0);actor:draw(-world.camera.x,0,1)end)
+   for y=0,15 do for x=0,15 do local _,_,_,a=pick.data:getPixel(x,y);local px=r.x*16-world.camera.x+x;local py=r.y*16+y
+    if a==1 then equalPixel(actual,px,py,pick.data,x,y,'Bell side failed to cover overlapping '..kind..' sprite pixels')
+    else local rr,gg,bb,aa=actual:getPixel(px,py);check(rr==1 and gg==0 and bb==1 and aa==1,'Unused Bell side hid overlapping '..kind..' sprite pixels')end
+    sideActorPixels=sideActorPixels+1
+   end end
+  end end
+  world.player,world.npcs,world.entities=savedPlayer,savedNpcs,savedEntities
+  world.viewW,world.viewH,world.camera,world.neighbors=savedW,savedH,savedCamera,savedNeighbors
+  mod.exports.vegetation:bind(world);sideBody:release();sideBackground:release()
+  return {complete_original_buildings=count,closed_facades=closed,original_entrances=warps,original_sprite_pixels=pixels,pond_rows=pond,walkable_tower_approaches=steps,crystal_step_art=game=='crystal',decorative_roof_cells=headbutt,actor_occlusion_pixels=actorChecks,underlying_headbutt_interactions_unchanged=true,
+   bell_side_cells=sideCount,bell_side_opaque_pixels=opaqueSide,bell_side_transparent_pixels=transparentSide,bell_side_synthetic_sprite_occlusion_pixels=sideActorPixels,bell_context=contextImage,bell_original_collision_and_entry_unchanged=true}
  end
 
  local function verifyOlivine(game,def,frame)

@@ -1,7 +1,10 @@
 # TileShift
 
 TileShift brings Gen 3 world art to Gen1Recomp with individually reviewed tile
-matches. Version 0.20.0 adds the actual MetalFlygon08 Johto Gen3 Game Corner artwork,
+matches. Version 0.21.0 widens Bell Tower using the supplied original reference.
+Its partial side tiles preserve the trees, ground and native map border underneath;
+the original entrance and collision footprint stay unchanged.
+Goldenrod uses the actual MetalFlygon08 Johto Gen3 Game Corner artwork,
 with complete original pixels and a full96x64 building footprint. Goldenrod
 remains in progress. Johto route replacements include full native gates,
 cave entrances, animated inland banks and thin cliff edges.
@@ -11,6 +14,9 @@ Lake of Rage are also complete.
 Ecruteak City is complete with original Gen3 buildings based
 on the supplied Johto reference, including its blue-roof homes, Dance Theater,
 Bell Tower, temple entrance and version-specific Burned Tower exterior.
+New building replacements keep their intended pixel scale and complete details.
+Decorative artwork may overhang neighbouring cells, with genuinely transparent
+unused portions; original entrances and collision footprints stay unchanged.
 Full roofs can extend one decorative tile above the unchanged building footprint,
 covering parts of the original trees and any actors behind them. No new collision
 is added; existing Headbutt trees retain their original interactions.
@@ -57,7 +63,7 @@ art; separate cartridge styles and reverse conversions are future work.
 1. Import **Emerald and FireRed** into Gen1Recomp. TileShift reads native donor
    art from your own imports; neither ROMs nor extracted native artwork are
    bundled.
-2. Download `TileShift-v0.20.0.zip` from [the latest release](https://github.com/Bentley734/TileShift/releases/latest).
+2. Download `TileShift-v0.21.0.zip` from [the latest release](https://github.com/Bentley734/TileShift/releases/latest).
 3. Extract the `tileshift` folder into Gen1Recomp's `mods` directory, enable
    **TileShift**, and restart the game.
 4. Open Options and set **Tileset** to **Gen 3**. This is the default on a fresh
@@ -160,7 +166,7 @@ Other cave floors can have different coverage; individual matches are scoped
 to the source map and the corresponding donor cave family.
 
 The complete map audit loads the actual mod and checks available replacements
-for all 1,791 imported Gen 1/2 maps. Version 0.20.0 covers 405,655 of 718,992
+for all 1,791 imported Gen 1/2 maps. Version 0.21.0 covers 405,655 of 718,992
 initial background cells (56.4%), including 202 complete maps, with zero
 rejected mappings or warnings.
 This audit checks actual replacement availability and position scope; it does
