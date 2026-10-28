@@ -597,7 +597,7 @@ def main():
                             (args.include_details, "pallet_details.lua"),
                             (args.include_outdoors, "gen1_outdoor.lua"), (args.include_outdoors, "gen2_outdoor.lua"),
                             (args.include_outdoors, "gen1_caves.lua"), (args.include_outdoors, "gen1_extended.lua"),
-                            (args.include_outdoors, "gen2_outdoor_extended.lua"), (args.include_outdoors, "azalea.lua"), (args.include_outdoors, "viridian.lua"), (args.include_outdoors, "gen2_pallet.lua"), (args.include_outdoors, "mahogany.lua"), (args.include_outdoors, "johto_terrain.lua"), (args.include_outdoors, "cianwood.lua"), (args.include_outdoors, "olivine.lua"), (args.include_outdoors, "ecruteak.lua"), (args.include_outdoors, "north_johto.lua"), (args.include_outdoors, "interiors.lua"),
+                            (args.include_outdoors, "gen2_outdoor_extended.lua"), (args.include_outdoors, "azalea.lua"), (args.include_outdoors, "viridian.lua"), (args.include_outdoors, "gen2_pallet.lua"), (args.include_outdoors, "mahogany.lua"), (args.include_outdoors, "johto_terrain.lua"), (args.include_outdoors, "cianwood.lua"), (args.include_outdoors, "olivine.lua"), (args.include_outdoors, "ecruteak.lua"), (args.include_outdoors, "north_johto.lua"), (args.include_outdoors, "silver_cave_outside.lua"), (args.include_outdoors, "interiors.lua"),
                             (args.include_outdoors, "gen2_caves.lua")):
         if requested and (args.reviewed.parent / name).exists():
             rows.extend(read_reviewed(args.reviewed.parent / name))

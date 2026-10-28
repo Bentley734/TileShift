@@ -2213,7 +2213,7 @@ local function run()
   {game='gold',id='BLACKTHORN_CITY',stem='johto-blackthorn_city',complete=true,water=true},
   {game='gold',id='LAKE_OF_RAGE',stem='johto-lake_of_rage',complete=true,water=true},
   {game='gold',id='RUINS_OF_ALPH_OUTSIDE',stem='johto-ruins_of_alph_outside'},
-  {game='gold',id='SILVER_CAVE_OUTSIDE',stem='johto-silver_cave_outside'},
+  {game='gold',id='SILVER_CAVE_OUTSIDE',stem='johto-silver_cave_outside',complete=true,water=true},
   {game='gold',id='ROUTE_29',stem='johto-route_29'},
   {game='gold',id='ROUTE_30',stem='johto-route_30',complete=true},
   {game='gold',id='ROUTE_31',stem='johto-route_31'},
@@ -2235,7 +2235,7 @@ local function run()
   {game='silver',id='BLACKTHORN_CITY',stem='johto-blackthorn_city',complete=true,water=true},
   {game='silver',id='LAKE_OF_RAGE',stem='johto-lake_of_rage',complete=true,water=true},
   {game='silver',id='RUINS_OF_ALPH_OUTSIDE',stem='johto-ruins_of_alph_outside'},
-  {game='silver',id='SILVER_CAVE_OUTSIDE',stem='johto-silver_cave_outside'},
+  {game='silver',id='SILVER_CAVE_OUTSIDE',stem='johto-silver_cave_outside',complete=true,water=true},
   {game='silver',id='ROUTE_29',stem='johto-route_29'},
   {game='silver',id='ROUTE_30',stem='johto-route_30',complete=true},
   {game='silver',id='ROUTE_31',stem='johto-route_31'},
@@ -2257,7 +2257,7 @@ local function run()
   {game='crystal',id='BLACKTHORN_CITY',stem='johto-blackthorn_city',complete=true,water=true},
   {game='crystal',id='LAKE_OF_RAGE',stem='johto-lake_of_rage',complete=true,water=true},
   {game='crystal',id='RUINS_OF_ALPH_OUTSIDE',stem='johto-ruins_of_alph_outside'},
-  {game='crystal',id='SILVER_CAVE_OUTSIDE',stem='johto-silver_cave_outside'},
+  {game='crystal',id='SILVER_CAVE_OUTSIDE',stem='johto-silver_cave_outside',complete=true,water=true},
   {game='crystal',id='ROUTE_29',stem='johto-route_29'},
   {game='crystal',id='ROUTE_30',stem='johto-route_30',complete=true},
   {game='crystal',id='ROUTE_31',stem='johto-route_31'},
@@ -2317,10 +2317,11 @@ local function run()
   end
   if spec.complete then check(fixture.coverage.replaced_occurrences==fixture.coverage.visible_cells,'Complete Violet fixture has unresolved art')end
   if spec.ladders then fixture.complete_native_ladders=verifyGen2Ladders(game,def,map,after)end
-  if spec.id=='BLACKTHORN_CITY'and spec.complete then
+  if(spec.id=='BLACKTHORN_CITY'or spec.id=='SILVER_CAVE_OUTSIDE')and spec.complete then
    local mouth=nativeCellImage({game='firered',tileset='general__rom_082d4af4',id=169,hash='d8ad64cabb388d76f36f8d1d39dcd0567de21348e20893da16e79652c1765d0a'})
    local entrances=0
-   for _,v in ipairs({{20,1,'DRAGONS_DEN_1F'},{36,9,'ICE_PATH_1F'}})do
+   local portals=spec.id=='BLACKTHORN_CITY'and{{20,1,'DRAGONS_DEN_1F'},{36,9,'ICE_PATH_1F'}}or{{18,11,'SILVER_CAVE_ROOM_1'}}
+   for _,v in ipairs(portals)do
     local found=false;for _,w in ipairs(def.warps or{})do if w.x==v[1]and w.y==v[2]and w.destMap==v[3]then found=true end end
     check(found,'Blackthorn original cave destination changed')
     local bid=def.blocks[math.floor(v[2]/2)*def.width+math.floor(v[1]/2)+1];local q=v[2]%2*2+v[1]%2
@@ -2330,9 +2331,10 @@ local function run()
    end
    fixture.native_cave_entrances=entrances
   end
-  if(spec.id=='BLACKTHORN_CITY'or spec.id=='LAKE_OF_RAGE')and spec.complete then
+  if(spec.id=='BLACKTHORN_CITY'or spec.id=='LAKE_OF_RAGE'or spec.id=='SILVER_CAVE_OUTSIDE')and spec.complete then
    local n=0
-   for _,r in ipairs(mappingRows('mappings/north_johto.lua'))do if r.game==game and r.map==def.id and r.role:match('^freshwater_pond_')then
+   local waterModule=spec.id=='SILVER_CAVE_OUTSIDE'and'mappings/silver_cave_outside.lua'or'mappings/north_johto.lua'
+   for _,r in ipairs(mappingRows(waterModule))do if r.game==game and r.map==def.id and r.role:match('^freshwater_pond_')then
     check(r.sourceOceanBounds==nil and r.animated==true,'Inland lake lost animation or joined the ocean')
     n=n+#r.sourceCells
    end end
