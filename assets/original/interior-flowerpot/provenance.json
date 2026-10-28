@@ -1,0 +1,34 @@
+{
+  "origin": "Original Gen3 compact planted flower box",
+  "tool": "image_gen.imagegen",
+  "prompt": "One complete tiny house flower planter sprite in the pixel-art style of Pok\u00e9mon Emerald / FireRed, intended logical resolution EXACTLY16 pixels wide by16 pixels tall, shown enlarged as clean hard square pixel clusters. A compact rectangular warm-brown wooden planter box filling the bottom4 logical pixels; a little green foliage and two cheerful small yellow-orange blossoms above it, with short stems. Front/three-quarter top-down GBA JRPG room-object perspective. Complete flower heads AND complete planter base all fit inside a single16x16 game tile. Bright but restrained12-color native GameBoyAdvance palette. Large pixel clusters, crisp stepped outlines. No dangling or hanging flowers, no long vase or long stalks, no stand, no glow or gradients, no text, no grid, no floor or wall. Genuinely transparent background outside the single complete planted flower box.",
+  "source_file": "exec-343d1bda-9a91-4ef3-9fa7-bb07c45d1400.png",
+  "source_sha256": "2b5fd27701601652bf293939c40639242e8070d23431948093fa18ca967fc6a7",
+  "source_size": [
+    1254,
+    1254
+  ],
+  "visible_bounds": [
+    222,
+    241,
+    1033,
+    1049
+  ],
+  "crop": [
+    219,
+    233,
+    1035,
+    1049
+  ],
+  "integer_reduction": 51,
+  "final_size": [
+    16,
+    16
+  ],
+  "binary_alpha": 128,
+  "palette_colors": 16,
+  "dither": false,
+  "files": {
+    "flowerpot.png": "85c5316f13e496e1014159eb36310b114d40c0eda7f8f03a65a577edbfe983d6"
+  }
+}

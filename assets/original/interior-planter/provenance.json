@@ -1,0 +1,37 @@
+{
+  "origin": "Original complete Gen3 room planter",
+  "name": "planter",
+  "logical_size": [
+    16,
+    16
+  ],
+  "prompt": "One complete tiny low indoor hedge planter sprite for a Pok\u00e9mon Emerald / FireRed GBA room, logical size EXACTLY16 by16 pixels, shown enlarged as very crisp large square pixel clusters. A wide squat rectangle of dense rounded green leaves filling the upper10 logical pixels, sitting in a complete low rectangular pale gray stone planter box along the bottom4 logical pixels. A tiny dark green base shadow between leaves and planter, restrained12-color GBA palette. Front three-quarter top-down JRPG view matching native interior furniture. No flowers, tree trunk or tall stems. Complete leafy bush AND entire planter base inside16x16. Truly transparent background outside this single complete low planter. No floor, room, text, grid, label, gradient, glow or small texture noise.",
+  "repeat_2x2": false,
+  "tool": "image_gen.imagegen",
+  "source_file": "exec-4872ac7c-91f7-486f-9785-518c267fe238.png",
+  "source_sha256": "2861aa3b6c57a15d677508cd3984eb34708ef1876559656f9f9457bcb3591f8c",
+  "source_size": [
+    1536,
+    1024
+  ],
+  "visible_bounds": [
+    168,
+    244,
+    1368,
+    836
+  ],
+  "crop": [
+    168,
+    -364,
+    1368,
+    836
+  ],
+  "integer_reduction": 75,
+  "binary_alpha": 128,
+  "dither": false,
+  "whole_visible_object_preserved": true,
+  "files": {
+    "planter.png": "2f5963590e45d6a8d147350e266ec35ccf3a15e4945b3e92dcd37b6c20683dbb",
+    "cell-0-0.png": "2f5963590e45d6a8d147350e266ec35ccf3a15e4945b3e92dcd37b6c20683dbb"
+  }
+}

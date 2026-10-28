@@ -1,0 +1,37 @@
+{
+  "origin": "Original complete Gen3 room lattice",
+  "name": "lattice",
+  "logical_size": [
+    8,
+    8
+  ],
+  "prompt": "One seamless repeating tiny wooden lattice tile for the interior floor puzzles of Pok\u00e9mon Johto\u2019s Bell Tower, in Pok\u00e9mon Emerald / FireRed native GBA pixel-art style. Intended logical resolution EXACTLY8 pixels wide by8 pixels tall, shown hugely enlarged as hard square pixel clusters. A top-down square of warm brown narrow wooden rafters: a thin horizontal beam across the top edge and one across the middle, one thin vertical crossbar at the left edge and one at the middle. Large transparent square holes between the timbers. Beams have one-pixel dark brown edge and one-pixel ochre highlight, no more than5 warm wood colors. A simple structural wooden grid, NOT solid boards and not a fence seen from the side. Must seamlessly repeat on all four sides. Genuinely transparent holes and transparent background, no floor, no shadow outside beams, no room, no text, no labels, no gradients, no perspective.",
+  "repeat_2x2": true,
+  "tool": "image_gen.imagegen",
+  "source_file": "exec-14131088-7ec8-48ee-8195-86081fd5e04f.png",
+  "source_sha256": "27bbecb3954701d9084154f9cc00218397eab1a1e47366ae8f679cd546dc06f3",
+  "source_size": [
+    1254,
+    1254
+  ],
+  "visible_bounds": [
+    105,
+    108,
+    1149,
+    1146
+  ],
+  "crop": [
+    103,
+    98,
+    1151,
+    1146
+  ],
+  "integer_reduction": 131,
+  "binary_alpha": 128,
+  "dither": false,
+  "whole_visible_object_preserved": true,
+  "files": {
+    "lattice.png": "8fea1c231d22aededd2b09a1cdb5a4a7eff96c04598a41e8ca7c431f9cecefdc",
+    "repeat.png": "fd4da3d85deff77339e0270c8f7236faae8153e46554ab62d6c51c7c56144d46"
+  }
+}

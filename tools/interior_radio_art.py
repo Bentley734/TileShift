@@ -1,0 +1,13 @@
+"""Integer-only normalization of the original Gen3 radio, retaining its case."""
+import argparse,json,math
+from pathlib import Path
+from PIL import Image
+import catalog
+ROOT=Path(__file__).resolve().parents[1]
+PROMPT='Single complete interior furniture sprite for a Pokémon Emerald / FireRed top-down overworld room. A small upright tabletop radio / compact stereo, intended logical footprint16 pixels wide by24 pixels tall, shown enlarged as very crisp pixel art. Three-quarter top-down JRPG perspective matching native GBA house furniture. Pale warm-gray plastic case, dark blue-gray circular speaker grille in the lower front, small amber tuning display and two tiny round knobs above it, subtle pale-blue top highlight. Complete case and bottom feet, no antenna and no wire. Restrained12-color palette, clean large pixel clusters, no gradients or antialiasing or photorealistic texture, no lettering. One radio only on genuinely transparent background, no floor, wall, pedestal, grid or labels. Compact mundane domestic appliance, not a television or arcade cabinet.'
+def main():
+ p=argparse.ArgumentParser();p.add_argument('source',type=Path);a=p.parse_args();im=Image.open(a.source).convert('RGBA');im.putalpha(im.getchannel('A').point(lambda v:255 if v>=128 else 0));b=im.getbbox();f=max(math.ceil((b[2]-b[0])/16),math.ceil((b[3]-b[1])/24));left=(b[0]+b[2])//2-8*f;box=(left,b[3]-24*f,left+16*f,b[3]);assert box[0]<=b[0]and box[1]<=b[1]and box[2]>=b[2];sprite=im.crop(box).resize((16,24),Image.Resampling.NEAREST).quantize(colors=16,method=Image.Quantize.FASTOCTREE,dither=Image.Dither.NONE).convert('RGBA');sprite.putalpha(sprite.getchannel('A').point(lambda v:255 if v>=128 else 0));canvas=Image.new('RGBA',(16,32));canvas.paste(sprite,(0,8));folder=ROOT/'assets/original/interior-radio';folder.mkdir(exist_ok=True,parents=True);files={}
+ for name,tile in(('radio.png',canvas),('cell-0.png',canvas.crop((0,0,16,16))),('cell-1.png',canvas.crop((0,16,16,32)))):
+  path=folder/name;tile.save(path);files[name]=catalog.sha(path.read_bytes())
+ proof={'origin':'Original Gen3 house radio made with the built-in image_gen tool.','tool':'image_gen.imagegen','prompt':PROMPT,'source_file':a.source.name,'source_sha256':catalog.sha(a.source.read_bytes()),'source_size':im.size,'visible_bounds':b,'crop':box,'integer_reduction':f,'final_size':[16,24],'canvas':[16,32],'offset':[0,8],'binary_alpha':128,'palette_colors':16,'dither':False,'whole_case_and_controls_preserved':True,'files':files};(folder/'provenance.json').write_text(json.dumps(proof,indent=2)+'\n');canvas.resize((160,320),Image.Resampling.NEAREST).save(ROOT.parent/'.work/tileshift-johto-rooms-finish/radio-review.png');print(json.dumps(proof))
+if __name__=='__main__':main()

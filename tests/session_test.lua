@@ -446,4 +446,59 @@ wrongCount.assetFrames={swirl.assetFrames[1],swirl.assetFrames[2],swirl.assetFra
 local badSwirl,badWarnings=make({wrongCount},{original=function()return glass end})
 badSwirl:select('gen3');badSwirl:replacements('red','OVERWORLD',def)
 eq(badSwirl.rejected,1);eq(#badWarnings,1,'changed native bank length fails closed')
+-- Recolor original pixels only after the existing source guards succeed.
+-- Per-quadrant palettes preserve mixed GBC colors without moving a pixel or
+-- reading the import again, and warm draws allocate/inspect nothing.
+;(function()
+local paletteRow=row(61,0);paletteRow.donor=nil;paletteRow.kind='source_palette';paletteRow.sourceColors={}
+for q=1,4 do
+ paletteRow.sourceColors[q]={{240,q*20,224},{170,q*20,144},{85,q*20,72},{24,q*20,32}}
+end
+local neutral,priority=newData(16,16),newData(16,16)
+for yy=0,15 do for xx=0,15 do
+ local shade=(xx+yy)%4;local value=(3-shade)/3
+ neutral:setPixel(xx,yy,value,value,value,(xx==2 and yy==7)and 0 or(xx==3 and yy==9)and .5 or 1)
+ if xx>=8 and yy<8 then priority:setPixel(xx,yy,value,value,value,1)end
+end end
+local paletteIdentity,paletteGood,paletteCalls,paletteReads,paletteAllocations='one',true,0,0,0
+local readNeutral=neutral.getPixel
+function neutral:getPixel(x,y)paletteReads=paletteReads+1;return readNeutral(self,x,y)end
+local paletteDecoder={invalidate=function()end,sourceIdentity=function()return paletteIdentity end,
+ cell=function(_,ref)
+  paletteCalls=paletteCalls+1;eq(ref.hashOnly,true,'recolor reuses only the guarded neutral source')
+  if not paletteGood then return nil,'source fingerprint changed'end
+  return {under=neutral,over=priority}
+ end}
+local paletteState,paletteWarnings=make({paletteRow},{donor=paletteDecoder,newImageData=function(w,h)
+ paletteAllocations=paletteAllocations+1;return newData(w,h)
+end})
+paletteState:select('gen3');local paletteBlocks=paletteState:replacements('red','OVERWORLD',def)
+eq(paletteState.accepted,1);eq(paletteState.rejected,0);eq(#paletteWarnings,0);eq(paletteCalls,1)
+for yy=0,15 do for xx=0,15 do
+ local sr,sg,sb,sa=readNeutral(neutral,xx,yy)
+ local rr,gg,bb,aa=paletteBlocks[61].image:getPixel(xx,yy)
+ eq(aa,sa,'source alpha and pixel coordinates remain exact')
+ if sa>0 then
+  local rgb=paletteRow.sourceColors[math.floor(yy/8)*2+math.floor(xx/8)+1][(xx+yy)%4+1]
+  eq(rr,rgb[1]/255);eq(gg,rgb[2]/255);eq(bb,rgb[3]/255)
+ end
+ local _,_,_,pa=priority:getPixel(xx,yy)
+ local _,_,_,fa=paletteBlocks[61].foreground:getPixel(xx,yy)
+ eq(fa,pa,'original priority geometry remains exact')
+ local after=readNeutral(neutral,xx,yy);eq(after,sr,'source image is never mutated')
+end end
+local warmReads,warmAllocations=paletteReads,paletteAllocations
+for i=1,1000 do eq(paletteState:replacements('red','OVERWORLD',def),paletteBlocks)end
+eq(paletteCalls,1);eq(paletteReads,warmReads,'warm recolors inspect no pixels')
+eq(paletteAllocations,warmAllocations,'warm recolors allocate no images')
+paletteIdentity='two';paletteGood=false;paletteState:checkSource('red')
+eq(next(paletteState:replacements('red','OVERWORLD',def)),nil,'changed source cannot reuse a cached recolor')
+eq(paletteState.accepted,0);eq(paletteState.rejected,1);eq(paletteCalls,2)
+eq(paletteReads,warmReads,'failed source guards run before recoloring any pixel')
+local badPalette=row(62,0);badPalette.donor=nil;badPalette.kind='source_palette';badPalette.sourceColors={}
+local badPaletteState,badPaletteWarnings,badPaletteCalls=make({badPalette});badPaletteState:select('gen3')
+eq(next(badPaletteState:replacements('red','OVERWORLD',def)),nil)
+eq(#badPaletteCalls,0,'invalid palettes fail before the source decoder')
+eq(badPaletteState.rejected,1);eq(#badPaletteWarnings,1)
+end)()
 print('PASS reviewed mapping session: '..count..' assertions')

@@ -165,3 +165,19 @@ https://www.deviantart.com/peekychew . Source hash, unscaled crop, edge recipe
 and output hashes are recorded in assets/third_party/peekychew/provenance.json.
 Other native Gen3 graphics remain fingerprinted references to the player's
 own imports, rather than redistributed ROM artwork.
+
+## Johto interiors
+
+Native Gen3 room, cave, casino, shop, laboratory, school, gym, tower and port
+artwork remains fingerprinted references to the player's own imports. Complete
+objects retain their native pixels; only repeating plain sections are rearranged.
+Original compact radios, computers, flowerpots, stairs, beacon, planter, pillar,
+rail post, lattice and Bellsprout painting were made with the built-in image
+generation tool and normalized with uniform integer nearest-neighbour reduction
+and binary alpha. Their prompts, source hashes, processing and file hashes are
+recorded in assets/original/interior-*/provenance.json. Tower roof-course
+modules derive from the previously approved original Sprout Tower artwork.
+Unique Unown inscriptions and unmatched transport/studio details use the
+user-requested native-pixel palette recoloring. Their original imported source
+pixels remain in the player's cache; only color values and fingerprinted mapping
+references are packaged.

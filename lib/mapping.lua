@@ -21,6 +21,23 @@ end
 local function fingerprint(value)
   return type(value)=='string' and #value==64 and value:match('^[0-9a-f]+$')~=nil
 end
+local function dense(value,size)
+  if type(value)~='table' or #value~=size then return false end
+  for i=1,size do if rawget(value,i)==nil then return false end end
+  for key in pairs(value)do if not integer(key,size) or key==0 then return false end end
+  return true
+end
+local function sourceColors(colors)
+  if not dense(colors,4) then return false end
+  for _,palette in ipairs(colors)do
+    if not dense(palette,4) then return false end
+    for _,rgb in ipairs(palette)do
+      if not dense(rgb,3) then return false end
+      for _,channel in ipairs(rgb)do if not integer(channel,255) then return false end end
+    end
+  end
+  return true
+end
 local function origin(ref)
   if ref.kind==nil then return true end
   if ref.kind=='field_effect' then
@@ -90,8 +107,16 @@ function M.validate(row)
         or rect[1]+rect[3]>16 or rect[2]+rect[4]>16 then return nil,'invalid retained native rectangle' end
     end
   end
+  if row.sourceColors~=nil and row.kind~='source_palette' then return nil,'source colors require source palette artwork' end
   local ref=row.donor
-  if ref then
+  if row.kind=='source_palette' then
+    if generations[row.game]>=3 or row.style~='gen3' then return nil,'source palette artwork requires a GB source and Gen3 style' end
+    if ref or row.base or row.parts or row.asset or row.artOverlay or row.foreground
+      or row.occludes or row.animated or row.animation or row.frames or row.assetFrames then
+      return nil,'source palette artwork must only recolor its original source'
+    end
+    if not sourceColors(row.sourceColors) then return nil,'source colors must be four dense palettes of four RGB8 triples' end
+  elseif ref then
     if type(ref)~='table' or not M.donorMatches(row.style,ref.game) then return nil,'donor does not match selected style' end
     if type(ref.tileset)~='string' or ref.tileset=='' or not integer(ref.id,65535) then return nil,'invalid donor tile reference' end
     if generations[ref.game]<3 and not integer(ref.quadrant or 0,3) then return nil,'invalid donor quadrant' end

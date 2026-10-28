@@ -1,0 +1,35 @@
+{
+  "origin": "Original complete compact Gen3 interior up staircase.",
+  "tool": "image_gen.imagegen",
+  "prompt": "A single tiny indoor ascending staircase game tile in Pok\u00e9mon Emerald / FireRed GBA pixel art. Intended logical size EXACTLY 16 by 16 pixels, enlarged with clean hard square pixel clusters, just six restrained native GBA colors. Three-quarter top-down RPG view, stairs ascending toward the upper right: complete diagonal charcoal-gray stair side edge and pale gray stair treads, with a thin dark handrail along the upper diagonal edge. Three or four broad visible treads. Every tread and both ends fit completely within one square 16x16 tile. A compact stair entrance marker designed for the original Game Boy Johto indoor footprint. No large surrounding platform or wall, no text or labels, no glow or gradients, no perspective vanishing point, no border. Truly transparent background outside the single complete compact staircase.",
+  "source_file": "exec-5acce29f-2a43-4f14-9e03-2e332bcd20ba.png",
+  "source_sha256": "ec4a3fc286563e866f98d546c98e1a78e45c6eeeeefd8c66b695336e188eda15",
+  "source_size": [
+    1254,
+    1254
+  ],
+  "visible_bounds": [
+    339,
+    352,
+    940,
+    974
+  ],
+  "crop": [
+    327,
+    350,
+    951,
+    974
+  ],
+  "integer_reduction": 39,
+  "final_size": [
+    16,
+    16
+  ],
+  "binary_alpha": 128,
+  "palette_colors": 12,
+  "dither": false,
+  "whole_staircase_preserved": true,
+  "files": {
+    "up.png": "b2a1ff6fb719eb336cafe8a0968b701b7e2b8d4f7c11f428601bc58390e67342"
+  }
+}

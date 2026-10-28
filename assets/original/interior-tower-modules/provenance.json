@@ -1,0 +1,59 @@
+{
+  "origin": "Unscaled modular derivatives of original Gen3 artwork; no imported ROM pixels.",
+  "sources": {
+    "sprout_roof": {
+      "path": "assets/original/sprout-tower/tower.png",
+      "sha256": "5fcc4a977c52e089ea5d735a3e3e3fc78d4e8bbb0077d96c322a232f1a36bc59",
+      "crops": {
+        "roof-west": [
+          2,
+          8,
+          10,
+          16
+        ],
+        "roof-east": [
+          54,
+          8,
+          62,
+          16
+        ]
+      }
+    },
+    "post": {
+      "path": "assets/original/interior-railpost/railpost.png",
+      "sha256": "526e5042ed374fae82071dab68c5de346912dfa12a2b5fb20ce6cf5f19c84a7a"
+    },
+    "painting": {
+      "path": "assets/original/interior-painting/painting.png",
+      "sha256": "78da4cb95b38a5c7032cd1e15b8f59288d091b2c61d419a73c9d42d2d456857e"
+    },
+    "lattice": {
+      "path": "assets/original/interior-lattice/lattice.png",
+      "sha256": "8fea1c231d22aededd2b09a1cdb5a4a7eff96c04598a41e8ca7c431f9cecefdc"
+    }
+  },
+  "scale": 1,
+  "composition": "Exact8px modules repeated, with explicit black gap masks for each original lattice edge and transparent original floor cutouts. Complete painting and all four frame corners span two guarded original cells.",
+  "files": {
+    "roof-west.png": "4f8052b9c8c9379bba660659d5ada5f85878d860166f868f1fe411c6cc3ac720",
+    "roof-east.png": "445f375f77e09aacc1c5c21a83fc8d8c6612fe711725e14ed3182c14c9dbc99a",
+    "ridge.png": "b60e81890ee8b61f08a38739ddfaf48400800d63ed401ea26d1d2fca21902d77",
+    "ridge-end.png": "b43cc6c358b9df67e124c415ccf0d6f09ba57bbb3f26e90ea309fb7c6425c1d6",
+    "fringe.png": "c490a11c8d9b9764fc46da2a73c3745945e5eea843d5ac106118ed771c3c9490",
+    "wall.png": "2730a284773201b0b4aecb160deb3c8d5089eb13c12956b22e179d4cc55ce767",
+    "broken-wall.png": "6515276c82091f1c2bc16c4edd8a91207a19dcad0f60f082acc657075d4fcdf8",
+    "vertical-wall.png": "49b2a2ea8562b512ace6f2db6befa3af4ef4878251d8283a746b9e2893eb8945",
+    "painting-left.png": "8888b300bd771a39cd04cbb01438f3243c2094d69ab863a035e5182458378586",
+    "painting-right.png": "b1d74d8d03ec01e731d0ae96b25b3de2759399499b24808a93bae2243b66de99",
+    "lattice-10-11-26-27.png": "1770086d510e6abb702d3450b3227d43de89694b1bd8e817b4f66765e3babcfa",
+    "lattice-11-11-27-27.png": "1b1e486c25c13d11c9e2c549ef6541dba262887579b403bdd90b9286733ed290",
+    "lattice-26-27-26-27.png": "632f7f26778d92c7f06d60c11ee89e5beb6e3d0c7193a6b475002f10bbf492df",
+    "lattice-27-27-27-27.png": "e9db81628f146b5350457ad01612ba33efe609f622571e058d65f4c028fe09c7",
+    "lattice-27-70-27-86.png": "6d3dc15f3398bd27f75ca5f0868772f6e678045daa7c1bfb4f206c237f3e6a4e",
+    "lattice-27-11-27-27.png": "c87b81d15874bb346514dfcce6a5145832014c61eb0608a0f2f0fcfd0a628659",
+    "lattice-71-26-87-26.png": "fc0850c543875d4a8fd885c418fc5264976689621a198305b6a394e8c899c541",
+    "lattice-11-27-27-27.png": "89c484e175afebd90e84e631ded56c4bfba01f019067999a9deffd3ec8b3ada9",
+    "lattice-3-3-11-11.png": "7a4b04e40c589df42647a2c6257817d8088abb729731f582a0735794ab61527c",
+    "lattice-26-27-27-27.png": "d6c3c8612225af84e1cf5f260a03fd8a4b79404fb0cd5c4ba81e075cd4c1466b"
+  }
+}

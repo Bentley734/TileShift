@@ -1,0 +1,45 @@
+{
+  "origin": "Original Gen3 house radio made with the built-in image_gen tool.",
+  "tool": "image_gen.imagegen",
+  "prompt": "Single complete interior furniture sprite for a Pok\u00e9mon Emerald / FireRed top-down overworld room. A small upright tabletop radio / compact stereo, intended logical footprint16 pixels wide by24 pixels tall, shown enlarged as very crisp pixel art. Three-quarter top-down JRPG perspective matching native GBA house furniture. Pale warm-gray plastic case, dark blue-gray circular speaker grille in the lower front, small amber tuning display and two tiny round knobs above it, subtle pale-blue top highlight. Complete case and bottom feet, no antenna and no wire. Restrained12-color palette, clean large pixel clusters, no gradients or antialiasing or photorealistic texture, no lettering. One radio only on genuinely transparent background, no floor, wall, pedestal, grid or labels. Compact mundane domestic appliance, not a television or arcade cabinet.",
+  "source_file": "exec-e5823325-a2ec-4835-8a94-48c932d4eb50.png",
+  "source_sha256": "9048a066884f43718737495c3174f302a74f0ac3e0c74b187d2ffd55c3167338",
+  "source_size": [
+    1024,
+    1536
+  ],
+  "visible_bounds": [
+    210,
+    314,
+    816,
+    1328
+  ],
+  "crop": [
+    169,
+    296,
+    857,
+    1328
+  ],
+  "integer_reduction": 43,
+  "final_size": [
+    16,
+    24
+  ],
+  "canvas": [
+    16,
+    32
+  ],
+  "offset": [
+    0,
+    8
+  ],
+  "binary_alpha": 128,
+  "palette_colors": 16,
+  "dither": false,
+  "whole_case_and_controls_preserved": true,
+  "files": {
+    "radio.png": "21015b568d920f32c4fef86497d5bf535ff248c0a64149468ee15842439e98f3",
+    "cell-0.png": "da5079900875aa3c200ab0209f326b9599d313f9e6264a8ef049039faae6ae92",
+    "cell-1.png": "8dd7025aaf0213602496b58b985c3665e44e1137226665b634321d779ff3ead2"
+  }
+}

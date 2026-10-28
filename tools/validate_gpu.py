@@ -1146,7 +1146,7 @@ local function run()
   local sideRows=assert(load(assert(read(MOD..'/lib/side_catalog.lua'))))()
   local opaqueSide,transparentSide,sideCount=0,0,0
   local picks={}
-  for _,r in ipairs(sideRows)do if r.game==game then
+  for _,r in ipairs(sideRows)do if r.game==game and r.map=='ECRUTEAK_CITY'then
    check(r.map=='ECRUTEAK_CITY'and r.buildingX==36 and r.buildingY==0 and r.buildingW==4 and r.buildingH==8,'Bell collision footprint changed')
    check(r.x==(r.side=='left'and 35 or 40)and r.sourceX==(r.side=='left'and 35 or 39),'Bell side lost its real source anchor')
    local data=love.image.newImageData(love.filesystem.newFileData(assert(read(MOD..'/'..r.asset)),'bell-side.png'))
@@ -2417,13 +2417,56 @@ local function run()
   {id='CERULEAN_CITY',stem='cerulean',architecture=true},
   {id='VERMILION_CITY',stem='vermilion',animated_buildings=true},
   {id='ROUTE_12',stem='route12',animated_buildings=true},
-  {id='ELMS_LAB',stem='elmslab'},
+  {id='PLAYERS_HOUSE_1F',stem='johto-players_house_1f',complete=true},
+  {id='PLAYERS_HOUSE_2F',stem='johto-players_house_2f',complete=true},
+  {id='EARLS_POKEMON_ACADEMY',stem='johto-earls_pokemon_academy',complete=true},
+  {id='KURTS_HOUSE',stem='johto-kurts_house',complete=true},
+  {id='DANCE_THEATER',stem='johto-dance_theater',complete=true},
+  {id='VIOLET_POKECENTER_1F',stem='johto-violet_pokemon_center_1f',complete=true},
+  {id='ROUTE_35_NATIONAL_PARK_GATE',stem='johto-route_35_national_park_gate',complete=true},
+  {id='GOLDENROD_GAME_CORNER',stem='johto-goldenrod_game_corner',complete=true},
+  {id='OLIVINE_CAFE',stem='johto-olivine_cafe',complete=true},
+  {id='GOLDENROD_DEPT_STORE_2F',stem='johto-goldenrod_dept_store_2f',complete=true},
+  {id='GOLDENROD_DEPT_STORE_6F',stem='johto-goldenrod_dept_store_6f',complete=true},
+  {id='GOLDENROD_DEPT_STORE_ROOF',stem='johto-goldenrod_dept_store_roof',complete=true},
+  {id='GOLDENROD_DEPT_STORE_ELEVATOR',stem='johto-goldenrod_dept_store_elevator',complete=true},
+  {id='GOLDENROD_UNDERGROUND_WAREHOUSE',stem='johto-goldenrod_underground_warehouse',complete=true},
+  {id='TEAM_ROCKET_BASE_B1F',stem='johto-team_rocket_base_b1f',complete=true},
+  {id='TEAM_ROCKET_BASE_B2F',stem='johto-team_rocket_base_b2f',complete=true},
+  {id='TEAM_ROCKET_BASE_B3F',stem='johto-team_rocket_base_b3f',complete=true},
+  {id='RUINS_OF_ALPH_RESEARCH_CENTER',stem='johto-ruins_of_alph_research_center',complete=true},
+  {id='POKECOM_CENTER_ADMIN_OFFICE_MOBILE',stem='johto-pokecom_center_admin_office_mobile',complete=true},
+  {id='SPROUT_TOWER_3F',stem='johto-sprout_tower_3f',complete=true},
+  {id='TIN_TOWER_6F',stem='johto-tin_tower_6f',complete=true},
+  {id='TIN_TOWER_ROOF',stem='johto-tin_tower_roof',complete=true},
+  {id='OLIVINE_LIGHTHOUSE_6F',stem='johto-olivine_lighthouse_6f',complete=true},
+  {id='GOLDENROD_GYM',stem='johto-goldenrod_gym',complete=true},
+  {id='ECRUTEAK_GYM',stem='johto-ecruteak_gym',complete=true},
+  {id='MAHOGANY_GYM',stem='johto-mahogany_gym',complete=true},
+  {id='BLACKTHORN_GYM_1F',stem='johto-blackthorn_gym_1f',complete=true},
+  {id='GOLDENROD_BIKE_SHOP',stem='johto-goldenrod_bike_shop',complete=true},
+  {id='BATTLE_TOWER_OUTSIDE',stem='johto-battle_tower_outside',complete=true},
+  {id='BATTLE_TOWER_1F',stem='johto-battle_tower_1f',complete=true},
+  {id='BATTLE_TOWER_HALLWAY',stem='johto-battle_tower_hallway',complete=true},
+  {id='BATTLE_TOWER_ELEVATOR',stem='johto-battle_tower_elevator',complete=true},
+  {id='BATTLE_TOWER_BATTLE_ROOM',stem='johto-battle_tower_battle_room',complete=true},
+  {id='DRAGONS_DEN_B1F',stem='johto-dragons_den_b1f',complete=true,animation=true},
+  {id='WHIRL_ISLAND_LUGIA_CHAMBER',stem='johto-whirl_island_lugia_chamber',complete=true,lit_cave=true,animation=true},
+  {id='TOHJO_FALLS',stem='johto-tohjo_falls',complete=true,lit_cave=true,animation=true},
+  {id='OLIVINE_PORT',stem='johto-olivine_port',complete=true},
+  {id='GOLDENROD_MAGNET_TRAIN_STATION',stem='johto-goldenrod_magnet_train_station',complete=true,warm=true},
+  {id='RADIO_TOWER_5F',stem='johto-radio_tower_5f',complete=true},
+  {id='RUINS_OF_ALPH_INNER_CHAMBER',stem='johto-ruins_of_alph_inner_chamber',complete=true},
+  {id='RUINS_OF_ALPH_KABUTO_CHAMBER',stem='johto-ruins_of_alph_kabuto_chamber',complete=true},
+  {id='RUINS_OF_ALPH_KABUTO_WORD_ROOM',stem='johto-ruins_of_alph_kabuto_word_room',complete=true,warm=true},
+  {id='DRAGON_SHRINE',stem='johto-dragon_shrine',complete=true},
+  {id='ELMS_LAB',stem='elmslab',complete=true},
   {id='UNION_CAVE_B1F',stem='unioncave',ladders=true},
   {id='ICE_PATH_B1F',stem='icepath',ladders=true}})do
   local game=spec.game or'crystal'
   GV.set(game);assetGame=game;clock=0
   local world,map,def=world2(game,spec.id);world.clockHour=12
-  world.daytime=require('src.world.gen2.Palettes').daytimeFor(def,12,false)
+  world.daytime=require('src.world.gen2.Palettes').daytimeFor(def,12,spec.lit_cave or false)
   check(world.daytime~='DARK','Additional lit GPU fixture unexpectedly requires native Flash')
   local function draw()return drawWorld2(world)end
   world.mapImage=world:imageFor(map.id)
@@ -2442,6 +2485,42 @@ local function run()
    check(#fixture.architecture>0 or fixture.center_styles~=nil,'Public architecture GPU fixture contains no reviewed buildings')
   end
   if spec.complete then check(fixture.coverage.replaced_occurrences==fixture.coverage.visible_cells,'Complete Gen2 fixture has unresolved art')end
+  if spec.id=='BATTLE_TOWER_OUTSIDE'then
+   local savedDraw=mod.exports.roofs.map;mod.exports.roofs.map=function()end
+   local underneath=draw();mod.exports.roofs.map=savedDraw
+   local sides=assert(load(assert(read(MOD..'/lib/side_catalog.lua'))))()
+   local count,opaque,transparent=0,0,0;local picks={}
+   for _,r in ipairs(sides)do if r.game==game and r.map==def.id then
+    check(r.buildingX==4 and r.buildingY==0 and r.buildingW==10 and r.buildingH==10,'Battle Tower collision footprint changed')
+    check(r.x==(r.side=='left'and 3 or 14)and r.sourceX==r.x,'Battle Tower side anchor changed')
+    local expected=nativeComposition(r)
+    for y=0,15 do for x=0,15 do
+     local _,_,_,a=expected:getPixel(x,y);check(a==0 or a==1,'Battle Tower side has resampled alpha')
+     if (r.side=='left'and x<8)or(r.side=='right'and x>=8)then check(a==0,'Unused Battle Tower half-cell is opaque')end
+     if a==1 then equalPixel(after,r.x*16+x,r.y*16+y,expected,x,y,'Native Battle Tower side pixels changed');opaque=opaque+1
+     else equalPixel(after,r.x*16+x,r.y*16+y,underneath,r.x*16+x,r.y*16+y,'Transparent Battle Tower side hid selected background');transparent=transparent+1 end
+    end end
+    if r.y==4 then picks[#picks+1]={row=r,data=expected}end;count=count+1
+   end end
+   check(count==20 and#picks==2 and opaque>0 and transparent>0,'Battle Tower partial sides missing')
+   local pixels=love.image.newImageData(16,16);pixels:mapPixel(function()return 1,0,1,1 end)
+   local body,background=G.newImage(pixels),G.newImage(after)
+   local player,npcs,entities=world.player,world.npcs,world.entities
+   for _,pick in ipairs(picks)do for _,kind in ipairs({'player','wild','follower','npc'})do
+    local r=pick.row;local actor={px=r.x*16,py=r.y*16+4,sprite={frameWidth=16,frameHeight=16,anchorX=8,anchorY=16}}
+    actor.draw=function(e,ox,oy,scale)G.draw(body,ox+e.px*scale,oy+(e.py-4)*scale,0,scale,scale)end
+    world.player=kind=='player'and actor or nil;world.npcs=kind=='npc'and{actor}or{};world.entities=(kind=='wild'or kind=='follower')and{actor}or{}
+    mod.exports.vegetation:bind(world)
+    local actual=capture(after:getWidth(),after:getHeight(),function()G.draw(background,0,0);actor:draw(0,0,1)end)
+    for y=0,15 do for x=0,15 do local _,_,_,a=pick.data:getPixel(x,y)
+     if a==1 then equalPixel(actual,r.x*16+x,r.y*16+y,pick.data,x,y,'Battle Tower failed to cover '..kind)
+     else local rr,gg,bb,aa=actual:getPixel(r.x*16+x,r.y*16+y);check(rr==1 and gg==0 and bb==1 and aa==1,'Unused Battle Tower side hid '..kind)end
+    end end
+   end end
+   world.player,world.npcs,world.entities=player,npcs,entities;mod.exports.vegetation:bind(world);body:release();background:release()
+   fixture.native_tower_sides={rows=count,opaque_pixels=opaque,transparent_pixels=transparent,actors={'player','wild','follower','npc'},no_fractional_scaling=true,source_entrance={8,9}}
+  end
+
   if spec.id=='GOLDENROD_CITY'then
    local folder=MOD..'/assets/third_party/metalflygon08/'
    local source=love.image.newImageData(love.filesystem.newFileData(assert(read(folder..'game-corner-source.png')),'arcade-source.png'))
@@ -2630,6 +2709,14 @@ local function run()
     end
    end
    mod.exports.flora:select('big_trees','default');mod.exports.state:invalidate();clock=0;world.mapImage=world:imageFor(map.id)
+  end
+  if spec.warm then fixture.warm_draws=verifyWarmDraws(mod,draw,game..' '..def.id)end
+  if spec.animation then
+   local animationChecks=0
+   for _,t in ipairs({.14,.28,.56,1.06})do
+    clock=t;animationChecks=animationChecks+verifyCoveredPixels(def,art,draw(),game..' '..def.id..' animated native counterpart')
+   end
+   clock=0;fixture.native_counterpart_animation_pixel_checks=animationChecks
   end
   if spec.animated_buildings then fixture.animated_buildings=verifyAnimatedBuildings(game,def,draw)end
   check(fixture.collision_before==fixture.collision_after and fixture.events_before==fixture.events_after,

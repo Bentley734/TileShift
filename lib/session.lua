@@ -62,6 +62,33 @@ function S.new(ctx)
     if not ok then return nil,tostring(result) end
     return result,err
   end
+  -- The guarded source has already been decoded with the neutral four-shade
+  -- palette. Recolor only once in this cached build, keeping its exact pixels,
+  -- alpha and priority planes; no second import or drawing-time work is needed.
+  local function recolorSource(source,colors)
+    local piece={}
+    for _,name in ipairs({'under','mid','over'})do
+      local image=source[name]
+      if image then
+        local w,h=image:getDimensions();assert(w==16 and h==16,'Source palette cell must be16x16')
+        local out=factory(16,16)
+        for y=0,15 do for x=0,15 do
+          local r,g,b,a=image:getPixel(x,y)
+          if a>0 then
+            assert(math.abs(r-g)<1/510 and math.abs(r-b)<1/510,'Source palette pixels must use neutral shades')
+            local shade=math.max(0,math.min(3,math.floor((1-r)*3+.5)))
+            local palette=colors[math.floor(y/8)*2+math.floor(x/8)+1]
+            local rgb=palette[shade+1]
+            out:setPixel(x,y,rgb[1]/255,rgb[2]/255,rgb[3]/255,a)
+          else out:setPixel(x,y,r,g,b,a) end
+        end end
+        piece[name]=out
+      end
+    end
+    assert(piece.under,'Source palette pixels are unavailable')
+    piece.foreground=piece.over -- Original GBC priority only, not its optional vegetation stencil.
+    return piece
+  end
   local function blankBlock()
     return {image=factory(32,32),foreground=factory(32,32),coverage={},vegetation={}}
   end
@@ -180,7 +207,8 @@ function S.new(ctx)
         end
         local piece,pieceError,sequence
         if source then
-          if row.donor then piece,pieceError=tryCall(donor.cell,donor,row.donor)
+          if row.kind=='source_palette' then piece,pieceError=tryCall(recolorSource,source,row.sourceColors)
+          elseif row.donor then piece,pieceError=tryCall(donor.cell,donor,row.donor)
           elseif row.parts then
             if row.animated then
               if ctx.composeFrames then

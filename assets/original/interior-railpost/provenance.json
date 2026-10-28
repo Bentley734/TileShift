@@ -1,0 +1,36 @@
+{
+  "origin": "Original complete Gen3 timber railing post",
+  "name": "railpost",
+  "logical_size": [
+    8,
+    16
+  ],
+  "palette_colors": 12,
+  "prompt": "One tiny modular vertical wooden railing post sprite for a Pok\u00e9mon Emerald / FireRed style ancient pagoda room. Intended logical resolution EXACTLY8 pixels wide by16 pixels tall, enlarged as hard square pixel clusters. A stout warm-brown upright cylindrical log. The top half8x8 has a little oval light-brown cut-log cap and dark edge; the bottom half8x8 is a straight full-width dark-brown bark body with one ochre vertical highlight. Flat foot at bottom. Overall width-to-height ratio1:2. It will repeat side by side to make an interior wooden railing, so log sides extend nearly the full8-pixel width. Native GBA RPG three-quarter top-down view. Restrained6-color wood palette. No roots, branches, leaves, glow, floor, grid, label, text or gradient. Truly transparent background outside the complete single tiny railing post.",
+  "tool": "image_gen.imagegen",
+  "source_file": "exec-9bcbbd8b-8dc9-4fb1-bdd7-fc33b6375e95.png",
+  "source_sha256": "6ba5b6af07c94257b7cc33b44037cb8b696b47ffada6025173f9179f5786f64c",
+  "source_size": [
+    887,
+    1774
+  ],
+  "visible_bounds": [
+    206,
+    147,
+    682,
+    1626
+  ],
+  "crop": [
+    72,
+    138,
+    816,
+    1626
+  ],
+  "integer_reduction": 93,
+  "binary_alpha": 128,
+  "dither": false,
+  "whole_visible_object_preserved": true,
+  "files": {
+    "railpost.png": "526e5042ed374fae82071dab68c5de346912dfa12a2b5fb20ce6cf5f19c84a7a"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "origin": "Original complete compact Gen3 interior down staircase.",
+  "tool": "image_gen.imagegen",
+  "prompt": "A single tiny descending staircase entrance tile for a top-down Pok\u00e9mon Emerald / FireRed GBA RPG interior, logical resolution EXACTLY16 by16 pixels, shown enlarged as clean hard square pixel clusters. Entire square small stairwell opening with dark gray descending steps receding toward the upper right, a complete thin pale gray diagonal side railing, all edges and treads contained inside one16x16 tile. Restrained6-color gray and blue-gray GBA palette, crisp large pixel clusters. This is stairs DOWN, a little dark stairwell opening seen from above, not a ladder and not a door. Truly transparent background outside the complete compact staircase object, no room or platform, no glow, no text, no labels, no gradient.",
+  "source_file": "exec-04746fbe-0939-4cd2-97a1-b7e5d1c915b7.png",
+  "source_sha256": "292c692c585327ce40abc17fcc692c511f126c1008d4d805fc6e61ec5e53d78e",
+  "source_size": [
+    1263,
+    1245
+  ],
+  "visible_bounds": [
+    365,
+    368,
+    898,
+    889
+  ],
+  "crop": [
+    359,
+    345,
+    903,
+    889
+  ],
+  "integer_reduction": 34,
+  "final_size": [
+    16,
+    16
+  ],
+  "binary_alpha": 128,
+  "palette_colors": 12,
+  "dither": false,
+  "whole_staircase_preserved": true,
+  "files": {
+    "down.png": "a8f7b9dd3eea0f49a15e4242296e4ae6e59504064bcb06526d9b9b3c8c9f94f1"
+  }
+}

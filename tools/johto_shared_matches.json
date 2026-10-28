@@ -1,0 +1,444 @@
+[
+  {
+    "sourceHash": "6f8ec28726270c779a44a0dc1a8e9ee47bd3611ae047632639b956e79ccd0d0c",
+    "sourceCollision": 0,
+    "recipe_sha256": "cde661167b88f2ae712c6021bb15c25f5b4605dd3c831fb24322f9dc2a9fd54e",
+    "role": "short_nonencounter_grass",
+    "reviewed_context": "AZALEA_GYM",
+    "sourceTemplate": {
+      "map": "ROUTE_34",
+      "tileset": "TILESET_JOHTO_MODERN",
+      "id": 71,
+      "quadrant": 2
+    }
+  },
+  {
+    "sourceHash": "9503245a0161a939de15c2414db2d336e761822fa6cff8136e4148f58f1f782e",
+    "sourceCollision": 7,
+    "recipe_sha256": "5e8f0328e30c77561a89be410458329685f30992ae287f4b1d83d1f7a83c479d",
+    "role": "johto_house_black_void",
+    "reviewed_context": "BURNED_TOWER_1F",
+    "sourceTemplate": {
+      "map": "DAY_CARE",
+      "tileset": "TILESET_HOUSE",
+      "id": 10,
+      "quadrant": 3
+    }
+  },
+  {
+    "sourceHash": "064cec89a69b99094b4901b7129a81b5d4ca46e2f360e3082a2c22f9c80142ba",
+    "sourceCollision": 7,
+    "recipe_sha256": "2e4223fa6e00c46f8d6bdedc824f8f21dec1066c763b60baa206939907a9fc37",
+    "role": "johto_center_whole_healing_machine_0",
+    "reviewed_context": "ELMS_LAB",
+    "sourceTemplate": {
+      "map": "VIOLET_POKECENTER_1F",
+      "tileset": "TILESET_POKECENTER",
+      "id": 1,
+      "quadrant": 0
+    }
+  },
+  {
+    "sourceHash": "825577fcb2951c2274e84e7a23ead12005b743da38787fbc621fafc2389e9bbb",
+    "sourceCollision": 7,
+    "recipe_sha256": "aeff2b537878a1d9a7a190b1d4be27b6c4b79eb95bb3b342ff8036b98ad78283",
+    "role": "johto_center_whole_healing_machine_1",
+    "reviewed_context": "ELMS_LAB",
+    "sourceTemplate": {
+      "map": "VIOLET_POKECENTER_1F",
+      "tileset": "TILESET_POKECENTER",
+      "id": 1,
+      "quadrant": 1
+    }
+  },
+  {
+    "sourceHash": "3e621bf7f9ccdd7df5c0470dc9273e1078304574d0f8364b3d13ef9891c2050e",
+    "sourceCollision": 7,
+    "recipe_sha256": "8d3b6a08cc91f0e42f595421e5dbbc60dac895f81a3f1d432ccf8c103f7361bb",
+    "role": "johto_center_whole_healing_machine_2",
+    "reviewed_context": "ELMS_LAB",
+    "sourceTemplate": {
+      "map": "VIOLET_POKECENTER_1F",
+      "tileset": "TILESET_POKECENTER",
+      "id": 1,
+      "quadrant": 2
+    }
+  },
+  {
+    "sourceHash": "cac8b12c67836527359555e6b760411cdc10d0e50bb85d9e32908674ab4faea9",
+    "sourceCollision": 7,
+    "recipe_sha256": "84384dd08da87744f9c904920c9d8a231c2238a421dba7757a4f1b3b229b4d3d",
+    "role": "johto_center_whole_healing_machine_3",
+    "reviewed_context": "ELMS_LAB",
+    "sourceTemplate": {
+      "map": "VIOLET_POKECENTER_1F",
+      "tileset": "TILESET_POKECENTER",
+      "id": 1,
+      "quadrant": 3
+    }
+  },
+  {
+    "sourceHash": "0fb1153eb6c40c0b5dd30dad456c5ff2ba912b7163ec71ace1d751c4cd0e2820",
+    "sourceCollision": 0,
+    "recipe_sha256": "801efe6d92c6e3f0929cd786bec0f79d92bf0110e7b5027676511b1b14278252",
+    "role": "interior_center_floor",
+    "reviewed_context": "GOLDENROD_BIKE_SHOP",
+    "sourceTemplate": {
+      "map": "ROUTE_32_POKECENTER_1F",
+      "tileset": "TILESET_POKECENTER",
+      "id": 47,
+      "quadrant": 3
+    }
+  },
+  {
+    "sourceHash": "421a70e5ece9c07c2f951d07a3324b544a5797549b57c246dcb676f15210179c",
+    "sourceCollision": 144,
+    "recipe_sha256": "4421ef5d2e1200abd087e3d67e2b7bd60266c86bc52fdc20212d7649a0585ca0",
+    "role": "johto_gate_desk_surface",
+    "reviewed_context": "GOLDENROD_BIKE_SHOP",
+    "sourceTemplate": {
+      "map": "ROUTE_43_MAHOGANY_GATE",
+      "tileset": "TILESET_GATE",
+      "id": 12,
+      "quadrant": 0
+    }
+  },
+  {
+    "sourceHash": "524b73e151ec45d57aca07b3b9d64b8ccb7498353276bfc83661fee237e0f932",
+    "sourceCollision": 0,
+    "recipe_sha256": "37d74526d8ffa74ab95b0209600de648a51de9469350ce1af609d789a2ba1a0f",
+    "role": "interior_dept_floor",
+    "reviewed_context": "GOLDENROD_DEPT_STORE_ELEVATOR",
+    "sourceTemplate": {
+      "map": "CELADON_DEPT_STORE_5F",
+      "tileset": "TILESET_MART",
+      "id": 31,
+      "quadrant": 3
+    }
+  },
+  {
+    "sourceHash": "38f622cd5954f854634a2835ea2563301b552be41a30da104f4500bc99bab4e4",
+    "sourceCollision": 7,
+    "recipe_sha256": "acb247d5befbc2929cfa7feb51534a79d10bb78c72284106edb8924a0696de0e",
+    "role": "johto_house_complete_table_0",
+    "reviewed_context": "MR_POKEMONS_HOUSE",
+    "sourceTemplate": {
+      "map": "GOLDENROD_FLOWER_SHOP",
+      "tileset": "TILESET_HOUSE",
+      "id": 45,
+      "quadrant": 0
+    }
+  },
+  {
+    "sourceHash": "b42a815d468ac9cfef118440b554d7e77a7c3f991305eada2238bf3f4ab48f9e",
+    "sourceCollision": 7,
+    "recipe_sha256": "6d906e455e45b116ef63b890ce4b5c64ff09d44cd3236c890cfab0f52fc991ae",
+    "role": "johto_terrain_mahogany_azalea_raised_rock_2",
+    "reviewed_context": "OLIVINE_GYM",
+    "sourceTemplate": {
+      "map": "ROUTE_33",
+      "tileset": "TILESET_JOHTO_MODERN",
+      "id": 109,
+      "quadrant": 2
+    }
+  },
+  {
+    "sourceHash": "48c0a551f12607b1c1d59c1c8ab67046e07d45c9a18a93da2931d87d6b4aef8f",
+    "sourceCollision": 0,
+    "recipe_sha256": "af83fd5e8f5fa45b03e035ae43101998d13c656440b59848947900f28b26ba81",
+    "role": "johto_terrain_mahogany_azalea_raised_rock_0",
+    "reviewed_context": "OLIVINE_GYM",
+    "sourceTemplate": {
+      "map": "ROUTE_33",
+      "tileset": "TILESET_JOHTO_MODERN",
+      "id": 107,
+      "quadrant": 2
+    }
+  },
+  {
+    "sourceHash": "05788b34d88bd83442670172e18f849221df4a8e1c4b585afb680743699af586",
+    "sourceCollision": 0,
+    "recipe_sha256": "fe8fead7d398657486f28ec2a5a2e6ad3d95351eddbfd295eee8d68352bd0e56",
+    "role": "interior_shiproom_floor",
+    "reviewed_context": "OLIVINE_LIGHTHOUSE_6F",
+    "sourceTemplate": {
+      "map": "FAST_SHIP_CABINS_NNW_NNE_NE",
+      "tileset": "TILESET_LIGHTHOUSE",
+      "id": 57,
+      "quadrant": 3
+    }
+  },
+  {
+    "sourceHash": "7df0343a30e583a0ec558eb0379867137a328ab74a7535343945dfc660f3f938",
+    "sourceCollision": 0,
+    "recipe_sha256": "cde661167b88f2ae712c6021bb15c25f5b4605dd3c831fb24322f9dc2a9fd54e",
+    "role": "open_grassy_ground",
+    "reviewed_context": "OLIVINE_PORT",
+    "sourceTemplate": {
+      "map": "ROUTE_34",
+      "tileset": "TILESET_JOHTO_MODERN",
+      "id": 74,
+      "quadrant": 0
+    }
+  },
+  {
+    "sourceHash": "49cabea2a4ac773d63d24bbad148365d71dec19eab735322f35b41b445116d9c",
+    "sourceCollision": 114,
+    "recipe_sha256": "357f21c9cce10ff967d92c4f6e2420c1ff17874fdef8cde9cb8c6b7a5eba608c",
+    "role": "johto_gate_stairs_down",
+    "reviewed_context": "TEAM_ROCKET_BASE_B2F",
+    "sourceTemplate": {
+      "map": "GOLDENROD_UNDERGROUND",
+      "tileset": "TILESET_GATE",
+      "id": 59,
+      "quadrant": 2
+    }
+  },
+  {
+    "sourceHash": "bc5ea236a9f5db6738105edb0151beea4dccee9779f114d84e4916d7b3e9bd77",
+    "sourceCollision": 7,
+    "recipe_sha256": "697895d0fca2eb0c262a8a33d57de141455a353933889206913d29055af1fea1",
+    "role": "dense_conifer_crown",
+    "reviewed_context": "BATTLE_TOWER_OUTSIDE",
+    "sourceTemplate": {
+      "map": "ROUTE_34",
+      "tileset": "TILESET_JOHTO_MODERN",
+      "id": 5,
+      "quadrant": 1
+    }
+  },
+  {
+    "sourceHash": "f432dde58cfac9e2a6549aec5428277ae0bb8c002d481a3f13e47f13a7eb8f69",
+    "sourceCollision": 21,
+    "recipe_sha256": "ee8820c7508315ff7b1f0f76e5077170490f8a094387694e88a0dc044267330d",
+    "role": "headbutt_small_tree",
+    "reviewed_context": "BATTLE_TOWER_OUTSIDE",
+    "sourceTemplate": {
+      "map": "ROUTE_34",
+      "tileset": "TILESET_JOHTO_MODERN",
+      "id": 61,
+      "quadrant": 1
+    }
+  },
+  {
+    "sourceHash": "3cd6e154ffbf2e799d926c887a80f2a9dc8f9172c7ea39ed47fbbd0741399c52",
+    "sourceCollision": 7,
+    "recipe_sha256": "27a89a62f254514c6d6d39349602c6ba1e75e1ed240d45f714845d767cd1fd70",
+    "role": "dense_conifer_trunk",
+    "reviewed_context": "BATTLE_TOWER_OUTSIDE",
+    "sourceTemplate": {
+      "map": "ROUTE_34",
+      "tileset": "TILESET_JOHTO_MODERN",
+      "id": 5,
+      "quadrant": 3
+    }
+  },
+  {
+    "sourceHash": "b6b16070541e5715cb3573a32cf8cc75370ab055060fc22e4649a7ee87ca59f9",
+    "sourceCollision": 7,
+    "recipe_sha256": "217f8ea4443093d7d9ab88df0f3d9a98c69c966a38001744ca0eed6aaf973129",
+    "role": "freestanding_sign",
+    "reviewed_context": "BATTLE_TOWER_OUTSIDE",
+    "sourceTemplate": {
+      "map": "ROUTE_34",
+      "tileset": "TILESET_JOHTO_MODERN",
+      "id": 71,
+      "quadrant": 3
+    }
+  },
+  {
+    "sourceHash": "c098da81d1e2b62642eaf1a9c03005efb8fe34c13d0985c9274dd81c8be7a9a7",
+    "sourceCollision": 7,
+    "recipe_sha256": "63e6be49416fcf4403ab814b6988b33c966c8caca4262e4d3cf049ebb0757441",
+    "role": "johto_repeat_north_johto_whole_outcrop_0",
+    "reviewed_context": "BATTLE_TOWER_OUTSIDE",
+    "sourceTemplate": {
+      "map": "ROUTE_34",
+      "tileset": "TILESET_JOHTO_MODERN",
+      "id": 10,
+      "quadrant": 0
+    }
+  },
+  {
+    "sourceHash": "d0cde5cdee229d42dd4d90e6d9909f52fb6443621977d1dbe4e56b011bccfd73",
+    "sourceCollision": 7,
+    "recipe_sha256": "7fa935b3a8bdb19a38b765cac390203e6643c0031bcb3948789cf0dfe29ada65",
+    "role": "johto_repeat_north_johto_whole_outcrop_1",
+    "reviewed_context": "BATTLE_TOWER_OUTSIDE",
+    "sourceTemplate": {
+      "map": "ROUTE_34",
+      "tileset": "TILESET_JOHTO_MODERN",
+      "id": 10,
+      "quadrant": 1
+    }
+  },
+  {
+    "sourceHash": "798362c2866c23e68df6dbbff089c23e0d9c885a8e631eb3f6dd610356dc6d59",
+    "sourceCollision": 7,
+    "recipe_sha256": "fa4b61b4653561b51d75d49dd7be971ceb228dbc31b674815576a2518fb2da56",
+    "role": "johto_repeat_north_johto_whole_outcrop_2",
+    "reviewed_context": "BATTLE_TOWER_OUTSIDE",
+    "sourceTemplate": {
+      "map": "ROUTE_34",
+      "tileset": "TILESET_JOHTO_MODERN",
+      "id": 10,
+      "quadrant": 2
+    }
+  },
+  {
+    "sourceHash": "2a3c4ebcb4580fd26d8460d9220ee2a234fadf5635961a43142a43655e6563c7",
+    "sourceCollision": 7,
+    "recipe_sha256": "d89e8bf5ca6752fcf8b4f1bcda5ec88f959db401d6759ee15cf4de7d36ecbb10",
+    "role": "johto_repeat_north_johto_whole_outcrop_3",
+    "reviewed_context": "BATTLE_TOWER_OUTSIDE",
+    "sourceTemplate": {
+      "map": "ROUTE_34",
+      "tileset": "TILESET_JOHTO_MODERN",
+      "id": 10,
+      "quadrant": 3
+    }
+  },
+  {
+    "sourceHash": "2f102b145d34a21c59b223d3b43211ebaff8b224290a166fad39b582fc82a9a0",
+    "sourceCollision": 7,
+    "recipe_sha256": "3a445eeb244ee0cab5e046dbf1e17894c5333682a62c58a876d7ccf5bcad8d4a",
+    "role": "johto_terrain_mahogany_violet_whole_raised_ground",
+    "reviewed_context": "BATTLE_TOWER_OUTSIDE",
+    "sourceTemplate": {
+      "map": "ROUTE_33",
+      "tileset": "TILESET_JOHTO_MODERN",
+      "id": 107,
+      "quadrant": 3
+    }
+  },
+  {
+    "sourceHash": "713f58c1a01bab055c8d81491998ca982f65ebe4a9502d7566d5c0f712af6014",
+    "sourceCollision": 0,
+    "recipe_sha256": "6fac31740685062dddf27d886c3e4c7016bedd627993f12cc8972d00c642d2c6",
+    "role": "interior_gamecorner_floor",
+    "reviewed_context": "GOLDENROD_GAME_CORNER",
+    "sourceTemplate": {
+      "map": "CELADON_GAME_CORNER",
+      "tileset": "TILESET_GAME_CORNER",
+      "id": 40,
+      "quadrant": 3
+    }
+  },
+  {
+    "sourceHash": "d39ea96182934a1137e4813194624c22d1290ee808591ceba1b045ac9153845c",
+    "sourceCollision": 144,
+    "recipe_sha256": "35437c4332588f8a6e08bf6d982cb3b3ca91baa7caf6e99cc27cd857ca42c35c",
+    "role": "johto_center_nurse_counter",
+    "reviewed_context": "POKECOM_CENTER_ADMIN_OFFICE_MOBILE",
+    "sourceTemplate": {
+      "map": "VIOLET_POKECENTER_1F",
+      "tileset": "TILESET_POKECENTER",
+      "id": 6,
+      "quadrant": 1
+    }
+  },
+  {
+    "sourceHash": "f6768efbbae39b70586d4cc894a38fe242410e2c582b5ad7adf9a2377ca92bbe",
+    "sourceCollision": 7,
+    "recipe_sha256": "35437c4332588f8a6e08bf6d982cb3b3ca91baa7caf6e99cc27cd857ca42c35c",
+    "role": "johto_center_nurse_counter",
+    "reviewed_context": "POKECOM_CENTER_ADMIN_OFFICE_MOBILE",
+    "sourceTemplate": {
+      "map": "VIOLET_POKECENTER_1F",
+      "tileset": "TILESET_POKECENTER",
+      "id": 6,
+      "quadrant": 0
+    }
+  },
+  {
+    "sourceHash": "969b878eed2113a2f9c536914937fde982959b97b55b3bed2886b0aaece159a9",
+    "sourceCollision": 0,
+    "recipe_sha256": "0dade61a4fde9b2878108906520a8e62848d435fb600030a3be1222bc0f79452",
+    "role": "johto_center_staff_floor",
+    "reviewed_context": "POKECOM_CENTER_ADMIN_OFFICE_MOBILE",
+    "sourceTemplate": {
+      "map": "VIOLET_POKECENTER_1F",
+      "tileset": "TILESET_POKECENTER",
+      "id": 7,
+      "quadrant": 3
+    }
+  },
+  {
+    "sourceHash": "b6513484fa718548620f6463a1d48517fcf90bc13cb93199f61b474cd99fd49b",
+    "sourceCollision": 7,
+    "recipe_sha256": "47a92a075b7499e7cdef16ee8aaf02d693f68804c532a1c2bf59f91e349c270a",
+    "role": "johto_center_full_wall",
+    "reviewed_context": "POKECOM_CENTER_ADMIN_OFFICE_MOBILE",
+    "sourceTemplate": {
+      "map": "VIOLET_POKECENTER_1F",
+      "tileset": "TILESET_POKECENTER",
+      "id": 8,
+      "quadrant": 0
+    }
+  },
+  {
+    "sourceHash": "c5c76d0e9ed312da99d43388bac4268204e17ce1166152abe3a678b7ac4441ee",
+    "sourceCollision": 7,
+    "recipe_sha256": "27e209737f31e0763532f765a1c2dc246f2edd31aac22a24020e0b2d568e4ff3",
+    "role": "johto_complete_pc_0",
+    "reviewed_context": "POKECOM_CENTER_ADMIN_OFFICE_MOBILE",
+    "sourceTemplate": {
+      "map": "VIOLET_POKECENTER_1F",
+      "tileset": "TILESET_POKECENTER",
+      "id": 2,
+      "quadrant": 0
+    }
+  },
+  {
+    "sourceHash": "dc517c6446f7af75f8959ee5a0d190de701eb3808107c9bb17aa1278a297f52c",
+    "sourceCollision": 7,
+    "recipe_sha256": "27e209737f31e0763532f765a1c2dc246f2edd31aac22a24020e0b2d568e4ff3",
+    "role": "johto_complete_pc_0",
+    "reviewed_context": "POKECOM_CENTER_ADMIN_OFFICE_MOBILE",
+    "sourceTemplate": {
+      "map": "VIOLET_POKECENTER_1F",
+      "tileset": "TILESET_POKECENTER",
+      "id": 8,
+      "quadrant": 1
+    }
+  },
+  {
+    "sourceHash": "ea671c4a3121c215f91d53158c6d033826dddd2930c216110889a353c36a80e6",
+    "sourceCollision": 7,
+    "recipe_sha256": "78bf99e27ed8272c9082ab3686b40184ed2909af2a5ff41f8ddabc8248e14e86",
+    "role": "johto_complete_pc_1",
+    "reviewed_context": "POKECOM_CENTER_ADMIN_OFFICE_MOBILE",
+    "sourceTemplate": {
+      "map": "VIOLET_POKECENTER_1F",
+      "tileset": "TILESET_POKECENTER",
+      "id": 2,
+      "quadrant": 2
+    }
+  },
+  {
+    "sourceHash": "fee446d3a4961d29dd5190ffddf57d3c4d70c1e76b3e499cf19a983f78ebc681",
+    "sourceCollision": 147,
+    "recipe_sha256": "78bf99e27ed8272c9082ab3686b40184ed2909af2a5ff41f8ddabc8248e14e86",
+    "role": "johto_complete_pc_1",
+    "reviewed_context": "POKECOM_CENTER_ADMIN_OFFICE_MOBILE",
+    "sourceTemplate": {
+      "map": "VIOLET_POKECENTER_1F",
+      "tileset": "TILESET_POKECENTER",
+      "id": 8,
+      "quadrant": 3
+    }
+  },
+  {
+    "sourceHash": "c64d5031b326802216f9535782f7ccbf36b748cc77d3a599dda6dce6e596df9c",
+    "sourceCollision": 114,
+    "recipe_sha256": "8b595f36717bfa4f945c7a3d889b516a0a4ab2b869a3338a12071116f5bfc8a3",
+    "role": "johto_center_counter_left_end",
+    "reviewed_context": "POKECOM_CENTER_ADMIN_OFFICE_MOBILE",
+    "sourceTemplate": {
+      "map": "VIOLET_POKECENTER_1F",
+      "tileset": "TILESET_POKECENTER",
+      "id": 18,
+      "quadrant": 2
+    }
+  }
+]

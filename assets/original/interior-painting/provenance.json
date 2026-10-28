@@ -1,0 +1,37 @@
+{
+  "origin": "Original complete Gen3 Bellsprout portrait preserving SproutTower3F painting interaction.",
+  "name": "painting",
+  "logical_size": [
+    16,
+    16
+  ],
+  "source_semantics": "https://github.com/pret/pokecrystal/blob/master/maps/SproutTower3F.asm",
+  "prompt": "A single tiny complete framed painting of the Pok\u00e9mon Bellsprout for Sprout Tower\u2019s interior wall, Pok\u00e9mon Emerald / FireRed native GBA pixel-art style. Intended logical resolution EXACTLY16x16 pixels, shown enlarged as hard clean square pixel clusters. Front-facing flat rectangular warm-brown wooden picture frame enclosing a simple cream canvas. On the canvas a recognizable stylized yellow Bellsprout head with round dark mouth, two tiny dot eyes, a thin brown curved stem and two green leaves. A powerful expressive Bellsprout portrait in very few native GBA pixel clusters. Complete frame on ALL FOUR sides, every corner intact, portrait fully inside. Restrained12-color GBA palette. Truly transparent background outside the complete square frame. No extra objects, floor, room, wall, text, lettering, labels, grid, halo, glow or gradients.",
+  "tool": "image_gen.imagegen",
+  "source_file": "exec-617e56dd-3e18-497f-ba81-68d204998067.png",
+  "source_sha256": "0a335c7773baf9000953fd4d606ff9b946df2d92d6c84143256a1412115fdd1f",
+  "source_size": [
+    1254,
+    1254
+  ],
+  "visible_bounds": [
+    213,
+    213,
+    1042,
+    1039
+  ],
+  "crop": [
+    211,
+    207,
+    1043,
+    1039
+  ],
+  "integer_reduction": 52,
+  "binary_alpha": 128,
+  "dither": false,
+  "whole_visible_object_preserved": true,
+  "files": {
+    "painting.png": "78da4cb95b38a5c7032cd1e15b8f59288d091b2c61d419a73c9d42d2d456857e",
+    "cell-0-0.png": "78da4cb95b38a5c7032cd1e15b8f59288d091b2c61d419a73c9d42d2d456857e"
+  }
+}

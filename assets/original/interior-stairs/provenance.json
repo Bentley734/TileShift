@@ -1,0 +1,11 @@
+{
+  "origin": "Original compact complete staircases; individual source, prompt and integer-normalization details retained in the component provenance files.",
+  "components": [
+    "up-provenance.json",
+    "down-provenance.json"
+  ],
+  "files": {
+    "up.png": "b2a1ff6fb719eb336cafe8a0968b701b7e2b8d4f7c11f428601bc58390e67342",
+    "down.png": "a8f7b9dd3eea0f49a15e4242296e4ae6e59504064bcb06526d9b9b3c8c9f94f1"
+  }
+}

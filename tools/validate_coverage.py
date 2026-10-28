@@ -28,10 +28,12 @@ COVERAGE = r"""
    checkedModules[path]=true
   end end
   local maps=generated(game,'maps');local names={}
+  local johtoLimit=coverageJohto and generated(game,'landmarks').landmarks.LANDMARK_PALLET_TOWN.index
   for id,def in pairs(maps)do
    if type(id)=='string'and type(def)=='table'and type(def.tileset)=='string'
     and type(def.width)=='number'and def.width>0 and type(def.height)=='number'and def.height>0
-    and type(def.blocks)=='table'and(not coverageTilesets or coverageTilesets[def.tileset])then names[#names+1]=id end
+    and type(def.blocks)=='table'and(not coverageTilesets or coverageTilesets[def.tileset])
+    and(not coverageJohto or(type(def.landmark)=='number'and def.landmark>0 and def.landmark<johtoLimit))then names[#names+1]=id end
   end
   table.sort(names,function(a,b)
    local x,y=maps[a].tileset,maps[b].tileset
@@ -116,9 +118,11 @@ def main() -> int:
     filters.add_argument('--games',default='red,blue,yellow,gold,silver,crystal')
     filters.add_argument('--tilesets',default=None)
     filters.add_argument('--require-complete',action='store_true')
+    filters.add_argument('--johto',action='store_true',help='Use each cartridge landmark boundary to audit only Johto maps')
     args,remaining=filters.parse_known_args()
     games=args.games.split(',')
     assert games and len(set(games))==len(games)and all(g in ('red','blue','yellow','gold','silver','crystal')for g in games)
+    assert not args.johto or all(g in ('gold','silver','crystal')for g in games), 'Johto scope requires Gen2 games'
     tilesets=args.tilesets.split(',')if args.tilesets else None
     assert not tilesets or all(t and t.replace('_','').isalnum()for t in tilesets)
     sys.argv=[sys.argv[0],*remaining]
@@ -136,9 +140,9 @@ end"""
     prefix = prefix.replace(old, new)
     game_lua='{'+','.join(json.dumps(g)for g in games)+'}'
     sets_lua='{'+','.join('['+json.dumps(t)+']=true'for t in tilesets)+'}'if tilesets else'nil'
-    settings='\n local coverageGames='+game_lua+'\n local coverageTilesets='+sets_lua+'\n local coverageRequireComplete='+str(args.require_complete).lower()+'\n'
+    settings='\n local coverageGames='+game_lua+'\n local coverageTilesets='+sets_lua+'\n local coverageRequireComplete='+str(args.require_complete).lower()+'\n local coverageJohto='+str(args.johto).lower()+'\n'
     audit=COVERAGE.replace(" report.type='authoritative main/Session all-map coverage'",
-         settings+" report.type='authoritative main/Session all-map coverage'\n report.filters={games=coverageGames,tilesets=coverageTilesets,require_complete=coverageRequireComplete}")
+         settings+" report.type='authoritative main/Session all-map coverage'\n report.filters={games=coverageGames,tilesets=coverageTilesets,require_complete=coverageRequireComplete,johto=coverageJohto}")
     validate_gpu.LUA = prefix + audit + base[base.index("\nfunction love.load()") :]
     if "--output" not in sys.argv:
         sys.argv.extend(["--output", str(Path(__file__).resolve().parents[2] / ".work/tileshift-runtime-coverage")])

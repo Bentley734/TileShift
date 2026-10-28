@@ -1,0 +1,43 @@
+{
+  "origin": "Original compact Gen3 pagoda support pillar, edited from an initial rejected slender prototype using built-in imagegen.",
+  "name": "pillar",
+  "logical_size": [
+    32,
+    48
+  ],
+  "prompt": "Redesign the reference into a VERY THICK, SHORTER pagoda wooden support stump for a top-down Pok\u00e9mon Emerald GBA room. The complete visible object must have a width-to-height ratio of TWO TO THREE, intended logical size32 pixels wide by48 pixels tall. Its main trunk alone must be almost as wide as the whole base: a massive chunky timber cylinder, NOT a thin tall pole. Large oval top fills almost the entire32-pixel width. Broad complete flat wooden foot. No root fingers spreading outside the cylinder, no leaves, no branches. Reduce the previous very tall slender proportions; preserve its good warm-brown Gen3 color palette and crisp stepped pixel clusters. Complete top and complete foot in frame on truly transparent background. No glow, blur, gradient, floor, room, text or labels.",
+  "reference_file": "exec-caf8227c-20d1-49a7-819c-90db6651ec28.png",
+  "reference_sha256": "d077984df5f1a3825fa6a68672dccbf407ba308ce4eed3344743859efec6d233",
+  "tool": "image_gen.imagegen",
+  "source_file": "exec-adf77953-bfc6-4a8e-9ef9-6e38e63eaa6e.png",
+  "source_sha256": "f34791f93d51e34a8e1aafe8f2ee6150b0dc49e5eb946b24233a1f0d96991793",
+  "source_size": [
+    1024,
+    1536
+  ],
+  "visible_bounds": [
+    53,
+    81,
+    972,
+    1492
+  ],
+  "crop": [
+    32,
+    52,
+    992,
+    1492
+  ],
+  "integer_reduction": 30,
+  "binary_alpha": 128,
+  "dither": false,
+  "whole_visible_object_preserved": true,
+  "files": {
+    "pillar.png": "3ff609e67f5265aa4428593b01dbba355732f7fc206a731ff67ec322dce1b0f3",
+    "cell-0-0.png": "87ebd2d57821b0aa223da5bfa6192722781486af4fcc4e3c7eb17d22bb44c4a4",
+    "cell-1-0.png": "5a4ce79de864dcd22d5de51affbdff05a3f8be53acf5fabfbbf773cae6693cf5",
+    "cell-0-1.png": "9245f302a12e2776671ec3c6517c0bdc43a67fb1fb18d7bf8b5545a7d18c3e0b",
+    "cell-1-1.png": "572a98b65512a9480006b5feafe16eceb0d8beffe6ee56fc0127e92a53ed0e57",
+    "cell-0-2.png": "e225f28219486ff963d123b6e30537d1846dca244d57c6f06bdaac21f26f2499",
+    "cell-1-2.png": "4990bce56fd8bbfedd7b6ff0546b323561162171e3824672bd84d7adc31e534b"
+  }
+}

@@ -204,4 +204,25 @@ for _,mutate in ipairs({function(r)r.assetFrames[1].hash=a end,
  function(r)r.assetFrames={}end})do
  local bad=clone(foam);mutate(bad);eq(M.validate(bad),nil,'invalid overlay phases fail closed')
 end
+local recolored=clone(base);recolored.donor=nil;recolored.kind='source_palette'
+recolored.sourceColors={}
+for q=1,4 do recolored.sourceColors[q]={{248,240,216},{176,184,168},{96,112,120},{32,40,56}} end
+eq(M.validate(recolored),true,'reviewed source can retain its exact art with four checked quadrant palettes')
+for _,mutate in ipairs({function(r)r.sourceColors=nil end,function(r)r.sourceColors={}end,
+ function(r)r.sourceColors[2]=nil end,function(r)r.sourceColors.extra={}end,
+ function(r)r.sourceColors[0]=r.sourceColors[1]end,function(r)r.sourceColors[5]=r.sourceColors[1]end,
+ function(r)r.sourceColors[1][2]=nil end,function(r)r.sourceColors[1][5]={1,2,3}end,
+ function(r)r.sourceColors[1][1][2]=nil end,function(r)r.sourceColors[1][1][4]=255 end,
+ function(r)r.sourceColors[1][1][1]=-1 end,function(r)r.sourceColors[1][1][1]=256 end,
+ function(r)r.sourceColors[1][1][1]=1.5 end,function(r)r.sourceColors[1][1][1]='248'end,
+ function(r)r.sourceColors[1][1][1]=math.huge end,function(r)r.sourceColors[1][1][1]=0/0 end,
+ function(r)r.game='ruby'end,function(r)r.style='gold'end,
+ function(r)r.donor=clone(base.donor)end,function(r)r.base=clone(base.donor)end,
+ function(r)r.asset='assets/original/extra.png'end,function(r)r.parts={}end,
+ function(r)r.animated=true end,function(r)r.animation={}end,
+ function(r)r.foreground={}end,function(r)r.artOverlay={}end})do
+ local bad=clone(recolored);mutate(bad);eq(M.validate(bad),nil,'source recolors reject malformed palettes, mixed origins and geometry changes')
+end
+local unrelated=clone(base);unrelated.sourceColors=clone(recolored.sourceColors)
+eq(M.validate(unrelated),nil,'source colors cannot silently attach to another artwork origin')
 print('PASS strict mapping validation: '..count..' assertions')

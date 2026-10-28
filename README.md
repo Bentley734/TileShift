@@ -1,16 +1,25 @@
 # TileShift
 
 TileShift brings Gen 3 world art to Gen1Recomp with individually reviewed tile
-matches. Version 0.23.0 completes Ilex Forest, National Park (including the
-Bug Contest map), Ruins of Alph Outside and Routes 32, 34, 38, 39, 40 and 41
-in Gold, Silver and Crystal. This includes native-scale gates, the daycare,
-Moomoo Farm buildings, fishing piers and animated whirlpools.
+matches. Version 0.24.0 completes Johto's backgrounds across Gold, Silver and
+Crystal: all 612 map variants and 263,308 cells pass the actual mapping checks.
+This includes caves, houses, Centers, gates, shops, gyms, towers, lighthouse,
+casino, port and other interiors. Battle Tower keeps complete
+native windows and a wider facade with transparent side edges. Source
+layouts, collision, warps, puzzle rules and interactions stay unchanged.
+
+Unique Johto objects without exact Gen3 counterparts keep every original
+pixel and receive matching Gen3 colors: Unown inscriptions and puzzle
+details, the Magnet Train, Fast Ship, studio microphones/score sheets and
+the Dragon Shrine mural. Their symbols, shapes and gameplay stay intact.
+Recoloring runs once when the checked map artwork is built and cached.
+
 Gen 2 Pokemon Centers retain selectable compact/expanded designs. Bell Tower uses the supplied original reference.
 Its partial side tiles preserve the trees, ground and native map border underneath;
 the original entrance and collision footprint stay unchanged.
 Goldenrod uses the actual MetalFlygon08 Johto Gen3 Game Corner artwork,
-with complete original pixels and a full96x64 building footprint. Goldenrod
-is now completely retiled in Gold, Silver and Crystal, including its department
+with complete original pixels and a full96x64 building footprint. Goldenrod City's
+outdoor map is completely retiled in Gold, Silver and Crystal, including its department
 store, station, Radio Tower, florist, underground entrances, background houses,
 railway, paving and coastline. Each version keeps its original flower-shop
 position. Johto route replacements include full native gates,
@@ -77,7 +86,7 @@ art; separate cartridge styles and reverse conversions are future work.
 1. Import **Emerald and FireRed** into Gen1Recomp. TileShift reads native donor
    art from your own imports; neither ROMs nor extracted native artwork are
    bundled.
-2. Download `TileShift-v0.21.0.zip` from [the latest release](https://github.com/Bentley734/TileShift/releases/latest).
+2. Download `TileShift-v0.24.0.zip` from [the latest release](https://github.com/Bentley734/TileShift/releases/latest).
 3. Extract the `tileshift` folder into Gen1Recomp's `mods` directory, enable
    **TileShift**, and restart the game.
 4. Open Options and set **Tileset** to **Gen 3**. This is the default on a fresh

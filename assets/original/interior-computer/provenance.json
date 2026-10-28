@@ -1,0 +1,35 @@
+{
+  "origin": "Original complete compact Gen3 room computer",
+  "tool": "image_gen.imagegen",
+  "prompt": "One complete tiny desk computer sprite for a Pok\u00e9mon Emerald / FireRed style GBA top-down RPG room, intended logical size EXACTLY16x16 pixels shown enlarged with hard square pixel clusters. A squat gray CRT monitor with a complete dark screen, pale cyan screen reflection, thick charcoal and pale gray bezel, and a small complete light-gray keyboard directly in front of it. Slight top-down three-quarter front view, monitor above keyboard, every part contained in16 by16 logical pixels. Very compact ordinary computer terminal, not a standing tall PC and no tower. Restrained10-color native GBA palette, crisp stepped edges, no gradients, no text or numbers. Truly transparent background outside the complete monitor AND keyboard, no desk surface, no floor, no wall, no grid, no labels.",
+  "source_file": "exec-9f6d1445-a060-49ef-932b-fd86f06658b8.png",
+  "source_sha256": "0eedf0383ae50aa1cdddcb508c13f4b4504a4a1fa993e64d56e92cfe3f1d98ba",
+  "source_size": [
+    1254,
+    1254
+  ],
+  "visible_bounds": [
+    348,
+    316,
+    916,
+    1005
+  ],
+  "crop": [
+    280,
+    301,
+    984,
+    1005
+  ],
+  "integer_reduction": 44,
+  "final_size": [
+    16,
+    16
+  ],
+  "binary_alpha": 128,
+  "palette_colors": 16,
+  "dither": false,
+  "whole_object_preserved": true,
+  "files": {
+    "computer.png": "9f71fd26e044dc0aa24cda6e87764f409fb3cd6460cdef967941ded104df2de4"
+  }
+}

@@ -190,4 +190,14 @@ eq(waterOptions:category(waterOriginal),'water','over-water original uses the wa
 local grouped=waterOptions:rows({waterOriginal,oceanNeighbour},'red',{id='COAST',width=2,height=1,blocks={77,77}})
 eq(grouped[1]._floraEntry,grouped[2]._floraEntry,'original background joins the surrounding Mixed ocean style')
 
+local falls=new(42);falls:select('water','mixed')
+local fallRows={
+ {id=1,quadrant=0,x=0,y=0,role='freshwater_pond_cave_bank'},
+ {id=1,quadrant=1,x=1,y=0,role='cave_native_vertical_waterfall'},
+ {id=1,quadrant=0,x=2,y=0,role='freshwater_pond_cave_bank'}}
+local fallArt=falls:rows(fallRows,'crystal',{id='FALLS',width=2,height=1,blocks={1,1}})
+eq(fallArt[1]._floraEntry,fallArt[3]._floraEntry,'waterfall joins upper and lower pools in Mixed mode')
+eq(fallArt[2]._floraEntry,nil,'native waterfall flow must not become a flat surface texture')
+falls:speed('water',0);eq(#falls:timing(fallRows[2],sequence).frames,1,'Water Off also freezes waterfalls')
+falls:speed('water',.5);eq(falls:timing(fallRows[2],sequence).period,.4,'waterfalls share water speed control')
 print('flora selection checks: '..count)

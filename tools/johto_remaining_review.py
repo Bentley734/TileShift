@@ -9,7 +9,7 @@ from newbark_building_review import native_reference
 from center_mart_overhang_review import write_rows
 ROOT=Path(__file__).resolve().parents[1]
 MAPS=('ILEX_FOREST','ROUTE_32','ROUTE_34','ROUTE_38','ROUTE_39','ROUTE_40','ROUTE_41','RUINS_OF_ALPH_OUTSIDE')
-ART=('kind','donor','base','parts','asset','assetFileHash','assetFrames','animated','animation','foreground','occludes','credit','sourceUrl')
+ART=('kind','donor','base','parts','asset','assetFileHash','assetFrames','animated','animation','foreground','occludes','credit','sourceUrl','artOverlay','sourceColors')
 def artwork(r):return{k:copy.deepcopy(r[k])for k in ART if k in r}
 
 def strip(parts,sy,h,ty):

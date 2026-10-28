@@ -326,8 +326,48 @@ def native_water_frames(cache, row, packed):
     return frames
 
 
+def source_palette_image(cache, row, packed):
+    """Keep every imported GB pixel; apply checked RGB8 colors per8px quadrant."""
+    colors = row.get('sourceColors')
+    assert type(colors) is list and len(colors) == 4, 'Source colors need four quadrant palettes'
+    for palette in colors:
+        assert type(palette) is list and len(palette) == 4, 'Source palette needs four colors'
+        for rgb in palette:
+            assert type(rgb) is list and len(rgb) == 3 and all(type(v) is int and 0 <= v <= 255 for v in rgb), 'Source colors must be RGB8 triples'
+    assert row['game'] in ('red', 'blue', 'yellow', 'gold', 'silver', 'crystal') and row['style'] == 'gen3'
+    key = ('source_palette_atlas', row['game'], row['tileset'], json.dumps(row.get('sourceFiles'), sort_keys=True))
+    if key not in packed:
+        root = cache / row['game']
+        metadata = (root / 'data/generated/tilesets.lua').read_bytes()
+        sets = catalog.read_lua(root / 'data/generated/tilesets.lua')
+        ts = sets[row['tileset']]
+        image_path = root / ts['image']
+        files = row.get('sourceFiles', {})
+        for name, relative in (('metadata', 'data/generated/tilesets.lua'), ('image', ts['image']),
+                               ('maps', 'data/generated/maps.lua'), ('palettes', 'data/generated/palettes.lua'),
+                               ('roofs', 'data/generated/roofs.lua')):
+            if name in files:
+                raw = metadata if name == 'metadata' else (root / relative).read_bytes()
+                assert catalog.sha(raw) == files[name], 'Source file fingerprint changed: ' + name
+        packed[key] = ts, Image.open(image_path).convert('RGBA')
+    ts, sheet = packed[key]
+    source = native_cell(sheet, ts, catalog.lua_array(catalog.dict_at(ts['blocks'], row['id'] + 1)), row['quadrant'])
+    assert catalog.sha(source.tobytes()) == row['sourceHash'], 'Source pixel fingerprint changed'
+    out = source.copy()
+    for y in range(16):
+        for x in range(16):
+            r, g, b, a = source.getpixel((x, y))
+            if a:
+                assert r == g == b, 'Source palette pixels must use neutral shades'
+                shade = max(0, min(3, round((255 - r) * 3 / 255)))
+                out.putpixel((x, y), tuple(colors[y // 8 * 2 + x // 8][shade]) + (a,))
+    return out
+
+
 def _replacement_frames_base(cache, row, packed, mod_root):
     """Compose every native background frame without mutating cached art."""
+    if row.get('kind') == 'source_palette':
+        return [source_palette_image(cache, row, packed)]
     if row.get("donor"):
         if row.get("animated"):
             return native_water_frames(cache, row, packed)
@@ -486,9 +526,11 @@ def map_preview(cache, output, game, map_id, stem, rows, packed, scale, mod_root
     ts = sets[map_def["tileset"]]
     sheet = Image.open(root / ts["image"])
     palettes, roof = None, None
+    source_daytime = map_def.get('palette', 'PALETTE_DAY').removeprefix('PALETTE_') if game in ('gold','silver','crystal') else 'DAY'
+    source_daytime = 'NITE' if source_daytime == 'DARK' else 'DAY' if source_daytime == 'AUTO' else source_daytime
     native_animation = gen1_animation_tiles(cache, game, ts, sheet) if game in ("red", "blue", "yellow") else None
     if game not in ("red", "blue", "yellow"):
-        palettes = palette_set(catalog.read_lua(root / "data/generated/palettes.lua"), map_def)
+        palettes = palette_set(catalog.read_lua(root / "data/generated/palettes.lua"), map_def, source_daytime)
         if map_def["tileset"] in ("TILESET_JOHTO", "TILESET_JOHTO_MODERN"):
             roofs = catalog.read_lua(root / "data/generated/roofs.lua")
             name = catalog.dict_at(roofs["mapGroupRoofs"], map_def["group"])
@@ -567,7 +609,7 @@ def map_preview(cache, output, game, map_id, stem, rows, packed, scale, mod_root
     draw.text((left, 40), "Native imported background-map preview; nearest-neighbor pixels. This is not a complete tileset replacement.", fill="#ced7e4", font=small)
     if any(r.get("animated") for r in selected.values()):
         draw.text((left, 61), "Native donor animations shown at frame 0.", fill="#ced7e4", font=small)
-    source_label = "Original monochrome" if palettes is None else "Original Crystal DAY colors and native roof"
+    source_label = "Original monochrome" if palettes is None else f"Original {game.title()} {source_daytime} colors" + (' after Flash' if map_def.get('palette')=='PALETTE_DARK' else '')
     draw.text((left, 82), source_label, fill="white", font=small)
     draw.text((left + display_w + gap, 82), "Gen 3 style — reviewed cells only", fill="white", font=small)
     canvas.paste(before.resize((display_w, display_h), Image.Resampling.NEAREST), (left, top))
@@ -584,7 +626,7 @@ def map_preview(cache, output, game, map_id, stem, rows, packed, scale, mod_root
     return {"game": game, "map": map_id, "tileset": map_def["tileset"], "visible_cells": total,
             "replaced_occurrences": coverage, "preserved_native_occurrences": total - coverage,
             "unique_mappings_used": len(unique), "replaced_by_role": dict(by_role),
-            "source_palette": "original monochrome" if palettes is None else "native Crystal DAY environment plus group roof",
+            "source_palette": "original monochrome" if palettes is None else f"native {game.title()} {source_daytime} environment plus group roof",
             "preserved_native_animation_tick": 0 if native_animation is not None else None,
             "credits": credits, "image": str(path.resolve())}
 

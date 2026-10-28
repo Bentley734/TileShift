@@ -4,6 +4,7 @@ local roles={boundary_tree='trees',dense_round_tree='trees',forest_boundary_smal
   forest_safari_round_boundary_tree='trees',
   decorative_flower_northwest='flowers',decorative_flower_southeast='flowers',
   tall_grass='grass',forest_tall_grass='grass',cuttable_small_tree='cut_trees'}
+roles.cave_native_vertical_waterfall='water'
 local treeParts={dense_forest_tree_northwest=0,dense_forest_tree_northeast=1,
   dense_forest_tree_southwest=2,dense_forest_tree_southeast=3}
 local function treePart(row)
@@ -157,7 +158,11 @@ function F.new(ctx)
             key=body=='world-ocean' and 'connected-world-ocean' or
               game..':'..def.id..':'..group..':'..tostring(body or 'border')
           end
-          copy._floraEntry=self:entry(group,key);copy._floraCategory=group
+          -- Falls connect the upper/lower water body and follow water timing,
+          -- while retaining the native lip, vertical flow and bottom foam.
+          if row.role~='cave_native_vertical_waterfall'then
+            copy._floraEntry=self:entry(group,key);copy._floraCategory=group
+          end
           push(copy,row.x==nil and x~=nil)
         end
         -- Keep the generic block for border rendering. Positional clones give

@@ -31,6 +31,8 @@ def main() -> None:
     allowed = ('third_party/j-treecko252/',
                'third_party/magiscarf/', 'third_party/metalflygon08/', 'user_flora/', 'original/sprout-tower/', 'original/flora/', 'original/slowpoke-well/', 'original/olivine-lighthouse/', 'original/compact-conifer/', 'original/ecruteak-v2/', 'original/bell-wide/', 'original/center-expanded/')
     allowed += ('original/ilex-shrine/', 'original/whirlpool/', 'original/park-bench/', 'third_party/peekychew/')
+    interior_folders = ('original/interior-beacon', 'original/interior-computer', 'original/interior-flowerpot', 'original/interior-lattice', 'original/interior-painting', 'original/interior-pillar', 'original/interior-planter', 'original/interior-radio', 'original/interior-railpost', 'original/interior-stairs', 'original/interior-tower-modules')
+    allowed += tuple(folder + '/' for folder in interior_folders)
     for path in asset_files:
         assert path.relative_to(root / 'assets').as_posix().startswith(allowed), 'Unreviewed asset folder'
         assert path.suffix in ('.png', '.jpg', '.json', '.txt'), 'Unreviewed asset format'
@@ -38,6 +40,10 @@ def main() -> None:
         provenance = json.loads((root / 'assets' / folder / 'provenance.json').read_text(encoding='utf-8'))
         for name, digest in provenance['files'].items():
             assert hashlib.sha256((root / 'assets' / folder / name).read_bytes()).hexdigest() == digest, 'Artwork provenance fingerprint changed'
+    for folder in interior_folders:
+        provenance = json.loads((root / 'assets' / folder / 'provenance.json').read_text(encoding='utf-8'))
+        for name, digest in provenance['files'].items():
+            assert hashlib.sha256((root / 'assets' / folder / name).read_bytes()).hexdigest() == digest, 'Interior artwork provenance fingerprint changed'
     fan = root / 'assets/third_party/j-treecko252'
     provenance = json.loads((fan / 'provenance.json').read_text(encoding='utf-8'))
     assert hashlib.sha256((fan / 'compact-tree.png').read_bytes()).hexdigest() == provenance['extraction']['png_sha256']

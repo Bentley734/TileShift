@@ -1,0 +1,42 @@
+{
+  "origin": "Original complete Gen3 room beacon",
+  "name": "beacon",
+  "logical_size": [
+    32,
+    48
+  ],
+  "prompt": "One complete compact indoor lighthouse beacon machine sprite for Pok\u00e9mon Johto\u2019s Olivine Lighthouse, in native Pok\u00e9mon Emerald / FireRed GBA pixel-art style. Intended logical footprint EXACTLY32 pixels wide by48 pixels tall, enlarged hard square pixel clusters. Front three-quarter top-down RPG room-object view. A tall cylindrical light-cyan glass lantern chamber with a warm amber round light bulb in its center, a narrow dark-blue/gray metal cap at the top, thick gray metal corner supports on the sides, and a complete short bronze-and-gray mechanical base at the bottom. A tiny gray connector or lever near the upper left of the glass. The full lamp, glass, supports and base are all inside32x48 logical pixels. Restrained16-color native GBA palette, crisp strong outlines and small stepped glass reflections, no gradients or glowing bloom outside the lamp. No Pok\u00e9mon or people, no text, floor, room, grid, labels or extra props. Genuinely transparent background outside the single complete beacon.",
+  "repeat_2x2": false,
+  "tool": "image_gen.imagegen",
+  "source_file": "exec-741fd3fa-027a-4821-a34c-73f05cfcf0e0.png",
+  "source_sha256": "cc3919cf1ed2a609d2669601c9bf1ec79ff8cca3a6160d4942bbff37bc046614",
+  "source_size": [
+    1024,
+    1536
+  ],
+  "visible_bounds": [
+    204,
+    50,
+    821,
+    1451
+  ],
+  "crop": [
+    32,
+    11,
+    992,
+    1451
+  ],
+  "integer_reduction": 30,
+  "binary_alpha": 128,
+  "dither": false,
+  "whole_visible_object_preserved": true,
+  "files": {
+    "beacon.png": "831f465ac161d93c14c6e16acf4edc175e365140a31e4e50ec50be497a99d74d",
+    "cell-0-0.png": "25bcae1e823a81c43a9f5925c8c3a56330ce56908a6f5fb1db4c2122bbdcec4d",
+    "cell-1-0.png": "258fcfb80356ed7394375f65c370fdb2f9e2e0591cca21b80d0ad3a5b577e915",
+    "cell-0-1.png": "ea74e9787b2239e10e2a7c8868cd0b321f83286fb826a3cbafe4b5a5518b34ee",
+    "cell-1-1.png": "bfc296de810efaf82ede97a6554441dc470d8ecdabc67f60ea5d358396654a1f",
+    "cell-0-2.png": "7dfe8b820a93452d9e693eb07a27a98085ec29c7bcbb1c46a8e79bb3400d5cda",
+    "cell-1-2.png": "9cca0394637fc928d39318e29f699df1d86a64039f741a3a7ec0ef727f0bbd86"
+  }
+}
