@@ -130,3 +130,19 @@ The original64px collision footprint and doorway remain unchanged. The tower
 continues north beyond the original map edge. The reference hash, crop,
 palette processing and asset hashes are recorded in
 assets/original/bell-wide/provenance.json.
+
+## Goldenrod modular buildings and redesigned clinic front
+
+Additional Goldenrod architecture uses MetalFlygon08's public Johto tileset
+under the same author permission cited above. Complete windows, entrances,
+parapets, clock/lattice mast and dish components remain at native pixel scale;
+plain roof/wall modules repeat where needed. Asset hashes and source rectangles
+are recorded in assets/third_party/metalflygon08/provenance.json.
+
+The expanded Pokemon Center facade is original artwork made with the built-in
+image-generation tool at the user's request. It is normalized using uniform
+18:1 nearest-neighbour reduction, binary alpha and a limited palette without
+dithering. The native Emerald roof is assembled separately from fingerprinted
+donor references and is not regenerated. The original compact native building
+remains selectable. Processing and hashes are recorded in
+assets/original/center-expanded/provenance.json.

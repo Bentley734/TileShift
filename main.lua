@@ -13,7 +13,7 @@ return function(mod)
     'mappings/pallet_buildings.lua','mappings/pallet_details.lua',
     'mappings/gen1_outdoor.lua','mappings/gen2_outdoor.lua','mappings/gen1_caves.lua',
     'mappings/gen2_buildings.lua','mappings/gen1_extended.lua','mappings/gen2_outdoor_extended.lua','mappings/azalea.lua','mappings/viridian.lua','mappings/gen2_pallet.lua','mappings/mahogany.lua','mappings/johto_terrain.lua','mappings/cianwood.lua','mappings/olivine.lua','mappings/ecruteak.lua','mappings/north_johto.lua','mappings/silver_cave_outside.lua','mappings/johto_terrain_repeats.lua','mappings/johto_route_details.lua','mappings/goldenrod_arcade.lua',
-    'mappings/buildings_extended.lua','mappings/interiors.lua','mappings/gen2_caves.lua',
+    'mappings/buildings_extended.lua','mappings/building_overhangs.lua','mappings/goldenrod.lua','mappings/pallet_overhangs.lua','mappings/interiors.lua','mappings/gen2_caves.lua',
   }) do
     local source=mod:read(path)
     if source then
@@ -98,13 +98,35 @@ return function(mod)
     time=function()return love.timer and love.timer.getTime() or 0 end,
     draw=function(...)
       if adapterContext and adapterContext.drawVegetation then adapterContext.drawVegetation(...)end
-      if roofs then roofs:actor(...)end
+      if roofs then
+        if mod.generation==1 then
+          local map,entity,cx,cy,s,moved,now,world=...
+          roofs:actor(map,entity,-(cx or 0)*(s or 1),-(cy or 0)*(s or 1),s,moved,now,world)
+        else roofs:actor(...)end
+      end
     end})
+  local centerStyle=tonumber(mod.options:get('center_style'))or tonumber(mod.save:get('center_style'))or 2
+  if centerStyle~=1 then centerStyle=2 end
   state=readModule('lib/session.lua').new({mappings=indexed,donor=decoder,
     newImageData=newData,generations=Mapping.generations,themes=Mapping.themes,
     normalizeStyle=Mapping.normalizeStyle,validate=Mapping.validate,
     original=original,foreground=foreground,compose=compose,composeFrames=composeFrames,
-    customizeRows=function(rows,game,def)return flora:rows(rows,game,def)end,
+    customizeRows=function(rows,game,def)
+      if centerStyle==1 then
+        local selected={}
+        for i,row in ipairs(rows)do
+          if row.buildingCompact then
+            local copy={};for k,v in pairs(row)do copy[k]=v end
+            copy.parts=nil;copy.donor=nil;copy.asset=nil;copy.assetFileHash=nil
+            copy.artOverlay=nil;copy.compositionPixelHash=nil;copy.base=nil
+            for k,v in pairs(row.buildingCompact)do copy[k]=v end
+            selected[i]=copy
+          else selected[i]=row end
+        end
+        rows=selected
+      end
+      return flora:rows(rows,game,def)
+    end,
     floraPiece=function(row)return flora:piece(row)end,
     finishPiece=function(row,piece,sequence)return flora:finish(row,piece,sequence)end,
     animationTiming=function(row,sequence)return flora:timing(row,sequence)end,
@@ -120,7 +142,10 @@ return function(mod)
   local selection=tonumber(mod.options:get('style')) or tonumber(mod.save:get('style')) or 2
   local floraOptions={}
   local schema={{key='style',label='TILESET',type='choice',choices=styleChoices,default=2}}
-  local floraLabels={trees='TREES',big_trees='BIG TREES',cut_trees='CUT TREES',flowers='FLOWERS',grass='TALL GRASS',water='WATER'}
+  floraOptions[#floraOptions+1]={category='center_style',key='center_style',building=true,
+    choices={{'COMPACT','compact',1},{'EXPANDED','expanded',2}},selection=centerStyle}
+  schema[#schema+1]={key='center_style',label='POKEMON CENTERS',type='choice',choices={{'COMPACT',1},{'EXPANDED',2}},default=2}
+  local floraLabels={trees='TREES',big_trees='BIG TREES',cut_trees='CUT TREES',flowers='FLOWERS',grass='TALL GRASS',water='WATER',center_style='POKEMON CENTERS'}
   for _,category in ipairs({'trees','big_trees','cut_trees','flowers','grass','water'})do
     local choices=flora:choices(category)
     local option={category=category,key='flora_'..category,choices=choices,selection=1}
@@ -199,9 +224,19 @@ return function(mod)
   if ownerBus and ownerBus.ownerEpoch then ownerEpoch=ownerBus:ownerEpoch(mod.id)end
   local decorationRows=readModule('lib/roof_catalog.lua')
   for _,row in ipairs(readModule('lib/side_catalog.lua'))do decorationRows[#decorationRows+1]=row end
+  for _,row in ipairs(readModule('lib/center_mart_roofs.lua'))do decorationRows[#decorationRows+1]=row end
+  for _,row in ipairs(readModule('lib/goldenrod_roofs.lua'))do decorationRows[#decorationRows+1]=row end
+  for _,row in ipairs(readModule('lib/pallet_roofs.lua'))do decorationRows[#decorationRows+1]=row end
   roofs=readModule('lib/roofs.lua').new({rows=decorationRows,validate=Mapping.validate,
-    donor=decoder,original=original,version=GV.get,revision=function()return state.revision end,
-    active=function()return state.style=='gen3'and mod.generation==2 and owned()end,
+    donor=decoder,original=original,compose=compose,version=GV.get,revision=function()return state.revision end,
+    markTrueColor=function(x,y,w,h)
+      if mod.generation==1 then
+        local fx=require('src.render.PaletteFX')
+        if fx.markTrueColor then fx.markTrueColor(x,y,w,h)end
+      end
+    end,
+    active=function()return state.style=='gen3'and mod.generation<3 and owned()end,
+    enabled=function(row)return row.role~='larger_center'or centerStyle~=1 end,
     warn=function(s)mod.log:warn('%s',s)end})
   local adapter=readModule('lib/gen'..mod.generation..'.lua')
   adapterContext={roofs=roofs,version=GV.get,revision=function()return state.revision end,active=owned,
@@ -229,7 +264,8 @@ return function(mod)
       for i,choice in ipairs(option.choices)do if choice[3]==value then option.selection=i;break end end
     end
     local changed
-    if option.motion then changed=vegetation:setMode(option.choices[option.selection][2])
+    if option.building then changed=centerStyle~=option.selection;centerStyle=option.selection
+    elseif option.motion then changed=vegetation:setMode(option.choices[option.selection][2])
     elseif option.speed then changed=flora:speed(option.speed,option.choices[option.selection][2])
     else changed=flora:select(option.category,option.choices[option.selection][2]) end
     if changed then

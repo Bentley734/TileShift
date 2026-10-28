@@ -76,7 +76,7 @@ for _,gameId in ipairs(games)do
     end},log={warn=function()end}}
   function mod:read(path)
     fixture.reads[#fixture.reads+1]=path
-    if path=='lib/roof_catalog.lua'or path=='lib/side_catalog.lua'then return 'return{}'end
+    if path=='lib/roof_catalog.lua'or path=='lib/side_catalog.lua'or path=='lib/center_mart_roofs.lua'or path=='lib/goldenrod_roofs.lua'or path=='lib/pallet_roofs.lua'then return 'return{}'end
     if path=='lib/roofs.lua' or path=='lib/vegetation.lua' or path=='lib/flora.lua' or path=='lib/flora_catalog.lua' or path=='lib/water_styles.lua' then
       local file=assert(io.open(root..'/'..path,'rb'));local source=file:read('*a');file:close();return source
     end
@@ -88,7 +88,7 @@ for _,gameId in ipairs(games)do
       or path=='mappings/gen1_outdoor.lua' or path=='mappings/gen2_outdoor.lua'
       or path=='mappings/gen1_caves.lua' or path=='mappings/gen2_buildings.lua'
       or path=='mappings/gen1_extended.lua' or path=='mappings/gen2_outdoor_extended.lua' or path=='mappings/azalea.lua' or path=='mappings/viridian.lua' or path=='mappings/gen2_pallet.lua' or path=='mappings/mahogany.lua' or path=='mappings/johto_terrain.lua' or path=='mappings/cianwood.lua' or path=='mappings/olivine.lua' or path=='mappings/ecruteak.lua' or path=='mappings/north_johto.lua' or path=='mappings/silver_cave_outside.lua' or path=='mappings/johto_terrain_repeats.lua' or path=='mappings/johto_route_details.lua' or path=='mappings/goldenrod_arcade.lua'
-      or path=='mappings/buildings_extended.lua' or path=='mappings/interiors.lua'
+      or path=='mappings/buildings_extended.lua' or path=='mappings/building_overhangs.lua' or path=='mappings/goldenrod.lua' or path=='mappings/pallet_overhangs.lua' or path=='mappings/interiors.lua'
       or path=='mappings/gen2_caves.lua' then return nil end
     if path=='mappings/reviewed.lua' then
       return 'local out={} for i,row in ipairs(__tileMainFixture.reviewed)do out[i]=row end return out'
@@ -132,7 +132,17 @@ for _,gameId in ipairs(games)do
   local rows=hooks['ui.options.rows'](function(g,out)
     eq(g,game);vanillaCalls=vanillaCalls+1;out[#out+1]={id='native'};return out
   end,game,{})
-  eq(vanillaCalls,1);eq(#rows,14);eq(rows[1].id,'native');eq(rows[2].value(),'ORIGINAL')
+  eq(vanillaCalls,1);eq(#rows,15);eq(rows[1].id,'native');eq(rows[2].value(),'ORIGINAL')
+  local centerRow=table.remove(rows,3)
+  eq(centerRow.label,'POKEMON CENTERS');eq(centerRow.value(),'COMPACT')
+  local compactRow={id=0,quadrant=0,role='larger_center',parts={'expanded'},asset='expanded.png',buildingCompact={kind='native_composite',parts={'compact'}}}
+  local compactRows=fixture.sessionCtx.customizeRows({compactRow},gameId,{})
+  eq(compactRows[1].parts[1],'compact');eq(compactRows[1].asset,nil)
+  eq(compactRow.parts[1],'expanded','switching never mutates reviewed mappings')
+  centerRow.step({game=game},1);eq(centerRow.value(),'EXPANDED');eq(stored.center_style,2)
+  local expandedRows=fixture.sessionCtx.customizeRows({compactRow},gameId,{})
+  eq(expandedRows[1],compactRow)
+  centerRow.step({game=game},-1);eq(stored.center_style,1);game.writes=0
   eq(rows[14].label,'COVERAGE');eq(rows[14].value(),'IN PROGRESS');eq(rows[14].step(),false)
   eq(rows[3].label,'TREES');eq(rows[4].label,'BIG TREES');eq(rows[5].label,'CUT TREES')
   eq(rows[6].label,'FLOWERS');eq(rows[7].label,'TALL GRASS');eq(rows[8].label,'WATER')
@@ -140,8 +150,8 @@ for _,gameId in ipairs(games)do
   eq(rows[11].label,'GRASS SPEED');eq(rows[12].label,'WATER SPEED')
   eq(rows[9].value(),'OFF');rows[9].step({game=game},1)
   eq(rows[9].value(),'SLOW');eq(stored.speed_trees,2);eq(game.writes,1);game.writes=0
-  eq(rows[3].value(),'DEFAULT');eq(schemas[7].key,'flora_water');eq(#schemas[7].choices,6)
-  eq(schemas[7].choices[4][2],6,'animated blue water keeps its existing stored ID')
+  eq(rows[3].value(),'DEFAULT');eq(schemas[8].key,'flora_water');eq(#schemas[8].choices,6)
+  eq(schemas[8].choices[4][2],6,'animated blue water keeps its existing stored ID')
   eq(rows[2].step({game=game},1),false)
   eq(state.style,'gen3');eq(rows[2].value(),'GEN 3');eq(stored.style,2)
   eq(game.options.modOptions.tileshift.style,2);eq(game.save.options.modOptions.tileshift.style,2)

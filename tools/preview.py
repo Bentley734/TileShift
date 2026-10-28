@@ -23,6 +23,8 @@ def read_reviewed(path):
     # This is authored mod code with an ipairs expansion, not a generated data
     # table. It is trusted local source; imported ROM data uses catalog's loader.
     rows = catalog.plain(catalog.LUA.execute(path.read_text(encoding="utf-8-sig")))
+    if rows == {}:
+        return []
     assert isinstance(rows, list), "Reviewed mappings must return an array"
     return rows
 
@@ -530,6 +532,13 @@ def map_preview(cache, output, game, map_id, stem, rows, packed, scale, mod_root
         side_path = mod_root / "lib/side_catalog.lua"
         if side_path.exists():
             roof_rows += read_reviewed(side_path)
+        extra_path = mod_root / 'lib/center_mart_roofs.lua'
+        if extra_path.exists():
+            roof_rows += read_reviewed(extra_path)
+        for name in ('goldenrod_roofs.lua', 'pallet_roofs.lua'):
+            extra_path = mod_root / 'lib' / name
+            if extra_path.exists():
+                roof_rows += read_reviewed(extra_path)
     for overlay in roof_rows:
         if overlay["game"] == game and overlay["map"] == map_id:
             if overlay.get("side"):
@@ -539,7 +548,8 @@ def map_preview(cache, output, game, map_id, stem, rows, packed, scale, mod_root
             else:
                 assert overlay["y"] + 1 == overlay["buildingY"]
             if overlay["x"] * 16 < after.width:
-                after.alpha_composite(asset_image(overlay, mod_root), (overlay["x"] * 16, overlay["y"] * 16))
+                pixels = replacement_image(cache, overlay, packed, mod_root) if overlay.get('parts') else asset_image(overlay, mod_root)
+                after.alpha_composite(pixels, (overlay["x"] * 16, overlay["y"] * 16))
     total = len(catalog.lua_array(map_def["blocks"])) * 4
     display_w, display_h = before.width * scale, before.height * scale
     gap, left, top = 20, 18, 116
@@ -602,7 +612,7 @@ def main():
         if coast.exists():
             rows.extend(read_reviewed(coast))
     for requested, name in ((args.include_buildings, "pallet_buildings.lua"), (args.include_buildings, "gen2_buildings.lua"),
-                            (args.include_buildings, "buildings_extended.lua"),
+                            (args.include_buildings, "buildings_extended.lua"), (args.include_buildings, "building_overhangs.lua"), (args.include_buildings, "pallet_overhangs.lua"), (args.include_buildings, "goldenrod.lua"),
                             (args.include_details, "pallet_details.lua"),
                             (args.include_outdoors, "gen1_outdoor.lua"), (args.include_outdoors, "gen2_outdoor.lua"),
                             (args.include_outdoors, "gen1_caves.lua"), (args.include_outdoors, "gen1_extended.lua"),

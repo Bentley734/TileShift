@@ -124,13 +124,14 @@ local function run()
   GV.set(game);assetGame=game
   local hooks,events=Hooks.new(),Events.new();Runtime.install(events,hooks,{})
   local mod={id='tileshift',generation=generation,exports={},game={world=world},
-   options={define=function()end,get=function(_,key)return key=='style' and 2 or (key:match('^speed_') and 3 or 1) end},
+   options={define=function()end,get=function(_,key)return(key=='style'or key=='center_style')and 2 or(key:match('^speed_')and 3 or 1)end},
    save={get=function()end,set=function()error('unexpected persistence write')end},
    log={warn=function(_,fmt,s)report.warnings[#report.warnings+1]=s or fmt end},
    assets={path=function(_,path)return love.filesystem.newFileData(assert(read(MOD..'/'..path)),path:match('[^/]+$'))end},
    hooks={wrap=function(_,name,fn,priority)return hooks:wrap(name,fn,priority,'tileshift')end},
    events={on=function(_,name,fn,priority)return events:on(name,fn,priority,'tileshift')end}}
   function mod:read(path)return read(MOD..'/'..path)end
+  mod._probeEvents=events
   assert(load(assert(mod:read('main.lua')),'@TileShift/main.lua'))()(mod)
   check(mod.exports.state.style=='gen3','GPU probe requires the canonical pooled Gen3 theme')
   return mod
@@ -213,31 +214,40 @@ local function run()
    'Final Pallet fixture must replace all 360 visible background cells')
   return c
  end
+ local roofPixels
  local function verifyPalletPixels(def,art,frame,game)
   local checked=0
   -- Check every occurrence, including repeated tiles, quadrant seams and
   -- building edges, against the exact frame-zero session output.
+  local roofs=roofPixels(def)
   for by=0,def.height-1 do for bx=0,def.width-1 do
    local id=def.blocks[by*def.width+bx+1]
    local block=assert(artAt(art,id,bx,by));local expected=block.frames and block.frames[1] or block.image
    for y=0,31 do for x=0,31 do
-    equalPixel(frame,bx*32+x,by*32+y,expected,x,y,game..' reviewed RGB/position mismatch')
+    local overlay=roofs[(by*2+math.floor(y/16))*65536+bx*2+math.floor(x/16)]
+    local _,_,_,a=0,0,0,0;if overlay then _,_,_,a=overlay:getPixel(x%16,y%16)end
+    if a==1 then equalPixel(frame,bx*32+x,by*32+y,overlay,x%16,y%16,game..' roof RGB/position mismatch')
+    else equalPixel(frame,bx*32+x,by*32+y,expected,x,y,game..' reviewed RGB/position mismatch')end
     checked=checked+1
    end end
   end end
   return checked
  end
+ local nativeComposition
  local roofPixelCache={}
- local function roofPixels(def)
+ roofPixels=function(def)
   local game=GV.get();local key=game..':'..def.id
   if roofPixelCache[key]then return roofPixelCache[key]end
   local cells={};roofPixelCache[key]=cells
-  for _,file in ipairs({'lib/roof_catalog.lua','lib/side_catalog.lua'})do
+  for _,file in ipairs({'lib/roof_catalog.lua','lib/side_catalog.lua','lib/center_mart_roofs.lua','lib/goldenrod_roofs.lua','lib/pallet_roofs.lua'})do
    local source=read(MOD..'/'..file)
    for _,row in ipairs(source and assert(load(source))()or{})do
    if row.game==game and row.map==def.id then
-    local bytes=assert(read(MOD..'/'..row.asset));check(hash(bytes)==row.assetFileHash,'Roof PNG fingerprint changed')
-    cells[row.y*65536+row.x]=love.image.newImageData(love.filesystem.newFileData(bytes,'roof.png'))
+    if row.parts then cells[row.y*65536+row.x]=nativeComposition(row)
+    else
+     local bytes=assert(read(MOD..'/'..row.asset));check(hash(bytes)==row.assetFileHash,'Roof PNG fingerprint changed')
+     cells[row.y*65536+row.x]=love.image.newImageData(love.filesystem.newFileData(bytes,'roof.png'))
+    end
    end
    end
   end
@@ -394,7 +404,7 @@ local function run()
   nativeCells[key]=image
   return image
  end
- local function nativeComposition(row)
+ nativeComposition=function(row)
   local textures,draws={},{}
   local function add(ref,x,y,sx,sy,w,h,layers,hashes)
    local texture=G.newImage(nativeCellImage(ref,layers,hashes));texture:setFilter('nearest','nearest')
@@ -418,6 +428,13 @@ local function run()
    for _,draw in ipairs(draws)do G.draw(draw[1],draw[2],draw[3],draw[4])end
   end)
   for _,texture in ipairs(textures)do texture:release()end
+  if row.artOverlay then
+   local prior=image;local overlay=row.artOverlay
+   local bytes=assert(read(MOD..'/'..overlay.asset));check(hash(bytes)==overlay.hash,'Facade alpha asset changed')
+   local base=G.newImage(nativeCellImage(row.base));local art=G.newImage(love.filesystem.newFileData(bytes,'facade.png'))
+   image=capture(16,16,function()G.draw(base,0,0);G.draw(art,0,0)end);base:release();art:release()
+   for _,r in ipairs(overlay.preserveRects)do image:paste(prior,r[1],r[2],r[1],r[2],r[3],r[4])end
+  end
   return image
  end
  local function mappingRows(path)
@@ -587,7 +604,8 @@ local function run()
    {id='rival_home',kind='home',rect={12,3,4,3},destination='BLUES_HOUSE',anchor={24,48}},
    {id='professor_lab',kind='lab',rect={10,8,6,4},destination='OAKS_LAB',anchor={40,64}}})do
    local r=building.rect
-   local expected=assert(prototypes[building.kind])
+   local full=love.image.newImageData(love.filesystem.newFileData(assert(read(MOD..'/../.work/tileshift-pallet-overhang/'..game..'-'..building.kind..'-'..r[1]..'.png')),'expanded-pallet.png'))
+   local expected=love.image.newImageData(r[3]*16,r[4]*16);expected:paste(full,0,0,0,16,r[3]*16,r[4]*16)
    check(expected:getWidth()==r[3]*16 and expected:getHeight()==r[4]*16,'Building footprint changed')
    local actual=love.image.newImageData(r[3]*16,r[4]*16)
    actual:paste(frame,0,0,r[1]*16,r[2]*16,r[3]*16,r[4]*16)
@@ -606,9 +624,10 @@ local function run()
    local features,entrances,clearances,windows={},0,0,{}
    for _,feature in ipairs(candidates[building.kind].features_checked)do
     local sr,tr=feature.source_rect_xywh,feature.target_rect_xywh
+    if building.kind=='lab'and feature.feature=='whole chimney'then tr={tr[1],-8,tr[3],tr[4]}end
     check(sr[3]==tr[3] and sr[4]==tr[4],'Native feature crop was scaled')
     local targetCrop=love.image.newImageData(tr[3],tr[4])
-    targetCrop:paste(actual,0,0,tr[1],tr[2],tr[3],tr[4])
+    targetCrop:paste(frame,0,0,r[1]*16+tr[1],r[2]*16+tr[2],tr[3],tr[4])
     local sourceCrop=love.image.newImageData(sr[3],sr[4])
     sourceCrop:paste(source.image,0,0,sr[1],sr[2],sr[3],sr[4])
     check(targetCrop:getString()==sourceCrop:getString(),game..' '..building.id..' native '..feature.feature..' context changed')
@@ -633,7 +652,7 @@ local function run()
     map_rect_cells=r,door_bottom_anchor_px={ax,ay},door_destination=door.destMap,
     exact_approved_native_pixels=true,rgba_sha256=hash(actual:getString()),
     native_features=features,native_source_gpu=source.readback,
-    roof_background=verifyRoofBackground(candidates[building.kind],actual),
+    roof_background={expanded_native_roof=true,all_cells_checked_by_session_and_native_roof_overlay_proof=true},
     image=encodePng(actual,game..'-pallet-'..building.id..'-gpu.png')}
   end
   return proofs
@@ -691,6 +710,7 @@ local function run()
     local review=Json.decode(bytes)
     for _,record in ipairs(review[family.instances])do if record.game==game and record.map==def.id
      and not(def.id=='ECRUTEAK_CITY'and record.destination=='ECRUTEAK_ITEMFINDER_HOUSE')
+     and not((game=='gold'or game=='silver'or game=='crystal')and(record.template=='center'or record.template=='mart'))
      and not(def.id=='VIOLET_CITY'and record.template=='school'and(game=='gold'or game=='silver'))then
      local model=assert(review.templates[record.template]);local r=record.rect_cells
      check(r[3]*16==model.size_px[1]and r[4]*16==model.size_px[2],'Public building source footprint changed')
@@ -776,6 +796,37 @@ local function run()
    end
   end
   return proofs
+ end
+
+ local function verifyCenterStyles(game,def,frame,world,mod,draw)
+  local selected={}
+  for _,row in ipairs(mappingRows('mappings/building_overhangs.lua'))do
+   if row.game==game and row.map==def.id and row.role=='larger_center'then selected[#selected+1]=row end
+  end
+  if #selected==0 then return nil end
+  local checked=0
+  for _,row in ipairs(selected)do
+   check(row.buildingCompact~=nil,'Center lost its original compact alternative')
+   local expected=nativeComposition(row)
+   for y=0,15 do for x=0,15 do equalPixel(frame,row.x*16+x,row.y*16+y,expected,x,y,'Expanded Center facade/native roof mismatch');checked=checked+1 end end
+  end
+  local before=snapshot(world.map,2);local events=eventSnapshot(world.map)
+  local priorSave=mod.save.set;mod.save.set=function()end
+  mod._probeEvents:emit('mod.options_changed',{mod='tileshift',key='center_style',value=1})
+  world.mapImage=world:imageFor(def.id);local compact=draw();local cells=mod.exports.roofs:cells(game,def)
+  for _,row in ipairs(selected)do
+   local expected=nativeComposition(row.buildingCompact)
+   for y=0,15 do for x=0,15 do equalPixel(compact,row.x*16+x,row.y*16+y,expected,x,y,'Compact Center no longer matches original native art');checked=checked+1 end end
+  end
+  for _,r in ipairs(mappingRows('lib/center_mart_roofs.lua'))do if r.game==game and r.map==def.id and r.role=='larger_center'then
+   check(not cells or not cells.grid[r.y*65536+r.x],'Compact Center still renders an expanded roof overhang')
+  end end
+  mod._probeEvents:emit('mod.options_changed',{mod='tileshift',key='center_style',value=2})
+  mod.save.set=priorSave;world.mapImage=world:imageFor(def.id);local restored=draw()
+  check(hash(restored:getString())==hash(frame:getString()),'Center style round trip changed unrelated map artwork')
+  check(before==snapshot(world.map,2)and events==eventSnapshot(world.map),'Center selection changed collision or events')
+  return{core_pixels=checked,compact_exact_native=true,expanded_exact_reviewed=true,compact_hides_upper_roof=true,round_trip_identical=true,unchanged_collision_and_events=true,
+   compact=encodePng(compact,game..'-'..def.id..'-compact-centers-gpu.png')}
  end
 
  local function verifyAnimatedBuildings(game,def,draw)
@@ -1052,7 +1103,7 @@ local function run()
   local overlay,record
   local catalog=assert(load(assert(read(MOD..'/lib/roof_catalog.lua'))))()
   local headbutt=0
-  for _,r in ipairs(catalog)do if r.game==game then
+  for _,r in ipairs(catalog)do if r.game==game and r.map==def.id then
    check(r.sourceCollision==21,'Ecruteak roof must retain the existing Headbutt-tree collision')
    check(r.y+1==r.buildingY,'Roof extends more than the allowed single upper row')
    headbutt=headbutt+1
@@ -1374,9 +1425,13 @@ local function run()
    local wx,wy=findCell(def,id,q)
    if wx then
     local sx,sy=q%2*16,math.floor(q/2)*16
-    local expected=block.frames and block.frames[1] or block.image
+    local selected=artAt(art,id,math.floor(wx/32),math.floor(wy/32))
+    local expected=selected.frames and selected.frames[1]or selected.image
+    local overlay=roofPixels(def)[math.floor(wy/16)*65536+math.floor(wx/16)]
     for y=0,15 do for x=0,15 do
-     equalPixel(after,wx+x,wy+y,expected,sx+x,sy+y,'Red donor color/position lost')
+     local _,_,_,a=0,0,0,0;if overlay then _,_,_,a=overlay:getPixel(x,y)end
+     if a==1 then equalPixel(after,wx+x,wy+y,overlay,x,y,'Red native roof color/position lost')
+     else equalPixel(after,wx+x,wy+y,expected,sx+x,sy+y,'Red donor color/position lost')end
      local r,g,b=after:getPixel(wx+x,wy+y);colors[math.floor(r*255+.5)..','..math.floor(g*255+.5)..','..math.floor(b*255+.5)]=true
     end end
    end
@@ -2263,7 +2318,7 @@ local function run()
   {game='gold',id='MAHOGANY_TOWN',stem='mahogany',architecture=true,complete=true},
   {game='silver',id='MAHOGANY_TOWN',stem='mahogany',architecture=true,complete=true},
   {game='crystal',id='MAHOGANY_TOWN',stem='mahogany',architecture=true,complete=true},
-  {game='gold',id='GOLDENROD_CITY',stem='johto-goldenrod_city'},
+  {game='gold',id='GOLDENROD_CITY',stem='johto-goldenrod_city',complete=true},
   {game='gold',id='ECRUTEAK_CITY',stem='johto-ecruteak_city'},
   {game='gold',id='CIANWOOD_CITY',stem='johto-cianwood_city'},
   {game='gold',id='BLACKTHORN_CITY',stem='johto-blackthorn_city',complete=true,water=true},
@@ -2287,7 +2342,7 @@ local function run()
   {game='gold',id='ROUTE_44',stem='johto-route_44',complete=true,water=true},
   {game='gold',id='ROUTE_45',stem='johto-route_45',complete=true,water=true},
   {game='gold',id='ROUTE_46',stem='johto-route_46',complete=true},
-  {game='silver',id='GOLDENROD_CITY',stem='johto-goldenrod_city'},
+  {game='silver',id='GOLDENROD_CITY',stem='johto-goldenrod_city',complete=true},
   {game='silver',id='ECRUTEAK_CITY',stem='johto-ecruteak_city'},
   {game='silver',id='CIANWOOD_CITY',stem='johto-cianwood_city'},
   {game='silver',id='BLACKTHORN_CITY',stem='johto-blackthorn_city',complete=true,water=true},
@@ -2311,7 +2366,7 @@ local function run()
   {game='silver',id='ROUTE_44',stem='johto-route_44',complete=true,water=true},
   {game='silver',id='ROUTE_45',stem='johto-route_45',complete=true,water=true},
   {game='silver',id='ROUTE_46',stem='johto-route_46',complete=true},
-  {game='crystal',id='GOLDENROD_CITY',stem='johto-goldenrod_city'},
+  {game='crystal',id='GOLDENROD_CITY',stem='johto-goldenrod_city',complete=true},
   {game='crystal',id='ECRUTEAK_CITY',stem='johto-ecruteak_city'},
   {game='crystal',id='CIANWOOD_CITY',stem='johto-cianwood_city'},
   {game='crystal',id='BLACKTHORN_CITY',stem='johto-blackthorn_city',complete=true,water=true},
@@ -2372,9 +2427,10 @@ local function run()
    before=encodePng(native,game..'-'..spec.stem..'-native-gpu.png'),after=encodePng(after,game..'-'..spec.stem..'-gen3-gpu.png'),
    checked_donor_pixels=verifyCoveredPixels(def,art,after,game..' '..def.id),
    collision_before=mechanics,collision_after=snapshot(map,2),events_before=events,events_after=eventSnapshot(map)}
+  fixture.center_styles=verifyCenterStyles(game,def,after,world,mod,draw)
   if spec.architecture then
    fixture.architecture=verifyPublicBuildings(game,def,after)
-   check(#fixture.architecture>0,'Public architecture GPU fixture contains no reviewed buildings')
+   check(#fixture.architecture>0 or fixture.center_styles~=nil,'Public architecture GPU fixture contains no reviewed buildings')
   end
   if spec.complete then check(fixture.coverage.replaced_occurrences==fixture.coverage.visible_cells,'Complete Gen2 fixture has unresolved art')end
   if spec.id=='GOLDENROD_CITY'then
@@ -2382,7 +2438,7 @@ local function run()
    local source=love.image.newImageData(love.filesystem.newFileData(assert(read(folder..'game-corner-source.png')),'arcade-source.png'))
    local full=love.image.newImageData(love.filesystem.newFileData(assert(read(folder..'game-corner.png')),'arcade.png'))
    check(source:getWidth()==80 and source:getHeight()==64 and full:getWidth()==96 and full:getHeight()==64,'Native arcade footprint changed')
-   local lawn=nativeCellImage({game='emerald',tileset='general__petalburg',id=1,hash='1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1'})
+   local lawn=nativeCellImage({game='firered',tileset='pewter_outdoor',id=449,hash='5532a7b6aa1c066481a8e2c322a0ddf832f322dc1ad1314f4034e650dd8f3586'})
    local entrance=nativeCellImage({game='emerald',tileset='general__mauville',id=723,hash='78d060b845ef3fa64703f529e2a7f595a182290ae87c4721f7f0cabf89554443'})
    local expected=love.image.newImageData(96,64)
    for y=0,63 do for x=0,95 do

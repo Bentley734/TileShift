@@ -11,6 +11,9 @@ from validate_gpu import runtime_fingerprint
 
 
 NAMES = {
+    ("crystal", "GOLDENROD_CITY"): ("Crystal / Goldenrod City", "Goldenrod", "Original Crystal native colors"),
+    ("gold", "GOLDENROD_CITY"): ("Gold / Goldenrod City", "Gold-Goldenrod", "Original Gold native colors"),
+    ("silver", "GOLDENROD_CITY"): ("Silver / Goldenrod City", "Silver-Goldenrod", "Original Silver native colors"),
     ("crystal", "ROUTE_29"): ("Crystal / Route 29", "Route29", "Original Crystal native colors"),
     ("crystal", "ROUTE_35"): ("Crystal / Route 35", "Route35", "Original Crystal native colors"),
     ("crystal", "ROUTE_31"): ("Crystal / Route 31", "Route31", "Original Crystal native colors"),

@@ -14,6 +14,12 @@ def main():
  active=[r for path in (ROOT/'mappings').glob('*.lua')if path.name!='mahogany.lua'for r in preview.read_reviewed(path)];im=Imports(cache,ROOT.parent/'.work/tileshift-catalog');ground=copy.deepcopy(next(r['base']for r in active if r.get('base',{}).get('tileset')=='general__petalburg'and r['base']['id']==1));packed=im.packed
  stage=SimpleNamespace(cache=cache,catalog=ROOT.parent/'.work/tileshift-catalog',output=out,approved_candidates=True,write_reviewed=False)
  cfg=copy.deepcopy(CONFIGS['ordinary']);cfg.update(size=(64,64),rows=tuple(range(8)),roof_rows=6,anchor=(24,64));cfg['features']=tuple((label,src,(dst[0],dst[1]+32,dst[2],dst[3]))for label,src,dst in cfg['features']);cfg['notes']='Complete native FR residence-style shop exterior, with single original entrance. Width compacted by removing plain spacing and the complete chimney; full height, window and entrance frames retained. This disguised shop keeps MAHOGANY_MART_1F and Rocket story behavior, without a Pokemon Mart sign.'
+ # Source column8 includes the removed chimney's yellow right-hand jamb.
+ # Use a whole plain roof panel there, and native alpha for both top rows.
+ # The facade cap row uses facade columns so every window/door stays intact.
+ cfg.update(roof_columns=(0,1,2,3,4,4,4,9),force_over_rows=(0,1),
+            row_columns={5:cfg['facade_columns']})
+ cfg['notes']+=' Chimney-free roof panels replace the stray yellow chimney jamb; both upper roof rows retain native exterior alpha, revealing the selected scenery beneath the roof corners.'
  original,native=native_reference(stage,'shop64',cfg,packed);target,model=a.compose(stage,'shop64',cfg,original,native,preview.native_donor(cache,ground,packed),ground,packed)
  records=[{'game':g,'map':'MAHOGANY_TOWN','template':'shop64','rect_cells':[10,4,4,4],'door_map_cell':[11,7],'door_bottom_anchor_px':[24,64],'destination':'MAHOGANY_MART_1F'}for g in e.GAMES]
  rows=k.positioned_rows(stage,{'shop64':model},records)

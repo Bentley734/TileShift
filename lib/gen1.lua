@@ -15,6 +15,7 @@ function G.install(ctx)
   local quads = setmetatable({}, {__mode='k'})
   local owned, warned = {}, {}
   local closed = false
+  local roofView={camera={x=0,y=0}}
   local cleanup
   local function active()
     if closed then return false end
@@ -193,6 +194,10 @@ function G.install(ctx)
         if row then paintBlock(row,bx,by,cx,cy) end
       end end
     end)
+    if ctx.roofs then
+      roofView.camera.x,roofView.camera.y=cx,cy;roofView.viewW,roofView.viewH=vw,vh
+      ctx.roofs:map(roofView,def,0,0,1)
+    end
     return unpack(result,1,result.n)
   end)
   wrap('drawBorderFill',function(native,self,cx,cy,vw,vh)

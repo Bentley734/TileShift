@@ -4,7 +4,7 @@ local checks=0
 local function eq(a,b,s)checks=checks+1;assert(a==b,s or(tostring(a)..' ~= '..tostring(b)))end
 local draws,images,releases,reads,sourceReads=0,0,0,0,0
 local G={push=function()end,pop=function()end,setShader=function()end,setColor=function()end}
-function G.newImage(data)images=images+1;return {setFilter=function()end,release=function()releases=releases+1 end}end
+function G.newImage(data)images=images+1;return {setFilter=function()end,replacePixels=function()end,release=function()releases=releases+1 end}end
 function G.newQuad()return{setViewport=function(_,x,y,w,h)eq(x>=0 and y>=0 and x+w<=16 and y+h<=16,true)end,release=function()end}end
 function G.draw(...)draws=draws+1 end
 local image={}
@@ -68,6 +68,11 @@ eq(draws-before,1,'right edge redraw clips to the overlapping actor pixels')
 sideActor.px=24;before=draws;sides:actor(map,sideActor,0,0,1,false,0,world)
 eq(draws-before,1,'left neighbour redraw clips to the overlapping actor pixels')
 world.daytime='DARK';before=draws;sides:map(world,def,0,0,1);eq(draws,before);world.daytime='DAY'
+sideActor.py=48;sideActor.sprite.frameHeight=48;sideActor.sprite.anchorY=48
+before=draws;sides:actor(map,sideActor,0,0,1,false,0,world)
+eq(draws,before,'a tall actor standing in front remains in front of side artwork')
+sideActor.spriteYOffset=-12;sides:actor(map,sideActor,0,0,1,false,0,world)
+eq(draws,before,'jump offset does not change physical front/behind order')
 sides:dispose();before=draws;sides:map(world,def,0,0,1);eq(draws,before)
 local far=sideRow('right');far.x=5;sideCtx.rows={far}
 eq(pcall(R.new,sideCtx),false,'more than one adjacent column is rejected')
@@ -81,4 +86,18 @@ rejected:map(world,def,0,0,1);eq(draws,before);eq(sideReads,oldReads);eq(sideWar
 local outside=sideRow('right');outside.buildingW=3;outside.x=5;sideCtx.rows={outside}
 rejected=R.new(sideCtx);before=draws
 rejected:map(world,def,0,0,1);eq(draws,before);eq(sideWarnings,2,'the original building must remain within its map');rejected:dispose()
+-- Native roof pieces use the cached normal composer with no baked ground.
+local native={};for k,v in pairs(row)do native[k]=v end
+native.kind='native_composite';native.asset=nil;native.assetFileHash=nil;native.parts={{}}
+local calls=0
+ctx.rows={native};ctx.compose=function(r)calls=calls+1;eq(r,native);eq(r.base,nil);return{under=image}end
+local nativeRoofs=R.new(ctx);before=draws;nativeRoofs:map(world,def,0,0,1)
+eq(draws-before,1,'native alpha roof draws');eq(calls,1)
+for i=1,100 do nativeRoofs:map(world,def,0,0,1)end
+eq(calls,1,'native roof composition stays cached across warm frames')
+local nativeImages=images
+for i=1,5 do revision=revision+1;nativeRoofs:map(world,def,0,0,1)end
+eq(images,nativeImages,'option changes reuse one GPU texture per native roof row')
+eq(calls,6,'option changes still revalidate and recompose native donor references')
+nativeRoofs:dispose()
 print('roof overhang checks: '..checks)

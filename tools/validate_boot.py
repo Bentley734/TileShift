@@ -92,6 +92,7 @@ assert(Serializer.encode(data.maps)==before,'source map registry changed during 
 local Manager=require('src.mods.ManagerState')
 local manager=Manager.new(host)
 local schema=assert(loader.optionSchemas.tileshift)
+local schemaByKey={};for _,row in ipairs(schema)do schemaByKey[row.key]=row end
 assert(schema[1].type=='choice' and #schema[1].choices==2 and schema[1].default==2,'implemented mod-manager choice schema missing')
 assert(schema[1].choices[1][1]=='ORIGINAL' and schema[1].choices[1][2]==1)
 assert(schema[1].choices[2][1]=='GEN 3' and schema[1].choices[2][2]==2)
@@ -103,8 +104,7 @@ assert(exported.state.style=='gen3','mod-manager change did not apply art live')
 assert(host.save.options.modOptions.tileshift.style==2,'mod-manager choice was not persisted')
 assert(managerRows[1].value()=='GEN 3')
 for i,key in ipairs({'flora_trees','flora_big_trees','flora_cut_trees','flora_flowers','flora_grass','flora_water'})do
- local index=i+1
- assert(schema[index].key==key and schema[index].type=='choice','custom artwork schema missing')
+ assert(schemaByKey[key]and schemaByKey[key].type=='choice','custom artwork schema missing')
  local beforeRevision=exported.state.revision
  manager:setOption('tileshift',key,3)
  assert(exported.flora.selected[key:sub(7)]=='mixed','custom artwork manager change did not apply')
@@ -112,7 +112,12 @@ for i,key in ipairs({'flora_trees','flora_big_trees','flora_cut_trees','flora_fl
  assert(host.save.options.modOptions.tileshift[key]==3,'custom artwork choice did not persist')
  manager:setOption('tileshift',key,1)
 end
-assert(#schema[7].choices==6,'Static custom water options must be absent')
+assert(#schemaByKey.flora_water.choices==6,'Static custom water options must be absent')
+assert(schemaByKey.center_style and #schemaByKey.center_style.choices==2,'Compact/expanded Center choices missing')
+manager:setOption('tileshift','center_style',1)
+assert(host.save.options.modOptions.tileshift.center_style==1,'Compact Center preference did not persist')
+manager:setOption('tileshift','center_style',2)
+assert(host.save.options.modOptions.tileshift.center_style==2,'Expanded Center preference did not persist')
 for value,id in pairs({[6]='ripple-blue',[7]='ripple-teal',[8]='ripple-olive',[4]='default',[5]='default'})do
  manager:setOption('tileshift','flora_water',value)
  assert(exported.flora.selected.water==id,'Existing water preference changed during option removal')

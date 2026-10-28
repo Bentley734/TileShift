@@ -29,11 +29,11 @@ def main() -> None:
     files += sorted((root / "mappings").glob("*.lua"))
     asset_files = sorted(path for path in (root / 'assets').rglob('*') if path.is_file())
     allowed = ('third_party/j-treecko252/',
-               'third_party/magiscarf/', 'third_party/metalflygon08/', 'user_flora/', 'original/sprout-tower/', 'original/flora/', 'original/slowpoke-well/', 'original/olivine-lighthouse/', 'original/compact-conifer/', 'original/ecruteak-v2/', 'original/bell-wide/')
+               'third_party/magiscarf/', 'third_party/metalflygon08/', 'user_flora/', 'original/sprout-tower/', 'original/flora/', 'original/slowpoke-well/', 'original/olivine-lighthouse/', 'original/compact-conifer/', 'original/ecruteak-v2/', 'original/bell-wide/', 'original/center-expanded/')
     for path in asset_files:
         assert path.relative_to(root / 'assets').as_posix().startswith(allowed), 'Unreviewed asset folder'
         assert path.suffix in ('.png', '.jpg', '.json', '.txt'), 'Unreviewed asset format'
-    for folder in ('user_flora', 'third_party/magiscarf', 'third_party/metalflygon08', 'original/sprout-tower', 'original/flora', 'original/slowpoke-well', 'original/olivine-lighthouse', 'original/compact-conifer', 'original/ecruteak-v2', 'original/bell-wide'):
+    for folder in ('user_flora', 'third_party/magiscarf', 'third_party/metalflygon08', 'original/sprout-tower', 'original/flora', 'original/slowpoke-well', 'original/olivine-lighthouse', 'original/compact-conifer', 'original/ecruteak-v2', 'original/bell-wide', 'original/center-expanded'):
         provenance = json.loads((root / 'assets' / folder / 'provenance.json').read_text(encoding='utf-8'))
         for name, digest in provenance['files'].items():
             assert hashlib.sha256((root / 'assets' / folder / name).read_bytes()).hexdigest() == digest, 'Artwork provenance fingerprint changed'

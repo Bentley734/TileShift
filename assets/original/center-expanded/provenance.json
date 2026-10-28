@@ -1,0 +1,50 @@
+{
+  "origin": "Original facade generated with built-in imagegen in response to the user request to redesign the expanded Pokemon Center front. Native roof is separately retained through donor references.",
+  "source_file": "exec-f5051122-4725-4a41-b471-5d37a07052cd.png",
+  "source_sha256": "45fa555b1304797f452da1694c92119265a36f36932714c8bb3f85a9e677b5db",
+  "source_size": [
+    1122,
+    1402
+  ],
+  "integer_reduction": 18,
+  "source_crop": [
+    -16,
+    704,
+    1136,
+    1424
+  ],
+  "final_facade": [
+    64,
+    40
+  ],
+  "entrance_surround_shift": [
+    -2,
+    0
+  ],
+  "binary_alpha": 128,
+  "palette_colors": 32,
+  "dither": false,
+  "files": {
+    "facade.png": "f6f36f50de8a3b62449fec98bd03b7f258585d738fb1bb1ea0585141275dd16a",
+    "cell-0-0.png": "232c2eac760eae604f9dd43352c0b272396b7cfaf220081b54583b6d0cbc2320",
+    "cell-1-0.png": "232c2eac760eae604f9dd43352c0b272396b7cfaf220081b54583b6d0cbc2320",
+    "cell-2-0.png": "232c2eac760eae604f9dd43352c0b272396b7cfaf220081b54583b6d0cbc2320",
+    "cell-3-0.png": "232c2eac760eae604f9dd43352c0b272396b7cfaf220081b54583b6d0cbc2320",
+    "cell-0-1.png": "232c2eac760eae604f9dd43352c0b272396b7cfaf220081b54583b6d0cbc2320",
+    "cell-1-1.png": "232c2eac760eae604f9dd43352c0b272396b7cfaf220081b54583b6d0cbc2320",
+    "cell-2-1.png": "232c2eac760eae604f9dd43352c0b272396b7cfaf220081b54583b6d0cbc2320",
+    "cell-3-1.png": "232c2eac760eae604f9dd43352c0b272396b7cfaf220081b54583b6d0cbc2320",
+    "cell-0-2.png": "006bd7e63994bbb9f859942a325baff6736c84c6750afc89e10b8ac958efd3c6",
+    "cell-1-2.png": "17a26829fa02a4bcb2725ba331707d987eee0b4bab34347f8cacc8a33be8e2a2",
+    "cell-2-2.png": "a53654544f28f65564822ac62e417e10bb377cf611e77c04f838f8262679398f",
+    "cell-3-2.png": "3ac1209df5896640f956f84e9a7e945e84cd31c846e83aa892cd3c64ef5f8911",
+    "cell-0-3.png": "9e87a009eeff8fe5db1d11980e2379821cbd2b210f11bc436ffa04f0642a52c5",
+    "cell-1-3.png": "53791ec5dfb70c5091385315220966fa45bbc0b63e2771a162ecbb93cafa7456",
+    "cell-2-3.png": "b16ab38cbea3a6b2ee47a24bb2567a4a38794f4c64514666d6c8c42fd0a2271b",
+    "cell-3-3.png": "c77cf65d6079754fe696708657565de1bc34fcd7658e2c2f877864e94788fa2d",
+    "cell-0-4.png": "6d702e269b0bf1c2a7478a9f8aac61226a007344d06cd432954669d2028f853e",
+    "cell-1-4.png": "a4ff7ef28377ef062e3afa2abdb3dc90a2b750a43a99a9f516e70c3ddb8ef9ca",
+    "cell-2-4.png": "9896b77cbd2af59ed80aa79a2fa1e75ab7b87468c7bb73448c22fab0fba8480e",
+    "cell-3-4.png": "24aafe8f35c67d07299e930fd17ad4dde73b992e0c2d0935d040412a069c6bb3"
+  }
+}

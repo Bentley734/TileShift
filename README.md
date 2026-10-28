@@ -1,12 +1,16 @@
 # TileShift
 
 TileShift brings Gen 3 world art to Gen1Recomp with individually reviewed tile
-matches. Version 0.21.0 widens Bell Tower using the supplied original reference.
+matches. Version 0.22.0 completes Goldenrod, adds selectable compact/expanded
+Gen 2 Pokemon Centers and enlarges Pallet architecture. Bell Tower uses the supplied original reference.
 Its partial side tiles preserve the trees, ground and native map border underneath;
 the original entrance and collision footprint stay unchanged.
 Goldenrod uses the actual MetalFlygon08 Johto Gen3 Game Corner artwork,
 with complete original pixels and a full96x64 building footprint. Goldenrod
-remains in progress. Johto route replacements include full native gates,
+is now completely retiled in Gold, Silver and Crystal, including its department
+store, station, Radio Tower, florist, underground entrances, background houses,
+railway, paving and coastline. Each version keeps its original flower-shop
+position. Johto route replacements include full native gates,
 cave entrances, animated inland banks and thin cliff edges.
 Mt. Silver Outside is complete, including its cliff family,
 animated freshwater shoreline and original cave entrance. Blackthorn City and
@@ -17,6 +21,13 @@ Bell Tower, temple entrance and version-specific Burned Tower exterior.
 New building replacements keep their intended pixel scale and complete details.
 Decorative artwork may overhang neighbouring cells, with genuinely transparent
 unused portions; original entrances and collision footprints stay unchanged.
+Gen 2 Pokemon Centers offer **COMPACT** and **EXPANDED** under
+**POKEMON CENTERS** in the mod options. Compact restores the original native
+64x64 design. Expanded keeps the native roof unchanged and adds a redesigned
+front with blue-glass windows, trim and an entrance surround. The door remains
+at the original map position. Style changes are cached and preserve collision.
+Pallet's houses and lab also use the row above them, retaining their complete
+windows and entrance frames. Gen 2 Marts gain additional native roofing.
 Full roofs can extend one decorative tile above the unchanged building footprint,
 covering parts of the original trees and any actors behind them. No new collision
 is added; existing Headbutt trees retain their original interactions.
@@ -26,7 +37,7 @@ entrance and both base windows are preserved. Johto rock
 and retaining-wall matches share source entries to keep runtime work small. Mixed designs follow connected
 areas; grass can react to footsteps, and plant foregrounds surround character feet. Custom water choices are animated. It completely retiles the **Pallet Town, Viridian City, Route 1 and
 Viridian Forest backgrounds in Red, Blue and Yellow**, all 19 maps using
-their cave tileset, and **Pallet Town, New Bark Town, Cherrygrove City, Violet City, Azalea Town, Mahogany Town, Cianwood City, Olivine City, Ecruteak City, Blackthorn City, Lake of Rage and Mt. Silver Outside in Gold, Silver and Crystal**.
+their cave tileset, and **Pallet Town, New Bark Town, Cherrygrove City, Violet City, Azalea Town, Mahogany Town, Cianwood City, Olivine City, Ecruteak City, Blackthorn City, Goldenrod City, Lake of Rage and Mt. Silver Outside in Gold, Silver and Crystal**.
 Red's downstairs room, Blue's house and many ordinary Kanto homes are also
 fully retiled. Pallet includes compact houses and Oak's
 lab, trees, fences, signs, grass, animated flowers, water and shoreline. Route 1
