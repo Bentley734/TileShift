@@ -471,7 +471,7 @@ def verify(rows, cache, catalogs, mod_root):
     return checked
 
 
-def map_preview(cache, output, game, map_id, stem, rows, packed, scale, mod_root):
+def map_preview(cache, output, game, map_id, stem, rows, packed, scale, mod_root, roof_rows=None):
     root = cache / game
     maps = catalog.read_lua(root / "data/generated/maps.lua")
     sets = catalog.read_lua(root / "data/generated/tilesets.lua")
@@ -524,6 +524,13 @@ def map_preview(cache, output, game, map_id, stem, rows, packed, scale, mod_root
                 by_role[replacement["role"]] += 1
             else:
                 after.paste(original, (x, y))
+    roof_path = mod_root / "lib/roof_catalog.lua"
+    if roof_rows is None:
+        roof_rows = read_reviewed(roof_path) if roof_path.exists() else []
+    for overlay in roof_rows:
+        if overlay["game"] == game and overlay["map"] == map_id:
+            assert overlay["y"] + 1 == overlay["buildingY"]
+            after.alpha_composite(asset_image(overlay, mod_root), (overlay["x"] * 16, overlay["y"] * 16))
     total = len(catalog.lua_array(map_def["blocks"])) * 4
     display_w, display_h = before.width * scale, before.height * scale
     gap, left, top = 20, 18, 116
@@ -590,7 +597,7 @@ def main():
                             (args.include_details, "pallet_details.lua"),
                             (args.include_outdoors, "gen1_outdoor.lua"), (args.include_outdoors, "gen2_outdoor.lua"),
                             (args.include_outdoors, "gen1_caves.lua"), (args.include_outdoors, "gen1_extended.lua"),
-                            (args.include_outdoors, "gen2_outdoor_extended.lua"), (args.include_outdoors, "azalea.lua"), (args.include_outdoors, "viridian.lua"), (args.include_outdoors, "gen2_pallet.lua"), (args.include_outdoors, "mahogany.lua"), (args.include_outdoors, "johto_terrain.lua"), (args.include_outdoors, "cianwood.lua"), (args.include_outdoors, "olivine.lua"), (args.include_outdoors, "interiors.lua"),
+                            (args.include_outdoors, "gen2_outdoor_extended.lua"), (args.include_outdoors, "azalea.lua"), (args.include_outdoors, "viridian.lua"), (args.include_outdoors, "gen2_pallet.lua"), (args.include_outdoors, "mahogany.lua"), (args.include_outdoors, "johto_terrain.lua"), (args.include_outdoors, "cianwood.lua"), (args.include_outdoors, "olivine.lua"), (args.include_outdoors, "ecruteak.lua"), (args.include_outdoors, "interiors.lua"),
                             (args.include_outdoors, "gen2_caves.lua")):
         if requested and (args.reviewed.parent / name).exists():
             rows.extend(read_reviewed(args.reviewed.parent / name))

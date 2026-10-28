@@ -248,6 +248,7 @@ function Adapter.install(ctx)
           end
         end end
       end)
+      if ctx.roofs then ctx.roofs:map(self,def,ox,oy,s)end
     end
   end)
   wrap('borderImageFor',function(old)
@@ -365,6 +366,12 @@ function Adapter.install(ctx)
         end
       end
       G.pop()
+    end
+  end)
+  wrap('drawBgPriorityOver',function(old)
+    return function(self,entity,ox,oy,s)
+      old(self,entity,ox,oy,s)
+      if ctx.roofs then ctx.roofs:actor(self.map,entity,ox,oy,s,false,0,self)end
     end
   end)
   wrap('drawGrassShake',function(old)

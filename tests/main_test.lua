@@ -76,7 +76,8 @@ for _,gameId in ipairs(games)do
     end},log={warn=function()end}}
   function mod:read(path)
     fixture.reads[#fixture.reads+1]=path
-    if path=='lib/vegetation.lua' or path=='lib/flora.lua' or path=='lib/flora_catalog.lua' or path=='lib/water_styles.lua' then
+    if path=='lib/roof_catalog.lua'then return 'return{}'end
+    if path=='lib/roofs.lua' or path=='lib/vegetation.lua' or path=='lib/flora.lua' or path=='lib/flora_catalog.lua' or path=='lib/water_styles.lua' then
       local file=assert(io.open(root..'/'..path,'rb'));local source=file:read('*a');file:close();return source
     end
     if path=='mappings/trees.lua' then
@@ -86,7 +87,7 @@ for _,gameId in ipairs(games)do
       or path=='mappings/pallet_buildings.lua' or path=='mappings/pallet_details.lua'
       or path=='mappings/gen1_outdoor.lua' or path=='mappings/gen2_outdoor.lua'
       or path=='mappings/gen1_caves.lua' or path=='mappings/gen2_buildings.lua'
-      or path=='mappings/gen1_extended.lua' or path=='mappings/gen2_outdoor_extended.lua' or path=='mappings/azalea.lua' or path=='mappings/viridian.lua' or path=='mappings/gen2_pallet.lua' or path=='mappings/mahogany.lua' or path=='mappings/johto_terrain.lua' or path=='mappings/cianwood.lua' or path=='mappings/olivine.lua'
+      or path=='mappings/gen1_extended.lua' or path=='mappings/gen2_outdoor_extended.lua' or path=='mappings/azalea.lua' or path=='mappings/viridian.lua' or path=='mappings/gen2_pallet.lua' or path=='mappings/mahogany.lua' or path=='mappings/johto_terrain.lua' or path=='mappings/cianwood.lua' or path=='mappings/olivine.lua' or path=='mappings/ecruteak.lua'
       or path=='mappings/buildings_extended.lua' or path=='mappings/interiors.lua'
       or path=='mappings/gen2_caves.lua' then return nil end
     if path=='mappings/reviewed.lua' then

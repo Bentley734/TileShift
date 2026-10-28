@@ -1,0 +1,562 @@
+{
+  "origin": "Original new designs made with built-in imagegen, then fitted to original source footprints",
+  "user_choice": "Generate our own Gen3-style replacements based on the supplied reference; retain recognizable colors, roof shapes and landmark features.",
+  "reference_artist": "MetalFlygon08 / SkidMarc25; style reference only, reference bitmaps are not distributed",
+  "reference_url": "https://imgur.com/gallery/testing-out-gen-3-style-tiles-johto-6A43Cji",
+  "creator_post": "https://www.reddit.com/r/PokemonRMXP/comments/yf90qb/full_johto_gen_3_tileset_tile_set_at_the_bottom/",
+  "prompt_history": {
+    "initial": {
+      "generation": [
+        [
+          "burned-v2",
+          "burned-atlas-6x.png",
+          "Create a NEW original compact game sprite based closely on the attached reference's visual language. Reference image is style/subject guidance ONLY. Match its MUTED FLAT GBA pixel-art colors, simple one-pixel edges, restrained 2-3-tone shading and readable chunky tile patterns. NO smooth shading, gradients, 3D bevels, painterly rendering, thick black outlines, added ornament or glossy highlights. Genuinely transparent background. Show ONLY the building, no ground, paths, scenery, trees, flowers outside the building, text, labels or characters. Orthographic overhead Pokemon Emerald/FRLG building viewpoint. Deliberately design at the specified low logical resolution, then present as crisp enlarged square pixels. All pixels aligned to the same square grid. Entire left/right/bottom silhouette and complete roof, doors and window frames must fit the logical footprint, with just tiny transparent margins, not a miniature building centered on a huge empty canvas. Asset: Ecruteak Burned Tower, exactly64x64 logical pixels, square. Keep the reference's pale desaturated grey-green damaged hip roof, LARGE irregular black collapsed hole with a few broken tile islands, blue-grey facade, small dark side windows, charred gold-edged broken doorway. Roof occupies upper40 logical rows, facade lower24. Reduce repetition and simplify details to fit64x64; DO NOT simply rescale the reference. The broken doorway center is x24/64 (37.5% across), its full bottom reaches y64; complete opening and frame in x16..31. Intact right wall/window, no cut frame corners. Keep the understated ruin appearance and muted palette of the reference."
+        ],
+        [
+          "bell-v2",
+          "bell-style-reference-6x.png",
+          "Create a NEW original compact game sprite based closely on the attached reference's visual language. Reference image is style/subject guidance ONLY. Match its MUTED FLAT GBA pixel-art colors, simple one-pixel edges, restrained 2-3-tone shading and readable chunky tile patterns. NO smooth shading, gradients, 3D bevels, painterly rendering, thick black outlines, added ornament or glossy highlights. Genuinely transparent background. Show ONLY the building, no ground, paths, scenery, trees, flowers outside the building, text, labels or characters. Orthographic overhead Pokemon Emerald/FRLG building viewpoint. Deliberately design at the specified low logical resolution, then present as crisp enlarged square pixels. All pixels aligned to the same square grid. Entire left/right/bottom silhouette and complete roof, doors and window frames must fit the logical footprint, with just tiny transparent margins, not a miniature building centered on a huge empty canvas. Asset: visible LOWER section of Ecruteak Bell/Tin Tower, exactly64x128 logical pixels, aspect1:2. Four compact stacked stories in reference's muted peach-orange roof tiles, mustard yellow walls, grey-purple eaves and rectangular grey-blue SIX-pane window bands (3columns x2rows). Avoid invented bright gold decorative trim. Flat color panels exactly like reference. Uppermost roof continues beyond the top map boundary, NO spire or complete pointed cap. All side eaves fit in64px width, roof forms are nearly straight side profiles as reference. Original doorway must be LEFT OF CENTER at logical x24, y128 at the bottom, about16px wide; one complete small right-side window, no left base window needed. Keep full door lintel/jambs, bottom and all right frame corners."
+        ],
+        [
+          "theater-v2",
+          "theater-style-reference-6x.png",
+          "Create a NEW original compact game sprite based closely on the attached reference's visual language. Reference image is style/subject guidance ONLY. Match its MUTED FLAT GBA pixel-art colors, simple one-pixel edges, restrained 2-3-tone shading and readable chunky tile patterns. NO smooth shading, gradients, 3D bevels, painterly rendering, thick black outlines, added ornament or glossy highlights. Genuinely transparent background. Show ONLY the building, no ground, paths, scenery, trees, flowers outside the building, text, labels or characters. Orthographic overhead Pokemon Emerald/FRLG building viewpoint. Deliberately design at the specified low logical resolution, then present as crisp enlarged square pixels. All pixels aligned to the same square grid. Entire left/right/bottom silhouette and complete roof, doors and window frames must fit the logical footprint, with just tiny transparent margins, not a miniature building centered on a huge empty canvas. Asset: Ecruteak Dance Theater, exactly64x48 logical pixels, aspect4:3. Keep reference's muted salmon/red tiled roof with raised central rectangular ridge, cream ridge strips, dark olive horizontal sign recess WITHOUT TEXT, orange wood side pillars, olive patterned wall, pale cream sliding entrance curtain/door at left, blue three-pane window with little green planters at right. Simplify repetitions to fit. Roof upper24 rows, facade lower24. Full entrance centered at logicalx24, its bottom at y48. Complete door top frame, intact entire right window and planter frames, no new blue-grey tall wooden door replacing the curtain. Faithful muted salmon/pale yellow/olive palette, no bright red or 3D modeling."
+        ],
+        [
+          "home-v2",
+          "blue-home-full.png",
+          "Create a NEW original compact game sprite based closely on the attached reference's visual language. Reference image is style/subject guidance ONLY. Match its MUTED FLAT GBA pixel-art colors, simple one-pixel edges, restrained 2-3-tone shading and readable chunky tile patterns. NO smooth shading, gradients, 3D bevels, painterly rendering, thick black outlines, added ornament or glossy highlights. Genuinely transparent background. Show ONLY the building, no ground, paths, scenery, trees, flowers outside the building, text, labels or characters. Orthographic overhead Pokemon Emerald/FRLG building viewpoint. Deliberately design at the specified low logical resolution, then present as crisp enlarged square pixels. All pixels aligned to the same square grid. Entire left/right/bottom silhouette and complete roof, doors and window frames must fit the logical footprint, with just tiny transparent margins, not a miniature building centered on a huge empty canvas. Asset: compact Ecruteak blue-roof ordinary home, exactly64x48 logical pixels, aspect4:3. Keep reference's dark teal-blue ribbed metal roof with a narrow blue ridge rail, tiny muted brass chimney on white flashing at upper LEFT, weathered grey-teal timber facade, simple mustard-yellow sliding door with orange transom above it, ONE whole blue square window on right. Roof upper24 rows, facade lower24. Chimney can be a complete tiny12px-high version fitting entirely inside roof footprint, not protruding out of canvas. Complete doorway centeredx24, bottomy48; whole right window aroundx40,y35, with all four dark frame corners. Simplify repeated roof ribs to reduce height, full house64px wide. No flower patch above roof; no empty top grass row. Keep pale grey, teal and mustard muted colors."
+        ],
+        [
+          "temple-v2",
+          "temple-style-reference-6x.png",
+          "Create a NEW original compact game sprite based closely on the attached reference's visual language. Reference image is style/subject guidance ONLY. Match its MUTED FLAT GBA pixel-art colors, simple one-pixel edges, restrained 2-3-tone shading and readable chunky tile patterns. NO smooth shading, gradients, 3D bevels, painterly rendering, thick black outlines, added ornament or glossy highlights. Genuinely transparent background. Show ONLY the building, no ground, paths, scenery, trees, flowers outside the building, text, labels or characters. Orthographic overhead Pokemon Emerald/FRLG building viewpoint. Deliberately design at the specified low logical resolution, then present as crisp enlarged square pixels. All pixels aligned to the same square grid. Entire left/right/bottom silhouette and complete roof, doors and window frames must fit the logical footprint, with just tiny transparent margins, not a miniature building centered on a huge empty canvas. Asset: Ecruteak temple entrance, exactly96x48 logical pixels, aspect2:1. Preserve reference's slate-grey/lavender tiled traditional roof with small raised hip-roof section on left and complete small green paired chimney/censer with cyan flashing on right; pale stone patterned facade with purple foundation, three cyan windows left, narrow single cyan window right, brown/gold complete sliding door. Make roof compact24px tall and full facade24px tall, use fewer repeated roof rows and chimney details. Full doorway center at logicalx40 of96, bottomy48. Move whole window units around doorway as needed; no chopped windows or missing top lintel. Entire low wide building, not tall or miniature. Match subdued lavender roof and olive/cream walls in reference."
+        ]
+      ],
+      "edits": [
+        [
+          "burned-v3",
+          "exec-4e9e56c5-fa88-46c3-84f4-aaa4e8f16e60.png",
+          "Edit ONLY the lower facade of this pixel-art ruined temple. Keep the entire roof, collapsed hole, all colors, pixel style, silhouette, canvas dimensions, transparency and ground line unchanged. Move the complete gold-edged broken doorway horizontally LEFT to put its center at37.5% of the total canvas width (currently around48%). Reposition the small dark window panels as complete units to fit around it. Entire doorway with gold charred arch, intact left/right jambs and full bottom must remain visible and inside facade, no chopped arch, no transparent gap in the facade. Door bottom stays at existing ground line. No other changes; no scenery or text."
+        ],
+        [
+          "theater-v3",
+          "exec-05c44bc0-5c85-4d29-bae4-e9b85cef306c.png",
+          "Edit ONLY the lower facade of this pixel-art theater. Keep roof, full silhouette, muted colors, transparent background, canvas dimensions and ground line exactly the same. Move the complete pale cream entrance curtain/door and its whole frame RIGHT so its center is37.5% of canvas width (currently around27%). Keep the THREE-pane blue window and its green planters as a complete group to the right, shifting that group right if necessary and compacting plain wall gaps. Keep both orange outer posts. Curtain bottom stays at the current ground line. Entire lintel, all jambs and every window/planter frame corner intact. No other changes."
+        ],
+        [
+          "temple-v3",
+          "exec-8ff42914-9a1a-4a6e-9150-c8b4a777f1aa.png",
+          "Edit ONLY the lower facade of this pixel-art temple entrance. Keep entire roof, chimney/censer, silhouette, muted colors, transparency, exact canvas dimensions and ground line unchanged. Move the COMPLETE brown/gold sliding doorway LEFT so its center is41.67% of the entire image width (currently around58%). Full doorway lintel, jambs and bottom must stay intact. Place a complete TWO-pane cyan window group to its left and a complete TWO-pane cyan window group to its right; all four corners of both window frames intact. Rebalance only plain stone wall panels around complete features. Keep outer pillars and purple foundation. No other changes."
+        ],
+        [
+          "home-v3",
+          "exec-37366145-7a44-45e7-8027-3db076121103.png",
+          "Refine this building into a MUCH LOWER and WIDER compact sprite. Preserve its exact blue ribbed metal roof, grey-teal timber facade, mustard sliding door with orange transom, complete blue right window, brass chimney and white flashing, muted GBA colors and crisp pixel style. REDESIGN roof height by removing repeated roof rib rows: roof including full chimney occupies the upper HALF of the complete building height, facade occupies lower HALF. Make the entire BUILDING silhouette width:height exactly4:3, with only small transparent margins. On the current canvas extend the house sides left and right to almost fill the width; lower the roof ridge to make the roof compact, but keep the entire small chimney inside the silhouette. Door center at37.5% of canvas width, bottom at the ground line. Complete door top lintel and all window-frame corners. Transparent background, full roof and wall silhouette visible, no grass or scenery or extra features. No gradients or smooth3D shading."
+        ]
+      ],
+      "extra": [
+        [
+          "home-v4",
+          "C:/Users/LSDMTHC/.codex/generated_images/01a1779e-1657-7893-8b0a-94f8fb9ac828/exec-37366145-7a44-45e7-8027-3db076121103.png",
+          "Edit the width of this pixel-art house ONLY, preserving its current HEIGHT and ground line. Extend both outer side walls and full roof horizontally to almost fill the canvas width: left building edge aroundx40 and right edge aroundx1400 on this1448px-wide canvas. Keep current top chimney tip near y40 and current ground near y1050. The entire building including chimney must consequently have a4:3 width-to-height ratio. Add only repeated roof ribs and plain grey timber wall panels to widen it; do not stretch pixels. Preserve exact muted TEAL-blue roof colors, grey-teal timber facade, tiny complete brass chimney/white flashing, mustard yellow sliding door/orange transom, and blue right window. Move the complete door horizontally so its center is aroundx565 (39% of canvas), full bottom at existing ground. Keep every frame corner, complete roof border and full silhouette. DO NOT make the roof shallower or reduce its height. No saturated electric blue colors, no gradients, no extra scenery, keep genuine transparency and exact canvas dimensions."
+        ],
+        [
+          "intact-v2",
+          "C:/Users/LSDMTHC/Desktop/Hoennto/.work/tileshift-ecruteak-finish/bell-style-reference-6x.png",
+          "Generate a NEW ORIGINAL compact64x80 logical-pixel Gen3 GBA Japanese pagoda tower sprite based closely on the attached reference style and MUTED colors. Transparent background. THREE compact stories: a complete intact hip roof on top, two thin lower eaves, mustard/olive walls, subdued peach-orange roof faces, grey-purple eave undersides and grey-blue six-pane window bands. Gold/Silver Burned Tower has a taller intact-looking exterior: NO charred hole, no ruined roof. Simplify repetitions for64x80 instead of scaling reference. Complete doorway offsetleft, centerx24/64(37.5%across), bottomy80, one full small window on right, all frames intact. Entire silhouette fills64x80 footprint nearly to all four edges. Flat simple one-pixel GBA shading, no thick black outlines, no3D, gradients, shiny gold trim, added ornaments or spire. Reference is style and subject guidance only. No ground, grass, scenery, people or text."
+        ]
+      ],
+      "closed": "Edit ONLY the facade of this pixel-art blue-roof house. Keep the entire roof and complete brass chimney/flashing, full silhouette, exact canvas size, all muted colors, transparency and ground line unchanged. This is a CLOSED decorative building with NO entrance: completely remove the mustard sliding door AND orange transom AND small door-handle mark. Replace that full doorway/transom area with weathered grey-teal timber wall containing one COMPLETE blue TWO-pane window matching the existing right window's colors, frame thickness and full four corners. Keep the existing right window unchanged. The two windows should sit on the same horizontal level, with a continuous grey wall and foundation beneath both. No doorway-like opening, steps, sign or new feature. Do not alter any roof or chimney pixels. Preserve crisp GBA sprite style and genuine transparency."
+    },
+    "full_size": {
+      "generation": [
+        [
+          "temple-full",
+          "temple-style-reference-6x.png",
+          "Generate a NEW original Ecruteak temple entrance in Pokemon Gen3 GBA pixel art, based very closely on this reference's muted lavender/slate tiled roof, complete small green paired chimney/censer on cyan flashing, pale patterned stone facade, purple foundation and cyan windows. Logical sprite96x64 pixels, aspect3:2. FULL-SIZE building: roof40px high, complete facade24px high. Whole building fills almost the ENTIRE canvas width and height, tiny transparent margins only. This is a larger replacement: do not make it low or miniature. Raised hip roof on left, chimney on right; keep both full shapes. Complete brown/gold framed doorway centered atx40 of96, bottomy64; TWO-pane cyan window on each side, every window and door frame intact. Entire silhouette, true transparent background, no ground/scenery/trees/labels/text. Flat muted GBA colors, crisp simple pixel clusters, no smooth shading,3D gradients or added details. Reference is subject/style guidance only; make an original compact design using fewer repeating roof tiles. Its upper16px will overhang the original building, so keep a complete tall roof."
+        ],
+        [
+          "theater-full",
+          "theater-style-reference-6x.png",
+          "Generate a NEW original Ecruteak Dance Theater sprite, Pokemon Emerald/FRLG GBA pixel art, based closely on the reference colors/design. Logical64x64 pixels, square. FULL-SIZE building fills nearly the ENTIRE square, not a low miniature with empty canvas. Roof40px high, facade24px high; the upper16px is allowed to overhang the original map footprint. Muted salmon/red tiled roof with raised rectangular central ridge and pale yellow strips, full dark olive horizontal sign recess WITHOUT TEXT, orange outer pillars, olive patterned facade. Complete pale cream sliding entrance curtain/door centered atx24 of64, bottomy64. Right full blue three-pane window and two green planter boxes with complete frames; preserve this distinctive reference curtain and planter design, no generic wooden door. Keep the full doorway lintel/jambs and all window corners. Entire silhouette, genuinely transparent background, no scenery, ground, trees, people or labels. Flat simple limited GBA palette and crisp square pixel clusters; no smooth3D shading or bright saturated colors. Reference is style and subject guidance only, create original proportions with fewer repetitions."
+        ]
+      ],
+      "edits": [
+        [
+          "temple-full-door",
+          "exec-a5b44c27-2b89-4e4d-9bd4-b5bff5c39f78.png",
+          "Edit ONLY the complete doorway position in the lower facade. Keep entire building size, all roof/chimney pixels, colors, windows, pillars, transparency and ground line unchanged. Move the whole framed brown/gold doorway LEFT by128 pixels on this1536px-wide canvas: its center should be x640, exactly41.67% across, rather than its current centralx768. Fill its former location with matching uninterrupted pale patterned stone and purple foundation. Do not move or cut any windows. Full door lintel, left/right jambs and bottom remain intact, full bottom at original ground line. No other changes."
+        ],
+        [
+          "theater-full-door",
+          "exec-5dc19b49-2dc9-4abf-9cef-15e698e4100f.png",
+          "Edit ONLY the lower facade of this square pixel-art theater. Keep full building size, entire roof, all colors, both orange outer posts, transparent background, exact canvas dimensions and ground line unchanged. Move the COMPLETE cream sliding entrance curtain and its full frame RIGHT until its center is x480 on this1254px-wide canvas(38.3%across). It is currently too far left aroundx370. Move the COMPLETE blue3-pane window and its green planter boxes to the right as a whole group if needed, reducing only blank wall gaps. Retain every door/window/planter frame corner, curtain hem and orange transom. Do not shrink the building or change the roof. No other changes."
+        ]
+      ]
+    }
+  },
+  "artwork": {
+    "burned": {
+      "source_file": "exec-91f2b53e-b409-4010-b528-a28013d656d6.png",
+      "source_sha256": "b151d7051ce0deade164e318c8ff7e52c4ba596dfee472541d1d678f42bcd8e6",
+      "generated_size": [
+        1254,
+        1254
+      ],
+      "visible_alpha_bounds": [
+        47,
+        22,
+        1210,
+        1236
+      ],
+      "crop_xyxy": [
+        44,
+        20,
+        1260,
+        1236
+      ],
+      "integer_reduction": 19,
+      "intermediate_size": [
+        64,
+        64
+      ],
+      "final_size": [
+        64,
+        64
+      ],
+      "extra_steps": [
+        {
+          "exterior_repeat_columns": [
+            0,
+            3
+          ],
+          "source_columns": [
+            2,
+            56
+          ],
+          "unique_features_unscaled": true
+        }
+      ],
+      "processing": "Full original building width; complete visible design retained, except Bell Tower continues beyond original north map edge. Full roofs may overhang one row above unchanged source collision footprint; binary alpha128, uniform integer nearest reduction,32 colors without dithering. No fractional/runtime scaling.",
+      "rgba_sha256": "8cc24b51f047db8aa94cb26851111b26e4d78892f54aba52e69444c76fd77d7f"
+    },
+    "bell": {
+      "source_file": "exec-dcf549ee-d4c1-498d-8f2b-eb69e459e8af.png",
+      "source_sha256": "d20d9068b22a5194e12b56208e9ed215c0846b7e2c1d3a051b2e09261af2642d",
+      "generated_size": [
+        887,
+        1774
+      ],
+      "visible_alpha_bounds": [
+        71,
+        0,
+        778,
+        1774
+      ],
+      "crop_xyxy": [
+        62,
+        238,
+        830,
+        1774
+      ],
+      "integer_reduction": 12,
+      "intermediate_size": [
+        64,
+        128
+      ],
+      "final_size": [
+        64,
+        128
+      ],
+      "extra_steps": [
+        {
+          "exterior_repeat_columns": [
+            1,
+            4
+          ],
+          "source_columns": [
+            3,
+            55
+          ],
+          "unique_features_unscaled": true
+        }
+      ],
+      "processing": "Full original building width; complete visible design retained, except Bell Tower continues beyond original north map edge. Full roofs may overhang one row above unchanged source collision footprint; binary alpha128, uniform integer nearest reduction,32 colors without dithering. No fractional/runtime scaling.",
+      "rgba_sha256": "7e20e554d9ac2f04320875a101b8acb1d3618b97487cc5d4691cf97dcf3b2419"
+    },
+    "theater": {
+      "source_file": "exec-43bc4a35-a72e-4652-8a57-4833b3df0aca.png",
+      "source_sha256": "00bf11ed9d0877a6b77a7f3c7eac2d66dc745cbfcd2284eb0f656b287752a463",
+      "generated_size": [
+        1254,
+        1254
+      ],
+      "visible_alpha_bounds": [
+        5,
+        59,
+        1250,
+        1188
+      ],
+      "crop_xyxy": [
+        0,
+        -92,
+        1280,
+        1188
+      ],
+      "integer_reduction": 20,
+      "intermediate_size": [
+        64,
+        64
+      ],
+      "final_size": [
+        64,
+        64
+      ],
+      "extra_steps": [
+        {
+          "exterior_repeat_columns": [
+            0,
+            2
+          ],
+          "source_columns": [
+            2,
+            31
+          ],
+          "unique_features_unscaled": true
+        }
+      ],
+      "processing": "Full original building width; complete visible design retained, except Bell Tower continues beyond original north map edge. Full roofs may overhang one row above unchanged source collision footprint; binary alpha128, uniform integer nearest reduction,32 colors without dithering. No fractional/runtime scaling.",
+      "rgba_sha256": "3b0c3c8736afdc208227438503ea5a25e06ff4e0e65927b9b689e7b94894f5f2"
+    },
+    "temple": {
+      "source_file": "exec-83c38fa6-8ef7-4397-a712-bd2e43132d4b.png",
+      "source_sha256": "8fd3b7f2786dc52d67bcc059295a597609ec181491144ca833c21f520800d644",
+      "generated_size": [
+        1536,
+        1024
+      ],
+      "visible_alpha_bounds": [
+        13,
+        18,
+        1523,
+        1006
+      ],
+      "crop_xyxy": [
+        0,
+        -18,
+        1536,
+        1006
+      ],
+      "integer_reduction": 16,
+      "intermediate_size": [
+        96,
+        64
+      ],
+      "final_size": [
+        96,
+        64
+      ],
+      "extra_steps": [
+        {
+          "exterior_repeat_columns": [
+            1,
+            1
+          ],
+          "source_columns": [
+            3,
+            90
+          ],
+          "unique_features_unscaled": true
+        }
+      ],
+      "processing": "Full original building width; complete visible design retained, except Bell Tower continues beyond original north map edge. Full roofs may overhang one row above unchanged source collision footprint; binary alpha128, uniform integer nearest reduction,32 colors without dithering. No fractional/runtime scaling.",
+      "rgba_sha256": "e59ef65f95fc8c006b8e2ededd4c630c31ddb6a9c9a2b9f3ea3c14145084d133"
+    },
+    "home": {
+      "source_file": "exec-37366145-7a44-45e7-8027-3db076121103.png",
+      "source_sha256": "087818db78e36c17dffa6563b15eb552c71cc87867840b5909c30d31204a0127",
+      "generated_size": [
+        1448,
+        1086
+      ],
+      "visible_alpha_bounds": [
+        170,
+        45,
+        1279,
+        1050
+      ],
+      "crop_xyxy": [
+        158,
+        -102,
+        1310,
+        1050
+      ],
+      "integer_reduction": 18,
+      "intermediate_size": [
+        64,
+        64
+      ],
+      "final_size": [
+        64,
+        64
+      ],
+      "extra_steps": [
+        {
+          "exterior_repeat_columns": [
+            1,
+            2
+          ],
+          "source_columns": [
+            3,
+            31
+          ],
+          "unique_features_unscaled": true
+        }
+      ],
+      "processing": "Full original building width; complete visible design retained, except Bell Tower continues beyond original north map edge. Full roofs may overhang one row above unchanged source collision footprint; binary alpha128, uniform integer nearest reduction,32 colors without dithering. No fractional/runtime scaling.",
+      "rgba_sha256": "67b11aed11497f75b5b54da5a31aa82269f653e8febc27a3207d2e3b7ec72581"
+    },
+    "closed": {
+      "source_file": "exec-92763e6e-3ddf-4119-b5b4-77eedce90f97.png",
+      "source_sha256": "d7ae897b3c9006fbf87f1958acd33647fb98cd034a6f1f857986c90627502050",
+      "generated_size": [
+        1448,
+        1086
+      ],
+      "visible_alpha_bounds": [
+        170,
+        44,
+        1279,
+        1052
+      ],
+      "crop_xyxy": [
+        158,
+        -100,
+        1310,
+        1052
+      ],
+      "integer_reduction": 18,
+      "intermediate_size": [
+        64,
+        64
+      ],
+      "final_size": [
+        64,
+        64
+      ],
+      "extra_steps": [
+        {
+          "exterior_repeat_columns": [
+            1,
+            2
+          ],
+          "source_columns": [
+            3,
+            31
+          ],
+          "unique_features_unscaled": true
+        }
+      ],
+      "processing": "Full original building width; complete visible design retained, except Bell Tower continues beyond original north map edge. Full roofs may overhang one row above unchanged source collision footprint; binary alpha128, uniform integer nearest reduction,32 colors without dithering. No fractional/runtime scaling.",
+      "rgba_sha256": "3bf43400aaa92a3345c638c601719b8b3c6bc95f63af3dc1a59a41787a86c0f2"
+    },
+    "intact": {
+      "source_file": "exec-59dc8a25-4634-4617-9d21-0cb6e54d903c.png",
+      "source_sha256": "f8862adfa74f6796365ddf79fbd135864b58f81fcb3d7013f46657ef63a45401",
+      "generated_size": [
+        1122,
+        1402
+      ],
+      "visible_alpha_bounds": [
+        0,
+        0,
+        1122,
+        1402
+      ],
+      "crop_xyxy": [
+        0,
+        -38,
+        1152,
+        1402
+      ],
+      "integer_reduction": 18,
+      "intermediate_size": [
+        64,
+        80
+      ],
+      "final_size": [
+        64,
+        80
+      ],
+      "extra_steps": [
+        {
+          "exterior_repeat_columns": [
+            0,
+            2
+          ],
+          "source_columns": [
+            2,
+            57
+          ],
+          "unique_features_unscaled": true
+        },
+        {
+          "repeated_upper_roof_rows": 2,
+          "complete_facade_unchanged": true
+        }
+      ],
+      "processing": "Full original building width; complete visible design retained, except Bell Tower continues beyond original north map edge. Full roofs may overhang one row above unchanged source collision footprint; binary alpha128, uniform integer nearest reduction,32 colors without dithering. No fractional/runtime scaling.",
+      "rgba_sha256": "df259c76a226571c62fce71774c2f1ade82621ff378d9059aff363ab302c55b2"
+    }
+  },
+  "files": {
+    "burned/burned.png": "ed7cff16a43faf6ae78eb05b23a19fafe8c7d2a9744a65677f568cccd2637fb3",
+    "burned/cell-0-0.png": "199723886fef12a2ef9b6a8ec1d1f68a8d76dab0e292407bd6ab97c3c9483546",
+    "burned/cell-1-0.png": "bdcacc71727f6e3845626457cc164e4f0668eb2eeb922725c59936ae30b94a5b",
+    "burned/cell-2-0.png": "ebfe6a1ef53579d21ba90612f4ce6c112ea56ec76786311f616c7a1e1fc3fbab",
+    "burned/cell-3-0.png": "691f337d4285a992473a763a29ec3855558ae53f2de16f5105c5dc5983732658",
+    "burned/cell-0-1.png": "aa073ab17e8b17351bcad0f41eed6ce6569d0d49a93e7b1cf4887d2a157a1be7",
+    "burned/cell-1-1.png": "3f765ed60acbca5281cefab86f1082169f02d374dde8ecf34e885c4ccc18d9cc",
+    "burned/cell-2-1.png": "3568a39e6654fc453e2ccf5256258a1583b63d068dd2a48615797b35aa2eca03",
+    "burned/cell-3-1.png": "7d1a38c96bb07db98421474090b4ef8194f259a8aeb9863299f6a632dbdf8823",
+    "burned/cell-0-2.png": "216e1ce2d65150ca4b88184ac707841925b399ea23863c8bc8ec63ee032a05be",
+    "burned/cell-1-2.png": "410f95b49d9ddede0de55844dedd47a3e0a43355ab1009520d965697e5818e79",
+    "burned/cell-2-2.png": "43657046d19ea460211ef97c865c99c941d8347f375786af33248d5b35644960",
+    "burned/cell-3-2.png": "55f32c916382a60944a9203eb2289a687605e4591835975730ca75d2ae5710f0",
+    "burned/cell-0-3.png": "e7c81e0229e2f9923cfcef1e5416677fcdd873ceed819fb62b3064d1cd9a5ee5",
+    "burned/cell-1-3.png": "0079a00804a875cc5732c5efb16859e255384619a3c37541f18bf626f10137b3",
+    "burned/cell-2-3.png": "9972ec7d747bbc6ba89c7a65189302b80130ebb9a4ea5bbd0a11accf3a4fe4b7",
+    "burned/cell-3-3.png": "1f575bde86cb107871c0573322c843252093b16ab185d5698f64e4b870677470",
+    "bell/bell.png": "f97c34bee4f976ec2d97b12095064dae6176f9bd815a5924f5468790dc417469",
+    "bell/cell-0-0.png": "3cd675e4b692769d18dcac051d7cca56d636b8cee3a8b869e4027db044fe37c0",
+    "bell/cell-1-0.png": "0cbc75937b9a2dce1bddfc775aada8736cf680ded645cdf882d38b90ae8b053a",
+    "bell/cell-2-0.png": "5563d839129aad564ddfda1e3e5fe397517db182641b329a3f3ba4a9b6018020",
+    "bell/cell-3-0.png": "687fb54961ac0eb526fc1f3b08adce9c11b7dbd867312eb0f5763868a9d23189",
+    "bell/cell-0-1.png": "1b3a6836da9996651fa8295a3af62579af529abf48ed5ec632bd3af060cb2dbc",
+    "bell/cell-1-1.png": "8c3cbcb7f0ecf2788d3ac401a9d0200c15bf1ed305f8cf39bee08ae8906984d8",
+    "bell/cell-2-1.png": "f3bffec63116d2ea6ee039db3ac90730748e48c21a5169b9b16e7f7da660aa8f",
+    "bell/cell-3-1.png": "db85c784e57beaa5be317465ebe7eb37166a75b6b9e23c779eb4bfcf9be5c446",
+    "bell/cell-0-2.png": "846988812ef337bf72ae42cc6eee52118eda49d5d83fc39385c66293acd44715",
+    "bell/cell-1-2.png": "d17e3b6fd7f2ca0d0229cbce5ae558e654c5b2f3f75fded1e711d91108ff9363",
+    "bell/cell-2-2.png": "f290590949cc9d45e3307afab244fe4c237786ae86aa1d1784d4b96e747f845f",
+    "bell/cell-3-2.png": "cf7c70105e5018906fd479717c9729e83a644f0880c1601cf11b11a6dc7b1964",
+    "bell/cell-0-3.png": "2231015a27b57cd14851020d6e4e6e9de10453f5365c4bfcf2e7bf5c50ef5ec1",
+    "bell/cell-1-3.png": "c5a30eca4f0f2a9fe6bbbe59332ad292cfc26870b96796e0a58c49ef0d5c41d3",
+    "bell/cell-2-3.png": "3bede928fa79c4e0741a31d3e2b0bb8e0f23202f6cad6dc96926c43aa37f097a",
+    "bell/cell-3-3.png": "0d9cfd9c0692cf19529a08ce55ec6fba6423856e7c37420677a981d80e474d7f",
+    "bell/cell-0-4.png": "20abacbc54624fdd110e0da83066d8b45b9654d4489c225edee3dd72f9b06df4",
+    "bell/cell-1-4.png": "0ff2db41f225104589fd15a01d9fd6cb3cfc7fb9b4536f6dc8115ad83bfa25a8",
+    "bell/cell-2-4.png": "6443e124206319e13ccb1f317030aa8028bc3a78c6265cbd5248d97dce4e934e",
+    "bell/cell-3-4.png": "66824c946a6e848f1e4595018d1984766ff09b582dc1d805ba7cb579d5a884d6",
+    "bell/cell-0-5.png": "e738890bd87defe5a9d601e77fc3d8721e82d5aac454a810fb6c1b2340430f2b",
+    "bell/cell-1-5.png": "79cda3d549dc5f42c5e127cc091217aab223f8d98263fcae33eb73bb96f330b0",
+    "bell/cell-2-5.png": "77cf5f662fc78801ed173274e3f721384f23196d40845fc6a3a6f7a5fde82b43",
+    "bell/cell-3-5.png": "1044a36471683255949b1b361c0d8af50055a81187125ff51b7664b975c4760d",
+    "bell/cell-0-6.png": "d1ef8a38aaf71032be90149bcd3174678384bb0a8aa6d74084ba462eb7436549",
+    "bell/cell-1-6.png": "f5d5e772472f25ea770c494d597720c3ac5037ae8324f07238057acdd93bd178",
+    "bell/cell-2-6.png": "07f9e98283438fb0190a51f3860a80afccc21acd5b887803bfcde1750b981d0c",
+    "bell/cell-3-6.png": "7b02000bf1e1e96e763c9c423d87262039d85a39db06db9d2a1cc4f236b31374",
+    "bell/cell-0-7.png": "3f6698cfb7e21c55179a891d884c2c41e83b00c633d7a52fbb93d0e294b8c46c",
+    "bell/cell-1-7.png": "18d4d62b5e32905e0522ff700d77d7baac21690a6d2ade03013e4e90d826516a",
+    "bell/cell-2-7.png": "711b8021645c7e37f493b48c3bdb2f8e6f5535c035b8bbcbe9679983e4d4d5ee",
+    "bell/cell-3-7.png": "c2b993dc4e82883673ea598047d8499e8d119f15dd7dd1ca182206ab9641230c",
+    "theater/theater.png": "45a4972028b600b8bc74032da92b4fa0072f048477adf99b012a9ef1a5d9b0c5",
+    "theater/cell-0-0.png": "0bb24fccca20e462322feff6020f87160a9b6cb423ded5adaef2a0cca933d927",
+    "theater/cell-1-0.png": "699322b112cb9d028efa7191091c674f50a9aa172bd76df2e8f42251a0e62947",
+    "theater/cell-2-0.png": "4b9f6901376512674f4c0b9e3a5db92d110cda430654a7d3ce70fbce53a62b84",
+    "theater/cell-3-0.png": "b2dd1817567f9aff6b39f1a23af379d8c574c86a6a24f6f197fa951a2c11a06d",
+    "theater/cell-0-1.png": "4a8ce81caa0620322140e6ff42b69acf9f186d22a9cdaeacb29822446a0de059",
+    "theater/cell-1-1.png": "e4c08183340b2252461efc964b02716006c4b4cc8d4a19fb699e45120bc2d043",
+    "theater/cell-2-1.png": "78eb9c9e9fb4633f5950d7a216a3a998f83eb139b7a05bb0219a7120e4c86740",
+    "theater/cell-3-1.png": "f96b5976d920e8e6ffbd79845cfd43101fd1ee91b6d9484b960d8c4e4c069a5c",
+    "theater/cell-0-2.png": "41889d5757699e985a8459828c3eac1a3e3136d756d8ec41bb9ca752a2c1fc34",
+    "theater/cell-1-2.png": "c2c1aac026d84a418dae59daa4f4c78a94cc0dafeffca5d268111aa625aeec8e",
+    "theater/cell-2-2.png": "7deb4eed8a98b9e6c8f659b1c5d6ed1e245dd3eec8870852a14c4d8320350bd6",
+    "theater/cell-3-2.png": "6423423a8ad4031af70751dfaf4c5bb896005cdac0d3c9a88127d33f00b8cfc1",
+    "theater/cell-0-3.png": "2bf9cc83be84ff6964722dfc241b23d59ba8be53636eb05d004f0f500a908ea3",
+    "theater/cell-1-3.png": "ebef4ea267f217a09155c3028c06c569bac517cf6a5da5a288e8e1aed6ea377a",
+    "theater/cell-2-3.png": "54a852ed08d3d9df778566a675cdb38e65e94efff6042f7ac2082b8ce07410b3",
+    "theater/cell-3-3.png": "2535e69192ee6a411757dea497374c05308388b2cd31fdf90b13cd13b5ebc72b",
+    "temple/temple.png": "63c826b2ac477e48312a0acebb19228ede057237ba6ee7da656138308b3af6eb",
+    "temple/cell-0-0.png": "5dca452f7db9c4b274a9fcf03c1114b3118dc0ed027c010ba5b09b60b811d900",
+    "temple/cell-1-0.png": "5c4e12cc2cc09b7ecdcb7bdaab3267388727ed92cd920d6c150da33af83e9662",
+    "temple/cell-2-0.png": "c4f2471d8ddc33a6e8ee40fcbf19422d6c5ec0f20a21fc1b54eca5c3d2469095",
+    "temple/cell-3-0.png": "716b636c90a218217f26b0e66b8976f1be0e12834baf49539e223bb10464313e",
+    "temple/cell-4-0.png": "d13256aa16053268d8e61addc4ae1a36939c860c30dc9f4c68dd5339814b4289",
+    "temple/cell-5-0.png": "bebbe9288c961baa98e6c45a7ad7196bf4524e70c389046951a429037e86ddf0",
+    "temple/cell-0-1.png": "79681c9212e276fea05bb2c8e9237e0ccec478c643e8e87b3f16cd2e50fae84d",
+    "temple/cell-1-1.png": "c38b926ea5454980ef1dc02fc3e2064a10eb45646fa1d4e373bf873054f7e73f",
+    "temple/cell-2-1.png": "826582c51754c9a3a42c6e27c6f989199b633578b68e0e679ff3c0f0912407b0",
+    "temple/cell-3-1.png": "0dd065b76c66db22a2a65388344a4b600fdcb2872aa1c41f94e7cdc293f202a7",
+    "temple/cell-4-1.png": "0f7dd06928cb08087557b1aaae78f7763b5d4f9c22f9a11ba4d50474b45733ff",
+    "temple/cell-5-1.png": "f5bbb3abcca8235317f0ab12166b96da1e811c4a31577a845508306c5103b1ac",
+    "temple/cell-0-2.png": "cf2b496f236cc83868e758ce772be1e19cdf7a983e623468d18df04aab5edeae",
+    "temple/cell-1-2.png": "6bf287879d4298ecc15bafd58d557494546ec268bd64e38acf23befed06b3381",
+    "temple/cell-2-2.png": "e27b4dc4f65500e4ef735aa45c648cc67b1a0d4941957520d8642774af9c0702",
+    "temple/cell-3-2.png": "4bdeb9877e8b3fed980b458de1b36fd14a268016da592d92713a6b01505e05ae",
+    "temple/cell-4-2.png": "827c5734bec04ad26d4e0aada3227170635e3f70d4bf197112b9c94bd5a548fd",
+    "temple/cell-5-2.png": "bae8aee1b503a40d00cf6342f3536a36bf82c181bf50e34fc39c95d07f516c02",
+    "temple/cell-0-3.png": "9e17b4925cbc1e5efca650c3cadcc43a71d41b7249bcd94921124908caca5e00",
+    "temple/cell-1-3.png": "1bbb959b86cd65f894824e04466bba7793d2f73a35a050f7def122e6191c520d",
+    "temple/cell-2-3.png": "a2a1f5524b9719d1c9c942f6cd7fd7aad888d1e5b5252d5dc94406bca20f5415",
+    "temple/cell-3-3.png": "fef72d9331125394f6298d78e603c15b9b3fca50e65a428b512ca62ff15a1edb",
+    "temple/cell-4-3.png": "3bce897f6c0d8870078d72cc26548e30eb2efc83a920be3e7568caddf5278348",
+    "temple/cell-5-3.png": "219fc1b58701fa51f16cc9a43baf31e4dc431bc62fa39f4e66ef3cb3aac91f2f",
+    "home/home.png": "49a1d7e66c61c58b0048f7bed3e55e2b103e68844963784bf397a90104b9eb71",
+    "home/cell-0-0.png": "63ae232c82555ccf1664c2daa4f3d698d05b863efcd5fbd0b96a659ca235b1f7",
+    "home/cell-1-0.png": "db7189f847f04fc0a0451fd24c69928289acfede6cacbd1cfdd934a392e64297",
+    "home/cell-2-0.png": "0bbdefa0d8543ad3872c30c034b91c4387e5a77a4a56ade1f187b36519f77045",
+    "home/cell-3-0.png": "4a7c7238beee26a1a4b44de0bc0268aecf56ea6632b9f6750898f1681a957464",
+    "home/cell-0-1.png": "e2eae90405ec35373abe2a5b79fdd3147e3713243d7dfe4e9761dfcc59c0d30f",
+    "home/cell-1-1.png": "a128e734a4347251f4cee9bec1ee0a981eb204237cbce79e407c4ac350918ad7",
+    "home/cell-2-1.png": "b84a0d5e0045d0b97d5b4b7bdea8767c0cbbd4b7b9e7b025e5b2958affafa0bc",
+    "home/cell-3-1.png": "21cc81c6818076092e7bd72839eeab8136f642065e353fe252098ebb5915a5f0",
+    "home/cell-0-2.png": "5b46f04e6ed41f58fe1cd3af556c7e67e03f402d97a82c3af70622429bb83a88",
+    "home/cell-1-2.png": "236a889517a1fa77c75dfd7ea119187ed95df764b2b5432e8c5fdb91f1e8805f",
+    "home/cell-2-2.png": "b4f44f3f16a9216128414fecf8a9a0f68e742d78d80364d90e0327969afbbe02",
+    "home/cell-3-2.png": "85c53bc6e797b926c6928ce6be89ea49f1a6b6d0a102e6c8befeec47f30504f7",
+    "home/cell-0-3.png": "c56a1d86e1e3b55a6078150b9eaa59f0c95636f0e3fca4d8642c08b4dd764d9f",
+    "home/cell-1-3.png": "f243e9b87de24e882ca5b76aa9e8f62b4e5967d96f94c7a639f28a7919bec17f",
+    "home/cell-2-3.png": "c05c5c5eace1a68e487937bb25978c2ca37b273c3a9b4a898db7b6b69d0e8591",
+    "home/cell-3-3.png": "9221842dacc0cd895245f1c4bb9b86ef530636689f24c6f34247848c8e37f974",
+    "closed/closed.png": "cd4075c5d6e835e4ae18e44bae6b30c19fb6ab5ef9d1748964a025ffa88ca915",
+    "closed/cell-0-0.png": "fb4024ef740102d22a4c25136243028df057d6af21648bdc06a7febb916863cf",
+    "closed/cell-1-0.png": "999c7ea0cbcbb9a6322a9e503d2a4fdebb8f756731722f6dcbd3978338499cbd",
+    "closed/cell-2-0.png": "8550c73a39d9c342c9469c1e8fd7e0349f15ad2f70ec96f2ca503263e31db722",
+    "closed/cell-3-0.png": "3720ecd707bb39515656a8199c5b436cb6172e3c14cb8b3b37a063af715f42ab",
+    "closed/cell-0-1.png": "bc72283e5e3e27bd1ae9f19b9eb59d7fccb30901ccc0a5a96b23c0cd0fb3bf3c",
+    "closed/cell-1-1.png": "719f2bcd30e9bab138b5ab28dbeab237ba3aba5abc6a7f27ceca0707f00e7880",
+    "closed/cell-2-1.png": "0335156391e4b44f3ffe0f91fca3c14a9d43aa4f4470ad0d4f678442fb562ef2",
+    "closed/cell-3-1.png": "bccbc64c23df95c80f0ea48cdb8a29ea5e4e707cce16490c926114d28eee80ec",
+    "closed/cell-0-2.png": "e189f7bc8cbb94f9a4c35809f7ed216d0212f91ffdc782206f08f95648557e08",
+    "closed/cell-1-2.png": "23315c9534f82f7152a76836e1060da861058d24832b6120692810ac329e5212",
+    "closed/cell-2-2.png": "b9f2682bc3a358b90443fead551582029ae4155ba72538f2e8974db34b64e87f",
+    "closed/cell-3-2.png": "0685a747fca19928e44eb6539ba1d2edb982637b7ca792cc92dc3b7143c278c2",
+    "closed/cell-0-3.png": "83c185b119de47dc5fe7ad113836835f3ca073ee58266af822c95cba8b5feb43",
+    "closed/cell-1-3.png": "940e17d1142e9b8d25975e80e0e530f47f9bf3a3c154292504ce6ddbb17fc42f",
+    "closed/cell-2-3.png": "53250199fd4ced9d2f43ee53e15691d798aa0637104232c7571ed0a2b261a3ac",
+    "closed/cell-3-3.png": "426d30e50a26a72a6bd6e1f4e9e2e0e2360841bea36f370ae9fefdf03f28cfae",
+    "intact/intact.png": "851cd910473ee977804f90a3ab91891fb9bdde6e6079f96e86cf3fc7ab7af7c6",
+    "intact/cell-0-0.png": "718a27a0a651f78a684361ef3f43fdc084f2d5fc49def93cd3f1a432d6bfa9f6",
+    "intact/cell-1-0.png": "5959cb6cbe0ad5615eff385b1c350a80963842fa6671040c46675efe6a4ecdf2",
+    "intact/cell-2-0.png": "f08293be97fefcb4fbd2885bad8f65edf3772058593b6069ba167e2364842351",
+    "intact/cell-3-0.png": "8833c917bce5c3f76735768c6324f22542eaaccfa99b02ddd6577cd615ac627f",
+    "intact/cell-0-1.png": "2d663f43307dee8b17e8be3875f0c8759092c3f7f2d9d6c0ef179f4612a8b2c0",
+    "intact/cell-1-1.png": "16b1379e798a38c1a4194ea4b3036a56ebd4e8b4c0f32604a9f9914ae670d361",
+    "intact/cell-2-1.png": "e2f25a95a7ba6f0fa2a55eaafb7b41b4684c2a09427111b53e1968906d32e912",
+    "intact/cell-3-1.png": "cac2e6acad15248f714ebd9b7d882d9b417b2b32ed71127e6e2198cbd2b156fe",
+    "intact/cell-0-2.png": "42c0daf1135bd89fca2197438e741b112e6fd311157e98f14e38dfb7b4ccf5fd",
+    "intact/cell-1-2.png": "eccf818f0e7e93f2bab5dd9223982e6849b4570de9a382549c68acce96ce346c",
+    "intact/cell-2-2.png": "918ed890069825731d5d325864674c772e6225bfeacaa2f23cb055943bc7fbe4",
+    "intact/cell-3-2.png": "1647b75de9e30a5f85e6b32234580f0a00f8aeeec6d096bd7d28359716def588",
+    "intact/cell-0-3.png": "72dd382fbc2ac466658f441d126e79ae9673a669a11a3a3ab999d39a973a86d2",
+    "intact/cell-1-3.png": "37a80b768c024e36f0222b45e34081d37e1c8ca0a1306b967d1bb7c2c4127094",
+    "intact/cell-2-3.png": "00b1139ac86a51c845bfbf2e8ab2d5607ef42400d62d6a8b0a06c896675eefb5",
+    "intact/cell-3-3.png": "53db162fa5ee33bc6fa5fb6578556c77c5c4a49d85135e25201bfd5a8889111d",
+    "intact/cell-0-4.png": "87ca36bb578849ca1e63c4a16abcd8d81fa4fbd81e0bd84e581bc09f3fe6c06c",
+    "intact/cell-1-4.png": "1d10783487d41c166615481e89a2634c0e256d1d91ddd2513cc305861616fe93",
+    "intact/cell-2-4.png": "6904fab956baba1d9062e74ce47f220f668d2623bdd8387d6bb7960e3c074cdf",
+    "intact/cell-3-4.png": "0c879d95f48daf916574022ce3629f43f4e9d3315ecb3c7e736fa1a1bc9ff9c9"
+  }
+}

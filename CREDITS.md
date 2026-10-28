@@ -94,3 +94,16 @@ The prompt, processing record and hashes are saved in
 assets/original/compact-conifer/provenance.json.
 The previous J-Treecko252 tree remains credited and packaged as historical
 artwork; the default now uses this original compact conifer.
+
+## Original Ecruteak buildings
+
+The new blue-roof homes, Dance Theater, temple entrance, Bell Tower and
+version-specific Burned Tower exteriors were made with built-in image generation.
+MetalFlygon08’s Johto artwork supplied style and subject references only.
+Reference bitmaps are not distributed. The new designs retain the original
+map footprints and entrance positions. Finalization uses uniform integer
+nearest-neighbor reduction and binary transparency. Full roofs may extend one decorative row above the original building.
+Existing trees remain underneath; source collisions and interactions stay unchanged.
+Only plain exterior columns are repeated to match the original building width.
+Prompts, source hashes, processing steps and final asset hashes are in
+assets/original/ecruteak-v2/provenance.json.

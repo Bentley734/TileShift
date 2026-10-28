@@ -227,8 +227,22 @@ local function run()
   end end
   return checked
  end
+ local roofPixelCache={}
+ local function roofPixels(def)
+  local game=GV.get();local key=game..':'..def.id
+  if roofPixelCache[key]then return roofPixelCache[key]end
+  local cells={};roofPixelCache[key]=cells
+  local source=read(MOD..'/lib/roof_catalog.lua')
+  for _,row in ipairs(source and assert(load(source))()or{})do
+   if row.game==game and row.map==def.id then
+    local bytes=assert(read(MOD..'/'..row.asset));check(hash(bytes)==row.assetFileHash,'Roof PNG fingerprint changed')
+    cells[row.y*65536+row.x]=love.image.newImageData(love.filesystem.newFileData(bytes,'roof.png'))
+   end
+  end
+  return cells
+ end
  local function verifyCoveredPixels(def,art,frame,game)
-  local checked=0
+  local checked=0;local roof=roofPixels(def)
   for by=0,def.height-1 do for bx=0,def.width-1 do
    local block=artAt(art,def.blocks[by*def.width+bx+1],bx,by)
    if block then
@@ -237,7 +251,10 @@ local function run()
      local expected=sequence.frames and sequence.frames[math.floor(math.max(0,clock-(sequence.offset or 0))/(sequence.period or .2))%#sequence.frames+1] or block.image
      local sx,sy=q%2*16,math.floor(q/2)*16
      for y=0,15 do for x=0,15 do
-      equalPixel(frame,bx*32+sx+x,by*32+sy+y,expected,sx+x,sy+y,game..' reviewed GPU pixels changed')
+      local overlay=roof[(by*2+math.floor(q/2))*65536+bx*2+q%2]
+      local a=0;if overlay then local r,g,b; r,g,b,a=overlay:getPixel(x,y)end
+      if a==1 then equalPixel(frame,bx*32+sx+x,by*32+sy+y,overlay,x,y,'Reviewed decorative roof pixels changed')
+      else equalPixel(frame,bx*32+sx+x,by*32+sy+y,expected,sx+x,sy+y,game..' reviewed GPU pixels changed')end
       checked=checked+1
      end end
     end end
@@ -671,6 +688,7 @@ local function run()
    if bytes then
     local review=Json.decode(bytes)
     for _,record in ipairs(review[family.instances])do if record.game==game and record.map==def.id
+     and not(def.id=='ECRUTEAK_CITY'and record.destination=='ECRUTEAK_ITEMFINDER_HOUSE')
      and not(def.id=='VIOLET_CITY'and record.template=='school'and(game=='gold'or game=='silver'))then
      local model=assert(review.templates[record.template]);local r=record.rect_cells
      check(r[3]*16==model.size_px[1]and r[4]*16==model.size_px[2],'Public building source footprint changed')
@@ -975,6 +993,93 @@ local function run()
   end
   return {whole_sprite_checked_pixels=2304,footprint={30,6,3,3},entrance={31,7},steps={31,8},source_warp_unchanged=true}
  end
+ local function verifyEcruteak(game,def,frame,world,mod)
+  local function crop(image,r)local out=love.image.newImageData(r[3],r[4]);out:paste(image,0,0,r[1],r[2],r[3],r[4]);return out end
+  local proof=Json.decode(assert(read(MOD..'/../.work/tileshift-ecruteak-finish/v2-building-model.json')))
+  local provenance=Json.decode(assert(read(MOD..'/assets/original/ecruteak-v2/provenance.json')))
+  local ground=nativeCellImage({game='emerald',tileset='general__petalburg',id=1,hash='1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1'})
+  local count,closed,warps,pixels=0,0,0,0
+  for _,record in ipairs(proof.instances)do if record.game==game then
+   local name,box=record.art,record.draw_rect
+   local sprite=love.image.newImageData(love.filesystem.newFileData(assert(read(MOD..'/assets/original/ecruteak-v2/'..name..'/'..name..'.png')),name..'.png'))
+   check(sprite:getWidth()==box[3]*16 and sprite:getHeight()==box[4]*16,'Ecruteak landmark footprint changed')
+   check(hash(sprite:getString())==record.rgba_sha256,'Approved Ecruteak whole-sprite pixels changed')
+   local expected=capture(sprite:getWidth(),sprite:getHeight(),function()
+    G.draw(world.mapImage,-box[1]*16,-box[2]*16)
+    local top=G.newImage(sprite);G.draw(top,0,0);top:release()
+   end)
+   local actual=crop(frame,{box[1]*16,box[2]*16,box[3]*16,box[4]*16})
+   check(actual:getString()==expected:getString(),'Ecruteak whole landmark differs from approved sprite on GPU')
+   local found=false
+   for _,w in ipairs(def.warps or{})do
+    if record.door then
+     if w.x==record.door[1]and w.y==record.door[2]and w.destMap==record.destination then found=true end
+    else local r=record.rect;check(not(w.x>=r[1]and w.x<r[1]+r[3]and w.y>=r[2]and w.y<r[2]+r[4]),'Closed Ecruteak building gained an entrance event')end
+   end
+   if record.door then
+    check(found,'Ecruteak original entrance changed')
+    local a=record.door_bottom_anchor_px
+    check(a[1]==(record.door[1]-record.rect[1])*16+8 and a[2]==record.rect[4]*16,'Ecruteak original door anchor moved')
+    local _,_,_,alpha=sprite:getPixel(a[1],sprite:getHeight()-2);check(alpha==1,'Ecruteak full doorway/base is missing at original entrance')
+    warps=warps+1
+   else closed=closed+1 end
+   local process=provenance.artwork[name]
+   check(process.integer_reduction>=1 and process.integer_reduction%1==0,'Ecruteak artwork used fractional scaling')
+   for y=0,sprite:getHeight()-1 do for x=0,sprite:getWidth()-1 do local _,_,_,a=sprite:getPixel(x,y);check(a==0 or a==1,'Ecruteak sprite has smoothed alpha');pixels=pixels+1 end end
+   count=count+1
+  end end
+  check(count==10 and closed==5 and warps==5,'Ecruteak landmark fixture is incomplete')
+  local pond,steps=0,0
+  for _,r in ipairs(mappingRows('mappings/ecruteak.lua'))do if r.game==game then
+   if r.role:match('^freshwater_pond_')then check(r.sourceOceanBounds==nil,'Ecruteak pond accidentally grouped with world ocean');pond=pond+1 end
+
+  end end
+  local stair=nativeCellImage({game='firered',tileset='general__rom_082d4b54',id=137,hash='a537938ef8ff054fa99ea4f184f9e01e39caa6a4d137e251b13dd7cd1f5aa96b'})
+  for _,xy in ipairs({{5,6},{37,8}})do
+   local bid=def.blocks[math.floor(xy[2]/2)*def.width+math.floor(xy[1]/2)+1]
+   local q=xy[2]%2*2+xy[1]%2
+   check(world.tilesets[def.tileset].collision[bid+1][q+1]==0,'Original tower approach became blocked')
+   local approach=game=='crystal'and stair or ground
+   for y=8,15 do for x=0,15 do equalPixel(frame,xy[1]*16+x,xy[2]*16+y,approach,x,y,'Version-specific native tower approach changed')end end
+   steps=steps+1
+  end
+  check(pond>0 and steps==2,'Ecruteak freshwater/step check is missing')
+  local overlay,record
+  local catalog=assert(load(assert(read(MOD..'/lib/roof_catalog.lua'))))()
+  local headbutt=0
+  for _,r in ipairs(catalog)do if r.game==game then
+   check(r.sourceCollision==21,'Ecruteak roof must retain the existing Headbutt-tree collision')
+   check(r.y+1==r.buildingY,'Roof extends more than the allowed single upper row')
+   headbutt=headbutt+1
+   local data=love.image.newImageData(love.filesystem.newFileData(assert(read(MOD..'/'..r.asset)),'roof.png'))
+   local opaque,transparent=0,0
+   for y=0,15 do for x=0,15 do local _,_,_,a=data:getPixel(x,y);if a==1 then opaque=opaque+1 else transparent=transparent+1 end end end
+   if opaque>0 and transparent>0 and not record then record,overlay=r,data end
+  end end
+  check(headbutt==34 and record~=nil,'Roof/tree alpha fixture is missing')
+  local bodyData=love.image.newImageData(16,16);bodyData:mapPixel(function()return 1,0,1,1 end)
+  local body=G.newImage(bodyData);local background=G.newImage(frame)
+  local savedPlayer,savedNpcs,savedEntities=world.player,world.npcs,world.entities
+  local actorChecks=0
+  for _,kind in ipairs({'player','wild','follower','npc'})do
+   local actor={px=record.x*16,py=record.y*16+4,sprite={frameWidth=16,frameHeight=16,anchorX=8,anchorY=16}}
+   actor.draw=function(e,ox,oy,s)G.draw(body,ox+e.px*s,oy+(e.py-4)*s,0,s,s)end
+   world.player=kind=='player'and actor or nil
+   world.npcs=kind=='npc'and{actor}or{}
+   world.entities=(kind=='wild'or kind=='follower')and{actor}or{}
+   mod.exports.vegetation:bind(world)
+   local actual=capture(frame:getWidth(),frame:getHeight(),function()G.draw(background,0,0);actor:draw(0,0,1)end)
+   for y=0,15 do for x=0,15 do local _,_,_,a=overlay:getPixel(x,y)
+    if a==1 then equalPixel(actual,record.x*16+x,record.y*16+y,overlay,x,y,'Roof failed to cover '..kind)
+    else local r,g,b,a=actual:getPixel(record.x*16+x,record.y*16+y);check(r==1 and g==0 and b==1 and a==1,'Transparent roof corner hid '..kind)end
+    actorChecks=actorChecks+1
+   end end
+  end
+  world.player,world.npcs,world.entities=savedPlayer,savedNpcs,savedEntities
+  mod.exports.vegetation:bind(world);body:release();background:release()
+  return {complete_original_buildings=count,closed_facades=closed,original_entrances=warps,original_sprite_pixels=pixels,pond_rows=pond,walkable_tower_approaches=steps,crystal_step_art=game=='crystal',decorative_roof_cells=headbutt,actor_occlusion_pixels=actorChecks,underlying_headbutt_interactions_unchanged=true}
+ end
+
  local function verifyOlivine(game,def,frame)
   local ground=nativeCellImage({game='emerald',tileset='general__petalburg',id=1,hash='1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1'})
   local whole=love.image.newImageData(love.filesystem.newFileData(assert(read(MOD..'/assets/original/olivine-lighthouse/lighthouse.png')),'lighthouse.png'))
@@ -2090,7 +2195,10 @@ local function run()
 
  -- Public Johto/Kanto architecture, a representative interior floor, and
  -- complete up/down glyphs on their actual Union Cave/Ice Path source maps.
- for _,spec in ipairs({{game='gold',id='OLIVINE_CITY',stem='olivine',architecture=true,complete=true,water=true},
+ for _,spec in ipairs({{game='gold',id='ECRUTEAK_CITY',stem='ecruteak',complete=true,water=true},
+  {game='silver',id='ECRUTEAK_CITY',stem='ecruteak',complete=true,water=true},
+  {game='crystal',id='ECRUTEAK_CITY',stem='ecruteak',complete=true,water=true},
+  {game='gold',id='OLIVINE_CITY',stem='olivine',architecture=true,complete=true,water=true},
   {game='silver',id='OLIVINE_CITY',stem='olivine',architecture=true,complete=true,water=true},
   {game='crystal',id='OLIVINE_CITY',stem='olivine',architecture=true,complete=true,water=true},
   {game='gold',id='CIANWOOD_CITY',stem='cianwood',architecture=true,complete=true,water=true},
@@ -2209,6 +2317,7 @@ local function run()
   end
   if spec.complete then check(fixture.coverage.replaced_occurrences==fixture.coverage.visible_cells,'Complete Violet fixture has unresolved art')end
   if spec.ladders then fixture.complete_native_ladders=verifyGen2Ladders(game,def,map,after)end
+  if spec.id=='ECRUTEAK_CITY'and spec.complete then fixture.ecruteak=verifyEcruteak(game,def,after,world,mod)end
   if spec.id=='OLIVINE_CITY'and spec.complete then
    fixture.olivine=verifyOlivine(game,def,after)
    local lighthouse=love.image.newImageData(love.filesystem.newFileData(assert(read(MOD..'/assets/original/olivine-lighthouse/lighthouse.png')),'lighthouse.png'))

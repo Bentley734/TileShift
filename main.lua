@@ -1,5 +1,5 @@
 return function(mod)
-  local callback,dispose,disposed,stopOptions,ownerBus,ownerEpoch,owned,adapterContext,state
+  local callback,dispose,disposed,stopOptions,ownerBus,ownerEpoch,owned,adapterContext,state,roofs
   local function readModule(path)
     return assert(load(assert(mod:read(path)), '@tileshift/'..path))()
   end
@@ -12,7 +12,7 @@ return function(mod)
     'mappings/trees.lua','mappings/posts.lua','mappings/cut_trees.lua','mappings/water.lua','mappings/coasts.lua',
     'mappings/pallet_buildings.lua','mappings/pallet_details.lua',
     'mappings/gen1_outdoor.lua','mappings/gen2_outdoor.lua','mappings/gen1_caves.lua',
-    'mappings/gen2_buildings.lua','mappings/gen1_extended.lua','mappings/gen2_outdoor_extended.lua','mappings/azalea.lua','mappings/viridian.lua','mappings/gen2_pallet.lua','mappings/mahogany.lua','mappings/johto_terrain.lua','mappings/cianwood.lua','mappings/olivine.lua',
+    'mappings/gen2_buildings.lua','mappings/gen1_extended.lua','mappings/gen2_outdoor_extended.lua','mappings/azalea.lua','mappings/viridian.lua','mappings/gen2_pallet.lua','mappings/mahogany.lua','mappings/johto_terrain.lua','mappings/cianwood.lua','mappings/olivine.lua','mappings/ecruteak.lua',
     'mappings/buildings_extended.lua','mappings/interiors.lua','mappings/gen2_caves.lua',
   }) do
     local source=mod:read(path)
@@ -96,7 +96,10 @@ return function(mod)
   local vegetation=readModule('lib/vegetation.lua').new({
     active=function()return state and state.style~='original' and owned and owned()end,
     time=function()return love.timer and love.timer.getTime() or 0 end,
-    draw=function(...)if adapterContext and adapterContext.drawVegetation then return adapterContext.drawVegetation(...)end end})
+    draw=function(...)
+      if adapterContext and adapterContext.drawVegetation then adapterContext.drawVegetation(...)end
+      if roofs then roofs:actor(...)end
+    end})
   state=readModule('lib/session.lua').new({mappings=indexed,donor=decoder,
     newImageData=newData,generations=Mapping.generations,themes=Mapping.themes,
     normalizeStyle=Mapping.normalizeStyle,validate=Mapping.validate,
@@ -194,8 +197,12 @@ return function(mod)
   mod.hooks:wrap('core.update',callback,125)
   ownerBus=Runtime.hooks
   if ownerBus and ownerBus.ownerEpoch then ownerEpoch=ownerBus:ownerEpoch(mod.id)end
+  roofs=readModule('lib/roofs.lua').new({rows=readModule('lib/roof_catalog.lua'),validate=Mapping.validate,
+    donor=decoder,original=original,version=GV.get,revision=function()return state.revision end,
+    active=function()return state.style=='gen3'and mod.generation==2 and owned()end,
+    warn=function(s)mod.log:warn('%s',s)end})
   local adapter=readModule('lib/gen'..mod.generation..'.lua')
-  adapterContext={version=GV.get,revision=function()return state.revision end,active=owned,
+  adapterContext={roofs=roofs,version=GV.get,revision=function()return state.revision end,active=owned,
     grassTime=function(map,x,y,now)return vegetation:time(map,x,y,now)end,
     disturb=function(map,x,y,now,duration)return vegetation:touch(map,x,y,now,duration)end,
     replacements=function(game,tileset,def)
@@ -205,7 +212,7 @@ return function(mod)
   local close=adapter.install(adapterContext)
   dispose=function()
     if disposed then return end
-    disposed=true;vegetation:dispose();close();decoder:invalidate()
+    disposed=true;vegetation:dispose();close();roofs:dispose();decoder:invalidate()
     if stopOptions then stopOptions();stopOptions=nil end
     if Runtime._tileShiftDispose==dispose then Runtime._tileShiftDispose=nil end
   end
@@ -286,6 +293,7 @@ return function(mod)
   mod.hooks:wrap('ui.options.rows',addOptions,125)
   mod.exports.state=state
   mod.exports.flora=flora
+  mod.exports.roofs=roofs
   mod.exports.vegetation=vegetation
   mod.exports.drawVegetation=function(...)if adapterContext.drawVegetation then return adapterContext.drawVegetation(...)end end
   mod.exports.dispose=dispose
