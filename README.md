@@ -1,11 +1,13 @@
 # TileShift
 
 TileShift swaps world artwork through individually reviewed tile matches.
-Version 0.26.0 adds selectable **Gen 1** and **Gen 2** background themes to
+Version 0.27.0 finishes **Oldale Town** in both classic styles. Selectable
+**Gen 1** and **Gen 2** background themes are available in
 **Ruby, Sapphire, Emerald, FireRed and LeafGreen**. Gen 1 uses Red's original
 four-shade monochrome artwork; Gen 2 uses one shared Crystal style with its
 native daytime colors. Both themes completely retile Pallet Town in FR/LG and
-Littleroot Town in R/S/E, with additional reviewed terrain and interior matches.
+Littleroot Town, Oldale Town and Route 101 in R/S/E, with additional reviewed
+terrain and interior matches.
 **Other Gen 3 maps remain partially converted**; unmatched cells retain native
 art. Gen 3 characters, Pokemon sprites and field effects retain their native art.
 
@@ -100,7 +102,7 @@ art.
    TileShift reads native donor
    art from your own imports; neither ROMs nor extracted native artwork are
    bundled.
-2. Download `TileShift-v0.26.0.zip` from [the latest release](https://github.com/Bentley734/TileShift/releases/latest).
+2. Download `TileShift-v0.27.0.zip` from [the latest release](https://github.com/Bentley734/TileShift/releases/latest).
 3. Extract the `tileshift` folder into Gen1Recomp's `mods` directory, enable
    **TileShift**, and restart the game.
 4. Open Options and select **Tileset**. Gen 1/2 hosts offer **Gen 3**; Gen 3 hosts
@@ -121,6 +123,10 @@ modules at their original pixel size. Repeating plain roof and siding sections
 fill the existing Gen 3 footprints; entrances and source collision stay put.
 Classic trees retain their full crowns and trunks. Littleroot's lab roof vent
 has purpose-made four-color artwork matching each selected classic theme.
+Oldale uses complete native Red/Crystal Centers and Marts, including their
+original signs, windows and doorway frames. Both houses keep their full 64x64
+footprints, with only repeating plain roof/wall sections arranged as needed.
+Unused roof corners show the selected classic ground beneath them.
 
 Water and flowers use verified native GB animation frames. **Water Speed** and
 **Flowers Speed** offer **Off**, **Slow**, **Normal** and **Fast**; Off freezes
@@ -133,7 +139,7 @@ Palette, artwork, animation and source fingerprints protect the matches;
 unreviewed material keeps its native pixels. This initial reverse conversion
 does not replace every Gen 3 map or unique Hoenn feature.
 The all-map audit checks 2,156 native maps in both themes (4,312 map/theme
-variants): 777,970 of 2,577,772 cells are replaced (30.2%), using 4,522 reviewed
+variants): 778,528 of 2,577,772 cells are replaced (30.2%), using 4,804 reviewed
 mappings with zero rejected decodes. The completed backgrounds are listed below.
 
 ### Selectable trees, flowers, grass and water
@@ -213,6 +219,7 @@ graphics cannot bypass native darkness.
 | Gold, Silver and Crystal, Johto | 263,308/263,308 | 612/612 |
 | FR/LG Pallet, both classic themes | 1,920/1,920 | 4/4 |
 | R/S/E Littleroot and Route 101, both classic themes | 4,800/4,800 | 12/12 |
+| R/S/E Oldale, both classic themes | 2,400/2,400 | 6/6 |
 
 Gen2 Kanto remains in progress. GB-host matches use their original source maps
 and donor families; classic themes on Gen 3 use checked native tileset pairs
@@ -242,8 +249,8 @@ The release is checked through the installed 0.3.97 loader for all eleven games,
 Lua regression fixtures, live-import fingerprint checks, native donor animation
 comparisons, and isolated native LOVE GPU rendering. Checks cover the original
 GB-to-Gen3 conversion and actual Gen 3 FieldView renders with both classic themes.
-Version 0.26.0 passes 39 Lua suite runs across three runtimes (58,440 assertions)
-and 119,214,575 checks across 56 new native Gen 3 background scenes. The existing
+Version 0.27.0 passes 39 Lua suite runs across three runtimes (58,440 assertions)
+and 120,089,481 checks across 56 native Gen 3 background scenes. The existing
 248-scene GPU regression also passes all 188,601,742 checks with zero warnings.
 The reverse audit traverses every native map using its true cell dimensions,
 reports partial coverage explicitly, and checks source definitions stay unchanged.
@@ -267,7 +274,7 @@ python TileShift/tools/validate_gpu.py --timeout 900
 python TileShift/tools/validate_coverage.py --games red,blue,yellow --require-complete --timeout 900
 python TileShift/tools/validate_source_palettes.py
 python TileShift/tools/validate_reverse_coverage.py --timeout 900
-python TileShift/tools/validate_reverse_gpu.py --timeout 900
+python TileShift/tools/validate_reverse_gpu.py --require-complete-map OLDALE_TOWN --timeout 1800
 python TileShift/tools/gpu_comparison.py
 python TileShift/tools/reverse_comparison.py
 python TileShift/tools/build_release.py

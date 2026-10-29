@@ -56,7 +56,7 @@ def main() -> int:
         f'TileShift v{version} - Gen1/Gen2 themes in Gen3 games\n'
         'Actual native GPU backgrounds at 2x nearest-neighbour scale.\n'
         'Each image reports its own replaced/native cell counts. Other Gen3 maps remain partially converted.\n'
-        'Pallet and Littleroot backgrounds are complete in both classic themes.\n'
+        'Pallet, Littleroot, Oldale and Route101 backgrounds are complete in both classic themes.\n'
         'Actors and field effects retain native Gen3 artwork; actors are omitted from these captures.\n'
         'The installable mod is the separate TileShift ZIP.\n', encoding='utf-8')
     result = {'output': str(output), 'comparisons': len(comparisons), 'panels_exact_gpu_rgb': True}

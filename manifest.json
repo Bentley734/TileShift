@@ -1,7 +1,7 @@
 {
   "id": "tileshift",
   "name": "TileShift",
-  "version": "0.26.0",
+  "version": "0.27.0",
   "api": 2,
   "entry": "main.lua",
   "games": [
@@ -28,5 +28,5 @@
   "conflicts": [],
   "affects_link": false,
   "github": "Bentley734/TileShift",
-  "description": "Gen 3 world art for Gen 1/2, plus selectable monochrome Gen 1 and Crystal-based Gen 2 backgrounds in Ruby, Sapphire, Emerald, FireRed and LeafGreen. Classic themes fully retile Pallet and Littleroot, with reviewed terrain and interiors elsewhere; other Gen 3 areas remain partially converted. Existing Gen 3 themes cover every Gen 1 map and all Johto backgrounds. Native-scale buildings, source entrances, collision, scripts and interactions are preserved."
+  "description": "Gen 3 world art for Gen 1/2, plus selectable monochrome Gen 1 and Crystal-based Gen 2 backgrounds in Ruby, Sapphire, Emerald, FireRed and LeafGreen. Classic themes fully retile Pallet, Littleroot, Oldale and Route 101, with reviewed terrain and interiors elsewhere; other Gen 3 areas remain partially converted. Existing Gen 3 themes cover every Gen 1 map and all Johto backgrounds. Native-scale buildings, source entrances, collision, scripts and interactions are preserved."
 }
