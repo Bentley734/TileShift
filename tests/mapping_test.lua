@@ -225,4 +225,19 @@ for _,mutate in ipairs({function(r)r.sourceColors=nil end,function(r)r.sourceCol
 end
 local unrelated=clone(base);unrelated.sourceColors=clone(recolored.sourceColors)
 eq(M.validate(unrelated),nil,'source colors cannot silently attach to another artwork origin')
+-- Native GB animation in a composite must mark its changing source explicitly.
+local classic=clone(gba);classic.style='gen1';classic.donor=nil;classic.kind='native_composite'
+classic.base={game='red',tileset='OVERWORLD',id=4,quadrant=0,hash=b,monochrome=true}
+classic.parts={{donor=clone(classic.base),w=8,h=8,animated=true}}
+classic.animated=true;classic.animation={kind='gb',bank='flower',hash=b,manifestHash=a}
+eq(M.validate(classic),true,'checked GB glyph animates inside a Gen3 composition')
+for _,mutate in ipairs({function(r)r.animated=nil end,function(r)r.animated=false end,
+ function(r)r.animation=true end,function(r)r.parts[1].animated=nil end,
+ function(r)r.parts[1].animated=false end,function(r)r.parts[1].animated=1 end,
+ function(r)r.parts[1].layers={'under'};r.parts[1].layerHashes={under=b}end})do
+ local bad=clone(classic);mutate(bad)
+ local ok,why=M.validate(bad);eq(ok,nil,'ambiguous GB animation composition fails at validation');eq(type(why),'string')
+end
+local badProfile=clone(bank);badProfile.animation=true
+eq(M.validate(badProfile),nil,'non-table animation profile is rejected without an exception')
 print('PASS strict mapping validation: '..count..' assertions')

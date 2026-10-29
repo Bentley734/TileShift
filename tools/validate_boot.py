@@ -28,7 +28,7 @@ if payloadModule then
   end)
 end
 local GV=require('src.core.GameVersion');GV.set(selectedVersion)
-require('src.core.Version').engine='0.3.96'
+require('src.core.Version').engine='0.3.97'
 local Loader=require('src.mods.Loader')
 local Runtime=require('src.mods.Runtime')
 local Serializer=require('src.core.SaveSerializer')
@@ -93,7 +93,9 @@ local Manager=require('src.mods.ManagerState')
 local manager=Manager.new(host)
 local schema=assert(loader.optionSchemas.tileshift)
 local schemaByKey={};for _,row in ipairs(schema)do schemaByKey[row.key]=row end
-assert(schema[1].type=='choice' and #schema[1].choices==2 and schema[1].default==2,'implemented mod-manager choice schema missing')
+local gen3=GV.generation()==3
+assert(schema[1].type=='choice' and #schema[1].choices==(gen3 and 4 or 2)
+ and schema[1].default==2,'implemented mod-manager choice schema missing')
 assert(schema[1].choices[1][1]=='ORIGINAL' and schema[1].choices[1][2]==1)
 assert(schema[1].choices[2][1]=='GEN 3' and schema[1].choices[2][2]==2)
 manager:setOption('tileshift','style',1)
@@ -103,6 +105,22 @@ managerRows[1].step(host,1)
 assert(exported.state.style=='gen3','mod-manager change did not apply art live')
 assert(host.save.options.modOptions.tileshift.style==2,'mod-manager choice was not persisted')
 assert(managerRows[1].value()=='GEN 3')
+if gen3 then
+ assert(#schema==3,'Gen3 schema must contain themes and native flower/water speeds')
+ for i,entry in ipairs({{'GEN 1',3,'gen1'},{'GEN 2',4,'gen2'},{'ORIGINAL',1,'original'}})do
+  managerRows[1].step(host,1)
+  assert(managerRows[1].value()==entry[1] and exported.state.style==entry[3],
+   'mod-manager reverse theme did not apply live')
+  assert(host.save.options.modOptions.tileshift.style==entry[2],
+   'mod-manager reverse theme did not retain its stored ID')
+ end
+ for _,key in ipairs({'center_style','flora_trees','flora_big_trees','flora_cut_trees',
+  'flora_flowers','flora_grass','flora_water','speed_trees','speed_grass','grass_motion'})do
+  assert(schemaByKey[key]==nil,'Gen3 schema exposed an unsupported custom art option: '..key)
+  for _,row in ipairs(rows)do assert(row.id~='tileshift:'..key,'unsupported native Gen3 option: '..key)end
+ end
+ assert(#rows==4,'Gen3 native hook must have exactly one theme, two speeds and coverage')
+else
 for i,key in ipairs({'flora_trees','flora_big_trees','flora_cut_trees','flora_flowers','flora_grass','flora_water'})do
  assert(schemaByKey[key]and schemaByKey[key].type=='choice','custom artwork schema missing')
  local beforeRevision=exported.state.revision
@@ -130,12 +148,33 @@ assert(exported.flora.selected.water=='ripple-teal' and host.save.options.modOpt
  'Water step did not retain its existing stored ID')
 manager:setOption('tileshift','flora_water',1)
 managerRows[1].step(host,-1)
+end
 assert(exported.state.style=='original','mod-manager return to original did not apply live')
+for _,group in ipairs(gen3 and {'flowers','water'}or{'trees','flowers','grass','water'})do
+ local key='speed_'..group
+ local field=assert(schemaByKey[key],'animation speed schema missing: '..key)
+ assert(field.type=='choice'and field.default==3 and #field.choices==4)
+ for value,label in ipairs({'OFF','SLOW','NORMAL','FAST'})do
+  assert(field.choices[value][1]==label and field.choices[value][2]==value,'speed choices changed stored IDs')
+  local revision=exported.state.revision
+  manager:setOption('tileshift',key,value)
+  assert(option(manager:buildOptionRows({id='tileshift'},schema),key).value()==label,
+   'mod-manager speed value did not update')
+  assert(host.save.options.modOptions.tileshift[key]==value,'speed choice did not persist')
+  assert(exported.state.revision>revision,'speed choice did not invalidate cached art')
+ end
+ local nativeSpeed=option(rows,'tileshift:'..key)
+ assert(nativeSpeed.value()=='FAST')
+ nativeSpeed.step({game=host},1)
+ assert(nativeSpeed.value()=='OFF'and host.options.modOptions.tileshift[key]==1,
+  'native speed Off did not persist')
+ manager:setOption('tileshift',key,3)
+end
 assert(#loader.errors==0,table.concat(loader.errors,'\n'))
 assert(Serializer.encode(data.maps)==before,'source maps changed through mod-manager option')
 local gen3Rows,gen3Context,skipCart
 if GV.generation()==3 then
-  -- Actual 0.3.96 Rows.build and Rows.withCart both bridge the shared hook.
+  -- Actual Rows.build and Rows.withCart both bridge the shared hook.
   -- Skip only ROM-text cart controls in this ROM-free headless boot.
   gen3Rows=require('src.ui.game3.option_rows')
   gen3Context={game=host,session={version=selectedVersion},options=host.options}
@@ -148,9 +187,22 @@ if GV.generation()==3 then
     end
     assert(styleCount==1 and reviewCount==1,'missing or duplicate native Gen3 options')
     assert(style.value(gen3Context)=='ORIGINAL')
-    style.step(gen3Context,1)
-    assert(exported.state.style=='gen3','native Gen3 bridged selection did not execute')
-    assert(exported.select('original'))
+    for _,entry in ipairs({{'GEN 3',2,'gen3'},{'GEN 1',3,'gen1'},
+     {'GEN 2',4,'gen2'},{'ORIGINAL',1,'original'}})do
+     style.step(gen3Context,1)
+     assert(style.value(gen3Context)==entry[1]and exported.state.style==entry[3],
+      'native Gen3 bridged theme did not execute')
+     assert(host.options.modOptions.tileshift.style==entry[2],
+      'native Gen3 bridged theme did not persist')
+    end
+    for _,group in ipairs({'flowers','water'})do
+     local speed=option(native,'tileshift:speed_'..group)
+     assert(speed.value(gen3Context)=='NORMAL')
+     speed.step(gen3Context,1)
+     assert(speed.value(gen3Context)=='FAST'and host.options.modOptions.tileshift['speed_'..group]==4,
+      'native Gen3 bridged speed did not execute')
+     manager:setOption('tileshift','speed_'..group,3)
+    end
   end
   checkNativeRows(gen3Rows.build(gen3Context,skipCart))
   checkNativeRows(gen3Rows.withCart(gen3Context,skipCart,function()end))
@@ -197,6 +249,28 @@ local restoredRows=restoredLoader.hooks:call('ui.options.rows',function(_,out)re
 assert(option(restoredRows,'tileshift:style').value()=='ORIGINAL')
 assert(Serializer.encode(restoredData.maps)==before,'source maps changed on saved-preference reload')
 restoredLoader.hooks:removeOwner('tileshift');restored.dispose()
+-- The two new stored theme IDs must survive a real SaveData/Loader round trip.
+if gen3 then
+ for value,expected in pairs({[3]='gen1',[4]='gen2'})do
+  persisted.modOptions.tileshift={style=value,speed_flowers=1,speed_water=2}
+  assert(SaveData.saveOptions(persisted,fs),'reverse theme preference did not save')
+  local reloaded=SaveData.loadOptions(fs)
+  local savedLoader=Loader.new({fs=fs,generation=GV.generation(),version=selectedVersion,dev=false})
+  local savedHost={generation=GV.generation(),options=reloaded,save={options=reloaded},mods=savedLoader,
+   writeOptions=function()return true end}
+  savedLoader.game=savedHost
+  savedLoader:load({pokemon={},moves={},items={},maps={},tilesets={}})
+  assert(#savedLoader.errors==0,table.concat(savedLoader.errors,'\n'))
+  local saved=assert(savedLoader.exports.tileshift)
+  assert(saved.state.style==expected,'stored reverse theme was replaced by another theme')
+  local savedRows=savedLoader.hooks:call('ui.options.rows',function(_,out)return out end,savedHost,{})
+  assert(option(savedRows,'tileshift:style').value()==(value==3 and 'GEN 1'or'GEN 2'))
+  assert(option(savedRows,'tileshift:speed_flowers').value()=='OFF','saved flower Off was lost')
+  assert(option(savedRows,'tileshift:speed_water').value()=='SLOW','saved water speed was lost')
+  assert(savedHost.options.modOptions.tileshift.style==value,'saved reverse theme ID changed')
+  savedLoader.hooks:removeOwner('tileshift');saved.dispose()
+ end
+end
 return #loaded
 '''
 

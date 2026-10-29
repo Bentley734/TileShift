@@ -3,13 +3,18 @@
 local S={}
 function S.new(ctx)
   local mappings, donor, factory=ctx.mappings,ctx.donor,ctx.newImageData
-  local themes=ctx.themes or {gen3=3,red=1,blue=1,yellow=1,gold=2,silver=2,crystal=2}
+  local themes=ctx.themes or {gen1=1,gen2=2,gen3=3,red=1,blue=1,yellow=1,gold=2,silver=2,crystal=2}
   local function normalizeStyle(style)
     if ctx.normalizeStyle then return ctx.normalizeStyle(style) end
     return ctx.generations[style]==3 and 'gen3' or style
   end
   local warnings,cache,sourceIdentities={},{},{}
   local empty={}
+  local transparentPlane
+  local function clearPlane()
+    if not transparentPlane then transparentPlane=factory(16,16)end
+    return transparentPlane
+  end
   local byContext={}
   for _,row in pairs(mappings)do if type(row)=='table' and row.game and row.style and row.tileset then
     local games=byContext[row.game] or {};byContext[row.game]=games
@@ -194,7 +199,7 @@ function S.new(ctx)
           end
           return block
         end
-        if ok and row.animated and (not row.animation or ctx.generations[game]==3) then
+        if ok and row.animated and not row.animation then
           ok=nil;why='Animated donor frames are still awaiting integration for this mapping'
         end
         local source,sourceError
@@ -265,11 +270,16 @@ function S.new(ctx)
         end
         if piece and row.artOverlay then
           local image,err=tryCall(ctx.original,row.artOverlay.asset,row.artOverlay.hash)
-          if image and row.base then
-            local base,why=tryCall(donor.cell,donor,row.base)
-            if base then
-              local original=copyLayers(piece)
-              local final=copyLayers({under=copyLayers(base),over=image})
+          if image and (row.base or row.artOverlay.mode=='over') then
+            local original=copyLayers(piece)
+            local ground,why
+            if row.artOverlay.mode=='over'then ground=original
+            else
+              local base; base,why=tryCall(donor.cell,donor,row.base)
+              if base then ground=copyLayers(base)end
+            end
+            if ground then
+              local final=copyLayers({under=ground,over=image})
               for _,rect in ipairs(row.artOverlay.preserveRects)do
                 final:paste(original,rect[1],rect[2],rect[1],rect[2],rect[3],rect[4])
               end
@@ -295,10 +305,38 @@ function S.new(ctx)
         if piece and ctx.decorateVegetation then
           piece,sequence=ctx.decorateVegetation(row,piece,sequence)
         end
-        if piece and sequence and ctx.animationTiming then sequence=ctx.animationTiming(row,sequence) end
+        if piece and sequence and ctx.animationTiming and ctx.generations[game]~=3 then sequence=ctx.animationTiming(row,sequence) end
         if piece then
           if ctx.generations[game]==3 then
-            rows[row.id]={under=piece.under,over=piece.over,mid=piece.mid}
+            -- The native atlas already composites its middle plane. Retheme
+            -- the complete16px image and explicitly clear unused native planes.
+            local overPixels={}
+            for y=0,15 do for x=0,15 do
+              local selected=row.overMask and row.overMask:sub(y*16+x+1,y*16+x+1)=='1'
+              if row.overMask==nil and source.over then
+                local _,_,_,alpha=source.over:getPixel(x,y);selected=alpha>0
+              end
+              if selected then overPixels[#overPixels+1]={x,y}end
+            end end
+            local function planes(frame)
+              local image=copyLayers(frame)
+              local over=clearPlane()
+              if #overPixels>0 then
+                over=factory(16,16)
+                for _,point in ipairs(overPixels)do
+                  over:setPixel(point[1],point[2],image:getPixel(point[1],point[2]))
+                end
+              end
+              return {under=image,over=over,mid=clearPlane()}
+            end
+            local replacement=planes(piece)
+            if sequence then
+              replacement.frames={}
+              for i,frame in ipairs(sequence.frames)do replacement.frames[i]=planes(frame)end
+              replacement.period=sequence.period;replacement.offset=sequence.offset or 0
+              replacement.category=row.animationCategory or (row.animation and row.animation.bank=='flower'and'flowers'or'water')
+            end
+            rows[row.id]=replacement
           else
             local q=row.quadrant or 0
             local block=targetBlock(true)

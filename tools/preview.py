@@ -98,7 +98,66 @@ def gen1_animation_tiles(cache, game, ts, sheet, tick=0):
     return tiles
 
 
+def gb_donor_layers(cache, ref, packed):
+    key = ('gb_donor', json.dumps(ref, sort_keys=True))
+    if key in packed:
+        return packed[key]
+    root = cache / ref['game']
+    metadata = (root / 'data/generated/tilesets.lua').read_bytes()
+    ts = catalog.read_lua(root / 'data/generated/tilesets.lua')[ref['tileset']]
+    raw = (root / ts['image']).read_bytes()
+    sheet = Image.open(root / ts['image']).convert('RGBA')
+    block = catalog.lua_array(catalog.dict_at(ts['blocks'], ref['id'] + 1))
+    neutral = native_cell(sheet, ts, block, ref.get('quadrant', 0))
+    assert catalog.sha(neutral.tobytes()) == ref['hash'], 'GB donor neutral fingerprint changed'
+    files = {'metadata': metadata, 'image': raw}
+    palettes, roof = None, None
+    if ref['game'] in ('gold', 'silver', 'crystal'):
+        map_id = ref.get('map') or ref.get('paletteContext', {}).get('map')
+        assert isinstance(map_id, str), 'Colored GB donor needs an explicit map context'
+        definition = catalog.read_lua(root / 'data/generated/maps.lua')[map_id]
+        assert definition['tileset'] == ref['tileset']
+        daytime = ref.get('daytime', ref.get('paletteContext', {}).get('daytime', 'DAY'))
+        palettes = palette_set(catalog.read_lua(root / 'data/generated/palettes.lua'), definition, daytime)
+        roof_path = root / 'data/generated/roofs.lua'
+        if roof_path.exists() and ref['tileset'] in ('TILESET_JOHTO', 'TILESET_JOHTO_MODERN'):
+            roofs = catalog.read_lua(roof_path)
+            name = catalog.dict_at(roofs.get('mapGroupRoofs'), definition['group'])
+            spec = roofs.get('roofs', {}).get(name) if name else None
+            if spec and spec.get('image'):
+                roof = Image.open(root / spec['image']).convert('RGBA')
+                files['roofImage'] = (root / spec['image']).read_bytes()
+    elif not ref.get('monochrome') and isinstance(ref.get('palette'), list):
+        palettes = [ref['palette']] * 8
+    for name, digest in ref.get('fingerprints', {}).items():
+        if name in ('maps', 'palettes', 'roofs'):
+            files[name] = (root / ('data/generated/' + name + '.lua')).read_bytes()
+        assert name in files and catalog.sha(files[name]) == digest, 'GB donor file changed: ' + name
+    image = native_cell(sheet, ts, block, ref.get('quadrant', 0), palettes, roof)
+    over = Image.new('RGBA', (16, 16))
+    q = ref.get('quadrant', 0); qx, qy = q % 2 * 2, q // 2 * 2
+    for i in range(4):
+        tile = block[(qy + i // 2) * 4 + qx + i % 2]
+        _, attr = catalog.gb_tile(sheet, ts, tile)
+        if attr.get('priority'):
+            x, y = i % 2 * 8, i // 2 * 8
+            over.paste(image.crop((x, y, x + 8, y + 8)), (x, y))
+    result = {'under': image, 'over': over}
+    packed[key] = result
+    return result
+
+
 def native_donor(cache, ref, packed, selected_layers=None, layer_hashes=None):
+    if ref['game'] in ('red', 'blue', 'yellow', 'gold', 'silver', 'crystal'):
+        layers = gb_donor_layers(cache, ref, packed)
+        if selected_layers is None:
+            return layers['under']
+        out = Image.new('RGBA', (16, 16))
+        for layer in selected_layers:
+            image = layers[layer]
+            assert catalog.sha(image.tobytes()) == layer_hashes[layer], 'GB donor layer fingerprint changed'
+            out = Image.alpha_composite(out, image)
+        return out
     if ref.get("kind") in ("field_object", "field_effect"):
         image = native_field_object(cache, ref, packed) if ref["kind"] == "field_object" else native_field_effect(cache, ref, packed)
         if selected_layers is None:
@@ -220,6 +279,9 @@ def native_water_frames(cache, row, packed):
         assert ((row.get("kind") == "native_composite" and row.get("parts")) or row.get("asset")) and row.get("base"), "Animated artwork needs a native base"
         ref = row["base"]
     spec = row["animation"]
+    if spec.get('kind') == 'gb':
+        from gb_theme_animation import frames
+        return frames(cache, ref, spec, packed)
     key = ("animation", ref["game"], ref["tileset"], ref["id"], ref.get("hash"), json.dumps(spec, sort_keys=True))
     if key in packed:
         return packed[key]
@@ -373,6 +435,21 @@ def _replacement_frames_base(cache, row, packed, mod_root):
             return native_water_frames(cache, row, packed)
         return [native_donor(cache, row["donor"], packed)]
     if row.get("parts"):
+        if row.get('animated') and row.get('animation', {}).get('kind') == 'gb':
+            from gb_theme_animation import frames as gb_frames
+            sequences = [gb_frames(cache, p['donor'], row['animation'], packed) if p.get('animated') else None for p in row['parts']]
+            count = next(len(v) for v in sequences if v is not None)
+            assert all(v is None or len(v) == count for v in sequences)
+            base = native_donor(cache, row['base'], packed) if row.get('base') else Image.new('RGBA', (16, 16))
+            results = []
+            for index in range(count):
+                image = base.copy()
+                for part, sequence in zip(row['parts'], sequences):
+                    source = sequence[index] if sequence else native_donor(cache, part['donor'], packed)
+                    sx, sy = part.get('srcX', 0), part.get('srcY', 0)
+                    image.alpha_composite(source.crop((sx, sy, sx + part['w'], sy + part['h'])), (part.get('x', 0), part.get('y', 0)))
+                results.append(image)
+            return results
         if row.get("animated"):
             bases = native_water_frames(cache, row, packed)
         else:
@@ -411,7 +488,7 @@ def replacement_frames(cache, row, packed, mod_root):
     assert catalog.sha(path.read_bytes()) == overlay['hash'], 'Original overlay artwork changed'
     sprite = Image.open(path).convert('RGBA')
     assert sprite.size == (16, 16)
-    final = Image.alpha_composite(native_donor(cache, row['base'], packed), sprite)
+    final = Image.alpha_composite(frames[0] if overlay.get('mode') == 'over' else native_donor(cache, row['base'], packed), sprite)
     for x, y, w, h in overlay['preserveRects']:
         final.paste(frames[0].crop((x, y, x + w, y + h)), (x, y))
     return [final]

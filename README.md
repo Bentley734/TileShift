@@ -1,7 +1,15 @@
 # TileShift
 
-TileShift brings Gen 3 world art to Gen1Recomp with individually reviewed tile
-matches. Version 0.25.0 completes the backgrounds of **every Red, Blue and Yellow
+TileShift swaps world artwork through individually reviewed tile matches.
+Version 0.26.0 adds selectable **Gen 1** and **Gen 2** background themes to
+**Ruby, Sapphire, Emerald, FireRed and LeafGreen**. Gen 1 uses Red's original
+four-shade monochrome artwork; Gen 2 uses one shared Crystal style with its
+native daytime colors. Both themes completely retile Pallet Town in FR/LG and
+Littleroot Town in R/S/E, with additional reviewed terrain and interior matches.
+**Other Gen 3 maps remain partially converted**; unmatched cells retain native
+art. Gen 3 characters, Pokemon sprites and field effects retain their native art.
+
+The existing Gen 3 theme completes the backgrounds of **every Red, Blue and Yellow
 map: 667 map variants and 284,740 cells**. All Kanto towns, routes, Safari Zone,
 caves, houses, Centers, shops, gates, laboratories, gyms, Pokemon Tower, museums,
 Rocket/Silph facilities and the S.S. Anne are covered, including Yellow's beach
@@ -83,26 +91,50 @@ household furniture keeps complete frames, shelves, paintings and plant crowns.
 Unique regional features without suitable counterparts retain
 their complete original shapes in matching Gen3 colors. Characters and Pokemon sprites are
 unchanged. The single **Gen 3** style combines Emerald and FireRed/LeafGreen
-art; separate cartridge styles and reverse conversions are future work.
+art.
 
 ## Install
 
-1. Import **Emerald and FireRed** into Gen1Recomp. TileShift reads native donor
+1. Import the donor games into Gen1Recomp: **Emerald and FireRed** for the Gen 3
+   theme, **Red** for the Gen 1 theme, and **Crystal** for the Gen 2 theme.
+   TileShift reads native donor
    art from your own imports; neither ROMs nor extracted native artwork are
    bundled.
-2. Download `TileShift-v0.25.0.zip` from [the latest release](https://github.com/Bentley734/TileShift/releases/latest).
+2. Download `TileShift-v0.26.0.zip` from [the latest release](https://github.com/Bentley734/TileShift/releases/latest).
 3. Extract the `tileshift` folder into Gen1Recomp's `mods` directory, enable
    **TileShift**, and restart the game.
-4. Open Options and set **Tileset** to **Gen 3**. This is the default on a fresh
-   installation; **Original** restores the host game's art.
+4. Open Options and select **Tileset**. Gen 1/2 hosts offer **Gen 3**; Gen 3 hosts
+   also offer **Gen 1** and **Gen 2**. **Original** restores the host game's art.
+   Fresh installations retain the existing Gen 3 default.
 
 Requires **Gen1Recomp 0.3.96 or newer**, within the 0.3.x series; also validated on 0.3.97. Reviewed replacements
-currently target Red, Blue, Yellow, Gold, Silver and Crystal. The mod can load
-under all eleven supported games; Gen 3 hosts keep their native art with the
-Gen 3 style selected. Missing or changed donor cells are skipped, leaving the
+support all eleven games. Gen 3 hosts keep their native art with the Gen 3 style
+selected. Missing or changed donor cells are skipped, leaving the
 host artwork visible.
 
 ## Artwork and matching
+
+### Classic themes in Gen 3 games
+
+Classic buildings use complete native doors, windows, roof edges and wall
+modules at their original pixel size. Repeating plain roof and siding sections
+fill the existing Gen 3 footprints; entrances and source collision stay put.
+Classic trees retain their full crowns and trunks. Littleroot's lab roof vent
+has purpose-made four-color artwork matching each selected classic theme.
+
+Water and flowers use verified native GB animation frames. **Water Speed** and
+**Flowers Speed** offer **Off**, **Slow**, **Normal** and **Fast**; Off freezes
+the first frame. The Gen 3 host menu exposes these controls and the tileset
+selector. The custom Gen 3 foliage, water presets and Center designs below apply
+to Gen 1/2 hosts using the Gen 3 theme.
+
+Classic replacements use checked native tileset pairs and source cells.
+Palette, artwork, animation and source fingerprints protect the matches;
+unreviewed material keeps its native pixels. This initial reverse conversion
+does not replace every Gen 3 map or unique Hoenn feature.
+The all-map audit checks 2,156 native maps in both themes (4,312 map/theme
+variants): 777,970 of 2,577,772 cells are replaced (30.2%), using 4,522 reviewed
+mappings with zero rejected decodes. The completed backgrounds are listed below.
 
 ### Selectable trees, flowers, grass and water
 
@@ -179,15 +211,17 @@ graphics cannot bypass native darkness.
 | --- | --- | --- |
 | Red, Blue and Yellow, every map | 284,740/284,740 | 667/667 |
 | Gold, Silver and Crystal, Johto | 263,308/263,308 | 612/612 |
+| FR/LG Pallet, both classic themes | 1,920/1,920 | 4/4 |
+| R/S/E Littleroot and Route 101, both classic themes | 4,800/4,800 | 12/12 |
 
-Gen2 Kanto remains in progress. All replacement matches are scoped to their
-original source map and native donor family. The complete map audit loads the
+Gen2 Kanto remains in progress. GB-host matches use their original source maps
+and donor families; classic themes on Gen 3 use checked native tileset pairs
+and cells. The complete map audit loads the
 actual mod and checks replacement availability, source fingerprints and
 position scope; it does not render every map or constitute a full playthrough.
 
-The longer-term goal includes Gen 1/2 themes and conversions between games.
-Red/Blue artwork will use the original four-shade monochrome palette. Features
-without a correct equivalent will need reviewed artwork in the selected style.
+Further classic-theme coverage will add reviewed counterparts for remaining
+Gen 3 buildings, interiors and regional features.
 
 ## Performance
 
@@ -197,14 +231,23 @@ import-marker polling runs once per second outside rendering. Cosmetic choices
 retain the donor decoder cache. Connected-area grouping runs only when a map's
 visual replacements are built. Actor bindings inspect list identity/count and
 appended entries; unchanged frames do not run another full entity scan.
+The Gen 3 adapter caches atlas slots and animation schedules. Unchanged draws
+do not allocate images or copy unchanged atlas planes; native animation and
+palette writes dirty only the affected slots. Switching back to Original restores
+the current native atlas pixels.
 
 ## Validation and development
 
 The release is checked through the installed 0.3.97 loader for all eleven games,
 Lua regression fixtures, live-import fingerprint checks, native donor animation
-comparisons, and isolated native LOVE GPU rendering. Version 0.25.0 passes
-36 Lua suite runs across three runtimes and 188,601,742 checks across 248 native
-GPU scenes. This release verifies
+comparisons, and isolated native LOVE GPU rendering. Checks cover the original
+GB-to-Gen3 conversion and actual Gen 3 FieldView renders with both classic themes.
+Version 0.26.0 passes 39 Lua suite runs across three runtimes (58,440 assertions)
+and 119,214,575 checks across 56 new native Gen 3 background scenes. The existing
+248-scene GPU regression also passes all 188,601,742 checks with zero warnings.
+The reverse audit traverses every native map using its true cell dimensions,
+reports partial coverage explicitly, and checks source definitions stay unchanged.
+This release verifies
 all completed Gen1 and Johto map variants, native donor animation frames,
 source fingerprints, collision/events, cleanup restoration, decorative
 transparency and plant foreground behavior. The GPU suite exercises all Kanto
@@ -223,7 +266,10 @@ python TileShift/tools/validate_animation.py --game leafgreen
 python TileShift/tools/validate_gpu.py --timeout 900
 python TileShift/tools/validate_coverage.py --games red,blue,yellow --require-complete --timeout 900
 python TileShift/tools/validate_source_palettes.py
+python TileShift/tools/validate_reverse_coverage.py --timeout 900
+python TileShift/tools/validate_reverse_gpu.py --timeout 900
 python TileShift/tools/gpu_comparison.py
+python TileShift/tools/reverse_comparison.py
 python TileShift/tools/build_release.py
 ```
 

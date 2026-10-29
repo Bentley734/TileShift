@@ -77,6 +77,8 @@ for _,gameId in ipairs(games)do
   function mod:read(path)
     fixture.reads[#fixture.reads+1]=path
     if path=='lib/roof_catalog.lua'or path=='lib/side_catalog.lua'or path=='lib/center_mart_roofs.lua'or path=='lib/goldenrod_roofs.lua'or path=='lib/pallet_roofs.lua'or path=='lib/johto_roofs.lua'then return 'return{}'end
+    if path=='mappings/reverse_kanto.lua'or path=='mappings/reverse_hoenn.lua'then return nil end
+    if path=='lib/gb_animation.lua'then return 'return {}'end
     if path=='lib/roofs.lua' or path=='lib/vegetation.lua' or path=='lib/flora.lua' or path=='lib/flora_catalog.lua' or path=='lib/water_styles.lua' then
       local file=assert(io.open(root..'/'..path,'rb'));local source=file:read('*a');file:close();return source
     end
@@ -117,6 +119,30 @@ for _,gameId in ipairs(games)do
     eq(fixture.adapterCtx.active(),true,'ownership epochs avoid hook-chain access')
     runtime.hooks.chains=chains
   end
+  if generation==3 then
+    eq(#schemas,3);eq(#schemas[1].choices,4)
+    eq(schemas[1].choices[3][1],'GEN 1');eq(schemas[1].choices[4][1],'GEN 2')
+    eq(schemas[2].key,'speed_flowers');eq(schemas[3].key,'speed_water')
+    local rows=hooks['ui.options.rows'](function(_,out)out[#out+1]={id='native'};return out end,game,{})
+    eq(#rows,5);eq(rows[2].value(),'ORIGINAL');eq(rows[3].label,'FLOWERS SPEED');eq(rows[4].label,'WATER SPEED')
+    for _,style in ipairs({'gen3','gen1','gen2','original'})do rows[2].step({game=game},1);eq(state.style,style)end
+    eq(mod.exports.select('gen1'),true);eq(state.style,'gen1');eq(rows[2].value(),'GEN 1')
+    eq(mod.exports.select('gen2'),true);eq(state.style,'gen2');eq(rows[2].value(),'GEN 2')
+    eq(fixture.adapterCtx.animationSpeed('water'),0)
+    rows[4].step({game=game},1);eq(fixture.adapterCtx.animationSpeed('water'),.5)
+    local art={{role='tree',style='gen1'}}
+    eq(fixture.sessionCtx.customizeRows(art,gameId,{}),art,'Gen3 host keeps the selected GB artwork')
+    emit('mod.options_changed',{mod='tileshift',key='style',value=3});eq(state.style,'gen1')
+    emit('mod.options_changed',{mod='tileshift',key='style',value=4});eq(state.style,'gen2')
+    emit('mod.options_changed',{mod='tileshift',key='style',value=2});eq(state.style,'gen3','stored Gen3 index stayscompatible')
+    runtime.hooks.chains['core.update']={}
+    eq(fixture.adapterCtx.replacements(gameId,'TEST'),nil)
+    emit('mod.options_changed',{mod='tileshift',key='style',value=3});eq(state.style,'gen3')
+    mod.exports.dispose();mod.exports.dispose();eq(fixture.closed,1)
+    eq(#listeners['mod.options_changed'],0)
+    mod.options.get=function()return 999 end;entry(mod);eq(state.style,'gen2')
+    mod.exports.dispose()
+  else
   eq(mod.exports.state,state);eq(state.style,'original');eq(schemas[1].key,'style')
   eq(schemas[1].default,2);eq(schemas[1].type,'choice');eq(#schemas[1].choices,2)
   eq(schemas[1].choices[1][1],'ORIGINAL');eq(schemas[1].choices[1][2],1)
@@ -224,6 +250,7 @@ for _,gameId in ipairs(games)do
   mod.options.get=function()return nil end;stored.style=nil
   entry(mod);eq(state.style,'gen3','fresh install defaults to implemented Gen3 theme')
   mod.exports.dispose()
+  end
 end
 _G.__tileMainFixture=nil
 for name,value in pairs(originalLoaded)do package.loaded[name]=value end

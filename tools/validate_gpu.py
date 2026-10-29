@@ -3129,6 +3129,9 @@ def main() -> int:
     native_paths = (
         "src/render/TileRenderer.lua", "src/world/gen2/World.lua",
         "src/world/Map.lua", "src/world/gen2/Map.lua",
+        "src/core/game3/field_view.lua", "src/core/game3/tileset_native.lua",
+        "src/core/game3/tileset_anim.lua", "src/core/game3/dataset.lua",
+        "src/core/game3/map.lua",
     )
     metadata["native_renderer_sha256"] = {
         name: hashlib.sha256((engine / name).read_bytes()).hexdigest() for name in native_paths

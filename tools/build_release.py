@@ -14,11 +14,16 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, default=root / "build")
     parser.add_argument("--gpu-report", type=Path, default=root.parent / ".work/tileshift-gpu/report.json")
+    parser.add_argument("--reverse-gpu-report", type=Path, default=root.parent / ".work/tileshift-reverse-gpu/report.json")
     args = parser.parse_args()
     proof = json.loads(args.gpu_report.read_text(encoding="utf-8"))
     inputs = runtime_fingerprint(root)
     assert proof["status"] == "passed", "Native GPU validation must pass before packaging"
+    assert proof.get("theme") == "gen3", "Forward Gen3-theme native GPU validation must pass"
     assert proof["runtime_inputs"] == inputs, "Native GPU proof is stale; validate the current runtime files first"
+    reverse = json.loads(args.reverse_gpu_report.read_text(encoding="utf-8"))
+    assert reverse["status"] == "passed" and reverse.get("theme") == "reverse", "Classic-theme native GPU validation must pass"
+    assert reverse["runtime_inputs"] == inputs, "Classic-theme GPU proof is stale"
     manifest = json.loads((root / "manifest.json").read_text(encoding="utf-8"))
     assert manifest["id"] == "tileshift"
     version = manifest["version"]
@@ -30,13 +35,13 @@ def main() -> None:
     asset_files = sorted(path for path in (root / 'assets').rglob('*') if path.is_file())
     allowed = ('third_party/j-treecko252/',
                'third_party/magiscarf/', 'third_party/metalflygon08/', 'user_flora/', 'original/sprout-tower/', 'original/flora/', 'original/slowpoke-well/', 'original/olivine-lighthouse/', 'original/compact-conifer/', 'original/ecruteak-v2/', 'original/bell-wide/', 'original/center-expanded/')
-    allowed += ('original/ilex-shrine/', 'original/whirlpool/', 'original/park-bench/', 'third_party/peekychew/')
+    allowed += ('original/classic-vent/', 'original/ilex-shrine/', 'original/whirlpool/', 'original/park-bench/', 'third_party/peekychew/')
     interior_folders = ('original/interior-beacon', 'original/interior-computer', 'original/interior-flowerpot', 'original/interior-lattice', 'original/interior-painting', 'original/interior-pillar', 'original/interior-planter', 'original/interior-radio', 'original/interior-railpost', 'original/interior-stairs', 'original/interior-tower-modules')
     allowed += tuple(folder + '/' for folder in interior_folders)
     for path in asset_files:
         assert path.relative_to(root / 'assets').as_posix().startswith(allowed), 'Unreviewed asset folder'
         assert path.suffix in ('.png', '.jpg', '.json', '.txt'), 'Unreviewed asset format'
-    for folder in ('user_flora', 'third_party/magiscarf', 'third_party/metalflygon08', 'original/sprout-tower', 'original/flora', 'original/slowpoke-well', 'original/olivine-lighthouse', 'original/compact-conifer', 'original/ecruteak-v2', 'original/bell-wide', 'original/center-expanded', 'original/ilex-shrine', 'original/whirlpool', 'original/park-bench', 'third_party/peekychew'):
+    for folder in ('original/classic-vent', 'user_flora', 'third_party/magiscarf', 'third_party/metalflygon08', 'original/sprout-tower', 'original/flora', 'original/slowpoke-well', 'original/olivine-lighthouse', 'original/compact-conifer', 'original/ecruteak-v2', 'original/bell-wide', 'original/center-expanded', 'original/ilex-shrine', 'original/whirlpool', 'original/park-bench', 'third_party/peekychew'):
         provenance = json.loads((root / 'assets' / folder / 'provenance.json').read_text(encoding='utf-8'))
         for name, digest in provenance['files'].items():
             assert hashlib.sha256((root / 'assets' / folder / name).read_bytes()).hexdigest() == digest, 'Artwork provenance fingerprint changed'
@@ -73,7 +78,7 @@ def main() -> None:
     report = {"version": version, "archive": str(archive.resolve()),
               "bytes": archive.stat().st_size, "sha256": digest,
               "files": expected, "zip_roundtrip_verified": True,
-              "validated_runtime_sha256": inputs["sha256"], "native_gpu_checks": proof["checks"]}
+              "validated_runtime_sha256": inputs["sha256"], "native_gpu_checks": proof["checks"], "reverse_native_gpu_checks": reverse["checks"]}
     (args.output / "package-verification.json").write_text(
         json.dumps(report, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({key: value for key, value in report.items() if key != "files"}, indent=2))

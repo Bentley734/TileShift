@@ -282,4 +282,46 @@ animationFails(function()end,'16 by 16')
 animatedDonor.frames=nil
 animationFails(function()end,'animation decoder is unavailable')
 animatedDonor.frames=originalSequence
+-- GB flower glyphs animate inside an independent, unchanged ground cell.
+local ground=newData(16,16)
+for y=0,15 do for x=0,15 do ground:setPixel(x,y,.1,.2,.3,1)end end
+local gbFrames={}
+for i=1,2 do
+ local frame=newData(16,16)
+ for y=0,15 do for x=0,15 do frame:setPixel(x,y,i/2,0,1-i/2,1)end end
+ gbFrames[i]={under=frame}
+end
+local classicDonor={cell=function()return{under=ground,hash=hashA}end,
+ frames=function()return{frames=gbFrames,period=.35,offset=0,bank='gb_flower',category='flowers'}end}
+local classicComposer=Composition.new({donor=classicDonor,newImageData=newData})
+local glyph={donor={game='red',tileset='OVERWORLD',id=1,quadrant=0,hash=hashA,monochrome=true},srcX=8,srcY=0,w=8,h=8,x=4,y=4,animated=true}
+local classicRow={game='emerald',style='gen1',kind='native_composite',base=glyph.donor,parts={glyph},animated=true,animation={kind='gb',bank='flower'}}
+local sequence,why=classicComposer:frames(classicRow);assert(sequence,why)
+eq(#sequence.frames,2);eq(sequence.period,.35);eq(sequence.category,'flowers')
+for i,frame in ipairs(sequence.frames)do
+ pixel(frame.under,0,0,.1,.2,.3,1,'Flower animation preserves surrounding ground')
+ pixel(frame.under,4,4,i/2,0,1-i/2,1,'Whole eight-pixel glyph animates without scaling')
+ pixel(frame.under,11,11,i/2,0,1-i/2,1,'Complete glyph bottom corner retained')
+ pixel(frame.under,12,11,.1,.2,.3,1,'No hatched donor floor outside flower')
+end
+-- Reject ambiguous GB animation before reading any donor pixels, including
+-- callers using the composition module directly rather than Mapping.validate.
+local guardedReads,guardedFrames=0,0
+local guardedComposer=Composition.new({donor={cell=function(...)
+ guardedReads=guardedReads+1;return classicDonor.cell(...)
+end,frames=function(...)
+ guardedFrames=guardedFrames+1;return classicDonor.frames(...)
+end},newImageData=newData})
+for _,mutate in ipairs({function(r)r.animated=nil end,function(r)r.animated=false end,
+ function(r)r.parts[1].animated=nil end,function(r)r.parts[1].animated=false end,
+ function(r)r.parts[1].animated=1 end,function(r)r.animation=true end,
+ function(r)r.parts[1].layers={'under'};r.parts[1].layerHashes={under=hashA}end})do
+ local bad=clone(classicRow);mutate(bad)
+ for _,method in ipairs({'cell','frames'})do
+  local out,message=guardedComposer[method](guardedComposer,bad)
+  eq(out,nil,'invalid GB animation '..method);eq(type(message),'string')
+ end
+ eq(guardedReads,0,'invalid GB composition fails before donor reads')
+ eq(guardedFrames,0,'invalid GB composition fails before animation reads')
+end
 print('composition: '..count..' assertions passed')

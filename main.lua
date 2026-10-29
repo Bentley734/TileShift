@@ -13,7 +13,7 @@ return function(mod)
     'mappings/pallet_buildings.lua','mappings/pallet_details.lua',
     'mappings/gen1_outdoor.lua','mappings/gen2_outdoor.lua','mappings/gen1_caves.lua',
     'mappings/gen2_buildings.lua','mappings/gen1_extended.lua','mappings/gen2_outdoor_extended.lua','mappings/azalea.lua','mappings/viridian.lua','mappings/gen2_pallet.lua','mappings/mahogany.lua','mappings/johto_terrain.lua','mappings/cianwood.lua','mappings/olivine.lua','mappings/ecruteak.lua','mappings/north_johto.lua','mappings/silver_cave_outside.lua','mappings/johto_terrain_repeats.lua','mappings/johto_route_details.lua','mappings/goldenrod_arcade.lua',
-    'mappings/buildings_extended.lua','mappings/building_overhangs.lua','mappings/goldenrod.lua','mappings/pallet_overhangs.lua','mappings/johto_remaining.lua','mappings/park.lua','mappings/interiors.lua','mappings/gen2_caves.lua','mappings/johto_cave_finish.lua','mappings/johto_rooms_finish.lua','mappings/johto_gate_finish.lua','mappings/johto_shared_finish.lua','mappings/johto_lighthouse_finish.lua','mappings/johto_tower_finish.lua','mappings/johto_gamecorner_finish.lua','mappings/gen1_center_finish.lua','mappings/gen1_commercial_finish.lua','mappings/gen1_domestic_finish.lua','mappings/gen1_facilities_finish.lua','mappings/gen1_galleries_finish.lua','mappings/gen1_gates_finish.lua','mappings/gen1_lab_finish.lua','mappings/gen1_overworld_finish.lua','mappings/gen1_plateau_finish.lua','mappings/gen1_safari_finish.lua','mappings/gen1_ship_finish.lua','mappings/gen1_special_finish.lua','mappings/gen1_temples_finish.lua','mappings/johto_unique_objects_finish.lua','mappings/johto_shrine_finish.lua','mappings/johto_port_finish.lua','mappings/johto_pokecom_finish.lua','mappings/johto_facility_finish.lua','mappings/johto_battle_outside_finish.lua','mappings/johto_station_finish.lua','mappings/johto_ruins_finish.lua','mappings/johto_radio_finish.lua','mappings/johto_gyms_finish.lua','mappings/johto_labrooms_finish.lua','mappings/johto_domestic_finish.lua','mappings/johto_mart_finish.lua','mappings/johto_dragonden_finish.lua','mappings/johto_battle_inside_finish.lua','mappings/johto_underground_finish.lua',
+    'mappings/buildings_extended.lua','mappings/building_overhangs.lua','mappings/goldenrod.lua','mappings/pallet_overhangs.lua','mappings/johto_remaining.lua','mappings/park.lua','mappings/interiors.lua','mappings/gen2_caves.lua','mappings/johto_cave_finish.lua','mappings/johto_rooms_finish.lua','mappings/johto_gate_finish.lua','mappings/johto_shared_finish.lua','mappings/johto_lighthouse_finish.lua','mappings/johto_tower_finish.lua','mappings/johto_gamecorner_finish.lua','mappings/gen1_center_finish.lua','mappings/gen1_commercial_finish.lua','mappings/gen1_domestic_finish.lua','mappings/gen1_facilities_finish.lua','mappings/gen1_galleries_finish.lua','mappings/gen1_gates_finish.lua','mappings/gen1_lab_finish.lua','mappings/gen1_overworld_finish.lua','mappings/gen1_plateau_finish.lua','mappings/gen1_safari_finish.lua','mappings/gen1_ship_finish.lua','mappings/gen1_special_finish.lua','mappings/gen1_temples_finish.lua','mappings/johto_unique_objects_finish.lua','mappings/johto_shrine_finish.lua','mappings/johto_port_finish.lua','mappings/johto_pokecom_finish.lua','mappings/johto_facility_finish.lua','mappings/johto_battle_outside_finish.lua','mappings/johto_station_finish.lua','mappings/johto_ruins_finish.lua','mappings/johto_radio_finish.lua','mappings/johto_gyms_finish.lua','mappings/johto_labrooms_finish.lua','mappings/johto_domestic_finish.lua','mappings/johto_mart_finish.lua','mappings/johto_dragonden_finish.lua','mappings/johto_battle_inside_finish.lua','mappings/johto_underground_finish.lua','mappings/reverse_kanto.lua','mappings/reverse_hoenn.lua',
   }) do
     local source=mod:read(path)
     if source then
@@ -25,7 +25,7 @@ return function(mod)
   local Donor=readModule('lib/donor.lua')
   -- Import checks run on a throttled update poll, never on warm render lookups.
   local identityToken=0
-  local decoder=Donor.new({identityToken=function()return identityToken end})
+  local decoder=Donor.new({identityToken=function()return identityToken end,gbAnimation=readModule('lib/gb_animation.lua')})
   local nativeFS=require('src.import.CacheFs')
   local function newData(w,h) return love.image.newImageData(w,h) end
   local composer
@@ -105,6 +105,7 @@ return function(mod)
         else roofs:actor(...)end
       end
     end})
+  local animationRates={trees=1,flowers=1,grass=1,water=1}
   local centerStyle=tonumber(mod.options:get('center_style'))or tonumber(mod.save:get('center_style'))or 2
   if centerStyle~=1 then centerStyle=2 end
   state=readModule('lib/session.lua').new({mappings=indexed,donor=decoder,
@@ -112,6 +113,7 @@ return function(mod)
     normalizeStyle=Mapping.normalizeStyle,validate=Mapping.validate,
     original=original,foreground=foreground,compose=compose,composeFrames=composeFrames,
     customizeRows=function(rows,game,def)
+      if mod.generation==3 then return rows end
       if centerStyle==1 then
         local selected={}
         for i,row in ipairs(rows)do
@@ -136,6 +138,10 @@ return function(mod)
     warn=function(s)mod.log:warn('%s',s)end})
   local styleNames={'ORIGINAL','GEN 3'}
   local styleIds={'original','gen3'}
+  if mod.generation==3 then
+    styleNames[3],styleNames[4]='GEN 1','GEN 2'
+    styleIds[3],styleIds[4]='gen1','gen2'
+  end
   local styleChoices={}
   for i,label in ipairs(styleNames)do styleChoices[i]={label,i} end
   -- Read stored preferences before registering the schema's fresh-install default.
@@ -167,7 +173,7 @@ return function(mod)
     local selected=tonumber(mod.options:get(key)) or tonumber(mod.save:get(key)) or 3
     if selected~=selected or selected==math.huge or selected==-math.huge then selected=3 end
     selected=math.max(1,math.min(4,math.floor(selected)))
-    flora:speed(group,speedChoices[selected][2])
+    flora:speed(group,speedChoices[selected][2]);animationRates[group]=speedChoices[selected][2]
     local label=(group=='grass' and 'GRASS' or floraLabels[group])..' SPEED'
     local option={category=key,speed=group,key=key,choices=speedChoices,selection=selected}
     floraLabels[key]=label;floraOptions[#floraOptions+1]=option
@@ -180,6 +186,12 @@ return function(mod)
   floraLabels.grass_motion='GRASS MOTION'
   floraOptions[#floraOptions+1]={category='grass_motion',key='grass_motion',motion=true,choices=motionChoices,selection=motion}
   schema[#schema+1]={key='grass_motion',label='GRASS MOTION',type='choice',choices={{'ALWAYS',1},{'ON WALK',2}},default=1}
+  if mod.generation==3 then
+    local options,fields={},{}
+    for _,option in ipairs(floraOptions)do if option.speed=='water'or option.speed=='flowers'then options[#options+1]=option end end
+    for _,field in ipairs(schema)do if field.key=='style'or field.key=='speed_water'or field.key=='speed_flowers'then fields[#fields+1]=field end end
+    floraOptions,schema=options,fields
+  end
   mod.options:define(schema)
   selection=math.max(1,math.min(#styleIds,math.floor(selection)))
   state:select(styleIds[selection])
@@ -212,7 +224,7 @@ return function(mod)
     pollElapsed=pollElapsed+(dt or 0)
     if pollElapsed>=1 then
       pollElapsed=pollElapsed%1
-      if state.style~='original' and mod.generation<3 and state.checkSource then
+      if state.style~='original' and (mod.generation<3 or state.style~='gen3') and state.checkSource then
         identityToken=identityToken+1;state:checkSource(GV.get())
       end
     end
@@ -240,7 +252,8 @@ return function(mod)
     enabled=function(row)return row.role~='larger_center'or centerStyle~=1 end,
     warn=function(s)mod.log:warn('%s',s)end})
   local adapter=readModule('lib/gen'..mod.generation..'.lua')
-  adapterContext={roofs=roofs,version=GV.get,revision=function()return state.revision end,active=owned,
+  adapterContext={time=function()return love.timer and love.timer.getTime()or 0 end,
+    animationSpeed=function(group)return animationRates[group]or 1 end,roofs=roofs,version=GV.get,revision=function()return state.revision end,active=owned,
     grassTime=function(map,x,y,now)return vegetation:time(map,x,y,now)end,
     disturb=function(map,x,y,now,duration)return vegetation:touch(map,x,y,now,duration)end,
     replacements=function(game,tileset,def)
@@ -267,7 +280,9 @@ return function(mod)
     local changed
     if option.building then changed=centerStyle~=option.selection;centerStyle=option.selection
     elseif option.motion then changed=vegetation:setMode(option.choices[option.selection][2])
-    elseif option.speed then changed=flora:speed(option.speed,option.choices[option.selection][2])
+    elseif option.speed then
+      animationRates[option.speed]=option.choices[option.selection][2]
+      changed=flora:speed(option.speed,animationRates[option.speed])
     else changed=flora:select(option.category,option.choices[option.selection][2]) end
     if changed then
       if state.invalidateVisual then state:invalidateVisual() else state:invalidate() end

@@ -132,8 +132,28 @@ local gba=row(9,nil);gba.game='ruby';gba.tileset='PAIR';gba.style='red'
 gba.donor={game='red',tileset='OVERWORLD',id=1,quadrant=0,hash=hashB}
 local layered=make({gba});layered:select('red')
 local layeredOut=layered:replacements('ruby','PAIR',def)
-eq(layeredOut[9].under,piece.under);eq(layeredOut[9].mid,piece.mid);eq(layeredOut[9].over,piece.over)
+eq(layeredOut[9].under~=piece.under,true,'GBplanesflattenedonce')
+r,g,b,a=layeredOut[9].under:getPixel(0,0);eq(g,1,'GBmiddleincludedinunder')
+r,g,b,a=layeredOut[9].mid:getPixel(0,0);eq(a,0,'NativeGBA middlecleared')
+r,g,b,a=layeredOut[9].over:getPixel(1,0);eq(a,0,'NativeGBA overclearedwhen sourcepriorityempty')
+local maskedGba={};for k,v in pairs(gba)do maskedGba[k]=v end
+maskedGba.style='gen1';maskedGba.donor.monochrome=true;maskedGba.overMask='1'..string.rep('0',255)
+local priority=make({maskedGba});priority:select('gen1')
+local priorityArt=priority:replacements('ruby','PAIR',def)[9]
+r,g,b,a=priorityArt.over:getPixel(0,0);eq(g,1);eq(a,1)
+r,g,b,a=priorityArt.over:getPixel(1,0);eq(a,0,'Overmaskdoesnotcoverbackground')
+local previous=priorityArt
+for i=1,1000 do eq(priority:replacements('ruby','PAIR',def)[9],previous,'Warmreverselookupreusesimageplanes')end
 eq(layeredOut[9].image,nil,'native Gen3 layer structure is retained')
+local animatedGba={};for k,v in pairs(maskedGba)do animatedGba[k]=v end
+animatedGba.animated=true;animatedGba.animation={kind='gb',bank='water',hash=hashB,manifestHash=hashA}
+local animationState=make({animatedGba},{animationTiming=function()error('Gen3 speed must not be applied twice')end})
+animationState:select('gen1');local animatedArt=animationState:replacements('ruby','PAIR',def)[9]
+eq(#animatedArt.frames,2);eq(animatedArt.period,16/60);eq(animatedArt.category,'water')
+r,g,b,a=animatedArt.frames[1].under:getPixel(0,0);eq(r,.25);eq(b,.75)
+r,g,b,a=animatedArt.frames[2].under:getPixel(0,0);eq(r,.75);eq(b,.25)
+r,g,b,a=animatedArt.frames[2].over:getPixel(1,0);eq(a,0,'Animation keeps transparent over pixels')
+
 -- Transparent tree art borrows only a fingerprint-checked ground donor; its
 -- clear pixels must show that selected game's ground rather than the source.
 local treeArt=newData(16,16);treeArt:setPixel(2,2,1,0,1,1)
@@ -500,5 +520,54 @@ local badPaletteState,badPaletteWarnings,badPaletteCalls=make({badPalette});badP
 eq(next(badPaletteState:replacements('red','OVERWORLD',def)),nil)
 eq(#badPaletteCalls,0,'invalid palettes fail before the source decoder')
 eq(badPaletteState.rejected,1);eq(#badPaletteWarnings,1)
+end)()
+-- A new facade can cover the current composed roof without replacing that
+-- roof with its plain base. Transparent holes and protected motifs stay exact.
+;(function()
+ local composed=fill(.8,.8,.8,1)
+ composed:setPixel(14,2,.65,.65,.65,1)
+ composed:setPixel(1,1,.9,.9,.9,1)
+ local overlay=newData(16,16)
+ overlay:setPixel(5,10,0,0,0,1);overlay:setPixel(6,10,0,0,0,.5)
+ overlay:setPixel(1,1,0,0,0,1)
+ local ground=fill(.2,.2,.2,1)
+ local classicRef={game='red',tileset='OVERWORLD',id=1,quadrant=0,hash=hashB,monochrome=true}
+ local roof={game='emerald',style='gen1',tileset='PAIR',id=91,status='reviewed',role='whole roof with door',
+  evidence='complete composed roof overlay fixture',sourceHash=hashA,kind='native_composite',base=classicRef,
+  parts={{donor=classicRef,srcX=0,srcY=0,w=16,h=16,x=0,y=0}},overMask=string.rep('0',256),
+  artOverlay={mode='over',asset='assets/original/fixture-door.png',hash=hashC,preserveRects={{0,0,2,2}}}}
+ local loads,decodes,composes,allocated=0,0,0,0
+ local decoder={invalidate=function()end,cell=function(_,reference)
+  decodes=decodes+1
+  if reference.hashOnly then return {under=fill(.5,.5,.5,1),over=newData(16,16)}end
+  return {under=ground}
+ end}
+ local context={donor=decoder,newImageData=function(w,h)allocated=allocated+1;return newData(w,h)end,
+  original=function(path,digest)loads=loads+1;eq(path,roof.artOverlay.asset);eq(digest,hashC);return overlay end,
+  compose=function(recipe)composes=composes+1;eq(recipe,roof);return {under=composed}end}
+ local state,warnings=make({roof},context);state:select('gen1')
+ local rows=state:replacements('emerald','PAIR')
+ eq(state.accepted,1);eq(state.rejected,0);eq(#warnings,0)
+ eq(rows[91].under:getPixel(14,2),.65,'transparent facade preserves the current roof, not plain ground')
+ eq(rows[91].under:getPixel(1,1),.9,'protected motif retains complete composed roof pixels')
+ eq(rows[91].under:getPixel(5,10),0,'opaque door artwork overlays the composed wall')
+ eq(rows[91].under:getPixel(6,10),.4,'semi-transparent trim blends over composed art')
+ eq(rows[91].under:getPixel(15,15),.8,'unused corners retain original composed roof')
+ eq(composed:getPixel(1,1),.9,'source roof remains immutable')
+ eq(ground:getPixel(1,1),.2,'source ground remains immutable')
+ local _,_,_,outside=overlay:getPixel(14,2);eq(outside,0,'overlay transparency remains untouched')
+ eq(decodes,1,'modeover never refetches an unrelated plain base')
+ local warmAllocated=allocated
+ for i=1,1000 do eq(state:replacements('emerald','PAIR'),rows)end
+ eq(allocated,warmAllocated,'warm facade does not rebuild roof/overlay images')
+ eq(loads,1);eq(composes,1);eq(decodes,1)
+ -- The legacy default intentionally draws on its explicit base, preserving
+ -- only designated original motifs. Its established semantics stay intact.
+ roof.artOverlay.mode=nil
+ local legacy,legacyWarnings=make({roof},context);legacy:select('gen1')
+ local originalRows=legacy:replacements('emerald','PAIR')
+ eq(legacy.accepted,1);eq(#legacyWarnings,0)
+ eq(originalRows[91].under:getPixel(14,2),.2,'legacy overlay still uses the explicit base')
+ eq(originalRows[91].under:getPixel(1,1),.9,'legacy protected rectangle still retains composed source')
 end)()
 print('PASS reviewed mapping session: '..count..' assertions')

@@ -193,3 +193,13 @@ Unique fossil displays, ship fittings, compact laboratory instruments, League
 monument details and unmatched symbols retain the original imported geometry
 in user-approved Gen3 colors. Only palettes and source fingerprints are
 packaged; their imported pixels remain in the player's cache.
+
+## Classic themes on Gen3
+
+Gen1 and Gen2 background counterparts are checked references to the player's
+Red and Crystal imports; no extracted GB artwork is bundled. Native windows,
+doors, tree silhouettes and complete furniture retain their original pixels.
+Only repeating roof/wall sections are arranged to retain Gen3 building footprints.
+The two classic laboratory vents are original built-in imagegen artwork. Their
+full prompts, source hashes, uniform integer 26 normalization, binary alpha and
+four-color palettes are recorded in assets/original/classic-vent/provenance.json.

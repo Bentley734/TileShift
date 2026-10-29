@@ -1,0 +1,116 @@
+{
+  "origin": "Original artwork made with built-in imagegen; native Emerald reference used for object function/shape only. No extracted ROM pixels are included.",
+  "files": {
+    "gen1-0.png": "d3159b4431404a1c376fb275f29f09c00422641641b43d29c36d1e86e9b4dd06",
+    "gen1-1.png": "1c0b4089c07553ac12560bcbd515fe83371d6ebb231a321b7e1fe233721b0bfe",
+    "gen1-2.png": "ff224f6cf4880f72f5d2e4e763404156e0faa3f3bc85c7042e78ccf1c3387f71",
+    "gen1-3.png": "e73f4d793da9d4101681232cf0b8e0dc27a8bfa0a3135926f63b46a36f034cd6",
+    "gen2-0.png": "9912f13d4949fd11bc4672162d18e9160e0b061e27102dd973549ccc295f2dfa",
+    "gen2-1.png": "071439af170106154a8f120953e8daa6dcef266350e816460fcd9f1a9c6ee9de",
+    "gen2-2.png": "04aefea33af999e8869a9a3bab29cc273d1ea2e8084df6724ca8baf1cc171883",
+    "gen2-3.png": "d6c37132d2f0460a2f01979b3cdd6b13afce004d1a2389257f0499a72b412836"
+  },
+  "variants": {
+    "gen1": {
+      "source_sha256": "21eed18fbe44bb381e874e0af73cf010c8857f445fdf1a62711c4b686a13146a",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "source_alpha_bbox": [
+        249,
+        246,
+        1005,
+        1010
+      ],
+      "integer_reduction": 26,
+      "crop_xyxy": [
+        211,
+        212,
+        1043,
+        1044
+      ],
+      "logical_size": [
+        32,
+        32
+      ],
+      "binary_alpha_threshold": 128,
+      "palette": [
+        [
+          255,
+          255,
+          255
+        ],
+        [
+          170,
+          170,
+          170
+        ],
+        [
+          85,
+          85,
+          85
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "complete_silhouette_retained": true
+    },
+    "gen2": {
+      "source_sha256": "e172b66015c368967badbee58e8e320a7c98521dfe0fbc84e4a973e02962def8",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "source_alpha_bbox": [
+        278,
+        263,
+        976,
+        1021
+      ],
+      "integer_reduction": 26,
+      "crop_xyxy": [
+        211,
+        226,
+        1043,
+        1058
+      ],
+      "logical_size": [
+        32,
+        32
+      ],
+      "binary_alpha_threshold": 128,
+      "palette": [
+        [
+          248,
+          248,
+          216
+        ],
+        [
+          176,
+          184,
+          184
+        ],
+        [
+          96,
+          120,
+          136
+        ],
+        [
+          24,
+          40,
+          56
+        ]
+      ],
+      "complete_silhouette_retained": true
+    }
+  },
+  "prompts": {
+    "gen1": "Create one production pixel-art game tile for a retro Pokemon world tileset. Asset: a complete round rooftop ventilation cylinder/fan, 3/4 overhead view, like the supplied reference object. The reference is for object shape/function only; OMIT all of its green roof and surrounding ground. Keep the round upper ring, dark oval vent opening, short cylindrical metal body and full rectangular metal base intact. One centered compact object in a square 32x32 LOGICAL PIXEL sprite, no text, no extra objects. Render on an EXACT 32x32 logical pixel grid enlarged uniformly to 1024x1024: each logical pixel is one hard square 32x32 block. It must read clearly after integer nearest-neighbor reduction to32x32. Crisp 1-logical-pixel outlines, blocky staircase curves, no smooth curves, no anti-aliasing, no gradients, no glow. Transparent background everywhere outside the object, including the corners around its round top. Keep the complete silhouette within the canvas with a 1-logical-pixel transparent margin. This is a newly authored missing counterpart for a Game Boy tileset, not a recolor of high-detail GBA graphics. Style: original Pokemon Red/Blue Game Boy world pixel art. EXACTLY FOUR opaque grayscale colors only: #FFFFFF #AAAAAA #555555 #000000; plus fully transparent. Strong dark outline, restrained checkerboard dithering, simple legible mechanical detail. No color tint.",
+    "gen2": "Create one production pixel-art game tile for a retro Pokemon world tileset. Asset: a complete round rooftop ventilation cylinder/fan, 3/4 overhead view, like the supplied reference object. The reference is for object shape/function only; OMIT all of its green roof and surrounding ground. Keep the round upper ring, dark oval vent opening, short cylindrical metal body and full rectangular metal base intact. One centered compact object in a square 32x32 LOGICAL PIXEL sprite, no text, no extra objects. Render on an EXACT 32x32 logical pixel grid enlarged uniformly to 1024x1024: each logical pixel is one hard square 32x32 block. It must read clearly after integer nearest-neighbor reduction to32x32. Crisp 1-logical-pixel outlines, blocky staircase curves, no smooth curves, no anti-aliasing, no gradients, no glow. Transparent background everywhere outside the object, including the corners around its round top. Keep the complete silhouette within the canvas with a 1-logical-pixel transparent margin. This is a newly authored missing counterpart for a Game Boy tileset, not a recolor of high-detail GBA graphics. Style: Pokemon Crystal Game Boy Color world pixel art, matching classic Johto laboratory fixtures. EXACTLY FOUR opaque colors only: warm pale #F8F8D8, metal light gray #B0B8B8, muted steel blue #607888, deep blue-black #182838; plus fully transparent. Deliberately simple chunky mechanical detail at native Game Boy pixel density."
+  },
+  "generator": "Built-in image_gen"
+}

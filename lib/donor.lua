@@ -193,7 +193,7 @@ function Donor.new(ctx)
       (bank==1 and palettes[129+raw%128]) or palettes[raw%128+1]) or 1
     return {palette=slot,vramBank=bank}
   end
-  local function gb(ref,gen)
+  local function gb(ref,gen,tileOverrides)
     sourceFiles(ref)
     local sets,setBytes=module(ref.game,'data/generated/tilesets.lua')
     local ts=sets[ref.tileset]
@@ -215,12 +215,12 @@ function Donor.new(ctx)
       end
       validateColors(colors)
     end
-    local roof
+    local roof,roofImageBytes
     if gen==2 and def and (ref.tileset=='TILESET_JOHTO' or ref.tileset=='TILESET_JOHTO_MODERN') then
       local roofs=module(ref.game,'data/generated/roofs.lua',true)
       local name=roofs and roofs.mapGroupRoofs and roofs.mapGroupRoofs[def.group]
       local spec=name and roofs.roofs and roofs.roofs[name]
-      if spec and spec.image then roof=sheet(ref.game,spec.image) end
+      if spec and spec.image then roof,roofImageBytes=sheet(ref.game,spec.image) end
     end
     local under,over,foreground,rawImage=newData(16,16),newData(16,16),newData(16,16),newData(16,16)
     local q=ref.quadrant or 0;local qx,qy=q%2*2,math.floor(q/2)*2
@@ -240,6 +240,7 @@ function Donor.new(ctx)
         local r,g,b,a=atlas:getPixel(sx+px,sy+py)
         local dx,dy=i%2*8+x,math.floor(i/2)*8+y
         rawImage:setPixel(dx,dy,r,g,b,a)
+        if tileOverrides and tileOverrides[raw]then r,g,b,a=tileOverrides[raw]:getPixel(x,y)end
         if roof and raw>=10 and raw<=18 then r,g,b,a=roof:getPixel((raw-10)*8+px,py) end
         local shade=math.max(0,math.min(3,math.floor((1-r)*3+.5)))
         local col=palette[shade+1]
@@ -250,7 +251,17 @@ function Donor.new(ctx)
       end end
     end
     local fingerprint=hash(bytesFor(rawImage))
-    checkFiles(ref,{metadata=setBytes,image=imageBytes})
+    local files={metadata=setBytes,image=imageBytes}
+    -- Neutral source hashes do not identify GBC output palettes/roof artwork.
+    -- Check those imported files during this cached decode as well.
+    for _,name in ipairs({'maps','palettes','roofs'})do
+      if ref.fingerprints and ref.fingerprints[name] then
+        local _,bytes=module(ref.game,'data/generated/'..name..'.lua')
+        files[name]=bytes
+      end
+    end
+    if roofImageBytes then files.roofImage=roofImageBytes end
+    checkFiles(ref,files)
     return {under=under,over=over,foreground=foreground,hash=fingerprint,sourceHash=fingerprint,
       game=ref.game,tileset=ref.tileset,id=ref.id,quadrant=q,daytime=daytime,
       cacheIdentity=importIdentity(ref.game)}
@@ -416,6 +427,19 @@ function Donor.new(ctx)
   -- Palette cycling and special scheduling functions remain unsupported.
   function self:frames(ref,spec)
     local ok,result=pcall(function()
+      if type(ref)=='table'and generations[ref.game]and generations[ref.game]<3 then
+        assert(type(spec)=='table'and spec.kind=='gb','GB native animation specification required')
+        assert(ctx.gbAnimation and type(ctx.gbAnimation.frames)=='function','GB animation decoder unavailable')
+        assert(self:cell(ref),'GB animation donor fingerprint changed')
+        local key=table.concat({'gb',ref.game,ref.tileset,tostring(ref.id),tostring(ref.quadrant or 0),
+          tostring(ref.map or ''),tostring(ref.daytime or 'DAY'),tostring(ref.monochrome),tostring(ref.hash),
+          tostring(spec.bank),tostring(spec.hash),tostring(spec.manifestHash)},':')
+        if not animations[key]then
+          animations[key]=ctx.gbAnimation.frames({module=module,sheet=sheet,hash=hash,newImageData=newData,
+            decode=function(reference,overrides)return gb(reference,generations[reference.game],overrides)end},ref,spec)
+        end
+        return animations[key]
+      end
       assert(type(ref)=='table' and (ref.game=='emerald' or ref.game=='firered' or ref.game=='leafgreen'),
         'Animated donor cartridge is unsupported')
       assert(ref.kind==nil,'Native animation banks require a metatile donor')
@@ -583,7 +607,7 @@ function Donor.new(ctx)
   end
   function self:sourceIdentity(game)
     local ok,result=pcall(function()
-      assert(generations[game] and generations[game]<3,'Source import identity requires a GB cartridge')
+      assert(generations[game],'Source import identity requires a supported cartridge')
       return importIdentity(game)
     end)
     if not ok then return nil,tostring(result)end

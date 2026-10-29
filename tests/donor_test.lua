@@ -99,6 +99,16 @@ assert(crystal,err)
 r,g,b,a=crystal.under:getPixel(0,0);eq(r,1);eq(g,0);eq(b,0,'bank1 and horizontal flip used')
 local pr,pg,pb,pa=crystal.over:getPixel(0,0);eq(pa,1);eq(pr,r);eq(pg,g);eq(pb,b)
 eq(crystal.sourceHash~=red.sourceHash,true,'fingerprint includes bank and flip')
+-- ColoredGBpixelsareguardedbypalette/mapfilesaswellasneutralgeometry.
+local guardedGbc={game='crystal',tileset='TEST',id=0,map='TEST_MAP',hash=crystal.sourceHash,
+ fingerprints={maps=hash(files['crystal/data/generated/maps.lua']),palettes=hash(files['crystal/data/generated/palettes.lua'])}}
+assert(reader:cell(guardedGbc))
+for _,name in ipairs({'maps','palettes'})do
+ local path='crystal/data/generated/'..name..'.lua';local previous=files[path]
+ local changed=previous..'-new';files[path]=changed;decoded[changed]=decoded[previous];reader:invalidate()
+ local bad,why=reader:cell(guardedGbc);eq(bad,nil);eq(why:find('Donor source changed: '..name,1,true)~=nil,true)
+ files[path]=previous;reader:invalidate()
+end
 local native,err=reader:cell({game='emerald',tileset='PAIR',id=77})
 assert(native,err)
 r,g,b,a=native.under:getPixel(0,0);eq(r,1);eq(g,0);eq(b,0);eq(a,1)

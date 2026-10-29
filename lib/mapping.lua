@@ -6,12 +6,14 @@ M.generations=generations
 M.games={'red','blue','yellow','gold','silver','crystal','ruby','sapphire','emerald','firered','leafgreen'}
 -- Cartridge identity belongs to source/donor references; the target theme
 -- pools Gen 3's compatible art under one choice.
-M.themes={gen3=3,red=1,blue=1,yellow=1,gold=2,silver=2,crystal=2}
+M.themes={gen1=1,gen2=2,gen3=3,red=1,blue=1,yellow=1,gold=2,silver=2,crystal=2}
 function M.normalizeStyle(style)
   return generations[style]==3 and 'gen3' or style
 end
 function M.donorMatches(style,game)
   if style=='gen3' then return generations[game]==3 end
+  if style=='gen1' then return generations[game]==1 end
+  if style=='gen2' then return generations[game]==2 end
   return M.themes[style]~=nil and game==style
 end
 
@@ -68,6 +70,7 @@ local function validRef(style,ref)
     and type(ref.tileset)=='string' and ref.tileset~='' and integer(ref.id,65535)
     and type(ref.hash)=='string' and #ref.hash==64 and ref.hash:match('^[0-9a-f]+$')~=nil
     and (generations[ref.game]==3 or integer(ref.quadrant or 0,3)) and origin(ref)
+    and (style~='gen1'or ref.monochrome==true)
 end
 function M.validate(row)
   if type(row)~='table' then return nil,'mapping must be a table' end
@@ -95,12 +98,18 @@ function M.validate(row)
     if not fingerprint(row.sourceFiles.metadata) or not fingerprint(row.sourceFiles.image)
       or not fingerprint(row.sourceFiles.maps) then return nil,'source metadata, image and map fingerprints are required' end
   end
+  if row.overMask~=nil then
+    if generations[row.game]~=3 or type(row.overMask)~='string' or #row.overMask~=256
+      or row.overMask:find('[^01]') then return nil,'Gen3 overhead mask must contain256 binary pixels' end
+  end
+  if generations[row.game]==3 and row.map~=nil then return nil,'Gen3 map scopes require a separate per-map atlas' end
   if row.artOverlay~=nil then
     local overlay=row.artOverlay
     if type(overlay)~='table' or type(overlay.asset)~='string'
       or not overlay.asset:match('^assets/original/[%w_/%-%.]+%.png$')
       or overlay.asset:find('..',1,true) or not fingerprint(overlay.hash)
       or type(overlay.preserveRects)~='table' then return nil,'invalid original artwork overlay' end
+    if overlay.mode~=nil and overlay.mode~='over'then return nil,'invalid original overlay mode' end
     for _,rect in ipairs(overlay.preserveRects)do
       if type(rect)~='table' or #rect~=4 or not integer(rect[1],15) or not integer(rect[2],15)
         or not integer(rect[3],16) or not integer(rect[4],16) or rect[3]==0 or rect[4]==0
@@ -122,6 +131,7 @@ function M.validate(row)
     if generations[ref.game]<3 and not integer(ref.quadrant or 0,3) then return nil,'invalid donor quadrant' end
     if type(ref.hash)~='string' or #ref.hash~=64 or not ref.hash:match('^[0-9a-f]+$') then return nil,'donor fingerprint required' end
     if not origin(ref) then return nil,'invalid native donor origin' end
+    if row.style=='gen1'and ref.monochrome~=true then return nil,'Gen1 theme requires original monochrome donors' end
   elseif row.asset then
     if row.kind~='original' and row.kind~='third_party' then return nil,'asset origin must be identified' end
     local prefix=row.kind=='original' and 'original' or 'third_party'
@@ -136,7 +146,8 @@ function M.validate(row)
     end
   elseif row.parts then
     if row.kind~='native_composite' then return nil,'native composition origin required' end
-    if type(row.parts)~='table' or #row.parts<1 or #row.parts>16 then return nil,'invalid native composition parts' end
+    local maxParts=generations[row.game]==3 and (row.style=='gen1'or row.style=='gen2')and 32 or 16
+    if type(row.parts)~='table' or #row.parts<1 or #row.parts>maxParts then return nil,'invalid native composition parts' end
     for key in pairs(row.parts)do
       if not integer(key,#row.parts) or key==0 then return nil,'native composition parts must be a dense array' end
     end
@@ -144,6 +155,11 @@ function M.validate(row)
     for i=1,#row.parts do
       local part=row.parts[i]
       if type(part)~='table' or not validRef(row.style,part.donor) then return nil,'invalid composition donor' end
+      if part.animated~=nil and type(part.animated)~='boolean'then return nil,'invalid animated composition part' end
+      if part.animated and not(row.animated==true and type(row.animation)=='table'and row.animation.kind=='gb')then
+        return nil,'animated GB parts need an animated row and native GB animation profile'
+      end
+      if part.animated and part.layers~=nil then return nil,'animated GB parts cannot select native layers' end
       if not selectedLayers(part) then return nil,'invalid composition layer selection or fingerprint' end
       local sx,sy,x,y,w,h=part.srcX or 0,part.srcY or 0,part.x or 0,part.y or 0,part.w,part.h
       if not integer(sx,15) or not integer(sy,15) or not integer(x,15) or not integer(y,15)
@@ -172,11 +188,21 @@ function M.validate(row)
   if row.animated~=nil and type(row.animated)~='boolean' then return nil,'invalid animated tile flag' end
   if row.animated then
     local animation=row.animation
+    if animation~=nil and type(animation)~='table'then return nil,'invalid animation profile' end
     local animatedRef=ref or ((row.parts or row.asset) and row.base)
-    if (row.parts or row.asset) and (generations[row.game]>=3 or not row.base or not animation or row.base.kind~=nil) then
+    if (row.parts or row.asset) and not(animation and animation.kind=='gb') and (generations[row.game]>=3 or not row.base or not animation or row.base.kind~=nil) then
       return nil,'animated composition requires a GB host and fingerprint-checked metatile base bank'
     end
-    if animation then
+    if animation and animation.kind=='gb' then
+      if row.parts then
+        local marked
+        for _,part in ipairs(row.parts)do if part.animated then animatedRef=part.donor;marked=true;break end end
+        if not marked then return nil,'GB animation needs a marked source part' end
+      end
+      if generations[row.game]~=3 or not animatedRef or generations[animatedRef.game]>=3
+        or (animation.bank~='water'and animation.bank~='flower')
+        or not fingerprint(animation.hash)or not fingerprint(animation.manifestHash)then return nil,'GB water animation needs checked native source files and a Gen3 host' end
+    elseif animation then
       if type(animation)~='table' or not animatedRef or animatedRef.kind~=nil or generations[animatedRef.game]~=3
         or type(animation.bank)~='string' or not animation.bank:match('^[%w_]+$')
         or type(animation.hash)~='string' or #animation.hash~=64 or not animation.hash:match('^[0-9a-f]+$')
