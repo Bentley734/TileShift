@@ -1,0 +1,308 @@
+{
+  "description": "User-reviewed Azalea floor, shadow and planter artwork. Apply after regenerating gym/shared mappings, then run interior_floor_cleanup.py --activate for remaining furniture. Imported references remain source-hashed.",
+  "recipes": {
+    "johto_bug_gym_turf": {
+      "kind": "native",
+      "donor": {
+        "id": 1,
+        "game": "firered",
+        "tileset": "pallet_outdoor",
+        "hash": "fd831cddaec923ae603b552833a9be282af7d55b0f32b1cd46fef4d700ae2be6"
+      }
+    },
+    "johto_bug_gym_clear_path": {
+      "kind": "original",
+      "asset": "assets/original/azalea-lawn/pink-floor.png",
+      "assetFileHash": "3d69ac0831c1d2c7de45a3da5ebdde92af90611442edd8108733f9a2a1152a5f"
+    },
+    "dense_forest_tree_northwest": {
+      "kind": "original",
+      "base": {
+        "id": 1,
+        "game": "firered",
+        "tileset": "pallet_outdoor",
+        "hash": "fd831cddaec923ae603b552833a9be282af7d55b0f32b1cd46fef4d700ae2be6"
+      },
+      "asset": "assets/original/azalea-lawn/oak-shadow-q0.png",
+      "assetFileHash": "b071d8aeed0eebbeac16ded6ffd4ed07635a0f8cb7169a9cf93c0d55c21a2a17"
+    },
+    "dense_forest_tree_northeast": {
+      "kind": "original",
+      "base": {
+        "id": 1,
+        "game": "firered",
+        "tileset": "pallet_outdoor",
+        "hash": "fd831cddaec923ae603b552833a9be282af7d55b0f32b1cd46fef4d700ae2be6"
+      },
+      "asset": "assets/original/azalea-lawn/oak-shadow-q1.png",
+      "assetFileHash": "6a20536a3757af657d423227c664db3f09481926fb7639f25a730b7e0b4abe5a"
+    },
+    "dense_forest_tree_southwest": {
+      "kind": "original",
+      "base": {
+        "id": 1,
+        "game": "firered",
+        "tileset": "pallet_outdoor",
+        "hash": "fd831cddaec923ae603b552833a9be282af7d55b0f32b1cd46fef4d700ae2be6"
+      },
+      "asset": "assets/original/azalea-lawn/oak-shadow-q2.png",
+      "assetFileHash": "fb440a7e753ba54daca6c562bbd3aa82eb9ce11f9b2bee0d4bd5d2850f3ef1fa"
+    },
+    "dense_forest_tree_southeast": {
+      "kind": "original",
+      "base": {
+        "id": 1,
+        "game": "firered",
+        "tileset": "pallet_outdoor",
+        "hash": "fd831cddaec923ae603b552833a9be282af7d55b0f32b1cd46fef4d700ae2be6"
+      },
+      "asset": "assets/original/azalea-lawn/oak-shadow-q3.png",
+      "assetFileHash": "a8a788e21d0a18c3b3846f13d503c1c7ebede9c6096eed8e6e8e673070a609bd"
+    },
+    "johto_gym_complete_statue_head": {
+      "kind": "native",
+      "donor": {
+        "id": 696,
+        "game": "firered",
+        "tileset": "building__rom_082d4d4c",
+        "hash": "52cce7d3daf32e150c3865ba88eb1ce8fc40dc1b89c3e973e332af36278ce2da"
+      },
+      "artOverlay": {
+        "mode": "over",
+        "preserveRects": [
+          [
+            0,
+            0,
+            16,
+            2
+          ],
+          [
+            2,
+            2,
+            13,
+            1
+          ],
+          [
+            3,
+            3,
+            10,
+            2
+          ],
+          [
+            2,
+            5,
+            12,
+            1
+          ],
+          [
+            1,
+            6,
+            14,
+            1
+          ],
+          [
+            0,
+            7,
+            16,
+            9
+          ]
+        ],
+        "hash": "3d69ac0831c1d2c7de45a3da5ebdde92af90611442edd8108733f9a2a1152a5f",
+        "asset": "assets/original/azalea-lawn/pink-floor.png"
+      }
+    },
+    "johto_gym_complete_statue_plinth": {
+      "kind": "native",
+      "donor": {
+        "id": 697,
+        "game": "firered",
+        "tileset": "building__rom_082d4d4c",
+        "hash": "38a43c62edc99840fbbd6c6a361db0fcdbfbafe012ce198609383f06472c14d6"
+      },
+      "artOverlay": {
+        "mode": "over",
+        "preserveRects": [
+          [
+            0,
+            0,
+            16,
+            15
+          ],
+          [
+            1,
+            15,
+            14,
+            1
+          ]
+        ],
+        "hash": "3d69ac0831c1d2c7de45a3da5ebdde92af90611442edd8108733f9a2a1152a5f",
+        "asset": "assets/original/azalea-lawn/pink-floor.png"
+      }
+    },
+    "household_rug_left": {
+      "kind": "native_composite",
+      "base": {
+        "id": 670,
+        "game": "firered",
+        "tileset": "building__rom_082d4d4c",
+        "hash": "4a3aafb0433b87b9ac612d5568b70f87a3f6000281eb732c6167cf5c1571fea2"
+      },
+      "parts": [
+        {
+          "y": 0,
+          "srcX": 11,
+          "w": 5,
+          "x": 3,
+          "h": 12,
+          "srcY": 4,
+          "donor": {
+            "id": 18,
+            "game": "firered",
+            "tileset": "player_house",
+            "hash": "a0470d3d4d0e7a1e3aba3e75be5c2051f6a3504d3d7ca773e6870e6a382a9a24"
+          }
+        },
+        {
+          "y": 0,
+          "srcX": 0,
+          "w": 8,
+          "x": 8,
+          "h": 12,
+          "srcY": 4,
+          "donor": {
+            "id": 19,
+            "game": "firered",
+            "tileset": "player_house",
+            "hash": "238ed2532359e508f6522d2a6685f49a5f11f71ee7747fcdc237e116e4844a25"
+          }
+        },
+        {
+          "y": 12,
+          "srcX": 11,
+          "w": 5,
+          "x": 3,
+          "h": 4,
+          "srcY": 0,
+          "donor": {
+            "id": 26,
+            "game": "firered",
+            "tileset": "player_house",
+            "hash": "9b4fe26a1c9df8ee5930ac991af2d8a07d78aaeda04e994cff51fa6e73246afb"
+          }
+        },
+        {
+          "y": 12,
+          "srcX": 0,
+          "w": 8,
+          "x": 8,
+          "h": 4,
+          "srcY": 0,
+          "donor": {
+            "id": 27,
+            "game": "firered",
+            "tileset": "player_house",
+            "hash": "ec7924c4464b5611505316a16f937970c041f4c441c83ba1325ed7e7a5bf656b"
+          }
+        }
+      ]
+    },
+    "household_rug_right": {
+      "kind": "native_composite",
+      "base": {
+        "id": 670,
+        "game": "firered",
+        "tileset": "building__rom_082d4d4c",
+        "hash": "4a3aafb0433b87b9ac612d5568b70f87a3f6000281eb732c6167cf5c1571fea2"
+      },
+      "parts": [
+        {
+          "y": 0,
+          "srcX": 8,
+          "w": 8,
+          "x": 0,
+          "h": 12,
+          "srcY": 4,
+          "donor": {
+            "id": 19,
+            "game": "firered",
+            "tileset": "player_house",
+            "hash": "238ed2532359e508f6522d2a6685f49a5f11f71ee7747fcdc237e116e4844a25"
+          }
+        },
+        {
+          "y": 0,
+          "srcX": 0,
+          "w": 5,
+          "x": 8,
+          "h": 12,
+          "srcY": 4,
+          "donor": {
+            "id": 20,
+            "game": "firered",
+            "tileset": "player_house",
+            "hash": "0e2e0dc0206ad73765a36130d5053e6bae2286de0e4d2957077a89c91e5919d5"
+          }
+        },
+        {
+          "y": 12,
+          "srcX": 8,
+          "w": 8,
+          "x": 0,
+          "h": 4,
+          "srcY": 0,
+          "donor": {
+            "id": 27,
+            "game": "firered",
+            "tileset": "player_house",
+            "hash": "ec7924c4464b5611505316a16f937970c041f4c441c83ba1325ed7e7a5bf656b"
+          }
+        },
+        {
+          "y": 12,
+          "srcX": 0,
+          "w": 5,
+          "x": 8,
+          "h": 4,
+          "srcY": 0,
+          "donor": {
+            "id": 28,
+            "game": "firered",
+            "tileset": "player_house",
+            "hash": "fe464fe96023623f009eeaa73bc39173c91e17f495f34f4da0ea3a9e38c031e2"
+          }
+        }
+      ]
+    },
+    "johto_house_complete_single_flowerpot": {
+      "kind": "original",
+      "base": {
+        "id": 1,
+        "game": "firered",
+        "tileset": "pallet_outdoor",
+        "hash": "fd831cddaec923ae603b552833a9be282af7d55b0f32b1cd46fef4d700ae2be6"
+      },
+      "asset": "assets/original/interior-flowerpot/flowerpot.png",
+      "assetFileHash": "85c5316f13e496e1014159eb36310b114d40c0eda7f8f03a65a577edbfe983d6"
+    },
+    "johto_house_complete_single_flowerpot:pink": {
+      "kind": "original",
+      "asset": "assets/original/azalea-lawn/pink-floor.png",
+      "assetFileHash": "3d69ac0831c1d2c7de45a3da5ebdde92af90611442edd8108733f9a2a1152a5f",
+      "artOverlay": {
+        "mode": "over",
+        "preserveRects": {},
+        "hash": "85c5316f13e496e1014159eb36310b114d40c0eda7f8f03a65a577edbfe983d6",
+        "asset": "assets/original/interior-flowerpot/flowerpot.png"
+      }
+    },
+    "short_nonencounter_grass": {
+      "kind": "native",
+      "donor": {
+        "id": 1,
+        "game": "firered",
+        "tileset": "pallet_outdoor",
+        "hash": "fd831cddaec923ae603b552833a9be282af7d55b0f32b1cd46fef4d700ae2be6"
+      }
+    }
+  }
+}

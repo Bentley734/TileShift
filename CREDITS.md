@@ -203,3 +203,5 @@ Only repeating roof/wall sections are arranged to retain Gen3 building footprint
 The two classic laboratory vents are original built-in imagegen artwork. Their
 full prompts, source hashes, uniform integer 26 normalization, binary alpha and
 four-color palettes are recorded in assets/original/classic-vent/provenance.json.
+
+Azalea Gym's pink patterned floor and oak ground shadow are original code-authored assets. The existing original oak pixels are preserved unchanged above the shadow; native FR/LG lawn artwork is read from the player's import. File fingerprints are recorded in assets/original/azalea-lawn/provenance.json.

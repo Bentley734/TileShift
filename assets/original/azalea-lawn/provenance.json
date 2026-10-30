@@ -1,0 +1,11 @@
+{
+  "origin": "Original code-native16px pink floor pattern and alpha ground shadow beneath unchanged original Johto oak pixels. Native ROM artwork is not bundled.",
+  "files": {
+    "flat-grass.png": "46a1735850aa084e4455e6423b67f909012b3d3f377c34923514ca97741f29b7",
+    "oak-shadow-q0.png": "b071d8aeed0eebbeac16ded6ffd4ed07635a0f8cb7169a9cf93c0d55c21a2a17",
+    "oak-shadow-q1.png": "6a20536a3757af657d423227c664db3f09481926fb7639f25a730b7e0b4abe5a",
+    "oak-shadow-q2.png": "fb440a7e753ba54daca6c562bbd3aa82eb9ce11f9b2bee0d4bd5d2850f3ef1fa",
+    "oak-shadow-q3.png": "a8a788e21d0a18c3b3846f13d503c1c7ebede9c6096eed8e6e8e673070a609bd",
+    "pink-floor.png": "3d69ac0831c1d2c7de45a3da5ebdde92af90611442edd8108733f9a2a1152a5f"
+  }
+}

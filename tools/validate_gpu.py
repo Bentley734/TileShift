@@ -2525,6 +2525,11 @@ local function run()
   {id='RUINS_OF_ALPH_KABUTO_CHAMBER',stem='johto-ruins_of_alph_kabuto_chamber',complete=true},
   {id='RUINS_OF_ALPH_KABUTO_WORD_ROOM',stem='johto-ruins_of_alph_kabuto_word_room',complete=true,warm=true},
   {id='DRAGON_SHRINE',stem='johto-dragon_shrine',complete=true},
+  {id='AZALEA_GYM',stem='azalea-gym',complete=true},
+  {game='gold',id='AZALEA_GYM',stem='azalea-gym',complete=true},
+  {game='silver',id='AZALEA_GYM',stem='azalea-gym',complete=true},
+  {id='RADIO_TOWER_2F',stem='radio-tower-2f',complete=true},
+  {id='BILLS_HOUSE',stem='bills-house'},
   {id='ELMS_LAB',stem='elmslab',complete=true},
   {id='UNION_CAVE_B1F',stem='unioncave',ladders=true},
   {id='ICE_PATH_B1F',stem='icepath',ladders=true}})do

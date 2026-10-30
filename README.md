@@ -1,7 +1,9 @@
 # TileShift
 
 TileShift swaps world artwork through individually reviewed tile matches.
-Version 0.27.0 finishes **Oldale Town** in both classic styles. Selectable
+Version 0.28.0 cleans up Gen 2 interior furniture backgrounds: chairs, plants, bookcases, radio desks and shop displays now sit on their room's selected floor. Azalea Gym uses FR/LG short grass, a shaded tree and its pink patterned paths; the four planters beside the tree retain pink backgrounds. Additional exact furniture matches fill gaps in Gen 2 Kanto houses. Other Gen 2 Kanto interiors remain partially converted.
+
+Classic themes completely retile **Oldale Town** in both styles. Selectable
 **Gen 1** and **Gen 2** background themes are available in
 **Ruby, Sapphire, Emerald, FireRed and LeafGreen**. Gen 1 uses Red's original
 four-shade monochrome artwork; Gen 2 uses one shared Crystal style with its
