@@ -1,0 +1,63 @@
+{
+  "origin": "FireGold 1.4 by Tzx211; artwork extracted from the user-supplied ROM",
+  "sourceUrl": "https://www.pokecommunity.com/threads/pok%C3%A9mon-fire-gold-1-4.473130/",
+  "sourceRom": "firegold1.4.gba",
+  "rom_sha256": "c65f698ffb844b99836a36dc0752e8b57ebd45be53be364cb3cfe52aa0cc74ce",
+  "source_map": "g03_m001",
+  "source_rect": [
+    384,
+    352,
+    464,
+    432
+  ],
+  "ground_sample_rectangles": [
+    [
+      384,
+      336,
+      400,
+      352
+    ],
+    [
+      368,
+      384,
+      384,
+      400
+    ]
+  ],
+  "removed_connected_exterior_pixels": 862,
+  "retained_native_pixels": 5538,
+  "source_overhead_pixels_unchanged": true,
+  "integer_native_scale": 1,
+  "native_entrance": {
+    "x": 26,
+    "y": 26
+  },
+  "alignment": "Native column2 -> original GSC column1; left16px decorative extension",
+  "files": {
+    "firegold-center-0-0.png": "53e89813a132cd171dc364f043012cc3b02e32c2230681c1149dd11449fa660a",
+    "firegold-center-1-0.png": "13782c300cdb876fd1424d5cbecc92eb4376a7a1702ea09da3a8e40de98397bc",
+    "firegold-center-2-0.png": "aa9868b7e20f00299739b67f092b22881da3a2258647f0401aa4985745d2afff",
+    "firegold-center-3-0.png": "75c83d057d2cfd3c121296b2be9090ac7375742654dd43e67b7fb15b8003750e",
+    "firegold-center-4-0.png": "8d35770df59c70a03b220f7068b3e89c9e308c22b180bdbfcebcafd641542178",
+    "firegold-center-0-1.png": "eb7e6756c5a6aa60d7add74ac06155a66af4b69fc80d75e676ca255fd2a006bf",
+    "firegold-center-1-1.png": "59832e7d40e3ad890b2f79fa528a093e29001569520627b12a6582242f2dd896",
+    "firegold-center-2-1.png": "736160b981570a4d8c1775a61dd12eab24900d08bca31b198befcdaba7a6de5b",
+    "firegold-center-3-1.png": "16639903851bfabac986971555c4e056ed0a03c5fd406a96c15324b38ffe49d6",
+    "firegold-center-4-1.png": "3997796bc0709acef3e1b868e3f09bf9849816d70ab9bde390aabfd59361433f",
+    "firegold-center-0-2.png": "6b8fe85543915daadb9c8401a2af352d0774659b26ed04e482a8929040c3034e",
+    "firegold-center-1-2.png": "3cd122f7e44844fe28aeca1bd1120f58bbccae82cdca647d8b227b85f437b8ab",
+    "firegold-center-2-2.png": "4f73e3255edb8487072d1e0854b0c6b101837d5a9e2d58215275c3728cd46bc7",
+    "firegold-center-3-2.png": "50ab6080a44d463b79e61158d6b6f279c3e8079b84a9804594033584bb8a083b",
+    "firegold-center-4-2.png": "b0581132ddd7e43348f2587c9d3aa7186715a3da4a5bf93e68abad733c02dace",
+    "firegold-center-0-3.png": "529ca35a84c5445270007922ed1e29b52b11d9bc7c39ff860ae112cad7a7cf8e",
+    "firegold-center-1-3.png": "e520db900426c46eb56233d2a72807b01dfb8acb2293d747aee3c7b6fef939de",
+    "firegold-center-2-3.png": "35ed3987048d5d0047564f707d6e676eab8fe9e80910a5026969c6799b18f126",
+    "firegold-center-3-3.png": "ca3133c13739434591de9aee22a1b1dde2428803b9ad65eb27c325c7bfb2d1d2",
+    "firegold-center-4-3.png": "108bd82854747062bd335fc0db298f5f70d09de608ab114071f84af33cab3393",
+    "firegold-center-0-4.png": "d28ee10c0e9eea82a1d4db82b4e10e58e9001af0ab824b60304e6f95c9f92bff",
+    "firegold-center-1-4.png": "cbd374713c7aec921bc2d71a53e8847da1baf834381f26294ec05119587d4845",
+    "firegold-center-2-4.png": "43b9831a22849d40d39c17ca0c136d24f775c914314ed48e4bb412e34d402faf",
+    "firegold-center-3-4.png": "6bff4f1f95ddf216f30d02cff1c76ac37f07a1fc180e8844f5ee796cf2660799",
+    "firegold-center-4-4.png": "d835738f6e2ad1005aab8a22f14fa83827ee9f4d7ed9fd64a977b18d41b86849"
+  }
+}

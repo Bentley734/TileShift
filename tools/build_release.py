@@ -1,4 +1,4 @@
-"""Build and verify the installable TileShift ZIP; never include imported art."""
+"""Build verified TileShift ZIP; selected user-authorized hack artwork only, never ROMs."""
 from __future__ import annotations
 
 import argparse
@@ -35,7 +35,7 @@ def main() -> None:
     asset_files = sorted(path for path in (root / 'assets').rglob('*') if path.is_file())
     allowed = ('third_party/j-treecko252/',
                'third_party/magiscarf/', 'third_party/metalflygon08/', 'user_flora/', 'original/sprout-tower/', 'original/flora/', 'original/slowpoke-well/', 'original/olivine-lighthouse/', 'original/compact-conifer/', 'original/ecruteak-v2/', 'original/bell-wide/', 'original/center-expanded/')
-    allowed += ('original/classic-vent/', 'original/ilex-shrine/', 'original/whirlpool/', 'original/park-bench/', 'third_party/peekychew/')
+    allowed += ('third_party/johto-hacks/', 'original/classic-vent/', 'original/ilex-shrine/', 'original/whirlpool/', 'original/park-bench/', 'third_party/peekychew/')
     interior_folders = ('original/azalea-lawn', 'original/interior-beacon', 'original/interior-computer', 'original/interior-flowerpot', 'original/interior-lattice', 'original/interior-painting', 'original/interior-pillar', 'original/interior-planter', 'original/interior-radio', 'original/interior-railpost', 'original/interior-stairs', 'original/interior-tower-modules')
     allowed += tuple(folder + '/' for folder in interior_folders)
     for path in asset_files:
@@ -49,6 +49,10 @@ def main() -> None:
         provenance = json.loads((root / 'assets' / folder / 'provenance.json').read_text(encoding='utf-8'))
         for name, digest in provenance['files'].items():
             assert hashlib.sha256((root / 'assets' / folder / name).read_bytes()).hexdigest() == digest, 'Interior artwork provenance fingerprint changed'
+    for record in (root / 'assets/third_party/johto-hacks').rglob('provenance.json'):
+        provenance = json.loads(record.read_text(encoding='utf-8'))
+        for name, digest in provenance['files'].items():
+            assert hashlib.sha256((record.parent / name).read_bytes()).hexdigest() == digest, 'Hack artwork provenance changed'
     fan = root / 'assets/third_party/j-treecko252'
     provenance = json.loads((fan / 'provenance.json').read_text(encoding='utf-8'))
     assert hashlib.sha256((fan / 'compact-tree.png').read_bytes()).hexdigest() == provenance['extraction']['png_sha256']

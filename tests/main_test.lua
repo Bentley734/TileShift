@@ -79,7 +79,7 @@ for _,gameId in ipairs(games)do
     if path=='lib/roof_catalog.lua'or path=='lib/side_catalog.lua'or path=='lib/center_mart_roofs.lua'or path=='lib/goldenrod_roofs.lua'or path=='lib/pallet_roofs.lua'or path=='lib/johto_roofs.lua'then return 'return{}'end
     if path=='mappings/reverse_kanto.lua'or path=='mappings/reverse_hoenn.lua'or path=='mappings/reverse_oldale.lua'then return nil end
     if path=='lib/gb_animation.lua'then return 'return {}'end
-    if path=='lib/roofs.lua' or path=='lib/vegetation.lua' or path=='lib/flora.lua' or path=='lib/flora_catalog.lua' or path=='lib/water_styles.lua' then
+    if path=='lib/roofs.lua' or path=='lib/vegetation.lua' or path=='lib/flora.lua' or path=='lib/flora_catalog.lua' or path=='lib/johto_hack_flora.lua' or path=='lib/water_styles.lua' then
       local file=assert(io.open(root..'/'..path,'rb'));local source=file:read('*a');file:close();return source
     end
     if path=='mappings/trees.lua' then
@@ -101,6 +101,16 @@ for _,gameId in ipairs(games)do
     return 'return __tileMainFixture.adapters['..gen..']'
   end
   entry(mod)
+  local hackCatalogRead=false
+  for _,path in ipairs(fixture.reads)do if path=='lib/johto_hack_flora.lua'then hackCatalogRead=true end end
+  eq(hackCatalogRead,generation==2,'native Johto foliage routes only to Gen2; other game preferences stay unchanged')
+  local treeChoices=mod.exports.flora:choices('trees')
+  eq(treeChoices[2][2],'random');eq(treeChoices[3][2],'mixed','native Johto choices retain connected-area customization modes')
+  if generation==2 then
+    eq(treeChoices[4][2],'johto-hack-crystaldust-conifer','Gen2 numbered choices begin with checked native foliage')
+  else
+    eq(treeChoices[4][2],'natural-1-1','other generations retain their original numbered artwork choices')
+  end
   eq(fixture.composerCreations,nil,'native compositor stays lazy at startup')
   local compositionRow={kind='native_composite'}
   eq(fixture.sessionCtx.composeFrames(compositionRow),'animated composition','main dispatches animated composite through frames API')

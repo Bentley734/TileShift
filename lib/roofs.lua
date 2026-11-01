@@ -16,14 +16,16 @@ function R.new(ctx)
       and type(row.buildingW)=='number'and type(row.buildingH)=='number'
       and row.buildingX>=0 and row.buildingY>=0 and row.buildingW>0 and row.buildingH>0
       and row.buildingX%1==0 and row.buildingY%1==0 and row.buildingW%1==0 and row.buildingH%1==0
-      and row.x==(row.side=='left'and row.buildingX-1 or row.buildingX+row.buildingW)
+      and type(row.x)=='number'and row.x%1==0
+      and ((row.side=='left'and row.x>=row.buildingX-2 and row.x<row.buildingX)
+        or(row.side=='right'and row.x>=row.buildingX+row.buildingW and row.x<=row.buildingX+row.buildingW+1))
       and row.y>=row.buildingY and row.y<row.buildingY+row.buildingH
       and type(row.sourceX)=='number'and row.sourceX%1==0
     local above=row.side==nil and row.buildingY==row.y+1
     assert((row.game=='red'or row.game=='blue'or row.game=='yellow'or row.game=='gold'or row.game=='silver'or row.game=='crystal')and row.style=='gen3'
       and (row.kind=='original'or row.kind=='third_party'or row.kind=='native_composite')
       and row.map and row.x and row.y and(above or boundedSide),
-      'Decoration must occupy one upper row or one adjacent side column')
+      'Decoration must occupy one upper row or at most two adjacent side columns')
     local games=groups[row.game]or{};groups[row.game]=games
     local maps=games[row.map]or{};games[row.map]=maps
     maps[#maps+1]=row
@@ -71,11 +73,21 @@ function R.new(ctx)
         local texture=textures[textureKey]
         if texture and row.parts then texture:replacePixels(data)end
         if not texture then texture=G.newImage(data);texture:setFilter('nearest','nearest');textures[textureKey]=texture end
-        local entry={x=row.x,y=row.y,data=data,texture=texture,
+        local entry={x=row.x,y=row.y,data=data,texture=texture,role=row.role,
           frontY=row.side and(row.buildingY+row.buildingH)*16 or nil}
         local line=result.rows[row.y]or{};result.rows[row.y]=line
-        assert(not result.grid[row.y*65536+row.x],'Duplicate roof overhang')
-        result.grid[row.y*65536+row.x]=entry;line[#line+1]=entry
+        -- Adjacent native buildings may share a decorative cell. Retain their
+        -- draw order and separate physical front/behind boundaries. This
+        -- linked stack is constructed once, never rebuilt in map/actor draws.
+        local key=row.y*65536+row.x
+        local previous=result.grid[key]
+        if previous then
+          local depth=1
+          while previous.next do previous=previous.next;depth=depth+1 end
+          assert(depth<4,'More than four overlapping decorative entries')
+          previous.next=entry
+        else result.grid[key]=entry end
+        line[#line+1]=entry
       elseif ctx.warn then ctx.warn('TileShift skipped roof overhang: '..tostring(data))end
       end
     end
@@ -115,14 +127,19 @@ function R.new(ctx)
     for ty=math.floor(y0/16),math.floor((y1-1)/16)do
       for tx=math.floor(x0/16),math.floor((x1-1)/16)do
         local entry=cells.grid[ty*65536+tx]
-        if entry and(not entry.frontY or entity.py+12<entry.frontY)then
+        if entry then
           local xx,yy=math.max(x0,tx*16),math.max(y0,ty*16)
           local w,h=math.min(x1,tx*16+16)-xx,math.min(y1,ty*16+16)-yy
           if not quad then quad=G.newQuad(0,0,16,16,16,16)end
           quad:setViewport(xx-tx*16,yy-ty*16,w,h,16,16)
-          G.push('all');G.setShader();G.setColor(1,1,1,1)
-          G.draw(entry.texture,quad,math.floor(ox+xx*s),math.floor(oy+yy*s),0,s,s);G.pop()
-          if ctx.markTrueColor then ctx.markTrueColor(math.floor(ox+xx*s),math.floor(oy+yy*s),w*s,h*s)end
+          while entry do
+            if not entry.frontY or entity.py+12<entry.frontY then
+              G.push('all');G.setShader();G.setColor(1,1,1,1)
+              G.draw(entry.texture,quad,math.floor(ox+xx*s),math.floor(oy+yy*s),0,s,s);G.pop()
+              if ctx.markTrueColor then ctx.markTrueColor(math.floor(ox+xx*s),math.floor(oy+yy*s),w*s,h*s)end
+            end
+            entry=entry.next
+          end
         end
       end
     end

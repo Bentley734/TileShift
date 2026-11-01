@@ -1,7 +1,7 @@
 # TileShift
 
 TileShift swaps world artwork through individually reviewed tile matches.
-Version 0.28.0 cleans up Gen 2 interior furniture backgrounds: chairs, plants, bookcases, radio desks and shop displays now sit on their room's selected floor. Azalea Gym uses FR/LG short grass, a shaded tree and its pink patterned paths; the four planters beside the tree retain pink backgrounds. Additional exact furniture matches fill gaps in Gen 2 Kanto houses. Other Gen 2 Kanto interiors remain partially converted.
+Version 0.29.0 replaces generated Gen 2 artwork with checked graphics extracted from the user-supplied FireGold, CrystalDust and Liquid Crystal ROMs. Johto landmarks, expanded Centers, interior objects and Gen 2 foliage choices use these counterparts. The generated roofed Slowpoke Well remains at the user's request. Where the hacks have no matching background object, radios and the lighthouse beacon retain their original Gen 2 pixels in matching Gen 3 colors, with exterior floor pixels omitted. Native building pixels, complete door frames, original entrances and collision are preserved; small objects and whole large trees use only documented uniform integer reduction when their footprints require it. Gen 1 foliage choices stay unchanged. Gen 2 Kanto interiors remain partially converted.
 
 Classic themes completely retile **Oldale Town** in both styles. Selectable
 **Gen 1** and **Gen 2** background themes are available in
@@ -27,10 +27,11 @@ without suitable counterparts retain every original pixel in matching Gen3
 colors, including Kanto's fossil displays, laboratory instruments and League
 monument details, plus Johto's Unown inscriptions, Magnet Train, studio
 microphones and Dragon Shrine mural. Recoloring runs once when checked map
-artwork is built and cached. Imported native pixels are read from your own game
-imports and are not bundled in the mod.
+artwork is built and cached. Stock game references are read from your own imports. Selected user-supplied
+hack graphics and the original radio/beacon derivatives are packaged with
+source fingerprints and credits.
 
-Gen 2 Pokemon Centers retain selectable compact/expanded designs. Bell Tower uses the supplied original reference.
+Gen 2 Pokemon Centers retain selectable compact/expanded designs. Bell Tower uses native CrystalDust artwork.
 Its partial side tiles preserve the trees, ground and native map border underneath;
 the original entrance and collision footprint stay unchanged.
 Goldenrod uses the actual MetalFlygon08 Johto Gen3 Game Corner artwork,
@@ -111,7 +112,7 @@ art.
    also offer **Gen 1** and **Gen 2**. **Original** restores the host game's art.
    Fresh installations retain the existing Gen 3 default.
 
-Requires **Gen1Recomp 0.3.96 or newer**, within the 0.3.x series; also validated on 0.3.97. Reviewed replacements
+Requires **Gen1Recomp 0.3.96 or newer**, within the 0.3.x series; validated on 0.3.98. Reviewed replacements
 support all eleven games. Gen 3 hosts keep their native art with the Gen 3 style
 selected. Missing or changed donor cells are skipped, leaving the
 host artwork visible.
@@ -150,7 +151,7 @@ Options and the mod manager expose **Trees**, **Big Trees**, **Cut Trees**,
 **Flowers**, **Tall Grass** and **Water** independently. Each offers **Default**,
 numbered designs, **Random** (one design for the session) and **Mixed** (one stable style per connected area). Edge- and corner-touching
 tiles in the same category share one design; separate patches can vary. There are 87 small-tree/shrub choices, 89 Big
-Trees, 89 Cut Trees, 57 flowers, 14 grass designs and three animated water choices.
+Trees, 89 Cut Trees, 57 flowers, 14 grass designs and three animated water choices in Gen 1. Gen 2 instead offers 3 native small trees, 3 whole big trees, 5 cut-tree choices, 4 flowers and 3 grass styles from the supplied hacks; animated water choices remain available.
 Big Trees select one complete 32x32 design per tree, including in Mixed mode.
 Custom flowers and grass animate with anchored roots; custom tree leaves sway
 above fixed trunks. Grass foregrounds follow the same animation around actors.
@@ -183,9 +184,7 @@ credits and provenance for the user-supplied/generated and third-party designs.
 Pallet's buildings use native FireRed pieces rearranged to fit the original
 Gen 1 footprints. Door leaves and their complete lintels retain their native
 pixels, and entrances stay at the original warp positions. Native building pieces
-retain their pixel size. The supplied Sprout Tower design is separately fitted to its original
-64×80 footprint, retaining the complete lower entrance between the unchanged
-native side ledges. Default water, shoreline and flowers use verified native animation frames.
+retain their pixel size. Sprout Tower uses native CrystalDust modules at their original pixel scale, with transparent side extensions and upper stories naturally continuing beyond the north map boundary. Default water, shoreline and flowers use verified native animation frames.
 Roof corners show the surrounding grass or native animated coastal water,
 using native transparent roof layers. Both complete lab windows and awnings, including their
 top corners, are checked independently alongside the complete door frames.
@@ -201,8 +200,7 @@ their original Headbutt eligibility, encounters, blocking and shake animation.
 Gen 1 town boundaries and compact forest trees use a 16px tree by **J-Treecko252**,
 with additional palette credit to **Zyxeion**, under the artist's permission.
 See [CREDITS.md](CREDITS.md). This follows the remake's tree interpretation of
-the round Gen 1 boundary objects. Optional foliage and the refined tower now
-include the user-supplied/generated artwork described above.
+the round Gen 1 boundary objects. Gen 1 optional foliage retains the previously supplied/generated designs. Gen 2 uses the extracted native hack catalog.
 
 Every mapping records a source fingerprint, semantic role, reviewed donor
 reference or credited asset, and review evidence. Source metadata, map files
@@ -247,7 +245,7 @@ the current native atlas pixels.
 
 ## Validation and development
 
-The release is checked through the installed 0.3.97 loader for all eleven games,
+The release is checked through the installed 0.3.98 loader for all eleven games,
 Lua regression fixtures, live-import fingerprint checks, native donor animation
 comparisons, and isolated native LOVE GPU rendering. Checks cover the original
 GB-to-Gen3 conversion and actual Gen 3 FieldView renders with both classic themes.
@@ -268,7 +266,7 @@ From the parent workspace:
 
 ```text
 python TileShift/tests/run.py
-python TileShift/tools/validate_boot.py --payload PATH_TO_0.3.97.love
+python TileShift/tools/validate_boot.py --payload PATH_TO_0.3.98.love
 python TileShift/tools/preview.py --include-trees --include-posts --include-water --include-details --include-buildings --include-outdoors --tree-fixtures
 python TileShift/tools/validate_animation.py --game firered
 python TileShift/tools/validate_animation.py --game leafgreen

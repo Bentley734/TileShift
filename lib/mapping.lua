@@ -23,6 +23,15 @@ end
 local function fingerprint(value)
   return type(value)=='string' and #value==64 and value:match('^[0-9a-f]+$')~=nil
 end
+local function assetPath(path,kind)
+  if kind~='original' and kind~='third_party' then return false end
+  return type(path)=='string' and path:match('^assets/'..kind..'/[%w_/%-%.]+%.png$')~=nil
+    and not path:find('..',1,true)
+end
+local function credited(row)
+  return type(row.credit)=='string' and row.credit~=''
+    and type(row.sourceUrl)=='string' and row.sourceUrl:match('^https://')~=nil
+end
 local function dense(value,size)
   if type(value)~='table' or #value~=size then return false end
   for i=1,size do if rawget(value,i)==nil then return false end end
@@ -105,10 +114,10 @@ function M.validate(row)
   if generations[row.game]==3 and row.map~=nil then return nil,'Gen3 map scopes require a separate per-map atlas' end
   if row.artOverlay~=nil then
     local overlay=row.artOverlay
-    if type(overlay)~='table' or type(overlay.asset)~='string'
-      or not overlay.asset:match('^assets/original/[%w_/%-%.]+%.png$')
-      or overlay.asset:find('..',1,true) or not fingerprint(overlay.hash)
-      or type(overlay.preserveRects)~='table' then return nil,'invalid original artwork overlay' end
+    if type(overlay)~='table' or not assetPath(overlay.asset,overlay.kind or 'original')
+      or not fingerprint(overlay.hash)
+      or type(overlay.preserveRects)~='table' then return nil,'invalid artwork overlay' end
+    if overlay.kind=='third_party' and not credited(row)then return nil,'third-party art requires credit and its source URL' end
     if overlay.mode~=nil and overlay.mode~='over'then return nil,'invalid original overlay mode' end
     for _,rect in ipairs(overlay.preserveRects)do
       if type(rect)~='table' or #rect~=4 or not integer(rect[1],15) or not integer(rect[2],15)
@@ -134,9 +143,8 @@ function M.validate(row)
     if row.style=='gen1'and ref.monochrome~=true then return nil,'Gen1 theme requires original monochrome donors' end
   elseif row.asset then
     if row.kind~='original' and row.kind~='third_party' then return nil,'asset origin must be identified' end
-    local prefix=row.kind=='original' and 'original' or 'third_party'
-    if type(row.asset)~='string' or not row.asset:match('^assets/'..prefix..'/[%w_/%-%.]+%.png$') or row.asset:find('..',1,true) then return nil,'invalid asset path' end
-    if row.kind=='third_party' and (type(row.credit)~='string' or row.credit=='' or type(row.sourceUrl)~='string' or not row.sourceUrl:match('^https://')) then return nil,'third-party art requires credit and its source URL' end
+    if not assetPath(row.asset,row.kind)then return nil,'invalid asset path' end
+    if row.kind=='third_party' and not credited(row)then return nil,'third-party art requires credit and its source URL' end
     if row.assetFileHash~=nil and (type(row.assetFileHash)~='string' or #row.assetFileHash~=64 or not row.assetFileHash:match('^[0-9a-f]+$')) then return nil,'invalid asset fingerprint' end
     if row.base then
       if type(row.base)~='table' or not M.donorMatches(row.style,row.base.game)
@@ -170,15 +178,14 @@ function M.validate(row)
   if ref and row.asset then return nil,'mapping must have exactly one artwork source' end
   if row.parts and (ref or row.asset) then return nil,'mapping must have exactly one artwork source' end
   if row.assetFrames~=nil then
-    if not row.asset or row.kind~='original'or row.animated~=true or type(row.assetFrames)~='table'
-      or #row.assetFrames<2 or #row.assetFrames>16 then return nil,'invalid original overlay animation' end
+    if not row.asset or (row.kind~='original'and row.kind~='third_party')or row.animated~=true or type(row.assetFrames)~='table'
+      or #row.assetFrames<2 or #row.assetFrames>16 then return nil,'invalid artwork overlay animation' end
     for key in pairs(row.assetFrames)do
       if not integer(key,#row.assetFrames)or key==0 then return nil,'overlay frames must be a dense array' end
     end
     for i=1,#row.assetFrames do
       local frame=row.assetFrames[i]
-      if type(frame)~='table'or type(frame.asset)~='string'
-        or not frame.asset:match('^assets/original/[%w_/%-%.]+%.png$')or frame.asset:find('..',1,true)
+      if type(frame)~='table'or not assetPath(frame.asset,row.kind)
         or not fingerprint(frame.hash)then return nil,'invalid overlay animation fingerprint' end
     end
     if row.assetFrames[1].asset~=row.asset or row.assetFrames[1].hash~=row.assetFileHash then

@@ -1,0 +1,296 @@
+{
+  "origin": "Native artwork extracted only from the user-supplied Johto ROM hacks.",
+  "no_generated_designs": true,
+  "no_fractional_scaling": true,
+  "entries": [
+    {
+      "asset": "crystaldust-conifer.png",
+      "hack": "crystaldust",
+      "source_rom": "Pok\u00e9mon CrystalDust.gba",
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "credit": "CrystalDust by Sierraffinity and its contributors",
+      "sourceUrl": "https://github.com/Sierraffinity/CrystalDust",
+      "pair": "083df704_083df74c",
+      "metatile": 199,
+      "layers": [
+        "mid",
+        "over"
+      ],
+      "ground_metatile": 1,
+      "omitted_field_pixels": 104,
+      "integer_scale": 1,
+      "source_rgba_sha256": "b2af262094373d7a2fd44a15f81e023b67b666a7b21ed21edb09a182870292cd"
+    },
+    {
+      "asset": "firegold-round-shrub.png",
+      "hack": "firegold",
+      "source_rom": "firegold1.4.gba",
+      "source_rom_sha256": "c65f698ffb844b99836a36dc0752e8b57ebd45be53be364cb3cfe52aa0cc74ce",
+      "credit": "FireGold 1.4 by Tzx211",
+      "sourceUrl": "https://www.pokecommunity.com/threads/pok%C3%A9mon-fire-gold-1-4.473130/",
+      "pair": "082d4a94_082d4aac",
+      "metatile": 5,
+      "layers": [
+        "mid",
+        "over"
+      ],
+      "ground_metatile": 1,
+      "omitted_field_pixels": 6,
+      "integer_scale": 1,
+      "source_rgba_sha256": "c47a16d340e063e54b1ad00cd01fc73904e9eed5f5f4e7f96633f8c7f4b6b5d4"
+    },
+    {
+      "asset": "liquidcrystal-berry-shrub.png",
+      "hack": "liquidcrystal",
+      "source_rom": "pokemon_liquid_crystal_beta_3.3.00100.gba",
+      "source_rom_sha256": "925cd6bd824e3e903636340e5f3519bc9ecb2f5f75c0bb87248213250514c965",
+      "credit": "Liquid Crystal by Linkandzelda and Synyster Zeikku",
+      "sourceUrl": "https://www.pokecommunity.com/threads/pok%C3%A9mon-liquid-crystal-3-3-xxxxx-live-beta.242023/",
+      "pair": "082d4a94_082d4b9c",
+      "metatile": 5,
+      "layers": [
+        "mid",
+        "over"
+      ],
+      "ground_metatile": 9,
+      "omitted_field_pixels": 100,
+      "integer_scale": 1,
+      "source_rgba_sha256": "2ea1492ca7b96df3ef22fa233ada9d7685211a0080b0eaca8e6bddeba6df8787"
+    },
+    {
+      "asset": "firegold-red-flowers.png",
+      "hack": "firegold",
+      "source_rom": "firegold1.4.gba",
+      "source_rom_sha256": "c65f698ffb844b99836a36dc0752e8b57ebd45be53be364cb3cfe52aa0cc74ce",
+      "credit": "FireGold 1.4 by Tzx211",
+      "sourceUrl": "https://www.pokecommunity.com/threads/pok%C3%A9mon-fire-gold-1-4.473130/",
+      "pair": "082d4a94_082d4aac",
+      "metatile": 4,
+      "layers": [
+        "mid",
+        "over"
+      ],
+      "ground_metatile": 1,
+      "omitted_field_pixels": 8,
+      "integer_scale": 1,
+      "source_rgba_sha256": "233040806f8cf26a212d206dd33d9d351f628c817fc3b03fd9be5b0be35dfedd"
+    },
+    {
+      "asset": "crystaldust-yellow-flowers.png",
+      "hack": "crystaldust",
+      "source_rom": "Pok\u00e9mon CrystalDust.gba",
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "credit": "CrystalDust by Sierraffinity and its contributors",
+      "sourceUrl": "https://github.com/Sierraffinity/CrystalDust",
+      "pair": "083df704_083df74c",
+      "metatile": 36,
+      "layers": [
+        "mid",
+        "over"
+      ],
+      "ground_metatile": 1,
+      "omitted_field_pixels": 200,
+      "integer_scale": 1,
+      "source_rgba_sha256": "1daa0a51faff70d77f0cd4921d5219bb5f0566d2d94fbabe587866d803127a55"
+    },
+    {
+      "asset": "liquidcrystal-red-flowers.png",
+      "hack": "liquidcrystal",
+      "source_rom": "pokemon_liquid_crystal_beta_3.3.00100.gba",
+      "source_rom_sha256": "925cd6bd824e3e903636340e5f3519bc9ecb2f5f75c0bb87248213250514c965",
+      "credit": "Liquid Crystal by Linkandzelda and Synyster Zeikku",
+      "sourceUrl": "https://www.pokecommunity.com/threads/pok%C3%A9mon-liquid-crystal-3-3-xxxxx-live-beta.242023/",
+      "pair": "082d4a94_082d4b9c",
+      "metatile": 4,
+      "layers": [
+        "mid",
+        "over"
+      ],
+      "ground_metatile": 9,
+      "omitted_field_pixels": 125,
+      "integer_scale": 1,
+      "source_rgba_sha256": "76adaaa52bd0638210c295385af90cf0f728af08beee0205d5f9b2e82d3983d7"
+    },
+    {
+      "asset": "liquidcrystal-wildflowers.png",
+      "hack": "liquidcrystal",
+      "source_rom": "pokemon_liquid_crystal_beta_3.3.00100.gba",
+      "source_rom_sha256": "925cd6bd824e3e903636340e5f3519bc9ecb2f5f75c0bb87248213250514c965",
+      "credit": "Liquid Crystal by Linkandzelda and Synyster Zeikku",
+      "sourceUrl": "https://www.pokecommunity.com/threads/pok%C3%A9mon-liquid-crystal-3-3-xxxxx-live-beta.242023/",
+      "pair": "082d4a94_082d4b9c",
+      "metatile": 1,
+      "layers": [
+        "mid",
+        "over"
+      ],
+      "ground_metatile": 9,
+      "omitted_field_pixels": 0,
+      "integer_scale": 1,
+      "source_rgba_sha256": "cda93cbb0a58a6cfe8cf82dc7bedb79d86bfa4f42d3b7b5c4816aa3cf7e38490"
+    },
+    {
+      "asset": "firegold-grass.png",
+      "hack": "firegold",
+      "source_rom": "firegold1.4.gba",
+      "source_rom_sha256": "c65f698ffb844b99836a36dc0752e8b57ebd45be53be364cb3cfe52aa0cc74ce",
+      "credit": "FireGold 1.4 by Tzx211",
+      "sourceUrl": "https://www.pokecommunity.com/threads/pok%C3%A9mon-fire-gold-1-4.473130/",
+      "pair": "082d4a94_082d4aac",
+      "metatile": 13,
+      "layers": [
+        "mid",
+        "over"
+      ],
+      "ground_metatile": 1,
+      "omitted_field_pixels": 116,
+      "integer_scale": 1,
+      "source_rgba_sha256": "69987662285d8b1ee8ee0f35d75769ec35ce8b2402dab81ea1f7d208adf5bd83"
+    },
+    {
+      "asset": "crystaldust-long-grass.png",
+      "hack": "crystaldust",
+      "source_rom": "Pok\u00e9mon CrystalDust.gba",
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "credit": "CrystalDust by Sierraffinity and its contributors",
+      "sourceUrl": "https://github.com/Sierraffinity/CrystalDust",
+      "pair": "083df704_083df74c",
+      "metatile": 21,
+      "layers": [
+        "mid",
+        "over"
+      ],
+      "ground_metatile": 1,
+      "omitted_field_pixels": 19,
+      "integer_scale": 1,
+      "source_rgba_sha256": "7e3b26dfeede2e8eafc6387a83bccc4d1abec5ca390c18526ff88913a8dc83a7"
+    },
+    {
+      "asset": "liquidcrystal-grass.png",
+      "hack": "liquidcrystal",
+      "source_rom": "pokemon_liquid_crystal_beta_3.3.00100.gba",
+      "source_rom_sha256": "925cd6bd824e3e903636340e5f3519bc9ecb2f5f75c0bb87248213250514c965",
+      "credit": "Liquid Crystal by Linkandzelda and Synyster Zeikku",
+      "sourceUrl": "https://www.pokecommunity.com/threads/pok%C3%A9mon-liquid-crystal-3-3-xxxxx-live-beta.242023/",
+      "pair": "082d4a94_082d4b9c",
+      "metatile": 13,
+      "layers": [
+        "mid",
+        "over"
+      ],
+      "ground_metatile": 9,
+      "omitted_field_pixels": 48,
+      "integer_scale": 1,
+      "source_rgba_sha256": "0679ad734c040dbd96a9c6376b9f496fcdea47f90c609dc173c89ccd08730eab"
+    },
+    {
+      "asset": "liquidcrystal-round-tree-whole32.png",
+      "hack": "liquidcrystal",
+      "source_rom": "pokemon_liquid_crystal_beta_3.3.00100.gba",
+      "source_rom_sha256": "925cd6bd824e3e903636340e5f3519bc9ecb2f5f75c0bb87248213250514c965",
+      "credit": "Liquid Crystal by Linkandzelda and Synyster Zeikku",
+      "sourceUrl": "https://www.pokecommunity.com/threads/pok%C3%A9mon-liquid-crystal-3-3-xxxxx-live-beta.242023/",
+      "map": "g03_m017",
+      "native_rect": [
+        352,
+        80,
+        384,
+        128
+      ],
+      "native_dimensions": [
+        32,
+        48
+      ],
+      "integer_reduction": 2,
+      "reduced_dimensions": [
+        16,
+        24
+      ],
+      "placement": [
+        8,
+        8
+      ],
+      "source_rgba_sha256": "9d9b38bbef2ba8b8788fdc88910c0a5444665b4eda336304d5ab6b6296d9cf12",
+      "full_canopy_and_roots_retained": true
+    },
+    {
+      "asset": "firegold-conifer-whole32.png",
+      "hack": "firegold",
+      "source_rom": "firegold1.4.gba",
+      "source_rom_sha256": "c65f698ffb844b99836a36dc0752e8b57ebd45be53be364cb3cfe52aa0cc74ce",
+      "credit": "FireGold 1.4 by Tzx211",
+      "sourceUrl": "https://www.pokecommunity.com/threads/pok%C3%A9mon-fire-gold-1-4.473130/",
+      "map": "g03_m001",
+      "native_rect": [
+        384,
+        32,
+        416,
+        80
+      ],
+      "native_dimensions": [
+        32,
+        48
+      ],
+      "integer_reduction": 2,
+      "reduced_dimensions": [
+        16,
+        24
+      ],
+      "placement": [
+        8,
+        8
+      ],
+      "source_rgba_sha256": "4c1c77efa766425314ae7a411324da42b175a82e70b3482a42bdada7e1678440",
+      "full_canopy_and_roots_retained": true
+    },
+    {
+      "asset": "crystaldust-conifer-whole32.png",
+      "hack": "crystaldust",
+      "source_rom": "Pok\u00e9mon CrystalDust.gba",
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "credit": "CrystalDust by Sierraffinity and its contributors",
+      "sourceUrl": "https://github.com/Sierraffinity/CrystalDust",
+      "map": "g00_m000",
+      "native_rect": [
+        96,
+        176,
+        128,
+        224
+      ],
+      "native_dimensions": [
+        32,
+        48
+      ],
+      "integer_reduction": 2,
+      "reduced_dimensions": [
+        16,
+        24
+      ],
+      "placement": [
+        8,
+        8
+      ],
+      "source_rgba_sha256": "b3abbd471cc430aa562101d39094d27b03742de6af57e2ab94c3e423cb3cfa77",
+      "full_canopy_and_roots_retained": true
+    }
+  ],
+  "files": {
+    "crystaldust-conifer.png": "9bc2dcc84bf0b64d58a8977170201801e9d47537b7d6f8584d1ce3bdd275e8f0",
+    "firegold-round-shrub.png": "39d17b13651c05bd297d03c0d780f27b26620ae454ab6dc40b66ec92f291c8a0",
+    "liquidcrystal-berry-shrub.png": "babeb847ba5022debc920f71f9f4fa5e341f1da5760853a476093e109ac6099b",
+    "firegold-red-flowers.png": "ae635efa63022a92b71f6244e71e7cb9b45426fc43f062b566843c822587e944",
+    "crystaldust-yellow-flowers.png": "dd6051c17c47fdb9dd548ad63021845a6a0ef4b45ede635f2c92b263237cc0e2",
+    "liquidcrystal-red-flowers.png": "96b8f61ab8572a0a9db753a5b23fe4f4f846c82e3e2bb68a66680ef6e76bd5d9",
+    "liquidcrystal-wildflowers.png": "54d322503da5d08c47df6a7eefea0c703af61c846fd3811305612fb1e5ad47b2",
+    "firegold-grass.png": "b86928f1e57bfa27f8e8a2b2648d75766014f7f5516d0b0a3507c5b89a36e7ea",
+    "crystaldust-long-grass.png": "0e81bdf4cfa92c1747ed7a530022c4ce5f0d8c557ecf1512578441687fe37271",
+    "liquidcrystal-grass.png": "c6c96f677b53e83ecac210e26d1e5fe190ae695dad6157ee3f742b6c5ac1cde9",
+    "liquidcrystal-round-tree-whole32.png": "570b590d7049e5ccc9178c31c51c868ebdb0aab77ca9aeff5f83bda01ce610b2",
+    "default-tree-q0.png": "429700255d46afc1f0e84cbbf5e0fd10e6b9c3dc864ef0dc9092f4197d552d6d",
+    "default-tree-q1.png": "44282a38568729005963cc6935c6ef6012cb3aa38a336319437a38a410a8864d",
+    "default-tree-q2.png": "2a148f190853465280aa443dd55e49ec0d21231b67862e51ab928ea1c670e591",
+    "default-tree-q3.png": "2332f5a0812cec2f92bfa0a1b4b288c7e37e0daa658c021dc8fa7c0a5e492a2d",
+    "firegold-conifer-whole32.png": "bb00b880602e0426f7a5586c46c857ecedb6d5fcb19172224335318aea021063",
+    "crystaldust-conifer-whole32.png": "bb419da8f4b7363bc71f24678a16af736b0706f59f80790d702c58eff9a89f02"
+  }
+}

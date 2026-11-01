@@ -667,7 +667,9 @@ def map_preview(cache, output, game, map_id, stem, rows, packed, scale, mod_root
         if overlay["game"] == game and overlay["map"] == map_id:
             if overlay.get("side"):
                 assert overlay["side"] in ("left", "right")
-                assert overlay["x"] == overlay["buildingX"] + (-1 if overlay["side"] == "left" else overlay["buildingW"])
+                distance = (overlay["buildingX"] - overlay["x"] if overlay["side"] == "left"
+                            else overlay["x"] - overlay["buildingX"] - overlay["buildingW"] + 1)
+                assert distance in (1, 2), "Decorative side may occupy only two adjacent columns"
                 assert overlay["buildingY"] <= overlay["y"] < overlay["buildingY"] + overlay["buildingH"]
             else:
                 assert overlay["y"] + 1 == overlay["buildingY"]
@@ -695,7 +697,7 @@ def map_preview(cache, output, game, map_id, stem, rows, packed, scale, mod_root
     credits = sorted({r["credit"] for r in [*selected.values(), *positioned.values()]
                       if r.get("credit") and (r["id"], r["quadrant"], r.get("x"), r.get("y")) in unique})
     if credits:
-        draw.text((left, top + display_h + 35), "Tree artwork: " + "; ".join(credits), fill="#ced7e4", font=small)
+        draw.text((left, top + display_h + 35), "Replacement artwork: " + "; ".join(credits), fill="#ced7e4", font=small)
     path = output / f"{stem}-development.png"
     canvas.save(path)
     before.convert("RGB").save(output / f"{stem}-before-native.png")

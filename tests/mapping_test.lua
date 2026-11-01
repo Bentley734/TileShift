@@ -240,4 +240,41 @@ for _,mutate in ipairs({function(r)r.animated=nil end,function(r)r.animated=fals
 end
 local badProfile=clone(bank);badProfile.animation=true
 eq(M.validate(badProfile),nil,'non-table animation profile is rejected without an exception')
+-- Imported hack artwork retains its third-party origin even when it is an
+-- animated transparent overlay above a checked native background bank.
+local imported=clone(foam);imported.kind='third_party'
+imported.credit='Named hack artist';imported.sourceUrl='https://example.com/hack'
+imported.asset='assets/third_party/hack/foam-1.png'
+imported.assetFrames[1].asset=imported.asset
+imported.assetFrames[2].asset='assets/third_party/hack/foam-2.png'
+eq(M.validate(imported),true,'credited third-party overlay phases use the existing checked bank')
+for _,mutate in ipairs({function(r)r.credit=nil end,function(r)r.sourceUrl=nil end,
+ function(r)r.sourceUrl='http://example.com/hack'end,
+ function(r)r.assetFrames[2].asset='assets/original/phase2.png'end,
+ function(r)r.assetFrames[2].asset='assets/third_party/hack/../escape.png'end,
+ function(r)r.assetFrames[2].hash='stale'end,
+ function(r)r.assetFrames[1].asset='assets/third_party/hack/other.png'end,
+ function(r)r.assetFrames[4]=r.assetFrames[2]end})do
+ local bad=clone(imported);mutate(bad)
+ eq(M.validate(bad),nil,'third-party phase origin, credit, first frame, bounds and fingerprints remain strict')
+end
+local importedOverlay=clone(layered)
+importedOverlay.credit=imported.credit;importedOverlay.sourceUrl=imported.sourceUrl
+importedOverlay.artOverlay={kind='third_party',asset='assets/third_party/hack/tree.png',
+ hash=a,mode='over',preserveRects={{0,0,4,4}}}
+eq(M.validate(importedOverlay),true,'native recipes may preserve exact pixels above an explicit third-party overlay')
+for _,mutate in ipairs({function(r)r.credit=nil end,function(r)r.sourceUrl=nil end,
+ function(r)r.sourceUrl='file:///hack'end,function(r)r.artOverlay.kind=nil end,
+ function(r)r.artOverlay.kind='unknown'end,
+ function(r)r.artOverlay.asset='assets/original/tree.png'end,
+ function(r)r.artOverlay.asset='assets/third_party/hack/../escape.png'end,
+ function(r)r.artOverlay.hash='stale'end,
+ function(r)r.artOverlay.mode='blend'end,
+ function(r)r.artOverlay.preserveRects={{15,0,2,16}}end})do
+ local bad=clone(importedOverlay);mutate(bad)
+ eq(M.validate(bad),nil,'third-party overlays retain origin, credit, hashes and retained rectangle boundaries')
+end
+local existingOverlay=clone(layered)
+existingOverlay.artOverlay={asset='assets/original/tree.png',hash=a,preserveRects={}}
+eq(M.validate(existingOverlay),true,'existing original overlays remain compatible without a new origin field')
 print('PASS strict mapping validation: '..count..' assertions')

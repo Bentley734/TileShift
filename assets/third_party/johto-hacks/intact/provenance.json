@@ -1,0 +1,89 @@
+{
+  "rom_sha256": "c65f698ffb844b99836a36dc0752e8b57ebd45be53be364cb3cfe52aa0cc74ce",
+  "map": "g43_m015",
+  "crop_cells": [
+    19,
+    8,
+    7,
+    4
+  ],
+  "source_door": [
+    22,
+    11
+  ],
+  "target_origin_cells": [
+    2,
+    1
+  ],
+  "target_door": [
+    5,
+    5
+  ],
+  "scale": 1,
+  "reviewed_exterior_clear_rects": [
+    [
+      0,
+      0,
+      8,
+      64
+    ],
+    [
+      104,
+      0,
+      8,
+      64
+    ],
+    [
+      8,
+      48,
+      8,
+      16
+    ],
+    [
+      96,
+      48,
+      8,
+      16
+    ]
+  ],
+  "transparent_top_padding": 16,
+  "processing": "Complete native FireGold intact tower; only connected exterior grass omitted. No shrinking or removed windows. Whole artwork uses two left decorative columns and one right column outside unchanged Gen2 footprint.",
+  "files": {
+    "intact.png": "08f8696c265ea9ec14fa1bab266ef3e66f40c5071939da012781c0dfadca03e8",
+    "cell-0-0.png": "232c2eac760eae604f9dd43352c0b272396b7cfaf220081b54583b6d0cbc2320",
+    "cell-1-0.png": "232c2eac760eae604f9dd43352c0b272396b7cfaf220081b54583b6d0cbc2320",
+    "cell-2-0.png": "232c2eac760eae604f9dd43352c0b272396b7cfaf220081b54583b6d0cbc2320",
+    "cell-3-0.png": "232c2eac760eae604f9dd43352c0b272396b7cfaf220081b54583b6d0cbc2320",
+    "cell-4-0.png": "232c2eac760eae604f9dd43352c0b272396b7cfaf220081b54583b6d0cbc2320",
+    "cell-5-0.png": "232c2eac760eae604f9dd43352c0b272396b7cfaf220081b54583b6d0cbc2320",
+    "cell-6-0.png": "232c2eac760eae604f9dd43352c0b272396b7cfaf220081b54583b6d0cbc2320",
+    "cell-0-1.png": "fe4d74e26d0547f92d969807d4d71c1983466c9916d45d8f99d8853e6fb6d606",
+    "cell-1-1.png": "d3ac06cebbfb920efb3e597a8e702e79ba9ef4df1439a8da12ab69c90d992463",
+    "cell-2-1.png": "a11be0a9ba8d4ab5d5e3f8062c53700eb8b1cbabda859363af73209ef1b1b7fc",
+    "cell-3-1.png": "a11be0a9ba8d4ab5d5e3f8062c53700eb8b1cbabda859363af73209ef1b1b7fc",
+    "cell-4-1.png": "a11be0a9ba8d4ab5d5e3f8062c53700eb8b1cbabda859363af73209ef1b1b7fc",
+    "cell-5-1.png": "782419a9520378f45e8c4a76f4b0943f2840ce2bc7e7b167a49eeb8e26c2c16b",
+    "cell-6-1.png": "c10d5b008a8f41bc37decff0adac44ea2b54da8de9ff39b7d59df06894221b59",
+    "cell-0-2.png": "7c3bb72c2be12e470cdb46cc2f3d1f6b1988155ab13b88ff4daa07132a0b282f",
+    "cell-1-2.png": "43fb3ea507d872ecbb246574aabc970c51d53df94a23c6b3eaf345e4b494ae26",
+    "cell-2-2.png": "4048bb151dbcb19fafa09b9a984c3857ef19d95b2dd7086ff90dcb895117d41a",
+    "cell-3-2.png": "2167896f1d865cb561f4eddc02f18c7d0ce1760625748149ee57e969371c8e82",
+    "cell-4-2.png": "0655b81d784fd14b74e4083c7662456c2404e2a77823dfb8675026bd537c23d7",
+    "cell-5-2.png": "cdebb66165c4f96c437e0d76f46da2ebfb7dedf9cbaa4fa54670132dd9a5e276",
+    "cell-6-2.png": "108d48c457ea4834f43b1fb25b836d21f3e2b6dc198e6d264987a0bc06a00975",
+    "cell-0-3.png": "0cfed845b6ca7f4654e7a8d9bee0e67e37624bc15263513524e9a0af41164afa",
+    "cell-1-3.png": "be94bab59e8b12963c333b98048963bd902cacbd37f3a5f362137410e698d401",
+    "cell-2-3.png": "f63c925e501f3b0c5cb27e9c16d2b7a6933ff1cebc0abd770bf1d570b5f5f843",
+    "cell-3-3.png": "e13020dd5f5b4142dee4a8698c80de2f4ec864e13d92a297384b01b1534349df",
+    "cell-4-3.png": "389191578b50758a9effd01092102b9d555813323fed75fda5997e4d15c0487e",
+    "cell-5-3.png": "0ff01fed4a0fb34da4b3ce85b2eb807eb7bce56a04cb130694561936bfa0e8f5",
+    "cell-6-3.png": "a0850ac9dd6b60fb297ea430b05aa10f191f334fb39e7c30bbef8fbc0dc07f87",
+    "cell-0-4.png": "232c2eac760eae604f9dd43352c0b272396b7cfaf220081b54583b6d0cbc2320",
+    "cell-1-4.png": "0182665d34a10b7b2f75c33c13f92b20451de8619e2f6a4b8a303ff1099ceb64",
+    "cell-2-4.png": "fce03dbfff8e60ed24e8ff56da9d63e488abd525b8fe4eb0ae265fb88bd6e575",
+    "cell-3-4.png": "43ff92b89ce5c9fc738fcd2e8a5fb0ec95ca1d78345cfbee0df61b9667a297c1",
+    "cell-4-4.png": "0182665d34a10b7b2f75c33c13f92b20451de8619e2f6a4b8a303ff1099ceb64",
+    "cell-5-4.png": "fce03dbfff8e60ed24e8ff56da9d63e488abd525b8fe4eb0ae265fb88bd6e575",
+    "cell-6-4.png": "232c2eac760eae604f9dd43352c0b272396b7cfaf220081b54583b6d0cbc2320"
+  }
+}

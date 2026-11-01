@@ -1,0 +1,1679 @@
+{
+  "origin": "Exact selected native16px room-object layers extracted from user-supplied Johto ROM hacks.",
+  "roms_not_bundled": true,
+  "source_urls": [
+    "https://www.pokecommunity.com/threads/pok%C3%A9mon-fire-gold-1-4.473130/",
+    "https://github.com/Sierraffinity/CrystalDust",
+    "https://www.pokecommunity.com/threads/pok%C3%A9mon-liquid-crystal-3-3-xxxxx-live-beta.242023/"
+  ],
+  "pieces": [
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/firegold-lab-computer.png",
+      "assetFileHash": "72d17ccd6480d17fa80ad56c10aedcdbf5c7210273fa8e9c8d90d0aa1a957173",
+      "source": "firegold",
+      "source_rom_sha256": "c65f698ffb844b99836a36dc0752e8b57ebd45be53be364cb3cfe52aa0cc74ce",
+      "source_rom_name": "firegold1.4.gba",
+      "tileset_pair": "082d4bb4_082d4c8c",
+      "metatile": 117,
+      "layer": "mid",
+      "source_atlas_sha256": "849767756e7faa1e275ee86b096517b2c26f6926f639f7d331c273e3c8a9297c",
+      "source_rect": [
+        80,
+        112,
+        16,
+        16
+      ],
+      "rgba_sha256": "f1f8391ca59492ed69b8e17a30696f7589d2c38e50e3bbf69c9755076b8ce578",
+      "scale": 1
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/crystaldust-wall.png",
+      "assetFileHash": "5a0d2ff32a28d144fb7f2801f7d88213119b0ca7986c6fdd3662533bde207ee8",
+      "source": "crystaldust",
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "source_rom_name": "Pok\u00e9mon CrystalDust.gba",
+      "tileset_pair": "083df884_083dfa94",
+      "metatile": 529,
+      "layer": "top",
+      "source_atlas_sha256": "2d00abc21db5fc9bfe659312c20516bba1532a6fc7b341043947a4fc793f02db",
+      "source_rect": [
+        16,
+        528,
+        16,
+        16
+      ],
+      "rgba_sha256": "87cb4e929433053b3d3cf2fec40106bfcd20808ea51fa9b104064ade28b39ec1",
+      "scale": 1
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/crystaldust-lattice-10-11-26-27.png",
+      "assetFileHash": "b0d8ed4b8cd02ac667c9fa62768586e243381ab06fefd2589bcba8bcf972c203",
+      "source": "crystaldust",
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "source_rom_name": "Pok\u00e9mon CrystalDust.gba",
+      "tileset_pair": "083df884_083dfa94",
+      "metatile": 550,
+      "layer": "flat",
+      "source_atlas_sha256": "22e6b92617908ae1c5f1212ea5e0959f2b64cb5d4081413ba3188ba4255eeabc",
+      "source_rect": [
+        96,
+        544,
+        16,
+        16
+      ],
+      "rgba_sha256": "22621bead28315e252125a2e3a16dbb3ddded11a65009da745fedf7b392a5e59",
+      "scale": 1
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/crystaldust-lattice-11-11-27-27.png",
+      "assetFileHash": "cf20f2c3e4bd1e9ddafd10f11a1ee0da88cebe671028a20132bbe1ff9e1a4bcb",
+      "source": "crystaldust",
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "source_rom_name": "Pok\u00e9mon CrystalDust.gba",
+      "tileset_pair": "083df884_083dfa94",
+      "metatile": 551,
+      "layer": "flat",
+      "source_atlas_sha256": "22e6b92617908ae1c5f1212ea5e0959f2b64cb5d4081413ba3188ba4255eeabc",
+      "source_rect": [
+        112,
+        544,
+        16,
+        16
+      ],
+      "rgba_sha256": "73e8fa65e342dea3998e3c9719d8ae9eb3f0bcd750459a946f200d9dc4d554db",
+      "scale": 1
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/crystaldust-lattice-26-27-26-27.png",
+      "assetFileHash": "dfd03464b82e52696d37a6013e83d50adf1168c9a82d9fe08e35bfebddd339cc",
+      "source": "crystaldust",
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "source_rom_name": "Pok\u00e9mon CrystalDust.gba",
+      "tileset_pair": "083df884_083dfa94",
+      "metatile": 566,
+      "layer": "flat",
+      "source_atlas_sha256": "22e6b92617908ae1c5f1212ea5e0959f2b64cb5d4081413ba3188ba4255eeabc",
+      "source_rect": [
+        96,
+        560,
+        16,
+        16
+      ],
+      "rgba_sha256": "bfe8e8fd3abe2398da5516fa4e3722ba52215d333f08285d0a6f6af808848a4b",
+      "scale": 1
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/crystaldust-lattice-27-27-27-27.png",
+      "assetFileHash": "14c81482effa18d26cfadfc4ccbd36f3269a7c88337f05c17471eeb8375a5e6b",
+      "source": "crystaldust",
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "source_rom_name": "Pok\u00e9mon CrystalDust.gba",
+      "tileset_pair": "083df884_083dfa94",
+      "metatile": 567,
+      "layer": "flat",
+      "source_atlas_sha256": "22e6b92617908ae1c5f1212ea5e0959f2b64cb5d4081413ba3188ba4255eeabc",
+      "source_rect": [
+        112,
+        560,
+        16,
+        16
+      ],
+      "rgba_sha256": "f591fdbaa2e1fbb9889ec08133741eaa75ef6ed2ceca0abcfb86ec919b590198",
+      "scale": 1
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/crystaldust-vertical-wall.png",
+      "assetFileHash": "c22e5e02b1d1a1be40db85b89078c2c8f7557278475a81e22925929b0d36c954",
+      "source": "crystaldust",
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "source_rom_name": "Pok\u00e9mon CrystalDust.gba",
+      "tileset_pair": "083df884_083dfa94",
+      "native_modules": [
+        {
+          "metatile": 529,
+          "layer": "top",
+          "rect": [
+            0,
+            0,
+            8,
+            16
+          ],
+          "destination": [
+            4,
+            0
+          ],
+          "source_atlas_sha256": "2d00abc21db5fc9bfe659312c20516bba1532a6fc7b341043947a4fc793f02db"
+        }
+      ],
+      "scale": 1,
+      "rgba_sha256": "9034f23b04912bbbd210f4ac0c92b232b8a233718cd1131d96185a7605da32f6"
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/crystaldust-broken-wall.png",
+      "assetFileHash": "efc512584864ff36f3d31af307586cb4ec4ee5b385c987e9a08745f3888cb8c5",
+      "source": "crystaldust",
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "source_rom_name": "Pok\u00e9mon CrystalDust.gba",
+      "tileset_pair": "083df884_083dfa94",
+      "native_modules": [
+        {
+          "metatile": 529,
+          "layer": "top",
+          "rect": [
+            0,
+            0,
+            16,
+            8
+          ],
+          "destination": [
+            0,
+            0
+          ],
+          "source_atlas_sha256": "2d00abc21db5fc9bfe659312c20516bba1532a6fc7b341043947a4fc793f02db"
+        },
+        {
+          "metatile": 529,
+          "layer": "top",
+          "rect": [
+            0,
+            8,
+            8,
+            8
+          ],
+          "destination": [
+            0,
+            8
+          ],
+          "source_atlas_sha256": "2d00abc21db5fc9bfe659312c20516bba1532a6fc7b341043947a4fc793f02db"
+        }
+      ],
+      "scale": 1,
+      "rgba_sha256": "6bdb957903b4620c760d2ddc6a5865048d5d8fccfd74b33dc2791b2bd942bd4a"
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/crystaldust-fringe.png",
+      "assetFileHash": "a9c69b21693374458b5ae5ee15d8f1a4c22ae25ae1d4a915f5387f73e0eec775",
+      "source": "crystaldust",
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "source_rom_name": "Pok\u00e9mon CrystalDust.gba",
+      "tileset_pair": "083df884_083dfa94",
+      "native_modules": [
+        {
+          "metatile": 576,
+          "layer": "flat",
+          "rect": [
+            0,
+            0,
+            16,
+            8
+          ],
+          "destination": [
+            0,
+            0
+          ],
+          "source_atlas_sha256": "22e6b92617908ae1c5f1212ea5e0959f2b64cb5d4081413ba3188ba4255eeabc"
+        },
+        {
+          "metatile": 512,
+          "layer": "flat",
+          "rect": [
+            0,
+            0,
+            16,
+            8
+          ],
+          "destination": [
+            0,
+            8
+          ],
+          "source_atlas_sha256": "22e6b92617908ae1c5f1212ea5e0959f2b64cb5d4081413ba3188ba4255eeabc"
+        }
+      ],
+      "scale": 1,
+      "rgba_sha256": "3d92dac5f36e3fef526bea5a0ce66f8ba5bb1f2ac51e5d300f0b6a1f72e20474"
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/crystaldust-lattice-floor-edge.png",
+      "assetFileHash": "6af279a6b6061eb5532f9cf58d945d0b855326996bd9629ff3e9e67953711d61",
+      "source": "crystaldust",
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "source_rom_name": "Pok\u00e9mon CrystalDust.gba",
+      "tileset_pair": "083df884_083dfa94",
+      "native_modules": [
+        {
+          "metatile": 551,
+          "layer": "flat",
+          "rect": [
+            0,
+            0,
+            16,
+            8
+          ],
+          "destination": [
+            0,
+            8
+          ],
+          "source_atlas_sha256": "22e6b92617908ae1c5f1212ea5e0959f2b64cb5d4081413ba3188ba4255eeabc"
+        }
+      ],
+      "scale": 1,
+      "rgba_sha256": "614f577c14ff62b9c41d7e8b8802dcc2005317e117538dba6329f1ae58e109b3"
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/crystaldust-lattice-27-70-27-86.png",
+      "assetFileHash": "9c034722aa6368b5bb885c577f965384072131d3b922a695c7ed85036007bf83",
+      "source": "crystaldust",
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "source_rom_name": "Pok\u00e9mon CrystalDust.gba",
+      "tileset_pair": "083df884_083dfa94",
+      "native_modules": [
+        {
+          "metatile": 567,
+          "layer": "flat",
+          "rect": [
+            8,
+            8,
+            8,
+            8
+          ],
+          "destination": [
+            0,
+            0
+          ],
+          "source_atlas_sha256": "22e6b92617908ae1c5f1212ea5e0959f2b64cb5d4081413ba3188ba4255eeabc"
+        },
+        {
+          "metatile": 567,
+          "layer": "flat",
+          "rect": [
+            8,
+            8,
+            8,
+            8
+          ],
+          "destination": [
+            0,
+            8
+          ],
+          "source_atlas_sha256": "22e6b92617908ae1c5f1212ea5e0959f2b64cb5d4081413ba3188ba4255eeabc"
+        },
+        {
+          "metatile": 529,
+          "layer": "top",
+          "rect": [
+            2,
+            8,
+            3,
+            8
+          ],
+          "destination": [
+            13,
+            8
+          ],
+          "source_atlas_sha256": "2d00abc21db5fc9bfe659312c20516bba1532a6fc7b341043947a4fc793f02db"
+        }
+      ],
+      "scale": 1,
+      "rgba_sha256": "054c602e402147734ca206f4364f7cceccc7d825a6e039650d8522baa50f28cb"
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/crystaldust-lattice-27-11-27-27.png",
+      "assetFileHash": "5a62bf85b0ef4de4e6bc7a532a0ffd447bb4591410fd35c24b3218f6d3c60d8b",
+      "source": "crystaldust",
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "source_rom_name": "Pok\u00e9mon CrystalDust.gba",
+      "tileset_pair": "083df884_083dfa94",
+      "native_modules": [
+        {
+          "metatile": 567,
+          "layer": "flat",
+          "rect": [
+            8,
+            8,
+            8,
+            8
+          ],
+          "destination": [
+            0,
+            0
+          ],
+          "source_atlas_sha256": "22e6b92617908ae1c5f1212ea5e0959f2b64cb5d4081413ba3188ba4255eeabc"
+        },
+        {
+          "metatile": 551,
+          "layer": "flat",
+          "rect": [
+            8,
+            0,
+            8,
+            8
+          ],
+          "destination": [
+            8,
+            0
+          ],
+          "source_atlas_sha256": "22e6b92617908ae1c5f1212ea5e0959f2b64cb5d4081413ba3188ba4255eeabc"
+        },
+        {
+          "metatile": 567,
+          "layer": "flat",
+          "rect": [
+            8,
+            8,
+            8,
+            8
+          ],
+          "destination": [
+            0,
+            8
+          ],
+          "source_atlas_sha256": "22e6b92617908ae1c5f1212ea5e0959f2b64cb5d4081413ba3188ba4255eeabc"
+        },
+        {
+          "metatile": 567,
+          "layer": "flat",
+          "rect": [
+            8,
+            8,
+            8,
+            8
+          ],
+          "destination": [
+            8,
+            8
+          ],
+          "source_atlas_sha256": "22e6b92617908ae1c5f1212ea5e0959f2b64cb5d4081413ba3188ba4255eeabc"
+        }
+      ],
+      "scale": 1,
+      "rgba_sha256": "bb84ffc69ccce1f2a9a557c0161b9cfd9866faa17ac362da18718f750947a5aa"
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/crystaldust-lattice-71-26-87-26.png",
+      "assetFileHash": "3ca0712de660cfd8a50539643b8d4fb26a2c56501b52c82460afe9b924efda6d",
+      "source": "crystaldust",
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "source_rom_name": "Pok\u00e9mon CrystalDust.gba",
+      "tileset_pair": "083df884_083dfa94",
+      "native_modules": [
+        {
+          "metatile": 566,
+          "layer": "flat",
+          "rect": [
+            0,
+            8,
+            8,
+            8
+          ],
+          "destination": [
+            8,
+            0
+          ],
+          "source_atlas_sha256": "22e6b92617908ae1c5f1212ea5e0959f2b64cb5d4081413ba3188ba4255eeabc"
+        },
+        {
+          "metatile": 529,
+          "layer": "top",
+          "rect": [
+            2,
+            8,
+            3,
+            8
+          ],
+          "destination": [
+            0,
+            8
+          ],
+          "source_atlas_sha256": "2d00abc21db5fc9bfe659312c20516bba1532a6fc7b341043947a4fc793f02db"
+        },
+        {
+          "metatile": 566,
+          "layer": "flat",
+          "rect": [
+            0,
+            8,
+            8,
+            8
+          ],
+          "destination": [
+            8,
+            8
+          ],
+          "source_atlas_sha256": "22e6b92617908ae1c5f1212ea5e0959f2b64cb5d4081413ba3188ba4255eeabc"
+        }
+      ],
+      "scale": 1,
+      "rgba_sha256": "646214481934879e92349fe4ac07b921ff8d0e6b8b7f4f0a34d9d1448f5d0177"
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/crystaldust-lattice-11-27-27-27.png",
+      "assetFileHash": "dbc373cdc8ad3bdee8e387bbc9b91703186c6cd67d4c5ca747ae98307bae032f",
+      "source": "crystaldust",
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "source_rom_name": "Pok\u00e9mon CrystalDust.gba",
+      "tileset_pair": "083df884_083dfa94",
+      "native_modules": [
+        {
+          "metatile": 551,
+          "layer": "flat",
+          "rect": [
+            8,
+            0,
+            8,
+            8
+          ],
+          "destination": [
+            0,
+            0
+          ],
+          "source_atlas_sha256": "22e6b92617908ae1c5f1212ea5e0959f2b64cb5d4081413ba3188ba4255eeabc"
+        },
+        {
+          "metatile": 567,
+          "layer": "flat",
+          "rect": [
+            8,
+            8,
+            8,
+            8
+          ],
+          "destination": [
+            8,
+            0
+          ],
+          "source_atlas_sha256": "22e6b92617908ae1c5f1212ea5e0959f2b64cb5d4081413ba3188ba4255eeabc"
+        },
+        {
+          "metatile": 567,
+          "layer": "flat",
+          "rect": [
+            8,
+            8,
+            8,
+            8
+          ],
+          "destination": [
+            0,
+            8
+          ],
+          "source_atlas_sha256": "22e6b92617908ae1c5f1212ea5e0959f2b64cb5d4081413ba3188ba4255eeabc"
+        },
+        {
+          "metatile": 567,
+          "layer": "flat",
+          "rect": [
+            8,
+            8,
+            8,
+            8
+          ],
+          "destination": [
+            8,
+            8
+          ],
+          "source_atlas_sha256": "22e6b92617908ae1c5f1212ea5e0959f2b64cb5d4081413ba3188ba4255eeabc"
+        }
+      ],
+      "scale": 1,
+      "rgba_sha256": "02d6a14d61b2bdc65b01cd7c2dac93e5ded195e512f0fa87503c0aef5533146a"
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/crystaldust-lattice-26-27-27-27.png",
+      "assetFileHash": "4bf31ef6bbddbfe446f8c12346f2409e17fcb844b67c34ca99c42f1d4e19db00",
+      "source": "crystaldust",
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "source_rom_name": "Pok\u00e9mon CrystalDust.gba",
+      "tileset_pair": "083df884_083dfa94",
+      "native_modules": [
+        {
+          "metatile": 566,
+          "layer": "flat",
+          "rect": [
+            0,
+            8,
+            8,
+            8
+          ],
+          "destination": [
+            0,
+            0
+          ],
+          "source_atlas_sha256": "22e6b92617908ae1c5f1212ea5e0959f2b64cb5d4081413ba3188ba4255eeabc"
+        },
+        {
+          "metatile": 567,
+          "layer": "flat",
+          "rect": [
+            8,
+            8,
+            8,
+            8
+          ],
+          "destination": [
+            8,
+            0
+          ],
+          "source_atlas_sha256": "22e6b92617908ae1c5f1212ea5e0959f2b64cb5d4081413ba3188ba4255eeabc"
+        },
+        {
+          "metatile": 567,
+          "layer": "flat",
+          "rect": [
+            8,
+            8,
+            8,
+            8
+          ],
+          "destination": [
+            0,
+            8
+          ],
+          "source_atlas_sha256": "22e6b92617908ae1c5f1212ea5e0959f2b64cb5d4081413ba3188ba4255eeabc"
+        },
+        {
+          "metatile": 567,
+          "layer": "flat",
+          "rect": [
+            8,
+            8,
+            8,
+            8
+          ],
+          "destination": [
+            8,
+            8
+          ],
+          "source_atlas_sha256": "22e6b92617908ae1c5f1212ea5e0959f2b64cb5d4081413ba3188ba4255eeabc"
+        }
+      ],
+      "scale": 1,
+      "rgba_sha256": "ade5b8c2595a835af6f511a5549b9172dbf3892117c71fb3e75dc8f097b31e0f"
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/crystaldust-painting-left.png",
+      "assetFileHash": "7dbfa46443367fb740cfe459e11cd9f479835fb2f91d4053a2a76ace84547677",
+      "source": "crystaldust",
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "source_rom_name": "Pok\u00e9mon CrystalDust.gba",
+      "tileset_pair": "083df884_083dfa94",
+      "native_parts": [
+        {
+          "metatile": 520,
+          "layer": "top",
+          "source_atlas_sha256": "2d00abc21db5fc9bfe659312c20516bba1532a6fc7b341043947a4fc793f02db"
+        },
+        {
+          "metatile": 528,
+          "layer": "top",
+          "source_atlas_sha256": "2d00abc21db5fc9bfe659312c20516bba1532a6fc7b341043947a4fc793f02db"
+        }
+      ],
+      "native_dimensions": [
+        16,
+        32
+      ],
+      "integer_reduction": 2,
+      "transparent_padding_placement": [
+        8,
+        0
+      ],
+      "outside_native_floor_pixels_omitted": 0,
+      "whole_object_retained": true,
+      "rgba_sha256": "dc0536f4ecf997fe8e2ebd5968be8e8e5f1d6a82336e4b1e7607663e3e491dbd",
+      "placement": "Complete reduced native picture spans two source cells, native log posts frame both sides."
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/crystaldust-painting-right.png",
+      "assetFileHash": "2050c4fce828c3425742998127f845cceed3e375ee0842a1819771e00ff51ddb",
+      "source": "crystaldust",
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "source_rom_name": "Pok\u00e9mon CrystalDust.gba",
+      "tileset_pair": "083df884_083dfa94",
+      "native_parts": [
+        {
+          "metatile": 520,
+          "layer": "top",
+          "source_atlas_sha256": "2d00abc21db5fc9bfe659312c20516bba1532a6fc7b341043947a4fc793f02db"
+        },
+        {
+          "metatile": 528,
+          "layer": "top",
+          "source_atlas_sha256": "2d00abc21db5fc9bfe659312c20516bba1532a6fc7b341043947a4fc793f02db"
+        }
+      ],
+      "native_dimensions": [
+        16,
+        32
+      ],
+      "integer_reduction": 2,
+      "transparent_padding_placement": [
+        8,
+        0
+      ],
+      "outside_native_floor_pixels_omitted": 0,
+      "whole_object_retained": true,
+      "rgba_sha256": "dc0536f4ecf997fe8e2ebd5968be8e8e5f1d6a82336e4b1e7607663e3e491dbd",
+      "placement": "Complete reduced native picture spans two source cells, native log posts frame both sides."
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/crystaldust-support-0-0.png",
+      "assetFileHash": "1d2e07a8c3441c81b001b012ae150176c2f3dfe4d91a66224108153cd9fb700b",
+      "source": "crystaldust",
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "source_rom_name": "Pok\u00e9mon CrystalDust.gba",
+      "tileset_pair": "083df884_083dfa94",
+      "metatile": 517,
+      "layer": "top",
+      "source_atlas_sha256": "2d00abc21db5fc9bfe659312c20516bba1532a6fc7b341043947a4fc793f02db",
+      "source_rect": [
+        80,
+        512,
+        16,
+        16
+      ],
+      "rgba_sha256": "b06dc75e7cdebcd7a5d984884ac16033e8b9d45547b71c4daf55e7b5f2ee1fc4",
+      "scale": 1
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/crystaldust-support-1-0.png",
+      "assetFileHash": "c7630df471998ba45281893206787439c27097ca9cf54d0329e8df534e053d2f",
+      "source": "crystaldust",
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "source_rom_name": "Pok\u00e9mon CrystalDust.gba",
+      "tileset_pair": "083df884_083dfa94",
+      "metatile": 518,
+      "layer": "top",
+      "source_atlas_sha256": "2d00abc21db5fc9bfe659312c20516bba1532a6fc7b341043947a4fc793f02db",
+      "source_rect": [
+        96,
+        512,
+        16,
+        16
+      ],
+      "rgba_sha256": "2f7e7fe52e3d3458d44ffc46898f748f9799341bea8c409a6238fd42fb0223f8",
+      "scale": 1
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/crystaldust-support-0-1.png",
+      "assetFileHash": "061c668012247c85c9a5428b1825f37e65325bddce905c1796b6edca41b0e2c2",
+      "source": "crystaldust",
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "source_rom_name": "Pok\u00e9mon CrystalDust.gba",
+      "tileset_pair": "083df884_083dfa94",
+      "metatile": 525,
+      "layer": "top",
+      "source_atlas_sha256": "2d00abc21db5fc9bfe659312c20516bba1532a6fc7b341043947a4fc793f02db",
+      "source_rect": [
+        208,
+        512,
+        16,
+        16
+      ],
+      "rgba_sha256": "7665600ec94ccf4aa845371f9a07510be5bea530ed20311ff5f19e48bb645673",
+      "scale": 1
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/crystaldust-support-1-1.png",
+      "assetFileHash": "75acdce426e6bedff0665377017faae863702d329e4a1f41bffe6c8b84a401ad",
+      "source": "crystaldust",
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "source_rom_name": "Pok\u00e9mon CrystalDust.gba",
+      "tileset_pair": "083df884_083dfa94",
+      "metatile": 526,
+      "layer": "top",
+      "source_atlas_sha256": "2d00abc21db5fc9bfe659312c20516bba1532a6fc7b341043947a4fc793f02db",
+      "source_rect": [
+        224,
+        512,
+        16,
+        16
+      ],
+      "rgba_sha256": "805a87137814580e2fc17844038410e95630e02bbd1b7fd214d4c2bbd257561c",
+      "scale": 1
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/crystaldust-support-0-2.png",
+      "assetFileHash": "38b5dc791612c9ef3267c666e7625e3c881722d7c6b3ba1f8085d146c2567ca8",
+      "source": "crystaldust",
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "source_rom_name": "Pok\u00e9mon CrystalDust.gba",
+      "tileset_pair": "083df884_083dfa94",
+      "metatile": 533,
+      "layer": "top",
+      "source_atlas_sha256": "2d00abc21db5fc9bfe659312c20516bba1532a6fc7b341043947a4fc793f02db",
+      "source_rect": [
+        80,
+        528,
+        16,
+        16
+      ],
+      "rgba_sha256": "fb339cc2cc9844c45f1afe515b71b0de33c3e500cf2ba221321e2f707c6befad",
+      "scale": 1
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/crystaldust-support-1-2.png",
+      "assetFileHash": "a1f767a44fe235b3e099cac3dc6f36f8663298d9afcc3c2693acb6f3786b9df7",
+      "source": "crystaldust",
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "source_rom_name": "Pok\u00e9mon CrystalDust.gba",
+      "tileset_pair": "083df884_083dfa94",
+      "metatile": 534,
+      "layer": "top",
+      "source_atlas_sha256": "2d00abc21db5fc9bfe659312c20516bba1532a6fc7b341043947a4fc793f02db",
+      "source_rect": [
+        96,
+        528,
+        16,
+        16
+      ],
+      "rgba_sha256": "9fe027a72826bfb4a8d2f2f52837877a1a344cc4460a50b72437ad4186de7812",
+      "scale": 1
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/crystaldust-roof-west.png",
+      "assetFileHash": "24de354592a01a04c938a7630562076a82c17f4bd4fdfe466fd6f91369bc1d7f",
+      "source": "crystaldust",
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "source_rom_name": "Pok\u00e9mon CrystalDust.gba",
+      "tileset_pair": "083df704_083df764",
+      "metatile": 683,
+      "layer": "flat",
+      "source_atlas_sha256": "8144b8fa6048b39db2fcf73bf23cf5026a379a5a80bba09350c7c66306ab9f54",
+      "source_rect": [
+        176,
+        672,
+        16,
+        16
+      ],
+      "rgba_sha256": "fa8d61a0a0745efcf02f085c746b0a468021bc831fe19521dfc186ab3ba04352",
+      "scale": 1
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/crystaldust-roof-east.png",
+      "assetFileHash": "24de354592a01a04c938a7630562076a82c17f4bd4fdfe466fd6f91369bc1d7f",
+      "source": "crystaldust",
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "source_rom_name": "Pok\u00e9mon CrystalDust.gba",
+      "tileset_pair": "083df704_083df764",
+      "metatile": 683,
+      "layer": "flat",
+      "source_atlas_sha256": "8144b8fa6048b39db2fcf73bf23cf5026a379a5a80bba09350c7c66306ab9f54",
+      "source_rect": [
+        176,
+        672,
+        16,
+        16
+      ],
+      "rgba_sha256": "fa8d61a0a0745efcf02f085c746b0a468021bc831fe19521dfc186ab3ba04352",
+      "scale": 1
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/crystaldust-ridge.png",
+      "assetFileHash": "24de354592a01a04c938a7630562076a82c17f4bd4fdfe466fd6f91369bc1d7f",
+      "source": "crystaldust",
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "source_rom_name": "Pok\u00e9mon CrystalDust.gba",
+      "tileset_pair": "083df704_083df764",
+      "metatile": 683,
+      "layer": "flat",
+      "source_atlas_sha256": "8144b8fa6048b39db2fcf73bf23cf5026a379a5a80bba09350c7c66306ab9f54",
+      "source_rect": [
+        176,
+        672,
+        16,
+        16
+      ],
+      "rgba_sha256": "fa8d61a0a0745efcf02f085c746b0a468021bc831fe19521dfc186ab3ba04352",
+      "scale": 1
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/crystaldust-ridge-end.png",
+      "assetFileHash": "cba1a08decc1134142182a58bf30b134d170d16d9aea27f9ab55f949cdb1e2a1",
+      "source": "crystaldust",
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "source_rom_name": "Pok\u00e9mon CrystalDust.gba",
+      "tileset_pair": "083df704_083df764",
+      "native_modules": [
+        {
+          "metatile": 682,
+          "layer": "flat",
+          "rect": [
+            8,
+            0,
+            8,
+            16
+          ],
+          "destination": [
+            0,
+            0
+          ],
+          "source_atlas_sha256": "8144b8fa6048b39db2fcf73bf23cf5026a379a5a80bba09350c7c66306ab9f54"
+        },
+        {
+          "metatile": 683,
+          "layer": "flat",
+          "rect": [
+            0,
+            0,
+            8,
+            16
+          ],
+          "destination": [
+            8,
+            0
+          ],
+          "source_atlas_sha256": "8144b8fa6048b39db2fcf73bf23cf5026a379a5a80bba09350c7c66306ab9f54"
+        }
+      ],
+      "scale": 1,
+      "rgba_sha256": "586e7f0a7939f130ee602382a830e077aac9b8836d119a8e657ca5d2063d7c76"
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/firegold-stairs-up.png",
+      "assetFileHash": "e78d46a4483853cd559b0544e442ad89211f115d7666f36da60bb2eb9b898a9b",
+      "source": "firegold",
+      "source_rom_sha256": "c65f698ffb844b99836a36dc0752e8b57ebd45be53be364cb3cfe52aa0cc74ce",
+      "source_rom_name": "firegold1.4.gba",
+      "tileset_pair": "082d4bb4_082d4c74",
+      "native_parts": [
+        {
+          "map": "g44_m001",
+          "source_rect": [
+            144,
+            16,
+            192,
+            48
+          ],
+          "layer": "flat",
+          "map_rgba_sha256": "5fa96367784c8eacdf24a0ba16f20d348fa6b11c2e493fd1f7516fc4037df1a4"
+        }
+      ],
+      "native_dimensions": [
+        48,
+        32
+      ],
+      "integer_reduction": 3,
+      "transparent_padding_placement": [
+        0,
+        16
+      ],
+      "outside_native_floor_pixels_omitted": 105,
+      "whole_object_retained": true,
+      "rgba_sha256": "0d25918ff4a173dee49027b6542eb8e158bb6cf5d1946af8e61dcdbcd583fe4b"
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/firegold-stairs-down.png",
+      "assetFileHash": "99d2af7e67227bf8f2a115c939713b9e326b3ed5b52fbf67b9b66ab1c1eda649",
+      "source": "firegold",
+      "source_rom_sha256": "c65f698ffb844b99836a36dc0752e8b57ebd45be53be364cb3cfe52aa0cc74ce",
+      "source_rom_name": "firegold1.4.gba",
+      "tileset_pair": "082d4bb4_082d4c74",
+      "native_parts": [
+        {
+          "map": "g44_m000",
+          "source_rect": [
+            128,
+            24,
+            176,
+            56
+          ],
+          "layer": "flat",
+          "map_rgba_sha256": "f6af292f1b76386b74e9716a2ac5804ce68321fcd0e0a575e68101a9afb92247"
+        }
+      ],
+      "native_dimensions": [
+        48,
+        32
+      ],
+      "integer_reduction": 3,
+      "transparent_padding_placement": [
+        0,
+        16
+      ],
+      "outside_native_floor_pixels_omitted": 447,
+      "whole_object_retained": true,
+      "rgba_sha256": "1c0440a34284045d36cf488a37e6451f996b808b66080fc97a7b0b5c3df374eb"
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/firegold-flowerbox.png",
+      "assetFileHash": "2d4f2feab334a155e9e792eef7957ddd13a8d4c9bbb6a49b05ddc6dcf05a3c51",
+      "source": "firegold",
+      "source_rom_sha256": "c65f698ffb844b99836a36dc0752e8b57ebd45be53be364cb3cfe52aa0cc74ce",
+      "source_rom_name": "firegold1.4.gba",
+      "tileset_pair": "082d4bb4_082d4f74",
+      "native_parts": [
+        {
+          "map": "g44_m064",
+          "source_rect": [
+            88,
+            112,
+            136,
+            128
+          ],
+          "layer": "mid",
+          "map_rgba_sha256": "b76bb12202743627d4d16d72ebb53eabf76f21b6c311fefd0fe8bc54fa5ce9d8"
+        }
+      ],
+      "native_dimensions": [
+        48,
+        16
+      ],
+      "integer_reduction": 3,
+      "transparent_padding_placement": [
+        0,
+        32
+      ],
+      "outside_native_floor_pixels_omitted": 0,
+      "whole_object_retained": true,
+      "rgba_sha256": "a5cb73f2f4cec41d3f41a0d35fb232d2c25aa997a205df0dc50810dc2c874ec4"
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/firegold-flowerbox.png",
+      "assetFileHash": "2d4f2feab334a155e9e792eef7957ddd13a8d4c9bbb6a49b05ddc6dcf05a3c51",
+      "source": "firegold",
+      "source_rom_sha256": "c65f698ffb844b99836a36dc0752e8b57ebd45be53be364cb3cfe52aa0cc74ce",
+      "source_rom_name": "firegold1.4.gba",
+      "tileset_pair": "082d4bb4_082d4f74",
+      "native_parts": [
+        {
+          "map": "g44_m064",
+          "source_rect": [
+            88,
+            112,
+            136,
+            128
+          ],
+          "layer": "mid",
+          "map_rgba_sha256": "b76bb12202743627d4d16d72ebb53eabf76f21b6c311fefd0fe8bc54fa5ce9d8"
+        }
+      ],
+      "native_dimensions": [
+        48,
+        16
+      ],
+      "integer_reduction": 3,
+      "transparent_padding_placement": [
+        0,
+        32
+      ],
+      "outside_native_floor_pixels_omitted": 0,
+      "whole_object_retained": true,
+      "rgba_sha256": "a5cb73f2f4cec41d3f41a0d35fb232d2c25aa997a205df0dc50810dc2c874ec4"
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/firegold-pink-floor.png",
+      "assetFileHash": "26e681db0d2221f7a0679e3b9f552272c56baf77cc778d9ce3f090f945553a91",
+      "source": "firegold",
+      "source_rom_sha256": "c65f698ffb844b99836a36dc0752e8b57ebd45be53be364cb3cfe52aa0cc74ce",
+      "source_rom_name": "firegold1.4.gba",
+      "tileset_pair": "082d4bb4_082d4e84",
+      "metatile": 846,
+      "layer": "flat",
+      "source_atlas_sha256": "617d41351e2dd5d780ec5c323709f5ff67b0d87c6bae7e77fa3ec8c75df2fad6",
+      "source_rect": [
+        224,
+        832,
+        16,
+        16
+      ],
+      "rgba_sha256": "a92cd527e3e5b649c257a590705cb558342cf815c10781848a2f4b1c1ebbde0c",
+      "scale": 1
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/flora/default-tree-q0.png",
+      "hack": "liquidcrystal",
+      "source_rom": "pokemon_liquid_crystal_beta_3.3.00100.gba",
+      "source_rom_sha256": "925cd6bd824e3e903636340e5f3519bc9ecb2f5f75c0bb87248213250514c965",
+      "credit": "Liquid Crystal by Linkandzelda and Synyster Zeikku",
+      "sourceUrl": "https://www.pokecommunity.com/threads/pok%C3%A9mon-liquid-crystal-3-3-xxxxx-live-beta.242023/",
+      "map": "g03_m017",
+      "native_rect": [
+        352,
+        80,
+        384,
+        128
+      ],
+      "native_dimensions": [
+        32,
+        48
+      ],
+      "integer_reduction": 2,
+      "reduced_dimensions": [
+        16,
+        24
+      ],
+      "placement": [
+        8,
+        8
+      ],
+      "source_rgba_sha256": "9d9b38bbef2ba8b8788fdc88910c0a5444665b4eda336304d5ab6b6296d9cf12",
+      "full_canopy_and_roots_retained": true,
+      "assetFileHash": "429700255d46afc1f0e84cbbf5e0fd10e6b9c3dc864ef0dc9092f4197d552d6d",
+      "source": "liquidcrystal",
+      "source_provenance": "assets/third_party/johto-hacks/flora/provenance.json"
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/flora/default-tree-q1.png",
+      "hack": "liquidcrystal",
+      "source_rom": "pokemon_liquid_crystal_beta_3.3.00100.gba",
+      "source_rom_sha256": "925cd6bd824e3e903636340e5f3519bc9ecb2f5f75c0bb87248213250514c965",
+      "credit": "Liquid Crystal by Linkandzelda and Synyster Zeikku",
+      "sourceUrl": "https://www.pokecommunity.com/threads/pok%C3%A9mon-liquid-crystal-3-3-xxxxx-live-beta.242023/",
+      "map": "g03_m017",
+      "native_rect": [
+        352,
+        80,
+        384,
+        128
+      ],
+      "native_dimensions": [
+        32,
+        48
+      ],
+      "integer_reduction": 2,
+      "reduced_dimensions": [
+        16,
+        24
+      ],
+      "placement": [
+        8,
+        8
+      ],
+      "source_rgba_sha256": "9d9b38bbef2ba8b8788fdc88910c0a5444665b4eda336304d5ab6b6296d9cf12",
+      "full_canopy_and_roots_retained": true,
+      "assetFileHash": "44282a38568729005963cc6935c6ef6012cb3aa38a336319437a38a410a8864d",
+      "source": "liquidcrystal",
+      "source_provenance": "assets/third_party/johto-hacks/flora/provenance.json"
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/flora/default-tree-q2.png",
+      "hack": "liquidcrystal",
+      "source_rom": "pokemon_liquid_crystal_beta_3.3.00100.gba",
+      "source_rom_sha256": "925cd6bd824e3e903636340e5f3519bc9ecb2f5f75c0bb87248213250514c965",
+      "credit": "Liquid Crystal by Linkandzelda and Synyster Zeikku",
+      "sourceUrl": "https://www.pokecommunity.com/threads/pok%C3%A9mon-liquid-crystal-3-3-xxxxx-live-beta.242023/",
+      "map": "g03_m017",
+      "native_rect": [
+        352,
+        80,
+        384,
+        128
+      ],
+      "native_dimensions": [
+        32,
+        48
+      ],
+      "integer_reduction": 2,
+      "reduced_dimensions": [
+        16,
+        24
+      ],
+      "placement": [
+        8,
+        8
+      ],
+      "source_rgba_sha256": "9d9b38bbef2ba8b8788fdc88910c0a5444665b4eda336304d5ab6b6296d9cf12",
+      "full_canopy_and_roots_retained": true,
+      "assetFileHash": "2a148f190853465280aa443dd55e49ec0d21231b67862e51ab928ea1c670e591",
+      "source": "liquidcrystal",
+      "source_provenance": "assets/third_party/johto-hacks/flora/provenance.json"
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/flora/default-tree-q3.png",
+      "hack": "liquidcrystal",
+      "source_rom": "pokemon_liquid_crystal_beta_3.3.00100.gba",
+      "source_rom_sha256": "925cd6bd824e3e903636340e5f3519bc9ecb2f5f75c0bb87248213250514c965",
+      "credit": "Liquid Crystal by Linkandzelda and Synyster Zeikku",
+      "sourceUrl": "https://www.pokecommunity.com/threads/pok%C3%A9mon-liquid-crystal-3-3-xxxxx-live-beta.242023/",
+      "map": "g03_m017",
+      "native_rect": [
+        352,
+        80,
+        384,
+        128
+      ],
+      "native_dimensions": [
+        32,
+        48
+      ],
+      "integer_reduction": 2,
+      "reduced_dimensions": [
+        16,
+        24
+      ],
+      "placement": [
+        8,
+        8
+      ],
+      "source_rgba_sha256": "9d9b38bbef2ba8b8788fdc88910c0a5444665b4eda336304d5ab6b6296d9cf12",
+      "full_canopy_and_roots_retained": true,
+      "assetFileHash": "2332f5a0812cec2f92bfa0a1b4b288c7e37e0daa658c021dc8fa7c0a5e492a2d",
+      "source": "liquidcrystal",
+      "source_provenance": "assets/third_party/johto-hacks/flora/provenance.json"
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/crystaldust-ladder-up.png",
+      "assetFileHash": "74e7e97664911b1a80fe815f1f4b825fe67c0e27be1aa7bc1ae37477e7303522",
+      "source": "crystaldust",
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "source_rom_name": "Pok\u00e9mon CrystalDust.gba",
+      "tileset_pair": "083df884_083dfa94",
+      "native_parts": [
+        {
+          "metatile": 673,
+          "layer": "top",
+          "source_atlas_sha256": "2d00abc21db5fc9bfe659312c20516bba1532a6fc7b341043947a4fc793f02db"
+        },
+        {
+          "metatile": 535,
+          "layer": "top",
+          "source_atlas_sha256": "2d00abc21db5fc9bfe659312c20516bba1532a6fc7b341043947a4fc793f02db"
+        }
+      ],
+      "native_dimensions": [
+        16,
+        32
+      ],
+      "integer_reduction": 2,
+      "transparent_padding_placement": [
+        8,
+        0
+      ],
+      "outside_native_floor_pixels_omitted": 0,
+      "whole_object_retained": true,
+      "rgba_sha256": "83097618f70ff365df60c2babb7b6c336d885222bc080b3f0eaf72494e3b7bf0"
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/crystaldust-ladder-down.png",
+      "assetFileHash": "bbdf2238d743c94fe78cf8c6e08d3192d458cfd3d897d8a53f400a00e536e99d",
+      "source": "crystaldust",
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "source_rom_name": "Pok\u00e9mon CrystalDust.gba",
+      "tileset_pair": "083df884_083dfa94",
+      "metatile": 519,
+      "layer": "top",
+      "source_atlas_sha256": "2d00abc21db5fc9bfe659312c20516bba1532a6fc7b341043947a4fc793f02db",
+      "source_rect": [
+        112,
+        512,
+        16,
+        16
+      ],
+      "rgba_sha256": "42db016122b4e9bd39ebd77809d9287e08178293c89ef3c439d04d7125cbf634",
+      "scale": 1
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/original-gsc-e41918291cc2ffe9.png",
+      "assetFileHash": "cfb332103f93cde523d201ccb8727b9f1464896960c2a56f6f0c0f8bfa9fb811",
+      "source": "original_gsc",
+      "source_game": "gold",
+      "source_map": "BILLS_HOUSE",
+      "source_tileset": "TILESET_HOUSE",
+      "source_block": 29,
+      "source_quadrant": 3,
+      "source_pixel_sha256": "e41918291cc2ffe9e77188647f15476167feb05eac2ccfcf72d56e45f44a5405",
+      "source_files": {
+        "metadata": "6521a2c155b16cbb502c53810b25685290594687706afdfc1c6b845090eb232f",
+        "maps": "d2b8cc76190f4d8a1609cc86ed7d0697df45188533e09f905f7afa53f3e487ac",
+        "image": "b39ccb013ca1d84117363b4244e9b33f3546a718bf9392e6ed5a81cdda572c35"
+      },
+      "fallback_reason": "No equivalent radio/beacon artwork in supplied hacks; user approved original cartridge geometry in Gen3 colors.",
+      "original_geometry_retained": true,
+      "room_base_preserved": true,
+      "empty_radio_head_floor_omitted": false,
+      "rgba_sha256": "1e59fffcdde158cdfe22b6e102a34169822fe02cbde9391c3dadf13727862a41",
+      "scale": 1
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/original-gsc-163baf529e26334e.png",
+      "assetFileHash": "232c2eac760eae604f9dd43352c0b272396b7cfaf220081b54583b6d0cbc2320",
+      "source": "original_gsc",
+      "source_game": "gold",
+      "source_map": "ECRUTEAK_ITEMFINDER_HOUSE",
+      "source_tileset": "TILESET_TRADITIONAL_HOUSE",
+      "source_block": 1,
+      "source_quadrant": 0,
+      "source_pixel_sha256": "163baf529e26334e733c3257a1213edc955641eb9aa1f4f4da44b715746b308b",
+      "source_files": {
+        "metadata": "6521a2c155b16cbb502c53810b25685290594687706afdfc1c6b845090eb232f",
+        "maps": "d2b8cc76190f4d8a1609cc86ed7d0697df45188533e09f905f7afa53f3e487ac",
+        "image": "a0f1652f310f5cc821c59e0e20ab3f787a2e8cb6b115c6f1765ff3e1eee805bf"
+      },
+      "fallback_reason": "No equivalent radio/beacon artwork in supplied hacks; user approved original cartridge geometry in Gen3 colors.",
+      "original_geometry_retained": true,
+      "room_base_preserved": true,
+      "empty_radio_head_floor_omitted": true,
+      "rgba_sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "scale": 1
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/original-gsc-c204f4ec0b6b6f25.png",
+      "assetFileHash": "2d771b57e573d8746521f8031de470b9df511ac17a2529a02f87026ff12fb30d",
+      "source": "original_gsc",
+      "source_game": "gold",
+      "source_map": "ECRUTEAK_ITEMFINDER_HOUSE",
+      "source_tileset": "TILESET_TRADITIONAL_HOUSE",
+      "source_block": 1,
+      "source_quadrant": 2,
+      "source_pixel_sha256": "c204f4ec0b6b6f25d408bfbeb3d174d89036f7923e7f51ef8c83d4104e942dee",
+      "source_files": {
+        "metadata": "6521a2c155b16cbb502c53810b25685290594687706afdfc1c6b845090eb232f",
+        "maps": "d2b8cc76190f4d8a1609cc86ed7d0697df45188533e09f905f7afa53f3e487ac",
+        "image": "a0f1652f310f5cc821c59e0e20ab3f787a2e8cb6b115c6f1765ff3e1eee805bf"
+      },
+      "fallback_reason": "No equivalent radio/beacon artwork in supplied hacks; user approved original cartridge geometry in Gen3 colors.",
+      "original_geometry_retained": true,
+      "room_base_preserved": true,
+      "empty_radio_head_floor_omitted": false,
+      "rgba_sha256": "3e0cab92c0e3b1d31df7869677e56782d551e1a424e270871e2c7945b328854a",
+      "scale": 1
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/original-gsc-54fd08e1726548ff.png",
+      "assetFileHash": "232c2eac760eae604f9dd43352c0b272396b7cfaf220081b54583b6d0cbc2320",
+      "source": "original_gsc",
+      "source_game": "gold",
+      "source_map": "PLAYERS_HOUSE_2F",
+      "source_tileset": "TILESET_PLAYERS_ROOM",
+      "source_block": 1,
+      "source_quadrant": 1,
+      "source_pixel_sha256": "54fd08e1726548ffe329b350b30b1699c2dbb220a48f61e91dbfb6ec25ff4511",
+      "source_files": {
+        "metadata": "6521a2c155b16cbb502c53810b25685290594687706afdfc1c6b845090eb232f",
+        "maps": "d2b8cc76190f4d8a1609cc86ed7d0697df45188533e09f905f7afa53f3e487ac",
+        "image": "d184f6c92a002d40f42d3caa8479e7f4e9ad3a2f048f9e12fe80e9b264bdc6b6"
+      },
+      "fallback_reason": "No equivalent radio/beacon artwork in supplied hacks; user approved original cartridge geometry in Gen3 colors.",
+      "original_geometry_retained": true,
+      "room_base_preserved": true,
+      "empty_radio_head_floor_omitted": true,
+      "rgba_sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "scale": 1
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/original-gsc-a465bf0b589e0f3a.png",
+      "assetFileHash": "ddee612dc4af30060fa0107e66ab1c937d2a540599b43135bae4807b445c4fe4",
+      "source": "original_gsc",
+      "source_game": "gold",
+      "source_map": "PLAYERS_HOUSE_2F",
+      "source_tileset": "TILESET_PLAYERS_ROOM",
+      "source_block": 1,
+      "source_quadrant": 3,
+      "source_pixel_sha256": "a465bf0b589e0f3a1e7e8e87d2f40e0a64b020659db5bc6d1b490854a42633b0",
+      "source_files": {
+        "metadata": "6521a2c155b16cbb502c53810b25685290594687706afdfc1c6b845090eb232f",
+        "maps": "d2b8cc76190f4d8a1609cc86ed7d0697df45188533e09f905f7afa53f3e487ac",
+        "image": "d184f6c92a002d40f42d3caa8479e7f4e9ad3a2f048f9e12fe80e9b264bdc6b6"
+      },
+      "fallback_reason": "No equivalent radio/beacon artwork in supplied hacks; user approved original cartridge geometry in Gen3 colors.",
+      "original_geometry_retained": true,
+      "room_base_preserved": true,
+      "empty_radio_head_floor_omitted": false,
+      "rgba_sha256": "c9f0abadc69320ee6804d4664ebc7a17827f1e87da3a6960ae88b3bdfe836ba3",
+      "scale": 1
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/original-gsc-0707012cda5a67f6.png",
+      "assetFileHash": "c07eb7532887c0e58722b8241bd26e4bf1d4b6327f1c09a4cdeb9b4023442a1a",
+      "source": "original_gsc",
+      "source_game": "crystal",
+      "source_map": "ECRUTEAK_ITEMFINDER_HOUSE",
+      "source_tileset": "TILESET_TRADITIONAL_HOUSE",
+      "source_block": 1,
+      "source_quadrant": 2,
+      "source_pixel_sha256": "0707012cda5a67f6842f32511347ef5463d65e33a9a887b987bbbae893a88bd7",
+      "source_files": {
+        "metadata": "0071b3599a4bf7682f07f433f8493159d105148d8b78ff06e77817ddb044c2a5",
+        "maps": "210b5527393c273c632572fd697aa89bec9c853526b58069a77a2acc8767ebf0",
+        "image": "68a0a663c6e88b8d1bb38f6279f3a6fee6d7ae81191cd9ae86936eeb2fe37d58"
+      },
+      "fallback_reason": "No equivalent radio/beacon artwork in supplied hacks; user approved original cartridge geometry in Gen3 colors.",
+      "original_geometry_retained": true,
+      "room_base_preserved": true,
+      "empty_radio_head_floor_omitted": false,
+      "rgba_sha256": "dffc9cd25aac97f2c446ab03d9508e43d8f5e7c90e89011c37baf106cd645760",
+      "scale": 1
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/original-gsc-f1f1a9a311726cb7.png",
+      "assetFileHash": "477f7fe4b7d7fdc83c1051a3f4f7428ba4394c905832940681aed9518000e35e",
+      "source": "original_gsc",
+      "source_game": "gold",
+      "source_map": "OLIVINE_LIGHTHOUSE_6F",
+      "source_tileset": "TILESET_LIGHTHOUSE",
+      "source_block": 6,
+      "source_quadrant": 2,
+      "source_pixel_sha256": "f1f1a9a311726cb727513dc98898528e04138e2ae5c26afc42bf176cad9b4d4a",
+      "source_files": {
+        "metadata": "6521a2c155b16cbb502c53810b25685290594687706afdfc1c6b845090eb232f",
+        "maps": "d2b8cc76190f4d8a1609cc86ed7d0697df45188533e09f905f7afa53f3e487ac",
+        "image": "3ff5605ac40bd5e98b6d3c9a0a1dfc8150341eb00d2217644732bd53f3bcf70d"
+      },
+      "fallback_reason": "No equivalent radio/beacon artwork in supplied hacks; user approved original cartridge geometry in Gen3 colors.",
+      "original_geometry_retained": true,
+      "room_base_preserved": true,
+      "empty_radio_head_floor_omitted": false,
+      "rgba_sha256": "d0b3266535f8add3400fa5706aeee602b5ffafb9d2355af1907c97f315d70c8e",
+      "scale": 1
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/original-gsc-28377f861407a175.png",
+      "assetFileHash": "e4b363eda204cc7606c7765e83bc9ad14bedae95d36007ea69c6be345ada450b",
+      "source": "original_gsc",
+      "source_game": "gold",
+      "source_map": "OLIVINE_LIGHTHOUSE_6F",
+      "source_tileset": "TILESET_LIGHTHOUSE",
+      "source_block": 6,
+      "source_quadrant": 3,
+      "source_pixel_sha256": "28377f861407a17534cc4beac0529c73b8dbc5293bc8cd0a5deb0b67fff1bb3e",
+      "source_files": {
+        "metadata": "6521a2c155b16cbb502c53810b25685290594687706afdfc1c6b845090eb232f",
+        "maps": "d2b8cc76190f4d8a1609cc86ed7d0697df45188533e09f905f7afa53f3e487ac",
+        "image": "3ff5605ac40bd5e98b6d3c9a0a1dfc8150341eb00d2217644732bd53f3bcf70d"
+      },
+      "fallback_reason": "No equivalent radio/beacon artwork in supplied hacks; user approved original cartridge geometry in Gen3 colors.",
+      "original_geometry_retained": true,
+      "room_base_preserved": true,
+      "empty_radio_head_floor_omitted": false,
+      "rgba_sha256": "60ba2378d1dae1a76648f4989ca10cc83d23480b4c89e2a1182c0198b4b313c4",
+      "scale": 1
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/original-gsc-4f767fdf5677b4e6.png",
+      "assetFileHash": "a9e26059a3f7a658f8eef744ed7684e895ddabbc76fb009c2770c2f1fbfb6ccf",
+      "source": "original_gsc",
+      "source_game": "gold",
+      "source_map": "OLIVINE_LIGHTHOUSE_6F",
+      "source_tileset": "TILESET_LIGHTHOUSE",
+      "source_block": 45,
+      "source_quadrant": 0,
+      "source_pixel_sha256": "4f767fdf5677b4e6b5809aab666c2b8c420dede686ca7f80096cf5a4ae48957d",
+      "source_files": {
+        "metadata": "6521a2c155b16cbb502c53810b25685290594687706afdfc1c6b845090eb232f",
+        "maps": "d2b8cc76190f4d8a1609cc86ed7d0697df45188533e09f905f7afa53f3e487ac",
+        "image": "3ff5605ac40bd5e98b6d3c9a0a1dfc8150341eb00d2217644732bd53f3bcf70d"
+      },
+      "fallback_reason": "No equivalent radio/beacon artwork in supplied hacks; user approved original cartridge geometry in Gen3 colors.",
+      "original_geometry_retained": true,
+      "room_base_preserved": true,
+      "empty_radio_head_floor_omitted": false,
+      "rgba_sha256": "2ea301fdcc9fd580ca15e214d9cbee333ca40df8520bb37dae28f357ad4ac686",
+      "scale": 1
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/original-gsc-57116797a581e116.png",
+      "assetFileHash": "c0aeb5741a32d79f224bb84db4382e0cfbe793e9041fb640d5c2e1e3d3c4bd21",
+      "source": "original_gsc",
+      "source_game": "gold",
+      "source_map": "OLIVINE_LIGHTHOUSE_6F",
+      "source_tileset": "TILESET_LIGHTHOUSE",
+      "source_block": 45,
+      "source_quadrant": 1,
+      "source_pixel_sha256": "57116797a581e116110f73bb0c6722fbd9b3655b9cf77fe0cfcbfe688e421543",
+      "source_files": {
+        "metadata": "6521a2c155b16cbb502c53810b25685290594687706afdfc1c6b845090eb232f",
+        "maps": "d2b8cc76190f4d8a1609cc86ed7d0697df45188533e09f905f7afa53f3e487ac",
+        "image": "3ff5605ac40bd5e98b6d3c9a0a1dfc8150341eb00d2217644732bd53f3bcf70d"
+      },
+      "fallback_reason": "No equivalent radio/beacon artwork in supplied hacks; user approved original cartridge geometry in Gen3 colors.",
+      "original_geometry_retained": true,
+      "room_base_preserved": true,
+      "empty_radio_head_floor_omitted": false,
+      "rgba_sha256": "4e6a4cce42c8e9c0caae4546a42f7c0af41c29e14ef8f0d9432e3069e775d095",
+      "scale": 1
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/original-gsc-fa4e18aec25fe7eb.png",
+      "assetFileHash": "c66dc9a7c97913c78b2cd00a0d6e899ab8504fbf412bd97ceb00995fca6d8616",
+      "source": "original_gsc",
+      "source_game": "gold",
+      "source_map": "OLIVINE_LIGHTHOUSE_6F",
+      "source_tileset": "TILESET_LIGHTHOUSE",
+      "source_block": 45,
+      "source_quadrant": 2,
+      "source_pixel_sha256": "fa4e18aec25fe7eb0e1ddfc9b95e873e6072ede9277c2bc7cebd5b5c418c14b4",
+      "source_files": {
+        "metadata": "6521a2c155b16cbb502c53810b25685290594687706afdfc1c6b845090eb232f",
+        "maps": "d2b8cc76190f4d8a1609cc86ed7d0697df45188533e09f905f7afa53f3e487ac",
+        "image": "3ff5605ac40bd5e98b6d3c9a0a1dfc8150341eb00d2217644732bd53f3bcf70d"
+      },
+      "fallback_reason": "No equivalent radio/beacon artwork in supplied hacks; user approved original cartridge geometry in Gen3 colors.",
+      "original_geometry_retained": true,
+      "room_base_preserved": true,
+      "empty_radio_head_floor_omitted": false,
+      "rgba_sha256": "00effc8f209d9b499edf9070e853f044e1c514407e26b4ac89e7abdc17ddaceb",
+      "scale": 1
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/original-gsc-17723b23b98450de.png",
+      "assetFileHash": "673b7a37b429665653d00ee015ac911f580cf82b613ce203ffb0fe26035cbb91",
+      "source": "original_gsc",
+      "source_game": "gold",
+      "source_map": "OLIVINE_LIGHTHOUSE_6F",
+      "source_tileset": "TILESET_LIGHTHOUSE",
+      "source_block": 45,
+      "source_quadrant": 3,
+      "source_pixel_sha256": "17723b23b98450defc22bbe359f82330a05eee1dde037ab48fb246063bf5ac4c",
+      "source_files": {
+        "metadata": "6521a2c155b16cbb502c53810b25685290594687706afdfc1c6b845090eb232f",
+        "maps": "d2b8cc76190f4d8a1609cc86ed7d0697df45188533e09f905f7afa53f3e487ac",
+        "image": "3ff5605ac40bd5e98b6d3c9a0a1dfc8150341eb00d2217644732bd53f3bcf70d"
+      },
+      "fallback_reason": "No equivalent radio/beacon artwork in supplied hacks; user approved original cartridge geometry in Gen3 colors.",
+      "original_geometry_retained": true,
+      "room_base_preserved": true,
+      "empty_radio_head_floor_omitted": false,
+      "rgba_sha256": "2329fe8cccf8a753b6a5920a52e09899cd03541695d82c040a9c697369b84bec",
+      "scale": 1
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/original-gsc-cd6d3daa76f4aa55.png",
+      "assetFileHash": "4861759442a6dfa09d17ed53960baef5d52998e21168fc4564482c01a0a5a847",
+      "source": "original_gsc",
+      "source_game": "crystal",
+      "source_map": "OLIVINE_LIGHTHOUSE_6F",
+      "source_tileset": "TILESET_LIGHTHOUSE",
+      "source_block": 6,
+      "source_quadrant": 2,
+      "source_pixel_sha256": "cd6d3daa76f4aa557f43655289dd483fee61c29a4341e9c9af1f1385c1c559ca",
+      "source_files": {
+        "metadata": "0071b3599a4bf7682f07f433f8493159d105148d8b78ff06e77817ddb044c2a5",
+        "maps": "210b5527393c273c632572fd697aa89bec9c853526b58069a77a2acc8767ebf0",
+        "image": "725c70770ba62f270f304f61ed044b947c61298cc360bee40d8504fb319529ec"
+      },
+      "fallback_reason": "No equivalent radio/beacon artwork in supplied hacks; user approved original cartridge geometry in Gen3 colors.",
+      "original_geometry_retained": true,
+      "room_base_preserved": true,
+      "empty_radio_head_floor_omitted": false,
+      "rgba_sha256": "42257ca6d5f83549f457b771cab4068c6c0d846f7bddbff8669230d927ad346a",
+      "scale": 1
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/original-gsc-627b0cb06c2ae17d.png",
+      "assetFileHash": "c5dd2fce9388755ba3d6d4ffb6e7b3d8ff53b4a0c8be3398ea7574cd8da222aa",
+      "source": "original_gsc",
+      "source_game": "crystal",
+      "source_map": "OLIVINE_LIGHTHOUSE_6F",
+      "source_tileset": "TILESET_LIGHTHOUSE",
+      "source_block": 6,
+      "source_quadrant": 3,
+      "source_pixel_sha256": "627b0cb06c2ae17d2ad3b941b0b9781feafb1fa3add25d3ecf4f53491c3c6f83",
+      "source_files": {
+        "metadata": "0071b3599a4bf7682f07f433f8493159d105148d8b78ff06e77817ddb044c2a5",
+        "maps": "210b5527393c273c632572fd697aa89bec9c853526b58069a77a2acc8767ebf0",
+        "image": "725c70770ba62f270f304f61ed044b947c61298cc360bee40d8504fb319529ec"
+      },
+      "fallback_reason": "No equivalent radio/beacon artwork in supplied hacks; user approved original cartridge geometry in Gen3 colors.",
+      "original_geometry_retained": true,
+      "room_base_preserved": true,
+      "empty_radio_head_floor_omitted": false,
+      "rgba_sha256": "9719f3ba382923c5e76b84869ff81f4acfe45ef8b6324e280d09b2dd0e20fdc1",
+      "scale": 1
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/original-gsc-20a53fbb046c37a2.png",
+      "assetFileHash": "c1e81212a9011151a27c903e68e142d110651cb301fa346bc47c94d32936aa0b",
+      "source": "original_gsc",
+      "source_game": "crystal",
+      "source_map": "OLIVINE_LIGHTHOUSE_6F",
+      "source_tileset": "TILESET_LIGHTHOUSE",
+      "source_block": 45,
+      "source_quadrant": 0,
+      "source_pixel_sha256": "20a53fbb046c37a22f3db8fa62acc35fc1fc4def6c81f269cbe1f2360a2a15f9",
+      "source_files": {
+        "metadata": "0071b3599a4bf7682f07f433f8493159d105148d8b78ff06e77817ddb044c2a5",
+        "maps": "210b5527393c273c632572fd697aa89bec9c853526b58069a77a2acc8767ebf0",
+        "image": "725c70770ba62f270f304f61ed044b947c61298cc360bee40d8504fb319529ec"
+      },
+      "fallback_reason": "No equivalent radio/beacon artwork in supplied hacks; user approved original cartridge geometry in Gen3 colors.",
+      "original_geometry_retained": true,
+      "room_base_preserved": true,
+      "empty_radio_head_floor_omitted": false,
+      "rgba_sha256": "c78cb28859fbd2ecbe32eb1f91baeec59cda87e8babde70ff458392285f0915f",
+      "scale": 1
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/original-gsc-74b25f627486bc8b.png",
+      "assetFileHash": "c407d080ef4d66140d6ff54c4df5a40e60c13306f6e1314a7cd1b4014d2f9370",
+      "source": "original_gsc",
+      "source_game": "crystal",
+      "source_map": "OLIVINE_LIGHTHOUSE_6F",
+      "source_tileset": "TILESET_LIGHTHOUSE",
+      "source_block": 45,
+      "source_quadrant": 1,
+      "source_pixel_sha256": "74b25f627486bc8b98b315599340485e06692ac09b4dd0f579e4fc0bb6f6fa66",
+      "source_files": {
+        "metadata": "0071b3599a4bf7682f07f433f8493159d105148d8b78ff06e77817ddb044c2a5",
+        "maps": "210b5527393c273c632572fd697aa89bec9c853526b58069a77a2acc8767ebf0",
+        "image": "725c70770ba62f270f304f61ed044b947c61298cc360bee40d8504fb319529ec"
+      },
+      "fallback_reason": "No equivalent radio/beacon artwork in supplied hacks; user approved original cartridge geometry in Gen3 colors.",
+      "original_geometry_retained": true,
+      "room_base_preserved": true,
+      "empty_radio_head_floor_omitted": false,
+      "rgba_sha256": "17d726dd4d183f22df1f2c9baab8d601084fda5503ae72c1246e5e1982f53857",
+      "scale": 1
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/original-gsc-336c0f58e6a9fca8.png",
+      "assetFileHash": "2aaa505276a2bb3e9701e706d9db95497b216282c032ea74db785b247febef12",
+      "source": "original_gsc",
+      "source_game": "crystal",
+      "source_map": "OLIVINE_LIGHTHOUSE_6F",
+      "source_tileset": "TILESET_LIGHTHOUSE",
+      "source_block": 45,
+      "source_quadrant": 2,
+      "source_pixel_sha256": "336c0f58e6a9fca8b72aa4e0b71d6c436f67ffe263d8c578976377ef732fa354",
+      "source_files": {
+        "metadata": "0071b3599a4bf7682f07f433f8493159d105148d8b78ff06e77817ddb044c2a5",
+        "maps": "210b5527393c273c632572fd697aa89bec9c853526b58069a77a2acc8767ebf0",
+        "image": "725c70770ba62f270f304f61ed044b947c61298cc360bee40d8504fb319529ec"
+      },
+      "fallback_reason": "No equivalent radio/beacon artwork in supplied hacks; user approved original cartridge geometry in Gen3 colors.",
+      "original_geometry_retained": true,
+      "room_base_preserved": true,
+      "empty_radio_head_floor_omitted": false,
+      "rgba_sha256": "0d878b62bd5cb5783d5dca8370a407d8f83add3af649f3c742111feacba98b2b",
+      "scale": 1
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/original-gsc-c5c398f5aa2b0574.png",
+      "assetFileHash": "0437e111b1614f93ee3b448b6330b38d9e5b4c47afa7f4fbe6f81a45c7d527b5",
+      "source": "original_gsc",
+      "source_game": "crystal",
+      "source_map": "OLIVINE_LIGHTHOUSE_6F",
+      "source_tileset": "TILESET_LIGHTHOUSE",
+      "source_block": 45,
+      "source_quadrant": 3,
+      "source_pixel_sha256": "c5c398f5aa2b0574b0413eee675881228be4fd13455f01e252f8fa4bfd4d3bd0",
+      "source_files": {
+        "metadata": "0071b3599a4bf7682f07f433f8493159d105148d8b78ff06e77817ddb044c2a5",
+        "maps": "210b5527393c273c632572fd697aa89bec9c853526b58069a77a2acc8767ebf0",
+        "image": "725c70770ba62f270f304f61ed044b947c61298cc360bee40d8504fb319529ec"
+      },
+      "fallback_reason": "No equivalent radio/beacon artwork in supplied hacks; user approved original cartridge geometry in Gen3 colors.",
+      "original_geometry_retained": true,
+      "room_base_preserved": true,
+      "empty_radio_head_floor_omitted": false,
+      "rgba_sha256": "58ca000ef568269441cef1c663d896ddb150682345892839c0851d5e892bea62",
+      "scale": 1
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/interiors/original-gsc-b7d086c6f6e2f35a.png",
+      "assetFileHash": "41a49d1b3e0ecbbad06baa176650b6271017b572790a3a66dbe634e94df44532",
+      "source": "original_gsc",
+      "source_game": "gold",
+      "source_map": "BILLS_FAMILYS_HOUSE",
+      "source_tileset": "TILESET_HOUSE",
+      "source_block": 29,
+      "source_quadrant": 1,
+      "source_pixel_sha256": "b7d086c6f6e2f35ac64cea53ba87641d9aef057b0654fda0175b2544cab48789",
+      "source_files": {
+        "metadata": "6521a2c155b16cbb502c53810b25685290594687706afdfc1c6b845090eb232f",
+        "maps": "d2b8cc76190f4d8a1609cc86ed7d0697df45188533e09f905f7afa53f3e487ac",
+        "image": "b39ccb013ca1d84117363b4244e9b33f3546a718bf9392e6ed5a81cdda572c35"
+      },
+      "fallback_reason": "No equivalent radio/beacon artwork in supplied hacks; user approved original cartridge geometry in Gen3 colors.",
+      "original_geometry_retained": true,
+      "room_base_preserved": true,
+      "empty_radio_head_floor_omitted": false,
+      "rgba_sha256": "01713fb8686776c367988c1783df942c23d78dd3f0df21577322bdf09badd008",
+      "scale": 1
+    }
+  ],
+  "files": {
+    "crystaldust-bellsprout-picture.png": "c83f212e1157812388f6c3e837c0fde3c702351cd3bdf51350b10f73c06ce4e6",
+    "crystaldust-broken-wall.png": "efc512584864ff36f3d31af307586cb4ec4ee5b385c987e9a08745f3888cb8c5",
+    "crystaldust-fringe.png": "a9c69b21693374458b5ae5ee15d8f1a4c22ae25ae1d4a915f5387f73e0eec775",
+    "crystaldust-ladder-down.png": "bbdf2238d743c94fe78cf8c6e08d3192d458cfd3d897d8a53f400a00e536e99d",
+    "crystaldust-ladder-up.png": "74e7e97664911b1a80fe815f1f4b825fe67c0e27be1aa7bc1ae37477e7303522",
+    "crystaldust-lattice-10-11-26-27.png": "b0d8ed4b8cd02ac667c9fa62768586e243381ab06fefd2589bcba8bcf972c203",
+    "crystaldust-lattice-11-11-27-27.png": "cf20f2c3e4bd1e9ddafd10f11a1ee0da88cebe671028a20132bbe1ff9e1a4bcb",
+    "crystaldust-lattice-11-27-27-27.png": "dbc373cdc8ad3bdee8e387bbc9b91703186c6cd67d4c5ca747ae98307bae032f",
+    "crystaldust-lattice-26-27-26-27.png": "dfd03464b82e52696d37a6013e83d50adf1168c9a82d9fe08e35bfebddd339cc",
+    "crystaldust-lattice-26-27-27-27.png": "4bf31ef6bbddbfe446f8c12346f2409e17fcb844b67c34ca99c42f1d4e19db00",
+    "crystaldust-lattice-27-11-27-27.png": "5a62bf85b0ef4de4e6bc7a532a0ffd447bb4591410fd35c24b3218f6d3c60d8b",
+    "crystaldust-lattice-27-27-27-27.png": "14c81482effa18d26cfadfc4ccbd36f3269a7c88337f05c17471eeb8375a5e6b",
+    "crystaldust-lattice-27-70-27-86.png": "9c034722aa6368b5bb885c577f965384072131d3b922a695c7ed85036007bf83",
+    "crystaldust-lattice-71-26-87-26.png": "3ca0712de660cfd8a50539643b8d4fb26a2c56501b52c82460afe9b924efda6d",
+    "crystaldust-lattice-floor-edge.png": "6af279a6b6061eb5532f9cf58d945d0b855326996bd9629ff3e9e67953711d61",
+    "crystaldust-painting-left.png": "7dbfa46443367fb740cfe459e11cd9f479835fb2f91d4053a2a76ace84547677",
+    "crystaldust-painting-right.png": "2050c4fce828c3425742998127f845cceed3e375ee0842a1819771e00ff51ddb",
+    "crystaldust-ridge-end.png": "cba1a08decc1134142182a58bf30b134d170d16d9aea27f9ab55f949cdb1e2a1",
+    "crystaldust-ridge.png": "24de354592a01a04c938a7630562076a82c17f4bd4fdfe466fd6f91369bc1d7f",
+    "crystaldust-roof-east.png": "24de354592a01a04c938a7630562076a82c17f4bd4fdfe466fd6f91369bc1d7f",
+    "crystaldust-roof-west.png": "24de354592a01a04c938a7630562076a82c17f4bd4fdfe466fd6f91369bc1d7f",
+    "crystaldust-support-0-0.png": "1d2e07a8c3441c81b001b012ae150176c2f3dfe4d91a66224108153cd9fb700b",
+    "crystaldust-support-0-1.png": "061c668012247c85c9a5428b1825f37e65325bddce905c1796b6edca41b0e2c2",
+    "crystaldust-support-0-2.png": "38b5dc791612c9ef3267c666e7625e3c881722d7c6b3ba1f8085d146c2567ca8",
+    "crystaldust-support-1-0.png": "c7630df471998ba45281893206787439c27097ca9cf54d0329e8df534e053d2f",
+    "crystaldust-support-1-1.png": "75acdce426e6bedff0665377017faae863702d329e4a1f41bffe6c8b84a401ad",
+    "crystaldust-support-1-2.png": "a1f767a44fe235b3e099cac3dc6f36f8663298d9afcc3c2693acb6f3786b9df7",
+    "crystaldust-vertical-wall.png": "c22e5e02b1d1a1be40db85b89078c2c8f7557278475a81e22925929b0d36c954",
+    "crystaldust-wall.png": "5a0d2ff32a28d144fb7f2801f7d88213119b0ca7986c6fdd3662533bde207ee8",
+    "firegold-flowerbox.png": "2d4f2feab334a155e9e792eef7957ddd13a8d4c9bbb6a49b05ddc6dcf05a3c51",
+    "firegold-lab-computer.png": "72d17ccd6480d17fa80ad56c10aedcdbf5c7210273fa8e9c8d90d0aa1a957173",
+    "firegold-pink-floor.png": "26e681db0d2221f7a0679e3b9f552272c56baf77cc778d9ce3f090f945553a91",
+    "firegold-stairs-down.png": "99d2af7e67227bf8f2a115c939713b9e326b3ed5b52fbf67b9b66ab1c1eda649",
+    "firegold-stairs-up.png": "e78d46a4483853cd559b0544e442ad89211f115d7666f36da60bb2eb9b898a9b",
+    "original-gsc-0707012cda5a67f6.png": "c07eb7532887c0e58722b8241bd26e4bf1d4b6327f1c09a4cdeb9b4023442a1a",
+    "original-gsc-163baf529e26334e.png": "232c2eac760eae604f9dd43352c0b272396b7cfaf220081b54583b6d0cbc2320",
+    "original-gsc-17723b23b98450de.png": "673b7a37b429665653d00ee015ac911f580cf82b613ce203ffb0fe26035cbb91",
+    "original-gsc-20a53fbb046c37a2.png": "c1e81212a9011151a27c903e68e142d110651cb301fa346bc47c94d32936aa0b",
+    "original-gsc-28377f861407a175.png": "e4b363eda204cc7606c7765e83bc9ad14bedae95d36007ea69c6be345ada450b",
+    "original-gsc-336c0f58e6a9fca8.png": "2aaa505276a2bb3e9701e706d9db95497b216282c032ea74db785b247febef12",
+    "original-gsc-4f767fdf5677b4e6.png": "a9e26059a3f7a658f8eef744ed7684e895ddabbc76fb009c2770c2f1fbfb6ccf",
+    "original-gsc-54fd08e1726548ff.png": "232c2eac760eae604f9dd43352c0b272396b7cfaf220081b54583b6d0cbc2320",
+    "original-gsc-57116797a581e116.png": "c0aeb5741a32d79f224bb84db4382e0cfbe793e9041fb640d5c2e1e3d3c4bd21",
+    "original-gsc-627b0cb06c2ae17d.png": "c5dd2fce9388755ba3d6d4ffb6e7b3d8ff53b4a0c8be3398ea7574cd8da222aa",
+    "original-gsc-74b25f627486bc8b.png": "c407d080ef4d66140d6ff54c4df5a40e60c13306f6e1314a7cd1b4014d2f9370",
+    "original-gsc-a465bf0b589e0f3a.png": "ddee612dc4af30060fa0107e66ab1c937d2a540599b43135bae4807b445c4fe4",
+    "original-gsc-b7d086c6f6e2f35a.png": "41a49d1b3e0ecbbad06baa176650b6271017b572790a3a66dbe634e94df44532",
+    "original-gsc-c204f4ec0b6b6f25.png": "2d771b57e573d8746521f8031de470b9df511ac17a2529a02f87026ff12fb30d",
+    "original-gsc-c5c398f5aa2b0574.png": "0437e111b1614f93ee3b448b6330b38d9e5b4c47afa7f4fbe6f81a45c7d527b5",
+    "original-gsc-cd6d3daa76f4aa55.png": "4861759442a6dfa09d17ed53960baef5d52998e21168fc4564482c01a0a5a847",
+    "original-gsc-e41918291cc2ffe9.png": "cfb332103f93cde523d201ccb8727b9f1464896960c2a56f6f0c0f8bfa9fb811",
+    "original-gsc-f1f1a9a311726cb7.png": "477f7fe4b7d7fdc83c1051a3f4f7428ba4394c905832940681aed9518000e35e",
+    "original-gsc-fa4e18aec25fe7eb.png": "c66dc9a7c97913c78b2cd00a0d6e899ab8504fbf412bd97ceb00995fca6d8616"
+  }
+}

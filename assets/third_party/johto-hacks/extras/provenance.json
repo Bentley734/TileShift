@@ -1,0 +1,207 @@
+{
+  "origin": "Complete native Johto-hack extras extracted from user supplied ROMs. No generated or repainted pixels. Original source gameplay remains unchanged.",
+  "objects": {
+    "shrine": {
+      "origin": "Complete nativeLiquidCrystal IlexShrine from userROM, connected sourcegrass omitted, exactinteger2 reduction thenbottomcentered in16x32 target. No generated or repaintedpixels.",
+      "rom_name": "pokemon_liquid_crystal_beta_3.3.00100.gba",
+      "rom_sha256": "925cd6bd824e3e903636340e5f3519bc9ecb2f5f75c0bb87248213250514c965",
+      "source_map": "g01_m000",
+      "source_rectangle_px": [
+        300,
+        589,
+        24,
+        34
+      ],
+      "source_flat_png_sha256": "71098da1df4e53a499d6ea422c31698b280dedd90f5ea64afcbd2f1278aa8e94",
+      "grass_reference_rect_px": [
+        288,
+        608,
+        12,
+        16
+      ],
+      "removed_sourcegrass_pixels": 152,
+      "integer_reduction": 2,
+      "target_offset_px": [
+        2,
+        15
+      ],
+      "floor_palette": "Connected green sourcegrass only; shrine contains brown wood and blue-grayfoot shadow, all preserved."
+    },
+    "bench": {
+      "rom_name": "Pok\u00e9mon CrystalDust.gba",
+      "rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "source_map": "g00_m036",
+      "source_rectangle_px": [
+        160,
+        640,
+        32,
+        32
+      ],
+      "source_flat_png_sha256": "d219a4712caad48361174ba1d8f6d58784e8e05f79419c1c176b2744b0b47cd7",
+      "source_ground_reference_px": [
+        160,
+        672,
+        32,
+        16
+      ],
+      "removed_sourceground_pixels": 394,
+      "integer_reduction": 1,
+      "floor_mask": "Exact native warm paving colors including enclosed gaps between bench slats. Bench palette contains only gray-blue and white and remains unchanged."
+    },
+    "whirlpool": {
+      "rom_name": "Pok\u00e9mon CrystalDust.gba",
+      "rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "source_metatile": 409,
+      "source_tileset_pair": [
+        "0x83df704",
+        "0x83df74c"
+      ],
+      "behavior": 235,
+      "metatile_entries": [
+        16858,
+        16859,
+        16860,
+        16861,
+        0,
+        0,
+        0,
+        0
+      ],
+      "animation_descriptor_offset": 15868032,
+      "frame_pointer_table_offset": 15857608,
+      "frame_offsets": [
+        15857096,
+        15857224,
+        15857352,
+        15857480
+      ],
+      "graphics_destination_tile": 474,
+      "graphics_tile_count": 4,
+      "frame_raw4bpp_sha256": [
+        "bca7dab615cc43855a047e9fe23f49f32f68caca3e7ec65ce43f92ab9d3a3b09",
+        "9cb37cad4c03973c836c588e2c1728d36538ae7a011070a6a86b56631945c687",
+        "71a7781add51c35bb38af813a5056e7cff131ea9ca399b86466236ae0062044b",
+        "2aa27d0e149d70000a25dbbd7ff7d1bfc06076a78b75b63b7ab2aa1d5e29e413"
+      ],
+      "integer_reduction": 1,
+      "dimensions_px": [
+        16,
+        16
+      ],
+      "notes": "Four complete nativeCrystalDustwhirlpoolframes include their bluewatercolors. Eachframeheldtwicein8-phase sequence, preservingexistinganimationtimingcontrols; nopaintedfoam/transparency/newpixels.",
+      "background_mask": "Intersection of the four nativeframes' corner-connected watercolor components. Exactly24 outercorner backgroundpixels transparent inallphases; allremaining nativevortex/foam pixelsunchanged.",
+      "transparent_background_coordinates": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          13
+        ],
+        [
+          0,
+          14
+        ],
+        [
+          0,
+          15
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          14
+        ],
+        [
+          1,
+          15
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          15
+        ],
+        [
+          13,
+          0
+        ],
+        [
+          13,
+          15
+        ],
+        [
+          14,
+          0
+        ],
+        [
+          14,
+          1
+        ],
+        [
+          14,
+          14
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          15,
+          0
+        ],
+        [
+          15,
+          1
+        ],
+        [
+          15,
+          2
+        ],
+        [
+          15,
+          13
+        ],
+        [
+          15,
+          14
+        ],
+        [
+          15,
+          15
+        ]
+      ]
+    }
+  },
+  "files": {
+    "ilex-shrine-0.png": "b7503591a46cfac69240787209c3cffe34622d6bfbf70ea38467183b42b22cf1",
+    "ilex-shrine-1.png": "b0cca22f6fc7f301499ad9b682d78035e11ff5df83e6d9a6dce852e1ccd91b7f",
+    "ilex-shrine.png": "19962fc38f8e71c89ec6335c0bbedf0154b40cfbe4c5c3b1cf0e4a1b940601e0",
+    "park-bench-0.png": "03584a261f4df289c15ea0478eee564b1869d5b844bf14e0e856e37674234792",
+    "park-bench-1.png": "cb5861c388bf0558d35fe3dd28c0a21ded8303e0b5208eb803587570f840d9a8",
+    "park-bench-2.png": "80f086f6bd9220dba4f84162d5052e5f14b56b24be3be3a82fef4af7f6ce9a8b",
+    "park-bench-3.png": "257de8dce81497e0936584bde6985bfa1314dbdfa5bb5a4ef431385615ec9dd2",
+    "park-bench.png": "b1b81da8b771bb40453ff7ace9682847f4a3bbbd0ae221a664fad5b7f796ffa9",
+    "whirlpool-0.png": "3b2cd68b6e3b7fe03cb6ed9a14c652a167abc18ad83a09c60c79ddac91fd0834",
+    "whirlpool-1.png": "b0a0a3dc36a80a5e30fd45199e3bdc39468e75790f78d88356fc2628fc57b12a",
+    "whirlpool-2.png": "0db7689b0f2f48e361edee120258ff7b07c75008bea95023221ce1ec7d583c49",
+    "whirlpool-3.png": "5337379ab839f73bc018064cb743495b814aa508e733583c0dc36a1f1731d369"
+  }
+}

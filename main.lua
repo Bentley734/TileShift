@@ -86,7 +86,9 @@ return function(mod)
     end end
     return out
   end
-  local flora=readModule('lib/flora.lua').new({catalog=readModule('lib/flora_catalog.lua'),
+  local floraCatalog=readModule('lib/flora_catalog.lua')
+  if mod.generation==2 then floraCatalog=readModule('lib/johto_hack_flora.lua')(floraCatalog)end
+  local flora=readModule('lib/flora.lua').new({catalog=floraCatalog,
     seed=love.timer and math.floor(love.timer.getTime()*1000000) or 1,
     newImageData=newData,
     sheet=checkedSheet,

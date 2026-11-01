@@ -205,3 +205,9 @@ full prompts, source hashes, uniform integer 26 normalization, binary alpha and
 four-color palettes are recorded in assets/original/classic-vent/provenance.json.
 
 Azalea Gym's pink patterned floor and oak ground shadow are original code-authored assets. The existing original oak pixels are preserved unchanged above the shadow; native FR/LG lawn artwork is read from the player's import. File fingerprints are recorded in assets/original/azalea-lawn/provenance.json.
+
+## User-supplied Johto ROM hacks
+
+Selected artwork was extracted at the user's request from their supplied FireGold 1.4 (Tzx211), CrystalDust (Sierraffinity and contributors), and Liquid Crystal (Linkandzelda, Synyster Zeikku and contributors) ROMs. These project credits do not imply an open license. Only selected checked graphics are packaged; the ROM binaries are never included. Per-object source ROM hashes, native crop bounds, alpha masks and any exact integer reductions are recorded under assets/third_party/johto-hacks/*/provenance.json.
+
+Project references: https://www.pokecommunity.com/threads/pok%C3%A9mon-fire-gold-1-4.473130/ , https://github.com/Sierraffinity/CrystalDust , https://www.pokecommunity.com/threads/pok%C3%A9mon-liquid-crystal-3-3-xxxxx-live-beta.242023/ .

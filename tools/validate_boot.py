@@ -28,7 +28,7 @@ if payloadModule then
   end)
 end
 local GV=require('src.core.GameVersion');GV.set(selectedVersion)
-require('src.core.Version').engine='0.3.97'
+require('src.core.Version').engine='0.3.98'
 local Loader=require('src.mods.Loader')
 local Runtime=require('src.mods.Runtime')
 local Serializer=require('src.core.SaveSerializer')

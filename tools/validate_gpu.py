@@ -243,11 +243,21 @@ local function run()
    local source=read(MOD..'/'..file)
    for _,row in ipairs(source and assert(load(source))()or{})do
    if row.game==game and row.map==def.id then
-    if row.parts then cells[row.y*65536+row.x]=nativeComposition(row)
+    local layer
+    if row.parts then layer=nativeComposition(row)
     else
      local bytes=assert(read(MOD..'/'..row.asset));check(hash(bytes)==row.assetFileHash,'Roof PNG fingerprint changed')
-     cells[row.y*65536+row.x]=love.image.newImageData(love.filesystem.newFileData(bytes,'roof.png'))
+     layer=love.image.newImageData(love.filesystem.newFileData(bytes,'roof.png'))
     end
+    local index=row.y*65536+row.x;local combined=cells[index]
+    if not combined then combined=love.image.newImageData(16,16);cells[index]=combined end
+    for yy=0,15 do for xx=0,15 do
+     local r,g,b,a=layer:getPixel(xx,yy)
+     if a>0 then
+      local dr,dg,db,da=combined:getPixel(xx,yy);local alpha=a+da*(1-a)
+      combined:setPixel(xx,yy,(r*a+dr*da*(1-a))/alpha,(g*a+dg*da*(1-a))/alpha,(b*a+db*da*(1-a))/alpha,alpha)
+     end
+    end end
    end
    end
   end
@@ -274,9 +284,18 @@ local function run()
   end end
   return checked
  end
+ local function probeFloraCatalog(game)
+  local catalog=assert(load(assert(read(MOD..'/lib/flora_catalog.lua'))))()
+  if game=='gold'or game=='silver'or game=='crystal'then
+   local factory=assert(load(assert(read(MOD..'/lib/johto_hack_flora.lua'))))()
+   catalog=factory(catalog)
+   check(#catalog.trees>0 and#catalog.flowers>0 and#catalog.grass>0 and#catalog.big_trees>0,'Native Johto foliage catalog is empty')
+  end
+  return catalog
+ end
  local function verifyPlantActors(mod,def,map,draw,renderer,world)
   local flora=mod.exports.flora
-  local catalog=assert(load(assert(read(MOD..'/lib/flora_catalog.lua'))))()
+  local catalog=probeFloraCatalog(GV.get())
   flora:select('grass',catalog.grass[#catalog.grass].id)
   flora:select('flowers',catalog.flowers[#catalog.flowers].id)
   mod.exports.state:invalidateVisual();clock=0
@@ -810,6 +829,25 @@ local function run()
    local expected=nativeComposition(row)
    for y=0,15 do for x=0,15 do equalPixel(frame,row.x*16+x,row.y*16+y,expected,x,y,'Expanded Center facade/native roof mismatch');checked=checked+1 end end
   end
+  local nativeSides={};local sideOpaque,sideTransparent=0,0
+  for _,r in ipairs(mappingRows('lib/side_catalog.lua'))do if r.game==game and r.map==def.id and r.role=='larger_center'then nativeSides[#nativeSides+1]=r end end
+  if #nativeSides>0 then
+   local savedDecorations=mod.exports.roofs.map;mod.exports.roofs.map=function()end
+   local beneath=draw();mod.exports.roofs.map=savedDecorations
+   for _,r in ipairs(nativeSides)do
+    check(r.side=='left'and r.sourceX==r.x,'Native Center left extension moved from its source cell')
+    local expected=nativeComposition(r)
+    for y=0,15 do for x=0,15 do local _,_,_,a=expected:getPixel(x,y)
+     check(a==0 or a==1,'Native Center side alpha was resampled')
+     local visible=roofPixels(def)[r.y*65536+r.x];local visibleAlpha=0
+     if visible then local vr,vg,vb;vr,vg,vb,visibleAlpha=visible:getPixel(x,y)end
+     if visibleAlpha==1 then equalPixel(frame,r.x*16+x,r.y*16+y,visible,x,y,'Native Center and neighboring roof stack differs from checked artwork')
+     else equalPixel(frame,r.x*16+x,r.y*16+y,beneath,r.x*16+x,r.y*16+y,'Unused decorative corner hid selected ground')end
+     if a==1 then sideOpaque=sideOpaque+1 else sideTransparent=sideTransparent+1 end
+    end end
+   end
+   check(sideOpaque>0 and sideTransparent>0,'Native Center left alpha fixture lacks both wall and ground samples')
+  end
   local before=snapshot(world.map,2);local events=eventSnapshot(world.map)
   local priorSave=mod.save.set;mod.save.set=function()end
   mod._probeEvents:emit('mod.options_changed',{mod='tileshift',key='center_style',value=1})
@@ -819,13 +857,14 @@ local function run()
    for y=0,15 do for x=0,15 do equalPixel(compact,row.x*16+x,row.y*16+y,expected,x,y,'Compact Center no longer matches original native art');checked=checked+1 end end
   end
   for _,r in ipairs(mappingRows('lib/center_mart_roofs.lua'))do if r.game==game and r.map==def.id and r.role=='larger_center'then
-   check(not cells or not cells.grid[r.y*65536+r.x],'Compact Center still renders an expanded roof overhang')
+   local cell=cells and cells.grid[r.y*65536+r.x];while cell do check(cell.role~='larger_center','Compact Center still renders an expanded roof overhang');cell=cell.next end
   end end
+  for _,r in ipairs(nativeSides)do local cell=cells and cells.grid[r.y*65536+r.x];while cell do check(cell.role~='larger_center','Compact Center still renders its expanded left side');cell=cell.next end end
   mod._probeEvents:emit('mod.options_changed',{mod='tileshift',key='center_style',value=2})
   mod.save.set=priorSave;world.mapImage=world:imageFor(def.id);local restored=draw()
   check(hash(restored:getString())==hash(frame:getString()),'Center style round trip changed unrelated map artwork')
   check(before==snapshot(world.map,2)and events==eventSnapshot(world.map),'Center selection changed collision or events')
-  return{core_pixels=checked,compact_exact_native=true,expanded_exact_reviewed=true,compact_hides_upper_roof=true,round_trip_identical=true,unchanged_collision_and_events=true,
+  return{core_pixels=checked,native_left_side_cells=#nativeSides,native_left_side_opaque_pixels=sideOpaque,native_left_side_transparent_pixels=sideTransparent,compact_exact_native=true,expanded_exact_reviewed=true,compact_hides_upper_roof=true,round_trip_identical=true,unchanged_collision_and_events=true,
    compact=encodePng(compact,game..'-'..def.id..'-compact-centers-gpu.png')}
  end
 
@@ -1046,20 +1085,48 @@ local function run()
   end
   return {whole_sprite_checked_pixels=2304,footprint={30,6,3,3},entrance={31,7},steps={31,8},source_warp_unchanged=true}
  end
+ local function hackExterior(name)
+  local folder='assets/third_party/johto-hacks/'..(name=='intact'and'intact/'or'exteriors/')
+  local provenance=Json.decode(assert(read(MOD..'/'..folder..'provenance.json')))
+  local record
+  if name=='intact'then
+   record={pixel_scale=provenance.scale,box_cells={0,0,provenance.crop_cells[3],provenance.crop_cells[4]+provenance.transparent_top_padding/16}}
+   check(provenance.source_door[1]==22 and provenance.source_door[2]==11 and provenance.target_door[1]==5 and provenance.target_door[2]==5,'FireGold intact-tower entrance provenance changed')
+  else record=assert(provenance.objects[name],'Native hack exterior provenance missing')end
+  local bytes=assert(read(MOD..'/'..folder..name..'.png'))
+  check(hash(bytes)==provenance.files[name..'.png'],'Native hack whole-sprite file fingerprint changed')
+  local image=love.image.newImageData(love.filesystem.newFileData(bytes,name..'.png'))
+  check(record.pixel_scale==1 and image:getWidth()==record.box_cells[3]*16 and image:getHeight()==record.box_cells[4]*16,'Native hack building was resized or truncated')
+  if record.rgba_sha256 then check(hash(image:getString())==record.rgba_sha256,'Native hack whole-sprite pixel fingerprint changed')end
+  for y=0,image:getHeight()-1 do for x=0,image:getWidth()-1 do local _,_,_,a=image:getPixel(x,y);check(a==0 or a==1,'Native hack silhouette contains resampled alpha')end end
+  return image,record,provenance
+ end
+ local function hasHackExterior(game,map,module)
+  for _,r in ipairs(mappingRows(module))do if r.game==game and r.map==map and r.asset and r.asset:match('^assets/third_party/johto%-hacks/exteriors/')then return true end end
+  return false
+ end
  local function verifyEcruteak(game,def,frame,world,mod)
   local function crop(image,r)local out=love.image.newImageData(r[3],r[4]);out:paste(image,0,0,r[1],r[2],r[3],r[4]);return out end
   local proof=Json.decode(assert(read(MOD..'/../.work/tileshift-ecruteak-finish/v2-building-model.json')))
-  local provenance=Json.decode(assert(read(MOD..'/assets/original/ecruteak-v2/provenance.json')))
-  local wideProof=Json.decode(assert(read(MOD..'/assets/original/bell-wide/provenance.json')))
-  local wideSprite=love.image.newImageData(love.filesystem.newFileData(assert(read(MOD..'/assets/original/bell-wide/bell.png')),'wide-bell.png'))
+  local hacked=hasHackExterior(game,def.id,'mappings/ecruteak.lua')
+  local provenance=not hacked and Json.decode(assert(read(MOD..'/assets/original/ecruteak-v2/provenance.json')))or nil
+  local wideProof,wideSprite
+  if hacked then wideSprite,wideProof=hackExterior('bell')else
+   wideProof=Json.decode(assert(read(MOD..'/assets/original/bell-wide/provenance.json')))
+   wideSprite=love.image.newImageData(love.filesystem.newFileData(assert(read(MOD..'/assets/original/bell-wide/bell.png')),'wide-bell.png'))
+  end
   check(wideSprite:getWidth()==96 and wideSprite:getHeight()==128 and hash(wideSprite:getString())==wideProof.rgba_sha256,'Wider Bell reference changed')
   local ground=nativeCellImage({game='emerald',tileset='general__petalburg',id=1,hash='1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1'})
   local count,closed,warps,pixels=0,0,0,0
   for _,record in ipairs(proof.instances)do if record.game==game then
    local name,box=record.art,record.draw_rect
-   local sprite=name=='bell'and crop(wideSprite,{16,0,64,128})or love.image.newImageData(love.filesystem.newFileData(assert(read(MOD..'/assets/original/ecruteak-v2/'..name..'/'..name..'.png')),name..'.png'))
+   local sprite,process
+   if hacked then
+    sprite,process=hackExterior(name)
+    if name=='bell'then sprite=crop(sprite,{16,0,64,128})elseif name=='intact'then sprite=crop(sprite,{32,0,64,80})elseif name=='theater'then sprite=crop(sprite,{16,0,64,64})end
+   else sprite=name=='bell'and crop(wideSprite,{16,0,64,128})or love.image.newImageData(love.filesystem.newFileData(assert(read(MOD..'/assets/original/ecruteak-v2/'..name..'/'..name..'.png')),name..'.png'))end
    check(sprite:getWidth()==box[3]*16 and sprite:getHeight()==box[4]*16,'Ecruteak landmark footprint changed')
-   check(hash(sprite:getString())==(name=='bell'and wideProof.core_rgba_sha256 or record.rgba_sha256),'Approved Ecruteak whole-sprite pixels changed')
+   if not hacked then check(hash(sprite:getString())==(name=='bell'and wideProof.core_rgba_sha256 or record.rgba_sha256),'Approved Ecruteak whole-sprite pixels changed')end
    local expected=capture(sprite:getWidth(),sprite:getHeight(),function()
     G.draw(world.mapImage,-box[1]*16,-box[2]*16)
     local top=G.newImage(sprite);G.draw(top,0,0);top:release()
@@ -1076,15 +1143,26 @@ local function run()
     check(found,'Ecruteak original entrance changed')
     local a=record.door_bottom_anchor_px
     check(a[1]==(record.door[1]-record.rect[1])*16+8 and a[2]==record.rect[4]*16,'Ecruteak original door anchor moved')
-    local _,_,_,alpha=sprite:getPixel(a[1],sprite:getHeight()-2);check(alpha==1,'Ecruteak full doorway/base is missing at original entrance')
+    if hacked then
+     local solid=0;for yy=sprite:getHeight()-16,sprite:getHeight()-1 do local _,_,_,alpha=sprite:getPixel(a[1],yy);if alpha==1 then solid=solid+1 end end
+     check(solid>0,'Native Ecruteak doorway graphic missing at original entrance: '..name)
+    else local _,_,_,alpha=sprite:getPixel(a[1],sprite:getHeight()-2);check(alpha==1,'Ecruteak full doorway/base is missing at original entrance')end
     warps=warps+1
    else closed=closed+1 end
-   local process=name=='bell'and wideProof or provenance.artwork[name]
-   check(process.integer_reduction>=1 and process.integer_reduction%1==0,'Ecruteak artwork used fractional scaling')
+   process=process or(name=='bell'and wideProof or provenance.artwork[name])
+   if hacked then check(process.pixel_scale==1,'Native Ecruteak building pixel scale changed')else check(process.integer_reduction>=1 and process.integer_reduction%1==0,'Ecruteak artwork used fractional scaling')end
    for y=0,sprite:getHeight()-1 do for x=0,sprite:getWidth()-1 do local _,_,_,a=sprite:getPixel(x,y);check(a==0 or a==1,'Ecruteak sprite has smoothed alpha');pixels=pixels+1 end end
    count=count+1
   end end
   check(count==10 and closed==5 and warps==5,'Ecruteak landmark fixture is incomplete')
+  if hacked and(game=='gold'or game=='silver')then
+   local intact=hackExterior('intact');check(intact:getWidth()==112 and intact:getHeight()==80,'Whole FireGold intact tower size changed')
+   local pixels=0
+   for y=0,79 do for x=0,111 do local _,_,_,a=intact:getPixel(x,y)
+    if a==1 then equalPixel(frame,2*16+x,1*16+y,intact,x,y,'Whole FireGold tower eaves/windows/side columns changed');pixels=pixels+1 end
+   end end
+   local _,_,_,door=intact:getPixel(56,78);check(door==1 and pixels>0,'FireGold whole intact tower door/base missing')
+  end
   local pond,steps=0,0
   for _,r in ipairs(mappingRows('mappings/ecruteak.lua'))do if r.game==game then
    if r.role:match('^freshwater_pond_')then check(r.sourceOceanBounds==nil,'Ecruteak pond accidentally grouped with world ocean');pond=pond+1 end
@@ -1104,7 +1182,8 @@ local function run()
   local catalog=assert(load(assert(read(MOD..'/lib/roof_catalog.lua'))))()
   local headbutt=0
   for _,r in ipairs(catalog)do if r.game==game and r.map==def.id then
-   check(r.sourceCollision==21,'Ecruteak roof must retain the existing Headbutt-tree collision')
+   local theaterCorner=hacked and r.x==21 and r.y==18 and r.buildingY==19
+   check(r.sourceCollision==(theaterCorner and 0 or 21),'Ecruteak roof changed its original tree or walkable-corner collision')
    check(r.y+1==r.buildingY,'Roof extends more than the allowed single upper row')
    headbutt=headbutt+1
    local data=love.image.newImageData(love.filesystem.newFileData(assert(read(MOD..'/'..r.asset)),'roof.png'))
@@ -1112,7 +1191,7 @@ local function run()
    for y=0,15 do for x=0,15 do local _,_,_,a=data:getPixel(x,y);if a==1 then opaque=opaque+1 else transparent=transparent+1 end end end
    if opaque>0 and transparent>0 and not record then record,overlay=r,data end
   end end
-  check(headbutt==34 and record~=nil,'Roof/tree alpha fixture is missing')
+  check(headbutt==(hacked and 35 or 34)and record~=nil,'Roof/tree alpha fixture is missing')
   local bodyData=love.image.newImageData(16,16);bodyData:mapPixel(function()return 1,0,1,1 end)
   local body=G.newImage(bodyData);local background=G.newImage(frame)
   local savedPlayer,savedNpcs,savedEntities=world.player,world.npcs,world.entities
@@ -1133,6 +1212,20 @@ local function run()
   end
   world.player,world.npcs,world.entities=savedPlayer,savedNpcs,savedEntities
   mod.exports.vegetation:bind(world);body:release();background:release()
+  if hacked then
+   local underlying=capture(frame:getWidth(),frame:getHeight(),function()G.draw(world.mapImage,0,0)end)
+   local theaterSides=0
+   for _,r in ipairs(mappingRows('lib/side_catalog.lua'))do if r.game==game and r.map==def.id and r.buildingX==22 and r.role=='hack_native_building_overhang' then
+    check(r.x==21 and r.y>=19 and r.y<=21 and r.buildingY==19 and r.buildingW==4 and r.buildingH==3,'Native Theater side footprint changed')
+    local image=love.image.newImageData(love.filesystem.newFileData(assert(read(MOD..'/'..r.asset)),'theater-side.png'))
+    for y=0,15 do for x=0,15 do local _,_,_,a=image:getPixel(x,y)
+     if a==1 then equalPixel(frame,r.x*16+x,r.y*16+y,image,x,y,'Native Theater complete left frame missing')
+     else equalPixel(frame,r.x*16+x,r.y*16+y,underlying,r.x*16+x,r.y*16+y,'Native Theater unused side corner hid selected ground')end
+    end end
+    theaterSides=theaterSides+1
+   end end
+   check(theaterSides==3,'Native Theater decorative left column incomplete')
+  end
   -- Use the real native border renderer: the right decorative strip extends
   -- beyond the map-image canvas. Verify both side alpha masks against an
   -- otherwise identical frame with decorations temporarily hidden.
@@ -1146,7 +1239,7 @@ local function run()
   local sideRows=assert(load(assert(read(MOD..'/lib/side_catalog.lua'))))()
   local opaqueSide,transparentSide,sideCount=0,0,0
   local picks={}
-  for _,r in ipairs(sideRows)do if r.game==game and r.map=='ECRUTEAK_CITY'then
+  for _,r in ipairs(sideRows)do if r.game==game and r.map=='ECRUTEAK_CITY'and r.buildingX==36 then
    check(r.map=='ECRUTEAK_CITY'and r.buildingX==36 and r.buildingY==0 and r.buildingW==4 and r.buildingH==8,'Bell collision footprint changed')
    check(r.x==(r.side=='left'and 35 or 40)and r.sourceX==(r.side=='left'and 35 or 39),'Bell side lost its real source anchor')
    local data=love.image.newImageData(love.filesystem.newFileData(assert(read(MOD..'/'..r.asset)),'bell-side.png'))
@@ -1187,9 +1280,10 @@ local function run()
    bell_side_cells=sideCount,bell_side_opaque_pixels=opaqueSide,bell_side_transparent_pixels=transparentSide,bell_side_synthetic_sprite_occlusion_pixels=sideActorPixels,bell_context=contextImage,bell_original_collision_and_entry_unchanged=true}
  end
 
- local function verifyOlivine(game,def,frame)
+ local function verifyOlivine(game,def,frame,mod)
   local ground=nativeCellImage({game='emerald',tileset='general__petalburg',id=1,hash='1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1'})
-  local whole=love.image.newImageData(love.filesystem.newFileData(assert(read(MOD..'/assets/original/olivine-lighthouse/lighthouse.png')),'lighthouse.png'))
+  local hacked=hasHackExterior(game,def.id,'mappings/olivine.lua')
+  local whole=hacked and hackExterior('lighthouse')or love.image.newImageData(love.filesystem.newFileData(assert(read(MOD..'/assets/original/olivine-lighthouse/lighthouse.png')),'lighthouse.png'))
   check(whole:getWidth()==64 and whole:getHeight()==224,'Lighthouse original4x14 footprint changed')
   local backgrounds={}
   for _,row in ipairs(mappingRows('mappings/olivine.lua'))do
@@ -1216,7 +1310,7 @@ local function run()
    G.draw(top,0,0);top:release()
   end)
   for y=0,223 do for x=0,63 do equalPixel(frame,28*16+x,14*16+y,expected,x,y,'Complete original lighthouse changed')end end
-  for _,xy in ipairs({{24,219},{9,212},{43,212}})do local _,_,_,a=whole:getPixel(xy[1],xy[2]);check(a==1,'Original lighthouse doorway/window silhouette missing')end
+  for _,xy in ipairs(hacked and{{24,219},{52,212}}or{{24,219},{9,212},{43,212}})do local _,_,_,a=whole:getPixel(xy[1],xy[2]);check(a==1,'Original lighthouse doorway/window silhouette missing')end
   local model=Json.decode(assert(read(MOD..'/../.work/tileshift-olivine-finish/port-model.json')))
   check(model.size_px[1]==64 and model.size_px[2]==64 and model.painted_south_door==false,'Port must keep its closed south facade')
   local port=capture(64,64,function()
@@ -1243,16 +1337,39 @@ local function run()
     local p=row.parts[1];local plane=nativeCellImage(p.donor,p.layers,p.layerHashes);local count=0
     if p.donor.id==244 or p.donor.id==245 then check(#p.layers==1 and p.layers[1]=='over','Vertical rail must select its visible native plane');vertical=vertical+1 end
     for y=0,15 do for x=0,15 do local _,_,_,a=plane:getPixel(x,y)
-     if a==1 then equalPixel(frame,row.x*16+x,row.y*16+y,plane,x,y,'Native railing disappeared or changed');count=count+1 end
+     if a==1 then
+      local cells=mod and mod.exports.roofs:cells(game,def);local entry=cells and cells.grid[row.y*65536+row.x];local cover
+      while entry do local _,_,_,alpha=entry.data:getPixel(x,y);if alpha==1 then cover=entry.data end;entry=entry.next end
+      if cover then equalPixel(frame,row.x*16+x,row.y*16+y,cover,x,y,'Opaque native building side failed to cover retained railing')
+      else equalPixel(frame,row.x*16+x,row.y*16+y,plane,x,y,'Native railing disappeared or changed')end
+      count=count+1
+     end
     end end
     check(count>0,'A complete railing cannot be invisible');railings=railings+1
    end
   end end
   check(assetCells==56 and railings==67 and vertical==33 and arrows==2,'Olivine whole feature/source footprint changed')
-  return {whole_lighthouse_pixels=14336,lighthouse_cells=56,both_base_windows_and_full_door_retained=true,
+  return {whole_lighthouse_pixels=14336,lighthouse_cells=56,both_base_windows_and_full_door_retained=not hacked,native_base_window_and_full_door_retained=hacked or nil,
    entrance={29,27},port_rear_entrances={{19,27},{20,27}},closed_port_facade_pixels=4096,railings=railings,visible_vertical_railings=vertical,downward_markers=arrows}
  end
  local function verifySprout(game,def,frame)
+  if hasHackExterior(game,def.id,'mappings/buildings_extended.lua')then
+   local whole,proof=hackExterior('sprout')
+   check(whole:getWidth()==96 and whole:getHeight()==96,'Complete native Sprout footprint changed')
+   local opaque,transparent,core=0,0,0
+   for y=0,95 do for x=0,95 do local _,_,_,a=whole:getPixel(x,y)
+    if a==1 then equalPixel(frame,21*16+x,y,whole,x,y,'Complete native Sprout roof/window/doorway changed');opaque=opaque+1 else transparent=transparent+1 end
+   end end
+   for _,r in ipairs(mappingRows('mappings/buildings_extended.lua'))do if r.game==game and r.map==def.id and r.role=='architecture_sprout_pagoda'then
+    local expected=nativeComposition(r)
+    for y=0,15 do for x=0,15 do equalPixel(frame,r.x*16+x,r.y*16+y,expected,x,y,'Native Sprout unused corner does not reveal its selected ground')end end
+    core=core+1
+   end end
+   local door=false;for _,w in ipairs(def.warps or{})do if w.destMap=='SPROUT_TOWER_1F'then check(w.x==23 and w.y==5,'Native Sprout source entrance moved');door=true end end
+   local _,_,_,anchor=whole:getPixel(40,94)
+   check(core==20 and door and anchor==1 and opaque>0 and transparent>0,'Native Sprout whole-building/entrance fixture incomplete')
+   return{artwork='Unscaled native CrystalDust Sprout Tower',whole_native_pixels=opaque,transparent_background_pixels=transparent,source_core_cells=core,source_warp_anchor={24,80},whole_approved_building_exact=true,rgba_sha256=proof.rgba_sha256}
+  end
   local folder=MOD..'/../.work/tileshift-sprout-native-material/sloped-roof-hybrid/'
   local bytes=assert(read(folder..'sprout-original-native-material-model.json'))
   local model=Json.decode(bytes);local r=model.source_rect_cells
@@ -1547,7 +1664,7 @@ local function run()
  report.performance={gen1=verifyWarmDraws(mod,function()return capture(def.width*32,def.height*32,drawMap)end,'Gen1')}
  report.customizations={}
  local flora=mod.exports.flora
- local catalog=assert(load(assert(read(MOD..'/lib/flora_catalog.lua'))))()
+ local catalog=probeFloraCatalog(GV.get())
  for _,category in ipairs({'trees','flowers','grass'})do
   local entries=catalog[category]
   local atlas=capture(960,math.ceil(#entries/12)*104+32,function()
@@ -1946,7 +2063,7 @@ local function run()
   if spec.water then fixture.water_all_frames=verifyAnimationFrames(def,art,draw,'water',8,1)end
   if spec.forest then fixture.forest=verifyForest(game,def,map,art,renderer,FX)end
   if spec.id=='VIRIDIAN_FOREST' then
-   for _,choice in ipairs({'default','mixed','johto-pine32'})do
+   for _,choice in ipairs({'default','mixed',probeFloraCatalog(game).big_trees[2].id})do
     mod.exports.flora:select('big_trees',choice);mod.exports.state:invalidate();clock=0
     local selected=mod.exports.state:replacements(game,def.tileset,def)
     for _,t in ipairs({0,.36,.71,1.06})do
@@ -2693,8 +2810,8 @@ local function run()
   end
   if spec.id=='ECRUTEAK_CITY'and spec.complete then fixture.ecruteak=verifyEcruteak(game,def,after,world,mod)end
   if spec.id=='OLIVINE_CITY'and spec.complete then
-   fixture.olivine=verifyOlivine(game,def,after)
-   local lighthouse=love.image.newImageData(love.filesystem.newFileData(assert(read(MOD..'/assets/original/olivine-lighthouse/lighthouse.png')),'lighthouse.png'))
+   fixture.olivine=verifyOlivine(game,def,after,mod)
+   local lighthouse=hasHackExterior(game,def.id,'mappings/olivine.lua')and hackExterior('lighthouse')or love.image.newImageData(love.filesystem.newFileData(assert(read(MOD..'/assets/original/olivine-lighthouse/lighthouse.png')),'lighthouse.png'))
    local grass=nativeCellImage({game='emerald',tileset='general__petalburg',id=1,hash='1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1'})
    for _,choice in ipairs({'ripple-blue','ripple-teal','ripple-olive','mixed'})do
     mod.exports.flora:select('water',choice);mod.exports.state:invalidate();clock=0;world.mapImage=world:imageFor(map.id)
@@ -2771,7 +2888,7 @@ local function run()
     pond=pond+1
    end end
    check(pond==32,'Ilex complete native pond family missing');fixture.ilex_pond_cells=pond
-   for _,choice in ipairs({'default','mixed','johto-pine32'})do
+   for _,choice in ipairs({'default','mixed','johto-hack-firegold-conifer-whole32'})do
     mod.exports.flora:select('big_trees',choice);mod.exports.state:invalidate();clock=0;world.mapImage=world:imageFor(map.id)
     local selected=mod.exports.state:replacements(game,def.tileset,def)
     for _,t in ipairs({0,.36,.71,1.06})do
@@ -3130,7 +3247,7 @@ def main() -> int:
         "read_only_imports": str(cache), "output": str(output),
         "runtime_inputs": runtime_inputs,
     }
-    payload = cache / "updates/gen1recomp-0.3.97.love"
+    payload = cache / "updates/gen1recomp-0.3.98.love"
     native_paths = (
         "src/render/TileRenderer.lua", "src/world/gen2/World.lua",
         "src/world/Map.lua", "src/world/gen2/Map.lua",
@@ -3149,7 +3266,7 @@ def main() -> int:
         metadata["reference_payload"] = str(payload)
         metadata["reference_payload_renderer_matches"] = matches
         if not all(matches.values()):
-            parser.error("The private native renderer source differs from installed 0.3.97")
+            parser.error("The private native renderer source differs from installed 0.3.98")
     (output / "invocation.json").write_text(json.dumps(metadata, indent=2), encoding="utf-8")
     script = (
         "$p=Start-Process -WindowStyle Hidden -FilePath " + ps_quote(str(love))

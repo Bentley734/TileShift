@@ -74,8 +74,20 @@ eq(draws,before,'a tall actor standing in front remains in front of side artwork
 sideActor.spriteYOffset=-12;sides:actor(map,sideActor,0,0,1,false,0,world)
 eq(draws,before,'jump offset does not change physical front/behind order')
 sides:dispose();before=draws;sides:map(world,def,0,0,1);eq(draws,before)
-local far=sideRow('right');far.x=5;sideCtx.rows={far}
-eq(pcall(R.new,sideCtx),false,'more than one adjacent column is rejected')
+local far=sideRow('right');far.x=6;sideCtx.rows={far}
+eq(pcall(R.new,sideCtx),false,'three or more adjacent columns are rejected')
+local second=sideRow('right');second.x=5;sideCtx.rows={second}
+local secondSides=R.new(sideCtx);before=draws
+secondSides:map(world,def,0,0,1);eq(draws-before,1,'a second adjacent column uses the original nearest-edge fingerprint')
+secondSides:dispose()
+second=sideRow('left');second.x=0;second.sourceX=0;second.quadrant=2;sideCtx.rows={second}
+local previousDonor=sideCtx.donor
+sideCtx.donor={cell=function(_,ref)eq(ref.id,7);eq(ref.quadrant,2);return{}end}
+secondSides=R.new(sideCtx);before=draws
+secondSides:map(world,def,0,0,1);eq(draws-before,1,'second left column renders from its exact real source quadrant')
+secondSides:dispose();sideCtx.donor=previousDonor
+far=sideRow('left');far.x=-1;far.sourceX=0;sideCtx.rows={far}
+eq(pcall(R.new,sideCtx),false,'a third left column is rejected')
 local low=sideRow('left');low.y=0;sideCtx.rows={low}
 eq(pcall(R.new,sideCtx),false,'side rows cannot extend above their building')
 local zero=sideRow('left');zero.buildingW=0;sideCtx.rows={zero}
@@ -100,4 +112,57 @@ for i=1,5 do revision=revision+1;nativeRoofs:map(world,def,0,0,1)end
 eq(images,nativeImages,'option changes reuse one GPU texture per native roof row')
 eq(calls,6,'option changes still revalidate and recompose native donor references')
 nativeRoofs:dispose()
+-- A shared cell keeps both native images in map order, while the actor pass
+-- independently respects each building's physical front line and alpha.
+local pixelSources,pixelAssets,pixelImages,pixelDraws=0,0,0,0
+local surface={}
+local function ink(x,y)return surface[y*64+x]or'magenta'end
+local function solid(value,lo,hi)
+ return{pixel=function(x,y)return x>=lo and x<=hi and value or nil end}
+end
+local red,blue=solid('red',0,7),solid('blue',4,11)
+local PG={push=function()end,pop=function()end,setShader=function()end,setColor=function()end}
+function PG.newImage(data)
+ pixelImages=pixelImages+1
+ return{data=data,setFilter=function()end,release=function()end}
+end
+function PG.newQuad()return{setViewport=function(self,x,y,w,h)self.x,self.y,self.w,self.h=x,y,w,h end,release=function()end}end
+function PG.draw(texture,q,x,y)
+ pixelDraws=pixelDraws+1
+ local sx,sy,w,h
+ if type(q)=='table'then sx,sy,w,h=q.x,q.y,q.w,q.h
+ else x,y=q,x;sx,sy,w,h=0,0,16,16 end
+ for yy=0,h-1 do for xx=0,w-1 do
+  local color=texture.data.pixel(sx+xx,sy+yy)
+  if color then surface[(y+yy)*64+x+xx]=color end
+ end end
+end
+local side=sideRow('left');side.y=0;side.buildingY=0;side.buildingH=2;side.quadrant=1
+side.asset='assets/original/side-red.png';side.role='side-red'
+local top={};for k,v in pairs(row)do top[k]=v end
+top.asset='assets/original/top-blue.png';top.role='top-blue'
+local stacks=R.new({rows={side,top},graphics=PG,active=function()return true end,
+ revision=function()return 1 end,version=function()return'crystal'end,validate=function()return true end,
+ donor={cell=function()pixelSources=pixelSources+1;return{}end},
+ original=function(path)pixelAssets=pixelAssets+1;return path==side.asset and red or blue end})
+world.viewW=64
+stacks:map(world,def,0,0,1)
+eq(ink(17,4),'red','lower native building remains visible through upper transparency')
+eq(ink(21,4),'blue','later native roof wins only at its opaque pixels')
+eq(ink(29,4),'magenta','transparent pixels preserve the actual backing')
+local cells=stacks:cells('crystal',def);local shared=cells.grid[1]
+eq(shared.role,'side-red');eq(shared.next.role,'top-blue');eq(shared.next.next,nil)
+surface={};actor.px,actor.py=16,4
+stacks:actor(map,actor,0,0,1,false,0,world)
+eq(ink(17,4),'red');eq(ink(21,4),'blue');eq(ink(29,4),'magenta','transparent native corners never paint the actor')
+surface={}
+local tall={px=16,py=20,sprite={frameWidth=16,frameHeight=48,anchorX=8,anchorY=48}}
+stacks:actor(map,tall,0,0,1,false,0,world)
+eq(ink(17,4),'magenta','actor in front of the side keeps its body pixels')
+eq(ink(21,4),'blue','same actor remains behind the independent upper roof')
+for i=1,100 do stacks:map(world,def,0,0,1);stacks:actor(map,actor,0,0,1,false,0,world)end
+eq(pixelSources,2,'overlap stacks do not reread source maps in warm frames')
+eq(pixelAssets,2,'overlap stacks do not reread source artwork in warm frames')
+eq(pixelImages,2,'overlap stacks reuse both native textures')
+stacks:dispose()
 print('roof overhang checks: '..checks)
