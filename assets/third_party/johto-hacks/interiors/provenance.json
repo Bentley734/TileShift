@@ -1026,29 +1026,69 @@
       "source_rom_sha256": "925cd6bd824e3e903636340e5f3519bc9ecb2f5f75c0bb87248213250514c965",
       "credit": "Liquid Crystal by Linkandzelda and Synyster Zeikku",
       "sourceUrl": "https://www.pokecommunity.com/threads/pok%C3%A9mon-liquid-crystal-3-3-xxxxx-live-beta.242023/",
-      "map": "g03_m017",
-      "native_rect": [
-        352,
-        80,
-        384,
-        128
+      "pair": "082d4a94_082d4b9c",
+      "native_metatile_grid": [
+        [
+          22,
+          23
+        ],
+        [
+          28,
+          29
+        ],
+        [
+          36,
+          37
+        ]
+      ],
+      "layers": [
+        "flat"
       ],
       "native_dimensions": [
         32,
         48
       ],
-      "integer_reduction": 2,
-      "reduced_dimensions": [
-        16,
-        24
+      "integer_scale": 1,
+      "compact_dimensions": [
+        32,
+        32
       ],
-      "placement": [
-        8,
-        8
+      "modules": [
+        {
+          "source_rect": [
+            0,
+            0,
+            32,
+            16
+          ],
+          "placement": [
+            0,
+            0
+          ]
+        },
+        {
+          "source_rect": [
+            0,
+            32,
+            32,
+            48
+          ],
+          "placement": [
+            0,
+            16
+          ]
+        }
       ],
-      "source_rgba_sha256": "9d9b38bbef2ba8b8788fdc88910c0a5444665b4eda336304d5ab6b6296d9cf12",
-      "full_canopy_and_roots_retained": true,
-      "assetFileHash": "429700255d46afc1f0e84cbbf5e0fd10e6b9c3dc864ef0dc9092f4197d552d6d",
+      "alpha_bounds": [
+        3,
+        4,
+        29,
+        31
+      ],
+      "processing": "Native canopy and matching root sections; omitted middle foliage tiers, no resized pixels.",
+      "source_rgba_sha256": "2b5c6f524106f3628f41ba12d2e0d7462bb912267b24ff18fdf9f7425591ddee",
+      "canopy_and_roots_retained": true,
+      "assetFileHash": "5778d3804fa1b26e0b741781e823d0b442218a32bad559544af7d522dc8837f1",
       "source": "liquidcrystal",
       "source_provenance": "assets/third_party/johto-hacks/flora/provenance.json"
     },
@@ -1059,29 +1099,69 @@
       "source_rom_sha256": "925cd6bd824e3e903636340e5f3519bc9ecb2f5f75c0bb87248213250514c965",
       "credit": "Liquid Crystal by Linkandzelda and Synyster Zeikku",
       "sourceUrl": "https://www.pokecommunity.com/threads/pok%C3%A9mon-liquid-crystal-3-3-xxxxx-live-beta.242023/",
-      "map": "g03_m017",
-      "native_rect": [
-        352,
-        80,
-        384,
-        128
+      "pair": "082d4a94_082d4b9c",
+      "native_metatile_grid": [
+        [
+          22,
+          23
+        ],
+        [
+          28,
+          29
+        ],
+        [
+          36,
+          37
+        ]
+      ],
+      "layers": [
+        "flat"
       ],
       "native_dimensions": [
         32,
         48
       ],
-      "integer_reduction": 2,
-      "reduced_dimensions": [
-        16,
-        24
+      "integer_scale": 1,
+      "compact_dimensions": [
+        32,
+        32
       ],
-      "placement": [
-        8,
-        8
+      "modules": [
+        {
+          "source_rect": [
+            0,
+            0,
+            32,
+            16
+          ],
+          "placement": [
+            0,
+            0
+          ]
+        },
+        {
+          "source_rect": [
+            0,
+            32,
+            32,
+            48
+          ],
+          "placement": [
+            0,
+            16
+          ]
+        }
       ],
-      "source_rgba_sha256": "9d9b38bbef2ba8b8788fdc88910c0a5444665b4eda336304d5ab6b6296d9cf12",
-      "full_canopy_and_roots_retained": true,
-      "assetFileHash": "44282a38568729005963cc6935c6ef6012cb3aa38a336319437a38a410a8864d",
+      "alpha_bounds": [
+        3,
+        4,
+        29,
+        31
+      ],
+      "processing": "Native canopy and matching root sections; omitted middle foliage tiers, no resized pixels.",
+      "source_rgba_sha256": "2b5c6f524106f3628f41ba12d2e0d7462bb912267b24ff18fdf9f7425591ddee",
+      "canopy_and_roots_retained": true,
+      "assetFileHash": "f28c6d0e2fd309eef6eb01b0657ed9a4bf77e1cbf9d606d96bc90cb480a76268",
       "source": "liquidcrystal",
       "source_provenance": "assets/third_party/johto-hacks/flora/provenance.json"
     },
@@ -1092,29 +1172,69 @@
       "source_rom_sha256": "925cd6bd824e3e903636340e5f3519bc9ecb2f5f75c0bb87248213250514c965",
       "credit": "Liquid Crystal by Linkandzelda and Synyster Zeikku",
       "sourceUrl": "https://www.pokecommunity.com/threads/pok%C3%A9mon-liquid-crystal-3-3-xxxxx-live-beta.242023/",
-      "map": "g03_m017",
-      "native_rect": [
-        352,
-        80,
-        384,
-        128
+      "pair": "082d4a94_082d4b9c",
+      "native_metatile_grid": [
+        [
+          22,
+          23
+        ],
+        [
+          28,
+          29
+        ],
+        [
+          36,
+          37
+        ]
+      ],
+      "layers": [
+        "flat"
       ],
       "native_dimensions": [
         32,
         48
       ],
-      "integer_reduction": 2,
-      "reduced_dimensions": [
-        16,
-        24
+      "integer_scale": 1,
+      "compact_dimensions": [
+        32,
+        32
       ],
-      "placement": [
-        8,
-        8
+      "modules": [
+        {
+          "source_rect": [
+            0,
+            0,
+            32,
+            16
+          ],
+          "placement": [
+            0,
+            0
+          ]
+        },
+        {
+          "source_rect": [
+            0,
+            32,
+            32,
+            48
+          ],
+          "placement": [
+            0,
+            16
+          ]
+        }
       ],
-      "source_rgba_sha256": "9d9b38bbef2ba8b8788fdc88910c0a5444665b4eda336304d5ab6b6296d9cf12",
-      "full_canopy_and_roots_retained": true,
-      "assetFileHash": "2a148f190853465280aa443dd55e49ec0d21231b67862e51ab928ea1c670e591",
+      "alpha_bounds": [
+        3,
+        4,
+        29,
+        31
+      ],
+      "processing": "Native canopy and matching root sections; omitted middle foliage tiers, no resized pixels.",
+      "source_rgba_sha256": "2b5c6f524106f3628f41ba12d2e0d7462bb912267b24ff18fdf9f7425591ddee",
+      "canopy_and_roots_retained": true,
+      "assetFileHash": "8e883cb437c6da2a8e0be85a8db7d4c215ae040020cb3ec2fdd91077d180a961",
       "source": "liquidcrystal",
       "source_provenance": "assets/third_party/johto-hacks/flora/provenance.json"
     },
@@ -1125,29 +1245,69 @@
       "source_rom_sha256": "925cd6bd824e3e903636340e5f3519bc9ecb2f5f75c0bb87248213250514c965",
       "credit": "Liquid Crystal by Linkandzelda and Synyster Zeikku",
       "sourceUrl": "https://www.pokecommunity.com/threads/pok%C3%A9mon-liquid-crystal-3-3-xxxxx-live-beta.242023/",
-      "map": "g03_m017",
-      "native_rect": [
-        352,
-        80,
-        384,
-        128
+      "pair": "082d4a94_082d4b9c",
+      "native_metatile_grid": [
+        [
+          22,
+          23
+        ],
+        [
+          28,
+          29
+        ],
+        [
+          36,
+          37
+        ]
+      ],
+      "layers": [
+        "flat"
       ],
       "native_dimensions": [
         32,
         48
       ],
-      "integer_reduction": 2,
-      "reduced_dimensions": [
-        16,
-        24
+      "integer_scale": 1,
+      "compact_dimensions": [
+        32,
+        32
       ],
-      "placement": [
-        8,
-        8
+      "modules": [
+        {
+          "source_rect": [
+            0,
+            0,
+            32,
+            16
+          ],
+          "placement": [
+            0,
+            0
+          ]
+        },
+        {
+          "source_rect": [
+            0,
+            32,
+            32,
+            48
+          ],
+          "placement": [
+            0,
+            16
+          ]
+        }
       ],
-      "source_rgba_sha256": "9d9b38bbef2ba8b8788fdc88910c0a5444665b4eda336304d5ab6b6296d9cf12",
-      "full_canopy_and_roots_retained": true,
-      "assetFileHash": "2332f5a0812cec2f92bfa0a1b4b288c7e37e0daa658c021dc8fa7c0a5e492a2d",
+      "alpha_bounds": [
+        3,
+        4,
+        29,
+        31
+      ],
+      "processing": "Native canopy and matching root sections; omitted middle foliage tiers, no resized pixels.",
+      "source_rgba_sha256": "2b5c6f524106f3628f41ba12d2e0d7462bb912267b24ff18fdf9f7425591ddee",
+      "canopy_and_roots_retained": true,
+      "assetFileHash": "4924b8954a2ba9747c7ba877a8bbd462d852dfc9143e21971867adcda66af405",
       "source": "liquidcrystal",
       "source_provenance": "assets/third_party/johto-hacks/flora/provenance.json"
     },

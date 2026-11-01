@@ -1,7 +1,7 @@
 # TileShift
 
 TileShift swaps world artwork through individually reviewed tile matches.
-Version 0.29.0 replaces generated Gen 2 artwork with checked graphics extracted from the user-supplied FireGold, CrystalDust and Liquid Crystal ROMs. Johto landmarks, expanded Centers, interior objects and Gen 2 foliage choices use these counterparts. The generated roofed Slowpoke Well remains at the user's request. Where the hacks have no matching background object, radios and the lighthouse beacon retain their original Gen 2 pixels in matching Gen 3 colors, with exterior floor pixels omitted. Native building pixels, complete door frames, original entrances and collision are preserved; small objects and whole large trees use only documented uniform integer reduction when their footprints require it. Gen 1 foliage choices stay unchanged. Gen 2 Kanto interiors remain partially converted.
+Version 0.29.1 replaces generated Gen 2 artwork with checked graphics extracted from the user-supplied FireGold, CrystalDust and Liquid Crystal ROMs. Johto landmarks, expanded Centers, interior objects and Gen 2 foliage choices use these counterparts. The generated roofed Slowpoke Well remains at the user's request. Where the hacks have no matching background object, radios and the lighthouse beacon retain their original Gen 2 pixels in matching Gen 3 colors, with exterior floor pixels omitted. Native building pixels, complete door frames, original entrances and collision are preserved; compact large trees use complete native canopy and root sections at their original pixel size in the existing 32x32 spaces. Small objects use documented uniform integer reduction only when needed. Gen 1 foliage choices stay unchanged. Gen 2 Kanto interiors remain partially converted.
 
 Classic themes completely retile **Oldale Town** in both styles. Selectable
 **Gen 1** and **Gen 2** background themes are available in
@@ -144,8 +144,8 @@ Options and the mod manager expose **Trees**, **Big Trees**, **Cut Trees**,
 **Flowers**, **Tall Grass** and **Water** independently. Each offers **Default**,
 numbered designs, **Random** (one design for the session) and **Mixed** (one stable style per connected area). Edge- and corner-touching
 tiles in the same category share one design; separate patches can vary. There are 87 small-tree/shrub choices, 89 Big
-Trees, 89 Cut Trees, 57 flowers, 14 grass designs and three animated water choices in Gen 1. Gen 2 instead offers 3 native small trees, 3 whole big trees, 5 cut-tree choices, 4 flowers and 3 grass styles from the supplied hacks; animated water choices remain available.
-Big Trees select one complete 32x32 design per tree, including in Mixed mode.
+Trees, 89 Cut Trees, 57 flowers, 14 grass designs and three animated water choices in Gen 1. Gen 2 instead offers 3 native small trees, 3 compact big trees, 5 cut-tree choices, 4 flowers and 3 grass styles combining native donor and supplied-hack artwork; animated water choices remain available.
+Big Trees select one complete 32x32 design per tree, including in Mixed mode. The Gen 2 choices retain native-width crowns, trunks and shadows without shrinking pixels; extra middle foliage sections are omitted to fit the original footprint.
 Custom flowers and grass animate with anchored roots; custom tree leaves sway
 above fixed trunks. Grass foregrounds follow the same animation around actors.
 Separate **Trees Speed**, **Flowers Speed**, **Grass Speed** and **Water Speed**

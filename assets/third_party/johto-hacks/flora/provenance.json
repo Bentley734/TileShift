@@ -190,28 +190,68 @@
       "source_rom_sha256": "925cd6bd824e3e903636340e5f3519bc9ecb2f5f75c0bb87248213250514c965",
       "credit": "Liquid Crystal by Linkandzelda and Synyster Zeikku",
       "sourceUrl": "https://www.pokecommunity.com/threads/pok%C3%A9mon-liquid-crystal-3-3-xxxxx-live-beta.242023/",
-      "map": "g03_m017",
-      "native_rect": [
-        352,
-        80,
-        384,
-        128
+      "pair": "082d4a94_082d4b9c",
+      "native_metatile_grid": [
+        [
+          22,
+          23
+        ],
+        [
+          28,
+          29
+        ],
+        [
+          36,
+          37
+        ]
+      ],
+      "layers": [
+        "flat"
       ],
       "native_dimensions": [
         32,
         48
       ],
-      "integer_reduction": 2,
-      "reduced_dimensions": [
-        16,
-        24
+      "integer_scale": 1,
+      "compact_dimensions": [
+        32,
+        32
       ],
-      "placement": [
-        8,
-        8
+      "modules": [
+        {
+          "source_rect": [
+            0,
+            0,
+            32,
+            16
+          ],
+          "placement": [
+            0,
+            0
+          ]
+        },
+        {
+          "source_rect": [
+            0,
+            32,
+            32,
+            48
+          ],
+          "placement": [
+            0,
+            16
+          ]
+        }
       ],
-      "source_rgba_sha256": "9d9b38bbef2ba8b8788fdc88910c0a5444665b4eda336304d5ab6b6296d9cf12",
-      "full_canopy_and_roots_retained": true
+      "alpha_bounds": [
+        3,
+        4,
+        29,
+        31
+      ],
+      "processing": "Native canopy and matching root sections; omitted middle foliage tiers, no resized pixels.",
+      "source_rgba_sha256": "2b5c6f524106f3628f41ba12d2e0d7462bb912267b24ff18fdf9f7425591ddee",
+      "canopy_and_roots_retained": true
     },
     {
       "asset": "firegold-conifer-whole32.png",
@@ -220,28 +260,68 @@
       "source_rom_sha256": "c65f698ffb844b99836a36dc0752e8b57ebd45be53be364cb3cfe52aa0cc74ce",
       "credit": "FireGold 1.4 by Tzx211",
       "sourceUrl": "https://www.pokecommunity.com/threads/pok%C3%A9mon-fire-gold-1-4.473130/",
-      "map": "g03_m001",
-      "native_rect": [
-        384,
-        32,
-        416,
-        80
+      "pair": "082d4a94_082d4aac",
+      "native_metatile_grid": [
+        [
+          18,
+          19
+        ],
+        [
+          26,
+          27
+        ],
+        [
+          34,
+          35
+        ]
+      ],
+      "layers": [
+        "flat"
       ],
       "native_dimensions": [
         32,
         48
       ],
-      "integer_reduction": 2,
-      "reduced_dimensions": [
-        16,
-        24
+      "integer_scale": 1,
+      "compact_dimensions": [
+        32,
+        32
       ],
-      "placement": [
-        8,
-        8
+      "modules": [
+        {
+          "source_rect": [
+            0,
+            0,
+            32,
+            16
+          ],
+          "placement": [
+            0,
+            0
+          ]
+        },
+        {
+          "source_rect": [
+            0,
+            32,
+            32,
+            48
+          ],
+          "placement": [
+            0,
+            16
+          ]
+        }
       ],
-      "source_rgba_sha256": "4c1c77efa766425314ae7a411324da42b175a82e70b3482a42bdada7e1678440",
-      "full_canopy_and_roots_retained": true
+      "alpha_bounds": [
+        1,
+        1,
+        31,
+        32
+      ],
+      "processing": "Native canopy and matching root sections; omitted middle foliage tiers, no resized pixels.",
+      "source_rgba_sha256": "e77a7498888db7096017c194f2550d7fff65e4c62543e82ec44b40c4da2f14f1",
+      "canopy_and_roots_retained": true
     },
     {
       "asset": "crystaldust-conifer-whole32.png",
@@ -261,17 +341,58 @@
         32,
         48
       ],
-      "integer_reduction": 2,
-      "reduced_dimensions": [
-        16,
-        24
+      "integer_scale": 1,
+      "compact_dimensions": [
+        32,
+        32
       ],
-      "placement": [
-        8,
-        8
+      "modules": [
+        {
+          "source_rect": [
+            0,
+            0,
+            32,
+            8
+          ],
+          "placement": [
+            0,
+            0
+          ]
+        },
+        {
+          "source_rect": [
+            0,
+            16,
+            32,
+            32
+          ],
+          "placement": [
+            0,
+            8
+          ]
+        },
+        {
+          "source_rect": [
+            0,
+            40,
+            32,
+            48
+          ],
+          "placement": [
+            0,
+            24
+          ]
+        }
       ],
+      "alpha_bounds": [
+        0,
+        0,
+        31,
+        32
+      ],
+      "processing": "Native canopy and matching root sections; omitted middle foliage tiers, no resized pixels.",
       "source_rgba_sha256": "b3abbd471cc430aa562101d39094d27b03742de6af57e2ab94c3e423cb3cfa77",
-      "full_canopy_and_roots_retained": true
+      "canopy_and_roots_retained": true
     }
   ],
   "files": {
@@ -285,12 +406,12 @@
     "firegold-grass.png": "b86928f1e57bfa27f8e8a2b2648d75766014f7f5516d0b0a3507c5b89a36e7ea",
     "crystaldust-long-grass.png": "0e81bdf4cfa92c1747ed7a530022c4ce5f0d8c557ecf1512578441687fe37271",
     "liquidcrystal-grass.png": "c6c96f677b53e83ecac210e26d1e5fe190ae695dad6157ee3f742b6c5ac1cde9",
-    "liquidcrystal-round-tree-whole32.png": "570b590d7049e5ccc9178c31c51c868ebdb0aab77ca9aeff5f83bda01ce610b2",
-    "default-tree-q0.png": "429700255d46afc1f0e84cbbf5e0fd10e6b9c3dc864ef0dc9092f4197d552d6d",
-    "default-tree-q1.png": "44282a38568729005963cc6935c6ef6012cb3aa38a336319437a38a410a8864d",
-    "default-tree-q2.png": "2a148f190853465280aa443dd55e49ec0d21231b67862e51ab928ea1c670e591",
-    "default-tree-q3.png": "2332f5a0812cec2f92bfa0a1b4b288c7e37e0daa658c021dc8fa7c0a5e492a2d",
-    "firegold-conifer-whole32.png": "bb00b880602e0426f7a5586c46c857ecedb6d5fcb19172224335318aea021063",
-    "crystaldust-conifer-whole32.png": "bb419da8f4b7363bc71f24678a16af736b0706f59f80790d702c58eff9a89f02"
+    "liquidcrystal-round-tree-whole32.png": "0065dc1c42e96227aa40d77c98cac0db36205a19f0cece7bc6bccde08b7f54e9",
+    "default-tree-q0.png": "5778d3804fa1b26e0b741781e823d0b442218a32bad559544af7d522dc8837f1",
+    "default-tree-q1.png": "f28c6d0e2fd309eef6eb01b0657ed9a4bf77e1cbf9d606d96bc90cb480a76268",
+    "default-tree-q2.png": "8e883cb437c6da2a8e0be85a8db7d4c215ae040020cb3ec2fdd91077d180a961",
+    "default-tree-q3.png": "4924b8954a2ba9747c7ba877a8bbd462d852dfc9143e21971867adcda66af405",
+    "firegold-conifer-whole32.png": "63fb33916315ccc9989f03be30f88a77b3fec428b862f42761c215e830ed3397",
+    "crystaldust-conifer-whole32.png": "babe7fb01a158104191dd1fd9a9bccf81843871ee2fd9d6de2ab0542d4a9e41e"
   }
 }
