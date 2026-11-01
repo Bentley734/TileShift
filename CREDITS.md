@@ -1,5 +1,7 @@
 # Artwork credits
 
+Current Gen2 artwork (v0.29.0 onward) uses the user-supplied Johto ROM hacks credited below. This file also preserves historical provenance for retained files and Gen1 options; the generated Gen2 replacements described in those historical sections are superseded, except the roofed Slowpoke Well kept at the user's request. Radios and the beacon preserve original Gen2 geometry in matching Gen3 colors where the hacks have no corresponding background object.
+
 ## Selectable foliage and Sprout Tower
 
 The two JPEGs in `assets/user_flora` were supplied by the user as Gemini-generated

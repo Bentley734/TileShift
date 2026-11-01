@@ -44,25 +44,19 @@ cave entrances, animated inland banks and thin cliff edges.
 Mt. Silver Outside is complete, including its cliff family,
 animated freshwater shoreline and original cave entrance. Blackthorn City and
 Lake of Rage are also complete.
-Ecruteak City is complete with original Gen3 buildings based
-on the supplied Johto reference, including its blue-roof homes, Dance Theater,
-Bell Tower, temple entrance and version-specific Burned Tower exterior.
+Ecruteak City uses native CrystalDust homes, Dance Theater, Bell Tower and temple entrance. Gold/Silver retain a distinct intact tower using whole FireGold artwork; Crystal uses the native damaged-tower counterpart.
 New building replacements keep their intended pixel scale and complete details.
 Decorative artwork may overhang neighbouring cells, with genuinely transparent
 unused portions; original entrances and collision footprints stay unchanged.
 Gen 2 Pokemon Centers offer **COMPACT** and **EXPANDED** under
 **POKEMON CENTERS** in the mod options. Compact restores the original native
-64x64 design. Expanded keeps the native roof unchanged and adds a redesigned
-front with blue-glass windows, trim and an entrance surround. The door remains
-at the original map position. Style changes are cached and preserve collision.
+64x64 design. Expanded uses the complete native80x80 FireGold Center, with an upper decorative row and one left side column so its native door aligns with the original entrance. Both styles are cached and preserve collision.
 Pallet's houses and lab also use the row above them, retaining their complete
 windows and entrance frames. Gen 2 Marts gain additional native roofing.
 Full roofs can extend one decorative tile above the unchanged building footprint,
 covering parts of the original trees and any actors behind them. No new collision
 is added; existing Headbutt trees retain their original interactions.
-Olivine City is complete, including a new lighthouse, the cafe,
-port passage, railings and coherent animated coastline. The original lighthouse
-entrance and both base windows are preserved. Johto rock
+Olivine City includes the complete native CrystalDust lighthouse, cafe, port passage, railings and animated coastline. The lighthouse keeps its original source entrance and the native counterpart's full door and window frames. Johto rock
 and retaining-wall matches share source entries to keep runtime work small. Mixed designs follow connected
 areas; grass can react to footsteps, and plant foregrounds surround character feet. Custom water choices are animated. It completely retiles the **Pallet Town, Viridian City, Route 1 and
 Viridian Forest backgrounds in Red, Blue and Yellow**, all 19 maps using
@@ -85,7 +79,7 @@ stairs, ladders, animated water and switch-controlled Victory Road barriers.
 Gen 2 caves add regional rock surfaces, complete rock masses, correctly joined
 corners, ladders, and distinct snowy floors and slippery ice. Cherrygrove has complete shoreline corners, animated sea-rock barriers,
 blocked outcrops and its separate walkable island surface. Violet includes
-a Sprout Tower facade refined from the user's supplied pagoda design,
+a native CrystalDust Sprout Tower facade,
 complete freshwater ponds, paving, raised ground and all building facades.
 Gold and Silver retain their taller school footprint; Crystal retains its
 shorter school and the original Headbutt-tree row above it.
@@ -95,8 +89,7 @@ matching house, lab, clinic, shop, ship, museum, Gym or facility art. Reviewed
 household furniture keeps complete frames, shelves, paintings and plant crowns.
 Unique regional features without suitable counterparts retain
 their complete original shapes in matching Gen3 colors. Characters and Pokemon sprites are
-unchanged. The single **Gen 3** style combines Emerald and FireRed/LeafGreen
-art.
+unchanged. The single **Gen 3** style combines Emerald, FireRed/LeafGreen and selected native Johto hack art.
 
 ## Install
 
