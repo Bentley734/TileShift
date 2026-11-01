@@ -712,6 +712,16 @@ local function run()
  end
  local function verifyPublicBuildings(game,def,frame)
   local proofs={}
+  local decorations=roofPixels(def)
+  local function decorated(source,sx,sy,tx,ty)
+   local result=love.image.newImageData(source:getWidth(),source:getHeight());result:paste(source,0,0,0,0,source:getWidth(),source:getHeight())
+   local covered=0
+   for y=0,result:getHeight()-1 do for x=0,result:getWidth()-1 do
+    local px,py=tx+x,ty+y;local layer=decorations[math.floor(py/16)*65536+math.floor(px/16)]
+    if layer then local r,g,b,a=layer:getPixel(px%16,py%16);if a==1 then result:setPixel(x,y,r,g,b,a);covered=covered+1 end end
+   end end
+   return result,covered
+  end
   local function crop(image,r)
    local out=love.image.newImageData(r[3],r[4]);out:paste(image,0,0,r[1],r[2],r[3],r[4]);return out
   end
@@ -757,7 +767,8 @@ local function run()
        end end
       end end
      end
-     check(actual:getString()==prototype:getString(),game..' '..def.id..' '..record.template..' GPU output differs from the approved whole building')
+     local visiblePrototype=decorated(prototype,0,0,r[1]*16,r[2]*16)
+     check(actual:getString()==visiblePrototype:getString(),game..' '..def.id..' '..record.template..' GPU output differs from the native building and checked decorative layers')
      local door
      if record.no_source_warp then
       for _,w in ipairs(def.warps or{})do
@@ -780,9 +791,10 @@ local function run()
       local sr,tr=feature.source_rect_xywh,feature.target_rect_xywh
       check(sr[3]==tr[3]and sr[4]==tr[4],'Public native feature was scaled')
       local expected=crop(source.image,sr);local result=crop(actual,tr)
-      check(result:getString()==expected:getString(),game..' '..def.id..' '..record.template..' clips/changes '..feature.feature)
+      local visible,occluded=decorated(expected,0,0,r[1]*16+tr[1],r[2]*16+tr[2])
+      check(result:getString()==visible:getString(),game..' '..def.id..' '..record.template..' clips/changes '..feature.feature)
       features[#features+1]={feature=feature.feature,source_rect_xywh=sr,target_rect_xywh=tr,
-       exact_original_native_gpu_pixels=true,rgba_sha256=hash(result:getString())}
+       exact_original_native_gpu_pixels=occluded==0,checked_native_overlay_pixels=occluded,exact_visible_native_pixels=true,rgba_sha256=hash(result:getString())}
      end
      check(#features>0,'Public building has no complete native feature proof')
      local holes,opaque=0,0
@@ -794,11 +806,11 @@ local function run()
       for y=0,part.h-1 do for x=0,part.w-1 do
        local sx,sy=part.srcX+x,part.srcY+y;local _,_,_,alpha=cell.over:getPixel(sx,sy)
        if alpha==0 then
-        equalPixel(actual,tx+x,ty+y,groundAt(tx+x,ty+y),(tx+x)%16,(ty+y)%16,'Public roof empty corner is not its actual local ground')
+        equalPixel(actual,tx+x,ty+y,visiblePrototype,tx+x,ty+y,'Public roof empty corner differs from selected ground and checked decoration')
         holes=holes+1
        else
         check(alpha==1,'Public native roof contains unexpected semi-transparency')
-        equalPixel(actual,tx+x,ty+y,cell.over,sx,sy,'Public native roof/eave pixel changed')
+        equalPixel(actual,tx+x,ty+y,visiblePrototype,tx+x,ty+y,'Public native roof/eave or checked overlay pixel changed')
         opaque=opaque+1
        end
       end end

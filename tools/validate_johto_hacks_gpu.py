@@ -9,7 +9,7 @@ def main():
  setup=base[base.index(' -- Real Gold/Silver/Crystal World bake'):base.index(' local function verifyGen2Ladders')]
  focused=r"""
  for _,game in ipairs({'gold','silver','crystal'})do
-  for _,id in ipairs({'GOLDENROD_CITY','LAVENDER_TOWN','ECRUTEAK_CITY','OLIVINE_CITY','VIOLET_CITY','AZALEA_GYM','SPROUT_TOWER_1F','NATIONAL_PARK','ILEX_FOREST','ROUTE_41'})do
+  for _,id in ipairs({'CERULEAN_CITY','GOLDENROD_CITY','LAVENDER_TOWN','ECRUTEAK_CITY','OLIVINE_CITY','VIOLET_CITY','AZALEA_GYM','SPROUT_TOWER_1F','NATIONAL_PARK','ILEX_FOREST','ROUTE_41'})do
    GV.set(game);assetGame=game;clock=0
    local world,map,def=world2(game,id)
    world.mapImage=world:imageFor(map.id)
@@ -20,6 +20,7 @@ def main():
    check(mod.exports.state.rejected==0,'Focused Johto scene rejected artwork')
    local f={game=game,map=id,coverage=coverage(def,art),before=encodePng(native,game..'-'..id..'-native-gpu.png'),after=encodePng(after,game..'-'..id..'-gen3-gpu.png'),checked_donor_pixels=verifyCoveredPixels(def,art,after,game..' '..id)}
    f.centers=verifyCenterStyles(game,def,after,world,mod,draw)
+   if id=='CERULEAN_CITY'then f.public=verifyPublicBuildings(game,def,after)end
    if id=='ECRUTEAK_CITY'then f.exteriors=verifyEcruteak(game,def,after,world,mod)end
    if id=='OLIVINE_CITY'then f.exteriors=verifyOlivine(game,def,after,mod)end
    if id=='VIOLET_CITY'then f.exteriors=verifySprout(game,def,after)end
