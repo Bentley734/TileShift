@@ -248,7 +248,15 @@ function Adapter.install(ctx)
           end
         end end
       end)
-      if ctx.roofs then ctx.roofs:map(self,def,ox,oy,s)end
+      if ctx.roofs then
+        ctx.roofs:map(self,def,ox,oy,s,self.map and mapId~=self.map.id and'withoutBorder'or nil)
+      end
+    end
+  end)
+  wrap('drawGround',function(old)
+    return function(self,s)
+      old(self,s)
+      if ctx.roofs and ctx.roofs.borders then ctx.roofs:borders(self,s)end
     end
   end)
   wrap('borderImageFor',function(old)
@@ -372,6 +380,20 @@ function Adapter.install(ctx)
     return function(self,entity,ox,oy,s)
       old(self,entity,ox,oy,s)
       if ctx.roofs then ctx.roofs:actor(self.map,entity,ox,oy,s,false,0,self)end
+    end
+  end)
+  wrap('drawPersonEntry',function(old)
+    return function(self,entry,s)
+      old(self,entry,s)
+      -- Crystal's on-map composite already replays priority artwork. GS and
+      -- connection ghosts use a different native sprite path and need it here.
+      if ctx.roofs and entry and entry.entity
+        and(not self:isCrystal()or entry.ox~=0 or entry.oy~=0)then
+        s=s or entry.s or 1
+        local ax,ay=entry.ox or 0,entry.oy or 0
+        ctx.roofs:actor(self.map,entry.entity,entry.sx-ax*s,entry.sy-ay*s,s,false,0,self,
+          nil,nil,nil,ax,ay)
+      end
     end
   end)
   wrap('drawGrassShake',function(old)

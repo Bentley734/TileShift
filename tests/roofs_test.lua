@@ -165,4 +165,156 @@ eq(pixelSources,2,'overlap stacks do not reread source maps in warm frames')
 eq(pixelAssets,2,'overlap stacks do not reread source artwork in warm frames')
 eq(pixelImages,2,'overlap stacks reuse both native textures')
 stacks:dispose()
+-- A generic town-tree crown expands into one cached canopy per real source
+-- occurrence. Its extra tile can cross the north map edge, while its source
+-- fingerprint and physical front line remain anchored to the original tree.
+local Mapping=assert(loadfile(root..'/lib/mapping.lua'))()
+local function clone(value)
+ local out={};for k,v in pairs(value)do out[k]=type(v)=='table'and clone(v)or v end;return out
+end
+local treeTemplate={game='crystal',style='gen3',kind='third_party',map='CANOPIES',tileset='T',
+ id=7,quadrant=0,role='dense_conifer_crown',status='reviewed',evidence='Synthetic complete native48px tree crown.',
+ sourceHash=string.rep('a',64),asset='assets/third_party/johto-hacks/town-trees/middle.png',assetFileHash=string.rep('b',64),
+ credit='Native test artwork',sourceUrl='https://example.com/native-tree',
+ base={game='emerald',tileset='T',id=1,hash=string.rep('c',64)},
+ canopy={asset='assets/third_party/johto-hacks/town-trees/top.png',hash=string.rep('d',64)}}
+local canopyData=solid('green',4,11)
+local buildingData=solid('blue',0,7)
+local function canopyCase(buildingHeight)
+ local template=clone(treeTemplate)
+ local treeDef={id='CANOPIES',tileset='T',width=2,height=3,blocks={7,8,7,8,9,10}}
+ local treeWorld={camera={x=0,y=0},viewW=64,viewH=96,daytime='DAY'}
+ local treeMap={def=treeDef}
+ local building={game='crystal',style='gen3',kind='third_party',map='CANOPIES',tileset='T',
+  side='left',x=0,y=1,sourceX=0,buildingX=1,buildingY=0,buildingW=1,buildingH=buildingHeight,
+  id=7,quadrant=2,role='canopy-adjacent-building',status='reviewed',evidence='Synthetic side with a checked native front line.',
+  sourceHash=string.rep('e',64),asset='assets/third_party/building-blue.png',assetFileHash=string.rep('f',64),
+  credit='Native test artwork',sourceUrl='https://example.com/native-building'}
+ local sourceCalls,assetCalls,treeCalls,buildingCalls,canopyWarnings=0,0,0,0,0
+ local canopyRevision,sourceValid=1,true
+ local treeCtx={rows={building},treeRows={template},graphics=PG,
+  active=function()return true end,revision=function()return canopyRevision end,
+  version=function()return'crystal'end,validate=Mapping.validate,
+  donor={cell=function(_,ref)
+   sourceCalls=sourceCalls+1;eq(ref.map,treeDef);eq(ref.id,7);eq(ref.hashOnly,true)
+   if ref.quadrant==0 then treeCalls=treeCalls+1;eq(ref.hash,template.sourceHash)
+   else buildingCalls=buildingCalls+1;eq(ref.quadrant,2);eq(ref.hash,building.sourceHash)end
+   return sourceValid and{}or nil,'changed native source'
+  end},original=function(path,hash)
+   assetCalls=assetCalls+1
+   if path==template.canopy.asset then eq(hash,template.canopy.hash);return canopyData end
+   eq(path,building.asset);eq(hash,building.assetFileHash);return buildingData
+  end,warn=function()canopyWarnings=canopyWarnings+1 end}
+ local treeRoofs=R.new(treeCtx)
+ eq(sourceCalls,0,'generic tree templates remain lazy before a map is used')
+ local treeCells=treeRoofs:cells('crystal',treeDef)
+ local borderCanopy=assert(treeCells.grid[-65536],'source crown at y0 needs its canopy at y-1')
+ eq(borderCanopy.x,0);eq(borderCanopy.y,-1);eq(borderCanopy.frontY,32)
+ eq(borderCanopy.data,canopyData);eq(borderCanopy.next,nil)
+ local sharedCanopy=assert(treeCells.grid[65536])
+ local first,second=sharedCanopy,sharedCanopy.next
+ eq(second~=nil,true,'an interior canopy keeps the existing side entry')
+ eq(second.next,nil,'the shared cell contains exactly its side and canopy')
+ if buildingHeight*16<64 then
+  eq(first.data,buildingData,'a farther building side remains behind the nearer tree')
+  eq(second.data,canopyData)
+ else
+  eq(first.data,canopyData,'nearer building sides and ties cover the tree canopy')
+  eq(second.data,buildingData)
+ end
+ surface={};treeRoofs:map(treeWorld,treeDef,0,0,1)
+ eq(ink(1,20),'blue','side-only pixels survive tree transparency')
+ eq(ink(5,20),buildingHeight*16<64 and'green'or'blue','map order matches physical canopy/side depth')
+ eq(ink(10,20),'green','complete canopy remains visible through side transparency')
+ eq(ink(14,20),'magenta','unused transparent corners keep the backing pixels')
+ treeWorld.camera.y=-16;surface={};treeRoofs:map(treeWorld,treeDef,0,0,1)
+ eq(ink(5,4),'green','north-border y-1 canopy draws when its actual pixels enter the viewport')
+ treeWorld.camera.y=0
+ local treeActor={px=0,py=51,sprite={frameWidth=16,frameHeight=64,anchorX=8,anchorY=64}}
+ surface={};treeRoofs:actor(treeMap,treeActor,0,0,1,false,0,treeWorld)
+ eq(ink(5,20),buildingHeight*16<64 and'green'or'blue','actor redraw follows the same per-cell depth order as the map')
+ eq(ink(10,20),'green','an actor behind the physical tree front is covered by its leaves')
+ eq(ink(14,20),'magenta','transparent canopy/side corners do not erase actor pixels')
+ treeActor.py=52;surface={};treeRoofs:actor(treeMap,treeActor,0,0,1,false,0,treeWorld)
+ eq(ink(5,20),buildingHeight*16>64 and'blue'or'magenta','feet at the tree front stay in front of the canopy')
+ eq(ink(10,20),'magenta','an actor in front of the tree keeps canopy-only body pixels')
+ treeActor.spriteYOffset=-12;surface={};treeRoofs:actor(treeMap,treeActor,0,0,1,false,0,treeWorld)
+ eq(ink(10,20),'magenta','a jump offset never changes physical front/behind order')
+ treeActor.py=80;treeActor.spriteYOffset=nil;treeActor.sprite.frameHeight=96;treeActor.sprite.anchorY=96
+ surface={};treeRoofs:actor(treeMap,treeActor,0,0,1,false,0,treeWorld)
+ eq(ink(5,20),'magenta','a tall actor in front of both objects remains in front of both')
+ -- A south neighbor's extra north row lies over the current map's last
+ --16px band. Replay it after the current canvas, including for an actor whose
+ -- current map has no canopy rows of its own.
+ local primaryDef={id='PRIMARY',tileset='T',width=2,height=2,blocks={9,10,9,10}}
+ local primaryMap={id='PRIMARY',def=primaryDef}
+ treeWorld.maps={PRIMARY=primaryDef,CANOPIES=treeDef}
+ treeWorld.map=primaryMap;treeWorld.neighbors={{id='CANOPIES',ox=16,oy=primaryDef.height*32}}
+ treeWorld.viewW,treeWorld.viewH=96,128
+ local neighborSources,neighborAssets=sourceCalls,assetCalls
+ surface={};treeRoofs:borders(treeWorld,1)
+ eq(ink(21,52),'green','the southern neighbor canopy survives a current-map canvas drawn over the connection')
+ eq(ink(30,52),'magenta','translated border canopy preserves transparent pixels')
+ eq(ink(21,84),'magenta','neighbor replay includes only its outside row, not its interior canopies or side art')
+ local neighborActor={px=16,py=52,sprite={frameWidth=16,frameHeight=16,anchorX=8,anchorY=16}}
+ surface={};treeRoofs:actor(primaryMap,neighborActor,0,0,1,false,0,treeWorld)
+ eq(ink(21,52),'green','a primary-map actor behind the neighboring tree receives the translated canopy')
+ eq(ink(30,52),'magenta','neighbor canopy holes retain the primary actor pixels')
+ neighborActor.py=84;neighborActor.sprite.frameHeight=64;neighborActor.sprite.anchorY=64
+ surface={};treeRoofs:actor(primaryMap,neighborActor,0,0,1,false,0,treeWorld)
+ eq(ink(21,52),'magenta','translated physical frontY lets an actor at the neighboring root front remain in front')
+ eq(ink(17,84),'magenta','neighbor actor replay does not repaint unrelated interior building sides')
+ neighborActor.py=52;neighborActor.sprite.frameHeight=16;neighborActor.sprite.anchorY=16
+ for i=1,100 do
+  surface={};treeRoofs:borders(treeWorld,1)
+  treeRoofs:actor(primaryMap,neighborActor,0,0,1,false,0,treeWorld)
+  eq(ink(21,52),'green','warm connected-map canopy stays visible')
+ end
+ eq(sourceCalls,neighborSources,'neighbor border and actor passes do not recheck source imports after warmup')
+ eq(assetCalls,neighborAssets,'neighbor border and actor passes do not reload native artwork')
+ treeWorld.maps=nil;treeWorld.neighbors=nil;treeWorld.map=nil;treeWorld.viewW,treeWorld.viewH=64,96
+ local warmSources,warmAssets,warmImages=sourceCalls,assetCalls,pixelImages
+ local originalTreeBlocks=treeDef.blocks
+ treeDef.blocks={}
+ -- Replacing the block list with an empty table exposes any accidental warm
+ -- expansion: cached map/actor draws must still find both existing canopies.
+ for i=1,100 do
+  surface={};treeRoofs:map(treeWorld,treeDef,0,0,1)
+  eq(ink(10,20),'green','warm draws retain cached source occurrences without rescanning blocks')
+  treeRoofs:actor(treeMap,treeActor,0,0,1,false,0,treeWorld)
+ end
+ eq(treeRoofs:cells('crystal',treeDef),treeCells,'warm map lookup returns the same cached expansion')
+ eq(sourceCalls,warmSources,'warm canopy draws never recheck imported source data')
+ eq(assetCalls,warmAssets,'warm canopy draws never reread native PNGs')
+ eq(pixelImages,warmImages,'all occurrences reuse checked GPU textures')
+ treeDef.blocks=originalTreeBlocks
+ canopyRevision=2;sourceValid=false;local failed=treeRoofs:cells('crystal',treeDef)
+ eq(next(failed.grid),nil,'failed native crown/building guards cannot paint an overhang')
+ eq(assetCalls,warmAssets,'failed source guards prevent artwork loading')
+ eq(canopyWarnings>0,true,'a changed native source is reported')
+ canopyRevision=3;sourceValid=true
+ local restored=treeRoofs:cells('crystal',treeDef)
+ eq(restored.grid[-65536]~=nil,true,'a successful source revalidation restores the north canopy')
+ eq(pixelImages,warmImages,'revision changes reuse the same canopy and side textures')
+ eq(treeDef.blocks,originalTreeBlocks,'canopy expansion never replaces the source block table')
+ eq(originalTreeBlocks[1],7);eq(originalTreeBlocks[3],7)
+ treeRoofs:dispose()
+end
+canopyCase(3) -- Farther side front48; tree front64.
+canopyCase(4) -- Equal front64; the existing building wins the tie.
+canopyCase(5) -- Nearer side front80; tree front64.
+local invalidCanopyCases={
+ function(r)r.canopy.hash='unverified'end,
+ function(r)r.canopy.asset='assets/third_party/../escaped.png'end,
+ function(r)r.role='dense_conifer_trunk'end,
+ function(r)r.game='red'end,
+ function(r)r.y=-1;r.x=0 end,
+ function(r)r.credit=nil end,
+}
+for _,change in ipairs(invalidCanopyCases)do
+ local invalid=clone(treeTemplate);change(invalid)
+ local ok=Mapping.validate(invalid);eq(ok,nil,'invalid canopy metadata fails the strict mapping validator')
+ eq(pcall(R.new,{rows={},treeRows={invalid},graphics=PG,validate=Mapping.validate}),false,
+  'invalid tree template is rejected before any map or texture is touched')
+end
 print('roof overhang checks: '..checks)

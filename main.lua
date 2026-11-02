@@ -242,7 +242,11 @@ return function(mod)
   for _,row in ipairs(readModule('lib/goldenrod_roofs.lua'))do decorationRows[#decorationRows+1]=row end
   for _,row in ipairs(readModule('lib/pallet_roofs.lua'))do decorationRows[#decorationRows+1]=row end
   for _,row in ipairs(readModule('lib/johto_roofs.lua'))do decorationRows[#decorationRows+1]=row end
-  roofs=readModule('lib/roofs.lua').new({rows=decorationRows,validate=Mapping.validate,
+  local treeRows={}
+  if mod.generation==2 then
+    for _,row in ipairs(reviewed)do if row.canopy then treeRows[#treeRows+1]=row end end
+  end
+  roofs=readModule('lib/roofs.lua').new({rows=decorationRows,treeRows=treeRows,validate=Mapping.validate,
     donor=decoder,original=original,compose=compose,version=GV.get,revision=function()return state.revision end,
     markTrueColor=function(x,y,w,h)
       if mod.generation==1 then

@@ -125,6 +125,19 @@ function M.validate(row)
         or rect[1]+rect[3]>16 or rect[2]+rect[4]>16 then return nil,'invalid retained native rectangle' end
     end
   end
+  if row.canopy~=nil then
+    local canopy=row.canopy
+    if generations[row.game]~=2 or row.style~='gen3' or row.kind~='third_party'
+      or row.role~='dense_conifer_crown' or row.x~=nil or row.y~=nil
+      or row.donor or row.parts or row.animated or not row.base
+      or type(canopy)~='table' or not assetPath(canopy.asset,'third_party')
+      or not fingerprint(canopy.hash) or not credited(row)then
+      return nil,'tree canopy requires a checked native Gen2 crown and one third-party top tile'
+    end
+    for name in pairs(canopy)do
+      if name~='asset'and name~='hash'then return nil,'unknown tree canopy field'end
+    end
+  end
   if row.sourceColors~=nil and row.kind~='source_palette' then return nil,'source colors require source palette artwork' end
   local ref=row.donor
   if row.kind=='source_palette' then

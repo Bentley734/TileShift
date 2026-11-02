@@ -219,4 +219,51 @@ eq(live:draw(),'native-ACTIVE','lost ownership restores source before world draw
 eq(live.neighbors[1].image,'native-NEIGHBOR','neighbor pointers restored too')
 eq(live:mapCacheKey('ACTIVE'),'ACTIVE','ownership loss unregisters cache wrapper')
 dispose()
+-- The engine draws neighbor canvases first and the current canvas afterward.
+-- A south neighbor's y=-1 tree canopy therefore needs a final replay, rather
+-- than being painted early and overwritten by the current map's background.
+local groundOrder,groundPixel={},nil
+local Ground={}
+function Ground:mapCacheKey(id)return id end
+function Ground:drawAnimCells(id)
+ groundOrder[#groundOrder+1]='native-animation-'..id
+end
+function Ground:drawGround(s)
+ groundPixel='neighbor-background';groundOrder[#groundOrder+1]='neighbor-canvas'
+ self:drawAnimCells('NEIGHBOR',0,32,s)
+ groundPixel='current-background';groundOrder[#groundOrder+1]='current-canvas'
+ self:drawAnimCells('CURRENT',0,0,s)
+ groundOrder[#groundOrder+1]='native-ground-complete'
+end
+local currentGround={id='CURRENT',tileset='TEST',width=1,height=1,blocks={1}}
+local neighborGround={id='NEIGHBOR',tileset='TEST',width=1,height=1,blocks={1}}
+local groundWorld=setmetatable({map={id='CURRENT',def=currentGround},maps={CURRENT=currentGround,NEIGHBOR=neighborGround},
+ camera={x=0,y=0},viewW=32,viewH=64,daytime='DAY',mapImages={},animCells={},bgSets={},
+ neighbors={{id='NEIGHBOR',ox=0,oy=32}}},{__index=Ground})
+local groundNative,animationNative=Ground.drawGround,Ground.drawAnimCells
+local groundClose=Adapter.install({worldClass=Ground,borderFill=Border,palette=Palette,graphics=G,
+ version=function()return'gold'end,replacements=function()return nil end,
+ roofs={map=function(_,actualWorld,actualDef,ox,oy,s,edgeMode)
+   eq(actualWorld,groundWorld);eq(s,1)
+   if actualDef==neighborGround then
+    eq(oy,32);eq(edgeMode,'withoutBorder','neighbor animation does not paint its outside canopy too early')
+    groundOrder[#groundOrder+1]='neighbor-interior-overlays'
+   else
+    eq(actualDef,currentGround);eq(oy,0);eq(edgeMode,nil)
+    groundOrder[#groundOrder+1]='current-overlays'
+   end
+  end,borders=function(_,actualWorld,s)
+   eq(actualWorld,groundWorld);eq(s,1)
+   eq(groundOrder[#groundOrder],'native-ground-complete','border replay runs after the entire native ground pipeline')
+   eq(groundPixel,'current-background','current canvas genuinely overwrote earlier neighbor pixels')
+   groundPixel='neighbor-canopy';groundOrder[#groundOrder+1]='late-neighbor-canopy'
+  end}})
+groundWorld:drawGround(1)
+eq(groundPixel,'neighbor-canopy','late canopy remains visible over the current canvas at a connection')
+eq(table.concat(groundOrder,','),
+ 'neighbor-canvas,native-animation-NEIGHBOR,neighbor-interior-overlays,current-canvas,native-animation-CURRENT,current-overlays,native-ground-complete,late-neighbor-canopy',
+ 'native map and animation order is preserved around the bounded canopy replay')
+groundClose()
+eq(Ground.drawGround,groundNative,'cleanup restores the native ground pipeline')
+eq(Ground.drawAnimCells,animationNative,'cleanup restores neighbor/current animation methods')
 print('PASS Gen 2 graphics adapter: '..count..' assertions')

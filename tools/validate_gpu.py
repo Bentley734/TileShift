@@ -214,7 +214,7 @@ local function run()
    'Final Pallet fixture must replace all 360 visible background cells')
   return c
  end
- local roofPixels
+ local roofPixels,mappingRows
  local function verifyPalletPixels(def,art,frame,game)
   local checked=0
   -- Check every occurrence, including repeated tiles, quadrant seams and
@@ -238,7 +238,18 @@ local function run()
  roofPixels=function(def)
   local game=GV.get();local key=game..':'..def.id
   if roofPixelCache[key]then return roofPixelCache[key]end
-  local cells={};roofPixelCache[key]=cells
+  local cells,stacks={},{};roofPixelCache[key]=cells
+  local function append(index,layer,frontY,canopy)
+   local stack=stacks[index]or{};stacks[index]=stack
+   local entry={image=layer,frontY=frontY}
+   local position=#stack+1
+   if canopy then
+    for i,previous in ipairs(stack)do
+     if not previous.frontY or previous.frontY>=frontY then position=i;break end
+    end
+   end
+   table.insert(stack,position,entry)
+  end
   for _,file in ipairs({'lib/roof_catalog.lua','lib/side_catalog.lua','lib/center_mart_roofs.lua','lib/goldenrod_roofs.lua','lib/pallet_roofs.lua','lib/johto_roofs.lua'})do
    local source=read(MOD..'/'..file)
    for _,row in ipairs(source and assert(load(source))()or{})do
@@ -249,8 +260,28 @@ local function run()
      local bytes=assert(read(MOD..'/'..row.asset));check(hash(bytes)==row.assetFileHash,'Roof PNG fingerprint changed')
      layer=love.image.newImageData(love.filesystem.newFileData(bytes,'roof.png'))
     end
-    local index=row.y*65536+row.x;local combined=cells[index]
-    if not combined then combined=love.image.newImageData(16,16);cells[index]=combined end
+    append(row.y*65536+row.x,layer,row.side and(row.buildingY+row.buildingH)*16 or nil)
+   end
+   end
+  end
+  for _,file in ipairs({'mappings/gen2_outdoor.lua','mappings/gen2_outdoor_extended.lua','mappings/johto_shared_finish.lua'})do
+   for _,row in ipairs(mappingRows(file))do
+    if row.game==game and row.map==def.id and row.canopy then
+     local bytes=assert(read(MOD..'/'..row.canopy.asset))
+     check(hash(bytes)==row.canopy.hash,'Tree canopy PNG fingerprint changed')
+     local top=love.image.newImageData(love.filesystem.newFileData(bytes,'canopy.png'))
+     for index,bid in ipairs(def.blocks)do if bid==row.id then
+      local x=(index-1)%def.width*2+row.quadrant%2
+      local sy=math.floor((index-1)/def.width)*2+math.floor(row.quadrant/2)
+      append((sy-1)*65536+x,top,(sy+2)*16,true)
+     end end
+    end
+   end
+  end
+  for index,stack in pairs(stacks)do
+   local combined=love.image.newImageData(16,16);cells[index]=combined
+   for _,entry in ipairs(stack)do
+    local layer=entry.image
     for yy=0,15 do for xx=0,15 do
      local r,g,b,a=layer:getPixel(xx,yy)
      if a>0 then
@@ -258,7 +289,6 @@ local function run()
       combined:setPixel(xx,yy,(r*a+dr*da*(1-a))/alpha,(g*a+dg*da*(1-a))/alpha,(b*a+db*da*(1-a))/alpha,alpha)
      end
     end end
-   end
    end
   end
   return cells
@@ -456,7 +486,7 @@ local function run()
   end
   return image
  end
- local function mappingRows(path)
+ mappingRows=function(path)
   local source=read(MOD..'/'..path)
   return source and assert(load(source,'@probe/'..path))() or {}
  end

@@ -663,6 +663,7 @@ def map_preview(cache, output, game, map_id, stem, rows, packed, scale, mod_root
             extra_path = mod_root / 'lib' / name
             if extra_path.exists():
                 roof_rows += read_reviewed(extra_path)
+    layers = {}
     for overlay in roof_rows:
         if overlay["game"] == game and overlay["map"] == map_id:
             if overlay.get("side"):
@@ -675,7 +676,24 @@ def map_preview(cache, output, game, map_id, stem, rows, packed, scale, mod_root
                 assert overlay["y"] + 1 == overlay["buildingY"]
             if overlay["x"] * 16 < after.width:
                 pixels = replacement_image(cache, overlay, packed, mod_root) if overlay.get('parts') else asset_image(overlay, mod_root)
-                after.alpha_composite(pixels, (overlay["x"] * 16, overlay["y"] * 16))
+                depth = ((overlay['buildingY'] + overlay['buildingH']) * 16
+                         if overlay.get('side') else None)
+                layers.setdefault((overlay['x'], overlay['y']), []).append((pixels, depth))
+    for index, block_id in enumerate(catalog.lua_array(map_def['blocks'])):
+        for q in range(4):
+            x, sy = index % map_def['width'] * 2 + q % 2, index // map_def['width'] * 2 + q // 2
+            row = positioned.get((block_id, q, x, sy), selected.get((block_id, q)))
+            if not row or not row.get('canopy') or sy == 0:
+                continue  # y=-1 continues outside this standard map-only preview.
+            canopy = row['canopy']
+            pixels = asset_image({'asset': canopy['asset'], 'assetFileHash': canopy['hash']}, mod_root)
+            stack = layers.setdefault((x, sy-1), [])
+            depth = (sy+2)*16
+            position = next((i for i, (_, front) in enumerate(stack) if front is None or front >= depth), len(stack))
+            stack.insert(position, (pixels, depth))
+    for (x, y), stack in layers.items():
+        for pixels, _ in stack:
+            after.alpha_composite(pixels, (x*16, y*16))
     total = len(catalog.lua_array(map_def["blocks"])) * 4
     display_w, display_h = before.width * scale, before.height * scale
     gap, left, top = 20, 18, 116
