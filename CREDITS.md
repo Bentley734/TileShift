@@ -212,4 +212,6 @@ Azalea Gym's pink patterned floor and oak ground shadow are original code-author
 
 Selected artwork was extracted at the user's request from their supplied FireGold 1.4 (Tzx211), CrystalDust (Sierraffinity and contributors), and Liquid Crystal (Linkandzelda, Synyster Zeikku and contributors) ROMs. These project credits do not imply an open license. Only selected checked graphics are packaged; the ROM binaries are never included. Per-object source ROM hashes, native crop bounds, alpha masks, compact tree module placements and any exact integer reductions are recorded under assets/third_party/johto-hacks/*/provenance.json.
 
+The narrow town pine retains its exact original FireGold two-cell pair (696 above 552), including canopy, trunk and shadow. Only outside-connected native field pixels are omitted so the selected ground remains visible. The exact native map coordinates, removed field-pixel mask, source hashes and PNG hashes are recorded in assets/third_party/johto-hacks/town-trees/provenance.json.
+
 Project references: https://www.pokecommunity.com/threads/pok%C3%A9mon-fire-gold-1-4.473130/ , https://github.com/Sierraffinity/CrystalDust , https://www.pokecommunity.com/threads/pok%C3%A9mon-liquid-crystal-3-3-xxxxx-live-beta.242023/ .
