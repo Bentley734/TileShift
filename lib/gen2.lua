@@ -177,14 +177,6 @@ function Adapter.install(ctx)
     end
     wrappers[name]=fn;World[name]=fn
   end
-  if ctx.seating then
-    wrap('pooledNpc',function(old)
-      return function(self,mapId,obj)
-        local npc=old(self,mapId,obj)
-        return ctx.seating:npc(self,mapId,obj,npc)
-      end
-    end)
-  end
   wrap('mapCacheKey',function(old)
     return function(self,mapId)
       worlds[self]=true
@@ -428,7 +420,6 @@ function Adapter.install(ctx)
   end)
   cleanup=function()
     if closed then return end;closed=true
-    if ctx.seating then ctx.seating:dispose()end
     for name,fn in pairs(wrappers) do
       if World[name]==fn then World[name]=previous[name] end
     end

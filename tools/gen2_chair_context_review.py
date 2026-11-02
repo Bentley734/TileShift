@@ -105,7 +105,7 @@ def main():
     extra_path=OUT/'vertical-primitives.json'
     if extra_path.exists():primitives.update(json.loads(extra_path.read_text()))
     staged=defaultdict(list);held=[];contexts=[];already_correct=[];replaced=defaultdict(dict);appended=defaultdict(list)
-    slot_proofs=[];cafe_relocation=[];source_data={game:review.source(cache,game) for game in review.GAMES}
+    slot_proofs=[];cafe_proofs=[];source_data={game:review.source(cache,game) for game in review.GAMES}
     def selected_cells(game,name,definition,active=False):
         family=[item for item in (live_by_family if active else by_family)[game,definition['tileset']]if item[0].get('map',name)==name]
         generic={};positioned={}
@@ -124,57 +124,10 @@ def main():
         if prior.get('x')is not None:replaced[module][index]=row
         else:appended[module].append(row)
         staged[module].append(row)
-    cafe_old={(x,y)for x in(1,4)for y in(2,3,6,7)}
-    cafe_new={(x,y-1)for x,y in cafe_old}
+    cafe_tables={(x,y)for x in(1,4)for y in(2,3,6,7)}
+    cafe_floor_cells={(x,y)for x in(1,4)for y in(1,5)}
     cafe_bar_west={(x,6)for x in range(8,12)}
     cafe_bar={(7,y)for y in range(2,6)}|cafe_bar_west
-    def translate_cafe_chairs(game,data,definition,cells):
-        live=selected_cells(game,'CELADON_CAFE',definition,active=True)
-        observed={pos for pos,item in live.items()if is_chair(item[0])}
-        assert observed in(cafe_old|cafe_bar,cafe_new|cafe_bar)
-        already_translated=observed==cafe_new|cafe_bar
-        floor=native.ref(657)
-        guarded=[]
-        for x,y in sorted(cafe_old|cafe_new|cafe_bar):
-            prior=cells[x,y][0]
-            source=review.cell_info(cache,game,data,definition['tileset'],prior['id'],prior['quadrant'])
-            assert source['sourceHash']==prior['sourceHash']and source['collision']==prior['sourceCollision']==0
-            guarded.append(dict(position=[x,y],sourceHash=source['sourceHash'],collision=source['collision']))
-        art_keys=('base','asset','assetFileHash','assetPixelHash','assetFrames','donor','parts','animated','animation','artOverlay','sourceColors','foreground','occludes','chairFacing','chairContext')
-        for x,y in sorted(cafe_new):
-            source_pos=(x,y+1);old=live[(x,y)if already_translated else source_pos][0]
-            direction='east'if x==1 else'west'
-            assert old.get('chairFacing')==direction and old['base']==floor
-            prior,module,index=cells[x,y]
-            row=copy.deepcopy(prior)
-            for key in art_keys:row.pop(key,None)
-            target_pos=(x+(1 if x==1 else-1),y);target=cells[target_pos][0]
-            assert target_kind(target,'CELADON_CAFE')=='table'
-            context=dict(direction=direction,position=list(target_pos),kind='table',role=target['role'],sourceHash=target['sourceHash'],id=target['id'],quadrant=target['quadrant'])
-            row.update(kind='native_composite',base=copy.deepcopy(floor),parts=[copy.deepcopy(primitives[direction])],
-                map='CELADON_CAFE',x=x,y=y,sourceCells=[[x,y]],role='gen2_celadon_cafe_table_chair',chairFacing=direction,
-                chairContext=dict(target=context,original_role=prior['role'],original_module=module,original_composition_hash=prior.get('compositionPixelHash'),pixel_scale=1,
-                    scope='Explicit user-authorized visual translation; native source map and collision remain unchanged'),
-                chairRelocation=dict(fromPosition=list(source_pos),translation=[0,-1],originalVisualHash=old['compositionPixelHash'],sourceCells=copy.deepcopy(guarded)),
-                evidence='User-authorized offline translation of the complete dining-table chair upward by exactly one16px cell. '
-                    'The whole native east/west chair silhouette and exact casino657 floor are unchanged. '
-                    'Both original and destination source cells remain fingerprinted with their original walkable collision0; map geometry, actors, warps, and scripts are untouched by this artwork recipe.')
-            row['compositionPixelHash']=catalog.sha(preview.replacement_image(cache,row,packed,ROOT).tobytes())
-            assert row['compositionPixelHash']==old['compositionPixelHash']
-            queue_row(row,prior,module,index)
-            contexts.append(dict(game=game,map='CELADON_CAFE',position=[x,y],module=module,prior_role=prior['role'],facing=direction,target=context,
-                original_seat_position=list(source_pos),translation=[0,-1]))
-        for x,y in sorted(cafe_old-cafe_new):
-            prior,module,index=cells[x,y];row=copy.deepcopy(prior)
-            for key in art_keys:row.pop(key,None)
-            row.update(kind='native',donor=copy.deepcopy(floor),map='CELADON_CAFE',x=x,y=y,sourceCells=[[x,y]],role='gen2_celadon_cafe_vacated_seat_floor',
-                chairRelocation=dict(vacatedPosition=[x,y],translation=[0,-1],sourceCells=copy.deepcopy(guarded)),
-                evidence='The user moved the dining-table chairs up one16px cell. This vacated seat cell now displays the exact complete native FireRed casino657 floor, '
-                    'with its original source fingerprint, collision0, palette, priority, interactions, map geometry and events unchanged.')
-            row['compositionPixelHash']=catalog.sha(preview.replacement_image(cache,row,packed,ROOT).tobytes())
-            assert row['compositionPixelHash']==floor['hash']
-            queue_row(row,prior,module,index)
-        return live,guarded
     for game in review.GAMES:
         data=source_data[game]
         for name,definition in sorted(data['maps'].items()):
@@ -183,7 +136,7 @@ def main():
             family=[item for item in by_family[game,definition['tileset']]if item[0].get('map',name)==name]
             if not any(is_chair(item[0])for item in family):continue
             cells=selected_cells(game,name,definition)
-            cafe_live,cafe_guards=translate_cafe_chairs(game,data,definition,cells)if name=='CELADON_CAFE'else(None,None)
+            cafe_live=selected_cells(game,name,definition,active=True)if name=='CELADON_CAFE'else None
             if game in ('gold','silver') and name in ('CELADON_GAME_CORNER','GOLDENROD_GAME_CORNER'):
                 crystal=source_data['crystal'];native_cells=selected_cells('crystal',name,crystal['maps'][name])
                 for (x,y),(prior,module,index)in list(cells.items()):
@@ -224,7 +177,6 @@ def main():
                     queue_row(row,prior,module,index);cells[x,y]=(row,module,index)
                     slot_proofs.append(dict(game=game,map=name,position=[x,y],old_role=prior['role'],new_role=seed['role'],bank_envelope=[left,top,2,bottom-top+1]))
             for (x,y),(prior,module,row_index) in sorted(cells.items()):
-                if name=='CELADON_CAFE'and(x,y)in cafe_old:continue
                 if not is_chair(prior):continue
                 candidates=[];neighbors=[]
                 for direction,dx,dy in DIRECTIONS:
@@ -307,19 +259,23 @@ def main():
                 for group in staged.values():
                     for row in group:
                         if row['game']==game and row.get('map')==name:final[row['x'],row['y']]=row
-                assert {pos for pos,row in final.items()if is_chair(row)}==cafe_new|cafe_bar
-                for pos in cafe_bar-cafe_bar_west:assert final[pos]==cafe_live[pos][0],('Side bar chair changed',game,pos)
+                assert {pos for pos,row in final.items()if is_chair(row)}==cafe_tables|cafe_bar
+                for pos in cafe_bar:assert final[pos]==cafe_live[pos][0],('Bar chair changed',game,pos)
+                for x,y in cafe_tables:assert final[x,y]['chairFacing']==('east'if x==1 else'west')
                 for pos in cafe_bar_west:
                     assert final[pos]['chairFacing']=='west'and final[pos]['parts']==[primitives['west']]
                     assert final[pos]['chairContext']['userFacingOverride']['facing']=='west'
+                floor=native.ref(657)
+                for pos in cafe_floor_cells:
+                    assert catalog.sha(preview.replacement_image(cache,final[pos],packed,ROOT).tobytes())==floor['hash']
                 source_fields=('game','tileset','id','quadrant','sourceHash','sourceFiles','sourceCollision','sourcePalettes','sourcePriority')
-                for pos in cafe_old|cafe_new|cafe_bar:
+                for pos in cafe_tables|cafe_floor_cells|cafe_bar:
                     for key in source_fields:assert final[pos].get(key)==cells[pos][0].get(key),(game,pos,key)
-                cafe_relocation.append(dict(game=game,passed=True,translation=[0,-1],original_table_chair_positions=[list(p)for p in sorted(cafe_old)],
-                    final_table_chair_positions=[list(p)for p in sorted(cafe_new)],vacated_floor_positions=[list(p)for p in sorted(cafe_old-cafe_new)],
-                    stable_bar_chair_positions=[list(p)for p in sorted(cafe_bar)],unchanged_side_bar_chairs=4,
-                    user_override_west_bar_positions=[list(p)for p in sorted(cafe_bar_west)],complete_native_chair_hashes_preserved=8,
-                    source_cells= cafe_guards,all_source_guards_and_collision_preserved=True))
+                assert not any('chairRelocation'in row for row in final.values())
+                cafe_proofs.append(dict(game=game,passed=True,table_chair_positions=[list(p)for p in sorted(cafe_tables)],
+                    empty_floor_positions=[list(p)for p in sorted(cafe_floor_cells)],bar_chair_positions=[list(p)for p in sorted(cafe_bar)],
+                    table_chairs_at_original_source_positions=True,bar_rows_unchanged=True,relocation_metadata_absent=True,
+                    all_source_guards_and_collision_preserved=True))
     rows=[r for group in staged.values()for r in group]
     cafe=Counter(r['chairFacing']for r in rows if r['game']=='crystal'and r['map']=='CELADON_CAFE'and r.get('chairFacing'))
     expected=Counter(east=8,west=8)
@@ -333,7 +289,7 @@ def main():
     (OUT/'already-correct.json').write_text(json.dumps(already_correct,indent=2)+'\n')
     (OUT/'held.json').write_text(json.dumps(held,indent=2)+'\n')
     (OUT/'slot-bank-fixes.json').write_text(json.dumps(slot_proofs,indent=2)+'\n')
-    (OUT/'cafe-relocation-proof.json').write_text(json.dumps(cafe_relocation,indent=2)+'\n')
+    (OUT/'cafe-seating-proof.json').write_text(json.dumps(cafe_proofs,indent=2)+'\n')
     (OUT/'summary.json').write_text(json.dumps(summary,indent=2)+'\n')
     for name in ('CELADON_CAFE','OLIVINE_CAFE','CELADON_GAME_CORNER','GOLDENROD_GAME_CORNER','POKEMON_FAN_CLUB','TRAINER_HOUSE_1F'):
         preview.map_preview(cache,OUT,'crystal',name,name,all_rows+rows,packed,3,ROOT)

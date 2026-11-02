@@ -13,7 +13,7 @@ BODY=r"""
  report.actors_rendered=true
  local NPC=require('src.world.gen2.Npc')
  local Player=require('src.world.gen2.Player')
- local expected={[2]={4,6,'left'},[3]={1,7,'right'},[4]={1,2,'right'},[5]={4,3,'left'}}
+ local expected={[1]={9,3,'left'},[2]={4,6,'left'},[3]={1,7,'right'},[4]={1,2,'right'},[5]={4,3,'left'}}
  local function drawActor(world,npc)
   return capture(world.viewW,world.viewH,function()
    local entry={entity=npc,sx=0,sy=0,ox=0,oy=0,s=1}
@@ -31,7 +31,7 @@ BODY=r"""
    end
   end)
  end
- report.totals={source_npcs=0,moved_npcs=0,unchanged_bar_npcs=0,checked_sprite_pixels=0,warm_pool_calls=0}
+ report.totals={source_npcs=0,moved_npcs=0,unchanged_npcs=0,unchanged_bar_npcs=0,checked_sprite_pixels=0,warm_pool_calls=0}
  for _,game in ipairs({'gold','silver','crystal'})do
   GV.set(game);assetGame=game;clock=0
   local world,map,def=world2(game,'CELADON_CAFE')
@@ -49,7 +49,8 @@ BODY=r"""
   world.mapImage=world:imageFor(map.id)
   local before=drawScene(world);local mechanics,events=snapshot(map,2),eventSnapshot(map)
   for _,npc in ipairs(world.npcs)do beforeActor[npc.def.index]=drawActor(world,npc)end
-  local mod=startMod(game,2,world);local seating=assert(mod.exports.seating,'Gen2 seating helper missing')
+  local mod=startMod(game,2,world)
+  check(mod.exports.seating==nil,'Cafe NPC relocation helper must be absent')
   world.mapImage=world:imageFor(map.id)
   local art=assert(mod.exports.state:replacements(game,def.tileset,def))
   check(mod.exports.state.rejected==0,'Cafe source/art validation rejected a reviewed row')
@@ -60,81 +61,89 @@ BODY=r"""
    before=encodePng(before,game..'-cafe-with-native-npcs-original.png'),
    after=encodePng(after,game..'-cafe-with-native-npcs-gen3.png')}
   for index,native in ipairs(source)do
-   local npc=world.npcs[index];local moved=expected[index]~=nil;local dy=moved and-1 or 0
+   local npc=world.npcs[index]
    check(npc==native.entity and npc.def==native.def and npc.sprite==native.sprite and npc.spriteDef==native.spriteDef,
-    'Seating replaced a native actor identity/wardrobe')
-   check(npc.cellX==native.x and npc.cellY==native.y+dy and npc.px==native.px and npc.py==native.py+16*dy,
-    'Native cafe NPC did not follow exactly one translated chair row')
-   check(npc.homeX==native.homeX and npc.homeY==native.homeY+dy,'Native cafe home moved inconsistently')
-   check(npc.facing==native.facing,'Seating changed original NPC facing')
+    'Retheming replaced a native actor identity/wardrobe')
+   check(npc.cellX==native.x and npc.cellY==native.y and npc.px==native.px and npc.py==native.py,
+    'Retheming moved a native cafe NPC')
+   check(npc.homeX==native.homeX and npc.homeY==native.homeY,'Retheming moved a native cafe home')
+   check(npc.facing==native.facing,'Retheming changed original NPC facing')
    check(npc.def.script==native.script and npc.def.scriptKey==native.scriptKey and npc.def.palette==native.palette,
-    'Seating changed source script/event identity or palette')
-   check(seating:offset(npc)==dy,'Native actor offset ownership is inconsistent')
+    'Retheming changed source script/event identity or palette')
    local pixels=0;local image=drawActor(world,npc);local original=beforeActor[index]
    for y=0,world.viewH-1 do for x=0,world.viewW-1 do
     local _,_,_,alpha=original:getPixel(x,y)
     if alpha>0 then
-     check(y+dy*16>=0 and y+dy*16<world.viewH,'Translated native sprite clipped at viewport edge')
-     equalPixel(original,x,y,image,x,y+dy*16,'Native cafe sprite/facing changed during seating translation')
+     equalPixel(original,x,y,image,x,y,'Retheming changed a native cafe sprite/facing pixel')
      pixels=pixels+1
     end
    end end
    check(pixels>0,'Cafe proof did not render a real source NPC sprite')
-   if moved then
-    check(npc.facing==expected[index][3],'Cafe original source-facing profile changed')
-    check(NPC.covers(npc,npc.cellX,npc.cellY)and not NPC.covers(npc,native.x,native.y),
-     'Native covers() did not move with its seated actor')
-    check(world:npcAt(npc.cellX,npc.cellY)==npc and world:npcAt(native.x,native.y)~=npc,
-     'Native occupancy lookup stayed at the original chair row')
-    world.player=Player.new(npc.cellX,npc.cellY+1,'up')
-    check(world:facingObject()==npc,'Native talk targeting missed the translated seated NPC')
-    local blocked=world.player:tryMove('up',map,world.entities)
-    check(blocked=='blocked'and not world.player.moving and world.player.cellX==npc.cellX
-      and world.player.cellY==npc.cellY+1 and world.player.targetY==nil,
-      'Native player collision entered the seated NPC cell')
-    world.player=Player.new(native.x-1,native.y,'right')
-    local moved=world.player:tryMove('right',map,world.entities)
-    check(moved=='moved'and world.player.moving and world.player.targetX==native.x and world.player.targetY==native.y,
-      'Original chair cell retained phantom NPC collision')
-    world.player=nil
-    report.totals.moved_npcs=report.totals.moved_npcs+1
-   else
-    check(index==1 and image:getString()==original:getString(),'Cafe bar NPC moved or changed its native appearance')
-    report.totals.unchanged_bar_npcs=report.totals.unchanged_bar_npcs+1
-   end
+   check(image:getString()==original:getString(),'Retheming changed native cafe actor pixels or placement')
+   check(npc.cellX==expected[index][1]and npc.cellY==expected[index][2]and npc.facing==expected[index][3],
+    'Cafe original source pose changed')
+   check(NPC.covers(npc,native.x,native.y)and world:npcAt(native.x,native.y)==npc,
+    'Native occupancy missed the original seated NPC')
+   world.player=Player.new(native.x-1,native.y,'right')
+   check(world:facingObject()==npc,'Native talk targeting missed the original seated NPC')
+   local blocked=world.player:tryMove('right',map,world.entities)
+   check(blocked=='blocked'and not world.player.moving and world.player.cellX==native.x-1
+     and world.player.cellY==native.y and world.player.targetX==nil,
+     'Native player collision entered the seated NPC cell')
+   world.player=Player.new(native.x-1,native.y,'right')
+   local moved=world.player:tryMove('right',map,{})
+   check(moved=='moved'and world.player.moving and world.player.targetX==native.x and world.player.targetY==native.y,
+     'Cafe occupancy proof was blocked by terrain instead of the native NPC')
+   world.player=nil
+   report.totals.unchanged_npcs=report.totals.unchanged_npcs+1
+   if index==1 then report.totals.unchanged_bar_npcs=report.totals.unchanged_bar_npcs+1 end
    fixture.actors[#fixture.actors+1]={index=index,id=npc.id,sprite_id=npc.def.sprite,script=native.script,
     scriptKey=native.scriptKey,original={native.x,native.y},gen3={npc.cellX,npc.cellY},
-    original_facing=native.facing,gen3_facing=npc.facing,moved=moved,checked_sprite_pixels=pixels,
-    source_identity_and_wardrobe_unchanged=true,native_occupancy_and_talk_geometry=moved and true or nil}
+    original_home={native.homeX,native.homeY},gen3_home={npc.homeX,npc.homeY},
+    original_pixel_position={native.px,native.py},gen3_pixel_position={npc.px,npc.py},
+    original_facing=native.facing,gen3_facing=npc.facing,moved=false,checked_sprite_pixels=pixels,
+    source_identity_and_wardrobe_unchanged=true,native_occupancy_and_talk_geometry=true}
    report.totals.source_npcs=report.totals.source_npcs+1;report.totals.checked_sprite_pixels=report.totals.checked_sprite_pixels+pixels
   end
-  local guards,artChecks,translations=seating.stats.guardBuilds,seating.stats.artworkChecks,seating.stats.translated
   local reads=importReads
   for i=1,120 do
-   seating:bind(world)
-   for index=2,5 do local obj=def.objects[index];check(world:pooledNpc(def.id,obj)==source[index].entity,'Warm pool replaced source actor')end
+   for index=1,5 do
+    local obj=def.objects[index];local npc=world:pooledNpc(def.id,obj)
+    check(npc==source[index].entity,'Warm pool replaced source actor')
+    check(npc.cellX==source[index].x and npc.cellY==source[index].y,'Warm pool moved a source actor')
+   end
   end
-  check(seating.stats.guardBuilds==guards and seating.stats.artworkChecks==artChecks and seating.stats.translated==translations,
-   'Warm NPC pool/bind repeated source/art scans or position offsets')
   check(importReads==reads,'Warm native actor binding reread imported data')
-  fixture.warm_pool_calls=480;fixture.warm_source_art_checks=0;report.totals.warm_pool_calls=report.totals.warm_pool_calls+480
+  fixture.warm_pool_calls=600;fixture.warm_source_art_checks=0;report.totals.warm_pool_calls=report.totals.warm_pool_calls+600
   mod.exports.select('original');world.mapImage=world:imageFor(map.id)
-  for index,npc in ipairs(world.npcs)do check(npc.cellY==source[index].y and npc.facing==source[index].facing,
-    'Original theme did not restore native cafe position/facing')end
+  for index,npc in ipairs(world.npcs)do local native=source[index]
+   check(npc.cellX==native.x and npc.cellY==native.y and npc.homeX==native.homeX and npc.homeY==native.homeY
+     and npc.px==native.px and npc.py==native.py and npc.facing==native.facing,
+     'Original theme changed a native cafe pose/home')
+  end
   check(drawScene(world):getString()==before:getString(),'Original theme failed to restore exact native background and actor pixels')
   mod.exports.select('gen3');world.mapImage=world:imageFor(map.id)
-  for index=2,5 do check(world.npcs[index].cellY==source[index].y-1,'Re-enabled theme repeated/missed seating offset')end
+  for index=1,5 do
+   local npc,native=world.npcs[index],source[index]
+   check(npc.cellX==native.x and npc.cellY==native.y and npc.homeX==native.homeX and npc.homeY==native.homeY
+     and npc.px==native.px and npc.py==native.py and npc.facing==native.facing,
+     'Re-enabled theme moved/changed a native cafe actor')
+  end
+  check(drawScene(world):getString()==after:getString(),'Theme cycle changed the native cafe actor scene')
   mod.exports.dispose();world.mapImage=world:imageFor(map.id)
-  for index,npc in ipairs(world.npcs)do check(npc.cellY==source[index].y and npc.facing==source[index].facing,
-    'Dispose did not restore native cafe position/facing')end
+  for index,npc in ipairs(world.npcs)do local native=source[index]
+   check(npc.cellX==native.x and npc.cellY==native.y and npc.homeX==native.homeX and npc.homeY==native.homeY
+     and npc.px==native.px and npc.py==native.py and npc.facing==native.facing,
+     'Dispose changed a native cafe pose/home')
+  end
   check(drawScene(world):getString()==before:getString(),'Dispose failed to restore exact native background and actors')
-  check(tableString(def)==originalDefinition,'Seating mutated imported map/object definitions')
-  check(snapshot(map,2)==mechanics and eventSnapshot(map)==events,'Seating changed source terrain collision/events')
+  check(tableString(def)==originalDefinition,'Retheming mutated imported map/object definitions')
+  check(snapshot(map,2)==mechanics and eventSnapshot(map)==events,'Retheming changed source terrain collision/events')
   fixture.original_restored=true;fixture.dispose_restored=true;fixture.original_map_and_object_definitions_unchanged=true
   fixture.source_collision_events_unchanged=true;report.fixtures[#report.fixtures+1]=fixture
   write('progress.json',Json.encode({fixtures=#report.fixtures,checks=report.checks,game=game,map=def.id}))
  end
- check(#report.fixtures==3 and report.totals.moved_npcs==12 and report.totals.unchanged_bar_npcs==3,
+ check(#report.fixtures==3 and report.totals.moved_npcs==0 and report.totals.unchanged_npcs==15 and report.totals.unchanged_bar_npcs==3,
   'Native cafe actor matrix is incomplete')
  check(#report.warnings==0,'Native cafe actor probe reported source warnings')
  report.status='passed';write('report.json',Json.encode(report))

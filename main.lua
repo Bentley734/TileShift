@@ -1,5 +1,5 @@
 return function(mod)
-  local callback,dispose,disposed,stopOptions,ownerBus,ownerEpoch,owned,adapterContext,state,roofs,seating
+  local callback,dispose,disposed,stopOptions,ownerBus,ownerEpoch,owned,adapterContext,state,roofs
   local function readModule(path)
     return assert(load(assert(mod:read(path)), '@tileshift/'..path))()
   end
@@ -212,14 +212,12 @@ return function(mod)
   local lastRevision=state.revision
   local function refresh(game)
     local world=game and game.world
-    if seating then seating:bind(world)end
     if mod.generation==2 and world and world.map and world.imageFor then
       world.mapImage=world:imageFor(world.map.id)
       for _,neighbor in ipairs(world.neighbors or {}) do neighbor.image=world:imageFor(neighbor.id) end
     end
   end
   local function afterUpdate(game,...)
-    if seating then seating:bind(game and game.world)end
     if state.style~='original' and mod.generation<3 then vegetation:bind(mod.generation==1 and (game.overworld or game.world) or game.world)end
     return ...
   end
@@ -261,18 +259,9 @@ return function(mod)
     active=function()return state.style=='gen3'and mod.generation<3 and owned()end,
     enabled=function(row)return row.role~='larger_center'or centerStyle~=1 end,
     warn=function(s)mod.log:warn('%s',s)end})
-  if mod.generation==2 then
-    seating=readModule('lib/npc_seating.lua').new({rows=reviewed,validate=Mapping.validate,
-      version=GV.get,revision=function()return state.revision end,
-      active=function()return state.style=='gen3'and owned()end,
-      artwork=function(game,def)
-        local art=state:replacements(game,def.tileset,def)
-        return art,state.rejected
-      end})
-  end
   local adapter=readModule('lib/gen'..mod.generation..'.lua')
   adapterContext={time=function()return love.timer and love.timer.getTime()or 0 end,
-    animationSpeed=function(group)return animationRates[group]or 1 end,roofs=roofs,seating=seating,version=GV.get,revision=function()return state.revision end,active=owned,
+    animationSpeed=function(group)return animationRates[group]or 1 end,roofs=roofs,version=GV.get,revision=function()return state.revision end,active=owned,
     grassTime=function(map,x,y,now)return vegetation:time(map,x,y,now)end,
     disturb=function(map,x,y,now,duration)return vegetation:touch(map,x,y,now,duration)end,
     replacements=function(game,tileset,def)
@@ -280,10 +269,9 @@ return function(mod)
       return state:replacements(game,tileset,def)
     end,warn=function(s)mod.log:warn('%s',s)end}
   local close=adapter.install(adapterContext)
-  if seating then seating:bind(mod.game and mod.game.world)end
   dispose=function()
     if disposed then return end
-    disposed=true;vegetation:dispose();if seating then seating:dispose()end;close();roofs:dispose();decoder:invalidate()
+    disposed=true;vegetation:dispose();close();roofs:dispose();decoder:invalidate()
     if stopOptions then stopOptions();stopOptions=nil end
     if Runtime._tileShiftDispose==dispose then Runtime._tileShiftDispose=nil end
   end
@@ -369,7 +357,6 @@ return function(mod)
   mod.exports.flora=flora
   mod.exports.roofs=roofs
   mod.exports.vegetation=vegetation
-  mod.exports.seating=seating
   mod.exports.drawVegetation=function(...)if adapterContext.drawVegetation then return adapterContext.drawVegetation(...)end end
   mod.exports.dispose=dispose
   mod.exports.select=function(style)

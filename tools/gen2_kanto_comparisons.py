@@ -20,13 +20,14 @@ def validate_seating_report(report,inputs):
     assert report['type']=='native GSC cafe NPC seating and sprite GPU validation'
     assert report['runtime_inputs']==inputs,'Runtime changed after native Cafe seating validation'
     assert report['runtime_inputs_unchanged_during_probe']is True and not report['warnings']
-    assert report['totals']['source_npcs']==15 and report['totals']['moved_npcs']==12 and report['totals']['unchanged_bar_npcs']==3
+    assert report['totals']['source_npcs']==15 and report['totals']['moved_npcs']==0
+    assert report['totals']['unchanged_npcs']==15 and report['totals']['unchanged_bar_npcs']==3
     assert len(report['fixtures'])==3 and{f['game']for f in report['fixtures']}=={'gold','silver','crystal'}
     expected={1:([9,3],[9,3],'left','SPRITE_SUPER_NERD'),
-              2:([4,6],[4,5],'left','SPRITE_FISHER'),
-              3:([1,7],[1,6],'right','SPRITE_FISHER'),
-              4:([1,2],[1,1],'right','SPRITE_FISHER'),
-              5:([4,3],[4,2],'left','SPRITE_TEACHER')}
+              2:([4,6],[4,6],'left','SPRITE_FISHER'),
+              3:([1,7],[1,7],'right','SPRITE_FISHER'),
+              4:([1,2],[1,2],'right','SPRITE_FISHER'),
+              5:([4,3],[4,3],'left','SPRITE_TEACHER')}
     gs_scripts=[(25637,'5e:6425'),(25645,'5e:642d'),(25662,'5e:643e'),(25679,'5e:644f'),(25696,'5e:6460')]
     crystal_scripts=[(28745,'1c:7049'),(28753,'1c:7051'),(28770,'1c:7062'),(28787,'1c:7073'),(28804,'1c:7084')]
     for fixture in report['fixtures']:
@@ -34,18 +35,20 @@ def validate_seating_report(report,inputs):
         assert 'World.drawPersonEntry'in fixture['native_renderer']and'Npc.draw'in fixture['native_renderer']
         for key in ('original_restored','dispose_restored','original_map_and_object_definitions_unchanged','source_collision_events_unchanged'):
             assert fixture[key]is True,(fixture['game'],key)
-        assert fixture['warm_source_art_checks']==0 and fixture['warm_pool_calls']==480
+        assert fixture['warm_source_art_checks']==0 and fixture['warm_pool_calls']==600
         actors=fixture['actors'];assert len(actors)==5 and{a['index']for a in actors}==set(expected)
         scripts=crystal_scripts if fixture['game']=='crystal'else gs_scripts
         for actor in actors:
             index=actor['index'];before,after,facing,sprite=expected[index]
             assert actor['id']==f'CELADON_CAFE_obj_{index}'and actor['sprite_id']==sprite
             assert actor['original']==before and actor['gen3']==after
+            assert actor['original_home']==actor['gen3_home']==before
+            assert actor['original_pixel_position']==actor['gen3_pixel_position']==[p*16 for p in before]
             assert actor['original_facing']==actor['gen3_facing']==facing
             assert(actor['script'],actor['scriptKey'])==scripts[index-1]
-            assert actor['moved']is(index!=1)and actor['source_identity_and_wardrobe_unchanged']is True
+            assert actor['moved']is False and actor['source_identity_and_wardrobe_unchanged']is True
             assert actor['checked_sprite_pixels']>0
-            if index!=1:assert actor['native_occupancy_and_talk_geometry']is True
+            assert actor['native_occupancy_and_talk_geometry']is True
 
 
 def make_seating(fixture,output,scale=3):
@@ -70,12 +73,12 @@ def make_seating(fixture,output,scale=3):
     game=fixture['game'].capitalize()
     groups=[(lines('DEVELOPMENT — '+game+' / Celadon Café',title_font,width-padding*2),title_font,25,'#f5f7fa'),
             (lines(f'Actual native GPU backgrounds and NPC sprites; {scale}× nearest-neighbor pixels.',font,width-padding*2),font,18,'#c4cdd8'),
-            (lines('Five original NPCs rendered in each panel. Table guests follow the raised chairs; original facings are preserved.',font,width-padding*2),font,18,'#c4cdd8')]
+            (lines('Five original NPCs rendered in each panel. All chairs and NPCs keep their original positions; original facings are preserved.',font,width-padding*2),font,18,'#c4cdd8')]
     labels_y=13+sum(len(text)*step+4 for text,face,step,color in groups)
     labels=[lines('Original '+game+' — native background + 5 NPCs',font,size[0]),
             lines('Gen 3 — retiled background + same 5 NPCs',font,size[0])]
     top=labels_y+max(map(len,labels))*18+12
-    caption=lines('Four table guests moved up exactly one tile. Bar NPC unchanged. Original mode and disabling the mod restore native seating.',font,width-padding*2)
+    caption=lines('Original table layout and all five NPC positions preserved. Four lower bar chairs face west. Native collision and talking verified.',font,width-padding*2)
     canvas=Image.new('RGB',(width,top+size[1]+max(56,18+len(caption)*18)),'#18212b')
     draw=ImageDraw.Draw(canvas);y=13
     for text,face,step,color in groups:
@@ -116,7 +119,7 @@ def main():
     comparisons=[]
     for source in report['fixtures']:
         game,name=source['game'],source['map']
-        if game!='crystal'and name not in TOWNS|{'LANCES_ROOM'}:continue
+        if game!='crystal'and name not in TOWNS|{'LANCES_ROOM','CELADON_CAFE'}:continue
         assert source['coverage']['preserved_native_occurrences']==0
         NAMES[game,name]=(game.capitalize()+' / '+name.replace('_',' ').title(),
                          game.capitalize()+'-'+name.title().replace('_',''),
@@ -144,20 +147,23 @@ def main():
         source_report_sha256=hashlib.sha256(args.seating_report.read_bytes()).hexdigest(),totals=seating['totals'],
         runtime_inputs_sha256=seating['runtime_inputs']['sha256'])
     (args.output/'comparison-verification.json').write_text(json.dumps(metadata,indent=2)+'\n')
+    scene_names=sorted({r['map'].replace('_',' ').title()for r in comparisons})
+    scene_description=('Scenes cover Celadon Cafe in Gold, Silver and Crystal.\n'if scene_names==['Celadon Cafe']else
+        'Scenes include Gold/Silver/Crystal Kanto towns and representative Crystal\n'
+        'routes, rooms, transport, League and Johto interior corrections.\n')
     (args.output/'README.txt').write_text(
         'TileShift '+version+' - Gen2 Kanto and shared interiors\n\n'
         'Original native DAY backgrounds and current complete Gen3 backgrounds.\n'
-        'Background-only files use actual native renderer readbacks at exactly2x\n'
+        'Background-only files use actual native renderer readbacks at exactly 2x\n'
         'nearest-neighbor. All their visible background cells are replaced; no actors\n'
         'are rendered in those scenes. Each image and metadata identify actor scope.\n'
         +('The three Cafe files marked with-NPCs use native GPU backgrounds and all\n'
-          'five real imported NPCs at exactly3x nearest-neighbor. Original panels\n'
-          'show native seating; Gen3 panels move the four table guests up one tile\n'
-          'with their chairs. The bar NPC stays put. Identities, sprites, palettes\n'
-          'and original facings are preserved. Original mode and disabling restore\n'
+          'five real imported NPCs at exactly 3x nearest-neighbor. All chairs and\n'
+          'NPCs retain their original positions. Four lower bar chairs face west.\n'
+          'NPC identities, sprites, palettes and original facings are preserved.\n'
+          'Original mode and disabling restore\n'
           'the exact native scene. Source object/map definitions remain unchanged.\n'if seating else'')+
-        'Scenes include Gold/Silver/Crystal Kanto towns and representative Crystal\n'
-        'routes, rooms, transport, League and Johto interior corrections.\n'
+        scene_description+
         'Original gameplay geometry, collision, interactions and warps are preserved.\n'
         'Unmatched unique compact details retain original GSC geometry in Gen3 colors.\n'
         'Source pixels and saved comparison panels were independently verified.\n')
