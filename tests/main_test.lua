@@ -76,7 +76,8 @@ for _,gameId in ipairs(games)do
     end},log={warn=function()end}}
   function mod:read(path)
     fixture.reads[#fixture.reads+1]=path
-    if path=='lib/roof_catalog.lua'or path=='lib/side_catalog.lua'or path=='lib/center_mart_roofs.lua'or path=='lib/goldenrod_roofs.lua'or path=='lib/pallet_roofs.lua'or path=='lib/johto_roofs.lua'then return 'return{}'end
+    if path=='lib/roof_catalog.lua'or path=='lib/side_catalog.lua'or path=='lib/center_mart_roofs.lua'or path=='lib/goldenrod_roofs.lua'or path=='lib/pallet_roofs.lua'or path=='lib/johto_roofs.lua'or path=='lib/gen2_kanto_building_roofs.lua'or path=='lib/gen2_kanto_landmark_decorations.lua'then return 'return{}'end
+    if path:match('^mappings/gen2_kanto_.*_finish%.lua$') or path=='mappings/gen2_compact_gyms_hall_finish.lua' then return nil end
     if path=='mappings/reverse_kanto.lua'or path=='mappings/reverse_hoenn.lua'or path=='mappings/reverse_oldale.lua'then return nil end
     if path=='lib/gb_animation.lua'then return 'return {}'end
     if path=='lib/roofs.lua' or path=='lib/vegetation.lua' or path=='lib/flora.lua' or path=='lib/flora_catalog.lua' or path=='lib/johto_hack_flora.lua' or path=='lib/water_styles.lua' then

@@ -1,7 +1,17 @@
 # TileShift
 
 TileShift swaps world artwork through individually reviewed tile matches.
-Version 0.29.3 replaces generated Gen 2 artwork with checked graphics extracted from the user-supplied FireGold, CrystalDust and Liquid Crystal ROMs. Johto landmarks, expanded Centers, interior objects and Gen 2 foliage choices use these counterparts. The generated roofed Slowpoke Well remains at the user's request. Where the hacks have no matching background object, radios and the lighthouse beacon retain their original Gen 2 pixels in matching Gen 3 colors, with exterior floor pixels omitted. Native building pixels, complete door frames, original entrances and collision are preserved; compact large trees use complete native canopy and root sections at their original pixel size in the existing 32x32 spaces. Small objects use documented uniform integer reduction only when needed. Gen 1 foliage choices stay unchanged. Gen 2 Kanto interiors remain partially converted. Narrow town trees use the full native FireGold 16x48 pine, including its middle tile. Middle and roots retain the original two-cell footprint; the intact canopy extends one cell above and can overlap the tree above. Transparent canopy pixels reveal the actual selected scenery and actors. Map connections retain that overhang, and all source collision, layout and interactions stay unchanged. Canopy geometry and textures are cached when maps load.
+Version 0.30.0 extends the Gen 3 theme through Gen 2 Kanto, the Pokemon League,
+shared upstairs clinic/link rooms, transport interiors and apartments. Complete
+native-size flowerpots and ladders replace the former reduced crops; compact
+stairs and unique room details retain their full original geometry in Gen 3
+colors. Furniture uses each room's actual floor, including partial cells.
+Building entrances and source collision remain unchanged. Whole native doors,
+windows and roof edges keep their pixel size, with transparent decorative
+extensions where needed. The full FireGold 16x48 town pine keeps its middle and
+roots in the original two-cell footprint and its intact upper canopy above it.
+Only the generated roofed Slowpoke Well remains active in the Gen 2 theme,
+as requested. Gen 1 foliage options stay unchanged.
 
 Classic themes completely retile **Oldale Town** in both styles. Selectable
 **Gen 1** and **Gen 2** background themes are available in
@@ -18,8 +28,13 @@ map: 667 map variants and 284,740 cells**. All Kanto towns, routes, Safari Zone,
 caves, houses, Centers, shops, gates, laboratories, gyms, Pokemon Tower, museums,
 Rocket/Silph facilities and the S.S. Anne are covered, including Yellow's beach
 house. Johto remains complete across Gold, Silver and Crystal: 612 map variants
-and 263,308 cells. Source layouts, collision, warps, puzzle rules and interactions
-stay unchanged; characters and Pokemon sprites retain their original artwork.
+and 263,308 cells. Gen 2 coverage now includes all playable Kanto, League,
+transport and shared interiors: **1,122 map variants and 432,812 background cells**
+across Gold, Silver and Crystal. The two unused Gold/Silver Safari Beta maps
+retain native art: their imported graphics are incomplete and their normal-world
+entrance is blocked. Source layouts, collision, warps, puzzle rules and
+interactions stay unchanged; characters and Pokemon sprites retain their
+original artwork.
 
 Native Gen3 counterparts keep their original pixel size and complete frames,
 window panels, doorways, furniture and statue silhouettes. Unique objects
@@ -69,7 +84,8 @@ Johto Routes 29 through 46 are completely retiled
 in Gold, Silver and Crystal. Original gate entrances, cave destinations,
 encounters and source movement rules are retained.
 
-**Gen 2 areas outside Johto remain partially converted.** Viridian now includes its
+Gen 2 Kanto coverage now includes the same reviewed terrain, whole buildings,
+room floors and furnishings as Johto. Viridian includes its
 freshwater pond, lawns, flowers, fences and ledges. New Bark has complete Gen 3
 buildings, forest trees, grass, animated flowers and coastline. Reviewed ground,
 trees, flowers, signs and grass now extend through many more Johto and Kanto maps.

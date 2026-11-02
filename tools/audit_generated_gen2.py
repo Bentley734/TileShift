@@ -12,7 +12,7 @@ def refs(v,field=''):
   for i,x in enumerate(v):yield from refs(x,field+'['+str(i)+']')
  elif isinstance(v,str)and v.startswith(('assets/original/','assets/user_flora/')):yield field,v
 left=[]
-for path in list((root/'mappings').glob('*.lua'))+[root/'lib'/n for n in ('roof_catalog.lua','side_catalog.lua','center_mart_roofs.lua','goldenrod_roofs.lua','pallet_roofs.lua','johto_roofs.lua')]:
+for path in list((root/'mappings').glob('*.lua'))+[root/'lib'/n for n in ('roof_catalog.lua','side_catalog.lua','center_mart_roofs.lua','goldenrod_roofs.lua','pallet_roofs.lua','johto_roofs.lua','gen2_kanto_building_roofs.lua','gen2_kanto_landmark_decorations.lua')]:
  for r in preview.read_reviewed(path):
   if r['game']not in ('gold','silver','crystal'):continue
   for field,asset in refs(r):left.append(dict(module=path.relative_to(root).as_posix(),game=r['game'],map=r.get('map'),role=r['role'],field=field,asset=asset))

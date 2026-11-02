@@ -250,7 +250,7 @@ local function run()
    end
    table.insert(stack,position,entry)
   end
-  for _,file in ipairs({'lib/roof_catalog.lua','lib/side_catalog.lua','lib/center_mart_roofs.lua','lib/goldenrod_roofs.lua','lib/pallet_roofs.lua','lib/johto_roofs.lua'})do
+  for _,file in ipairs({'lib/roof_catalog.lua','lib/side_catalog.lua','lib/center_mart_roofs.lua','lib/goldenrod_roofs.lua','lib/pallet_roofs.lua','lib/johto_roofs.lua','lib/gen2_kanto_building_roofs.lua','lib/gen2_kanto_landmark_decorations.lua'})do
    local source=read(MOD..'/'..file)
    for _,row in ipairs(source and assert(load(source))()or{})do
    if row.game==game and row.map==def.id then
@@ -2642,6 +2642,20 @@ local function run()
   {id='VERMILION_CITY',stem='vermilion',animated_buildings=true},
   {id='ROUTE_12',stem='route12',animated_buildings=true},
   {id='PLAYERS_HOUSE_1F',stem='johto-players_house_1f',complete=true},
+  {game='gold',id='CELADON_MANSION_1F',stem='kanto-celadon_mansion_1f',complete=true},
+  {game='gold',id='CELADON_MANSION_2F',stem='kanto-celadon_mansion_2f',complete=true},
+  {game='gold',id='CELADON_MANSION_3F',stem='kanto-celadon_mansion_3f',complete=true},
+  {game='gold',id='CELADON_MANSION_ROOF',stem='kanto-celadon_mansion_roof',complete=true},
+  {game='silver',id='CELADON_MANSION_1F',stem='kanto-celadon_mansion_1f',complete=true},
+  {game='silver',id='CELADON_MANSION_2F',stem='kanto-celadon_mansion_2f',complete=true},
+  {game='silver',id='CELADON_MANSION_3F',stem='kanto-celadon_mansion_3f',complete=true},
+  {game='silver',id='CELADON_MANSION_ROOF',stem='kanto-celadon_mansion_roof',complete=true},
+  {game='crystal',id='CELADON_MANSION_1F',stem='kanto-celadon_mansion_1f',complete=true},
+  {game='crystal',id='CELADON_MANSION_2F',stem='kanto-celadon_mansion_2f',complete=true},
+  {game='crystal',id='CELADON_MANSION_3F',stem='kanto-celadon_mansion_3f',complete=true},
+  {game='crystal',id='CELADON_MANSION_ROOF',stem='kanto-celadon_mansion_roof',complete=true},
+  {game='crystal',id='MOBILE_BATTLE_ROOM',stem='kanto-mobile_battle_room',complete=true},
+  {game='crystal',id='MOBILE_TRADE_ROOM',stem='kanto-mobile_trade_room',complete=true},
   {id='PLAYERS_HOUSE_2F',stem='johto-players_house_2f',complete=true},
   {id='EARLS_POKEMON_ACADEMY',stem='johto-earls_pokemon_academy',complete=true},
   {id='KURTS_HOUSE',stem='johto-kurts_house',complete=true},

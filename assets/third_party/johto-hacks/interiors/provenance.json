@@ -964,8 +964,11 @@
         32
       ],
       "outside_native_floor_pixels_omitted": 0,
-      "whole_object_retained": true,
-      "rgba_sha256": "a5cb73f2f4cec41d3f41a0d35fb232d2c25aa997a205df0dc50810dc2c874ec4"
+      "whole_object_retained": false,
+      "rgba_sha256": "a5cb73f2f4cec41d3f41a0d35fb232d2c25aa997a205df0dc50810dc2c874ec4",
+      "active_gsc_use": false,
+      "superseded_by": "assets/third_party/johto-hacks/interior-plants/firegold-potted-flower16.png",
+      "historical_status": "Superseded: the old crop contains a partial wide flower cluster and neighboring pixels; the active replacement is a complete native16x16 pot at original pixel size."
     },
     {
       "asset": "assets/third_party/johto-hacks/interiors/firegold-flowerbox.png",
@@ -997,8 +1000,11 @@
         32
       ],
       "outside_native_floor_pixels_omitted": 0,
-      "whole_object_retained": true,
-      "rgba_sha256": "a5cb73f2f4cec41d3f41a0d35fb232d2c25aa997a205df0dc50810dc2c874ec4"
+      "whole_object_retained": false,
+      "rgba_sha256": "a5cb73f2f4cec41d3f41a0d35fb232d2c25aa997a205df0dc50810dc2c874ec4",
+      "active_gsc_use": false,
+      "superseded_by": "assets/third_party/johto-hacks/interior-plants/firegold-potted-flower16.png",
+      "historical_status": "Superseded: the old crop contains a partial wide flower cluster and neighboring pixels; the active replacement is a complete native16x16 pot at original pixel size."
     },
     {
       "asset": "assets/third_party/johto-hacks/interiors/firegold-pink-floor.png",
@@ -1835,5 +1841,8 @@
     "original-gsc-e41918291cc2ffe9.png": "cfb332103f93cde523d201ccb8727b9f1464896960c2a56f6f0c0f8bfa9fb811",
     "original-gsc-f1f1a9a311726cb7.png": "477f7fe4b7d7fdc83c1051a3f4f7428ba4394c905832940681aed9518000e35e",
     "original-gsc-fa4e18aec25fe7eb.png": "c66dc9a7c97913c78b2cd00a0d6e899ab8504fbf412bd97ceb00995fca6d8616"
+  },
+  "superseded_assets": {
+    "assets/third_party/johto-hacks/interiors/firegold-flowerbox.png": "assets/third_party/johto-hacks/interior-plants/firegold-potted-flower16.png"
   }
 }

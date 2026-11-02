@@ -1,0 +1,97 @@
+{
+  "origin": "Complete native FireGold potted flower; no scaled or synthesized pixels.",
+  "source": "firegold",
+  "source_rom_name": "firegold1.4.gba",
+  "source_rom_sha256": "c65f698ffb844b99836a36dc0752e8b57ebd45be53be364cb3cfe52aa0cc74ce",
+  "source_pair": "082d4bb4_082d4be4",
+  "source_map": "g44_m096",
+  "layer": "mid",
+  "source_rect_ltrb": [
+    64,
+    37,
+    80,
+    53
+  ],
+  "source_metatiles": [
+    689,
+    697
+  ],
+  "source_map_cells": [
+    [
+      4,
+      2
+    ],
+    [
+      4,
+      3
+    ]
+  ],
+  "native_source_parts": [
+    {
+      "metatile": 689,
+      "source_rect_xywh": [
+        0,
+        5,
+        16,
+        11
+      ],
+      "destination": [
+        0,
+        0
+      ]
+    },
+    {
+      "metatile": 697,
+      "source_rect_xywh": [
+        0,
+        0,
+        16,
+        5
+      ],
+      "destination": [
+        0,
+        11
+      ]
+    }
+  ],
+  "source_map_file_sha256": {
+    "under": "1d0693cfaf64334254b65afa80d30835117c18930b60c84f894c3ebcda8c6332",
+    "mid": "5a79baeaa26a67b774fd0f6e127104eb5b7db647d879b88b59409490305e6759",
+    "over": "a83c1711492ce5a568212d33406300c0cab762485b5e55d52c3711209ba518f0",
+    "flat": "83a18756752c8745bf9c43195d152e6346ac6741e5dc10e003ce8a506a0bde91"
+  },
+  "source_atlas_mid_sha256": "0f4b30c60de7647380cacdc5e17ac597c75148682014457712d397dfbc7e3d70",
+  "native_dimensions": [
+    16,
+    16
+  ],
+  "pixel_scale": 1,
+  "complete_object_alpha_component_bounds_in_source_strip": [
+    2,
+    6,
+    14,
+    21
+  ],
+  "whole_native_object_retained": true,
+  "unchanged_native_object_pixels": 150,
+  "opaque_source_pixels_retained": 150,
+  "alpha_bounds": [
+    2,
+    1,
+    14,
+    16
+  ],
+  "transparent_exterior_pixels": 106,
+  "floor_color_erasure": false,
+  "neighbor_counter_pixels_included": 0,
+  "native_under_and_mid_recompose_flat_exactly": true,
+  "credit": "FireGold 1.4 by Tzx211; native potted flower artwork.",
+  "sourceUrl": "https://www.pokecommunity.com/threads/pok%C3%A9mon-fire-gold-1-4.473130/",
+  "asset": "assets/third_party/johto-hacks/interior-plants/firegold-potted-flower16.png",
+  "assetFileHash": "d7c42c8f2d91b284423382de5ef26eb0378486aaa452783993b284933452d193",
+  "rgba_sha256": "ccad925efb6cf310f4d410a0ccedc0c291648da80519b8e27aa8d346edb49127",
+  "supersedes": "assets/third_party/johto-hacks/interiors/firegold-flowerbox.png",
+  "files": {
+    "firegold-potted-flower16.png": "d7c42c8f2d91b284423382de5ef26eb0378486aaa452783993b284933452d193"
+  }
+}

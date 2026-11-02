@@ -1,0 +1,4339 @@
+{
+  "origin": "Clearly labelled original-GSC source geometry recolors with exact native FRLG background pieces; no generated replacement designs.",
+  "sourceUrl": "https://github.com/pret/pokecrystal",
+  "pixel_scale": 1,
+  "assets": {
+    "assets/third_party/gsc-room-geometry/gold-43e68bb54469fa081f84-d7175f136a9a.png": {
+      "assetFileHash": "e66357dd336c974035c1619cf749bb520ba69e7b5acf2bbd118ea6fca0b1b7ee",
+      "origin": "original_gsc_palette_recolor_with_native_background_pieces",
+      "game": "gold",
+      "tileset": "TILESET_POKECENTER",
+      "sourceHash": "43e68bb54469fa081f84a7c91e0b94d9066b7648cb33d7050279292e1533ff6f",
+      "sourceFiles": {
+        "metadata": "6521a2c155b16cbb502c53810b25685290594687706afdfc1c6b845090eb232f",
+        "image": "1e096cf6a1ca1931fce0fb28c54c929a4391e9b4cd72329e12cf6fafcf027e83",
+        "maps": "d2b8cc76190f4d8a1609cc86ed7d0697df45188533e09f905f7afa53f3e487ac"
+      },
+      "sourceTileIds": [
+        1,
+        1,
+        32,
+        33
+      ],
+      "literal_background_quadrants": [
+        0,
+        1
+      ],
+      "backgrounds": {
+        "1": {
+          "game": "firered",
+          "tileset": "network",
+          "id": 641,
+          "hash": "11cc9f4213d4bd8236e651bd3f8cbd7254d55a4a43762fbacfc90a82faae6576"
+        },
+        "17": {
+          "game": "firered",
+          "tileset": "network",
+          "id": 641,
+          "hash": "11cc9f4213d4bd8236e651bd3f8cbd7254d55a4a43762fbacfc90a82faae6576"
+        },
+        "2": {
+          "game": "firered",
+          "tileset": "network",
+          "id": 644,
+          "hash": "f0e92cf36a96c59fd07fedcb6bfa4032dd3925d854eeab519196f6051ec2c3a9"
+        }
+      },
+      "retained_source_glyphs_at_pixel_scale": 1,
+      "sourceColors": [
+        [
+          [
+            240,
+            248,
+            240
+          ],
+          [
+            176,
+            200,
+            216
+          ],
+          [
+            96,
+            120,
+            152
+          ],
+          [
+            48,
+            56,
+            80
+          ]
+        ],
+        [
+          [
+            240,
+            248,
+            240
+          ],
+          [
+            176,
+            200,
+            216
+          ],
+          [
+            96,
+            120,
+            152
+          ],
+          [
+            48,
+            56,
+            80
+          ]
+        ],
+        [
+          [
+            240,
+            248,
+            240
+          ],
+          [
+            176,
+            200,
+            216
+          ],
+          [
+            96,
+            120,
+            152
+          ],
+          [
+            48,
+            56,
+            80
+          ]
+        ],
+        [
+          [
+            240,
+            248,
+            240
+          ],
+          [
+            176,
+            200,
+            216
+          ],
+          [
+            96,
+            120,
+            152
+          ],
+          [
+            48,
+            56,
+            80
+          ]
+        ]
+      ]
+    },
+    "assets/third_party/gsc-room-geometry/gold-608d3ebc2858b83807cd-9a6ff4796c71.png": {
+      "assetFileHash": "31b8e4f54a35ebe495d570958ccff927e667a4c53a7666a63a67c2c2df9fe5f7",
+      "origin": "original_gsc_palette_recolor_with_native_background_pieces",
+      "game": "gold",
+      "tileset": "TILESET_GATE",
+      "sourceHash": "608d3ebc2858b83807cd7146b9be241535d84a3acad6eb3e64e5efbf4f524f17",
+      "sourceFiles": {
+        "metadata": "6521a2c155b16cbb502c53810b25685290594687706afdfc1c6b845090eb232f",
+        "image": "25639f818cf834d9c9f595b9a3d941f13b4f9f58d9acd657e9af8aa655e92ed8",
+        "maps": "d2b8cc76190f4d8a1609cc86ed7d0697df45188533e09f905f7afa53f3e487ac"
+      },
+      "sourceTileIds": [
+        1,
+        67,
+        67,
+        67
+      ],
+      "literal_background_quadrants": [
+        0
+      ],
+      "backgrounds": {
+        "1": {
+          "game": "firered",
+          "tileset": "building__rom_082d4c44",
+          "id": 648,
+          "hash": "d3b10a37128783f68b122d68481fab97a3db43ea507cb1c5d8cb9926fd0e4364"
+        }
+      },
+      "retained_source_glyphs_at_pixel_scale": 1,
+      "sourceColors": [
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ],
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ],
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ],
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ]
+      ]
+    },
+    "assets/third_party/gsc-room-geometry/gold-c6e011014f3bbce3c924-38da72c41c7d.png": {
+      "assetFileHash": "c024aa4db2cfc23845669354bb7059fe34322477a09fabd230455338981fbf2f",
+      "origin": "original_gsc_palette_recolor_with_native_background_pieces",
+      "game": "gold",
+      "tileset": "TILESET_GATE",
+      "sourceHash": "c6e011014f3bbce3c9248ecd57bcbaf4fa6a8eb39fd6570af0521d3e1e650997",
+      "sourceFiles": {
+        "metadata": "6521a2c155b16cbb502c53810b25685290594687706afdfc1c6b845090eb232f",
+        "image": "25639f818cf834d9c9f595b9a3d941f13b4f9f58d9acd657e9af8aa655e92ed8",
+        "maps": "d2b8cc76190f4d8a1609cc86ed7d0697df45188533e09f905f7afa53f3e487ac"
+      },
+      "sourceTileIds": [
+        66,
+        1,
+        66,
+        66
+      ],
+      "literal_background_quadrants": [
+        1
+      ],
+      "backgrounds": {
+        "1": {
+          "game": "firered",
+          "tileset": "building__rom_082d4c44",
+          "id": 648,
+          "hash": "d3b10a37128783f68b122d68481fab97a3db43ea507cb1c5d8cb9926fd0e4364"
+        }
+      },
+      "retained_source_glyphs_at_pixel_scale": 1,
+      "sourceColors": [
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ],
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ],
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ],
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ]
+      ]
+    },
+    "assets/third_party/gsc-room-geometry/gold-95fa4ed5ff936df27f71-ade88d0b9b5a.png": {
+      "assetFileHash": "937bcd47bec5ae10b390448d6a19f87db9b58d1447c8926a3a5bd694792540c2",
+      "origin": "original_gsc_palette_recolor_with_native_background_pieces",
+      "game": "gold",
+      "tileset": "TILESET_GATE",
+      "sourceHash": "95fa4ed5ff936df27f71b0d52fc13a2a05f8614b7992e948a85a25b9c096aae9",
+      "sourceFiles": {
+        "metadata": "6521a2c155b16cbb502c53810b25685290594687706afdfc1c6b845090eb232f",
+        "image": "25639f818cf834d9c9f595b9a3d941f13b4f9f58d9acd657e9af8aa655e92ed8",
+        "maps": "d2b8cc76190f4d8a1609cc86ed7d0697df45188533e09f905f7afa53f3e487ac"
+      },
+      "sourceTileIds": [
+        66,
+        66,
+        1,
+        66
+      ],
+      "literal_background_quadrants": [
+        2
+      ],
+      "backgrounds": {
+        "1": {
+          "game": "firered",
+          "tileset": "building__rom_082d4c44",
+          "id": 648,
+          "hash": "d3b10a37128783f68b122d68481fab97a3db43ea507cb1c5d8cb9926fd0e4364"
+        }
+      },
+      "retained_source_glyphs_at_pixel_scale": 1,
+      "sourceColors": [
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ],
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ],
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ],
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ]
+      ]
+    },
+    "assets/third_party/gsc-room-geometry/gold-d74b51f5184604c47a64-a7805da8d8d6.png": {
+      "assetFileHash": "d39d2f3095b931d3d3b7f6a4ea1a76090b6d37df7fc7a8af9c62dad8e6db7832",
+      "origin": "original_gsc_palette_recolor_with_native_background_pieces",
+      "game": "gold",
+      "tileset": "TILESET_GATE",
+      "sourceHash": "d74b51f5184604c47a64483addbbe797da221b9d8a2f858857479d2c25b81ed6",
+      "sourceFiles": {
+        "metadata": "6521a2c155b16cbb502c53810b25685290594687706afdfc1c6b845090eb232f",
+        "image": "25639f818cf834d9c9f595b9a3d941f13b4f9f58d9acd657e9af8aa655e92ed8",
+        "maps": "d2b8cc76190f4d8a1609cc86ed7d0697df45188533e09f905f7afa53f3e487ac"
+      },
+      "sourceTileIds": [
+        67,
+        67,
+        67,
+        1
+      ],
+      "literal_background_quadrants": [
+        3
+      ],
+      "backgrounds": {
+        "1": {
+          "game": "firered",
+          "tileset": "building__rom_082d4c44",
+          "id": 648,
+          "hash": "d3b10a37128783f68b122d68481fab97a3db43ea507cb1c5d8cb9926fd0e4364"
+        }
+      },
+      "retained_source_glyphs_at_pixel_scale": 1,
+      "sourceColors": [
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ],
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ],
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ],
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ]
+      ]
+    },
+    "assets/third_party/gsc-room-geometry/gold-3b53878d7d279b5c0350-b4f39de4a253.png": {
+      "assetFileHash": "e3947901a32ac4596705d61357617ecc1f7219adaf9b3b1b413ff10ab651d785",
+      "origin": "original_gsc_palette_recolor_with_native_background_pieces",
+      "game": "gold",
+      "tileset": "TILESET_POKECENTER",
+      "sourceHash": "3b53878d7d279b5c0350731363a7806c496c58bf170b45741223dd7fdbf135aa",
+      "sourceFiles": {
+        "metadata": "6521a2c155b16cbb502c53810b25685290594687706afdfc1c6b845090eb232f",
+        "image": "1e096cf6a1ca1931fce0fb28c54c929a4391e9b4cd72329e12cf6fafcf027e83",
+        "maps": "d2b8cc76190f4d8a1609cc86ed7d0697df45188533e09f905f7afa53f3e487ac"
+      },
+      "sourceTileIds": [
+        2,
+        2,
+        15,
+        2
+      ],
+      "literal_background_quadrants": [
+        0,
+        1,
+        3
+      ],
+      "backgrounds": {
+        "1": {
+          "game": "firered",
+          "tileset": "network",
+          "id": 641,
+          "hash": "11cc9f4213d4bd8236e651bd3f8cbd7254d55a4a43762fbacfc90a82faae6576"
+        },
+        "17": {
+          "game": "firered",
+          "tileset": "network",
+          "id": 641,
+          "hash": "11cc9f4213d4bd8236e651bd3f8cbd7254d55a4a43762fbacfc90a82faae6576"
+        },
+        "2": {
+          "game": "firered",
+          "tileset": "network",
+          "id": 644,
+          "hash": "f0e92cf36a96c59fd07fedcb6bfa4032dd3925d854eeab519196f6051ec2c3a9"
+        }
+      },
+      "retained_source_glyphs_at_pixel_scale": 1,
+      "sourceColors": [
+        [
+          [
+            240,
+            248,
+            240
+          ],
+          [
+            176,
+            200,
+            216
+          ],
+          [
+            96,
+            120,
+            152
+          ],
+          [
+            48,
+            56,
+            80
+          ]
+        ],
+        [
+          [
+            240,
+            248,
+            240
+          ],
+          [
+            176,
+            200,
+            216
+          ],
+          [
+            96,
+            120,
+            152
+          ],
+          [
+            48,
+            56,
+            80
+          ]
+        ],
+        [
+          [
+            240,
+            248,
+            240
+          ],
+          [
+            176,
+            200,
+            216
+          ],
+          [
+            96,
+            120,
+            152
+          ],
+          [
+            48,
+            56,
+            80
+          ]
+        ],
+        [
+          [
+            240,
+            248,
+            240
+          ],
+          [
+            176,
+            200,
+            216
+          ],
+          [
+            96,
+            120,
+            152
+          ],
+          [
+            48,
+            56,
+            80
+          ]
+        ]
+      ]
+    },
+    "assets/third_party/gsc-room-geometry/gold-3a64413865f04684398c-b5a233fdb80e.png": {
+      "assetFileHash": "8cd7692e04f0e0e680411b0872661e0cb12ac7fbcb58c3825352876baaf74b16",
+      "origin": "original_gsc_palette_recolor_with_native_background_pieces",
+      "game": "gold",
+      "tileset": "TILESET_POKECENTER",
+      "sourceHash": "3a64413865f04684398c2c97de8cfe38269d68f874f200ea5223f32e113e75f9",
+      "sourceFiles": {
+        "metadata": "6521a2c155b16cbb502c53810b25685290594687706afdfc1c6b845090eb232f",
+        "image": "1e096cf6a1ca1931fce0fb28c54c929a4391e9b4cd72329e12cf6fafcf027e83",
+        "maps": "d2b8cc76190f4d8a1609cc86ed7d0697df45188533e09f905f7afa53f3e487ac"
+      },
+      "sourceTileIds": [
+        15,
+        1,
+        15,
+        17
+      ],
+      "literal_background_quadrants": [
+        1,
+        3
+      ],
+      "backgrounds": {
+        "1": {
+          "game": "firered",
+          "tileset": "network",
+          "id": 641,
+          "hash": "11cc9f4213d4bd8236e651bd3f8cbd7254d55a4a43762fbacfc90a82faae6576"
+        },
+        "17": {
+          "game": "firered",
+          "tileset": "network",
+          "id": 641,
+          "hash": "11cc9f4213d4bd8236e651bd3f8cbd7254d55a4a43762fbacfc90a82faae6576"
+        },
+        "2": {
+          "game": "firered",
+          "tileset": "network",
+          "id": 644,
+          "hash": "f0e92cf36a96c59fd07fedcb6bfa4032dd3925d854eeab519196f6051ec2c3a9"
+        }
+      },
+      "retained_source_glyphs_at_pixel_scale": 1,
+      "sourceColors": [
+        [
+          [
+            240,
+            248,
+            240
+          ],
+          [
+            176,
+            200,
+            216
+          ],
+          [
+            96,
+            120,
+            152
+          ],
+          [
+            48,
+            56,
+            80
+          ]
+        ],
+        [
+          [
+            240,
+            248,
+            240
+          ],
+          [
+            176,
+            200,
+            216
+          ],
+          [
+            96,
+            120,
+            152
+          ],
+          [
+            48,
+            56,
+            80
+          ]
+        ],
+        [
+          [
+            240,
+            248,
+            240
+          ],
+          [
+            176,
+            200,
+            216
+          ],
+          [
+            96,
+            120,
+            152
+          ],
+          [
+            48,
+            56,
+            80
+          ]
+        ],
+        [
+          [
+            240,
+            248,
+            240
+          ],
+          [
+            176,
+            200,
+            216
+          ],
+          [
+            96,
+            120,
+            152
+          ],
+          [
+            48,
+            56,
+            80
+          ]
+        ]
+      ]
+    },
+    "assets/third_party/gsc-room-geometry/gold-24392f81a0f005e03042-table-ornament.png": {
+      "assetFileHash": "935e0726016e8eb7e5bbd322d4fbafd890d9d23011f7dd3c5227f4371c563aea",
+      "origin": "complete_original_gsc_table_ornament_palette_recolor_over_native_tabletop",
+      "game": "gold",
+      "map": "TRAINER_HOUSE_1F",
+      "sourceHash": "24392f81a0f005e03042bc4e90b75514fab5c81ee371e1690ffe894a5f64ee8b",
+      "sourceFiles": {
+        "metadata": "6521a2c155b16cbb502c53810b25685290594687706afdfc1c6b845090eb232f",
+        "image": "b39ccb013ca1d84117363b4244e9b33f3546a718bf9392e6ed5a81cdda572c35",
+        "maps": "d2b8cc76190f4d8a1609cc86ed7d0697df45188533e09f905f7afa53f3e487ac"
+      },
+      "whole_original_envelope": [
+        4,
+        5,
+        2,
+        2
+      ],
+      "sourcePieces": [
+        {
+          "cell": [
+            4,
+            5
+          ],
+          "sourceHash": "24392f81a0f005e03042bc4e90b75514fab5c81ee371e1690ffe894a5f64ee8b"
+        },
+        {
+          "cell": [
+            5,
+            5
+          ],
+          "sourceHash": "ad28886f0c4188d9a66ca7371c8297dd4f6976ea8037eb4de79de1b86ac99db4"
+        },
+        {
+          "cell": [
+            4,
+            6
+          ],
+          "sourceHash": "a96a916d3c828d4de2a116dcab791ba80f262dfbac7f8b7bd4b17ed8b273a1c0"
+        },
+        {
+          "cell": [
+            5,
+            6
+          ],
+          "sourceHash": "0033ba6961ccb30f7ef7f985332861154991c0e8c43f5b921ab7d2b96dc886dc"
+        }
+      ],
+      "removed_only_connected_flat_tabletop_exterior": true,
+      "retained_original_outline_at_pixel_scale": 1,
+      "native_background": {
+        "kind": "native_composite",
+        "base": {
+          "game": "firered",
+          "tileset": "player_house",
+          "id": 1,
+          "hash": "eba7bafe3b8bf236ae3602939529c34fad55c66c94aed6bb6cb4681b08fe2af6"
+        },
+        "parts": [
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 0,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 0
+          },
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 0,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 8
+          },
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 8,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 0
+          },
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 8,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 8
+          }
+        ]
+      }
+    },
+    "assets/third_party/gsc-room-geometry/gold-ad28886f0c4188d9a66c-table-ornament.png": {
+      "assetFileHash": "9abd0d5be33145cce5d0eeb12261cfbddcab9dd24d1339f7c144aeb8f1e6578c",
+      "origin": "complete_original_gsc_table_ornament_palette_recolor_over_native_tabletop",
+      "game": "gold",
+      "map": "TRAINER_HOUSE_1F",
+      "sourceHash": "ad28886f0c4188d9a66ca7371c8297dd4f6976ea8037eb4de79de1b86ac99db4",
+      "sourceFiles": {
+        "metadata": "6521a2c155b16cbb502c53810b25685290594687706afdfc1c6b845090eb232f",
+        "image": "b39ccb013ca1d84117363b4244e9b33f3546a718bf9392e6ed5a81cdda572c35",
+        "maps": "d2b8cc76190f4d8a1609cc86ed7d0697df45188533e09f905f7afa53f3e487ac"
+      },
+      "whole_original_envelope": [
+        4,
+        5,
+        2,
+        2
+      ],
+      "sourcePieces": [
+        {
+          "cell": [
+            4,
+            5
+          ],
+          "sourceHash": "24392f81a0f005e03042bc4e90b75514fab5c81ee371e1690ffe894a5f64ee8b"
+        },
+        {
+          "cell": [
+            5,
+            5
+          ],
+          "sourceHash": "ad28886f0c4188d9a66ca7371c8297dd4f6976ea8037eb4de79de1b86ac99db4"
+        },
+        {
+          "cell": [
+            4,
+            6
+          ],
+          "sourceHash": "a96a916d3c828d4de2a116dcab791ba80f262dfbac7f8b7bd4b17ed8b273a1c0"
+        },
+        {
+          "cell": [
+            5,
+            6
+          ],
+          "sourceHash": "0033ba6961ccb30f7ef7f985332861154991c0e8c43f5b921ab7d2b96dc886dc"
+        }
+      ],
+      "removed_only_connected_flat_tabletop_exterior": true,
+      "retained_original_outline_at_pixel_scale": 1,
+      "native_background": {
+        "kind": "native_composite",
+        "base": {
+          "game": "firered",
+          "tileset": "player_house",
+          "id": 1,
+          "hash": "eba7bafe3b8bf236ae3602939529c34fad55c66c94aed6bb6cb4681b08fe2af6"
+        },
+        "parts": [
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 0,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 0
+          },
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 0,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 8
+          },
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 8,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 0
+          },
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 8,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 8
+          }
+        ]
+      }
+    },
+    "assets/third_party/gsc-room-geometry/gold-a96a916d3c828d4de2a1-table-ornament.png": {
+      "assetFileHash": "1d6f32c08de6db39cf06f32e4b40b9fa384aa49320ad89510ac6df5ad20979bc",
+      "origin": "complete_original_gsc_table_ornament_palette_recolor_over_native_tabletop",
+      "game": "gold",
+      "map": "TRAINER_HOUSE_1F",
+      "sourceHash": "a96a916d3c828d4de2a116dcab791ba80f262dfbac7f8b7bd4b17ed8b273a1c0",
+      "sourceFiles": {
+        "metadata": "6521a2c155b16cbb502c53810b25685290594687706afdfc1c6b845090eb232f",
+        "image": "b39ccb013ca1d84117363b4244e9b33f3546a718bf9392e6ed5a81cdda572c35",
+        "maps": "d2b8cc76190f4d8a1609cc86ed7d0697df45188533e09f905f7afa53f3e487ac"
+      },
+      "whole_original_envelope": [
+        4,
+        5,
+        2,
+        2
+      ],
+      "sourcePieces": [
+        {
+          "cell": [
+            4,
+            5
+          ],
+          "sourceHash": "24392f81a0f005e03042bc4e90b75514fab5c81ee371e1690ffe894a5f64ee8b"
+        },
+        {
+          "cell": [
+            5,
+            5
+          ],
+          "sourceHash": "ad28886f0c4188d9a66ca7371c8297dd4f6976ea8037eb4de79de1b86ac99db4"
+        },
+        {
+          "cell": [
+            4,
+            6
+          ],
+          "sourceHash": "a96a916d3c828d4de2a116dcab791ba80f262dfbac7f8b7bd4b17ed8b273a1c0"
+        },
+        {
+          "cell": [
+            5,
+            6
+          ],
+          "sourceHash": "0033ba6961ccb30f7ef7f985332861154991c0e8c43f5b921ab7d2b96dc886dc"
+        }
+      ],
+      "removed_only_connected_flat_tabletop_exterior": true,
+      "retained_original_outline_at_pixel_scale": 1,
+      "native_background": {
+        "kind": "native_composite",
+        "base": {
+          "game": "firered",
+          "tileset": "player_house",
+          "id": 1,
+          "hash": "eba7bafe3b8bf236ae3602939529c34fad55c66c94aed6bb6cb4681b08fe2af6"
+        },
+        "parts": [
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 0,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 0
+          },
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 0,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 8
+          },
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 8,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 0
+          },
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 8,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 8
+          }
+        ]
+      }
+    },
+    "assets/third_party/gsc-room-geometry/gold-0033ba6961ccb30f7ef7-table-ornament.png": {
+      "assetFileHash": "5d2e6a37e802d3e5f50732ecaeea1be593e95854f15c5fb7723dde1670960671",
+      "origin": "complete_original_gsc_table_ornament_palette_recolor_over_native_tabletop",
+      "game": "gold",
+      "map": "TRAINER_HOUSE_1F",
+      "sourceHash": "0033ba6961ccb30f7ef7f985332861154991c0e8c43f5b921ab7d2b96dc886dc",
+      "sourceFiles": {
+        "metadata": "6521a2c155b16cbb502c53810b25685290594687706afdfc1c6b845090eb232f",
+        "image": "b39ccb013ca1d84117363b4244e9b33f3546a718bf9392e6ed5a81cdda572c35",
+        "maps": "d2b8cc76190f4d8a1609cc86ed7d0697df45188533e09f905f7afa53f3e487ac"
+      },
+      "whole_original_envelope": [
+        4,
+        5,
+        2,
+        2
+      ],
+      "sourcePieces": [
+        {
+          "cell": [
+            4,
+            5
+          ],
+          "sourceHash": "24392f81a0f005e03042bc4e90b75514fab5c81ee371e1690ffe894a5f64ee8b"
+        },
+        {
+          "cell": [
+            5,
+            5
+          ],
+          "sourceHash": "ad28886f0c4188d9a66ca7371c8297dd4f6976ea8037eb4de79de1b86ac99db4"
+        },
+        {
+          "cell": [
+            4,
+            6
+          ],
+          "sourceHash": "a96a916d3c828d4de2a116dcab791ba80f262dfbac7f8b7bd4b17ed8b273a1c0"
+        },
+        {
+          "cell": [
+            5,
+            6
+          ],
+          "sourceHash": "0033ba6961ccb30f7ef7f985332861154991c0e8c43f5b921ab7d2b96dc886dc"
+        }
+      ],
+      "removed_only_connected_flat_tabletop_exterior": true,
+      "retained_original_outline_at_pixel_scale": 1,
+      "native_background": {
+        "kind": "native_composite",
+        "base": {
+          "game": "firered",
+          "tileset": "player_house",
+          "id": 1,
+          "hash": "eba7bafe3b8bf236ae3602939529c34fad55c66c94aed6bb6cb4681b08fe2af6"
+        },
+        "parts": [
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 0,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 0
+          },
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 0,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 8
+          },
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 8,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 0
+          },
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 8,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 8
+          }
+        ]
+      }
+    },
+    "assets/third_party/gsc-room-geometry/silver-43e68bb54469fa081f84-d7175f136a9a.png": {
+      "assetFileHash": "e66357dd336c974035c1619cf749bb520ba69e7b5acf2bbd118ea6fca0b1b7ee",
+      "origin": "original_gsc_palette_recolor_with_native_background_pieces",
+      "game": "silver",
+      "tileset": "TILESET_POKECENTER",
+      "sourceHash": "43e68bb54469fa081f84a7c91e0b94d9066b7648cb33d7050279292e1533ff6f",
+      "sourceFiles": {
+        "metadata": "6521a2c155b16cbb502c53810b25685290594687706afdfc1c6b845090eb232f",
+        "image": "1e096cf6a1ca1931fce0fb28c54c929a4391e9b4cd72329e12cf6fafcf027e83",
+        "maps": "d2b8cc76190f4d8a1609cc86ed7d0697df45188533e09f905f7afa53f3e487ac"
+      },
+      "sourceTileIds": [
+        1,
+        1,
+        32,
+        33
+      ],
+      "literal_background_quadrants": [
+        0,
+        1
+      ],
+      "backgrounds": {
+        "1": {
+          "game": "firered",
+          "tileset": "network",
+          "id": 641,
+          "hash": "11cc9f4213d4bd8236e651bd3f8cbd7254d55a4a43762fbacfc90a82faae6576"
+        },
+        "17": {
+          "game": "firered",
+          "tileset": "network",
+          "id": 641,
+          "hash": "11cc9f4213d4bd8236e651bd3f8cbd7254d55a4a43762fbacfc90a82faae6576"
+        },
+        "2": {
+          "game": "firered",
+          "tileset": "network",
+          "id": 644,
+          "hash": "f0e92cf36a96c59fd07fedcb6bfa4032dd3925d854eeab519196f6051ec2c3a9"
+        }
+      },
+      "retained_source_glyphs_at_pixel_scale": 1,
+      "sourceColors": [
+        [
+          [
+            240,
+            248,
+            240
+          ],
+          [
+            176,
+            200,
+            216
+          ],
+          [
+            96,
+            120,
+            152
+          ],
+          [
+            48,
+            56,
+            80
+          ]
+        ],
+        [
+          [
+            240,
+            248,
+            240
+          ],
+          [
+            176,
+            200,
+            216
+          ],
+          [
+            96,
+            120,
+            152
+          ],
+          [
+            48,
+            56,
+            80
+          ]
+        ],
+        [
+          [
+            240,
+            248,
+            240
+          ],
+          [
+            176,
+            200,
+            216
+          ],
+          [
+            96,
+            120,
+            152
+          ],
+          [
+            48,
+            56,
+            80
+          ]
+        ],
+        [
+          [
+            240,
+            248,
+            240
+          ],
+          [
+            176,
+            200,
+            216
+          ],
+          [
+            96,
+            120,
+            152
+          ],
+          [
+            48,
+            56,
+            80
+          ]
+        ]
+      ]
+    },
+    "assets/third_party/gsc-room-geometry/silver-608d3ebc2858b83807cd-9a6ff4796c71.png": {
+      "assetFileHash": "31b8e4f54a35ebe495d570958ccff927e667a4c53a7666a63a67c2c2df9fe5f7",
+      "origin": "original_gsc_palette_recolor_with_native_background_pieces",
+      "game": "silver",
+      "tileset": "TILESET_GATE",
+      "sourceHash": "608d3ebc2858b83807cd7146b9be241535d84a3acad6eb3e64e5efbf4f524f17",
+      "sourceFiles": {
+        "metadata": "6521a2c155b16cbb502c53810b25685290594687706afdfc1c6b845090eb232f",
+        "image": "25639f818cf834d9c9f595b9a3d941f13b4f9f58d9acd657e9af8aa655e92ed8",
+        "maps": "d2b8cc76190f4d8a1609cc86ed7d0697df45188533e09f905f7afa53f3e487ac"
+      },
+      "sourceTileIds": [
+        1,
+        67,
+        67,
+        67
+      ],
+      "literal_background_quadrants": [
+        0
+      ],
+      "backgrounds": {
+        "1": {
+          "game": "firered",
+          "tileset": "building__rom_082d4c44",
+          "id": 648,
+          "hash": "d3b10a37128783f68b122d68481fab97a3db43ea507cb1c5d8cb9926fd0e4364"
+        }
+      },
+      "retained_source_glyphs_at_pixel_scale": 1,
+      "sourceColors": [
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ],
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ],
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ],
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ]
+      ]
+    },
+    "assets/third_party/gsc-room-geometry/silver-c6e011014f3bbce3c924-38da72c41c7d.png": {
+      "assetFileHash": "c024aa4db2cfc23845669354bb7059fe34322477a09fabd230455338981fbf2f",
+      "origin": "original_gsc_palette_recolor_with_native_background_pieces",
+      "game": "silver",
+      "tileset": "TILESET_GATE",
+      "sourceHash": "c6e011014f3bbce3c9248ecd57bcbaf4fa6a8eb39fd6570af0521d3e1e650997",
+      "sourceFiles": {
+        "metadata": "6521a2c155b16cbb502c53810b25685290594687706afdfc1c6b845090eb232f",
+        "image": "25639f818cf834d9c9f595b9a3d941f13b4f9f58d9acd657e9af8aa655e92ed8",
+        "maps": "d2b8cc76190f4d8a1609cc86ed7d0697df45188533e09f905f7afa53f3e487ac"
+      },
+      "sourceTileIds": [
+        66,
+        1,
+        66,
+        66
+      ],
+      "literal_background_quadrants": [
+        1
+      ],
+      "backgrounds": {
+        "1": {
+          "game": "firered",
+          "tileset": "building__rom_082d4c44",
+          "id": 648,
+          "hash": "d3b10a37128783f68b122d68481fab97a3db43ea507cb1c5d8cb9926fd0e4364"
+        }
+      },
+      "retained_source_glyphs_at_pixel_scale": 1,
+      "sourceColors": [
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ],
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ],
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ],
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ]
+      ]
+    },
+    "assets/third_party/gsc-room-geometry/silver-95fa4ed5ff936df27f71-ade88d0b9b5a.png": {
+      "assetFileHash": "937bcd47bec5ae10b390448d6a19f87db9b58d1447c8926a3a5bd694792540c2",
+      "origin": "original_gsc_palette_recolor_with_native_background_pieces",
+      "game": "silver",
+      "tileset": "TILESET_GATE",
+      "sourceHash": "95fa4ed5ff936df27f71b0d52fc13a2a05f8614b7992e948a85a25b9c096aae9",
+      "sourceFiles": {
+        "metadata": "6521a2c155b16cbb502c53810b25685290594687706afdfc1c6b845090eb232f",
+        "image": "25639f818cf834d9c9f595b9a3d941f13b4f9f58d9acd657e9af8aa655e92ed8",
+        "maps": "d2b8cc76190f4d8a1609cc86ed7d0697df45188533e09f905f7afa53f3e487ac"
+      },
+      "sourceTileIds": [
+        66,
+        66,
+        1,
+        66
+      ],
+      "literal_background_quadrants": [
+        2
+      ],
+      "backgrounds": {
+        "1": {
+          "game": "firered",
+          "tileset": "building__rom_082d4c44",
+          "id": 648,
+          "hash": "d3b10a37128783f68b122d68481fab97a3db43ea507cb1c5d8cb9926fd0e4364"
+        }
+      },
+      "retained_source_glyphs_at_pixel_scale": 1,
+      "sourceColors": [
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ],
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ],
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ],
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ]
+      ]
+    },
+    "assets/third_party/gsc-room-geometry/silver-d74b51f5184604c47a64-a7805da8d8d6.png": {
+      "assetFileHash": "d39d2f3095b931d3d3b7f6a4ea1a76090b6d37df7fc7a8af9c62dad8e6db7832",
+      "origin": "original_gsc_palette_recolor_with_native_background_pieces",
+      "game": "silver",
+      "tileset": "TILESET_GATE",
+      "sourceHash": "d74b51f5184604c47a64483addbbe797da221b9d8a2f858857479d2c25b81ed6",
+      "sourceFiles": {
+        "metadata": "6521a2c155b16cbb502c53810b25685290594687706afdfc1c6b845090eb232f",
+        "image": "25639f818cf834d9c9f595b9a3d941f13b4f9f58d9acd657e9af8aa655e92ed8",
+        "maps": "d2b8cc76190f4d8a1609cc86ed7d0697df45188533e09f905f7afa53f3e487ac"
+      },
+      "sourceTileIds": [
+        67,
+        67,
+        67,
+        1
+      ],
+      "literal_background_quadrants": [
+        3
+      ],
+      "backgrounds": {
+        "1": {
+          "game": "firered",
+          "tileset": "building__rom_082d4c44",
+          "id": 648,
+          "hash": "d3b10a37128783f68b122d68481fab97a3db43ea507cb1c5d8cb9926fd0e4364"
+        }
+      },
+      "retained_source_glyphs_at_pixel_scale": 1,
+      "sourceColors": [
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ],
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ],
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ],
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ]
+      ]
+    },
+    "assets/third_party/gsc-room-geometry/silver-3b53878d7d279b5c0350-b4f39de4a253.png": {
+      "assetFileHash": "e3947901a32ac4596705d61357617ecc1f7219adaf9b3b1b413ff10ab651d785",
+      "origin": "original_gsc_palette_recolor_with_native_background_pieces",
+      "game": "silver",
+      "tileset": "TILESET_POKECENTER",
+      "sourceHash": "3b53878d7d279b5c0350731363a7806c496c58bf170b45741223dd7fdbf135aa",
+      "sourceFiles": {
+        "metadata": "6521a2c155b16cbb502c53810b25685290594687706afdfc1c6b845090eb232f",
+        "image": "1e096cf6a1ca1931fce0fb28c54c929a4391e9b4cd72329e12cf6fafcf027e83",
+        "maps": "d2b8cc76190f4d8a1609cc86ed7d0697df45188533e09f905f7afa53f3e487ac"
+      },
+      "sourceTileIds": [
+        2,
+        2,
+        15,
+        2
+      ],
+      "literal_background_quadrants": [
+        0,
+        1,
+        3
+      ],
+      "backgrounds": {
+        "1": {
+          "game": "firered",
+          "tileset": "network",
+          "id": 641,
+          "hash": "11cc9f4213d4bd8236e651bd3f8cbd7254d55a4a43762fbacfc90a82faae6576"
+        },
+        "17": {
+          "game": "firered",
+          "tileset": "network",
+          "id": 641,
+          "hash": "11cc9f4213d4bd8236e651bd3f8cbd7254d55a4a43762fbacfc90a82faae6576"
+        },
+        "2": {
+          "game": "firered",
+          "tileset": "network",
+          "id": 644,
+          "hash": "f0e92cf36a96c59fd07fedcb6bfa4032dd3925d854eeab519196f6051ec2c3a9"
+        }
+      },
+      "retained_source_glyphs_at_pixel_scale": 1,
+      "sourceColors": [
+        [
+          [
+            240,
+            248,
+            240
+          ],
+          [
+            176,
+            200,
+            216
+          ],
+          [
+            96,
+            120,
+            152
+          ],
+          [
+            48,
+            56,
+            80
+          ]
+        ],
+        [
+          [
+            240,
+            248,
+            240
+          ],
+          [
+            176,
+            200,
+            216
+          ],
+          [
+            96,
+            120,
+            152
+          ],
+          [
+            48,
+            56,
+            80
+          ]
+        ],
+        [
+          [
+            240,
+            248,
+            240
+          ],
+          [
+            176,
+            200,
+            216
+          ],
+          [
+            96,
+            120,
+            152
+          ],
+          [
+            48,
+            56,
+            80
+          ]
+        ],
+        [
+          [
+            240,
+            248,
+            240
+          ],
+          [
+            176,
+            200,
+            216
+          ],
+          [
+            96,
+            120,
+            152
+          ],
+          [
+            48,
+            56,
+            80
+          ]
+        ]
+      ]
+    },
+    "assets/third_party/gsc-room-geometry/silver-3a64413865f04684398c-b5a233fdb80e.png": {
+      "assetFileHash": "8cd7692e04f0e0e680411b0872661e0cb12ac7fbcb58c3825352876baaf74b16",
+      "origin": "original_gsc_palette_recolor_with_native_background_pieces",
+      "game": "silver",
+      "tileset": "TILESET_POKECENTER",
+      "sourceHash": "3a64413865f04684398c2c97de8cfe38269d68f874f200ea5223f32e113e75f9",
+      "sourceFiles": {
+        "metadata": "6521a2c155b16cbb502c53810b25685290594687706afdfc1c6b845090eb232f",
+        "image": "1e096cf6a1ca1931fce0fb28c54c929a4391e9b4cd72329e12cf6fafcf027e83",
+        "maps": "d2b8cc76190f4d8a1609cc86ed7d0697df45188533e09f905f7afa53f3e487ac"
+      },
+      "sourceTileIds": [
+        15,
+        1,
+        15,
+        17
+      ],
+      "literal_background_quadrants": [
+        1,
+        3
+      ],
+      "backgrounds": {
+        "1": {
+          "game": "firered",
+          "tileset": "network",
+          "id": 641,
+          "hash": "11cc9f4213d4bd8236e651bd3f8cbd7254d55a4a43762fbacfc90a82faae6576"
+        },
+        "17": {
+          "game": "firered",
+          "tileset": "network",
+          "id": 641,
+          "hash": "11cc9f4213d4bd8236e651bd3f8cbd7254d55a4a43762fbacfc90a82faae6576"
+        },
+        "2": {
+          "game": "firered",
+          "tileset": "network",
+          "id": 644,
+          "hash": "f0e92cf36a96c59fd07fedcb6bfa4032dd3925d854eeab519196f6051ec2c3a9"
+        }
+      },
+      "retained_source_glyphs_at_pixel_scale": 1,
+      "sourceColors": [
+        [
+          [
+            240,
+            248,
+            240
+          ],
+          [
+            176,
+            200,
+            216
+          ],
+          [
+            96,
+            120,
+            152
+          ],
+          [
+            48,
+            56,
+            80
+          ]
+        ],
+        [
+          [
+            240,
+            248,
+            240
+          ],
+          [
+            176,
+            200,
+            216
+          ],
+          [
+            96,
+            120,
+            152
+          ],
+          [
+            48,
+            56,
+            80
+          ]
+        ],
+        [
+          [
+            240,
+            248,
+            240
+          ],
+          [
+            176,
+            200,
+            216
+          ],
+          [
+            96,
+            120,
+            152
+          ],
+          [
+            48,
+            56,
+            80
+          ]
+        ],
+        [
+          [
+            240,
+            248,
+            240
+          ],
+          [
+            176,
+            200,
+            216
+          ],
+          [
+            96,
+            120,
+            152
+          ],
+          [
+            48,
+            56,
+            80
+          ]
+        ]
+      ]
+    },
+    "assets/third_party/gsc-room-geometry/silver-24392f81a0f005e03042-table-ornament.png": {
+      "assetFileHash": "935e0726016e8eb7e5bbd322d4fbafd890d9d23011f7dd3c5227f4371c563aea",
+      "origin": "complete_original_gsc_table_ornament_palette_recolor_over_native_tabletop",
+      "game": "silver",
+      "map": "TRAINER_HOUSE_1F",
+      "sourceHash": "24392f81a0f005e03042bc4e90b75514fab5c81ee371e1690ffe894a5f64ee8b",
+      "sourceFiles": {
+        "metadata": "6521a2c155b16cbb502c53810b25685290594687706afdfc1c6b845090eb232f",
+        "image": "b39ccb013ca1d84117363b4244e9b33f3546a718bf9392e6ed5a81cdda572c35",
+        "maps": "d2b8cc76190f4d8a1609cc86ed7d0697df45188533e09f905f7afa53f3e487ac"
+      },
+      "whole_original_envelope": [
+        4,
+        5,
+        2,
+        2
+      ],
+      "sourcePieces": [
+        {
+          "cell": [
+            4,
+            5
+          ],
+          "sourceHash": "24392f81a0f005e03042bc4e90b75514fab5c81ee371e1690ffe894a5f64ee8b"
+        },
+        {
+          "cell": [
+            5,
+            5
+          ],
+          "sourceHash": "ad28886f0c4188d9a66ca7371c8297dd4f6976ea8037eb4de79de1b86ac99db4"
+        },
+        {
+          "cell": [
+            4,
+            6
+          ],
+          "sourceHash": "a96a916d3c828d4de2a116dcab791ba80f262dfbac7f8b7bd4b17ed8b273a1c0"
+        },
+        {
+          "cell": [
+            5,
+            6
+          ],
+          "sourceHash": "0033ba6961ccb30f7ef7f985332861154991c0e8c43f5b921ab7d2b96dc886dc"
+        }
+      ],
+      "removed_only_connected_flat_tabletop_exterior": true,
+      "retained_original_outline_at_pixel_scale": 1,
+      "native_background": {
+        "kind": "native_composite",
+        "base": {
+          "game": "firered",
+          "tileset": "player_house",
+          "id": 1,
+          "hash": "eba7bafe3b8bf236ae3602939529c34fad55c66c94aed6bb6cb4681b08fe2af6"
+        },
+        "parts": [
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 0,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 0
+          },
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 0,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 8
+          },
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 8,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 0
+          },
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 8,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 8
+          }
+        ]
+      }
+    },
+    "assets/third_party/gsc-room-geometry/silver-ad28886f0c4188d9a66c-table-ornament.png": {
+      "assetFileHash": "9abd0d5be33145cce5d0eeb12261cfbddcab9dd24d1339f7c144aeb8f1e6578c",
+      "origin": "complete_original_gsc_table_ornament_palette_recolor_over_native_tabletop",
+      "game": "silver",
+      "map": "TRAINER_HOUSE_1F",
+      "sourceHash": "ad28886f0c4188d9a66ca7371c8297dd4f6976ea8037eb4de79de1b86ac99db4",
+      "sourceFiles": {
+        "metadata": "6521a2c155b16cbb502c53810b25685290594687706afdfc1c6b845090eb232f",
+        "image": "b39ccb013ca1d84117363b4244e9b33f3546a718bf9392e6ed5a81cdda572c35",
+        "maps": "d2b8cc76190f4d8a1609cc86ed7d0697df45188533e09f905f7afa53f3e487ac"
+      },
+      "whole_original_envelope": [
+        4,
+        5,
+        2,
+        2
+      ],
+      "sourcePieces": [
+        {
+          "cell": [
+            4,
+            5
+          ],
+          "sourceHash": "24392f81a0f005e03042bc4e90b75514fab5c81ee371e1690ffe894a5f64ee8b"
+        },
+        {
+          "cell": [
+            5,
+            5
+          ],
+          "sourceHash": "ad28886f0c4188d9a66ca7371c8297dd4f6976ea8037eb4de79de1b86ac99db4"
+        },
+        {
+          "cell": [
+            4,
+            6
+          ],
+          "sourceHash": "a96a916d3c828d4de2a116dcab791ba80f262dfbac7f8b7bd4b17ed8b273a1c0"
+        },
+        {
+          "cell": [
+            5,
+            6
+          ],
+          "sourceHash": "0033ba6961ccb30f7ef7f985332861154991c0e8c43f5b921ab7d2b96dc886dc"
+        }
+      ],
+      "removed_only_connected_flat_tabletop_exterior": true,
+      "retained_original_outline_at_pixel_scale": 1,
+      "native_background": {
+        "kind": "native_composite",
+        "base": {
+          "game": "firered",
+          "tileset": "player_house",
+          "id": 1,
+          "hash": "eba7bafe3b8bf236ae3602939529c34fad55c66c94aed6bb6cb4681b08fe2af6"
+        },
+        "parts": [
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 0,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 0
+          },
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 0,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 8
+          },
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 8,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 0
+          },
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 8,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 8
+          }
+        ]
+      }
+    },
+    "assets/third_party/gsc-room-geometry/silver-a96a916d3c828d4de2a1-table-ornament.png": {
+      "assetFileHash": "1d6f32c08de6db39cf06f32e4b40b9fa384aa49320ad89510ac6df5ad20979bc",
+      "origin": "complete_original_gsc_table_ornament_palette_recolor_over_native_tabletop",
+      "game": "silver",
+      "map": "TRAINER_HOUSE_1F",
+      "sourceHash": "a96a916d3c828d4de2a116dcab791ba80f262dfbac7f8b7bd4b17ed8b273a1c0",
+      "sourceFiles": {
+        "metadata": "6521a2c155b16cbb502c53810b25685290594687706afdfc1c6b845090eb232f",
+        "image": "b39ccb013ca1d84117363b4244e9b33f3546a718bf9392e6ed5a81cdda572c35",
+        "maps": "d2b8cc76190f4d8a1609cc86ed7d0697df45188533e09f905f7afa53f3e487ac"
+      },
+      "whole_original_envelope": [
+        4,
+        5,
+        2,
+        2
+      ],
+      "sourcePieces": [
+        {
+          "cell": [
+            4,
+            5
+          ],
+          "sourceHash": "24392f81a0f005e03042bc4e90b75514fab5c81ee371e1690ffe894a5f64ee8b"
+        },
+        {
+          "cell": [
+            5,
+            5
+          ],
+          "sourceHash": "ad28886f0c4188d9a66ca7371c8297dd4f6976ea8037eb4de79de1b86ac99db4"
+        },
+        {
+          "cell": [
+            4,
+            6
+          ],
+          "sourceHash": "a96a916d3c828d4de2a116dcab791ba80f262dfbac7f8b7bd4b17ed8b273a1c0"
+        },
+        {
+          "cell": [
+            5,
+            6
+          ],
+          "sourceHash": "0033ba6961ccb30f7ef7f985332861154991c0e8c43f5b921ab7d2b96dc886dc"
+        }
+      ],
+      "removed_only_connected_flat_tabletop_exterior": true,
+      "retained_original_outline_at_pixel_scale": 1,
+      "native_background": {
+        "kind": "native_composite",
+        "base": {
+          "game": "firered",
+          "tileset": "player_house",
+          "id": 1,
+          "hash": "eba7bafe3b8bf236ae3602939529c34fad55c66c94aed6bb6cb4681b08fe2af6"
+        },
+        "parts": [
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 0,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 0
+          },
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 0,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 8
+          },
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 8,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 0
+          },
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 8,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 8
+          }
+        ]
+      }
+    },
+    "assets/third_party/gsc-room-geometry/silver-0033ba6961ccb30f7ef7-table-ornament.png": {
+      "assetFileHash": "5d2e6a37e802d3e5f50732ecaeea1be593e95854f15c5fb7723dde1670960671",
+      "origin": "complete_original_gsc_table_ornament_palette_recolor_over_native_tabletop",
+      "game": "silver",
+      "map": "TRAINER_HOUSE_1F",
+      "sourceHash": "0033ba6961ccb30f7ef7f985332861154991c0e8c43f5b921ab7d2b96dc886dc",
+      "sourceFiles": {
+        "metadata": "6521a2c155b16cbb502c53810b25685290594687706afdfc1c6b845090eb232f",
+        "image": "b39ccb013ca1d84117363b4244e9b33f3546a718bf9392e6ed5a81cdda572c35",
+        "maps": "d2b8cc76190f4d8a1609cc86ed7d0697df45188533e09f905f7afa53f3e487ac"
+      },
+      "whole_original_envelope": [
+        4,
+        5,
+        2,
+        2
+      ],
+      "sourcePieces": [
+        {
+          "cell": [
+            4,
+            5
+          ],
+          "sourceHash": "24392f81a0f005e03042bc4e90b75514fab5c81ee371e1690ffe894a5f64ee8b"
+        },
+        {
+          "cell": [
+            5,
+            5
+          ],
+          "sourceHash": "ad28886f0c4188d9a66ca7371c8297dd4f6976ea8037eb4de79de1b86ac99db4"
+        },
+        {
+          "cell": [
+            4,
+            6
+          ],
+          "sourceHash": "a96a916d3c828d4de2a116dcab791ba80f262dfbac7f8b7bd4b17ed8b273a1c0"
+        },
+        {
+          "cell": [
+            5,
+            6
+          ],
+          "sourceHash": "0033ba6961ccb30f7ef7f985332861154991c0e8c43f5b921ab7d2b96dc886dc"
+        }
+      ],
+      "removed_only_connected_flat_tabletop_exterior": true,
+      "retained_original_outline_at_pixel_scale": 1,
+      "native_background": {
+        "kind": "native_composite",
+        "base": {
+          "game": "firered",
+          "tileset": "player_house",
+          "id": 1,
+          "hash": "eba7bafe3b8bf236ae3602939529c34fad55c66c94aed6bb6cb4681b08fe2af6"
+        },
+        "parts": [
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 0,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 0
+          },
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 0,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 8
+          },
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 8,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 0
+          },
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 8,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 8
+          }
+        ]
+      }
+    },
+    "assets/third_party/gsc-room-geometry/crystal-43e68bb54469fa081f84-d7175f136a9a.png": {
+      "assetFileHash": "e66357dd336c974035c1619cf749bb520ba69e7b5acf2bbd118ea6fca0b1b7ee",
+      "origin": "original_gsc_palette_recolor_with_native_background_pieces",
+      "game": "crystal",
+      "tileset": "TILESET_POKECENTER",
+      "sourceHash": "43e68bb54469fa081f84a7c91e0b94d9066b7648cb33d7050279292e1533ff6f",
+      "sourceFiles": {
+        "metadata": "0071b3599a4bf7682f07f433f8493159d105148d8b78ff06e77817ddb044c2a5",
+        "image": "c561cdc23373bc229c5166680254a6fa560b8483c24d3c61912c0f4200a8661e",
+        "maps": "210b5527393c273c632572fd697aa89bec9c853526b58069a77a2acc8767ebf0"
+      },
+      "sourceTileIds": [
+        1,
+        1,
+        32,
+        33
+      ],
+      "literal_background_quadrants": [
+        0,
+        1
+      ],
+      "backgrounds": {
+        "1": {
+          "game": "firered",
+          "tileset": "network",
+          "id": 641,
+          "hash": "11cc9f4213d4bd8236e651bd3f8cbd7254d55a4a43762fbacfc90a82faae6576"
+        },
+        "17": {
+          "game": "firered",
+          "tileset": "network",
+          "id": 641,
+          "hash": "11cc9f4213d4bd8236e651bd3f8cbd7254d55a4a43762fbacfc90a82faae6576"
+        },
+        "2": {
+          "game": "firered",
+          "tileset": "network",
+          "id": 644,
+          "hash": "f0e92cf36a96c59fd07fedcb6bfa4032dd3925d854eeab519196f6051ec2c3a9"
+        }
+      },
+      "retained_source_glyphs_at_pixel_scale": 1,
+      "sourceColors": [
+        [
+          [
+            240,
+            248,
+            240
+          ],
+          [
+            176,
+            200,
+            216
+          ],
+          [
+            96,
+            120,
+            152
+          ],
+          [
+            48,
+            56,
+            80
+          ]
+        ],
+        [
+          [
+            240,
+            248,
+            240
+          ],
+          [
+            176,
+            200,
+            216
+          ],
+          [
+            96,
+            120,
+            152
+          ],
+          [
+            48,
+            56,
+            80
+          ]
+        ],
+        [
+          [
+            240,
+            248,
+            240
+          ],
+          [
+            176,
+            200,
+            216
+          ],
+          [
+            96,
+            120,
+            152
+          ],
+          [
+            48,
+            56,
+            80
+          ]
+        ],
+        [
+          [
+            240,
+            248,
+            240
+          ],
+          [
+            176,
+            200,
+            216
+          ],
+          [
+            96,
+            120,
+            152
+          ],
+          [
+            48,
+            56,
+            80
+          ]
+        ]
+      ]
+    },
+    "assets/third_party/gsc-room-geometry/crystal-608d3ebc2858b83807cd-9a6ff4796c71.png": {
+      "assetFileHash": "31b8e4f54a35ebe495d570958ccff927e667a4c53a7666a63a67c2c2df9fe5f7",
+      "origin": "original_gsc_palette_recolor_with_native_background_pieces",
+      "game": "crystal",
+      "tileset": "TILESET_GATE",
+      "sourceHash": "608d3ebc2858b83807cd7146b9be241535d84a3acad6eb3e64e5efbf4f524f17",
+      "sourceFiles": {
+        "metadata": "0071b3599a4bf7682f07f433f8493159d105148d8b78ff06e77817ddb044c2a5",
+        "image": "a0e62bb231453c8b9518250be9165a9ef16b8c85ad7ad2e349de633b1f0ce0f7",
+        "maps": "210b5527393c273c632572fd697aa89bec9c853526b58069a77a2acc8767ebf0"
+      },
+      "sourceTileIds": [
+        1,
+        67,
+        67,
+        67
+      ],
+      "literal_background_quadrants": [
+        0
+      ],
+      "backgrounds": {
+        "1": {
+          "game": "firered",
+          "tileset": "building__rom_082d4c44",
+          "id": 648,
+          "hash": "d3b10a37128783f68b122d68481fab97a3db43ea507cb1c5d8cb9926fd0e4364"
+        }
+      },
+      "retained_source_glyphs_at_pixel_scale": 1,
+      "sourceColors": [
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ],
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ],
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ],
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ]
+      ]
+    },
+    "assets/third_party/gsc-room-geometry/crystal-c6e011014f3bbce3c924-38da72c41c7d.png": {
+      "assetFileHash": "c024aa4db2cfc23845669354bb7059fe34322477a09fabd230455338981fbf2f",
+      "origin": "original_gsc_palette_recolor_with_native_background_pieces",
+      "game": "crystal",
+      "tileset": "TILESET_GATE",
+      "sourceHash": "c6e011014f3bbce3c9248ecd57bcbaf4fa6a8eb39fd6570af0521d3e1e650997",
+      "sourceFiles": {
+        "metadata": "0071b3599a4bf7682f07f433f8493159d105148d8b78ff06e77817ddb044c2a5",
+        "image": "a0e62bb231453c8b9518250be9165a9ef16b8c85ad7ad2e349de633b1f0ce0f7",
+        "maps": "210b5527393c273c632572fd697aa89bec9c853526b58069a77a2acc8767ebf0"
+      },
+      "sourceTileIds": [
+        66,
+        1,
+        66,
+        66
+      ],
+      "literal_background_quadrants": [
+        1
+      ],
+      "backgrounds": {
+        "1": {
+          "game": "firered",
+          "tileset": "building__rom_082d4c44",
+          "id": 648,
+          "hash": "d3b10a37128783f68b122d68481fab97a3db43ea507cb1c5d8cb9926fd0e4364"
+        }
+      },
+      "retained_source_glyphs_at_pixel_scale": 1,
+      "sourceColors": [
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ],
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ],
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ],
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ]
+      ]
+    },
+    "assets/third_party/gsc-room-geometry/crystal-95fa4ed5ff936df27f71-ade88d0b9b5a.png": {
+      "assetFileHash": "937bcd47bec5ae10b390448d6a19f87db9b58d1447c8926a3a5bd694792540c2",
+      "origin": "original_gsc_palette_recolor_with_native_background_pieces",
+      "game": "crystal",
+      "tileset": "TILESET_GATE",
+      "sourceHash": "95fa4ed5ff936df27f71b0d52fc13a2a05f8614b7992e948a85a25b9c096aae9",
+      "sourceFiles": {
+        "metadata": "0071b3599a4bf7682f07f433f8493159d105148d8b78ff06e77817ddb044c2a5",
+        "image": "a0e62bb231453c8b9518250be9165a9ef16b8c85ad7ad2e349de633b1f0ce0f7",
+        "maps": "210b5527393c273c632572fd697aa89bec9c853526b58069a77a2acc8767ebf0"
+      },
+      "sourceTileIds": [
+        66,
+        66,
+        1,
+        66
+      ],
+      "literal_background_quadrants": [
+        2
+      ],
+      "backgrounds": {
+        "1": {
+          "game": "firered",
+          "tileset": "building__rom_082d4c44",
+          "id": 648,
+          "hash": "d3b10a37128783f68b122d68481fab97a3db43ea507cb1c5d8cb9926fd0e4364"
+        }
+      },
+      "retained_source_glyphs_at_pixel_scale": 1,
+      "sourceColors": [
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ],
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ],
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ],
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ]
+      ]
+    },
+    "assets/third_party/gsc-room-geometry/crystal-d74b51f5184604c47a64-a7805da8d8d6.png": {
+      "assetFileHash": "d39d2f3095b931d3d3b7f6a4ea1a76090b6d37df7fc7a8af9c62dad8e6db7832",
+      "origin": "original_gsc_palette_recolor_with_native_background_pieces",
+      "game": "crystal",
+      "tileset": "TILESET_GATE",
+      "sourceHash": "d74b51f5184604c47a64483addbbe797da221b9d8a2f858857479d2c25b81ed6",
+      "sourceFiles": {
+        "metadata": "0071b3599a4bf7682f07f433f8493159d105148d8b78ff06e77817ddb044c2a5",
+        "image": "a0e62bb231453c8b9518250be9165a9ef16b8c85ad7ad2e349de633b1f0ce0f7",
+        "maps": "210b5527393c273c632572fd697aa89bec9c853526b58069a77a2acc8767ebf0"
+      },
+      "sourceTileIds": [
+        67,
+        67,
+        67,
+        1
+      ],
+      "literal_background_quadrants": [
+        3
+      ],
+      "backgrounds": {
+        "1": {
+          "game": "firered",
+          "tileset": "building__rom_082d4c44",
+          "id": 648,
+          "hash": "d3b10a37128783f68b122d68481fab97a3db43ea507cb1c5d8cb9926fd0e4364"
+        }
+      },
+      "retained_source_glyphs_at_pixel_scale": 1,
+      "sourceColors": [
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ],
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ],
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ],
+        [
+          [
+            123,
+            156,
+            181
+          ],
+          [
+            192,
+            216,
+            224
+          ],
+          [
+            216,
+            128,
+            56
+          ],
+          [
+            72,
+            96,
+            120
+          ]
+        ]
+      ]
+    },
+    "assets/third_party/gsc-room-geometry/crystal-3b53878d7d279b5c0350-b4f39de4a253.png": {
+      "assetFileHash": "e3947901a32ac4596705d61357617ecc1f7219adaf9b3b1b413ff10ab651d785",
+      "origin": "original_gsc_palette_recolor_with_native_background_pieces",
+      "game": "crystal",
+      "tileset": "TILESET_POKECENTER",
+      "sourceHash": "3b53878d7d279b5c0350731363a7806c496c58bf170b45741223dd7fdbf135aa",
+      "sourceFiles": {
+        "metadata": "0071b3599a4bf7682f07f433f8493159d105148d8b78ff06e77817ddb044c2a5",
+        "image": "c561cdc23373bc229c5166680254a6fa560b8483c24d3c61912c0f4200a8661e",
+        "maps": "210b5527393c273c632572fd697aa89bec9c853526b58069a77a2acc8767ebf0"
+      },
+      "sourceTileIds": [
+        2,
+        2,
+        15,
+        2
+      ],
+      "literal_background_quadrants": [
+        0,
+        1,
+        3
+      ],
+      "backgrounds": {
+        "1": {
+          "game": "firered",
+          "tileset": "network",
+          "id": 641,
+          "hash": "11cc9f4213d4bd8236e651bd3f8cbd7254d55a4a43762fbacfc90a82faae6576"
+        },
+        "17": {
+          "game": "firered",
+          "tileset": "network",
+          "id": 641,
+          "hash": "11cc9f4213d4bd8236e651bd3f8cbd7254d55a4a43762fbacfc90a82faae6576"
+        },
+        "2": {
+          "game": "firered",
+          "tileset": "network",
+          "id": 644,
+          "hash": "f0e92cf36a96c59fd07fedcb6bfa4032dd3925d854eeab519196f6051ec2c3a9"
+        }
+      },
+      "retained_source_glyphs_at_pixel_scale": 1,
+      "sourceColors": [
+        [
+          [
+            240,
+            248,
+            240
+          ],
+          [
+            176,
+            200,
+            216
+          ],
+          [
+            96,
+            120,
+            152
+          ],
+          [
+            48,
+            56,
+            80
+          ]
+        ],
+        [
+          [
+            240,
+            248,
+            240
+          ],
+          [
+            176,
+            200,
+            216
+          ],
+          [
+            96,
+            120,
+            152
+          ],
+          [
+            48,
+            56,
+            80
+          ]
+        ],
+        [
+          [
+            240,
+            248,
+            240
+          ],
+          [
+            176,
+            200,
+            216
+          ],
+          [
+            96,
+            120,
+            152
+          ],
+          [
+            48,
+            56,
+            80
+          ]
+        ],
+        [
+          [
+            240,
+            248,
+            240
+          ],
+          [
+            176,
+            200,
+            216
+          ],
+          [
+            96,
+            120,
+            152
+          ],
+          [
+            48,
+            56,
+            80
+          ]
+        ]
+      ]
+    },
+    "assets/third_party/gsc-room-geometry/crystal-3a64413865f04684398c-b5a233fdb80e.png": {
+      "assetFileHash": "8cd7692e04f0e0e680411b0872661e0cb12ac7fbcb58c3825352876baaf74b16",
+      "origin": "original_gsc_palette_recolor_with_native_background_pieces",
+      "game": "crystal",
+      "tileset": "TILESET_POKECENTER",
+      "sourceHash": "3a64413865f04684398c2c97de8cfe38269d68f874f200ea5223f32e113e75f9",
+      "sourceFiles": {
+        "metadata": "0071b3599a4bf7682f07f433f8493159d105148d8b78ff06e77817ddb044c2a5",
+        "image": "c561cdc23373bc229c5166680254a6fa560b8483c24d3c61912c0f4200a8661e",
+        "maps": "210b5527393c273c632572fd697aa89bec9c853526b58069a77a2acc8767ebf0"
+      },
+      "sourceTileIds": [
+        15,
+        1,
+        15,
+        17
+      ],
+      "literal_background_quadrants": [
+        1,
+        3
+      ],
+      "backgrounds": {
+        "1": {
+          "game": "firered",
+          "tileset": "network",
+          "id": 641,
+          "hash": "11cc9f4213d4bd8236e651bd3f8cbd7254d55a4a43762fbacfc90a82faae6576"
+        },
+        "17": {
+          "game": "firered",
+          "tileset": "network",
+          "id": 641,
+          "hash": "11cc9f4213d4bd8236e651bd3f8cbd7254d55a4a43762fbacfc90a82faae6576"
+        },
+        "2": {
+          "game": "firered",
+          "tileset": "network",
+          "id": 644,
+          "hash": "f0e92cf36a96c59fd07fedcb6bfa4032dd3925d854eeab519196f6051ec2c3a9"
+        }
+      },
+      "retained_source_glyphs_at_pixel_scale": 1,
+      "sourceColors": [
+        [
+          [
+            240,
+            248,
+            240
+          ],
+          [
+            176,
+            200,
+            216
+          ],
+          [
+            96,
+            120,
+            152
+          ],
+          [
+            48,
+            56,
+            80
+          ]
+        ],
+        [
+          [
+            240,
+            248,
+            240
+          ],
+          [
+            176,
+            200,
+            216
+          ],
+          [
+            96,
+            120,
+            152
+          ],
+          [
+            48,
+            56,
+            80
+          ]
+        ],
+        [
+          [
+            240,
+            248,
+            240
+          ],
+          [
+            176,
+            200,
+            216
+          ],
+          [
+            96,
+            120,
+            152
+          ],
+          [
+            48,
+            56,
+            80
+          ]
+        ],
+        [
+          [
+            240,
+            248,
+            240
+          ],
+          [
+            176,
+            200,
+            216
+          ],
+          [
+            96,
+            120,
+            152
+          ],
+          [
+            48,
+            56,
+            80
+          ]
+        ]
+      ]
+    },
+    "assets/third_party/gsc-room-geometry/crystal-21bde65ec2f36a150087-table-ornament.png": {
+      "assetFileHash": "fbd9088ab4b5c3135dcd2aa77a55cc533a59c99d2b7237baf13016ed2623dfb6",
+      "origin": "complete_original_gsc_table_ornament_palette_recolor_over_native_tabletop",
+      "game": "crystal",
+      "map": "TRAINER_HOUSE_1F",
+      "sourceHash": "21bde65ec2f36a150087a3c94547bc527334c97977d18a545ccde93ac5681bbb",
+      "sourceFiles": {
+        "metadata": "0071b3599a4bf7682f07f433f8493159d105148d8b78ff06e77817ddb044c2a5",
+        "image": "23ed07efaad978358933cfaa6b94bdf6a0c311e89ab1e44b9b3e5015a2f26122",
+        "maps": "210b5527393c273c632572fd697aa89bec9c853526b58069a77a2acc8767ebf0"
+      },
+      "whole_original_envelope": [
+        4,
+        5,
+        2,
+        2
+      ],
+      "sourcePieces": [
+        {
+          "cell": [
+            4,
+            5
+          ],
+          "sourceHash": "21bde65ec2f36a150087a3c94547bc527334c97977d18a545ccde93ac5681bbb"
+        },
+        {
+          "cell": [
+            5,
+            5
+          ],
+          "sourceHash": "60223c13041dd2d989d98d1ee381c3ce82f35c28c984be380d9b6e80251947b1"
+        },
+        {
+          "cell": [
+            4,
+            6
+          ],
+          "sourceHash": "a96a916d3c828d4de2a116dcab791ba80f262dfbac7f8b7bd4b17ed8b273a1c0"
+        },
+        {
+          "cell": [
+            5,
+            6
+          ],
+          "sourceHash": "0033ba6961ccb30f7ef7f985332861154991c0e8c43f5b921ab7d2b96dc886dc"
+        }
+      ],
+      "removed_only_connected_flat_tabletop_exterior": true,
+      "retained_original_outline_at_pixel_scale": 1,
+      "native_background": {
+        "kind": "native_composite",
+        "base": {
+          "game": "firered",
+          "tileset": "player_house",
+          "id": 1,
+          "hash": "eba7bafe3b8bf236ae3602939529c34fad55c66c94aed6bb6cb4681b08fe2af6"
+        },
+        "parts": [
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 0,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 0
+          },
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 0,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 8
+          },
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 8,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 0
+          },
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 8,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 8
+          }
+        ]
+      }
+    },
+    "assets/third_party/gsc-room-geometry/crystal-60223c13041dd2d989d9-table-ornament.png": {
+      "assetFileHash": "e06afa9261b0993c180db380f707a732bba7aff93f0fbaefb95e587cb205ccb9",
+      "origin": "complete_original_gsc_table_ornament_palette_recolor_over_native_tabletop",
+      "game": "crystal",
+      "map": "TRAINER_HOUSE_1F",
+      "sourceHash": "60223c13041dd2d989d98d1ee381c3ce82f35c28c984be380d9b6e80251947b1",
+      "sourceFiles": {
+        "metadata": "0071b3599a4bf7682f07f433f8493159d105148d8b78ff06e77817ddb044c2a5",
+        "image": "23ed07efaad978358933cfaa6b94bdf6a0c311e89ab1e44b9b3e5015a2f26122",
+        "maps": "210b5527393c273c632572fd697aa89bec9c853526b58069a77a2acc8767ebf0"
+      },
+      "whole_original_envelope": [
+        4,
+        5,
+        2,
+        2
+      ],
+      "sourcePieces": [
+        {
+          "cell": [
+            4,
+            5
+          ],
+          "sourceHash": "21bde65ec2f36a150087a3c94547bc527334c97977d18a545ccde93ac5681bbb"
+        },
+        {
+          "cell": [
+            5,
+            5
+          ],
+          "sourceHash": "60223c13041dd2d989d98d1ee381c3ce82f35c28c984be380d9b6e80251947b1"
+        },
+        {
+          "cell": [
+            4,
+            6
+          ],
+          "sourceHash": "a96a916d3c828d4de2a116dcab791ba80f262dfbac7f8b7bd4b17ed8b273a1c0"
+        },
+        {
+          "cell": [
+            5,
+            6
+          ],
+          "sourceHash": "0033ba6961ccb30f7ef7f985332861154991c0e8c43f5b921ab7d2b96dc886dc"
+        }
+      ],
+      "removed_only_connected_flat_tabletop_exterior": true,
+      "retained_original_outline_at_pixel_scale": 1,
+      "native_background": {
+        "kind": "native_composite",
+        "base": {
+          "game": "firered",
+          "tileset": "player_house",
+          "id": 1,
+          "hash": "eba7bafe3b8bf236ae3602939529c34fad55c66c94aed6bb6cb4681b08fe2af6"
+        },
+        "parts": [
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 0,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 0
+          },
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 0,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 8
+          },
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 8,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 0
+          },
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 8,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 8
+          }
+        ]
+      }
+    },
+    "assets/third_party/gsc-room-geometry/crystal-a96a916d3c828d4de2a1-table-ornament.png": {
+      "assetFileHash": "1d6f32c08de6db39cf06f32e4b40b9fa384aa49320ad89510ac6df5ad20979bc",
+      "origin": "complete_original_gsc_table_ornament_palette_recolor_over_native_tabletop",
+      "game": "crystal",
+      "map": "TRAINER_HOUSE_1F",
+      "sourceHash": "a96a916d3c828d4de2a116dcab791ba80f262dfbac7f8b7bd4b17ed8b273a1c0",
+      "sourceFiles": {
+        "metadata": "0071b3599a4bf7682f07f433f8493159d105148d8b78ff06e77817ddb044c2a5",
+        "image": "23ed07efaad978358933cfaa6b94bdf6a0c311e89ab1e44b9b3e5015a2f26122",
+        "maps": "210b5527393c273c632572fd697aa89bec9c853526b58069a77a2acc8767ebf0"
+      },
+      "whole_original_envelope": [
+        4,
+        5,
+        2,
+        2
+      ],
+      "sourcePieces": [
+        {
+          "cell": [
+            4,
+            5
+          ],
+          "sourceHash": "21bde65ec2f36a150087a3c94547bc527334c97977d18a545ccde93ac5681bbb"
+        },
+        {
+          "cell": [
+            5,
+            5
+          ],
+          "sourceHash": "60223c13041dd2d989d98d1ee381c3ce82f35c28c984be380d9b6e80251947b1"
+        },
+        {
+          "cell": [
+            4,
+            6
+          ],
+          "sourceHash": "a96a916d3c828d4de2a116dcab791ba80f262dfbac7f8b7bd4b17ed8b273a1c0"
+        },
+        {
+          "cell": [
+            5,
+            6
+          ],
+          "sourceHash": "0033ba6961ccb30f7ef7f985332861154991c0e8c43f5b921ab7d2b96dc886dc"
+        }
+      ],
+      "removed_only_connected_flat_tabletop_exterior": true,
+      "retained_original_outline_at_pixel_scale": 1,
+      "native_background": {
+        "kind": "native_composite",
+        "base": {
+          "game": "firered",
+          "tileset": "player_house",
+          "id": 1,
+          "hash": "eba7bafe3b8bf236ae3602939529c34fad55c66c94aed6bb6cb4681b08fe2af6"
+        },
+        "parts": [
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 0,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 0
+          },
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 0,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 8
+          },
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 8,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 0
+          },
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 8,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 8
+          }
+        ]
+      }
+    },
+    "assets/third_party/gsc-room-geometry/crystal-0033ba6961ccb30f7ef7-table-ornament.png": {
+      "assetFileHash": "5d2e6a37e802d3e5f50732ecaeea1be593e95854f15c5fb7723dde1670960671",
+      "origin": "complete_original_gsc_table_ornament_palette_recolor_over_native_tabletop",
+      "game": "crystal",
+      "map": "TRAINER_HOUSE_1F",
+      "sourceHash": "0033ba6961ccb30f7ef7f985332861154991c0e8c43f5b921ab7d2b96dc886dc",
+      "sourceFiles": {
+        "metadata": "0071b3599a4bf7682f07f433f8493159d105148d8b78ff06e77817ddb044c2a5",
+        "image": "23ed07efaad978358933cfaa6b94bdf6a0c311e89ab1e44b9b3e5015a2f26122",
+        "maps": "210b5527393c273c632572fd697aa89bec9c853526b58069a77a2acc8767ebf0"
+      },
+      "whole_original_envelope": [
+        4,
+        5,
+        2,
+        2
+      ],
+      "sourcePieces": [
+        {
+          "cell": [
+            4,
+            5
+          ],
+          "sourceHash": "21bde65ec2f36a150087a3c94547bc527334c97977d18a545ccde93ac5681bbb"
+        },
+        {
+          "cell": [
+            5,
+            5
+          ],
+          "sourceHash": "60223c13041dd2d989d98d1ee381c3ce82f35c28c984be380d9b6e80251947b1"
+        },
+        {
+          "cell": [
+            4,
+            6
+          ],
+          "sourceHash": "a96a916d3c828d4de2a116dcab791ba80f262dfbac7f8b7bd4b17ed8b273a1c0"
+        },
+        {
+          "cell": [
+            5,
+            6
+          ],
+          "sourceHash": "0033ba6961ccb30f7ef7f985332861154991c0e8c43f5b921ab7d2b96dc886dc"
+        }
+      ],
+      "removed_only_connected_flat_tabletop_exterior": true,
+      "retained_original_outline_at_pixel_scale": 1,
+      "native_background": {
+        "kind": "native_composite",
+        "base": {
+          "game": "firered",
+          "tileset": "player_house",
+          "id": 1,
+          "hash": "eba7bafe3b8bf236ae3602939529c34fad55c66c94aed6bb6cb4681b08fe2af6"
+        },
+        "parts": [
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 0,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 0
+          },
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 0,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 8
+          },
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 8,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 0
+          },
+          {
+            "layers": [
+              "mid"
+            ],
+            "srcX": 8,
+            "h": 8,
+            "w": 8,
+            "y": 8,
+            "layerHashes": {
+              "mid": "e660cb1b5771938dd0d3337909415a1040cc20b18a4bd1a82515dd803bfca37f"
+            },
+            "srcY": 8,
+            "donor": {
+              "hash": "f992344040542e04d95536f77900a128208e80c30116f695c93e9becffd189d8",
+              "tileset": "player_house",
+              "game": "firered",
+              "id": 76
+            },
+            "x": 8
+          }
+        ]
+      }
+    }
+  }
+}

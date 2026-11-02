@@ -1,0 +1,77 @@
+{
+  "origin": "Exact complete native FRLG Pewter Gym sculptures; no generated artwork or scaling.",
+  "assets": [
+    {
+      "asset": "assets/third_party/native-kanto-interiors/firered-pewter-fixed-rock.png",
+      "assetFileHash": "cd8dec6221c80f19613b20f68643e65d35ceea67c5e69efc561a2d351a2bb317",
+      "game": "firered",
+      "map": "FR_PEWTER_CITY_GYM",
+      "pair": "pewter_gym",
+      "native_rect": [
+        64,
+        80,
+        16,
+        16
+      ],
+      "source_layout_hash": "0a75432538143a280a83dc8e2d69676b4a94215481936cd08a58fcedb48357e0",
+      "pixel_scale": 1,
+      "dimensions": [
+        16,
+        16
+      ],
+      "original_rgba_hash": "3f360e29dce50fae2c6648cf9e82c0bc29a69eb0ff6619239c682eec0a6b1deb",
+      "cutout_rgba_hash": "dce4821224d59557cfcc953ff9429b7e5ce8412d73dbc3eab6c5e4ad3a5fac10",
+      "retained_pixels": 126,
+      "exact_retained_native_pixels": true,
+      "removed_only_native_soil_or_wood_exterior_palette": true
+    },
+    {
+      "asset": "assets/third_party/native-kanto-interiors/firered-pewter-complete-statue-head.png",
+      "assetFileHash": "ec062eb7e976697aa37b1772ac592ce59089f86f8b96fbe22f28abb03b70d977",
+      "game": "firered",
+      "map": "FR_PEWTER_CITY_GYM",
+      "pair": "pewter_gym",
+      "native_rect": [
+        64,
+        176,
+        16,
+        16
+      ],
+      "source_layout_hash": "0a75432538143a280a83dc8e2d69676b4a94215481936cd08a58fcedb48357e0",
+      "pixel_scale": 1,
+      "dimensions": [
+        16,
+        16
+      ],
+      "original_rgba_hash": "f3a942fd2692383c7c8089f0932a909361093a1e422cc3e7d01c4a2bff01c89f",
+      "cutout_rgba_hash": "4a090fae4c7a1714233a87374929b3e2518fd07a7c12a478357f802278ae7c5f",
+      "retained_pixels": 232,
+      "exact_retained_native_pixels": true,
+      "removed_only_native_soil_or_wood_exterior_palette": true
+    },
+    {
+      "asset": "assets/third_party/native-kanto-interiors/firered-pewter-complete-statue-plinth.png",
+      "assetFileHash": "235615180c64c3b2a59829fa0002d2ff2e697facb34c01d11625a069cbb3ed8a",
+      "game": "firered",
+      "map": "FR_PEWTER_CITY_GYM",
+      "pair": "pewter_gym",
+      "native_rect": [
+        64,
+        192,
+        16,
+        16
+      ],
+      "source_layout_hash": "0a75432538143a280a83dc8e2d69676b4a94215481936cd08a58fcedb48357e0",
+      "pixel_scale": 1,
+      "dimensions": [
+        16,
+        16
+      ],
+      "original_rgba_hash": "37937347b93b0d495cfb68806b4f03a56fe104c6bd67fb7c88fd426733b86718",
+      "cutout_rgba_hash": "37937347b93b0d495cfb68806b4f03a56fe104c6bd67fb7c88fd426733b86718",
+      "retained_pixels": 256,
+      "exact_retained_native_pixels": true,
+      "removed_only_native_soil_or_wood_exterior_palette": true
+    }
+  ]
+}

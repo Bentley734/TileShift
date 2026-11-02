@@ -36,6 +36,8 @@ def main() -> None:
     allowed = ('third_party/j-treecko252/',
                'third_party/magiscarf/', 'third_party/metalflygon08/', 'user_flora/', 'original/sprout-tower/', 'original/flora/', 'original/slowpoke-well/', 'original/olivine-lighthouse/', 'original/compact-conifer/', 'original/ecruteak-v2/', 'original/bell-wide/', 'original/center-expanded/')
     allowed += ('third_party/johto-hacks/', 'original/classic-vent/', 'original/ilex-shrine/', 'original/whirlpool/', 'original/park-bench/', 'third_party/peekychew/')
+    allowed += ('third_party/native-kanto-interiors/', 'third_party/gsc-room-geometry/',
+                'third_party/gamefreak/gsc-apartments/', 'third_party/kanto-landmarks/')
     interior_folders = ('original/azalea-lawn', 'original/interior-beacon', 'original/interior-computer', 'original/interior-flowerpot', 'original/interior-lattice', 'original/interior-painting', 'original/interior-pillar', 'original/interior-planter', 'original/interior-radio', 'original/interior-railpost', 'original/interior-stairs', 'original/interior-tower-modules')
     allowed += tuple(folder + '/' for folder in interior_folders)
     for path in asset_files:
@@ -53,6 +55,30 @@ def main() -> None:
         provenance = json.loads(record.read_text(encoding='utf-8'))
         for name, digest in provenance['files'].items():
             assert hashlib.sha256((record.parent / name).read_bytes()).hexdigest() == digest, 'Hack artwork provenance changed'
+    landmark_folder = root / 'assets/third_party/kanto-landmarks'
+    landmark_provenance = json.loads((landmark_folder / 'provenance.json').read_text(encoding='utf-8'))
+    for name, digest in landmark_provenance['files'].items():
+        path = landmark_folder / name
+        assert path.resolve().is_relative_to(landmark_folder.resolve()), 'Landmark artwork leaves its reviewed folder'
+        assert hashlib.sha256(path.read_bytes()).hexdigest() == digest, 'Native landmark artwork changed'
+    assert set(landmark_provenance['files']) == {path.relative_to(landmark_folder).as_posix()
+        for path in landmark_folder.rglob('*.png')}, 'Native landmark PNG lacks provenance'
+    # Complete native sculptures and the explicitly credited original-GSC
+    # geometry derivatives have distinct provenance schemas. Every packaged
+    # PNG must be accounted for, rather than simply allowing a new folder.
+    for folder in ('native-kanto-interiors', 'gsc-room-geometry', 'gamefreak/gsc-apartments'):
+        directory = root / 'assets/third_party' / folder
+        provenance = json.loads((directory / 'provenance.json').read_text(encoding='utf-8'))
+        records = provenance['assets']
+        checked = set()
+        for name, item in (records.items() if isinstance(records, dict)
+                           else ((item['asset'], item) for item in records)):
+            path = root / name if name.startswith('assets/') else directory / name
+            assert path.resolve().is_relative_to(directory.resolve()), 'Provenance asset leaves its reviewed folder'
+            expected_hash = item.get('assetFileHash') or item.get('png_sha256')
+            assert expected_hash and hashlib.sha256(path.read_bytes()).hexdigest() == expected_hash, 'Native interior derivative changed'
+            checked.add(path.resolve())
+        assert checked == {path.resolve() for path in directory.rglob('*.png')}, 'Native interior PNG lacks provenance'
     fan = root / 'assets/third_party/j-treecko252'
     provenance = json.loads((fan / 'provenance.json').read_text(encoding='utf-8'))
     assert hashlib.sha256((fan / 'compact-tree.png').read_bytes()).hexdigest() == provenance['extraction']['png_sha256']

@@ -165,24 +165,26 @@ Route32 uses native16x16 wooden pier boards from Peekychew's public standard
 route sheet, supplied and explicitly authorized by the user. Artist:
 https://www.deviantart.com/peekychew . Source hash, unscaled crop, edge recipe
 and output hashes are recorded in assets/third_party/peekychew/provenance.json.
-Other native Gen3 graphics remain fingerprinted references to the player's
-own imports, rather than redistributed ROM artwork.
+Most native Gen3 graphics remain fingerprinted references to the player's own
+imports. The selected exact native interior cutouts described below are packaged
+with their source coordinates and file hashes.
 
 ## Johto interiors
 
 Native Gen3 room, cave, casino, shop, laboratory, school, gym, tower and port
 artwork remains fingerprinted references to the player's own imports. Complete
 objects retain their native pixels; only repeating plain sections are rearranged.
-Original compact radios, computers, flowerpots, stairs, beacon, planter, pillar,
-rail post, lattice and Bellsprout painting were made with the built-in image
-generation tool and normalized with uniform integer nearest-neighbour reduction
-and binary alpha. Their prompts, source hashes, processing and file hashes are
-recorded in assets/original/interior-*/provenance.json. Tower roof-course
-modules derive from the previously approved original Sprout Tower artwork.
+Historical generated interior artwork remains credited in the original provenance
+files. Those designs are inactive in the Gen 2 theme; the generated roofed
+Slowpoke Well is retained at the user's request. Current potted flowers and
+ascending ladders keep complete native pixels at1:1. Compact original GSC
+stairs, service equipment, paintings and ornaments use the authorized original
+geometry recolor when a complete native counterpart does not fit.
 Unique Unown inscriptions and unmatched transport/studio details use the
 user-requested native-pixel palette recoloring. Their original imported source
-pixels remain in the player's cache; only color values and fingerprinted mapping
-references are packaged.
+pixels are normally read from the player's cache through color values and
+fingerprinted references. The current-version notes below identify the small
+credited derivatives that are packaged with native background corrections.
 
 ## Kanto completion
 
@@ -193,8 +195,9 @@ native pixel size and frames. Only repeating roof, wall, cabinet and floor
 sections are rearranged to preserve the original map footprint and entrances.
 Unique fossil displays, ship fittings, compact laboratory instruments, League
 monument details and unmatched symbols retain the original imported geometry
-in user-approved Gen3 colors. Only palettes and source fingerprints are
-packaged; their imported pixels remain in the player's cache.
+in user-approved Gen3 colors. Most matches package only palettes and source fingerprints and read imported
+pixels from the player's cache. The current-version notes identify the selected
+credited derivative PNGs included for irregular transparent backgrounds.
 
 ## Classic themes on Gen3
 
@@ -215,3 +218,32 @@ Selected artwork was extracted at the user's request from their supplied FireGol
 The narrow town pine retains all three original FireGold cells (600 canopy, 601 middle and 608 roots) at native 16x48 size. The middle and root cells occupy the original source footprint while the complete canopy forms a one-cell decorative overhang. No pixel scaling, foliage-tier removal or native-map changes are used. Only outside-connected native field pixels are omitted so the selected ground remains visible. The exact native map coordinates, removed field-pixel mask, source hashes and PNG hashes are recorded in assets/third_party/johto-hacks/town-trees/provenance.json.
 
 Project references: https://www.pokecommunity.com/threads/pok%C3%A9mon-fire-gold-1-4.473130/ , https://github.com/Sierraffinity/CrystalDust , https://www.pokecommunity.com/threads/pok%C3%A9mon-liquid-crystal-3-3-xxxxx-live-beta.242023/ .
+
+
+## Gen 2 Kanto and shared interiors (0.30.0)
+
+Native FR/LG/Pokemon Emerald floors, complete furniture, sculptures, casino
+machines, transport equipment and architecture are matched to the original
+GSC footprints and room purposes. Only plain repeatable sections are rearranged.
+Original GSC compact or unique geometry is explicitly credited as a palette
+recolor, including League ornaments, link hardware and small staircase frames.
+Original collision, events, warps, source layouts and interaction points remain
+unchanged.
+
+Exact native sculpture cutouts are recorded in
+assets/third_party/native-kanto-interiors/provenance.json. Exact native clock and
+original-GSC office-cabinet derivatives are recorded in
+assets/third_party/gamefreak/gsc-apartments/provenance.json. The original-GSC
+recolored service/cabinet/table ornament derivatives with checked native floor
+pieces are recorded in assets/third_party/gsc-room-geometry/provenance.json.
+These derivatives preserve original pixel size and record every omitted exterior
+floor pixel or replaced floor-only8px piece. Pokemon artwork: Game Freak.
+No ROM binaries are bundled.
+
+The full native Kanto landmark recipes and selected checked pixels (Saffron's
+station, Lavender's tower, the Cerulean police house and League entrance) are
+recorded in assets/third_party/kanto-landmarks/provenance.json. Sources are the
+player's FireRed import, the user-supplied FireGold and the previously authorized
+MetalFlygon08 Johto artwork. Complete native features keep their original size;
+only plain repeat sections are rearranged. Transparent unused pixels preserve
+the selected background.
