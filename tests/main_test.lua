@@ -86,6 +86,8 @@ for _,gameId in ipairs(games)do
     if path=='mappings/trees.lua' then
       return fixture.trees and 'return __tileMainFixture.trees' or nil
     end
+    if path=='mappings/gen2_domestic_floor_audit.lua' or path=='mappings/gen2_facility_floor_audit.lua'
+      or path=='mappings/gen2_interior_chair_audit.lua' then return nil end
     if path=='mappings/posts.lua' or path=='mappings/cut_trees.lua' or path=='mappings/water.lua' or path=='mappings/coasts.lua'
       or path=='mappings/pallet_buildings.lua' or path=='mappings/pallet_details.lua'
       or path=='mappings/gen1_outdoor.lua' or path=='mappings/gen2_outdoor.lua'

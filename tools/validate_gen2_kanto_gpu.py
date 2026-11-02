@@ -38,6 +38,7 @@ BODY=r"""
  report.totals={scenes=0,source_cells=0,replaced_cells=0,remaining_cells=0,checked_pixels=0,warm_frames=0}
  for _,game in ipairs(selected.games)do
   for _,id in ipairs(selected.maps)do
+   if not selected.scenes or selected.scenes[game..':'..id]then
    local definition=generated(game,'maps')[id]
    if not definition then
     report.skipped_absent_maps[#report.skipped_absent_maps+1]={game=game,map=id}
@@ -90,6 +91,7 @@ BODY=r"""
     report.totals.checked_pixels=report.totals.checked_pixels+pixels;report.totals.warm_frames=report.totals.warm_frames+12
     write('progress.json',Json.encode({fixtures=#report.fixtures,checks=report.checks,game=game,map=id}))
    end
+   end
   end
  end
  check(#report.fixtures>0 and #report.warnings==0,'Empty probe or reported warning')
@@ -101,12 +103,18 @@ def main():
     parser=argparse.ArgumentParser(add_help=False)
     parser.add_argument('--games',nargs='+',choices=('gold','silver','crystal'),default=['gold','silver','crystal'])
     parser.add_argument('--maps',nargs='+',default=MAPS)
+    parser.add_argument('--scenes-json',type=Path,help='Explicit list of {game,map} pairs, avoiding repeated identical room layouts')
     args,remaining=parser.parse_known_args();sys.argv[1:]=remaining
     assert args.maps and all(re.fullmatch(r'[A-Z][A-Z0-9_]*',name)for name in args.maps),'Invalid native map ID'
     source=validate_gpu.LUA
     prefix=source[:source.index(' -- Native Gen1 TileRenderer on real Red Pallet Town.')]
     setup=source[source.index(' -- Real Gold/Silver/Crystal World bake'):source.index(' local function verifyGen2Ladders')]
     selection=dict(games=args.games,maps=args.maps)
+    if args.scenes_json:
+        scenes=json.loads(args.scenes_json.read_text())
+        assert scenes and all(s['game']in('gold','silver','crystal')and re.fullmatch(r'[A-Z][A-Z0-9_]*',s['map'])for s in scenes)
+        selection=dict(games=list(dict.fromkeys(s['game']for s in scenes)),maps=list(dict.fromkeys(s['map']for s in scenes)),
+                       scenes={s['game']+':'+s['map']:True for s in scenes})
     validate_gpu.LUA=prefix+setup+BODY.replace('@SELECTION@',json.dumps(json.dumps(selection)))+source[source.index('\nfunction love.load()'):]
     if '--output'not in sys.argv:sys.argv.extend(['--output',str(Path(__file__).resolve().parents[2]/'.work/tileshift-v0300-gen2-gpu')])
     return validate_gpu.main()

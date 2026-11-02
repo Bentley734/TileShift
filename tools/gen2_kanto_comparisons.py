@@ -110,6 +110,7 @@ def main():
     p.add_argument('--output',type=Path,default=ROOT.parent/'.work/tileshift-v0300-comparisons')
     p.add_argument('--build',type=Path,default=ROOT/'build')
     p.add_argument('--seating-report',type=Path,help='Optional passed current native G/S/C Cafe report with all five NPCs')
+    p.add_argument('--all-scenes',action='store_true',help='Include every validated scene, including Gold/Silver interior differences')
     args=p.parse_args();report=json.loads(args.report.read_text())
     assert report['status']=='passed'and report['theme']=='gen3'
     inputs=runtime_fingerprint(ROOT)
@@ -119,7 +120,7 @@ def main():
     comparisons=[]
     for source in report['fixtures']:
         game,name=source['game'],source['map']
-        if game!='crystal'and name not in TOWNS|{'LANCES_ROOM','CELADON_CAFE'}:continue
+        if not args.all_scenes and game!='crystal'and name not in TOWNS|{'LANCES_ROOM','CELADON_CAFE'}:continue
         assert source['coverage']['preserved_native_occurrences']==0
         NAMES[game,name]=(game.capitalize()+' / '+name.replace('_',' ').title(),
                          game.capitalize()+'-'+name.title().replace('_',''),
@@ -151,6 +152,8 @@ def main():
     scene_description=('Scenes cover Celadon Cafe in Gold, Silver and Crystal.\n'if scene_names==['Celadon Cafe']else
         'Scenes include Gold/Silver/Crystal Kanto towns and representative Crystal\n'
         'routes, rooms, transport, League and Johto interior corrections.\n')
+    if args.all_scenes:
+        scene_description='Scenes cover every distinct audited interior layout, including Gold/Silver differences.\n'
     (args.output/'README.txt').write_text(
         'TileShift '+version+' - Gen2 Kanto and shared interiors\n\n'
         'Original native DAY backgrounds and current complete Gen3 backgrounds.\n'

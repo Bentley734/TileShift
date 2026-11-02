@@ -39,6 +39,7 @@ def main() -> None:
     allowed += ('third_party/native-kanto-interiors/', 'third_party/gsc-room-geometry/',
                 'third_party/gamefreak/gsc-apartments/', 'third_party/kanto-landmarks/',
                 'third_party/native-kanto-chairs/', 'third_party/saffron-paving/')
+    allowed += ('third_party/gen2-domestic-floor-audit/', 'third_party/native-interior-seats/')
     interior_folders = ('original/azalea-lawn', 'original/interior-beacon', 'original/interior-computer', 'original/interior-flowerpot', 'original/interior-lattice', 'original/interior-painting', 'original/interior-pillar', 'original/interior-planter', 'original/interior-radio', 'original/interior-railpost', 'original/interior-stairs', 'original/interior-tower-modules')
     allowed += tuple(folder + '/' for folder in interior_folders)
     for path in asset_files:
@@ -56,7 +57,8 @@ def main() -> None:
         provenance = json.loads(record.read_text(encoding='utf-8'))
         for name, digest in provenance['files'].items():
             assert hashlib.sha256((record.parent / name).read_bytes()).hexdigest() == digest, 'Hack artwork provenance changed'
-    for folder in ('kanto-landmarks', 'native-kanto-chairs', 'saffron-paving'):
+    for folder in ('kanto-landmarks', 'native-kanto-chairs', 'saffron-paving',
+                   'gen2-domestic-floor-audit', 'native-interior-seats'):
         directory = root / 'assets/third_party' / folder
         provenance = json.loads((directory / 'provenance.json').read_text(encoding='utf-8'))
         for name, digest in provenance['files'].items():

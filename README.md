@@ -2,10 +2,11 @@
 
 TileShift swaps world artwork through individually reviewed tile matches.
 
-Version 0.30.2 restores the eight Celadon Cafe table chairs and four seated
-NPCs to their original positions. Corrected chair directions remain, including
-the four left-facing chairs below the bar. Saffron keeps its connected brick
-paving, outer rail and openings to the northern buildings.
+Version 0.30.3 reviews all Gen 2 interiors for correct seating and object
+floors. Furniture uses each room's own floor; traditional floor cushions and
+complete lounge/waiting seats replace incorrect backed-chair crops. Original
+chair and NPC positions are preserved, including Celadon Cafe's table layout
+and four left-facing lower bar chairs.
 
 The Gen 3 theme covers Gen 2 Kanto, the Pokemon League,
 shared upstairs clinic/link rooms, transport interiors and apartments. Complete

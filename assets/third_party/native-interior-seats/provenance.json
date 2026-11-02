@@ -1,0 +1,22 @@
+{
+  "files": {
+    "emerald-round-floor-cushion16.png": "92397bc938731a002260f866ab48b3c7d702da03a5307ddbc681d07bd2197331"
+  },
+  "sources": [
+    {
+      "asset": "emerald-round-floor-cushion16.png",
+      "game": "emerald",
+      "native_object_graphics_id": 168,
+      "native_name": "OBJ_EVENT_GFX_ROUND_CUSHION",
+      "source": "Original native Emerald imported ow/168.rgba",
+      "source_file_sha256": "cf8cc987e635824f77ef6798b021c31b8fe72c13d8bebb21df64174ba588f003",
+      "source_metadata_sha256": "c9362242717050f56dcd386387d56d99a693b3f269f4871ad911023a64ff1efe",
+      "rgba_sha256": "2ca22bd61d58e9e86ea9b228391ebfc7626564b12c5e5e18c4bf59c986013779",
+      "width": 16,
+      "height": 16,
+      "extraction": "Complete native RGBA frame; no crop, rotation, resizing, recolor or new pixels",
+      "credit": "Original Pokemon Emerald / Game Freak",
+      "sourceUrl": "https://github.com/pret/pokeemerald"
+    }
+  ]
+}

@@ -257,3 +257,9 @@ hashes are recorded in assets/third_party/native-kanto-chairs/provenance.json.
 Saffron pavement and unchanged native foreground derivatives are recorded in
 assets/third_party/saffron-paving/provenance.json; original collision and native
 building/window pixels remain unchanged.
+
+Gen 2 interior floor corrections retain complete native furniture foregrounds
+and place them over each source room's selected floor. Exact derivative pixels
+and source recipes are recorded in assets/third_party/gen2-domestic-floor-audit/
+provenance.json. Native interior cushions and lounge/waiting-seat artwork are
+credited in assets/third_party/native-interior-seats/provenance.json.
