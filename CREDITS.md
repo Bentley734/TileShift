@@ -247,3 +247,13 @@ player's FireRed import, the user-supplied FireGold and the previously authorize
 MetalFlygon08 Johto artwork. Complete native features keep their original size;
 only plain repeat sections are rearranged. Transparent unused pixels preserve
 the selected background.
+
+
+Gen 2 directional chairs use complete native FireRed house/casino/restaurant
+views. The north-facing chair retains the complete native Emerald S.S. Tidal
+geometry at 1:1, with a literal substitution of the native casino blue palette.
+Only unrelated desk-board pixels are removed. Source, mask, palette and pixel
+hashes are recorded in assets/third_party/native-kanto-chairs/provenance.json.
+Saffron pavement and unchanged native foreground derivatives are recorded in
+assets/third_party/saffron-paving/provenance.json; original collision and native
+building/window pixels remain unchanged.

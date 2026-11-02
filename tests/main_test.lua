@@ -80,7 +80,7 @@ for _,gameId in ipairs(games)do
     if path:match('^mappings/gen2_kanto_.*_finish%.lua$') or path=='mappings/gen2_compact_gyms_hall_finish.lua' then return nil end
     if path=='mappings/reverse_kanto.lua'or path=='mappings/reverse_hoenn.lua'or path=='mappings/reverse_oldale.lua'then return nil end
     if path=='lib/gb_animation.lua'then return 'return {}'end
-    if path=='lib/roofs.lua' or path=='lib/vegetation.lua' or path=='lib/flora.lua' or path=='lib/flora_catalog.lua' or path=='lib/johto_hack_flora.lua' or path=='lib/water_styles.lua' then
+    if path=='lib/roofs.lua' or path=='lib/npc_seating.lua' or path=='lib/vegetation.lua' or path=='lib/flora.lua' or path=='lib/flora_catalog.lua' or path=='lib/johto_hack_flora.lua' or path=='lib/water_styles.lua' then
       local file=assert(io.open(root..'/'..path,'rb'));local source=file:read('*a');file:close();return source
     end
     if path=='mappings/trees.lua' then

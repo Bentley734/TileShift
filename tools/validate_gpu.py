@@ -480,7 +480,7 @@ local function run()
   if row.artOverlay then
    local prior=image;local overlay=row.artOverlay
    local bytes=assert(read(MOD..'/'..overlay.asset));check(hash(bytes)==overlay.hash,'Facade alpha asset changed')
-   local base=G.newImage(nativeCellImage(row.base));local art=G.newImage(love.filesystem.newFileData(bytes,'facade.png'))
+   local base=G.newImage(overlay.mode=='over'and prior or nativeCellImage(row.base));local art=G.newImage(love.filesystem.newFileData(bytes,'facade.png'))
    image=capture(16,16,function()G.draw(base,0,0);G.draw(art,0,0)end);base:release();art:release()
    for _,r in ipairs(overlay.preserveRects)do image:paste(prior,r[1],r[2],r[1],r[2],r[3],r[4])end
   end

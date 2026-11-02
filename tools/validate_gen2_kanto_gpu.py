@@ -6,6 +6,7 @@ warm-cache behavior and native cleanup are checked for every selected scene.
 """
 import argparse
 import json
+import re
 import sys
 from pathlib import Path
 import validate_gpu
@@ -76,6 +77,10 @@ BODY=r"""
      warm_frames=12,warm_import_reads=0,warm_asset_reads=0,warm_bakes=0,warm_mapping_rebuilds=0,
      before=encodePng(before,game..'-'..id..'-native-gpu.png'),
      after=encodePng(after,game..'-'..id..'-gen3-gpu.png')}
+    if id=='SAFFRON_CITY'then
+     clock=0
+     fixture.center_styles=verifyCenterStyles(game,def,after,world,mod,function()return drawWorld2(world)end)
+    end
     mod.exports.dispose();clock=0;world.mapImage=world:imageFor(map.id)
     check(drawWorld2(world):getString()==before:getString(),'Cleanup failed to restore source pixels: '..game..'/'..id)
     fixture.cleanup_restored_native=true;report.fixtures[#report.fixtures+1]=fixture
@@ -95,8 +100,9 @@ end
 def main():
     parser=argparse.ArgumentParser(add_help=False)
     parser.add_argument('--games',nargs='+',choices=('gold','silver','crystal'),default=['gold','silver','crystal'])
-    parser.add_argument('--maps',nargs='+',choices=MAPS,default=MAPS)
+    parser.add_argument('--maps',nargs='+',default=MAPS)
     args,remaining=parser.parse_known_args();sys.argv[1:]=remaining
+    assert args.maps and all(re.fullmatch(r'[A-Z][A-Z0-9_]*',name)for name in args.maps),'Invalid native map ID'
     source=validate_gpu.LUA
     prefix=source[:source.index(' -- Native Gen1 TileRenderer on real Red Pallet Town.')]
     setup=source[source.index(' -- Real Gold/Silver/Crystal World bake'):source.index(' local function verifyGen2Ladders')]

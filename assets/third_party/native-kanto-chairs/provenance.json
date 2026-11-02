@@ -1,0 +1,240 @@
+{
+  "origin": "Complete native Emerald S.S. Tidal north-facing chair; exact FireRed casino blue palette substitution only.",
+  "credit": "Original Pokemon Emerald/FireRed chair artwork / Game Freak; native geometry and native palette colors.",
+  "sourceUrl": "https://github.com/pret/pokeemerald",
+  "source_game": "emerald",
+  "source_rom_name": "Emerald.gba",
+  "source_rom_sha256": "a9dec84dfe7f62ab2220bafaef7479da0929d066ece16a6885f6226db19085af",
+  "source_map": "EM_SS_TIDAL_ROOMS",
+  "source_map_cells": [
+    [
+      28,
+      3
+    ],
+    [
+      29,
+      3
+    ]
+  ],
+  "source_pixel_rect": [
+    456,
+    48,
+    16,
+    16
+  ],
+  "source_tileset": "general__inside_ship",
+  "native_parts": [
+    {
+      "donor": {
+        "game": "emerald",
+        "tileset": "general__inside_ship",
+        "id": 673,
+        "hash": "8385893549108fa02b091185a3143457ba4fe8080afda07597fd5a19e1fd354c"
+      },
+      "layer": "mid",
+      "layer_rgba_sha256": "d0a03840bc4e0a83dd2f2ef3cad208b44b842ff71834d0f2aa74858e2e108864",
+      "source_rect": [
+        8,
+        0,
+        8,
+        16
+      ],
+      "destination": [
+        0,
+        0
+      ]
+    },
+    {
+      "donor": {
+        "game": "emerald",
+        "tileset": "general__inside_ship",
+        "id": 674,
+        "hash": "862b0ef8fbacf9e9b7b8ea1aa2246d5989bb5ea85ea5a6b4ce33b42a34c5765f"
+      },
+      "layer": "mid",
+      "layer_rgba_sha256": "0409404b977c4cb673a1a8f4af97fc6cf29e9d39ca5ca92ce182ce7084ec3100",
+      "source_rect": [
+        0,
+        0,
+        8,
+        16
+      ],
+      "destination": [
+        8,
+        0
+      ]
+    }
+  ],
+  "facing": "north",
+  "facing_evidence": "The whole slatted chair is directly below the native cabin desk; its back faces south toward the viewer and its seat faces north toward the desk.",
+  "omitted_gray_desk_board_coordinates": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      2,
+      0
+    ],
+    [
+      3,
+      0
+    ],
+    [
+      4,
+      0
+    ],
+    [
+      5,
+      0
+    ],
+    [
+      6,
+      0
+    ],
+    [
+      9,
+      0
+    ],
+    [
+      10,
+      0
+    ],
+    [
+      11,
+      0
+    ],
+    [
+      12,
+      0
+    ],
+    [
+      13,
+      0
+    ],
+    [
+      14,
+      0
+    ],
+    [
+      15,
+      0
+    ],
+    [
+      15,
+      1
+    ]
+  ],
+  "omitted_dark_desk_lip_coordinates": [
+    [
+      0,
+      2
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      15,
+      2
+    ]
+  ],
+  "all_chair_wood_pixels_retained": true,
+  "all_chair_side_posts_and_feet_retained": true,
+  "palette_reference": {
+    "donor": {
+      "game": "firered",
+      "tileset": "building__rom_082d4cec",
+      "id": 683,
+      "hash": "93df9d0f1c0eac48136cd51f7e186d470e5249c52de027ed8948b5fe376cb4a0"
+    },
+    "layer": "mid",
+    "layer_rgba_sha256": "abcd47026da340fcb38377966baeafee2796b817aa80a341d95e4a48ba81feb2"
+  },
+  "palette_substitution": [
+    {
+      "source": [
+        74,
+        74,
+        99,
+        255
+      ],
+      "target": [
+        82,
+        82,
+        107,
+        255
+      ]
+    },
+    {
+      "source": [
+        148,
+        107,
+        58,
+        255
+      ],
+      "target": [
+        74,
+        132,
+        197,
+        255
+      ]
+    },
+    {
+      "source": [
+        189,
+        140,
+        58,
+        255
+      ],
+      "target": [
+        140,
+        197,
+        255,
+        255
+      ]
+    },
+    {
+      "source": [
+        214,
+        189,
+        132,
+        255
+      ],
+      "target": [
+        255,
+        255,
+        255,
+        255
+      ]
+    }
+  ],
+  "pixel_scale": 1,
+  "dimensions": [
+    16,
+    16
+  ],
+  "source_raw_rgba_sha256": "88df0ee53f4bebf93e6c88e7f5e699e36e6073a6ea1d48fd283cbdbea759aecf",
+  "retained_native_rgba_sha256": "e37546c2f083c4e05d73997ae73b6c14d1a11113ee9287245485fe3fdaa2f210",
+  "target_rgba_sha256": "05e5d13ffba2ce1ea4444310eff8c5da1766413da8bd15ac3c4ffa9634f3dac4",
+  "native_pixels_retained": 178,
+  "target_opaque_pixels": 178,
+  "only_nonchair_desk_pixels_removed": 20,
+  "source_and_target_alpha_identical": true,
+  "independent_direct_rom_pixel_verification": true,
+  "files": {
+    "north-blue.png": "a12ef5fe649d6a4253181e5d3435f9b347c52fdedd8cf805ca1cdc0586a63f7c"
+  }
+}
