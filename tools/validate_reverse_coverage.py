@@ -65,7 +65,11 @@ AUDIT = r"""
     complete_maps=0,accepted_decodes=0,rejected_decodes=0}
    local currentPair,art,accepted,rejected,checkedPairs=nil,nil,0,0,{}
    local function loadPair(pair)
-    state:select('original');state:select(style);collectgarbage('collect')
+    -- Keep collection incremental while traversing pairs. A full collection of
+    -- the immutable mapping index at every pair dominates this audit's cost.
+    -- Game/theme boundaries below still collect fully; all decode and source
+    -- checks run unchanged for every pair and every native cell.
+    state:select('original');state:select(style);collectgarbage('step',256)
     art=state:replacements(game,pair)or{}
     accepted,rejected=state.accepted,state.rejected
     summary.accepted_decodes=summary.accepted_decodes+accepted

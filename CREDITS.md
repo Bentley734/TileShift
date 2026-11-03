@@ -1,6 +1,6 @@
 # Artwork credits
 
-Current Gen2 artwork (v0.29.0 onward) uses the user-supplied Johto ROM hacks credited below. This file also preserves historical provenance for retained files and Gen1 options; the generated Gen2 replacements described in those historical sections are superseded, except the roofed Slowpoke Well kept at the user's request. Radios and the beacon preserve original Gen2 geometry in matching Gen3 colors where the hacks have no corresponding background object.
+The Gen3 theme on Gen2 hosts (v0.29.0 onward) uses the user-supplied Johto ROM hacks credited below. This file also preserves historical provenance for retained files and Gen1 options; the generated Gen2 replacements described in those historical sections are superseded, except the roofed Slowpoke Well kept at the user's request. Radios and the beacon preserve original Gen2 geometry in matching Gen3 colors where the hacks have no corresponding background object.
 
 ## Selectable foliage and Sprout Tower
 
@@ -205,6 +205,15 @@ Gen1 and Gen2 background counterparts are checked references to the player's
 Red and Crystal imports; no extracted GB artwork is bundled. Native windows,
 doors, tree silhouettes and complete furniture retain their original pixels.
 Only repeating roof/wall sections are arranged to retain Gen3 building footprints.
+The expanded Crystal theme in v0.32.0 also assembles complete native foliage,
+furniture, shoreline and cave modules from the player's import. Original Game
+Freak/Nintendo artwork is not bundled by these recipes. The original Crystal
+animation programs supply water, flowers, lava and related native frames;
+unidirectional current animation is a TileShift adaptation of the native wave
+glyph. Underwater terrain and shadowed paving use explicit four-shade palettes.
+Small missing furniture motifs, directional panels and clinic emblems are
+code-authored Gen2-style counterparts, using native modules and colors at their
+logical pixel size. These are not claimed as original stock Crystal objects.
 The two classic laboratory vents are original built-in imagegen artwork. Their
 full prompts, source hashes, uniform integer 26 normalization, binary alpha and
 four-color palettes are recorded in assets/original/classic-vent/provenance.json.

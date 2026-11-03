@@ -3275,7 +3275,12 @@ def main() -> int:
     parser.add_argument("--cache", type=Path, default=Path(os.environ["APPDATA"]) / "pokemon-love2d")
     parser.add_argument("--output", type=Path, default=workspace / ".work/tileshift-gpu")
     parser.add_argument("--timeout", type=int, default=90)
+    parser.add_argument("--mod-root", type=Path, default=mod_root,
+                        help="Validate an isolated complete mod copy instead of the working tree")
     args = parser.parse_args()
+    mod_root = args.mod_root.resolve()
+    if not (mod_root/'main.lua').is_file() or not (mod_root/'manifest.json').is_file():
+        parser.error("The selected mod copy must contain main.lua and manifest.json")
     engine, love, cache, output = (p.resolve() for p in (args.engine, args.love, args.cache, args.output))
     if not love.is_file() or not (engine / "src/render/TileRenderer.lua").is_file():
         parser.error("The native LÃ–VE executable and engine source must exist")
@@ -3297,7 +3302,7 @@ def main() -> int:
         bundle.writestr("main.lua", source)
         bundle.writestr("conf.lua", CONF)
     metadata = {
-        "engine_source": str(engine), "love_executable": str(love),
+        "engine_source": str(engine), "love_executable": str(love), "mod_root": str(mod_root),
         "identity": "tileshift-gpu-validation", "private_archive": str(archive),
         "mod_main_sha256": hashlib.sha256((mod_root / "main.lua").read_bytes()).hexdigest(),
         "read_only_imports": str(cache), "output": str(output),

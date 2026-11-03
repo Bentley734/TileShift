@@ -176,6 +176,10 @@ function M.validate(row)
     for i=1,#row.parts do
       local part=row.parts[i]
       if type(part)~='table' or not validRef(row.style,part.donor) then return nil,'invalid composition donor' end
+      if part.gbForeground~=nil and type(part.gbForeground)~='boolean'then return nil,'invalid GB foreground selection' end
+      if part.gbForeground and(generations[part.donor.game]>=3 or part.donor.kind~=nil or part.layers~=nil or part.layerHashes~=nil)then
+        return nil,'GB foreground needs a native GB donor without layer selection'
+      end
       if part.animated~=nil and type(part.animated)~='boolean'then return nil,'invalid animated composition part' end
       if part.animated and not(row.animated==true and type(row.animation)=='table'and row.animation.kind=='gb')then
         return nil,'animated GB parts need an animated row and native GB animation profile'
@@ -214,13 +218,17 @@ function M.validate(row)
       return nil,'animated composition requires a GB host and fingerprint-checked metatile base bank'
     end
     if animation and animation.kind=='gb' then
+      if animation.flowDirection~=nil and(animation.bank~='program'or not({north=true,south=true,east=true,west=true})[animation.flowDirection])then
+        return nil,'invalid native GB current direction'
+      end
       if row.parts then
         local marked
         for _,part in ipairs(row.parts)do if part.animated then animatedRef=part.donor;marked=true;break end end
         if not marked then return nil,'GB animation needs a marked source part' end
       end
       if generations[row.game]~=3 or not animatedRef or generations[animatedRef.game]>=3
-        or (animation.bank~='water'and animation.bank~='flower')
+        or (animation.bank~='water'and animation.bank~='flower'and animation.bank~='program')
+        or (animation.bank=='program'and generations[animatedRef.game]~=2)
         or not fingerprint(animation.hash)or not fingerprint(animation.manifestHash)then return nil,'GB water animation needs checked native source files and a Gen3 host' end
     elseif animation then
       if type(animation)~='table' or not animatedRef or animatedRef.kind~=nil or generations[animatedRef.game]~=3

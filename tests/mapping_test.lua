@@ -231,6 +231,17 @@ classic.base={game='red',tileset='OVERWORLD',id=4,quadrant=0,hash=b,monochrome=t
 classic.parts={{donor=clone(classic.base),w=8,h=8,animated=true}}
 classic.animated=true;classic.animation={kind='gb',bank='flower',hash=b,manifestHash=a}
 eq(M.validate(classic),true,'checked GB glyph animates inside a Gen3 composition')
+local current=clone(classic);current.style='gen2'
+current.base={game='crystal',tileset='TILESET_CAVE',id=15,quadrant=0,hash=b}
+current.parts[1].donor=clone(current.base);current.animation.bank='program'
+for _,direction in ipairs({'north','south','east','west'})do
+ current.animation.flowDirection=direction
+ eq(M.validate(current),true,'explicit native-glyph current direction is supported')
+end
+current.animation.flowDirection='diagonal'
+eq(M.validate(current),nil,'unknown current direction is rejected')
+current.animation.flowDirection='east';current.animation.bank='water'
+eq(M.validate(current),nil,'directional flow cannot change an unrelated animation bank')
 for _,mutate in ipairs({function(r)r.animated=nil end,function(r)r.animated=false end,
  function(r)r.animation=true end,function(r)r.parts[1].animated=nil end,
  function(r)r.parts[1].animated=false end,function(r)r.parts[1].animated=1 end,

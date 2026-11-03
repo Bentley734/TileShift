@@ -30,6 +30,15 @@ local function copyColors(colors)
   for i=1,4 do out[i]={colors[i][1],colors[i][2],colors[i][3]} end
   return out
 end
+local function paletteKey(palettes)
+  if palettes==nil then return ''end
+  local out={}
+  for i=1,8 do
+    local colors=validateColors(palettes[i])
+    for shade=1,4 do for channel=1,3 do out[#out+1]=tostring(colors[shade][channel])end end
+  end
+  return table.concat(out,',')
+end
 
 function Donor.new(ctx)
   ctx=ctx or {}
@@ -433,7 +442,7 @@ function Donor.new(ctx)
         assert(self:cell(ref),'GB animation donor fingerprint changed')
         local key=table.concat({'gb',ref.game,ref.tileset,tostring(ref.id),tostring(ref.quadrant or 0),
           tostring(ref.map or ''),tostring(ref.daytime or 'DAY'),tostring(ref.monochrome),tostring(ref.hash),
-          tostring(spec.bank),tostring(spec.hash),tostring(spec.manifestHash)},':')
+          tostring(spec.bank),tostring(spec.hash),tostring(spec.manifestHash),tostring(spec.flowDirection or ''),paletteKey(ref.palettes)},':')
         if not animations[key]then
           animations[key]=ctx.gbAnimation.frames({module=module,sheet=sheet,hash=hash,newImageData=newData,
             decode=function(reference,overrides)return gb(reference,generations[reference.game],overrides)end},ref,spec)

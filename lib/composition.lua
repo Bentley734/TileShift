@@ -1,6 +1,7 @@
 -- Assemble reviewed native pixel rectangles without scaling or changing the
 -- donor art. Source references pass through the normal fingerprint decoder.
 local Composition={}
+local GB={red=true,blue=true,yellow=true,gold=true,silver=true,crystal=true}
 local function integer(n,maximum)
   return type(n)=='number' and n>=0 and n%1==0 and n<=maximum
 end
@@ -71,6 +72,13 @@ function Composition.new(ctx)
         local part=parts[i]
         assert(type(part)=='table','Native composition part is required')
         reference(part.donor)
+        -- Explicit native-ink selection removes source shade0, never an RGB
+        -- color that could also belong to a blossom or another palette shade.
+        assert(part.gbForeground==nil or type(part.gbForeground)=='boolean','Invalid GB foreground selection')
+        if part.gbForeground then
+          assert(GB[part.donor.game]and part.donor.kind==nil and part.layers==nil and part.layerHashes==nil,
+            'GB foreground needs a native GB donor without layer selection')
+        end
         assert(part.animated==nil or type(part.animated)=='boolean','Invalid animated composition part')
         if part.animated then
           assert(row.animated==true and type(row.animation)=='table'and row.animation.kind=='gb',
@@ -106,16 +114,17 @@ function Composition.new(ctx)
         end
         return out
   end
-  local function decoded(ref,layers,hashes)
+  local function decoded(ref,layers,hashes,foreground)
     local piece,why=donor:cell(ref)
     assert(piece,'Native composition donor failed: '..tostring(why))
     assert(piece.hash==ref.hash or piece.sourceHash==ref.hash,
       'Native composition donor fingerprint changed')
+    if foreground then image16(piece.foreground);return piece.foreground end
     return flatten(piece,layers,hashes)
   end
   local function prepare(row)
     local sources={}
-    for i,part in ipairs(row.parts)do sources[i]=decoded(part.donor,part.layers,part.layerHashes)end
+    for i,part in ipairs(row.parts)do sources[i]=decoded(part.donor,part.layers,part.layerHashes,part.gbForeground)end
     return sources
   end
   local function compose(row,under,sources)
@@ -159,7 +168,11 @@ function Composition.new(ctx)
         for frame=1,#first.frames do
           local prepared={}
           for i,source in ipairs(sources)do
-            prepared[i]=sequences[i]and flatten(sequences[i].frames[frame])or source
+            if sequences[i]then
+              local piece=sequences[i].frames[frame]
+              if row.parts[i].gbForeground then image16(piece.foreground);prepared[i]=piece.foreground
+              else prepared[i]=flatten(piece)end
+            else prepared[i]=source end
           end
           local under=factory(16,16)
           for y=0,15 do for x=0,15 do under:setPixel(x,y,base:getPixel(x,y))end end

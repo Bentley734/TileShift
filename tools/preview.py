@@ -118,7 +118,7 @@ def gb_donor_layers(cache, ref, packed):
         definition = catalog.read_lua(root / 'data/generated/maps.lua')[map_id]
         assert definition['tileset'] == ref['tileset']
         daytime = ref.get('daytime', ref.get('paletteContext', {}).get('daytime', 'DAY'))
-        palettes = palette_set(catalog.read_lua(root / 'data/generated/palettes.lua'), definition, daytime)
+        palettes = ref.get('palettes') or palette_set(catalog.read_lua(root / 'data/generated/palettes.lua'), definition, daytime)
         roof_path = root / 'data/generated/roofs.lua'
         if roof_path.exists() and ref['tileset'] in ('TILESET_JOHTO', 'TILESET_JOHTO_MODERN'):
             roofs = catalog.read_lua(roof_path)
@@ -135,6 +135,11 @@ def gb_donor_layers(cache, ref, packed):
         assert name in files and catalog.sha(files[name]) == digest, 'GB donor file changed: ' + name
     image = native_cell(sheet, ts, block, ref.get('quadrant', 0), palettes, roof)
     over = Image.new('RGBA', (16, 16))
+    foreground=Image.new('RGBA',(16,16))
+    visible_neutral=native_cell(sheet,ts,block,ref.get('quadrant',0),None,roof)
+    for y in range(16):
+        for x in range(16):
+            if visible_neutral.getpixel((x,y))[0]<255:foreground.putpixel((x,y),image.getpixel((x,y)))
     q = ref.get('quadrant', 0); qx, qy = q % 2 * 2, q // 2 * 2
     for i in range(4):
         tile = block[(qy + i // 2) * 4 + qx + i % 2]
@@ -142,7 +147,7 @@ def gb_donor_layers(cache, ref, packed):
         if attr.get('priority'):
             x, y = i % 2 * 8, i // 2 * 8
             over.paste(image.crop((x, y, x + 8, y + 8)), (x, y))
-    result = {'under': image, 'over': over}
+    result = {'under': image, 'over': over, 'foreground':foreground}
     packed[key] = result
     return result
 
@@ -436,8 +441,8 @@ def _replacement_frames_base(cache, row, packed, mod_root):
         return [native_donor(cache, row["donor"], packed)]
     if row.get("parts"):
         if row.get('animated') and row.get('animation', {}).get('kind') == 'gb':
-            from gb_theme_animation import frames as gb_frames
-            sequences = [gb_frames(cache, p['donor'], row['animation'], packed) if p.get('animated') else None for p in row['parts']]
+            from gb_theme_animation import frames as gb_frames,foreground_frames as gb_foreground_frames
+            sequences = [(gb_foreground_frames if p.get('gbForeground')else gb_frames)(cache, p['donor'], row['animation'], packed) if p.get('animated') else None for p in row['parts']]
             count = next(len(v) for v in sequences if v is not None)
             assert all(v is None or len(v) == count for v in sequences)
             base = native_donor(cache, row['base'], packed) if row.get('base') else Image.new('RGBA', (16, 16))
@@ -445,7 +450,7 @@ def _replacement_frames_base(cache, row, packed, mod_root):
             for index in range(count):
                 image = base.copy()
                 for part, sequence in zip(row['parts'], sequences):
-                    source = sequence[index] if sequence else native_donor(cache, part['donor'], packed)
+                    source = sequence[index] if sequence else gb_donor_layers(cache,part['donor'],packed)['foreground']if part.get('gbForeground')else native_donor(cache, part['donor'], packed)
                     sx, sy = part.get('srcX', 0), part.get('srcY', 0)
                     image.alpha_composite(source.crop((sx, sy, sx + part['w'], sy + part['h'])), (part.get('x', 0), part.get('y', 0)))
                 results.append(image)
@@ -457,7 +462,8 @@ def _replacement_frames_base(cache, row, packed, mod_root):
         parts = []
         for part in row["parts"]:
             sx, sy = part.get("srcX", 0), part.get("srcY", 0)
-            image = native_donor(cache, part["donor"], packed, part.get("layers"), part.get("layerHashes")).crop(
+            source=gb_donor_layers(cache,part['donor'],packed)['foreground']if part.get('gbForeground')else native_donor(cache,part['donor'],packed,part.get('layers'),part.get('layerHashes'))
+            image = source.crop(
                 (sx, sy, sx + part["w"], sy + part["h"]))
             parts.append((image, (part.get("x", 0), part.get("y", 0))))
         frames = []

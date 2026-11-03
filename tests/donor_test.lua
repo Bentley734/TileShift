@@ -452,6 +452,37 @@ eq(markerReads,2)
 batched:invalidate();assert(batched:sourceIdentity('red'))
 eq(markerReads,3,'explicit invalidation drops the token cache immediately')
 files['red/rom-cache.complete']=oldMarker
+-- Native scrolling-current direction and explicit GBC palette are independent
+-- animation identities, even though their neutral source fingerprints match.
+local animationBuilds=0
+local animatedReader=Donor.new({read=function(path)return files[path]end,
+ decode=function(bytes)return decoded[bytes]end,prefix=function(game)return game..'/'end,
+ newImageData=newData,loadImage=function()return sheet end,hash=hash,
+ gbAnimation={frames=function(context,reference,spec)
+  animationBuilds=animationBuilds+1
+  local piece=assert(context.decode(reference))
+  return{frames={piece,piece},period=.1,direction=spec.flowDirection}
+ end}})
+local animatedRef={game='crystal',tileset='TEST',id=0,map='TEST_MAP',palettes=bgSet}
+local profile={kind='gb',bank='program',hash='checked atlas',manifestHash='checked metadata',flowDirection='north'}
+local north=assert(animatedReader:frames(animatedRef,profile))
+eq(animatedReader:frames(animatedRef,profile),north,'same native current reuses its sequence')
+profile.flowDirection='east'
+local east=assert(animatedReader:frames(animatedRef,profile));eq(east~=north,true,'current direction has its own cache identity')
+local alternate={}
+for slot=1,8 do
+ alternate[slot]={}
+ for shade=1,4 do alternate[slot][shade]={colors[shade][1],colors[shade][2],colors[shade][3]}end
+ alternate[slot][1]={17,34,51}
+end
+animatedRef.palettes=alternate
+local tinted=assert(animatedReader:frames(animatedRef,profile));eq(tinted~=east,true,'explicit native palette has its own cache identity')
+eq(animatedReader:frames(animatedRef,profile),tinted,'identical palette and direction reuse their sequence')
+profile.flowDirection='north'
+eq(assert(animatedReader:frames(animatedRef,profile))~=north,true,'palette remains distinct across direction switches')
+animatedRef.palettes=bgSet
+eq(animatedReader:frames(animatedRef,profile),north,'restored original palette recovers original sequence')
+eq(animationBuilds,4,'each direction/palette pair builds only once')
 for _,path in ipairs(reads)do
   local cartridge=path:match('^([^/]+)/')
   eq(cartridge=='red' or cartridge=='gold' or cartridge=='crystal' or cartridge=='emerald'

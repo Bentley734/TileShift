@@ -47,18 +47,21 @@ def literal_rows(text):
         elif c=='}':
             assert stack,'Unbalanced literal table'
             start,fields=stack.pop()
-            if {'game','style','tileset','id','quadrant','sourceHash'}<=fields or {'common','cells'}<=fields:
+            if {'game','style','tileset','id','sourceHash'}<=fields or {'common','cells'}<=fields:
                 yield start,i+1
         i+=1
     assert not stack,'Unclosed literal table'
 
 
 def main():
+    global ROOT
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--module',action='append',required=True)
     p.add_argument('--output',type=Path,required=True)
     p.add_argument('--activate',action='store_true')
+    p.add_argument('--root',type=Path,default=ROOT,help='Integrate into an isolated complete mod copy')
     args=p.parse_args();args.output.mkdir(parents=True,exist_ok=True)
+    ROOT=args.root.resolve()
     main_path=ROOT/'main.lua';main_before=main_path.read_bytes();main_text=main_before.decode()
     modules=list(dict.fromkeys(re.findall(r"['\"](mappings/[^'\"]+\.lua)['\"]",main_text)))
     assert not(set(args.module)&set(modules)),'Audit module already integrated'

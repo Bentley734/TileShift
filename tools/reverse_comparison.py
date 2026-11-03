@@ -24,6 +24,8 @@ def main() -> int:
     output = (args.output or workspace / f'TileShift-Classic-Comparisons-v{version}').resolve()
     report = json.loads(args.report.read_text())
     coverage = json.loads(args.coverage.read_text())
+    styles=sorted({fixture['style']for fixture in report['fixtures']})
+    series='Gen2-in-Gen3'if styles==['gen2']else'Classic'
     assert report['status'] == coverage['status'] == 'passed'
     assert report['theme'] == 'reverse'
     assert report['runtime_inputs'] == coverage['runtime_inputs'] == runtime_fingerprint(root)
@@ -39,7 +41,7 @@ def main() -> int:
         fixture = dict(fixture, comparison_after_label=label + ' — reviewed cells')
         record = gpu_comparison.make(fixture, output)
         old = Path(record['output'])
-        target = output / f'TileShift-Classic-{stem}-comparison.png'
+        target = output / f'TileShift-{series}-{stem}-comparison.png'
         old.replace(target)
         record.update(output=target.name, style=style)
         comparisons.append(record)
@@ -53,15 +55,16 @@ def main() -> int:
                 'limits': report['limits'], 'scope': coverage['totals'], 'comparisons': comparisons}
     (output / 'comparison-verification.json').write_text(json.dumps(metadata, indent=2) + '\n', encoding='utf-8')
     (output / 'README.txt').write_text(
-        f'TileShift v{version} - Gen1/Gen2 themes in Gen3 games\n'
+        f'TileShift v{version} - '+('Crystal/Gen2 graphics in Gen3 games\n'if styles==['gen2']else'Gen1/Gen2 themes in Gen3 games\n')+
         'Actual native GPU backgrounds at 2x nearest-neighbour scale.\n'
-        'Each image reports its own replaced/native cell counts. Other Gen3 maps remain partially converted.\n'
-        'Pallet, Littleroot, Oldale and Route101 backgrounds are complete in both classic themes.\n'
+        'Each image reports its own replaced/native cell counts. Unresolved source tiles keep native art.\n'
+        f"Full audit: {coverage['totals']['replaced_cells']}/{coverage['totals']['source_cells']} background cells replaced; "
+        f"{coverage['totals']['complete_maps']}/{coverage['totals']['maps']} map/theme variants complete.\n"
         'Actors and field effects retain native Gen3 artwork; actors are omitted from these captures.\n'
         'The installable mod is the separate TileShift ZIP.\n', encoding='utf-8')
     result = {'output': str(output), 'comparisons': len(comparisons), 'panels_exact_gpu_rgb': True}
     if args.package:
-        archive = root / f'build/TileShift-Classic-Comparisons-v{version}.zip'
+        archive = root / f'build/TileShift-{series}-Comparisons-v{version}.zip'
         archive.parent.mkdir(exist_ok=True)
         package_names = expected | {'comparison-verification.json', 'README.txt'}
         files = {name: (output / name).read_bytes() for name in package_names}

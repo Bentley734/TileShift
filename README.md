@@ -2,8 +2,15 @@
 
 TileShift swaps world artwork through individually reviewed tile matches.
 
-Version 0.31.0 completes the Gen 1 Gen 3-art review across Red, Blue and
-Yellow. All maps are retiled with corrected native objects, room floors,
+Version 0.32.0 expands the Crystal-based Gen 2 theme across all five Gen 3 games,
+including fully retiled Dewford Town, more complete cave rooms, coastal terrain,
+whole trees, city houses and interior furnishings. Source entrances, collision,
+actor positions and events stay unchanged. Other Gen 3 areas are still partly
+converted; unreviewed cells keep their original artwork. The launcher requirement
+now has only a minimum version, with no maximum version limit.
+
+The Gen 1 Gen 3-art review is complete across Red, Blue and Yellow.
+All maps are retiled with corrected native objects, room floors,
 seating, animated inland water, fence/sand transitions and Saffron paving.
 Complete native buildings retain their pixel scale and source entrances;
 Gen 1 Centers offer compact and expanded designs. Original layouts, NPC
@@ -18,7 +25,7 @@ Building entrances and source collision remain unchanged. Whole native doors,
 windows and roof edges keep their pixel size, with transparent decorative
 extensions where needed. The full FireGold 16x48 town pine keeps its middle and
 roots in the original two-cell footprint and its intact upper canopy above it.
-Only the generated roofed Slowpoke Well remains active in the Gen 2 theme,
+Only the generated roofed Slowpoke Well remains active in the Gen 3 theme on Gen 2 hosts,
 as requested. Gen 1 foliage options stay unchanged.
 
 Classic themes completely retile **Oldale Town** in both styles. Selectable
@@ -28,6 +35,10 @@ four-shade monochrome artwork; Gen 2 uses one shared Crystal style with its
 native daytime colors. Both themes completely retile Pallet Town in FR/LG and
 Littleroot Town, Oldale Town and Route 101 in R/S/E, with additional reviewed
 terrain and interior matches.
+The Crystal theme currently replaces **931,705 of 1,288,886 background cells
+(72.3%)** across all five GBA games, with **102 of 2,156 imported maps** fully
+retiled. These counts use the maps' actual dimensions and exclude storage
+padding and border cells.
 **Other Gen 3 maps remain partially converted**; unmatched cells retain native
 art. Gen 3 characters, Pokemon sprites and field effects retain their native art.
 
@@ -122,17 +133,27 @@ unchanged. The single **Gen 3** style combines Emerald, FireRed/LeafGreen and se
    TileShift reads native donor
    art from your own imports; neither ROMs nor extracted native artwork are
    bundled.
-2. Download `TileShift-v0.27.0.zip` from [the latest release](https://github.com/Bentley734/TileShift/releases/latest).
+2. Download `TileShift-v0.32.0.zip` from [the latest release](https://github.com/Bentley734/TileShift/releases/latest).
 3. Extract the `tileshift` folder into Gen1Recomp's `mods` directory, enable
    **TileShift**, and restart the game.
 4. Open Options and select **Tileset**. Gen 1/2 hosts offer **Gen 3**; Gen 3 hosts
    also offer **Gen 1** and **Gen 2**. **Original** restores the host game's art.
    Fresh installations retain the existing Gen 3 default.
 
-Requires **Gen1Recomp 0.3.96 or newer**, within the 0.3.x series; validated on 0.3.98. Reviewed replacements
+Requires **Gen1Recomp 0.3.96 or newer**; validated on 0.3.98. There is no maximum launcher version requirement. Reviewed replacements
 support all eleven games. Gen 3 hosts keep their native art with the Gen 3 style
 selected. Missing or changed donor cells are skipped, leaving the
 host artwork visible.
+
+The release also includes
+`TileShift-Gen1-Gen2-All-Areas-Comparisons-v0.32.0.zip`: **1,791 side-by-side
+images**, covering every imported town, interior, route and other area in Red,
+Blue, Yellow, Gold, Silver and Crystal. Open `index.html` after extracting it to
+browse by game and area. Images use actual native background renders and state
+their replacement counts. The two unused Gold/Silver Safari Beta maps are
+included with their retained native graphics. A separate
+`TileShift-Gen2-in-Gen3-Comparisons-v0.32.0.zip` shows the expanded Crystal theme
+on selected GBA maps, including partial areas with native tiles still visible.
 
 ## Artwork and matching
 
@@ -153,6 +174,13 @@ Water and flowers use verified native GB animation frames. **Water Speed** and
 the first frame. The Gen 3 host menu exposes these controls and the tileset
 selector. The custom Gen 3 foliage, water presets and Center designs below apply
 to Gen 1/2 hosts using the Gen 3 theme.
+
+The Crystal theme shares one synchronized native cave-water animation across
+connected water bodies. Directional current counterparts move that native wave
+glyph in the original current's direction. Underwater counterparts use native
+Crystal terrain with a blue four-shade palette. Whole native furniture modules
+and new small counterparts in the same style retain their original pixel scale;
+the actual room floor remains visible around their legs and plant stems.
 
 Classic replacements use checked native tileset pairs and source cells.
 Palette, artwork, animation and source fingerprints protect the matches;
@@ -266,9 +294,11 @@ The release is checked through the installed 0.3.98 loader for all eleven games,
 Lua regression fixtures, live-import fingerprint checks, native donor animation
 comparisons, and isolated native LOVE GPU rendering. Checks cover the original
 GB-to-Gen3 conversion and actual Gen 3 FieldView renders with both classic themes.
-Version 0.27.0 passes 39 Lua suite runs across three runtimes (58,440 assertions)
-and 120,089,481 checks across 56 native Gen 3 background scenes. The existing
-248-scene GPU regression also passes all 188,601,742 checks with zero warnings.
+Version 0.32.0 passes 51 Lua suite runs across three runtimes. Native probes
+check both classic themes, all reviewed GB animation programs, dynamic Secret
+Base furnishings, Trainer Hill layouts and Battle Pyramid layouts. The full
+Gen 1/2 gallery captures every imported map before replacement, with Gen 3 art,
+and after cleanup, while checking source layouts and events remain unchanged.
 The reverse audit traverses every native map using its true cell dimensions,
 reports partial coverage explicitly, and checks source definitions stay unchanged.
 This release verifies
@@ -287,10 +317,11 @@ python TileShift/tools/validate_boot.py --payload PATH_TO_0.3.98.love
 python TileShift/tools/preview.py --include-trees --include-posts --include-water --include-details --include-buildings --include-outdoors --tree-fixtures
 python TileShift/tools/validate_animation.py --game firered
 python TileShift/tools/validate_animation.py --game leafgreen
-python TileShift/tools/validate_gpu.py --timeout 900
+python TileShift/tools/validate_gb_programs_gpu.py --timeout 900
+python TileShift/tools/validate_gen2_kanto_gpu.py --timeout 1800
 python TileShift/tools/validate_coverage.py --games red,blue,yellow --require-complete --timeout 900
 python TileShift/tools/validate_source_palettes.py
-python TileShift/tools/validate_reverse_coverage.py --timeout 900
+python TileShift/tools/validate_reverse_coverage.py --styles gen2 --timeout 3600
 python TileShift/tools/validate_reverse_gpu.py --require-complete-map OLDALE_TOWN --timeout 1800
 python TileShift/tools/gpu_comparison.py
 python TileShift/tools/reverse_comparison.py

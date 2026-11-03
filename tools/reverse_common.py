@@ -67,7 +67,7 @@ class ReverseReview:
                 if spec and spec.get('image'):
                     ref['fingerprints']['roofImage'] = catalog.sha((CACHE/game/spec['image']).read_bytes())
         self._refs[cache_key] = ref
-        return ref
+        return copy.deepcopy(ref)
 
     def gb_at(self, game, map_id, x, y):
         m = self.imp.table(game, 'maps')[map_id]
@@ -105,7 +105,7 @@ class ReverseReview:
         palettes = roof = None
         if game == 'crystal':
             definition = self.imp.table(game, 'maps')[ref['map']]
-            palettes = preview.palette_set(self.imp.table(game, 'palettes'), definition, ref.get('daytime', 'DAY'))
+            palettes = ref.get('palettes') or preview.palette_set(self.imp.table(game, 'palettes'), definition, ref.get('daytime', 'DAY'))
             if ref['tileset'] in ('TILESET_JOHTO', 'TILESET_JOHTO_MODERN'):
                 roofs = self.imp.table(game, 'roofs')
                 name = catalog.dict_at(roofs.get('mapGroupRoofs', {}), definition['group'])
@@ -153,7 +153,7 @@ class ReverseReview:
             out = self.gb_image(row['base']).copy() if row.get('base') else Image.new('RGBA', (16, 16))
             for p in row['parts']:
                 assert p.get('layers') is None, 'GB sources have one complete colored pixel canvas'
-                im = self.gb_image(p['donor'])
+                im = preview.gb_donor_layers(self.cache,p['donor'],self.packed)['foreground']if p.get('gbForeground')else self.gb_image(p['donor'])
                 sx, sy, w, h = p.get('srcX', 0), p.get('srcY', 0), p['w'], p['h']
                 piece = im.crop((sx, sy, sx+w, sy+h))
                 out.alpha_composite(piece, (p.get('x', 0), p.get('y', 0)))
@@ -240,7 +240,16 @@ class ReverseReview:
             ctx=vm.table_from({b'read':read,b'prefix':lambda g:g+b'/',b'hash':checked_hash,b'newImageData':make,b'loadImage':load_image,b'gbAnimation':gb_animation})
             decoder=vm.execute((ROOT/'lib/donor.lua').read_bytes())[b'new'](ctx)
             composer=vm.execute((ROOT/'lib/composition.lua').read_bytes())[b'new'](vm.table_from({b'donor':decoder,b'newImageData':make}))
-            vm.globals()[b'reverseRows']=vm.execute(('return '+lua(rows)).encode())
+            # Match the installable module's bounded table batches. One giant
+            # literal exceeds LuaJIT's per-function constant limit once a full
+            # multi-game review contains several thousand guarded recipes.
+            decoded_rows=vm.table()
+            append=vm.eval(b'function(rows,batch)for _,row in ipairs(batch)do rows[#rows+1]=row end end')
+            for start in range(0,len(rows),24):
+                batch=vm.execute(('return '+lua(rows[start:start+24])).encode())
+                append(decoded_rows,batch)
+            assert len(decoded_rows)==len(rows),'Batched validation lost a reviewed row'
+            vm.globals()[b'reverseRows']=decoded_rows
             vm.globals()[b'reverseMapping']=vm.execute((ROOT/'lib/mapping.lua').read_bytes())
             vm.globals()[b'reverseSession']=vm.execute((ROOT/'lib/session.lua').read_bytes())
             vm.globals()[b'reverseDecoder']=decoder; vm.globals()[b'reverseComposer']=composer
