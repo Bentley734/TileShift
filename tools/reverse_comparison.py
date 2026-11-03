@@ -58,7 +58,7 @@ def main() -> int:
         f'TileShift v{version} - '+('Crystal/Gen2 graphics in Gen3 games\n'if styles==['gen2']else'Gen1/Gen2 themes in Gen3 games\n')+
         'Actual native GPU backgrounds at 2x nearest-neighbour scale.\n'
         'Each image reports its own replaced/native cell counts. Unresolved source tiles keep native art.\n'
-        f"Full audit: {coverage['totals']['replaced_cells']}/{coverage['totals']['source_cells']} background cells replaced; "
+        f"Full map-body coverage count: {coverage['totals']['replaced_cells']}/{coverage['totals']['source_cells']} background cells replaced; "
         f"{coverage['totals']['complete_maps']}/{coverage['totals']['maps']} map/theme variants complete.\n"
         'Actors and field effects retain native Gen3 artwork; actors are omitted from these captures.\n'
         'The installable mod is the separate TileShift ZIP.\n', encoding='utf-8')

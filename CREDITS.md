@@ -205,7 +205,7 @@ Gen1 and Gen2 background counterparts are checked references to the player's
 Red and Crystal imports; no extracted GB artwork is bundled. Native windows,
 doors, tree silhouettes and complete furniture retain their original pixels.
 Only repeating roof/wall sections are arranged to retain Gen3 building footprints.
-The expanded Crystal theme in v0.32.0 also assembles complete native foliage,
+The expanded Crystal theme in v0.32.0 and v0.33.0 also assembles complete native foliage,
 furniture, shoreline and cave modules from the player's import. Original Game
 Freak/Nintendo artwork is not bundled by these recipes. The original Crystal
 animation programs supply water, flowers, lava and related native frames;

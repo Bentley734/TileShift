@@ -17,6 +17,7 @@ return function(mod)
     'mappings/gen2_domestic_floor_audit.lua','mappings/gen2_facility_floor_audit.lua','mappings/gen2_interior_chair_audit.lua',
     'mappings/gen1_seating_domestic_audit.lua','mappings/gen1_facility_audit.lua','mappings/gen1_outdoor_audit.lua',
     'mappings/reverse_gen2_kanto_finish.lua','mappings/reverse_gen2_hoenn_outdoor_finish.lua','mappings/reverse_gen2_hoenn_interior_finish.lua','mappings/reverse_gen2_hoenn_city_buildings_finish.lua',
+    'mappings/reverse_gen2_kanto_complete.lua','mappings/reverse_gen2_hoenn_outdoor_complete.lua','mappings/reverse_gen2_hoenn_interior_complete.lua','mappings/reverse_gen2_hoenn_city_complete.lua',
   }) do
     local source=mod:read(path)
     if source then

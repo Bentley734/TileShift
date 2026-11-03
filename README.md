@@ -2,9 +2,10 @@
 
 TileShift swaps world artwork through individually reviewed tile matches.
 
-Version 0.32.0 expands the Crystal-based Gen 2 theme across all five Gen 3 games,
-including fully retiled Dewford Town, more complete cave rooms, coastal terrain,
-whole trees, city houses and interior furnishings. Source entrances, collision,
+Version 0.33.0 expands the Crystal-based Gen 2 theme across all five Gen 3 games,
+including fully retiled Petalburg City and 47 more upstairs clinic rooms,
+native-size Hoenn city buildings, coastal terrain and Kanto interior details.
+Source entrances, collision,
 actor positions and events stay unchanged. Other Gen 3 areas are still partly
 converted; unreviewed cells keep their original artwork. The launcher requirement
 now has only a minimum version, with no maximum version limit.
@@ -35,8 +36,8 @@ four-shade monochrome artwork; Gen 2 uses one shared Crystal style with its
 native daytime colors. Both themes completely retile Pallet Town in FR/LG and
 Littleroot Town, Oldale Town and Route 101 in R/S/E, with additional reviewed
 terrain and interior matches.
-The Crystal theme currently replaces **931,705 of 1,288,886 background cells
-(72.3%)** across all five GBA games, with **102 of 2,156 imported maps** fully
+The Crystal theme currently replaces **997,414 of 1,288,886 background cells
+(77.4%)** across all five GBA games, with **152 of 2,156 imported maps** fully
 retiled. These counts use the maps' actual dimensions and exclude storage
 padding and border cells.
 **Other Gen 3 maps remain partially converted**; unmatched cells retain native
@@ -133,7 +134,7 @@ unchanged. The single **Gen 3** style combines Emerald, FireRed/LeafGreen and se
    TileShift reads native donor
    art from your own imports; neither ROMs nor extracted native artwork are
    bundled.
-2. Download `TileShift-v0.32.0.zip` from [the latest release](https://github.com/Bentley734/TileShift/releases/latest).
+2. Download `TileShift-v0.33.0.zip` from [the latest release](https://github.com/Bentley734/TileShift/releases/latest).
 3. Extract the `tileshift` folder into Gen1Recomp's `mods` directory, enable
    **TileShift**, and restart the game.
 4. Open Options and select **Tileset**. Gen 1/2 hosts offer **Gen 3**; Gen 3 hosts
@@ -152,7 +153,7 @@ Blue, Yellow, Gold, Silver and Crystal. Open `index.html` after extracting it to
 browse by game and area. Images use actual native background renders and state
 their replacement counts. The two unused Gold/Silver Safari Beta maps are
 included with their retained native graphics. A separate
-`TileShift-Gen2-in-Gen3-Comparisons-v0.32.0.zip` shows the expanded Crystal theme
+`TileShift-Gen2-in-Gen3-Comparisons-v0.33.0.zip` shows the expanded Crystal theme
 on selected GBA maps, including partial areas with native tiles still visible.
 
 ## Artwork and matching
@@ -266,7 +267,7 @@ graphics cannot bypass native darkness.
 | R/S/E Littleroot and Route 101, both classic themes | 4,800/4,800 | 12/12 |
 | R/S/E Oldale, both classic themes | 2,400/2,400 | 6/6 |
 
-Gen2 Kanto remains in progress. GB-host matches use their original source maps
+Playable Gen2 Kanto backgrounds are complete. GB-host matches use their original source maps
 and donor families; classic themes on Gen 3 use checked native tileset pairs
 and cells. The complete map audit loads the
 actual mod and checks replacement availability, source fingerprints and
@@ -294,7 +295,15 @@ The release is checked through the installed 0.3.98 loader for all eleven games,
 Lua regression fixtures, live-import fingerprint checks, native donor animation
 comparisons, and isolated native LOVE GPU rendering. Checks cover the original
 GB-to-Gen3 conversion and actual Gen 3 FieldView renders with both classic themes.
-Version 0.32.0 passes 51 Lua suite runs across three runtimes. Native probes
+Version 0.33.0 passes 51 Lua suite runs across three runtimes. This data-only
+update adds 1,096 source keys and corrects 62 existing recipes. Strict authoring
+checks validate all 1,158 changed recipes against neutral imports and independent
+pixel compositions. The native GPU delta checks every changed key, touched border
+headers and representative complete maps; the unchanged renderer, libraries,
+assets and unrelated recipes retain the v0.32.0 validation baseline. Exact native
+map-body counts are independently reconstructed for every one of the 2,156 maps.
+The full 1,791-image Gen1/Gen2 gallery remains the unchanged v0.32.0 archive,
+linked above; this release adds fresh Gen2-on-Gen3 comparisons. Native probes
 check both classic themes, all reviewed GB animation programs, dynamic Secret
 Base furnishings, Trainer Hill layouts and Battle Pyramid layouts. The full
 Gen 1/2 gallery captures every imported map before replacement, with Gen 3 art,

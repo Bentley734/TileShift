@@ -25,47 +25,91 @@ import validate_gpu
 GAMES = ('firered', 'leafgreen', 'ruby', 'sapphire', 'emerald')
 
 
-def selection(root: Path, cache: Path, planner: Path, games: list[str], pilot: bool) -> dict:
-    plan = json.loads(planner.read_text())
+def selection(root: Path, cache: Path, planner: Path, games: list[str], pilot: bool,
+              only_modules: list[str] | None = None) -> dict:
     inputs = validate_gpu.runtime_fingerprint(root)
-    assert inputs == plan['runtime_inputs'], 'The native matrix plan belongs to a different runtime snapshot'
-    rows = {}
-    for name in dict.fromkeys(re.findall(r"['\"](mappings/[^'\"]+\.lua)['\"]", (root / 'main.lua').read_text())):
+    paths = list(dict.fromkeys(re.findall(r"['\"](mappings/[^'\"]+\.lua)['\"]", (root / 'main.lua').read_text())))
+    requested = []
+    for value in only_modules or []:
+        path = Path(value)
+        path = (root / path).resolve() if not path.is_absolute() else path.resolve()
+        assert path.is_relative_to(root.resolve()) and path.suffix == '.lua', 'Delta modules must be Lua files within the selected mod'
+        name = path.relative_to(root.resolve()).as_posix()
+        assert name in paths, 'Requested delta module is not loaded by current main: ' + name
+        if name not in requested:
+            requested.append(name)
+    plan = None if requested else json.loads(planner.read_text())
+    if plan is not None:
+        assert inputs == plan['runtime_inputs'], 'The native matrix plan belongs to a different runtime snapshot'
+    rows, owners, module_counts = {}, {}, {}
+    for name in paths:
+        count = 0
         for row in preview.read_reviewed(root / name):
             if row['style'] != 'gen2' or row['game'] not in GAMES:
                 continue
             assert row.get('map') is None, 'Native GBA atlas themes must be pair-global'
             key = row['game'], row['tileset'], row['id']
-            assert key not in rows
-            rows[key] = row
+            assert key not in rows, 'Current main has duplicate Gen2 GBA key: ' + str(key)
+            rows[key], owners[key] = row, name
+            count += 1
+        if name in requested:
+            module_counts[name] = count
+    delta_keys = {key for key, name in owners.items() if name in requested}
+    if requested:
+        assert delta_keys and all(module_counts.values()), 'Every delta module must contain current Gen2 GBA rows'
+        assert all(re.fullmatch(r'[0-9a-f]{64}', rows[key].get('compositionPixelHash', '')) for key in delta_keys), 'Every delta row needs its independently authored RGBA hash'
     manifests = {g: catalog.read_lua(cache / g / 'data/generated/gba/native/manifest.lua')['layouts'] for g in GAMES}
-    witnesses = {}
-    source_files = {}
-    for scene in plan['scenes']:
+    scenes = ([dict(game=g, map=n) for g in GAMES for n in sorted(manifests[g])]
+              if requested else plan['scenes'])
+    witnesses, header_witnesses, source_files = {}, defaultdict(list), {}
+    all_headers = {}
+    body_keys = set()
+    for scene in scenes:
         game, name = scene['game'], scene['map']
         spec = manifests[game][name]
         path = cache / game / 'data/generated/gba/native' / spec['file']
         data = path.read_bytes()
-        assert hashlib.sha256(data).hexdigest() == scene['layout_sha256'], 'Actual source layout changed since matrix planning'
+        checksum = hashlib.sha256(data).hexdigest()
+        if plan is not None:
+            assert checksum == scene['layout_sha256'], 'Actual source layout changed since matrix planning'
         blob = data if data[:4] == b'SVML' else zlib.decompress(data)
+        assert blob[:4] == b'SVML'
         width, height, tw, th = struct.unpack_from('<HHHH', blob, 6)
         columns, lines = tw or width, th or height
-        offset = 16 + blob[14] * blob[15] * 2
+        border_width, border_height = blob[14], blob[15]
+        offset = 16 + border_width * border_height * 2
+        if requested:
+            actual_header = set()
+            for i in range(border_width * border_height):
+                mid = struct.unpack_from('<H', blob, 16 + i * 2)[0]
+                key = game, spec['pair'], mid
+                actual_header.add(key)
+                if key in delta_keys and game in games:
+                    header_witnesses[key].append(dict(map=name, x=i % border_width, y=i // border_width,
+                                                       width=border_width, height=border_height,
+                                                       layout_sha256=checksum))
+            all_headers[game, name] = actual_header
         for y in range(lines):
             for x in range(columns):
                 at = offset + (y * width + x) * 4
                 mid = struct.unpack_from('<H', blob, at)[0]
                 key = game, spec['pair'], mid
-                if key in rows and key not in witnesses:
+                body_keys.add(key)
+                if key in rows and (not requested or key in delta_keys) and key not in witnesses:
                     witnesses[key] = dict(map=name, x=x, y=y, mid=mid, coll=blob[at + 2], elev=blob[at + 3])
-        source_files[path.relative_to(cache).as_posix()] = hashlib.sha256(data).hexdigest()
-    assert len(witnesses) == plan['used_source_keys'] == 12573, 'Used-key matrix is incomplete'
+        source_files[path.relative_to(cache).as_posix()] = checksum
+    if requested:
+        assert set(witnesses) == delta_keys.intersection(body_keys), 'Actual native body scan omitted a delta key'
+    else:
+        assert len(witnesses) == plan['used_source_keys'], 'Used-key matrix is incomplete'
     grouped = defaultdict(list)
     for (game, pair, mid), witness in sorted(witnesses.items()):
         row = rows[game, pair, mid]
         item = dict(witness, sourceHash=row['sourceHash'])
         if row.get('compositionPixelHash'):
             item['compositionPixelHash'] = row['compositionPixelHash']
+        if requested:
+            item['source_module'] = owners[game, pair, mid]
         grouped[game, pair].append(item)
     fixtures = []
     for game in games:
@@ -73,12 +117,46 @@ def selection(root: Path, cache: Path, planner: Path, games: list[str], pilot: b
                  for (g, pair), items in sorted(grouped.items()) if g == game]
         if pilot:
             wanted = 'general__petalburg' if game in ('ruby', 'sapphire', 'emerald') else 'pallet_outdoor'
-            pairs = [p for p in pairs if p['pair'] == wanted]
+            preferred = [p for p in pairs if p['pair'] == wanted]
+            pairs = preferred or pairs[:1]
             assert pairs
         fixtures.append(dict(game=game, pairs=pairs))
-    return dict(fixtures=fixtures, expected_keys=sum(len(p['items']) for f in fixtures for p in f['pairs']),
-                full_planner_used_keys=len(witnesses), pilot=pilot, source_file_sha256=source_files,
-                runtime_sha256=inputs['sha256'])
+    result = dict(fixtures=fixtures, expected_keys=sum(len(p['items']) for f in fixtures for p in f['pairs']),
+                  full_planner_used_keys=len(witnesses), pilot=pilot, source_file_sha256=source_files,
+                  runtime_sha256=inputs['sha256'])
+    if requested:
+        requested_game_keys = {k for k in delta_keys if k[0] in games}
+        header = [dict(game=g, pair=p, mid=m, module=owners[g,p,m],
+                       body_used=(g,p,m) in body_keys, witnesses=items)
+                  for (g,p,m), items in sorted(header_witnesses.items())]
+        result['delta'] = dict(modules=requested, module_gen2_gba_row_counts=module_counts,
+                               total_module_keys=len(delta_keys), requested_game_keys=len(requested_game_keys),
+                               actual_body_used_keys=sum(k[0] in games for k in witnesses),
+                               selected_fixture_keys=result['expected_keys'], scanned_native_layouts=len(scenes),
+                               excluded_no_body_witness=[dict(game=g,pair=p,mid=m,module=owners[g,p,m],
+                                                            header_used=(g,p,m) in header_witnesses)
+                                                         for g,p,m in sorted(requested_game_keys-body_keys)],
+                               current_main_exact_module_keys=True, actual_used_key_set_complete=True)
+        result['native_header_plan'] = dict(touched_keys=len(header), keys=header,
+                                           needed=bool(header), all_native_headers_scanned=True,
+                                           source='Actual SVML borderWidth/borderHeight and uint16 header MIDs, not map-edge body inference')
+        missing = set(header_witnesses)
+        candidates = {key: values.intersection(missing) for key, values in all_headers.items() if values.intersection(missing)}
+        selected_scenes = []
+        while missing:
+            key = max(candidates, key=lambda value: (len(candidates[value].intersection(missing)), value))
+            assert candidates[key].intersection(missing), 'Delta header set-cover omitted a touched key'
+            selected_scenes.append(key)
+            missing.difference_update(candidates[key])
+        sampled_keys = set().union(*(all_headers[key] for key in selected_scenes)) if selected_scenes else set()
+        result['native_header_plan']['scenes'] = [dict(game=g, map=n) for g,n in selected_scenes]
+        result['native_header_plan']['sampled_all_header_keys'] = len(sampled_keys)
+        result['native_header_plan']['inventory'] = dict(all_border=[
+            dict(game=g, pair=p, id=mid, touched_by_delta=(g,p,mid) in header_witnesses,
+                 maps=[name for game,name in selected_scenes if game == g and (g,p,mid) in all_headers[game,name]])
+            for g,p,mid in sorted(sampled_keys)])
+    assert inputs == validate_gpu.runtime_fingerprint(root), 'Runtime changed while constructing the native key plan; retry after integration is frozen'
+    return result
 
 
 BODY = r"""
@@ -264,13 +342,27 @@ def main() -> int:
     parser.add_argument('--games', nargs='+', choices=GAMES, default=list(GAMES))
     parser.add_argument('--planner', type=Path, default=Path(__file__).resolve().parents[2] / '.work/tileshift-v0320-final-reverse-matrix/report.json')
     parser.add_argument('--pilot', action='store_true')
+    parser.add_argument('--only-module', action='append', default=[],
+                        help='Repeat for exact current main modules whose actually used Gen2 keys should be tested')
+    parser.add_argument('--plan-only', action='store_true', help='Write exact body/header delta inventory without launching a GPU probe')
     args, remaining = parser.parse_known_args()
     root = Path(remaining[remaining.index('--mod-root') + 1]).resolve() if '--mod-root' in remaining else Path(__file__).resolve().parents[1]
     cache = Path(remaining[remaining.index('--cache') + 1]).resolve() if '--cache' in remaining else Path(os.environ['APPDATA']) / 'pokemon-love2d'
-    chosen = selection(root, cache, args.planner, args.games, args.pilot)
+    chosen = selection(root, cache, args.planner, args.games, args.pilot, args.only_module)
     if '--output' not in remaining:
         remaining.extend(['--output', str(root.parent / '.work/tileshift-reverse-atlas-gpu')])
     output = Path(remaining[remaining.index('--output') + 1]).resolve();output.mkdir(parents=True, exist_ok=True)
+    (output / 'selection.json').write_text(json.dumps(chosen, indent=2) + '\n')
+    if chosen.get('native_header_plan') is not None:
+        (output / 'native-header-plan.json').write_text(json.dumps(chosen['native_header_plan'], indent=2) + '\n')
+        (output / 'native-header-inventory.json').write_text(json.dumps(chosen['native_header_plan']['inventory'], indent=2) + '\n')
+        (output / 'native-header-scenes.json').write_text(json.dumps(chosen['native_header_plan']['scenes'], indent=2) + '\n')
+    if args.plan_only:
+        print(json.dumps(dict(status='planned', banks=sum(len(f['pairs']) for f in chosen['fixtures']),
+                              used_keys=chosen['expected_keys'], delta=chosen.get('delta'),
+                              header_touched_keys=chosen.get('native_header_plan', {}).get('touched_keys'),
+                              runtime_sha256=chosen['runtime_sha256'], output=str(output))))
+        return 0
     base = validate_gpu.LUA
     validate_gpu.LUA = base[:base.index(' -- Native Gen1 TileRenderer on real Red Pallet Town.')] + BODY.replace('@SELECTION@', json.dumps(json.dumps(chosen, separators=(',', ':')))) + base[base.index('\nfunction love.load()'):]
     sys.argv[1:] = remaining
