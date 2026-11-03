@@ -250,7 +250,7 @@ local function run()
    end
    table.insert(stack,position,entry)
   end
-  for _,file in ipairs({'lib/roof_catalog.lua','lib/side_catalog.lua','lib/center_mart_roofs.lua','lib/goldenrod_roofs.lua','lib/pallet_roofs.lua','lib/johto_roofs.lua','lib/gen2_kanto_building_roofs.lua','lib/gen2_kanto_landmark_decorations.lua'})do
+  for _,file in ipairs({'lib/roof_catalog.lua','lib/side_catalog.lua','lib/center_mart_roofs.lua','lib/goldenrod_roofs.lua','lib/pallet_roofs.lua','lib/johto_roofs.lua','lib/gen2_kanto_building_roofs.lua','lib/gen2_kanto_landmark_decorations.lua','lib/gen1_building_audit_roofs.lua'})do
    local source=read(MOD..'/'..file)
    for _,row in ipairs(source and assert(load(source))()or{})do
    if row.game==game and row.map==def.id then

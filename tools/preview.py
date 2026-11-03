@@ -659,7 +659,7 @@ def map_preview(cache, output, game, map_id, stem, rows, packed, scale, mod_root
         extra_path = mod_root / 'lib/center_mart_roofs.lua'
         if extra_path.exists():
             roof_rows += read_reviewed(extra_path)
-        for name in ('goldenrod_roofs.lua', 'pallet_roofs.lua', 'johto_roofs.lua', 'gen2_kanto_building_roofs.lua','gen2_kanto_landmark_decorations.lua'):
+        for name in ('goldenrod_roofs.lua', 'pallet_roofs.lua', 'johto_roofs.lua', 'gen2_kanto_building_roofs.lua','gen2_kanto_landmark_decorations.lua','gen1_building_audit_roofs.lua'):
             extra_path = mod_root / 'lib' / name
             if extra_path.exists():
                 roof_rows += read_reviewed(extra_path)

@@ -76,6 +76,9 @@ for _,gameId in ipairs(games)do
     end},log={warn=function()end}}
   function mod:read(path)
     fixture.reads[#fixture.reads+1]=path
+    if path=='lib/gen1_building_audit_roofs.lua'then return 'return{}'end
+    if path=='mappings/gen1_outdoor_audit.lua'or path=='mappings/gen1_facility_audit.lua'
+      or path=='mappings/gen1_seating_domestic_audit.lua'then return nil end
     if path=='lib/roof_catalog.lua'or path=='lib/side_catalog.lua'or path=='lib/center_mart_roofs.lua'or path=='lib/goldenrod_roofs.lua'or path=='lib/pallet_roofs.lua'or path=='lib/johto_roofs.lua'or path=='lib/gen2_kanto_building_roofs.lua'or path=='lib/gen2_kanto_landmark_decorations.lua'then return 'return{}'end
     if path:match('^mappings/gen2_kanto_.*_finish%.lua$') or path=='mappings/gen2_compact_gyms_hall_finish.lua' then return nil end
     if path=='mappings/reverse_kanto.lua'or path=='mappings/reverse_hoenn.lua'or path=='mappings/reverse_oldale.lua'then return nil end

@@ -5,6 +5,7 @@ actual engine map, script hooks, block swaps, renderer and adapter run normally.
 No production mapping, imported cache, installed game or save is written.
 """
 from pathlib import Path
+import argparse
 import sys
 import validate_gpu
 
@@ -97,6 +98,7 @@ DYNAMIC = r"""
    local realAfter=artAt(art,spec.after,spec.bx,spec.by)
    local production=realBefore and realAfter
    for q=0,3 do production=production and realBefore.coverage[q]and realAfter.coverage[q]end
+   check(not requireProduction or production,'Production Victory Road before/after artwork is missing')
    if not production then
     positionArt(art,spec.before,spec.bx,spec.by,before)
     positionArt(art,spec.after,spec.bx,spec.by,after);inject(mod,game,def,art)
@@ -160,7 +162,7 @@ DYNAMIC = r"""
    local sourceCollision=map:cellTile(x,y);local sourceHashCell,why=sourceDecoder():cell({game=game,tileset=def.tileset,id=id,quadrant=q})
    check(sourceHashCell~=nil,tostring(why))
    local mod=startMod(game,1);local art=copy(assert(mod.exports.state:replacements(game,def.tileset,def)))
-   if kind=='tree' then
+   if kind=='tree'and not requireProduction then
     local original=artAt(art,id,bx,by);local image=original and original.image:clone()or love.image.newImageData(32,32)
     local coverage=copy(original and original.coverage);coverage[q]=true
     image:paste(nativeComposition(cutObject),q%2*16,math.floor(q/2)*16,0,0,16,16)
@@ -197,7 +199,8 @@ DYNAMIC = r"""
     no_stale_donor_art=true,cleanup_restored_native=true,
     before=encodePng(cropped(before,bx*32,by*32,32,32),game..'-cut-'..kind..'-before-gpu.png'),
     after=encodePng(cropped(after,bx*32,by*32,32,32),game..'-cut-'..kind..'-after-gpu.png'),
-    private_fixture=kind=='tree' and 'One source Cut-tree cell uses the already reviewed full nativeFR95 object overEmerald1; private position only.' or false,
+    production_reviewed_rows=requireProduction or kind=='grass',
+    private_fixture=kind=='tree'and not requireProduction and 'One source Cut-tree cell uses the already reviewed full nativeFR95 object overEmerald1; private position only.' or false,
     limits='Native Cut block swap/text callback; text immediately acknowledged and dust/tree-split animation entry recorded without running visual FX/audio.'}
   end
  end
@@ -220,6 +223,7 @@ DYNAMIC = r"""
     positionArt(art,id,bx,by,image,coverage)
    end
   end
+  check(not requireProduction or production,'Production Seafoam hole artwork is missing')
   if not production then inject(mod,game,def,art)end
   local before=draw();local pathCalls=0
   local currentState=setmetatable({map={id='SEAFOAM_ISLANDS_B3F'},player={cellX=18,cellY=7,surfing=true}}, {__index=Overworld})
@@ -255,11 +259,14 @@ end
 
 
 def main() -> int:
+    parser=argparse.ArgumentParser(add_help=False)
+    parser.add_argument('--require-production',action='store_true')
+    args,remaining=parser.parse_known_args();sys.argv[1:]=remaining
     marker = " -- Native Gen1 TileRenderer on real Red Pallet Town."
     base = validate_gpu.LUA
     prefix = base[:base.index(marker)]
     suffix = base[base.index("\nfunction love.load()") :]
-    validate_gpu.LUA = prefix + DYNAMIC + suffix
+    validate_gpu.LUA = prefix + '\n local requireProduction='+str(args.require_production).lower()+'\n' + DYNAMIC + suffix
     if "--output" not in sys.argv:
         sys.argv.extend(["--output", str(Path(__file__).resolve().parents[2] / ".work/tileshift-gen1-dynamic-gpu")])
     return validate_gpu.main()

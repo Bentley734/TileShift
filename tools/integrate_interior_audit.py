@@ -15,7 +15,7 @@ import preview
 
 ROOT=Path(__file__).resolve().parents[1]
 FIELDS=('game','style','tileset','id','quadrant','map','x','y')
-GUARDS=FIELDS+('sourceHash','sourceFiles','sourceCollision','sourcePriority','sourcePalettes')
+GUARDS=FIELDS+('sourceHash','sourceFiles','sourceCollision','sourcePriority','sourcePalettes','sourceBehavior')
 
 
 def key(row):
@@ -41,13 +41,13 @@ def literal_rows(text):
                 else:i+=1
             continue
         if c=='['and stack:
-            match=re.match(r'''\[\s*["'](game|style|tileset|id|quadrant|sourceHash)["']\s*\]\s*=''',text[i:i+45])
+            match=re.match(r'''\[\s*["'](game|style|tileset|id|quadrant|sourceHash|common|cells)["']\s*\]\s*=''',text[i:i+45])
             if match:stack[-1][1].add(match[1])
         if c=='{':stack.append([i,set()])
         elif c=='}':
             assert stack,'Unbalanced literal table'
             start,fields=stack.pop()
-            if {'game','style','tileset','id','quadrant','sourceHash'}<=fields:
+            if {'game','style','tileset','id','quadrant','sourceHash'}<=fields or {'common','cells'}<=fields:
                 yield start,i+1
         i+=1
     assert not stack,'Unclosed literal table'
@@ -71,28 +71,37 @@ def main():
         for index,row in enumerate(rows):
             assert key(row)not in indexed,'Existing exact duplicate'
             indexed[key(row)]=(module,index,row)
-    removals=defaultdict(dict);new=[];audit_sources={}
+    removals=defaultdict(dict);new=[];new_keys=set();audit_sources={}
     for module in args.module:
         assert module.startswith('mappings/')and(ROOT/module).is_file()
         audit_sources[module]=(ROOT/module).read_bytes()
         audit_rows=catalog.plain(catalog.LUA.execute(audit_sources[module].decode()))
         for row in ([]if audit_rows=={}else audit_rows):
-            assert key(row)not in{key(r)for r in new},'Audit modules overlap'
+            assert key(row)not in new_keys,'Audit modules overlap'
+            new_keys.add(key(row))
             new.append(row)
             prior=indexed.get(key(row))
             if prior:
                 oldmodule,index,oldrow=prior
-                assert all(row.get(k)==oldrow.get(k)for k in GUARDS),'Source guard changed'
+                # Existing guards must remain exact. Older reviewed recipes
+                # can gain additional source guards validated by their author.
+                assert all(oldrow.get(k)is None or row.get(k)==oldrow.get(k)for k in GUARDS),'Existing source guard changed'
                 removals[oldmodule][key(row)]=(index,oldrow)
     proposals={};proof=[]
     for module,targets in removals.items():
         text=sources[module].decode();intervals=[];found=set()
         for start,end in literal_rows(text):
-            row=catalog.plain(catalog.LUA.execute('return '+text[start:end]))
-            target=targets.get(key(row))
-            if target:
-                assert row==target[1],'Literal differs from executed row'
-                assert key(row)not in found;found.add(key(row))
+            value=catalog.plain(catalog.LUA.execute('return '+text[start:end]))
+            rows=([dict(id=cell[0],quadrant=cell[1],**value['common'])for cell in value['cells']]
+                  if 'common'in value and 'cells'in value else[value])
+            matches=[(row,targets[key(row)])for row in rows if key(row)in targets]
+            if matches:
+                assert len(matches)==len(rows),'Cannot remove a partially superseded compressed group'
+                for row,target in matches:
+                    assert row==target[1],'Literal differs from executed row'
+                    assert key(row)not in found;found.add(key(row))
+                    proof.append(dict(module=module,old_index=target[0],old_row=row,
+                        old_row_sha256=hashlib.sha256(json.dumps(row,sort_keys=True,separators=(',',':')).encode()).hexdigest()))
                 stop=end
                 while stop<len(text)and text[stop].isspace():stop+=1
                 if stop<len(text)and text[stop]==',':end=stop+1
@@ -101,14 +110,13 @@ def main():
                     while previous>=0 and text[previous].isspace():previous-=1
                     if previous>=0 and text[previous]==',':start=previous
                 intervals.append((start,end))
-                proof.append(dict(module=module,old_index=target[0],old_row=row,
-                    old_row_sha256=hashlib.sha256(json.dumps(row,sort_keys=True,separators=(',',':')).encode()).hexdigest()))
         assert found==set(targets),f'Unlocated literal rows in {module}: {set(targets)-found}'
         merged=[]
         for start,end in sorted(intervals):
             if merged and start<=merged[-1][1]:merged[-1]=(merged[-1][0],max(end,merged[-1][1]))
             else:merged.append((start,end))
         for start,end in reversed(merged):text=text[:start]+text[end:]
+        text=re.sub(r'(?m)^[ \t]+(?=\r?$)','',text)
         after=catalog.plain(catalog.LUA.execute(text));after=[]if after=={}else after
         expected=[row for row in old[module]if key(row)not in targets]
         assert after==expected,'Unrelated rows changed'

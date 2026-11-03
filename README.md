@@ -2,11 +2,12 @@
 
 TileShift swaps world artwork through individually reviewed tile matches.
 
-Version 0.30.3 reviews all Gen 2 interiors for correct seating and object
-floors. Furniture uses each room's own floor; traditional floor cushions and
-complete lounge/waiting seats replace incorrect backed-chair crops. Original
-chair and NPC positions are preserved, including Celadon Cafe's table layout
-and four left-facing lower bar chairs.
+Version 0.31.0 completes the Gen 1 Gen 3-art review across Red, Blue and
+Yellow. All maps are retiled with corrected native objects, room floors,
+seating, animated inland water, fence/sand transitions and Saffron paving.
+Complete native buildings retain their pixel scale and source entrances;
+Gen 1 Centers offer compact and expanded designs. Original layouts, NPC
+positions/facing, collision, scripts and interactions are preserved.
 
 The Gen 3 theme covers Gen 2 Kanto, the Pokemon League,
 shared upstairs clinic/link rooms, transport interiors and apartments. Complete

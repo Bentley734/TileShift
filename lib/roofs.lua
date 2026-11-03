@@ -4,12 +4,16 @@ function R.new(ctx)
   local G=ctx.graphics or love.graphics
   local groups,trees,cache,textures={},{},{},{}
   local closed,revision,quad=false,nil,nil
+  local staticBorders=false
   for _,row in ipairs(ctx.rows or{})do
     -- A side may render outside the map-image canvas; validate its real
     -- fingerprint anchor with the same strict mapping validator. This copy
     -- is made once at construction, never in the draw/update path.
     local checked=row
-    if row.side then checked={};for k,v in pairs(row)do checked[k]=v end;checked.x=row.sourceX end
+    if row.side or row.sourceY~=nil or row.sourceX~=nil then
+      checked={};for k,v in pairs(row)do checked[k]=v end
+      checked.x=row.sourceX or row.x;checked.y=row.sourceY or row.y
+    end
     assert(ctx.validate(checked),'Invalid reviewed decorative tile')
     local side=row.side=='left'or row.side=='right'
     local boundedSide=side and type(row.buildingX)=='number'and type(row.buildingY)=='number'
@@ -22,6 +26,21 @@ function R.new(ctx)
       and row.y>=row.buildingY and row.y<row.buildingY+row.buildingH
       and type(row.sourceX)=='number'and row.sourceX%1==0
     local above=row.side==nil and row.buildingY==row.y+1
+    if row.sourceY~=nil then
+      assert(above and row.y==-1 and row.buildingY==0 and row.sourceY==0,
+        'Static north overhang must use the first source row')
+    end
+    if row.sourceX~=nil then
+      assert(type(row.sourceX)=='number'and row.sourceX%1==0 and row.sourceX>=0,
+        'Invalid decorative source column')
+    end
+    if row.sourceY~=nil or(row.sourceX~=nil and not row.side)then
+      assert(above and type(row.buildingX)=='number'and row.buildingX>=0 and row.buildingX%1==0
+        and type(row.buildingW)=='number'and row.buildingW>0 and row.buildingW%1==0
+        and type(row.buildingH)=='number'and row.buildingH>0 and row.buildingH%1==0
+        and row.x>=row.buildingX-2 and row.x<=row.buildingX+row.buildingW+1,
+        'Anchored upper decoration must remain within its building envelope')
+    end
     assert((row.game=='red'or row.game=='blue'or row.game=='yellow'or row.game=='gold'or row.game=='silver'or row.game=='crystal')and row.style=='gen3'
       and (row.kind=='original'or row.kind=='third_party'or row.kind=='native_composite')
       and row.map and row.x and row.y and(above or boundedSide),
@@ -29,6 +48,7 @@ function R.new(ctx)
     local games=groups[row.game]or{};groups[row.game]=games
     local maps=games[row.map]or{};games[row.map]=maps
     maps[#maps+1]=row
+    if row.side or row.sourceY~=nil or row.sourceX~=nil then staticBorders=true end
   end
   for _,row in ipairs(ctx.treeRows or{})do
     assert(ctx.validate(row)and row.canopy and row.role=='dense_conifer_crown'
@@ -54,12 +74,19 @@ function R.new(ctx)
     local function append(row,x,y,sourceY,canopy)
       if not ctx.enabled or ctx.enabled(row)then
       local ok,data=pcall(function()
-        local sx,sy=x,sourceY or y
+        local sx,sy=row.sourceX or x,sourceY or row.sourceY or y
         if row.side then
           assert(row.buildingX+row.buildingW<=def.width*2 and row.buildingY+row.buildingH<=def.height*2,
             'Decorative building footprint lies outside source map')
           sx=math.max(0,math.min(def.width*2-1,row.x))
           assert(row.sourceX==sx,'Decorative side anchor changed')
+        elseif row.sourceX~=nil then
+          assert(row.sourceX==math.max(0,math.min(def.width*2-1,x)),
+            'Upper decoration source anchor changed')
+        end
+        if row.sourceY~=nil then
+          assert(row.buildingX+row.buildingW<=def.width*2 and row.buildingY+row.buildingH<=def.height*2,
+            'North-edge building footprint lies outside source map')
         end
         assert(row.tileset==def.tileset and sx>=0 and sy>=0
           and sx<def.width*2 and sy<def.height*2,'Decoration lies outside checked source map')
@@ -86,6 +113,7 @@ function R.new(ctx)
         if not texture then texture=G.newImage(data);texture:setFilter('nearest','nearest');textures[textureKey]=texture end
         local entry={x=x,y=y,data=data,texture=texture,role=canopy and'dense_conifer_canopy'or row.role,
           treeCanopy=canopy or nil,sourceY=canopy and sourceY or nil,
+          outside=x<0 or y<0 or x>=def.width*2 or y>=def.height*2,
           frontY=canopy and(sourceY+2)*16 or(row.side and(row.buildingY+row.buildingH)*16 or nil)}
         result.minY=math.min(result.minY,y)
         -- Adjacent native buildings may share a decorative cell. Retain their
@@ -200,7 +228,7 @@ function R.new(ctx)
           if not quad then quad=G.newQuad(0,0,16,16,16,16)end
           quad:setViewport(xx-tx*16,yy-ty*16,w,h,16,16)
           while entry do
-            if(not borderOnly or(entry.treeCanopy and entry.y==-1))
+            if(not borderOnly or entry.outside)
               and(not entry.frontY or entity.py+actorOriginY+12<entry.frontY+originY)then
               G.push('all');G.setShader();G.setColor(1,1,1,1)
               G.draw(entry.texture,quad,math.floor(ox+(xx+originX)*s),math.floor(oy+(yy+originY)*s),0,s,s);G.pop()
@@ -211,9 +239,13 @@ function R.new(ctx)
         end
       end
     end end
-    if primary and next(trees)and world.maps then
-      for _,neighbor in ipairs(world.neighbors or{})do
-        local neighborDef=world.maps[neighbor.id]
+    if primary and(staticBorders or next(trees))and world.neighbors then
+      for _,neighbor in ipairs(world.neighbors)do
+        -- Gen1 neighbors retain loaded native Map objects; Gen2 keeps their
+        -- definitions by ID. Only cached decorations outside that source map
+        -- can cross over an actor in the current map.
+        local neighborDef=neighbor.map and(neighbor.map.def or neighbor.map)
+          or(world.maps and world.maps[neighbor.id])
         if neighborDef then
           local ownMap=neighbor.ox==actorOriginX and neighbor.oy==actorOriginY
           self:actor(neighborDef,entity,ox,oy,s,moved,now,world,neighbor.ox,neighbor.oy,not ownMap,actorOriginX,actorOriginY)

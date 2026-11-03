@@ -1,0 +1,2326 @@
+{
+  "assets": {
+    "assets/third_party/gen1-outdoor-audit/foreground-02011ec73159df3c4f80a06d.png": {
+      "dimensions": [
+        16,
+        16
+      ],
+      "rgba_sha256": "02011ec73159df3c4f80a06d10aef787e62f2ed2f8fc04e7ef0b21f1849e7b88",
+      "pixel_scale": 1,
+      "source": {
+        "originalArtwork": {
+          "kind": "native_composite",
+          "base": {
+            "tileset": "general__petalburg",
+            "id": 1,
+            "game": "emerald",
+            "hash": "1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1"
+          },
+          "parts": [
+            {
+              "srcX": 0,
+              "y": 0,
+              "x": 0,
+              "srcY": 0,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "02011ec73159df3c4f80a06d10aef787e62f2ed2f8fc04e7ef0b21f1849e7b88"
+              },
+              "donor": {
+                "tileset": "general__petalburg",
+                "id": 426,
+                "game": "emerald",
+                "hash": "eb00c8eebaa54e2caf22c27bbc6ee06621dc65e9e75444433ff5ea506742bf57"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 8,
+              "y": 0,
+              "x": 8,
+              "srcY": 0,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "02011ec73159df3c4f80a06d10aef787e62f2ed2f8fc04e7ef0b21f1849e7b88"
+              },
+              "donor": {
+                "tileset": "general__petalburg",
+                "id": 426,
+                "game": "emerald",
+                "hash": "eb00c8eebaa54e2caf22c27bbc6ee06621dc65e9e75444433ff5ea506742bf57"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 0,
+              "y": 8,
+              "x": 0,
+              "srcY": 8,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "02011ec73159df3c4f80a06d10aef787e62f2ed2f8fc04e7ef0b21f1849e7b88"
+              },
+              "donor": {
+                "tileset": "general__petalburg",
+                "id": 426,
+                "game": "emerald",
+                "hash": "eb00c8eebaa54e2caf22c27bbc6ee06621dc65e9e75444433ff5ea506742bf57"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 8,
+              "y": 8,
+              "x": 8,
+              "srcY": 8,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "02011ec73159df3c4f80a06d10aef787e62f2ed2f8fc04e7ef0b21f1849e7b88"
+              },
+              "donor": {
+                "tileset": "general__petalburg",
+                "id": 426,
+                "game": "emerald",
+                "hash": "eb00c8eebaa54e2caf22c27bbc6ee06621dc65e9e75444433ff5ea506742bf57"
+              },
+              "w": 8,
+              "h": 8
+            }
+          ]
+        },
+        "unchanged_foreground_pixels": 237
+      }
+    },
+    "assets/third_party/gen1-outdoor-audit/foreground-efb3d0a127cad5ab9ea7d879.png": {
+      "dimensions": [
+        16,
+        16
+      ],
+      "rgba_sha256": "efb3d0a127cad5ab9ea7d87962bd03a0ad494d68de43ab0ce73fbb94b336bc5f",
+      "pixel_scale": 1,
+      "source": {
+        "originalArtwork": {
+          "kind": "native_composite",
+          "base": {
+            "tileset": "general__petalburg",
+            "id": 1,
+            "game": "emerald",
+            "hash": "1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1"
+          },
+          "parts": [
+            {
+              "srcX": 0,
+              "y": 0,
+              "x": 0,
+              "srcY": 0,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "efb3d0a127cad5ab9ea7d87962bd03a0ad494d68de43ab0ce73fbb94b336bc5f"
+              },
+              "donor": {
+                "tileset": "general__petalburg",
+                "id": 427,
+                "game": "emerald",
+                "hash": "98a8b64ced61073a4456faef6496f2ec12a489912462b85554f63c5b493bc297"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 8,
+              "y": 0,
+              "x": 8,
+              "srcY": 0,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "efb3d0a127cad5ab9ea7d87962bd03a0ad494d68de43ab0ce73fbb94b336bc5f"
+              },
+              "donor": {
+                "tileset": "general__petalburg",
+                "id": 427,
+                "game": "emerald",
+                "hash": "98a8b64ced61073a4456faef6496f2ec12a489912462b85554f63c5b493bc297"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 0,
+              "y": 8,
+              "x": 0,
+              "srcY": 8,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "efb3d0a127cad5ab9ea7d87962bd03a0ad494d68de43ab0ce73fbb94b336bc5f"
+              },
+              "donor": {
+                "tileset": "general__petalburg",
+                "id": 427,
+                "game": "emerald",
+                "hash": "98a8b64ced61073a4456faef6496f2ec12a489912462b85554f63c5b493bc297"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 8,
+              "y": 8,
+              "x": 8,
+              "srcY": 8,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "efb3d0a127cad5ab9ea7d87962bd03a0ad494d68de43ab0ce73fbb94b336bc5f"
+              },
+              "donor": {
+                "tileset": "general__petalburg",
+                "id": 427,
+                "game": "emerald",
+                "hash": "98a8b64ced61073a4456faef6496f2ec12a489912462b85554f63c5b493bc297"
+              },
+              "w": 8,
+              "h": 8
+            }
+          ]
+        },
+        "unchanged_foreground_pixels": 240
+      }
+    },
+    "assets/third_party/gen1-outdoor-audit/foreground-fdb23f3c398ab20e76beed1a.png": {
+      "dimensions": [
+        16,
+        16
+      ],
+      "rgba_sha256": "fdb23f3c398ab20e76beed1aa2515309de93f589e5ce15288c477f19e62bd328",
+      "pixel_scale": 1,
+      "source": {
+        "originalArtwork": {
+          "kind": "native_composite",
+          "base": {
+            "tileset": "general__petalburg",
+            "id": 1,
+            "game": "emerald",
+            "hash": "1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1"
+          },
+          "parts": [
+            {
+              "srcX": 0,
+              "y": 0,
+              "x": 0,
+              "srcY": 0,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "fdb23f3c398ab20e76beed1aa2515309de93f589e5ce15288c477f19e62bd328"
+              },
+              "donor": {
+                "tileset": "general__petalburg",
+                "id": 440,
+                "game": "emerald",
+                "hash": "490fda12d3f83e479bebf9efb0f228a1f781dfa81674d20ffad8c11a217e1a8b"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 8,
+              "y": 0,
+              "x": 8,
+              "srcY": 0,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "fdb23f3c398ab20e76beed1aa2515309de93f589e5ce15288c477f19e62bd328"
+              },
+              "donor": {
+                "tileset": "general__petalburg",
+                "id": 440,
+                "game": "emerald",
+                "hash": "490fda12d3f83e479bebf9efb0f228a1f781dfa81674d20ffad8c11a217e1a8b"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 0,
+              "y": 8,
+              "x": 0,
+              "srcY": 8,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "fdb23f3c398ab20e76beed1aa2515309de93f589e5ce15288c477f19e62bd328"
+              },
+              "donor": {
+                "tileset": "general__petalburg",
+                "id": 440,
+                "game": "emerald",
+                "hash": "490fda12d3f83e479bebf9efb0f228a1f781dfa81674d20ffad8c11a217e1a8b"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 8,
+              "y": 8,
+              "x": 8,
+              "srcY": 8,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "fdb23f3c398ab20e76beed1aa2515309de93f589e5ce15288c477f19e62bd328"
+              },
+              "donor": {
+                "tileset": "general__petalburg",
+                "id": 440,
+                "game": "emerald",
+                "hash": "490fda12d3f83e479bebf9efb0f228a1f781dfa81674d20ffad8c11a217e1a8b"
+              },
+              "w": 8,
+              "h": 8
+            }
+          ]
+        },
+        "unchanged_foreground_pixels": 249
+      }
+    },
+    "assets/third_party/gen1-outdoor-audit/foreground-4ed6af81edad2755b83723eb.png": {
+      "dimensions": [
+        16,
+        16
+      ],
+      "rgba_sha256": "4ed6af81edad2755b83723eb6640fb38c9a99f9d2dad6acdc3075e2a1417eac2",
+      "pixel_scale": 1,
+      "source": {
+        "originalArtwork": {
+          "kind": "native_composite",
+          "base": {
+            "tileset": "general__petalburg",
+            "id": 1,
+            "game": "emerald",
+            "hash": "1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1"
+          },
+          "parts": [
+            {
+              "srcX": 0,
+              "y": 0,
+              "x": 0,
+              "srcY": 0,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "4ed6af81edad2755b83723eb6640fb38c9a99f9d2dad6acdc3075e2a1417eac2"
+              },
+              "donor": {
+                "tileset": "general__petalburg",
+                "id": 428,
+                "game": "emerald",
+                "hash": "0a15306f9b19fd6e9b3f9cd103321b7769b1f49130a4d28c83fb6e8ebd01d63a"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 8,
+              "y": 0,
+              "x": 8,
+              "srcY": 0,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "4ed6af81edad2755b83723eb6640fb38c9a99f9d2dad6acdc3075e2a1417eac2"
+              },
+              "donor": {
+                "tileset": "general__petalburg",
+                "id": 428,
+                "game": "emerald",
+                "hash": "0a15306f9b19fd6e9b3f9cd103321b7769b1f49130a4d28c83fb6e8ebd01d63a"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 0,
+              "y": 8,
+              "x": 0,
+              "srcY": 8,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "4ed6af81edad2755b83723eb6640fb38c9a99f9d2dad6acdc3075e2a1417eac2"
+              },
+              "donor": {
+                "tileset": "general__petalburg",
+                "id": 428,
+                "game": "emerald",
+                "hash": "0a15306f9b19fd6e9b3f9cd103321b7769b1f49130a4d28c83fb6e8ebd01d63a"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 8,
+              "y": 8,
+              "x": 8,
+              "srcY": 8,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "4ed6af81edad2755b83723eb6640fb38c9a99f9d2dad6acdc3075e2a1417eac2"
+              },
+              "donor": {
+                "tileset": "general__petalburg",
+                "id": 428,
+                "game": "emerald",
+                "hash": "0a15306f9b19fd6e9b3f9cd103321b7769b1f49130a4d28c83fb6e8ebd01d63a"
+              },
+              "w": 8,
+              "h": 8
+            }
+          ]
+        },
+        "unchanged_foreground_pixels": 237
+      }
+    },
+    "assets/third_party/gen1-outdoor-audit/foreground-201503d32f668732fafb7a84.png": {
+      "dimensions": [
+        16,
+        16
+      ],
+      "rgba_sha256": "201503d32f668732fafb7a845746d09b055531794436b1c89ab44b5af97cbc8a",
+      "pixel_scale": 1,
+      "source": {
+        "originalArtwork": {
+          "kind": "native_composite",
+          "base": {
+            "tileset": "general__petalburg",
+            "id": 1,
+            "game": "emerald",
+            "hash": "1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1"
+          },
+          "parts": [
+            {
+              "srcX": 0,
+              "y": 0,
+              "x": 0,
+              "srcY": 0,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "201503d32f668732fafb7a845746d09b055531794436b1c89ab44b5af97cbc8a"
+              },
+              "donor": {
+                "tileset": "general__petalburg",
+                "id": 72,
+                "game": "emerald",
+                "hash": "cc4ef26c0b111885d04ce1f3f9213931806845cce268af301798227fbb93ad9e"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 8,
+              "y": 0,
+              "x": 8,
+              "srcY": 0,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "201503d32f668732fafb7a845746d09b055531794436b1c89ab44b5af97cbc8a"
+              },
+              "donor": {
+                "tileset": "general__petalburg",
+                "id": 72,
+                "game": "emerald",
+                "hash": "cc4ef26c0b111885d04ce1f3f9213931806845cce268af301798227fbb93ad9e"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 0,
+              "y": 8,
+              "x": 0,
+              "srcY": 8,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "201503d32f668732fafb7a845746d09b055531794436b1c89ab44b5af97cbc8a"
+              },
+              "donor": {
+                "tileset": "general__petalburg",
+                "id": 72,
+                "game": "emerald",
+                "hash": "cc4ef26c0b111885d04ce1f3f9213931806845cce268af301798227fbb93ad9e"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 8,
+              "y": 8,
+              "x": 8,
+              "srcY": 8,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "201503d32f668732fafb7a845746d09b055531794436b1c89ab44b5af97cbc8a"
+              },
+              "donor": {
+                "tileset": "general__petalburg",
+                "id": 72,
+                "game": "emerald",
+                "hash": "cc4ef26c0b111885d04ce1f3f9213931806845cce268af301798227fbb93ad9e"
+              },
+              "w": 8,
+              "h": 8
+            }
+          ]
+        },
+        "unchanged_foreground_pixels": 100
+      }
+    },
+    "assets/third_party/gen1-outdoor-audit/foreground-471b68d654c316b0ef755d90.png": {
+      "dimensions": [
+        16,
+        16
+      ],
+      "rgba_sha256": "471b68d654c316b0ef755d906368731085f2d4b0df8904e54109f170cddbc5b1",
+      "pixel_scale": 1,
+      "source": {
+        "originalArtwork": {
+          "kind": "native_composite",
+          "base": {
+            "tileset": "general__petalburg",
+            "id": 1,
+            "game": "emerald",
+            "hash": "1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1"
+          },
+          "parts": [
+            {
+              "srcX": 0,
+              "y": 0,
+              "x": 0,
+              "srcY": 0,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "471b68d654c316b0ef755d906368731085f2d4b0df8904e54109f170cddbc5b1"
+              },
+              "donor": {
+                "tileset": "general__petalburg",
+                "id": 73,
+                "game": "emerald",
+                "hash": "35ba41636c9730dfb6f46b81ad2f43a1512fe50ac5f91a99b131a9b18249d898"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 8,
+              "y": 0,
+              "x": 8,
+              "srcY": 0,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "471b68d654c316b0ef755d906368731085f2d4b0df8904e54109f170cddbc5b1"
+              },
+              "donor": {
+                "tileset": "general__petalburg",
+                "id": 73,
+                "game": "emerald",
+                "hash": "35ba41636c9730dfb6f46b81ad2f43a1512fe50ac5f91a99b131a9b18249d898"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 0,
+              "y": 8,
+              "x": 0,
+              "srcY": 8,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "471b68d654c316b0ef755d906368731085f2d4b0df8904e54109f170cddbc5b1"
+              },
+              "donor": {
+                "tileset": "general__petalburg",
+                "id": 73,
+                "game": "emerald",
+                "hash": "35ba41636c9730dfb6f46b81ad2f43a1512fe50ac5f91a99b131a9b18249d898"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 8,
+              "y": 8,
+              "x": 8,
+              "srcY": 8,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "471b68d654c316b0ef755d906368731085f2d4b0df8904e54109f170cddbc5b1"
+              },
+              "donor": {
+                "tileset": "general__petalburg",
+                "id": 73,
+                "game": "emerald",
+                "hash": "35ba41636c9730dfb6f46b81ad2f43a1512fe50ac5f91a99b131a9b18249d898"
+              },
+              "w": 8,
+              "h": 8
+            }
+          ]
+        },
+        "unchanged_foreground_pixels": 220
+      }
+    },
+    "assets/third_party/gen1-outdoor-audit/foreground-80328d31f0111f9846d16bc0.png": {
+      "dimensions": [
+        16,
+        16
+      ],
+      "rgba_sha256": "80328d31f0111f9846d16bc045b4d3bf56c75dda1a2b53943769ed886f238789",
+      "pixel_scale": 1,
+      "source": {
+        "originalArtwork": {
+          "kind": "native_composite",
+          "base": {
+            "tileset": "general__petalburg",
+            "id": 1,
+            "game": "emerald",
+            "hash": "1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1"
+          },
+          "parts": [
+            {
+              "srcX": 0,
+              "y": 0,
+              "x": 0,
+              "srcY": 0,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "80328d31f0111f9846d16bc045b4d3bf56c75dda1a2b53943769ed886f238789"
+              },
+              "donor": {
+                "tileset": "general__petalburg",
+                "id": 74,
+                "game": "emerald",
+                "hash": "476ee9e9d9fafdb8f0b797b9d550417b56ef2aa0feec276a099a434263868f5b"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 8,
+              "y": 0,
+              "x": 8,
+              "srcY": 0,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "80328d31f0111f9846d16bc045b4d3bf56c75dda1a2b53943769ed886f238789"
+              },
+              "donor": {
+                "tileset": "general__petalburg",
+                "id": 74,
+                "game": "emerald",
+                "hash": "476ee9e9d9fafdb8f0b797b9d550417b56ef2aa0feec276a099a434263868f5b"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 0,
+              "y": 8,
+              "x": 0,
+              "srcY": 8,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "80328d31f0111f9846d16bc045b4d3bf56c75dda1a2b53943769ed886f238789"
+              },
+              "donor": {
+                "tileset": "general__petalburg",
+                "id": 74,
+                "game": "emerald",
+                "hash": "476ee9e9d9fafdb8f0b797b9d550417b56ef2aa0feec276a099a434263868f5b"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 8,
+              "y": 8,
+              "x": 8,
+              "srcY": 8,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "80328d31f0111f9846d16bc045b4d3bf56c75dda1a2b53943769ed886f238789"
+              },
+              "donor": {
+                "tileset": "general__petalburg",
+                "id": 74,
+                "game": "emerald",
+                "hash": "476ee9e9d9fafdb8f0b797b9d550417b56ef2aa0feec276a099a434263868f5b"
+              },
+              "w": 8,
+              "h": 8
+            }
+          ]
+        },
+        "unchanged_foreground_pixels": 220
+      }
+    },
+    "assets/third_party/gen1-outdoor-audit/foreground-66ed7d538dafa03f83aca75a.png": {
+      "dimensions": [
+        16,
+        16
+      ],
+      "rgba_sha256": "66ed7d538dafa03f83aca75a373e613bc277a2d6bf4da716460aa16e83b733aa",
+      "pixel_scale": 1,
+      "source": {
+        "originalArtwork": {
+          "kind": "native_composite",
+          "base": {
+            "tileset": "general__petalburg",
+            "id": 1,
+            "game": "emerald",
+            "hash": "1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1"
+          },
+          "parts": [
+            {
+              "srcX": 0,
+              "y": 0,
+              "x": 0,
+              "srcY": 0,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "66ed7d538dafa03f83aca75a373e613bc277a2d6bf4da716460aa16e83b733aa"
+              },
+              "donor": {
+                "tileset": "general__petalburg",
+                "id": 75,
+                "game": "emerald",
+                "hash": "443e8448037c4920177bf30fc351be088fc2241f70bacf71636dbcd5767c28a1"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 8,
+              "y": 0,
+              "x": 8,
+              "srcY": 0,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "66ed7d538dafa03f83aca75a373e613bc277a2d6bf4da716460aa16e83b733aa"
+              },
+              "donor": {
+                "tileset": "general__petalburg",
+                "id": 75,
+                "game": "emerald",
+                "hash": "443e8448037c4920177bf30fc351be088fc2241f70bacf71636dbcd5767c28a1"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 0,
+              "y": 8,
+              "x": 0,
+              "srcY": 8,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "66ed7d538dafa03f83aca75a373e613bc277a2d6bf4da716460aa16e83b733aa"
+              },
+              "donor": {
+                "tileset": "general__petalburg",
+                "id": 75,
+                "game": "emerald",
+                "hash": "443e8448037c4920177bf30fc351be088fc2241f70bacf71636dbcd5767c28a1"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 8,
+              "y": 8,
+              "x": 8,
+              "srcY": 8,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "66ed7d538dafa03f83aca75a373e613bc277a2d6bf4da716460aa16e83b733aa"
+              },
+              "donor": {
+                "tileset": "general__petalburg",
+                "id": 75,
+                "game": "emerald",
+                "hash": "443e8448037c4920177bf30fc351be088fc2241f70bacf71636dbcd5767c28a1"
+              },
+              "w": 8,
+              "h": 8
+            }
+          ]
+        },
+        "unchanged_foreground_pixels": 100
+      }
+    },
+    "assets/third_party/gen1-outdoor-audit/foreground-f5ac2b3b0f0e5427b4441164.png": {
+      "dimensions": [
+        16,
+        16
+      ],
+      "rgba_sha256": "f5ac2b3b0f0e5427b444116493ffd24fa7976894fbb8cf5dcc65ced072796ea7",
+      "pixel_scale": 1,
+      "source": {
+        "originalArtwork": {
+          "kind": "native_composite",
+          "base": {
+            "tileset": "general__petalburg",
+            "id": 1,
+            "game": "emerald",
+            "hash": "1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1"
+          },
+          "parts": [
+            {
+              "srcX": 0,
+              "y": 0,
+              "x": 0,
+              "srcY": 0,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "f5ac2b3b0f0e5427b444116493ffd24fa7976894fbb8cf5dcc65ced072796ea7"
+              },
+              "donor": {
+                "tileset": "general__petalburg",
+                "id": 592,
+                "game": "emerald",
+                "hash": "7c5ec4f1e91d28ec6727737aeb83a841609e83b9b2e82959deee4293cda75676"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 8,
+              "y": 0,
+              "x": 8,
+              "srcY": 0,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "f5ac2b3b0f0e5427b444116493ffd24fa7976894fbb8cf5dcc65ced072796ea7"
+              },
+              "donor": {
+                "tileset": "general__petalburg",
+                "id": 592,
+                "game": "emerald",
+                "hash": "7c5ec4f1e91d28ec6727737aeb83a841609e83b9b2e82959deee4293cda75676"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 0,
+              "y": 8,
+              "x": 0,
+              "srcY": 8,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "f5ac2b3b0f0e5427b444116493ffd24fa7976894fbb8cf5dcc65ced072796ea7"
+              },
+              "donor": {
+                "tileset": "general__petalburg",
+                "id": 592,
+                "game": "emerald",
+                "hash": "7c5ec4f1e91d28ec6727737aeb83a841609e83b9b2e82959deee4293cda75676"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 8,
+              "y": 8,
+              "x": 8,
+              "srcY": 8,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "f5ac2b3b0f0e5427b444116493ffd24fa7976894fbb8cf5dcc65ced072796ea7"
+              },
+              "donor": {
+                "tileset": "general__petalburg",
+                "id": 592,
+                "game": "emerald",
+                "hash": "7c5ec4f1e91d28ec6727737aeb83a841609e83b9b2e82959deee4293cda75676"
+              },
+              "w": 8,
+              "h": 8
+            }
+          ]
+        },
+        "unchanged_foreground_pixels": 100
+      }
+    },
+    "assets/third_party/gen1-outdoor-audit/foreground-9fbc7992dfc0fafbbc2e9243.png": {
+      "dimensions": [
+        16,
+        16
+      ],
+      "rgba_sha256": "9fbc7992dfc0fafbbc2e9243206c8a8a183b738caee782b7a1b7b00eed624864",
+      "pixel_scale": 1,
+      "source": {
+        "originalArtwork": {
+          "kind": "native_composite",
+          "base": {
+            "tileset": "general__petalburg",
+            "id": 1,
+            "game": "emerald",
+            "hash": "1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1"
+          },
+          "parts": [
+            {
+              "srcX": 0,
+              "y": 0,
+              "x": 0,
+              "srcY": 0,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "9fbc7992dfc0fafbbc2e9243206c8a8a183b738caee782b7a1b7b00eed624864"
+              },
+              "donor": {
+                "tileset": "general__petalburg",
+                "id": 593,
+                "game": "emerald",
+                "hash": "95184a455479cab0e705c83ca647af42fbb0a17474d37503e96bebcf25554be3"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 8,
+              "y": 0,
+              "x": 8,
+              "srcY": 0,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "9fbc7992dfc0fafbbc2e9243206c8a8a183b738caee782b7a1b7b00eed624864"
+              },
+              "donor": {
+                "tileset": "general__petalburg",
+                "id": 593,
+                "game": "emerald",
+                "hash": "95184a455479cab0e705c83ca647af42fbb0a17474d37503e96bebcf25554be3"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 0,
+              "y": 8,
+              "x": 0,
+              "srcY": 8,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "9fbc7992dfc0fafbbc2e9243206c8a8a183b738caee782b7a1b7b00eed624864"
+              },
+              "donor": {
+                "tileset": "general__petalburg",
+                "id": 593,
+                "game": "emerald",
+                "hash": "95184a455479cab0e705c83ca647af42fbb0a17474d37503e96bebcf25554be3"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 8,
+              "y": 8,
+              "x": 8,
+              "srcY": 8,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "9fbc7992dfc0fafbbc2e9243206c8a8a183b738caee782b7a1b7b00eed624864"
+              },
+              "donor": {
+                "tileset": "general__petalburg",
+                "id": 593,
+                "game": "emerald",
+                "hash": "95184a455479cab0e705c83ca647af42fbb0a17474d37503e96bebcf25554be3"
+              },
+              "w": 8,
+              "h": 8
+            }
+          ]
+        },
+        "unchanged_foreground_pixels": 128
+      }
+    },
+    "assets/third_party/gen1-outdoor-audit/foreground-99855007c0887ffb22a428c2.png": {
+      "dimensions": [
+        16,
+        16
+      ],
+      "rgba_sha256": "99855007c0887ffb22a428c2d3d02f349ec514071b23c274897eed31be0eabef",
+      "pixel_scale": 1,
+      "source": {
+        "originalArtwork": {
+          "kind": "native_composite",
+          "base": {
+            "tileset": "general__petalburg",
+            "id": 1,
+            "game": "emerald",
+            "hash": "1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1"
+          },
+          "parts": [
+            {
+              "srcX": 0,
+              "y": 0,
+              "x": 0,
+              "srcY": 0,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "99855007c0887ffb22a428c2d3d02f349ec514071b23c274897eed31be0eabef"
+              },
+              "donor": {
+                "tileset": "general__petalburg",
+                "id": 601,
+                "game": "emerald",
+                "hash": "7f86af5107c810d9f958a9d6efd82eb4a09047f9f784db44d81e6b3e02db7ff4"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 8,
+              "y": 0,
+              "x": 8,
+              "srcY": 0,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "99855007c0887ffb22a428c2d3d02f349ec514071b23c274897eed31be0eabef"
+              },
+              "donor": {
+                "tileset": "general__petalburg",
+                "id": 601,
+                "game": "emerald",
+                "hash": "7f86af5107c810d9f958a9d6efd82eb4a09047f9f784db44d81e6b3e02db7ff4"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 0,
+              "y": 8,
+              "x": 0,
+              "srcY": 8,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "99855007c0887ffb22a428c2d3d02f349ec514071b23c274897eed31be0eabef"
+              },
+              "donor": {
+                "tileset": "general__petalburg",
+                "id": 601,
+                "game": "emerald",
+                "hash": "7f86af5107c810d9f958a9d6efd82eb4a09047f9f784db44d81e6b3e02db7ff4"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 8,
+              "y": 8,
+              "x": 8,
+              "srcY": 8,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "99855007c0887ffb22a428c2d3d02f349ec514071b23c274897eed31be0eabef"
+              },
+              "donor": {
+                "tileset": "general__petalburg",
+                "id": 601,
+                "game": "emerald",
+                "hash": "7f86af5107c810d9f958a9d6efd82eb4a09047f9f784db44d81e6b3e02db7ff4"
+              },
+              "w": 8,
+              "h": 8
+            }
+          ]
+        },
+        "unchanged_foreground_pixels": 100
+      }
+    },
+    "assets/third_party/gen1-outdoor-audit/foreground-2249881ff8b3031ba00939e6.png": {
+      "dimensions": [
+        16,
+        16
+      ],
+      "rgba_sha256": "2249881ff8b3031ba00939e67be8c47e37738927ce669920c6c7fd46b28527da",
+      "pixel_scale": 1,
+      "source": {
+        "originalArtwork": {
+          "kind": "native_composite",
+          "base": {
+            "tileset": "general__petalburg",
+            "id": 1,
+            "game": "emerald",
+            "hash": "1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1"
+          },
+          "parts": [
+            {
+              "srcX": 0,
+              "y": 0,
+              "x": 0,
+              "srcY": 8,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "771838f0569fbc38f419c95514265b3e289386245d16b4b874db6b0372f3ee44"
+              },
+              "donor": {
+                "tileset": "viridian_outdoor",
+                "id": 680,
+                "game": "firered",
+                "hash": "11812069b24ddf2295e2821acc5ab5b382de087348a15595ee456570bcb38a66"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 8,
+              "y": 0,
+              "x": 8,
+              "srcY": 8,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "771838f0569fbc38f419c95514265b3e289386245d16b4b874db6b0372f3ee44"
+              },
+              "donor": {
+                "tileset": "viridian_outdoor",
+                "id": 680,
+                "game": "firered",
+                "hash": "11812069b24ddf2295e2821acc5ab5b382de087348a15595ee456570bcb38a66"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "y": 8,
+              "srcX": 0,
+              "srcY": 8,
+              "donor": {
+                "tileset": "viridian_outdoor",
+                "id": 656,
+                "game": "firered",
+                "hash": "fe498597cf4164ec95f0782b7fa3f03ede868ce308d96e8264b92dc4c8531fa8"
+              },
+              "x": 0,
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 8,
+              "y": 8,
+              "x": 8,
+              "srcY": 8,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "4733c043321e0d9785de059fe35be4c0fd50370e170b30508bbd3930b24f34d6"
+              },
+              "donor": {
+                "tileset": "viridian_outdoor",
+                "id": 656,
+                "game": "firered",
+                "hash": "fe498597cf4164ec95f0782b7fa3f03ede868ce308d96e8264b92dc4c8531fa8"
+              },
+              "w": 8,
+              "h": 8
+            }
+          ]
+        },
+        "unchanged_foreground_pixels": 246
+      }
+    },
+    "assets/third_party/gen1-outdoor-audit/foreground-c78e4e2ccc6eef09711a346a.png": {
+      "dimensions": [
+        16,
+        16
+      ],
+      "rgba_sha256": "c78e4e2ccc6eef09711a346a5faae1c22b6f060bf774dd1a6d70c4a30c237245",
+      "pixel_scale": 1,
+      "source": {
+        "originalArtwork": {
+          "kind": "native_composite",
+          "base": {
+            "tileset": "general__petalburg",
+            "id": 1,
+            "game": "emerald",
+            "hash": "1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1"
+          },
+          "parts": [
+            {
+              "srcX": 0,
+              "y": 0,
+              "x": 0,
+              "srcY": 8,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "efdf546431969ed1019964fe12f953b4e4d67445737c0777c181589a4d493ca9"
+              },
+              "donor": {
+                "tileset": "viridian_outdoor",
+                "id": 681,
+                "game": "firered",
+                "hash": "7ac99c24c1f1663dbd211aefb0f2aa311ed43db66857e99e3c3bdcea45f40137"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 8,
+              "y": 0,
+              "x": 8,
+              "srcY": 8,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "efdf546431969ed1019964fe12f953b4e4d67445737c0777c181589a4d493ca9"
+              },
+              "donor": {
+                "tileset": "viridian_outdoor",
+                "id": 681,
+                "game": "firered",
+                "hash": "7ac99c24c1f1663dbd211aefb0f2aa311ed43db66857e99e3c3bdcea45f40137"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 0,
+              "y": 8,
+              "x": 0,
+              "srcY": 8,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "db674568ceffbd90c9f7207a798631ed78867369bf08b7bc759cdc8f0a83c7a6"
+              },
+              "donor": {
+                "tileset": "viridian_outdoor",
+                "id": 657,
+                "game": "firered",
+                "hash": "db674568ceffbd90c9f7207a798631ed78867369bf08b7bc759cdc8f0a83c7a6"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 8,
+              "y": 8,
+              "x": 8,
+              "srcY": 8,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "db674568ceffbd90c9f7207a798631ed78867369bf08b7bc759cdc8f0a83c7a6"
+              },
+              "donor": {
+                "tileset": "viridian_outdoor",
+                "id": 657,
+                "game": "firered",
+                "hash": "db674568ceffbd90c9f7207a798631ed78867369bf08b7bc759cdc8f0a83c7a6"
+              },
+              "w": 8,
+              "h": 8
+            }
+          ]
+        },
+        "unchanged_foreground_pixels": 248
+      }
+    },
+    "assets/third_party/gen1-outdoor-audit/foreground-36a8eb9f982c409adae6b7b4.png": {
+      "dimensions": [
+        16,
+        16
+      ],
+      "rgba_sha256": "36a8eb9f982c409adae6b7b4df94b5b8320b0cdf0a0c754f5e811fd5d7a84a3c",
+      "pixel_scale": 1,
+      "source": {
+        "originalArtwork": {
+          "kind": "native_composite",
+          "base": {
+            "tileset": "general__petalburg",
+            "id": 1,
+            "game": "emerald",
+            "hash": "1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1"
+          },
+          "parts": [
+            {
+              "srcX": 0,
+              "y": 0,
+              "x": 0,
+              "srcY": 8,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "45d79636938f201c3deddfbc4276a7e1d730e576235fe29a36d1e69d28d858da"
+              },
+              "donor": {
+                "tileset": "viridian_outdoor",
+                "id": 684,
+                "game": "firered",
+                "hash": "533ec173fd9b546ee452ff945689450a3155fe67a9ec984a3e697b967e064867"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 8,
+              "y": 0,
+              "x": 8,
+              "srcY": 8,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "45d79636938f201c3deddfbc4276a7e1d730e576235fe29a36d1e69d28d858da"
+              },
+              "donor": {
+                "tileset": "viridian_outdoor",
+                "id": 684,
+                "game": "firered",
+                "hash": "533ec173fd9b546ee452ff945689450a3155fe67a9ec984a3e697b967e064867"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 0,
+              "y": 8,
+              "x": 0,
+              "srcY": 8,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "07cc478e0ceb77cf31037e2d17e1193ef425867479331a832a5bf974d13e7478"
+              },
+              "donor": {
+                "tileset": "viridian_outdoor",
+                "id": 660,
+                "game": "firered",
+                "hash": "015e69d181175385392c86d88bd818dd204022c38a72ac0007ea6ef84c8808fa"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 8,
+              "y": 8,
+              "x": 8,
+              "srcY": 8,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "07cc478e0ceb77cf31037e2d17e1193ef425867479331a832a5bf974d13e7478"
+              },
+              "donor": {
+                "tileset": "viridian_outdoor",
+                "id": 660,
+                "game": "firered",
+                "hash": "015e69d181175385392c86d88bd818dd204022c38a72ac0007ea6ef84c8808fa"
+              },
+              "w": 8,
+              "h": 8
+            }
+          ]
+        },
+        "unchanged_foreground_pixels": 246
+      }
+    },
+    "assets/third_party/gen1-outdoor-audit/foreground-2105cb0375e25337a405f041.png": {
+      "dimensions": [
+        16,
+        16
+      ],
+      "rgba_sha256": "2105cb0375e25337a405f04120d7611f6aed19b4c111fb8887ffda6c61f4cc47",
+      "pixel_scale": 1,
+      "source": {
+        "originalArtwork": {
+          "kind": "native_composite",
+          "base": {
+            "tileset": "general__petalburg",
+            "id": 1,
+            "game": "emerald",
+            "hash": "1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1"
+          },
+          "parts": [
+            {
+              "srcX": 0,
+              "y": 0,
+              "x": 0,
+              "srcY": 8,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "abade4ecc0491a80e20fb843ae04e64c95ab4ccf7a6f484a0c32ecd798ebd9a6"
+              },
+              "donor": {
+                "tileset": "general__rom_082d4b9c",
+                "id": 816,
+                "game": "firered",
+                "hash": "a7cb01d1904bf533a8417cd6c0d306eb190448601fe7a8b5fef6ed213c0b4e48"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 8,
+              "y": 0,
+              "x": 8,
+              "srcY": 8,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "abade4ecc0491a80e20fb843ae04e64c95ab4ccf7a6f484a0c32ecd798ebd9a6"
+              },
+              "donor": {
+                "tileset": "general__rom_082d4b9c",
+                "id": 816,
+                "game": "firered",
+                "hash": "a7cb01d1904bf533a8417cd6c0d306eb190448601fe7a8b5fef6ed213c0b4e48"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 0,
+              "y": 8,
+              "x": 0,
+              "srcY": 0,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "403900de2e437f7427d4b008fbbd080592ad6cb6169c31a6dc66621afc27f5ee"
+              },
+              "donor": {
+                "tileset": "general__rom_082d4b9c",
+                "id": 824,
+                "game": "firered",
+                "hash": "403900de2e437f7427d4b008fbbd080592ad6cb6169c31a6dc66621afc27f5ee"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 8,
+              "y": 8,
+              "x": 8,
+              "srcY": 0,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "403900de2e437f7427d4b008fbbd080592ad6cb6169c31a6dc66621afc27f5ee"
+              },
+              "donor": {
+                "tileset": "general__rom_082d4b9c",
+                "id": 824,
+                "game": "firered",
+                "hash": "403900de2e437f7427d4b008fbbd080592ad6cb6169c31a6dc66621afc27f5ee"
+              },
+              "w": 8,
+              "h": 8
+            }
+          ]
+        },
+        "unchanged_foreground_pixels": 239
+      }
+    },
+    "assets/third_party/gen1-outdoor-audit/foreground-4305e376d5f4b4f06826d422.png": {
+      "dimensions": [
+        16,
+        16
+      ],
+      "rgba_sha256": "4305e376d5f4b4f06826d422c9ddf624fc7542dcf5c3614e0c7d2ea9e2e8aae6",
+      "pixel_scale": 1,
+      "source": {
+        "originalArtwork": {
+          "kind": "native_composite",
+          "base": {
+            "tileset": "general__petalburg",
+            "id": 1,
+            "game": "emerald",
+            "hash": "1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1"
+          },
+          "parts": [
+            {
+              "srcX": 0,
+              "y": 0,
+              "x": 0,
+              "srcY": 8,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "26206042303c50607ca2c8d290e1fbbbbc12fc17997de3edb08883712af39ceb"
+              },
+              "donor": {
+                "tileset": "general__rom_082d4b9c",
+                "id": 817,
+                "game": "firered",
+                "hash": "112b4eafbafc617781b23651334d945e0490bf8909f54283e389af77c637c5f0"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 8,
+              "y": 0,
+              "x": 8,
+              "srcY": 8,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "26206042303c50607ca2c8d290e1fbbbbc12fc17997de3edb08883712af39ceb"
+              },
+              "donor": {
+                "tileset": "general__rom_082d4b9c",
+                "id": 817,
+                "game": "firered",
+                "hash": "112b4eafbafc617781b23651334d945e0490bf8909f54283e389af77c637c5f0"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 0,
+              "y": 8,
+              "x": 0,
+              "srcY": 0,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "434d5eb629120f9394b54754fe50245e5293497a2ad4484b29ae9867241264c5"
+              },
+              "donor": {
+                "tileset": "general__rom_082d4b9c",
+                "id": 825,
+                "game": "firered",
+                "hash": "434d5eb629120f9394b54754fe50245e5293497a2ad4484b29ae9867241264c5"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 8,
+              "y": 8,
+              "x": 8,
+              "srcY": 0,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "434d5eb629120f9394b54754fe50245e5293497a2ad4484b29ae9867241264c5"
+              },
+              "donor": {
+                "tileset": "general__rom_082d4b9c",
+                "id": 825,
+                "game": "firered",
+                "hash": "434d5eb629120f9394b54754fe50245e5293497a2ad4484b29ae9867241264c5"
+              },
+              "w": 8,
+              "h": 8
+            }
+          ]
+        },
+        "unchanged_foreground_pixels": 240
+      }
+    },
+    "assets/third_party/gen1-outdoor-audit/foreground-7d13acb64aac7e5fb5cb490d.png": {
+      "dimensions": [
+        16,
+        16
+      ],
+      "rgba_sha256": "7d13acb64aac7e5fb5cb490de6f16138ceb8d6c8342488f7d6f418ab7b396ea6",
+      "pixel_scale": 1,
+      "source": {
+        "originalArtwork": {
+          "kind": "native_composite",
+          "base": {
+            "tileset": "general__petalburg",
+            "id": 1,
+            "game": "emerald",
+            "hash": "1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1"
+          },
+          "parts": [
+            {
+              "srcX": 0,
+              "y": 0,
+              "x": 0,
+              "srcY": 8,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "ff4809fab932a463fdd8538d82f4b2ddb2dc440720580367cca5cb0f9768c9d0"
+              },
+              "donor": {
+                "tileset": "general__rom_082d4b9c",
+                "id": 818,
+                "game": "firered",
+                "hash": "768df8a73fc179c9fdd73b3befd97bd9bbb3b6add4ff317dcca331099459a5fc"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 8,
+              "y": 0,
+              "x": 8,
+              "srcY": 8,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "ff4809fab932a463fdd8538d82f4b2ddb2dc440720580367cca5cb0f9768c9d0"
+              },
+              "donor": {
+                "tileset": "general__rom_082d4b9c",
+                "id": 818,
+                "game": "firered",
+                "hash": "768df8a73fc179c9fdd73b3befd97bd9bbb3b6add4ff317dcca331099459a5fc"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 0,
+              "y": 8,
+              "x": 0,
+              "srcY": 0,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "a4891ed8358eb13fc395fad690e3d4f550389fb2f58faae13624a66c1b924770"
+              },
+              "donor": {
+                "tileset": "general__rom_082d4b9c",
+                "id": 826,
+                "game": "firered",
+                "hash": "a4891ed8358eb13fc395fad690e3d4f550389fb2f58faae13624a66c1b924770"
+              },
+              "w": 8,
+              "h": 8
+            },
+            {
+              "srcX": 8,
+              "y": 8,
+              "x": 8,
+              "srcY": 0,
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "a4891ed8358eb13fc395fad690e3d4f550389fb2f58faae13624a66c1b924770"
+              },
+              "donor": {
+                "tileset": "general__rom_082d4b9c",
+                "id": 826,
+                "game": "firered",
+                "hash": "a4891ed8358eb13fc395fad690e3d4f550389fb2f58faae13624a66c1b924770"
+              },
+              "w": 8,
+              "h": 8
+            }
+          ]
+        },
+        "unchanged_foreground_pixels": 239
+      }
+    },
+    "assets/third_party/gen1-outdoor-audit/foreground-a93049b5cd6a1dec9f2d7aea.png": {
+      "dimensions": [
+        16,
+        16
+      ],
+      "rgba_sha256": "a93049b5cd6a1dec9f2d7aea74a40f20d8a71608770fb7b731996db50551c40e",
+      "pixel_scale": 1,
+      "source": {
+        "originalArtwork": {
+          "donor": {
+            "tileset": "pallet_outdoor",
+            "id": 644,
+            "game": "firered",
+            "hash": "03087e017ab190f3aafa4f07ae258d16cbf4e6a243241899c171e506cdc58ebd"
+          }
+        },
+        "unchanged_foreground_pixels": 174
+      }
+    },
+    "assets/third_party/gen1-outdoor-audit/foreground-ff7e267651d17e91b2b06586.png": {
+      "dimensions": [
+        16,
+        16
+      ],
+      "rgba_sha256": "ff7e267651d17e91b2b065867b1ee4bcac7c1cf8cdc7949588fa42381a63fac0",
+      "pixel_scale": 1,
+      "source": {
+        "originalArtwork": {
+          "kind": "native_composite",
+          "base": {
+            "tileset": "pewter_outdoor",
+            "id": 1,
+            "game": "firered",
+            "hash": "fd831cddaec923ae603b552833a9be282af7d55b0f32b1cd46fef4d700ae2be6"
+          },
+          "parts": [
+            {
+              "donor": {
+                "game": "firered",
+                "tileset": "general__rom_082d4b54",
+                "id": 236,
+                "hash": "391fd3308777ac65d664acae7e54c225302a7392d2c83a886c68b660aa2a9f51"
+              },
+              "layers": [
+                "mid"
+              ],
+              "layerHashes": {
+                "mid": "ff7e267651d17e91b2b065867b1ee4bcac7c1cf8cdc7949588fa42381a63fac0"
+              },
+              "srcX": 0,
+              "srcY": 0,
+              "w": 16,
+              "h": 16,
+              "x": 0,
+              "y": 0
+            }
+          ]
+        },
+        "unchanged_foreground_pixels": 171
+      }
+    },
+    "assets/third_party/gen1-outdoor-audit/foreground-c80a8ffa5f483e65942f1f25.png": {
+      "dimensions": [
+        16,
+        16
+      ],
+      "rgba_sha256": "c80a8ffa5f483e65942f1f252bf3165ec540ccde11c82ad904c339afaf325b14",
+      "pixel_scale": 1,
+      "source": {
+        "originalArtwork": {
+          "kind": "native_composite",
+          "base": {
+            "tileset": "pewter_outdoor",
+            "id": 1,
+            "game": "firered",
+            "hash": "fd831cddaec923ae603b552833a9be282af7d55b0f32b1cd46fef4d700ae2be6"
+          },
+          "parts": [
+            {
+              "donor": {
+                "game": "firered",
+                "tileset": "general__rom_082d4b54",
+                "id": 244,
+                "hash": "63e5b521b028a2e57d3eddf503cc2fcb440f28a622d8c21464fcf8e326eb7d86"
+              },
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "c80a8ffa5f483e65942f1f252bf3165ec540ccde11c82ad904c339afaf325b14"
+              },
+              "srcX": 0,
+              "srcY": 0,
+              "w": 16,
+              "h": 16,
+              "x": 0,
+              "y": 0
+            }
+          ]
+        },
+        "unchanged_foreground_pixels": 78
+      }
+    },
+    "assets/third_party/gen1-outdoor-audit/foreground-6205beb0ea9935e568db87f4.png": {
+      "dimensions": [
+        16,
+        16
+      ],
+      "rgba_sha256": "6205beb0ea9935e568db87f42235567fd84350602f968f2181938611c03a1ad5",
+      "pixel_scale": 1,
+      "source": {
+        "originalArtwork": {
+          "kind": "native_composite",
+          "base": {
+            "tileset": "pewter_outdoor",
+            "id": 1,
+            "game": "firered",
+            "hash": "fd831cddaec923ae603b552833a9be282af7d55b0f32b1cd46fef4d700ae2be6"
+          },
+          "parts": [
+            {
+              "donor": {
+                "game": "firered",
+                "tileset": "general__rom_082d4b54",
+                "id": 237,
+                "hash": "5907cd4abd0e47826cd0b026a925bb6c50b6489515864e2a8355695eba4b5eec"
+              },
+              "layers": [
+                "mid"
+              ],
+              "layerHashes": {
+                "mid": "6205beb0ea9935e568db87f42235567fd84350602f968f2181938611c03a1ad5"
+              },
+              "srcX": 0,
+              "srcY": 0,
+              "w": 16,
+              "h": 16,
+              "x": 0,
+              "y": 0
+            }
+          ]
+        },
+        "unchanged_foreground_pixels": 171
+      }
+    },
+    "assets/third_party/gen1-outdoor-audit/foreground-898a78085c087c02cfc2dbb6.png": {
+      "dimensions": [
+        16,
+        16
+      ],
+      "rgba_sha256": "898a78085c087c02cfc2dbb68a895f4c3235ca4d26ce4e201fab6c8c2488737a",
+      "pixel_scale": 1,
+      "source": {
+        "originalArtwork": {
+          "kind": "native_composite",
+          "base": {
+            "tileset": "pewter_outdoor",
+            "id": 1,
+            "game": "firered",
+            "hash": "fd831cddaec923ae603b552833a9be282af7d55b0f32b1cd46fef4d700ae2be6"
+          },
+          "parts": [
+            {
+              "donor": {
+                "game": "firered",
+                "tileset": "general__rom_082d4b54",
+                "id": 245,
+                "hash": "94ec300543f851c07d9b90cc0c13edb8e8d0712a334e4cc65e2ab0116bbc3016"
+              },
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "898a78085c087c02cfc2dbb68a895f4c3235ca4d26ce4e201fab6c8c2488737a"
+              },
+              "srcX": 0,
+              "srcY": 0,
+              "w": 16,
+              "h": 16,
+              "x": 0,
+              "y": 0
+            }
+          ]
+        },
+        "unchanged_foreground_pixels": 78
+      }
+    },
+    "assets/third_party/gen1-outdoor-audit/foreground-a168b4835c09e2a19ba9b848.png": {
+      "dimensions": [
+        16,
+        16
+      ],
+      "rgba_sha256": "a168b4835c09e2a19ba9b848425d018b73026b7f5b545aa0e3293fa9e8706441",
+      "pixel_scale": 1,
+      "source": {
+        "originalArtwork": {
+          "kind": "native_composite",
+          "base": {
+            "tileset": "pewter_outdoor",
+            "id": 1,
+            "game": "firered",
+            "hash": "fd831cddaec923ae603b552833a9be282af7d55b0f32b1cd46fef4d700ae2be6"
+          },
+          "parts": [
+            {
+              "donor": {
+                "game": "firered",
+                "tileset": "general__rom_082d4b54",
+                "id": 238,
+                "hash": "abccfd7b59e6ee6c718715305c2fa214083162b796a4ddccc01a6d6fc7dd2fde"
+              },
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "f680b54fe35fee701eb2c3467657271af2ceab40a32891c56d39f42643945690"
+              },
+              "srcX": 8,
+              "srcY": 2,
+              "w": 8,
+              "h": 14,
+              "x": 0,
+              "y": 2
+            }
+          ]
+        },
+        "unchanged_foreground_pixels": 84
+      }
+    },
+    "assets/third_party/gen1-outdoor-audit/foreground-f680b54fe35fee701eb2c346.png": {
+      "dimensions": [
+        16,
+        16
+      ],
+      "rgba_sha256": "f680b54fe35fee701eb2c3467657271af2ceab40a32891c56d39f42643945690",
+      "pixel_scale": 1,
+      "source": {
+        "originalArtwork": {
+          "kind": "native_composite",
+          "base": {
+            "tileset": "pewter_outdoor",
+            "id": 1,
+            "game": "firered",
+            "hash": "fd831cddaec923ae603b552833a9be282af7d55b0f32b1cd46fef4d700ae2be6"
+          },
+          "parts": [
+            {
+              "donor": {
+                "game": "firered",
+                "tileset": "general__rom_082d4b54",
+                "id": 238,
+                "hash": "abccfd7b59e6ee6c718715305c2fa214083162b796a4ddccc01a6d6fc7dd2fde"
+              },
+              "layers": [
+                "over"
+              ],
+              "layerHashes": {
+                "over": "f680b54fe35fee701eb2c3467657271af2ceab40a32891c56d39f42643945690"
+              },
+              "srcX": 8,
+              "srcY": 2,
+              "w": 8,
+              "h": 14,
+              "x": 8,
+              "y": 2
+            }
+          ]
+        },
+        "unchanged_foreground_pixels": 84
+      }
+    },
+    "assets/third_party/gen1-outdoor-audit/foreground-bcff0735e3513f930640f302.png": {
+      "dimensions": [
+        16,
+        16
+      ],
+      "rgba_sha256": "bcff0735e3513f930640f302af1db457b08ce2f9a571005945afbb734d5108da",
+      "pixel_scale": 1,
+      "source": {
+        "native_post": {
+          "game": "firered",
+          "tileset": "general__rom_082d4b84",
+          "id": 711,
+          "hash": "7d92e0cb24bf9f2eab1a2a909a558d020bd0e961bddc49946b19c8bfd7d6ee5f"
+        },
+        "native_layer": "mid",
+        "whole_native_pixels": 211
+      }
+    },
+    "assets/third_party/gen1-outdoor-audit/foreground-fedb567d057787fa817d1709.png": {
+      "dimensions": [
+        16,
+        16
+      ],
+      "rgba_sha256": "fedb567d057787fa817d170955118b87d7b68ee6cdae2216790d87eac11e0252",
+      "pixel_scale": 1,
+      "source": {
+        "originalArtwork": {
+          "kind": "native_composite",
+          "base": {
+            "tileset": "pewter_outdoor",
+            "id": 1,
+            "game": "firered",
+            "hash": "fd831cddaec923ae603b552833a9be282af7d55b0f32b1cd46fef4d700ae2be6"
+          },
+          "parts": [
+            {
+              "donor": {
+                "game": "firered",
+                "tileset": "general__rom_082d4b54",
+                "id": 252,
+                "hash": "5cc93acdfd20c3aaa7e59346bfa7253aced6da456480947d2ad917617a27c848"
+              },
+              "layers": [
+                "mid"
+              ],
+              "layerHashes": {
+                "mid": "fedb567d057787fa817d170955118b87d7b68ee6cdae2216790d87eac11e0252"
+              },
+              "srcX": 0,
+              "srcY": 0,
+              "w": 16,
+              "h": 16,
+              "x": 0,
+              "y": 0
+            }
+          ]
+        },
+        "unchanged_foreground_pixels": 182
+      }
+    },
+    "assets/third_party/gen1-outdoor-audit/foreground-314ad77088dcff2fd758932f.png": {
+      "dimensions": [
+        16,
+        16
+      ],
+      "rgba_sha256": "314ad77088dcff2fd758932f35d4604ce8f18e54ba2890e2f57030fcf8294e16",
+      "pixel_scale": 1,
+      "source": {
+        "originalArtwork": {
+          "kind": "native_composite",
+          "base": {
+            "tileset": "pewter_outdoor",
+            "id": 1,
+            "game": "firered",
+            "hash": "fd831cddaec923ae603b552833a9be282af7d55b0f32b1cd46fef4d700ae2be6"
+          },
+          "parts": [
+            {
+              "donor": {
+                "game": "firered",
+                "tileset": "general__rom_082d4b54",
+                "id": 253,
+                "hash": "7bfaaaff7dd5fa9b6bca4946a6328dd658240d9275e5921ba7382d01575a25d0"
+              },
+              "layers": [
+                "mid"
+              ],
+              "layerHashes": {
+                "mid": "314ad77088dcff2fd758932f35d4604ce8f18e54ba2890e2f57030fcf8294e16"
+              },
+              "srcX": 0,
+              "srcY": 0,
+              "w": 16,
+              "h": 16,
+              "x": 0,
+              "y": 0
+            }
+          ]
+        },
+        "unchanged_foreground_pixels": 182
+      }
+    },
+    "assets/third_party/gen1-outdoor-audit/foreground-6a80a645ae735c523fd85340.png": {
+      "dimensions": [
+        16,
+        16
+      ],
+      "rgba_sha256": "6a80a645ae735c523fd853403ba66c6d6ed54ca00a3b025af2fcc1db2b015140",
+      "pixel_scale": 1,
+      "source": {
+        "existing_native_asset": "assets/third_party/johto-hacks/centers/firegold-center-1-1.png"
+      }
+    },
+    "assets/third_party/gen1-outdoor-audit/foreground-4427cc2eadd5312b10da500f.png": {
+      "dimensions": [
+        16,
+        16
+      ],
+      "rgba_sha256": "4427cc2eadd5312b10da500f1077932d5e9765323eb3150a934a301db4973511",
+      "pixel_scale": 1,
+      "source": {
+        "existing_native_asset": "assets/third_party/johto-hacks/centers/firegold-center-2-1.png"
+      }
+    },
+    "assets/third_party/gen1-outdoor-audit/foreground-93b1b7e8a301587f976564d3.png": {
+      "dimensions": [
+        16,
+        16
+      ],
+      "rgba_sha256": "93b1b7e8a301587f976564d3d871d64b5f70384061083d121023d2468fa35727",
+      "pixel_scale": 1,
+      "source": {
+        "existing_native_asset": "assets/third_party/johto-hacks/centers/firegold-center-1-2.png"
+      }
+    },
+    "assets/third_party/gen1-outdoor-audit/foreground-a5182e66d87306611342e282.png": {
+      "dimensions": [
+        16,
+        16
+      ],
+      "rgba_sha256": "a5182e66d87306611342e28264503647a50db871c8af1362553a3e3ba4bc3170",
+      "pixel_scale": 1,
+      "source": {
+        "existing_native_asset": "assets/third_party/johto-hacks/centers/firegold-center-2-2.png"
+      }
+    },
+    "assets/third_party/gen1-outdoor-audit/foreground-4d4723a482a107dca729a0b6.png": {
+      "dimensions": [
+        16,
+        16
+      ],
+      "rgba_sha256": "4d4723a482a107dca729a0b6e2b918b1d8017144366d088a52af1fbf2b4e19fc",
+      "pixel_scale": 1,
+      "source": {
+        "existing_native_asset": "assets/third_party/johto-hacks/centers/firegold-center-3-1.png"
+      }
+    },
+    "assets/third_party/gen1-outdoor-audit/foreground-77a8124199a93fb5371cb570.png": {
+      "dimensions": [
+        16,
+        16
+      ],
+      "rgba_sha256": "77a8124199a93fb5371cb5702b9d0ce684ff57590044e07619521c466319e842",
+      "pixel_scale": 1,
+      "source": {
+        "existing_native_asset": "assets/third_party/johto-hacks/centers/firegold-center-4-1.png"
+      }
+    },
+    "assets/third_party/gen1-outdoor-audit/foreground-3bebf1cdddaa70959ac1e94f.png": {
+      "dimensions": [
+        16,
+        16
+      ],
+      "rgba_sha256": "3bebf1cdddaa70959ac1e94f84b87b0b43b1dff7efd71d923cfc4cbbec9d5ce5",
+      "pixel_scale": 1,
+      "source": {
+        "existing_native_asset": "assets/third_party/johto-hacks/centers/firegold-center-3-2.png"
+      }
+    },
+    "assets/third_party/gen1-outdoor-audit/foreground-6f0dd92d94406d319d1c9719.png": {
+      "dimensions": [
+        16,
+        16
+      ],
+      "rgba_sha256": "6f0dd92d94406d319d1c9719ec0b925ceba29fb6fd8e58bf04a48311611af433",
+      "pixel_scale": 1,
+      "source": {
+        "existing_native_asset": "assets/third_party/johto-hacks/centers/firegold-center-4-2.png"
+      }
+    },
+    "assets/third_party/gen1-outdoor-audit/foreground-53b4d06a787510d4347aa1d2.png": {
+      "dimensions": [
+        16,
+        16
+      ],
+      "rgba_sha256": "53b4d06a787510d4347aa1d22fdcbcc661be2f06c815bd69405d44b1dae46765",
+      "pixel_scale": 1,
+      "source": {
+        "existing_native_asset": "assets/third_party/johto-hacks/centers/firegold-center-1-3.png"
+      }
+    },
+    "assets/third_party/gen1-outdoor-audit/foreground-188b3dc6b768fda7c951b6c4.png": {
+      "dimensions": [
+        16,
+        16
+      ],
+      "rgba_sha256": "188b3dc6b768fda7c951b6c46c66b39cc517dead17f2ca0f4473db1c7d36270e",
+      "pixel_scale": 1,
+      "source": {
+        "existing_native_asset": "assets/third_party/johto-hacks/centers/firegold-center-2-3.png"
+      }
+    },
+    "assets/third_party/gen1-outdoor-audit/foreground-629fe102e85694eebc148c5b.png": {
+      "dimensions": [
+        16,
+        16
+      ],
+      "rgba_sha256": "629fe102e85694eebc148c5b4461b346d50f51411df8ecdac78ebce58618deeb",
+      "pixel_scale": 1,
+      "source": {
+        "existing_native_asset": "assets/third_party/johto-hacks/centers/firegold-center-1-4.png"
+      }
+    },
+    "assets/third_party/gen1-outdoor-audit/foreground-1e99eaa8ebd30d9b730c366f.png": {
+      "dimensions": [
+        16,
+        16
+      ],
+      "rgba_sha256": "1e99eaa8ebd30d9b730c366f6f8908c345f641b885f3e9e4635f5f2451d92400",
+      "pixel_scale": 1,
+      "source": {
+        "existing_native_asset": "assets/third_party/johto-hacks/centers/firegold-center-2-4.png"
+      }
+    },
+    "assets/third_party/gen1-outdoor-audit/foreground-577cf1d96f156bbf91dbd264.png": {
+      "dimensions": [
+        16,
+        16
+      ],
+      "rgba_sha256": "577cf1d96f156bbf91dbd2648100e3292b2624da9d51c80d9e46284c6b144287",
+      "pixel_scale": 1,
+      "source": {
+        "existing_native_asset": "assets/third_party/johto-hacks/centers/firegold-center-3-3.png"
+      }
+    },
+    "assets/third_party/gen1-outdoor-audit/foreground-06baefc65324ce320ea274aa.png": {
+      "dimensions": [
+        16,
+        16
+      ],
+      "rgba_sha256": "06baefc65324ce320ea274aab176ddff9597fec58566aff114226fd6051651c7",
+      "pixel_scale": 1,
+      "source": {
+        "existing_native_asset": "assets/third_party/johto-hacks/centers/firegold-center-4-3.png"
+      }
+    },
+    "assets/third_party/gen1-outdoor-audit/foreground-432b63a152b2ad8cc699e6f7.png": {
+      "dimensions": [
+        16,
+        16
+      ],
+      "rgba_sha256": "432b63a152b2ad8cc699e6f7c27cc1efbd301d3103856114c7fc88cb823c3141",
+      "pixel_scale": 1,
+      "source": {
+        "existing_native_asset": "assets/third_party/johto-hacks/centers/firegold-center-3-4.png"
+      }
+    },
+    "assets/third_party/gen1-outdoor-audit/foreground-49205d3960ccdf86273c76fd.png": {
+      "dimensions": [
+        16,
+        16
+      ],
+      "rgba_sha256": "49205d3960ccdf86273c76fd0e42b682841b35db6343a62eb98745c7aca86a31",
+      "pixel_scale": 1,
+      "source": {
+        "existing_native_asset": "assets/third_party/johto-hacks/centers/firegold-center-4-4.png"
+      }
+    }
+  },
+  "files": {
+    "foreground-02011ec73159df3c4f80a06d.png": "78aa3e9871354eb8271d6b273bbfdd3ad4d9b416bc9dd76f65b313aed93fab81",
+    "foreground-efb3d0a127cad5ab9ea7d879.png": "455dd12c88688e0e09841c53655683d4716bdde8bac93e88c5cd70df4cc33a6f",
+    "foreground-fdb23f3c398ab20e76beed1a.png": "86c3902a5c6121a42804cfdd96f75c91a308e2bc61119094df252b094e9fddeb",
+    "foreground-4ed6af81edad2755b83723eb.png": "117098587004faaab7a18ee6987a4fe86ac623c4d8a75046193f7692d23f788e",
+    "foreground-201503d32f668732fafb7a84.png": "34f59f67178de91954d2b148e3f5cc4b1a69dbe2b79547ecbaeb86dcb5fcbfaa",
+    "foreground-471b68d654c316b0ef755d90.png": "e49b411310f36a3967208c44151af699cda3ab142f357510a039ec67894af65c",
+    "foreground-80328d31f0111f9846d16bc0.png": "5204d9bfd7931ae9652d181f9fb6ed88eef23ccc1ea0157cf72e944c078a36fa",
+    "foreground-66ed7d538dafa03f83aca75a.png": "5701052d0cd8a8361e22843f8ec6d75a9b506fcfa56907048131d64284093724",
+    "foreground-f5ac2b3b0f0e5427b4441164.png": "fc153501ece2622af7eb1159f10a19f47fe92922c228102c098f523729760233",
+    "foreground-9fbc7992dfc0fafbbc2e9243.png": "63167d7e299b1407fa988c4220c2e21f251a8dddea7766dbeb3688992cabcfdd",
+    "foreground-99855007c0887ffb22a428c2.png": "26c19b3853ef8b6e5d5cab4be06ebb00da65ed6350f54412d076b9b266b340a8",
+    "foreground-2249881ff8b3031ba00939e6.png": "336febc6323e645fc59148c00206f30e0335ac80b039dafe88166a676ed3f207",
+    "foreground-c78e4e2ccc6eef09711a346a.png": "9448d524b388663bdafaecdf42ea111fe29009f4d9c28e9959bea31605ea1583",
+    "foreground-36a8eb9f982c409adae6b7b4.png": "b1c954bcc976b89259b31482cc3a0e1141186a865f94345871fa494540b9787a",
+    "foreground-2105cb0375e25337a405f041.png": "4ee620cb20b56d820da40aef74bb65e553947d0b637cdfdb56fc045e32e09c1c",
+    "foreground-4305e376d5f4b4f06826d422.png": "f3f945c17acabd6618c7bb970fa1a16a422647a517341c1692c86f294a8af774",
+    "foreground-7d13acb64aac7e5fb5cb490d.png": "815328642a4d4f0b5cc573cd4624d2fb5c98c560b4ba79bb0530a0c616e25fe8",
+    "foreground-a93049b5cd6a1dec9f2d7aea.png": "2ed65b8fa24b4ee191155e5b7d672c85cb61d51804333f37641e22cd82c3a6b0",
+    "foreground-ff7e267651d17e91b2b06586.png": "87ecc735fa38abe453d87702be21ffe37c4da59c5b8473ab0a9dc147046cabab",
+    "foreground-c80a8ffa5f483e65942f1f25.png": "7ff752ff5a1091834426581834cbd184c653213d1973a36f393a91613e53b462",
+    "foreground-6205beb0ea9935e568db87f4.png": "bf0e2c1e53ea2d6578d52fdfb46987a87a5c8230baabbccf31450826d364efad",
+    "foreground-898a78085c087c02cfc2dbb6.png": "73c87af5a29691e26011602be3078b236f1befe16dffb9761d0b86534a72e2fc",
+    "foreground-a168b4835c09e2a19ba9b848.png": "12af0bf95fed14daeabd6c19db8d7f0ae0af45496298e38c21d849f65c8f6b9c",
+    "foreground-f680b54fe35fee701eb2c346.png": "39fe2eb4537fd9fcd50c12aab9b3bce5659b852f5e90ed04dfe2ed3884390e92",
+    "foreground-bcff0735e3513f930640f302.png": "e9647847fae194573f5c0ad670784b91d9aff8a40f86503bc805606341bacf0d",
+    "foreground-fedb567d057787fa817d1709.png": "8f64ae918de9fee3d89e6073b32c608db04d700577a4f9ebaf66567b28a33b8a",
+    "foreground-314ad77088dcff2fd758932f.png": "c505e3ec0834dab6a5cb66596c502c96f45c9de2a35e86773ab0737015164b15",
+    "foreground-6a80a645ae735c523fd85340.png": "59832e7d40e3ad890b2f79fa528a093e29001569520627b12a6582242f2dd896",
+    "foreground-4427cc2eadd5312b10da500f.png": "736160b981570a4d8c1775a61dd12eab24900d08bca31b198befcdaba7a6de5b",
+    "foreground-93b1b7e8a301587f976564d3.png": "3cd122f7e44844fe28aeca1bd1120f58bbccae82cdca647d8b227b85f437b8ab",
+    "foreground-a5182e66d87306611342e282.png": "4f73e3255edb8487072d1e0854b0c6b101837d5a9e2d58215275c3728cd46bc7",
+    "foreground-4d4723a482a107dca729a0b6.png": "16639903851bfabac986971555c4e056ed0a03c5fd406a96c15324b38ffe49d6",
+    "foreground-77a8124199a93fb5371cb570.png": "3997796bc0709acef3e1b868e3f09bf9849816d70ab9bde390aabfd59361433f",
+    "foreground-3bebf1cdddaa70959ac1e94f.png": "50ab6080a44d463b79e61158d6b6f279c3e8079b84a9804594033584bb8a083b",
+    "foreground-6f0dd92d94406d319d1c9719.png": "b0581132ddd7e43348f2587c9d3aa7186715a3da4a5bf93e68abad733c02dace",
+    "foreground-53b4d06a787510d4347aa1d2.png": "e520db900426c46eb56233d2a72807b01dfb8acb2293d747aee3c7b6fef939de",
+    "foreground-188b3dc6b768fda7c951b6c4.png": "35ed3987048d5d0047564f707d6e676eab8fe9e80910a5026969c6799b18f126",
+    "foreground-629fe102e85694eebc148c5b.png": "cbd374713c7aec921bc2d71a53e8847da1baf834381f26294ec05119587d4845",
+    "foreground-1e99eaa8ebd30d9b730c366f.png": "43b9831a22849d40d39c17ca0c136d24f775c914314ed48e4bb412e34d402faf",
+    "foreground-577cf1d96f156bbf91dbd264.png": "ca3133c13739434591de9aee22a1b1dde2428803b9ad65eb27c325c7bfb2d1d2",
+    "foreground-06baefc65324ce320ea274aa.png": "108bd82854747062bd335fc0db298f5f70d09de608ab114071f84af33cab3393",
+    "foreground-432b63a152b2ad8cc699e6f7.png": "6bff4f1f95ddf216f30d02cff1c76ac37f07a1fc180e8844f5ee796cf2660799",
+    "foreground-49205d3960ccdf86273c76fd.png": "d835738f6e2ad1005aab8a22f14fa83827ee9f4d7ed9fd64a977b18d41b86849"
+  }
+}

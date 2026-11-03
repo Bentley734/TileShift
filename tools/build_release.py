@@ -40,6 +40,8 @@ def main() -> None:
                 'third_party/gamefreak/gsc-apartments/', 'third_party/kanto-landmarks/',
                 'third_party/native-kanto-chairs/', 'third_party/saffron-paving/')
     allowed += ('third_party/gen2-domestic-floor-audit/', 'third_party/native-interior-seats/')
+    allowed += ('third_party/gen1-outdoor-audit/', 'third_party/gen1-seating-domestic/',
+                'third_party/gamefreak/rby-facility-floor/')
     interior_folders = ('original/azalea-lawn', 'original/interior-beacon', 'original/interior-computer', 'original/interior-flowerpot', 'original/interior-lattice', 'original/interior-painting', 'original/interior-pillar', 'original/interior-planter', 'original/interior-radio', 'original/interior-railpost', 'original/interior-stairs', 'original/interior-tower-modules')
     allowed += tuple(folder + '/' for folder in interior_folders)
     for path in asset_files:
@@ -58,14 +60,26 @@ def main() -> None:
         for name, digest in provenance['files'].items():
             assert hashlib.sha256((record.parent / name).read_bytes()).hexdigest() == digest, 'Hack artwork provenance changed'
     for folder in ('kanto-landmarks', 'native-kanto-chairs', 'saffron-paving',
-                   'gen2-domestic-floor-audit', 'native-interior-seats'):
+                   'gen2-domestic-floor-audit', 'native-interior-seats',
+                   'gen1-outdoor-audit', 'gen1-seating-domestic', 'gamefreak/rby-facility-floor'):
         directory = root / 'assets/third_party' / folder
         provenance = json.loads((directory / 'provenance.json').read_text(encoding='utf-8'))
-        for name, digest in provenance['files'].items():
+        checked_files = provenance['files']
+        if isinstance(checked_files, list):
+            assert folder == 'gen1-seating-domestic', 'Unexpected native asset provenance schema'
+            checked_files = {}
+            for record in provenance['files']:
+                path = root / record['path']
+                assert path.resolve().is_relative_to(directory.resolve()), 'Native provenance leaves its reviewed folder'
+                name = path.relative_to(directory).as_posix()
+                assert name not in checked_files, 'Duplicate native PNG provenance'
+                checked_files[name] = record['sha256']
+        assert isinstance(checked_files, dict), 'Invalid native PNG provenance'
+        for name, digest in checked_files.items():
             path = directory / name
             assert path.resolve().is_relative_to(directory.resolve()), 'Native artwork leaves its reviewed folder'
             assert hashlib.sha256(path.read_bytes()).hexdigest() == digest, 'Native artwork changed'
-        assert set(provenance['files']) == {path.relative_to(directory).as_posix()
+        assert set(checked_files) == {path.relative_to(directory).as_posix()
             for path in directory.rglob('*.png')}, 'Native PNG lacks provenance'
     # Complete native sculptures and the explicitly credited original-GSC
     # geometry derivatives have distinct provenance schemas. Every packaged

@@ -263,3 +263,10 @@ and place them over each source room's selected floor. Exact derivative pixels
 and source recipes are recorded in assets/third_party/gen2-domestic-floor-audit/
 provenance.json. Native interior cushions and lounge/waiting-seat artwork are
 credited in assets/third_party/native-interior-seats/provenance.json.
+
+The Gen 1 completion audit uses native FireRed/Emerald room objects and the
+user-authorized FireGold clinic, plus the approved full-size League fit.
+Native foregrounds, exact source geometry for unmatched compact details,
+source-room masks and file hashes are recorded in assets/third_party/
+gen1-outdoor-audit/, gen1-seating-domestic/ and gamefreak/rby-facility-floor/
+provenance.json. No original layout, entrance or NPC coordinates are moved.

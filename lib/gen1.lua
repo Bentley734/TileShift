@@ -16,6 +16,8 @@ function G.install(ctx)
   local owned, warned = {}, {}
   local closed = false
   local roofView={camera={x=0,y=0}}
+  local borderRoofView={camera={x=0,y=0}}
+  local borderRenderer,borderGame
   local cleanup
   local function active()
     if closed then return false end
@@ -201,9 +203,15 @@ function G.install(ctx)
     return unpack(result,1,result.n)
   end)
   wrap('drawBorderFill',function(native,self,cx,cy,vw,vh)
+    borderRenderer=nil
     local result=pack(native(self,cx,cy,vw,vh))
     local replacements=rows(self)
     if not replacements then return unpack(result,1,result.n) end
+    if ctx.roofs and vw and vh then
+      borderRenderer,borderGame=self,version()
+      borderRoofView.camera.x,borderRoofView.camera.y=cx,cy
+      borderRoofView.viewW,borderRoofView.viewH=vw,vh
+    end
     local id
     if T.borderBlockFor then id=T.borderBlockFor(self.map) else id=self.map.def.borderBlock end
     local row=id~=false and id~=nil and record(self,replacements,id)
@@ -218,6 +226,23 @@ function G.install(ctx)
         end
       end
     end)
+    return unpack(result,1,result.n)
+  end)
+  wrap('drawMapOnly',function(native,self,cx,cy,vw,vh)
+    local result=pack(native(self,cx,cy,vw,vh))
+    -- Connected-map bodies draw after the current map. Replay only its
+    -- cached outside north row when a neighbor actually overlaps that row.
+    -- Views are reused; this path never scans maps or constructs art rows.
+    local root=borderRenderer
+    if root and root~=self and borderGame==version()and ctx.roofs
+      and root.data and self.data and root.data.maps==self.data.maps
+      and vw==borderRoofView.viewW and vh==borderRoofView.viewH
+      and(not FX.pass or FX.pass()=='world')then
+      local oy=borderRoofView.camera.y-cy
+      if oy<0 and oy+self.map.def.height*32>-16 then
+        ctx.roofs:map(borderRoofView,root.map.def,0,0,1,'onlyBorder')
+      end
+    end
     return unpack(result,1,result.n)
   end)
   -- Source grass/flower graphics must not reappear across a sprite's feet.

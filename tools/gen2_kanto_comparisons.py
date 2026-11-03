@@ -116,6 +116,8 @@ def main():
     inputs=runtime_fingerprint(ROOT)
     assert report['runtime_inputs']==inputs,'Runtime changed after native GPU validation'
     version=json.loads((ROOT/'manifest.json').read_text())['version']
+    gen1=all(f['game']in('red','blue','yellow')for f in report['fixtures'])
+    series='Gen1'if gen1 else'Gen2'
     args.output.mkdir(parents=True,exist_ok=True);args.build.mkdir(parents=True,exist_ok=True)
     comparisons=[]
     for source in report['fixtures']:
@@ -124,7 +126,7 @@ def main():
         assert source['coverage']['preserved_native_occurrences']==0
         NAMES[game,name]=(game.capitalize()+' / '+name.replace('_',' ').title(),
                          game.capitalize()+'-'+name.title().replace('_',''),
-                         'Original '+game.capitalize()+' native DAY colors')
+                         'Original monochrome'if gen1 else'Original '+game.capitalize()+' native DAY colors')
         fixture=copy.deepcopy(source)
         fixture['comparison_after_label']='Gen 3 - complete background'
         result=make(fixture,args.output.resolve())
@@ -153,10 +155,12 @@ def main():
         'Scenes include Gold/Silver/Crystal Kanto towns and representative Crystal\n'
         'routes, rooms, transport, League and Johto interior corrections.\n')
     if args.all_scenes:
-        scene_description='Scenes cover every distinct audited interior layout, including Gold/Silver differences.\n'
+        scene_description=('Scenes cover every distinct audited Red/Blue/Yellow map layout.\n'if gen1 else
+            'Scenes cover every distinct audited interior layout, including Gold/Silver differences.\n')
     (args.output/'README.txt').write_text(
-        'TileShift '+version+' - Gen2 Kanto and shared interiors\n\n'
-        'Original native DAY backgrounds and current complete Gen3 backgrounds.\n'
+        'TileShift '+version+' - '+series+' world comparisons\n\n'+
+        ('Original monochrome backgrounds and current complete Gen3 backgrounds.\n'if gen1 else
+         'Original native DAY backgrounds and current complete Gen3 backgrounds.\n')+
         'Background-only files use actual native renderer readbacks at exactly 2x\n'
         'nearest-neighbor. All their visible background cells are replaced; no actors\n'
         'are rendered in those scenes. Each image and metadata identify actor scope.\n'
@@ -168,9 +172,9 @@ def main():
           'the exact native scene. Source object/map definitions remain unchanged.\n'if seating else'')+
         scene_description+
         'Original gameplay geometry, collision, interactions and warps are preserved.\n'
-        'Unmatched unique compact details retain original GSC geometry in Gen3 colors.\n'
+        'Unmatched unique compact details retain the host game\'s original geometry in Gen3 colors.\n'
         'Source pixels and saved comparison panels were independently verified.\n')
-    archive=args.build/('TileShift-Gen2-Comparisons-v'+version+'.zip')
+    archive=args.build/('TileShift-'+series+'-Comparisons-v'+version+'.zip')
     names=[r['output']for r in comparisons]+['README.txt','comparison-verification.json']
     with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED,compresslevel=9)as bundle:
         for name in sorted(names):

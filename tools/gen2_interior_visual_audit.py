@@ -24,6 +24,8 @@ ENVIRONMENTS = {'INDOOR', 'GATE', 'DUNGEON', 'CAVE'}
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--games',nargs='+',default=['crystal','gold','silver'],choices=('red','blue','yellow','gold','silver','crystal'))
+    parser.add_argument('--all-maps',action='store_true',help='Also capture outdoor maps; used by the Gen1 audit')
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=True)
     cache = Path(os.environ['APPDATA']) / 'pokemon-love2d'
@@ -34,10 +36,11 @@ def main():
     families = defaultdict(list)
     for name in modules:
         for row in preview.read_reviewed(ROOT/name):
-            if row['game'] in ('gold', 'silver', 'crystal') and row['style'] == 'gen3':
+            if row['game'] in args.games and row['style'] == 'gen3':
                 families[row['game'], row['tileset']].append(row)
     original_read = catalog.read_lua
     catalog.read_lua = lru_cache(maxsize=None)(original_read)
+    preview.read_reviewed = lru_cache(maxsize=None)(preview.read_reviewed)
     original_art = preview.replacement_image
     memo, packed = {}, {}
     def cached_art(cache, row, packed, root):
@@ -47,25 +50,28 @@ def main():
         return memo[key]
     preview.replacement_image = cached_art
     records, unique, excluded = [], {}, []
-    for game in ('crystal', 'gold', 'silver'):
+    for game in args.games:
         maps = catalog.read_lua(cache/game/'data/generated/maps.lua')
         output = args.output/game
         output.mkdir(exist_ok=True)
         for name, definition in sorted(maps.items()):
-            if not isinstance(definition, dict) or definition.get('environment') not in ENVIRONMENTS:
+            if not isinstance(definition,dict)or not definition.get('tileset')or not definition.get('width')or not definition.get('height')or not isinstance(definition.get('blocks'),list):
+                continue
+            if not args.all_maps and definition.get('environment') not in ENVIRONMENTS:
                 continue
             if game in ('gold', 'silver') and name == 'SAFARI_ZONE_BETA':
                 excluded.append(dict(game=game, map=name,
                     reason='Unused inaccessible beta map; references missing native tile255.'))
                 continue
             result = preview.map_preview(cache, output, game, name, name,
-                families[game, definition['tileset']], packed, 1, ROOT, roof_rows=[])
+                families[game, definition['tileset']], packed, 1, ROOT, roof_rows=None if args.all_maps else [])
             before = output/(name+'-before-native.png')
             after = output/(name+'-after-native.png')
             before_image, after_image = Image.open(before), Image.open(after)
             pixels = repr((before_image.size,after_image.size)).encode()+before_image.tobytes()+after_image.tobytes()
             digest = hashlib.sha256(pixels).hexdigest()
-            record = dict(game=game, map=name, environment=definition['environment'],
+            environment=definition.get('environment','OUTDOOR'if definition['tileset']in('OVERWORLD','FOREST','SAFARI','PLATEAU')else'INTERIOR')
+            record = dict(game=game, map=name, environment=environment,
                 tileset=definition['tileset'], before=str(before.resolve()), after=str(after.resolve()),
                 visible_cells=result['visible_cells'], replaced_cells=result['replaced_occurrences'],
                 remaining_cells=result['preserved_native_occurrences'], pair_rgba_sha256=digest)
