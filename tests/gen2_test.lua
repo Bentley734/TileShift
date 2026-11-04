@@ -266,4 +266,42 @@ eq(table.concat(groundOrder,','),
 groundClose()
 eq(Ground.drawGround,groundNative,'cleanup restores the native ground pipeline')
 eq(Ground.drawAnimCells,animationNative,'cleanup restores neighbor/current animation methods')
+-- A live world may already hold native canvases when the mod is enabled.
+-- Refresh those references before roof/canopy drawing, and after a deferred
+-- loader restores an old pointer. Warm frames must not request new bakes.
+local Cached={}
+local requests,cacheRevision=0,1
+function Cached:mapCacheKey(id)return id end
+function Cached:imageFor(id)
+ requests=requests+1
+ local key=self:mapCacheKey(id)
+ if not self.mapImages[key]then self.mapImages[key]='image:'..key end
+ return self.mapImages[key]
+end
+function Cached:drawGround()return self.mapImage..'/'..self.neighbors[1].image end
+local cached=setmetatable({map={id='CURRENT'},mapImages={},neighbors={{id='NEXT'}}},{__index=Cached})
+cached.mapImage=cached:imageFor('CURRENT');cached.neighbors[1].image=cached:imageFor('NEXT')
+local nativeCurrent,nativeNext=cached.mapImage,cached.neighbors[1].image
+local cachedClose=Adapter.install({worldClass=Cached,borderFill=Border,palette=Palette,graphics=G,
+ version=function()return'gold'end,replacements=function()return nil end,
+ revision=function()return cacheRevision end})
+cached:drawGround()
+eq(cached.mapImage~=nativeCurrent,true,'late enable refreshes the existing current-map canvas')
+eq(cached.neighbors[1].image~=nativeNext,true,'late enable refreshes connected-map canvases')
+local selectedCurrent,selectedNext=cached.mapImage,cached.neighbors[1].image
+local warmRequests=requests
+for i=1,60 do cached:drawGround()end
+eq(requests,warmRequests,'unchanged attached canvases need no imageFor calls on warm frames')
+cached.mapImage=nativeCurrent;cached.neighbors[1].image=nativeNext
+cached:drawGround()
+eq(cached.mapImage,selectedCurrent,'a stale externally restored current pointer is repaired')
+eq(cached.neighbors[1].image,selectedNext,'a stale deferred neighbor pointer is repaired')
+cacheRevision=2;cached:drawGround()
+eq(cached.mapImage~=selectedCurrent,true,'an option revision replaces attached current art')
+eq(cached.neighbors[1].image~=selectedNext,true,'an option revision replaces attached neighbor art')
+cached.neighbors={{id='OTHER',image=nativeNext}};cached:drawGround()
+eq(cached.neighbors[1].image==nativeNext,false,'a new connected-map list receives its own canvas')
+cachedClose()
+eq(cached.mapImage,nativeCurrent,'unload restores original current art after live refresh')
+eq(cached.neighbors[1].image,'image:OTHER','unload restores the current neighbor list')
 print('PASS Gen 2 graphics adapter: '..count..' assertions')

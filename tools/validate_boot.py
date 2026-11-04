@@ -28,7 +28,9 @@ if payloadModule then
   end)
 end
 local GV=require('src.core.GameVersion');GV.set(selectedVersion)
-require('src.core.Version').engine='0.3.98'
+-- Source fixtures need a released version; an actual payload must keep its
+-- own declared engine version so its compatibility check is meaningful.
+if not payloadModule then require('src.core.Version').engine='0.3.98' end
 local Loader=require('src.mods.Loader')
 local Runtime=require('src.mods.Runtime')
 local Serializer=require('src.core.SaveSerializer')
@@ -314,7 +316,8 @@ def main() -> int:
                 lua.globals().payloadModule = payload_module
             try:
                 loaded = lua.execute(BOOT)
-                print(f"PASS actual Loader/Sandbox {game}: {loaded} engine modules; no map writes", flush=True)
+                engine_version=lua.eval("require('src.core.Version').engine")
+                print(f"PASS actual Loader/Sandbox {game} on {engine_version}: {loaded} engine modules; no map writes", flush=True)
             except Exception as exc:
                 failures.append(game)
                 print(f"FAIL actual Loader/Sandbox {game}: {exc}", flush=True)

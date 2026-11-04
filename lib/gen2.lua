@@ -21,6 +21,7 @@ function Adapter.install(ctx)
   local version = ctx.version or require('src.core.GameVersion').get
   local G = ctx.graphics or love.graphics
   local previous, wrappers, worlds = {}, {}, setmetatable({}, {__mode='k'})
+  local attachedImages = setmetatable({}, {__mode='k'})
   local closed=false
   local cleanup
   local images, quads = setmetatable({}, {__mode='k'}), setmetatable({}, {__mode='k'})
@@ -123,6 +124,34 @@ function Adapter.install(ctx)
     local ok,err = pcall(fn)
     G.pop()
     if not ok then error(err,0) end
+  end
+  local function refreshAttachedImages(self)
+    if not (self.map and self.imageFor) then return end
+    local current=revision()
+    local bound=attachedImages[self]
+    local neighbors=self.neighbors or {}
+    local changed=not bound or bound.revision~=current or bound.map~=self.map
+      or bound.image~=self.mapImage or bound.cache~=self.mapImages
+      or bound.neighbors~=self.neighbors or #bound.entries~=#neighbors
+    if not changed then
+      for i,neighbor in ipairs(neighbors)do
+        if bound.entries[i]~=neighbor or bound.images[i]~=neighbor.image then changed=true;break end
+      end
+    end
+    if not changed then return end
+    -- Enabling/reloading the mod can leave native canvases attached even
+    -- though imageFor now uses our revision key. Live extensions must never
+    -- draw over those stale backgrounds, including deferred neighbor bakes.
+    local image=self:imageFor(self.map.id)
+    if image then self.mapImage=image end
+    local entries,images={},{}
+    for i,neighbor in ipairs(neighbors)do
+      local image=self:imageFor(neighbor.id)
+      if image then neighbor.image=image end
+      entries[i],images[i]=neighbor,neighbor.image
+    end
+    attachedImages[self]={revision=current,map=self.map,image=self.mapImage,cache=self.mapImages,
+      neighbors=self.neighbors,entries=entries,images=images}
   end
   local function drawBlock(art,img,x,y,s,self,bx,by)
     if not art.coverage then G.draw(img,x,y,0,s or 1,s or 1);return end
@@ -255,6 +284,8 @@ function Adapter.install(ctx)
   end)
   wrap('drawGround',function(old)
     return function(self,s)
+      worlds[self]=true
+      refreshAttachedImages(self)
       old(self,s)
       if ctx.roofs and ctx.roofs.borders then ctx.roofs:borders(self,s)end
     end

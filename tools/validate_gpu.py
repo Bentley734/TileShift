@@ -3275,6 +3275,8 @@ def main() -> int:
     parser.add_argument("--cache", type=Path, default=Path(os.environ["APPDATA"]) / "pokemon-love2d")
     parser.add_argument("--output", type=Path, default=workspace / ".work/tileshift-gpu")
     parser.add_argument("--timeout", type=int, default=90)
+    parser.add_argument("--reference-payload", type=Path,
+                        help="Require native renderer files to match this actual launcher payload")
     parser.add_argument("--mod-root", type=Path, default=mod_root,
                         help="Validate an isolated complete mod copy instead of the working tree")
     args = parser.parse_args()
@@ -3308,7 +3310,9 @@ def main() -> int:
         "read_only_imports": str(cache), "output": str(output),
         "runtime_inputs": runtime_inputs,
     }
-    payload = cache / "updates/gen1recomp-0.3.98.love"
+    payload = args.reference_payload.resolve() if args.reference_payload else cache / "updates/gen1recomp-0.3.98.love"
+    if args.reference_payload and not payload.is_file():
+        parser.error("The required reference payload does not exist")
     native_paths = (
         "src/render/TileRenderer.lua", "src/world/gen2/World.lua",
         "src/world/Map.lua", "src/world/gen2/Map.lua",
@@ -3327,7 +3331,7 @@ def main() -> int:
         metadata["reference_payload"] = str(payload)
         metadata["reference_payload_renderer_matches"] = matches
         if not all(matches.values()):
-            parser.error("The private native renderer source differs from installed 0.3.98")
+            parser.error("The private native renderer source differs from the reference launcher payload")
     (output / "invocation.json").write_text(json.dumps(metadata, indent=2), encoding="utf-8")
     script = (
         "$p=Start-Process -WindowStyle Hidden -FilePath " + ps_quote(str(love))

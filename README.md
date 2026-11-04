@@ -2,10 +2,13 @@
 
 TileShift swaps world artwork through individually reviewed tile matches.
 
-Version 0.33.0 expands the Crystal-based Gen 2 theme across all five Gen 3 games,
-including fully retiled Petalburg City and 47 more upstairs clinic rooms,
-native-size Hoenn city buildings, coastal terrain and Kanto interior details.
-Source entrances, collision,
+Version 0.34.0 completes Crystal-style Lavaridge Town, Mauville City and
+Ever Grande City in Ruby, Sapphire and Emerald. Whole native buildings,
+hot-spring details, bicycles and League gates retain their original pixel scale.
+It also fixes mixed original/replacement artwork in Gen 2: enabling or reloading
+TileShift refreshes the current and connected map canvases before replacement
+roof extensions and tree canopies are drawn. Side-entrance artwork follows its
+original warp direction, including the right-facing Route 38 gate. Source entrances, collision,
 actor positions and events stay unchanged. Other Gen 3 areas are still partly
 converted; unreviewed cells keep their original artwork. The launcher requirement
 now has only a minimum version, with no maximum version limit.
@@ -36,8 +39,8 @@ four-shade monochrome artwork; Gen 2 uses one shared Crystal style with its
 native daytime colors. Both themes completely retile Pallet Town in FR/LG and
 Littleroot Town, Oldale Town and Route 101 in R/S/E, with additional reviewed
 terrain and interior matches.
-The Crystal theme currently replaces **997,414 of 1,288,886 background cells
-(77.4%)** across all five GBA games, with **152 of 2,156 imported maps** fully
+The Crystal theme currently replaces **1,001,035 of 1,288,886 background cells
+(77.7%)** across all five GBA games, with **161 of 2,156 imported maps** fully
 retiled. These counts use the maps' actual dimensions and exclude storage
 padding and border cells.
 **Other Gen 3 maps remain partially converted**; unmatched cells retain native
@@ -134,14 +137,14 @@ unchanged. The single **Gen 3** style combines Emerald, FireRed/LeafGreen and se
    TileShift reads native donor
    art from your own imports; neither ROMs nor extracted native artwork are
    bundled.
-2. Download `TileShift-v0.33.0.zip` from [the latest release](https://github.com/Bentley734/TileShift/releases/latest).
+2. Download `TileShift-v0.34.0.zip` from [the latest release](https://github.com/Bentley734/TileShift/releases/latest).
 3. Extract the `tileshift` folder into Gen1Recomp's `mods` directory, enable
    **TileShift**, and restart the game.
 4. Open Options and select **Tileset**. Gen 1/2 hosts offer **Gen 3**; Gen 3 hosts
    also offer **Gen 1** and **Gen 2**. **Original** restores the host game's art.
    Fresh installations retain the existing Gen 3 default.
 
-Requires **Gen1Recomp 0.3.96 or newer**; validated on 0.3.98. There is no maximum launcher version requirement. Reviewed replacements
+Requires **Gen1Recomp 0.3.96 or newer**; validated on 0.4.0. There is no maximum launcher version requirement. Reviewed replacements
 support all eleven games. Gen 3 hosts keep their native art with the Gen 3 style
 selected. Missing or changed donor cells are skipped, leaving the
 host artwork visible.
@@ -152,9 +155,13 @@ images**, covering every imported town, interior, route and other area in Red,
 Blue, Yellow, Gold, Silver and Crystal. Open `index.html` after extracting it to
 browse by game and area. Images use actual native background renders and state
 their replacement counts. The two unused Gold/Silver Safari Beta maps are
-included with their retained native graphics. A separate
-`TileShift-Gen2-in-Gen3-Comparisons-v0.33.0.zip` shows the expanded Crystal theme
-on selected GBA maps, including partial areas with native tiles still visible.
+included with their retained native graphics. This is a historical v0.32.0
+snapshot; its side-entrance markers predate this release's direction fixes.
+`TileShift-Gen2-Fixes-Comparisons-v0.34.0.zip` contains fresh native captures of
+the corrected entrances and live background refresh, plus the reproduced
+overlap before the fix. A separate
+`TileShift-Gen2-in-Gen3-Comparisons-v0.34.0.zip` shows this release's Crystal-theme
+changes on GBA maps, including partial routes with native tiles still visible.
 
 ## Artwork and matching
 
@@ -187,9 +194,9 @@ Classic replacements use checked native tileset pairs and source cells.
 Palette, artwork, animation and source fingerprints protect the matches;
 unreviewed material keeps its native pixels. This initial reverse conversion
 does not replace every Gen 3 map or unique Hoenn feature.
-The all-map audit checks 2,156 native maps in both themes (4,312 map/theme
-variants): 778,528 of 2,577,772 cells are replaced (30.2%), using 4,804 reviewed
-mappings with zero rejected decodes. The completed backgrounds are listed below.
+The all-map inventory contains 2,156 native maps per classic theme (4,312
+map/theme variants). Crystal-theme coverage is reported above; the monochrome
+theme remains partial. The completed background groups are listed below.
 
 ### Selectable trees, flowers, grass and water
 
@@ -266,6 +273,7 @@ graphics cannot bypass native darkness.
 | FR/LG Pallet, both classic themes | 1,920/1,920 | 4/4 |
 | R/S/E Littleroot and Route 101, both classic themes | 4,800/4,800 | 12/12 |
 | R/S/E Oldale, both classic themes | 2,400/2,400 | 6/6 |
+| R/S/E Lavaridge, Mauville and Ever Grande, Crystal theme | 13,200/13,200 | 9/9 |
 
 Playable Gen2 Kanto backgrounds are complete. GB-host matches use their original source maps
 and donor families; classic themes on Gen 3 use checked native tileset pairs
@@ -284,6 +292,9 @@ import-marker polling runs once per second outside rendering. Cosmetic choices
 retain the donor decoder cache. Connected-area grouping runs only when a map's
 visual replacements are built. Actor bindings inspect list identity/count and
 appended entries; unchanged frames do not run another full entity scan.
+The Gen 2 adapter checks attached current/neighbor canvas identities before
+ground drawing. Unchanged frames reuse those references without new bakes or
+file reads; enabling, reloading or changing themes refreshes stale references.
 The Gen 3 adapter caches atlas slots and animation schedules. Unchanged draws
 do not allocate images or copy unchanged atlas planes; native animation and
 palette writes dirty only the affected slots. Switching back to Original restores
@@ -291,38 +302,32 @@ the current native atlas pixels.
 
 ## Validation and development
 
-The release is checked through the installed 0.3.98 loader for all eleven games,
+The release is checked through the actual 0.4.0 loader for all eleven games,
 Lua regression fixtures, live-import fingerprint checks, native donor animation
-comparisons, and isolated native LOVE GPU rendering. Checks cover the original
-GB-to-Gen3 conversion and actual Gen 3 FieldView renders with both classic themes.
-Version 0.33.0 passes 51 Lua suite runs across three runtimes. This data-only
-update adds 1,096 source keys and corrects 62 existing recipes. Strict authoring
-checks validate all 1,158 changed recipes against neutral imports and independent
-pixel compositions. The native GPU delta checks every changed key, touched border
-headers and representative complete maps; the unchanged renderer, libraries,
-assets and unrelated recipes retain the v0.32.0 validation baseline. Exact native
-map-body counts are independently reconstructed for every one of the 2,156 maps.
-The full 1,791-image Gen1/Gen2 gallery remains the unchanged v0.32.0 archive,
-linked above; this release adds fresh Gen2-on-Gen3 comparisons. Native probes
-check both classic themes, all reviewed GB animation programs, dynamic Secret
-Base furnishings, Trainer Hill layouts and Battle Pyramid layouts. The full
-Gen 1/2 gallery captures every imported map before replacement, with Gen 3 art,
-and after cleanup, while checking source layouts and events remain unchanged.
-The reverse audit traverses every native map using its true cell dimensions,
-reports partial coverage explicitly, and checks source definitions stay unchanged.
-This release verifies
-all completed Gen1 and Johto map variants, native donor animation frames,
-source fingerprints, collision/events, cleanup restoration, decorative
-transparency and plant foreground behavior. The GPU suite exercises all Kanto
-towns and representative routes, homes, shops, laboratories, gyms, tower,
-ship and facility interiors in the actual native renderer. These are background
-and mechanics fixtures, not full interactive playthroughs.
+comparisons, and isolated native LOVE GPU rendering. Fresh checks cover the
+GB-to-Gen3 fixes and the expanded Crystal theme in actual Gen 3 FieldView renders.
+Version 0.34.0 checks the live Gen 2 canvas lifecycle as well as the Lua suites
+across three runtimes. The native regression reproduces late enable against an
+existing original canvas, stale pointer restoration, connected-map refresh,
+theme changes, warm draws and native cleanup in Gold, Silver and Crystal.
+Strict authoring checks validate all 597 new Crystal-theme recipes against
+neutral imports and independent pixel compositions. Native GPU probes check
+every new source key, touched border headers and affected maps. Exact logical
+map-body counts are independently reconstructed for all 2,156 GBA maps against
+the passed baseline; pre-existing GBA artwork and source guards are preserved.
+Fresh captures cover all 18 corrected entrance scenes, six live-cache cases,
+and all 41 GBA maps touched by the new matches. The unchanged Gen 1 renderer was
+also checked in Pallet, Viridian and Saffron across Red, Blue and Yellow. The
+full 1,791-image Gen1/Gen2 gallery remains a historical v0.32.0 archive, linked
+above; fresh Gen2 fixes and Gen2-on-Gen3 comparisons accompany this release.
+These are background and mechanics fixtures, not full interactive playthroughs.
 
 From the parent workspace:
 
 ```text
 python TileShift/tests/run.py
-python TileShift/tools/validate_boot.py --payload PATH_TO_0.3.98.love
+python TileShift/tools/validate_boot.py --payload PATH_TO_0.4.0.love
+python TileShift/tools/validate_gen2_lifecycle_gpu.py --engine PATH_TO_MATCHING_ENGINE --reference-payload PATH_TO_0.4.0.love
 python TileShift/tools/preview.py --include-trees --include-posts --include-water --include-details --include-buildings --include-outdoors --tree-fixtures
 python TileShift/tools/validate_animation.py --game firered
 python TileShift/tools/validate_animation.py --game leafgreen
