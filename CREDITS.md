@@ -1,5 +1,22 @@
 # Artwork credits
 
+## Crystal berry plants and dirt
+
+The 43 berry plant sheets and the berry-soil material in
+`assets/original/berries/gen2/` were generated independently with the built-in
+OpenAI image-generation tool at the user's request on 2026-11-03. Each variety
+uses its original Gen 3 berry identity and native growth poses as reference,
+with Crystal-style pixels and a small declared palette. Native reference art
+and high-resolution working outputs are not bundled.
+
+All 387 frames retain the native16x240 sheet layout and original anchors.
+Technical processing uses recorded integer nearest-neighbor normalization,
+transparent padding, palette conformance and binary alpha. The generated soil
+material is clipped only to the original rounded dirt shapes. The consolidated
+`provenance.json` records exact prompts, raw/output hashes, crop and palette
+rules, source bounds and frame checks. Native planting and growth code is
+unchanged; only the selected theme's ground and berry actor pixels change.
+
 The Gen3 theme on Gen2 hosts (v0.29.0 onward) uses the user-supplied Johto ROM hacks credited below. This file also preserves historical provenance for retained files and Gen1 options; the generated Gen2 replacements described in those historical sections are superseded, except the roofed Slowpoke Well kept at the user's request. Radios and the beacon preserve original Gen2 geometry in matching Gen3 colors where the hacks have no corresponding background object.
 
 ## Selectable foliage and Sprout Tower

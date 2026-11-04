@@ -1,9 +1,10 @@
 return function(mod)
-  local callback,dispose,disposed,stopOptions,ownerBus,ownerEpoch,owned,adapterContext,state,roofs
+  local callback,dispose,disposed,stopOptions,ownerBus,ownerEpoch,owned,adapterContext,state,roofs,berryTheme
   local function readModule(path)
     return assert(load(assert(mod:read(path)), '@tileshift/'..path))()
   end
   local GV=require('src.core.GameVersion')
+  local berryHost=mod.generation==3 and (GV.get()=='ruby'or GV.get()=='sapphire'or GV.get()=='emerald')
   local Runtime=require('src.mods.Runtime')
   if Runtime._tileShiftDispose then Runtime._tileShiftDispose() end
   local Mapping=readModule('lib/mapping.lua')
@@ -19,6 +20,9 @@ return function(mod)
     'mappings/reverse_gen2_kanto_finish.lua','mappings/reverse_gen2_hoenn_outdoor_finish.lua','mappings/reverse_gen2_hoenn_interior_finish.lua','mappings/reverse_gen2_hoenn_city_buildings_finish.lua',
     'mappings/reverse_gen2_kanto_complete.lua','mappings/reverse_gen2_hoenn_outdoor_complete.lua','mappings/reverse_gen2_hoenn_interior_complete.lua','mappings/reverse_gen2_hoenn_city_complete.lua',
     'mappings/reverse_gen2_lavaridge_complete.lua','mappings/reverse_gen2_mauville_complete.lua','mappings/reverse_gen2_ever_grande_complete.lua',
+    'mappings/reverse_gen2_pacifidlog_complete.lua','mappings/reverse_gen2_verdanturf_complete.lua','mappings/reverse_gen2_fallarbor_complete.lua',
+    'mappings/reverse_classic_gyms_finish.lua',
+    'mappings/reverse_classic_berry_soil.lua',
   }) do
     local source=mod:read(path)
     if source then
@@ -115,6 +119,8 @@ return function(mod)
   local animationRates={trees=1,flowers=1,grass=1,water=1}
   local centerStyle=tonumber(mod.options:get('center_style'))or tonumber(mod.save:get('center_style'))or 2
   if centerStyle~=1 then centerStyle=2 end
+  local berryStyle=tonumber((mod.options:get('berry_style')))or tonumber((mod.save:get('berry_style')))or 2
+  berryStyle=berryStyle==1 and 1 or 2
   state=readModule('lib/session.lua').new({mappings=indexed,donor=decoder,
     newImageData=newData,generations=Mapping.generations,themes=Mapping.themes,
     normalizeStyle=Mapping.normalizeStyle,validate=Mapping.validate,
@@ -199,6 +205,13 @@ return function(mod)
     for _,field in ipairs(schema)do if field.key=='style'or field.key=='speed_water'or field.key=='speed_flowers'then fields[#fields+1]=field end end
     floraOptions,schema=options,fields
   end
+  if berryHost then
+    floraLabels.berry_style='BERRY TREES'
+    floraOptions[#floraOptions+1]={category='berry_style',key='berry_style',berry=true,
+      choices={{'NATIVE','native',1},{'CRYSTAL','crystal',2}},selection=berryStyle}
+    schema[#schema+1]={key='berry_style',label='BERRY TREES',type='choice',
+      choices={{'NATIVE',1},{'CRYSTAL',2}},default=2}
+  end
   mod.options:define(schema)
   selection=math.max(1,math.min(#styleIds,math.floor(selection)))
   state:select(styleIds[selection])
@@ -216,6 +229,7 @@ return function(mod)
   end
   local lastRevision=state.revision
   local function refresh(game)
+    if berryTheme then berryTheme:prepare(GV.get()) end
     local world=game and game.world
     if mod.generation==2 and world and world.map and world.imageFor then
       world.mapImage=world:imageFor(world.map.id)
@@ -234,6 +248,7 @@ return function(mod)
       if state.style~='original' and (mod.generation<3 or state.style~='gen3') and state.checkSource then
         identityToken=identityToken+1;state:checkSource(GV.get())
       end
+      if berryTheme then berryTheme:checkSource(GV.get()) end
     end
     if lastRevision~=state.revision then refresh(game);lastRevision=state.revision end
     return afterUpdate(game,nextFn(game,dt))
@@ -275,9 +290,26 @@ return function(mod)
       return state:replacements(game,tileset,def)
     end,warn=function(s)mod.log:warn('%s',s)end}
   local close=adapter.install(adapterContext)
+  if berryHost then
+    local catalogSource=mod:read('lib/berry_catalog.lua')
+    if catalogSource then
+      local ok,result=pcall(function()
+        return readModule('lib/berry_theme.lua').install({
+          catalog=assert(load(catalogSource,'@tileshift/lib/berry_catalog.lua'))(),
+          style=function()return state.style end,version=GV.get,active=owned,
+          berryStyle=function()return berryStyle==2 and 'crystal'or'native'end,
+          source=function(game,path)return nativeFS.readAt(GV.cachePrefix(game)..path)end,
+          sheet=checkedSheet,identityToken=function()return identityToken end,
+          warn=function(s)mod.log:warn('%s',s)end})
+      end)
+      if ok then berryTheme=result;berryTheme:prepare(GV.get())
+      else mod.log:warn('Crystal berry artwork unavailable: %s',tostring(result))end
+    end
+  end
   dispose=function()
     if disposed then return end
-    disposed=true;vegetation:dispose();close();roofs:dispose();decoder:invalidate()
+    disposed=true;if berryTheme then berryTheme:dispose()end
+    vegetation:dispose();close();roofs:dispose();decoder:invalidate()
     if stopOptions then stopOptions();stopOptions=nil end
     if Runtime._tileShiftDispose==dispose then Runtime._tileShiftDispose=nil end
   end
@@ -292,13 +324,14 @@ return function(mod)
       for i,choice in ipairs(option.choices)do if choice[3]==value then option.selection=i;break end end
     end
     local changed
-    if option.building then changed=centerStyle~=option.selection;centerStyle=option.selection
+    if option.berry then changed=berryStyle~=option.selection;berryStyle=option.selection
+    elseif option.building then changed=centerStyle~=option.selection;centerStyle=option.selection
     elseif option.motion then changed=vegetation:setMode(option.choices[option.selection][2])
     elseif option.speed then
       animationRates[option.speed]=option.choices[option.selection][2]
       changed=flora:speed(option.speed,animationRates[option.speed])
     else changed=flora:select(option.category,option.choices[option.selection][2]) end
-    if changed then
+    if changed and not option.berry then
       if state.invalidateVisual then state:invalidateVisual() else state:invalidate() end
     end
     mod.save:set(option.key,option.choices[option.selection][3])
@@ -363,6 +396,7 @@ return function(mod)
   mod.exports.flora=flora
   mod.exports.roofs=roofs
   mod.exports.vegetation=vegetation
+  mod.exports.berryTheme=berryTheme
   mod.exports.drawVegetation=function(...)if adapterContext.drawVegetation then return adapterContext.drawVegetation(...)end end
   mod.exports.dispose=dispose
   mod.exports.select=function(style)

@@ -60,7 +60,8 @@ def main() -> int:
         'Each image reports its own replaced/native cell counts. Unresolved source tiles keep native art.\n'
         f"Full map-body coverage count: {coverage['totals']['replaced_cells']}/{coverage['totals']['source_cells']} background cells replaced; "
         f"{coverage['totals']['complete_maps']}/{coverage['totals']['maps']} map/theme variants complete.\n"
-        'Actors and field effects retain native Gen3 artwork; actors are omitted from these captures.\n'
+        'Actors and field effects are omitted from these background captures.\n'
+        'Crystal-style berry actors are shown in the separate Crystal Berry Comparisons gallery.\n'
         'The installable mod is the separate TileShift ZIP.\n', encoding='utf-8')
     result = {'output': str(output), 'comparisons': len(comparisons), 'panels_exact_gpu_rgb': True}
     if args.package:

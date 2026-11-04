@@ -26,7 +26,7 @@ GAMES = ('firered', 'leafgreen', 'ruby', 'sapphire', 'emerald')
 
 
 def selection(root: Path, cache: Path, planner: Path, games: list[str], pilot: bool,
-              only_modules: list[str] | None = None) -> dict:
+              only_modules: list[str] | None = None, only_keys: Path | None = None) -> dict:
     inputs = validate_gpu.runtime_fingerprint(root)
     paths = list(dict.fromkeys(re.findall(r"['\"](mappings/[^'\"]+\.lua)['\"]", (root / 'main.lua').read_text())))
     requested = []
@@ -38,7 +38,16 @@ def selection(root: Path, cache: Path, planner: Path, games: list[str], pilot: b
         assert name in paths, 'Requested delta module is not loaded by current main: ' + name
         if name not in requested:
             requested.append(name)
-    plan = None if requested else json.loads(planner.read_text())
+    assert not (requested and only_keys), 'Select whole modules or an exact key inventory'
+    selected_keys = None
+    if only_keys:
+        inventory = json.loads(only_keys.read_text())
+        assert isinstance(inventory, list) and inventory, 'An exact key inventory must be a nonempty list'
+        selected_keys = {(r['game'], r['pair'], r['mid']) for r in inventory}
+        assert len(selected_keys) == len(inventory), 'Exact key inventory repeats a source key'
+        assert all(g in GAMES and isinstance(p, str) and type(m) is int for g,p,m in selected_keys), 'Invalid exact source key'
+    scoped = bool(requested) or selected_keys is not None
+    plan = None if scoped else json.loads(planner.read_text())
     if plan is not None:
         assert inputs == plan['runtime_inputs'], 'The native matrix plan belongs to a different runtime snapshot'
     rows, owners, module_counts = {}, {}, {}
@@ -54,13 +63,17 @@ def selection(root: Path, cache: Path, planner: Path, games: list[str], pilot: b
             count += 1
         if name in requested:
             module_counts[name] = count
-    delta_keys = {key for key, name in owners.items() if name in requested}
-    if requested:
+    if selected_keys is not None:
+        assert selected_keys.issubset(rows), 'Exact inventory contains keys not loaded by current main'
+        requested = sorted({owners[key] for key in selected_keys})
+        module_counts = {name: sum(owner == name for owner in owners.values()) for name in requested}
+    delta_keys = selected_keys if selected_keys is not None else {key for key, name in owners.items() if name in requested}
+    if scoped:
         assert delta_keys and all(module_counts.values()), 'Every delta module must contain current Gen2 GBA rows'
         assert all(re.fullmatch(r'[0-9a-f]{64}', rows[key].get('compositionPixelHash', '')) for key in delta_keys), 'Every delta row needs its independently authored RGBA hash'
     manifests = {g: catalog.read_lua(cache / g / 'data/generated/gba/native/manifest.lua')['layouts'] for g in GAMES}
     scenes = ([dict(game=g, map=n) for g in GAMES for n in sorted(manifests[g])]
-              if requested else plan['scenes'])
+              if scoped else plan['scenes'])
     witnesses, header_witnesses, source_files = {}, defaultdict(list), {}
     all_headers = {}
     body_keys = set()
@@ -78,7 +91,7 @@ def selection(root: Path, cache: Path, planner: Path, games: list[str], pilot: b
         columns, lines = tw or width, th or height
         border_width, border_height = blob[14], blob[15]
         offset = 16 + border_width * border_height * 2
-        if requested:
+        if scoped:
             actual_header = set()
             for i in range(border_width * border_height):
                 mid = struct.unpack_from('<H', blob, 16 + i * 2)[0]
@@ -95,10 +108,10 @@ def selection(root: Path, cache: Path, planner: Path, games: list[str], pilot: b
                 mid = struct.unpack_from('<H', blob, at)[0]
                 key = game, spec['pair'], mid
                 body_keys.add(key)
-                if key in rows and (not requested or key in delta_keys) and key not in witnesses:
+                if key in rows and (not scoped or key in delta_keys) and key not in witnesses:
                     witnesses[key] = dict(map=name, x=x, y=y, mid=mid, coll=blob[at + 2], elev=blob[at + 3])
         source_files[path.relative_to(cache).as_posix()] = checksum
-    if requested:
+    if scoped:
         assert set(witnesses) == delta_keys.intersection(body_keys), 'Actual native body scan omitted a delta key'
     else:
         assert len(witnesses) == plan['used_source_keys'], 'Used-key matrix is incomplete'
@@ -108,7 +121,7 @@ def selection(root: Path, cache: Path, planner: Path, games: list[str], pilot: b
         item = dict(witness, sourceHash=row['sourceHash'])
         if row.get('compositionPixelHash'):
             item['compositionPixelHash'] = row['compositionPixelHash']
-        if requested:
+        if scoped:
             item['source_module'] = owners[game, pair, mid]
         grouped[game, pair].append(item)
     fixtures = []
@@ -124,19 +137,23 @@ def selection(root: Path, cache: Path, planner: Path, games: list[str], pilot: b
     result = dict(fixtures=fixtures, expected_keys=sum(len(p['items']) for f in fixtures for p in f['pairs']),
                   full_planner_used_keys=len(witnesses), pilot=pilot, source_file_sha256=source_files,
                   runtime_sha256=inputs['sha256'])
-    if requested:
+    if scoped:
         requested_game_keys = {k for k in delta_keys if k[0] in games}
         header = [dict(game=g, pair=p, mid=m, module=owners[g,p,m],
                        body_used=(g,p,m) in body_keys, witnesses=items)
                   for (g,p,m), items in sorted(header_witnesses.items())]
         result['delta'] = dict(modules=requested, module_gen2_gba_row_counts=module_counts,
-                               total_module_keys=len(delta_keys), requested_game_keys=len(requested_game_keys),
+                               total_module_keys=sum(module_counts.values()), selected_inventory_keys=len(delta_keys),
+                               requested_game_keys=len(requested_game_keys),
                                actual_body_used_keys=sum(k[0] in games for k in witnesses),
                                selected_fixture_keys=result['expected_keys'], scanned_native_layouts=len(scenes),
                                excluded_no_body_witness=[dict(game=g,pair=p,mid=m,module=owners[g,p,m],
                                                             header_used=(g,p,m) in header_witnesses)
                                                          for g,p,m in sorted(requested_game_keys-body_keys)],
-                               current_main_exact_module_keys=True, actual_used_key_set_complete=True)
+                               current_main_exact_module_keys=selected_keys is None,
+                               current_main_exact_inventory_keys=selected_keys is not None,
+                               key_inventory_sha256=hashlib.sha256(only_keys.read_bytes()).hexdigest() if only_keys else None,
+                               actual_used_key_set_complete=True)
         result['native_header_plan'] = dict(touched_keys=len(header), keys=header,
                                            needed=bool(header), all_native_headers_scanned=True,
                                            source='Actual SVML borderWidth/borderHeight and uint16 header MIDs, not map-edge body inference')
@@ -344,11 +361,13 @@ def main() -> int:
     parser.add_argument('--pilot', action='store_true')
     parser.add_argument('--only-module', action='append', default=[],
                         help='Repeat for exact current main modules whose actually used Gen2 keys should be tested')
+    parser.add_argument('--keys-json', type=Path,
+                        help='Exact nonempty list of game/pair/mid keys loaded by current main; mutually exclusive with --only-module')
     parser.add_argument('--plan-only', action='store_true', help='Write exact body/header delta inventory without launching a GPU probe')
     args, remaining = parser.parse_known_args()
     root = Path(remaining[remaining.index('--mod-root') + 1]).resolve() if '--mod-root' in remaining else Path(__file__).resolve().parents[1]
     cache = Path(remaining[remaining.index('--cache') + 1]).resolve() if '--cache' in remaining else Path(os.environ['APPDATA']) / 'pokemon-love2d'
-    chosen = selection(root, cache, args.planner, args.games, args.pilot, args.only_module)
+    chosen = selection(root, cache, args.planner, args.games, args.pilot, args.only_module, args.keys_json)
     if '--output' not in remaining:
         remaining.extend(['--output', str(root.parent / '.work/tileshift-reverse-atlas-gpu')])
     output = Path(remaining[remaining.index('--output') + 1]).resolve();output.mkdir(parents=True, exist_ok=True)
@@ -369,16 +388,18 @@ def main() -> int:
     with (output / 'runner-output.json').open('w', encoding='utf-8') as log, contextlib.redirect_stdout(log):
         result = validate_gpu.main()
     unchanged = all(hashlib.sha256((cache / name).read_bytes()).hexdigest() == expected for name, expected in chosen['source_file_sha256'].items())
+    inventory_unchanged = args.keys_json is None or hashlib.sha256(args.keys_json.read_bytes()).hexdigest() == chosen['delta']['key_inventory_sha256']
     path = output / 'report.json'
     if path.exists():
         report = json.loads(path.read_text());report['source_layout_files_unchanged'] = unchanged
-        if not unchanged:report['status'] = 'failed'
+        report['key_inventory_unchanged'] = inventory_unchanged
+        if not unchanged or not inventory_unchanged:report['status'] = 'failed'
         path.write_text(json.dumps(report, indent=2) + '\n')
         print(json.dumps(dict(status=report['status'], verified_source_keys=report.get('verified_source_keys'),
                               independent_hashes=report.get('independent_composition_hashes'),
                               exact_pixels=report.get('byte_exact_gpu_pixels'), tolerant_pixels=report.get('tolerance_checked_gpu_pixels'),
                               error=report.get('error'), report=str(path))))
-    return result if unchanged else 1
+    return result if unchanged and inventory_unchanged else 1
 
 
 if __name__ == '__main__':

@@ -8,6 +8,102 @@ from pathlib import Path
 import zipfile
 from validate_gpu import runtime_fingerprint
 
+BERRY_SOIL_NAMES = {f'soil-{tile}.png' for tile in
+    (259, 260, 261, 267, 268, 269, 275, 276, 277, 331, 332, 333)} | {
+    f'soil-{bank}-{tile}.png' for bank, tiles in (
+        ('fortree', (659, 667, 668)),
+        ('lilycove', (627, 629, 635, 637, 725, 733, 741))) for tile in tiles}
+
+
+def validate_berry_assets(root: Path) -> dict:
+    """Account for only the approved native-sized trees and clipped soil art."""
+    from lupa import LuaRuntime
+    from PIL import Image
+
+    directory = root / 'assets/original/berries/gen2'
+    provenance = json.loads((directory / 'provenance.json').read_text(encoding='utf-8'))
+    assert provenance['format'] == 1 and provenance['style'] == 'gen2'
+    assert provenance['generator'] == 'built-in image_gen'
+    assert provenance['variety_count'] == 43 and provenance['native_frames'] == 387
+    assert provenance['all_raw_and_native_reference_images_private'] is True
+    assert provenance['each_atlas_uses_one_uniform_integer_scale'] is True
+    vm = LuaRuntime(unpack_returned_tuples=True)
+    catalog = vm.execute((root / 'lib/berry_catalog.lua').read_text(encoding='utf-8'))
+    varieties = dict(catalog['varieties'].items())
+    assert set(varieties) == set(range(1, 44)), 'Incomplete berry runtime catalog'
+    records = provenance['varieties']
+    assert len(records) == 43 and {item['berry'] for item in records} == set(varieties)
+    checked = {}
+
+    def check_asset(item: dict, size: tuple[int, int], png_hash: str) -> Image.Image:
+        relative = item['asset']
+        path = root / relative
+        assert path.parent == directory and path.resolve().is_relative_to(directory.resolve()), 'Berry provenance leaves its reviewed folder'
+        assert path.suffix == '.png' and relative not in checked, 'Duplicate or invalid berry asset'
+        assert hashlib.sha256(path.read_bytes()).hexdigest() == png_hash, 'Berry PNG provenance changed'
+        with Image.open(path) as encoded:
+            assert encoded.format == 'PNG' and encoded.size == size, 'Berry native sheet dimensions changed'
+            image = encoded.convert('RGBA')
+        rgba_hash = item.get('native_rgba_sha256') or item.get('rgba_sha256')
+        assert rgba_hash and hashlib.sha256(image.tobytes()).hexdigest() == rgba_hash, 'Berry RGBA provenance changed'
+        assert set(image.getchannel('A').get_flattened_data()) <= {0, 255}, 'Berry artwork lost binary alpha'
+        checked[relative] = {'png_sha256': png_hash, 'rgba_sha256': rgba_hash, 'size': list(size)}
+        return image
+
+    def check_generation(item: dict) -> None:
+        generation = item['generation']
+        assert generation['mode'] == 'built-in image_gen'
+        assert hashlib.sha256(generation['prompt'].encode('utf-8')).hexdigest() == generation['prompt_sha256'], 'Berry generation prompt changed'
+
+    for item in records:
+        entry = varieties[item['berry']]
+        expected_asset = f"assets/original/berries/gen2/{item['name']}.png"
+        assert item['name'].isascii() and item['name'].isalpha() and item['name'].islower()
+        assert item['asset'] == expected_asset == entry['asset'] and item['name'] == entry['name'], 'Berry catalog identity differs from provenance'
+        assert item['native_png_sha256'] == entry['hash'], 'Berry catalog fingerprint differs from provenance'
+        assert item['native_sheet'] == [16, 240]
+        image = check_asset(item, (16, 240), item['native_png_sha256'])
+        check_generation(item)
+        assert item['recipe']['integer_scale'] >= 1 and isinstance(item['recipe']['integer_scale'], int)
+        frames = item['frames']
+        assert len(frames) == 9 and [frame['frame'] for frame in frames] == list(range(9))
+        for index, frame in enumerate(frames):
+            y, height = (index * 16, 16) if index < 3 else (48 + (index - 3) * 32, 32)
+            pixels = image.crop((0, y, 16, y + height))
+            assert pixels.getbbox() is not None, 'Empty berry growth frame'
+            assert frame['packed_size'] == [16, height]
+            assert hashlib.sha256(pixels.tobytes()).hexdigest() == frame['rgba_sha256'], 'Berry frame provenance changed'
+
+    material = provenance['soil_material']
+    assert material['asset'] == 'assets/original/berries/gen2/soil-material.png'
+    assert material['size'] == [16, 16] and material['opaque'] is True
+    material_image = check_asset(material, (16, 16), material['native_png_sha256'])
+    assert set(material_image.getchannel('A').get_flattened_data()) == {255}
+    check_generation(material)
+    shapes = material['shape_variants']
+    expected_shapes = {'assets/original/berries/gen2/' + name for name in BERRY_SOIL_NAMES}
+    assert len(shapes) == 22 and {item['asset'] for item in shapes} == expected_shapes, 'Incomplete berry soil provenance'
+    for item in shapes:
+        assert item['size'] == [16, 16]
+        check_asset(item, (16, 16), item['sha256'])
+    soil_rows = vm.execute((root / 'mappings/reverse_classic_berry_soil.lua').read_text(encoding='utf-8'))
+    used_shapes = set()
+    assert len(soil_rows) == 219, 'Unexpected berry soil key count'
+    for row in soil_rows.values():
+        assert row['style'] == 'gen2' and row['game'] in ('ruby', 'sapphire', 'emerald')
+        assert row['asset'] in expected_shapes, 'Berry soil recipe references unreviewed artwork'
+        entry = checked[row['asset']]
+        assert row['assetFileHash'] == entry['png_sha256'] and row['assetPixelHash'] == entry['rgba_sha256'], 'Berry soil recipe fingerprint differs from provenance'
+        assert row['berrySoilReview']['material_hash'] == material['native_png_sha256']
+        used_shapes.add(row['asset'])
+    assert used_shapes == expected_shapes
+    actual_files = {path.relative_to(root).as_posix() for path in directory.rglob('*') if path.is_file()}
+    assert len(checked) == 66
+    assert actual_files == set(checked) | {'assets/original/berries/gen2/provenance.json'}, 'Unreviewed berry file or raw master would enter the package'
+    return {'trees': 43, 'tree_frames': 387, 'soil_assets': 23, 'pngs': len(checked),
+            'provenance_sha256': hashlib.sha256((directory / 'provenance.json').read_bytes()).hexdigest(),
+            'files': checked}
+
 
 def main() -> None:
     root = Path(__file__).resolve().parents[1]
@@ -44,9 +140,11 @@ def main() -> None:
                 'third_party/gamefreak/rby-facility-floor/')
     interior_folders = ('original/azalea-lawn', 'original/interior-beacon', 'original/interior-computer', 'original/interior-flowerpot', 'original/interior-lattice', 'original/interior-painting', 'original/interior-pillar', 'original/interior-planter', 'original/interior-radio', 'original/interior-railpost', 'original/interior-stairs', 'original/interior-tower-modules')
     allowed += tuple(folder + '/' for folder in interior_folders)
+    allowed += ('original/berries/gen2/',)
     for path in asset_files:
         assert path.relative_to(root / 'assets').as_posix().startswith(allowed), 'Unreviewed asset folder'
         assert path.suffix in ('.png', '.jpg', '.json', '.txt'), 'Unreviewed asset format'
+    berry_assets = validate_berry_assets(root)
     for folder in ('original/classic-vent', 'user_flora', 'third_party/magiscarf', 'third_party/metalflygon08', 'original/sprout-tower', 'original/flora', 'original/slowpoke-well', 'original/olivine-lighthouse', 'original/compact-conifer', 'original/ecruteak-v2', 'original/bell-wide', 'original/center-expanded', 'original/ilex-shrine', 'original/whirlpool', 'original/park-bench', 'third_party/peekychew'):
         provenance = json.loads((root / 'assets' / folder / 'provenance.json').read_text(encoding='utf-8'))
         for name, digest in provenance['files'].items():
@@ -127,6 +225,7 @@ def main() -> None:
               "bytes": archive.stat().st_size, "sha256": digest,
               "files": expected, "zip_roundtrip_verified": True,
               "validated_runtime_sha256": inputs["sha256"], "native_gpu_checks": proof["checks"], "reverse_native_gpu_checks": reverse["checks"]}
+    report['berry_artwork'] = berry_assets
     (args.output / "package-verification.json").write_text(
         json.dumps(report, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({key: value for key, value in report.items() if key != "files"}, indent=2))

@@ -96,6 +96,7 @@ local manager=Manager.new(host)
 local schema=assert(loader.optionSchemas.tileshift)
 local schemaByKey={};for _,row in ipairs(schema)do schemaByKey[row.key]=row end
 local gen3=GV.generation()==3
+local berryHost=gen3 and (selectedVersion=='ruby'or selectedVersion=='sapphire'or selectedVersion=='emerald')
 assert(schema[1].type=='choice' and #schema[1].choices==(gen3 and 4 or 2)
  and schema[1].default==2,'implemented mod-manager choice schema missing')
 assert(schema[1].choices[1][1]=='ORIGINAL' and schema[1].choices[1][2]==1)
@@ -108,7 +109,27 @@ assert(exported.state.style=='gen3','mod-manager change did not apply art live')
 assert(host.save.options.modOptions.tileshift.style==2,'mod-manager choice was not persisted')
 assert(managerRows[1].value()=='GEN 3')
 if gen3 then
- assert(#schema==3,'Gen3 schema must contain themes and native flower/water speeds')
+ assert(#schema==(berryHost and 4 or 3),'Gen3 schema must contain themes, native flower/water speeds and RSE berry choice')
+ assert((exported.berryTheme~=nil)==berryHost,'Berry actor adapter must only be exposed on RSE')
+ if berryHost then
+  local field=assert(schemaByKey.berry_style,'RSE berry preference schema missing')
+  assert(field.type=='choice'and field.default==2 and #field.choices==2
+   and field.choices[1][1]=='NATIVE'and field.choices[1][2]==1
+   and field.choices[2][1]=='CRYSTAL'and field.choices[2][2]==2,'Berry choice schema/default changed')
+  local berryRow=option(rows,'tileshift:berry_style')
+  assert(berryRow.label=='BERRY TREES'and berryRow.value()=='CRYSTAL','Fresh berry choice must default to Crystal')
+  local revision=exported.state.revision
+  manager:setOption('tileshift','berry_style',1)
+  assert(berryRow.value()=='NATIVE'and host.save.options.modOptions.tileshift.berry_style==1,
+   'Actual manager did not persist Native berry preference')
+  assert(exported.state.style=='gen3'and exported.state.revision==revision,'Berry preference changed background style/cache')
+  berryRow.step({game=host},1)
+  assert(berryRow.value()=='CRYSTAL'and host.options.modOptions.tileshift.berry_style==2,
+   'Native option row did not persist Crystal berry preference')
+ else
+  assert(schemaByKey.berry_style==nil,'FRLG must not expose an RSE berry preference')
+  for _,row in ipairs(rows)do assert(row.id~='tileshift:berry_style','FRLG native UI exposed an RSE berry preference')end
+ end
  for i,entry in ipairs({{'GEN 1',3,'gen1'},{'GEN 2',4,'gen2'},{'ORIGINAL',1,'original'}})do
   managerRows[1].step(host,1)
   assert(managerRows[1].value()==entry[1] and exported.state.style==entry[3],
@@ -121,7 +142,7 @@ if gen3 then
   assert(schemaByKey[key]==nil,'Gen3 schema exposed an unsupported custom art option: '..key)
   for _,row in ipairs(rows)do assert(row.id~='tileshift:'..key,'unsupported native Gen3 option: '..key)end
  end
- assert(#rows==4,'Gen3 native hook must have exactly one theme, two speeds and coverage')
+ assert(#rows==(berryHost and 5 or 4),'Gen3 native hook must expose exactly its supported options')
 else
 for i,key in ipairs({'flora_trees','flora_big_trees','flora_cut_trees','flora_flowers','flora_grass','flora_water'})do
  assert(schemaByKey[key]and schemaByKey[key].type=='choice','custom artwork schema missing')
@@ -236,6 +257,7 @@ local SaveData=require('src.core.SaveData')
 local persisted=SaveData.loadOptions(fs)
 persisted.modOptions=persisted.modOptions or {}
 persisted.modOptions.tileshift={style=1,flora_water=6}
+if berryHost then persisted.modOptions.tileshift.berry_style=1 end
 assert(SaveData.saveOptions(persisted,fs),'in-memory Original preference did not save')
 local restoredLoader=Loader.new({fs=fs,generation=GV.generation(),version=selectedVersion,dev=false})
 local restoredHost={generation=GV.generation(),options=persisted,save={options=persisted},mods=restoredLoader,
@@ -249,12 +271,14 @@ assert(restored.state.style=='original','persisted Original choice was replaced 
 assert(restored.flora.selected.water=='ripple-blue','v0.7.0 animated water choice did not survive a fresh Loader boot')
 local restoredRows=restoredLoader.hooks:call('ui.options.rows',function(_,out)return out end,restoredHost,{})
 assert(option(restoredRows,'tileshift:style').value()=='ORIGINAL')
+if berryHost then assert(option(restoredRows,'tileshift:berry_style').value()=='NATIVE','Saved Native berry preference was replaced by the Crystal default')end
 assert(Serializer.encode(restoredData.maps)==before,'source maps changed on saved-preference reload')
 restoredLoader.hooks:removeOwner('tileshift');restored.dispose()
 -- The two new stored theme IDs must survive a real SaveData/Loader round trip.
 if gen3 then
  for value,expected in pairs({[3]='gen1',[4]='gen2'})do
   persisted.modOptions.tileshift={style=value,speed_flowers=1,speed_water=2}
+  if berryHost then persisted.modOptions.tileshift.berry_style=value==3 and 2 or 1 end
   assert(SaveData.saveOptions(persisted,fs),'reverse theme preference did not save')
   local reloaded=SaveData.loadOptions(fs)
   local savedLoader=Loader.new({fs=fs,generation=GV.generation(),version=selectedVersion,dev=false})
@@ -270,6 +294,10 @@ if gen3 then
   assert(option(savedRows,'tileshift:speed_flowers').value()=='OFF','saved flower Off was lost')
   assert(option(savedRows,'tileshift:speed_water').value()=='SLOW','saved water speed was lost')
   assert(savedHost.options.modOptions.tileshift.style==value,'saved reverse theme ID changed')
+  if berryHost then
+   assert(option(savedRows,'tileshift:berry_style').value()==(value==3 and 'CRYSTAL'or'NATIVE'),
+    'Independent berry preference did not survive actual SaveData/Loader reload')
+  end
   savedLoader.hooks:removeOwner('tileshift');saved.dispose()
  end
 end

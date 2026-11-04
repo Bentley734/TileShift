@@ -37,3 +37,47 @@ redesigned expanded front. The mod option is POKEMON CENTERS: COMPACT/EXPANDED.
 The user rejected the generated Goldenrod arcade prototypes. Its current
 replacement uses intact MetalFlygon08 Johto artwork at1:1 pixel scale, with a
 complete wall/window module repeated to reach the original building width.
+
+# Classic Gym roofs and Mauville details
+
+On 2026-11-03 the user requested plain rectangular roofs for Gen 3 Gyms
+displayed in the Gen 1 or Gen 2 theme. Remove the projecting extra roof piece
+above the entrance; preserve the complete native doorway, windows and GYM
+lettering, and keep source entrances and collision unchanged. Gym signs must
+use the selected generation's actual outdoor sign, not a computer or machine.
+When flattening the projecting piece, move its lower roof edge/shadow up to
+align with the neighboring edge. Keep that border continuous above the door;
+plain roof fill must not leave a gap in the shadow.
+Wide Gym facades must repeat interior wall/window modules. Use the right edge
+tile only at the building's outer right edge; do not repeat its vertical frame
+strips beside the doorway.
+
+The user also requested connected Crystal-style fences in Mauville, preferring
+suitable native fence tiles; generate matching pieces only when native art
+cannot provide the needed joins. Replace the rejected compact frontal bicycle
+glyphs with the bicycles from Cerulean City's Bike Shop, retaining complete
+native bicycle silhouettes and pixel scale.
+
+Crystal-style boulders and cliffs/mountains must retain their native rock
+silhouettes with transparent exterior corners. Remove the donor's brown
+background outside the rock, so the surrounding selected water or ground shows
+through. Preserve actual rock shading and enclosed detail; do not erase a
+matching color throughout the object.
+
+Expanded native Poké Mart roofs must extend plain lower roofing panels. Do not
+repeat the roof's horizontal top border inside the added height: the user
+rejected the two resulting dark seams on Blackthorn's Mart and all shared uses.
+
+The user requested Crystal-style dirt and a distinct tree for every Gen 3 berry
+variety. Keep the original rounded dirt silhouettes over the exact selected
+field, with no native cyan grass rectangle. Use the 43 individually generated
+plant sheets, not one reused vanilla Crystal tree or recolors of one plant.
+Preserve all nine native frame rectangles, native anchors and the engine's
+planting, watering, growth, harvesting, sorting and effect logic. Source checks,
+asset loads and quad construction belong outside warm draw work.
+Expose a separate persisted BERRY TREES: NATIVE/CRYSTAL option in R/S/E,
+defaulting to Crystal. Native must immediately restore pooled native images
+and quads while the selected background remains unchanged. Only the Gen 2
+background theme enables Crystal plants; other background themes keep native
+actors. Review complete dirt plots, including secondary regional tile IDs:
+both halves must use the same generated material and matching exterior grass.

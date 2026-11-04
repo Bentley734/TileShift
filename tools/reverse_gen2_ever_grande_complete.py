@@ -12,6 +12,7 @@ import re
 import struct
 import zlib
 from collections import Counter
+from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
 
@@ -41,9 +42,9 @@ REVIEWED_SOURCE_BINDING = 'ae2cf13242863d930ddece6cfdd34a26981ff4481cdf56c6ce6f4
 
 
 class Review(CityReview):
-    def __init__(self):
+    def __init__(self,out=None):
         ReverseReview.__init__(self, 'gen2-ever-grande-complete', GAMES)
-        self.out = ROOT.parent / '.work/tileshift-v0340-ever-grande'
+        self.out = Path(out)if out else ROOT.parent / '.work/tileshift-v0340-ever-grande'
         self.out.mkdir(exist_ok=True)
         self.prior, self.all_prior = {}, []
         self.contracts, self.proofs = [], {}
@@ -167,10 +168,10 @@ class Review(CityReview):
         for row,mids in enumerate(((523,524,525,526,527),(531,532,533,534,535))):
             for col,mid in enumerate(mids):
                 arts[mid]=roof[col,row]
-        # The entire framed native16px emblem is retained on the porch;
-        # its corners/header are neither reduced nor cut into another sign.
-        arts[533]=self.rectangle('BATTLE_TOWER_OUTSIDE',96,128,'reverse_gen2_ever_grande_whole_native_league_emblem')
-        arts[533]['overMask']='1'*256
+        # The user explicitly requested a plain center roof band instead of
+        # the former pink framed emblem. Keep the same complete native gray
+        # band as both neighbors; the full entrance below remains unchanged.
+        assert self.render(arts[533]).tobytes()==self.render(arts[532]).tobytes()==self.render(arts[534]).tobytes()
         pavement=self.art(self.prior['emerald',PAIR,573])
         assert len(pavement.get('parts',[]))==1 and pavement['parts'][0]['w']==16 and pavement['parts'][0]['h']==16
         pillar=self.pillar(pavement['parts'][0]['donor'])
@@ -198,7 +199,8 @@ class Review(CityReview):
             assert self.layouts[game][5][18]==541
             for mid,art in arts.items():
                 if mid not in self.missing[game]:continue
-                self.put(game,mid,art,'Whole Ever Grande League facade and80x64 entrance pavilion are independently reviewed as connected native-size objects. The original Crystal Route23 League supplies whole window, brick and16px entrance modules; only ordinary brick/window repeats widen the tall facade, which naturally continues above the actual north map border. The porch retains complete native gray roof caps, a complete16px framed BattleTower emblem, the full32px TinTower pillar caps/shafts/feet and one full original door at18,5. No bitmap, window, roof tip, emblem or doorway is downsized or clipped.',dict(object='league',source_entrance=[18,5],native_league=['crystal','ROUTE_23'],native_pixel_scale=1))
+                evidence=('The user-requested plain Ever Grande porch roof center retains exactly the same complete native Crystal gray lower roof band as both adjacent roof cells532/534. The former unrelated pink framed emblem is removed from this roof cell only; the complete native doorway541 immediately below, all roof caps, pillars, entrance at18,5 and original source collision stay unchanged. No native roof or doorway pixels are resized, rotated or clipped.'if mid==533 else 'Whole Ever Grande League facade and80x64 entrance pavilion are independently reviewed as connected native-size objects. The original Crystal Route23 League supplies whole window, brick and16px entrance modules; only ordinary brick/window repeats widen the tall facade, which naturally continues above the actual north map border. The porch retains complete native gray roof caps, a complete16px framed BattleTower emblem, the full32px TinTower pillar caps/shafts/feet and one full original door at18,5. No bitmap, window, roof tip, emblem or doorway is downsized or clipped.')
+                self.put(game,mid,art,evidence,dict(object='league',source_entrance=[18,5],native_league=['crystal','ROUTE_23'],native_pixel_scale=1))
             matrix=[row[13:24]for row in self.layouts[game][:7]]
             self.contracts.append(dict(game=game,map=name,object='league',visible_origin=[13,0],visible_source_matrix=matrix,source_entrance=entrance[0],north_boundary_continuation=True,source_layout_sha256=self.sources[game]['sha256']))
 
@@ -353,8 +355,8 @@ class Review(CityReview):
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)
-    p.add_argument('--activate',action='store_true');p.add_argument('--validate',action='store_true');p.add_argument('--inventory-only',action='store_true')
-    args=p.parse_args();r=Review();r.inventory()
+    p.add_argument('--activate',action='store_true');p.add_argument('--validate',action='store_true');p.add_argument('--inventory-only',action='store_true');p.add_argument('--output',type=Path)
+    args=p.parse_args();r=Review(args.output);r.inventory()
     if args.inventory_only:
         r.equivalent_terrain();r.save()
         print(json.dumps(dict(rows=len(r.rows),remaining={g:[m for m in r.missing[g] if (g,'gen2',PAIR,m,None)not in r.rows] for g in GAMES})),flush=True)

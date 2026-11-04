@@ -27,9 +27,9 @@ def main():
   row_sources=(0,1,2,3,4,6,6,5,6,7)if name=='center'else(0,1,1,1,2,3,4,5,6,7)
   for y,sy in enumerate(row_sources):
    for x in range(8):
-    # Both8px columns of each shoulder need the plain lower roof panel.
-    # Copying row1 into columns1/6 repeats their horizontal grey top caps.
-    yy=2 if name=='mart'and y in(2,3)and x in(0,1,6,7)else sy
+    # Extend the plain lower roof panel across the full roof width. Repeating
+    # row1 also repeats the center's horizontal top border as two dark seams.
+    yy=2 if name=='mart'and y in(2,3)else sy
     sx=1 if name=='center'and y in(5,6)and 0<x<7 else x
     gx,gy=native['pixel_origin'][0]+sx*8,native['pixel_origin'][1]+yy*8
     mid=native['layout']['mids'][gy//16*native['layout']['width']+gx//16];rec=native['records'][mid]

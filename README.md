@@ -3,13 +3,25 @@
 
 TileShift swaps world artwork through individually reviewed tile matches.
 
-Version 0.34.0 completes Crystal-style Lavaridge Town, Mauville City and
-Ever Grande City in Ruby, Sapphire and Emerald. Whole native buildings,
-hot-spring details, bicycles and League gates retain their original pixel scale.
-It also fixes mixed original/replacement artwork in Gen 2: enabling or reloading
-TileShift refreshes the current and connected map canvases before replacement
-roof extensions and tree canopies are drawn. Side-entrance artwork follows its
-original warp direction, including the right-facing Route 38 gate. Source entrances, collision,
+Version 0.35.0 completes Crystal-style Pacifidlog Town, Verdanturf Town and
+Fallarbor Town in Ruby, Sapphire and Emerald. Complete native buildings and
+regional terrain retain their original pixel scale. Converted Gyms use plain
+rectangular roofs and outdoor signs. Mauville has joined native Crystal fences
+and the complete Cerulean Bike Shop bicycles. The framed ornament above the
+Ever Grande and Verdanturf entrances is replaced by matching roof. Crystal
+rock and cliff corners reveal the surrounding selected water or ground.
+Expanded Poké Mart roofs in Gold, Silver and Crystal use plain roofing bands,
+removing the two repeated dark borders while retaining the complete emblem and facade.
+The Crystal theme also includes new dirt and 43 individually drawn berry plant
+varieties in Ruby, Sapphire and Emerald. Each keeps all nine native growth/sway
+frames and its original ground anchor. Grass around the rounded plots matches
+the selected field. Native planting, watering, growth and harvesting stay unchanged.
+R/S/E also offers **Berry Trees: Native / Crystal**, with Crystal selected by
+default. Native restores the original Gen 3 plants while keeping the chosen
+background theme.
+The Gen 2 background refresh and entrance-direction fixes remain: current and connected map canvases
+refresh before replacement roof extensions and tree canopies are drawn, and
+side-entrance artwork follows the original warp direction. Source entrances, collision,
 actor positions and events stay unchanged. Other Gen 3 areas are still partly
 converted; unreviewed cells keep their original artwork. The launcher requirement
 now has only a minimum version, with no maximum version limit.
@@ -40,12 +52,13 @@ four-shade monochrome artwork; Gen 2 uses one shared Crystal style with its
 native daytime colors. Both themes completely retile Pallet Town in FR/LG and
 Littleroot Town, Oldale Town and Route 101 in R/S/E, with additional reviewed
 terrain and interior matches.
-The Crystal theme currently replaces **1,001,035 of 1,288,886 background cells
-(77.7%)** across all five GBA games, with **161 of 2,156 imported maps** fully
+The Crystal theme currently replaces **1,004,949 of 1,288,886 background cells
+(78.0%)** across all five GBA games, with **170 of 2,156 imported maps** fully
 retiled. These counts use the maps' actual dimensions and exclude storage
 padding and border cells.
 **Other Gen 3 maps remain partially converted**; unmatched cells retain native
-art. Gen 3 characters, Pokemon sprites and field effects retain their native art.
+art. Characters, Pokemon sprites and other field effects retain their native
+art; Crystal-themed R/S/E berry plants use the new variety-specific artwork.
 
 The existing Gen 3 theme completes the backgrounds of **every Red, Blue and Yellow
 map: 667 map variants and 284,740 cells**. All Kanto towns, routes, Safari Zone,
@@ -135,10 +148,11 @@ unchanged. The single **Gen 3** style combines Emerald, FireRed/LeafGreen and se
 
 1. Import the donor games into Gen1Recomp: **Emerald and FireRed** for the Gen 3
    theme, **Red** for the Gen 1 theme, and **Crystal** for the Gen 2 theme.
+   The Crystal theme also reads Mauville's Cerulean Bike Shop bicycles from **Red**.
    TileShift reads native donor
    art from your own imports; neither ROMs nor extracted native artwork are
    bundled.
-2. Download `TileShift-v0.34.0.zip` from [the latest release](https://github.com/Bentley734/TileShift/releases/latest).
+2. Download `TileShift-v0.35.0.zip` from [the latest release](https://github.com/Bentley734/TileShift/releases/latest).
 3. Extract the `tileshift` folder into Gen1Recomp's `mods` directory, enable
    **TileShift**, and restart the game.
 4. Open Options and select **Tileset**. Gen 1/2 hosts offer **Gen 3**; Gen 3 hosts
@@ -157,12 +171,17 @@ Blue, Yellow, Gold, Silver and Crystal. Open `index.html` after extracting it to
 browse by game and area. Images use actual native background renders and state
 their replacement counts. The two unused Gold/Silver Safari Beta maps are
 included with their retained native graphics. This is a historical v0.32.0
-snapshot; its side-entrance markers predate this release's direction fixes.
-`TileShift-Gen2-Fixes-Comparisons-v0.34.0.zip` contains fresh native captures of
-the corrected entrances and live background refresh, plus the reproduced
-overlap before the fix. A separate
-`TileShift-Gen2-in-Gen3-Comparisons-v0.34.0.zip` shows this release's Crystal-theme
+snapshot; its side-entrance markers predate the v0.34 direction fixes.
+The [v0.34 fixes gallery](https://github.com/Bentley734/TileShift/releases/download/v0.34.0/TileShift-Gen2-Fixes-Comparisons-v0.34.0.zip)
+contains native captures of the corrected entrances and live background refresh,
+plus the reproduced overlap before the fix. A separate
+`TileShift-Gen2-in-Gen3-Comparisons-v0.35.0.zip` shows this release's Crystal-theme
 changes on GBA maps, including partial routes with native tiles still visible.
+`TileShift-Mart-Roof-Fixes-Comparisons-v0.35.0.zip` contains fresh native captures
+of all 39 affected Mart exterior maps across Gold, Silver and Crystal.
+`TileShift-Crystal-Berry-Comparisons-v0.35.0.zip` shows all 43 plants and their
+nine frames through the actual native berry actor renderer. These are isolated
+actor atlas fixtures, rather than map or interactive growth captures.
 
 ## Artwork and matching
 
@@ -183,6 +202,12 @@ Water and flowers use verified native GB animation frames. **Water Speed** and
 the first frame. The Gen 3 host menu exposes these controls and the tileset
 selector. The custom Gen 3 foliage, water presets and Center designs below apply
 to Gen 1/2 hosts using the Gen 3 theme.
+
+In Ruby, Sapphire and Emerald, **Berry Trees** independently selects **Native**
+or **Crystal** for the plants shown with the Gen 2 background theme. The choice
+is saved; switching to Native immediately restores the original sprites. The
+Original, Gen 1 and Gen 3 background themes retain native berry plants. This
+option changes the plants; Crystal dirt follows the background theme.
 
 The Crystal theme shares one synchronized native cave-water animation across
 connected water bodies. Directional current counterparts move that native wave
@@ -307,21 +332,28 @@ The release is checked through the actual 0.4.0 loader for all eleven games,
 Lua regression fixtures, live-import fingerprint checks, native donor animation
 comparisons, and isolated native LOVE GPU rendering. Fresh checks cover the
 GB-to-Gen3 fixes and the expanded Crystal theme in actual Gen 3 FieldView renders.
-Version 0.34.0 checks the live Gen 2 canvas lifecycle as well as the Lua suites
+Version 0.35.0 checks the live Gen 2 canvas lifecycle as well as the Lua suites
 across three runtimes. The native regression reproduces late enable against an
 existing original canvas, stale pointer restoration, connected-map refresh,
 theme changes, warm draws and native cleanup in Gold, Silver and Crystal.
-Strict authoring checks validate all 597 new Crystal-theme recipes against
+Strict authoring checks validate all 568 new town recipes, 195 new Gym keys,
+219 berry-soil keys and the corrected shared artwork against
 neutral imports and independent pixel compositions. Native GPU probes check
 every new source key, touched border headers and affected maps. Exact logical
 map-body counts are independently reconstructed for all 2,156 GBA maps against
-the passed baseline; pre-existing GBA artwork and source guards are preserved.
+the passed baseline. Source guards and unrelated pre-existing artwork are
+preserved; corrected existing recipes have explicit before/after proofs.
 Fresh captures cover all 18 corrected entrance scenes, six live-cache cases,
-and all 41 GBA maps touched by the new matches. The unchanged Gen 1 renderer was
+and the reviewed GBA towns, buildings, fences and terrain joins. The unchanged Gen 1 renderer was
 also checked in Pallet, Viridian and Saffron across Red, Blue and Yellow. The
 full 1,791-image Gen1/Gen2 gallery remains a historical v0.32.0 archive, linked
 above; fresh Gen2 fixes and Gen2-on-Gen3 comparisons accompany this release.
 These are background and mechanics fixtures, not full interactive playthroughs.
+Berry checks exercise every variety/frame in all three Hoenn games, native
+position/sorting/fade and animation state, source revalidation, style changes,
+profile transitions, warm draw caching and native cleanup. Generated artwork
+has bounded native frames, binary alpha, small declared palettes and recorded
+integer normalization; all 43 mature and pre-fruit silhouettes are distinct.
 
 From the parent workspace:
 

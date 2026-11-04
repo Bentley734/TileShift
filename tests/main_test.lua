@@ -47,6 +47,15 @@ for _,gameId in ipairs(games)do
       frames=function(_,row)fixture.animatedRow=row;return 'animated composition'end}
   end}
   fixture.session={new=function(ctx)fixture.sessionCtx=ctx;return state end}
+  fixture.berryCatalog={fixture=true}
+  fixture.berryModule={install=function(ctx)
+    fixture.berryCtx=ctx
+    return {prepare=function(_,version)
+      eq(version,gameId);fixture.berryPrepares=(fixture.berryPrepares or 0)+1
+    end,checkSource=function(_,version)
+      eq(version,gameId);fixture.berryChecks=(fixture.berryChecks or 0)+1
+    end,dispose=function()fixture.berryDisposes=(fixture.berryDisposes or 0)+1 end}
+  end}
   for gen=1,3 do
     local selectedGen=gen
     fixture.adapters[gen]={install=function(ctx)
@@ -56,7 +65,8 @@ for _,gameId in ipairs(games)do
   end
   _G.__tileMainFixture=fixture
   local modules={['lib/mapping.lua']='mapping',['mappings/reviewed.lua']='reviewed',
-    ['lib/donor.lua']='donor',['lib/session.lua']='session',['lib/composition.lua']='composition'}
+    ['lib/donor.lua']='donor',['lib/session.lua']='session',['lib/composition.lua']='composition',
+    ['lib/berry_catalog.lua']='berryCatalog',['lib/berry_theme.lua']='berryModule'}
   local stored,schemas,hooks,listeners={},nil,{},{}
   local function emit(name,payload)
     for _,fn in ipairs(listeners[name] or {})do fn(payload)end
@@ -65,7 +75,7 @@ for _,gameId in ipairs(games)do
   function game:writeOptions()self.writes=self.writes+1 end
   game.world={map={id='CURRENT'},neighbors={{id='NEIGHBOR'}},imageFor=function(_,id)return 'native-'..id end}
   local mod={id='tileshift',generation=generation,exports={},game=game,
-    options={define=function(_,rows)schemas=rows end,get=function()return 1 end},
+    options={define=function(_,rows)schemas=rows end,get=function(_,key)if key=='berry_style'then return nil end;return 1 end},
     save={get=function(_,key)return stored[key]end,set=function(_,key,value)stored[key]=value end},
     assets={path=function(_,path)return 'mods/tileshift/'..path end},
     hooks={wrap=function(_,name,fn,priority)
@@ -83,6 +93,7 @@ for _,gameId in ipairs(games)do
     if path:match('^mappings/gen2_kanto_.*_finish%.lua$') or path=='mappings/gen2_compact_gyms_hall_finish.lua' then return nil end
     if path=='mappings/reverse_kanto.lua'or path=='mappings/reverse_hoenn.lua'or path=='mappings/reverse_oldale.lua'then return nil end
     if path:match('^mappings/reverse_gen2_.*_finish%.lua$')or path:match('^mappings/reverse_gen2_.*_complete%.lua$')then return nil end
+    if path=='mappings/reverse_classic_gyms_finish.lua'or path=='mappings/reverse_classic_berry_soil.lua'then return nil end
     if path=='lib/gb_animation.lua'then return 'return {}'end
     if path=='lib/roofs.lua' or path=='lib/vegetation.lua' or path=='lib/flora.lua' or path=='lib/flora_catalog.lua' or path=='lib/johto_hack_flora.lua' or path=='lib/water_styles.lua' then
       local file=assert(io.open(root..'/'..path,'rb'));local source=file:read('*a');file:close();return source
@@ -137,14 +148,47 @@ for _,gameId in ipairs(games)do
     runtime.hooks.chains=chains
   end
   if generation==3 then
-    eq(#schemas,3);eq(#schemas[1].choices,4)
+    local berryHost=gameId=='ruby'or gameId=='sapphire'or gameId=='emerald'
+    eq(mod.exports.berryTheme~=nil,berryHost,'only native RSE hosts install berry actor artwork')
+    if berryHost then
+      eq(fixture.berryCtx.catalog,fixture.berryCatalog)
+      eq(fixture.berryCtx.version(),gameId);eq(fixture.berryCtx.style(),state.style)
+      eq(fixture.berryCtx.active(),true);eq(fixture.berryPrepares,1,'berry startup preparation is outside draw')
+      eq(fixture.berryCtx.berryStyle(),'crystal','fresh berry artwork defaults to Crystal')
+      eq(type(fixture.berryCtx.source),'function');eq(type(fixture.berryCtx.sheet),'function')
+    end
+    eq(#schemas,berryHost and 4 or 3);eq(#schemas[1].choices,4)
     eq(schemas[1].choices[3][1],'GEN 1');eq(schemas[1].choices[4][1],'GEN 2')
     eq(schemas[2].key,'speed_flowers');eq(schemas[3].key,'speed_water')
     local rows=hooks['ui.options.rows'](function(_,out)out[#out+1]={id='native'};return out end,game,{})
-    eq(#rows,5);eq(rows[2].value(),'ORIGINAL');eq(rows[3].label,'FLOWERS SPEED');eq(rows[4].label,'WATER SPEED')
+    eq(#rows,berryHost and 6 or 5);eq(rows[2].value(),'ORIGINAL');eq(rows[3].label,'FLOWERS SPEED');eq(rows[4].label,'WATER SPEED')
+    if berryHost then
+      eq(schemas[4].key,'berry_style');eq(schemas[4].default,2)
+      eq(schemas[4].choices[1][1],'NATIVE');eq(schemas[4].choices[1][2],1)
+      eq(schemas[4].choices[2][1],'CRYSTAL');eq(schemas[4].choices[2][2],2)
+      eq(rows[5].id,'tileshift:berry_style');eq(rows[5].label,'BERRY TREES');eq(rows[5].value(),'CRYSTAL')
+    end
     for _,style in ipairs({'gen3','gen1','gen2','original'})do rows[2].step({game=game},1);eq(state.style,style)end
     eq(mod.exports.select('gen1'),true);eq(state.style,'gen1');eq(rows[2].value(),'GEN 1')
     eq(mod.exports.select('gen2'),true);eq(state.style,'gen2');eq(rows[2].value(),'GEN 2')
+    if berryHost then
+      eq(fixture.berryCtx.style(),'gen2');eq(fixture.berryPrepares>1,true,'style changes prepare/restore berry art immediately')
+      local revision,prepares=state.revision,fixture.berryPrepares
+      emit('mod.options_changed',{mod='tileshift',key='berry_style',value=1})
+      eq(fixture.berryCtx.berryStyle(),'native');eq(stored.berry_style,1);eq(rows[5].value(),'NATIVE')
+      eq(state.style,'gen2');eq(state.revision,revision,'berry preference does not invalidate map backgrounds')
+      eq(fixture.berryPrepares,prepares+1,'Native immediately requests pooled actor restoration')
+      emit('mod.options_changed',{mod='tileshift',key='berry_style',value=0/0})
+      eq(fixture.berryCtx.berryStyle(),'native','invalid manager values retain the berry preference')
+      mod.exports.select('original');mod.exports.select('gen2')
+      eq(fixture.berryCtx.berryStyle(),'native','background changes retain independent Native preference')
+      rows[5].step({game=game},1)
+      eq(fixture.berryCtx.berryStyle(),'crystal');eq(stored.berry_style,2);eq(rows[5].value(),'CRYSTAL')
+      eq(game.options.modOptions.tileshift.berry_style,2);eq(game.save.options.modOptions.tileshift.berry_style,2)
+      eq(game.mods.modOptions.tileshift.berry_style,2)
+    end
+    hooks['core.update'](function()return 'berry-update'end,game,1.05)
+    eq(fixture.berryChecks or 0,berryHost and 1 or 0,'source revalidation runs in the update poll')
     eq(fixture.adapterCtx.animationSpeed('water'),0)
     rows[4].step({game=game},1);eq(fixture.adapterCtx.animationSpeed('water'),.5)
     local art={{role='tree',style='gen1'}}
@@ -156,9 +200,19 @@ for _,gameId in ipairs(games)do
     eq(fixture.adapterCtx.replacements(gameId,'TEST'),nil)
     emit('mod.options_changed',{mod='tileshift',key='style',value=3});eq(state.style,'gen3')
     mod.exports.dispose();mod.exports.dispose();eq(fixture.closed,1)
+    eq(fixture.berryDisposes or 0,berryHost and 1 or 0,'berry actor disposal runs exactly once')
     eq(#listeners['mod.options_changed'],0)
     mod.options.get=function()return 999 end;entry(mod);eq(state.style,'gen2')
+    if berryHost then eq(fixture.berryCtx.berryStyle(),'crystal','invalid stored berry preference falls back to Crystal')end
     mod.exports.dispose()
+    if berryHost then
+      mod.options.get=function()return nil end;stored.berry_style=1
+      entry(mod);eq(fixture.berryCtx.berryStyle(),'native','saved Native preference survives reload')
+      mod.exports.dispose()
+      stored.berry_style=nil;entry(mod)
+      eq(fixture.berryCtx.berryStyle(),'crystal','missing preference uses the fresh Crystal default')
+      mod.exports.dispose()
+    end
   else
   eq(mod.exports.state,state);eq(state.style,'original');eq(schemas[1].key,'style')
   eq(schemas[1].default,2);eq(schemas[1].type,'choice');eq(#schemas[1].choices,2)

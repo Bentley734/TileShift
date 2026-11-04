@@ -288,4 +288,54 @@ end
 local existingOverlay=clone(layered)
 existingOverlay.artOverlay={asset='assets/original/tree.png',hash=a,preserveRects={}}
 eq(M.validate(existingOverlay),true,'existing original overlays remain compatible without a new origin field')
+-- Cerulean's real Red bicycle is an explicitly borrowed native object; the
+-- Crystal theme and all ordinary donor matching remain strict by default.
+local borrowed=clone(gba);borrowed.style='gen2';borrowed.donor=nil;borrowed.kind='native_composite'
+borrowed.base={game='crystal',tileset='TILESET_JOHTO',id=2,quadrant=0,hash=b}
+borrowed.parts={{donor={game='red',tileset='CLUB',id=1,quadrant=0,hash=b,monochrome=true},
+  donorStyle='gen1',w=8,h=8}}
+eq(M.validate(borrowed),true,'explicit native monochrome Red object may appear on Crystal-themed GBA ground')
+for _,game in ipairs({'ruby','sapphire','emerald','firered','leafgreen'})do
+ local supported=clone(borrowed);supported.game=game
+ eq(M.validate(supported),true,'explicit borrowing is supported only by the five GBA hosts: '..game)
+end
+eq(M.donorMatches('gen2','red'),false,'the Crystal theme does not globally pool Red donors')
+eq(M.donorMatches('gen1','crystal'),false,'borrowing does not change the Gen1 theme')
+for _,mutate in ipairs({
+ function(r)r.parts[1].donorStyle=nil end,
+ function(r)r.parts[1].donorStyle='gen2'end,
+ function(r)r.parts[1].donorStyle='gen3'end,
+ function(r)r.parts[1].donorStyle='red'end,
+ function(r)r.parts[1].donorStyle=false end,
+ function(r)r.parts[1].donorStyle=1 end,
+ function(r)r.parts[1].donor.monochrome=nil end,
+ function(r)r.parts[1].donor.monochrome=false end,
+ function(r)r.parts[1].donor.game='blue'end,
+ function(r)r.parts[1].donor.game='yellow'end,
+ function(r)r.parts[1].donor.game='crystal'end,
+ function(r)r.parts[1].donor.kind='field_object'end,
+ function(r)r.parts[1].donor.hash='changed'end,
+ function(r)r.parts[1].donor.quadrant=4 end,
+ function(r)r.kind='original'end,
+ function(r)r.game='gold';r.quadrant=0 end,
+ function(r)r.game='red';r.quadrant=0 end,
+ function(r)r.style='gen1';r.base=clone(r.parts[1].donor)end,
+ function(r)r.style='gen3';r.base={game='emerald',tileset='PAIR',id=1,hash=b}end
+})do
+ local bad=clone(borrowed);mutate(bad)
+ local ok,why=M.validate(bad);eq(ok,nil,'unreviewed cross-theme borrowing fails closed');eq(type(why),'string')
+end
+local borrowedAnimation=clone(borrowed)
+borrowedAnimation.animated=true;borrowedAnimation.animation={kind='gb',bank='flower',hash=b,manifestHash=a}
+borrowedAnimation.parts[1].animated=true
+eq(M.validate(borrowedAnimation),nil,'the borrowed Red object cannot acquire an animation program')
+local nativeAnimation=clone(borrowedAnimation)
+nativeAnimation.parts[1].donor=clone(borrowed.base);nativeAnimation.parts[1].donorStyle=nil
+eq(M.validate(nativeAnimation),true,'ordinary Crystal native animation remains supported')
+local borrowedGround=clone(borrowed);borrowedGround.base=clone(borrowed.parts[1].donor)
+borrowedGround.base.donorStyle='gen1'
+eq(M.validate(borrowedGround),nil,'base donors cannot use the part-only override')
+local borrowedDirect=clone(borrowed);borrowedDirect.parts=nil;borrowedDirect.base=nil;borrowedDirect.kind='native'
+borrowedDirect.donor=clone(borrowed.parts[1].donor);borrowedDirect.donorStyle='gen1'
+eq(M.validate(borrowedDirect),nil,'direct donors cannot use the part-only override')
 print('PASS strict mapping validation: '..count..' assertions')

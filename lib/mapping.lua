@@ -81,6 +81,16 @@ local function validRef(style,ref)
     and (generations[ref.game]==3 or integer(ref.quadrant or 0,3)) and origin(ref)
     and (style~='gen1'or ref.monochrome==true)
 end
+local function validPartDonor(row,part)
+  if part.donorStyle==nil then return validRef(row.style,part.donor) end
+  -- Explicitly reviewed Red native objects may keep their original monochrome
+  -- pixels inside the Crystal theme on GBA hosts. This does not pool themes,
+  -- change base/direct donors, or permit a borrowed animation program.
+  return part.donorStyle=='gen1' and row.kind=='native_composite'
+    and row.style=='gen2' and generations[row.game]==3 and not part.animated
+    and type(part.donor)=='table' and part.donor.game=='red'
+    and part.donor.kind==nil and validRef('gen1',part.donor)
+end
 function M.validate(row)
   if type(row)~='table' then return nil,'mapping must be a table' end
   if not generations[row.game] or not M.themes[row.style] then return nil,'unknown game or style' end
@@ -175,7 +185,7 @@ function M.validate(row)
     if row.base and not validRef(row.style,row.base) then return nil,'invalid composition ground reference' end
     for i=1,#row.parts do
       local part=row.parts[i]
-      if type(part)~='table' or not validRef(row.style,part.donor) then return nil,'invalid composition donor' end
+      if type(part)~='table' or not validPartDonor(row,part) then return nil,'invalid composition donor' end
       if part.gbForeground~=nil and type(part.gbForeground)~='boolean'then return nil,'invalid GB foreground selection' end
       if part.gbForeground and(generations[part.donor.game]>=3 or part.donor.kind~=nil or part.layers~=nil or part.layerHashes~=nil)then
         return nil,'GB foreground needs a native GB donor without layer selection'

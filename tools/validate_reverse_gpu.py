@@ -59,7 +59,7 @@ BODY = r"""
  local View=require('src.core.game3.field_view')
  local selection=Json.decode(@SELECTION@)
  report.selection=selection
- report.theme='reverse';report.limits='Actual Gen3 FieldView backgrounds and source-layout/event snapshots. Oldale foreground checks use a synthetic magenta marker at the native normal-actor boundary, not an interactive actor. Native actor/field-effect art is unchanged; no saves or interactive playthrough.'
+ report.theme='reverse';report.limits='Actual Gen3 FieldView backgrounds and source-layout/event snapshots. Oldale foreground checks use a synthetic magenta marker at the native normal-actor boundary, not an interactive actor. Actors and field effects are omitted from these background captures; Crystal berry actor artwork has a separate native probe. No saves or interactive playthrough.'
  for _,fixture in ipairs(selection.fixtures)do
   local game=fixture.game
   GV.set(game);assetGame=game;clock=0
