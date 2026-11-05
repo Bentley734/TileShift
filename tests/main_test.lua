@@ -104,7 +104,18 @@ for _,gameId in ipairs(games)do
       or path=='mappings/reverse_gen2_hoenn_facility_outdoors.lua'
       or path=='mappings/reverse_gen2_kanto_network_completion.lua'
       or path=='mappings/reverse_gen2_kanto_mansion_completion.lua'
-      or path=='mappings/reverse_gen2_kanto_silph_rocket_completion.lua' then return nil end
+      or path=='mappings/reverse_gen2_kanto_silph_rocket_completion.lua'
+      or path=='mappings/reverse_gen2_kanto_player_houses.lua'
+      or path=='mappings/reverse_gen2_kanto_celadon.lua'
+      or path=='mappings/reverse_gen2_kanto_league.lua'
+      or path=='mappings/reverse_gen2_kanto_power_plant_completion.lua'
+      or path=='mappings/reverse_gen2_kanto_tanoby_completion.lua'
+      or path=='mappings/reverse_gen2_kanto_ssanne_completion.lua'
+      or path=='mappings/reverse_gen2_sevii_outdoor_completion.lua'
+      or path=='mappings/reverse_gen2_kanto_gyms_completion.lua'
+      or path=='mappings/reverse_gen2_kanto_marts_completion.lua'
+      or path=='mappings/reverse_gen2_mt_ember_completion.lua'
+      or path=='mappings/reverse_gen2_kanto_trainer_tower.lua' then return nil end
     if path=='mappings/reverse_classic_gyms_finish.lua'or path=='mappings/reverse_classic_berry_soil.lua'then return nil end
     if path=='lib/gb_animation.lua'then return 'return {}'end
     if path=='lib/roofs.lua' or path=='lib/vegetation.lua' or path=='lib/flora.lua' or path=='lib/flora_catalog.lua' or path=='lib/johto_hack_flora.lua' or path=='lib/water_styles.lua' then
