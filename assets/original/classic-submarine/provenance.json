@@ -1,0 +1,173 @@
+{
+  "format": 1,
+  "feature": "whole Hoenn docked submarine",
+  "style": "gen2",
+  "generator": "built-in image_gen",
+  "whole_canvas": [
+    64,
+    48
+  ],
+  "visible_vessel_rows": [
+    0,
+    31
+  ],
+  "transparent_lower_rows": [
+    32,
+    47
+  ],
+  "source_cell_grid": [
+    [
+      740,
+      741,
+      742,
+      743
+    ],
+    [
+      736,
+      737,
+      738,
+      739
+    ],
+    [
+      744,
+      745,
+      746,
+      747
+    ]
+  ],
+  "whole_rgba_sha256": "34022d195fa21528791927e21fe8a25fc03295d5bdf833cb5f15f103ccb189e5",
+  "whole_png_sha256": "3b2d39a92b62973fb0e319eab68fb0a3f62c9ce04d874d1eafd6babec5cd51a8",
+  "palette": [
+    [
+      58,
+      58,
+      58
+    ],
+    [
+      66,
+      82,
+      99
+    ],
+    [
+      115,
+      140,
+      156
+    ],
+    [
+      189,
+      206,
+      214
+    ]
+  ],
+  "all_raw_and_native_reference_images_private": true,
+  "generation": {
+    "mode": "built-in image_gen",
+    "prompt": "Use case: style-transfer. Edit target: reference1, a complete64x48 logical-pixel underwater submarine cutout enlarged16x. Preserve the exact canvas framing, every pixel block's position, whole external transparent silhouette, left-facing orientation, periscope, tower, round hatch, pipe at right, and blank lower16 logical rows. Repaint ONLY its interior color and shading into restrained Pokemon Crystal Game Boy Color pixel art. Use exactly four flat colors: outline RGB58,58,58; dark slate RGB66,82,99; middle blue-gray RGB115,140,156; highlight RGB189,206,214. The left rounded hull and right pipe must remain completely visible. Treat each existing16x16 source square as one indivisible logical pixel. No smoothing, antialiasing, gradients, glow or new shadows; hard square pixel edges. Transparent background remains fully transparent. Do not change or zoom the frame. Output1024x768 PNG, same position and scale as reference1. Original coherent Crystal-style shading should use larger deliberate flat clusters and sparse ordered pixel dithering.",
+    "prompt_sha256": "d9929499a1cbd03a17fbed58b84b11284e739e50cc4e67043215c90709c4a1d7",
+    "raw_png_sha256": "e61617fcd2ac06b809f9b744cd7fc3064b319c0214709dde042de179c9102a98",
+    "raw_size": [
+      1448,
+      1086
+    ],
+    "intent": "style-transfer",
+    "reference_role": "private whole source vessel silhouette and pose"
+  },
+  "normalization": {
+    "generated_size": [
+      1448,
+      1086
+    ],
+    "logical_size": [
+      64,
+      48
+    ],
+    "colors": [
+      [
+        58,
+        58,
+        58
+      ],
+      [
+        66,
+        82,
+        99
+      ],
+      [
+        115,
+        140,
+        156
+      ],
+      [
+        189,
+        206,
+        214
+      ]
+    ],
+    "source_alpha_sha256": "55cc11e7fc9ed5666464820ffe7aac33a94d99d543de94bac9c099f0ab51d912",
+    "generated_file_sha256": "e61617fcd2ac06b809f9b744cd7fc3064b319c0214709dde042de179c9102a98",
+    "logical_rgba_sha256": "34022d195fa21528791927e21fe8a25fc03295d5bdf833cb5f15f103ccb189e5",
+    "logical_file_sha256": "3b2d39a92b62973fb0e319eab68fb0a3f62c9ce04d874d1eafd6babec5cd51a8",
+    "normalization": "Transparent centered padding12px left/right,9px top/bottom to1472x1104; uniform integer23:1 nearest-neighbor reduction to64x48; explicit four-color normalization and source-exact vessel alpha. Entire unique generated art retained.",
+    "padded_size": [
+      1472,
+      1104
+    ],
+    "padding": [
+      12,
+      9,
+      12,
+      9
+    ],
+    "uniform_integer_scale": 23
+  },
+  "cells": [
+    {
+      "mid": 740,
+      "asset": "assets/original/classic-submarine/submarine-740.png",
+      "file_sha256": "c5ddf2ac03969ef8e9d19d6b201e0c90c6b70047b0e5561ff2519338df65596b",
+      "rgba_sha256": "a6eefa9726f914d6b07d86ac2b80e99c178f798738495b7425ad00c1853f6ee0"
+    },
+    {
+      "mid": 741,
+      "asset": "assets/original/classic-submarine/submarine-741.png",
+      "file_sha256": "abfcdb91b7a685db6463305c79577d3155ffefb7b8e69b6847f219b67ebc4e71",
+      "rgba_sha256": "e95ab402296cf24baded68dfc977667cb66c75b6e22e6a45492403460ec28dde"
+    },
+    {
+      "mid": 742,
+      "asset": "assets/original/classic-submarine/submarine-742.png",
+      "file_sha256": "c498824b475606a470e51d27b77c747c0a5c853b177b67c5f53c2c67f2218106",
+      "rgba_sha256": "c251c710ca2ee18b22431c7f491e29511150af8f76919ad5dafeaf317c422925"
+    },
+    {
+      "mid": 743,
+      "asset": "assets/original/classic-submarine/submarine-743.png",
+      "file_sha256": "62869a7ab471c55991825846a37e7dea17e40a0142c74faf415828df6d82c48e",
+      "rgba_sha256": "6bfe4b4fa11ea6f84b2547a18719a67b062f6f459ced384abfa02c2e9b515a35"
+    },
+    {
+      "mid": 736,
+      "asset": "assets/original/classic-submarine/submarine-736.png",
+      "file_sha256": "2e0c3971915c62d04690ee7c4b506f49b1f8799879264f484a658dfaadcf84e5",
+      "rgba_sha256": "abceceffe182a5326726caf3ad3e018c90174e096f31789bc023c8a1259376db"
+    },
+    {
+      "mid": 737,
+      "asset": "assets/original/classic-submarine/submarine-737.png",
+      "file_sha256": "f005adfe3f9950d9ccbfedfb19354ad8d9df95447ae3e762ed2edeed649bde12",
+      "rgba_sha256": "f0bb5efff7110ff0d6e788afa87a52a5902acb8777aedf4b43440df5fbdc90df"
+    },
+    {
+      "mid": 738,
+      "asset": "assets/original/classic-submarine/submarine-738.png",
+      "file_sha256": "ac4f6e671970d0178bed0e9e2c68e8534d1c8921771f51ba68483cbcba2da643",
+      "rgba_sha256": "1a6868da2fba113e014781895b7ec1245f26862ecf15e35976777b4973832921"
+    },
+    {
+      "mid": 739,
+      "asset": "assets/original/classic-submarine/submarine-739.png",
+      "file_sha256": "01bfe62c94a6a5fbdc6614d75f08e88589800f2350db6f767e1c68096c94887e",
+      "rgba_sha256": "615d6e96cac2438467a80e935bfdd3aac735280bb97ad1c6d5cd5f5c76192203"
+    }
+  ]
+}

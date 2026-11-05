@@ -116,11 +116,24 @@ def selection(root: Path, cache: Path, planner: Path, games: list[str], pilot: b
     else:
         assert len(witnesses) == plan['used_source_keys'], 'Used-key matrix is incomplete'
     grouped = defaultdict(list)
+    animation_cache = {}
     for (game, pair, mid), witness in sorted(witnesses.items()):
         row = rows[game, pair, mid]
         item = dict(witness, sourceHash=row['sourceHash'])
         if row.get('compositionPixelHash'):
             item['compositionPixelHash'] = row['compositionPixelHash']
+        ground = row.get('classicGeometry', {}).get('ground', {})
+        if ground.get('animation'):
+            frames = preview.classic_geometry_frames(cache, row, animation_cache)
+            item['classicFrameHashes'] = [catalog.sha(frame.tobytes()) for frame in frames]
+            assert item['classicFrameHashes'][0] == item['compositionPixelHash']
+        native_over = row.get('classicGeometry', {}).get('nativeOver')
+        if native_over:
+            layers = preview.classic_geometry_layers(cache, row, animation_cache)
+            item['retainedOverHex'] = layers['over'].tobytes().hex()
+            manifest = catalog.read_lua(cache / game / 'data/generated/gba/native' / pair / 'anim_manifest.lua')
+            bank = next(bank for bank in manifest['banks'] if bank['name'] == native_over['bank'])
+            item['retainedOverSchedule'] = {key: bank[key] for key in ('period', 'phase', 'frames')}
         if scoped:
             item['source_module'] = owners[game, pair, mid]
         grouped[game, pair].append(item)
@@ -197,17 +210,39 @@ BODY = r"""
  local function sourceContent(def)
   return hash(tableString(def.midLayout.cells)..tableString(def.midLayout.overrides)..tableString(def.warps)..tableString(def.objects)..tableString(def.coordEvents))
  end
- local bytesCache,foregroundCache={},{}
+ local bytesCache,foregroundCache,compositeCache,retainedOver={},{},{},{}
  local magentaPixel=string.char(255,0,255,255)
  local function bytes(image)
   if not bytesCache[image]then bytesCache[image]=image:getString()end
   return bytesCache[image]
  end
- local function frameImage(row,over)
-  local image=row
-  if row.frames then image=row.frames[math.floor((clock+(row.offset or 0))/(row.period or 1))%#row.frames+1]end
-  if over then return image.over end
-  return image.under
+ local function currentFrame(row)
+  if not row.frames then return row end
+  local elapsed=math.max(0,clock-(row.offset or 0))
+  return row.frames[math.floor(elapsed/row.period)%#row.frames+1]
+ end
+ local function compositeBytes(frame)
+  if compositeCache[frame]then return compositeCache[frame]end
+  local under=bytes(frame.under)
+  local middle=frame.mid and bytes(frame.mid)
+  local top=frame.over or retainedOver[frame]
+  local over=top and bytes(top)
+  local pixels={}
+  for offset=1,#under,4 do
+   local pixel=under:sub(offset,offset+3)
+   if middle and middle:byte(offset+3)~=0 then
+    check(middle:byte(offset+3)==255,'Classic middle plane must have binary alpha')
+    pixel=middle:sub(offset,offset+3)
+   end
+   if over and over:byte(offset+3)~=0 then
+    check(over:byte(offset+3)==255,'Classic over plane must have binary alpha')
+    pixel=over:sub(offset,offset+3)
+   end
+   pixels[#pixels+1]=pixel
+  end
+  local result=table.concat(pixels)
+  compositeCache[frame]=result
+  return result
  end
  local function foregroundBytes(image)
   if not image then return magentaPixel:rep(256)end
@@ -224,14 +259,14 @@ BODY = r"""
   for y=0,room.rows-1 do for yy=0,15 do
    for x=0,7 do
     local mid=room.layout:midAt(x,y);local row=assert(art[mid],'Used source key has no cached Gen2 image')
-    local image=frameImage(row,over)
-    local raw=over and foregroundBytes(image)or bytes(image)
+    local frame=currentFrame(row)
+    local raw=over and foregroundBytes(frame.over or retainedOver[frame])or compositeBytes(frame)
     out[#out+1]=raw:sub(yy*64+1,yy*64+64)
    end
   end end
   return table.concat(out)
  end
- local exactPixels,tolerantPixels,independentHashes,verifiedKeys=0,0,0,0
+ local exactPixels,tolerantPixels,independentHashes,verifiedKeys,independentAnimationFrames,nativeOverChecks=0,0,0,0,0,0
  local function verifyImage(actual,expected,message)
   local raw=actual:getString();check(#raw==#expected,'Atlas RGBA byte count differs')
   if raw==expected then exactPixels=exactPixels+#raw/4;check(true,message..' byte-exact');return end
@@ -293,8 +328,14 @@ BODY = r"""
    times['0']=0
    for _,item in ipairs(room.bank.items)do
     local row=assert(art[item.mid],'Actual used source MID was rejected or skipped')
+    if item.retainedOverHex then
+     check(row.over==nil,'Theme owns the retained native foreground')
+     local raw=love.data.decode('string','hex',item.retainedOverHex)
+     retainedOver[row]=love.image.newImageData(16,16,'rgba8',raw)
+    end
     if item.compositionPixelHash then
-     check(hash(bytes(frameImage(row,false)))==item.compositionPixelHash,'Cached frame0 differs from independent authored compositionPixelHash: '..game..'/'..room.bank.pair..'/'..item.mid)
+     local first=row.frames and row.frames[1]or row
+     check(hash(compositeBytes(first))==item.compositionPixelHash,'Cached frame0 differs from independent authored compositionPixelHash: '..game..'/'..room.bank.pair..'/'..item.mid)
      independentHashes=independentHashes+1;rowHashes=rowHashes+1
     end
     verifiedKeys=verifiedKeys+1
@@ -303,8 +344,15 @@ BODY = r"""
      check(period and period>0 and count>=1,'Invalid cached animation schedule')
      local key=count..'/'..string.format('%.12g',period)..'/'..string.format('%.12g',offset)
      schedules[key]={frames=count,period=period,offset=offset,bank=row.bank}
+     if item.classicFrameHashes then
+      check(#item.classicFrameHashes==count,'Classic ground frame count differs from independent native program')
+      for index,expected in ipairs(item.classicFrameHashes)do
+       check(hash(compositeBytes(row.frames[index]))==expected,'Classic ground frame differs from independent native program: '..game..'/'..room.bank.pair..'/'..item.mid..' frame '..index)
+       independentAnimationFrames=independentAnimationFrames+1
+      end
+     end
      for i=0,count-1 do
-      local at=i*period-offset+.00001
+      local at=i*period+offset+.00001
       while at<0 do at=at+count*period end
       times[string.format('%.12g',at)]=at
      end
@@ -344,10 +392,74 @@ BODY = r"""
   for _,key in ipairs({'speed_water','speed_flowers'})do mod._probeEvents:emit('mod.options_changed',{mod='tileshift',key=key,value=3})end
   assert(mod.exports.select('original'));clock=0
   for _,room in ipairs(rooms)do bind(room);check(draw(room):getString()==room.before:getString(),'Atlas theme cleanup did not restore original native pixels')end
+  local function sourceOver(room,mid)
+   local atlas=assert(Native.get(room.bank.pair))
+   local slot=assert(atlas.midToSlot[mid])
+   local tile=love.image.newImageData(16,16)
+   tile:paste(atlas.overImageData,0,0,(slot%atlas.cols)*16,math.floor(slot/atlas.cols)*16,16,16)
+   return tile
+  end
+  local preserved={}
+  for _,room in ipairs(rooms)do
+   local items,phaseTimes,lastTick={}, {},0
+   for _,item in ipairs(room.bank.items)do
+    local schedule=item.retainedOverSchedule
+    if schedule then
+     items[#items+1]=item
+     local start=schedule.phase==0 and schedule.period or schedule.phase
+     for frame=0,schedule.frames do
+      local tick=start+frame*schedule.period
+      phaseTimes[tick]=true
+      lastTick=math.max(lastTick,tick)
+     end
+    end
+   end
+   if #items>0 then
+    bind(room);draw(room)
+    local baseline,lastByMid,changed={},{},false
+    for tick=1,lastTick do
+     Anim.stepRse()
+     if phaseTimes[tick]then
+      baseline[tick]={}
+      for _,item in ipairs(items)do
+       local value=hash(bytes(sourceOver(room,item.mid)))
+       if lastByMid[item.mid] and lastByMid[item.mid]~=value then changed=true end
+       lastByMid[item.mid]=value;baseline[tick][item.mid]=value
+      end
+     end
+    end
+    check(changed,'Native retained foreground did not animate')
+    preserved[#preserved+1]={room=room,items=items,baseline=baseline,lastTick=lastTick}
+   end
+  end
+  if #preserved>0 then
+   assert(mod.exports.select('gen2'))
+   for _,proof in ipairs(preserved)do
+    local room=proof.room
+    bind(room);draw(room)
+    local art=assert(mod.exports.state:replacements(game,room.bank.pair))
+    for tick=1,proof.lastTick do
+     Anim.stepRse()
+     if proof.baseline[tick]then
+      for _,item in ipairs(proof.items)do
+       local row=assert(art[item.mid]);check(row.over==nil,'Retained foreground was copied into the theme atlas')
+       local image=sourceOver(room,item.mid)
+       check(hash(bytes(image))==proof.baseline[tick][item.mid],'Native foreground playback changed under the theme')
+       retainedOver[row]=image;compositeCache[row]=nil;nativeOverChecks=nativeOverChecks+1
+      end
+      verifyImage(draw(room,true),expectedBytes(room,art,true),'Retained native foreground crossed the actor boundary')
+      verifyImage(draw(room),expectedBytes(room,art,false),'Retained native foreground did not combine with the themed background')
+     end
+    end
+   end
+   assert(mod.exports.select('original'))
+  end
   mod.exports.dispose()
  end
  check(verifiedKeys==selected.expected_keys,'Some actual used source keys were skipped')
  report.verified_source_keys=verifiedKeys;report.independent_composition_hashes=independentHashes
+ report.independent_classic_animation_frames=independentAnimationFrames
+ report.retained_native_foreground_checks=nativeOverChecks
  report.byte_exact_gpu_pixels=exactPixels;report.tolerance_checked_gpu_pixels=tolerantPixels
  report.status='passed';write('report.json',Json.encode(report))
 end

@@ -207,12 +207,28 @@ function S.new(ctx)
           local generation=ctx.generations[game]
           local sourceRef={game=game,tileset=tileset,id=row.id,quadrant=row.quadrant,
             hash=row.sourceHash,hashOnly=true,map=row.sourceMap,monochrome=true,sourceFiles=row.sourceFiles}
+          if row.kind=='classic_native_geometry'then
+            sourceRef.animationManifestHash=row.classicGeometry.animationManifestHash;sourceRef.staticClassic=true
+            sourceRef.classicNativeOver=row.classicGeometry.nativeOver
+            local ground=row.classicGeometry.ground
+            if ground and ground.animation then sourceRef.classicGroundMasks=ground.masks end
+          end
           if generation==2 and not sourceRef.map then sourceRef.map=def end
           source,sourceError=tryCall(donor.cell,donor,sourceRef)
         end
         local piece,pieceError,sequence
         if source then
-          if row.kind=='source_palette' then piece,pieceError=tryCall(recolorSource,source,row.sourceColors)
+          if row.kind=='classic_native_geometry'then
+            local ground=row.classicGeometry.ground
+            if ground and ground.animation then
+              if ctx.composeFrames then
+                sequence,pieceError=tryCall(ctx.composeFrames,row,source)
+                if sequence and type(sequence.frames)=='table'and #sequence.frames>=2 then piece=sequence.frames[1]
+                else sequence=nil;pieceError=pieceError or'Invalid classic ground animation'end
+              else pieceError='Classic ground animation service is unavailable'end
+            elseif ctx.compose then piece,pieceError=tryCall(ctx.compose,row,source)
+            else pieceError='Classic geometry composition service is unavailable'end
+          elseif row.kind=='source_palette' then piece,pieceError=tryCall(recolorSource,source,row.sourceColors)
           elseif row.donor then piece,pieceError=tryCall(donor.cell,donor,row.donor)
           elseif row.parts then
             if row.animated then
@@ -307,7 +323,30 @@ function S.new(ctx)
         end
         if piece and sequence and ctx.animationTiming and ctx.generations[game]~=3 then sequence=ctx.animationTiming(row,sequence) end
         if piece then
-          if ctx.generations[game]==3 then
+          if row.kind=='classic_native_geometry'then
+            local function planes(frame)
+              -- The native background atlas already combines UNDER and MID.
+              -- Keep OVER separate so actors still pass behind foreground art.
+              local under=frame.under
+              if frame.mid then
+                under=factory(16,16);under:paste(frame.under,0,0)
+                for y=0,15 do for x=0,15 do
+                  local r,g,b,a=frame.mid:getPixel(x,y)
+                  if a==1 then under:setPixel(x,y,r,g,b,a)end
+                end end
+              end
+              local over
+              if not row.classicGeometry.nativeOver then over=frame.over or clearPlane()end
+              return{under=under,mid=clearPlane(),over=over}
+            end
+            local replacement=planes(piece)
+            if sequence then
+              replacement.frames={}
+              for index,frame in ipairs(sequence.frames)do replacement.frames[index]=planes(frame)end
+              replacement.period=sequence.period;replacement.offset=sequence.offset or 0;replacement.category='water'
+            end
+            rows[row.id]=replacement
+          elseif ctx.generations[game]==3 then
             -- The native atlas already composites its middle plane. Retheme
             -- the complete16px image and explicitly clear unused native planes.
             local overPixels={}

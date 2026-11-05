@@ -296,3 +296,5 @@ Native foregrounds, exact source geometry for unmatched compact details,
 source-room masks and file hashes are recorded in assets/third_party/
 gen1-outdoor-audit/, gen1-seating-domestic/ and gamefreak/rby-facility-floor/
 provenance.json. No original layout, entrance or NPC coordinates are moved.
+
+The Hoenn submarine replacement uses one original vessel created with the built-in image generator. Its whole 64×48 canvas was normalized with uniform integer nearest-neighbor reduction and split at native 16-pixel boundaries. Generation and piece fingerprints are in `assets/original/classic-submarine/provenance.json`. Other named regional four-color derivatives are drawn at runtime from the player’s own imported native geometry.

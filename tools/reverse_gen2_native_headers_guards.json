@@ -1,0 +1,185 @@
+[
+  {
+    "game": "emerald",
+    "pair": "building__lilycove_museum",
+    "mid": 513,
+    "sourceHash": "516c1c2666e350a2ba58be63a11662a342e6124a81727216d4dafa83b6f11a10",
+    "sourceLayers": {
+      "under": "516c1c2666e350a2ba58be63a11662a342e6124a81727216d4dafa83b6f11a10",
+      "mid": "516c1c2666e350a2ba58be63a11662a342e6124a81727216d4dafa83b6f11a10",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "target": "outside_room_void",
+    "headers": {
+      "EM_LILYCOVE_CITY_LILYCOVE_MUSEUM_1F": "a8f2e390c13e9ba26c019dbecf1db8b72309c95f12a46564447e3b93f3787261",
+      "EM_LILYCOVE_CITY_LILYCOVE_MUSEUM_2F": "35bee5d4ae2345ee069e7b7919bf33c3ace4a26265be1385c5ea1eca80e46102"
+    }
+  },
+  {
+    "game": "emerald",
+    "pair": "general__battle_frontier",
+    "mid": 35,
+    "sourceHash": "be07a39d73f752992b88b9586d8c8c10f63d39134a7b3c29f39457963325123b",
+    "sourceLayers": {
+      "under": "be07a39d73f752992b88b9586d8c8c10f63d39134a7b3c29f39457963325123b",
+      "mid": "be07a39d73f752992b88b9586d8c8c10f63d39134a7b3c29f39457963325123b",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "target": "outside_room_void",
+    "headers": {
+      "EM_BATTLE_FRONTIER_RECEPTION_GATE": "465e75f1103027792cd7dec8c7b4042e8e15994c794f9f40cbd89afa1f7420bd"
+    }
+  },
+  {
+    "game": "emerald",
+    "pair": "general__battle_palace",
+    "mid": 35,
+    "sourceHash": "be07a39d73f752992b88b9586d8c8c10f63d39134a7b3c29f39457963325123b",
+    "sourceLayers": {
+      "under": "be07a39d73f752992b88b9586d8c8c10f63d39134a7b3c29f39457963325123b",
+      "mid": "be07a39d73f752992b88b9586d8c8c10f63d39134a7b3c29f39457963325123b",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "target": "outside_room_void",
+    "headers": {
+      "EM_BATTLE_FRONTIER_BATTLE_PALACE_BATTLE_ROOM": "2a15b7e9a0a0ef59a9700dc4d772fb59430b62ddd02364c138afa66d636f306a",
+      "EM_BATTLE_FRONTIER_BATTLE_PALACE_CORRIDOR": "cdf7d0a5aaf0db9efc86b1fae844f7105016576388293b8b4895bb1027daa728"
+    }
+  },
+  {
+    "game": "emerald",
+    "pair": "general__battle_tent",
+    "mid": 35,
+    "sourceHash": "be07a39d73f752992b88b9586d8c8c10f63d39134a7b3c29f39457963325123b",
+    "sourceLayers": {
+      "under": "be07a39d73f752992b88b9586d8c8c10f63d39134a7b3c29f39457963325123b",
+      "mid": "be07a39d73f752992b88b9586d8c8c10f63d39134a7b3c29f39457963325123b",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "target": "outside_room_void",
+    "headers": {
+      "EM_VERDANTURF_TOWN_BATTLE_TENT_BATTLE_ROOM": "6c7fb99c8e2759ed5ded328619c5fae5f8bcb4f223fd89fd67a89cfc2ec70dd8"
+    }
+  },
+  {
+    "game": "emerald",
+    "pair": "general__cave",
+    "mid": 35,
+    "sourceHash": "be07a39d73f752992b88b9586d8c8c10f63d39134a7b3c29f39457963325123b",
+    "sourceLayers": {
+      "under": "be07a39d73f752992b88b9586d8c8c10f63d39134a7b3c29f39457963325123b",
+      "mid": "be07a39d73f752992b88b9586d8c8c10f63d39134a7b3c29f39457963325123b",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "target": "outside_room_void",
+    "headers": {
+      "EM_SEALED_CHAMBER_INNER_ROOM": "711493da9b12ecb23fcf35e826c5e7c661ebc3ac5c6463bb56863b0a8119c085",
+      "EM_SEALED_CHAMBER_OUTER_ROOM": "bc9181db73af9ee728474575a5d654bcb92335d996a9fe64f9c61f71af94ada1"
+    }
+  },
+  {
+    "game": "firered",
+    "pair": "building__rom_082d5094",
+    "mid": 815,
+    "sourceHash": "64646c60fdad9a262e6d756452e783be03f5714686d008e8f44f5858bc8ba137",
+    "sourceLayers": {
+      "under": "64646c60fdad9a262e6d756452e783be03f5714686d008e8f44f5858bc8ba137",
+      "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": null,
+    "target": "roof_sky",
+    "headers": {
+      "FR_TRAINER_TOWER_ROOF": "8c517a178c57ab1a2a6b8c90d10c4d90b9835205b5e9a6ee4294ec87dcd7e99d"
+    }
+  },
+  {
+    "game": "leafgreen",
+    "pair": "building__rom_082d5074",
+    "mid": 815,
+    "sourceHash": "64646c60fdad9a262e6d756452e783be03f5714686d008e8f44f5858bc8ba137",
+    "sourceLayers": {
+      "under": "64646c60fdad9a262e6d756452e783be03f5714686d008e8f44f5858bc8ba137",
+      "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": null,
+    "target": "roof_sky",
+    "headers": {
+      "FR_TRAINER_TOWER_ROOF": "8c517a178c57ab1a2a6b8c90d10c4d90b9835205b5e9a6ee4294ec87dcd7e99d"
+    }
+  },
+  {
+    "game": "ruby",
+    "pair": "building__lilycove_museum",
+    "mid": 513,
+    "sourceHash": "516c1c2666e350a2ba58be63a11662a342e6124a81727216d4dafa83b6f11a10",
+    "sourceLayers": {
+      "under": "516c1c2666e350a2ba58be63a11662a342e6124a81727216d4dafa83b6f11a10",
+      "mid": "516c1c2666e350a2ba58be63a11662a342e6124a81727216d4dafa83b6f11a10",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "target": "outside_room_void",
+    "headers": {
+      "RU_LILYCOVE_CITY_LILYCOVE_MUSEUM_1F": "a8f2e390c13e9ba26c019dbecf1db8b72309c95f12a46564447e3b93f3787261",
+      "RU_LILYCOVE_CITY_LILYCOVE_MUSEUM_2F": "35bee5d4ae2345ee069e7b7919bf33c3ace4a26265be1385c5ea1eca80e46102"
+    }
+  },
+  {
+    "game": "ruby",
+    "pair": "general__cave",
+    "mid": 35,
+    "sourceHash": "be07a39d73f752992b88b9586d8c8c10f63d39134a7b3c29f39457963325123b",
+    "sourceLayers": {
+      "under": "be07a39d73f752992b88b9586d8c8c10f63d39134a7b3c29f39457963325123b",
+      "mid": "be07a39d73f752992b88b9586d8c8c10f63d39134a7b3c29f39457963325123b",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "target": "outside_room_void",
+    "headers": {
+      "RU_SEALED_CHAMBER_INNER_ROOM": "711493da9b12ecb23fcf35e826c5e7c661ebc3ac5c6463bb56863b0a8119c085",
+      "RU_SEALED_CHAMBER_OUTER_ROOM": "bc9181db73af9ee728474575a5d654bcb92335d996a9fe64f9c61f71af94ada1"
+    }
+  },
+  {
+    "game": "sapphire",
+    "pair": "building__lilycove_museum",
+    "mid": 513,
+    "sourceHash": "516c1c2666e350a2ba58be63a11662a342e6124a81727216d4dafa83b6f11a10",
+    "sourceLayers": {
+      "under": "516c1c2666e350a2ba58be63a11662a342e6124a81727216d4dafa83b6f11a10",
+      "mid": "516c1c2666e350a2ba58be63a11662a342e6124a81727216d4dafa83b6f11a10",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "target": "outside_room_void",
+    "headers": {
+      "SA_LILYCOVE_CITY_LILYCOVE_MUSEUM_1F": "a8f2e390c13e9ba26c019dbecf1db8b72309c95f12a46564447e3b93f3787261",
+      "SA_LILYCOVE_CITY_LILYCOVE_MUSEUM_2F": "35bee5d4ae2345ee069e7b7919bf33c3ace4a26265be1385c5ea1eca80e46102"
+    }
+  },
+  {
+    "game": "sapphire",
+    "pair": "general__cave",
+    "mid": 35,
+    "sourceHash": "be07a39d73f752992b88b9586d8c8c10f63d39134a7b3c29f39457963325123b",
+    "sourceLayers": {
+      "under": "be07a39d73f752992b88b9586d8c8c10f63d39134a7b3c29f39457963325123b",
+      "mid": "be07a39d73f752992b88b9586d8c8c10f63d39134a7b3c29f39457963325123b",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "target": "outside_room_void",
+    "headers": {
+      "SA_SEALED_CHAMBER_INNER_ROOM": "711493da9b12ecb23fcf35e826c5e7c661ebc3ac5c6463bb56863b0a8119c085",
+      "SA_SEALED_CHAMBER_OUTER_ROOM": "bc9181db73af9ee728474575a5d654bcb92335d996a9fe64f9c61f71af94ada1"
+    }
+  }
+]

@@ -431,8 +431,84 @@ def source_palette_image(cache, row, packed):
     return out
 
 
+def classic_geometry_layers(cache, row, packed, ground_frame=None):
+    """Keep every source plane/alpha and apply an explicit reviewed RGB map."""
+    assert row['kind']=='classic_native_geometry'and row['style']=='gen2'
+    assert row['game']in('ruby','sapphire','emerald','firered','leafgreen')
+    spec=row['classicGeometry'];assert spec['version']==1 and spec['static']is True
+    ref=dict(game=row['game'],tileset=row['tileset'],id=row['id'],hash=row['sourceHash'])
+    native_donor(cache,ref,packed)
+    mids,palette,planes=packed[row['game'],row['tileset']];slot=mids.index(row['id'])
+    path=cache/row['game']/'data/generated/gba/native'/row['tileset']/'anim_manifest.lua'
+    manifest=path.read_bytes()if path.is_file()else b''
+    assert catalog.sha(manifest)==spec['animationManifestHash'],'Classic geometry animation manifest changed'
+    from classic_geometry_review import static_manifest
+    ground_spec=spec.get('ground',{})
+    assert static_manifest(cache,row['game'],row['tileset'],row['id'],packed,ground_spec['masks']if ground_spec.get('animation')else None,spec.get('nativeOver'))==spec['animationManifestHash']
+    target={tuple(rgb)for rgb in spec['palette']};assert len(target)==4
+    colors={tuple(e[:3]):tuple(e[3:])for e in spec['colorMap']}
+    assert len(colors)==len(spec['colorMap'])and set(colors.values())<=target
+    present=set(planes)|{'over'}
+    assert present==set(spec['sourceLayers']),'Classic geometry source plane presence changed'
+    result={}
+    ground=None
+    # A Crystal ground donor is its complete colored cell, including pixels
+    # whose ordinary background priority is below its native foreground.
+    if spec.get('ground'):
+        if ground_frame is not None:ground=ground_frame
+        elif ground_spec.get('animation'):
+            from gb_theme_animation import frames
+            ground=frames(cache,ground_spec['donor'],ground_spec['animation'],packed)[0]
+        else:ground=native_donor(cache,ground_spec['donor'],packed)
+    for name in ('under','mid','over'):
+        if name not in present:continue
+        image=catalog.rgba_native(planes[name][slot*256:(slot+1)*256],palette,name!='under')if name in planes else Image.new('RGBA',(16,16))
+        assert catalog.sha(image.tobytes())==spec['sourceLayers'][name],'Classic geometry source plane changed'
+        if name=='over'and spec.get('nativeOver'):
+            result[name]=image
+            continue
+        out=image.copy()
+        for y in range(16):
+            for x in range(16):
+                pixel=image.getpixel((x,y));assert pixel[3]in(0,255)
+                if pixel[3]:
+                    assert pixel[:3]in colors,'Classic geometry contains an unmapped source color'
+                    mask=spec.get('ground',{}).get('masks',{}).get(name,'0'*256)
+                    rgb=colors[pixel[:3]]
+                    if mask[y*16+x]=='1':
+                        gp=ground.getpixel((x%ground_spec.get('repeatWidth',16),y));assert gp[3]==255;rgb=gp[:3]
+                    out.putpixel((x,y),rgb+(pixel[3],))
+                else:
+                    mask=spec.get('ground',{}).get('masks',{}).get(name,'0'*256)
+                    assert mask[y*16+x]=='0','Classic ground mask includes transparent native pixels'
+        result[name]=out
+    return result
+
+
+def classic_geometry_image(cache,row,packed):
+    layers=classic_geometry_layers(cache,row,packed);out=Image.new('RGBA',(16,16))
+    for name in ('under','mid','over'):
+        if name in layers:out=Image.alpha_composite(out,layers[name])
+    return out
+
+
+def classic_geometry_frames(cache,row,packed):
+    ground=row['classicGeometry'].get('ground',{})
+    if not ground.get('animation'):return[classic_geometry_image(cache,row,packed)]
+    from gb_theme_animation import frames
+    output=[]
+    for frame in frames(cache,ground['donor'],ground['animation'],packed):
+        layers=classic_geometry_layers(cache,row,packed,frame);image=Image.new('RGBA',(16,16))
+        for name in ('under','mid','over'):
+            if name in layers:image=Image.alpha_composite(image,layers[name])
+        output.append(image)
+    return output
+
+
 def _replacement_frames_base(cache, row, packed, mod_root):
     """Compose every native background frame without mutating cached art."""
+    if row.get('kind') == 'classic_native_geometry':
+        return classic_geometry_frames(cache,row,packed)
     if row.get('kind') == 'source_palette':
         return [source_palette_image(cache, row, packed)]
     if row.get("donor"):

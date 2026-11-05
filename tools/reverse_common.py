@@ -145,6 +145,8 @@ class ReverseReview:
         return row
 
     def render(self, row):
+        if row.get('kind')=='classic_native_geometry':
+            return preview.classic_geometry_image(self.cache,row,self.packed)
         if row.get('animated'):
             return preview.replacement_image(self.cache,row,self.packed,ROOT)
         if row.get('donor'):
@@ -239,7 +241,8 @@ class ReverseReview:
             checked_hash=wrap(lambda raw:hashlib.sha256(raw).hexdigest().encode())
             ctx=vm.table_from({b'read':read,b'prefix':lambda g:g+b'/',b'hash':checked_hash,b'newImageData':make,b'loadImage':load_image,b'gbAnimation':gb_animation})
             decoder=vm.execute((ROOT/'lib/donor.lua').read_bytes())[b'new'](ctx)
-            composer=vm.execute((ROOT/'lib/composition.lua').read_bytes())[b'new'](vm.table_from({b'donor':decoder,b'newImageData':make}))
+            mapping=vm.execute((ROOT/'lib/mapping.lua').read_bytes())
+            composer=vm.execute((ROOT/'lib/composition.lua').read_bytes())[b'new'](vm.table_from({b'donor':decoder,b'newImageData':make,b'validateRow':mapping[b'validate'],b'hashImage':wrap(lambda im:hashlib.sha256(im[b'getString'](im)).hexdigest().encode())}))
             # Match the installable module's bounded table batches. One giant
             # literal exceeds LuaJIT's per-function constant limit once a full
             # multi-game review contains several thousand guarded recipes.
@@ -250,10 +253,23 @@ class ReverseReview:
                 append(decoded_rows,batch)
             assert len(decoded_rows)==len(rows),'Batched validation lost a reviewed row'
             vm.globals()[b'reverseRows']=decoded_rows
-            vm.globals()[b'reverseMapping']=vm.execute((ROOT/'lib/mapping.lua').read_bytes())
+            vm.globals()[b'reverseMapping']=mapping
             vm.globals()[b'reverseSession']=vm.execute((ROOT/'lib/session.lua').read_bytes())
             vm.globals()[b'reverseDecoder']=decoder; vm.globals()[b'reverseComposer']=composer
             vm.globals()[b'reverseHash']=lambda raw:hashlib.sha256(raw).hexdigest().encode()
+            classic_layers={}
+            empty=Image.new('RGBA',(16,16))
+            for row in rows:
+                if row.get('kind')=='classic_native_geometry':
+                    planes=preview.classic_geometry_layers(self.cache,row,self.packed)
+                    under=planes['under'].copy()
+                    if 'mid' in planes:
+                        under.paste(planes['mid'],(0,0),planes['mid'].getchannel('A'))
+                    planes.update(under=under,mid=empty)
+                    for name in ('under','mid','over'):
+                        image=planes.get(name,empty)
+                        classic_layers[row['game'].encode(),row['tileset'].encode(),row['id'],name.encode()]=catalog.sha(image.tobytes()).encode()
+            vm.globals()[b'reverseExpectedClassicLayer']=lambda game,pair,mid,name:classic_layers[game,pair,mid,name]
             def original_art(relative, expected):
                 path=(ROOT/relative.decode()).resolve();assert path.is_relative_to(ROOT)
                 raw=path.read_bytes();assert hashlib.sha256(raw).hexdigest().encode()==expected
@@ -274,7 +290,25 @@ for _,style in ipairs({'gen1','gen2'})do
   expected=expected+1;local k=row.game..':'..row.tileset..':'..(row.map or '*')
   if not visited[k]then visited[k]=assert(state:replacements(row.game,row.tileset,row.map and{id=row.map}or nil))end
   local piece=assert(visited[k][row.id]);assert(piece.under)
-  assert(reverseHash(piece.under:getString())==row.compositionPixelHash,'Reverse RGB output differs from independently rendered GB counterpart')
+  local flat=piece.under
+  if row.kind=='classic_native_geometry'then
+   local retainedOver
+   if row.classicGeometry.nativeOver then
+    assert(piece.over==nil,'Retained native foreground was overwritten by the theme')
+    retainedOver=assert(reverseDecoder:cell({game=row.game,tileset=row.tileset,id=row.id,hash=row.sourceHash})).over
+   end
+   local function layer(name)return piece[name]or(name=='over'and retainedOver)end
+   for _,name in ipairs({'under','mid','over'})do
+    local plane=layer(name)
+    assert(plane and reverseHash(plane:getString())==reverseExpectedClassicLayer(row.game,row.tileset,row.id,name),'Classic geometry atlas plane differs from independent Python pixels: '..name)
+   end
+   flat=makeData(16,16)
+   for _,name in ipairs({'under','mid','over'})do if layer(name)then
+    local plane=layer(name)
+    for y=0,15 do for x=0,15 do local r,g,b,a=plane:getPixel(x,y);if a>0 then flat:setPixel(x,y,r,g,b,a)end end end
+   end end
+  end
+  assert(reverseHash(flat:getString())==row.compositionPixelHash,'Reverse RGB output differs from independently rendered GB counterpart')
  end end
  assert(state.rejected==0 and state.accepted==expected,'Reverse rows failed strict source/donor decoding')
  totals[style]=state.accepted
@@ -283,7 +317,8 @@ return totals
 ''')
             accepted={k.decode()if isinstance(k,bytes)else k:v for k,v in result.items()}
             proof={'accepted':accepted,'rejected':0,'neutral_imports_only':True,'source_and_donor_hashes_checked':True,
-                   'independent_output_pixels_checked':len(rows)*256}
+                   'independent_output_pixels_checked':len(rows)*256,
+                   'independent_classic_priority_plane_pixels_checked':len(classic_layers)*256}
             (self.out/'proof.json').write_text(json.dumps(proof,indent=2),encoding='utf-8')
             return proof
         finally:

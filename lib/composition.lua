@@ -137,8 +137,94 @@ function Composition.new(ctx)
       end
       return {under=under,over=factory(16,16)}
   end
-  function self:cell(row)
+  local function classicSource(row,source)
+    assert(type(ctx.validateRow)=='function','Classic geometry needs the mapping validator')
+    local valid,why=ctx.validateRow(row);assert(valid,why)
+    local spec=row.classicGeometry
+    if not source then
+      source,why=donor:cell({game=row.game,tileset=row.tileset,id=row.id,hash=row.sourceHash,
+        animationManifestHash=spec.animationManifestHash,staticClassic=true,
+        classicGroundMasks=spec.ground and spec.ground.animation and spec.ground.masks or nil,
+        classicNativeOver=spec.nativeOver})
+    end
+    assert(source and(source.hash==row.sourceHash or source.sourceHash==row.sourceHash),'Classic geometry source fingerprint changed: '..tostring(why))
+    assert(source.animationManifestHash==spec.animationManifestHash,'Classic geometry animation source changed')
+    assert(source.staticClassic==true,'Classic geometry source animation exclusion was not checked')
+    local masks=spec.ground and spec.ground.animation and spec.ground.masks
+    local maskKey=table.concat({masks and masks.under or'',masks and masks.mid or'',masks and masks.over or''},':')
+    assert((source.classicGroundMaskKey or'::')==maskKey,'Classic geometry animation coverage differs from its checked source')
+    local nativeOver=spec.nativeOver
+    assert(source.classicNativeOver==(nativeOver and nativeOver.bank..':'..nativeOver.hash or nil),
+      'Classic geometry native foreground differs from its checked source')
+    return source
+  end
+  local function classicGeometry(row,source,groundFrame)
+    source=classicSource(row,source)
+    local spec=row.classicGeometry
+    local colors={}
+    for _,e in ipairs(spec.colorMap)do colors[e[1]*65536+e[2]*256+e[3]]={e[4]/255,e[5]/255,e[6]/255}end
+    local ground=groundFrame or(spec.ground and decoded(spec.ground.donor))
+    local groundWidth=spec.ground and spec.ground.repeatWidth or 16
+    local result={}
+    for _,name in ipairs({'under','mid','over'})do
+      local image=source[name];local expected=spec.sourceLayers[name]
+      assert((image~=nil)==(expected~=nil),'Classic geometry source layer presence changed: '..name)
+      if image then
+        image16(image);assert(hashImage(image)==expected,'Classic geometry source layer changed: '..name)
+        if name=='over'and spec.nativeOver then
+          result[name]=image
+        else
+          local out=factory(16,16)
+          local mask=spec.ground and spec.ground.masks[name]
+          for y=0,15 do
+            for x=0,15 do
+              local r,g,b,a=image:getPixel(x,y)
+              assert(a==0 or a==1,'Classic geometry requires native binary alpha')
+              if a==1 then
+                local key=math.floor(r*255+.5)*65536+math.floor(g*255+.5)*256+math.floor(b*255+.5)
+                local rgb=colors[key]
+                assert(rgb,'Classic geometry contains an unmapped source color')
+                r,g,b=rgb[1],rgb[2],rgb[3]
+              end
+              local offset=y*16+x+1
+              if mask and mask:sub(offset,offset)=='1'then
+                assert(a==1,'Classic geometry ground mask includes transparent source pixels')
+                local gr,gg,gb,ga=ground:getPixel(x%groundWidth,y)
+                assert(ga==1,'Classic geometry ground pixel must be opaque')
+                r,g,b=gr,gg,gb
+              end
+              out:setPixel(x,y,r,g,b,a)
+            end
+          end
+          result[name]=out
+        end
+      end
+    end
+    result.foreground=result.over
+    return result
+  end
+  local function classicFrames(row,source)
+    source=classicSource(row,source)
+    local ground=row.classicGeometry.ground
+    assert(ground and ground.animation,'Classic geometry has no animated ground')
+    local sequence,why=donor:frames(ground.donor,ground.animation)
+    assert(sequence,'Classic ground animation failed: '..tostring(why))
+    assert(type(sequence.frames)=='table'and #sequence.frames>=2 and #sequence.frames<=256
+      and type(sequence.period)=='number'and sequence.period>0 and sequence.period<math.huge,
+      'Invalid classic ground animation sequence')
+    local output={frames={}}
+    for key,value in pairs(sequence)do if key~='frames'then output[key]=value end end
+    for index,frame in ipairs(sequence.frames)do output.frames[index]=classicGeometry(row,source,flatten(frame))end
+    return output
+  end
+  function self:cell(row,source)
     local ok,result=pcall(function()
+      if type(row)=='table'and row.kind=='classic_native_geometry'then
+        if row.classicGeometry and row.classicGeometry.ground and row.classicGeometry.ground.animation then
+          return classicFrames(row,source).frames[1]
+        end
+        return classicGeometry(row,source)
+      end
       validate(row)
       local under=row.base and decoded(row.base) or factory(16,16)
       return compose(row,under,prepare(row))
@@ -146,8 +232,9 @@ function Composition.new(ctx)
     if not ok then return nil,tostring(result) end
     return result
   end
-  function self:frames(row)
+  function self:frames(row,source)
     local ok,result=pcall(function()
+      if type(row)=='table'and row.kind=='classic_native_geometry'then return classicFrames(row,source)end
       validate(row)
       if row.animation and row.animation.kind=='gb'then
         local sources=prepare(row)

@@ -15,6 +15,38 @@ BERRY_SOIL_NAMES = {f'soil-{tile}.png' for tile in
         ('lilycove', (627, 629, 635, 637, 725, 733, 741))) for tile in tiles}
 
 
+def validate_submarine_assets(root: Path) -> dict:
+    """Verify the whole generated vessel and every installed 16px piece."""
+    from PIL import Image
+
+    directory = root / 'assets/original/classic-submarine'
+    provenance = json.loads((directory / 'provenance.json').read_text(encoding='utf-8'))
+    whole = directory / 'submarine64x48.png'
+    assert hashlib.sha256(whole.read_bytes()).hexdigest() == provenance['whole_png_sha256']
+    image = Image.open(whole).convert('RGBA')
+    assert image.size == (64, 48) and not image.crop((0, 32, 64, 48)).getbbox()
+    assert set(image.getchannel('A').get_flattened_data()) <= {0, 255}
+    assert {p[:3] for p in image.get_flattened_data() if p[3]} == set(map(tuple, provenance['palette']))
+    assert len(provenance['palette']) == 4 and provenance['normalization']['uniform_integer_scale'] == 23
+    whole_hash = hashlib.sha256(image.tobytes()).hexdigest()
+    assert whole_hash == provenance['whole_rgba_sha256']
+    grid = [[740, 741, 742, 743], [736, 737, 738, 739]]
+    pieces = {item['mid']: item for item in provenance['cells']}
+    assert set(pieces) == set(range(736, 744)) and len(provenance['cells']) == 8
+    assert {p.name for p in directory.iterdir()} == {'provenance.json', whole.name} | {f'submarine-{mid}.png' for mid in pieces}
+    for y, row in enumerate(grid):
+        for x, mid in enumerate(row):
+            path = directory / f'submarine-{mid}.png'
+            record = pieces[mid]
+            assert record['asset'] == path.relative_to(root).as_posix()
+            assert hashlib.sha256(path.read_bytes()).hexdigest() == record['file_sha256']
+            tile = Image.open(path).convert('RGBA')
+            assert tile.size == (16, 16)
+            assert tile.tobytes() == image.crop((x*16, y*16, x*16+16, y*16+16)).tobytes()
+            assert hashlib.sha256(tile.tobytes()).hexdigest() == record['rgba_sha256']
+    return {'whole_rgba_sha256': whole_hash, 'checked_cells': len(pieces)}
+
+
 def validate_berry_assets(root: Path) -> dict:
     """Account for only the approved native-sized trees and clipped soil art."""
     from lupa import LuaRuntime
@@ -140,11 +172,12 @@ def main() -> None:
                 'third_party/gamefreak/rby-facility-floor/')
     interior_folders = ('original/azalea-lawn', 'original/interior-beacon', 'original/interior-computer', 'original/interior-flowerpot', 'original/interior-lattice', 'original/interior-painting', 'original/interior-pillar', 'original/interior-planter', 'original/interior-radio', 'original/interior-railpost', 'original/interior-stairs', 'original/interior-tower-modules')
     allowed += tuple(folder + '/' for folder in interior_folders)
-    allowed += ('original/berries/gen2/',)
+    allowed += ('original/berries/gen2/', 'original/classic-submarine/')
     for path in asset_files:
         assert path.relative_to(root / 'assets').as_posix().startswith(allowed), 'Unreviewed asset folder'
         assert path.suffix in ('.png', '.jpg', '.json', '.txt'), 'Unreviewed asset format'
     berry_assets = validate_berry_assets(root)
+    submarine_assets = validate_submarine_assets(root) if (root / 'assets/original/classic-submarine').is_dir() else None
     for folder in ('original/classic-vent', 'user_flora', 'third_party/magiscarf', 'third_party/metalflygon08', 'original/sprout-tower', 'original/flora', 'original/slowpoke-well', 'original/olivine-lighthouse', 'original/compact-conifer', 'original/ecruteak-v2', 'original/bell-wide', 'original/center-expanded', 'original/ilex-shrine', 'original/whirlpool', 'original/park-bench', 'third_party/peekychew'):
         provenance = json.loads((root / 'assets' / folder / 'provenance.json').read_text(encoding='utf-8'))
         for name, digest in provenance['files'].items():
@@ -226,6 +259,8 @@ def main() -> None:
               "files": expected, "zip_roundtrip_verified": True,
               "validated_runtime_sha256": inputs["sha256"], "native_gpu_checks": proof["checks"], "reverse_native_gpu_checks": reverse["checks"]}
     report['berry_artwork'] = berry_assets
+    if submarine_assets:
+        report['submarine_artwork'] = submarine_assets
     (args.output / "package-verification.json").write_text(
         json.dumps(report, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({key: value for key, value in report.items() if key != "files"}, indent=2))

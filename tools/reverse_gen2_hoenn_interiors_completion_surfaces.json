@@ -1,0 +1,1067 @@
+{
+  "format": 1,
+  "review": "Explicit weighted context and complete room review; source frames/objects excluded",
+  "sources": [
+    {
+      "game": "emerald",
+      "pair": "building__elite_four",
+      "id": 556,
+      "sourceHash": "80932265631ab68c48b7da489b27333a846bb219e4e536f2a6d54f8f4b308df8",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "80932265631ab68c48b7da489b27333a846bb219e4e536f2a6d54f8f4b308df8",
+        "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 27,
+      "material": "timber_floor",
+      "feature": "Complete ornamental parquet walking floors in the four Elite Four chambers",
+      "native_map": "DANCE_THEATER",
+      "native_block": 45,
+      "native_quadrant": 2,
+      "expected_output_sha256": "9351803f807e883d16cafe94e17116fd13cc92c68e7af1b4c3427d7aa1e1b2da",
+      "source_maps": [
+        "EM_EVER_GRANDE_CITY_SIDNEYS_ROOM"
+      ],
+      "review_index": 8
+    },
+    {
+      "game": "emerald",
+      "pair": "building__elite_four",
+      "id": 604,
+      "sourceHash": "40d69557f5f0ac098b5916c760a62c0ce1b9760104076e1daf54b58fcae6f43e",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "40d69557f5f0ac098b5916c760a62c0ce1b9760104076e1daf54b58fcae6f43e",
+        "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 27,
+      "material": "timber_floor",
+      "feature": "Complete ornamental parquet walking floors in the four Elite Four chambers",
+      "native_map": "DANCE_THEATER",
+      "native_block": 45,
+      "native_quadrant": 2,
+      "expected_output_sha256": "9351803f807e883d16cafe94e17116fd13cc92c68e7af1b4c3427d7aa1e1b2da",
+      "source_maps": [
+        "EM_EVER_GRANDE_CITY_PHOEBES_ROOM"
+      ],
+      "review_index": 8
+    },
+    {
+      "game": "emerald",
+      "pair": "building__elite_four",
+      "id": 652,
+      "sourceHash": "663d6345ac71cdbe528247d3075b0206ab47941a589d628e277de8302cf54132",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "663d6345ac71cdbe528247d3075b0206ab47941a589d628e277de8302cf54132",
+        "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 27,
+      "material": "timber_floor",
+      "feature": "Complete ornamental parquet walking floors in the four Elite Four chambers",
+      "native_map": "DANCE_THEATER",
+      "native_block": 45,
+      "native_quadrant": 2,
+      "expected_output_sha256": "9351803f807e883d16cafe94e17116fd13cc92c68e7af1b4c3427d7aa1e1b2da",
+      "source_maps": [
+        "EM_EVER_GRANDE_CITY_GLACIAS_ROOM"
+      ],
+      "review_index": 8
+    },
+    {
+      "game": "emerald",
+      "pair": "building__elite_four",
+      "id": 700,
+      "sourceHash": "539e8137689dc3e275a29b07d9d8a6ec53ab89b483a77d31f04982bb19a813de",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "539e8137689dc3e275a29b07d9d8a6ec53ab89b483a77d31f04982bb19a813de",
+        "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 27,
+      "material": "timber_floor",
+      "feature": "Complete ornamental parquet walking floors in the four Elite Four chambers",
+      "native_map": "DANCE_THEATER",
+      "native_block": 45,
+      "native_quadrant": 2,
+      "expected_output_sha256": "9351803f807e883d16cafe94e17116fd13cc92c68e7af1b4c3427d7aa1e1b2da",
+      "source_maps": [
+        "EM_EVER_GRANDE_CITY_DRAKES_ROOM"
+      ],
+      "review_index": 8
+    },
+    {
+      "game": "ruby",
+      "pair": "building__elite_four",
+      "id": 556,
+      "sourceHash": "80932265631ab68c48b7da489b27333a846bb219e4e536f2a6d54f8f4b308df8",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "80932265631ab68c48b7da489b27333a846bb219e4e536f2a6d54f8f4b308df8",
+        "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 27,
+      "material": "timber_floor",
+      "feature": "Complete ornamental parquet walking floors in the four Elite Four chambers",
+      "native_map": "DANCE_THEATER",
+      "native_block": 45,
+      "native_quadrant": 2,
+      "expected_output_sha256": "9351803f807e883d16cafe94e17116fd13cc92c68e7af1b4c3427d7aa1e1b2da",
+      "source_maps": [
+        "RU_EVER_GRANDE_CITY_SIDNEYS_ROOM"
+      ],
+      "review_index": 8
+    },
+    {
+      "game": "ruby",
+      "pair": "building__elite_four",
+      "id": 604,
+      "sourceHash": "40d69557f5f0ac098b5916c760a62c0ce1b9760104076e1daf54b58fcae6f43e",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "40d69557f5f0ac098b5916c760a62c0ce1b9760104076e1daf54b58fcae6f43e",
+        "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 27,
+      "material": "timber_floor",
+      "feature": "Complete ornamental parquet walking floors in the four Elite Four chambers",
+      "native_map": "DANCE_THEATER",
+      "native_block": 45,
+      "native_quadrant": 2,
+      "expected_output_sha256": "9351803f807e883d16cafe94e17116fd13cc92c68e7af1b4c3427d7aa1e1b2da",
+      "source_maps": [
+        "RU_EVER_GRANDE_CITY_PHOEBES_ROOM"
+      ],
+      "review_index": 8
+    },
+    {
+      "game": "ruby",
+      "pair": "building__elite_four",
+      "id": 652,
+      "sourceHash": "663d6345ac71cdbe528247d3075b0206ab47941a589d628e277de8302cf54132",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "663d6345ac71cdbe528247d3075b0206ab47941a589d628e277de8302cf54132",
+        "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 27,
+      "material": "timber_floor",
+      "feature": "Complete ornamental parquet walking floors in the four Elite Four chambers",
+      "native_map": "DANCE_THEATER",
+      "native_block": 45,
+      "native_quadrant": 2,
+      "expected_output_sha256": "9351803f807e883d16cafe94e17116fd13cc92c68e7af1b4c3427d7aa1e1b2da",
+      "source_maps": [
+        "RU_EVER_GRANDE_CITY_GLACIAS_ROOM"
+      ],
+      "review_index": 8
+    },
+    {
+      "game": "ruby",
+      "pair": "building__elite_four",
+      "id": 700,
+      "sourceHash": "539e8137689dc3e275a29b07d9d8a6ec53ab89b483a77d31f04982bb19a813de",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "539e8137689dc3e275a29b07d9d8a6ec53ab89b483a77d31f04982bb19a813de",
+        "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 27,
+      "material": "timber_floor",
+      "feature": "Complete ornamental parquet walking floors in the four Elite Four chambers",
+      "native_map": "DANCE_THEATER",
+      "native_block": 45,
+      "native_quadrant": 2,
+      "expected_output_sha256": "9351803f807e883d16cafe94e17116fd13cc92c68e7af1b4c3427d7aa1e1b2da",
+      "source_maps": [
+        "RU_EVER_GRANDE_CITY_DRAKES_ROOM"
+      ],
+      "review_index": 8
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__elite_four",
+      "id": 556,
+      "sourceHash": "80932265631ab68c48b7da489b27333a846bb219e4e536f2a6d54f8f4b308df8",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "80932265631ab68c48b7da489b27333a846bb219e4e536f2a6d54f8f4b308df8",
+        "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 27,
+      "material": "timber_floor",
+      "feature": "Complete ornamental parquet walking floors in the four Elite Four chambers",
+      "native_map": "DANCE_THEATER",
+      "native_block": 45,
+      "native_quadrant": 2,
+      "expected_output_sha256": "9351803f807e883d16cafe94e17116fd13cc92c68e7af1b4c3427d7aa1e1b2da",
+      "source_maps": [
+        "SA_EVER_GRANDE_CITY_SIDNEYS_ROOM"
+      ],
+      "review_index": 8
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__elite_four",
+      "id": 604,
+      "sourceHash": "40d69557f5f0ac098b5916c760a62c0ce1b9760104076e1daf54b58fcae6f43e",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "40d69557f5f0ac098b5916c760a62c0ce1b9760104076e1daf54b58fcae6f43e",
+        "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 27,
+      "material": "timber_floor",
+      "feature": "Complete ornamental parquet walking floors in the four Elite Four chambers",
+      "native_map": "DANCE_THEATER",
+      "native_block": 45,
+      "native_quadrant": 2,
+      "expected_output_sha256": "9351803f807e883d16cafe94e17116fd13cc92c68e7af1b4c3427d7aa1e1b2da",
+      "source_maps": [
+        "SA_EVER_GRANDE_CITY_PHOEBES_ROOM"
+      ],
+      "review_index": 8
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__elite_four",
+      "id": 652,
+      "sourceHash": "663d6345ac71cdbe528247d3075b0206ab47941a589d628e277de8302cf54132",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "663d6345ac71cdbe528247d3075b0206ab47941a589d628e277de8302cf54132",
+        "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 27,
+      "material": "timber_floor",
+      "feature": "Complete ornamental parquet walking floors in the four Elite Four chambers",
+      "native_map": "DANCE_THEATER",
+      "native_block": 45,
+      "native_quadrant": 2,
+      "expected_output_sha256": "9351803f807e883d16cafe94e17116fd13cc92c68e7af1b4c3427d7aa1e1b2da",
+      "source_maps": [
+        "SA_EVER_GRANDE_CITY_GLACIAS_ROOM"
+      ],
+      "review_index": 8
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__elite_four",
+      "id": 700,
+      "sourceHash": "539e8137689dc3e275a29b07d9d8a6ec53ab89b483a77d31f04982bb19a813de",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "539e8137689dc3e275a29b07d9d8a6ec53ab89b483a77d31f04982bb19a813de",
+        "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 27,
+      "material": "timber_floor",
+      "feature": "Complete ornamental parquet walking floors in the four Elite Four chambers",
+      "native_map": "DANCE_THEATER",
+      "native_block": 45,
+      "native_quadrant": 2,
+      "expected_output_sha256": "9351803f807e883d16cafe94e17116fd13cc92c68e7af1b4c3427d7aa1e1b2da",
+      "source_maps": [
+        "SA_EVER_GRANDE_CITY_DRAKES_ROOM"
+      ],
+      "review_index": 8
+    },
+    {
+      "game": "ruby",
+      "pair": "building__mossdeep_gym",
+      "id": 528,
+      "sourceHash": "ba76a8a9a32963d3972cd53c538f713b1c52777f9f1742b9c919e798865087df",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "ba76a8a9a32963d3972cd53c538f713b1c52777f9f1742b9c919e798865087df",
+        "mid": "ba76a8a9a32963d3972cd53c538f713b1c52777f9f1742b9c919e798865087df",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 148,
+      "material": "teleporter_gym_ceramic_floor",
+      "feature": "Complete ordinary unmarked blue ceramic walking floor in Mossdeep Gym, distinct from its direction/warp pads",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 15,
+      "native_quadrant": 1,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "RU_MOSSDEEP_CITY_GYM"
+      ],
+      "review_index": 10
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__mossdeep_gym",
+      "id": 528,
+      "sourceHash": "ba76a8a9a32963d3972cd53c538f713b1c52777f9f1742b9c919e798865087df",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "ba76a8a9a32963d3972cd53c538f713b1c52777f9f1742b9c919e798865087df",
+        "mid": "ba76a8a9a32963d3972cd53c538f713b1c52777f9f1742b9c919e798865087df",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 148,
+      "material": "teleporter_gym_ceramic_floor",
+      "feature": "Complete ordinary unmarked blue ceramic walking floor in Mossdeep Gym, distinct from its direction/warp pads",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 15,
+      "native_quadrant": 1,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "SA_MOSSDEEP_CITY_GYM"
+      ],
+      "review_index": 10
+    },
+    {
+      "game": "ruby",
+      "pair": "building__sootopolis_gym",
+      "id": 529,
+      "sourceHash": "087d4229b99357acdcfe45a6e5b46e5fc49569620cb93795abb41228e35b86b5",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "087d4229b99357acdcfe45a6e5b46e5fc49569620cb93795abb41228e35b86b5",
+        "mid": "087d4229b99357acdcfe45a6e5b46e5fc49569620cb93795abb41228e35b86b5",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 101,
+      "material": "snow_floor",
+      "feature": "Complete snowy walking ground on the lower Sootopolis Gym floor; this is not the upper thin-ice puzzle texture",
+      "native_map": "ICE_PATH_1F",
+      "native_block": 16,
+      "native_quadrant": 0,
+      "expected_output_sha256": "538e5e5147afd9c9a4246ad1c17342c428717852b9b3c82a24b40eb0a393fd93",
+      "source_maps": [
+        "RU_SOOTOPOLIS_CITY_GYM_B1F"
+      ],
+      "review_index": 21
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__sootopolis_gym",
+      "id": 529,
+      "sourceHash": "087d4229b99357acdcfe45a6e5b46e5fc49569620cb93795abb41228e35b86b5",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "087d4229b99357acdcfe45a6e5b46e5fc49569620cb93795abb41228e35b86b5",
+        "mid": "087d4229b99357acdcfe45a6e5b46e5fc49569620cb93795abb41228e35b86b5",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 101,
+      "material": "snow_floor",
+      "feature": "Complete snowy walking ground on the lower Sootopolis Gym floor; this is not the upper thin-ice puzzle texture",
+      "native_map": "ICE_PATH_1F",
+      "native_block": 16,
+      "native_quadrant": 0,
+      "expected_output_sha256": "538e5e5147afd9c9a4246ad1c17342c428717852b9b3c82a24b40eb0a393fd93",
+      "source_maps": [
+        "SA_SOOTOPOLIS_CITY_GYM_B1F"
+      ],
+      "review_index": 21
+    },
+    {
+      "game": "emerald",
+      "pair": "general__facility",
+      "id": 897,
+      "sourceHash": "3efc88c5fa03ede2c60ec06e034c44c424b9faef88409abd6c1974cdd0bd7750",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "3efc88c5fa03ede2c60ec06e034c44c424b9faef88409abd6c1974cdd0bd7750",
+        "mid": "3efc88c5fa03ede2c60ec06e034c44c424b9faef88409abd6c1974cdd0bd7750",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 29,
+      "material": "facility_floor",
+      "feature": "Complete unmarked carpet shading in the Aqua Hideout interior office. Furnishings, console screens, floor-pad symbols and carpet edging are separate sources",
+      "native_map": "BATTLE_TOWER_1F",
+      "native_block": 1,
+      "native_quadrant": 0,
+      "expected_output_sha256": "1af6ad1003d7def71cc78e12f65bbe3dc4404862865a2e507dad0a1580d3d9d1",
+      "source_maps": [
+        "EM_AQUA_HIDEOUT_B1F",
+        "EM_AQUA_HIDEOUT_UNUSED_RUBY_MAP2",
+        "EM_RUSTBORO_CITY_DEVON_CORP_2F"
+      ],
+      "review_index": 28
+    },
+    {
+      "game": "ruby",
+      "pair": "general__facility",
+      "id": 897,
+      "sourceHash": "3efc88c5fa03ede2c60ec06e034c44c424b9faef88409abd6c1974cdd0bd7750",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "3efc88c5fa03ede2c60ec06e034c44c424b9faef88409abd6c1974cdd0bd7750",
+        "mid": "3efc88c5fa03ede2c60ec06e034c44c424b9faef88409abd6c1974cdd0bd7750",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 77,
+      "material": "facility_floor",
+      "feature": "Complete unmarked carpet shading in the Aqua Hideout interior office. Furnishings, console screens, floor-pad symbols and carpet edging are separate sources",
+      "native_map": "BATTLE_TOWER_1F",
+      "native_block": 1,
+      "native_quadrant": 0,
+      "expected_output_sha256": "1af6ad1003d7def71cc78e12f65bbe3dc4404862865a2e507dad0a1580d3d9d1",
+      "source_maps": [
+        "RU_AQUA_HIDEOUT_B1F",
+        "RU_MAGMA_HIDEOUT_B1F",
+        "RU_RUSTBORO_CITY_DEVON_CORP_1F"
+      ],
+      "review_index": 28
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__facility",
+      "id": 897,
+      "sourceHash": "3efc88c5fa03ede2c60ec06e034c44c424b9faef88409abd6c1974cdd0bd7750",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "3efc88c5fa03ede2c60ec06e034c44c424b9faef88409abd6c1974cdd0bd7750",
+        "mid": "3efc88c5fa03ede2c60ec06e034c44c424b9faef88409abd6c1974cdd0bd7750",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 77,
+      "material": "facility_floor",
+      "feature": "Complete unmarked carpet shading in the Aqua Hideout interior office. Furnishings, console screens, floor-pad symbols and carpet edging are separate sources",
+      "native_map": "BATTLE_TOWER_1F",
+      "native_block": 1,
+      "native_quadrant": 0,
+      "expected_output_sha256": "1af6ad1003d7def71cc78e12f65bbe3dc4404862865a2e507dad0a1580d3d9d1",
+      "source_maps": [
+        "SA_AQUA_HIDEOUT_B1F",
+        "SA_MAGMA_HIDEOUT_B1F",
+        "SA_RUSTBORO_CITY_DEVON_CORP_1F"
+      ],
+      "review_index": 28
+    },
+    {
+      "game": "emerald",
+      "pair": "building__sootopolis_gym",
+      "id": 529,
+      "sourceHash": "535bd625aaa0e00b3b227e8fefccfb7c6cfbc3796a170873e7864cff7b9c5c16",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "535bd625aaa0e00b3b227e8fefccfb7c6cfbc3796a170873e7864cff7b9c5c16",
+        "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 115,
+      "material": "snow_floor",
+      "feature": "Complete Emerald lower Sootopolis Gym snowy walking surface with its full fine wave texture; independent Emerald source differs from the R/S floor palette indices",
+      "native_map": "ICE_PATH_1F",
+      "native_block": 16,
+      "native_quadrant": 0,
+      "expected_output_sha256": "538e5e5147afd9c9a4246ad1c17342c428717852b9b3c82a24b40eb0a393fd93",
+      "source_maps": [
+        "EM_SOOTOPOLIS_CITY_GYM_B1F"
+      ],
+      "review_index": 71
+    },
+    {
+      "game": "ruby",
+      "pair": "building__mauville_gym",
+      "id": 513,
+      "sourceHash": "e38455a76fb0311364cf4fe03f2a35bb75d360705f4e67ed668a4e96b57c017f",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "e38455a76fb0311364cf4fe03f2a35bb75d360705f4e67ed668a4e96b57c017f",
+        "mid": "e38455a76fb0311364cf4fe03f2a35bb75d360705f4e67ed668a4e96b57c017f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 65,
+      "material": "electric_gym_tiled_floor",
+      "feature": "Complete unmarked pale diamond ceramic walking floor in Mauville Gym; electric barriers, switches, directional lightning glyphs and machines are excluded",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 15,
+      "native_quadrant": 1,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "RU_MAUVILLE_CITY_GYM"
+      ],
+      "review_index": 41
+    },
+    {
+      "game": "ruby",
+      "pair": "building__mauville_gym",
+      "id": 538,
+      "sourceHash": "e38455a76fb0311364cf4fe03f2a35bb75d360705f4e67ed668a4e96b57c017f",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "e38455a76fb0311364cf4fe03f2a35bb75d360705f4e67ed668a4e96b57c017f",
+        "mid": "e38455a76fb0311364cf4fe03f2a35bb75d360705f4e67ed668a4e96b57c017f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 1,
+      "material": "electric_gym_tiled_floor",
+      "feature": "Complete unmarked pale diamond ceramic walking floor in Mauville Gym; electric barriers, switches, directional lightning glyphs and machines are excluded",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 15,
+      "native_quadrant": 1,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "RU_MAUVILLE_CITY_GYM"
+      ],
+      "review_index": 41
+    },
+    {
+      "game": "ruby",
+      "pair": "building__mauville_gym",
+      "id": 562,
+      "sourceHash": "e38455a76fb0311364cf4fe03f2a35bb75d360705f4e67ed668a4e96b57c017f",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "e38455a76fb0311364cf4fe03f2a35bb75d360705f4e67ed668a4e96b57c017f",
+        "mid": "e38455a76fb0311364cf4fe03f2a35bb75d360705f4e67ed668a4e96b57c017f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 2,
+      "material": "electric_gym_tiled_floor",
+      "feature": "Complete unmarked pale diamond ceramic walking floor in Mauville Gym; electric barriers, switches, directional lightning glyphs and machines are excluded",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 15,
+      "native_quadrant": 1,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "RU_MAUVILLE_CITY_GYM"
+      ],
+      "review_index": 41
+    },
+    {
+      "game": "ruby",
+      "pair": "building__mauville_gym",
+      "id": 563,
+      "sourceHash": "e38455a76fb0311364cf4fe03f2a35bb75d360705f4e67ed668a4e96b57c017f",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "e38455a76fb0311364cf4fe03f2a35bb75d360705f4e67ed668a4e96b57c017f",
+        "mid": "e38455a76fb0311364cf4fe03f2a35bb75d360705f4e67ed668a4e96b57c017f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 2,
+      "material": "electric_gym_tiled_floor",
+      "feature": "Complete unmarked pale diamond ceramic walking floor in Mauville Gym; electric barriers, switches, directional lightning glyphs and machines are excluded",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 15,
+      "native_quadrant": 1,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "RU_MAUVILLE_CITY_GYM"
+      ],
+      "review_index": 41
+    },
+    {
+      "game": "ruby",
+      "pair": "building__mauville_gym",
+      "id": 570,
+      "sourceHash": "e38455a76fb0311364cf4fe03f2a35bb75d360705f4e67ed668a4e96b57c017f",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "e38455a76fb0311364cf4fe03f2a35bb75d360705f4e67ed668a4e96b57c017f",
+        "mid": "e38455a76fb0311364cf4fe03f2a35bb75d360705f4e67ed668a4e96b57c017f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 2,
+      "material": "electric_gym_tiled_floor",
+      "feature": "Complete unmarked pale diamond ceramic walking floor in Mauville Gym; electric barriers, switches, directional lightning glyphs and machines are excluded",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 15,
+      "native_quadrant": 1,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "RU_MAUVILLE_CITY_GYM"
+      ],
+      "review_index": 41
+    },
+    {
+      "game": "ruby",
+      "pair": "building__mauville_gym",
+      "id": 571,
+      "sourceHash": "e38455a76fb0311364cf4fe03f2a35bb75d360705f4e67ed668a4e96b57c017f",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "e38455a76fb0311364cf4fe03f2a35bb75d360705f4e67ed668a4e96b57c017f",
+        "mid": "e38455a76fb0311364cf4fe03f2a35bb75d360705f4e67ed668a4e96b57c017f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 2,
+      "material": "electric_gym_tiled_floor",
+      "feature": "Complete unmarked pale diamond ceramic walking floor in Mauville Gym; electric barriers, switches, directional lightning glyphs and machines are excluded",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 15,
+      "native_quadrant": 1,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "RU_MAUVILLE_CITY_GYM"
+      ],
+      "review_index": 41
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__mauville_gym",
+      "id": 513,
+      "sourceHash": "e38455a76fb0311364cf4fe03f2a35bb75d360705f4e67ed668a4e96b57c017f",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "e38455a76fb0311364cf4fe03f2a35bb75d360705f4e67ed668a4e96b57c017f",
+        "mid": "e38455a76fb0311364cf4fe03f2a35bb75d360705f4e67ed668a4e96b57c017f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 65,
+      "material": "electric_gym_tiled_floor",
+      "feature": "Complete unmarked pale diamond ceramic walking floor in Mauville Gym; electric barriers, switches, directional lightning glyphs and machines are excluded",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 15,
+      "native_quadrant": 1,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "SA_MAUVILLE_CITY_GYM"
+      ],
+      "review_index": 41
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__mauville_gym",
+      "id": 538,
+      "sourceHash": "e38455a76fb0311364cf4fe03f2a35bb75d360705f4e67ed668a4e96b57c017f",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "e38455a76fb0311364cf4fe03f2a35bb75d360705f4e67ed668a4e96b57c017f",
+        "mid": "e38455a76fb0311364cf4fe03f2a35bb75d360705f4e67ed668a4e96b57c017f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 1,
+      "material": "electric_gym_tiled_floor",
+      "feature": "Complete unmarked pale diamond ceramic walking floor in Mauville Gym; electric barriers, switches, directional lightning glyphs and machines are excluded",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 15,
+      "native_quadrant": 1,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "SA_MAUVILLE_CITY_GYM"
+      ],
+      "review_index": 41
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__mauville_gym",
+      "id": 562,
+      "sourceHash": "e38455a76fb0311364cf4fe03f2a35bb75d360705f4e67ed668a4e96b57c017f",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "e38455a76fb0311364cf4fe03f2a35bb75d360705f4e67ed668a4e96b57c017f",
+        "mid": "e38455a76fb0311364cf4fe03f2a35bb75d360705f4e67ed668a4e96b57c017f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 2,
+      "material": "electric_gym_tiled_floor",
+      "feature": "Complete unmarked pale diamond ceramic walking floor in Mauville Gym; electric barriers, switches, directional lightning glyphs and machines are excluded",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 15,
+      "native_quadrant": 1,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "SA_MAUVILLE_CITY_GYM"
+      ],
+      "review_index": 41
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__mauville_gym",
+      "id": 563,
+      "sourceHash": "e38455a76fb0311364cf4fe03f2a35bb75d360705f4e67ed668a4e96b57c017f",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "e38455a76fb0311364cf4fe03f2a35bb75d360705f4e67ed668a4e96b57c017f",
+        "mid": "e38455a76fb0311364cf4fe03f2a35bb75d360705f4e67ed668a4e96b57c017f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 2,
+      "material": "electric_gym_tiled_floor",
+      "feature": "Complete unmarked pale diamond ceramic walking floor in Mauville Gym; electric barriers, switches, directional lightning glyphs and machines are excluded",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 15,
+      "native_quadrant": 1,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "SA_MAUVILLE_CITY_GYM"
+      ],
+      "review_index": 41
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__mauville_gym",
+      "id": 570,
+      "sourceHash": "e38455a76fb0311364cf4fe03f2a35bb75d360705f4e67ed668a4e96b57c017f",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "e38455a76fb0311364cf4fe03f2a35bb75d360705f4e67ed668a4e96b57c017f",
+        "mid": "e38455a76fb0311364cf4fe03f2a35bb75d360705f4e67ed668a4e96b57c017f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 2,
+      "material": "electric_gym_tiled_floor",
+      "feature": "Complete unmarked pale diamond ceramic walking floor in Mauville Gym; electric barriers, switches, directional lightning glyphs and machines are excluded",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 15,
+      "native_quadrant": 1,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "SA_MAUVILLE_CITY_GYM"
+      ],
+      "review_index": 41
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__mauville_gym",
+      "id": 571,
+      "sourceHash": "e38455a76fb0311364cf4fe03f2a35bb75d360705f4e67ed668a4e96b57c017f",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "e38455a76fb0311364cf4fe03f2a35bb75d360705f4e67ed668a4e96b57c017f",
+        "mid": "e38455a76fb0311364cf4fe03f2a35bb75d360705f4e67ed668a4e96b57c017f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 2,
+      "material": "electric_gym_tiled_floor",
+      "feature": "Complete unmarked pale diamond ceramic walking floor in Mauville Gym; electric barriers, switches, directional lightning glyphs and machines are excluded",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 15,
+      "native_quadrant": 1,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "SA_MAUVILLE_CITY_GYM"
+      ],
+      "review_index": 41
+    },
+    {
+      "game": "emerald",
+      "pair": "building__sootopolis_gym",
+      "id": 525,
+      "sourceHash": "c7424209f8d57ffbee803420c7ccb4f7b7eeb3feddfaccdace52385132256eea",
+      "sourceBehavior": 38,
+      "layer_sha256": {
+        "under": "c7424209f8d57ffbee803420c7ccb4f7b7eeb3feddfaccdace52385132256eea",
+        "mid": "c7424209f8d57ffbee803420c7ccb4f7b7eeb3feddfaccdace52385132256eea",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 48,
+      "material": "slippery_ice_floor",
+      "feature": "Complete uncracked thin-ice puzzle surface in the upper Sootopolis Gym, with its original breakable-ice behavior retained",
+      "native_map": "ICE_PATH_1F",
+      "native_block": 31,
+      "native_quadrant": 0,
+      "expected_output_sha256": "b0d5e85c1770caf838765fa39ec38d569ce0a7d8ad12d0954cc740a3b2cbc60a",
+      "source_maps": [
+        "EM_SOOTOPOLIS_CITY_GYM_1F"
+      ],
+      "review_index": 42
+    },
+    {
+      "game": "ruby",
+      "pair": "building__sootopolis_gym",
+      "id": 525,
+      "sourceHash": "b849d0bf66d697df01587e8e4c135a5c3556be0ab19bc4231ea5d3ae9b9a6c13",
+      "sourceBehavior": 38,
+      "layer_sha256": {
+        "under": "b849d0bf66d697df01587e8e4c135a5c3556be0ab19bc4231ea5d3ae9b9a6c13",
+        "mid": "b849d0bf66d697df01587e8e4c135a5c3556be0ab19bc4231ea5d3ae9b9a6c13",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 49,
+      "material": "slippery_ice_floor",
+      "feature": "Complete uncracked thin-ice puzzle surface in the upper Sootopolis Gym, with its original breakable-ice behavior retained",
+      "native_map": "ICE_PATH_1F",
+      "native_block": 31,
+      "native_quadrant": 0,
+      "expected_output_sha256": "b0d5e85c1770caf838765fa39ec38d569ce0a7d8ad12d0954cc740a3b2cbc60a",
+      "source_maps": [
+        "RU_SOOTOPOLIS_CITY_GYM_1F"
+      ],
+      "review_index": 42
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__sootopolis_gym",
+      "id": 525,
+      "sourceHash": "b849d0bf66d697df01587e8e4c135a5c3556be0ab19bc4231ea5d3ae9b9a6c13",
+      "sourceBehavior": 38,
+      "layer_sha256": {
+        "under": "b849d0bf66d697df01587e8e4c135a5c3556be0ab19bc4231ea5d3ae9b9a6c13",
+        "mid": "b849d0bf66d697df01587e8e4c135a5c3556be0ab19bc4231ea5d3ae9b9a6c13",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 49,
+      "material": "slippery_ice_floor",
+      "feature": "Complete uncracked thin-ice puzzle surface in the upper Sootopolis Gym, with its original breakable-ice behavior retained",
+      "native_map": "ICE_PATH_1F",
+      "native_block": 31,
+      "native_quadrant": 0,
+      "expected_output_sha256": "b0d5e85c1770caf838765fa39ec38d569ce0a7d8ad12d0954cc740a3b2cbc60a",
+      "source_maps": [
+        "SA_SOOTOPOLIS_CITY_GYM_1F"
+      ],
+      "review_index": 42
+    },
+    {
+      "game": "emerald",
+      "pair": "building__generic_building",
+      "id": 925,
+      "sourceHash": "871cb5c3ce6ec3ab2c6ca953aaef47a33571eb9397f19e940481e4e826ca35ea",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "871cb5c3ce6ec3ab2c6ca953aaef47a33571eb9397f19e940481e4e826ca35ea",
+        "mid": "871cb5c3ce6ec3ab2c6ca953aaef47a33571eb9397f19e940481e4e826ca35ea",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 24,
+      "material": "household_carpet",
+      "feature": "Complete flat cyan household carpet in Pacifidlog homes; no rug border, chair or table appears in this source cell",
+      "native_map": "GUIDE_GENTS_HOUSE",
+      "native_block": 15,
+      "native_quadrant": 0,
+      "expected_output_sha256": "03e6e45a1e068813abc28ad700bc5b381c97d8e49452881366e4ba967761a05b",
+      "source_maps": [
+        "EM_PACIFIDLOG_TOWN_HOUSE1",
+        "EM_PACIFIDLOG_TOWN_HOUSE2",
+        "EM_PACIFIDLOG_TOWN_HOUSE3"
+      ],
+      "review_index": 51
+    },
+    {
+      "game": "ruby",
+      "pair": "building__generic_building",
+      "id": 574,
+      "sourceHash": "871cb5c3ce6ec3ab2c6ca953aaef47a33571eb9397f19e940481e4e826ca35ea",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "871cb5c3ce6ec3ab2c6ca953aaef47a33571eb9397f19e940481e4e826ca35ea",
+        "mid": "871cb5c3ce6ec3ab2c6ca953aaef47a33571eb9397f19e940481e4e826ca35ea",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 54,
+      "material": "household_carpet",
+      "feature": "Complete flat cyan household carpet in Pacifidlog homes; no rug border, chair or table appears in this source cell",
+      "native_map": "GUIDE_GENTS_HOUSE",
+      "native_block": 15,
+      "native_quadrant": 0,
+      "expected_output_sha256": "03e6e45a1e068813abc28ad700bc5b381c97d8e49452881366e4ba967761a05b",
+      "source_maps": [
+        "RU_FALLARBOR_TOWN_HOUSE1",
+        "RU_LILYCOVE_CITY_HOUSE1",
+        "RU_LILYCOVE_CITY_HOUSE4"
+      ],
+      "review_index": 51
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__generic_building",
+      "id": 574,
+      "sourceHash": "871cb5c3ce6ec3ab2c6ca953aaef47a33571eb9397f19e940481e4e826ca35ea",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "871cb5c3ce6ec3ab2c6ca953aaef47a33571eb9397f19e940481e4e826ca35ea",
+        "mid": "871cb5c3ce6ec3ab2c6ca953aaef47a33571eb9397f19e940481e4e826ca35ea",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 54,
+      "material": "household_carpet",
+      "feature": "Complete flat cyan household carpet in Pacifidlog homes; no rug border, chair or table appears in this source cell",
+      "native_map": "GUIDE_GENTS_HOUSE",
+      "native_block": 15,
+      "native_quadrant": 0,
+      "expected_output_sha256": "03e6e45a1e068813abc28ad700bc5b381c97d8e49452881366e4ba967761a05b",
+      "source_maps": [
+        "SA_FALLARBOR_TOWN_HOUSE1",
+        "SA_LILYCOVE_CITY_HOUSE1",
+        "SA_LILYCOVE_CITY_HOUSE4"
+      ],
+      "review_index": 51
+    },
+    {
+      "game": "ruby",
+      "pair": "building__generic_building",
+      "id": 1023,
+      "sourceHash": "91ad8fd726b3b5e11c89c9ffeb47aebc4f96e84295cd67b308e3d12c2333b82e",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "91ad8fd726b3b5e11c89c9ffeb47aebc4f96e84295cd67b308e3d12c2333b82e",
+        "mid": "91ad8fd726b3b5e11c89c9ffeb47aebc4f96e84295cd67b308e3d12c2333b82e",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 62,
+      "material": "household_stone_floor",
+      "feature": "Complete gray checked ordinary household stone walking floor in Sootopolis homes",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 15,
+      "native_quadrant": 1,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "RU_SOOTOPOLIS_CITY_HOUSE1",
+        "RU_SOOTOPOLIS_CITY_HOUSE2"
+      ],
+      "review_index": 60
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__generic_building",
+      "id": 1023,
+      "sourceHash": "91ad8fd726b3b5e11c89c9ffeb47aebc4f96e84295cd67b308e3d12c2333b82e",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "91ad8fd726b3b5e11c89c9ffeb47aebc4f96e84295cd67b308e3d12c2333b82e",
+        "mid": "91ad8fd726b3b5e11c89c9ffeb47aebc4f96e84295cd67b308e3d12c2333b82e",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 62,
+      "material": "household_stone_floor",
+      "feature": "Complete gray checked ordinary household stone walking floor in Sootopolis homes",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 15,
+      "native_quadrant": 1,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "SA_SOOTOPOLIS_CITY_HOUSE1",
+        "SA_SOOTOPOLIS_CITY_HOUSE2"
+      ],
+      "review_index": 60
+    },
+    {
+      "game": "ruby",
+      "pair": "building__rustboro_gym",
+      "id": 520,
+      "sourceHash": "f53fa55e98a82b23eaaa59a4f3b5ce0fffbb055eb34b887a4d08bc6edac319a0",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "f53fa55e98a82b23eaaa59a4f3b5ce0fffbb055eb34b887a4d08bc6edac319a0",
+        "mid": "f53fa55e98a82b23eaaa59a4f3b5ce0fffbb055eb34b887a4d08bc6edac319a0",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 58,
+      "material": "rock_gym_stone_floor",
+      "feature": "Complete rough natural stone walking floor between the rock displays in Rustboro Gym",
+      "native_map": "UNION_CAVE_1F",
+      "native_block": 2,
+      "native_quadrant": 0,
+      "expected_output_sha256": "fb0a82359eafb1ddf42be8c994d05e8329ca5843058132bdcaf4afcd7ff3d584",
+      "source_maps": [
+        "RU_RUSTBORO_CITY_GYM"
+      ],
+      "review_index": 69
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__rustboro_gym",
+      "id": 520,
+      "sourceHash": "f53fa55e98a82b23eaaa59a4f3b5ce0fffbb055eb34b887a4d08bc6edac319a0",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "f53fa55e98a82b23eaaa59a4f3b5ce0fffbb055eb34b887a4d08bc6edac319a0",
+        "mid": "f53fa55e98a82b23eaaa59a4f3b5ce0fffbb055eb34b887a4d08bc6edac319a0",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 58,
+      "material": "rock_gym_stone_floor",
+      "feature": "Complete rough natural stone walking floor between the rock displays in Rustboro Gym",
+      "native_map": "UNION_CAVE_1F",
+      "native_block": 2,
+      "native_quadrant": 0,
+      "expected_output_sha256": "fb0a82359eafb1ddf42be8c994d05e8329ca5843058132bdcaf4afcd7ff3d584",
+      "source_maps": [
+        "SA_RUSTBORO_CITY_GYM"
+      ],
+      "review_index": 69
+    },
+    {
+      "game": "ruby",
+      "pair": "general__ship",
+      "id": 572,
+      "sourceHash": "a71edb7b268c4ccd91de967ca86c4c137c0ad28b0c6cca7809bf7d54ba190ebe",
+      "sourceBehavior": 11,
+      "layer_sha256": {
+        "under": "a71edb7b268c4ccd91de967ca86c4c137c0ad28b0c6cca7809bf7d54ba190ebe",
+        "mid": "a71edb7b268c4ccd91de967ca86c4c137c0ad28b0c6cca7809bf7d54ba190ebe",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 16,
+      "material": "ship_cabin_shadow_floor",
+      "feature": "Complete unmarked cabin carpet shade beside the built-in bed foot",
+      "native_map": "FAST_SHIP_CABINS_SW_SSW_NW",
+      "native_block": 6,
+      "native_quadrant": 0,
+      "expected_output_sha256": "ca10dc4b94d191f4b23ef3b2fe4c6874c046b3ea7619276c29662759e7b52344",
+      "source_maps": [
+        "RU_ABANDONED_SHIP_HIDDEN_FLOOR_ROOMS",
+        "RU_ABANDONED_SHIP_ROOMS2_1F",
+        "RU_ABANDONED_SHIP_ROOMS2_B1F",
+        "RU_ABANDONED_SHIP_ROOMS_1F",
+        "RU_ABANDONED_SHIP_ROOMS_B1F",
+        "RU_SS_TIDAL_ROOMS"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__ship",
+      "id": 572,
+      "sourceHash": "a71edb7b268c4ccd91de967ca86c4c137c0ad28b0c6cca7809bf7d54ba190ebe",
+      "sourceBehavior": 11,
+      "layer_sha256": {
+        "under": "a71edb7b268c4ccd91de967ca86c4c137c0ad28b0c6cca7809bf7d54ba190ebe",
+        "mid": "a71edb7b268c4ccd91de967ca86c4c137c0ad28b0c6cca7809bf7d54ba190ebe",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 16,
+      "material": "ship_cabin_shadow_floor",
+      "feature": "Complete unmarked cabin carpet shade beside the built-in bed foot",
+      "native_map": "FAST_SHIP_CABINS_SW_SSW_NW",
+      "native_block": 6,
+      "native_quadrant": 0,
+      "expected_output_sha256": "ca10dc4b94d191f4b23ef3b2fe4c6874c046b3ea7619276c29662759e7b52344",
+      "source_maps": [
+        "SA_ABANDONED_SHIP_HIDDEN_FLOOR_ROOMS",
+        "SA_ABANDONED_SHIP_ROOMS2_1F",
+        "SA_ABANDONED_SHIP_ROOMS2_B1F",
+        "SA_ABANDONED_SHIP_ROOMS_1F",
+        "SA_ABANDONED_SHIP_ROOMS_B1F",
+        "SA_SS_TIDAL_ROOMS"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "general__inside_ship",
+      "id": 572,
+      "sourceHash": "a71edb7b268c4ccd91de967ca86c4c137c0ad28b0c6cca7809bf7d54ba190ebe",
+      "sourceBehavior": 11,
+      "layer_sha256": {
+        "under": "a71edb7b268c4ccd91de967ca86c4c137c0ad28b0c6cca7809bf7d54ba190ebe",
+        "mid": "a71edb7b268c4ccd91de967ca86c4c137c0ad28b0c6cca7809bf7d54ba190ebe",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 16,
+      "material": "ship_cabin_shadow_floor",
+      "feature": "Complete unmarked cabin carpet shade beside the built-in bed foot",
+      "native_map": "FAST_SHIP_CABINS_SW_SSW_NW",
+      "native_block": 6,
+      "native_quadrant": 0,
+      "expected_output_sha256": "ca10dc4b94d191f4b23ef3b2fe4c6874c046b3ea7619276c29662759e7b52344",
+      "source_maps": [
+        "EM_ABANDONED_SHIP_HIDDEN_FLOOR_ROOMS",
+        "EM_ABANDONED_SHIP_ROOMS2_1F",
+        "EM_ABANDONED_SHIP_ROOMS2_B1F",
+        "EM_ABANDONED_SHIP_ROOMS_1F",
+        "EM_ABANDONED_SHIP_ROOMS_B1F",
+        "EM_SS_TIDAL_ROOMS"
+      ]
+    }
+  ]
+}

@@ -23,6 +23,13 @@ return function(mod)
     'mappings/reverse_gen2_pacifidlog_complete.lua','mappings/reverse_gen2_verdanturf_complete.lua','mappings/reverse_gen2_fallarbor_complete.lua',
     'mappings/reverse_classic_gyms_finish.lua',
     'mappings/reverse_classic_berry_soil.lua',
+    'mappings/reverse_gen2_kanto_final.lua',
+    'mappings/reverse_gen2_hoenn_outdoor_remaining.lua',
+    'mappings/reverse_gen2_hoenn_interiors_completion.lua',
+    'mappings/reverse_gen2_fortree_complete.lua',
+    'mappings/reverse_gen2_native_headers_complete.lua',
+    'mappings/reverse_gen2_hoenn_home_complete.lua',
+
   }) do
     local source=mod:read(path)
     if source then
@@ -39,11 +46,11 @@ return function(mod)
   local function newData(w,h) return love.image.newImageData(w,h) end
   local composer
   local function getComposer()
-    if not composer then composer=readModule('lib/composition.lua').new({donor=decoder,newImageData=newData}) end
+    if not composer then composer=readModule('lib/composition.lua').new({donor=decoder,newImageData=newData,validateRow=Mapping.validate}) end
     return composer
   end
-  local function compose(row)return getComposer():cell(row)end
-  local function composeFrames(row)return getComposer():frames(row)end
+  local function compose(row,source)return getComposer():cell(row,source)end
+  local function composeFrames(row,source)return getComposer():frames(row,source)end
   local originals,effects={},{}
   local function original(path,expectedHash)
     local key=path..':'..tostring(expectedHash or '')

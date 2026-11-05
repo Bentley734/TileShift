@@ -26,6 +26,7 @@ end
 
 LUA = r"""
 local CACHE,MOD,OUT=@CACHE@,@MOD@,@OUT@
+local REVIEW_WORKSPACE=@REVIEW_WORKSPACE@
 local G=love.graphics
 local report={status='running',theme='gen3',checks=0,fixtures={},interactions={},lighting={},warnings={},writes='private probe output only',
  limits='Native TileRenderer and Gen2 World background GPU methods plus a synthetic actor rectangle; no full gameplay or UI automation.',
@@ -637,7 +638,7 @@ local function run()
   return result
  end
  local function verifyBuildings(def,frame,game)
-  local reviewRoot=MOD..'/../.work/tileshift-building-review/'
+  local reviewRoot=REVIEW_WORKSPACE..'/.work/tileshift-building-review/'
   local review=Json.decode(assert(read(reviewRoot..'compact-frlg-native-parts-review.json')))
   local prototypes,candidates={},{}
   for _,candidate in ipairs(review.candidates)do
@@ -653,7 +654,7 @@ local function run()
    {id='rival_home',kind='home',rect={12,3,4,3},destination='BLUES_HOUSE',anchor={24,48}},
    {id='professor_lab',kind='lab',rect={10,8,6,4},destination='OAKS_LAB',anchor={40,64}}})do
    local r=building.rect
-   local full=love.image.newImageData(love.filesystem.newFileData(assert(read(MOD..'/../.work/tileshift-pallet-overhang/'..game..'-'..building.kind..'-'..r[1]..'.png')),'expanded-pallet.png'))
+   local full=love.image.newImageData(love.filesystem.newFileData(assert(read(REVIEW_WORKSPACE..'/.work/tileshift-pallet-overhang/'..game..'-'..building.kind..'-'..r[1]..'.png')),'expanded-pallet.png'))
    local expected=love.image.newImageData(r[3]*16,r[4]*16);expected:paste(full,0,0,0,16,r[3]*16,r[4]*16)
    check(expected:getWidth()==r[3]*16 and expected:getHeight()==r[4]*16,'Building footprint changed')
    local actual=love.image.newImageData(r[3]*16,r[4]*16)
@@ -763,7 +764,7 @@ local function run()
    {folder='tileshift-building-kanto',file='kanto-building-variants.json',instances='source_instances'},
    {folder='tileshift-violet-facade-review',file='decorative-native-model.json',instances='source_instances'},
    {folder='tileshift-violet-school-review',file='school-tall-model.json',instances='source_instances'}})do
-   local root=MOD..'/../.work/'..family.folder..'/'
+   local root=REVIEW_WORKSPACE..'/.work/'..family.folder..'/'
    local bytes=read(root..family.file)
    if bytes then
     local review=Json.decode(bytes)
@@ -911,7 +912,7 @@ local function run()
  end
 
  local function verifyAnimatedBuildings(game,def,draw)
-  local folder=MOD..'/../.work/'
+  local folder=REVIEW_WORKSPACE..'/.work/'
   local fan=Json.decode(assert(read(folder..'tileshift-special-buildings/fanclub-activation/fanclub-expected-frame-hashes.json')))
   local route=Json.decode(assert(read(folder..'tileshift-route12-houses/route12-coastal-house-model.json')))
   local selected={}
@@ -1149,7 +1150,7 @@ local function run()
  end
  local function verifyEcruteak(game,def,frame,world,mod)
   local function crop(image,r)local out=love.image.newImageData(r[3],r[4]);out:paste(image,0,0,r[1],r[2],r[3],r[4]);return out end
-  local proof=Json.decode(assert(read(MOD..'/../.work/tileshift-ecruteak-finish/v2-building-model.json')))
+  local proof=Json.decode(assert(read(REVIEW_WORKSPACE..'/.work/tileshift-ecruteak-finish/v2-building-model.json')))
   local hacked=hasHackExterior(game,def.id,'mappings/ecruteak.lua')
   local provenance=not hacked and Json.decode(assert(read(MOD..'/assets/original/ecruteak-v2/provenance.json')))or nil
   local wideProof,wideSprite
@@ -1353,7 +1354,7 @@ local function run()
   end)
   for y=0,223 do for x=0,63 do equalPixel(frame,28*16+x,14*16+y,expected,x,y,'Complete original lighthouse changed')end end
   for _,xy in ipairs(hacked and{{24,219},{52,212}}or{{24,219},{9,212},{43,212}})do local _,_,_,a=whole:getPixel(xy[1],xy[2]);check(a==1,'Original lighthouse doorway/window silhouette missing')end
-  local model=Json.decode(assert(read(MOD..'/../.work/tileshift-olivine-finish/port-model.json')))
+  local model=Json.decode(assert(read(REVIEW_WORKSPACE..'/.work/tileshift-olivine-finish/port-model.json')))
   check(model.size_px[1]==64 and model.size_px[2]==64 and model.painted_south_door==false,'Port must keep its closed south facade')
   local port=capture(64,64,function()
    local bg=G.newImage(ground);for y=0,3 do for x=0,3 do G.draw(bg,x*16,y*16)end end;bg:release()
@@ -1412,7 +1413,7 @@ local function run()
    check(core==20 and door and anchor==1 and opaque>0 and transparent>0,'Native Sprout whole-building/entrance fixture incomplete')
    return{artwork='Unscaled native CrystalDust Sprout Tower',whole_native_pixels=opaque,transparent_background_pixels=transparent,source_core_cells=core,source_warp_anchor={24,80},whole_approved_building_exact=true,rgba_sha256=proof.rgba_sha256}
   end
-  local folder=MOD..'/../.work/tileshift-sprout-native-material/sloped-roof-hybrid/'
+  local folder=REVIEW_WORKSPACE..'/.work/tileshift-sprout-native-material/sloped-roof-hybrid/'
   local bytes=assert(read(folder..'sprout-original-native-material-model.json'))
   local model=Json.decode(bytes);local r=model.source_rect_cells
   check(def.id==model.source_map,'Sprout GPU fixture uses the wrong source map')
@@ -1977,7 +1978,7 @@ local function run()
   local mod=startMod(game,1);local art=assert(mod.exports.state:replacements(game,def.tileset,def));local after=draw()
   local c=coverage(def,art);check(c.replaced_occurrences==1440 and c.visible_cells==1440,'Viridian must be completely retiled')
   check(mod.exports.state.rejected==0,'Viridian source/donor rejected')
-  local prototype=love.image.newImageData(love.filesystem.newFileData(assert(read(MOD..'/../.work/tileshift-building-kanto/home32-compact-prototype.png')),'school.png'))
+  local prototype=love.image.newImageData(love.filesystem.newFileData(assert(read(REVIEW_WORKSPACE..'/.work/tileshift-building-kanto/home32-compact-prototype.png')),'school.png'))
   check(prototype:getWidth()==64 and prototype:getHeight()==32,'Schoolhouse footprint changed')
   for y=0,31 do for x=0,63 do equalPixel(after,20*16+x,14*16+y,prototype,x,y,'Complete schoolhouse roof/window/door frame changed')end end
   local door=false
@@ -2204,7 +2205,7 @@ local function run()
  end
  local newBarkNativeSources={}
  local function verifyNewBarkBuildings(game,def,art,frame)
-  local reviewRoot=MOD..'/../.work/tileshift-newbark-buildings/'
+  local reviewRoot=REVIEW_WORKSPACE..'/.work/tileshift-newbark-buildings/'
   local review=Json.decode(assert(read(reviewRoot..'newbark-native-building-prototypes.json')))
   check(review.status=='reviewed_buildings_activated' and review.production_rows==168,
    'NewBark architecture review is incomplete')
@@ -2920,7 +2921,7 @@ local function run()
    fixture.sea_rocks={cells=#seaRows,opaque_pixels_per_rock=205,all_custom_water_choices_preserve_rock_pixels=true}
   end
   if spec.id=='MAHOGANY_TOWN'then
-   local home=love.image.newImageData(love.filesystem.newFileData(assert(read(MOD..'/../.work/tileshift-building-kanto/home32-compact-prototype.png')),'door.png'))
+   local home=love.image.newImageData(love.filesystem.newFileData(assert(read(REVIEW_WORKSPACE..'/.work/tileshift-building-kanto/home32-compact-prototype.png')),'door.png'))
    for y=0,16 do for x=0,15 do equalPixel(after,9*16+x,15+y,home,16+x,15+y,'Gate complete native door frame cap changed')end end
    local gate,shop=false,false
    for _,w in ipairs(def.warps or{})do
@@ -3279,6 +3280,8 @@ def main() -> int:
                         help="Require native renderer files to match this actual launcher payload")
     parser.add_argument("--mod-root", type=Path, default=mod_root,
                         help="Validate an isolated complete mod copy instead of the working tree")
+    parser.add_argument("--review-workspace", type=Path,
+                        help="Workspace containing private artwork review fixtures for an isolated mod copy")
     args = parser.parse_args()
     mod_root = args.mod_root.resolve()
     if not (mod_root/'main.lua').is_file() or not (mod_root/'manifest.json').is_file():
@@ -3291,8 +3294,10 @@ def main() -> int:
     for name in ("report.json", "error.txt", "progress.json"):
         (output / name).unlink(missing_ok=True)
     runtime_inputs = runtime_fingerprint(mod_root)
+    review_workspace = args.review_workspace.resolve() if args.review_workspace else mod_root.parent
     source = LUA.replace("@CACHE@", json.dumps(cache.as_posix())).replace(
         "@MOD@", json.dumps(mod_root.as_posix())).replace("@OUT@", json.dumps(output.as_posix())).replace(
+        "@REVIEW_WORKSPACE@", json.dumps(review_workspace.as_posix())).replace(
         "@RUNTIME_INPUT@", json.dumps(json.dumps(runtime_inputs, separators=(",", ":"))))
     (output / "probe.lua").write_text(source, encoding="utf-8")
     archive = output / "native-probe.love"

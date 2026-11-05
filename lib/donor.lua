@@ -308,9 +308,87 @@ function Donor.new(ctx)
       packs[key]=pack
     end
     checkFiles(ref,pack.files)
+    if ref.animationManifestHash then
+      assert(type(ref.animationManifestHash)=='string'and #ref.animationManifestHash==64
+        and ref.animationManifestHash:match('^[0-9a-f]+$'),'Invalid native animation manifest fingerprint')
+      if not pack.animationManifestHash then
+        local manifest,bytes=module(ref.game,'data/generated/gba/native/'..ref.tileset..'/anim_manifest.lua',true)
+        pack.animationManifest=manifest or {}
+        pack.animationManifestHash=hash(bytes or'')
+      end
+      assert(pack.animationManifestHash==ref.animationManifestHash,'Native animation manifest changed')
+    end
     local slot=pack.slots[ref.id]
     assert(slot~=nil,'Donor metatile is unavailable: '..ref.id)
-    local result={game=ref.game,tileset=ref.tileset,id=ref.id,cacheIdentity=importIdentity(ref.game)}
+    if ref.staticClassic then
+      assert(ref.animationManifestHash and pack.animationManifest,'Static classic artwork needs a checked animation manifest')
+      local banks={}
+      for _,bank in pairs(pack.animationManifest.banks or{})do banks[#banks+1]=bank end
+      if ref.game=='firered'or ref.game=='leafgreen'then
+        for _,name in ipairs({'water','sand','flower'})do
+          if pack.animationManifest[name]then banks[#banks+1]=pack.animationManifest[name]end
+        end
+      end
+      local masks=ref.classicGroundMasks
+      local nativeOver=ref.classicNativeOver
+      local retainedOver=false
+      local duplicateMid=pack.layers.mid~=nil
+      if duplicateMid then for offset=1,256 do
+        if pack.layers.mid.idx.pixels[slot*256+offset]~=pack.layers.under.idx.pixels[slot*256+offset]then duplicateMid=false;break end
+      end end
+      local function covered(name,offset)
+        return type(masks)=='table'and type(masks[name])=='string'and #masks[name]==256 and masks[name]:sub(offset,offset)=='1'
+      end
+      for _,bank in ipairs(banks)do
+        for _,name in ipairs({'mids','overMids'})do for index,id in pairs(bank[name]or{})do
+          if id==ref.id then
+            local layer=name=='mids'and'under'or'over'
+            local flags=(bank[name=='mids'and'quads'or'overQuads']or{})[index]
+            if flags==nil then flags=15 end
+            assert(integer(flags,15),'Invalid native animated quadrant mask')
+            local retain=layer=='over'and nativeOver and bank.name==nativeOver.bank
+            if retain then
+              assert(not retainedOver and pack.layers.over and flags>0 and bank.kind=='tiles'
+                and bank.overFile and not bank.file and #(bank.mids or{})==0,
+                'Native foreground requires one over-only animation bank')
+              pack.retainedOverHashes=pack.retainedOverHashes or{}
+              if not pack.retainedOverHashes[bank.name]then
+                local bytes=readFile(ref.game,'data/generated/gba/native/'..ref.tileset..'/'..bank.overFile)
+                assert(integer(bank.frames,256)and bank.frames>=2 and #bytes==bank.frames*#bank.overMids*256,
+                  'Native foreground bank pixels are incomplete')
+                pack.retainedOverHashes[bank.name]=hash(bytes)
+              end
+              assert(pack.retainedOverHashes[bank.name]==nativeOver.hash,'Native foreground bank changed')
+              retainedOver=true
+            else
+              for offset=1,256 do
+                local x,y=(offset-1)%16,math.floor((offset-1)/16)
+                local q=math.floor(y/8)*2+math.floor(x/8)
+                if math.floor(flags/2^q)%2==1 then
+                  assert(covered(layer,offset),'Animated native feature requires an animation recipe covering every source quadrant')
+                  if layer=='under'and duplicateMid then
+                    assert(covered('mid',offset),'Duplicate native water middle plane also needs animated ground coverage')
+                  end
+                end
+              end
+            end
+          end
+        end end
+        if bank.kind=='palette'and bank.paletteSlot~=nil then
+          for name,layer in pairs(pack.layers)do for offset=1,256 do
+            local byte=layer.idx.pixels[slot*256+offset]
+            assert((name~='under'and byte==0)or math.floor(byte/16)~=bank.paletteSlot or covered(name,offset),
+              'Native palette animation requires an animation recipe')
+          end end
+        end
+      end
+      assert(not nativeOver or retainedOver,'Native foreground bank does not own this source cell')
+    end
+    local result={game=ref.game,tileset=ref.tileset,id=ref.id,cacheIdentity=importIdentity(ref.game),
+      animationManifestHash=pack.animationManifestHash,staticClassic=ref.staticClassic==true,
+      classicNativeOver=ref.classicNativeOver and ref.classicNativeOver.bank..':'..ref.classicNativeOver.hash or nil,
+      classicGroundMaskKey=table.concat({ref.classicGroundMasks and ref.classicGroundMasks.under or'',
+        ref.classicGroundMasks and ref.classicGroundMasks.mid or'',ref.classicGroundMasks and ref.classicGroundMasks.over or''},':')}
     local flattened=newData(16,16)
     for _,layer in ipairs({'under','mid','over'}) do
       local source=pack.layers[layer]

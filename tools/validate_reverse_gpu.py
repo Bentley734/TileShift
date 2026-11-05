@@ -95,13 +95,36 @@ BODY = r"""
    end
    local function verify(frame,art,theme)
     local covered,checked,used=0,0,{}
+    local combined={}
+    local function imageFor(row,mid)
+     local index=row.frames and(math.floor(math.max(0,clock-(row.offset or 0))/row.period)%#row.frames+1)or 1
+     local selected=row.frames and row.frames[index]or row
+     if combined[selected]then return combined[selected]end
+     local image=nativeData(16,16);image:paste(selected.under,0,0)
+     local over=selected.over
+     if not over then
+      local atlas=assert(Native.get(pair));local slot=assert(atlas.midToSlot[mid])
+      over=nativeData(16,16)
+      over:paste(atlas.overImageData,0,0,(slot%atlas.cols)*16,math.floor(slot/atlas.cols)*16,16,16)
+     end
+     local function overlay(layer)
+      if not layer then return end
+      for y=0,15 do for x=0,15 do
+       local r,g,b,a=layer:getPixel(x,y)
+       check(a==0 or a==1,'Classic priority plane must have binary alpha')
+       if a==1 then image:setPixel(x,y,r,g,b,a)end
+      end end
+     end
+     overlay(selected.mid);overlay(over)
+     combined[selected]=image
+     return image
+    end
     for y=0,rows-1 do for x=0,columns-1 do
      local mid=layout:midAt(x,y);local row=art[mid]
      if row then
       covered=covered+1
       used[mid]=true
-      local index=row.frames and(math.floor((clock+(row.offset or 0))/(row.period or 1))%#row.frames+1)or 1
-      local image=row.frames and row.frames[index].under or row.under
+      local image=imageFor(row,mid)
       for dy=0,15 do for dx=0,15 do
        equalPixel(frame,x*16+dx,y*16+dy,image,dx,dy,'Actual FieldView counterpart pixels differ')
        if theme=='gen1'then
@@ -231,7 +254,7 @@ BODY = r"""
       local key=tostring(#row.frames)..'/'..string.format('%.12g',row.period)
       sequences[key]={frames=#row.frames,period=row.period,bank=row.bank}
       for frame=0,#row.frames-1 do
-       local at=frame*row.period+.00001
+       local at=frame*row.period+(row.offset or 0)+.00001
        times[string.format('%.12g',at)]=at
       end
      end end

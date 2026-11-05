@@ -49,6 +49,43 @@ local function sourceColors(colors)
   end
   return true
 end
+function M.validateClassicGeometry(row)
+  local spec=row.classicGeometry
+  if generations[row.game]~=3 or row.style~='gen2' or row.kind~='classic_native_geometry'
+    or row.donor or row.base or row.parts or row.asset or row.artOverlay or row.foreground
+    or row.overMask or row.occludes or row.animated or row.animation or row.frames or row.assetFrames
+    or type(spec)~='table' or spec.version~=1 or spec.static~=true
+    or type(spec.feature)~='string' or #spec.feature<1 or #spec.feature>96
+    or not spec.feature:match('^[%w_%-]+$') or not fingerprint(spec.animationManifestHash)
+    or not fingerprint(row.compositionPixelHash) then return nil,'invalid static classic geometry contract' end
+  local known={version=true,static=true,feature=true,palette=true,colorMap=true,sourceLayers=true,animationManifestHash=true,ground=true,nativeOver=true}
+  for k in pairs(spec)do if not known[k]then return nil,'unknown classic geometry field' end end
+  if not dense(spec.palette,4)then return nil,'classic geometry needs four reviewed RGB8 colors' end
+  local palette={}
+  for _,rgb in ipairs(spec.palette)do
+    if not dense(rgb,3)then return nil,'invalid classic geometry palette' end
+    for _,c in ipairs(rgb)do if not integer(c,255)then return nil,'invalid classic geometry palette channel' end end
+    local key=rgb[1]*65536+rgb[2]*256+rgb[3]
+    if palette[key]then return nil,'duplicate classic geometry palette color' end
+    palette[key]=true
+  end
+  if type(spec.colorMap)~='table' or #spec.colorMap<1 or #spec.colorMap>256
+    or not dense(spec.colorMap,#spec.colorMap)then return nil,'invalid classic geometry color map' end
+  local used={}
+  for _,entry in ipairs(spec.colorMap)do
+    if not dense(entry,6)then return nil,'classic geometry color map needs six RGB8 channels' end
+    for _,c in ipairs(entry)do if not integer(c,255)then return nil,'invalid classic geometry mapped channel' end end
+    local source=entry[1]*65536+entry[2]*256+entry[3]
+    if used[source] or not palette[entry[4]*65536+entry[5]*256+entry[6]]then return nil,'duplicate source or unreviewed target color' end
+    used[source]=true
+  end
+  if type(spec.sourceLayers)~='table' or not fingerprint(spec.sourceLayers.under)
+    or not fingerprint(spec.sourceLayers.over)then return nil,'classic geometry needs native layer fingerprints' end
+  for name,value in pairs(spec.sourceLayers)do
+    if(name~='under'and name~='mid'and name~='over')or not fingerprint(value)then return nil,'invalid classic geometry layer fingerprint' end
+  end
+  return true
+end
 local function origin(ref)
   if ref.kind==nil then return true end
   if ref.kind=='field_effect' then
@@ -150,7 +187,46 @@ function M.validate(row)
   end
   if row.sourceColors~=nil and row.kind~='source_palette' then return nil,'source colors require source palette artwork' end
   local ref=row.donor
-  if row.kind=='source_palette' then
+  if row.kind=='classic_native_geometry'then
+    local ok,why=M.validateClassicGeometry(row);if not ok then return nil,why end
+    local nativeOver=row.classicGeometry.nativeOver
+    if nativeOver~=nil then
+      if(row.game~='ruby'and row.game~='sapphire'and row.game~='emerald')or type(nativeOver)~='table'
+        or type(nativeOver.bank)~='string'or not nativeOver.bank:match('^[%w_]+$')or not fingerprint(nativeOver.hash)then
+        return nil,'native foreground preservation requires a checked RSE over-only bank'
+      end
+      for key in pairs(nativeOver)do if key~='bank'and key~='hash'then return nil,'unknown native foreground field'end end
+    end
+    local ground=row.classicGeometry.ground
+    if ground~=nil then
+      if type(ground)~='table'or not validRef('gen2',ground.donor)or ground.donor.game~='crystal'
+        or type(ground.masks)~='table'then return nil,'classic geometry ground needs one reviewed Crystal donor and explicit native-plane masks'end
+      for key in pairs(ground)do
+        if key~='donor'and key~='masks'and key~='animation'and key~='repeatWidth'then return nil,'unknown classic geometry ground field'end
+      end
+      if ground.repeatWidth~=nil and(ground.repeatWidth~=8 or type(ground.animation)~='table'or ground.animation.bank~='program')then
+        return nil,'classic animated ground may repeat one complete native eight-pixel column'
+      end
+      local found=false
+      for name,mask in pairs(ground.masks)do
+        if not row.classicGeometry.sourceLayers[name]or type(mask)~='string'or #mask~=256 or mask:find('[^01]')then
+          return nil,'invalid classic geometry ground mask'
+        end
+        if mask:find('1',1,true)then found=true end
+      end
+      if not found then return nil,'classic geometry ground mask is empty'end
+      if nativeOver and(ground.masks.over or ground.animation)then return nil,'native foreground must remain solely owned by its source animation'end
+      if ground.animation~=nil then
+        local probe={game=row.game,style=row.style,tileset=row.tileset,id=row.id,sourceHash=row.sourceHash,
+          status=row.status,role=row.role,evidence=row.evidence,kind='native_composite',animated=true,
+          animation=ground.animation,parts={{donor=ground.donor,animated=true,w=16,h=16,x=0,y=0}}}
+        if type(ground.animation)~='table'or ground.animation.kind~='gb'
+          or(ground.animation.bank~='water'and ground.animation.bank~='program')then return nil,'classic geometry ground needs a checked native GB water program'end
+        local valid,reason=M.validate(probe);if not valid then return nil,reason end
+      end
+    end
+  elseif row.classicGeometry~=nil then return nil,'classic geometry contract requires its explicit artwork kind'
+  elseif row.kind=='source_palette' then
     if generations[row.game]>=3 or row.style~='gen3' then return nil,'source palette artwork requires a GB source and Gen3 style' end
     if ref or row.base or row.parts or row.asset or row.artOverlay or row.foreground
       or row.occludes or row.animated or row.animation or row.frames or row.assetFrames then
