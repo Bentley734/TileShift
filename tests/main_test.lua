@@ -127,7 +127,13 @@ for _,gameId in ipairs(games)do
       or path=='mappings/reverse_gen2_cerulean_outdoor_completion.lua'
       or path=='mappings/reverse_gen2_kanto_navel_dotted_completion.lua'
       or path=='mappings/reverse_gen2_four_five_outdoor_completion.lua'
-      or path=='mappings/reverse_gen2_kanto_safari_rooms.lua' then return nil end
+      or path=='mappings/reverse_gen2_kanto_safari_rooms.lua'
+      or path=='mappings/reverse_gen2_kanto_labs_museum_completion.lua'
+      or path=='mappings/reverse_gen2_kanto_cable_rooms_completion.lua'
+      or path=='mappings/reverse_gen2_cinnabar_pallet_completion.lua'
+      or path=='mappings/reverse_gen2_kanto_commercial_rooms.lua'
+      or path=='mappings/reverse_gen2_kanto_final_rooms.lua'
+      or path=='mappings/reverse_gen2_kanto_final_houses.lua' then return nil end
     if path=='mappings/reverse_classic_gyms_finish.lua'or path=='mappings/reverse_classic_berry_soil.lua'then return nil end
     if path=='lib/gb_animation.lua'then return 'return {}'end
     if path=='lib/roofs.lua' or path=='lib/vegetation.lua' or path=='lib/flora.lua' or path=='lib/flora_catalog.lua' or path=='lib/johto_hack_flora.lua' or path=='lib/water_styles.lua' then

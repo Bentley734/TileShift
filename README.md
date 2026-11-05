@@ -3,6 +3,8 @@
 
 TileShift swaps world artwork through individually reviewed tile matches.
 
+Version 0.41.0 adds the final 9,246 Crystal-style map background swaps. The update finishes the Viridian and Pewter areas, Pallet, Cinnabar, the Hall of Fame, the Union Room, the labs, Pewter Museum, the cable rooms, and the last shops and houses.
+
 Version 0.40.0 adds 23,784 Crystal-style background swaps across FireRed and LeafGreen. It includes the Celadon Department Store and Condominiums, Route 23 and Indigo Plateau, Viridian Forest, Pattern Bush, Lavender, Vermilion, Cerulean, and more caves and tunnels.
 
 Version 0.39.0 adds 32,834 Crystal-style background swaps in FireRed and LeafGreen. It includes Celadon and Cycling Road, the Safari Zone, Indigo Plateau, the Trainer Tower, the S.S. Anne, Mt. Ember, and the Sevii Islands.
@@ -11,11 +13,11 @@ Version 0.38.0 adds Crystal-style replacements for 16,551 more background cells.
 
 Version 0.37.0 adds Crystal-style replacements for 76,100 more background cells across the five Gen 3 games. It includes the Lilycove and Safari Zone terrain, the Battle Frontier exteriors, additional Hoenn caves and interiors, and new Kanto and Sevii areas. Source-driven animations keep their original game timing and priority.
 
-The Crystal theme now covers 1,206,471 of 1,288,886 logical background cells. 82,415 cells still use their original art.
+In v0.37.0 the Crystal theme covered 1,206,471 of 1,288,886 logical background cells. 82,415 cells still used their original art.
 
 Version 0.36.0 adds Crystal-style replacements for 125,422 background cells across 1,467 Gen 3 map variants. This includes Fortree City, the Hoenn underwater map bodies, the Sevii harbors, Berry Forest, Fuchsia Gym and additional Hoenn rooms and facilities. Meteor Falls keeps moving water beneath its pillars, and Lavaridge plays its native steam over Crystal-style rock. Complete Crystal or Red pieces provide native counterparts where available. Named regional features use individually reviewed four-color versions that preserve their silhouettes, clues and priority layers.
 
-Across all five Gen 3 games, the Crystal theme now covers 1,130,371 of 1,288,886 logical background cells. 158,515 cells are still awaiting replacement.
+Across all five Gen 3 games, the Crystal theme covered 1,130,371 of 1,288,886 logical background cells. 158,515 cells still awaited replacement.
 
 Version 0.35.0 completes Crystal-style Pacifidlog Town, Verdanturf Town and
 Fallarbor Town in Ruby, Sapphire and Emerald. Complete native buildings and
@@ -66,13 +68,12 @@ four-shade monochrome artwork; Gen 2 uses one shared Crystal style with its
 native daytime colors. Both themes completely retile Pallet Town in FR/LG and
 Littleroot Town, Oldale Town and Route 101 in R/S/E, with additional reviewed
 terrain and interior matches.
-The Crystal theme currently replaces **1,004,949 of 1,288,886 background cells
-(78.0%)** across all five GBA games, with **170 of 2,156 imported maps** fully
-retiled. These counts use the maps' actual dimensions and exclude storage
-padding and border cells.
-**Other Gen 3 maps remain partially converted**; unmatched cells retain native
-art. Characters, Pokemon sprites and other field effects retain their native
-art; Crystal-themed R/S/E berry plants use the new variety-specific artwork.
+The Crystal theme replaces all **1,288,886 logical background cells** across
+**2,156 imported Gen 3 map variants**. The totals use each map's actual
+dimensions and exclude storage padding and border cells. The separate Gen 1
+theme has partial coverage. Characters, Pokémon sprites and other field
+effects retain their native art. Crystal-themed R/S/E berry plants use
+the variety-specific artwork.
 
 The existing Gen 3 theme completes the backgrounds of **every Red, Blue and Yellow
 map: 667 map variants and 284,740 cells**. All Kanto towns, routes, Safari Zone,
@@ -162,11 +163,11 @@ unchanged. The single **Gen 3** style combines Emerald, FireRed/LeafGreen and se
 
 1. Import the donor games into Gen1Recomp: **Emerald and FireRed** for the Gen 3
    theme, **Red** for the Gen 1 theme, and **Crystal** for the Gen 2 theme.
-   The Crystal theme also reads Mauville's Cerulean Bike Shop bicycles from **Red**.
+   The Crystal theme also reads the original Cerulean bicycles used in Mauville and Cerulean from **Red**.
    TileShift reads native donor
    art from your own imports; neither ROMs nor extracted native artwork are
    bundled.
-2. Download `TileShift-v0.40.0.zip` from [the latest release](https://github.com/Bentley734/TileShift/releases/latest).
+2. Download `TileShift-v0.41.0.zip` from [the latest release](https://github.com/Bentley734/TileShift/releases/latest).
 3. Extract the `tileshift` folder into Gen1Recomp's `mods` directory, enable
    **TileShift**, and restart the game.
 4. Open Options and select **Tileset**. Gen 1/2 hosts offer **Gen 3**; Gen 3 hosts
@@ -310,6 +311,7 @@ graphics cannot bypass native darkness.
 | --- | --- | --- |
 | Red, Blue and Yellow, every map | 284,740/284,740 | 667/667 |
 | Gold, Silver and Crystal, Johto | 263,308/263,308 | 612/612 |
+| All five Gen 3 games, Crystal theme | 1,288,886/1,288,886 | 2,156/2,156 |
 | FR/LG Pallet, both classic themes | 1,920/1,920 | 4/4 |
 | R/S/E Littleroot and Route 101, both classic themes | 4,800/4,800 | 12/12 |
 | R/S/E Oldale, both classic themes | 2,400/2,400 | 6/6 |
@@ -321,8 +323,7 @@ and cells. The complete map audit loads the
 actual mod and checks replacement availability, source fingerprints and
 position scope; it does not render every map or constitute a full playthrough.
 
-Further classic-theme coverage will add reviewed counterparts for remaining
-Gen 3 buildings, interiors and regional features.
+The separate Gen 1 theme still has room for additional reviewed counterparts.
 
 ## Performance
 
