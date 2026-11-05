@@ -76,6 +76,8 @@ RAIL_PALETTE = [(58, 58, 58), (165, 49, 41), (247, 82, 49), (255, 156, 197)]
 
 
 class Review(Layouts):
+    pairs = PAIRS
+
     def __init__(self):
         ReverseReview.__init__(self, 'gen2-kanto-celadon', GAMES)
         self.out = OUTPUT
@@ -99,7 +101,7 @@ class Review(Layouts):
         return preview.replacement_image(self.cache, row, self.packed, ROOT)
 
     def planes(self, game, mid):
-        pair = PAIRS[game]
+        pair = self.pairs[game]
         source = self.imp.cell_index(game)[pair, mid]
         preview.native_donor(self.cache, dict(game=game, tileset=pair, id=mid, hash=source['pixel_sha256']), self.packed)
         mids, colors, blobs = self.packed[game, pair]
@@ -127,7 +129,7 @@ class Review(Layouts):
         planes = self.planes(game, mid)
         changed, middle = set(), set()
         if animation:
-            _, changed, middle = source_under_frames(self.cache, game, PAIRS[game], mid, self.packed, animation)
+            _, changed, middle = source_under_frames(self.cache, game, self.pairs[game], mid, self.packed, animation)
         forced = {'under': changed, 'mid': middle}
         masks, color_map = {}, {}
         for name, image in planes.items():
@@ -145,11 +147,11 @@ class Review(Layouts):
         if backing == self.water and (not animation or animation['mode'] == 'water_mask'):
             assert ground
             ground['animation'] = self.water_program
-        return geometry_art(self, game, PAIRS[game], mid, feature, palette, color_map,
+        return geometry_art(self, game, self.pairs[game], mid, feature, palette, color_map,
                             ground=ground, source_animation=animation)
 
     def shore(self, game, mid):
-        pair = PAIRS[game]
+        pair = self.pairs[game]
         path = self.cache / game / 'data/generated/gba/native' / pair
         bank = catalog.read_lua(path / 'anim_manifest.lua')['water']
         assert mid in bank['mids']
