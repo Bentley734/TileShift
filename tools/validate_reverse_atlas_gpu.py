@@ -1,8 +1,9 @@
-"""Native FieldView atlas fixtures for every actually used Crystal-theme key.
+"""Native FieldView atlas fixtures for used Crystal-theme keys.
 
 Real used MIDs are arranged in private 8-column grids, preserving an actual
-source cell's collision/elevation as a witness. This verifies rendering and
-animations, not actual-map geometry or gameplay. Source maps remain untouched.
+source cell's collision/elevation as a witness. An exact script inventory can
+also exercise field writes from an original cell to an alternate MID. Source
+maps remain untouched.
 """
 from __future__ import annotations
 
@@ -26,7 +27,8 @@ GAMES = ('firered', 'leafgreen', 'ruby', 'sapphire', 'emerald')
 
 
 def selection(root: Path, cache: Path, planner: Path, games: list[str], pilot: bool,
-              only_modules: list[str] | None = None, only_keys: Path | None = None) -> dict:
+              only_modules: list[str] | None = None, only_keys: Path | None = None,
+              script_witnesses: Path | None = None) -> dict:
     inputs = validate_gpu.runtime_fingerprint(root)
     paths = list(dict.fromkeys(re.findall(r"['\"](mappings/[^'\"]+\.lua)['\"]", (root / 'main.lua').read_text())))
     requested = []
@@ -47,6 +49,16 @@ def selection(root: Path, cache: Path, planner: Path, games: list[str], pilot: b
         assert len(selected_keys) == len(inventory), 'Exact key inventory repeats a source key'
         assert all(g in GAMES and isinstance(p, str) and type(m) is int for g,p,m in selected_keys), 'Invalid exact source key'
     scoped = bool(requested) or selected_keys is not None
+    script_rows, pending_scripts = defaultdict(list), set()
+    if script_witnesses:
+        assert selected_keys is not None and not pilot, 'Script witnesses require an exact key inventory'
+        for row in json.loads(script_witnesses.read_text()):
+            key = row['game'], row['pair'], row['mid']
+            assert key in selected_keys and key not in pending_scripts, ('Invalid scripted key', key)
+            assert type(row['x']) is type(row['y']) is type(row['before_mid']) is int, row
+            assert type(row.get('impassable', False)) is bool, row
+            pending_scripts.add(key)
+            script_rows[row['game'], row['map']].append(row)
     plan = None if scoped else json.loads(planner.read_text())
     if plan is not None:
         assert inputs == plan['runtime_inputs'], 'The native matrix plan belongs to a different runtime snapshot'
@@ -77,6 +89,7 @@ def selection(root: Path, cache: Path, planner: Path, games: list[str], pilot: b
     witnesses, header_witnesses, source_files = {}, defaultdict(list), {}
     all_headers = {}
     body_keys = set()
+    scripted = {}
     for scene in scenes:
         game, name = scene['game'], scene['map']
         spec = manifests[game][name]
@@ -91,6 +104,14 @@ def selection(root: Path, cache: Path, planner: Path, games: list[str], pilot: b
         columns, lines = tw or width, th or height
         border_width, border_height = blob[14], blob[15]
         offset = 16 + border_width * border_height * 2
+        for row in script_rows.get((game, name), ()):
+            x, y, mid = row['x'], row['y'], row['mid']
+            assert spec['pair'] == row['pair'] and 0 <= x < columns and 0 <= y < lines, row
+            start = offset + (y * width + x) * 4
+            before, coll, elev = struct.unpack_from('<HBB', blob, start)
+            assert before == row['before_mid'] and before != mid, row
+            scripted[game, spec['pair'], mid] = dict(map=name, x=x, y=y, mid=mid, coll=coll, elev=elev,
+                                                    beforeMid=before, impassable=row.get('impassable', False))
         if scoped:
             actual_header = set()
             for i in range(border_width * border_height):
@@ -115,6 +136,8 @@ def selection(root: Path, cache: Path, planner: Path, games: list[str], pilot: b
         assert set(witnesses) == delta_keys.intersection(body_keys), 'Actual native body scan omitted a delta key'
     else:
         assert len(witnesses) == plan['used_source_keys'], 'Used-key matrix is incomplete'
+    assert scripted.keys() == pending_scripts and not scripted.keys() & witnesses.keys(), 'Script witnesses must identify alternate-only MIDs'
+    witnesses.update(scripted)
     grouped = defaultdict(list)
     animation_cache = {}
     for (game, pair, mid), witness in sorted(witnesses.items()):
@@ -181,13 +204,15 @@ def selection(root: Path, cache: Path, planner: Path, games: list[str], pilot: b
         result['delta'] = dict(modules=requested, module_gen2_gba_row_counts=module_counts,
                                total_module_keys=sum(module_counts.values()), selected_inventory_keys=len(delta_keys),
                                requested_game_keys=len(requested_game_keys),
-                               actual_body_used_keys=sum(k[0] in games for k in witnesses),
+                               actual_body_used_keys=sum(k[0] in games and k in body_keys for k in witnesses),
                                selected_fixture_keys=result['expected_keys'], scanned_native_layouts=len(scenes),
                                excluded_no_body_witness=[dict(game=g,pair=p,mid=m,module=owners[g,p,m],
                                                             header_used=(g,p,m) in header_witnesses)
                                                          for g,p,m in sorted(requested_game_keys-body_keys)],
                                current_main_exact_module_keys=selected_keys is None,
                                current_main_exact_inventory_keys=selected_keys is not None,
+                               scripted_key_count=sum(k[0] in games for k in scripted),
+                               script_witnesses_sha256=hashlib.sha256(script_witnesses.read_bytes()).hexdigest() if script_witnesses else None,
                                key_inventory_sha256=hashlib.sha256(only_keys.read_bytes()).hexdigest() if only_keys else None,
                                actual_used_key_set_complete=True)
         result['native_header_plan'] = dict(touched_keys=len(header), keys=header,
@@ -222,8 +247,9 @@ BODY = r"""
  local LayoutNative=require('src.core.game3.layout_native')
  local View=require('src.core.game3.field_view')
  local selected=Json.decode(@SELECTION@)
+ local Field=selected.delta and selected.delta.scripted_key_count>0 and require('src.core.game3.field')
  report.theme='native_gen2_used_atlas_fixtures';report.selection=selected
- report.limits='Actual native FieldView on PRIVATE 8-column atlas grids containing only real used MIDs with actual-cell witnesses. Not actual-map layout/joins, gameplay or collision semantics. Every original imported source map/events stays unchanged; actual-map witnesses are validated separately.'
+ report.limits='Actual native FieldView on private atlas grids with native cell witnesses and optional field-write witnesses. Original imported maps and events remain unchanged.'
  local function clone(value,seen)
   if type(value)~='table'then return value end
   seen=seen or{};if seen[value]then return seen[value]end
@@ -296,6 +322,7 @@ BODY = r"""
   return table.concat(out)
  end
  local exactPixels,tolerantPixels,independentHashes,verifiedKeys,independentAnimationFrames=0,0,0,0,0
+ local scriptedKeys=0
  local nativeOverChecks,nativeUnderChecks,nativeUnderKeys=0,0,0
  local function verifyImage(actual,expected,message)
   local raw=actual:getString();check(#raw==#expected,'Atlas RGBA byte count differs')
@@ -318,7 +345,7 @@ BODY = r"""
    local sourceHash=sourceContent(source);local def=clone(source);local n=#bank.items;local rows=math.ceil(n/8);local cells={}
    for i=1,rows*8 do
     local item=bank.items[i]or bank.items[1]
-    cells[i]={mid=item.mid,coll=item.coll,elev=item.elev}
+    cells[i]={mid=item.beforeMid or item.mid,coll=item.coll,elev=item.elev}
    end
    def.midLayout=LayoutNative.fromDecoded({width=8,height=rows,trueWidth=8,trueHeight=rows,borderWidth=1,borderHeight=1,
     borderMids={bank.items[1].mid},cells=cells},bank.source_map,bank.pair)
@@ -349,11 +376,36 @@ BODY = r"""
    G.push('all');G.setCanvas(room.canvas);G.origin();G.setScissor();G.setShader();G.clear(0,0,0,0);G.setColor(1,1,1,1)
    View.draw(host,128,room.rows*16,{skipActors=true});G.pop()
   end
+  local function writeScriptedCells(room)
+   if not Field then return 0 end
+   local writes=0
+   local savedGame,savedSession=Field._game,Field._session
+   local id=room.bank.source_map
+   Field._game=host;Field._session={map=id}
+   for i=1,room.rows*8 do
+    local item=room.bank.items[i]or room.bank.items[1]
+    if item.beforeMid then
+     local x,y=(i-1)%8,math.floor((i-1)/8)
+     check(room.layout:midAt(x,y)==item.beforeMid,'Scripted atlas cell did not start in its imported state')
+     Field.setMetatile(x,y,item.mid,item.impassable)
+     check(room.layout:midAt(x,y)==item.mid,'Native field did not apply the exact scripted MID')
+     if i<=#room.bank.items then writes=writes+1 end
+    end
+   end
+   Field._game,Field._session=savedGame,savedSession
+   Field.metatileOverrides[id]=nil;Field._overrideLayouts[id]=nil
+   return writes
+  end
   assert(mod.exports.select('original'))
-  for _,room in ipairs(rooms)do bind(room);room.before=draw(room)end
+  for _,room in ipairs(rooms)do bind(room);writeScriptedCells(room);room.before=draw(room)end
   assert(mod.exports.select('gen2'));clock=0
   for _,room in ipairs(rooms)do
-   bind(room);local after=draw(room);local art=assert(mod.exports.state:replacements(game,room.bank.pair))
+   bind(room)
+   if Field then
+    room.layout:clearOverrides();warmDraw(room)
+    scriptedKeys=scriptedKeys+writeScriptedCells(room)
+   end
+   local after=draw(room);local art=assert(mod.exports.state:replacements(game,room.bank.pair))
    local rowHashes=0;local schedules,times={},{}
    times['0']=0
    for _,item in ipairs(room.bank.items)do
@@ -581,6 +633,7 @@ BODY = r"""
  check(verifiedKeys==selected.expected_keys,'Some actual used source keys were skipped')
  report.verified_source_keys=verifiedKeys;report.independent_composition_hashes=independentHashes
  report.independent_classic_animation_frames=independentAnimationFrames
+ report.scripted_keys_verified=scriptedKeys
  report.retained_native_foreground_checks=nativeOverChecks
  report.native_under_animation_keys=nativeUnderKeys;report.native_under_gpu_pixels=nativeUnderChecks
  report.byte_exact_gpu_pixels=exactPixels;report.tolerance_checked_gpu_pixels=tolerantPixels
@@ -598,11 +651,13 @@ def main() -> int:
                         help='Repeat for exact current main modules whose actually used Gen2 keys should be tested')
     parser.add_argument('--keys-json', type=Path,
                         help='Exact nonempty list of game/pair/mid keys loaded by current main; mutually exclusive with --only-module')
+    parser.add_argument('--script-witnesses', type=Path,
+                        help='Exact alternate-only keys with map, x, y, before_mid and optional impassable fields')
     parser.add_argument('--plan-only', action='store_true', help='Write exact body/header delta inventory without launching a GPU probe')
     args, remaining = parser.parse_known_args()
     root = Path(remaining[remaining.index('--mod-root') + 1]).resolve() if '--mod-root' in remaining else Path(__file__).resolve().parents[1]
     cache = Path(remaining[remaining.index('--cache') + 1]).resolve() if '--cache' in remaining else Path(os.environ['APPDATA']) / 'pokemon-love2d'
-    chosen = selection(root, cache, args.planner, args.games, args.pilot, args.only_module, args.keys_json)
+    chosen = selection(root, cache, args.planner, args.games, args.pilot, args.only_module, args.keys_json, args.script_witnesses)
     if '--output' not in remaining:
         remaining.extend(['--output', str(root.parent / '.work/tileshift-reverse-atlas-gpu')])
     output = Path(remaining[remaining.index('--output') + 1]).resolve();output.mkdir(parents=True, exist_ok=True)
@@ -624,17 +679,26 @@ def main() -> int:
         result = validate_gpu.main()
     unchanged = all(hashlib.sha256((cache / name).read_bytes()).hexdigest() == expected for name, expected in chosen['source_file_sha256'].items())
     inventory_unchanged = args.keys_json is None or hashlib.sha256(args.keys_json.read_bytes()).hexdigest() == chosen['delta']['key_inventory_sha256']
+    witnesses_unchanged = (args.script_witnesses is None or hashlib.sha256(args.script_witnesses.read_bytes()).hexdigest()
+                           == chosen['delta']['script_witnesses_sha256'])
     path = output / 'report.json'
     if path.exists():
         report = json.loads(path.read_text());report['source_layout_files_unchanged'] = unchanged
         report['key_inventory_unchanged'] = inventory_unchanged
-        if not unchanged or not inventory_unchanged:report['status'] = 'failed'
+        report['script_witnesses_unchanged'] = witnesses_unchanged
+        if args.script_witnesses:
+            expected = sum(item.get('beforeMid') is not None for fixture in chosen['fixtures']
+                           for bank in fixture['pairs'] for item in bank['items'])
+            if report.get('scripted_keys_verified') != expected:
+                report['status'] = 'failed'
+                result = 1
+        if not unchanged or not inventory_unchanged or not witnesses_unchanged:report['status'] = 'failed'
         path.write_text(json.dumps(report, indent=2) + '\n')
         print(json.dumps(dict(status=report['status'], verified_source_keys=report.get('verified_source_keys'),
                               independent_hashes=report.get('independent_composition_hashes'),
                               exact_pixels=report.get('byte_exact_gpu_pixels'), tolerant_pixels=report.get('tolerance_checked_gpu_pixels'),
                               error=report.get('error'), report=str(path))))
-    return result if unchanged and inventory_unchanged else 1
+    return result if unchanged and inventory_unchanged and witnesses_unchanged else 1
 
 
 if __name__ == '__main__':

@@ -1,0 +1,2072 @@
+{
+  "rows": [
+    {
+      "game": "firered",
+      "pair": "building__rom_082d4eb4",
+      "mid": 693,
+      "sourceHash": "2cc2ff4d38096a136869399a7e5d076eae14a1c4fd1fef47109d84e7c00a064b",
+      "sourceLayers": {
+        "under": "2cc2ff4d38096a136869399a7e5d076eae14a1c4fd1fef47109d84e7c00a064b",
+        "mid": "2cc2ff4d38096a136869399a7e5d076eae14a1c4fd1fef47109d84e7c00a064b",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 0,
+      "contexts": [
+        {
+          "map": "FR_ROUTE_25_SEA_COTTAGE",
+          "x": 3,
+          "y": 1,
+          "before_mid": 650,
+          "layoutSHA256": "8ac8ae4516e9e423b76907473b4c6d63cee8704bb44a2cdca5f51e1f40ef08bf",
+          "impassable": true,
+          "origins": [
+            [
+              "special",
+              "g3:081706fa",
+              13,
+              "AnimateTeleporterHousing"
+            ],
+            [
+              "special",
+              "g3:081706fa",
+              23,
+              "AnimateTeleporterHousing"
+            ]
+          ]
+        },
+        {
+          "map": "FR_ROUTE_25_SEA_COTTAGE",
+          "x": 10,
+          "y": 1,
+          "before_mid": 650,
+          "layoutSHA256": "8ac8ae4516e9e423b76907473b4c6d63cee8704bb44a2cdca5f51e1f40ef08bf",
+          "impassable": true,
+          "origins": [
+            [
+              "special",
+              "g3:081706fa",
+              13,
+              "AnimateTeleporterHousing"
+            ],
+            [
+              "special",
+              "g3:081706fa",
+              23,
+              "AnimateTeleporterHousing"
+            ]
+          ]
+        }
+      ],
+      "base": {
+        "mid": 650,
+        "module": "mappings/reverse_gen2_kanto_final_houses.lua",
+        "semanticSHA256": "02a0d10f512ec89a52133a1a170aef853349b74604abf6ae7ca2123747ea22db"
+      }
+    },
+    {
+      "game": "firered",
+      "pair": "building__rom_082d4eb4",
+      "mid": 694,
+      "sourceHash": "5a39e1dcf47ff074bd1f7b4110bd0591b74391268d3a13d5283f1a4ad3a4d43f",
+      "sourceLayers": {
+        "under": "5a39e1dcf47ff074bd1f7b4110bd0591b74391268d3a13d5283f1a4ad3a4d43f",
+        "mid": "5a39e1dcf47ff074bd1f7b4110bd0591b74391268d3a13d5283f1a4ad3a4d43f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 0,
+      "contexts": [
+        {
+          "map": "FR_ROUTE_25_SEA_COTTAGE",
+          "x": 3,
+          "y": 1,
+          "before_mid": 650,
+          "layoutSHA256": "8ac8ae4516e9e423b76907473b4c6d63cee8704bb44a2cdca5f51e1f40ef08bf",
+          "impassable": true,
+          "origins": [
+            [
+              "special",
+              "g3:081706fa",
+              13,
+              "AnimateTeleporterHousing"
+            ],
+            [
+              "special",
+              "g3:081706fa",
+              23,
+              "AnimateTeleporterHousing"
+            ]
+          ]
+        },
+        {
+          "map": "FR_ROUTE_25_SEA_COTTAGE",
+          "x": 10,
+          "y": 1,
+          "before_mid": 650,
+          "layoutSHA256": "8ac8ae4516e9e423b76907473b4c6d63cee8704bb44a2cdca5f51e1f40ef08bf",
+          "impassable": true,
+          "origins": [
+            [
+              "special",
+              "g3:081706fa",
+              13,
+              "AnimateTeleporterHousing"
+            ],
+            [
+              "special",
+              "g3:081706fa",
+              23,
+              "AnimateTeleporterHousing"
+            ]
+          ]
+        }
+      ],
+      "base": {
+        "mid": 650,
+        "module": "mappings/reverse_gen2_kanto_final_houses.lua",
+        "semanticSHA256": "02a0d10f512ec89a52133a1a170aef853349b74604abf6ae7ca2123747ea22db"
+      }
+    },
+    {
+      "game": "firered",
+      "pair": "building__rom_082d4eb4",
+      "mid": 695,
+      "sourceHash": "0416267308e509aa2827f413ead4b39dd34413a9a3738d91d4118bc44da187c5",
+      "sourceLayers": {
+        "under": "0416267308e509aa2827f413ead4b39dd34413a9a3738d91d4118bc44da187c5",
+        "mid": "0416267308e509aa2827f413ead4b39dd34413a9a3738d91d4118bc44da187c5",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 105,
+      "contexts": [
+        {
+          "map": "FR_ROUTE_25_SEA_COTTAGE",
+          "x": 3,
+          "y": 3,
+          "before_mid": 662,
+          "layoutSHA256": "8ac8ae4516e9e423b76907473b4c6d63cee8704bb44a2cdca5f51e1f40ef08bf",
+          "impassable": true,
+          "origins": [
+            [
+              "special",
+              "g3:081706fa",
+              13,
+              "AnimateTeleporterHousing"
+            ],
+            [
+              "special",
+              "g3:081706fa",
+              23,
+              "AnimateTeleporterHousing"
+            ]
+          ]
+        },
+        {
+          "map": "FR_ROUTE_25_SEA_COTTAGE",
+          "x": 10,
+          "y": 3,
+          "before_mid": 662,
+          "layoutSHA256": "8ac8ae4516e9e423b76907473b4c6d63cee8704bb44a2cdca5f51e1f40ef08bf",
+          "impassable": true,
+          "origins": [
+            [
+              "special",
+              "g3:081706fa",
+              13,
+              "AnimateTeleporterHousing"
+            ],
+            [
+              "special",
+              "g3:081706fa",
+              23,
+              "AnimateTeleporterHousing"
+            ]
+          ]
+        }
+      ],
+      "base": {
+        "mid": 662,
+        "module": "mappings/reverse_gen2_kanto_final_houses.lua",
+        "semanticSHA256": "1226ec8ec0bdac38a1820664a7bc787649a1822b36edf5f0dcf1d1853d88a40a"
+      }
+    },
+    {
+      "game": "firered",
+      "pair": "building__rom_082d4eb4",
+      "mid": 696,
+      "sourceHash": "f19a6378dd9ff1f4bdbfad0cd57a2b3c5231d7a17e6c38cbd4f54e2fbdc5eb46",
+      "sourceLayers": {
+        "under": "f19a6378dd9ff1f4bdbfad0cd57a2b3c5231d7a17e6c38cbd4f54e2fbdc5eb46",
+        "mid": "f19a6378dd9ff1f4bdbfad0cd57a2b3c5231d7a17e6c38cbd4f54e2fbdc5eb46",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 105,
+      "contexts": [
+        {
+          "map": "FR_ROUTE_25_SEA_COTTAGE",
+          "x": 3,
+          "y": 3,
+          "before_mid": 662,
+          "layoutSHA256": "8ac8ae4516e9e423b76907473b4c6d63cee8704bb44a2cdca5f51e1f40ef08bf",
+          "impassable": true,
+          "origins": [
+            [
+              "special",
+              "g3:081706fa",
+              13,
+              "AnimateTeleporterHousing"
+            ],
+            [
+              "special",
+              "g3:081706fa",
+              23,
+              "AnimateTeleporterHousing"
+            ]
+          ]
+        },
+        {
+          "map": "FR_ROUTE_25_SEA_COTTAGE",
+          "x": 10,
+          "y": 3,
+          "before_mid": 662,
+          "layoutSHA256": "8ac8ae4516e9e423b76907473b4c6d63cee8704bb44a2cdca5f51e1f40ef08bf",
+          "impassable": true,
+          "origins": [
+            [
+              "special",
+              "g3:081706fa",
+              13,
+              "AnimateTeleporterHousing"
+            ],
+            [
+              "special",
+              "g3:081706fa",
+              23,
+              "AnimateTeleporterHousing"
+            ]
+          ]
+        }
+      ],
+      "base": {
+        "mid": 662,
+        "module": "mappings/reverse_gen2_kanto_final_houses.lua",
+        "semanticSHA256": "1226ec8ec0bdac38a1820664a7bc787649a1822b36edf5f0dcf1d1853d88a40a"
+      }
+    },
+    {
+      "game": "firered",
+      "pair": "building__rom_082d4eb4",
+      "mid": 697,
+      "sourceHash": "fffa1b7a2df3b82102b2e1846cc2c93ca694bf214f60b2f8255951667f6c8891",
+      "sourceLayers": {
+        "under": "fffa1b7a2df3b82102b2e1846cc2c93ca694bf214f60b2f8255951667f6c8891",
+        "mid": "20fa53aeeecacfa6c182f42a09bdaf89bd120b25a9bb101b74513cc87d814bfc",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 0,
+      "contexts": [
+        {
+          "map": "FR_ROUTE_25_SEA_COTTAGE",
+          "x": 5,
+          "y": 1,
+          "before_mid": 645,
+          "layoutSHA256": "8ac8ae4516e9e423b76907473b4c6d63cee8704bb44a2cdca5f51e1f40ef08bf",
+          "impassable": true,
+          "origins": [
+            [
+              "special",
+              "g3:081706fa",
+              25,
+              "AnimateTeleporterCable"
+            ]
+          ]
+        },
+        {
+          "map": "FR_ROUTE_25_SEA_COTTAGE",
+          "x": 6,
+          "y": 1,
+          "before_mid": 645,
+          "layoutSHA256": "8ac8ae4516e9e423b76907473b4c6d63cee8704bb44a2cdca5f51e1f40ef08bf",
+          "impassable": true,
+          "origins": [
+            [
+              "special",
+              "g3:081706fa",
+              25,
+              "AnimateTeleporterCable"
+            ]
+          ]
+        },
+        {
+          "map": "FR_ROUTE_25_SEA_COTTAGE",
+          "x": 7,
+          "y": 1,
+          "before_mid": 645,
+          "layoutSHA256": "8ac8ae4516e9e423b76907473b4c6d63cee8704bb44a2cdca5f51e1f40ef08bf",
+          "impassable": true,
+          "origins": [
+            [
+              "special",
+              "g3:081706fa",
+              25,
+              "AnimateTeleporterCable"
+            ]
+          ]
+        },
+        {
+          "map": "FR_ROUTE_25_SEA_COTTAGE",
+          "x": 8,
+          "y": 1,
+          "before_mid": 645,
+          "layoutSHA256": "8ac8ae4516e9e423b76907473b4c6d63cee8704bb44a2cdca5f51e1f40ef08bf",
+          "impassable": true,
+          "origins": [
+            [
+              "special",
+              "g3:081706fa",
+              25,
+              "AnimateTeleporterCable"
+            ]
+          ]
+        }
+      ],
+      "base": {
+        "mid": 645,
+        "module": "mappings/reverse_gen2_kanto_final_houses.lua",
+        "semanticSHA256": "a3f664259f8004246f66647cae04fb0f7fa7cf1b388d10a0c9d6171b9193e0de"
+      }
+    },
+    {
+      "game": "firered",
+      "pair": "building__rom_082d4eb4",
+      "mid": 698,
+      "sourceHash": "aac9c36d28371386b21b3a6b168b6024fbb83dbea8a456482f625070db02e519",
+      "sourceLayers": {
+        "under": "aac9c36d28371386b21b3a6b168b6024fbb83dbea8a456482f625070db02e519",
+        "mid": "2342e673b407c8297142f9efef86c46520c271bb1027b1dffdeef9adfb7b1495",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 0,
+      "contexts": [
+        {
+          "map": "FR_ROUTE_25_SEA_COTTAGE",
+          "x": 5,
+          "y": 2,
+          "before_mid": 692,
+          "layoutSHA256": "8ac8ae4516e9e423b76907473b4c6d63cee8704bb44a2cdca5f51e1f40ef08bf",
+          "impassable": true,
+          "origins": [
+            [
+              "special",
+              "g3:081706fa",
+              25,
+              "AnimateTeleporterCable"
+            ]
+          ]
+        },
+        {
+          "map": "FR_ROUTE_25_SEA_COTTAGE",
+          "x": 6,
+          "y": 2,
+          "before_mid": 692,
+          "layoutSHA256": "8ac8ae4516e9e423b76907473b4c6d63cee8704bb44a2cdca5f51e1f40ef08bf",
+          "impassable": true,
+          "origins": [
+            [
+              "special",
+              "g3:081706fa",
+              25,
+              "AnimateTeleporterCable"
+            ]
+          ]
+        },
+        {
+          "map": "FR_ROUTE_25_SEA_COTTAGE",
+          "x": 7,
+          "y": 2,
+          "before_mid": 692,
+          "layoutSHA256": "8ac8ae4516e9e423b76907473b4c6d63cee8704bb44a2cdca5f51e1f40ef08bf",
+          "impassable": true,
+          "origins": [
+            [
+              "special",
+              "g3:081706fa",
+              25,
+              "AnimateTeleporterCable"
+            ]
+          ]
+        },
+        {
+          "map": "FR_ROUTE_25_SEA_COTTAGE",
+          "x": 8,
+          "y": 2,
+          "before_mid": 692,
+          "layoutSHA256": "8ac8ae4516e9e423b76907473b4c6d63cee8704bb44a2cdca5f51e1f40ef08bf",
+          "impassable": true,
+          "origins": [
+            [
+              "special",
+              "g3:081706fa",
+              25,
+              "AnimateTeleporterCable"
+            ]
+          ]
+        }
+      ],
+      "base": {
+        "mid": 692,
+        "module": "mappings/reverse_gen2_kanto_final_houses.lua",
+        "semanticSHA256": "52c9cd24cba1d99620c92a7a3d726b5d4ad9a5d9254d57e27adf324d3dd707c8"
+      }
+    },
+    {
+      "game": "firered",
+      "pair": "general__rom_082d4bfc",
+      "mid": 775,
+      "sourceHash": "463991896e0e2c99731268407997e34bcb3e718ec7550d1a389b2a4f3920e372",
+      "sourceLayers": {
+        "under": "463991896e0e2c99731268407997e34bcb3e718ec7550d1a389b2a4f3920e372",
+        "mid": "e52dbead4bdbe8b1172d667e68ec268e82561de3a9d66c74aef26c61fb3f41ee",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 0,
+      "contexts": [
+        {
+          "map": "FR_VICTORY_ROAD_1F",
+          "x": 12,
+          "y": 14,
+          "before_mid": 721,
+          "layoutSHA256": "636a8f4c7d777f5adbe1b25e6e9aa0f1b419f9357f9a72cde8fe2f881606670d",
+          "impassable": true,
+          "origins": [
+            [
+              "script",
+              "g3:08160f1c",
+              0,
+              12,
+              14
+            ]
+          ]
+        },
+        {
+          "map": "FR_VICTORY_ROAD_2F",
+          "x": 33,
+          "y": 16,
+          "before_mid": 721,
+          "layoutSHA256": "8210fb99e2bf7e573ee6a6f7d19a0ef6df5a801d90d6c43d0dda35897d3d553b",
+          "impassable": true,
+          "origins": [
+            [
+              "script",
+              "g3:08160fc2",
+              0,
+              33,
+              16
+            ],
+            [
+              "script",
+              "g3:08160faf",
+              0,
+              13,
+              10
+            ]
+          ]
+        },
+        {
+          "map": "FR_VICTORY_ROAD_2F",
+          "x": 13,
+          "y": 10,
+          "before_mid": 721,
+          "layoutSHA256": "8210fb99e2bf7e573ee6a6f7d19a0ef6df5a801d90d6c43d0dda35897d3d553b",
+          "impassable": true,
+          "origins": [
+            [
+              "script",
+              "g3:08160fc2",
+              0,
+              33,
+              16
+            ],
+            [
+              "script",
+              "g3:08160faf",
+              0,
+              13,
+              10
+            ]
+          ]
+        },
+        {
+          "map": "FR_VICTORY_ROAD_3F",
+          "x": 12,
+          "y": 12,
+          "before_mid": 721,
+          "layoutSHA256": "d0d51f35144385ce720f88fed6b65bf9daaae5cd50dc7cdeb8d683da689c3871",
+          "impassable": true,
+          "origins": [
+            [
+              "script",
+              "g3:081610bc",
+              0,
+              12,
+              12
+            ]
+          ]
+        }
+      ],
+      "base": {
+        "mid": 792,
+        "module": "mappings/reverse_gen2_kanto_regional_caves_completion.lua",
+        "semanticSHA256": "6accb848c5981b4e3251bbe6f4dc385a2730588ef12c55983c68a6f779ab58ff"
+      }
+    },
+    {
+      "game": "firered",
+      "pair": "general__rom_082d4bfc",
+      "mid": 791,
+      "sourceHash": "b2ca615080fe814b86b686467d88f971775e1c6264d04402865d9779ce4c61e9",
+      "sourceLayers": {
+        "under": "b2ca615080fe814b86b686467d88f971775e1c6264d04402865d9779ce4c61e9",
+        "mid": "b326c8f37886e35be84ce58a3bcc04a3192eb2180b4fbad5ea65b198a99334d8",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 0,
+      "contexts": [
+        {
+          "map": "FR_VICTORY_ROAD_1F",
+          "x": 12,
+          "y": 15,
+          "before_mid": 737,
+          "layoutSHA256": "636a8f4c7d777f5adbe1b25e6e9aa0f1b419f9357f9a72cde8fe2f881606670d",
+          "impassable": true,
+          "origins": [
+            [
+              "script",
+              "g3:08160f1c",
+              1,
+              12,
+              15
+            ]
+          ]
+        },
+        {
+          "map": "FR_VICTORY_ROAD_2F",
+          "x": 33,
+          "y": 17,
+          "before_mid": 737,
+          "layoutSHA256": "8210fb99e2bf7e573ee6a6f7d19a0ef6df5a801d90d6c43d0dda35897d3d553b",
+          "impassable": true,
+          "origins": [
+            [
+              "script",
+              "g3:08160fc2",
+              1,
+              33,
+              17
+            ],
+            [
+              "script",
+              "g3:08160faf",
+              1,
+              13,
+              11
+            ]
+          ]
+        },
+        {
+          "map": "FR_VICTORY_ROAD_2F",
+          "x": 13,
+          "y": 11,
+          "before_mid": 737,
+          "layoutSHA256": "8210fb99e2bf7e573ee6a6f7d19a0ef6df5a801d90d6c43d0dda35897d3d553b",
+          "impassable": true,
+          "origins": [
+            [
+              "script",
+              "g3:08160fc2",
+              1,
+              33,
+              17
+            ],
+            [
+              "script",
+              "g3:08160faf",
+              1,
+              13,
+              11
+            ]
+          ]
+        },
+        {
+          "map": "FR_VICTORY_ROAD_3F",
+          "x": 12,
+          "y": 13,
+          "before_mid": 737,
+          "layoutSHA256": "d0d51f35144385ce720f88fed6b65bf9daaae5cd50dc7cdeb8d683da689c3871",
+          "impassable": true,
+          "origins": [
+            [
+              "script",
+              "g3:081610bc",
+              1,
+              12,
+              13
+            ]
+          ]
+        }
+      ],
+      "base": {
+        "mid": 792,
+        "module": "mappings/reverse_gen2_kanto_regional_caves_completion.lua",
+        "semanticSHA256": "6accb848c5981b4e3251bbe6f4dc385a2730588ef12c55983c68a6f779ab58ff"
+      }
+    },
+    {
+      "game": "firered",
+      "pair": "general__rom_082d4e24",
+      "mid": 858,
+      "sourceHash": "6b387d82a61e3b7526f10dc8acef046966abd5fd3f05cfbe1272de0d6f4d0125",
+      "sourceLayers": {
+        "under": "6b387d82a61e3b7526f10dc8acef046966abd5fd3f05cfbe1272de0d6f4d0125",
+        "mid": "6b387d82a61e3b7526f10dc8acef046966abd5fd3f05cfbe1272de0d6f4d0125",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 39,
+      "contexts": [
+        {
+          "map": "FR_FOUR_ISLAND_ICEFALL_CAVE_1F",
+          "x": 8,
+          "y": 3,
+          "before_mid": 857,
+          "layoutSHA256": "363498b9aa79883dc9c6c639c3f938a70511698d01e7dfe6b71b08f331373686",
+          "impassable": false,
+          "origins": [
+            [
+              "special",
+              "g3:08163d57",
+              0,
+              "SetIcefallCaveCrackedIceMetatiles"
+            ],
+            [
+              "forced_ice"
+            ]
+          ]
+        },
+        {
+          "map": "FR_FOUR_ISLAND_ICEFALL_CAVE_1F",
+          "x": 10,
+          "y": 5,
+          "before_mid": 857,
+          "layoutSHA256": "363498b9aa79883dc9c6c639c3f938a70511698d01e7dfe6b71b08f331373686",
+          "impassable": false,
+          "origins": [
+            [
+              "special",
+              "g3:08163d57",
+              0,
+              "SetIcefallCaveCrackedIceMetatiles"
+            ],
+            [
+              "forced_ice"
+            ]
+          ]
+        },
+        {
+          "map": "FR_FOUR_ISLAND_ICEFALL_CAVE_1F",
+          "x": 15,
+          "y": 5,
+          "before_mid": 857,
+          "layoutSHA256": "363498b9aa79883dc9c6c639c3f938a70511698d01e7dfe6b71b08f331373686",
+          "impassable": false,
+          "origins": [
+            [
+              "special",
+              "g3:08163d57",
+              0,
+              "SetIcefallCaveCrackedIceMetatiles"
+            ],
+            [
+              "forced_ice"
+            ]
+          ]
+        },
+        {
+          "map": "FR_FOUR_ISLAND_ICEFALL_CAVE_1F",
+          "x": 8,
+          "y": 9,
+          "before_mid": 857,
+          "layoutSHA256": "363498b9aa79883dc9c6c639c3f938a70511698d01e7dfe6b71b08f331373686",
+          "impassable": false,
+          "origins": [
+            [
+              "special",
+              "g3:08163d57",
+              0,
+              "SetIcefallCaveCrackedIceMetatiles"
+            ],
+            [
+              "forced_ice"
+            ]
+          ]
+        },
+        {
+          "map": "FR_FOUR_ISLAND_ICEFALL_CAVE_1F",
+          "x": 9,
+          "y": 9,
+          "before_mid": 857,
+          "layoutSHA256": "363498b9aa79883dc9c6c639c3f938a70511698d01e7dfe6b71b08f331373686",
+          "impassable": false,
+          "origins": [
+            [
+              "special",
+              "g3:08163d57",
+              0,
+              "SetIcefallCaveCrackedIceMetatiles"
+            ],
+            [
+              "forced_ice"
+            ]
+          ]
+        },
+        {
+          "map": "FR_FOUR_ISLAND_ICEFALL_CAVE_1F",
+          "x": 16,
+          "y": 9,
+          "before_mid": 857,
+          "layoutSHA256": "363498b9aa79883dc9c6c639c3f938a70511698d01e7dfe6b71b08f331373686",
+          "impassable": false,
+          "origins": [
+            [
+              "special",
+              "g3:08163d57",
+              0,
+              "SetIcefallCaveCrackedIceMetatiles"
+            ],
+            [
+              "forced_ice"
+            ]
+          ]
+        },
+        {
+          "map": "FR_FOUR_ISLAND_ICEFALL_CAVE_1F",
+          "x": 8,
+          "y": 10,
+          "before_mid": 857,
+          "layoutSHA256": "363498b9aa79883dc9c6c639c3f938a70511698d01e7dfe6b71b08f331373686",
+          "impassable": false,
+          "origins": [
+            [
+              "special",
+              "g3:08163d57",
+              0,
+              "SetIcefallCaveCrackedIceMetatiles"
+            ],
+            [
+              "forced_ice"
+            ]
+          ]
+        },
+        {
+          "map": "FR_FOUR_ISLAND_ICEFALL_CAVE_1F",
+          "x": 9,
+          "y": 10,
+          "before_mid": 857,
+          "layoutSHA256": "363498b9aa79883dc9c6c639c3f938a70511698d01e7dfe6b71b08f331373686",
+          "impassable": false,
+          "origins": [
+            [
+              "special",
+              "g3:08163d57",
+              0,
+              "SetIcefallCaveCrackedIceMetatiles"
+            ],
+            [
+              "forced_ice"
+            ]
+          ]
+        },
+        {
+          "map": "FR_FOUR_ISLAND_ICEFALL_CAVE_1F",
+          "x": 8,
+          "y": 14,
+          "before_mid": 857,
+          "layoutSHA256": "363498b9aa79883dc9c6c639c3f938a70511698d01e7dfe6b71b08f331373686",
+          "impassable": false,
+          "origins": [
+            [
+              "special",
+              "g3:08163d57",
+              0,
+              "SetIcefallCaveCrackedIceMetatiles"
+            ],
+            [
+              "forced_ice"
+            ]
+          ]
+        }
+      ],
+      "base": {
+        "mid": 857,
+        "module": "mappings/reverse_gen2_kanto_regional_caves_completion.lua",
+        "semanticSHA256": "d6430216b0d1c6640c115cd717956d2c99459dde97cc5f5621589c256b12df32"
+      }
+    },
+    {
+      "game": "firered",
+      "pair": "general__rom_082d4e24",
+      "mid": 859,
+      "sourceHash": "52cba71dfe8237ab35caa125bb695ae806ee5a93081285eeeedfd16f735d6273",
+      "sourceLayers": {
+        "under": "52cba71dfe8237ab35caa125bb695ae806ee5a93081285eeeedfd16f735d6273",
+        "mid": "52cba71dfe8237ab35caa125bb695ae806ee5a93081285eeeedfd16f735d6273",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 102,
+      "contexts": [
+        {
+          "map": "FR_FOUR_ISLAND_ICEFALL_CAVE_1F",
+          "x": 8,
+          "y": 3,
+          "before_mid": 857,
+          "layoutSHA256": "363498b9aa79883dc9c6c639c3f938a70511698d01e7dfe6b71b08f331373686",
+          "impassable": false,
+          "origins": [
+            [
+              "forced_ice"
+            ]
+          ]
+        },
+        {
+          "map": "FR_FOUR_ISLAND_ICEFALL_CAVE_1F",
+          "x": 10,
+          "y": 5,
+          "before_mid": 857,
+          "layoutSHA256": "363498b9aa79883dc9c6c639c3f938a70511698d01e7dfe6b71b08f331373686",
+          "impassable": false,
+          "origins": [
+            [
+              "forced_ice"
+            ]
+          ]
+        },
+        {
+          "map": "FR_FOUR_ISLAND_ICEFALL_CAVE_1F",
+          "x": 15,
+          "y": 5,
+          "before_mid": 857,
+          "layoutSHA256": "363498b9aa79883dc9c6c639c3f938a70511698d01e7dfe6b71b08f331373686",
+          "impassable": false,
+          "origins": [
+            [
+              "forced_ice"
+            ]
+          ]
+        },
+        {
+          "map": "FR_FOUR_ISLAND_ICEFALL_CAVE_1F",
+          "x": 8,
+          "y": 9,
+          "before_mid": 857,
+          "layoutSHA256": "363498b9aa79883dc9c6c639c3f938a70511698d01e7dfe6b71b08f331373686",
+          "impassable": false,
+          "origins": [
+            [
+              "forced_ice"
+            ]
+          ]
+        },
+        {
+          "map": "FR_FOUR_ISLAND_ICEFALL_CAVE_1F",
+          "x": 9,
+          "y": 9,
+          "before_mid": 857,
+          "layoutSHA256": "363498b9aa79883dc9c6c639c3f938a70511698d01e7dfe6b71b08f331373686",
+          "impassable": false,
+          "origins": [
+            [
+              "forced_ice"
+            ]
+          ]
+        },
+        {
+          "map": "FR_FOUR_ISLAND_ICEFALL_CAVE_1F",
+          "x": 16,
+          "y": 9,
+          "before_mid": 857,
+          "layoutSHA256": "363498b9aa79883dc9c6c639c3f938a70511698d01e7dfe6b71b08f331373686",
+          "impassable": false,
+          "origins": [
+            [
+              "forced_ice"
+            ]
+          ]
+        },
+        {
+          "map": "FR_FOUR_ISLAND_ICEFALL_CAVE_1F",
+          "x": 8,
+          "y": 10,
+          "before_mid": 857,
+          "layoutSHA256": "363498b9aa79883dc9c6c639c3f938a70511698d01e7dfe6b71b08f331373686",
+          "impassable": false,
+          "origins": [
+            [
+              "forced_ice"
+            ]
+          ]
+        },
+        {
+          "map": "FR_FOUR_ISLAND_ICEFALL_CAVE_1F",
+          "x": 9,
+          "y": 10,
+          "before_mid": 857,
+          "layoutSHA256": "363498b9aa79883dc9c6c639c3f938a70511698d01e7dfe6b71b08f331373686",
+          "impassable": false,
+          "origins": [
+            [
+              "forced_ice"
+            ]
+          ]
+        },
+        {
+          "map": "FR_FOUR_ISLAND_ICEFALL_CAVE_1F",
+          "x": 8,
+          "y": 14,
+          "before_mid": 857,
+          "layoutSHA256": "363498b9aa79883dc9c6c639c3f938a70511698d01e7dfe6b71b08f331373686",
+          "impassable": false,
+          "origins": [
+            [
+              "forced_ice"
+            ]
+          ]
+        }
+      ],
+      "base": {
+        "mid": 857,
+        "module": "mappings/reverse_gen2_kanto_regional_caves_completion.lua",
+        "semanticSHA256": "d6430216b0d1c6640c115cd717956d2c99459dde97cc5f5621589c256b12df32"
+      }
+    },
+    {
+      "game": "firered",
+      "pair": "general__rom_082d5064",
+      "mid": 687,
+      "sourceHash": "e25d894fe55c8f4a2261ed4a071ad9f7a1bcd5b3c1e5093048a58371fdbb66f1",
+      "sourceLayers": {
+        "under": "e25d894fe55c8f4a2261ed4a071ad9f7a1bcd5b3c1e5093048a58371fdbb66f1",
+        "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 105,
+      "contexts": [
+        {
+          "map": "FR_FIVE_ISLAND_MEADOW",
+          "x": 12,
+          "y": 21,
+          "before_mid": 779,
+          "layoutSHA256": "52ac138d0cebb74c0041a3262ea0e2148215e50ad55a3d092e3a023144691162",
+          "impassable": true,
+          "origins": [
+            [
+              "script",
+              "g3:08168983",
+              0,
+              12,
+              21
+            ]
+          ]
+        }
+      ],
+      "base": {
+        "mid": 779,
+        "module": "mappings/reverse_gen2_four_five_outdoor_completion.lua",
+        "semanticSHA256": "c6724d31d2bfc91647ba8ffafdeb1e142e75c4aa95d04a07d419ae8b1966fd7e"
+      }
+    },
+    {
+      "game": "firered",
+      "pair": "general__rom_082d507c",
+      "mid": 856,
+      "sourceHash": "3656f5f323ee8b14e9ed7b9c0c3300f88397c1842dfd827bdb8fbcc9ac131c72",
+      "sourceLayers": {
+        "under": "3656f5f323ee8b14e9ed7b9c0c3300f88397c1842dfd827bdb8fbcc9ac131c72",
+        "mid": "3656f5f323ee8b14e9ed7b9c0c3300f88397c1842dfd827bdb8fbcc9ac131c72",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 96,
+      "contexts": [
+        {
+          "map": "FR_SIX_ISLAND_RUIN_VALLEY",
+          "x": 24,
+          "y": 24,
+          "before_mid": 855,
+          "layoutSHA256": "b26a133979c2d5ca2e7d731c462240b689efa2c7e21b4f7202c945a822dd8d38",
+          "impassable": false,
+          "origins": [
+            [
+              "script",
+              "g3:08168b63",
+              0,
+              24,
+              24
+            ],
+            [
+              "ruin_valley_cut_entrance",
+              24,
+              24
+            ]
+          ]
+        }
+      ],
+      "base": {
+        "mid": 855,
+        "module": "mappings/reverse_gen2_sevii_outdoor_completion.lua",
+        "semanticSHA256": "0c66e59e91da12041e2153a672421c7bb5c0edcb9230dcf4915296c644efa7d6"
+      }
+    },
+    {
+      "game": "leafgreen",
+      "pair": "building__rom_082d4e94",
+      "mid": 693,
+      "sourceHash": "2cc2ff4d38096a136869399a7e5d076eae14a1c4fd1fef47109d84e7c00a064b",
+      "sourceLayers": {
+        "under": "2cc2ff4d38096a136869399a7e5d076eae14a1c4fd1fef47109d84e7c00a064b",
+        "mid": "2cc2ff4d38096a136869399a7e5d076eae14a1c4fd1fef47109d84e7c00a064b",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 0,
+      "contexts": [
+        {
+          "map": "FR_ROUTE_25_SEA_COTTAGE",
+          "x": 3,
+          "y": 1,
+          "before_mid": 650,
+          "layoutSHA256": "8ac8ae4516e9e423b76907473b4c6d63cee8704bb44a2cdca5f51e1f40ef08bf",
+          "impassable": true,
+          "origins": [
+            [
+              "special",
+              "g3:081706d6",
+              13,
+              "AnimateTeleporterHousing"
+            ],
+            [
+              "special",
+              "g3:081706d6",
+              23,
+              "AnimateTeleporterHousing"
+            ]
+          ]
+        },
+        {
+          "map": "FR_ROUTE_25_SEA_COTTAGE",
+          "x": 10,
+          "y": 1,
+          "before_mid": 650,
+          "layoutSHA256": "8ac8ae4516e9e423b76907473b4c6d63cee8704bb44a2cdca5f51e1f40ef08bf",
+          "impassable": true,
+          "origins": [
+            [
+              "special",
+              "g3:081706d6",
+              13,
+              "AnimateTeleporterHousing"
+            ],
+            [
+              "special",
+              "g3:081706d6",
+              23,
+              "AnimateTeleporterHousing"
+            ]
+          ]
+        }
+      ],
+      "base": {
+        "mid": 650,
+        "module": "mappings/reverse_gen2_kanto_final_houses.lua",
+        "semanticSHA256": "f51ddaa2e31516548068308b2f85a5d5fd825418c43071cdc78b0febe1a46986"
+      }
+    },
+    {
+      "game": "leafgreen",
+      "pair": "building__rom_082d4e94",
+      "mid": 694,
+      "sourceHash": "5a39e1dcf47ff074bd1f7b4110bd0591b74391268d3a13d5283f1a4ad3a4d43f",
+      "sourceLayers": {
+        "under": "5a39e1dcf47ff074bd1f7b4110bd0591b74391268d3a13d5283f1a4ad3a4d43f",
+        "mid": "5a39e1dcf47ff074bd1f7b4110bd0591b74391268d3a13d5283f1a4ad3a4d43f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 0,
+      "contexts": [
+        {
+          "map": "FR_ROUTE_25_SEA_COTTAGE",
+          "x": 3,
+          "y": 1,
+          "before_mid": 650,
+          "layoutSHA256": "8ac8ae4516e9e423b76907473b4c6d63cee8704bb44a2cdca5f51e1f40ef08bf",
+          "impassable": true,
+          "origins": [
+            [
+              "special",
+              "g3:081706d6",
+              13,
+              "AnimateTeleporterHousing"
+            ],
+            [
+              "special",
+              "g3:081706d6",
+              23,
+              "AnimateTeleporterHousing"
+            ]
+          ]
+        },
+        {
+          "map": "FR_ROUTE_25_SEA_COTTAGE",
+          "x": 10,
+          "y": 1,
+          "before_mid": 650,
+          "layoutSHA256": "8ac8ae4516e9e423b76907473b4c6d63cee8704bb44a2cdca5f51e1f40ef08bf",
+          "impassable": true,
+          "origins": [
+            [
+              "special",
+              "g3:081706d6",
+              13,
+              "AnimateTeleporterHousing"
+            ],
+            [
+              "special",
+              "g3:081706d6",
+              23,
+              "AnimateTeleporterHousing"
+            ]
+          ]
+        }
+      ],
+      "base": {
+        "mid": 650,
+        "module": "mappings/reverse_gen2_kanto_final_houses.lua",
+        "semanticSHA256": "f51ddaa2e31516548068308b2f85a5d5fd825418c43071cdc78b0febe1a46986"
+      }
+    },
+    {
+      "game": "leafgreen",
+      "pair": "building__rom_082d4e94",
+      "mid": 695,
+      "sourceHash": "0416267308e509aa2827f413ead4b39dd34413a9a3738d91d4118bc44da187c5",
+      "sourceLayers": {
+        "under": "0416267308e509aa2827f413ead4b39dd34413a9a3738d91d4118bc44da187c5",
+        "mid": "0416267308e509aa2827f413ead4b39dd34413a9a3738d91d4118bc44da187c5",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 105,
+      "contexts": [
+        {
+          "map": "FR_ROUTE_25_SEA_COTTAGE",
+          "x": 3,
+          "y": 3,
+          "before_mid": 662,
+          "layoutSHA256": "8ac8ae4516e9e423b76907473b4c6d63cee8704bb44a2cdca5f51e1f40ef08bf",
+          "impassable": true,
+          "origins": [
+            [
+              "special",
+              "g3:081706d6",
+              13,
+              "AnimateTeleporterHousing"
+            ],
+            [
+              "special",
+              "g3:081706d6",
+              23,
+              "AnimateTeleporterHousing"
+            ]
+          ]
+        },
+        {
+          "map": "FR_ROUTE_25_SEA_COTTAGE",
+          "x": 10,
+          "y": 3,
+          "before_mid": 662,
+          "layoutSHA256": "8ac8ae4516e9e423b76907473b4c6d63cee8704bb44a2cdca5f51e1f40ef08bf",
+          "impassable": true,
+          "origins": [
+            [
+              "special",
+              "g3:081706d6",
+              13,
+              "AnimateTeleporterHousing"
+            ],
+            [
+              "special",
+              "g3:081706d6",
+              23,
+              "AnimateTeleporterHousing"
+            ]
+          ]
+        }
+      ],
+      "base": {
+        "mid": 662,
+        "module": "mappings/reverse_gen2_kanto_final_houses.lua",
+        "semanticSHA256": "4c638eac28aa6775de42ae1263579c54b9a3335e14b0e7e176c3c5162383cc23"
+      }
+    },
+    {
+      "game": "leafgreen",
+      "pair": "building__rom_082d4e94",
+      "mid": 696,
+      "sourceHash": "f19a6378dd9ff1f4bdbfad0cd57a2b3c5231d7a17e6c38cbd4f54e2fbdc5eb46",
+      "sourceLayers": {
+        "under": "f19a6378dd9ff1f4bdbfad0cd57a2b3c5231d7a17e6c38cbd4f54e2fbdc5eb46",
+        "mid": "f19a6378dd9ff1f4bdbfad0cd57a2b3c5231d7a17e6c38cbd4f54e2fbdc5eb46",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 105,
+      "contexts": [
+        {
+          "map": "FR_ROUTE_25_SEA_COTTAGE",
+          "x": 3,
+          "y": 3,
+          "before_mid": 662,
+          "layoutSHA256": "8ac8ae4516e9e423b76907473b4c6d63cee8704bb44a2cdca5f51e1f40ef08bf",
+          "impassable": true,
+          "origins": [
+            [
+              "special",
+              "g3:081706d6",
+              13,
+              "AnimateTeleporterHousing"
+            ],
+            [
+              "special",
+              "g3:081706d6",
+              23,
+              "AnimateTeleporterHousing"
+            ]
+          ]
+        },
+        {
+          "map": "FR_ROUTE_25_SEA_COTTAGE",
+          "x": 10,
+          "y": 3,
+          "before_mid": 662,
+          "layoutSHA256": "8ac8ae4516e9e423b76907473b4c6d63cee8704bb44a2cdca5f51e1f40ef08bf",
+          "impassable": true,
+          "origins": [
+            [
+              "special",
+              "g3:081706d6",
+              13,
+              "AnimateTeleporterHousing"
+            ],
+            [
+              "special",
+              "g3:081706d6",
+              23,
+              "AnimateTeleporterHousing"
+            ]
+          ]
+        }
+      ],
+      "base": {
+        "mid": 662,
+        "module": "mappings/reverse_gen2_kanto_final_houses.lua",
+        "semanticSHA256": "4c638eac28aa6775de42ae1263579c54b9a3335e14b0e7e176c3c5162383cc23"
+      }
+    },
+    {
+      "game": "leafgreen",
+      "pair": "building__rom_082d4e94",
+      "mid": 697,
+      "sourceHash": "fffa1b7a2df3b82102b2e1846cc2c93ca694bf214f60b2f8255951667f6c8891",
+      "sourceLayers": {
+        "under": "fffa1b7a2df3b82102b2e1846cc2c93ca694bf214f60b2f8255951667f6c8891",
+        "mid": "20fa53aeeecacfa6c182f42a09bdaf89bd120b25a9bb101b74513cc87d814bfc",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 0,
+      "contexts": [
+        {
+          "map": "FR_ROUTE_25_SEA_COTTAGE",
+          "x": 5,
+          "y": 1,
+          "before_mid": 645,
+          "layoutSHA256": "8ac8ae4516e9e423b76907473b4c6d63cee8704bb44a2cdca5f51e1f40ef08bf",
+          "impassable": true,
+          "origins": [
+            [
+              "special",
+              "g3:081706d6",
+              25,
+              "AnimateTeleporterCable"
+            ]
+          ]
+        },
+        {
+          "map": "FR_ROUTE_25_SEA_COTTAGE",
+          "x": 6,
+          "y": 1,
+          "before_mid": 645,
+          "layoutSHA256": "8ac8ae4516e9e423b76907473b4c6d63cee8704bb44a2cdca5f51e1f40ef08bf",
+          "impassable": true,
+          "origins": [
+            [
+              "special",
+              "g3:081706d6",
+              25,
+              "AnimateTeleporterCable"
+            ]
+          ]
+        },
+        {
+          "map": "FR_ROUTE_25_SEA_COTTAGE",
+          "x": 7,
+          "y": 1,
+          "before_mid": 645,
+          "layoutSHA256": "8ac8ae4516e9e423b76907473b4c6d63cee8704bb44a2cdca5f51e1f40ef08bf",
+          "impassable": true,
+          "origins": [
+            [
+              "special",
+              "g3:081706d6",
+              25,
+              "AnimateTeleporterCable"
+            ]
+          ]
+        },
+        {
+          "map": "FR_ROUTE_25_SEA_COTTAGE",
+          "x": 8,
+          "y": 1,
+          "before_mid": 645,
+          "layoutSHA256": "8ac8ae4516e9e423b76907473b4c6d63cee8704bb44a2cdca5f51e1f40ef08bf",
+          "impassable": true,
+          "origins": [
+            [
+              "special",
+              "g3:081706d6",
+              25,
+              "AnimateTeleporterCable"
+            ]
+          ]
+        }
+      ],
+      "base": {
+        "mid": 645,
+        "module": "mappings/reverse_gen2_kanto_final_houses.lua",
+        "semanticSHA256": "1711f43ba109fee5380958b83fd29c6ea15270272d8e5c9362bf63ecc1484531"
+      }
+    },
+    {
+      "game": "leafgreen",
+      "pair": "building__rom_082d4e94",
+      "mid": 698,
+      "sourceHash": "aac9c36d28371386b21b3a6b168b6024fbb83dbea8a456482f625070db02e519",
+      "sourceLayers": {
+        "under": "aac9c36d28371386b21b3a6b168b6024fbb83dbea8a456482f625070db02e519",
+        "mid": "2342e673b407c8297142f9efef86c46520c271bb1027b1dffdeef9adfb7b1495",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 0,
+      "contexts": [
+        {
+          "map": "FR_ROUTE_25_SEA_COTTAGE",
+          "x": 5,
+          "y": 2,
+          "before_mid": 692,
+          "layoutSHA256": "8ac8ae4516e9e423b76907473b4c6d63cee8704bb44a2cdca5f51e1f40ef08bf",
+          "impassable": true,
+          "origins": [
+            [
+              "special",
+              "g3:081706d6",
+              25,
+              "AnimateTeleporterCable"
+            ]
+          ]
+        },
+        {
+          "map": "FR_ROUTE_25_SEA_COTTAGE",
+          "x": 6,
+          "y": 2,
+          "before_mid": 692,
+          "layoutSHA256": "8ac8ae4516e9e423b76907473b4c6d63cee8704bb44a2cdca5f51e1f40ef08bf",
+          "impassable": true,
+          "origins": [
+            [
+              "special",
+              "g3:081706d6",
+              25,
+              "AnimateTeleporterCable"
+            ]
+          ]
+        },
+        {
+          "map": "FR_ROUTE_25_SEA_COTTAGE",
+          "x": 7,
+          "y": 2,
+          "before_mid": 692,
+          "layoutSHA256": "8ac8ae4516e9e423b76907473b4c6d63cee8704bb44a2cdca5f51e1f40ef08bf",
+          "impassable": true,
+          "origins": [
+            [
+              "special",
+              "g3:081706d6",
+              25,
+              "AnimateTeleporterCable"
+            ]
+          ]
+        },
+        {
+          "map": "FR_ROUTE_25_SEA_COTTAGE",
+          "x": 8,
+          "y": 2,
+          "before_mid": 692,
+          "layoutSHA256": "8ac8ae4516e9e423b76907473b4c6d63cee8704bb44a2cdca5f51e1f40ef08bf",
+          "impassable": true,
+          "origins": [
+            [
+              "special",
+              "g3:081706d6",
+              25,
+              "AnimateTeleporterCable"
+            ]
+          ]
+        }
+      ],
+      "base": {
+        "mid": 692,
+        "module": "mappings/reverse_gen2_kanto_final_houses.lua",
+        "semanticSHA256": "106d96788e392dc7b93548ffc76c55b8466a2bccdf4bffb898a75f39825b0a2e"
+      }
+    },
+    {
+      "game": "leafgreen",
+      "pair": "general__rom_082d4bdc",
+      "mid": 775,
+      "sourceHash": "463991896e0e2c99731268407997e34bcb3e718ec7550d1a389b2a4f3920e372",
+      "sourceLayers": {
+        "under": "463991896e0e2c99731268407997e34bcb3e718ec7550d1a389b2a4f3920e372",
+        "mid": "e52dbead4bdbe8b1172d667e68ec268e82561de3a9d66c74aef26c61fb3f41ee",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 0,
+      "contexts": [
+        {
+          "map": "FR_VICTORY_ROAD_1F",
+          "x": 12,
+          "y": 14,
+          "before_mid": 721,
+          "layoutSHA256": "636a8f4c7d777f5adbe1b25e6e9aa0f1b419f9357f9a72cde8fe2f881606670d",
+          "impassable": true,
+          "origins": [
+            [
+              "script",
+              "g3:08160ef8",
+              0,
+              12,
+              14
+            ]
+          ]
+        },
+        {
+          "map": "FR_VICTORY_ROAD_2F",
+          "x": 33,
+          "y": 16,
+          "before_mid": 721,
+          "layoutSHA256": "8210fb99e2bf7e573ee6a6f7d19a0ef6df5a801d90d6c43d0dda35897d3d553b",
+          "impassable": true,
+          "origins": [
+            [
+              "script",
+              "g3:08160f9e",
+              0,
+              33,
+              16
+            ],
+            [
+              "script",
+              "g3:08160f8b",
+              0,
+              13,
+              10
+            ]
+          ]
+        },
+        {
+          "map": "FR_VICTORY_ROAD_2F",
+          "x": 13,
+          "y": 10,
+          "before_mid": 721,
+          "layoutSHA256": "8210fb99e2bf7e573ee6a6f7d19a0ef6df5a801d90d6c43d0dda35897d3d553b",
+          "impassable": true,
+          "origins": [
+            [
+              "script",
+              "g3:08160f9e",
+              0,
+              33,
+              16
+            ],
+            [
+              "script",
+              "g3:08160f8b",
+              0,
+              13,
+              10
+            ]
+          ]
+        },
+        {
+          "map": "FR_VICTORY_ROAD_3F",
+          "x": 12,
+          "y": 12,
+          "before_mid": 721,
+          "layoutSHA256": "d0d51f35144385ce720f88fed6b65bf9daaae5cd50dc7cdeb8d683da689c3871",
+          "impassable": true,
+          "origins": [
+            [
+              "script",
+              "g3:08161098",
+              0,
+              12,
+              12
+            ]
+          ]
+        }
+      ],
+      "base": {
+        "mid": 792,
+        "module": "mappings/reverse_gen2_kanto_regional_caves_completion.lua",
+        "semanticSHA256": "faa769199b769dfa35d72216fa26e197bed560d4e12ec67c94af55d6a1e764b6"
+      }
+    },
+    {
+      "game": "leafgreen",
+      "pair": "general__rom_082d4bdc",
+      "mid": 791,
+      "sourceHash": "b2ca615080fe814b86b686467d88f971775e1c6264d04402865d9779ce4c61e9",
+      "sourceLayers": {
+        "under": "b2ca615080fe814b86b686467d88f971775e1c6264d04402865d9779ce4c61e9",
+        "mid": "b326c8f37886e35be84ce58a3bcc04a3192eb2180b4fbad5ea65b198a99334d8",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 0,
+      "contexts": [
+        {
+          "map": "FR_VICTORY_ROAD_1F",
+          "x": 12,
+          "y": 15,
+          "before_mid": 737,
+          "layoutSHA256": "636a8f4c7d777f5adbe1b25e6e9aa0f1b419f9357f9a72cde8fe2f881606670d",
+          "impassable": true,
+          "origins": [
+            [
+              "script",
+              "g3:08160ef8",
+              1,
+              12,
+              15
+            ]
+          ]
+        },
+        {
+          "map": "FR_VICTORY_ROAD_2F",
+          "x": 33,
+          "y": 17,
+          "before_mid": 737,
+          "layoutSHA256": "8210fb99e2bf7e573ee6a6f7d19a0ef6df5a801d90d6c43d0dda35897d3d553b",
+          "impassable": true,
+          "origins": [
+            [
+              "script",
+              "g3:08160f9e",
+              1,
+              33,
+              17
+            ],
+            [
+              "script",
+              "g3:08160f8b",
+              1,
+              13,
+              11
+            ]
+          ]
+        },
+        {
+          "map": "FR_VICTORY_ROAD_2F",
+          "x": 13,
+          "y": 11,
+          "before_mid": 737,
+          "layoutSHA256": "8210fb99e2bf7e573ee6a6f7d19a0ef6df5a801d90d6c43d0dda35897d3d553b",
+          "impassable": true,
+          "origins": [
+            [
+              "script",
+              "g3:08160f9e",
+              1,
+              33,
+              17
+            ],
+            [
+              "script",
+              "g3:08160f8b",
+              1,
+              13,
+              11
+            ]
+          ]
+        },
+        {
+          "map": "FR_VICTORY_ROAD_3F",
+          "x": 12,
+          "y": 13,
+          "before_mid": 737,
+          "layoutSHA256": "d0d51f35144385ce720f88fed6b65bf9daaae5cd50dc7cdeb8d683da689c3871",
+          "impassable": true,
+          "origins": [
+            [
+              "script",
+              "g3:08161098",
+              1,
+              12,
+              13
+            ]
+          ]
+        }
+      ],
+      "base": {
+        "mid": 792,
+        "module": "mappings/reverse_gen2_kanto_regional_caves_completion.lua",
+        "semanticSHA256": "faa769199b769dfa35d72216fa26e197bed560d4e12ec67c94af55d6a1e764b6"
+      }
+    },
+    {
+      "game": "leafgreen",
+      "pair": "general__rom_082d4e04",
+      "mid": 858,
+      "sourceHash": "6b387d82a61e3b7526f10dc8acef046966abd5fd3f05cfbe1272de0d6f4d0125",
+      "sourceLayers": {
+        "under": "6b387d82a61e3b7526f10dc8acef046966abd5fd3f05cfbe1272de0d6f4d0125",
+        "mid": "6b387d82a61e3b7526f10dc8acef046966abd5fd3f05cfbe1272de0d6f4d0125",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 39,
+      "contexts": [
+        {
+          "map": "FR_FOUR_ISLAND_ICEFALL_CAVE_1F",
+          "x": 8,
+          "y": 3,
+          "before_mid": 857,
+          "layoutSHA256": "363498b9aa79883dc9c6c639c3f938a70511698d01e7dfe6b71b08f331373686",
+          "impassable": false,
+          "origins": [
+            [
+              "special",
+              "g3:08163d33",
+              0,
+              "SetIcefallCaveCrackedIceMetatiles"
+            ],
+            [
+              "forced_ice"
+            ]
+          ]
+        },
+        {
+          "map": "FR_FOUR_ISLAND_ICEFALL_CAVE_1F",
+          "x": 10,
+          "y": 5,
+          "before_mid": 857,
+          "layoutSHA256": "363498b9aa79883dc9c6c639c3f938a70511698d01e7dfe6b71b08f331373686",
+          "impassable": false,
+          "origins": [
+            [
+              "special",
+              "g3:08163d33",
+              0,
+              "SetIcefallCaveCrackedIceMetatiles"
+            ],
+            [
+              "forced_ice"
+            ]
+          ]
+        },
+        {
+          "map": "FR_FOUR_ISLAND_ICEFALL_CAVE_1F",
+          "x": 15,
+          "y": 5,
+          "before_mid": 857,
+          "layoutSHA256": "363498b9aa79883dc9c6c639c3f938a70511698d01e7dfe6b71b08f331373686",
+          "impassable": false,
+          "origins": [
+            [
+              "special",
+              "g3:08163d33",
+              0,
+              "SetIcefallCaveCrackedIceMetatiles"
+            ],
+            [
+              "forced_ice"
+            ]
+          ]
+        },
+        {
+          "map": "FR_FOUR_ISLAND_ICEFALL_CAVE_1F",
+          "x": 8,
+          "y": 9,
+          "before_mid": 857,
+          "layoutSHA256": "363498b9aa79883dc9c6c639c3f938a70511698d01e7dfe6b71b08f331373686",
+          "impassable": false,
+          "origins": [
+            [
+              "special",
+              "g3:08163d33",
+              0,
+              "SetIcefallCaveCrackedIceMetatiles"
+            ],
+            [
+              "forced_ice"
+            ]
+          ]
+        },
+        {
+          "map": "FR_FOUR_ISLAND_ICEFALL_CAVE_1F",
+          "x": 9,
+          "y": 9,
+          "before_mid": 857,
+          "layoutSHA256": "363498b9aa79883dc9c6c639c3f938a70511698d01e7dfe6b71b08f331373686",
+          "impassable": false,
+          "origins": [
+            [
+              "special",
+              "g3:08163d33",
+              0,
+              "SetIcefallCaveCrackedIceMetatiles"
+            ],
+            [
+              "forced_ice"
+            ]
+          ]
+        },
+        {
+          "map": "FR_FOUR_ISLAND_ICEFALL_CAVE_1F",
+          "x": 16,
+          "y": 9,
+          "before_mid": 857,
+          "layoutSHA256": "363498b9aa79883dc9c6c639c3f938a70511698d01e7dfe6b71b08f331373686",
+          "impassable": false,
+          "origins": [
+            [
+              "special",
+              "g3:08163d33",
+              0,
+              "SetIcefallCaveCrackedIceMetatiles"
+            ],
+            [
+              "forced_ice"
+            ]
+          ]
+        },
+        {
+          "map": "FR_FOUR_ISLAND_ICEFALL_CAVE_1F",
+          "x": 8,
+          "y": 10,
+          "before_mid": 857,
+          "layoutSHA256": "363498b9aa79883dc9c6c639c3f938a70511698d01e7dfe6b71b08f331373686",
+          "impassable": false,
+          "origins": [
+            [
+              "special",
+              "g3:08163d33",
+              0,
+              "SetIcefallCaveCrackedIceMetatiles"
+            ],
+            [
+              "forced_ice"
+            ]
+          ]
+        },
+        {
+          "map": "FR_FOUR_ISLAND_ICEFALL_CAVE_1F",
+          "x": 9,
+          "y": 10,
+          "before_mid": 857,
+          "layoutSHA256": "363498b9aa79883dc9c6c639c3f938a70511698d01e7dfe6b71b08f331373686",
+          "impassable": false,
+          "origins": [
+            [
+              "special",
+              "g3:08163d33",
+              0,
+              "SetIcefallCaveCrackedIceMetatiles"
+            ],
+            [
+              "forced_ice"
+            ]
+          ]
+        },
+        {
+          "map": "FR_FOUR_ISLAND_ICEFALL_CAVE_1F",
+          "x": 8,
+          "y": 14,
+          "before_mid": 857,
+          "layoutSHA256": "363498b9aa79883dc9c6c639c3f938a70511698d01e7dfe6b71b08f331373686",
+          "impassable": false,
+          "origins": [
+            [
+              "special",
+              "g3:08163d33",
+              0,
+              "SetIcefallCaveCrackedIceMetatiles"
+            ],
+            [
+              "forced_ice"
+            ]
+          ]
+        }
+      ],
+      "base": {
+        "mid": 857,
+        "module": "mappings/reverse_gen2_kanto_regional_caves_completion.lua",
+        "semanticSHA256": "1bcb9d8e68376b699d75c58eb3ed44447fd6cd05b56807dc8fa527c54fa90838"
+      }
+    },
+    {
+      "game": "leafgreen",
+      "pair": "general__rom_082d4e04",
+      "mid": 859,
+      "sourceHash": "52cba71dfe8237ab35caa125bb695ae806ee5a93081285eeeedfd16f735d6273",
+      "sourceLayers": {
+        "under": "52cba71dfe8237ab35caa125bb695ae806ee5a93081285eeeedfd16f735d6273",
+        "mid": "52cba71dfe8237ab35caa125bb695ae806ee5a93081285eeeedfd16f735d6273",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 102,
+      "contexts": [
+        {
+          "map": "FR_FOUR_ISLAND_ICEFALL_CAVE_1F",
+          "x": 8,
+          "y": 3,
+          "before_mid": 857,
+          "layoutSHA256": "363498b9aa79883dc9c6c639c3f938a70511698d01e7dfe6b71b08f331373686",
+          "impassable": false,
+          "origins": [
+            [
+              "forced_ice"
+            ]
+          ]
+        },
+        {
+          "map": "FR_FOUR_ISLAND_ICEFALL_CAVE_1F",
+          "x": 10,
+          "y": 5,
+          "before_mid": 857,
+          "layoutSHA256": "363498b9aa79883dc9c6c639c3f938a70511698d01e7dfe6b71b08f331373686",
+          "impassable": false,
+          "origins": [
+            [
+              "forced_ice"
+            ]
+          ]
+        },
+        {
+          "map": "FR_FOUR_ISLAND_ICEFALL_CAVE_1F",
+          "x": 15,
+          "y": 5,
+          "before_mid": 857,
+          "layoutSHA256": "363498b9aa79883dc9c6c639c3f938a70511698d01e7dfe6b71b08f331373686",
+          "impassable": false,
+          "origins": [
+            [
+              "forced_ice"
+            ]
+          ]
+        },
+        {
+          "map": "FR_FOUR_ISLAND_ICEFALL_CAVE_1F",
+          "x": 8,
+          "y": 9,
+          "before_mid": 857,
+          "layoutSHA256": "363498b9aa79883dc9c6c639c3f938a70511698d01e7dfe6b71b08f331373686",
+          "impassable": false,
+          "origins": [
+            [
+              "forced_ice"
+            ]
+          ]
+        },
+        {
+          "map": "FR_FOUR_ISLAND_ICEFALL_CAVE_1F",
+          "x": 9,
+          "y": 9,
+          "before_mid": 857,
+          "layoutSHA256": "363498b9aa79883dc9c6c639c3f938a70511698d01e7dfe6b71b08f331373686",
+          "impassable": false,
+          "origins": [
+            [
+              "forced_ice"
+            ]
+          ]
+        },
+        {
+          "map": "FR_FOUR_ISLAND_ICEFALL_CAVE_1F",
+          "x": 16,
+          "y": 9,
+          "before_mid": 857,
+          "layoutSHA256": "363498b9aa79883dc9c6c639c3f938a70511698d01e7dfe6b71b08f331373686",
+          "impassable": false,
+          "origins": [
+            [
+              "forced_ice"
+            ]
+          ]
+        },
+        {
+          "map": "FR_FOUR_ISLAND_ICEFALL_CAVE_1F",
+          "x": 8,
+          "y": 10,
+          "before_mid": 857,
+          "layoutSHA256": "363498b9aa79883dc9c6c639c3f938a70511698d01e7dfe6b71b08f331373686",
+          "impassable": false,
+          "origins": [
+            [
+              "forced_ice"
+            ]
+          ]
+        },
+        {
+          "map": "FR_FOUR_ISLAND_ICEFALL_CAVE_1F",
+          "x": 9,
+          "y": 10,
+          "before_mid": 857,
+          "layoutSHA256": "363498b9aa79883dc9c6c639c3f938a70511698d01e7dfe6b71b08f331373686",
+          "impassable": false,
+          "origins": [
+            [
+              "forced_ice"
+            ]
+          ]
+        },
+        {
+          "map": "FR_FOUR_ISLAND_ICEFALL_CAVE_1F",
+          "x": 8,
+          "y": 14,
+          "before_mid": 857,
+          "layoutSHA256": "363498b9aa79883dc9c6c639c3f938a70511698d01e7dfe6b71b08f331373686",
+          "impassable": false,
+          "origins": [
+            [
+              "forced_ice"
+            ]
+          ]
+        }
+      ],
+      "base": {
+        "mid": 857,
+        "module": "mappings/reverse_gen2_kanto_regional_caves_completion.lua",
+        "semanticSHA256": "1bcb9d8e68376b699d75c58eb3ed44447fd6cd05b56807dc8fa527c54fa90838"
+      }
+    },
+    {
+      "game": "leafgreen",
+      "pair": "general__rom_082d5044",
+      "mid": 687,
+      "sourceHash": "e25d894fe55c8f4a2261ed4a071ad9f7a1bcd5b3c1e5093048a58371fdbb66f1",
+      "sourceLayers": {
+        "under": "e25d894fe55c8f4a2261ed4a071ad9f7a1bcd5b3c1e5093048a58371fdbb66f1",
+        "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 105,
+      "contexts": [
+        {
+          "map": "FR_FIVE_ISLAND_MEADOW",
+          "x": 12,
+          "y": 21,
+          "before_mid": 779,
+          "layoutSHA256": "52ac138d0cebb74c0041a3262ea0e2148215e50ad55a3d092e3a023144691162",
+          "impassable": true,
+          "origins": [
+            [
+              "script",
+              "g3:0816895f",
+              0,
+              12,
+              21
+            ]
+          ]
+        }
+      ],
+      "base": {
+        "mid": 779,
+        "module": "mappings/reverse_gen2_four_five_outdoor_completion.lua",
+        "semanticSHA256": "46c4879bfb87e6c355967eec762ae219d3e4d52371944f125d8902e23c80f6c0"
+      }
+    },
+    {
+      "game": "leafgreen",
+      "pair": "general__rom_082d505c",
+      "mid": 856,
+      "sourceHash": "3656f5f323ee8b14e9ed7b9c0c3300f88397c1842dfd827bdb8fbcc9ac131c72",
+      "sourceLayers": {
+        "under": "3656f5f323ee8b14e9ed7b9c0c3300f88397c1842dfd827bdb8fbcc9ac131c72",
+        "mid": "3656f5f323ee8b14e9ed7b9c0c3300f88397c1842dfd827bdb8fbcc9ac131c72",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 96,
+      "contexts": [
+        {
+          "map": "FR_SIX_ISLAND_RUIN_VALLEY",
+          "x": 24,
+          "y": 24,
+          "before_mid": 855,
+          "layoutSHA256": "b26a133979c2d5ca2e7d731c462240b689efa2c7e21b4f7202c945a822dd8d38",
+          "impassable": false,
+          "origins": [
+            [
+              "script",
+              "g3:08168b3f",
+              0,
+              24,
+              24
+            ],
+            [
+              "ruin_valley_cut_entrance",
+              24,
+              24
+            ]
+          ]
+        }
+      ],
+      "base": {
+        "mid": 855,
+        "module": "mappings/reverse_gen2_sevii_outdoor_completion.lua",
+        "semanticSHA256": "3067e254491a99bd14e33d8b3bad0b041ccd6d40cd56507c7e55f09f0a3f4247"
+      }
+    }
+  ],
+  "scriptFiles": [
+    {
+      "game": "firered",
+      "path": "data/generated/gba/scripts/events.lua",
+      "sha256": "b9a49c28654abb9634fa6763b119226ac064fe3858f2ab8110dd6d7a7d3f7898"
+    },
+    {
+      "game": "firered",
+      "path": "data/generated/gba/scripts/scripts.lua",
+      "sha256": "40beefe65e2ebe223a5771ec21df9370d43a8375bd2630d51bd355ee9f38116a"
+    },
+    {
+      "game": "leafgreen",
+      "path": "data/generated/gba/scripts/events.lua",
+      "sha256": "0d420f7a494f2f45f717f490e3984701985856f511f5bf6401fba4715f4ea891"
+    },
+    {
+      "game": "leafgreen",
+      "path": "data/generated/gba/scripts/scripts.lua",
+      "sha256": "99347bf220485e82487d29bcae88be0f63f5832e18fdf4d4e193c5915ce9d834"
+    }
+  ]
+}
