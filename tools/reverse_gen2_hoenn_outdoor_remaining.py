@@ -854,6 +854,8 @@ def main():
         records+=pacifidlog_routes(review)
         from reverse_gen2_rustboro_routes import emit as rustboro_routes
         records+=rustboro_routes(review)
+        from reverse_gen2_dewford_harbor import emit as dewford_harbor
+        records+=dewford_harbor(review)
         review.write(review.out/'candidate.lua')
         summary.update(status='built',rows=len(review.rows),new_cells=sum(row['occurrences']for row in records))
         summary['coverage']=review.coverage_manifests()

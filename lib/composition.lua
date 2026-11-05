@@ -157,7 +157,10 @@ function Composition.new(ctx)
     assert(source.classicNativeOver==(nativeOver and nativeOver.bank..':'..nativeOver.hash or nil),
       'Classic geometry native foreground differs from its checked source')
     local animation=spec.sourceAnimation
-    assert(source.classicSourceAnimation==(animation and animation.mode..':'..animation.bank..':'..animation.hash or nil),
+    local secondary=animation and animation.secondary
+    local key=animation and animation.mode..':'..animation.bank..':'..animation.hash
+      ..(secondary and ':'..secondary.bank..':'..secondary.hash or'')or nil
+    assert(source.classicSourceAnimation==key,
       'Classic geometry source animation differs from its checked source')
     return source
   end

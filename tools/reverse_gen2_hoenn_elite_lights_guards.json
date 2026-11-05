@@ -1,0 +1,860 @@
+[
+  {
+    "game": "emerald",
+    "mid": 524,
+    "sourceHash": "b04b3088bb334b54d14359c95bc8b8725fb9ca0208548b790b0019c441423fd1",
+    "sourceLayers": {
+      "under": "b04b3088bb334b54d14359c95bc8b8725fb9ca0208548b790b0019c441423fd1",
+      "mid": "480d9111d750844f319a856bb17d6eb42dc6481f31df8a0a1e386172ee70a919",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "contexts": [
+      {
+        "map": "EM_EVER_GRANDE_CITY_DRAKES_ROOM",
+        "coords": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            10,
+            2
+          ],
+          [
+            12,
+            2
+          ]
+        ]
+      },
+      {
+        "map": "EM_EVER_GRANDE_CITY_GLACIAS_ROOM",
+        "coords": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            10,
+            2
+          ],
+          [
+            12,
+            2
+          ]
+        ]
+      },
+      {
+        "map": "EM_EVER_GRANDE_CITY_HALL4",
+        "coords": [
+          [
+            0,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            9,
+            2
+          ]
+        ]
+      },
+      {
+        "map": "EM_EVER_GRANDE_CITY_PHOEBES_ROOM",
+        "coords": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            10,
+            2
+          ],
+          [
+            12,
+            2
+          ]
+        ]
+      },
+      {
+        "map": "EM_EVER_GRANDE_CITY_SIDNEYS_ROOM",
+        "coords": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            10,
+            2
+          ],
+          [
+            12,
+            2
+          ]
+        ]
+      }
+    ],
+    "sourceAnimation": {
+      "mode": "native_under",
+      "bank": "elite_four_ground_lights",
+      "hash": "4508a7e92f725702fa56541e6662ec716d9f8d286e852aa886c3e4fa56c33fd4",
+      "secondary": {
+        "bank": "elite_four_wall_lights",
+        "hash": "68398601e95ac8567b95de3e2274ae37d8db2b9a17f70fe881f016faf9d01139"
+      }
+    }
+  },
+  {
+    "game": "emerald",
+    "mid": 525,
+    "sourceHash": "c7977bbe48240d224989a0b888919cffe26e7facd6d526d81317983d2db5db2a",
+    "sourceLayers": {
+      "under": "c7977bbe48240d224989a0b888919cffe26e7facd6d526d81317983d2db5db2a",
+      "mid": "480d9111d750844f319a856bb17d6eb42dc6481f31df8a0a1e386172ee70a919",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "contexts": [
+      {
+        "map": "EM_EVER_GRANDE_CITY_DRAKES_ROOM",
+        "coords": [
+          [
+            0,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            9,
+            2
+          ],
+          [
+            11,
+            2
+          ]
+        ]
+      },
+      {
+        "map": "EM_EVER_GRANDE_CITY_GLACIAS_ROOM",
+        "coords": [
+          [
+            0,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            9,
+            2
+          ],
+          [
+            11,
+            2
+          ]
+        ]
+      },
+      {
+        "map": "EM_EVER_GRANDE_CITY_HALL4",
+        "coords": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            10,
+            2
+          ]
+        ]
+      },
+      {
+        "map": "EM_EVER_GRANDE_CITY_PHOEBES_ROOM",
+        "coords": [
+          [
+            0,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            9,
+            2
+          ],
+          [
+            11,
+            2
+          ]
+        ]
+      },
+      {
+        "map": "EM_EVER_GRANDE_CITY_SIDNEYS_ROOM",
+        "coords": [
+          [
+            0,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            9,
+            2
+          ],
+          [
+            11,
+            2
+          ]
+        ]
+      }
+    ],
+    "sourceAnimation": {
+      "mode": "native_under",
+      "bank": "elite_four_ground_lights",
+      "hash": "4508a7e92f725702fa56541e6662ec716d9f8d286e852aa886c3e4fa56c33fd4",
+      "secondary": {
+        "bank": "elite_four_wall_lights",
+        "hash": "68398601e95ac8567b95de3e2274ae37d8db2b9a17f70fe881f016faf9d01139"
+      }
+    }
+  },
+  {
+    "game": "ruby",
+    "mid": 524,
+    "sourceHash": "b04b3088bb334b54d14359c95bc8b8725fb9ca0208548b790b0019c441423fd1",
+    "sourceLayers": {
+      "under": "b04b3088bb334b54d14359c95bc8b8725fb9ca0208548b790b0019c441423fd1",
+      "mid": "480d9111d750844f319a856bb17d6eb42dc6481f31df8a0a1e386172ee70a919",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "contexts": [
+      {
+        "map": "RU_EVER_GRANDE_CITY_CORRIDOR4",
+        "coords": [
+          [
+            0,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            9,
+            2
+          ]
+        ]
+      },
+      {
+        "map": "RU_EVER_GRANDE_CITY_DRAKES_ROOM",
+        "coords": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            10,
+            2
+          ],
+          [
+            12,
+            2
+          ]
+        ]
+      },
+      {
+        "map": "RU_EVER_GRANDE_CITY_GLACIAS_ROOM",
+        "coords": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            10,
+            2
+          ],
+          [
+            12,
+            2
+          ]
+        ]
+      },
+      {
+        "map": "RU_EVER_GRANDE_CITY_PHOEBES_ROOM",
+        "coords": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            10,
+            2
+          ],
+          [
+            12,
+            2
+          ]
+        ]
+      },
+      {
+        "map": "RU_EVER_GRANDE_CITY_SIDNEYS_ROOM",
+        "coords": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            10,
+            2
+          ],
+          [
+            12,
+            2
+          ]
+        ]
+      }
+    ],
+    "sourceAnimation": {
+      "mode": "native_under",
+      "bank": "elite_four_ground_lights",
+      "hash": "4508a7e92f725702fa56541e6662ec716d9f8d286e852aa886c3e4fa56c33fd4",
+      "secondary": {
+        "bank": "elite_four_wall_lights",
+        "hash": "68398601e95ac8567b95de3e2274ae37d8db2b9a17f70fe881f016faf9d01139"
+      }
+    }
+  },
+  {
+    "game": "ruby",
+    "mid": 525,
+    "sourceHash": "c7977bbe48240d224989a0b888919cffe26e7facd6d526d81317983d2db5db2a",
+    "sourceLayers": {
+      "under": "c7977bbe48240d224989a0b888919cffe26e7facd6d526d81317983d2db5db2a",
+      "mid": "480d9111d750844f319a856bb17d6eb42dc6481f31df8a0a1e386172ee70a919",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "contexts": [
+      {
+        "map": "RU_EVER_GRANDE_CITY_CORRIDOR4",
+        "coords": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            10,
+            2
+          ]
+        ]
+      },
+      {
+        "map": "RU_EVER_GRANDE_CITY_DRAKES_ROOM",
+        "coords": [
+          [
+            0,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            9,
+            2
+          ],
+          [
+            11,
+            2
+          ]
+        ]
+      },
+      {
+        "map": "RU_EVER_GRANDE_CITY_GLACIAS_ROOM",
+        "coords": [
+          [
+            0,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            9,
+            2
+          ],
+          [
+            11,
+            2
+          ]
+        ]
+      },
+      {
+        "map": "RU_EVER_GRANDE_CITY_PHOEBES_ROOM",
+        "coords": [
+          [
+            0,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            9,
+            2
+          ],
+          [
+            11,
+            2
+          ]
+        ]
+      },
+      {
+        "map": "RU_EVER_GRANDE_CITY_SIDNEYS_ROOM",
+        "coords": [
+          [
+            0,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            9,
+            2
+          ],
+          [
+            11,
+            2
+          ]
+        ]
+      }
+    ],
+    "sourceAnimation": {
+      "mode": "native_under",
+      "bank": "elite_four_ground_lights",
+      "hash": "4508a7e92f725702fa56541e6662ec716d9f8d286e852aa886c3e4fa56c33fd4",
+      "secondary": {
+        "bank": "elite_four_wall_lights",
+        "hash": "68398601e95ac8567b95de3e2274ae37d8db2b9a17f70fe881f016faf9d01139"
+      }
+    }
+  },
+  {
+    "game": "sapphire",
+    "mid": 524,
+    "sourceHash": "b04b3088bb334b54d14359c95bc8b8725fb9ca0208548b790b0019c441423fd1",
+    "sourceLayers": {
+      "under": "b04b3088bb334b54d14359c95bc8b8725fb9ca0208548b790b0019c441423fd1",
+      "mid": "480d9111d750844f319a856bb17d6eb42dc6481f31df8a0a1e386172ee70a919",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "contexts": [
+      {
+        "map": "SA_EVER_GRANDE_CITY_CORRIDOR4",
+        "coords": [
+          [
+            0,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            9,
+            2
+          ]
+        ]
+      },
+      {
+        "map": "SA_EVER_GRANDE_CITY_DRAKES_ROOM",
+        "coords": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            10,
+            2
+          ],
+          [
+            12,
+            2
+          ]
+        ]
+      },
+      {
+        "map": "SA_EVER_GRANDE_CITY_GLACIAS_ROOM",
+        "coords": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            10,
+            2
+          ],
+          [
+            12,
+            2
+          ]
+        ]
+      },
+      {
+        "map": "SA_EVER_GRANDE_CITY_PHOEBES_ROOM",
+        "coords": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            10,
+            2
+          ],
+          [
+            12,
+            2
+          ]
+        ]
+      },
+      {
+        "map": "SA_EVER_GRANDE_CITY_SIDNEYS_ROOM",
+        "coords": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            10,
+            2
+          ],
+          [
+            12,
+            2
+          ]
+        ]
+      }
+    ],
+    "sourceAnimation": {
+      "mode": "native_under",
+      "bank": "elite_four_ground_lights",
+      "hash": "4508a7e92f725702fa56541e6662ec716d9f8d286e852aa886c3e4fa56c33fd4",
+      "secondary": {
+        "bank": "elite_four_wall_lights",
+        "hash": "68398601e95ac8567b95de3e2274ae37d8db2b9a17f70fe881f016faf9d01139"
+      }
+    }
+  },
+  {
+    "game": "sapphire",
+    "mid": 525,
+    "sourceHash": "c7977bbe48240d224989a0b888919cffe26e7facd6d526d81317983d2db5db2a",
+    "sourceLayers": {
+      "under": "c7977bbe48240d224989a0b888919cffe26e7facd6d526d81317983d2db5db2a",
+      "mid": "480d9111d750844f319a856bb17d6eb42dc6481f31df8a0a1e386172ee70a919",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "contexts": [
+      {
+        "map": "SA_EVER_GRANDE_CITY_CORRIDOR4",
+        "coords": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            10,
+            2
+          ]
+        ]
+      },
+      {
+        "map": "SA_EVER_GRANDE_CITY_DRAKES_ROOM",
+        "coords": [
+          [
+            0,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            9,
+            2
+          ],
+          [
+            11,
+            2
+          ]
+        ]
+      },
+      {
+        "map": "SA_EVER_GRANDE_CITY_GLACIAS_ROOM",
+        "coords": [
+          [
+            0,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            9,
+            2
+          ],
+          [
+            11,
+            2
+          ]
+        ]
+      },
+      {
+        "map": "SA_EVER_GRANDE_CITY_PHOEBES_ROOM",
+        "coords": [
+          [
+            0,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            9,
+            2
+          ],
+          [
+            11,
+            2
+          ]
+        ]
+      },
+      {
+        "map": "SA_EVER_GRANDE_CITY_SIDNEYS_ROOM",
+        "coords": [
+          [
+            0,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            9,
+            2
+          ],
+          [
+            11,
+            2
+          ]
+        ]
+      }
+    ],
+    "sourceAnimation": {
+      "mode": "native_under",
+      "bank": "elite_four_ground_lights",
+      "hash": "4508a7e92f725702fa56541e6662ec716d9f8d286e852aa886c3e4fa56c33fd4",
+      "secondary": {
+        "bank": "elite_four_wall_lights",
+        "hash": "68398601e95ac8567b95de3e2274ae37d8db2b9a17f70fe881f016faf9d01139"
+      }
+    }
+  }
+]

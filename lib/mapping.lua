@@ -192,16 +192,31 @@ function M.validate(row)
     local nativeOver=row.classicGeometry.nativeOver
     local sourceAnimation=row.classicGeometry.sourceAnimation
     if sourceAnimation~=nil then
-      if (row.game~='ruby'and row.game~='sapphire'and row.game~='emerald')
-        or type(sourceAnimation)~='table'
+      if type(sourceAnimation)~='table'
         or(sourceAnimation.mode~='water_mask'and sourceAnimation.mode~='native_under'
           and sourceAnimation.mode~='static_equivalent')
         or type(sourceAnimation.bank)~='string'or not sourceAnimation.bank:match('^[%w_]+$')
         or not fingerprint(sourceAnimation.hash)then
-        return nil,'classic source animation needs one checked RSE under-only bank'
+        return nil,'classic source animation needs a checked under-only bank'
+      end
+      if row.game=='firered'or row.game=='leafgreen'then
+        if sourceAnimation.mode=='native_under'or(sourceAnimation.bank~='water'and sourceAnimation.bank~='sand')then
+          return nil,'classic FRLG source animation needs one checked water or sand bank'
+        end
       end
       for key in pairs(sourceAnimation)do
-        if key~='mode'and key~='bank'and key~='hash'then return nil,'unknown classic source animation field'end
+        if key~='mode'and key~='bank'and key~='hash'and key~='secondary'then return nil,'unknown classic source animation field'end
+      end
+      local secondary=sourceAnimation.secondary
+      if secondary~=nil then
+        if sourceAnimation.mode~='native_under'or type(secondary)~='table'
+          or type(secondary.bank)~='string'or not secondary.bank:match('^[%w_]+$')
+          or secondary.bank==sourceAnimation.bank or not fingerprint(secondary.hash)then
+          return nil,'classic source animation needs two distinct checked UNDER banks'
+        end
+        for key in pairs(secondary)do
+          if key~='bank'and key~='hash'then return nil,'unknown secondary source animation field'end
+        end
       end
       if nativeOver and sourceAnimation.mode~='water_mask'then
         return nil,'retained native foreground can only combine with masked background animation'

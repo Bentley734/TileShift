@@ -138,13 +138,18 @@ def selection(root: Path, cache: Path, planner: Path, games: list[str], pilot: b
                             for native, themed in zip(native_frames, themed_frames)}
             assert len(frame_hashes) >= 2
             manifest = catalog.read_lua(cache / game / 'data/generated/gba/native' / pair / 'anim_manifest.lua')
-            bank = next(bank for bank in manifest['banks'] if bank['name'] == source_animation['bank'])
-            counter = bank.get('counter', 'primary')
-            assert counter in ('primary', 'secondary')
-            ticks = bank['period'] * (bank['frames'] + bank.get('slot', 0) + 2)
+            secondary = source_animation.get('secondary')
+            names = [source_animation['bank']] + ([secondary['bank']] if secondary else [])
+            schedules = []
+            for name in names:
+                bank = next(bank for bank in manifest['banks'] if bank['name'] == name)
+                counter = bank.get('counter', 'primary')
+                assert counter in ('primary', 'secondary')
+                schedules.append(dict(counter=counter,period=bank['period'],phase=bank.get('phase',0),
+                                      ticks=bank['period']*(bank['frames']+bank.get('slot',0)+2)))
+            ticks = max(schedule['ticks'] for schedule in schedules)
             assert 0 < ticks <= 65536
-            item['nativeUnder'] = dict(frameHashes=frame_hashes, counter=counter, period=bank['period'],
-                                       phase=bank.get('phase', 0), ticks=ticks)
+            item['nativeUnder'] = dict(frameHashes=frame_hashes,schedules=schedules,ticks=ticks,checkAll=secondary is None)
         native_over = row.get('classicGeometry', {}).get('nativeOver')
         if native_over:
             layers = preview.classic_geometry_layers(cache, row, animation_cache)
@@ -526,7 +531,11 @@ BODY = r"""
      Anim.stepRse()
      for _,witness in ipairs(items)do
       local item=witness.item;local program=item.nativeUnder
-      if Anim._rse[program.counter]%program.period==program.phase then
+      local updating=false
+      for _,schedule in ipairs(program.schedules)do
+       if Anim._rse[schedule.counter]%schedule.period==schedule.phase then updating=true;break end
+      end
+      if updating then
        local source=nativeUnder(room,item.mid)
        check(program.frameHashes[source]~=nil,'Native animation differs from its checked bank: '..room.bank.pair..'/'..item.mid)
        witness.seen[source]=true
@@ -536,8 +545,13 @@ BODY = r"""
      end
     end
     for _,witness in ipairs(items)do
-     for source in pairs(witness.item.nativeUnder.frameHashes)do
-      check(witness.seen[source],'A guarded native animation phase was never rendered')
+     if witness.item.nativeUnder.checkAll then
+      for source in pairs(witness.item.nativeUnder.frameHashes)do
+       check(witness.seen[source],'A guarded native animation phase was never rendered')
+      end
+     else
+      local count=0;for _ in pairs(witness.seen)do count=count+1 end
+      check(count>=2,'Overlapping native animations did not vary across their native ticks')
      end
     end
     assert(mod.exports.select('gen2'));bind(room);draw(room)

@@ -187,7 +187,7 @@ eq(Mapping.validate(altered),nil)
 -- The real donor rejects static artwork on both tile and palette animation
 -- banks, including legacy FR/LG banks and transparent overlay palette zeros.
 local manifest={banks={}};local reads=0;local withMid,withOver=false,false
-local bankBytes=string.rep('q',512)
+local bankBytes=string.rep('q',512);local legacyBytes
 local lightBytes=string.rep(string.char(1),256)..string.char(2)..string.rep(string.char(1),255)
 local pixels={};for i=1,256 do pixels[i]=1 end
 local pack={decodePalettes=function()return{}end,palsToRgb8=function()return{[0]={[0]={5,7,9},[1]={255,0,0},[2]={0,255,0}}}end,
@@ -197,6 +197,7 @@ local d=Donor.new{read=function(path)
  if(path:find('mids_mid')and not withMid)or(path:find('mids_over')and not withOver)or path:find('rom%-cache')or path:find('meta.json',1,true)then return nil end
  if path:find('steam.idx',1,true)then return bankBytes end
  if path:find('lights.idx',1,true)then return lightBytes end
+ if path:find('anim_water.rgba',1,true)then return legacyBytes end
  return path:find('anim_manifest',1,true)and'manifest'or'pixels'
  end,
  prefix=function(g)return g..'/'end,decode=function()return manifest end,newImageData=data,hash=hash,nativePack=pack,identityToken=function()return 1 end}
@@ -261,4 +262,33 @@ manifest.banks[1].overMids={78};manifest.banks[1].overFile='over.idx';d:invalida
 eq(assert(d:cell(ref)).staticClassic,true,'unrelated native OVER cell blocks a safe UNDER source')
 manifest.banks[1].overMids={77};d:invalidate()
 eq(d:cell(ref),nil,'one cell cannot claim independent UNDER and OVER under the source contract')
+local red=string.char(255,0,0,255)
+local legacyStill=string.rep(red,256)
+local legacyMoving=string.char(0,255,0,255)..legacyStill:sub(5)
+legacyBytes=legacyStill:rep(7)..legacyMoving
+manifest={water={mids={77},frames=8}}
+ref.game='firered';ref.classicSourceAnimation={mode='water_mask',bank='water',hash=hash(legacyBytes)}
+ref.classicGroundMasks={under=first,mid=first};d:invalidate()
+eq(assert(d:cell(ref)).staticClassic,true,'legacy water only requires a mask over changing pixels')
+ref.classicGroundMasks.mid=nil;eq(d:cell(ref),nil,'legacy water must also mask the visible middle pixel')
+ref.classicGroundMasks={under=ones,mid=ones};manifest.sand={mids={77},frames=8};d:invalidate()
+eq(d:cell(ref),nil,'legacy source contract cannot claim a second bank')
+manifest.sand=nil;ref.classicSourceAnimation.hash=hash('wrong');d:invalidate()
+eq(d:cell(ref),nil,'changed legacy motion bank accepted')
+ref.classicSourceAnimation.hash=hash(legacyBytes);ref.classicSourceAnimation.mode='static_equivalent'
+eq(d:cell(ref),nil,'animated legacy bank accepted as static')
+legacyBytes=legacyStill:rep(8);ref.classicSourceAnimation.hash=hash(legacyBytes)
+ref.classicGroundMasks=nil;d:invalidate();eq(assert(d:cell(ref)).staticClassic,true)
+legacyBytes=legacyMoving:rep(8);ref.classicSourceAnimation.hash=hash(legacyBytes);d:invalidate()
+eq(d:cell(ref),nil,'constant legacy frame disagrees with the baked original')
+legacyBytes=legacyStill:rep(7)..string.char(255,0,0,0)..legacyStill:sub(5)
+ref.classicSourceAnimation.mode='water_mask';ref.classicSourceAnimation.hash=hash(legacyBytes)
+ref.classicGroundMasks={under=ones,mid=ones};d:invalidate()
+eq(d:cell(ref),nil,'legacy change to UNDER alpha accepted')
+local legacyRow=copy(shoreline);legacyRow.game='leafgreen';legacyRow.classicGeometry.nativeOver=nil
+legacyRow.classicGeometry.sourceAnimation={mode='water_mask',bank='sand',hash=hash(legacyBytes)}
+eq(Mapping.validate(legacyRow),true)
+legacyRow.classicGeometry.sourceAnimation.bank='flower';eq(Mapping.validate(legacyRow),nil)
+legacyRow.classicGeometry.sourceAnimation.bank='water';legacyRow.classicGeometry.sourceAnimation.mode='native_under'
+eq(Mapping.validate(legacyRow),nil)
 print('classic geometry checks: '..checks)

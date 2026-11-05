@@ -166,7 +166,9 @@ def simple_materials(f,prior):
    index=f.imp.cell_index(game)
    for(pair,mid),cell in index.items():
     if not cell.get('used_by_map_count'):continue
-    if pair.startswith('general__')and mid in(0,462,463,464,465,466,472,473,474,480,481,482):
+    # The guarded Birth Island triangle uses its reviewed whole marker geometry.
+    birth_island_triangle = style == 'gen2' and game == 'emerald' and pair == 'general__dewford' and mid in (464,466,472,473,474,481)
+    if pair.startswith('general__')and mid in(0,462,463,464,465,466,472,473,474,480,481,482) and not birth_island_triangle:
      canonical=f.imp.cell_index(game).get(('general__petalburg',mid))
      if canonical and native_geometry(f,game,pair,mid)==native_geometry(f,game,'general__petalburg',mid)and cell.get('behavior')==canonical.get('behavior'):
       base=f.gb_ref('red','PALLET_TOWN',1,0)if style=='gen1'else choose(gb,'short_nonencounter_grass')

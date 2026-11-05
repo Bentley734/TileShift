@@ -1,0 +1,2256 @@
+[
+  {
+    "mid": 720,
+    "coords": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        0
+      ],
+      [
+        5,
+        0
+      ],
+      [
+        6,
+        0
+      ],
+      [
+        7,
+        0
+      ],
+      [
+        8,
+        0
+      ],
+      [
+        9,
+        0
+      ],
+      [
+        11,
+        0
+      ],
+      [
+        12,
+        0
+      ],
+      [
+        13,
+        0
+      ],
+      [
+        14,
+        0
+      ],
+      [
+        15,
+        0
+      ],
+      [
+        17,
+        0
+      ],
+      [
+        18,
+        0
+      ],
+      [
+        19,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        4,
+        1
+      ],
+      [
+        5,
+        1
+      ],
+      [
+        6,
+        1
+      ],
+      [
+        7,
+        1
+      ],
+      [
+        8,
+        1
+      ],
+      [
+        9,
+        1
+      ],
+      [
+        11,
+        1
+      ],
+      [
+        12,
+        1
+      ],
+      [
+        13,
+        1
+      ],
+      [
+        14,
+        1
+      ],
+      [
+        15,
+        1
+      ],
+      [
+        17,
+        1
+      ],
+      [
+        18,
+        1
+      ],
+      [
+        19,
+        1
+      ]
+    ],
+    "sourceHash": "6c82e41cdd4b87bdd1816e2062139e7ba21e75c1ea54bf0235ae702d4b680c75",
+    "sourceLayers": {
+      "under": "6c82e41cdd4b87bdd1816e2062139e7ba21e75c1ea54bf0235ae702d4b680c75",
+      "mid": "6c82e41cdd4b87bdd1816e2062139e7ba21e75c1ea54bf0235ae702d4b680c75",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 721,
+    "coords": [
+      [
+        2,
+        0
+      ],
+      [
+        10,
+        0
+      ],
+      [
+        16,
+        0
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        10,
+        1
+      ],
+      [
+        16,
+        1
+      ]
+    ],
+    "sourceHash": "fdd1dc2bcd307a1fc22e9a59fdab807c8a57862f582f7ea49bd1e0004f4c8715",
+    "sourceLayers": {
+      "under": "fdd1dc2bcd307a1fc22e9a59fdab807c8a57862f582f7ea49bd1e0004f4c8715",
+      "mid": "fdd1dc2bcd307a1fc22e9a59fdab807c8a57862f582f7ea49bd1e0004f4c8715",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 722,
+    "coords": [
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        5,
+        2
+      ],
+      [
+        6,
+        2
+      ],
+      [
+        7,
+        2
+      ],
+      [
+        8,
+        2
+      ],
+      [
+        9,
+        2
+      ],
+      [
+        11,
+        2
+      ],
+      [
+        12,
+        2
+      ],
+      [
+        13,
+        2
+      ],
+      [
+        14,
+        2
+      ],
+      [
+        15,
+        2
+      ],
+      [
+        17,
+        2
+      ],
+      [
+        18,
+        2
+      ],
+      [
+        19,
+        2
+      ]
+    ],
+    "sourceHash": "e54ea89214f9428428d13a94379a23043a5f4105f0e9aa92fe30e97328433923",
+    "sourceLayers": {
+      "under": "6c82e41cdd4b87bdd1816e2062139e7ba21e75c1ea54bf0235ae702d4b680c75",
+      "mid": "6c82e41cdd4b87bdd1816e2062139e7ba21e75c1ea54bf0235ae702d4b680c75",
+      "over": "a4e23473afec0036628cd5ac31072250d0150a97173636afa441df565a34113e"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 723,
+    "coords": [
+      [
+        2,
+        2
+      ],
+      [
+        10,
+        2
+      ],
+      [
+        16,
+        2
+      ]
+    ],
+    "sourceHash": "8970c0914e56b2470178176c4a0a44a6e139b62d2470b9f3e5c954bce36bed0d",
+    "sourceLayers": {
+      "under": "fdd1dc2bcd307a1fc22e9a59fdab807c8a57862f582f7ea49bd1e0004f4c8715",
+      "mid": "fdd1dc2bcd307a1fc22e9a59fdab807c8a57862f582f7ea49bd1e0004f4c8715",
+      "over": "a4e23473afec0036628cd5ac31072250d0150a97173636afa441df565a34113e"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 724,
+    "coords": [
+      [
+        0,
+        3
+      ],
+      [
+        7,
+        3
+      ],
+      [
+        14,
+        3
+      ]
+    ],
+    "sourceHash": "0619813ea48361c3f5437016cb457aaf7438af02d36b1b3fc93f08f7edd51cbf",
+    "sourceLayers": {
+      "under": "0619813ea48361c3f5437016cb457aaf7438af02d36b1b3fc93f08f7edd51cbf",
+      "mid": "0619813ea48361c3f5437016cb457aaf7438af02d36b1b3fc93f08f7edd51cbf",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 725,
+    "coords": [
+      [
+        1,
+        3
+      ],
+      [
+        8,
+        3
+      ],
+      [
+        15,
+        3
+      ]
+    ],
+    "sourceHash": "6ea670795bd2de6544222c233e3745a44d519bd08646bffb14a7aeef4ee2f39c",
+    "sourceLayers": {
+      "under": "6ea670795bd2de6544222c233e3745a44d519bd08646bffb14a7aeef4ee2f39c",
+      "mid": "6ea670795bd2de6544222c233e3745a44d519bd08646bffb14a7aeef4ee2f39c",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 726,
+    "coords": [
+      [
+        2,
+        3
+      ],
+      [
+        9,
+        3
+      ],
+      [
+        16,
+        3
+      ]
+    ],
+    "sourceHash": "66f3881d1cea32d8d8f0c1e540905ff062326a0e33a6a40a4e51e880a97c30a8",
+    "sourceLayers": {
+      "under": "66f3881d1cea32d8d8f0c1e540905ff062326a0e33a6a40a4e51e880a97c30a8",
+      "mid": "66f3881d1cea32d8d8f0c1e540905ff062326a0e33a6a40a4e51e880a97c30a8",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 727,
+    "coords": [
+      [
+        3,
+        3
+      ],
+      [
+        10,
+        3
+      ],
+      [
+        17,
+        3
+      ]
+    ],
+    "sourceHash": "42f5b984d93796731d0b9d7901154707a72ef1b69de91f74366a9e6acc4cd942",
+    "sourceLayers": {
+      "under": "42f5b984d93796731d0b9d7901154707a72ef1b69de91f74366a9e6acc4cd942",
+      "mid": "42f5b984d93796731d0b9d7901154707a72ef1b69de91f74366a9e6acc4cd942",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 728,
+    "coords": [
+      [
+        4,
+        3
+      ],
+      [
+        11,
+        3
+      ],
+      [
+        18,
+        3
+      ]
+    ],
+    "sourceHash": "2f5e766e6fad6fa207273b0ad752f8604b7a6afa492f3d531f8226d500cdc846",
+    "sourceLayers": {
+      "under": "2f5e766e6fad6fa207273b0ad752f8604b7a6afa492f3d531f8226d500cdc846",
+      "mid": "2f5e766e6fad6fa207273b0ad752f8604b7a6afa492f3d531f8226d500cdc846",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 729,
+    "coords": [
+      [
+        5,
+        3
+      ],
+      [
+        12,
+        3
+      ],
+      [
+        19,
+        3
+      ]
+    ],
+    "sourceHash": "fd0e11c2c6a53f7c5d7434486afb6969e0ffda61400ec6d95081f7ccfd55438e",
+    "sourceLayers": {
+      "under": "fd0e11c2c6a53f7c5d7434486afb6969e0ffda61400ec6d95081f7ccfd55438e",
+      "mid": "fd0e11c2c6a53f7c5d7434486afb6969e0ffda61400ec6d95081f7ccfd55438e",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 730,
+    "coords": [
+      [
+        6,
+        3
+      ],
+      [
+        13,
+        3
+      ]
+    ],
+    "sourceHash": "46e45080b5c9ddaa8e57021e7bb74e89bfd28f4c5844c6a6d22885e903539fc8",
+    "sourceLayers": {
+      "under": "46e45080b5c9ddaa8e57021e7bb74e89bfd28f4c5844c6a6d22885e903539fc8",
+      "mid": "46e45080b5c9ddaa8e57021e7bb74e89bfd28f4c5844c6a6d22885e903539fc8",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 737,
+    "coords": [
+      [
+        2,
+        4
+      ]
+    ],
+    "sourceHash": "bfa59d5741f412c87dfddfe2a8249d9f31301cedb8a54b5f4278804744449c75",
+    "sourceLayers": {
+      "under": "bfa59d5741f412c87dfddfe2a8249d9f31301cedb8a54b5f4278804744449c75",
+      "mid": "bfa59d5741f412c87dfddfe2a8249d9f31301cedb8a54b5f4278804744449c75",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 738,
+    "coords": [
+      [
+        3,
+        4
+      ]
+    ],
+    "sourceHash": "80c59c04454196903549f49bc806c9627da1c398e9cb7f691586d2335bc9e39f",
+    "sourceLayers": {
+      "under": "80c59c04454196903549f49bc806c9627da1c398e9cb7f691586d2335bc9e39f",
+      "mid": "80c59c04454196903549f49bc806c9627da1c398e9cb7f691586d2335bc9e39f",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 739,
+    "coords": [
+      [
+        4,
+        4
+      ]
+    ],
+    "sourceHash": "baf54509493bc702bc1d157b5d3a11f9a5b52808e0af2ae859e635979f86ea67",
+    "sourceLayers": {
+      "under": "baf54509493bc702bc1d157b5d3a11f9a5b52808e0af2ae859e635979f86ea67",
+      "mid": "baf54509493bc702bc1d157b5d3a11f9a5b52808e0af2ae859e635979f86ea67",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 740,
+    "coords": [
+      [
+        5,
+        4
+      ]
+    ],
+    "sourceHash": "a5ba1753a460efc983bad5eba106e634342a9b32aeed056d4d96062c54155e17",
+    "sourceLayers": {
+      "under": "a5ba1753a460efc983bad5eba106e634342a9b32aeed056d4d96062c54155e17",
+      "mid": "a5ba1753a460efc983bad5eba106e634342a9b32aeed056d4d96062c54155e17",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 741,
+    "coords": [
+      [
+        6,
+        4
+      ]
+    ],
+    "sourceHash": "583adaaffbc73215f0c20d519c6c5e4a49584f5b5d01e6218c63a1e830bc3530",
+    "sourceLayers": {
+      "under": "583adaaffbc73215f0c20d519c6c5e4a49584f5b5d01e6218c63a1e830bc3530",
+      "mid": "583adaaffbc73215f0c20d519c6c5e4a49584f5b5d01e6218c63a1e830bc3530",
+      "over": "2dc3f0c2f0a22ff8f627d7fdbcf49e6331c4f8ad0dbc526e85a0154d97999467"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 742,
+    "coords": [
+      [
+        7,
+        4
+      ]
+    ],
+    "sourceHash": "3974281f83189e1ba15b0d8e123fedf8bfd1500ca4ad7c166bcb7ed229f3eddc",
+    "sourceLayers": {
+      "under": "3974281f83189e1ba15b0d8e123fedf8bfd1500ca4ad7c166bcb7ed229f3eddc",
+      "mid": "3974281f83189e1ba15b0d8e123fedf8bfd1500ca4ad7c166bcb7ed229f3eddc",
+      "over": "9d1e789c3dc0a004ed15be6711d46d449fa4f8c49c2440842856df0848546fcf"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 743,
+    "coords": [
+      [
+        8,
+        4
+      ]
+    ],
+    "sourceHash": "0cc13b36f04558b5be22b1806ffb33c5cf2b398b295302550d1f05366d211303",
+    "sourceLayers": {
+      "under": "0cc13b36f04558b5be22b1806ffb33c5cf2b398b295302550d1f05366d211303",
+      "mid": "0cc13b36f04558b5be22b1806ffb33c5cf2b398b295302550d1f05366d211303",
+      "over": "19136a47f67eca990a17bcd0b0a6f478a0644e2998e36005b10d879fd2e4a037"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 745,
+    "coords": [
+      [
+        2,
+        5
+      ]
+    ],
+    "sourceHash": "138f4f7e184d8e09132db83f945d6b2eac3ce47ce75dfc9b159dd3505360615c",
+    "sourceLayers": {
+      "under": "138f4f7e184d8e09132db83f945d6b2eac3ce47ce75dfc9b159dd3505360615c",
+      "mid": "138f4f7e184d8e09132db83f945d6b2eac3ce47ce75dfc9b159dd3505360615c",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "native_under",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 746,
+    "coords": [
+      [
+        3,
+        5
+      ]
+    ],
+    "sourceHash": "071fcd4cddc65cbb689a1169ce5dcf49c8bc9a924a01b3484f48b78a5e7e81c6",
+    "sourceLayers": {
+      "under": "071fcd4cddc65cbb689a1169ce5dcf49c8bc9a924a01b3484f48b78a5e7e81c6",
+      "mid": "071fcd4cddc65cbb689a1169ce5dcf49c8bc9a924a01b3484f48b78a5e7e81c6",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "native_under",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 747,
+    "coords": [
+      [
+        4,
+        5
+      ]
+    ],
+    "sourceHash": "1ce4221b1e5f285f72bc34e58ee4fe61941467c68c71a6c761d167f754742bf6",
+    "sourceLayers": {
+      "under": "1ce4221b1e5f285f72bc34e58ee4fe61941467c68c71a6c761d167f754742bf6",
+      "mid": "1ce4221b1e5f285f72bc34e58ee4fe61941467c68c71a6c761d167f754742bf6",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "native_under",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 748,
+    "coords": [
+      [
+        5,
+        5
+      ]
+    ],
+    "sourceHash": "6849c517d0afd964afe18a4cbe3903490cc8ad23bf624b57c34c10c9afeec75b",
+    "sourceLayers": {
+      "under": "6849c517d0afd964afe18a4cbe3903490cc8ad23bf624b57c34c10c9afeec75b",
+      "mid": "6849c517d0afd964afe18a4cbe3903490cc8ad23bf624b57c34c10c9afeec75b",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "native_under",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 749,
+    "coords": [
+      [
+        6,
+        5
+      ]
+    ],
+    "sourceHash": "a08d9c55bba9b3ba76232d1e2beb560ef5d19ca90229ad09bbac03f8665451f1",
+    "sourceLayers": {
+      "under": "a08d9c55bba9b3ba76232d1e2beb560ef5d19ca90229ad09bbac03f8665451f1",
+      "mid": "a08d9c55bba9b3ba76232d1e2beb560ef5d19ca90229ad09bbac03f8665451f1",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 750,
+    "coords": [
+      [
+        7,
+        5
+      ]
+    ],
+    "sourceHash": "811bf65718c83ed2e7d5fc40f30a148c90864e39a5b48201dc092e473eee4023",
+    "sourceLayers": {
+      "under": "811bf65718c83ed2e7d5fc40f30a148c90864e39a5b48201dc092e473eee4023",
+      "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 751,
+    "coords": [
+      [
+        8,
+        5
+      ]
+    ],
+    "sourceHash": "651ce14834e942727117c24724aba48a706765009481a56658d8481bc27a1075",
+    "sourceLayers": {
+      "under": "651ce14834e942727117c24724aba48a706765009481a56658d8481bc27a1075",
+      "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 753,
+    "coords": [
+      [
+        2,
+        6
+      ]
+    ],
+    "sourceHash": "41a02574926423a7f70176f5ed48c9baf3235155a818bd5425e437d71378051f",
+    "sourceLayers": {
+      "under": "41a02574926423a7f70176f5ed48c9baf3235155a818bd5425e437d71378051f",
+      "mid": "41a02574926423a7f70176f5ed48c9baf3235155a818bd5425e437d71378051f",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "native_under",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 754,
+    "coords": [
+      [
+        3,
+        6
+      ]
+    ],
+    "sourceHash": "5fa381dc53c196fc3b68dd4f3ae4365bba3e5af468566aed2e329c70b54b4af7",
+    "sourceLayers": {
+      "under": "5fa381dc53c196fc3b68dd4f3ae4365bba3e5af468566aed2e329c70b54b4af7",
+      "mid": "5fa381dc53c196fc3b68dd4f3ae4365bba3e5af468566aed2e329c70b54b4af7",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "native_under",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 755,
+    "coords": [
+      [
+        4,
+        6
+      ]
+    ],
+    "sourceHash": "69201103f2dc250f7ce09d253e814da2d1d7ed3886c0f3200e28d0d4e7657ca1",
+    "sourceLayers": {
+      "under": "69201103f2dc250f7ce09d253e814da2d1d7ed3886c0f3200e28d0d4e7657ca1",
+      "mid": "69201103f2dc250f7ce09d253e814da2d1d7ed3886c0f3200e28d0d4e7657ca1",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 756,
+    "coords": [
+      [
+        5,
+        6
+      ]
+    ],
+    "sourceHash": "be4e891759393df64e61baf0417800ff11bc736dbf8ec1d92e5ce1c70de20c0e",
+    "sourceLayers": {
+      "under": "be4e891759393df64e61baf0417800ff11bc736dbf8ec1d92e5ce1c70de20c0e",
+      "mid": "be4e891759393df64e61baf0417800ff11bc736dbf8ec1d92e5ce1c70de20c0e",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 757,
+    "coords": [
+      [
+        6,
+        6
+      ]
+    ],
+    "sourceHash": "c0946db4ffad263282e3bc15b30053a4328d1524b11baa02f012197a718be544",
+    "sourceLayers": {
+      "under": "c0946db4ffad263282e3bc15b30053a4328d1524b11baa02f012197a718be544",
+      "mid": "c0946db4ffad263282e3bc15b30053a4328d1524b11baa02f012197a718be544",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 758,
+    "coords": [
+      [
+        7,
+        6
+      ]
+    ],
+    "sourceHash": "9e1d3411157df24a1e4d8659f16bf46bc40874be15a2d6333703ed65914fa698",
+    "sourceLayers": {
+      "under": "9e1d3411157df24a1e4d8659f16bf46bc40874be15a2d6333703ed65914fa698",
+      "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 759,
+    "coords": [
+      [
+        8,
+        6
+      ]
+    ],
+    "sourceHash": "26c0b42d03ba49ca26c6cfa6c8f36bf172a2300d22706a56440b1f39f58fde7f",
+    "sourceLayers": {
+      "under": "26c0b42d03ba49ca26c6cfa6c8f36bf172a2300d22706a56440b1f39f58fde7f",
+      "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 761,
+    "coords": [
+      [
+        2,
+        7
+      ]
+    ],
+    "sourceHash": "4353976148adea8bdf983de54d8e3093f606232e89b8e5a7b4d07d515f1ef1c4",
+    "sourceLayers": {
+      "under": "4353976148adea8bdf983de54d8e3093f606232e89b8e5a7b4d07d515f1ef1c4",
+      "mid": "4353976148adea8bdf983de54d8e3093f606232e89b8e5a7b4d07d515f1ef1c4",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "native_under",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 762,
+    "coords": [
+      [
+        3,
+        7
+      ]
+    ],
+    "sourceHash": "dac2d4dd09c2d63898d6f3389f1327da9d40f7a80297f7ddadc7bfb712efbb81",
+    "sourceLayers": {
+      "under": "dac2d4dd09c2d63898d6f3389f1327da9d40f7a80297f7ddadc7bfb712efbb81",
+      "mid": "dac2d4dd09c2d63898d6f3389f1327da9d40f7a80297f7ddadc7bfb712efbb81",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "native_under",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 763,
+    "coords": [
+      [
+        4,
+        7
+      ]
+    ],
+    "sourceHash": "bcc7af66ed630e5ee37ec088be8dcbaeecb5965eb10a82592cdd258a93ef0ccb",
+    "sourceLayers": {
+      "under": "bcc7af66ed630e5ee37ec088be8dcbaeecb5965eb10a82592cdd258a93ef0ccb",
+      "mid": "bcc7af66ed630e5ee37ec088be8dcbaeecb5965eb10a82592cdd258a93ef0ccb",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "native_under",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 764,
+    "coords": [
+      [
+        5,
+        7
+      ]
+    ],
+    "sourceHash": "785bdc4fb3183f504b71c0877261accb4d1722972c16bd26f05a4aa5c168e86e",
+    "sourceLayers": {
+      "under": "785bdc4fb3183f504b71c0877261accb4d1722972c16bd26f05a4aa5c168e86e",
+      "mid": "785bdc4fb3183f504b71c0877261accb4d1722972c16bd26f05a4aa5c168e86e",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "native_under",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 765,
+    "coords": [
+      [
+        6,
+        7
+      ]
+    ],
+    "sourceHash": "6b8230a955754277c305f09116c83f3dc419948deb62037f33cf1f51928e5c23",
+    "sourceLayers": {
+      "under": "6b8230a955754277c305f09116c83f3dc419948deb62037f33cf1f51928e5c23",
+      "mid": "6b8230a955754277c305f09116c83f3dc419948deb62037f33cf1f51928e5c23",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 766,
+    "coords": [
+      [
+        7,
+        7
+      ]
+    ],
+    "sourceHash": "c7993bd5a0bb521a95a14d7cdbb6b8189183dfa6412eba7907a2ff21e5242b3b",
+    "sourceLayers": {
+      "under": "c7993bd5a0bb521a95a14d7cdbb6b8189183dfa6412eba7907a2ff21e5242b3b",
+      "mid": "c7993bd5a0bb521a95a14d7cdbb6b8189183dfa6412eba7907a2ff21e5242b3b",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 767,
+    "coords": [
+      [
+        8,
+        7
+      ]
+    ],
+    "sourceHash": "a285a8952af1bfd617cfe2b0fbcd67e59e039a209f65bdc60cfdb459d5f781cf",
+    "sourceLayers": {
+      "under": "a285a8952af1bfd617cfe2b0fbcd67e59e039a209f65bdc60cfdb459d5f781cf",
+      "mid": "a285a8952af1bfd617cfe2b0fbcd67e59e039a209f65bdc60cfdb459d5f781cf",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 769,
+    "coords": [
+      [
+        2,
+        8
+      ]
+    ],
+    "sourceHash": "6a3222fad3569ae45bfd69fa616ff4917dd3d43e6c010d279dd38a7750ae568a",
+    "sourceLayers": {
+      "under": "6a3222fad3569ae45bfd69fa616ff4917dd3d43e6c010d279dd38a7750ae568a",
+      "mid": "6a3222fad3569ae45bfd69fa616ff4917dd3d43e6c010d279dd38a7750ae568a",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "native_under",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 770,
+    "coords": [
+      [
+        3,
+        8
+      ]
+    ],
+    "sourceHash": "197c001e613de2d7347fbf2ac5c8ddd1dd7c71e2a0e42115a1a05487030fb168",
+    "sourceLayers": {
+      "under": "197c001e613de2d7347fbf2ac5c8ddd1dd7c71e2a0e42115a1a05487030fb168",
+      "mid": "197c001e613de2d7347fbf2ac5c8ddd1dd7c71e2a0e42115a1a05487030fb168",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 771,
+    "coords": [
+      [
+        4,
+        8
+      ]
+    ],
+    "sourceHash": "4b8d24a22942a0f8cbf4a052eb195f377d753c10ba6c1b6ed92bff460bc121f1",
+    "sourceLayers": {
+      "under": "4b8d24a22942a0f8cbf4a052eb195f377d753c10ba6c1b6ed92bff460bc121f1",
+      "mid": "4b8d24a22942a0f8cbf4a052eb195f377d753c10ba6c1b6ed92bff460bc121f1",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 772,
+    "coords": [
+      [
+        5,
+        8
+      ]
+    ],
+    "sourceHash": "d080be926862a6d6ff5ca7132f5c021721ed153f030e13aaef510972e3c28d37",
+    "sourceLayers": {
+      "under": "d080be926862a6d6ff5ca7132f5c021721ed153f030e13aaef510972e3c28d37",
+      "mid": "d080be926862a6d6ff5ca7132f5c021721ed153f030e13aaef510972e3c28d37",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 773,
+    "coords": [
+      [
+        6,
+        8
+      ]
+    ],
+    "sourceHash": "517676c3d1b8b0011ef910bfaa5b725d03c7820aa731267d15e260fedbc551b7",
+    "sourceLayers": {
+      "under": "517676c3d1b8b0011ef910bfaa5b725d03c7820aa731267d15e260fedbc551b7",
+      "mid": "517676c3d1b8b0011ef910bfaa5b725d03c7820aa731267d15e260fedbc551b7",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 774,
+    "coords": [
+      [
+        7,
+        8
+      ]
+    ],
+    "sourceHash": "f9b8e65c3c73fc00ff0ad4499bf2efc4fc5dedc9c48dedd4f9c122cb04172352",
+    "sourceLayers": {
+      "under": "f9b8e65c3c73fc00ff0ad4499bf2efc4fc5dedc9c48dedd4f9c122cb04172352",
+      "mid": "f9b8e65c3c73fc00ff0ad4499bf2efc4fc5dedc9c48dedd4f9c122cb04172352",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 775,
+    "coords": [
+      [
+        8,
+        8
+      ]
+    ],
+    "sourceHash": "5acfe3b7bf45de92ddd70ccff3ecb2cca9550f2926bebbb7a9950284207959ed",
+    "sourceLayers": {
+      "under": "5acfe3b7bf45de92ddd70ccff3ecb2cca9550f2926bebbb7a9950284207959ed",
+      "mid": "5acfe3b7bf45de92ddd70ccff3ecb2cca9550f2926bebbb7a9950284207959ed",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 778,
+    "coords": [
+      [
+        3,
+        9
+      ]
+    ],
+    "sourceHash": "d1a1bebc40373f2c56974366a3c98d9f637f56870ae61afd44641f53f1123e83",
+    "sourceLayers": {
+      "under": "d1a1bebc40373f2c56974366a3c98d9f637f56870ae61afd44641f53f1123e83",
+      "mid": "d1a1bebc40373f2c56974366a3c98d9f637f56870ae61afd44641f53f1123e83",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "native_under",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 779,
+    "coords": [
+      [
+        4,
+        9
+      ]
+    ],
+    "sourceHash": "762a1f57cae03fceee375f5fc255b44176b28fa0970352b53e89e201e5bd7c1d",
+    "sourceLayers": {
+      "under": "762a1f57cae03fceee375f5fc255b44176b28fa0970352b53e89e201e5bd7c1d",
+      "mid": "762a1f57cae03fceee375f5fc255b44176b28fa0970352b53e89e201e5bd7c1d",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 780,
+    "coords": [
+      [
+        5,
+        9
+      ]
+    ],
+    "sourceHash": "ebfe47eccc26c64be602e9c98faad3c10917b04fcac2a9f3e4c5be6ba86f061c",
+    "sourceLayers": {
+      "under": "ebfe47eccc26c64be602e9c98faad3c10917b04fcac2a9f3e4c5be6ba86f061c",
+      "mid": "ebfe47eccc26c64be602e9c98faad3c10917b04fcac2a9f3e4c5be6ba86f061c",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "native_under",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 781,
+    "coords": [
+      [
+        6,
+        9
+      ]
+    ],
+    "sourceHash": "e0bc5814ec1258029a378a1b198beb3e8bafe6a7a040476755679d5c0ff3e830",
+    "sourceLayers": {
+      "under": "e0bc5814ec1258029a378a1b198beb3e8bafe6a7a040476755679d5c0ff3e830",
+      "mid": "e0bc5814ec1258029a378a1b198beb3e8bafe6a7a040476755679d5c0ff3e830",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 782,
+    "coords": [
+      [
+        7,
+        9
+      ]
+    ],
+    "sourceHash": "d3234bdfaba74d2ecd5b050aef80185135334e5354954ec422da4fc1af771c3b",
+    "sourceLayers": {
+      "under": "d3234bdfaba74d2ecd5b050aef80185135334e5354954ec422da4fc1af771c3b",
+      "mid": "d3234bdfaba74d2ecd5b050aef80185135334e5354954ec422da4fc1af771c3b",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 783,
+    "coords": [
+      [
+        8,
+        9
+      ]
+    ],
+    "sourceHash": "a608f26334b628c7bf21e6cd9f48bcd7726eb1c9209d799d060ab74c01ff6221",
+    "sourceLayers": {
+      "under": "a608f26334b628c7bf21e6cd9f48bcd7726eb1c9209d799d060ab74c01ff6221",
+      "mid": "a608f26334b628c7bf21e6cd9f48bcd7726eb1c9209d799d060ab74c01ff6221",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 784,
+    "coords": [
+      [
+        9,
+        4
+      ]
+    ],
+    "sourceHash": "8b0b9533cd2c252bfc66acf8ac9362ed67726c51e2a9d451f0f7992a459df116",
+    "sourceLayers": {
+      "under": "8b0b9533cd2c252bfc66acf8ac9362ed67726c51e2a9d451f0f7992a459df116",
+      "mid": "8b0b9533cd2c252bfc66acf8ac9362ed67726c51e2a9d451f0f7992a459df116",
+      "over": "bb605a8d0528ace6f3618e07dfd684c8e355cad89cb3f53644be5972b72822d9"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 785,
+    "coords": [
+      [
+        10,
+        4
+      ]
+    ],
+    "sourceHash": "3974281f83189e1ba15b0d8e123fedf8bfd1500ca4ad7c166bcb7ed229f3eddc",
+    "sourceLayers": {
+      "under": "3974281f83189e1ba15b0d8e123fedf8bfd1500ca4ad7c166bcb7ed229f3eddc",
+      "mid": "3974281f83189e1ba15b0d8e123fedf8bfd1500ca4ad7c166bcb7ed229f3eddc",
+      "over": "9d1e789c3dc0a004ed15be6711d46d449fa4f8c49c2440842856df0848546fcf"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 786,
+    "coords": [
+      [
+        11,
+        4
+      ]
+    ],
+    "sourceHash": "57c6229ffe81080af762abf423fe3ec8f5ea687f53e7f5261be565f43bce09ac",
+    "sourceLayers": {
+      "under": "57c6229ffe81080af762abf423fe3ec8f5ea687f53e7f5261be565f43bce09ac",
+      "mid": "57c6229ffe81080af762abf423fe3ec8f5ea687f53e7f5261be565f43bce09ac",
+      "over": "901f1a3b130154ed9f301d477677d463382620941cbf56a82c50751b384e7cc0"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 787,
+    "coords": [
+      [
+        12,
+        4
+      ]
+    ],
+    "sourceHash": "2c09a7a2116b21391e24877c217a065676135ef287beceefdbcfd119b3280d46",
+    "sourceLayers": {
+      "under": "2c09a7a2116b21391e24877c217a065676135ef287beceefdbcfd119b3280d46",
+      "mid": "2c09a7a2116b21391e24877c217a065676135ef287beceefdbcfd119b3280d46",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 788,
+    "coords": [
+      [
+        13,
+        4
+      ]
+    ],
+    "sourceHash": "d052c23519643efa8b89f99f7c3058f9ad0750456efcaafd729815411b417ccb",
+    "sourceLayers": {
+      "under": "d052c23519643efa8b89f99f7c3058f9ad0750456efcaafd729815411b417ccb",
+      "mid": "d052c23519643efa8b89f99f7c3058f9ad0750456efcaafd729815411b417ccb",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 789,
+    "coords": [
+      [
+        14,
+        4
+      ]
+    ],
+    "sourceHash": "4bc33bf43da1afbfa2b4cb69d6de272a00ae0089b8627916ef22416cb0ee3719",
+    "sourceLayers": {
+      "under": "4bc33bf43da1afbfa2b4cb69d6de272a00ae0089b8627916ef22416cb0ee3719",
+      "mid": "4bc33bf43da1afbfa2b4cb69d6de272a00ae0089b8627916ef22416cb0ee3719",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 790,
+    "coords": [
+      [
+        15,
+        4
+      ]
+    ],
+    "sourceHash": "6495e26aa4cb6a8297bd46c473b0d6d05eff5e59f8dc32e4f52040dec9e5a8f3",
+    "sourceLayers": {
+      "under": "6495e26aa4cb6a8297bd46c473b0d6d05eff5e59f8dc32e4f52040dec9e5a8f3",
+      "mid": "6495e26aa4cb6a8297bd46c473b0d6d05eff5e59f8dc32e4f52040dec9e5a8f3",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 792,
+    "coords": [
+      [
+        9,
+        5
+      ]
+    ],
+    "sourceHash": "8edbc34062e2cb248f962f940f74fb3a7c985b3a6c8797c32092712fd2c0271a",
+    "sourceLayers": {
+      "under": "8edbc34062e2cb248f962f940f74fb3a7c985b3a6c8797c32092712fd2c0271a",
+      "mid": "8edbc34062e2cb248f962f940f74fb3a7c985b3a6c8797c32092712fd2c0271a",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 793,
+    "coords": [
+      [
+        10,
+        5
+      ]
+    ],
+    "sourceHash": "af4e94c0acae3f3d9d41f9551c0541ecf9cde8321695c06abe8fe916f2b0f67d",
+    "sourceLayers": {
+      "under": "af4e94c0acae3f3d9d41f9551c0541ecf9cde8321695c06abe8fe916f2b0f67d",
+      "mid": "af4e94c0acae3f3d9d41f9551c0541ecf9cde8321695c06abe8fe916f2b0f67d",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 794,
+    "coords": [
+      [
+        11,
+        5
+      ]
+    ],
+    "sourceHash": "27ae79f71538258f480ccc6d2518b6f51e72481d94d31a35abc7953ea3df1bcb",
+    "sourceLayers": {
+      "under": "27ae79f71538258f480ccc6d2518b6f51e72481d94d31a35abc7953ea3df1bcb",
+      "mid": "27ae79f71538258f480ccc6d2518b6f51e72481d94d31a35abc7953ea3df1bcb",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 795,
+    "coords": [
+      [
+        12,
+        5
+      ]
+    ],
+    "sourceHash": "ce161429ba27b9e77dff788b93d81508e23953e8c6ce13644ebd56292f6d14f7",
+    "sourceLayers": {
+      "under": "ce161429ba27b9e77dff788b93d81508e23953e8c6ce13644ebd56292f6d14f7",
+      "mid": "ce161429ba27b9e77dff788b93d81508e23953e8c6ce13644ebd56292f6d14f7",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "native_under",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 796,
+    "coords": [
+      [
+        13,
+        5
+      ]
+    ],
+    "sourceHash": "7ab3fae81bb9e7c4dffe30cb5e82132730538bf394c51174fbfa94b074754c6c",
+    "sourceLayers": {
+      "under": "7ab3fae81bb9e7c4dffe30cb5e82132730538bf394c51174fbfa94b074754c6c",
+      "mid": "7ab3fae81bb9e7c4dffe30cb5e82132730538bf394c51174fbfa94b074754c6c",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "native_under",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 797,
+    "coords": [
+      [
+        14,
+        5
+      ]
+    ],
+    "sourceHash": "40d491c6946b46dc7ad31b15391edeae56c6ed12b1c7ff70bf55e816fac660b4",
+    "sourceLayers": {
+      "under": "40d491c6946b46dc7ad31b15391edeae56c6ed12b1c7ff70bf55e816fac660b4",
+      "mid": "40d491c6946b46dc7ad31b15391edeae56c6ed12b1c7ff70bf55e816fac660b4",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "native_under",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 798,
+    "coords": [
+      [
+        15,
+        5
+      ]
+    ],
+    "sourceHash": "e1c351c76d21cbca01f7a4c2f6df44968bf4650e3dd3b19533522b22cb78b446",
+    "sourceLayers": {
+      "under": "e1c351c76d21cbca01f7a4c2f6df44968bf4650e3dd3b19533522b22cb78b446",
+      "mid": "e1c351c76d21cbca01f7a4c2f6df44968bf4650e3dd3b19533522b22cb78b446",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "native_under",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 800,
+    "coords": [
+      [
+        9,
+        6
+      ]
+    ],
+    "sourceHash": "f1977af2b81ef02ccf0880d6ff2debd70e490afa974c52186216efb9bdda9d2e",
+    "sourceLayers": {
+      "under": "f1977af2b81ef02ccf0880d6ff2debd70e490afa974c52186216efb9bdda9d2e",
+      "mid": "f1977af2b81ef02ccf0880d6ff2debd70e490afa974c52186216efb9bdda9d2e",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 801,
+    "coords": [
+      [
+        10,
+        6
+      ]
+    ],
+    "sourceHash": "12f04a9ee49f1cc50b59eea268f6d9339fca2417b91940fcb4b68c5967e65831",
+    "sourceLayers": {
+      "under": "12f04a9ee49f1cc50b59eea268f6d9339fca2417b91940fcb4b68c5967e65831",
+      "mid": "12f04a9ee49f1cc50b59eea268f6d9339fca2417b91940fcb4b68c5967e65831",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 802,
+    "coords": [
+      [
+        11,
+        6
+      ]
+    ],
+    "sourceHash": "8536f8b31a95f0dd625793ac199b9b20d384001d37edc7b85f264c1e9db98cc0",
+    "sourceLayers": {
+      "under": "8536f8b31a95f0dd625793ac199b9b20d384001d37edc7b85f264c1e9db98cc0",
+      "mid": "8536f8b31a95f0dd625793ac199b9b20d384001d37edc7b85f264c1e9db98cc0",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 803,
+    "coords": [
+      [
+        12,
+        6
+      ]
+    ],
+    "sourceHash": "29d57ae5a1080fa2ea296d33e43cf6365e71b68e031a9674e5dc8b37fb87ae69",
+    "sourceLayers": {
+      "under": "29d57ae5a1080fa2ea296d33e43cf6365e71b68e031a9674e5dc8b37fb87ae69",
+      "mid": "29d57ae5a1080fa2ea296d33e43cf6365e71b68e031a9674e5dc8b37fb87ae69",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 804,
+    "coords": [
+      [
+        13,
+        6
+      ]
+    ],
+    "sourceHash": "6d883b0bad18c48a2cf9cb1de128b7ab1b988b1993d8b256d44c0188dc51584e",
+    "sourceLayers": {
+      "under": "6d883b0bad18c48a2cf9cb1de128b7ab1b988b1993d8b256d44c0188dc51584e",
+      "mid": "6d883b0bad18c48a2cf9cb1de128b7ab1b988b1993d8b256d44c0188dc51584e",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 805,
+    "coords": [
+      [
+        14,
+        6
+      ]
+    ],
+    "sourceHash": "9dd1d0a900e19dbe63390287eb7f0fd0f29af47b1ac639c059688f932e12d821",
+    "sourceLayers": {
+      "under": "9dd1d0a900e19dbe63390287eb7f0fd0f29af47b1ac639c059688f932e12d821",
+      "mid": "9dd1d0a900e19dbe63390287eb7f0fd0f29af47b1ac639c059688f932e12d821",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "native_under",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 806,
+    "coords": [
+      [
+        15,
+        6
+      ]
+    ],
+    "sourceHash": "ef38b3d51a294badc879f53cab41f81667e1d5f04a764a3ddb64168526446b4c",
+    "sourceLayers": {
+      "under": "ef38b3d51a294badc879f53cab41f81667e1d5f04a764a3ddb64168526446b4c",
+      "mid": "ef38b3d51a294badc879f53cab41f81667e1d5f04a764a3ddb64168526446b4c",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "native_under",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 808,
+    "coords": [
+      [
+        9,
+        7
+      ]
+    ],
+    "sourceHash": "91e4f5d4ffece1728b74bc3ba8b6ec6d00b3c2164f6f02cd0a080c0387a293df",
+    "sourceLayers": {
+      "under": "91e4f5d4ffece1728b74bc3ba8b6ec6d00b3c2164f6f02cd0a080c0387a293df",
+      "mid": "91e4f5d4ffece1728b74bc3ba8b6ec6d00b3c2164f6f02cd0a080c0387a293df",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 809,
+    "coords": [
+      [
+        10,
+        7
+      ]
+    ],
+    "sourceHash": "962a87900ac7883ab78881e0e272a48b626773ac300ef4ef7ab5a161743ee7c3",
+    "sourceLayers": {
+      "under": "962a87900ac7883ab78881e0e272a48b626773ac300ef4ef7ab5a161743ee7c3",
+      "mid": "962a87900ac7883ab78881e0e272a48b626773ac300ef4ef7ab5a161743ee7c3",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 810,
+    "coords": [
+      [
+        11,
+        7
+      ]
+    ],
+    "sourceHash": "54e768062ebc0f57a6a0146bc29ec81fdb81edd702f94529104f9f26f6641101",
+    "sourceLayers": {
+      "under": "54e768062ebc0f57a6a0146bc29ec81fdb81edd702f94529104f9f26f6641101",
+      "mid": "54e768062ebc0f57a6a0146bc29ec81fdb81edd702f94529104f9f26f6641101",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 811,
+    "coords": [
+      [
+        12,
+        7
+      ]
+    ],
+    "sourceHash": "90149d17368a80375f62ffc5c0fa745940d6df143293f9e47cf4ca8dc3228429",
+    "sourceLayers": {
+      "under": "90149d17368a80375f62ffc5c0fa745940d6df143293f9e47cf4ca8dc3228429",
+      "mid": "90149d17368a80375f62ffc5c0fa745940d6df143293f9e47cf4ca8dc3228429",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "native_under",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 812,
+    "coords": [
+      [
+        13,
+        7
+      ]
+    ],
+    "sourceHash": "52c9edadcba95cf909efa9530c556897f3d84f2a119b829a3d5d9a02db3671e5",
+    "sourceLayers": {
+      "under": "52c9edadcba95cf909efa9530c556897f3d84f2a119b829a3d5d9a02db3671e5",
+      "mid": "52c9edadcba95cf909efa9530c556897f3d84f2a119b829a3d5d9a02db3671e5",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "native_under",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 813,
+    "coords": [
+      [
+        14,
+        7
+      ]
+    ],
+    "sourceHash": "49a8ddde0f48f1f43c242305cadf31c6bb9d47ef1476dabb5fc2df9c355871e4",
+    "sourceLayers": {
+      "under": "49a8ddde0f48f1f43c242305cadf31c6bb9d47ef1476dabb5fc2df9c355871e4",
+      "mid": "49a8ddde0f48f1f43c242305cadf31c6bb9d47ef1476dabb5fc2df9c355871e4",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "native_under",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 814,
+    "coords": [
+      [
+        15,
+        7
+      ]
+    ],
+    "sourceHash": "3014f4efb66348f26ef58512c3c54d14871ec7439861f96ae0f39abcb12ad6a3",
+    "sourceLayers": {
+      "under": "3014f4efb66348f26ef58512c3c54d14871ec7439861f96ae0f39abcb12ad6a3",
+      "mid": "3014f4efb66348f26ef58512c3c54d14871ec7439861f96ae0f39abcb12ad6a3",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "native_under",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 816,
+    "coords": [
+      [
+        9,
+        8
+      ]
+    ],
+    "sourceHash": "df4737284889ee08234967aa3c86563f2603f08adaac70977603273af68bc2dc",
+    "sourceLayers": {
+      "under": "df4737284889ee08234967aa3c86563f2603f08adaac70977603273af68bc2dc",
+      "mid": "df4737284889ee08234967aa3c86563f2603f08adaac70977603273af68bc2dc",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 817,
+    "coords": [
+      [
+        10,
+        8
+      ]
+    ],
+    "sourceHash": "f9b8e65c3c73fc00ff0ad4499bf2efc4fc5dedc9c48dedd4f9c122cb04172352",
+    "sourceLayers": {
+      "under": "f9b8e65c3c73fc00ff0ad4499bf2efc4fc5dedc9c48dedd4f9c122cb04172352",
+      "mid": "f9b8e65c3c73fc00ff0ad4499bf2efc4fc5dedc9c48dedd4f9c122cb04172352",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 818,
+    "coords": [
+      [
+        11,
+        8
+      ]
+    ],
+    "sourceHash": "26e77b30edf77c1f34fc66a0b27d47a2e37b258b50eacea669e260b933146f47",
+    "sourceLayers": {
+      "under": "26e77b30edf77c1f34fc66a0b27d47a2e37b258b50eacea669e260b933146f47",
+      "mid": "26e77b30edf77c1f34fc66a0b27d47a2e37b258b50eacea669e260b933146f47",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 819,
+    "coords": [
+      [
+        12,
+        8
+      ]
+    ],
+    "sourceHash": "6c3b2177d8420856d8a892b874d2888d93f3a9c16cbc52e09729f29c154d8d1b",
+    "sourceLayers": {
+      "under": "6c3b2177d8420856d8a892b874d2888d93f3a9c16cbc52e09729f29c154d8d1b",
+      "mid": "6c3b2177d8420856d8a892b874d2888d93f3a9c16cbc52e09729f29c154d8d1b",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 820,
+    "coords": [
+      [
+        13,
+        8
+      ]
+    ],
+    "sourceHash": "02124acc471c0e51dcde2d06f43dd0c3807607c3bddafafab106528d8a497ecf",
+    "sourceLayers": {
+      "under": "02124acc471c0e51dcde2d06f43dd0c3807607c3bddafafab106528d8a497ecf",
+      "mid": "02124acc471c0e51dcde2d06f43dd0c3807607c3bddafafab106528d8a497ecf",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 821,
+    "coords": [
+      [
+        14,
+        8
+      ]
+    ],
+    "sourceHash": "4ccecc2ff9dbc48c3618411b9f40c7bc88323c3271c3f3afe246391fdc4f6ba4",
+    "sourceLayers": {
+      "under": "4ccecc2ff9dbc48c3618411b9f40c7bc88323c3271c3f3afe246391fdc4f6ba4",
+      "mid": "4ccecc2ff9dbc48c3618411b9f40c7bc88323c3271c3f3afe246391fdc4f6ba4",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 822,
+    "coords": [
+      [
+        15,
+        8
+      ]
+    ],
+    "sourceHash": "57faae3622a0450d6792bb2598b997463e0b0d09d3590cd12cf398fd6eedb047",
+    "sourceLayers": {
+      "under": "57faae3622a0450d6792bb2598b997463e0b0d09d3590cd12cf398fd6eedb047",
+      "mid": "57faae3622a0450d6792bb2598b997463e0b0d09d3590cd12cf398fd6eedb047",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "native_under",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 824,
+    "coords": [
+      [
+        9,
+        9
+      ]
+    ],
+    "sourceHash": "0bada48d891922f476825980981258f2ab57cb62aedb9976ee031ffa13f02a30",
+    "sourceLayers": {
+      "under": "0bada48d891922f476825980981258f2ab57cb62aedb9976ee031ffa13f02a30",
+      "mid": "0bada48d891922f476825980981258f2ab57cb62aedb9976ee031ffa13f02a30",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 825,
+    "coords": [
+      [
+        10,
+        9
+      ]
+    ],
+    "sourceHash": "5961e73a8e3f9ae3e5739ec01809c90b63059a8b2e8e1f74f60f3aadb03cb9c8",
+    "sourceLayers": {
+      "under": "5961e73a8e3f9ae3e5739ec01809c90b63059a8b2e8e1f74f60f3aadb03cb9c8",
+      "mid": "5961e73a8e3f9ae3e5739ec01809c90b63059a8b2e8e1f74f60f3aadb03cb9c8",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 826,
+    "coords": [
+      [
+        11,
+        9
+      ]
+    ],
+    "sourceHash": "d775f78f09decd102081b03f6e4afd71c49ed3f2b6061b87cd474e6756ee0a9b",
+    "sourceLayers": {
+      "under": "d775f78f09decd102081b03f6e4afd71c49ed3f2b6061b87cd474e6756ee0a9b",
+      "mid": "d775f78f09decd102081b03f6e4afd71c49ed3f2b6061b87cd474e6756ee0a9b",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 827,
+    "coords": [
+      [
+        12,
+        9
+      ]
+    ],
+    "sourceHash": "d1a1bebc40373f2c56974366a3c98d9f637f56870ae61afd44641f53f1123e83",
+    "sourceLayers": {
+      "under": "d1a1bebc40373f2c56974366a3c98d9f637f56870ae61afd44641f53f1123e83",
+      "mid": "d1a1bebc40373f2c56974366a3c98d9f637f56870ae61afd44641f53f1123e83",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "native_under",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 828,
+    "coords": [
+      [
+        13,
+        9
+      ]
+    ],
+    "sourceHash": "762a1f57cae03fceee375f5fc255b44176b28fa0970352b53e89e201e5bd7c1d",
+    "sourceLayers": {
+      "under": "762a1f57cae03fceee375f5fc255b44176b28fa0970352b53e89e201e5bd7c1d",
+      "mid": "762a1f57cae03fceee375f5fc255b44176b28fa0970352b53e89e201e5bd7c1d",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 829,
+    "coords": [
+      [
+        14,
+        9
+      ]
+    ],
+    "sourceHash": "ebfe47eccc26c64be602e9c98faad3c10917b04fcac2a9f3e4c5be6ba86f061c",
+    "sourceLayers": {
+      "under": "ebfe47eccc26c64be602e9c98faad3c10917b04fcac2a9f3e4c5be6ba86f061c",
+      "mid": "ebfe47eccc26c64be602e9c98faad3c10917b04fcac2a9f3e4c5be6ba86f061c",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "native_under",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  },
+  {
+    "mid": 830,
+    "coords": [
+      [
+        15,
+        9
+      ],
+      [
+        16,
+        9
+      ]
+    ],
+    "sourceHash": "8ba3767acad4bc51e68cb4cd03fb1376eba8944e75d4621388fa4068c5c66dc4",
+    "sourceLayers": {
+      "under": "8ba3767acad4bc51e68cb4cd03fb1376eba8944e75d4621388fa4068c5c66dc4",
+      "mid": "8ba3767acad4bc51e68cb4cd03fb1376eba8944e75d4621388fa4068c5c66dc4",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "sourceBehavior": 0,
+    "sourceAnimation": {
+      "mode": "static_equivalent",
+      "bank": "battle_dome_floor_lights",
+      "hash": "69ef83c37b509749663531dc8d37484ee927423c11be160384db7923e91d1989"
+    }
+  }
+]
