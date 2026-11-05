@@ -145,7 +145,7 @@ function Composition.new(ctx)
       source,why=donor:cell({game=row.game,tileset=row.tileset,id=row.id,hash=row.sourceHash,
         animationManifestHash=spec.animationManifestHash,staticClassic=true,
         classicGroundMasks=spec.ground and spec.ground.animation and spec.ground.masks or nil,
-        classicNativeOver=spec.nativeOver})
+        classicNativeOver=spec.nativeOver,classicSourceAnimation=spec.sourceAnimation})
     end
     assert(source and(source.hash==row.sourceHash or source.sourceHash==row.sourceHash),'Classic geometry source fingerprint changed: '..tostring(why))
     assert(source.animationManifestHash==spec.animationManifestHash,'Classic geometry animation source changed')
@@ -156,9 +156,12 @@ function Composition.new(ctx)
     local nativeOver=spec.nativeOver
     assert(source.classicNativeOver==(nativeOver and nativeOver.bank..':'..nativeOver.hash or nil),
       'Classic geometry native foreground differs from its checked source')
+    local animation=spec.sourceAnimation
+    assert(source.classicSourceAnimation==(animation and animation.mode..':'..animation.bank..':'..animation.hash or nil),
+      'Classic geometry source animation differs from its checked source')
     return source
   end
-  local function classicGeometry(row,source,groundFrame)
+  local function classicGeometry(row,source,groundFrame,sourceFrame)
     source=classicSource(row,source)
     local spec=row.classicGeometry
     local colors={}
@@ -171,6 +174,9 @@ function Composition.new(ctx)
       assert((image~=nil)==(expected~=nil),'Classic geometry source layer presence changed: '..name)
       if image then
         image16(image);assert(hashImage(image)==expected,'Classic geometry source layer changed: '..name)
+      end
+      if sourceFrame and name=='under'then image=sourceFrame end
+      if image then
         if name=='over'and spec.nativeOver then
           result[name]=image
         else
@@ -179,6 +185,8 @@ function Composition.new(ctx)
           for y=0,15 do
             for x=0,15 do
               local r,g,b,a=image:getPixel(x,y)
+              local offset=y*16+x+1
+              if sourceFrame and name=='mid'and source.classicSourceMiddleOverlap[offset]then r,g,b,a=0,0,0,0 end
               assert(a==0 or a==1,'Classic geometry requires native binary alpha')
               if a==1 then
                 local key=math.floor(r*255+.5)*65536+math.floor(g*255+.5)*256+math.floor(b*255+.5)
@@ -186,7 +194,6 @@ function Composition.new(ctx)
                 assert(rgb,'Classic geometry contains an unmapped source color')
                 r,g,b=rgb[1],rgb[2],rgb[3]
               end
-              local offset=y*16+x+1
               if mask and mask:sub(offset,offset)=='1'then
                 assert(a==1,'Classic geometry ground mask includes transparent source pixels')
                 local gr,gg,gb,ga=ground:getPixel(x%groundWidth,y)
@@ -205,7 +212,26 @@ function Composition.new(ctx)
   end
   local function classicFrames(row,source)
     source=classicSource(row,source)
-    local ground=row.classicGeometry.ground
+    local spec=row.classicGeometry
+    local ground=spec.ground
+    if spec.sourceAnimation and spec.sourceAnimation.mode=='native_under'then
+      assert(type(source.classicSourceFrames)=='table'and #source.classicSourceFrames>=2
+        and #source.classicSourceFrames<=256,'Classic source animation frames unavailable')
+      if ground then
+        for offset in pairs(source.classicSourceVariation)do
+          assert(not ground.masks.under or ground.masks.under:sub(offset,offset)~='1',
+            'Classic static ground mask covers a moving source pixel')
+          assert(not ground.masks.mid or ground.masks.mid:sub(offset,offset)~='1',
+            'Classic static ground mask covers a moving middle pixel')
+        end
+      end
+      local output={frames={},sourceUnderBytes={},base=classicGeometry(row,source)}
+      for index,frame in ipairs(source.classicSourceFrames)do
+        output.frames[index]=classicGeometry(row,source,nil,frame)
+        output.sourceUnderBytes[index]=frame:getString()
+      end
+      return output
+    end
     assert(ground and ground.animation,'Classic geometry has no animated ground')
     local sequence,why=donor:frames(ground.donor,ground.animation)
     assert(sequence,'Classic ground animation failed: '..tostring(why))

@@ -25,6 +25,11 @@ local function data(w, h, fill)
     end
   end
   function d:sample(x, y) return self.pixels[y*self.w+x+1] end
+  function d:getString()
+    local out={}
+    for i=1,#self.pixels do out[i]=string.char(self.pixels[i])end
+    return table.concat(out)
+  end
   return d
 end
 local function fillSlot(d, slot, color)
@@ -377,6 +382,27 @@ eq(paletteTs.imageData:sample(16,0),33,'unmapped palette retains its native upda
 native.setSlotPalette(paletteTs,0,36)
 eq(paletteTs.imageData:sample(0,0),36,'later wrapper cannot revive disabled donor pixels')
 eq(paletteTs.gpuUnder:sample(0,0),36,'later wrapper retains native GPU palette after cleanup')
+
+local lightTs=atlas();native._pairs={fixture=lightTs}
+local lightPhase=data(16,16,5)
+fillSlot(lightTs.imageData,0,5)
+local lightPieces={[0]={under=data(16,16,81),mid=data(16,16,0),nativeUnder={
+  [lightPhase:getString()]=data(16,16,85),
+  [data(16,16,6):getString()]=data(16,16,86),
+}}}
+local stopLights=Adapter.install({native=native,animation=animation,view=view,
+  version='emerald',newImageData=data,replacements=function()return lightPieces end})
+eq(lightTs.gpuUnder:sample(0,0),85,'installation detects the current exact native frame')
+native.markDirty(lightTs,false,0);fillSlot(lightTs.imageData,0,6);native.flush(lightTs,true,false)
+eq(lightTs.gpuUnder:sample(0,0),86,'native frame update selects its reviewed replacement')
+local lightPastes,lightImages=pastes,imageAllocations
+for i=1,1000 do view.draw()end
+eq(pastes,lightPastes,'unchanged native source phase performs no atlas copies')
+eq(imageAllocations,lightImages,'unchanged native source phase allocates no images')
+native.markDirty(lightTs,false,0);fillSlot(lightTs.imageData,0,7);native.flush(lightTs,true,false)
+eq(lightTs.gpuUnder:sample(0,0),81,'unknown source image selects the reviewed still frame')
+stopLights()
+eq(lightTs.gpuUnder:sample(0,0),7,'cleanup restores the most recent native source pixels')
 
 print('Gen 3 adapter: '..checks..' checks passed')
 return checks

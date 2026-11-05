@@ -159,17 +159,44 @@ eq(retained.under:getString(),merged:getString(),'Native background lost visible
 eq(retained.mid:getString(),data(16,16):getString(),'Native atlas receives a duplicate middle layer')
 altered=copy(preserved);altered.classicGeometry.ground={donor={game='crystal',tileset='TEST',id=0,quadrant=0,hash=floor.hash},masks={over=ones}}
 eq(Mapping.validate(altered),nil)
+local shoreline=copy(animated);shoreline.id=80
+shoreline.classicGeometry.nativeOver=preserved.classicGeometry.nativeOver
+shoreline.classicGeometry.sourceAnimation={mode='water_mask',bank='water',hash=hash('native-water')}
+eq(Mapping.validate(shoreline),true)
+local shoreSource={}
+for key,value in pairs(animatedSource)do shoreSource[key]=value end
+shoreSource.classicNativeOver=preservedSource.classicNativeOver
+shoreSource.classicSourceAnimation='water_mask:water:'..hash('native-water')
+local shoreCell=decoder.cell
+function decoder:cell(ref)
+ if ref.id==80 then return shoreSource end
+ return shoreCell(self,ref)
+end
+local shoreState=Session.new{mappings=assert(Mapping.index({shoreline})),donor=decoder,newImageData=data,
+ generations=Mapping.generations,themes=Mapping.themes,normalizeStyle=Mapping.normalizeStyle,validate=Mapping.validate,
+ compose=function(r,s)return composer:cell(r,s)end,composeFrames=function(r,s)return composer:frames(r,s)end,warn=error}
+shoreState:select('gen2')
+local shore=shoreState:replacements('emerald','PAIR')[80]
+eq(shore.over,nil,'Animated background must leave native foreground available')
+for index,frame in ipairs(shore.frames)do
+ eq(frame.over,nil,'Background frame must never overwrite retained foreground')
+ eq(frame.under:getString(),sequence.frames[index].under:getString(),'Retained foreground changes animated background')
+end
+altered=copy(shoreline);altered.classicGeometry.sourceAnimation.mode='native_under'
+eq(Mapping.validate(altered),nil)
 -- The real donor rejects static artwork on both tile and palette animation
 -- banks, including legacy FR/LG banks and transparent overlay palette zeros.
 local manifest={banks={}};local reads=0;local withMid,withOver=false,false
 local bankBytes=string.rep('q',512)
+local lightBytes=string.rep(string.char(1),256)..string.char(2)..string.rep(string.char(1),255)
 local pixels={};for i=1,256 do pixels[i]=1 end
-local pack={decodePalettes=function()return{}end,palsToRgb8=function()return{[0]={[0]={5,7,9},[1]={255,0,0}}}end,
+local pack={decodePalettes=function()return{}end,palsToRgb8=function()return{[0]={[0]={5,7,9},[1]={255,0,0},[2]={0,255,0}}}end,
  decodeIdx=function()return{midIds={77},pixels=pixels}end}
 local d=Donor.new{read=function(path)
  reads=reads+1
  if(path:find('mids_mid')and not withMid)or(path:find('mids_over')and not withOver)or path:find('rom%-cache')or path:find('meta.json',1,true)then return nil end
  if path:find('steam.idx',1,true)then return bankBytes end
+ if path:find('lights.idx',1,true)then return lightBytes end
  return path:find('anim_manifest',1,true)and'manifest'or'pixels'
  end,
  prefix=function(g)return g..'/'end,decode=function()return manifest end,newImageData=data,hash=hash,nativePack=pack,identityToken=function()return 1 end}
@@ -193,4 +220,45 @@ manifest={banks={{kind='tiles',name='steam',frames=2,overFile='steam.idx',overMi
 d:invalidate();eq(assert(d:cell(ref)).classicNativeOver,'steam:'..hash(bankBytes))
 ref.classicNativeOver.hash=hash('wrong');eq(d:cell(ref),nil,'changed native effect bank accepted')
 ref.classicNativeOver.hash=hash(bankBytes);manifest.banks[1].file='under.idx';d:invalidate();eq(d:cell(ref),nil,'mixed under/over bank accepted')
+ref.classicNativeOver=nil;withOver=false
+manifest={family='rse',banks={{kind='tiles',name='lights',frames=2,file='lights.idx',mids={77},quads={15}}}}
+local first='1'..string.rep('0',255)
+ref.classicSourceAnimation={mode='water_mask',bank='lights',hash=hash(lightBytes)}
+ref.classicGroundMasks={under=first,mid=first};d:invalidate()
+eq(assert(d:cell(ref)).staticClassic,true,'constant pixels inside a flagged quadrant must stay available')
+ref.classicGroundMasks.mid=nil;eq(d:cell(ref),nil,'water phase would be hidden by duplicate middle pixel')
+ref.classicGroundMasks=nil;eq(d:cell(ref),nil,'uncovered actual source change accepted')
+ref.classicSourceAnimation.mode='native_under'
+local lightSource=assert(d:cell(ref))
+eq(#lightSource.classicSourceFrames,2);eq(lightSource.classicSourceMiddleOverlap[1],true)
+eq(lightSource.classicSourceVariation[2],nil,'stable source pixel treated as a moving pixel')
+eq(lightSource.classicSourceFrames[2]:getString():sub(1,4),string.char(0,255,0,255))
+local lights=copy(row);lights.sourceHash=lightSource.hash
+lights.classicGeometry.sourceAnimation=copy(ref.classicSourceAnimation)
+for _,name in ipairs({'under','mid','over'})do lights.classicGeometry.sourceLayers[name]=hash(lightSource[name]:getString())end
+lights.classicGeometry.animationManifestHash=lightSource.animationManifestHash
+local lightComposer=Composition.new{donor=d,newImageData=data,validateRow=Mapping.validate,hashImage=function(im)return hash(im:getString())end}
+local phases=assert(lightComposer:frames(lights,lightSource));eq(#phases.sourceUnderBytes,2)
+eq(phases.frames[2].under:getString():sub(1,4),string.char(160,192,96,255))
+eq(phases.frames[2].mid:getString():sub(1,4),string.char(0,0,0,0),'duplicated middle freezes moving source pixel')
+eq(phases.frames[2].mid:getString():sub(5,8),phases.base.mid:getString():sub(5,8),'static middle pixel changed')
+local lightIndex=assert(Mapping.index({lights}));local lightSession=Session.new{mappings=lightIndex,donor=d,newImageData=data,
+ generations=Mapping.generations,themes=Mapping.themes,normalizeStyle=Mapping.normalizeStyle,validate=Mapping.validate,
+ composeFrames=function(r,s)return lightComposer:frames(r,s)end,warn=error}
+lightSession:select('gen2');local lightReplacement=lightSession:replacements('emerald','PAIR')[77]
+eq(lightReplacement.nativeUnder[phases.sourceUnderBytes[2]]:getString(),phases.frames[2].under:getString())
+eq(lightReplacement.frames,nil,'native source animation must not run a second clock')
+altered=copy(lights);altered.classicGeometry.sourceAnimation.hash=hash('wrong')
+eq(lightComposer:frames(altered),nil,'changed under animation bank accepted')
+altered=copy(lights);altered.classicGeometry.ground=copy(grounded.classicGeometry.ground)
+altered.classicGeometry.ground.donor.game='crystal'
+eq(lightComposer:frames(altered,lightSource),nil,'static backing masks a moving source pixel')
+ref.classicSourceAnimation.mode='static_equivalent'
+eq(d:cell(ref),nil,'varying native source accepted as static')
+manifest.banks[1].quads={2};d:invalidate()
+eq(assert(d:cell(ref)).classicSourceFrames,nil,'visually static native bank creates animation frames')
+manifest.banks[1].overMids={78};manifest.banks[1].overFile='over.idx';d:invalidate()
+eq(assert(d:cell(ref)).staticClassic,true,'unrelated native OVER cell blocks a safe UNDER source')
+manifest.banks[1].overMids={77};d:invalidate()
+eq(d:cell(ref),nil,'one cell cannot claim independent UNDER and OVER under the source contract')
 print('classic geometry checks: '..checks)

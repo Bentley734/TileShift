@@ -58,7 +58,7 @@ function M.validateClassicGeometry(row)
     or type(spec.feature)~='string' or #spec.feature<1 or #spec.feature>96
     or not spec.feature:match('^[%w_%-]+$') or not fingerprint(spec.animationManifestHash)
     or not fingerprint(row.compositionPixelHash) then return nil,'invalid static classic geometry contract' end
-  local known={version=true,static=true,feature=true,palette=true,colorMap=true,sourceLayers=true,animationManifestHash=true,ground=true,nativeOver=true}
+  local known={version=true,static=true,feature=true,palette=true,colorMap=true,sourceLayers=true,animationManifestHash=true,ground=true,nativeOver=true,sourceAnimation=true}
   for k in pairs(spec)do if not known[k]then return nil,'unknown classic geometry field' end end
   if not dense(spec.palette,4)then return nil,'classic geometry needs four reviewed RGB8 colors' end
   local palette={}
@@ -190,6 +190,23 @@ function M.validate(row)
   if row.kind=='classic_native_geometry'then
     local ok,why=M.validateClassicGeometry(row);if not ok then return nil,why end
     local nativeOver=row.classicGeometry.nativeOver
+    local sourceAnimation=row.classicGeometry.sourceAnimation
+    if sourceAnimation~=nil then
+      if (row.game~='ruby'and row.game~='sapphire'and row.game~='emerald')
+        or type(sourceAnimation)~='table'
+        or(sourceAnimation.mode~='water_mask'and sourceAnimation.mode~='native_under'
+          and sourceAnimation.mode~='static_equivalent')
+        or type(sourceAnimation.bank)~='string'or not sourceAnimation.bank:match('^[%w_]+$')
+        or not fingerprint(sourceAnimation.hash)then
+        return nil,'classic source animation needs one checked RSE under-only bank'
+      end
+      for key in pairs(sourceAnimation)do
+        if key~='mode'and key~='bank'and key~='hash'then return nil,'unknown classic source animation field'end
+      end
+      if nativeOver and sourceAnimation.mode~='water_mask'then
+        return nil,'retained native foreground can only combine with masked background animation'
+      end
+    end
     if nativeOver~=nil then
       if(row.game~='ruby'and row.game~='sapphire'and row.game~='emerald')or type(nativeOver)~='table'
         or type(nativeOver.bank)~='string'or not nativeOver.bank:match('^[%w_]+$')or not fingerprint(nativeOver.hash)then
@@ -215,7 +232,10 @@ function M.validate(row)
         if mask:find('1',1,true)then found=true end
       end
       if not found then return nil,'classic geometry ground mask is empty'end
-      if nativeOver and(ground.masks.over or ground.animation)then return nil,'native foreground must remain solely owned by its source animation'end
+      if nativeOver and ground.masks.over then return nil,'native foreground must remain solely owned by its source animation'end
+      if sourceAnimation and sourceAnimation.mode~='water_mask'and ground.animation then
+        return nil,'classic native source animation cannot also animate its ground'
+      end
       if ground.animation~=nil then
         local probe={game=row.game,style=row.style,tileset=row.tileset,id=row.id,sourceHash=row.sourceHash,
           status=row.status,role=row.role,evidence=row.evidence,kind='native_composite',animated=true,

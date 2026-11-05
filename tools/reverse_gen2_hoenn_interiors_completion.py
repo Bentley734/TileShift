@@ -103,7 +103,7 @@ class Review(ReverseReview):
         guards=json.loads(SURFACE_GUARDS.read_text());assert guards['format']==1
         for contract in guards['sources']:
             game,pair,mid=contract['game'],contract['pair'],contract['id'];key=game,pair,mid
-            assert key not in self.active and key not in {(r['game'],r['tileset'],r['id'])for r in self.rows.values()}
+            assert key not in self.active and (game,'gen2',pair,mid,None) not in self.rows
             cell=self.imp.cell_index(game)[pair,mid]
             assert cell['pixel_sha256']==contract['sourceHash'] and cell.get('behavior')==contract['sourceBehavior']
             assert cell['layer_sha256']==contract['layer_sha256'] and self.used[key]==contract['body_cells']
@@ -114,7 +114,6 @@ class Review(ReverseReview):
                 'Whole source room and weighted source context were explicitly reviewed: '+contract['feature']+'. '
                 'Uses one complete original Crystal sixteen-pixel '+contract['material']+' module at native scale, with no fractional resizing, extracted source pixels, or unreviewed object suppression. '
                 'The literal source RGBA, every priority plane, exact behavior and actual logical-cell usage are frozen separately for this source. '
-                'Uncracked slippery ice and ordinary snowy walking ground use distinct native Ice Path textures, preserving the original visual distinction and all native puzzle logic. '
                 'Original map geometry, collision, entrances, actors and scripted mechanics remain unchanged.')
             assert row['compositionPixelHash']==contract['expected_output_sha256']
             row['reverseGen2HoennInteriorsCompletion']=dict(reviewed_contract_sha256=digest(contract),
@@ -126,7 +125,7 @@ class Review(ReverseReview):
         guards=json.loads(FEATURE_GUARDS.read_text());assert guards['format']==1
         for contract in guards['sources']:
             game,pair,mid=contract['game'],contract['pair'],contract['id'];key=game,pair,mid
-            assert key not in self.active and key not in {(r['game'],r['tileset'],r['id'])for r in self.rows.values()}
+            assert key not in self.active and (game,'gen2',pair,mid,None) not in self.rows
             cell=self.imp.cell_index(game)[pair,mid]
             assert cell['pixel_sha256']==contract['sourceHash'] and cell.get('behavior')==contract['sourceBehavior']
             assert cell['layer_sha256']==contract['layer_sha256'] and self.used[key]==contract['body_cells']
@@ -138,7 +137,8 @@ class Review(ReverseReview):
                 assert floor['donor']==contract['ground']['donor']
             colors={tuple(entry[:3]):tuple(entry[3:])for entry in contract['colorMap']}
             recipe=art(self,game,pair,mid,contract['feature'],contract['palette'],colors,
-                'reverse_gen2_hoenn_named_'+contract['feature'],ground=contract.get('ground'))
+                'reverse_gen2_hoenn_named_'+contract['feature'],ground=contract.get('ground'),
+                native_over=contract.get('nativeOver'),source_animation=contract.get('sourceAnimation'))
             assert recipe['classicGeometry']['animationManifestHash']==contract['animationManifestHash']
             row=self.row(game,pair,mid,'gen2',recipe,
                 'Named whole-feature context review: '+contract['review']+'. '
@@ -147,6 +147,8 @@ class Review(ReverseReview):
                 'This is a limited-palette derivative of the named Hoenn feature, not native Crystal donor artwork. '
                 'No geometry is cropped, shrunk, filled over or inferred from a generic material; collision, actors and scripted mechanics remain unchanged.')
             assert row['compositionPixelHash']==contract['expected_output_sha256']
+            if 'expected_phase_sha256' in contract:
+                assert [sha(frame.tobytes())for frame in preview.replacement_frames(self.cache,row,self.packed,ROOT)]==contract['expected_phase_sha256']
             row['reverseGen2HoennInteriorsCompletion']=dict(reviewed_contract_sha256=digest(contract),
                 named_feature=contract['feature'],source_contexts=contract['source_maps'],pixel_scale=1,
                 original_feature_geometry=True,independent_output_sha256=contract['expected_output_sha256'])
@@ -155,10 +157,13 @@ class Review(ReverseReview):
         guards=json.loads(OBJECT_GUARDS.read_text());assert guards['format']==1
         for contract in guards['sources']:
             game,pair,mid=contract['game'],contract['pair'],contract['id'];key=game,pair,mid
-            assert key not in self.active and key not in {(r['game'],r['tileset'],r['id'])for r in self.rows.values()}
+            assert key not in self.active and (game,'gen2',pair,mid,None) not in self.rows
             cell=self.imp.cell_index(game)[pair,mid]
             assert cell['pixel_sha256']==contract['sourceHash'] and cell.get('behavior')==contract['sourceBehavior']
             assert cell['layer_sha256']==contract['layer_sha256'] and self.used[key]==contract['body_cells']
+            if 'reviewed_layout_sha256' in contract:
+                layouts=[m for m in self.maps if m['game']==game and m['map'] in contract['source_maps']]
+                assert len(layouts)==1 and layouts[0]['layout_sha256']==contract['reviewed_layout_sha256']
             row=self.row(game,pair,mid,'gen2',contract['art'],contract['review']+
                 ' Uses complete original Crystal object artwork at native pixel scale and the exact selected native floor; only connected exterior floor pixels are excluded. '
                 'Whole source identity, every source priority plane, behavior and actual logical usage are frozen independently. '

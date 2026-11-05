@@ -210,6 +210,7 @@ function S.new(ctx)
           if row.kind=='classic_native_geometry'then
             sourceRef.animationManifestHash=row.classicGeometry.animationManifestHash;sourceRef.staticClassic=true
             sourceRef.classicNativeOver=row.classicGeometry.nativeOver
+            sourceRef.classicSourceAnimation=row.classicGeometry.sourceAnimation
             local ground=row.classicGeometry.ground
             if ground and ground.animation then sourceRef.classicGroundMasks=ground.masks end
           end
@@ -219,11 +220,13 @@ function S.new(ctx)
         local piece,pieceError,sequence
         if source then
           if row.kind=='classic_native_geometry'then
-            local ground=row.classicGeometry.ground
-            if ground and ground.animation then
+            local spec=row.classicGeometry
+            local ground=spec.ground
+            local nativeUnder=spec.sourceAnimation and spec.sourceAnimation.mode=='native_under'
+            if nativeUnder or(ground and ground.animation)then
               if ctx.composeFrames then
                 sequence,pieceError=tryCall(ctx.composeFrames,row,source)
-                if sequence and type(sequence.frames)=='table'and #sequence.frames>=2 then piece=sequence.frames[1]
+                if sequence and type(sequence.frames)=='table'and #sequence.frames>=2 then piece=sequence.base or sequence.frames[1]
                 else sequence=nil;pieceError=pieceError or'Invalid classic ground animation'end
               else pieceError='Classic ground animation service is unavailable'end
             elseif ctx.compose then piece,pieceError=tryCall(ctx.compose,row,source)
@@ -340,7 +343,12 @@ function S.new(ctx)
               return{under=under,mid=clearPlane(),over=over}
             end
             local replacement=planes(piece)
-            if sequence then
+            if sequence and sequence.sourceUnderBytes then
+              replacement.nativeUnder={}
+              for index,frame in ipairs(sequence.frames)do
+                replacement.nativeUnder[sequence.sourceUnderBytes[index]]=planes(frame).under
+              end
+            elseif sequence then
               replacement.frames={}
               for index,frame in ipairs(sequence.frames)do replacement.frames[index]=planes(frame)end
               replacement.period=sequence.period;replacement.offset=sequence.offset or 0;replacement.category='water'

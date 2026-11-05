@@ -62,6 +62,11 @@ function M.install(context)
       end
     end
   end
+  local function selectNativeUnder(row)
+    if row.nativeUnder then
+      row.under=row.nativeUnder[row.underSource:getString()] or row.underFallback
+    end
+  end
   local function capture(state)
     for i=1,#state.list do
       local row=state.list[i]
@@ -69,6 +74,7 @@ function M.install(context)
         local layer=LAYERS[j]
         if row[layer]then row[layer..'Source']:paste(state.ts[DATA[layer]],0,0,row.x,row.y,16,16)end
       end
+      selectNativeUnder(row)
     end
   end
   local function paint(state,dirty)
@@ -115,6 +121,7 @@ function M.install(context)
         if row[layer..'Pending']then
           if live then
             row[layer..'Source']:paste(state.ts[DATA[layer]],0,0,row.x,row.y,16,16)
+            if layer=='under'then selectNativeUnder(row)end
             -- Native markDirty already recorded the slot; GPU still contains
             -- this same donor frame until native's scheduled flush.
             state.ts[DATA[layer]]:paste(row[layer],row.x,row.y)
@@ -195,7 +202,12 @@ function M.install(context)
             end
           end
           if row.under or row.over or row.mid then
-            addFrames(state,row,replacement)
+            if row.under and type(replacement.nativeUnder)=='table'then
+              row.nativeUnder,row.underFallback=replacement.nativeUnder,row.under
+              selectNativeUnder(row)
+            else
+              addFrames(state,row,replacement)
+            end
             state.list[#state.list+1]=row;state.bySlot[slot]=row
           end
         end

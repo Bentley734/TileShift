@@ -29,6 +29,10 @@ return function(mod)
     'mappings/reverse_gen2_fortree_complete.lua',
     'mappings/reverse_gen2_native_headers_complete.lua',
     'mappings/reverse_gen2_hoenn_home_complete.lua',
+    'mappings/reverse_gen2_lilycove_remaining.lua',
+    'mappings/reverse_gen2_frontier_outside.lua',
+    'mappings/reverse_gen2_hoenn_cave_completion.lua',
+    'mappings/reverse_gen2_kanto_house_completion.lua',
 
   }) do
     local source=mod:read(path)

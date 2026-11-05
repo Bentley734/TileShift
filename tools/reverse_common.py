@@ -258,6 +258,8 @@ class ReverseReview:
             vm.globals()[b'reverseDecoder']=decoder; vm.globals()[b'reverseComposer']=composer
             vm.globals()[b'reverseHash']=lambda raw:hashlib.sha256(raw).hexdigest().encode()
             classic_layers={}
+            native_under_frames={}
+            native_under_counts={}
             empty=Image.new('RGBA',(16,16))
             for row in rows:
                 if row.get('kind')=='classic_native_geometry':
@@ -269,7 +271,22 @@ class ReverseReview:
                     for name in ('under','mid','over'):
                         image=planes.get(name,empty)
                         classic_layers[row['game'].encode(),row['tileset'].encode(),row['id'],name.encode()]=catalog.sha(image.tobytes()).encode()
+                    animation=row['classicGeometry'].get('sourceAnimation',{})
+                    if animation.get('mode')=='native_under':
+                        from classic_geometry_review import source_under_frames
+                        game,pair,mid=row['game'],row['tileset'],row['id']
+                        key=(game.encode(),pair.encode(),mid)
+                        frames,_,middle_overlap=source_under_frames(self.cache,game,pair,mid,self.packed,animation)
+                        native_under_counts[key]=len({frame.tobytes() for frame in frames})
+                        for frame in frames:
+                            layers=preview.classic_geometry_layers(self.cache,row,self.packed,
+                                                                  source_frame=frame,middle_overlap=middle_overlap)
+                            under=layers['under']
+                            if 'mid' in layers:under=Image.alpha_composite(under,layers['mid'])
+                            native_under_frames[(*key,frame.tobytes())]=catalog.sha(under.tobytes()).encode()
             vm.globals()[b'reverseExpectedClassicLayer']=lambda game,pair,mid,name:classic_layers[game,pair,mid,name]
+            vm.globals()[b'reverseExpectedNativeUnder']=lambda game,pair,mid,source:native_under_frames.get((game,pair,mid,source))
+            vm.globals()[b'reverseExpectedNativeUnderCount']=lambda game,pair,mid:native_under_counts[game,pair,mid]
             def original_art(relative, expected):
                 path=(ROOT/relative.decode()).resolve();assert path.is_relative_to(ROOT)
                 raw=path.read_bytes();assert hashlib.sha256(raw).hexdigest().encode()==expected
@@ -292,6 +309,15 @@ for _,style in ipairs({'gen1','gen2'})do
   local piece=assert(visited[k][row.id]);assert(piece.under)
   local flat=piece.under
   if row.kind=='classic_native_geometry'then
+   if row.classicGeometry.sourceAnimation and row.classicGeometry.sourceAnimation.mode=='native_under'then
+    local found=0
+    for nativeBytes,frame in pairs(assert(piece.nativeUnder))do
+     assert(reverseHash(frame:getString())==reverseExpectedNativeUnder(row.game,row.tileset,row.id,nativeBytes),
+       'Classic source animation phase differs from independent native pixels')
+     found=found+1
+    end
+    assert(found==reverseExpectedNativeUnderCount(row.game,row.tileset,row.id),'Classic source animation missed a native phase')
+   end
    local retainedOver
    if row.classicGeometry.nativeOver then
     assert(piece.over==nil,'Retained native foreground was overwritten by the theme')
@@ -318,7 +344,8 @@ return totals
             accepted={k.decode()if isinstance(k,bytes)else k:v for k,v in result.items()}
             proof={'accepted':accepted,'rejected':0,'neutral_imports_only':True,'source_and_donor_hashes_checked':True,
                    'independent_output_pixels_checked':len(rows)*256,
-                   'independent_classic_priority_plane_pixels_checked':len(classic_layers)*256}
+                   'independent_classic_priority_plane_pixels_checked':len(classic_layers)*256,
+                   'independent_native_under_animation_pixels_checked':len(native_under_frames)*256}
             (self.out/'proof.json').write_text(json.dumps(proof,indent=2),encoding='utf-8')
             return proof
         finally:

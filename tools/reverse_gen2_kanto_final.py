@@ -329,9 +329,12 @@ class Final(Complete):
                 origin=decision['canonical'];canonical=self.current[origin['game'],'gen2',origin['pair'],origin['mid'],None]
                 assert catalog.sha(previous.stable(canonical).encode())==decision['canonical_row_sha256'],'Reviewed native floor row changed'
             assert cell['layer_sha256']['over']==catalog.sha(bytes(1024))
-            self.emit_final(game,pair,mid,copy.deepcopy(decision['art']),decision['evidence'],
+            row=self.emit_final(game,pair,mid,copy.deepcopy(decision['art']),decision['evidence'],
                 dict(kind='reviewed_complete_native_module',feature=decision['feature'],
-                    source_contexts=self.usage[game,pair,mid],source_layers=cell['layer_sha256'],native_pixel_scale=1))
+                    source_contexts=self.usage[game,pair,mid],source_layers=cell['layer_sha256'],native_pixel_scale=1,
+                    **({'reviewed_alias':decision['reviewed_alias']}if 'reviewed_alias'in decision else{})))
+            if row and 'reviewed_alias'in decision:
+                assert row['compositionPixelHash']==decision['reviewed_alias']['compositionPixelHash'],'Reviewed alias output changed'
         for decision in decisions.get('native_objects',[]):
             game,pair,mid=decision['game'],decision['pair'],decision['mid']
             cell=self.imp.cell_index(game)[pair,mid]

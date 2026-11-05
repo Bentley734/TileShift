@@ -1062,6 +1062,3920 @@
         "EM_ABANDONED_SHIP_ROOMS_B1F",
         "EM_SS_TIDAL_ROOMS"
       ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__shop",
+      "id": 589,
+      "sourceHash": "53a7e7319995358b6a9993eeca7a8c5967b54a8b6468eed829fbb634bf983f10",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "53a7e7319995358b6a9993eeca7a8c5967b54a8b6468eed829fbb634bf983f10",
+        "mid": "53a7e7319995358b6a9993eeca7a8c5967b54a8b6468eed829fbb634bf983f10",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 6,
+      "material": "lilycove_rooftop_paving",
+      "feature": "Complete shadowed stone paving on the public department-store rooftop",
+      "native_map": "GOLDENROD_DEPT_STORE_ROOF",
+      "native_block": 58,
+      "native_quadrant": 1,
+      "expected_output_sha256": "9a5cdded4f69ccb42cafac415c244b7a0721044f974a97d3ddacca85dd6ad168",
+      "source_maps": [
+        "EM_LILYCOVE_CITY_DEPARTMENT_STORE_ROOFTOP"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__shop",
+      "id": 754,
+      "sourceHash": "0ad998b368285795b26fe3c220f9fc7c9f8c3c4fe7fe4ea9ddae7e40ab26138d",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "0ad998b368285795b26fe3c220f9fc7c9f8c3c4fe7fe4ea9ddae7e40ab26138d",
+        "mid": "0ad998b368285795b26fe3c220f9fc7c9f8c3c4fe7fe4ea9ddae7e40ab26138d",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 25,
+      "material": "lilycove_fifth_floor_commercial_tile",
+      "feature": "Complete unmarked fifth-floor public carpet tile and full shaded variation",
+      "native_map": "GOLDENROD_DEPT_STORE_3F",
+      "native_block": 12,
+      "native_quadrant": 3,
+      "expected_output_sha256": "31cbcaca69ae81dc9652f0a25e007d1bd68f4b56d36b38c12330c94d8a098079",
+      "source_maps": [
+        "EM_LILYCOVE_CITY_DEPARTMENT_STORE_5F"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__shop",
+      "id": 755,
+      "sourceHash": "d020fcff1dde08878c3e7d7b3e3ccd50b2f36b4562763fc738bf888e197c4ca4",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "d020fcff1dde08878c3e7d7b3e3ccd50b2f36b4562763fc738bf888e197c4ca4",
+        "mid": "d020fcff1dde08878c3e7d7b3e3ccd50b2f36b4562763fc738bf888e197c4ca4",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 3,
+      "material": "lilycove_fifth_floor_commercial_tile",
+      "feature": "Complete unmarked fifth-floor public carpet tile and full shaded variation",
+      "native_map": "GOLDENROD_DEPT_STORE_3F",
+      "native_block": 12,
+      "native_quadrant": 3,
+      "expected_output_sha256": "31cbcaca69ae81dc9652f0a25e007d1bd68f4b56d36b38c12330c94d8a098079",
+      "source_maps": [
+        "EM_LILYCOVE_CITY_DEPARTMENT_STORE_5F"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__shop",
+      "id": 756,
+      "sourceHash": "eae43a0ff22c3a52b6ff2de31885d63f8cec6d9c18ba99c17a374c775aced8cd",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "eae43a0ff22c3a52b6ff2de31885d63f8cec6d9c18ba99c17a374c775aced8cd",
+        "mid": "eae43a0ff22c3a52b6ff2de31885d63f8cec6d9c18ba99c17a374c775aced8cd",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 17,
+      "material": "lilycove_fifth_floor_commercial_tile",
+      "feature": "Complete unmarked fifth-floor public carpet tile and full shaded variation",
+      "native_map": "GOLDENROD_DEPT_STORE_3F",
+      "native_block": 12,
+      "native_quadrant": 3,
+      "expected_output_sha256": "31cbcaca69ae81dc9652f0a25e007d1bd68f4b56d36b38c12330c94d8a098079",
+      "source_maps": [
+        "EM_LILYCOVE_CITY_DEPARTMENT_STORE_5F"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__shop",
+      "id": 757,
+      "sourceHash": "47a883525b05afd6f5ddf5ec5b6ff203d109cca58e273631dc41ef0ea52f9cbb",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "47a883525b05afd6f5ddf5ec5b6ff203d109cca58e273631dc41ef0ea52f9cbb",
+        "mid": "47a883525b05afd6f5ddf5ec5b6ff203d109cca58e273631dc41ef0ea52f9cbb",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 3,
+      "material": "lilycove_fifth_floor_commercial_tile",
+      "feature": "Complete unmarked fifth-floor public carpet tile and full shaded variation",
+      "native_map": "GOLDENROD_DEPT_STORE_3F",
+      "native_block": 12,
+      "native_quadrant": 3,
+      "expected_output_sha256": "31cbcaca69ae81dc9652f0a25e007d1bd68f4b56d36b38c12330c94d8a098079",
+      "source_maps": [
+        "EM_LILYCOVE_CITY_DEPARTMENT_STORE_5F"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__shop",
+      "id": 762,
+      "sourceHash": "10e173c6c3c1451c784dcb10916f2f1ad8ff8350e136db1c368c895614b855f4",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "10e173c6c3c1451c784dcb10916f2f1ad8ff8350e136db1c368c895614b855f4",
+        "mid": "10e173c6c3c1451c784dcb10916f2f1ad8ff8350e136db1c368c895614b855f4",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 11,
+      "material": "lilycove_fifth_floor_commercial_tile",
+      "feature": "Complete unmarked fifth-floor public carpet tile and full shaded variation",
+      "native_map": "GOLDENROD_DEPT_STORE_3F",
+      "native_block": 12,
+      "native_quadrant": 3,
+      "expected_output_sha256": "31cbcaca69ae81dc9652f0a25e007d1bd68f4b56d36b38c12330c94d8a098079",
+      "source_maps": [
+        "EM_LILYCOVE_CITY_DEPARTMENT_STORE_5F"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__shop",
+      "id": 764,
+      "sourceHash": "db8399db141f4c28bf14168d0874402b85361c4f67bece454662e7dd0f9a7d45",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "db8399db141f4c28bf14168d0874402b85361c4f67bece454662e7dd0f9a7d45",
+        "mid": "db8399db141f4c28bf14168d0874402b85361c4f67bece454662e7dd0f9a7d45",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 4,
+      "material": "lilycove_fifth_floor_commercial_tile",
+      "feature": "Complete unmarked fifth-floor public carpet tile and full shaded variation",
+      "native_map": "GOLDENROD_DEPT_STORE_3F",
+      "native_block": 12,
+      "native_quadrant": 3,
+      "expected_output_sha256": "31cbcaca69ae81dc9652f0a25e007d1bd68f4b56d36b38c12330c94d8a098079",
+      "source_maps": [
+        "EM_LILYCOVE_CITY_DEPARTMENT_STORE_5F"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__shop",
+      "id": 765,
+      "sourceHash": "92ba3050264989dbb6ffb70aedad537302bad46468145b480bf7704868f5b6b5",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "92ba3050264989dbb6ffb70aedad537302bad46468145b480bf7704868f5b6b5",
+        "mid": "92ba3050264989dbb6ffb70aedad537302bad46468145b480bf7704868f5b6b5",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 4,
+      "material": "lilycove_fifth_floor_commercial_tile",
+      "feature": "Complete unmarked fifth-floor public carpet tile and full shaded variation",
+      "native_map": "GOLDENROD_DEPT_STORE_3F",
+      "native_block": 12,
+      "native_quadrant": 3,
+      "expected_output_sha256": "31cbcaca69ae81dc9652f0a25e007d1bd68f4b56d36b38c12330c94d8a098079",
+      "source_maps": [
+        "EM_LILYCOVE_CITY_DEPARTMENT_STORE_5F"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__shop",
+      "id": 589,
+      "sourceHash": "53a7e7319995358b6a9993eeca7a8c5967b54a8b6468eed829fbb634bf983f10",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "53a7e7319995358b6a9993eeca7a8c5967b54a8b6468eed829fbb634bf983f10",
+        "mid": "53a7e7319995358b6a9993eeca7a8c5967b54a8b6468eed829fbb634bf983f10",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 6,
+      "material": "lilycove_rooftop_paving",
+      "feature": "Complete shadowed stone paving on the public department-store rooftop",
+      "native_map": "GOLDENROD_DEPT_STORE_ROOF",
+      "native_block": 58,
+      "native_quadrant": 1,
+      "expected_output_sha256": "9a5cdded4f69ccb42cafac415c244b7a0721044f974a97d3ddacca85dd6ad168",
+      "source_maps": [
+        "RU_LILYCOVE_CITY_DEPARTMENT_STORE_ROOFTOP"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__shop",
+      "id": 754,
+      "sourceHash": "0ad998b368285795b26fe3c220f9fc7c9f8c3c4fe7fe4ea9ddae7e40ab26138d",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "0ad998b368285795b26fe3c220f9fc7c9f8c3c4fe7fe4ea9ddae7e40ab26138d",
+        "mid": "0ad998b368285795b26fe3c220f9fc7c9f8c3c4fe7fe4ea9ddae7e40ab26138d",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 25,
+      "material": "lilycove_fifth_floor_commercial_tile",
+      "feature": "Complete unmarked fifth-floor public carpet tile and full shaded variation",
+      "native_map": "GOLDENROD_DEPT_STORE_3F",
+      "native_block": 12,
+      "native_quadrant": 3,
+      "expected_output_sha256": "31cbcaca69ae81dc9652f0a25e007d1bd68f4b56d36b38c12330c94d8a098079",
+      "source_maps": [
+        "RU_LILYCOVE_CITY_DEPARTMENT_STORE_5F"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__shop",
+      "id": 755,
+      "sourceHash": "d020fcff1dde08878c3e7d7b3e3ccd50b2f36b4562763fc738bf888e197c4ca4",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "d020fcff1dde08878c3e7d7b3e3ccd50b2f36b4562763fc738bf888e197c4ca4",
+        "mid": "d020fcff1dde08878c3e7d7b3e3ccd50b2f36b4562763fc738bf888e197c4ca4",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 3,
+      "material": "lilycove_fifth_floor_commercial_tile",
+      "feature": "Complete unmarked fifth-floor public carpet tile and full shaded variation",
+      "native_map": "GOLDENROD_DEPT_STORE_3F",
+      "native_block": 12,
+      "native_quadrant": 3,
+      "expected_output_sha256": "31cbcaca69ae81dc9652f0a25e007d1bd68f4b56d36b38c12330c94d8a098079",
+      "source_maps": [
+        "RU_LILYCOVE_CITY_DEPARTMENT_STORE_5F"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__shop",
+      "id": 756,
+      "sourceHash": "eae43a0ff22c3a52b6ff2de31885d63f8cec6d9c18ba99c17a374c775aced8cd",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "eae43a0ff22c3a52b6ff2de31885d63f8cec6d9c18ba99c17a374c775aced8cd",
+        "mid": "eae43a0ff22c3a52b6ff2de31885d63f8cec6d9c18ba99c17a374c775aced8cd",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 17,
+      "material": "lilycove_fifth_floor_commercial_tile",
+      "feature": "Complete unmarked fifth-floor public carpet tile and full shaded variation",
+      "native_map": "GOLDENROD_DEPT_STORE_3F",
+      "native_block": 12,
+      "native_quadrant": 3,
+      "expected_output_sha256": "31cbcaca69ae81dc9652f0a25e007d1bd68f4b56d36b38c12330c94d8a098079",
+      "source_maps": [
+        "RU_LILYCOVE_CITY_DEPARTMENT_STORE_5F"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__shop",
+      "id": 757,
+      "sourceHash": "47a883525b05afd6f5ddf5ec5b6ff203d109cca58e273631dc41ef0ea52f9cbb",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "47a883525b05afd6f5ddf5ec5b6ff203d109cca58e273631dc41ef0ea52f9cbb",
+        "mid": "47a883525b05afd6f5ddf5ec5b6ff203d109cca58e273631dc41ef0ea52f9cbb",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 3,
+      "material": "lilycove_fifth_floor_commercial_tile",
+      "feature": "Complete unmarked fifth-floor public carpet tile and full shaded variation",
+      "native_map": "GOLDENROD_DEPT_STORE_3F",
+      "native_block": 12,
+      "native_quadrant": 3,
+      "expected_output_sha256": "31cbcaca69ae81dc9652f0a25e007d1bd68f4b56d36b38c12330c94d8a098079",
+      "source_maps": [
+        "RU_LILYCOVE_CITY_DEPARTMENT_STORE_5F"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__shop",
+      "id": 762,
+      "sourceHash": "10e173c6c3c1451c784dcb10916f2f1ad8ff8350e136db1c368c895614b855f4",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "10e173c6c3c1451c784dcb10916f2f1ad8ff8350e136db1c368c895614b855f4",
+        "mid": "10e173c6c3c1451c784dcb10916f2f1ad8ff8350e136db1c368c895614b855f4",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 11,
+      "material": "lilycove_fifth_floor_commercial_tile",
+      "feature": "Complete unmarked fifth-floor public carpet tile and full shaded variation",
+      "native_map": "GOLDENROD_DEPT_STORE_3F",
+      "native_block": 12,
+      "native_quadrant": 3,
+      "expected_output_sha256": "31cbcaca69ae81dc9652f0a25e007d1bd68f4b56d36b38c12330c94d8a098079",
+      "source_maps": [
+        "RU_LILYCOVE_CITY_DEPARTMENT_STORE_5F"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__shop",
+      "id": 764,
+      "sourceHash": "db8399db141f4c28bf14168d0874402b85361c4f67bece454662e7dd0f9a7d45",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "db8399db141f4c28bf14168d0874402b85361c4f67bece454662e7dd0f9a7d45",
+        "mid": "db8399db141f4c28bf14168d0874402b85361c4f67bece454662e7dd0f9a7d45",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 4,
+      "material": "lilycove_fifth_floor_commercial_tile",
+      "feature": "Complete unmarked fifth-floor public carpet tile and full shaded variation",
+      "native_map": "GOLDENROD_DEPT_STORE_3F",
+      "native_block": 12,
+      "native_quadrant": 3,
+      "expected_output_sha256": "31cbcaca69ae81dc9652f0a25e007d1bd68f4b56d36b38c12330c94d8a098079",
+      "source_maps": [
+        "RU_LILYCOVE_CITY_DEPARTMENT_STORE_5F"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__shop",
+      "id": 765,
+      "sourceHash": "92ba3050264989dbb6ffb70aedad537302bad46468145b480bf7704868f5b6b5",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "92ba3050264989dbb6ffb70aedad537302bad46468145b480bf7704868f5b6b5",
+        "mid": "92ba3050264989dbb6ffb70aedad537302bad46468145b480bf7704868f5b6b5",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 4,
+      "material": "lilycove_fifth_floor_commercial_tile",
+      "feature": "Complete unmarked fifth-floor public carpet tile and full shaded variation",
+      "native_map": "GOLDENROD_DEPT_STORE_3F",
+      "native_block": 12,
+      "native_quadrant": 3,
+      "expected_output_sha256": "31cbcaca69ae81dc9652f0a25e007d1bd68f4b56d36b38c12330c94d8a098079",
+      "source_maps": [
+        "RU_LILYCOVE_CITY_DEPARTMENT_STORE_5F"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__shop",
+      "id": 589,
+      "sourceHash": "53a7e7319995358b6a9993eeca7a8c5967b54a8b6468eed829fbb634bf983f10",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "53a7e7319995358b6a9993eeca7a8c5967b54a8b6468eed829fbb634bf983f10",
+        "mid": "53a7e7319995358b6a9993eeca7a8c5967b54a8b6468eed829fbb634bf983f10",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 6,
+      "material": "lilycove_rooftop_paving",
+      "feature": "Complete shadowed stone paving on the public department-store rooftop",
+      "native_map": "GOLDENROD_DEPT_STORE_ROOF",
+      "native_block": 58,
+      "native_quadrant": 1,
+      "expected_output_sha256": "9a5cdded4f69ccb42cafac415c244b7a0721044f974a97d3ddacca85dd6ad168",
+      "source_maps": [
+        "SA_LILYCOVE_CITY_DEPARTMENT_STORE_ROOFTOP"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__shop",
+      "id": 754,
+      "sourceHash": "0ad998b368285795b26fe3c220f9fc7c9f8c3c4fe7fe4ea9ddae7e40ab26138d",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "0ad998b368285795b26fe3c220f9fc7c9f8c3c4fe7fe4ea9ddae7e40ab26138d",
+        "mid": "0ad998b368285795b26fe3c220f9fc7c9f8c3c4fe7fe4ea9ddae7e40ab26138d",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 25,
+      "material": "lilycove_fifth_floor_commercial_tile",
+      "feature": "Complete unmarked fifth-floor public carpet tile and full shaded variation",
+      "native_map": "GOLDENROD_DEPT_STORE_3F",
+      "native_block": 12,
+      "native_quadrant": 3,
+      "expected_output_sha256": "31cbcaca69ae81dc9652f0a25e007d1bd68f4b56d36b38c12330c94d8a098079",
+      "source_maps": [
+        "SA_LILYCOVE_CITY_DEPARTMENT_STORE_5F"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__shop",
+      "id": 755,
+      "sourceHash": "d020fcff1dde08878c3e7d7b3e3ccd50b2f36b4562763fc738bf888e197c4ca4",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "d020fcff1dde08878c3e7d7b3e3ccd50b2f36b4562763fc738bf888e197c4ca4",
+        "mid": "d020fcff1dde08878c3e7d7b3e3ccd50b2f36b4562763fc738bf888e197c4ca4",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 3,
+      "material": "lilycove_fifth_floor_commercial_tile",
+      "feature": "Complete unmarked fifth-floor public carpet tile and full shaded variation",
+      "native_map": "GOLDENROD_DEPT_STORE_3F",
+      "native_block": 12,
+      "native_quadrant": 3,
+      "expected_output_sha256": "31cbcaca69ae81dc9652f0a25e007d1bd68f4b56d36b38c12330c94d8a098079",
+      "source_maps": [
+        "SA_LILYCOVE_CITY_DEPARTMENT_STORE_5F"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__shop",
+      "id": 756,
+      "sourceHash": "eae43a0ff22c3a52b6ff2de31885d63f8cec6d9c18ba99c17a374c775aced8cd",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "eae43a0ff22c3a52b6ff2de31885d63f8cec6d9c18ba99c17a374c775aced8cd",
+        "mid": "eae43a0ff22c3a52b6ff2de31885d63f8cec6d9c18ba99c17a374c775aced8cd",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 17,
+      "material": "lilycove_fifth_floor_commercial_tile",
+      "feature": "Complete unmarked fifth-floor public carpet tile and full shaded variation",
+      "native_map": "GOLDENROD_DEPT_STORE_3F",
+      "native_block": 12,
+      "native_quadrant": 3,
+      "expected_output_sha256": "31cbcaca69ae81dc9652f0a25e007d1bd68f4b56d36b38c12330c94d8a098079",
+      "source_maps": [
+        "SA_LILYCOVE_CITY_DEPARTMENT_STORE_5F"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__shop",
+      "id": 757,
+      "sourceHash": "47a883525b05afd6f5ddf5ec5b6ff203d109cca58e273631dc41ef0ea52f9cbb",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "47a883525b05afd6f5ddf5ec5b6ff203d109cca58e273631dc41ef0ea52f9cbb",
+        "mid": "47a883525b05afd6f5ddf5ec5b6ff203d109cca58e273631dc41ef0ea52f9cbb",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 3,
+      "material": "lilycove_fifth_floor_commercial_tile",
+      "feature": "Complete unmarked fifth-floor public carpet tile and full shaded variation",
+      "native_map": "GOLDENROD_DEPT_STORE_3F",
+      "native_block": 12,
+      "native_quadrant": 3,
+      "expected_output_sha256": "31cbcaca69ae81dc9652f0a25e007d1bd68f4b56d36b38c12330c94d8a098079",
+      "source_maps": [
+        "SA_LILYCOVE_CITY_DEPARTMENT_STORE_5F"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__shop",
+      "id": 762,
+      "sourceHash": "10e173c6c3c1451c784dcb10916f2f1ad8ff8350e136db1c368c895614b855f4",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "10e173c6c3c1451c784dcb10916f2f1ad8ff8350e136db1c368c895614b855f4",
+        "mid": "10e173c6c3c1451c784dcb10916f2f1ad8ff8350e136db1c368c895614b855f4",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 11,
+      "material": "lilycove_fifth_floor_commercial_tile",
+      "feature": "Complete unmarked fifth-floor public carpet tile and full shaded variation",
+      "native_map": "GOLDENROD_DEPT_STORE_3F",
+      "native_block": 12,
+      "native_quadrant": 3,
+      "expected_output_sha256": "31cbcaca69ae81dc9652f0a25e007d1bd68f4b56d36b38c12330c94d8a098079",
+      "source_maps": [
+        "SA_LILYCOVE_CITY_DEPARTMENT_STORE_5F"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__shop",
+      "id": 764,
+      "sourceHash": "db8399db141f4c28bf14168d0874402b85361c4f67bece454662e7dd0f9a7d45",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "db8399db141f4c28bf14168d0874402b85361c4f67bece454662e7dd0f9a7d45",
+        "mid": "db8399db141f4c28bf14168d0874402b85361c4f67bece454662e7dd0f9a7d45",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 4,
+      "material": "lilycove_fifth_floor_commercial_tile",
+      "feature": "Complete unmarked fifth-floor public carpet tile and full shaded variation",
+      "native_map": "GOLDENROD_DEPT_STORE_3F",
+      "native_block": 12,
+      "native_quadrant": 3,
+      "expected_output_sha256": "31cbcaca69ae81dc9652f0a25e007d1bd68f4b56d36b38c12330c94d8a098079",
+      "source_maps": [
+        "SA_LILYCOVE_CITY_DEPARTMENT_STORE_5F"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__shop",
+      "id": 765,
+      "sourceHash": "92ba3050264989dbb6ffb70aedad537302bad46468145b480bf7704868f5b6b5",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "92ba3050264989dbb6ffb70aedad537302bad46468145b480bf7704868f5b6b5",
+        "mid": "92ba3050264989dbb6ffb70aedad537302bad46468145b480bf7704868f5b6b5",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 4,
+      "material": "lilycove_fifth_floor_commercial_tile",
+      "feature": "Complete unmarked fifth-floor public carpet tile and full shaded variation",
+      "native_map": "GOLDENROD_DEPT_STORE_3F",
+      "native_block": 12,
+      "native_quadrant": 3,
+      "expected_output_sha256": "31cbcaca69ae81dc9652f0a25e007d1bd68f4b56d36b38c12330c94d8a098079",
+      "source_maps": [
+        "SA_LILYCOVE_CITY_DEPARTMENT_STORE_5F"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__lilycove_museum",
+      "id": 574,
+      "sourceHash": "93b76c1d6c117da6590343e963dc2691370b8671aab3e82d17ec388e89a73681",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "93b76c1d6c117da6590343e963dc2691370b8671aab3e82d17ec388e89a73681",
+        "mid": "93b76c1d6c117da6590343e963dc2691370b8671aab3e82d17ec388e89a73681",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 3,
+      "material": "hoenn_museum_complete_mosaic",
+      "feature": "Full patterned pavement immediately beside the gallery display islands",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 8,
+      "native_quadrant": 3,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "EM_LILYCOVE_CITY_LILYCOVE_MUSEUM_1F"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__lilycove_museum",
+      "id": 575,
+      "sourceHash": "7ecd3c069b89fb8647b1ef28dd89477b8cd2d91725a70caf777f1c04b1d22704",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "7ecd3c069b89fb8647b1ef28dd89477b8cd2d91725a70caf777f1c04b1d22704",
+        "mid": "7ecd3c069b89fb8647b1ef28dd89477b8cd2d91725a70caf777f1c04b1d22704",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 10,
+      "material": "hoenn_museum_complete_mosaic",
+      "feature": "Full shadowed patterned gallery floor around the exhibit islands",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 8,
+      "native_quadrant": 3,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "EM_LILYCOVE_CITY_LILYCOVE_MUSEUM_1F"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__lilycove_museum",
+      "id": 582,
+      "sourceHash": "b6c5be471953153dec3e76fe960770e620cdb703115126e462f247920592ad36",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "b6c5be471953153dec3e76fe960770e620cdb703115126e462f247920592ad36",
+        "mid": "b6c5be471953153dec3e76fe960770e620cdb703115126e462f247920592ad36",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 3,
+      "material": "hoenn_museum_complete_mosaic",
+      "feature": "Full shadow transition tile at a gallery display edge",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 8,
+      "native_quadrant": 3,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "EM_LILYCOVE_CITY_LILYCOVE_MUSEUM_1F"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__lilycove_museum",
+      "id": 589,
+      "sourceHash": "0e63e8a69c4df9cf4098dd4a8dc37261254922de64a6c343f6d38912770cf615",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "0e63e8a69c4df9cf4098dd4a8dc37261254922de64a6c343f6d38912770cf615",
+        "mid": "0e63e8a69c4df9cf4098dd4a8dc37261254922de64a6c343f6d38912770cf615",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 1,
+      "material": "hoenn_museum_complete_mosaic",
+      "feature": "Full alternate patterned floor underneath an open exhibit island",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 8,
+      "native_quadrant": 3,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "EM_LILYCOVE_CITY_LILYCOVE_MUSEUM_1F"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__lilycove_museum",
+      "id": 591,
+      "sourceHash": "6ad0cfdd3946eab3e23d256daf2ec05fb534d6d6ad3293321a6d81f6b9eeac1e",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "6ad0cfdd3946eab3e23d256daf2ec05fb534d6d6ad3293321a6d81f6b9eeac1e",
+        "mid": "6ad0cfdd3946eab3e23d256daf2ec05fb534d6d6ad3293321a6d81f6b9eeac1e",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 6,
+      "material": "hoenn_museum_complete_mosaic",
+      "feature": "Full patterned floor tile along the right of the exhibit islands",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 8,
+      "native_quadrant": 3,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "EM_LILYCOVE_CITY_LILYCOVE_MUSEUM_1F"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__lilycove_museum",
+      "id": 624,
+      "sourceHash": "46bcd79ffbcca3b38bf4fa8d54c256791caca8bd8b8872bf790d6ac900bd8223",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "46bcd79ffbcca3b38bf4fa8d54c256791caca8bd8b8872bf790d6ac900bd8223",
+        "mid": "46bcd79ffbcca3b38bf4fa8d54c256791caca8bd8b8872bf790d6ac900bd8223",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 14,
+      "material": "hoenn_museum_complete_mosaic",
+      "feature": "Full cool stone pavement immediately below the upper gallery back wall",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 8,
+      "native_quadrant": 3,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "EM_LILYCOVE_CITY_LILYCOVE_MUSEUM_2F"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__lilycove_museum",
+      "id": 625,
+      "sourceHash": "2ba19a20e08d1c5bb9eea951d10b564ac61244c6aa720b2664892358044128d6",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "2ba19a20e08d1c5bb9eea951d10b564ac61244c6aa720b2664892358044128d6",
+        "mid": "2ba19a20e08d1c5bb9eea951d10b564ac61244c6aa720b2664892358044128d6",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 16,
+      "material": "hoenn_museum_complete_mosaic",
+      "feature": "Full alternate cool stone pavement immediately below the upper gallery back wall",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 8,
+      "native_quadrant": 3,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "EM_LILYCOVE_CITY_LILYCOVE_MUSEUM_2F"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__oceanic_museum",
+      "id": 579,
+      "sourceHash": "252336deb8946295ba5f6465bac1f73ab91543b0bb4be2e06f9907a991d1425f",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "252336deb8946295ba5f6465bac1f73ab91543b0bb4be2e06f9907a991d1425f",
+        "mid": "252336deb8946295ba5f6465bac1f73ab91543b0bb4be2e06f9907a991d1425f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 26,
+      "material": "hoenn_museum_complete_mosaic",
+      "feature": "Full Slateport museum mosaic tile in the right column of the floor pattern",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 8,
+      "native_quadrant": 3,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "EM_SLATEPORT_CITY_OCEANIC_MUSEUM_1F",
+        "EM_SLATEPORT_CITY_OCEANIC_MUSEUM_2F"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__oceanic_museum",
+      "id": 587,
+      "sourceHash": "67a8496c22f5ef27a5a7d2c3d3095f113ed985a816a31471d24fff9c97ce3799",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "67a8496c22f5ef27a5a7d2c3d3095f113ed985a816a31471d24fff9c97ce3799",
+        "mid": "67a8496c22f5ef27a5a7d2c3d3095f113ed985a816a31471d24fff9c97ce3799",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 11,
+      "material": "hoenn_museum_complete_mosaic",
+      "feature": "Full Slateport museum mosaic tile in the lower row of the floor pattern",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 8,
+      "native_quadrant": 3,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "EM_SLATEPORT_CITY_OCEANIC_MUSEUM_1F",
+        "EM_SLATEPORT_CITY_OCEANIC_MUSEUM_2F"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__lilycove_museum",
+      "id": 574,
+      "sourceHash": "93b76c1d6c117da6590343e963dc2691370b8671aab3e82d17ec388e89a73681",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "93b76c1d6c117da6590343e963dc2691370b8671aab3e82d17ec388e89a73681",
+        "mid": "93b76c1d6c117da6590343e963dc2691370b8671aab3e82d17ec388e89a73681",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 3,
+      "material": "hoenn_museum_complete_mosaic",
+      "feature": "Full patterned pavement immediately beside the gallery display islands",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 8,
+      "native_quadrant": 3,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "RU_LILYCOVE_CITY_LILYCOVE_MUSEUM_1F"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__lilycove_museum",
+      "id": 575,
+      "sourceHash": "7ecd3c069b89fb8647b1ef28dd89477b8cd2d91725a70caf777f1c04b1d22704",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "7ecd3c069b89fb8647b1ef28dd89477b8cd2d91725a70caf777f1c04b1d22704",
+        "mid": "7ecd3c069b89fb8647b1ef28dd89477b8cd2d91725a70caf777f1c04b1d22704",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 10,
+      "material": "hoenn_museum_complete_mosaic",
+      "feature": "Full shadowed patterned gallery floor around the exhibit islands",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 8,
+      "native_quadrant": 3,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "RU_LILYCOVE_CITY_LILYCOVE_MUSEUM_1F"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__lilycove_museum",
+      "id": 582,
+      "sourceHash": "b6c5be471953153dec3e76fe960770e620cdb703115126e462f247920592ad36",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "b6c5be471953153dec3e76fe960770e620cdb703115126e462f247920592ad36",
+        "mid": "b6c5be471953153dec3e76fe960770e620cdb703115126e462f247920592ad36",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 3,
+      "material": "hoenn_museum_complete_mosaic",
+      "feature": "Full shadow transition tile at a gallery display edge",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 8,
+      "native_quadrant": 3,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "RU_LILYCOVE_CITY_LILYCOVE_MUSEUM_1F"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__lilycove_museum",
+      "id": 589,
+      "sourceHash": "0e63e8a69c4df9cf4098dd4a8dc37261254922de64a6c343f6d38912770cf615",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "0e63e8a69c4df9cf4098dd4a8dc37261254922de64a6c343f6d38912770cf615",
+        "mid": "0e63e8a69c4df9cf4098dd4a8dc37261254922de64a6c343f6d38912770cf615",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 1,
+      "material": "hoenn_museum_complete_mosaic",
+      "feature": "Full alternate patterned floor underneath an open exhibit island",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 8,
+      "native_quadrant": 3,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "RU_LILYCOVE_CITY_LILYCOVE_MUSEUM_1F"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__lilycove_museum",
+      "id": 591,
+      "sourceHash": "6ad0cfdd3946eab3e23d256daf2ec05fb534d6d6ad3293321a6d81f6b9eeac1e",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "6ad0cfdd3946eab3e23d256daf2ec05fb534d6d6ad3293321a6d81f6b9eeac1e",
+        "mid": "6ad0cfdd3946eab3e23d256daf2ec05fb534d6d6ad3293321a6d81f6b9eeac1e",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 6,
+      "material": "hoenn_museum_complete_mosaic",
+      "feature": "Full patterned floor tile along the right of the exhibit islands",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 8,
+      "native_quadrant": 3,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "RU_LILYCOVE_CITY_LILYCOVE_MUSEUM_1F"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__lilycove_museum",
+      "id": 624,
+      "sourceHash": "46bcd79ffbcca3b38bf4fa8d54c256791caca8bd8b8872bf790d6ac900bd8223",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "46bcd79ffbcca3b38bf4fa8d54c256791caca8bd8b8872bf790d6ac900bd8223",
+        "mid": "46bcd79ffbcca3b38bf4fa8d54c256791caca8bd8b8872bf790d6ac900bd8223",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 14,
+      "material": "hoenn_museum_complete_mosaic",
+      "feature": "Full cool stone pavement immediately below the upper gallery back wall",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 8,
+      "native_quadrant": 3,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "RU_LILYCOVE_CITY_LILYCOVE_MUSEUM_2F"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__lilycove_museum",
+      "id": 625,
+      "sourceHash": "2ba19a20e08d1c5bb9eea951d10b564ac61244c6aa720b2664892358044128d6",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "2ba19a20e08d1c5bb9eea951d10b564ac61244c6aa720b2664892358044128d6",
+        "mid": "2ba19a20e08d1c5bb9eea951d10b564ac61244c6aa720b2664892358044128d6",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 16,
+      "material": "hoenn_museum_complete_mosaic",
+      "feature": "Full alternate cool stone pavement immediately below the upper gallery back wall",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 8,
+      "native_quadrant": 3,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "RU_LILYCOVE_CITY_LILYCOVE_MUSEUM_2F"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__oceanic_museum",
+      "id": 579,
+      "sourceHash": "252336deb8946295ba5f6465bac1f73ab91543b0bb4be2e06f9907a991d1425f",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "252336deb8946295ba5f6465bac1f73ab91543b0bb4be2e06f9907a991d1425f",
+        "mid": "252336deb8946295ba5f6465bac1f73ab91543b0bb4be2e06f9907a991d1425f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 26,
+      "material": "hoenn_museum_complete_mosaic",
+      "feature": "Full Slateport museum mosaic tile in the right column of the floor pattern",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 8,
+      "native_quadrant": 3,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "RU_SLATEPORT_CITY_OCEANIC_MUSEUM_1F",
+        "RU_SLATEPORT_CITY_OCEANIC_MUSEUM_2F"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__oceanic_museum",
+      "id": 587,
+      "sourceHash": "67a8496c22f5ef27a5a7d2c3d3095f113ed985a816a31471d24fff9c97ce3799",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "67a8496c22f5ef27a5a7d2c3d3095f113ed985a816a31471d24fff9c97ce3799",
+        "mid": "67a8496c22f5ef27a5a7d2c3d3095f113ed985a816a31471d24fff9c97ce3799",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 11,
+      "material": "hoenn_museum_complete_mosaic",
+      "feature": "Full Slateport museum mosaic tile in the lower row of the floor pattern",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 8,
+      "native_quadrant": 3,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "RU_SLATEPORT_CITY_OCEANIC_MUSEUM_1F",
+        "RU_SLATEPORT_CITY_OCEANIC_MUSEUM_2F"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__lilycove_museum",
+      "id": 574,
+      "sourceHash": "93b76c1d6c117da6590343e963dc2691370b8671aab3e82d17ec388e89a73681",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "93b76c1d6c117da6590343e963dc2691370b8671aab3e82d17ec388e89a73681",
+        "mid": "93b76c1d6c117da6590343e963dc2691370b8671aab3e82d17ec388e89a73681",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 3,
+      "material": "hoenn_museum_complete_mosaic",
+      "feature": "Full patterned pavement immediately beside the gallery display islands",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 8,
+      "native_quadrant": 3,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "SA_LILYCOVE_CITY_LILYCOVE_MUSEUM_1F"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__lilycove_museum",
+      "id": 575,
+      "sourceHash": "7ecd3c069b89fb8647b1ef28dd89477b8cd2d91725a70caf777f1c04b1d22704",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "7ecd3c069b89fb8647b1ef28dd89477b8cd2d91725a70caf777f1c04b1d22704",
+        "mid": "7ecd3c069b89fb8647b1ef28dd89477b8cd2d91725a70caf777f1c04b1d22704",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 10,
+      "material": "hoenn_museum_complete_mosaic",
+      "feature": "Full shadowed patterned gallery floor around the exhibit islands",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 8,
+      "native_quadrant": 3,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "SA_LILYCOVE_CITY_LILYCOVE_MUSEUM_1F"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__lilycove_museum",
+      "id": 582,
+      "sourceHash": "b6c5be471953153dec3e76fe960770e620cdb703115126e462f247920592ad36",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "b6c5be471953153dec3e76fe960770e620cdb703115126e462f247920592ad36",
+        "mid": "b6c5be471953153dec3e76fe960770e620cdb703115126e462f247920592ad36",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 3,
+      "material": "hoenn_museum_complete_mosaic",
+      "feature": "Full shadow transition tile at a gallery display edge",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 8,
+      "native_quadrant": 3,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "SA_LILYCOVE_CITY_LILYCOVE_MUSEUM_1F"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__lilycove_museum",
+      "id": 589,
+      "sourceHash": "0e63e8a69c4df9cf4098dd4a8dc37261254922de64a6c343f6d38912770cf615",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "0e63e8a69c4df9cf4098dd4a8dc37261254922de64a6c343f6d38912770cf615",
+        "mid": "0e63e8a69c4df9cf4098dd4a8dc37261254922de64a6c343f6d38912770cf615",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 1,
+      "material": "hoenn_museum_complete_mosaic",
+      "feature": "Full alternate patterned floor underneath an open exhibit island",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 8,
+      "native_quadrant": 3,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "SA_LILYCOVE_CITY_LILYCOVE_MUSEUM_1F"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__lilycove_museum",
+      "id": 591,
+      "sourceHash": "6ad0cfdd3946eab3e23d256daf2ec05fb534d6d6ad3293321a6d81f6b9eeac1e",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "6ad0cfdd3946eab3e23d256daf2ec05fb534d6d6ad3293321a6d81f6b9eeac1e",
+        "mid": "6ad0cfdd3946eab3e23d256daf2ec05fb534d6d6ad3293321a6d81f6b9eeac1e",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 6,
+      "material": "hoenn_museum_complete_mosaic",
+      "feature": "Full patterned floor tile along the right of the exhibit islands",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 8,
+      "native_quadrant": 3,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "SA_LILYCOVE_CITY_LILYCOVE_MUSEUM_1F"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__lilycove_museum",
+      "id": 624,
+      "sourceHash": "46bcd79ffbcca3b38bf4fa8d54c256791caca8bd8b8872bf790d6ac900bd8223",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "46bcd79ffbcca3b38bf4fa8d54c256791caca8bd8b8872bf790d6ac900bd8223",
+        "mid": "46bcd79ffbcca3b38bf4fa8d54c256791caca8bd8b8872bf790d6ac900bd8223",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 14,
+      "material": "hoenn_museum_complete_mosaic",
+      "feature": "Full cool stone pavement immediately below the upper gallery back wall",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 8,
+      "native_quadrant": 3,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "SA_LILYCOVE_CITY_LILYCOVE_MUSEUM_2F"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__lilycove_museum",
+      "id": 625,
+      "sourceHash": "2ba19a20e08d1c5bb9eea951d10b564ac61244c6aa720b2664892358044128d6",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "2ba19a20e08d1c5bb9eea951d10b564ac61244c6aa720b2664892358044128d6",
+        "mid": "2ba19a20e08d1c5bb9eea951d10b564ac61244c6aa720b2664892358044128d6",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 16,
+      "material": "hoenn_museum_complete_mosaic",
+      "feature": "Full alternate cool stone pavement immediately below the upper gallery back wall",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 8,
+      "native_quadrant": 3,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "SA_LILYCOVE_CITY_LILYCOVE_MUSEUM_2F"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__oceanic_museum",
+      "id": 579,
+      "sourceHash": "252336deb8946295ba5f6465bac1f73ab91543b0bb4be2e06f9907a991d1425f",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "252336deb8946295ba5f6465bac1f73ab91543b0bb4be2e06f9907a991d1425f",
+        "mid": "252336deb8946295ba5f6465bac1f73ab91543b0bb4be2e06f9907a991d1425f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 26,
+      "material": "hoenn_museum_complete_mosaic",
+      "feature": "Full Slateport museum mosaic tile in the right column of the floor pattern",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 8,
+      "native_quadrant": 3,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "SA_SLATEPORT_CITY_OCEANIC_MUSEUM_1F",
+        "SA_SLATEPORT_CITY_OCEANIC_MUSEUM_2F"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__oceanic_museum",
+      "id": 587,
+      "sourceHash": "67a8496c22f5ef27a5a7d2c3d3095f113ed985a816a31471d24fff9c97ce3799",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "67a8496c22f5ef27a5a7d2c3d3095f113ed985a816a31471d24fff9c97ce3799",
+        "mid": "67a8496c22f5ef27a5a7d2c3d3095f113ed985a816a31471d24fff9c97ce3799",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 11,
+      "material": "hoenn_museum_complete_mosaic",
+      "feature": "Full Slateport museum mosaic tile in the lower row of the floor pattern",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 8,
+      "native_quadrant": 3,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "SA_SLATEPORT_CITY_OCEANIC_MUSEUM_1F",
+        "SA_SLATEPORT_CITY_OCEANIC_MUSEUM_2F"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__battle_frontier",
+      "id": 604,
+      "sourceHash": "fe44154196c5c27370a636bf175858cfbdd9071ec8bb070cc226e36afc233077",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "fe44154196c5c27370a636bf175858cfbdd9071ec8bb070cc226e36afc233077",
+        "mid": "fe44154196c5c27370a636bf175858cfbdd9071ec8bb070cc226e36afc233077",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 3,
+      "material": "hoenn_competition_venue_floor",
+      "feature": "Complete shaded or unshaded floor of the shared Hoenn elevator cabin",
+      "native_map": "GOLDENROD_DEPT_STORE_3F",
+      "native_block": 12,
+      "native_quadrant": 3,
+      "expected_output_sha256": "31cbcaca69ae81dc9652f0a25e007d1bd68f4b56d36b38c12330c94d8a098079",
+      "source_maps": [
+        "EM_BATTLE_FRONTIER_BATTLE_TOWER_ELEVATOR",
+        "EM_LILYCOVE_CITY_DEPARTMENT_STORE_ELEVATOR",
+        "EM_TRAINER_HILL_ELEVATOR"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__battle_frontier",
+      "id": 605,
+      "sourceHash": "96f20aeb56a1373d0de4323e07c6b021e43e369873796a389ebcc20299cc29dd",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "96f20aeb56a1373d0de4323e07c6b021e43e369873796a389ebcc20299cc29dd",
+        "mid": "96f20aeb56a1373d0de4323e07c6b021e43e369873796a389ebcc20299cc29dd",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 12,
+      "material": "hoenn_competition_venue_floor",
+      "feature": "Complete shaded or unshaded floor of the shared Hoenn elevator cabin",
+      "native_map": "GOLDENROD_DEPT_STORE_3F",
+      "native_block": 12,
+      "native_quadrant": 3,
+      "expected_output_sha256": "31cbcaca69ae81dc9652f0a25e007d1bd68f4b56d36b38c12330c94d8a098079",
+      "source_maps": [
+        "EM_BATTLE_FRONTIER_BATTLE_TOWER_ELEVATOR",
+        "EM_LILYCOVE_CITY_DEPARTMENT_STORE_ELEVATOR",
+        "EM_TRAINER_HILL_ELEVATOR"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__battle_frontier",
+      "id": 612,
+      "sourceHash": "1b366f9e46ce30de48a2372f60f8674bf7f385fbac070ed0a4b73f4078989aa6",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "1b366f9e46ce30de48a2372f60f8674bf7f385fbac070ed0a4b73f4078989aa6",
+        "mid": "1b366f9e46ce30de48a2372f60f8674bf7f385fbac070ed0a4b73f4078989aa6",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 8,
+      "material": "hoenn_competition_venue_floor",
+      "feature": "Complete shaded or unshaded floor of the shared Hoenn elevator cabin",
+      "native_map": "GOLDENROD_DEPT_STORE_3F",
+      "native_block": 12,
+      "native_quadrant": 3,
+      "expected_output_sha256": "31cbcaca69ae81dc9652f0a25e007d1bd68f4b56d36b38c12330c94d8a098079",
+      "source_maps": [
+        "EM_BATTLE_FRONTIER_BATTLE_TOWER_ELEVATOR",
+        "EM_LILYCOVE_CITY_DEPARTMENT_STORE_ELEVATOR",
+        "EM_TRAINER_HILL_ELEVATOR"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__battle_frontier",
+      "id": 613,
+      "sourceHash": "33c2997b53690c27eb761e0c77e3608ea775bf3ce6679cd61977d036d42ac086",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "33c2997b53690c27eb761e0c77e3608ea775bf3ce6679cd61977d036d42ac086",
+        "mid": "33c2997b53690c27eb761e0c77e3608ea775bf3ce6679cd61977d036d42ac086",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 24,
+      "material": "hoenn_competition_venue_floor",
+      "feature": "Complete shaded or unshaded floor of the shared Hoenn elevator cabin",
+      "native_map": "GOLDENROD_DEPT_STORE_3F",
+      "native_block": 12,
+      "native_quadrant": 3,
+      "expected_output_sha256": "31cbcaca69ae81dc9652f0a25e007d1bd68f4b56d36b38c12330c94d8a098079",
+      "source_maps": [
+        "EM_BATTLE_FRONTIER_BATTLE_TOWER_ELEVATOR",
+        "EM_LILYCOVE_CITY_DEPARTMENT_STORE_ELEVATOR",
+        "EM_TRAINER_HILL_ELEVATOR"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__battle_frontier",
+      "id": 614,
+      "sourceHash": "8f624faa298992d415db18da8f084d223910a14ab012ee2e8ebe8895f6261958",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "8f624faa298992d415db18da8f084d223910a14ab012ee2e8ebe8895f6261958",
+        "mid": "8f624faa298992d415db18da8f084d223910a14ab012ee2e8ebe8895f6261958",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 2,
+      "material": "hoenn_competition_venue_floor",
+      "feature": "Complete shaded or unshaded floor of the shared Hoenn elevator cabin",
+      "native_map": "GOLDENROD_DEPT_STORE_3F",
+      "native_block": 12,
+      "native_quadrant": 3,
+      "expected_output_sha256": "31cbcaca69ae81dc9652f0a25e007d1bd68f4b56d36b38c12330c94d8a098079",
+      "source_maps": [
+        "EM_LILYCOVE_CITY_DEPARTMENT_STORE_ELEVATOR"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__battle_tent",
+      "id": 520,
+      "sourceHash": "f3a838a3183e21d723cb9f380cc5d7dfdb1ca8c94245d2a367d5b88857dabf3a",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "f3a838a3183e21d723cb9f380cc5d7dfdb1ca8c94245d2a367d5b88857dabf3a",
+        "mid": "f3a838a3183e21d723cb9f380cc5d7dfdb1ca8c94245d2a367d5b88857dabf3a",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 12,
+      "material": "hoenn_competition_venue_floor",
+      "feature": "Complete accessible Hoenn competition venue floor or full shadow variation",
+      "native_map": "BATTLE_TOWER_1F",
+      "native_block": 1,
+      "native_quadrant": 0,
+      "expected_output_sha256": "1af6ad1003d7def71cc78e12f65bbe3dc4404862865a2e507dad0a1580d3d9d1",
+      "source_maps": [
+        "EM_FALLARBOR_TOWN_BATTLE_TENT_LOBBY",
+        "EM_SLATEPORT_CITY_BATTLE_TENT_LOBBY",
+        "EM_VERDANTURF_TOWN_BATTLE_TENT_LOBBY"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__battle_tent",
+      "id": 521,
+      "sourceHash": "a7a4a1de0dd0aebc7715de93230debe8fa181696e4f8380137c1f5f67d008192",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "a7a4a1de0dd0aebc7715de93230debe8fa181696e4f8380137c1f5f67d008192",
+        "mid": "a7a4a1de0dd0aebc7715de93230debe8fa181696e4f8380137c1f5f67d008192",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 15,
+      "material": "hoenn_competition_venue_floor",
+      "feature": "Complete accessible Hoenn competition venue floor or full shadow variation",
+      "native_map": "BATTLE_TOWER_1F",
+      "native_block": 1,
+      "native_quadrant": 0,
+      "expected_output_sha256": "1af6ad1003d7def71cc78e12f65bbe3dc4404862865a2e507dad0a1580d3d9d1",
+      "source_maps": [
+        "EM_FALLARBOR_TOWN_BATTLE_TENT_LOBBY",
+        "EM_SLATEPORT_CITY_BATTLE_TENT_LOBBY",
+        "EM_VERDANTURF_TOWN_BATTLE_TENT_LOBBY"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__battle_tent",
+      "id": 547,
+      "sourceHash": "8b181e2cb01a88e2075c6630d5ac3e1ada3ec5d498b3f9ba2822df67cb049c49",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "8b181e2cb01a88e2075c6630d5ac3e1ada3ec5d498b3f9ba2822df67cb049c49",
+        "mid": "8b181e2cb01a88e2075c6630d5ac3e1ada3ec5d498b3f9ba2822df67cb049c49",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 9,
+      "material": "hoenn_competition_venue_floor",
+      "feature": "Complete accessible Hoenn competition venue floor or full shadow variation",
+      "native_map": "BATTLE_TOWER_1F",
+      "native_block": 1,
+      "native_quadrant": 0,
+      "expected_output_sha256": "1af6ad1003d7def71cc78e12f65bbe3dc4404862865a2e507dad0a1580d3d9d1",
+      "source_maps": [
+        "EM_FALLARBOR_TOWN_BATTLE_TENT_CORRIDOR",
+        "EM_SLATEPORT_CITY_BATTLE_TENT_CORRIDOR",
+        "EM_VERDANTURF_TOWN_BATTLE_TENT_CORRIDOR"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__battle_tent",
+      "id": 548,
+      "sourceHash": "c07b63851353013e281944591388aa516bf7dbc8ebc7ba6acade2c7721419da8",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "c07b63851353013e281944591388aa516bf7dbc8ebc7ba6acade2c7721419da8",
+        "mid": "c07b63851353013e281944591388aa516bf7dbc8ebc7ba6acade2c7721419da8",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 6,
+      "material": "hoenn_competition_venue_floor",
+      "feature": "Complete accessible Hoenn competition venue floor or full shadow variation",
+      "native_map": "BATTLE_TOWER_1F",
+      "native_block": 1,
+      "native_quadrant": 0,
+      "expected_output_sha256": "1af6ad1003d7def71cc78e12f65bbe3dc4404862865a2e507dad0a1580d3d9d1",
+      "source_maps": [
+        "EM_FALLARBOR_TOWN_BATTLE_TENT_CORRIDOR",
+        "EM_SLATEPORT_CITY_BATTLE_TENT_CORRIDOR",
+        "EM_VERDANTURF_TOWN_BATTLE_TENT_CORRIDOR"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__battle_tent",
+      "id": 554,
+      "sourceHash": "3a52a58a4c8a2f780fe80b88dd05dd51a7573f3bc9c8de25e9d18997ea69d04f",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "3a52a58a4c8a2f780fe80b88dd05dd51a7573f3bc9c8de25e9d18997ea69d04f",
+        "mid": "3a52a58a4c8a2f780fe80b88dd05dd51a7573f3bc9c8de25e9d18997ea69d04f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 6,
+      "material": "hoenn_competition_venue_floor",
+      "feature": "Complete accessible Hoenn competition venue floor or full shadow variation",
+      "native_map": "BATTLE_TOWER_1F",
+      "native_block": 1,
+      "native_quadrant": 0,
+      "expected_output_sha256": "1af6ad1003d7def71cc78e12f65bbe3dc4404862865a2e507dad0a1580d3d9d1",
+      "source_maps": [
+        "EM_FALLARBOR_TOWN_BATTLE_TENT_CORRIDOR",
+        "EM_SLATEPORT_CITY_BATTLE_TENT_CORRIDOR",
+        "EM_VERDANTURF_TOWN_BATTLE_TENT_CORRIDOR"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__battle_tent",
+      "id": 555,
+      "sourceHash": "9cc8391182334b5cae8de677d587389f7a400b314bdcd55146eaf0314a8bafbe",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "9cc8391182334b5cae8de677d587389f7a400b314bdcd55146eaf0314a8bafbe",
+        "mid": "9cc8391182334b5cae8de677d587389f7a400b314bdcd55146eaf0314a8bafbe",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 6,
+      "material": "hoenn_competition_venue_floor",
+      "feature": "Complete accessible Hoenn competition venue floor or full shadow variation",
+      "native_map": "BATTLE_TOWER_1F",
+      "native_block": 1,
+      "native_quadrant": 0,
+      "expected_output_sha256": "1af6ad1003d7def71cc78e12f65bbe3dc4404862865a2e507dad0a1580d3d9d1",
+      "source_maps": [
+        "EM_FALLARBOR_TOWN_BATTLE_TENT_CORRIDOR",
+        "EM_SLATEPORT_CITY_BATTLE_TENT_CORRIDOR",
+        "EM_VERDANTURF_TOWN_BATTLE_TENT_CORRIDOR"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__battle_tent",
+      "id": 570,
+      "sourceHash": "2e6121a5237a6f808cb87ce1852245f485584eae765413df531e678966470ceb",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "2e6121a5237a6f808cb87ce1852245f485584eae765413df531e678966470ceb",
+        "mid": "2e6121a5237a6f808cb87ce1852245f485584eae765413df531e678966470ceb",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 24,
+      "material": "hoenn_competition_venue_floor",
+      "feature": "Complete accessible Hoenn competition venue floor or full shadow variation",
+      "native_map": "BATTLE_TOWER_1F",
+      "native_block": 1,
+      "native_quadrant": 0,
+      "expected_output_sha256": "1af6ad1003d7def71cc78e12f65bbe3dc4404862865a2e507dad0a1580d3d9d1",
+      "source_maps": [
+        "EM_FALLARBOR_TOWN_BATTLE_TENT_CORRIDOR",
+        "EM_SLATEPORT_CITY_BATTLE_TENT_CORRIDOR",
+        "EM_VERDANTURF_TOWN_BATTLE_TENT_CORRIDOR"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__battle_tent",
+      "id": 571,
+      "sourceHash": "e2b8092700e6280b42b82286964da8bd572cd17af2fe2b0692992db4e7ef5569",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "e2b8092700e6280b42b82286964da8bd572cd17af2fe2b0692992db4e7ef5569",
+        "mid": "e2b8092700e6280b42b82286964da8bd572cd17af2fe2b0692992db4e7ef5569",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 27,
+      "material": "hoenn_competition_venue_floor",
+      "feature": "Complete accessible Hoenn competition venue floor or full shadow variation",
+      "native_map": "BATTLE_TOWER_1F",
+      "native_block": 1,
+      "native_quadrant": 0,
+      "expected_output_sha256": "1af6ad1003d7def71cc78e12f65bbe3dc4404862865a2e507dad0a1580d3d9d1",
+      "source_maps": [
+        "EM_FALLARBOR_TOWN_BATTLE_TENT_CORRIDOR",
+        "EM_SLATEPORT_CITY_BATTLE_TENT_CORRIDOR",
+        "EM_VERDANTURF_TOWN_BATTLE_TENT_CORRIDOR"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__trainer_hill",
+      "id": 568,
+      "sourceHash": "6f3c5ab51a7a94cd5f9ba32da46079f0a03cccf8e35bc3c6b12817413890f91e",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "6f3c5ab51a7a94cd5f9ba32da46079f0a03cccf8e35bc3c6b12817413890f91e",
+        "mid": "6f3c5ab51a7a94cd5f9ba32da46079f0a03cccf8e35bc3c6b12817413890f91e",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 12,
+      "material": "hoenn_competition_venue_floor",
+      "feature": "Complete accessible Hoenn competition venue floor or full shadow variation",
+      "native_map": "DANCE_THEATER",
+      "native_block": 46,
+      "native_quadrant": 2,
+      "expected_output_sha256": "6dcfb4f63a4861a1b32c9d2884e9cd2b7aca9ba0ce1002e33f5273c3b3e06f5d",
+      "source_maps": [
+        "EM_TRAINER_HILL_1F",
+        "EM_TRAINER_HILL_2F",
+        "EM_TRAINER_HILL_3F",
+        "EM_TRAINER_HILL_4F"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__trainer_hill",
+      "id": 570,
+      "sourceHash": "a269017b64e0252cc1378ee2175a453153dea652c2c3c1b4a1e396a7faaf6adf",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "a269017b64e0252cc1378ee2175a453153dea652c2c3c1b4a1e396a7faaf6adf",
+        "mid": "a269017b64e0252cc1378ee2175a453153dea652c2c3c1b4a1e396a7faaf6adf",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 8,
+      "material": "hoenn_competition_venue_floor",
+      "feature": "Complete accessible Hoenn competition venue floor or full shadow variation",
+      "native_map": "DANCE_THEATER",
+      "native_block": 46,
+      "native_quadrant": 2,
+      "expected_output_sha256": "6dcfb4f63a4861a1b32c9d2884e9cd2b7aca9ba0ce1002e33f5273c3b3e06f5d",
+      "source_maps": [
+        "EM_TRAINER_HILL_1F",
+        "EM_TRAINER_HILL_2F",
+        "EM_TRAINER_HILL_3F",
+        "EM_TRAINER_HILL_4F"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__battle_tower",
+      "id": 604,
+      "sourceHash": "fe44154196c5c27370a636bf175858cfbdd9071ec8bb070cc226e36afc233077",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "fe44154196c5c27370a636bf175858cfbdd9071ec8bb070cc226e36afc233077",
+        "mid": "fe44154196c5c27370a636bf175858cfbdd9071ec8bb070cc226e36afc233077",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 2,
+      "material": "hoenn_competition_venue_floor",
+      "feature": "Complete shaded or unshaded floor of the shared Hoenn elevator cabin",
+      "native_map": "GOLDENROD_DEPT_STORE_3F",
+      "native_block": 12,
+      "native_quadrant": 3,
+      "expected_output_sha256": "31cbcaca69ae81dc9652f0a25e007d1bd68f4b56d36b38c12330c94d8a098079",
+      "source_maps": [
+        "RU_BATTLE_TOWER_ELEVATOR",
+        "RU_LILYCOVE_CITY_DEPARTMENT_STORE_ELEVATOR"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__battle_tower",
+      "id": 605,
+      "sourceHash": "96f20aeb56a1373d0de4323e07c6b021e43e369873796a389ebcc20299cc29dd",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "96f20aeb56a1373d0de4323e07c6b021e43e369873796a389ebcc20299cc29dd",
+        "mid": "96f20aeb56a1373d0de4323e07c6b021e43e369873796a389ebcc20299cc29dd",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 6,
+      "material": "hoenn_competition_venue_floor",
+      "feature": "Complete shaded or unshaded floor of the shared Hoenn elevator cabin",
+      "native_map": "GOLDENROD_DEPT_STORE_3F",
+      "native_block": 12,
+      "native_quadrant": 3,
+      "expected_output_sha256": "31cbcaca69ae81dc9652f0a25e007d1bd68f4b56d36b38c12330c94d8a098079",
+      "source_maps": [
+        "RU_BATTLE_TOWER_ELEVATOR",
+        "RU_LILYCOVE_CITY_DEPARTMENT_STORE_ELEVATOR"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__battle_tower",
+      "id": 612,
+      "sourceHash": "1b366f9e46ce30de48a2372f60f8674bf7f385fbac070ed0a4b73f4078989aa6",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "1b366f9e46ce30de48a2372f60f8674bf7f385fbac070ed0a4b73f4078989aa6",
+        "mid": "1b366f9e46ce30de48a2372f60f8674bf7f385fbac070ed0a4b73f4078989aa6",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 5,
+      "material": "hoenn_competition_venue_floor",
+      "feature": "Complete shaded or unshaded floor of the shared Hoenn elevator cabin",
+      "native_map": "GOLDENROD_DEPT_STORE_3F",
+      "native_block": 12,
+      "native_quadrant": 3,
+      "expected_output_sha256": "31cbcaca69ae81dc9652f0a25e007d1bd68f4b56d36b38c12330c94d8a098079",
+      "source_maps": [
+        "RU_BATTLE_TOWER_ELEVATOR",
+        "RU_LILYCOVE_CITY_DEPARTMENT_STORE_ELEVATOR"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__battle_tower",
+      "id": 613,
+      "sourceHash": "33c2997b53690c27eb761e0c77e3608ea775bf3ce6679cd61977d036d42ac086",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "33c2997b53690c27eb761e0c77e3608ea775bf3ce6679cd61977d036d42ac086",
+        "mid": "33c2997b53690c27eb761e0c77e3608ea775bf3ce6679cd61977d036d42ac086",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 6,
+      "material": "hoenn_competition_venue_floor",
+      "feature": "Complete shaded or unshaded floor of the shared Hoenn elevator cabin",
+      "native_map": "GOLDENROD_DEPT_STORE_3F",
+      "native_block": 12,
+      "native_quadrant": 3,
+      "expected_output_sha256": "31cbcaca69ae81dc9652f0a25e007d1bd68f4b56d36b38c12330c94d8a098079",
+      "source_maps": [
+        "RU_BATTLE_TOWER_ELEVATOR",
+        "RU_LILYCOVE_CITY_DEPARTMENT_STORE_ELEVATOR"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__battle_tower",
+      "id": 614,
+      "sourceHash": "8f624faa298992d415db18da8f084d223910a14ab012ee2e8ebe8895f6261958",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "8f624faa298992d415db18da8f084d223910a14ab012ee2e8ebe8895f6261958",
+        "mid": "8f624faa298992d415db18da8f084d223910a14ab012ee2e8ebe8895f6261958",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 5,
+      "material": "hoenn_competition_venue_floor",
+      "feature": "Complete shaded or unshaded floor of the shared Hoenn elevator cabin",
+      "native_map": "GOLDENROD_DEPT_STORE_3F",
+      "native_block": 12,
+      "native_quadrant": 3,
+      "expected_output_sha256": "31cbcaca69ae81dc9652f0a25e007d1bd68f4b56d36b38c12330c94d8a098079",
+      "source_maps": [
+        "RU_BATTLE_TOWER_ELEVATOR",
+        "RU_LILYCOVE_CITY_DEPARTMENT_STORE_ELEVATOR"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__battle_tower",
+      "id": 604,
+      "sourceHash": "fe44154196c5c27370a636bf175858cfbdd9071ec8bb070cc226e36afc233077",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "fe44154196c5c27370a636bf175858cfbdd9071ec8bb070cc226e36afc233077",
+        "mid": "fe44154196c5c27370a636bf175858cfbdd9071ec8bb070cc226e36afc233077",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 2,
+      "material": "hoenn_competition_venue_floor",
+      "feature": "Complete shaded or unshaded floor of the shared Hoenn elevator cabin",
+      "native_map": "GOLDENROD_DEPT_STORE_3F",
+      "native_block": 12,
+      "native_quadrant": 3,
+      "expected_output_sha256": "31cbcaca69ae81dc9652f0a25e007d1bd68f4b56d36b38c12330c94d8a098079",
+      "source_maps": [
+        "SA_BATTLE_TOWER_ELEVATOR",
+        "SA_LILYCOVE_CITY_DEPARTMENT_STORE_ELEVATOR"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__battle_tower",
+      "id": 605,
+      "sourceHash": "96f20aeb56a1373d0de4323e07c6b021e43e369873796a389ebcc20299cc29dd",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "96f20aeb56a1373d0de4323e07c6b021e43e369873796a389ebcc20299cc29dd",
+        "mid": "96f20aeb56a1373d0de4323e07c6b021e43e369873796a389ebcc20299cc29dd",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 6,
+      "material": "hoenn_competition_venue_floor",
+      "feature": "Complete shaded or unshaded floor of the shared Hoenn elevator cabin",
+      "native_map": "GOLDENROD_DEPT_STORE_3F",
+      "native_block": 12,
+      "native_quadrant": 3,
+      "expected_output_sha256": "31cbcaca69ae81dc9652f0a25e007d1bd68f4b56d36b38c12330c94d8a098079",
+      "source_maps": [
+        "SA_BATTLE_TOWER_ELEVATOR",
+        "SA_LILYCOVE_CITY_DEPARTMENT_STORE_ELEVATOR"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__battle_tower",
+      "id": 612,
+      "sourceHash": "1b366f9e46ce30de48a2372f60f8674bf7f385fbac070ed0a4b73f4078989aa6",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "1b366f9e46ce30de48a2372f60f8674bf7f385fbac070ed0a4b73f4078989aa6",
+        "mid": "1b366f9e46ce30de48a2372f60f8674bf7f385fbac070ed0a4b73f4078989aa6",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 5,
+      "material": "hoenn_competition_venue_floor",
+      "feature": "Complete shaded or unshaded floor of the shared Hoenn elevator cabin",
+      "native_map": "GOLDENROD_DEPT_STORE_3F",
+      "native_block": 12,
+      "native_quadrant": 3,
+      "expected_output_sha256": "31cbcaca69ae81dc9652f0a25e007d1bd68f4b56d36b38c12330c94d8a098079",
+      "source_maps": [
+        "SA_BATTLE_TOWER_ELEVATOR",
+        "SA_LILYCOVE_CITY_DEPARTMENT_STORE_ELEVATOR"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__battle_tower",
+      "id": 613,
+      "sourceHash": "33c2997b53690c27eb761e0c77e3608ea775bf3ce6679cd61977d036d42ac086",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "33c2997b53690c27eb761e0c77e3608ea775bf3ce6679cd61977d036d42ac086",
+        "mid": "33c2997b53690c27eb761e0c77e3608ea775bf3ce6679cd61977d036d42ac086",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 6,
+      "material": "hoenn_competition_venue_floor",
+      "feature": "Complete shaded or unshaded floor of the shared Hoenn elevator cabin",
+      "native_map": "GOLDENROD_DEPT_STORE_3F",
+      "native_block": 12,
+      "native_quadrant": 3,
+      "expected_output_sha256": "31cbcaca69ae81dc9652f0a25e007d1bd68f4b56d36b38c12330c94d8a098079",
+      "source_maps": [
+        "SA_BATTLE_TOWER_ELEVATOR",
+        "SA_LILYCOVE_CITY_DEPARTMENT_STORE_ELEVATOR"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__battle_tower",
+      "id": 614,
+      "sourceHash": "8f624faa298992d415db18da8f084d223910a14ab012ee2e8ebe8895f6261958",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "8f624faa298992d415db18da8f084d223910a14ab012ee2e8ebe8895f6261958",
+        "mid": "8f624faa298992d415db18da8f084d223910a14ab012ee2e8ebe8895f6261958",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 5,
+      "material": "hoenn_competition_venue_floor",
+      "feature": "Complete shaded or unshaded floor of the shared Hoenn elevator cabin",
+      "native_map": "GOLDENROD_DEPT_STORE_3F",
+      "native_block": 12,
+      "native_quadrant": 3,
+      "expected_output_sha256": "31cbcaca69ae81dc9652f0a25e007d1bd68f4b56d36b38c12330c94d8a098079",
+      "source_maps": [
+        "SA_BATTLE_TOWER_ELEVATOR",
+        "SA_LILYCOVE_CITY_DEPARTMENT_STORE_ELEVATOR"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__brendans_mays_house",
+      "id": 518,
+      "sourceHash": "1fef3f92b5be39a241332545dba7f0a28348d068b52969117ef6e9f56395e296",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "1fef3f92b5be39a241332545dba7f0a28348d068b52969117ef6e9f56395e296",
+        "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 2,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "REDS_HOUSE_1F",
+      "native_block": 1,
+      "native_quadrant": 2,
+      "expected_output_sha256": "0093858c553fb161170d270a92f4cac0e3394d4256afb4d31901cd6dba522518",
+      "source_maps": [
+        "EM_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F",
+        "EM_LITTLEROOT_TOWN_MAYS_HOUSE_1F"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__brendans_mays_house",
+      "id": 632,
+      "sourceHash": "fd49c0d8db7f3ace717534b34abd904ced1a1fcf19643626ff3395b67772435e",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "fd49c0d8db7f3ace717534b34abd904ced1a1fcf19643626ff3395b67772435e",
+        "mid": "fd49c0d8db7f3ace717534b34abd904ced1a1fcf19643626ff3395b67772435e",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 3,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "REDS_HOUSE_1F",
+      "native_block": 1,
+      "native_quadrant": 2,
+      "expected_output_sha256": "0093858c553fb161170d270a92f4cac0e3394d4256afb4d31901cd6dba522518",
+      "source_maps": [
+        "EM_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F",
+        "EM_LITTLEROOT_TOWN_MAYS_HOUSE_1F"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__brendans_mays_house",
+      "id": 633,
+      "sourceHash": "162fbf4a13613b0c57a6e23ae80d302d9b51200213873969eb6f8a32f3ed1273",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "162fbf4a13613b0c57a6e23ae80d302d9b51200213873969eb6f8a32f3ed1273",
+        "mid": "162fbf4a13613b0c57a6e23ae80d302d9b51200213873969eb6f8a32f3ed1273",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 1,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "REDS_HOUSE_1F",
+      "native_block": 1,
+      "native_quadrant": 2,
+      "expected_output_sha256": "0093858c553fb161170d270a92f4cac0e3394d4256afb4d31901cd6dba522518",
+      "source_maps": [
+        "EM_LITTLEROOT_TOWN_MAYS_HOUSE_1F"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__cable_club",
+      "id": 514,
+      "sourceHash": "820df649882a982fdf7cb3370884265be13d4eb3ec82f6e64ab8fc1ba1ae4f84",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "820df649882a982fdf7cb3370884265be13d4eb3ec82f6e64ab8fc1ba1ae4f84",
+        "mid": "820df649882a982fdf7cb3370884265be13d4eb3ec82f6e64ab8fc1ba1ae4f84",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 1,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "TRADE_CENTER",
+      "native_block": 23,
+      "native_quadrant": 3,
+      "expected_output_sha256": "3b74ada047339549ecfa8fbd96c39d0751309587bb9899a9eec0dc8c1ea1f7d5",
+      "source_maps": [
+        "EM_TRADE_CENTER"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__cable_club",
+      "id": 519,
+      "sourceHash": "820df649882a982fdf7cb3370884265be13d4eb3ec82f6e64ab8fc1ba1ae4f84",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "820df649882a982fdf7cb3370884265be13d4eb3ec82f6e64ab8fc1ba1ae4f84",
+        "mid": "820df649882a982fdf7cb3370884265be13d4eb3ec82f6e64ab8fc1ba1ae4f84",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 1,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "TRADE_CENTER",
+      "native_block": 23,
+      "native_quadrant": 3,
+      "expected_output_sha256": "3b74ada047339549ecfa8fbd96c39d0751309587bb9899a9eec0dc8c1ea1f7d5",
+      "source_maps": [
+        "EM_TRADE_CENTER"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__cable_club",
+      "id": 520,
+      "sourceHash": "d3b10a37128783f68b122d68481fab97a3db43ea507cb1c5d8cb9926fd0e4364",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "d3b10a37128783f68b122d68481fab97a3db43ea507cb1c5d8cb9926fd0e4364",
+        "mid": "d3b10a37128783f68b122d68481fab97a3db43ea507cb1c5d8cb9926fd0e4364",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 8,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "TRADE_CENTER",
+      "native_block": 23,
+      "native_quadrant": 3,
+      "expected_output_sha256": "3b74ada047339549ecfa8fbd96c39d0751309587bb9899a9eec0dc8c1ea1f7d5",
+      "source_maps": [
+        "EM_TRADE_CENTER"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__cable_club",
+      "id": 528,
+      "sourceHash": "2faf92aecf97b08a3c62e6d6f6a4e44c8351acc1a95938079abdaea85ead6cfc",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "2faf92aecf97b08a3c62e6d6f6a4e44c8351acc1a95938079abdaea85ead6cfc",
+        "mid": "2faf92aecf97b08a3c62e6d6f6a4e44c8351acc1a95938079abdaea85ead6cfc",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 2,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "TRADE_CENTER",
+      "native_block": 23,
+      "native_quadrant": 3,
+      "expected_output_sha256": "3b74ada047339549ecfa8fbd96c39d0751309587bb9899a9eec0dc8c1ea1f7d5",
+      "source_maps": [
+        "EM_TRADE_CENTER"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__cable_club",
+      "id": 529,
+      "sourceHash": "b7e13196950581faa65d7abb61612be021ba690eed25f76da5a02dbbc5438c50",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "b7e13196950581faa65d7abb61612be021ba690eed25f76da5a02dbbc5438c50",
+        "mid": "b7e13196950581faa65d7abb61612be021ba690eed25f76da5a02dbbc5438c50",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 2,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "TRADE_CENTER",
+      "native_block": 23,
+      "native_quadrant": 3,
+      "expected_output_sha256": "3b74ada047339549ecfa8fbd96c39d0751309587bb9899a9eec0dc8c1ea1f7d5",
+      "source_maps": [
+        "EM_TRADE_CENTER"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__cable_club",
+      "id": 555,
+      "sourceHash": "ad38a4aa4b3e17e8d45e0def1b76b6fc04fc09d7430090f13bc90dcef17d914c",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "ad38a4aa4b3e17e8d45e0def1b76b6fc04fc09d7430090f13bc90dcef17d914c",
+        "mid": "ad38a4aa4b3e17e8d45e0def1b76b6fc04fc09d7430090f13bc90dcef17d914c",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 2,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "TRADE_CENTER",
+      "native_block": 23,
+      "native_quadrant": 3,
+      "expected_output_sha256": "3b74ada047339549ecfa8fbd96c39d0751309587bb9899a9eec0dc8c1ea1f7d5",
+      "source_maps": [
+        "EM_TRADE_CENTER"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__cable_club",
+      "id": 558,
+      "sourceHash": "820df649882a982fdf7cb3370884265be13d4eb3ec82f6e64ab8fc1ba1ae4f84",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "820df649882a982fdf7cb3370884265be13d4eb3ec82f6e64ab8fc1ba1ae4f84",
+        "mid": "820df649882a982fdf7cb3370884265be13d4eb3ec82f6e64ab8fc1ba1ae4f84",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 2,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "TRADE_CENTER",
+      "native_block": 23,
+      "native_quadrant": 3,
+      "expected_output_sha256": "3b74ada047339549ecfa8fbd96c39d0751309587bb9899a9eec0dc8c1ea1f7d5",
+      "source_maps": [
+        "EM_TRADE_CENTER"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__lab",
+      "id": 516,
+      "sourceHash": "b509523bebd643253d691ffba1da8344a9c4a6f5eb0d86e771faf47ce3e1a8da",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "b509523bebd643253d691ffba1da8344a9c4a6f5eb0d86e771faf47ce3e1a8da",
+        "mid": "b509523bebd643253d691ffba1da8344a9c4a6f5eb0d86e771faf47ce3e1a8da",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 2,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "ELMS_LAB",
+      "native_block": 1,
+      "native_quadrant": 0,
+      "expected_output_sha256": "e90a6d5435dd10dcaf4815c1755e221f46a702ab5e4b2651dc55e38e2132867e",
+      "source_maps": [
+        "EM_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__lab",
+      "id": 517,
+      "sourceHash": "b592cc57540b7ab0c3bb845f7c7ee382053a005d82aba2656efbf33eada13878",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "b592cc57540b7ab0c3bb845f7c7ee382053a005d82aba2656efbf33eada13878",
+        "mid": "b592cc57540b7ab0c3bb845f7c7ee382053a005d82aba2656efbf33eada13878",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 1,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "ELMS_LAB",
+      "native_block": 1,
+      "native_quadrant": 0,
+      "expected_output_sha256": "e90a6d5435dd10dcaf4815c1755e221f46a702ab5e4b2651dc55e38e2132867e",
+      "source_maps": [
+        "EM_ROUTE114_LANETTES_HOUSE"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__lab",
+      "id": 554,
+      "sourceHash": "157f28c35a6a7823723ce8d37541a6c2dcf82d61a16c55bc818ba6795090367e",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "157f28c35a6a7823723ce8d37541a6c2dcf82d61a16c55bc818ba6795090367e",
+        "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 2,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "ELMS_LAB",
+      "native_block": 1,
+      "native_quadrant": 0,
+      "expected_output_sha256": "e90a6d5435dd10dcaf4815c1755e221f46a702ab5e4b2651dc55e38e2132867e",
+      "source_maps": [
+        "EM_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__lab",
+      "id": 573,
+      "sourceHash": "11b314fa9d8f81f2e741e1a9ab12c2b45bd2740e16c6d2da35b40411901da161",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "11b314fa9d8f81f2e741e1a9ab12c2b45bd2740e16c6d2da35b40411901da161",
+        "mid": "11b314fa9d8f81f2e741e1a9ab12c2b45bd2740e16c6d2da35b40411901da161",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 1,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "ELMS_LAB",
+      "native_block": 1,
+      "native_quadrant": 0,
+      "expected_output_sha256": "e90a6d5435dd10dcaf4815c1755e221f46a702ab5e4b2651dc55e38e2132867e",
+      "source_maps": [
+        "EM_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__lab",
+      "id": 574,
+      "sourceHash": "6951db008ce08fad7fe66748c6421953a7af021a6b41ef7f884e2d0c9233ce03",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "6951db008ce08fad7fe66748c6421953a7af021a6b41ef7f884e2d0c9233ce03",
+        "mid": "6951db008ce08fad7fe66748c6421953a7af021a6b41ef7f884e2d0c9233ce03",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 5,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "ELMS_LAB",
+      "native_block": 1,
+      "native_quadrant": 0,
+      "expected_output_sha256": "e90a6d5435dd10dcaf4815c1755e221f46a702ab5e4b2651dc55e38e2132867e",
+      "source_maps": [
+        "EM_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__lab",
+      "id": 575,
+      "sourceHash": "23d204e8a6c279ea83992953be6bb6581c7c7e674eef53e3c6c9e81cc32bbd1a",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "23d204e8a6c279ea83992953be6bb6581c7c7e674eef53e3c6c9e81cc32bbd1a",
+        "mid": "23d204e8a6c279ea83992953be6bb6581c7c7e674eef53e3c6c9e81cc32bbd1a",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 6,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "ELMS_LAB",
+      "native_block": 1,
+      "native_quadrant": 0,
+      "expected_output_sha256": "e90a6d5435dd10dcaf4815c1755e221f46a702ab5e4b2651dc55e38e2132867e",
+      "source_maps": [
+        "EM_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__lab",
+      "id": 591,
+      "sourceHash": "b1f27db583373516763d947f004f16b47a4340cf1bce074feabf3dbb59f9eb4d",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "b1f27db583373516763d947f004f16b47a4340cf1bce074feabf3dbb59f9eb4d",
+        "mid": "b1f27db583373516763d947f004f16b47a4340cf1bce074feabf3dbb59f9eb4d",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 1,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "ELMS_LAB",
+      "native_block": 1,
+      "native_quadrant": 0,
+      "expected_output_sha256": "e90a6d5435dd10dcaf4815c1755e221f46a702ab5e4b2651dc55e38e2132867e",
+      "source_maps": [
+        "EM_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__lab",
+      "id": 618,
+      "sourceHash": "8fda372f320e080ff648bef4c03b8192477fcb524f4a3124ef158fee35609312",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "8fda372f320e080ff648bef4c03b8192477fcb524f4a3124ef158fee35609312",
+        "mid": "8fda372f320e080ff648bef4c03b8192477fcb524f4a3124ef158fee35609312",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 7,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 15,
+      "native_quadrant": 1,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "EM_ROUTE119_WEATHER_INSTITUTE_1F",
+        "EM_ROUTE119_WEATHER_INSTITUTE_2F"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__lab",
+      "id": 631,
+      "sourceHash": "956be49b885559245716be2200cfb6c72eaac875a05168a7d2e910ff55783cb5",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "956be49b885559245716be2200cfb6c72eaac875a05168a7d2e910ff55783cb5",
+        "mid": "956be49b885559245716be2200cfb6c72eaac875a05168a7d2e910ff55783cb5",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 5,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 15,
+      "native_quadrant": 1,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "EM_ROUTE119_WEATHER_INSTITUTE_1F",
+        "EM_ROUTE119_WEATHER_INSTITUTE_2F"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__mauville_game_corner",
+      "id": 515,
+      "sourceHash": "bdf29ecf99ecba3a5822bd3ce98cee226efb0f5c46bfe3b28171553dc6501650",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "bdf29ecf99ecba3a5822bd3ce98cee226efb0f5c46bfe3b28171553dc6501650",
+        "mid": "bdf29ecf99ecba3a5822bd3ce98cee226efb0f5c46bfe3b28171553dc6501650",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 8,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "CELADON_GAME_CORNER",
+      "native_block": 1,
+      "native_quadrant": 0,
+      "expected_output_sha256": "c3089b81af376500498b778644beb3931c8b6a3260850c1c8b7ded8f690f2bc1",
+      "source_maps": [
+        "EM_MAUVILLE_CITY_GAME_CORNER"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__mauville_game_corner",
+      "id": 516,
+      "sourceHash": "3d8fad100f6312ec2f3d0bf109733f70dab277e8bd15053eddcb1387639bab39",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "3d8fad100f6312ec2f3d0bf109733f70dab277e8bd15053eddcb1387639bab39",
+        "mid": "3d8fad100f6312ec2f3d0bf109733f70dab277e8bd15053eddcb1387639bab39",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 11,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "CELADON_GAME_CORNER",
+      "native_block": 1,
+      "native_quadrant": 0,
+      "expected_output_sha256": "c3089b81af376500498b778644beb3931c8b6a3260850c1c8b7ded8f690f2bc1",
+      "source_maps": [
+        "EM_MAUVILLE_CITY_GAME_CORNER"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__mauville_game_corner",
+      "id": 517,
+      "sourceHash": "1b5aa58996b6a7a53e1426daaac0ec3562454d5a932ad54d2d773ddb1a6d3e2a",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "1b5aa58996b6a7a53e1426daaac0ec3562454d5a932ad54d2d773ddb1a6d3e2a",
+        "mid": "1b5aa58996b6a7a53e1426daaac0ec3562454d5a932ad54d2d773ddb1a6d3e2a",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 1,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "CELADON_GAME_CORNER",
+      "native_block": 1,
+      "native_quadrant": 0,
+      "expected_output_sha256": "c3089b81af376500498b778644beb3931c8b6a3260850c1c8b7ded8f690f2bc1",
+      "source_maps": [
+        "EM_MAUVILLE_CITY_GAME_CORNER"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__mauville_game_corner",
+      "id": 524,
+      "sourceHash": "8cfc69bce4c6111da85d2505333607fe6713b6a685a941e157e877180d9b8917",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "8cfc69bce4c6111da85d2505333607fe6713b6a685a941e157e877180d9b8917",
+        "mid": "8cfc69bce4c6111da85d2505333607fe6713b6a685a941e157e877180d9b8917",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 6,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "CELADON_GAME_CORNER",
+      "native_block": 1,
+      "native_quadrant": 0,
+      "expected_output_sha256": "c3089b81af376500498b778644beb3931c8b6a3260850c1c8b7ded8f690f2bc1",
+      "source_maps": [
+        "EM_MAUVILLE_CITY_GAME_CORNER"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__mauville_game_corner",
+      "id": 525,
+      "sourceHash": "d890da3aab6b5602a1dde49dbbf633be07147eb004192a6ed0c0306dc9cf08a4",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "d890da3aab6b5602a1dde49dbbf633be07147eb004192a6ed0c0306dc9cf08a4",
+        "mid": "d890da3aab6b5602a1dde49dbbf633be07147eb004192a6ed0c0306dc9cf08a4",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 2,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "CELADON_GAME_CORNER",
+      "native_block": 1,
+      "native_quadrant": 0,
+      "expected_output_sha256": "c3089b81af376500498b778644beb3931c8b6a3260850c1c8b7ded8f690f2bc1",
+      "source_maps": [
+        "EM_MAUVILLE_CITY_GAME_CORNER"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__pokemon_day_care",
+      "id": 516,
+      "sourceHash": "487fb5ff10c4fe3940753454979b2dea36a77351437c9e641fe128e08e3c94c2",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "487fb5ff10c4fe3940753454979b2dea36a77351437c9e641fe128e08e3c94c2",
+        "mid": "487fb5ff10c4fe3940753454979b2dea36a77351437c9e641fe128e08e3c94c2",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 10,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "DANCE_THEATER",
+      "native_block": 46,
+      "native_quadrant": 2,
+      "expected_output_sha256": "6dcfb4f63a4861a1b32c9d2884e9cd2b7aca9ba0ce1002e33f5273c3b3e06f5d",
+      "source_maps": [
+        "EM_ROUTE117_POKEMON_DAY_CARE"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__pokemon_day_care",
+      "id": 557,
+      "sourceHash": "487fb5ff10c4fe3940753454979b2dea36a77351437c9e641fe128e08e3c94c2",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "487fb5ff10c4fe3940753454979b2dea36a77351437c9e641fe128e08e3c94c2",
+        "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 1,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "DANCE_THEATER",
+      "native_block": 46,
+      "native_quadrant": 2,
+      "expected_output_sha256": "6dcfb4f63a4861a1b32c9d2884e9cd2b7aca9ba0ce1002e33f5273c3b3e06f5d",
+      "source_maps": [
+        "EM_ROUTE117_POKEMON_DAY_CARE"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__pokemon_day_care",
+      "id": 569,
+      "sourceHash": "8400303cceaa79c3f3d38417e1aabbdf4571134b600f1b5f586d535008812b59",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "8400303cceaa79c3f3d38417e1aabbdf4571134b600f1b5f586d535008812b59",
+        "mid": "8400303cceaa79c3f3d38417e1aabbdf4571134b600f1b5f586d535008812b59",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 1,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "DANCE_THEATER",
+      "native_block": 46,
+      "native_quadrant": 2,
+      "expected_output_sha256": "6dcfb4f63a4861a1b32c9d2884e9cd2b7aca9ba0ce1002e33f5273c3b3e06f5d",
+      "source_maps": [
+        "EM_ROUTE117_POKEMON_DAY_CARE"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__pretty_petal_flower_shop",
+      "id": 524,
+      "sourceHash": "6e909be82f77ad906c3617fb3029b9eb489afa90a82dd2d0c394d969c1bc78b6",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "6e909be82f77ad906c3617fb3029b9eb489afa90a82dd2d0c394d969c1bc78b6",
+        "mid": "6e909be82f77ad906c3617fb3029b9eb489afa90a82dd2d0c394d969c1bc78b6",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 10,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "DANCE_THEATER",
+      "native_block": 45,
+      "native_quadrant": 2,
+      "expected_output_sha256": "9351803f807e883d16cafe94e17116fd13cc92c68e7af1b4c3427d7aa1e1b2da",
+      "source_maps": [
+        "EM_ROUTE104_PRETTY_PETAL_FLOWER_SHOP",
+        "EM_ROUTE104_PROTOTYPE_PRETTY_PETAL_FLOWER_SHOP"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__pretty_petal_flower_shop",
+      "id": 554,
+      "sourceHash": "80d36c6219929bbdb0ed8f1061acbe3624f90467255c9427c54491ae8520bf19",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "80d36c6219929bbdb0ed8f1061acbe3624f90467255c9427c54491ae8520bf19",
+        "mid": "80d36c6219929bbdb0ed8f1061acbe3624f90467255c9427c54491ae8520bf19",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 8,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "DANCE_THEATER",
+      "native_block": 45,
+      "native_quadrant": 2,
+      "expected_output_sha256": "9351803f807e883d16cafe94e17116fd13cc92c68e7af1b4c3427d7aa1e1b2da",
+      "source_maps": [
+        "EM_ROUTE104_PRETTY_PETAL_FLOWER_SHOP",
+        "EM_ROUTE104_PROTOTYPE_PRETTY_PETAL_FLOWER_SHOP"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__seashore_house",
+      "id": 538,
+      "sourceHash": "c93b8d2f92dedbfcac21328158c00ed1e5615749bb3e05f7acca4808d7a70c35",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "c93b8d2f92dedbfcac21328158c00ed1e5615749bb3e05f7acca4808d7a70c35",
+        "mid": "c93b8d2f92dedbfcac21328158c00ed1e5615749bb3e05f7acca4808d7a70c35",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 13,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "DANCE_THEATER",
+      "native_block": 46,
+      "native_quadrant": 2,
+      "expected_output_sha256": "6dcfb4f63a4861a1b32c9d2884e9cd2b7aca9ba0ce1002e33f5273c3b3e06f5d",
+      "source_maps": [
+        "EM_ROUTE109_SEASHORE_HOUSE"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__seashore_house",
+      "id": 539,
+      "sourceHash": "3d48836555fc501b2b78e0b6dfe2bd9455f5e14a936152530f2d8cccf42d74f6",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "3d48836555fc501b2b78e0b6dfe2bd9455f5e14a936152530f2d8cccf42d74f6",
+        "mid": "3d48836555fc501b2b78e0b6dfe2bd9455f5e14a936152530f2d8cccf42d74f6",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 10,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "DANCE_THEATER",
+      "native_block": 46,
+      "native_quadrant": 2,
+      "expected_output_sha256": "6dcfb4f63a4861a1b32c9d2884e9cd2b7aca9ba0ce1002e33f5273c3b3e06f5d",
+      "source_maps": [
+        "EM_ROUTE109_SEASHORE_HOUSE"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__seashore_house",
+      "id": 549,
+      "sourceHash": "0a59504b8123f248c9683f20bcba1d1b05ab7c151c7f47319d54ca4ebc83cc80",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "0a59504b8123f248c9683f20bcba1d1b05ab7c151c7f47319d54ca4ebc83cc80",
+        "mid": "0a59504b8123f248c9683f20bcba1d1b05ab7c151c7f47319d54ca4ebc83cc80",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 19,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "DANCE_THEATER",
+      "native_block": 46,
+      "native_quadrant": 2,
+      "expected_output_sha256": "6dcfb4f63a4861a1b32c9d2884e9cd2b7aca9ba0ce1002e33f5273c3b3e06f5d",
+      "source_maps": [
+        "EM_ROUTE109_SEASHORE_HOUSE"
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__seashore_house",
+      "id": 554,
+      "sourceHash": "cd7a7996708f3787448f260ca0a769fc2947f42b2bf5116949105af586fe7c80",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "cd7a7996708f3787448f260ca0a769fc2947f42b2bf5116949105af586fe7c80",
+        "mid": "cd7a7996708f3787448f260ca0a769fc2947f42b2bf5116949105af586fe7c80",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 16,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "DANCE_THEATER",
+      "native_block": 46,
+      "native_quadrant": 2,
+      "expected_output_sha256": "6dcfb4f63a4861a1b32c9d2884e9cd2b7aca9ba0ce1002e33f5273c3b3e06f5d",
+      "source_maps": [
+        "EM_ROUTE109_SEASHORE_HOUSE"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__brendans_mays_house",
+      "id": 518,
+      "sourceHash": "1fef3f92b5be39a241332545dba7f0a28348d068b52969117ef6e9f56395e296",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "1fef3f92b5be39a241332545dba7f0a28348d068b52969117ef6e9f56395e296",
+        "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 2,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "REDS_HOUSE_1F",
+      "native_block": 1,
+      "native_quadrant": 2,
+      "expected_output_sha256": "0093858c553fb161170d270a92f4cac0e3394d4256afb4d31901cd6dba522518",
+      "source_maps": [
+        "RU_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F",
+        "RU_LITTLEROOT_TOWN_MAYS_HOUSE_1F"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__brendans_mays_house",
+      "id": 632,
+      "sourceHash": "fd49c0d8db7f3ace717534b34abd904ced1a1fcf19643626ff3395b67772435e",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "fd49c0d8db7f3ace717534b34abd904ced1a1fcf19643626ff3395b67772435e",
+        "mid": "fd49c0d8db7f3ace717534b34abd904ced1a1fcf19643626ff3395b67772435e",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 3,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "REDS_HOUSE_1F",
+      "native_block": 1,
+      "native_quadrant": 2,
+      "expected_output_sha256": "0093858c553fb161170d270a92f4cac0e3394d4256afb4d31901cd6dba522518",
+      "source_maps": [
+        "RU_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F",
+        "RU_LITTLEROOT_TOWN_MAYS_HOUSE_1F"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__brendans_mays_house",
+      "id": 633,
+      "sourceHash": "162fbf4a13613b0c57a6e23ae80d302d9b51200213873969eb6f8a32f3ed1273",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "162fbf4a13613b0c57a6e23ae80d302d9b51200213873969eb6f8a32f3ed1273",
+        "mid": "162fbf4a13613b0c57a6e23ae80d302d9b51200213873969eb6f8a32f3ed1273",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 1,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "REDS_HOUSE_1F",
+      "native_block": 1,
+      "native_quadrant": 2,
+      "expected_output_sha256": "0093858c553fb161170d270a92f4cac0e3394d4256afb4d31901cd6dba522518",
+      "source_maps": [
+        "RU_LITTLEROOT_TOWN_MAYS_HOUSE_1F"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__cable_club",
+      "id": 514,
+      "sourceHash": "820df649882a982fdf7cb3370884265be13d4eb3ec82f6e64ab8fc1ba1ae4f84",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "820df649882a982fdf7cb3370884265be13d4eb3ec82f6e64ab8fc1ba1ae4f84",
+        "mid": "820df649882a982fdf7cb3370884265be13d4eb3ec82f6e64ab8fc1ba1ae4f84",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 1,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "TRADE_CENTER",
+      "native_block": 23,
+      "native_quadrant": 3,
+      "expected_output_sha256": "3b74ada047339549ecfa8fbd96c39d0751309587bb9899a9eec0dc8c1ea1f7d5",
+      "source_maps": [
+        "RU_TRADE_CENTER"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__cable_club",
+      "id": 519,
+      "sourceHash": "820df649882a982fdf7cb3370884265be13d4eb3ec82f6e64ab8fc1ba1ae4f84",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "820df649882a982fdf7cb3370884265be13d4eb3ec82f6e64ab8fc1ba1ae4f84",
+        "mid": "820df649882a982fdf7cb3370884265be13d4eb3ec82f6e64ab8fc1ba1ae4f84",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 1,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "TRADE_CENTER",
+      "native_block": 23,
+      "native_quadrant": 3,
+      "expected_output_sha256": "3b74ada047339549ecfa8fbd96c39d0751309587bb9899a9eec0dc8c1ea1f7d5",
+      "source_maps": [
+        "RU_TRADE_CENTER"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__cable_club",
+      "id": 520,
+      "sourceHash": "d3b10a37128783f68b122d68481fab97a3db43ea507cb1c5d8cb9926fd0e4364",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "d3b10a37128783f68b122d68481fab97a3db43ea507cb1c5d8cb9926fd0e4364",
+        "mid": "d3b10a37128783f68b122d68481fab97a3db43ea507cb1c5d8cb9926fd0e4364",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 8,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "TRADE_CENTER",
+      "native_block": 23,
+      "native_quadrant": 3,
+      "expected_output_sha256": "3b74ada047339549ecfa8fbd96c39d0751309587bb9899a9eec0dc8c1ea1f7d5",
+      "source_maps": [
+        "RU_TRADE_CENTER"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__cable_club",
+      "id": 528,
+      "sourceHash": "2faf92aecf97b08a3c62e6d6f6a4e44c8351acc1a95938079abdaea85ead6cfc",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "2faf92aecf97b08a3c62e6d6f6a4e44c8351acc1a95938079abdaea85ead6cfc",
+        "mid": "2faf92aecf97b08a3c62e6d6f6a4e44c8351acc1a95938079abdaea85ead6cfc",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 2,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "TRADE_CENTER",
+      "native_block": 23,
+      "native_quadrant": 3,
+      "expected_output_sha256": "3b74ada047339549ecfa8fbd96c39d0751309587bb9899a9eec0dc8c1ea1f7d5",
+      "source_maps": [
+        "RU_TRADE_CENTER"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__cable_club",
+      "id": 529,
+      "sourceHash": "b7e13196950581faa65d7abb61612be021ba690eed25f76da5a02dbbc5438c50",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "b7e13196950581faa65d7abb61612be021ba690eed25f76da5a02dbbc5438c50",
+        "mid": "b7e13196950581faa65d7abb61612be021ba690eed25f76da5a02dbbc5438c50",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 2,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "TRADE_CENTER",
+      "native_block": 23,
+      "native_quadrant": 3,
+      "expected_output_sha256": "3b74ada047339549ecfa8fbd96c39d0751309587bb9899a9eec0dc8c1ea1f7d5",
+      "source_maps": [
+        "RU_TRADE_CENTER"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__cable_club",
+      "id": 555,
+      "sourceHash": "ad38a4aa4b3e17e8d45e0def1b76b6fc04fc09d7430090f13bc90dcef17d914c",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "ad38a4aa4b3e17e8d45e0def1b76b6fc04fc09d7430090f13bc90dcef17d914c",
+        "mid": "ad38a4aa4b3e17e8d45e0def1b76b6fc04fc09d7430090f13bc90dcef17d914c",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 2,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "TRADE_CENTER",
+      "native_block": 23,
+      "native_quadrant": 3,
+      "expected_output_sha256": "3b74ada047339549ecfa8fbd96c39d0751309587bb9899a9eec0dc8c1ea1f7d5",
+      "source_maps": [
+        "RU_TRADE_CENTER"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__cable_club",
+      "id": 558,
+      "sourceHash": "820df649882a982fdf7cb3370884265be13d4eb3ec82f6e64ab8fc1ba1ae4f84",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "820df649882a982fdf7cb3370884265be13d4eb3ec82f6e64ab8fc1ba1ae4f84",
+        "mid": "820df649882a982fdf7cb3370884265be13d4eb3ec82f6e64ab8fc1ba1ae4f84",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 2,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "TRADE_CENTER",
+      "native_block": 23,
+      "native_quadrant": 3,
+      "expected_output_sha256": "3b74ada047339549ecfa8fbd96c39d0751309587bb9899a9eec0dc8c1ea1f7d5",
+      "source_maps": [
+        "RU_TRADE_CENTER"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__lab",
+      "id": 516,
+      "sourceHash": "b509523bebd643253d691ffba1da8344a9c4a6f5eb0d86e771faf47ce3e1a8da",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "b509523bebd643253d691ffba1da8344a9c4a6f5eb0d86e771faf47ce3e1a8da",
+        "mid": "b509523bebd643253d691ffba1da8344a9c4a6f5eb0d86e771faf47ce3e1a8da",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 2,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "ELMS_LAB",
+      "native_block": 1,
+      "native_quadrant": 0,
+      "expected_output_sha256": "e90a6d5435dd10dcaf4815c1755e221f46a702ab5e4b2651dc55e38e2132867e",
+      "source_maps": [
+        "RU_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__lab",
+      "id": 517,
+      "sourceHash": "b592cc57540b7ab0c3bb845f7c7ee382053a005d82aba2656efbf33eada13878",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "b592cc57540b7ab0c3bb845f7c7ee382053a005d82aba2656efbf33eada13878",
+        "mid": "b592cc57540b7ab0c3bb845f7c7ee382053a005d82aba2656efbf33eada13878",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 1,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "ELMS_LAB",
+      "native_block": 1,
+      "native_quadrant": 0,
+      "expected_output_sha256": "e90a6d5435dd10dcaf4815c1755e221f46a702ab5e4b2651dc55e38e2132867e",
+      "source_maps": [
+        "RU_ROUTE114_LANETTES_HOUSE"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__lab",
+      "id": 554,
+      "sourceHash": "157f28c35a6a7823723ce8d37541a6c2dcf82d61a16c55bc818ba6795090367e",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "157f28c35a6a7823723ce8d37541a6c2dcf82d61a16c55bc818ba6795090367e",
+        "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 2,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "ELMS_LAB",
+      "native_block": 1,
+      "native_quadrant": 0,
+      "expected_output_sha256": "e90a6d5435dd10dcaf4815c1755e221f46a702ab5e4b2651dc55e38e2132867e",
+      "source_maps": [
+        "RU_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__lab",
+      "id": 573,
+      "sourceHash": "11b314fa9d8f81f2e741e1a9ab12c2b45bd2740e16c6d2da35b40411901da161",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "11b314fa9d8f81f2e741e1a9ab12c2b45bd2740e16c6d2da35b40411901da161",
+        "mid": "11b314fa9d8f81f2e741e1a9ab12c2b45bd2740e16c6d2da35b40411901da161",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 1,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "ELMS_LAB",
+      "native_block": 1,
+      "native_quadrant": 0,
+      "expected_output_sha256": "e90a6d5435dd10dcaf4815c1755e221f46a702ab5e4b2651dc55e38e2132867e",
+      "source_maps": [
+        "RU_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__lab",
+      "id": 574,
+      "sourceHash": "6951db008ce08fad7fe66748c6421953a7af021a6b41ef7f884e2d0c9233ce03",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "6951db008ce08fad7fe66748c6421953a7af021a6b41ef7f884e2d0c9233ce03",
+        "mid": "6951db008ce08fad7fe66748c6421953a7af021a6b41ef7f884e2d0c9233ce03",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 6,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "ELMS_LAB",
+      "native_block": 1,
+      "native_quadrant": 0,
+      "expected_output_sha256": "e90a6d5435dd10dcaf4815c1755e221f46a702ab5e4b2651dc55e38e2132867e",
+      "source_maps": [
+        "RU_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__lab",
+      "id": 575,
+      "sourceHash": "23d204e8a6c279ea83992953be6bb6581c7c7e674eef53e3c6c9e81cc32bbd1a",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "23d204e8a6c279ea83992953be6bb6581c7c7e674eef53e3c6c9e81cc32bbd1a",
+        "mid": "23d204e8a6c279ea83992953be6bb6581c7c7e674eef53e3c6c9e81cc32bbd1a",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 6,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "ELMS_LAB",
+      "native_block": 1,
+      "native_quadrant": 0,
+      "expected_output_sha256": "e90a6d5435dd10dcaf4815c1755e221f46a702ab5e4b2651dc55e38e2132867e",
+      "source_maps": [
+        "RU_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__lab",
+      "id": 591,
+      "sourceHash": "b1f27db583373516763d947f004f16b47a4340cf1bce074feabf3dbb59f9eb4d",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "b1f27db583373516763d947f004f16b47a4340cf1bce074feabf3dbb59f9eb4d",
+        "mid": "b1f27db583373516763d947f004f16b47a4340cf1bce074feabf3dbb59f9eb4d",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 1,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "ELMS_LAB",
+      "native_block": 1,
+      "native_quadrant": 0,
+      "expected_output_sha256": "e90a6d5435dd10dcaf4815c1755e221f46a702ab5e4b2651dc55e38e2132867e",
+      "source_maps": [
+        "RU_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__lab",
+      "id": 618,
+      "sourceHash": "8fda372f320e080ff648bef4c03b8192477fcb524f4a3124ef158fee35609312",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "8fda372f320e080ff648bef4c03b8192477fcb524f4a3124ef158fee35609312",
+        "mid": "8fda372f320e080ff648bef4c03b8192477fcb524f4a3124ef158fee35609312",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 7,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 15,
+      "native_quadrant": 1,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "RU_ROUTE119_WEATHER_INSTITUTE_1F",
+        "RU_ROUTE119_WEATHER_INSTITUTE_2F"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__lab",
+      "id": 631,
+      "sourceHash": "956be49b885559245716be2200cfb6c72eaac875a05168a7d2e910ff55783cb5",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "956be49b885559245716be2200cfb6c72eaac875a05168a7d2e910ff55783cb5",
+        "mid": "956be49b885559245716be2200cfb6c72eaac875a05168a7d2e910ff55783cb5",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 5,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 15,
+      "native_quadrant": 1,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "RU_ROUTE119_WEATHER_INSTITUTE_1F",
+        "RU_ROUTE119_WEATHER_INSTITUTE_2F"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__mauville_game_corner",
+      "id": 515,
+      "sourceHash": "bdf29ecf99ecba3a5822bd3ce98cee226efb0f5c46bfe3b28171553dc6501650",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "bdf29ecf99ecba3a5822bd3ce98cee226efb0f5c46bfe3b28171553dc6501650",
+        "mid": "bdf29ecf99ecba3a5822bd3ce98cee226efb0f5c46bfe3b28171553dc6501650",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 8,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "CELADON_GAME_CORNER",
+      "native_block": 1,
+      "native_quadrant": 0,
+      "expected_output_sha256": "c3089b81af376500498b778644beb3931c8b6a3260850c1c8b7ded8f690f2bc1",
+      "source_maps": [
+        "RU_MAUVILLE_CITY_GAME_CORNER"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__mauville_game_corner",
+      "id": 516,
+      "sourceHash": "3d8fad100f6312ec2f3d0bf109733f70dab277e8bd15053eddcb1387639bab39",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "3d8fad100f6312ec2f3d0bf109733f70dab277e8bd15053eddcb1387639bab39",
+        "mid": "3d8fad100f6312ec2f3d0bf109733f70dab277e8bd15053eddcb1387639bab39",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 11,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "CELADON_GAME_CORNER",
+      "native_block": 1,
+      "native_quadrant": 0,
+      "expected_output_sha256": "c3089b81af376500498b778644beb3931c8b6a3260850c1c8b7ded8f690f2bc1",
+      "source_maps": [
+        "RU_MAUVILLE_CITY_GAME_CORNER"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__mauville_game_corner",
+      "id": 517,
+      "sourceHash": "1b5aa58996b6a7a53e1426daaac0ec3562454d5a932ad54d2d773ddb1a6d3e2a",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "1b5aa58996b6a7a53e1426daaac0ec3562454d5a932ad54d2d773ddb1a6d3e2a",
+        "mid": "1b5aa58996b6a7a53e1426daaac0ec3562454d5a932ad54d2d773ddb1a6d3e2a",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 1,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "CELADON_GAME_CORNER",
+      "native_block": 1,
+      "native_quadrant": 0,
+      "expected_output_sha256": "c3089b81af376500498b778644beb3931c8b6a3260850c1c8b7ded8f690f2bc1",
+      "source_maps": [
+        "RU_MAUVILLE_CITY_GAME_CORNER"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__mauville_game_corner",
+      "id": 524,
+      "sourceHash": "8cfc69bce4c6111da85d2505333607fe6713b6a685a941e157e877180d9b8917",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "8cfc69bce4c6111da85d2505333607fe6713b6a685a941e157e877180d9b8917",
+        "mid": "8cfc69bce4c6111da85d2505333607fe6713b6a685a941e157e877180d9b8917",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 6,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "CELADON_GAME_CORNER",
+      "native_block": 1,
+      "native_quadrant": 0,
+      "expected_output_sha256": "c3089b81af376500498b778644beb3931c8b6a3260850c1c8b7ded8f690f2bc1",
+      "source_maps": [
+        "RU_MAUVILLE_CITY_GAME_CORNER"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__mauville_game_corner",
+      "id": 525,
+      "sourceHash": "d890da3aab6b5602a1dde49dbbf633be07147eb004192a6ed0c0306dc9cf08a4",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "d890da3aab6b5602a1dde49dbbf633be07147eb004192a6ed0c0306dc9cf08a4",
+        "mid": "d890da3aab6b5602a1dde49dbbf633be07147eb004192a6ed0c0306dc9cf08a4",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 2,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "CELADON_GAME_CORNER",
+      "native_block": 1,
+      "native_quadrant": 0,
+      "expected_output_sha256": "c3089b81af376500498b778644beb3931c8b6a3260850c1c8b7ded8f690f2bc1",
+      "source_maps": [
+        "RU_MAUVILLE_CITY_GAME_CORNER"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__pokemon_day_care",
+      "id": 516,
+      "sourceHash": "487fb5ff10c4fe3940753454979b2dea36a77351437c9e641fe128e08e3c94c2",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "487fb5ff10c4fe3940753454979b2dea36a77351437c9e641fe128e08e3c94c2",
+        "mid": "487fb5ff10c4fe3940753454979b2dea36a77351437c9e641fe128e08e3c94c2",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 10,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "DANCE_THEATER",
+      "native_block": 46,
+      "native_quadrant": 2,
+      "expected_output_sha256": "6dcfb4f63a4861a1b32c9d2884e9cd2b7aca9ba0ce1002e33f5273c3b3e06f5d",
+      "source_maps": [
+        "RU_ROUTE117_POKEMON_DAY_CARE"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__pokemon_day_care",
+      "id": 557,
+      "sourceHash": "487fb5ff10c4fe3940753454979b2dea36a77351437c9e641fe128e08e3c94c2",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "487fb5ff10c4fe3940753454979b2dea36a77351437c9e641fe128e08e3c94c2",
+        "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 1,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "DANCE_THEATER",
+      "native_block": 46,
+      "native_quadrant": 2,
+      "expected_output_sha256": "6dcfb4f63a4861a1b32c9d2884e9cd2b7aca9ba0ce1002e33f5273c3b3e06f5d",
+      "source_maps": [
+        "RU_ROUTE117_POKEMON_DAY_CARE"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__pokemon_day_care",
+      "id": 569,
+      "sourceHash": "8400303cceaa79c3f3d38417e1aabbdf4571134b600f1b5f586d535008812b59",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "8400303cceaa79c3f3d38417e1aabbdf4571134b600f1b5f586d535008812b59",
+        "mid": "8400303cceaa79c3f3d38417e1aabbdf4571134b600f1b5f586d535008812b59",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 1,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "DANCE_THEATER",
+      "native_block": 46,
+      "native_quadrant": 2,
+      "expected_output_sha256": "6dcfb4f63a4861a1b32c9d2884e9cd2b7aca9ba0ce1002e33f5273c3b3e06f5d",
+      "source_maps": [
+        "RU_ROUTE117_POKEMON_DAY_CARE"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__pretty_petal_flower_shop",
+      "id": 524,
+      "sourceHash": "6e909be82f77ad906c3617fb3029b9eb489afa90a82dd2d0c394d969c1bc78b6",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "6e909be82f77ad906c3617fb3029b9eb489afa90a82dd2d0c394d969c1bc78b6",
+        "mid": "6e909be82f77ad906c3617fb3029b9eb489afa90a82dd2d0c394d969c1bc78b6",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 10,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "DANCE_THEATER",
+      "native_block": 45,
+      "native_quadrant": 2,
+      "expected_output_sha256": "9351803f807e883d16cafe94e17116fd13cc92c68e7af1b4c3427d7aa1e1b2da",
+      "source_maps": [
+        "RU_ROUTE104_PRETTY_PETAL_FLOWER_SHOP",
+        "RU_ROUTE104_PROTOTYPE_PRETTY_PETAL_FLOWER_SHOP"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__pretty_petal_flower_shop",
+      "id": 554,
+      "sourceHash": "80d36c6219929bbdb0ed8f1061acbe3624f90467255c9427c54491ae8520bf19",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "80d36c6219929bbdb0ed8f1061acbe3624f90467255c9427c54491ae8520bf19",
+        "mid": "80d36c6219929bbdb0ed8f1061acbe3624f90467255c9427c54491ae8520bf19",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 8,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "DANCE_THEATER",
+      "native_block": 45,
+      "native_quadrant": 2,
+      "expected_output_sha256": "9351803f807e883d16cafe94e17116fd13cc92c68e7af1b4c3427d7aa1e1b2da",
+      "source_maps": [
+        "RU_ROUTE104_PRETTY_PETAL_FLOWER_SHOP",
+        "RU_ROUTE104_PROTOTYPE_PRETTY_PETAL_FLOWER_SHOP"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__seashore_house",
+      "id": 538,
+      "sourceHash": "c93b8d2f92dedbfcac21328158c00ed1e5615749bb3e05f7acca4808d7a70c35",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "c93b8d2f92dedbfcac21328158c00ed1e5615749bb3e05f7acca4808d7a70c35",
+        "mid": "c93b8d2f92dedbfcac21328158c00ed1e5615749bb3e05f7acca4808d7a70c35",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 13,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "DANCE_THEATER",
+      "native_block": 46,
+      "native_quadrant": 2,
+      "expected_output_sha256": "6dcfb4f63a4861a1b32c9d2884e9cd2b7aca9ba0ce1002e33f5273c3b3e06f5d",
+      "source_maps": [
+        "RU_ROUTE109_SEASHORE_HOUSE"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__seashore_house",
+      "id": 539,
+      "sourceHash": "3d48836555fc501b2b78e0b6dfe2bd9455f5e14a936152530f2d8cccf42d74f6",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "3d48836555fc501b2b78e0b6dfe2bd9455f5e14a936152530f2d8cccf42d74f6",
+        "mid": "3d48836555fc501b2b78e0b6dfe2bd9455f5e14a936152530f2d8cccf42d74f6",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 10,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "DANCE_THEATER",
+      "native_block": 46,
+      "native_quadrant": 2,
+      "expected_output_sha256": "6dcfb4f63a4861a1b32c9d2884e9cd2b7aca9ba0ce1002e33f5273c3b3e06f5d",
+      "source_maps": [
+        "RU_ROUTE109_SEASHORE_HOUSE"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__seashore_house",
+      "id": 549,
+      "sourceHash": "0a59504b8123f248c9683f20bcba1d1b05ab7c151c7f47319d54ca4ebc83cc80",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "0a59504b8123f248c9683f20bcba1d1b05ab7c151c7f47319d54ca4ebc83cc80",
+        "mid": "0a59504b8123f248c9683f20bcba1d1b05ab7c151c7f47319d54ca4ebc83cc80",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 19,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "DANCE_THEATER",
+      "native_block": 46,
+      "native_quadrant": 2,
+      "expected_output_sha256": "6dcfb4f63a4861a1b32c9d2884e9cd2b7aca9ba0ce1002e33f5273c3b3e06f5d",
+      "source_maps": [
+        "RU_ROUTE109_SEASHORE_HOUSE"
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__seashore_house",
+      "id": 554,
+      "sourceHash": "cd7a7996708f3787448f260ca0a769fc2947f42b2bf5116949105af586fe7c80",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "cd7a7996708f3787448f260ca0a769fc2947f42b2bf5116949105af586fe7c80",
+        "mid": "cd7a7996708f3787448f260ca0a769fc2947f42b2bf5116949105af586fe7c80",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 16,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "DANCE_THEATER",
+      "native_block": 46,
+      "native_quadrant": 2,
+      "expected_output_sha256": "6dcfb4f63a4861a1b32c9d2884e9cd2b7aca9ba0ce1002e33f5273c3b3e06f5d",
+      "source_maps": [
+        "RU_ROUTE109_SEASHORE_HOUSE"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__brendans_mays_house",
+      "id": 518,
+      "sourceHash": "1fef3f92b5be39a241332545dba7f0a28348d068b52969117ef6e9f56395e296",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "1fef3f92b5be39a241332545dba7f0a28348d068b52969117ef6e9f56395e296",
+        "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 2,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "REDS_HOUSE_1F",
+      "native_block": 1,
+      "native_quadrant": 2,
+      "expected_output_sha256": "0093858c553fb161170d270a92f4cac0e3394d4256afb4d31901cd6dba522518",
+      "source_maps": [
+        "SA_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F",
+        "SA_LITTLEROOT_TOWN_MAYS_HOUSE_1F"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__brendans_mays_house",
+      "id": 632,
+      "sourceHash": "fd49c0d8db7f3ace717534b34abd904ced1a1fcf19643626ff3395b67772435e",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "fd49c0d8db7f3ace717534b34abd904ced1a1fcf19643626ff3395b67772435e",
+        "mid": "fd49c0d8db7f3ace717534b34abd904ced1a1fcf19643626ff3395b67772435e",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 3,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "REDS_HOUSE_1F",
+      "native_block": 1,
+      "native_quadrant": 2,
+      "expected_output_sha256": "0093858c553fb161170d270a92f4cac0e3394d4256afb4d31901cd6dba522518",
+      "source_maps": [
+        "SA_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F",
+        "SA_LITTLEROOT_TOWN_MAYS_HOUSE_1F"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__brendans_mays_house",
+      "id": 633,
+      "sourceHash": "162fbf4a13613b0c57a6e23ae80d302d9b51200213873969eb6f8a32f3ed1273",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "162fbf4a13613b0c57a6e23ae80d302d9b51200213873969eb6f8a32f3ed1273",
+        "mid": "162fbf4a13613b0c57a6e23ae80d302d9b51200213873969eb6f8a32f3ed1273",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 1,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "REDS_HOUSE_1F",
+      "native_block": 1,
+      "native_quadrant": 2,
+      "expected_output_sha256": "0093858c553fb161170d270a92f4cac0e3394d4256afb4d31901cd6dba522518",
+      "source_maps": [
+        "SA_LITTLEROOT_TOWN_MAYS_HOUSE_1F"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__cable_club",
+      "id": 514,
+      "sourceHash": "820df649882a982fdf7cb3370884265be13d4eb3ec82f6e64ab8fc1ba1ae4f84",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "820df649882a982fdf7cb3370884265be13d4eb3ec82f6e64ab8fc1ba1ae4f84",
+        "mid": "820df649882a982fdf7cb3370884265be13d4eb3ec82f6e64ab8fc1ba1ae4f84",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 1,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "TRADE_CENTER",
+      "native_block": 23,
+      "native_quadrant": 3,
+      "expected_output_sha256": "3b74ada047339549ecfa8fbd96c39d0751309587bb9899a9eec0dc8c1ea1f7d5",
+      "source_maps": [
+        "SA_TRADE_CENTER"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__cable_club",
+      "id": 519,
+      "sourceHash": "820df649882a982fdf7cb3370884265be13d4eb3ec82f6e64ab8fc1ba1ae4f84",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "820df649882a982fdf7cb3370884265be13d4eb3ec82f6e64ab8fc1ba1ae4f84",
+        "mid": "820df649882a982fdf7cb3370884265be13d4eb3ec82f6e64ab8fc1ba1ae4f84",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 1,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "TRADE_CENTER",
+      "native_block": 23,
+      "native_quadrant": 3,
+      "expected_output_sha256": "3b74ada047339549ecfa8fbd96c39d0751309587bb9899a9eec0dc8c1ea1f7d5",
+      "source_maps": [
+        "SA_TRADE_CENTER"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__cable_club",
+      "id": 520,
+      "sourceHash": "d3b10a37128783f68b122d68481fab97a3db43ea507cb1c5d8cb9926fd0e4364",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "d3b10a37128783f68b122d68481fab97a3db43ea507cb1c5d8cb9926fd0e4364",
+        "mid": "d3b10a37128783f68b122d68481fab97a3db43ea507cb1c5d8cb9926fd0e4364",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 8,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "TRADE_CENTER",
+      "native_block": 23,
+      "native_quadrant": 3,
+      "expected_output_sha256": "3b74ada047339549ecfa8fbd96c39d0751309587bb9899a9eec0dc8c1ea1f7d5",
+      "source_maps": [
+        "SA_TRADE_CENTER"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__cable_club",
+      "id": 528,
+      "sourceHash": "2faf92aecf97b08a3c62e6d6f6a4e44c8351acc1a95938079abdaea85ead6cfc",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "2faf92aecf97b08a3c62e6d6f6a4e44c8351acc1a95938079abdaea85ead6cfc",
+        "mid": "2faf92aecf97b08a3c62e6d6f6a4e44c8351acc1a95938079abdaea85ead6cfc",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 2,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "TRADE_CENTER",
+      "native_block": 23,
+      "native_quadrant": 3,
+      "expected_output_sha256": "3b74ada047339549ecfa8fbd96c39d0751309587bb9899a9eec0dc8c1ea1f7d5",
+      "source_maps": [
+        "SA_TRADE_CENTER"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__cable_club",
+      "id": 529,
+      "sourceHash": "b7e13196950581faa65d7abb61612be021ba690eed25f76da5a02dbbc5438c50",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "b7e13196950581faa65d7abb61612be021ba690eed25f76da5a02dbbc5438c50",
+        "mid": "b7e13196950581faa65d7abb61612be021ba690eed25f76da5a02dbbc5438c50",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 2,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "TRADE_CENTER",
+      "native_block": 23,
+      "native_quadrant": 3,
+      "expected_output_sha256": "3b74ada047339549ecfa8fbd96c39d0751309587bb9899a9eec0dc8c1ea1f7d5",
+      "source_maps": [
+        "SA_TRADE_CENTER"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__cable_club",
+      "id": 555,
+      "sourceHash": "ad38a4aa4b3e17e8d45e0def1b76b6fc04fc09d7430090f13bc90dcef17d914c",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "ad38a4aa4b3e17e8d45e0def1b76b6fc04fc09d7430090f13bc90dcef17d914c",
+        "mid": "ad38a4aa4b3e17e8d45e0def1b76b6fc04fc09d7430090f13bc90dcef17d914c",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 2,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "TRADE_CENTER",
+      "native_block": 23,
+      "native_quadrant": 3,
+      "expected_output_sha256": "3b74ada047339549ecfa8fbd96c39d0751309587bb9899a9eec0dc8c1ea1f7d5",
+      "source_maps": [
+        "SA_TRADE_CENTER"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__cable_club",
+      "id": 558,
+      "sourceHash": "820df649882a982fdf7cb3370884265be13d4eb3ec82f6e64ab8fc1ba1ae4f84",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "820df649882a982fdf7cb3370884265be13d4eb3ec82f6e64ab8fc1ba1ae4f84",
+        "mid": "820df649882a982fdf7cb3370884265be13d4eb3ec82f6e64ab8fc1ba1ae4f84",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 2,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "TRADE_CENTER",
+      "native_block": 23,
+      "native_quadrant": 3,
+      "expected_output_sha256": "3b74ada047339549ecfa8fbd96c39d0751309587bb9899a9eec0dc8c1ea1f7d5",
+      "source_maps": [
+        "SA_TRADE_CENTER"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__lab",
+      "id": 516,
+      "sourceHash": "b509523bebd643253d691ffba1da8344a9c4a6f5eb0d86e771faf47ce3e1a8da",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "b509523bebd643253d691ffba1da8344a9c4a6f5eb0d86e771faf47ce3e1a8da",
+        "mid": "b509523bebd643253d691ffba1da8344a9c4a6f5eb0d86e771faf47ce3e1a8da",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 2,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "ELMS_LAB",
+      "native_block": 1,
+      "native_quadrant": 0,
+      "expected_output_sha256": "e90a6d5435dd10dcaf4815c1755e221f46a702ab5e4b2651dc55e38e2132867e",
+      "source_maps": [
+        "SA_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__lab",
+      "id": 517,
+      "sourceHash": "b592cc57540b7ab0c3bb845f7c7ee382053a005d82aba2656efbf33eada13878",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "b592cc57540b7ab0c3bb845f7c7ee382053a005d82aba2656efbf33eada13878",
+        "mid": "b592cc57540b7ab0c3bb845f7c7ee382053a005d82aba2656efbf33eada13878",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 1,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "ELMS_LAB",
+      "native_block": 1,
+      "native_quadrant": 0,
+      "expected_output_sha256": "e90a6d5435dd10dcaf4815c1755e221f46a702ab5e4b2651dc55e38e2132867e",
+      "source_maps": [
+        "SA_ROUTE114_LANETTES_HOUSE"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__lab",
+      "id": 554,
+      "sourceHash": "157f28c35a6a7823723ce8d37541a6c2dcf82d61a16c55bc818ba6795090367e",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "157f28c35a6a7823723ce8d37541a6c2dcf82d61a16c55bc818ba6795090367e",
+        "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 2,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "ELMS_LAB",
+      "native_block": 1,
+      "native_quadrant": 0,
+      "expected_output_sha256": "e90a6d5435dd10dcaf4815c1755e221f46a702ab5e4b2651dc55e38e2132867e",
+      "source_maps": [
+        "SA_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__lab",
+      "id": 573,
+      "sourceHash": "11b314fa9d8f81f2e741e1a9ab12c2b45bd2740e16c6d2da35b40411901da161",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "11b314fa9d8f81f2e741e1a9ab12c2b45bd2740e16c6d2da35b40411901da161",
+        "mid": "11b314fa9d8f81f2e741e1a9ab12c2b45bd2740e16c6d2da35b40411901da161",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 1,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "ELMS_LAB",
+      "native_block": 1,
+      "native_quadrant": 0,
+      "expected_output_sha256": "e90a6d5435dd10dcaf4815c1755e221f46a702ab5e4b2651dc55e38e2132867e",
+      "source_maps": [
+        "SA_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__lab",
+      "id": 574,
+      "sourceHash": "6951db008ce08fad7fe66748c6421953a7af021a6b41ef7f884e2d0c9233ce03",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "6951db008ce08fad7fe66748c6421953a7af021a6b41ef7f884e2d0c9233ce03",
+        "mid": "6951db008ce08fad7fe66748c6421953a7af021a6b41ef7f884e2d0c9233ce03",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 6,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "ELMS_LAB",
+      "native_block": 1,
+      "native_quadrant": 0,
+      "expected_output_sha256": "e90a6d5435dd10dcaf4815c1755e221f46a702ab5e4b2651dc55e38e2132867e",
+      "source_maps": [
+        "SA_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__lab",
+      "id": 575,
+      "sourceHash": "23d204e8a6c279ea83992953be6bb6581c7c7e674eef53e3c6c9e81cc32bbd1a",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "23d204e8a6c279ea83992953be6bb6581c7c7e674eef53e3c6c9e81cc32bbd1a",
+        "mid": "23d204e8a6c279ea83992953be6bb6581c7c7e674eef53e3c6c9e81cc32bbd1a",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 6,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "ELMS_LAB",
+      "native_block": 1,
+      "native_quadrant": 0,
+      "expected_output_sha256": "e90a6d5435dd10dcaf4815c1755e221f46a702ab5e4b2651dc55e38e2132867e",
+      "source_maps": [
+        "SA_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__lab",
+      "id": 591,
+      "sourceHash": "b1f27db583373516763d947f004f16b47a4340cf1bce074feabf3dbb59f9eb4d",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "b1f27db583373516763d947f004f16b47a4340cf1bce074feabf3dbb59f9eb4d",
+        "mid": "b1f27db583373516763d947f004f16b47a4340cf1bce074feabf3dbb59f9eb4d",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 1,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "ELMS_LAB",
+      "native_block": 1,
+      "native_quadrant": 0,
+      "expected_output_sha256": "e90a6d5435dd10dcaf4815c1755e221f46a702ab5e4b2651dc55e38e2132867e",
+      "source_maps": [
+        "SA_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__lab",
+      "id": 618,
+      "sourceHash": "8fda372f320e080ff648bef4c03b8192477fcb524f4a3124ef158fee35609312",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "8fda372f320e080ff648bef4c03b8192477fcb524f4a3124ef158fee35609312",
+        "mid": "8fda372f320e080ff648bef4c03b8192477fcb524f4a3124ef158fee35609312",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 7,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 15,
+      "native_quadrant": 1,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "SA_ROUTE119_WEATHER_INSTITUTE_1F",
+        "SA_ROUTE119_WEATHER_INSTITUTE_2F"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__lab",
+      "id": 631,
+      "sourceHash": "956be49b885559245716be2200cfb6c72eaac875a05168a7d2e910ff55783cb5",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "956be49b885559245716be2200cfb6c72eaac875a05168a7d2e910ff55783cb5",
+        "mid": "956be49b885559245716be2200cfb6c72eaac875a05168a7d2e910ff55783cb5",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 5,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "SAFFRON_GYM",
+      "native_block": 15,
+      "native_quadrant": 1,
+      "expected_output_sha256": "8618082e4e626790d8bde533671aaf699b1250897bc3acbc9b6f6a26d560d843",
+      "source_maps": [
+        "SA_ROUTE119_WEATHER_INSTITUTE_1F",
+        "SA_ROUTE119_WEATHER_INSTITUTE_2F"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__mauville_game_corner",
+      "id": 515,
+      "sourceHash": "bdf29ecf99ecba3a5822bd3ce98cee226efb0f5c46bfe3b28171553dc6501650",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "bdf29ecf99ecba3a5822bd3ce98cee226efb0f5c46bfe3b28171553dc6501650",
+        "mid": "bdf29ecf99ecba3a5822bd3ce98cee226efb0f5c46bfe3b28171553dc6501650",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 8,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "CELADON_GAME_CORNER",
+      "native_block": 1,
+      "native_quadrant": 0,
+      "expected_output_sha256": "c3089b81af376500498b778644beb3931c8b6a3260850c1c8b7ded8f690f2bc1",
+      "source_maps": [
+        "SA_MAUVILLE_CITY_GAME_CORNER"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__mauville_game_corner",
+      "id": 516,
+      "sourceHash": "3d8fad100f6312ec2f3d0bf109733f70dab277e8bd15053eddcb1387639bab39",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "3d8fad100f6312ec2f3d0bf109733f70dab277e8bd15053eddcb1387639bab39",
+        "mid": "3d8fad100f6312ec2f3d0bf109733f70dab277e8bd15053eddcb1387639bab39",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 11,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "CELADON_GAME_CORNER",
+      "native_block": 1,
+      "native_quadrant": 0,
+      "expected_output_sha256": "c3089b81af376500498b778644beb3931c8b6a3260850c1c8b7ded8f690f2bc1",
+      "source_maps": [
+        "SA_MAUVILLE_CITY_GAME_CORNER"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__mauville_game_corner",
+      "id": 517,
+      "sourceHash": "1b5aa58996b6a7a53e1426daaac0ec3562454d5a932ad54d2d773ddb1a6d3e2a",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "1b5aa58996b6a7a53e1426daaac0ec3562454d5a932ad54d2d773ddb1a6d3e2a",
+        "mid": "1b5aa58996b6a7a53e1426daaac0ec3562454d5a932ad54d2d773ddb1a6d3e2a",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 1,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "CELADON_GAME_CORNER",
+      "native_block": 1,
+      "native_quadrant": 0,
+      "expected_output_sha256": "c3089b81af376500498b778644beb3931c8b6a3260850c1c8b7ded8f690f2bc1",
+      "source_maps": [
+        "SA_MAUVILLE_CITY_GAME_CORNER"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__mauville_game_corner",
+      "id": 524,
+      "sourceHash": "8cfc69bce4c6111da85d2505333607fe6713b6a685a941e157e877180d9b8917",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "8cfc69bce4c6111da85d2505333607fe6713b6a685a941e157e877180d9b8917",
+        "mid": "8cfc69bce4c6111da85d2505333607fe6713b6a685a941e157e877180d9b8917",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 6,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "CELADON_GAME_CORNER",
+      "native_block": 1,
+      "native_quadrant": 0,
+      "expected_output_sha256": "c3089b81af376500498b778644beb3931c8b6a3260850c1c8b7ded8f690f2bc1",
+      "source_maps": [
+        "SA_MAUVILLE_CITY_GAME_CORNER"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__mauville_game_corner",
+      "id": 525,
+      "sourceHash": "d890da3aab6b5602a1dde49dbbf633be07147eb004192a6ed0c0306dc9cf08a4",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "d890da3aab6b5602a1dde49dbbf633be07147eb004192a6ed0c0306dc9cf08a4",
+        "mid": "d890da3aab6b5602a1dde49dbbf633be07147eb004192a6ed0c0306dc9cf08a4",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 2,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "CELADON_GAME_CORNER",
+      "native_block": 1,
+      "native_quadrant": 0,
+      "expected_output_sha256": "c3089b81af376500498b778644beb3931c8b6a3260850c1c8b7ded8f690f2bc1",
+      "source_maps": [
+        "SA_MAUVILLE_CITY_GAME_CORNER"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__pokemon_day_care",
+      "id": 516,
+      "sourceHash": "487fb5ff10c4fe3940753454979b2dea36a77351437c9e641fe128e08e3c94c2",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "487fb5ff10c4fe3940753454979b2dea36a77351437c9e641fe128e08e3c94c2",
+        "mid": "487fb5ff10c4fe3940753454979b2dea36a77351437c9e641fe128e08e3c94c2",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 10,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "DANCE_THEATER",
+      "native_block": 46,
+      "native_quadrant": 2,
+      "expected_output_sha256": "6dcfb4f63a4861a1b32c9d2884e9cd2b7aca9ba0ce1002e33f5273c3b3e06f5d",
+      "source_maps": [
+        "SA_ROUTE117_POKEMON_DAY_CARE"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__pokemon_day_care",
+      "id": 557,
+      "sourceHash": "487fb5ff10c4fe3940753454979b2dea36a77351437c9e641fe128e08e3c94c2",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "487fb5ff10c4fe3940753454979b2dea36a77351437c9e641fe128e08e3c94c2",
+        "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 1,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "DANCE_THEATER",
+      "native_block": 46,
+      "native_quadrant": 2,
+      "expected_output_sha256": "6dcfb4f63a4861a1b32c9d2884e9cd2b7aca9ba0ce1002e33f5273c3b3e06f5d",
+      "source_maps": [
+        "SA_ROUTE117_POKEMON_DAY_CARE"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__pokemon_day_care",
+      "id": 569,
+      "sourceHash": "8400303cceaa79c3f3d38417e1aabbdf4571134b600f1b5f586d535008812b59",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "8400303cceaa79c3f3d38417e1aabbdf4571134b600f1b5f586d535008812b59",
+        "mid": "8400303cceaa79c3f3d38417e1aabbdf4571134b600f1b5f586d535008812b59",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 1,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "DANCE_THEATER",
+      "native_block": 46,
+      "native_quadrant": 2,
+      "expected_output_sha256": "6dcfb4f63a4861a1b32c9d2884e9cd2b7aca9ba0ce1002e33f5273c3b3e06f5d",
+      "source_maps": [
+        "SA_ROUTE117_POKEMON_DAY_CARE"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__pretty_petal_flower_shop",
+      "id": 524,
+      "sourceHash": "6e909be82f77ad906c3617fb3029b9eb489afa90a82dd2d0c394d969c1bc78b6",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "6e909be82f77ad906c3617fb3029b9eb489afa90a82dd2d0c394d969c1bc78b6",
+        "mid": "6e909be82f77ad906c3617fb3029b9eb489afa90a82dd2d0c394d969c1bc78b6",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 10,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "DANCE_THEATER",
+      "native_block": 45,
+      "native_quadrant": 2,
+      "expected_output_sha256": "9351803f807e883d16cafe94e17116fd13cc92c68e7af1b4c3427d7aa1e1b2da",
+      "source_maps": [
+        "SA_ROUTE104_PRETTY_PETAL_FLOWER_SHOP",
+        "SA_ROUTE104_PROTOTYPE_PRETTY_PETAL_FLOWER_SHOP"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__pretty_petal_flower_shop",
+      "id": 554,
+      "sourceHash": "80d36c6219929bbdb0ed8f1061acbe3624f90467255c9427c54491ae8520bf19",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "80d36c6219929bbdb0ed8f1061acbe3624f90467255c9427c54491ae8520bf19",
+        "mid": "80d36c6219929bbdb0ed8f1061acbe3624f90467255c9427c54491ae8520bf19",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 8,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "DANCE_THEATER",
+      "native_block": 45,
+      "native_quadrant": 2,
+      "expected_output_sha256": "9351803f807e883d16cafe94e17116fd13cc92c68e7af1b4c3427d7aa1e1b2da",
+      "source_maps": [
+        "SA_ROUTE104_PRETTY_PETAL_FLOWER_SHOP",
+        "SA_ROUTE104_PROTOTYPE_PRETTY_PETAL_FLOWER_SHOP"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__seashore_house",
+      "id": 538,
+      "sourceHash": "c93b8d2f92dedbfcac21328158c00ed1e5615749bb3e05f7acca4808d7a70c35",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "c93b8d2f92dedbfcac21328158c00ed1e5615749bb3e05f7acca4808d7a70c35",
+        "mid": "c93b8d2f92dedbfcac21328158c00ed1e5615749bb3e05f7acca4808d7a70c35",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 13,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "DANCE_THEATER",
+      "native_block": 46,
+      "native_quadrant": 2,
+      "expected_output_sha256": "6dcfb4f63a4861a1b32c9d2884e9cd2b7aca9ba0ce1002e33f5273c3b3e06f5d",
+      "source_maps": [
+        "SA_ROUTE109_SEASHORE_HOUSE"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__seashore_house",
+      "id": 539,
+      "sourceHash": "3d48836555fc501b2b78e0b6dfe2bd9455f5e14a936152530f2d8cccf42d74f6",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "3d48836555fc501b2b78e0b6dfe2bd9455f5e14a936152530f2d8cccf42d74f6",
+        "mid": "3d48836555fc501b2b78e0b6dfe2bd9455f5e14a936152530f2d8cccf42d74f6",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 10,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "DANCE_THEATER",
+      "native_block": 46,
+      "native_quadrant": 2,
+      "expected_output_sha256": "6dcfb4f63a4861a1b32c9d2884e9cd2b7aca9ba0ce1002e33f5273c3b3e06f5d",
+      "source_maps": [
+        "SA_ROUTE109_SEASHORE_HOUSE"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__seashore_house",
+      "id": 549,
+      "sourceHash": "0a59504b8123f248c9683f20bcba1d1b05ab7c151c7f47319d54ca4ebc83cc80",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "0a59504b8123f248c9683f20bcba1d1b05ab7c151c7f47319d54ca4ebc83cc80",
+        "mid": "0a59504b8123f248c9683f20bcba1d1b05ab7c151c7f47319d54ca4ebc83cc80",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 19,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "DANCE_THEATER",
+      "native_block": 46,
+      "native_quadrant": 2,
+      "expected_output_sha256": "6dcfb4f63a4861a1b32c9d2884e9cd2b7aca9ba0ce1002e33f5273c3b3e06f5d",
+      "source_maps": [
+        "SA_ROUTE109_SEASHORE_HOUSE"
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__seashore_house",
+      "id": 554,
+      "sourceHash": "cd7a7996708f3787448f260ca0a769fc2947f42b2bf5116949105af586fe7c80",
+      "sourceBehavior": 0,
+      "layer_sha256": {
+        "under": "cd7a7996708f3787448f260ca0a769fc2947f42b2bf5116949105af586fe7c80",
+        "mid": "cd7a7996708f3787448f260ca0a769fc2947f42b2bf5116949105af586fe7c80",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "body_cells": 16,
+      "material": "hoenn_complete_public_or_house_floor",
+      "feature": "Complete unmarked source walking surface and ordinary shadow variant",
+      "native_map": "DANCE_THEATER",
+      "native_block": 46,
+      "native_quadrant": 2,
+      "expected_output_sha256": "6dcfb4f63a4861a1b32c9d2884e9cd2b7aca9ba0ce1002e33f5273c3b3e06f5d",
+      "source_maps": [
+        "SA_ROUTE109_SEASHORE_HOUSE"
+      ]
     }
   ]
 }

@@ -838,6 +838,22 @@ def main():
         records+=review.volcanic_region()
         records+=review.volcanic_steam()
         records+=review.reviewed_terrain('reviewed_shared_terrain')
+        from reverse_gen2_mossdeep_remaining import emit as mossdeep
+        records+=mossdeep(review)
+        from reverse_gen2_slateport_remaining import emit as slateport
+        records+=slateport(review)
+        from reverse_gen2_mauville_routes import emit as mauville_routes
+        records+=mauville_routes(review)
+        from reverse_gen2_fortree_routes import emit as fortree_routes
+        records+=fortree_routes(review)
+        from reverse_gen2_fallarbor_routes import emit as fallarbor_routes
+        records+=fallarbor_routes(review)
+        from reverse_gen2_sootopolis_routes import emit as sootopolis_routes
+        records+=sootopolis_routes(review)
+        from reverse_gen2_pacifidlog_routes import emit as pacifidlog_routes
+        records+=pacifidlog_routes(review)
+        from reverse_gen2_rustboro_routes import emit as rustboro_routes
+        records+=rustboro_routes(review)
         review.write(review.out/'candidate.lua')
         summary.update(status='built',rows=len(review.rows),new_cells=sum(row['occurrences']for row in records))
         summary['coverage']=review.coverage_manifests()

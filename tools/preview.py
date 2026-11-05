@@ -431,7 +431,8 @@ def source_palette_image(cache, row, packed):
     return out
 
 
-def classic_geometry_layers(cache, row, packed, ground_frame=None):
+def classic_geometry_layers(cache, row, packed, ground_frame=None, source_frame=None,
+                            middle_overlap=()):
     """Keep every source plane/alpha and apply an explicit reviewed RGB map."""
     assert row['kind']=='classic_native_geometry'and row['style']=='gen2'
     assert row['game']in('ruby','sapphire','emerald','firered','leafgreen')
@@ -444,7 +445,9 @@ def classic_geometry_layers(cache, row, packed, ground_frame=None):
     assert catalog.sha(manifest)==spec['animationManifestHash'],'Classic geometry animation manifest changed'
     from classic_geometry_review import static_manifest
     ground_spec=spec.get('ground',{})
-    assert static_manifest(cache,row['game'],row['tileset'],row['id'],packed,ground_spec['masks']if ground_spec.get('animation')else None,spec.get('nativeOver'))==spec['animationManifestHash']
+    assert static_manifest(cache,row['game'],row['tileset'],row['id'],packed,
+                           ground_spec['masks']if ground_spec.get('animation')else None,
+                           spec.get('nativeOver'),spec.get('sourceAnimation'))==spec['animationManifestHash']
     target={tuple(rgb)for rgb in spec['palette']};assert len(target)==4
     colors={tuple(e[:3]):tuple(e[3:])for e in spec['colorMap']}
     assert len(colors)==len(spec['colorMap'])and set(colors.values())<=target
@@ -464,6 +467,11 @@ def classic_geometry_layers(cache, row, packed, ground_frame=None):
         if name not in present:continue
         image=catalog.rgba_native(planes[name][slot*256:(slot+1)*256],palette,name!='under')if name in planes else Image.new('RGBA',(16,16))
         assert catalog.sha(image.tobytes())==spec['sourceLayers'][name],'Classic geometry source plane changed'
+        if source_frame is not None:
+            if name=='under':image=source_frame
+            if name=='mid':
+                image=image.copy()
+                for offset in middle_overlap:image.putpixel((offset%16,offset//16),(0,0,0,0))
         if name=='over'and spec.get('nativeOver'):
             result[name]=image
             continue
@@ -493,12 +501,24 @@ def classic_geometry_image(cache,row,packed):
 
 
 def classic_geometry_frames(cache,row,packed):
-    ground=row['classicGeometry'].get('ground',{})
-    if not ground.get('animation'):return[classic_geometry_image(cache,row,packed)]
-    from gb_theme_animation import frames
+    spec=row['classicGeometry']
+    ground=spec.get('ground',{})
+    source_animation=spec.get('sourceAnimation',{})
+    if source_animation.get('mode')=='native_under':
+        from classic_geometry_review import source_under_frames
+        source_frames,changed,middle_overlap=source_under_frames(cache,row['game'],row['tileset'],
+                                                               row['id'],packed,source_animation)
+        empty='0'*256
+        masks=ground.get('masks',{})
+        assert all(masks.get(name,empty)[i]=='0'for name in ('under','mid')for i in changed)
+        variants=[(None,frame,middle_overlap)for frame in source_frames]
+    elif ground.get('animation'):
+        from gb_theme_animation import frames
+        variants=[(frame,None,())for frame in frames(cache,ground['donor'],ground['animation'],packed)]
+    else:return[classic_geometry_image(cache,row,packed)]
     output=[]
-    for frame in frames(cache,ground['donor'],ground['animation'],packed):
-        layers=classic_geometry_layers(cache,row,packed,frame);image=Image.new('RGBA',(16,16))
+    for variant in variants:
+        layers=classic_geometry_layers(cache,row,packed,*variant);image=Image.new('RGBA',(16,16))
         for name in ('under','mid','over'):
             if name in layers:image=Image.alpha_composite(image,layers[name])
         output.append(image)
@@ -577,6 +597,9 @@ def replacement_frames(cache, row, packed, mod_root):
 
 
 def replacement_image(cache, row, packed, mod_root):
+    source_animation=row.get('classicGeometry',{}).get('sourceAnimation',{})
+    if source_animation.get('mode')=='native_under':
+        return classic_geometry_image(cache,row,packed)
     return replacement_frames(cache, row, packed, mod_root)[0]
 
 

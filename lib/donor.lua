@@ -320,6 +320,8 @@ function Donor.new(ctx)
     end
     local slot=pack.slots[ref.id]
     assert(slot~=nil,'Donor metatile is unavailable: '..ref.id)
+    local sourceAnimation=ref.classicSourceAnimation
+    local sourceFrames,sourceVariation,sourceMiddleOverlap
     if ref.staticClassic then
       assert(ref.animationManifestHash and pack.animationManifest,'Static classic artwork needs a checked animation manifest')
       local banks={}
@@ -331,13 +333,67 @@ function Donor.new(ctx)
       end
       local masks=ref.classicGroundMasks
       local nativeOver=ref.classicNativeOver
-      local retainedOver=false
+      local retainedOver,checkedSourceAnimation=false,false
       local duplicateMid=pack.layers.mid~=nil
       if duplicateMid then for offset=1,256 do
         if pack.layers.mid.idx.pixels[slot*256+offset]~=pack.layers.under.idx.pixels[slot*256+offset]then duplicateMid=false;break end
       end end
       local function covered(name,offset)
         return type(masks)=='table'and type(masks[name])=='string'and #masks[name]==256 and masks[name]:sub(offset,offset)=='1'
+      end
+      local function checkSourceAnimation(bank,index,flags)
+        assert(not checkedSourceAnimation and pack.animationManifest.family=='rse'
+          and bank.kind=='tiles'and bank.file and bank.file:match('^[%w_%-]+%.idx$')
+          and flags>0,'Classic source animation requires one RSE indexed UNDER bank')
+        for _,id in pairs(bank.overMids or{})do
+          assert(id~=ref.id,'Classic source animation cell also belongs to its native OVER bank')
+        end
+        assert(sourceAnimation.mode=='water_mask'or sourceAnimation.mode=='native_under'
+          or sourceAnimation.mode=='static_equivalent','Unsupported classic source animation mode')
+        assert(integer(bank.frames,256)and bank.frames>=2,'Invalid classic source frame count')
+        pack.classicUnderBanks=pack.classicUnderBanks or{}
+        local cached=pack.classicUnderBanks[bank.name]
+        if not cached then
+          local bytes=readFile(ref.game,'data/generated/gba/native/'..ref.tileset..'/'..bank.file)
+          assert(#bytes==bank.frames*#bank.mids*256,'Classic source animation pixels are incomplete')
+          cached={bytes=bytes,hash=hash(bytes)};pack.classicUnderBanks[bank.name]=cached
+        end
+        assert(cached.hash==sourceAnimation.hash,'Classic source animation bank changed')
+        local under=pack.layers.under
+        local function rgb(byte)return under.colors[math.floor(byte/16)][byte%16]end
+        local preserve=sourceAnimation.mode=='native_under'
+        local frames,variation,middleOverlap={},{},{}
+        local function equal(a,b)return a[1]==b[1]and a[2]==b[2]and a[3]==b[3]end
+        for phase=0,bank.frames-1 do
+          local image=preserve and newData(16,16)
+          local start=(phase*#bank.mids+index-1)*256
+          for offset=1,256 do
+            local x,y=(offset-1)%16,math.floor((offset-1)/16)
+            local q=math.floor(y/8)*2+math.floor(x/8)
+            local base=rgb(under.idx.pixels[slot*256+offset])
+            local color=math.floor(flags/2^q)%2==1 and rgb(cached.bytes:byte(start+offset))or base
+            if not equal(color,base)then
+              variation[offset]=true
+              local mid=pack.layers.mid and pack.layers.mid.idx.pixels[slot*256+offset]
+              local copied=mid and mid~=0 and equal(rgb(mid),base)
+              if not preserve then
+                assert(sourceAnimation.mode~='static_equivalent','Source animation is not exactly static')
+                assert(covered('under',offset),'Animated source water requires a mask over every changed pixel')
+                assert(not copied or covered('mid',offset),'Duplicate source water middle pixel also needs a mask')
+              elseif mid and mid~=0 then
+                assert(copied,'Native under animation overlaps a distinct middle pixel')
+                middleOverlap[offset]=true
+              end
+            end
+            if image then image:setPixel(x,y,color[1]/255,color[2]/255,color[3]/255,1)end
+          end
+          if image then frames[#frames+1]=image end
+        end
+        if preserve then
+          assert(next(variation),'Native under animation does not change source pixels')
+          sourceFrames,sourceVariation,sourceMiddleOverlap=frames,variation,middleOverlap
+        end
+        checkedSourceAnimation=true
       end
       for _,bank in ipairs(banks)do
         for _,name in ipairs({'mids','overMids'})do for index,id in pairs(bank[name]or{})do
@@ -349,8 +405,11 @@ function Donor.new(ctx)
             local retain=layer=='over'and nativeOver and bank.name==nativeOver.bank
             if retain then
               assert(not retainedOver and pack.layers.over and flags>0 and bank.kind=='tiles'
-                and bank.overFile and not bank.file and #(bank.mids or{})==0,
-                'Native foreground requires one over-only animation bank')
+                and bank.overFile and (bank.file~=nil)==(#(bank.mids or{})>0),
+                'Native foreground requires one checked OVER animation bank')
+              for _,sourceId in pairs(bank.mids or{})do
+                assert(sourceId~=ref.id,'Retained foreground cell also belongs to its native UNDER bank')
+              end
               pack.retainedOverHashes=pack.retainedOverHashes or{}
               if not pack.retainedOverHashes[bank.name]then
                 local bytes=readFile(ref.game,'data/generated/gba/native/'..ref.tileset..'/'..bank.overFile)
@@ -360,6 +419,8 @@ function Donor.new(ctx)
               end
               assert(pack.retainedOverHashes[bank.name]==nativeOver.hash,'Native foreground bank changed')
               retainedOver=true
+            elseif layer=='under'and sourceAnimation and bank.name==sourceAnimation.bank then
+              checkSourceAnimation(bank,index,flags)
             else
               for offset=1,256 do
                 local x,y=(offset-1)%16,math.floor((offset-1)/16)
@@ -383,10 +444,13 @@ function Donor.new(ctx)
         end
       end
       assert(not nativeOver or retainedOver,'Native foreground bank does not own this source cell')
+      assert(not sourceAnimation or checkedSourceAnimation,'Classic source animation bank does not own this source cell')
     end
     local result={game=ref.game,tileset=ref.tileset,id=ref.id,cacheIdentity=importIdentity(ref.game),
       animationManifestHash=pack.animationManifestHash,staticClassic=ref.staticClassic==true,
       classicNativeOver=ref.classicNativeOver and ref.classicNativeOver.bank..':'..ref.classicNativeOver.hash or nil,
+      classicSourceAnimation=sourceAnimation and sourceAnimation.mode..':'..sourceAnimation.bank..':'..sourceAnimation.hash or nil,
+      classicSourceFrames=sourceFrames,classicSourceVariation=sourceVariation,classicSourceMiddleOverlap=sourceMiddleOverlap,
       classicGroundMaskKey=table.concat({ref.classicGroundMasks and ref.classicGroundMasks.under or'',
         ref.classicGroundMasks and ref.classicGroundMasks.mid or'',ref.classicGroundMasks and ref.classicGroundMasks.over or''},':')}
     local flattened=newData(16,16)

@@ -127,6 +127,24 @@ def selection(root: Path, cache: Path, planner: Path, games: list[str], pilot: b
             frames = preview.classic_geometry_frames(cache, row, animation_cache)
             item['classicFrameHashes'] = [catalog.sha(frame.tobytes()) for frame in frames]
             assert item['classicFrameHashes'][0] == item['compositionPixelHash']
+        source_animation = row.get('classicGeometry', {}).get('sourceAnimation', {})
+        if source_animation.get('mode') == 'native_under':
+            from classic_geometry_review import source_under_frames
+            preview.classic_geometry_layers(cache, row, animation_cache)
+            native_frames, _, _ = source_under_frames(cache, game, pair, mid, animation_cache, source_animation)
+            themed_frames = preview.classic_geometry_frames(cache, row, animation_cache)
+            assert len(native_frames) == len(themed_frames)
+            frame_hashes = {catalog.sha(native.tobytes()): catalog.sha(themed.tobytes())
+                            for native, themed in zip(native_frames, themed_frames)}
+            assert len(frame_hashes) >= 2
+            manifest = catalog.read_lua(cache / game / 'data/generated/gba/native' / pair / 'anim_manifest.lua')
+            bank = next(bank for bank in manifest['banks'] if bank['name'] == source_animation['bank'])
+            counter = bank.get('counter', 'primary')
+            assert counter in ('primary', 'secondary')
+            ticks = bank['period'] * (bank['frames'] + bank.get('slot', 0) + 2)
+            assert 0 < ticks <= 65536
+            item['nativeUnder'] = dict(frameHashes=frame_hashes, counter=counter, period=bank['period'],
+                                       phase=bank.get('phase', 0), ticks=ticks)
         native_over = row.get('classicGeometry', {}).get('nativeOver')
         if native_over:
             layers = preview.classic_geometry_layers(cache, row, animation_cache)
@@ -221,6 +239,12 @@ BODY = r"""
   local elapsed=math.max(0,clock-(row.offset or 0))
   return row.frames[math.floor(elapsed/row.period)%#row.frames+1]
  end
+ local function retainForeground(row,image)
+  retainedOver[row]=image;compositeCache[row]=nil
+  for _,frame in ipairs(row.frames or{})do
+   retainedOver[frame]=image;compositeCache[frame]=nil
+  end
+ end
  local function compositeBytes(frame)
   if compositeCache[frame]then return compositeCache[frame]end
   local under=bytes(frame.under)
@@ -266,7 +290,8 @@ BODY = r"""
   end end
   return table.concat(out)
  end
- local exactPixels,tolerantPixels,independentHashes,verifiedKeys,independentAnimationFrames,nativeOverChecks=0,0,0,0,0,0
+ local exactPixels,tolerantPixels,independentHashes,verifiedKeys,independentAnimationFrames=0,0,0,0,0
+ local nativeOverChecks,nativeUnderChecks,nativeUnderKeys=0,0,0
  local function verifyImage(actual,expected,message)
   local raw=actual:getString();check(#raw==#expected,'Atlas RGBA byte count differs')
   if raw==expected then exactPixels=exactPixels+#raw/4;check(true,message..' byte-exact');return end
@@ -331,7 +356,7 @@ BODY = r"""
     if item.retainedOverHex then
      check(row.over==nil,'Theme owns the retained native foreground')
      local raw=love.data.decode('string','hex',item.retainedOverHex)
-     retainedOver[row]=love.image.newImageData(16,16,'rgba8',raw)
+     retainForeground(row,love.image.newImageData(16,16,'rgba8',raw))
     end
     if item.compositionPixelHash then
      local first=row.frames and row.frames[1]or row
@@ -399,13 +424,19 @@ BODY = r"""
    tile:paste(atlas.overImageData,0,0,(slot%atlas.cols)*16,math.floor(slot/atlas.cols)*16,16,16)
    return tile
   end
+  local function witnessTile(image,index)
+   local tile=love.image.newImageData(16,16)
+   tile:paste(image,0,0,((index-1)%8)*16,math.floor((index-1)/8)*16,16,16)
+   return tile
+  end
   local preserved={}
   for _,room in ipairs(rooms)do
-   local items,phaseTimes,lastTick={}, {},0
-   for _,item in ipairs(room.bank.items)do
+   local items,indices,phaseTimes,lastTick={},{},{},0
+   for index,item in ipairs(room.bank.items)do
     local schedule=item.retainedOverSchedule
     if schedule then
      items[#items+1]=item
+     indices[item.mid]=index
      local start=schedule.phase==0 and schedule.period or schedule.phase
      for frame=0,schedule.frames do
       local tick=start+frame*schedule.period
@@ -429,7 +460,7 @@ BODY = r"""
      end
     end
     check(changed,'Native retained foreground did not animate')
-    preserved[#preserved+1]={room=room,items=items,baseline=baseline,lastTick=lastTick}
+    preserved[#preserved+1]={room=room,items=items,indices=indices,baseline=baseline,lastTick=lastTick}
    end
   end
   if #preserved>0 then
@@ -445,14 +476,91 @@ BODY = r"""
        local row=assert(art[item.mid]);check(row.over==nil,'Retained foreground was copied into the theme atlas')
        local image=sourceOver(room,item.mid)
        check(hash(bytes(image))==proof.baseline[tick][item.mid],'Native foreground playback changed under the theme')
-       retainedOver[row]=image;compositeCache[row]=nil;nativeOverChecks=nativeOverChecks+1
+       retainForeground(row,image);nativeOverChecks=nativeOverChecks+1
       end
-      verifyImage(draw(room,true),expectedBytes(room,art,true),'Retained native foreground crossed the actor boundary')
-      verifyImage(draw(room),expectedBytes(room,art,false),'Retained native foreground did not combine with the themed background')
+      local foreground,complete=draw(room,true),draw(room)
+      for _,item in ipairs(proof.items)do
+       local frame=currentFrame(art[item.mid]);local index=proof.indices[item.mid]
+       verifyImage(witnessTile(foreground,index),foregroundBytes(retainedOver[frame]),
+        'Retained native foreground crossed the actor boundary')
+       verifyImage(witnessTile(complete,index),compositeBytes(frame),
+        'Retained native foreground did not combine with the themed background')
+      end
      end
     end
    end
    assert(mod.exports.select('original'))
+   for _,proof in ipairs(preserved)do
+    bind(proof.room);draw(proof.room)
+    for tick=1,proof.lastTick do
+     Anim.stepRse()
+     for _,item in ipairs(proof.items)do
+      if proof.baseline[tick]then
+       check(hash(bytes(sourceOver(proof.room,item.mid)))==proof.baseline[tick][item.mid],
+        'Cleanup changed retained foreground animation')
+      end
+     end
+    end
+   end
+  end
+  local function nativeUnder(room,mid)
+   local atlas=assert(Native.get(room.bank.pair));local slot=assert(atlas.midToSlot[mid])
+   local tile=love.image.newImageData(16,16)
+   tile:paste(atlas.imageData,0,0,(slot%atlas.cols)*16,math.floor(slot/atlas.cols)*16,16,16)
+   return hash(tile:getString())
+  end
+  for _,room in ipairs(rooms)do
+   local items,lastTick={},0
+   for index,item in ipairs(room.bank.items)do
+    if item.nativeUnder then
+     items[#items+1]={item=item,index=index,seen={}}
+     lastTick=math.max(lastTick,item.nativeUnder.ticks)
+     nativeUnderKeys=nativeUnderKeys+1
+    end
+   end
+   if #items>0 then
+    -- Drawing after binding attaches the native bank before its first tick.
+    bind(room);draw(room)
+    local baseline={}
+    for tick=1,lastTick do
+     Anim.stepRse()
+     for _,witness in ipairs(items)do
+      local item=witness.item;local program=item.nativeUnder
+      if Anim._rse[program.counter]%program.period==program.phase then
+       local source=nativeUnder(room,item.mid)
+       check(program.frameHashes[source]~=nil,'Native animation differs from its checked bank: '..room.bank.pair..'/'..item.mid)
+       witness.seen[source]=true
+       local samples=baseline[tick]or{};baseline[tick]=samples
+       samples[#samples+1]={witness=witness,source=source}
+      end
+     end
+    end
+    for _,witness in ipairs(items)do
+     for source in pairs(witness.item.nativeUnder.frameHashes)do
+      check(witness.seen[source],'A guarded native animation phase was never rendered')
+     end
+    end
+    assert(mod.exports.select('gen2'));bind(room);draw(room)
+    for tick=1,lastTick do
+     Anim.stepRse()
+     if baseline[tick]then
+      local image=draw(room)
+      for _,sample in ipairs(baseline[tick])do
+       local witness=sample.witness;local item=witness.item
+       check(hash(witnessTile(image,witness.index):getString())==item.nativeUnder.frameHashes[sample.source],
+        'Themed animation changed its native cadence or pixels: '..room.bank.pair..'/'..item.mid)
+       nativeUnderChecks=nativeUnderChecks+256
+      end
+     end
+    end
+    assert(mod.exports.select('original'));bind(room);draw(room)
+    for tick=1,lastTick do
+     Anim.stepRse()
+     for _,sample in ipairs(baseline[tick]or{})do
+      check(nativeUnder(room,sample.witness.item.mid)==sample.source,'Cleanup changed the original animation phase')
+     end
+    end
+   end
   end
   mod.exports.dispose()
  end
@@ -460,6 +568,7 @@ BODY = r"""
  report.verified_source_keys=verifiedKeys;report.independent_composition_hashes=independentHashes
  report.independent_classic_animation_frames=independentAnimationFrames
  report.retained_native_foreground_checks=nativeOverChecks
+ report.native_under_animation_keys=nativeUnderKeys;report.native_under_gpu_pixels=nativeUnderChecks
  report.byte_exact_gpu_pixels=exactPixels;report.tolerance_checked_gpu_pixels=tolerantPixels
  report.status='passed';write('report.json',Json.encode(report))
 end

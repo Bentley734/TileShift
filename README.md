@@ -3,6 +3,10 @@
 
 TileShift swaps world artwork through individually reviewed tile matches.
 
+Version 0.37.0 adds Crystal-style replacements for 76,100 more background cells across the five Gen 3 games. It includes the Lilycove and Safari Zone terrain, the Battle Frontier exteriors, additional Hoenn caves and interiors, and new Kanto and Sevii areas. Source-driven animations keep their original game timing and priority.
+
+The Crystal theme now covers 1,206,471 of 1,288,886 logical background cells. 82,415 cells still use their original art.
+
 Version 0.36.0 adds Crystal-style replacements for 125,422 background cells across 1,467 Gen 3 map variants. This includes Fortree City, the Hoenn underwater map bodies, the Sevii harbors, Berry Forest, Fuchsia Gym and additional Hoenn rooms and facilities. Meteor Falls keeps moving water beneath its pillars, and Lavaridge plays its native steam over Crystal-style rock. Complete Crystal or Red pieces provide native counterparts where available. Named regional features use individually reviewed four-color versions that preserve their silhouettes, clues and priority layers.
 
 Across all five Gen 3 games, the Crystal theme now covers 1,130,371 of 1,288,886 logical background cells. 158,515 cells are still awaiting replacement.
@@ -156,7 +160,7 @@ unchanged. The single **Gen 3** style combines Emerald, FireRed/LeafGreen and se
    TileShift reads native donor
    art from your own imports; neither ROMs nor extracted native artwork are
    bundled.
-2. Download `TileShift-v0.36.0.zip` from [the latest release](https://github.com/Bentley734/TileShift/releases/latest).
+2. Download `TileShift-v0.37.0.zip` from [the latest release](https://github.com/Bentley734/TileShift/releases/latest).
 3. Extract the `tileshift` folder into Gen1Recomp's `mods` directory, enable
    **TileShift**, and restart the game.
 4. Open Options and select **Tileset**. Gen 1/2 hosts offer **Gen 3**; Gen 3 hosts

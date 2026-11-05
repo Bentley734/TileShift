@@ -1,0 +1,2888 @@
+[
+  {
+    "game": "ruby",
+    "pair": "general__pacifidlog",
+    "mid": 582,
+    "sourceHash": "b5c702dde3939aa5b5415d825e7b729c15af857f2ba37156857960043af4c853",
+    "sourceBehavior": 23,
+    "sourceLayers": {
+      "under": "b5c702dde3939aa5b5415d825e7b729c15af857f2ba37156857960043af4c853",
+      "mid": "11544332329a28b6cbd127144d5c40d3375a9ef9b00384ea4d63ef949aaa602c",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "shallow",
+    "mask": "0001111001011110001111000111110000111100001111000001111000111110000111100001111000111100001111000011110000111111100111100001111011111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111"
+  },
+  {
+    "game": "sapphire",
+    "pair": "general__pacifidlog",
+    "mid": 582,
+    "sourceHash": "b5c702dde3939aa5b5415d825e7b729c15af857f2ba37156857960043af4c853",
+    "sourceBehavior": 23,
+    "sourceLayers": {
+      "under": "b5c702dde3939aa5b5415d825e7b729c15af857f2ba37156857960043af4c853",
+      "mid": "11544332329a28b6cbd127144d5c40d3375a9ef9b00384ea4d63ef949aaa602c",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "shallow",
+    "mask": "0001111001011110001111000111110000111100001111000001111000111110000111100001111000111100001111000011110000111111100111100001111011111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111"
+  },
+  {
+    "game": "emerald",
+    "pair": "general__pacifidlog",
+    "mid": 582,
+    "sourceHash": "b5c702dde3939aa5b5415d825e7b729c15af857f2ba37156857960043af4c853",
+    "sourceBehavior": 23,
+    "sourceLayers": {
+      "under": "b5c702dde3939aa5b5415d825e7b729c15af857f2ba37156857960043af4c853",
+      "mid": "11544332329a28b6cbd127144d5c40d3375a9ef9b00384ea4d63ef949aaa602c",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "shallow",
+    "mask": "0001111001011110001111000111110000111100001111000001111000111110000111100001111000111100001111000011110000111111100111100001111011111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111"
+  },
+  {
+    "game": "ruby",
+    "pair": "general__pacifidlog",
+    "mid": 644,
+    "sourceHash": "e999fb82423824f0d97a93a815f49d3eb3c7508c0ee1b81048f9b2a407830b05",
+    "sourceBehavior": 80,
+    "sourceLayers": {
+      "under": "e999fb82423824f0d97a93a815f49d3eb3c7508c0ee1b81048f9b2a407830b05",
+      "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "current",
+    "plan": "east"
+  },
+  {
+    "game": "sapphire",
+    "pair": "general__pacifidlog",
+    "mid": 644,
+    "sourceHash": "e999fb82423824f0d97a93a815f49d3eb3c7508c0ee1b81048f9b2a407830b05",
+    "sourceBehavior": 80,
+    "sourceLayers": {
+      "under": "e999fb82423824f0d97a93a815f49d3eb3c7508c0ee1b81048f9b2a407830b05",
+      "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "current",
+    "plan": "east"
+  },
+  {
+    "game": "emerald",
+    "pair": "general__pacifidlog",
+    "mid": 644,
+    "sourceHash": "e999fb82423824f0d97a93a815f49d3eb3c7508c0ee1b81048f9b2a407830b05",
+    "sourceBehavior": 80,
+    "sourceLayers": {
+      "under": "e999fb82423824f0d97a93a815f49d3eb3c7508c0ee1b81048f9b2a407830b05",
+      "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "current",
+    "plan": "east"
+  },
+  {
+    "game": "ruby",
+    "pair": "general__pacifidlog",
+    "mid": 641,
+    "sourceHash": "47048cf8eec8665c80700fd3ff37756db75094e5445183fccb0f07333d0a9c3b",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "47048cf8eec8665c80700fd3ff37756db75094e5445183fccb0f07333d0a9c3b",
+      "mid": "47048cf8eec8665c80700fd3ff37756db75094e5445183fccb0f07333d0a9c3b",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "alias",
+    "witness": {
+      "game": "sapphire",
+      "pair": "general__cave",
+      "mid": 761,
+      "module": "mappings/reverse_gen2_hoenn_outdoor_finish.lua",
+      "role": "reverse_gen2_hoenn_joined_dry_cave_596",
+      "compositionPixelHash": "fbdc4c52c29d587e2482e1bf506d71f71697f1234ea19da68ff53b3d6180ba98"
+    }
+  },
+  {
+    "game": "sapphire",
+    "pair": "general__pacifidlog",
+    "mid": 641,
+    "sourceHash": "47048cf8eec8665c80700fd3ff37756db75094e5445183fccb0f07333d0a9c3b",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "47048cf8eec8665c80700fd3ff37756db75094e5445183fccb0f07333d0a9c3b",
+      "mid": "47048cf8eec8665c80700fd3ff37756db75094e5445183fccb0f07333d0a9c3b",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "alias",
+    "witness": {
+      "game": "sapphire",
+      "pair": "general__cave",
+      "mid": 761,
+      "module": "mappings/reverse_gen2_hoenn_outdoor_finish.lua",
+      "role": "reverse_gen2_hoenn_joined_dry_cave_596",
+      "compositionPixelHash": "fbdc4c52c29d587e2482e1bf506d71f71697f1234ea19da68ff53b3d6180ba98"
+    }
+  },
+  {
+    "game": "ruby",
+    "pair": "general__pacifidlog",
+    "mid": 633,
+    "sourceHash": "0c62d1255c744fd200675b3789a46522a2b0dc9fb26a5d675c4efc9548a30fa3",
+    "sourceBehavior": 8,
+    "sourceLayers": {
+      "under": "0c62d1255c744fd200675b3789a46522a2b0dc9fb26a5d675c4efc9548a30fa3",
+      "mid": "0c62d1255c744fd200675b3789a46522a2b0dc9fb26a5d675c4efc9548a30fa3",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "floor"
+  },
+  {
+    "game": "sapphire",
+    "pair": "general__pacifidlog",
+    "mid": 633,
+    "sourceHash": "0c62d1255c744fd200675b3789a46522a2b0dc9fb26a5d675c4efc9548a30fa3",
+    "sourceBehavior": 8,
+    "sourceLayers": {
+      "under": "0c62d1255c744fd200675b3789a46522a2b0dc9fb26a5d675c4efc9548a30fa3",
+      "mid": "0c62d1255c744fd200675b3789a46522a2b0dc9fb26a5d675c4efc9548a30fa3",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "floor"
+  },
+  {
+    "game": "emerald",
+    "pair": "general__pacifidlog",
+    "mid": 634,
+    "sourceHash": "02a59e7d95943deb8da2818a1412ddc9661ad0b288803b7ca45527c09c29d3ba",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "02a59e7d95943deb8da2818a1412ddc9661ad0b288803b7ca45527c09c29d3ba",
+      "mid": "02a59e7d95943deb8da2818a1412ddc9661ad0b288803b7ca45527c09c29d3ba",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "ridge",
+    "plan": [
+      6,
+      3
+    ]
+  },
+  {
+    "game": "emerald",
+    "pair": "general__pacifidlog",
+    "mid": 632,
+    "sourceHash": "547eae594510b312d61ad0f118da2914e89c567abe0ae5843e2a5b638a56021e",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "547eae594510b312d61ad0f118da2914e89c567abe0ae5843e2a5b638a56021e",
+      "mid": "547eae594510b312d61ad0f118da2914e89c567abe0ae5843e2a5b638a56021e",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "ridge",
+    "plan": [
+      4,
+      0
+    ]
+  },
+  {
+    "game": "emerald",
+    "pair": "general__pacifidlog",
+    "mid": 641,
+    "sourceHash": "5b669223d290a1fb453302d24fb2f7cb0efdc4e0726d66318d163b6cff11dc15",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "5b669223d290a1fb453302d24fb2f7cb0efdc4e0726d66318d163b6cff11dc15",
+      "mid": "5b669223d290a1fb453302d24fb2f7cb0efdc4e0726d66318d163b6cff11dc15",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "ridge",
+    "plan": [
+      6,
+      3
+    ]
+  },
+  {
+    "game": "ruby",
+    "pair": "general__pacifidlog",
+    "mid": 574,
+    "sourceHash": "293874388b3d309261bf162d32e9c47e09b25261e92bb518403910424d0cf491",
+    "sourceBehavior": 23,
+    "sourceLayers": {
+      "under": "293874388b3d309261bf162d32e9c47e09b25261e92bb518403910424d0cf491",
+      "mid": "8805ead702db50c073ccdc0890cd6139725a5cb9e3ec59cb373136ad4b348110",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "shallow",
+    "mask": "0001111011111111001111001111111100111100111111110001111011111111000111101111111100111100111111110011110011111111100111101111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111"
+  },
+  {
+    "game": "sapphire",
+    "pair": "general__pacifidlog",
+    "mid": 574,
+    "sourceHash": "293874388b3d309261bf162d32e9c47e09b25261e92bb518403910424d0cf491",
+    "sourceBehavior": 23,
+    "sourceLayers": {
+      "under": "293874388b3d309261bf162d32e9c47e09b25261e92bb518403910424d0cf491",
+      "mid": "8805ead702db50c073ccdc0890cd6139725a5cb9e3ec59cb373136ad4b348110",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "shallow",
+    "mask": "0001111011111111001111001111111100111100111111110001111011111111000111101111111100111100111111110011110011111111100111101111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111"
+  },
+  {
+    "game": "emerald",
+    "pair": "general__pacifidlog",
+    "mid": 574,
+    "sourceHash": "293874388b3d309261bf162d32e9c47e09b25261e92bb518403910424d0cf491",
+    "sourceBehavior": 23,
+    "sourceLayers": {
+      "under": "293874388b3d309261bf162d32e9c47e09b25261e92bb518403910424d0cf491",
+      "mid": "8805ead702db50c073ccdc0890cd6139725a5cb9e3ec59cb373136ad4b348110",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "shallow",
+    "mask": "0001111011111111001111001111111100111100111111110001111011111111000111101111111100111100111111110011110011111111100111101111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111"
+  },
+  {
+    "game": "ruby",
+    "pair": "general__pacifidlog",
+    "mid": 575,
+    "sourceHash": "0e684ac93f569f6927067bf40d657ecd3b6530913087e50f367a0ee7603ee4cb",
+    "sourceBehavior": 23,
+    "sourceLayers": {
+      "under": "0e684ac93f569f6927067bf40d657ecd3b6530913087e50f367a0ee7603ee4cb",
+      "mid": "2a620f6592aed76d65a29e12775ab4a6fb7ee54101f8a0f42e4e2d17af0e6d76",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "shallow",
+    "mask": "1111111101011110111111110111110011111111001111001111111100111110111111110001111011111111001111001111111100111111111111110001111011111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111"
+  },
+  {
+    "game": "sapphire",
+    "pair": "general__pacifidlog",
+    "mid": 575,
+    "sourceHash": "0e684ac93f569f6927067bf40d657ecd3b6530913087e50f367a0ee7603ee4cb",
+    "sourceBehavior": 23,
+    "sourceLayers": {
+      "under": "0e684ac93f569f6927067bf40d657ecd3b6530913087e50f367a0ee7603ee4cb",
+      "mid": "2a620f6592aed76d65a29e12775ab4a6fb7ee54101f8a0f42e4e2d17af0e6d76",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "shallow",
+    "mask": "1111111101011110111111110111110011111111001111001111111100111110111111110001111011111111001111001111111100111111111111110001111011111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111"
+  },
+  {
+    "game": "emerald",
+    "pair": "general__pacifidlog",
+    "mid": 575,
+    "sourceHash": "0e684ac93f569f6927067bf40d657ecd3b6530913087e50f367a0ee7603ee4cb",
+    "sourceBehavior": 23,
+    "sourceLayers": {
+      "under": "0e684ac93f569f6927067bf40d657ecd3b6530913087e50f367a0ee7603ee4cb",
+      "mid": "2a620f6592aed76d65a29e12775ab4a6fb7ee54101f8a0f42e4e2d17af0e6d76",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "shallow",
+    "mask": "1111111101011110111111110111110011111111001111001111111100111110111111110001111011111111001111001111111100111111111111110001111011111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111"
+  },
+  {
+    "game": "emerald",
+    "pair": "general__pacifidlog",
+    "mid": 633,
+    "sourceHash": "d32b0f5ff4123c3a60596919e33175bdc41c366ea1e21193c29fb31d65fe2c06",
+    "sourceBehavior": 8,
+    "sourceLayers": {
+      "under": "d32b0f5ff4123c3a60596919e33175bdc41c366ea1e21193c29fb31d65fe2c06",
+      "mid": "d32b0f5ff4123c3a60596919e33175bdc41c366ea1e21193c29fb31d65fe2c06",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "floor"
+  },
+  {
+    "game": "ruby",
+    "pair": "general__pacifidlog",
+    "mid": 630,
+    "sourceHash": "bbc5e9fc1fa3a634033f29434e3917d650f3c2b9bb34aee802e4b35252b2980c",
+    "sourceBehavior": 8,
+    "sourceLayers": {
+      "under": "ec68d3123df4f5e023eed01ae132475c32a66718585d629d7c63ce95ff647b07",
+      "mid": "ec68d3123df4f5e023eed01ae132475c32a66718585d629d7c63ce95ff647b07",
+      "over": "e0f55c33a17958450b0bb992675a017489205327201b4af3b865c1f724b36b48"
+    },
+    "kind": "floor"
+  },
+  {
+    "game": "sapphire",
+    "pair": "general__pacifidlog",
+    "mid": 630,
+    "sourceHash": "bbc5e9fc1fa3a634033f29434e3917d650f3c2b9bb34aee802e4b35252b2980c",
+    "sourceBehavior": 8,
+    "sourceLayers": {
+      "under": "ec68d3123df4f5e023eed01ae132475c32a66718585d629d7c63ce95ff647b07",
+      "mid": "ec68d3123df4f5e023eed01ae132475c32a66718585d629d7c63ce95ff647b07",
+      "over": "e0f55c33a17958450b0bb992675a017489205327201b4af3b865c1f724b36b48"
+    },
+    "kind": "floor"
+  },
+  {
+    "game": "emerald",
+    "pair": "general__pacifidlog",
+    "mid": 630,
+    "sourceHash": "7f298b7de4966f9c07f54ba1898d16ccf42fc23a8f262c5bd441aa2168c5f136",
+    "sourceBehavior": 8,
+    "sourceLayers": {
+      "under": "ec68d3123df4f5e023eed01ae132475c32a66718585d629d7c63ce95ff647b07",
+      "mid": "ec68d3123df4f5e023eed01ae132475c32a66718585d629d7c63ce95ff647b07",
+      "over": "7f298b7de4966f9c07f54ba1898d16ccf42fc23a8f262c5bd441aa2168c5f136"
+    },
+    "kind": "floor"
+  },
+  {
+    "game": "ruby",
+    "pair": "general__pacifidlog",
+    "mid": 100,
+    "sourceHash": "1c0a17411159487012f66770390968ed28c901c4b0ab921ce138500a984bfdd5",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "1c0a17411159487012f66770390968ed28c901c4b0ab921ce138500a984bfdd5",
+      "mid": "1c0a17411159487012f66770390968ed28c901c4b0ab921ce138500a984bfdd5",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "geometry",
+    "feature": "sky_pillar_complete_cave_entrance_shadow",
+    "palette": [
+      [
+        222,
+        255,
+        222
+      ],
+      [
+        197,
+        148,
+        58
+      ],
+      [
+        165,
+        123,
+        25
+      ],
+      [
+        58,
+        58,
+        58
+      ]
+    ],
+    "colorMap": [
+      [
+        66,
+        49,
+        66,
+        58,
+        58,
+        58
+      ],
+      [
+        99,
+        66,
+        82,
+        58,
+        58,
+        58
+      ],
+      [
+        132,
+        90,
+        90,
+        165,
+        123,
+        25
+      ],
+      [
+        156,
+        115,
+        115,
+        165,
+        123,
+        25
+      ],
+      [
+        189,
+        148,
+        140,
+        197,
+        148,
+        58
+      ],
+      [
+        222,
+        181,
+        165,
+        197,
+        148,
+        58
+      ]
+    ]
+  },
+  {
+    "game": "sapphire",
+    "pair": "general__pacifidlog",
+    "mid": 100,
+    "sourceHash": "1c0a17411159487012f66770390968ed28c901c4b0ab921ce138500a984bfdd5",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "1c0a17411159487012f66770390968ed28c901c4b0ab921ce138500a984bfdd5",
+      "mid": "1c0a17411159487012f66770390968ed28c901c4b0ab921ce138500a984bfdd5",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "geometry",
+    "feature": "sky_pillar_complete_cave_entrance_shadow",
+    "palette": [
+      [
+        222,
+        255,
+        222
+      ],
+      [
+        197,
+        148,
+        58
+      ],
+      [
+        165,
+        123,
+        25
+      ],
+      [
+        58,
+        58,
+        58
+      ]
+    ],
+    "colorMap": [
+      [
+        66,
+        49,
+        66,
+        58,
+        58,
+        58
+      ],
+      [
+        99,
+        66,
+        82,
+        58,
+        58,
+        58
+      ],
+      [
+        132,
+        90,
+        90,
+        165,
+        123,
+        25
+      ],
+      [
+        156,
+        115,
+        115,
+        165,
+        123,
+        25
+      ],
+      [
+        189,
+        148,
+        140,
+        197,
+        148,
+        58
+      ],
+      [
+        222,
+        181,
+        165,
+        197,
+        148,
+        58
+      ]
+    ]
+  },
+  {
+    "game": "emerald",
+    "pair": "general__pacifidlog",
+    "mid": 100,
+    "sourceHash": "1c0a17411159487012f66770390968ed28c901c4b0ab921ce138500a984bfdd5",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "1c0a17411159487012f66770390968ed28c901c4b0ab921ce138500a984bfdd5",
+      "mid": "1c0a17411159487012f66770390968ed28c901c4b0ab921ce138500a984bfdd5",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "geometry",
+    "feature": "sky_pillar_complete_cave_entrance_shadow",
+    "palette": [
+      [
+        222,
+        255,
+        222
+      ],
+      [
+        197,
+        148,
+        58
+      ],
+      [
+        165,
+        123,
+        25
+      ],
+      [
+        58,
+        58,
+        58
+      ]
+    ],
+    "colorMap": [
+      [
+        66,
+        49,
+        66,
+        58,
+        58,
+        58
+      ],
+      [
+        99,
+        66,
+        82,
+        58,
+        58,
+        58
+      ],
+      [
+        132,
+        90,
+        90,
+        165,
+        123,
+        25
+      ],
+      [
+        156,
+        115,
+        115,
+        165,
+        123,
+        25
+      ],
+      [
+        189,
+        148,
+        140,
+        197,
+        148,
+        58
+      ],
+      [
+        222,
+        181,
+        165,
+        197,
+        148,
+        58
+      ]
+    ]
+  },
+  {
+    "game": "ruby",
+    "pair": "general__pacifidlog",
+    "mid": 625,
+    "sourceHash": "d29de116a9cf85061b42602a0001c1a941f207bd6ca8d31e260e0cf69636a823",
+    "sourceBehavior": 8,
+    "sourceLayers": {
+      "under": "d29de116a9cf85061b42602a0001c1a941f207bd6ca8d31e260e0cf69636a823",
+      "mid": "d29de116a9cf85061b42602a0001c1a941f207bd6ca8d31e260e0cf69636a823",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "floor"
+  },
+  {
+    "game": "sapphire",
+    "pair": "general__pacifidlog",
+    "mid": 625,
+    "sourceHash": "d29de116a9cf85061b42602a0001c1a941f207bd6ca8d31e260e0cf69636a823",
+    "sourceBehavior": 8,
+    "sourceLayers": {
+      "under": "d29de116a9cf85061b42602a0001c1a941f207bd6ca8d31e260e0cf69636a823",
+      "mid": "d29de116a9cf85061b42602a0001c1a941f207bd6ca8d31e260e0cf69636a823",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "floor"
+  },
+  {
+    "game": "ruby",
+    "pair": "general__pacifidlog",
+    "mid": 660,
+    "sourceHash": "1b6480fdc3c5522315afb681e6b6647e33704b0e7e385fccfddb8f1e060002b1",
+    "sourceBehavior": 8,
+    "sourceLayers": {
+      "under": "fe412566994d84e3300b9ce0c3ade8e7d063e5c9e0f8da40128d1ce2c08ae693",
+      "mid": "fe412566994d84e3300b9ce0c3ade8e7d063e5c9e0f8da40128d1ce2c08ae693",
+      "over": "e0f55c33a17958450b0bb992675a017489205327201b4af3b865c1f724b36b48"
+    },
+    "kind": "floor"
+  },
+  {
+    "game": "sapphire",
+    "pair": "general__pacifidlog",
+    "mid": 660,
+    "sourceHash": "1b6480fdc3c5522315afb681e6b6647e33704b0e7e385fccfddb8f1e060002b1",
+    "sourceBehavior": 8,
+    "sourceLayers": {
+      "under": "fe412566994d84e3300b9ce0c3ade8e7d063e5c9e0f8da40128d1ce2c08ae693",
+      "mid": "fe412566994d84e3300b9ce0c3ade8e7d063e5c9e0f8da40128d1ce2c08ae693",
+      "over": "e0f55c33a17958450b0bb992675a017489205327201b4af3b865c1f724b36b48"
+    },
+    "kind": "floor"
+  },
+  {
+    "game": "ruby",
+    "pair": "general__pacifidlog",
+    "mid": 629,
+    "sourceHash": "e04c260af18fd0d287510686f9c61690fc24dcc9fd5ea71e48c1bd09b7fb6d7c",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "e04c260af18fd0d287510686f9c61690fc24dcc9fd5ea71e48c1bd09b7fb6d7c",
+      "mid": "a45fb6eec05d5dd47cf569ad37a1ddde2f97330331c1928311f4253b61abddfe",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "wet_rock",
+    "plan": [
+      6,
+      1
+    ],
+    "mask": "0000000000000000000000000000000000000000000001110000000000011111000000000011111100000000011111110000000011111111000000011111111100000011111111110000011111111111000011111111111100001111111111110001111111111111001111111111111100111111111111110111111111111111"
+  },
+  {
+    "game": "sapphire",
+    "pair": "general__pacifidlog",
+    "mid": 629,
+    "sourceHash": "e04c260af18fd0d287510686f9c61690fc24dcc9fd5ea71e48c1bd09b7fb6d7c",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "e04c260af18fd0d287510686f9c61690fc24dcc9fd5ea71e48c1bd09b7fb6d7c",
+      "mid": "a45fb6eec05d5dd47cf569ad37a1ddde2f97330331c1928311f4253b61abddfe",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "wet_rock",
+    "plan": [
+      6,
+      1
+    ],
+    "mask": "0000000000000000000000000000000000000000000001110000000000011111000000000011111100000000011111110000000011111111000000011111111100000011111111110000011111111111000011111111111100001111111111110001111111111111001111111111111100111111111111110111111111111111"
+  },
+  {
+    "game": "ruby",
+    "pair": "general__pacifidlog",
+    "mid": 623,
+    "sourceHash": "bbc5e9fc1fa3a634033f29434e3917d650f3c2b9bb34aee802e4b35252b2980c",
+    "sourceBehavior": 8,
+    "sourceLayers": {
+      "under": "bbc5e9fc1fa3a634033f29434e3917d650f3c2b9bb34aee802e4b35252b2980c",
+      "mid": "e0f55c33a17958450b0bb992675a017489205327201b4af3b865c1f724b36b48",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "floor"
+  },
+  {
+    "game": "sapphire",
+    "pair": "general__pacifidlog",
+    "mid": 623,
+    "sourceHash": "bbc5e9fc1fa3a634033f29434e3917d650f3c2b9bb34aee802e4b35252b2980c",
+    "sourceBehavior": 8,
+    "sourceLayers": {
+      "under": "bbc5e9fc1fa3a634033f29434e3917d650f3c2b9bb34aee802e4b35252b2980c",
+      "mid": "e0f55c33a17958450b0bb992675a017489205327201b4af3b865c1f724b36b48",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "floor"
+  },
+  {
+    "game": "emerald",
+    "pair": "general__pacifidlog",
+    "mid": 625,
+    "sourceHash": "9bd778e05c0571524ae50cb301071e8cb2b497401e766280c0749efa6fc88bf3",
+    "sourceBehavior": 8,
+    "sourceLayers": {
+      "under": "9bd778e05c0571524ae50cb301071e8cb2b497401e766280c0749efa6fc88bf3",
+      "mid": "9bd778e05c0571524ae50cb301071e8cb2b497401e766280c0749efa6fc88bf3",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "floor"
+  },
+  {
+    "game": "ruby",
+    "pair": "general__pacifidlog",
+    "mid": 631,
+    "sourceHash": "62e719fdfcd3b65cae5d4e96ad214475dcc5bc51661be28854b1e9681a85b2d4",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "62e719fdfcd3b65cae5d4e96ad214475dcc5bc51661be28854b1e9681a85b2d4",
+      "mid": "8593e185f05190cc6a894aef7b289ba861156550b4599e062e80d5362cadbda6",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "wet_rock",
+    "plan": [
+      4,
+      0
+    ],
+    "mask": "1000000000000000110000000000000011110000000000001111100000000000111111100000000011111111000000001111111110000000111111111100000011111111111000001111111111110000111111111111100011111111111111001111111111111100111111111111111011111111111111101111111111111110"
+  },
+  {
+    "game": "sapphire",
+    "pair": "general__pacifidlog",
+    "mid": 631,
+    "sourceHash": "62e719fdfcd3b65cae5d4e96ad214475dcc5bc51661be28854b1e9681a85b2d4",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "62e719fdfcd3b65cae5d4e96ad214475dcc5bc51661be28854b1e9681a85b2d4",
+      "mid": "8593e185f05190cc6a894aef7b289ba861156550b4599e062e80d5362cadbda6",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "wet_rock",
+    "plan": [
+      4,
+      0
+    ],
+    "mask": "1000000000000000110000000000000011110000000000001111100000000000111111100000000011111111000000001111111110000000111111111100000011111111111000001111111111110000111111111111100011111111111111001111111111111100111111111111111011111111111111101111111111111110"
+  },
+  {
+    "game": "ruby",
+    "pair": "general__pacifidlog",
+    "mid": 646,
+    "sourceHash": "47048cf8eec8665c80700fd3ff37756db75094e5445183fccb0f07333d0a9c3b",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "47048cf8eec8665c80700fd3ff37756db75094e5445183fccb0f07333d0a9c3b",
+      "mid": "47048cf8eec8665c80700fd3ff37756db75094e5445183fccb0f07333d0a9c3b",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "alias",
+    "witness": {
+      "game": "sapphire",
+      "pair": "general__cave",
+      "mid": 761,
+      "module": "mappings/reverse_gen2_hoenn_outdoor_finish.lua",
+      "role": "reverse_gen2_hoenn_joined_dry_cave_596",
+      "compositionPixelHash": "fbdc4c52c29d587e2482e1bf506d71f71697f1234ea19da68ff53b3d6180ba98"
+    }
+  },
+  {
+    "game": "sapphire",
+    "pair": "general__pacifidlog",
+    "mid": 646,
+    "sourceHash": "47048cf8eec8665c80700fd3ff37756db75094e5445183fccb0f07333d0a9c3b",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "47048cf8eec8665c80700fd3ff37756db75094e5445183fccb0f07333d0a9c3b",
+      "mid": "47048cf8eec8665c80700fd3ff37756db75094e5445183fccb0f07333d0a9c3b",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "alias",
+    "witness": {
+      "game": "sapphire",
+      "pair": "general__cave",
+      "mid": 761,
+      "module": "mappings/reverse_gen2_hoenn_outdoor_finish.lua",
+      "role": "reverse_gen2_hoenn_joined_dry_cave_596",
+      "compositionPixelHash": "fbdc4c52c29d587e2482e1bf506d71f71697f1234ea19da68ff53b3d6180ba98"
+    }
+  },
+  {
+    "game": "ruby",
+    "pair": "general__pacifidlog",
+    "mid": 649,
+    "sourceHash": "64656b007bb8c4166a54a960219ecfc4030184202be921db6bad8a5ddf22b2b0",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "64656b007bb8c4166a54a960219ecfc4030184202be921db6bad8a5ddf22b2b0",
+      "mid": "64656b007bb8c4166a54a960219ecfc4030184202be921db6bad8a5ddf22b2b0",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "geometry",
+    "feature": "seafloor_cavern_complete_deep_recess_and_entrance_lip",
+    "palette": [
+      [
+        189,
+        173,
+        156
+      ],
+      [
+        132,
+        107,
+        99
+      ],
+      [
+        90,
+        74,
+        82
+      ],
+      [
+        41,
+        33,
+        58
+      ]
+    ],
+    "colorMap": [
+      [
+        49,
+        8,
+        49,
+        41,
+        33,
+        58
+      ],
+      [
+        66,
+        41,
+        66,
+        41,
+        33,
+        58
+      ],
+      [
+        90,
+        74,
+        82,
+        41,
+        33,
+        58
+      ],
+      [
+        132,
+        107,
+        107,
+        90,
+        74,
+        82
+      ],
+      [
+        165,
+        140,
+        115,
+        90,
+        74,
+        82
+      ],
+      [
+        206,
+        173,
+        123,
+        132,
+        107,
+        99
+      ]
+    ]
+  },
+  {
+    "game": "sapphire",
+    "pair": "general__pacifidlog",
+    "mid": 649,
+    "sourceHash": "64656b007bb8c4166a54a960219ecfc4030184202be921db6bad8a5ddf22b2b0",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "64656b007bb8c4166a54a960219ecfc4030184202be921db6bad8a5ddf22b2b0",
+      "mid": "64656b007bb8c4166a54a960219ecfc4030184202be921db6bad8a5ddf22b2b0",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "geometry",
+    "feature": "seafloor_cavern_complete_deep_recess_and_entrance_lip",
+    "palette": [
+      [
+        189,
+        173,
+        156
+      ],
+      [
+        132,
+        107,
+        99
+      ],
+      [
+        90,
+        74,
+        82
+      ],
+      [
+        41,
+        33,
+        58
+      ]
+    ],
+    "colorMap": [
+      [
+        49,
+        8,
+        49,
+        41,
+        33,
+        58
+      ],
+      [
+        66,
+        41,
+        66,
+        41,
+        33,
+        58
+      ],
+      [
+        90,
+        74,
+        82,
+        41,
+        33,
+        58
+      ],
+      [
+        132,
+        107,
+        107,
+        90,
+        74,
+        82
+      ],
+      [
+        165,
+        140,
+        115,
+        90,
+        74,
+        82
+      ],
+      [
+        206,
+        173,
+        123,
+        132,
+        107,
+        99
+      ]
+    ]
+  },
+  {
+    "game": "ruby",
+    "pair": "general__pacifidlog",
+    "mid": 650,
+    "sourceHash": "c59e37c7e2b733027b9af89517a80dfa80e1bb82d8ca07cd3cc84d5f89bdd244",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "c59e37c7e2b733027b9af89517a80dfa80e1bb82d8ca07cd3cc84d5f89bdd244",
+      "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "ridge",
+    "plan": [
+      6,
+      3
+    ]
+  },
+  {
+    "game": "sapphire",
+    "pair": "general__pacifidlog",
+    "mid": 650,
+    "sourceHash": "c59e37c7e2b733027b9af89517a80dfa80e1bb82d8ca07cd3cc84d5f89bdd244",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "c59e37c7e2b733027b9af89517a80dfa80e1bb82d8ca07cd3cc84d5f89bdd244",
+      "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "ridge",
+    "plan": [
+      6,
+      3
+    ]
+  },
+  {
+    "game": "ruby",
+    "pair": "general__pacifidlog",
+    "mid": 657,
+    "sourceHash": "8990b7ed1dd32e0662ee013e3696cc344a0f2dbc0ee866c43a3a0960d0d76b18",
+    "sourceBehavior": 96,
+    "sourceLayers": {
+      "under": "8990b7ed1dd32e0662ee013e3696cc344a0f2dbc0ee866c43a3a0960d0d76b18",
+      "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "geometry",
+    "feature": "seafloor_cavern_complete_deep_recess_and_entrance_lip",
+    "palette": [
+      [
+        189,
+        173,
+        156
+      ],
+      [
+        132,
+        107,
+        99
+      ],
+      [
+        90,
+        74,
+        82
+      ],
+      [
+        41,
+        33,
+        58
+      ]
+    ],
+    "colorMap": [
+      [
+        49,
+        8,
+        49,
+        41,
+        33,
+        58
+      ],
+      [
+        66,
+        41,
+        66,
+        41,
+        33,
+        58
+      ],
+      [
+        90,
+        74,
+        82,
+        41,
+        33,
+        58
+      ],
+      [
+        132,
+        107,
+        107,
+        90,
+        74,
+        82
+      ]
+    ]
+  },
+  {
+    "game": "sapphire",
+    "pair": "general__pacifidlog",
+    "mid": 657,
+    "sourceHash": "8990b7ed1dd32e0662ee013e3696cc344a0f2dbc0ee866c43a3a0960d0d76b18",
+    "sourceBehavior": 96,
+    "sourceLayers": {
+      "under": "8990b7ed1dd32e0662ee013e3696cc344a0f2dbc0ee866c43a3a0960d0d76b18",
+      "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "geometry",
+    "feature": "seafloor_cavern_complete_deep_recess_and_entrance_lip",
+    "palette": [
+      [
+        189,
+        173,
+        156
+      ],
+      [
+        132,
+        107,
+        99
+      ],
+      [
+        90,
+        74,
+        82
+      ],
+      [
+        41,
+        33,
+        58
+      ]
+    ],
+    "colorMap": [
+      [
+        49,
+        8,
+        49,
+        41,
+        33,
+        58
+      ],
+      [
+        66,
+        41,
+        66,
+        41,
+        33,
+        58
+      ],
+      [
+        90,
+        74,
+        82,
+        41,
+        33,
+        58
+      ],
+      [
+        132,
+        107,
+        107,
+        90,
+        74,
+        82
+      ]
+    ]
+  },
+  {
+    "game": "ruby",
+    "pair": "general__pacifidlog",
+    "mid": 658,
+    "sourceHash": "f50a9ffe63fb19d3aa40f6f54c3e5ddd59faa4b653ff04281bedcfe17d01cce0",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "f50a9ffe63fb19d3aa40f6f54c3e5ddd59faa4b653ff04281bedcfe17d01cce0",
+      "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "ridge",
+    "plan": [
+      6,
+      3
+    ]
+  },
+  {
+    "game": "sapphire",
+    "pair": "general__pacifidlog",
+    "mid": 658,
+    "sourceHash": "f50a9ffe63fb19d3aa40f6f54c3e5ddd59faa4b653ff04281bedcfe17d01cce0",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "f50a9ffe63fb19d3aa40f6f54c3e5ddd59faa4b653ff04281bedcfe17d01cce0",
+      "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "ridge",
+    "plan": [
+      6,
+      3
+    ]
+  },
+  {
+    "game": "ruby",
+    "pair": "general__pacifidlog",
+    "mid": 677,
+    "sourceHash": "485491b5876ae1f6ff5808dfc5b33cf98ce537db30e0d2f3c4a770f131dcc6e9",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "485491b5876ae1f6ff5808dfc5b33cf98ce537db30e0d2f3c4a770f131dcc6e9",
+      "mid": "5bbdf1c72551c20737a7675f58ca172b17c30a31ea28041a089b87ddedcf23af",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "sky_bank",
+    "plan": [
+      4,
+      3
+    ],
+    "mask": "0000000011000000111100111111101111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111"
+  },
+  {
+    "game": "sapphire",
+    "pair": "general__pacifidlog",
+    "mid": 677,
+    "sourceHash": "485491b5876ae1f6ff5808dfc5b33cf98ce537db30e0d2f3c4a770f131dcc6e9",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "485491b5876ae1f6ff5808dfc5b33cf98ce537db30e0d2f3c4a770f131dcc6e9",
+      "mid": "5bbdf1c72551c20737a7675f58ca172b17c30a31ea28041a089b87ddedcf23af",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "sky_bank",
+    "plan": [
+      4,
+      3
+    ],
+    "mask": "0000000011000000111100111111101111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111"
+  },
+  {
+    "game": "emerald",
+    "pair": "general__pacifidlog",
+    "mid": 677,
+    "sourceHash": "485491b5876ae1f6ff5808dfc5b33cf98ce537db30e0d2f3c4a770f131dcc6e9",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "485491b5876ae1f6ff5808dfc5b33cf98ce537db30e0d2f3c4a770f131dcc6e9",
+      "mid": "5bbdf1c72551c20737a7675f58ca172b17c30a31ea28041a089b87ddedcf23af",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "sky_bank",
+    "plan": [
+      4,
+      3
+    ],
+    "mask": "0000000011000000111100111111101111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111"
+  },
+  {
+    "game": "ruby",
+    "pair": "general__pacifidlog",
+    "mid": 696,
+    "sourceHash": "1a786f42f67aa4b8d223140adaaf0a1771d9f4620fe9c14517019dfc28583524",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "1a786f42f67aa4b8d223140adaaf0a1771d9f4620fe9c14517019dfc28583524",
+      "mid": "24644b426fcc1c1e080bec907aaaba1be6e2966123c361e4c81516d43f51f177",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "sky_bank",
+    "plan": [
+      4,
+      0
+    ],
+    "mask": "0000000000000000100000000000000011000000000000001110000000000000111100000000000011111000000000001111111000000000111111110000000011111111100000001111111111000000111111111100000011111111111000001111111111110000111111111111000011111111111110001111111111111000"
+  },
+  {
+    "game": "sapphire",
+    "pair": "general__pacifidlog",
+    "mid": 696,
+    "sourceHash": "1a786f42f67aa4b8d223140adaaf0a1771d9f4620fe9c14517019dfc28583524",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "1a786f42f67aa4b8d223140adaaf0a1771d9f4620fe9c14517019dfc28583524",
+      "mid": "24644b426fcc1c1e080bec907aaaba1be6e2966123c361e4c81516d43f51f177",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "sky_bank",
+    "plan": [
+      4,
+      0
+    ],
+    "mask": "0000000000000000100000000000000011000000000000001110000000000000111100000000000011111000000000001111111000000000111111110000000011111111100000001111111111000000111111111100000011111111111000001111111111110000111111111111000011111111111110001111111111111000"
+  },
+  {
+    "game": "emerald",
+    "pair": "general__pacifidlog",
+    "mid": 696,
+    "sourceHash": "1a786f42f67aa4b8d223140adaaf0a1771d9f4620fe9c14517019dfc28583524",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "1a786f42f67aa4b8d223140adaaf0a1771d9f4620fe9c14517019dfc28583524",
+      "mid": "24644b426fcc1c1e080bec907aaaba1be6e2966123c361e4c81516d43f51f177",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "sky_bank",
+    "plan": [
+      4,
+      0
+    ],
+    "mask": "0000000000000000100000000000000011000000000000001110000000000000111100000000000011111000000000001111111000000000111111110000000011111111100000001111111111000000111111111100000011111111111000001111111111110000111111111111000011111111111110001111111111111000"
+  },
+  {
+    "game": "emerald",
+    "pair": "general__pacifidlog",
+    "mid": 646,
+    "sourceHash": "b6fec93551c8103a5e5f100bbcc7b95c95805cd8694c59a367736f10e1066760",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "b6fec93551c8103a5e5f100bbcc7b95c95805cd8694c59a367736f10e1066760",
+      "mid": "6b198b16058c49aeaef64bf2243ec1dd5149ad8e4fcdc92a7b7b231a87b981a1",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "ridge",
+    "plan": [
+      4,
+      2
+    ]
+  },
+  {
+    "game": "ruby",
+    "pair": "general__pacifidlog",
+    "mid": 648,
+    "sourceHash": "c6e2c2b4f3b65da9368fdb00a4a64231d14550aca0409026ff3ce87e42b1d15b",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "c6e2c2b4f3b65da9368fdb00a4a64231d14550aca0409026ff3ce87e42b1d15b",
+      "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "ridge",
+    "plan": [
+      4,
+      2
+    ]
+  },
+  {
+    "game": "sapphire",
+    "pair": "general__pacifidlog",
+    "mid": 648,
+    "sourceHash": "c6e2c2b4f3b65da9368fdb00a4a64231d14550aca0409026ff3ce87e42b1d15b",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "c6e2c2b4f3b65da9368fdb00a4a64231d14550aca0409026ff3ce87e42b1d15b",
+      "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "ridge",
+    "plan": [
+      4,
+      2
+    ]
+  },
+  {
+    "game": "ruby",
+    "pair": "general__pacifidlog",
+    "mid": 656,
+    "sourceHash": "1f9dcaf9a81724c4b36261c449ffc7e9c6324af5f1c6d99ec1e7c489bf506302",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "1f9dcaf9a81724c4b36261c449ffc7e9c6324af5f1c6d99ec1e7c489bf506302",
+      "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "ridge",
+    "plan": [
+      4,
+      2
+    ]
+  },
+  {
+    "game": "sapphire",
+    "pair": "general__pacifidlog",
+    "mid": 656,
+    "sourceHash": "1f9dcaf9a81724c4b36261c449ffc7e9c6324af5f1c6d99ec1e7c489bf506302",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "1f9dcaf9a81724c4b36261c449ffc7e9c6324af5f1c6d99ec1e7c489bf506302",
+      "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "ridge",
+    "plan": [
+      4,
+      2
+    ]
+  },
+  {
+    "game": "ruby",
+    "pair": "general__pacifidlog",
+    "mid": 664,
+    "sourceHash": "462354b5d11e25dd1a12717b0687e111a7538037d013d091944202e82e81a16c",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "462354b5d11e25dd1a12717b0687e111a7538037d013d091944202e82e81a16c",
+      "mid": "c31b9c9befca14441f5adb8ec3f60c892f1258b5fb33c131100c83d8455027ec",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "floor"
+  },
+  {
+    "game": "sapphire",
+    "pair": "general__pacifidlog",
+    "mid": 664,
+    "sourceHash": "462354b5d11e25dd1a12717b0687e111a7538037d013d091944202e82e81a16c",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "462354b5d11e25dd1a12717b0687e111a7538037d013d091944202e82e81a16c",
+      "mid": "c31b9c9befca14441f5adb8ec3f60c892f1258b5fb33c131100c83d8455027ec",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "floor"
+  },
+  {
+    "game": "ruby",
+    "pair": "general__pacifidlog",
+    "mid": 665,
+    "sourceHash": "78c45b1b0e97e0670cc66872e365e6c49725dee17fe8098f891b0f124f00a38b",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "78c45b1b0e97e0670cc66872e365e6c49725dee17fe8098f891b0f124f00a38b",
+      "mid": "78c45b1b0e97e0670cc66872e365e6c49725dee17fe8098f891b0f124f00a38b",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "geometry",
+    "feature": "seafloor_cavern_complete_deep_recess_and_entrance_lip",
+    "palette": [
+      [
+        189,
+        173,
+        156
+      ],
+      [
+        132,
+        107,
+        99
+      ],
+      [
+        90,
+        74,
+        82
+      ],
+      [
+        41,
+        33,
+        58
+      ]
+    ],
+    "colorMap": [
+      [
+        66,
+        41,
+        66,
+        41,
+        33,
+        58
+      ],
+      [
+        90,
+        74,
+        82,
+        41,
+        33,
+        58
+      ],
+      [
+        132,
+        107,
+        107,
+        90,
+        74,
+        82
+      ],
+      [
+        165,
+        140,
+        115,
+        90,
+        74,
+        82
+      ],
+      [
+        206,
+        173,
+        123,
+        132,
+        107,
+        99
+      ],
+      [
+        230,
+        197,
+        140,
+        132,
+        107,
+        99
+      ],
+      [
+        255,
+        230,
+        156,
+        189,
+        173,
+        156
+      ]
+    ]
+  },
+  {
+    "game": "sapphire",
+    "pair": "general__pacifidlog",
+    "mid": 665,
+    "sourceHash": "78c45b1b0e97e0670cc66872e365e6c49725dee17fe8098f891b0f124f00a38b",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "78c45b1b0e97e0670cc66872e365e6c49725dee17fe8098f891b0f124f00a38b",
+      "mid": "78c45b1b0e97e0670cc66872e365e6c49725dee17fe8098f891b0f124f00a38b",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "geometry",
+    "feature": "seafloor_cavern_complete_deep_recess_and_entrance_lip",
+    "palette": [
+      [
+        189,
+        173,
+        156
+      ],
+      [
+        132,
+        107,
+        99
+      ],
+      [
+        90,
+        74,
+        82
+      ],
+      [
+        41,
+        33,
+        58
+      ]
+    ],
+    "colorMap": [
+      [
+        66,
+        41,
+        66,
+        41,
+        33,
+        58
+      ],
+      [
+        90,
+        74,
+        82,
+        41,
+        33,
+        58
+      ],
+      [
+        132,
+        107,
+        107,
+        90,
+        74,
+        82
+      ],
+      [
+        165,
+        140,
+        115,
+        90,
+        74,
+        82
+      ],
+      [
+        206,
+        173,
+        123,
+        132,
+        107,
+        99
+      ],
+      [
+        230,
+        197,
+        140,
+        132,
+        107,
+        99
+      ],
+      [
+        255,
+        230,
+        156,
+        189,
+        173,
+        156
+      ]
+    ]
+  },
+  {
+    "game": "ruby",
+    "pair": "general__pacifidlog",
+    "mid": 668,
+    "sourceHash": "37ce3d54bfa8eca8c9557fb156dd4ca1023fdfac27271af41b3426eb834e1ba6",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "37ce3d54bfa8eca8c9557fb156dd4ca1023fdfac27271af41b3426eb834e1ba6",
+      "mid": "8593e185f05190cc6a894aef7b289ba861156550b4599e062e80d5362cadbda6",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "ridge",
+    "plan": [
+      6,
+      3
+    ]
+  },
+  {
+    "game": "sapphire",
+    "pair": "general__pacifidlog",
+    "mid": 668,
+    "sourceHash": "37ce3d54bfa8eca8c9557fb156dd4ca1023fdfac27271af41b3426eb834e1ba6",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "37ce3d54bfa8eca8c9557fb156dd4ca1023fdfac27271af41b3426eb834e1ba6",
+      "mid": "8593e185f05190cc6a894aef7b289ba861156550b4599e062e80d5362cadbda6",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "ridge",
+    "plan": [
+      6,
+      3
+    ]
+  },
+  {
+    "game": "emerald",
+    "pair": "general__pacifidlog",
+    "mid": 707,
+    "sourceHash": "ba11fedaf0c77b73679992dd2506ccad0f48dadbfac07a29f5c72ea209f74ffd",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "ec68d3123df4f5e023eed01ae132475c32a66718585d629d7c63ce95ff647b07",
+      "mid": "ec68d3123df4f5e023eed01ae132475c32a66718585d629d7c63ce95ff647b07",
+      "over": "172fbcfad32903696d743b7dd730d88f7647dec9d464a4ef120082f7647a8359"
+    },
+    "kind": "wet_rock",
+    "plan": [
+      6,
+      1
+    ],
+    "mask": "0000000000000001000000000001111100000000011111110000000111111111000000111111111100000111111111110000111111111111000111111111111100011111111111110011111111111111001111111111111100111111111111110111111111111111011111111111111111111111111111111111111111111111"
+  },
+  {
+    "game": "emerald",
+    "pair": "general__pacifidlog",
+    "mid": 649,
+    "sourceHash": "4b661e060b0227224673fda0b9c2fbd3e9098c4c0e346116e39a9f14d375010e",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "4b661e060b0227224673fda0b9c2fbd3e9098c4c0e346116e39a9f14d375010e",
+      "mid": "4b661e060b0227224673fda0b9c2fbd3e9098c4c0e346116e39a9f14d375010e",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "geometry",
+    "feature": "seafloor_cavern_complete_deep_recess_and_entrance_lip",
+    "palette": [
+      [
+        189,
+        173,
+        156
+      ],
+      [
+        132,
+        107,
+        99
+      ],
+      [
+        90,
+        74,
+        82
+      ],
+      [
+        41,
+        33,
+        58
+      ]
+    ],
+    "colorMap": [
+      [
+        49,
+        8,
+        49,
+        41,
+        33,
+        58
+      ],
+      [
+        66,
+        41,
+        66,
+        41,
+        33,
+        58
+      ],
+      [
+        90,
+        74,
+        82,
+        41,
+        33,
+        58
+      ],
+      [
+        132,
+        107,
+        107,
+        90,
+        74,
+        82
+      ],
+      [
+        165,
+        140,
+        115,
+        90,
+        74,
+        82
+      ]
+    ]
+  },
+  {
+    "game": "emerald",
+    "pair": "general__pacifidlog",
+    "mid": 650,
+    "sourceHash": "aad5190dcd133c3bbc132cb4a5a5e6885cf2ad6d1b9d145284dfcf787527128c",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "aad5190dcd133c3bbc132cb4a5a5e6885cf2ad6d1b9d145284dfcf787527128c",
+      "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "ridge",
+    "plan": [
+      6,
+      3
+    ]
+  },
+  {
+    "game": "emerald",
+    "pair": "general__pacifidlog",
+    "mid": 657,
+    "sourceHash": "cdc0baad26395378ac01db77736427297362b8642d0e1833f5373f8138db7083",
+    "sourceBehavior": 96,
+    "sourceLayers": {
+      "under": "cdc0baad26395378ac01db77736427297362b8642d0e1833f5373f8138db7083",
+      "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "geometry",
+    "feature": "seafloor_cavern_complete_deep_recess_and_entrance_lip",
+    "palette": [
+      [
+        189,
+        173,
+        156
+      ],
+      [
+        132,
+        107,
+        99
+      ],
+      [
+        90,
+        74,
+        82
+      ],
+      [
+        41,
+        33,
+        58
+      ]
+    ],
+    "colorMap": [
+      [
+        49,
+        8,
+        49,
+        41,
+        33,
+        58
+      ],
+      [
+        66,
+        41,
+        66,
+        41,
+        33,
+        58
+      ],
+      [
+        90,
+        74,
+        82,
+        41,
+        33,
+        58
+      ],
+      [
+        132,
+        107,
+        107,
+        90,
+        74,
+        82
+      ]
+    ]
+  },
+  {
+    "game": "emerald",
+    "pair": "general__pacifidlog",
+    "mid": 660,
+    "sourceHash": "7f298b7de4966f9c07f54ba1898d16ccf42fc23a8f262c5bd441aa2168c5f136",
+    "sourceBehavior": 8,
+    "sourceLayers": {
+      "under": "02a59e7d95943deb8da2818a1412ddc9661ad0b288803b7ca45527c09c29d3ba",
+      "mid": "02a59e7d95943deb8da2818a1412ddc9661ad0b288803b7ca45527c09c29d3ba",
+      "over": "7f298b7de4966f9c07f54ba1898d16ccf42fc23a8f262c5bd441aa2168c5f136"
+    },
+    "kind": "floor"
+  },
+  {
+    "game": "ruby",
+    "pair": "general__pacifidlog",
+    "mid": 693,
+    "sourceHash": "a840eb7c2ea5ed9510d5200884ee464ecb1c81729ad00bc63e6f37a63f768cf5",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "a840eb7c2ea5ed9510d5200884ee464ecb1c81729ad00bc63e6f37a63f768cf5",
+      "mid": "a39c37d63d0c9eae5a3f4375aaece59a64acd757954788720bcbd8ba36c9a8c5",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "sky_bank",
+    "plan": [
+      6,
+      1
+    ],
+    "mask": "0000000000000000000000000000000100000000000001110000000000001111000000000001111100000000000111110000000000111111000000000111111100000000111111110000000111111111000000111111111100000111111111110000111111111111000011111111111100011111111111110001111111111111"
+  },
+  {
+    "game": "sapphire",
+    "pair": "general__pacifidlog",
+    "mid": 693,
+    "sourceHash": "a840eb7c2ea5ed9510d5200884ee464ecb1c81729ad00bc63e6f37a63f768cf5",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "a840eb7c2ea5ed9510d5200884ee464ecb1c81729ad00bc63e6f37a63f768cf5",
+      "mid": "a39c37d63d0c9eae5a3f4375aaece59a64acd757954788720bcbd8ba36c9a8c5",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "sky_bank",
+    "plan": [
+      6,
+      1
+    ],
+    "mask": "0000000000000000000000000000000100000000000001110000000000001111000000000001111100000000000111110000000000111111000000000111111100000000111111110000000111111111000000111111111100000111111111110000111111111111000011111111111100011111111111110001111111111111"
+  },
+  {
+    "game": "emerald",
+    "pair": "general__pacifidlog",
+    "mid": 693,
+    "sourceHash": "a840eb7c2ea5ed9510d5200884ee464ecb1c81729ad00bc63e6f37a63f768cf5",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "a840eb7c2ea5ed9510d5200884ee464ecb1c81729ad00bc63e6f37a63f768cf5",
+      "mid": "a39c37d63d0c9eae5a3f4375aaece59a64acd757954788720bcbd8ba36c9a8c5",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "sky_bank",
+    "plan": [
+      6,
+      1
+    ],
+    "mask": "0000000000000000000000000000000100000000000001110000000000001111000000000001111100000000000111110000000000111111000000000111111100000000111111110000000111111111000000111111111100000111111111110000111111111111000011111111111100011111111111110001111111111111"
+  },
+  {
+    "game": "ruby",
+    "pair": "general__pacifidlog",
+    "mid": 399,
+    "sourceHash": "4e8353beb3ef8295168bd4a82dcebca3330c39c29b19f83a8390a56eabed44e5",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "df6c29206b15fa587c505d0e656e40c1cde8aff983d2d80a94aa6d50be110d99",
+      "mid": "df6c29206b15fa587c505d0e656e40c1cde8aff983d2d80a94aa6d50be110d99",
+      "over": "b388874f2d02e20df070cbb848a37d72f90268b78ec7e4ed2bfa651a34cc44b0"
+    },
+    "kind": "wet_rock",
+    "plan": [
+      6,
+      3
+    ],
+    "mask": "1111111111111110111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111"
+  },
+  {
+    "game": "sapphire",
+    "pair": "general__pacifidlog",
+    "mid": 399,
+    "sourceHash": "4e8353beb3ef8295168bd4a82dcebca3330c39c29b19f83a8390a56eabed44e5",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "df6c29206b15fa587c505d0e656e40c1cde8aff983d2d80a94aa6d50be110d99",
+      "mid": "df6c29206b15fa587c505d0e656e40c1cde8aff983d2d80a94aa6d50be110d99",
+      "over": "b388874f2d02e20df070cbb848a37d72f90268b78ec7e4ed2bfa651a34cc44b0"
+    },
+    "kind": "wet_rock",
+    "plan": [
+      6,
+      3
+    ],
+    "mask": "1111111111111110111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111"
+  },
+  {
+    "game": "emerald",
+    "pair": "general__pacifidlog",
+    "mid": 399,
+    "sourceHash": "4e8353beb3ef8295168bd4a82dcebca3330c39c29b19f83a8390a56eabed44e5",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "df6c29206b15fa587c505d0e656e40c1cde8aff983d2d80a94aa6d50be110d99",
+      "mid": "df6c29206b15fa587c505d0e656e40c1cde8aff983d2d80a94aa6d50be110d99",
+      "over": "b388874f2d02e20df070cbb848a37d72f90268b78ec7e4ed2bfa651a34cc44b0"
+    },
+    "kind": "wet_rock",
+    "plan": [
+      6,
+      3
+    ],
+    "mask": "1111111111111110111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111"
+  },
+  {
+    "game": "ruby",
+    "pair": "general__pacifidlog",
+    "mid": 627,
+    "sourceHash": "dde4f07c601c29da32424d763cb888889f55260b93283a1b324148a9814593aa",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "dde4f07c601c29da32424d763cb888889f55260b93283a1b324148a9814593aa",
+      "mid": "270629acc8a59b294e3ca119265e68a67713caaccb2a1b1cfc0c9441aeb5400e",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "boulder",
+    "plan": 3
+  },
+  {
+    "game": "sapphire",
+    "pair": "general__pacifidlog",
+    "mid": 627,
+    "sourceHash": "dde4f07c601c29da32424d763cb888889f55260b93283a1b324148a9814593aa",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "dde4f07c601c29da32424d763cb888889f55260b93283a1b324148a9814593aa",
+      "mid": "270629acc8a59b294e3ca119265e68a67713caaccb2a1b1cfc0c9441aeb5400e",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "boulder",
+    "plan": 3
+  },
+  {
+    "game": "ruby",
+    "pair": "general__pacifidlog",
+    "mid": 628,
+    "sourceHash": "b13e4f0904a1907c9832d2a10c92b707889700da6408ec6a93ebf613c69c7be6",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "b13e4f0904a1907c9832d2a10c92b707889700da6408ec6a93ebf613c69c7be6",
+      "mid": "8823e72baac5863cf658cc5a0e4accd78d99fac2029aa5f551e2188b0ba8ce36",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "boulder",
+    "plan": 1
+  },
+  {
+    "game": "sapphire",
+    "pair": "general__pacifidlog",
+    "mid": 628,
+    "sourceHash": "b13e4f0904a1907c9832d2a10c92b707889700da6408ec6a93ebf613c69c7be6",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "b13e4f0904a1907c9832d2a10c92b707889700da6408ec6a93ebf613c69c7be6",
+      "mid": "8823e72baac5863cf658cc5a0e4accd78d99fac2029aa5f551e2188b0ba8ce36",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "boulder",
+    "plan": 1
+  },
+  {
+    "game": "ruby",
+    "pair": "general__pacifidlog",
+    "mid": 637,
+    "sourceHash": "588eb2eeff0b57937169c1cda420eb2d3e88ccf958e4df14abf7e8d820eacb20",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "588eb2eeff0b57937169c1cda420eb2d3e88ccf958e4df14abf7e8d820eacb20",
+      "mid": "76fc59273033cd1dedd89c3aebf72c35249b41d84a04a5e059427db0f16a50c5",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "wet_rock",
+    "plan": [
+      6,
+      1
+    ],
+    "mask": "0111111111111111011111111111111101111111111111110011111111111111001111111111111100111111111111110001111111111111000111111111111100111111111111110011111111111111011111111111111101111111111111110011111111111111011111111111111101111111111111110011111111111111"
+  },
+  {
+    "game": "sapphire",
+    "pair": "general__pacifidlog",
+    "mid": 637,
+    "sourceHash": "588eb2eeff0b57937169c1cda420eb2d3e88ccf958e4df14abf7e8d820eacb20",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "588eb2eeff0b57937169c1cda420eb2d3e88ccf958e4df14abf7e8d820eacb20",
+      "mid": "76fc59273033cd1dedd89c3aebf72c35249b41d84a04a5e059427db0f16a50c5",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "wet_rock",
+    "plan": [
+      6,
+      1
+    ],
+    "mask": "0111111111111111011111111111111101111111111111110011111111111111001111111111111100111111111111110001111111111111000111111111111100111111111111110011111111111111011111111111111101111111111111110011111111111111011111111111111101111111111111110011111111111111"
+  },
+  {
+    "game": "ruby",
+    "pair": "general__pacifidlog",
+    "mid": 639,
+    "sourceHash": "cad84f6892f05a499b84a2b4ef285372e54c358263cdc00cd7f5774ef8c921e7",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "cad84f6892f05a499b84a2b4ef285372e54c358263cdc00cd7f5774ef8c921e7",
+      "mid": "0e39a252b5f537a842fb40b55a3520dffa55b533b990cb1526415082bf9cc41a",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "wet_rock",
+    "plan": [
+      4,
+      0
+    ],
+    "mask": "1111111111111100111111111111110011111111111111101111111111111110111111111111111011111111111111101111111111111110111111111111111011111111111111001111111111111000111111111111100011111111111111001111111111111100111111111111111011111111111111101111111111111110"
+  },
+  {
+    "game": "sapphire",
+    "pair": "general__pacifidlog",
+    "mid": 639,
+    "sourceHash": "cad84f6892f05a499b84a2b4ef285372e54c358263cdc00cd7f5774ef8c921e7",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "cad84f6892f05a499b84a2b4ef285372e54c358263cdc00cd7f5774ef8c921e7",
+      "mid": "0e39a252b5f537a842fb40b55a3520dffa55b533b990cb1526415082bf9cc41a",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "wet_rock",
+    "plan": [
+      4,
+      0
+    ],
+    "mask": "1111111111111100111111111111110011111111111111101111111111111110111111111111111011111111111111101111111111111110111111111111111011111111111111001111111111111000111111111111100011111111111111001111111111111100111111111111111011111111111111101111111111111110"
+  },
+  {
+    "game": "ruby",
+    "pair": "general__pacifidlog",
+    "mid": 645,
+    "sourceHash": "a2491d675bc1776d735fde5a803a894949d69dae65d7936e4d92d3b773c2c2b2",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "a2491d675bc1776d735fde5a803a894949d69dae65d7936e4d92d3b773c2c2b2",
+      "mid": "9b2b67293aae0d493f8c32ce0b22bc9ac27114ef5453368ea1b933495c98bb5b",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "wet_rock",
+    "plan": [
+      4,
+      2
+    ],
+    "mask": "0001111111111111001111111111111100111111111111110111111111111111011111111111111101111111111111110111111111111111011111111111111101111111111111110111111111111111011111111111111100111111111111110011111111111111000111001111111100000000000011110000000000000000"
+  },
+  {
+    "game": "sapphire",
+    "pair": "general__pacifidlog",
+    "mid": 645,
+    "sourceHash": "a2491d675bc1776d735fde5a803a894949d69dae65d7936e4d92d3b773c2c2b2",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "a2491d675bc1776d735fde5a803a894949d69dae65d7936e4d92d3b773c2c2b2",
+      "mid": "9b2b67293aae0d493f8c32ce0b22bc9ac27114ef5453368ea1b933495c98bb5b",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "wet_rock",
+    "plan": [
+      4,
+      2
+    ],
+    "mask": "0001111111111111001111111111111100111111111111110111111111111111011111111111111101111111111111110111111111111111011111111111111101111111111111110111111111111111011111111111111100111111111111110011111111111111000111001111111100000000000011110000000000000000"
+  },
+  {
+    "game": "ruby",
+    "pair": "general__pacifidlog",
+    "mid": 647,
+    "sourceHash": "3f83cbca5f4a422c1306e5534b3bfe09ad09f20bedf354d4d919580115e33d1b",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "3f83cbca5f4a422c1306e5534b3bfe09ad09f20bedf354d4d919580115e33d1b",
+      "mid": "a15097b0157057a85b53b5288e87c5c9aea9e1a7f36e7c95bff6c9e349391468",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "wet_rock",
+    "plan": [
+      6,
+      3
+    ],
+    "mask": "1111111111111110111111111111110011111111111111001111111111111000111111111111100011111111111110001111111111111000111111111111110011111111111111001111111111111100111111111111110011111111111110001111111111110000111111100000000011111000000000001110000000000000"
+  },
+  {
+    "game": "sapphire",
+    "pair": "general__pacifidlog",
+    "mid": 647,
+    "sourceHash": "3f83cbca5f4a422c1306e5534b3bfe09ad09f20bedf354d4d919580115e33d1b",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "3f83cbca5f4a422c1306e5534b3bfe09ad09f20bedf354d4d919580115e33d1b",
+      "mid": "a15097b0157057a85b53b5288e87c5c9aea9e1a7f36e7c95bff6c9e349391468",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "wet_rock",
+    "plan": [
+      6,
+      3
+    ],
+    "mask": "1111111111111110111111111111110011111111111111001111111111111000111111111111100011111111111110001111111111111000111111111111110011111111111111001111111111111100111111111111110011111111111110001111111111110000111111100000000011111000000000001110000000000000"
+  },
+  {
+    "game": "emerald",
+    "pair": "general__pacifidlog",
+    "mid": 648,
+    "sourceHash": "3e149f34cff6d1ec48b14d619b3e952688001df200c80637c3c1be3ed312da26",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "3e149f34cff6d1ec48b14d619b3e952688001df200c80637c3c1be3ed312da26",
+      "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "ridge",
+    "plan": [
+      4,
+      2
+    ]
+  },
+  {
+    "game": "ruby",
+    "pair": "general__pacifidlog",
+    "mid": 655,
+    "sourceHash": "6466dea9689c3e5477a0cd819db4148f7d0bc7e00c57f26161d486216e35f585",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "9503245a0161a939de15c2414db2d336e761822fa6cff8136e4148f58f1f782e",
+      "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "over": "6466dea9689c3e5477a0cd819db4148f7d0bc7e00c57f26161d486216e35f585"
+    },
+    "kind": "geometry",
+    "feature": "seafloor_cavern_complete_deep_recess_and_entrance_lip",
+    "palette": [
+      [
+        189,
+        173,
+        156
+      ],
+      [
+        132,
+        107,
+        99
+      ],
+      [
+        90,
+        74,
+        82
+      ],
+      [
+        41,
+        33,
+        58
+      ]
+    ],
+    "colorMap": [
+      [
+        0,
+        0,
+        0,
+        41,
+        33,
+        58
+      ],
+      [
+        66,
+        41,
+        66,
+        41,
+        33,
+        58
+      ],
+      [
+        90,
+        74,
+        82,
+        41,
+        33,
+        58
+      ],
+      [
+        132,
+        107,
+        107,
+        90,
+        74,
+        82
+      ],
+      [
+        165,
+        140,
+        115,
+        90,
+        74,
+        82
+      ],
+      [
+        206,
+        173,
+        123,
+        132,
+        107,
+        99
+      ]
+    ]
+  },
+  {
+    "game": "sapphire",
+    "pair": "general__pacifidlog",
+    "mid": 655,
+    "sourceHash": "6466dea9689c3e5477a0cd819db4148f7d0bc7e00c57f26161d486216e35f585",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "9503245a0161a939de15c2414db2d336e761822fa6cff8136e4148f58f1f782e",
+      "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "over": "6466dea9689c3e5477a0cd819db4148f7d0bc7e00c57f26161d486216e35f585"
+    },
+    "kind": "geometry",
+    "feature": "seafloor_cavern_complete_deep_recess_and_entrance_lip",
+    "palette": [
+      [
+        189,
+        173,
+        156
+      ],
+      [
+        132,
+        107,
+        99
+      ],
+      [
+        90,
+        74,
+        82
+      ],
+      [
+        41,
+        33,
+        58
+      ]
+    ],
+    "colorMap": [
+      [
+        0,
+        0,
+        0,
+        41,
+        33,
+        58
+      ],
+      [
+        66,
+        41,
+        66,
+        41,
+        33,
+        58
+      ],
+      [
+        90,
+        74,
+        82,
+        41,
+        33,
+        58
+      ],
+      [
+        132,
+        107,
+        107,
+        90,
+        74,
+        82
+      ],
+      [
+        165,
+        140,
+        115,
+        90,
+        74,
+        82
+      ],
+      [
+        206,
+        173,
+        123,
+        132,
+        107,
+        99
+      ]
+    ]
+  },
+  {
+    "game": "emerald",
+    "pair": "general__pacifidlog",
+    "mid": 656,
+    "sourceHash": "49987869252d3b65cca0f8d6eaa062c8c4c48c8ceb82b6766c93ee5cc622e397",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "49987869252d3b65cca0f8d6eaa062c8c4c48c8ceb82b6766c93ee5cc622e397",
+      "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "ridge",
+    "plan": [
+      4,
+      2
+    ]
+  },
+  {
+    "game": "emerald",
+    "pair": "general__pacifidlog",
+    "mid": 658,
+    "sourceHash": "59e15520ae2e56c3fe6dbf51dbdfe941d3a87f1f45f7bc4d43ec8e98dbe0c221",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "59e15520ae2e56c3fe6dbf51dbdfe941d3a87f1f45f7bc4d43ec8e98dbe0c221",
+      "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "ridge",
+    "plan": [
+      6,
+      3
+    ]
+  },
+  {
+    "game": "ruby",
+    "pair": "general__pacifidlog",
+    "mid": 661,
+    "sourceHash": "0c62d1255c744fd200675b3789a46522a2b0dc9fb26a5d675c4efc9548a30fa3",
+    "sourceBehavior": 101,
+    "sourceLayers": {
+      "under": "0c62d1255c744fd200675b3789a46522a2b0dc9fb26a5d675c4efc9548a30fa3",
+      "mid": "0c62d1255c744fd200675b3789a46522a2b0dc9fb26a5d675c4efc9548a30fa3",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "floor"
+  },
+  {
+    "game": "sapphire",
+    "pair": "general__pacifidlog",
+    "mid": 661,
+    "sourceHash": "0c62d1255c744fd200675b3789a46522a2b0dc9fb26a5d675c4efc9548a30fa3",
+    "sourceBehavior": 101,
+    "sourceLayers": {
+      "under": "0c62d1255c744fd200675b3789a46522a2b0dc9fb26a5d675c4efc9548a30fa3",
+      "mid": "0c62d1255c744fd200675b3789a46522a2b0dc9fb26a5d675c4efc9548a30fa3",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "floor"
+  },
+  {
+    "game": "ruby",
+    "pair": "general__pacifidlog",
+    "mid": 663,
+    "sourceHash": "fe412566994d84e3300b9ce0c3ade8e7d063e5c9e0f8da40128d1ce2c08ae693",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "9503245a0161a939de15c2414db2d336e761822fa6cff8136e4148f58f1f782e",
+      "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "over": "fe412566994d84e3300b9ce0c3ade8e7d063e5c9e0f8da40128d1ce2c08ae693"
+    },
+    "kind": "ridge",
+    "plan": [
+      4,
+      0
+    ]
+  },
+  {
+    "game": "sapphire",
+    "pair": "general__pacifidlog",
+    "mid": 663,
+    "sourceHash": "fe412566994d84e3300b9ce0c3ade8e7d063e5c9e0f8da40128d1ce2c08ae693",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "9503245a0161a939de15c2414db2d336e761822fa6cff8136e4148f58f1f782e",
+      "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "over": "fe412566994d84e3300b9ce0c3ade8e7d063e5c9e0f8da40128d1ce2c08ae693"
+    },
+    "kind": "ridge",
+    "plan": [
+      4,
+      0
+    ]
+  },
+  {
+    "game": "emerald",
+    "pair": "general__pacifidlog",
+    "mid": 664,
+    "sourceHash": "d93799a30ddb1153ac254b4d9b0e30fdf295a77720a287902d4e6a35605bee31",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "d93799a30ddb1153ac254b4d9b0e30fdf295a77720a287902d4e6a35605bee31",
+      "mid": "d93799a30ddb1153ac254b4d9b0e30fdf295a77720a287902d4e6a35605bee31",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "floor"
+  },
+  {
+    "game": "emerald",
+    "pair": "general__pacifidlog",
+    "mid": 665,
+    "sourceHash": "ccf6ef868ba48d802fbe9588d838fcc2ce6379b08ed5a111862615e6b3ce5462",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "ccf6ef868ba48d802fbe9588d838fcc2ce6379b08ed5a111862615e6b3ce5462",
+      "mid": "ccf6ef868ba48d802fbe9588d838fcc2ce6379b08ed5a111862615e6b3ce5462",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "geometry",
+    "feature": "seafloor_cavern_complete_deep_recess_and_entrance_lip",
+    "palette": [
+      [
+        189,
+        173,
+        156
+      ],
+      [
+        132,
+        107,
+        99
+      ],
+      [
+        90,
+        74,
+        82
+      ],
+      [
+        41,
+        33,
+        58
+      ]
+    ],
+    "colorMap": [
+      [
+        66,
+        41,
+        66,
+        41,
+        33,
+        58
+      ],
+      [
+        90,
+        74,
+        82,
+        41,
+        33,
+        58
+      ],
+      [
+        132,
+        107,
+        107,
+        90,
+        74,
+        82
+      ],
+      [
+        165,
+        140,
+        115,
+        90,
+        74,
+        82
+      ],
+      [
+        206,
+        173,
+        123,
+        132,
+        107,
+        99
+      ],
+      [
+        230,
+        197,
+        140,
+        132,
+        107,
+        99
+      ],
+      [
+        255,
+        230,
+        156,
+        189,
+        173,
+        156
+      ]
+    ]
+  },
+  {
+    "game": "ruby",
+    "pair": "general__pacifidlog",
+    "mid": 666,
+    "sourceHash": "c91ab11d1b278338becefab10b7e25bcb92c766c1db3609e8d75b19896ab421f",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "c91ab11d1b278338becefab10b7e25bcb92c766c1db3609e8d75b19896ab421f",
+      "mid": "4f258307d0fe36ef39a667992ef113fafeb172e2a78c4419860cd5981be1adb3",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "floor"
+  },
+  {
+    "game": "sapphire",
+    "pair": "general__pacifidlog",
+    "mid": 666,
+    "sourceHash": "c91ab11d1b278338becefab10b7e25bcb92c766c1db3609e8d75b19896ab421f",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "c91ab11d1b278338becefab10b7e25bcb92c766c1db3609e8d75b19896ab421f",
+      "mid": "4f258307d0fe36ef39a667992ef113fafeb172e2a78c4419860cd5981be1adb3",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "floor"
+  },
+  {
+    "game": "emerald",
+    "pair": "general__pacifidlog",
+    "mid": 666,
+    "sourceHash": "3ae8450de23253f1ba416f73769138dbc8927c17554dbe505581009451e24691",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "3ae8450de23253f1ba416f73769138dbc8927c17554dbe505581009451e24691",
+      "mid": "3ae8450de23253f1ba416f73769138dbc8927c17554dbe505581009451e24691",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "floor"
+  },
+  {
+    "game": "ruby",
+    "pair": "general__pacifidlog",
+    "mid": 667,
+    "sourceHash": "7bcf7b2ac91f7934ac94e31aeda9669c552ef46e997c91ed81e2aebad8cf4be8",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "7bcf7b2ac91f7934ac94e31aeda9669c552ef46e997c91ed81e2aebad8cf4be8",
+      "mid": "a45fb6eec05d5dd47cf569ad37a1ddde2f97330331c1928311f4253b61abddfe",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "ridge",
+    "plan": [
+      4,
+      2
+    ]
+  },
+  {
+    "game": "sapphire",
+    "pair": "general__pacifidlog",
+    "mid": 667,
+    "sourceHash": "7bcf7b2ac91f7934ac94e31aeda9669c552ef46e997c91ed81e2aebad8cf4be8",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "7bcf7b2ac91f7934ac94e31aeda9669c552ef46e997c91ed81e2aebad8cf4be8",
+      "mid": "a45fb6eec05d5dd47cf569ad37a1ddde2f97330331c1928311f4253b61abddfe",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "ridge",
+    "plan": [
+      4,
+      2
+    ]
+  },
+  {
+    "game": "emerald",
+    "pair": "general__pacifidlog",
+    "mid": 668,
+    "sourceHash": "7800f33727ac6a282330cdf8a1770449b2c29b6f9f570788b70e9d76f72ee11b",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "7800f33727ac6a282330cdf8a1770449b2c29b6f9f570788b70e9d76f72ee11b",
+      "mid": "295ac78ee675c741cf3486f6e059b41cede2d55ce3ad9a7dd6ff98ea2e9544e6",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "ridge",
+    "plan": [
+      6,
+      3
+    ]
+  },
+  {
+    "game": "emerald",
+    "pair": "general__pacifidlog",
+    "mid": 709,
+    "sourceHash": "067edcbd91f8389e1ff6d6cb66b3765be7de2734c7d722e3a6ad0767fef09ce8",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "ec68d3123df4f5e023eed01ae132475c32a66718585d629d7c63ce95ff647b07",
+      "mid": "ec68d3123df4f5e023eed01ae132475c32a66718585d629d7c63ce95ff647b07",
+      "over": "295ac78ee675c741cf3486f6e059b41cede2d55ce3ad9a7dd6ff98ea2e9544e6"
+    },
+    "kind": "wet_rock",
+    "plan": [
+      4,
+      0
+    ],
+    "mask": "1000000000000000111110000000000011111110000000001111111110000000111111111100000011111111111000001111111111110000111111111111100011111111111110001111111111111100111111111111110011111111111111101111111111111110111111111111111111111111111111111111111111111111"
+  },
+  {
+    "game": "emerald",
+    "pair": "general__pacifidlog",
+    "mid": 627,
+    "sourceHash": "64a34a2474d292c48ec91b59982b3bf458dfc1bb73b1614abf350a450070312c",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "64a34a2474d292c48ec91b59982b3bf458dfc1bb73b1614abf350a450070312c",
+      "mid": "71e917e2cf169bd87419224b8c54176053d4b8f5de8f4766acc073ca694cc156",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "boulder",
+    "plan": 3
+  },
+  {
+    "game": "emerald",
+    "pair": "general__pacifidlog",
+    "mid": 628,
+    "sourceHash": "7b17c38e2325fd2cf03942a4c556b8d607e5fe1bd0010a73a08f2bdd4749a540",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "7b17c38e2325fd2cf03942a4c556b8d607e5fe1bd0010a73a08f2bdd4749a540",
+      "mid": "d2d5a9a3ee731ff7f4a0d3ccfaaf633ac31ef415dd0d211b80d7e7f9bc31bab8",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "boulder",
+    "plan": 1
+  },
+  {
+    "game": "emerald",
+    "pair": "general__pacifidlog",
+    "mid": 629,
+    "sourceHash": "ba11fedaf0c77b73679992dd2506ccad0f48dadbfac07a29f5c72ea209f74ffd",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "ba11fedaf0c77b73679992dd2506ccad0f48dadbfac07a29f5c72ea209f74ffd",
+      "mid": "172fbcfad32903696d743b7dd730d88f7647dec9d464a4ef120082f7647a8359",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "wet_rock",
+    "plan": [
+      6,
+      1
+    ],
+    "mask": "0000000000000001000000000001111100000000011111110000000111111111000000111111111100000111111111110000111111111111000111111111111100011111111111110011111111111111001111111111111100111111111111110111111111111111011111111111111111111111111111111111111111111111"
+  },
+  {
+    "game": "emerald",
+    "pair": "general__pacifidlog",
+    "mid": 631,
+    "sourceHash": "067edcbd91f8389e1ff6d6cb66b3765be7de2734c7d722e3a6ad0767fef09ce8",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "067edcbd91f8389e1ff6d6cb66b3765be7de2734c7d722e3a6ad0767fef09ce8",
+      "mid": "295ac78ee675c741cf3486f6e059b41cede2d55ce3ad9a7dd6ff98ea2e9544e6",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "wet_rock",
+    "plan": [
+      4,
+      0
+    ],
+    "mask": "1000000000000000111110000000000011111110000000001111111110000000111111111100000011111111111000001111111111110000111111111111100011111111111110001111111111111100111111111111110011111111111111101111111111111110111111111111111111111111111111111111111111111111"
+  },
+  {
+    "game": "emerald",
+    "pair": "general__pacifidlog",
+    "mid": 637,
+    "sourceHash": "2251c2281f966ea53d3b161a981cd05750af68b48007ff8077342758ad826fe9",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "2251c2281f966ea53d3b161a981cd05750af68b48007ff8077342758ad826fe9",
+      "mid": "b3e6266fa1e98b0f679d45b61ea194d4a47db02519270deef873aba88873ac86",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "wet_rock",
+    "plan": [
+      6,
+      1
+    ],
+    "mask": "1111111111111111111111111111111101111111111111110011111111111111000111111111111100011111111111110001111111111111000111111111111100111111111111110111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111"
+  },
+  {
+    "game": "emerald",
+    "pair": "general__pacifidlog",
+    "mid": 639,
+    "sourceHash": "16494656ddedc1baceea4174aba932554fb547d7b198b242fd2c801a37291ca6",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "16494656ddedc1baceea4174aba932554fb547d7b198b242fd2c801a37291ca6",
+      "mid": "5431cb0c2c80ec5ef8bbb4c67feafd5b8b88e603ce8db66f5fd7487c4f737e46",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "wet_rock",
+    "plan": [
+      4,
+      0
+    ],
+    "mask": "1111111111111111111111111111111111111111111111111111111111111110111111111111100011111111111110001111111111111000111111111111110011111111111111101111111111111110111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111"
+  },
+  {
+    "game": "emerald",
+    "pair": "general__pacifidlog",
+    "mid": 645,
+    "sourceHash": "fc0f615d37cf2b2cce6f2d8ac936930d6544ccde90aa896fbd41ad08eefc33bb",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "fc0f615d37cf2b2cce6f2d8ac936930d6544ccde90aa896fbd41ad08eefc33bb",
+      "mid": "3d861302436756ff325e6bb2f66ae3060419d507a8a63995a2f3a3358fa4c213",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "wet_rock",
+    "plan": [
+      4,
+      2
+    ],
+    "mask": "0111111111111111011111111111111100111111111111110011111111111111011111111111111101111111111111110111111111111111011111111111111101111111111111110111111111111111011111111111111100111111111111110011111111111111000111001111111100000000001111110000000000000000"
+  },
+  {
+    "game": "emerald",
+    "pair": "general__pacifidlog",
+    "mid": 647,
+    "sourceHash": "712e85a49c11d29ded2ef7e52ed9f804001d1c4b6058a0acb15ee2b7700c36e6",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "712e85a49c11d29ded2ef7e52ed9f804001d1c4b6058a0acb15ee2b7700c36e6",
+      "mid": "9154bd61202515b41157f5e65849cef8c485997b9b172c32d44c8622c750aeac",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "wet_rock",
+    "plan": [
+      6,
+      3
+    ],
+    "mask": "1111111111111110111111111111110011111111111111001111111111111000111111111111000011111111111110001111111111111000111111111111110011111111111111001111111111111100111111111111110011111111111110001111111111110000111111100000000001111100000000000011100000000000"
+  },
+  {
+    "game": "emerald",
+    "pair": "general__pacifidlog",
+    "mid": 655,
+    "sourceHash": "547eae594510b312d61ad0f118da2914e89c567abe0ae5843e2a5b638a56021e",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "9503245a0161a939de15c2414db2d336e761822fa6cff8136e4148f58f1f782e",
+      "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "over": "547eae594510b312d61ad0f118da2914e89c567abe0ae5843e2a5b638a56021e"
+    },
+    "kind": "geometry",
+    "feature": "seafloor_cavern_complete_deep_recess_and_entrance_lip",
+    "palette": [
+      [
+        189,
+        173,
+        156
+      ],
+      [
+        132,
+        107,
+        99
+      ],
+      [
+        90,
+        74,
+        82
+      ],
+      [
+        41,
+        33,
+        58
+      ]
+    ],
+    "colorMap": [
+      [
+        0,
+        0,
+        0,
+        41,
+        33,
+        58
+      ],
+      [
+        66,
+        41,
+        66,
+        41,
+        33,
+        58
+      ],
+      [
+        90,
+        74,
+        82,
+        41,
+        33,
+        58
+      ],
+      [
+        132,
+        107,
+        107,
+        90,
+        74,
+        82
+      ],
+      [
+        165,
+        140,
+        115,
+        90,
+        74,
+        82
+      ]
+    ]
+  },
+  {
+    "game": "emerald",
+    "pair": "general__pacifidlog",
+    "mid": 661,
+    "sourceHash": "d32b0f5ff4123c3a60596919e33175bdc41c366ea1e21193c29fb31d65fe2c06",
+    "sourceBehavior": 101,
+    "sourceLayers": {
+      "under": "d32b0f5ff4123c3a60596919e33175bdc41c366ea1e21193c29fb31d65fe2c06",
+      "mid": "d32b0f5ff4123c3a60596919e33175bdc41c366ea1e21193c29fb31d65fe2c06",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "floor"
+  },
+  {
+    "game": "emerald",
+    "pair": "general__pacifidlog",
+    "mid": 663,
+    "sourceHash": "02a59e7d95943deb8da2818a1412ddc9661ad0b288803b7ca45527c09c29d3ba",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "9503245a0161a939de15c2414db2d336e761822fa6cff8136e4148f58f1f782e",
+      "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "over": "02a59e7d95943deb8da2818a1412ddc9661ad0b288803b7ca45527c09c29d3ba"
+    },
+    "kind": "ridge",
+    "plan": [
+      4,
+      0
+    ]
+  },
+  {
+    "game": "emerald",
+    "pair": "general__pacifidlog",
+    "mid": 667,
+    "sourceHash": "10c526b04a202623217a7798100a58138ac5fc86d0cea9d5942f6cafac7959b8",
+    "sourceBehavior": 0,
+    "sourceLayers": {
+      "under": "10c526b04a202623217a7798100a58138ac5fc86d0cea9d5942f6cafac7959b8",
+      "mid": "172fbcfad32903696d743b7dd730d88f7647dec9d464a4ef120082f7647a8359",
+      "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    "kind": "ridge",
+    "plan": [
+      4,
+      2
+    ]
+  }
+]
