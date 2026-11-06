@@ -1,0 +1,1327 @@
+{
+  "items": [
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 806,
+      "source": "13bebc248f11277878566d83aa03fa863811f67b021a481e834242d2cda1ff89",
+      "layers": {
+        "under": "13bebc248f11277878566d83aa03fa863811f67b021a481e834242d2cda1ff89",
+        "mid": "13bebc248f11277878566d83aa03fa863811f67b021a481e834242d2cda1ff89",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "RU_CAVE_OF_ORIGIN_B4F",
+          "alt_313",
+          313,
+          "g3:0815ddc5",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 807,
+      "source": "9e6505e43ce6e8db4c9d7eb5ef1f1604859ae2a03bc21d20e3ce19a68612fae4",
+      "layers": {
+        "under": "9e6505e43ce6e8db4c9d7eb5ef1f1604859ae2a03bc21d20e3ce19a68612fae4",
+        "mid": "9e6505e43ce6e8db4c9d7eb5ef1f1604859ae2a03bc21d20e3ce19a68612fae4",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "RU_CAVE_OF_ORIGIN_B4F",
+          "alt_313",
+          313,
+          "g3:0815ddc5",
+          0
+        ]
+      ],
+      "placement_count": 2
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 840,
+      "source": "e11738de1fb9c2ae904072eca47d337ca2581581c07db66f90c963ebc6e57bb5",
+      "layers": {
+        "under": "e11738de1fb9c2ae904072eca47d337ca2581581c07db66f90c963ebc6e57bb5",
+        "mid": "e11738de1fb9c2ae904072eca47d337ca2581581c07db66f90c963ebc6e57bb5",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "RU_CAVE_OF_ORIGIN_B4F",
+          "alt_313",
+          313,
+          "g3:0815ddc5",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 841,
+      "source": "f2ae5896636790a807247da0445913617b3957eff3b123c49ce41f1d4335c47a",
+      "layers": {
+        "under": "f2ae5896636790a807247da0445913617b3957eff3b123c49ce41f1d4335c47a",
+        "mid": "f2ae5896636790a807247da0445913617b3957eff3b123c49ce41f1d4335c47a",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "RU_CAVE_OF_ORIGIN_B4F",
+          "alt_313",
+          313,
+          "g3:0815ddc5",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 846,
+      "source": "2b9f565587bfd7d755e8ef1367328b36c1db8154c75f67961d50e6192f4700de",
+      "layers": {
+        "under": "2b9f565587bfd7d755e8ef1367328b36c1db8154c75f67961d50e6192f4700de",
+        "mid": "2b9f565587bfd7d755e8ef1367328b36c1db8154c75f67961d50e6192f4700de",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "RU_CAVE_OF_ORIGIN_B4F",
+          "alt_313",
+          313,
+          "g3:0815ddc5",
+          0
+        ]
+      ],
+      "placement_count": 2
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 847,
+      "source": "30bec51d3b1db05b71457dc55c600aea46786057eb587613067790e8100367c5",
+      "layers": {
+        "under": "30bec51d3b1db05b71457dc55c600aea46786057eb587613067790e8100367c5",
+        "mid": "30bec51d3b1db05b71457dc55c600aea46786057eb587613067790e8100367c5",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "RU_CAVE_OF_ORIGIN_B4F",
+          "alt_313",
+          313,
+          "g3:0815ddc5",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 863,
+      "source": "15cf46ce345d78f37cc6974a51a62014f78aa395534c9eb59898ede74c28e70b",
+      "layers": {
+        "under": "15cf46ce345d78f37cc6974a51a62014f78aa395534c9eb59898ede74c28e70b",
+        "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "RU_CAVE_OF_ORIGIN_B4F",
+          "alt_313",
+          313,
+          "g3:0815ddc5",
+          0
+        ],
+        [
+          "RU_SEAFLOOR_CAVERN_ROOM9",
+          "alt_327",
+          327,
+          "g3:0815daec",
+          2
+        ]
+      ],
+      "placement_count": 33
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 864,
+      "source": "d74d74b02db5b3977d6c75bd685f9d45cd5e44a2023ff77532b12d694aebfa74",
+      "layers": {
+        "under": "d74d74b02db5b3977d6c75bd685f9d45cd5e44a2023ff77532b12d694aebfa74",
+        "mid": "c3cec6f88633665fc1e66b916d4903a6979e4ae0937de007aa3b09065cf8c4f2",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "RU_SEAFLOOR_CAVERN_ROOM9",
+          "alt_327",
+          327,
+          "g3:0815daec",
+          2
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 865,
+      "source": "5020cbb6558efdbb0b0e059ca745ca260446f931832bb185a6e973eaf2444a34",
+      "layers": {
+        "under": "5020cbb6558efdbb0b0e059ca745ca260446f931832bb185a6e973eaf2444a34",
+        "mid": "22f079bb9fbe6fa8d2477c2ce30a8b38640351ca25f32840e744ba0537dfbc53",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 8,
+      "scripts": [
+        [
+          "RU_SEAFLOOR_CAVERN_ROOM9",
+          "alt_327",
+          327,
+          "g3:0815daec",
+          2
+        ]
+      ],
+      "placement_count": 7
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 866,
+      "source": "ed36fca6257e14aa8b4aeb6eec8a37202529f3d13a5a97705f5f45f8092b0b82",
+      "layers": {
+        "under": "ed36fca6257e14aa8b4aeb6eec8a37202529f3d13a5a97705f5f45f8092b0b82",
+        "mid": "ff82ee0ee736c05409803520d07b8be5b3735323bb19c8d5cb2887fa7efcf0b8",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "RU_SEAFLOOR_CAVERN_ROOM9",
+          "alt_327",
+          327,
+          "g3:0815daec",
+          2
+        ]
+      ],
+      "placement_count": 2
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 868,
+      "source": "4412f7b193005d5814a03f27182f8279b02277c6f4fb74c066b9cd859da6f7c6",
+      "layers": {
+        "under": "4412f7b193005d5814a03f27182f8279b02277c6f4fb74c066b9cd859da6f7c6",
+        "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 8,
+      "scripts": [
+        [
+          "RU_CAVE_OF_ORIGIN_B4F",
+          "alt_313",
+          313,
+          "g3:0815ddc5",
+          0
+        ],
+        [
+          "RU_SEAFLOOR_CAVERN_ROOM9",
+          "alt_327",
+          327,
+          "g3:0815daec",
+          2
+        ]
+      ],
+      "placement_count": 36
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 869,
+      "source": "2df63eb13e140ae434af9167e543950f7814458730b6684c2156c9b96aacf345",
+      "layers": {
+        "under": "2df63eb13e140ae434af9167e543950f7814458730b6684c2156c9b96aacf345",
+        "mid": "fa9f044cbb53a16a21e79fa02c5236d4399978f02ee5ef6a59dfef02d622f478",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 21,
+      "scripts": [
+        [
+          "RU_SEAFLOOR_CAVERN_ROOM9",
+          "alt_327",
+          327,
+          "g3:0815daec",
+          2
+        ]
+      ],
+      "placement_count": 4
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 870,
+      "source": "26bdc43f529aa91dcd39d11a6c09394b448f40c8d6752c65436857de727bc83c",
+      "layers": {
+        "under": "26bdc43f529aa91dcd39d11a6c09394b448f40c8d6752c65436857de727bc83c",
+        "mid": "7d8c7b3e5aa8ed55bc903200129b62efdfbf48c2c28d8508e27807db352094af",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 21,
+      "scripts": [
+        [
+          "RU_SEAFLOOR_CAVERN_ROOM9",
+          "alt_327",
+          327,
+          "g3:0815daec",
+          2
+        ]
+      ],
+      "placement_count": 4
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 871,
+      "source": "ed7d4fd7a2e54182ec72495ba0a7784c60b856c844b19feebfe2c50ee7c88491",
+      "layers": {
+        "under": "ed7d4fd7a2e54182ec72495ba0a7784c60b856c844b19feebfe2c50ee7c88491",
+        "mid": "697f09262384389a7d16492a03f4e304838b3545f8e21a00fbf3d169360d2de1",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 21,
+      "scripts": [
+        [
+          "RU_SEAFLOOR_CAVERN_ROOM9",
+          "alt_327",
+          327,
+          "g3:0815daec",
+          2
+        ]
+      ],
+      "placement_count": 3
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 872,
+      "source": "7a3d8abd323e9aba460e93cff61bfb51ac3c2b1bea6e35494ee162c12b961c72",
+      "layers": {
+        "under": "7a3d8abd323e9aba460e93cff61bfb51ac3c2b1bea6e35494ee162c12b961c72",
+        "mid": "5b71d060e340eb0170f98eef295a3ab6792ddab114041dffac6cc0f0b6f9a44d",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "RU_CAVE_OF_ORIGIN_B4F",
+          "alt_313",
+          313,
+          "g3:0815ddc5",
+          0
+        ]
+      ],
+      "placement_count": 2
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 873,
+      "source": "c08e5a15bd2c3d326dae937b4a2ddc323d82c62c4c23238319ff9204d0711390",
+      "layers": {
+        "under": "c08e5a15bd2c3d326dae937b4a2ddc323d82c62c4c23238319ff9204d0711390",
+        "mid": "e0a6715989d6652b242058a45efbd9ece89d37a5d34c253a7abb303dc1ecdd95",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 8,
+      "scripts": [
+        [
+          "RU_CAVE_OF_ORIGIN_B4F",
+          "alt_313",
+          313,
+          "g3:0815ddc5",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 874,
+      "source": "bc068a73275d8b70f8c7ada6181b59ba8874dec6012106e97c1e02cbad720d7c",
+      "layers": {
+        "under": "bc068a73275d8b70f8c7ada6181b59ba8874dec6012106e97c1e02cbad720d7c",
+        "mid": "316e452aa246eaa38c11c4dbf1fea592cce08229a7a30bf9cb35d9a5b10cf7fd",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "RU_CAVE_OF_ORIGIN_B4F",
+          "alt_313",
+          313,
+          "g3:0815ddc5",
+          0
+        ]
+      ],
+      "placement_count": 2
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 875,
+      "source": "3f7156721b79fe500d488a83e3a1d50c21c3372f654e6f2852212bc4eef10f91",
+      "layers": {
+        "under": "3f7156721b79fe500d488a83e3a1d50c21c3372f654e6f2852212bc4eef10f91",
+        "mid": "c7a5c337595f47535525a90de4d4c74e97479f8192cb7f81ffaf5516112260ec",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "RU_CAVE_OF_ORIGIN_B4F",
+          "alt_313",
+          313,
+          "g3:0815ddc5",
+          0
+        ]
+      ],
+      "placement_count": 2
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 876,
+      "source": "9b230b11979f813ed046bb3213fe7744a7559e82e187b704e913d24ae764f5e8",
+      "layers": {
+        "under": "9b230b11979f813ed046bb3213fe7744a7559e82e187b704e913d24ae764f5e8",
+        "mid": "306af5e6000673df8795110d7f5661358183b2f37b44a1dd80d2636d8277be0d",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 8,
+      "scripts": [
+        [
+          "RU_CAVE_OF_ORIGIN_B4F",
+          "alt_313",
+          313,
+          "g3:0815ddc5",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 877,
+      "source": "d16b294ec2dd5a0cd99777f3d8441322abb6acc66127528be36e03620867d99e",
+      "layers": {
+        "under": "d16b294ec2dd5a0cd99777f3d8441322abb6acc66127528be36e03620867d99e",
+        "mid": "438948c6cd05cb3629a9269b0c6538fd7f848c2a25ac16bc1eff4584fda4422e",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "RU_CAVE_OF_ORIGIN_B4F",
+          "alt_313",
+          313,
+          "g3:0815ddc5",
+          0
+        ]
+      ],
+      "placement_count": 2
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 878,
+      "source": "b5635f9a82b42112b7c5f0c191281d32c1ea9f77d0bd3a037923cc3ce6e00536",
+      "layers": {
+        "under": "b5635f9a82b42112b7c5f0c191281d32c1ea9f77d0bd3a037923cc3ce6e00536",
+        "mid": "575aa9b9744b9c723ae4f7e11ee6f1ad12356a0cf462fd1910ca297ddf955795",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "RU_CAVE_OF_ORIGIN_B4F",
+          "alt_313",
+          313,
+          "g3:0815ddc5",
+          0
+        ]
+      ],
+      "placement_count": 2
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 879,
+      "source": "df5e76c73e4e0ecdd51cbee2b7f115db1b5ddb84f0d546c22d0a085de9d11815",
+      "layers": {
+        "under": "df5e76c73e4e0ecdd51cbee2b7f115db1b5ddb84f0d546c22d0a085de9d11815",
+        "mid": "04dabb09d6b773b249ee7b2eec0f9bc0b38d971988f6965cf98df1b59bbd15f0",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "RU_CAVE_OF_ORIGIN_B4F",
+          "alt_313",
+          313,
+          "g3:0815ddc5",
+          0
+        ]
+      ],
+      "placement_count": 2
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 880,
+      "source": "22d0824f6c5cdb4ad5a95e20639f9da3c3c5e7ce4e2dc7b0aba2edf8ae373af6",
+      "layers": {
+        "under": "22d0824f6c5cdb4ad5a95e20639f9da3c3c5e7ce4e2dc7b0aba2edf8ae373af6",
+        "mid": "5a69989beb01da4722fa05fefeb7ae464442af19100302e907aab51a742306a3",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 21,
+      "scripts": [
+        [
+          "RU_SEAFLOOR_CAVERN_ROOM9",
+          "alt_327",
+          327,
+          "g3:0815daec",
+          2
+        ]
+      ],
+      "placement_count": 5
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 881,
+      "source": "9468af0a9e43fea99ca2fe336aeba7d9a07bf07cf7e6e3737a7031c957203c15",
+      "layers": {
+        "under": "9468af0a9e43fea99ca2fe336aeba7d9a07bf07cf7e6e3737a7031c957203c15",
+        "mid": "2f50579ac6fbc0e2cb4037f828b5d068152f0e97d1aecfd119d1f8a57a535bd0",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 21,
+      "scripts": [
+        [
+          "RU_SEAFLOOR_CAVERN_ROOM9",
+          "alt_327",
+          327,
+          "g3:0815daec",
+          2
+        ]
+      ],
+      "placement_count": 3
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 882,
+      "source": "4e6058d8c54f09de8723475c479b9cf4073c77f739b24028d6f7bde7cc205f62",
+      "layers": {
+        "under": "4e6058d8c54f09de8723475c479b9cf4073c77f739b24028d6f7bde7cc205f62",
+        "mid": "eeee098403677892e974d1c41438eb43c984ddc76a2400da4e7b2f01b489b20b",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 21,
+      "scripts": [
+        [
+          "RU_SEAFLOOR_CAVERN_ROOM9",
+          "alt_327",
+          327,
+          "g3:0815daec",
+          2
+        ]
+      ],
+      "placement_count": 2
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 883,
+      "source": "cf85f390385c35ed843bab5f89fd12619313181f1668106e521d3af40a570011",
+      "layers": {
+        "under": "cf85f390385c35ed843bab5f89fd12619313181f1668106e521d3af40a570011",
+        "mid": "681480c24fe699f96dce15be5f6ad7ad3cf90c444293789068e50f06c1d32747",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 21,
+      "scripts": [
+        [
+          "RU_SEAFLOOR_CAVERN_ROOM9",
+          "alt_327",
+          327,
+          "g3:0815daec",
+          2
+        ]
+      ],
+      "placement_count": 3
+    }
+  ],
+  "proof": {
+    "layouts": {
+      "ruby/RU_CAVE_OF_ORIGIN_B4F/alt_313": {
+        "base": "46ef986f846745c55f18939c9e8f43bded1436a9a482224910b0e99530f31d20",
+        "alternate": "1d22db998214115b1e61155e0c79176c1413fcd00bca97950aa68bd476171276",
+        "size": [
+          19,
+          19
+        ]
+      },
+      "ruby/RU_SEAFLOOR_CAVERN_ROOM9/alt_327": {
+        "base": "1381441fb3bd132f1a321b52f6b5f9940f0c41e8a5732925beb8db62f18583b8",
+        "alternate": "3cf5c46168c011955008a13dfbdd3867cb50fba8d348852c9c6f69699cfe157e",
+        "size": [
+          27,
+          46
+        ]
+      }
+    },
+    "anchors": {},
+    "rows": [
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 806,
+        "output": [
+          "fe1c730381d4d830a59f50436711830cc2e69a402f14d5a609af6d6b57ff46e1"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 807,
+        "output": [
+          "634ea1dba66bdd7727e3abb89ade7420516d0722da298eab69c01193e1138f97"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 840,
+        "output": [
+          "70303af19780061bdd4a4f448fc1f89c01a801a0f62eb165b8780e3d5032688f"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 841,
+        "output": [
+          "043fe1c5920ad06e5fc58147a81d05d6e27e9d0917316f3003720ea0c3cb9c73"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 846,
+        "output": [
+          "b8a9f1d35ce93114afb0a679eea08c7aafded01965cdeebe85fd92e8718ce60c"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 847,
+        "output": [
+          "5872b1b507f6b693cc75b2c71b600f636f786132afeb3fc51fde973d5b1359e2"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 863,
+        "output": [
+          "0b1d1582be1d868a8d8f8e1a95d9ad1e1bcb357a7114f910de1cafb2027300d4",
+          "0b1d1582be1d868a8d8f8e1a95d9ad1e1bcb357a7114f910de1cafb2027300d4",
+          "f1205ec8b7f4bd044d8d39c73ab4b4b0ea6253717368272961121e02df91fbdd",
+          "f1205ec8b7f4bd044d8d39c73ab4b4b0ea6253717368272961121e02df91fbdd",
+          "fe24169d48742d3d6017f9c889bd3e292a103dc65ac7997772cb55f674b1cdd8",
+          "fe24169d48742d3d6017f9c889bd3e292a103dc65ac7997772cb55f674b1cdd8",
+          "0cdb6b2e25a9a5dc6d9176830fe9618a63b9be2ebbbcaab5b09d90b16c39b776",
+          "0cdb6b2e25a9a5dc6d9176830fe9618a63b9be2ebbbcaab5b09d90b16c39b776"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 864,
+        "output": [
+          "7aae2a8ad6bc10c15fdbb0f406960eb5a96ab8f82bdc21a62ab11db662728891",
+          "7aae2a8ad6bc10c15fdbb0f406960eb5a96ab8f82bdc21a62ab11db662728891",
+          "7e37363a776b808573005a4f887523e312831462f88351438047a47d64deea48",
+          "7e37363a776b808573005a4f887523e312831462f88351438047a47d64deea48",
+          "9ccd04455b2b1b0e08b61e22832c0a7cc7f21ce31007713732a20ee39c932cb5",
+          "9ccd04455b2b1b0e08b61e22832c0a7cc7f21ce31007713732a20ee39c932cb5",
+          "2566b0159d12418791f13ffcac7ba1fbc7a3da1e1a3d40f9a067f0723b4ad29f",
+          "2566b0159d12418791f13ffcac7ba1fbc7a3da1e1a3d40f9a067f0723b4ad29f"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 865,
+        "output": [
+          "6f503e2341a15b914417beed20cb0caa8212c850a68dcc46d7432f1f52a30c96",
+          "6f503e2341a15b914417beed20cb0caa8212c850a68dcc46d7432f1f52a30c96",
+          "63fad1fd74bdbd926711b7046c2d294543116b21fd671134deb487317d7681dd",
+          "63fad1fd74bdbd926711b7046c2d294543116b21fd671134deb487317d7681dd",
+          "6f503e2341a15b914417beed20cb0caa8212c850a68dcc46d7432f1f52a30c96",
+          "6f503e2341a15b914417beed20cb0caa8212c850a68dcc46d7432f1f52a30c96",
+          "6f503e2341a15b914417beed20cb0caa8212c850a68dcc46d7432f1f52a30c96",
+          "6f503e2341a15b914417beed20cb0caa8212c850a68dcc46d7432f1f52a30c96"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 866,
+        "output": [
+          "506bc03fe3667543156f5741c456b92fda180575f9352e02005b3d0b4e2c51a6",
+          "506bc03fe3667543156f5741c456b92fda180575f9352e02005b3d0b4e2c51a6",
+          "7976cae990fe1cdfdbb1d39f1dd3823ec375bd9fd13ab161486d5d3021221e51",
+          "7976cae990fe1cdfdbb1d39f1dd3823ec375bd9fd13ab161486d5d3021221e51",
+          "3a7f25171d12b609d8c06f975255bcb947daad6729ad5cd711640210acc9cac5",
+          "3a7f25171d12b609d8c06f975255bcb947daad6729ad5cd711640210acc9cac5",
+          "03641b57501b8dcfb01283a936bcc48269cbbba3f369d237c1cf4cff3339da6c",
+          "03641b57501b8dcfb01283a936bcc48269cbbba3f369d237c1cf4cff3339da6c"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 868,
+        "output": [
+          "0b1d1582be1d868a8d8f8e1a95d9ad1e1bcb357a7114f910de1cafb2027300d4",
+          "0b1d1582be1d868a8d8f8e1a95d9ad1e1bcb357a7114f910de1cafb2027300d4",
+          "f1205ec8b7f4bd044d8d39c73ab4b4b0ea6253717368272961121e02df91fbdd",
+          "f1205ec8b7f4bd044d8d39c73ab4b4b0ea6253717368272961121e02df91fbdd",
+          "fe24169d48742d3d6017f9c889bd3e292a103dc65ac7997772cb55f674b1cdd8",
+          "fe24169d48742d3d6017f9c889bd3e292a103dc65ac7997772cb55f674b1cdd8",
+          "0cdb6b2e25a9a5dc6d9176830fe9618a63b9be2ebbbcaab5b09d90b16c39b776",
+          "0cdb6b2e25a9a5dc6d9176830fe9618a63b9be2ebbbcaab5b09d90b16c39b776"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 869,
+        "output": [
+          "f20bd41cd5541e6c0a237ae0e3dce7bff32eeef51461997e9d7c74d9da81f895",
+          "f20bd41cd5541e6c0a237ae0e3dce7bff32eeef51461997e9d7c74d9da81f895",
+          "798ce7bd85c3936056b92621baa717d45dc4227d14cb0e3f529c04de489bee8e",
+          "798ce7bd85c3936056b92621baa717d45dc4227d14cb0e3f529c04de489bee8e",
+          "0e3cc301f665e6758d8927b46b771ee338d133ce86997a44857b5c47baa9065d",
+          "0e3cc301f665e6758d8927b46b771ee338d133ce86997a44857b5c47baa9065d",
+          "d92cb84419921c6defebb13d2fa4da1a0aee0fa99c7878fe387ac34e74023791",
+          "d92cb84419921c6defebb13d2fa4da1a0aee0fa99c7878fe387ac34e74023791"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 870,
+        "output": [
+          "db4471b4ef83232d14f71c1f9aaeaca8110aadbd77bd17e9324ed578c9cf7832",
+          "db4471b4ef83232d14f71c1f9aaeaca8110aadbd77bd17e9324ed578c9cf7832",
+          "1bd3e28eca09a4ad2b2cb41784f5ebe4a4429771b96d3be6a0379eb1e3fbf69f",
+          "1bd3e28eca09a4ad2b2cb41784f5ebe4a4429771b96d3be6a0379eb1e3fbf69f",
+          "0a1b89cd2180ff4c1d90fec06446878790bdd4fd83dd7fa299229c808ae73f81",
+          "0a1b89cd2180ff4c1d90fec06446878790bdd4fd83dd7fa299229c808ae73f81",
+          "a42fa2bc8b40ee0b52565ff9f72d79fccc3107492d1d05e46be858c85d578078",
+          "a42fa2bc8b40ee0b52565ff9f72d79fccc3107492d1d05e46be858c85d578078"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 871,
+        "output": [
+          "79955ded5c21b5e4bd00f9a96012d507fa7237ca5acfa481d8ccdca1784250ab",
+          "79955ded5c21b5e4bd00f9a96012d507fa7237ca5acfa481d8ccdca1784250ab",
+          "b9030a2024be5edd02ce8f014cddacfb67d5ad6dc22775992ece0cde62b23058",
+          "b9030a2024be5edd02ce8f014cddacfb67d5ad6dc22775992ece0cde62b23058",
+          "c1acf44f0446a9f958f5fcabbed8e306ead015e079da72582dfb43d48b2fe23b",
+          "c1acf44f0446a9f958f5fcabbed8e306ead015e079da72582dfb43d48b2fe23b",
+          "e080fcae6d4a776ee222ca2cdb8fda7a1241f91cae5c071042ef790a3a766ed4",
+          "e080fcae6d4a776ee222ca2cdb8fda7a1241f91cae5c071042ef790a3a766ed4"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 872,
+        "output": [
+          "23c3b9785e7018dcea996b0249efc352867254c05f656dee1732fbcc052ebdcf",
+          "23c3b9785e7018dcea996b0249efc352867254c05f656dee1732fbcc052ebdcf",
+          "028b4afc5aa43a386c7aaec89fba959a7d7e8aa10862f3dd1ad725d24ba39a60",
+          "028b4afc5aa43a386c7aaec89fba959a7d7e8aa10862f3dd1ad725d24ba39a60",
+          "57c3940924dccb2a7a88b460eb49188871285541beefa8680959024ce7a745a2",
+          "57c3940924dccb2a7a88b460eb49188871285541beefa8680959024ce7a745a2",
+          "60f9d64aefe66656f57c6fe31e6a5daf261f99d4da9bc62162db7621e5e5d706",
+          "60f9d64aefe66656f57c6fe31e6a5daf261f99d4da9bc62162db7621e5e5d706"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 873,
+        "output": [
+          "6f503e2341a15b914417beed20cb0caa8212c850a68dcc46d7432f1f52a30c96",
+          "6f503e2341a15b914417beed20cb0caa8212c850a68dcc46d7432f1f52a30c96",
+          "63fad1fd74bdbd926711b7046c2d294543116b21fd671134deb487317d7681dd",
+          "63fad1fd74bdbd926711b7046c2d294543116b21fd671134deb487317d7681dd",
+          "6f503e2341a15b914417beed20cb0caa8212c850a68dcc46d7432f1f52a30c96",
+          "6f503e2341a15b914417beed20cb0caa8212c850a68dcc46d7432f1f52a30c96",
+          "6f503e2341a15b914417beed20cb0caa8212c850a68dcc46d7432f1f52a30c96",
+          "6f503e2341a15b914417beed20cb0caa8212c850a68dcc46d7432f1f52a30c96"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 874,
+        "output": [
+          "0acf95e1d00ad83e1e1fe54677e75c77d1c404b70a0cb442d1f6e9d93fdd6eff",
+          "0acf95e1d00ad83e1e1fe54677e75c77d1c404b70a0cb442d1f6e9d93fdd6eff",
+          "613aa1cbfb4fd1d7fc9d615abdcd00b69d33dd05eafbeccb8df9f90a6e439018",
+          "613aa1cbfb4fd1d7fc9d615abdcd00b69d33dd05eafbeccb8df9f90a6e439018",
+          "aa750b97f22e9a6d41b112aeb574c77095b36c175603607f65013764775b98b7",
+          "aa750b97f22e9a6d41b112aeb574c77095b36c175603607f65013764775b98b7",
+          "eb18aea384579466ee4f36435c28231afb355f497cd411e5b017a8fd8b57a934",
+          "eb18aea384579466ee4f36435c28231afb355f497cd411e5b017a8fd8b57a934"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 875,
+        "output": [
+          "7394faa7b7c14ddca92aae58e2102e5940c733912c542874017f890a184c3fb6",
+          "7394faa7b7c14ddca92aae58e2102e5940c733912c542874017f890a184c3fb6",
+          "a41fa97c561f927ed81feb4e272d9a11a82a992703464d67f016145b8a7444b1",
+          "a41fa97c561f927ed81feb4e272d9a11a82a992703464d67f016145b8a7444b1",
+          "0b59f9f98ff6620eb42c6383536a833c098b41d3dab55d984f8824216a77a8ea",
+          "0b59f9f98ff6620eb42c6383536a833c098b41d3dab55d984f8824216a77a8ea",
+          "baf339f72edfafb486892070a4d9be0d64d65181128e60f14f32cdee6cfef717",
+          "baf339f72edfafb486892070a4d9be0d64d65181128e60f14f32cdee6cfef717"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 876,
+        "output": [
+          "73ca691bf45c0f812c684e4bc238db8c72d7a2e7c0000acab08615e52ada9341",
+          "73ca691bf45c0f812c684e4bc238db8c72d7a2e7c0000acab08615e52ada9341",
+          "a710edc3af7a3c94218f6ab7dedfe0d25bf385f0064ff84cf8b3bccb1f150cc9",
+          "a710edc3af7a3c94218f6ab7dedfe0d25bf385f0064ff84cf8b3bccb1f150cc9",
+          "cd62b3021ec30c951f54bea2842e323ac55fba3924c1198cffe5d376eaafb52c",
+          "cd62b3021ec30c951f54bea2842e323ac55fba3924c1198cffe5d376eaafb52c",
+          "02eca736f19bfee04b3be22456145e1b579e2409e828a8a270423831f6665999",
+          "02eca736f19bfee04b3be22456145e1b579e2409e828a8a270423831f6665999"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 877,
+        "output": [
+          "1bb3db7e709aacd696fd53bc2816e11e4c3c17a0b10d81bfacd0ca9aefee2a6d",
+          "1bb3db7e709aacd696fd53bc2816e11e4c3c17a0b10d81bfacd0ca9aefee2a6d",
+          "43662a2d22062958ed01a56918036e685ee01c17461a0cb9181dfb39d1657671",
+          "43662a2d22062958ed01a56918036e685ee01c17461a0cb9181dfb39d1657671",
+          "07da5a62a93683133f85b44abe763a69e2f43e531014478440398760fe919f27",
+          "07da5a62a93683133f85b44abe763a69e2f43e531014478440398760fe919f27",
+          "af2a94d6a91022a03fb84422385d08ce1128c5af788750623909882079d0e263",
+          "af2a94d6a91022a03fb84422385d08ce1128c5af788750623909882079d0e263"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 878,
+        "output": [
+          "2adee677592d0f6fe0f2a3c0aefccf4c8074910abdff580537e9b4f94bb47e4c",
+          "2adee677592d0f6fe0f2a3c0aefccf4c8074910abdff580537e9b4f94bb47e4c",
+          "50057675d925570d8ee3f12a3e346a8e31e24897b63333329f44a07bb1129d32",
+          "50057675d925570d8ee3f12a3e346a8e31e24897b63333329f44a07bb1129d32",
+          "e74fa1df1a4339df372a7d2ece210f81a771b3339bfc1e6dce0b586d49ee46e3",
+          "e74fa1df1a4339df372a7d2ece210f81a771b3339bfc1e6dce0b586d49ee46e3",
+          "718ce3de64571973c3f9eea4aa95722d66ae2300183f248444e607c99ada76ac",
+          "718ce3de64571973c3f9eea4aa95722d66ae2300183f248444e607c99ada76ac"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 879,
+        "output": [
+          "c4aef74796d0f7808d7c8783e77d472bfe287c27f3ea8081c4269a523351fd20",
+          "c4aef74796d0f7808d7c8783e77d472bfe287c27f3ea8081c4269a523351fd20",
+          "dc78aa50b052b5a0b966f9fa2ae2a7162cebdf44bd70612e30558a3021b2656f",
+          "dc78aa50b052b5a0b966f9fa2ae2a7162cebdf44bd70612e30558a3021b2656f",
+          "60e8357b84b505e2a76d1b929899adb49fc732a66facc19d941d68f6ca4f998d",
+          "60e8357b84b505e2a76d1b929899adb49fc732a66facc19d941d68f6ca4f998d",
+          "d63fb34a8b454ec2049ce65a05b5b049e3bee6aa1edeac6aca0a8016c48aeebf",
+          "d63fb34a8b454ec2049ce65a05b5b049e3bee6aa1edeac6aca0a8016c48aeebf"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 880,
+        "output": [
+          "3f9f8b33242ebcbf4fa612d98defbbf88bc83502db4ffc21f5c2b44bec8a7c76",
+          "3f9f8b33242ebcbf4fa612d98defbbf88bc83502db4ffc21f5c2b44bec8a7c76",
+          "7e90d63438abf6cf8ba6309ebb49cc7b97473ca3eda7489835465ec24712f377",
+          "7e90d63438abf6cf8ba6309ebb49cc7b97473ca3eda7489835465ec24712f377",
+          "b31db8f005cca15f7981aa9819810a26072833ba01f3c899ff3f0a43168ca8ca",
+          "b31db8f005cca15f7981aa9819810a26072833ba01f3c899ff3f0a43168ca8ca",
+          "79916cc0045108bd875663e79c740c75267762dd1a6abc87e08a7438547dd51e",
+          "79916cc0045108bd875663e79c740c75267762dd1a6abc87e08a7438547dd51e"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 881,
+        "output": [
+          "27d296453f7bc8f6d6db27e07f8028e0bd0209b07794e27e9a4043006ff93acf",
+          "27d296453f7bc8f6d6db27e07f8028e0bd0209b07794e27e9a4043006ff93acf",
+          "26343a68b043d710917567195b74a7afcd9d9a541cfc94fefe4656377eca08fa",
+          "26343a68b043d710917567195b74a7afcd9d9a541cfc94fefe4656377eca08fa",
+          "b1eb6755a616c77fbdc0adffedfab5e07f516f0da4fcc266a14ce48ffd443845",
+          "b1eb6755a616c77fbdc0adffedfab5e07f516f0da4fcc266a14ce48ffd443845",
+          "292f88c8df12e15d1da8fecc72ba0e90a2335d344aec4a77311be37c27131e8c",
+          "292f88c8df12e15d1da8fecc72ba0e90a2335d344aec4a77311be37c27131e8c"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 882,
+        "output": [
+          "b6037f381325b550f96da96099dde48b48b825653824eb044fee5256a9ecf549",
+          "b6037f381325b550f96da96099dde48b48b825653824eb044fee5256a9ecf549",
+          "59ae6cb216afc3d6c988afc83219807af500d47413c01f565b9f646bf428a869",
+          "59ae6cb216afc3d6c988afc83219807af500d47413c01f565b9f646bf428a869",
+          "6fada5fa58059b08a384fc55fdbfd54fd69b044f902b2ee9f96e65bdfa988397",
+          "6fada5fa58059b08a384fc55fdbfd54fd69b044f902b2ee9f96e65bdfa988397",
+          "212e5f053958d627de5715f23dc1ec8538c1d07bf5eb0e68000255aa80fcf8e9",
+          "212e5f053958d627de5715f23dc1ec8538c1d07bf5eb0e68000255aa80fcf8e9"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 883,
+        "output": [
+          "0178467a9a892658afb28a34d4734c0870f1950c82a72bf91eb7dbc3831b3277",
+          "0178467a9a892658afb28a34d4734c0870f1950c82a72bf91eb7dbc3831b3277",
+          "a13fe37bc8310ca240505f3978b10e41efffbb95f8a99ae82e0b694ffdad6061",
+          "a13fe37bc8310ca240505f3978b10e41efffbb95f8a99ae82e0b694ffdad6061",
+          "cd7990ca1bde2262890d8146280b39518746a161ffabcd206994809bbef5a135",
+          "cd7990ca1bde2262890d8146280b39518746a161ffabcd206994809bbef5a135",
+          "a4a28fe3628ceac4c3497666fff935ef97dc8b087c7bdb8e3bf906e65cbfd3a0",
+          "a4a28fe3628ceac4c3497666fff935ef97dc8b087c7bdb8e3bf906e65cbfd3a0"
+        ]
+      }
+    ],
+    "witnesses": [
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 806,
+        "map": "RU_CAVE_OF_ORIGIN_B4F",
+        "x": 17,
+        "y": 9,
+        "before_mid": 844,
+        "impassable": true,
+        "layout_file": "alt_313",
+        "source_collision": 7,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 807,
+        "map": "RU_CAVE_OF_ORIGIN_B4F",
+        "x": 0,
+        "y": 12,
+        "before_mid": 802,
+        "impassable": true,
+        "layout_file": "alt_313",
+        "source_collision": 7,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 840,
+        "map": "RU_CAVE_OF_ORIGIN_B4F",
+        "x": 18,
+        "y": 4,
+        "before_mid": 800,
+        "impassable": true,
+        "layout_file": "alt_313",
+        "source_collision": 7,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 841,
+        "map": "RU_CAVE_OF_ORIGIN_B4F",
+        "x": 0,
+        "y": 1,
+        "before_mid": 799,
+        "impassable": true,
+        "layout_file": "alt_313",
+        "source_collision": 7,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 846,
+        "map": "RU_CAVE_OF_ORIGIN_B4F",
+        "x": 15,
+        "y": 11,
+        "before_mid": 798,
+        "impassable": true,
+        "layout_file": "alt_313",
+        "source_collision": 7,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 847,
+        "map": "RU_CAVE_OF_ORIGIN_B4F",
+        "x": 4,
+        "y": 6,
+        "before_mid": 799,
+        "impassable": true,
+        "layout_file": "alt_313",
+        "source_collision": 7,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 863,
+        "map": "RU_CAVE_OF_ORIGIN_B4F",
+        "x": 8,
+        "y": 9,
+        "before_mid": 335,
+        "impassable": true,
+        "layout_file": "alt_313",
+        "source_collision": 7,
+        "target_collision": 7,
+        "target_elevation": 1
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 864,
+        "map": "RU_SEAFLOOR_CAVERN_ROOM9",
+        "x": 20,
+        "y": 41,
+        "before_mid": 618,
+        "impassable": true,
+        "layout_file": "alt_327",
+        "source_collision": 7,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 865,
+        "map": "RU_SEAFLOOR_CAVERN_ROOM9",
+        "x": 15,
+        "y": 42,
+        "before_mid": 627,
+        "impassable": true,
+        "layout_file": "alt_327",
+        "source_collision": 43,
+        "target_collision": 43,
+        "target_elevation": 3
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 866,
+        "map": "RU_SEAFLOOR_CAVERN_ROOM9",
+        "x": 13,
+        "y": 40,
+        "before_mid": 620,
+        "impassable": true,
+        "layout_file": "alt_327",
+        "source_collision": 7,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 868,
+        "map": "RU_CAVE_OF_ORIGIN_B4F",
+        "x": 7,
+        "y": 9,
+        "before_mid": 334,
+        "impassable": true,
+        "layout_file": "alt_313",
+        "source_collision": 7,
+        "target_collision": 7,
+        "target_elevation": 1
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 869,
+        "map": "RU_SEAFLOOR_CAVERN_ROOM9",
+        "x": 12,
+        "y": 38,
+        "before_mid": 649,
+        "impassable": true,
+        "layout_file": "alt_327",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 1
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 870,
+        "map": "RU_SEAFLOOR_CAVERN_ROOM9",
+        "x": 14,
+        "y": 35,
+        "before_mid": 657,
+        "impassable": true,
+        "layout_file": "alt_327",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 1
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 871,
+        "map": "RU_SEAFLOOR_CAVERN_ROOM9",
+        "x": 18,
+        "y": 33,
+        "before_mid": 657,
+        "impassable": true,
+        "layout_file": "alt_327",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 1
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 872,
+        "map": "RU_CAVE_OF_ORIGIN_B4F",
+        "x": 10,
+        "y": 12,
+        "before_mid": 830,
+        "impassable": true,
+        "layout_file": "alt_313",
+        "source_collision": 7,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 873,
+        "map": "RU_CAVE_OF_ORIGIN_B4F",
+        "x": 9,
+        "y": 13,
+        "before_mid": 834,
+        "impassable": true,
+        "layout_file": "alt_313",
+        "source_collision": 43,
+        "target_collision": 43,
+        "target_elevation": 3
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 874,
+        "map": "RU_CAVE_OF_ORIGIN_B4F",
+        "x": 7,
+        "y": 11,
+        "before_mid": 831,
+        "impassable": true,
+        "layout_file": "alt_313",
+        "source_collision": 7,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 875,
+        "map": "RU_CAVE_OF_ORIGIN_B4F",
+        "x": 12,
+        "y": 9,
+        "before_mid": 838,
+        "impassable": true,
+        "layout_file": "alt_313",
+        "source_collision": 7,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 876,
+        "map": "RU_CAVE_OF_ORIGIN_B4F",
+        "x": 9,
+        "y": 6,
+        "before_mid": 809,
+        "impassable": true,
+        "layout_file": "alt_313",
+        "source_collision": 7,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 877,
+        "map": "RU_CAVE_OF_ORIGIN_B4F",
+        "x": 6,
+        "y": 9,
+        "before_mid": 839,
+        "impassable": true,
+        "layout_file": "alt_313",
+        "source_collision": 7,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 878,
+        "map": "RU_CAVE_OF_ORIGIN_B4F",
+        "x": 10,
+        "y": 7,
+        "before_mid": 836,
+        "impassable": true,
+        "layout_file": "alt_313",
+        "source_collision": 7,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 879,
+        "map": "RU_CAVE_OF_ORIGIN_B4F",
+        "x": 7,
+        "y": 8,
+        "before_mid": 837,
+        "impassable": true,
+        "layout_file": "alt_313",
+        "source_collision": 7,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 880,
+        "map": "RU_SEAFLOOR_CAVERN_ROOM9",
+        "x": 22,
+        "y": 36,
+        "before_mid": 648,
+        "impassable": true,
+        "layout_file": "alt_327",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 1
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 881,
+        "map": "RU_SEAFLOOR_CAVERN_ROOM9",
+        "x": 12,
+        "y": 39,
+        "before_mid": 650,
+        "impassable": true,
+        "layout_file": "alt_327",
+        "source_collision": 7,
+        "target_collision": 7,
+        "target_elevation": 1
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 882,
+        "map": "RU_SEAFLOOR_CAVERN_ROOM9",
+        "x": 18,
+        "y": 34,
+        "before_mid": 335,
+        "impassable": true,
+        "layout_file": "alt_327",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 1
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 883,
+        "map": "RU_SEAFLOOR_CAVERN_ROOM9",
+        "x": 13,
+        "y": 38,
+        "before_mid": 658,
+        "impassable": true,
+        "layout_file": "alt_327",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 1
+      }
+    ]
+  }
+}

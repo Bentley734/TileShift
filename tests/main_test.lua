@@ -143,7 +143,14 @@ for _,gameId in ipairs(games)do
       or path=='mappings/reverse_gen1_kanto_landmarks.lua'
       or path=='mappings/reverse_gen1_native_terrain.lua'
       or path=='mappings/reverse_gen1_native_service_rooms.lua'
-      or path=='mappings/reverse_gen1_native_service_backings.lua' then return nil end
+      or path=='mappings/reverse_gen1_native_service_backings.lua'
+      or path=='mappings/reverse_gen2_rse_field_states.lua'
+      or path=='mappings/reverse_gen2_rse_scripted_interiors.lua'
+      or path=='mappings/reverse_gen2_rse_industrial_states.lua'
+      or path=='mappings/reverse_gen2_hoenn_alternate_layouts.lua'
+      or path=='mappings/reverse_gen2_rse_doors_elevators.lua'
+      or path=='mappings/reverse_gen2_hoenn_script_aliases.lua'
+      or path=='mappings/reverse_gen2_rse_outdoor_states.lua' then return nil end
     if path=='mappings/reverse_classic_gyms_finish.lua'or path=='mappings/reverse_classic_berry_soil.lua'then return nil end
     if path=='lib/gb_animation.lua'then return 'return {}'end
     if path=='lib/roofs.lua' or path=='lib/vegetation.lua' or path=='lib/flora.lua' or path=='lib/flora_catalog.lua' or path=='lib/johto_hack_flora.lua' or path=='lib/water_styles.lua' or path=='lib/monochrome.lua' then

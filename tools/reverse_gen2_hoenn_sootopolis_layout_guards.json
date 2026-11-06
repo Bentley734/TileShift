@@ -1,0 +1,2395 @@
+{
+  "items": [
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 656,
+      "source": "77fe3cd7d5a8b66edbfbb9fffde3c1f04144ad4bc4783b7ab3481c430236e8ae",
+      "layers": {
+        "under": "77fe3cd7d5a8b66edbfbb9fffde3c1f04144ad4bc4783b7ab3481c430236e8ae",
+        "mid": "77fe3cd7d5a8b66edbfbb9fffde3c1f04144ad4bc4783b7ab3481c430236e8ae",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 21,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY",
+          "alt_357",
+          357,
+          "g3:081e5801",
+          0
+        ]
+      ],
+      "placement_count": 421
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 657,
+      "source": "ebeeaac30dd48928112842cef338cd2ba6377c34aa50d9c6e2abbf4064667891",
+      "layers": {
+        "under": "ebeeaac30dd48928112842cef338cd2ba6377c34aa50d9c6e2abbf4064667891",
+        "mid": "ebeeaac30dd48928112842cef338cd2ba6377c34aa50d9c6e2abbf4064667891",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 18,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY",
+          "alt_357",
+          357,
+          "g3:081e5801",
+          0
+        ]
+      ],
+      "placement_count": 19
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 658,
+      "source": "06b0169b53cdaf97438192ee42006ed53b63975768437654de6773b6196e6a16",
+      "layers": {
+        "under": "06b0169b53cdaf97438192ee42006ed53b63975768437654de6773b6196e6a16",
+        "mid": "572893a77149edf0ef97022214c87f4044cd84abc0affe7c0342e4a36973e169",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 21,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY",
+          "alt_357",
+          357,
+          "g3:081e5801",
+          0
+        ]
+      ],
+      "placement_count": 6
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 659,
+      "source": "5119a833d3bbed4b1e6947a6ce86e469d18cb93affd10a5bab0ed9de0b1f2f0a",
+      "layers": {
+        "under": "5119a833d3bbed4b1e6947a6ce86e469d18cb93affd10a5bab0ed9de0b1f2f0a",
+        "mid": "dd725d080411628dac1079826f5d641c2634ead2fd0e77882134f8cbe20d8daa",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 21,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY",
+          "alt_357",
+          357,
+          "g3:081e5801",
+          0
+        ]
+      ],
+      "placement_count": 29
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 660,
+      "source": "a07ecde9e27aa285a9f828cfd4af3573cd504c00da8ca0fad8bec04dfaf297bc",
+      "layers": {
+        "under": "a07ecde9e27aa285a9f828cfd4af3573cd504c00da8ca0fad8bec04dfaf297bc",
+        "mid": "ae9bf06c01dd4e2ff02abcb7108c7bab78fcb693a24594220d2db76e3cf98c17",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 21,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY",
+          "alt_357",
+          357,
+          "g3:081e5801",
+          0
+        ]
+      ],
+      "placement_count": 6
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 664,
+      "source": "6130d1e7762a28d6ec567e2ee6a06be8ff02bbe56a3d76153b0d43d836b07266",
+      "layers": {
+        "under": "77fe3cd7d5a8b66edbfbb9fffde3c1f04144ad4bc4783b7ab3481c430236e8ae",
+        "mid": "77fe3cd7d5a8b66edbfbb9fffde3c1f04144ad4bc4783b7ab3481c430236e8ae",
+        "over": "02011ec73159df3c4f80a06d10aef787e62f2ed2f8fc04e7ef0b21f1849e7b88"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY",
+          "alt_357",
+          357,
+          "g3:081e5801",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 665,
+      "source": "6977783e3ebc2c85c9d090290fbc92f207d2cbe33b6f30ff8dfa8c84585c36c9",
+      "layers": {
+        "under": "77fe3cd7d5a8b66edbfbb9fffde3c1f04144ad4bc4783b7ab3481c430236e8ae",
+        "mid": "77fe3cd7d5a8b66edbfbb9fffde3c1f04144ad4bc4783b7ab3481c430236e8ae",
+        "over": "efb3d0a127cad5ab9ea7d87962bd03a0ad494d68de43ab0ce73fbb94b336bc5f"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY",
+          "alt_357",
+          357,
+          "g3:081e5801",
+          0
+        ]
+      ],
+      "placement_count": 4
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 666,
+      "source": "1e685281c6bdc66b9d57d86f66f318c81885fd45ea145cd722a5e39d626b4203",
+      "layers": {
+        "under": "1e685281c6bdc66b9d57d86f66f318c81885fd45ea145cd722a5e39d626b4203",
+        "mid": "99321135d6b77d7e82c335cf3cf5abd0906cc637528261de3e0393f1650d07b6",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 21,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY",
+          "alt_357",
+          357,
+          "g3:081e5801",
+          0
+        ]
+      ],
+      "placement_count": 33
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 668,
+      "source": "37c394cbbaf0dcf9584d8f8132db0d730a953aa36a7c90cdc11ec1ddc785b021",
+      "layers": {
+        "under": "37c394cbbaf0dcf9584d8f8132db0d730a953aa36a7c90cdc11ec1ddc785b021",
+        "mid": "f33540338f7b4166d968c1e13c3daf76d8d03409e690cb86d557a08940f52f78",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 21,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY",
+          "alt_357",
+          357,
+          "g3:081e5801",
+          0
+        ]
+      ],
+      "placement_count": 26
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 669,
+      "source": "d82af20a7fedccf082115857217ef32f2dbca863b8ee140864b4b79342a7060d",
+      "layers": {
+        "under": "d82af20a7fedccf082115857217ef32f2dbca863b8ee140864b4b79342a7060d",
+        "mid": "10ad1ceaa83a2c5566b4e163b4d234cee3369fe41fe1164444779866050e88a5",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 21,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY",
+          "alt_357",
+          357,
+          "g3:081e5801",
+          0
+        ]
+      ],
+      "placement_count": 4
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 672,
+      "source": "dc0a119c6bff404ecf96e87b3f92a29482d76a2194d5ced41821b0ac1385d5dd",
+      "layers": {
+        "under": "77fe3cd7d5a8b66edbfbb9fffde3c1f04144ad4bc4783b7ab3481c430236e8ae",
+        "mid": "77fe3cd7d5a8b66edbfbb9fffde3c1f04144ad4bc4783b7ab3481c430236e8ae",
+        "over": "4ed6af81edad2755b83723eb6640fb38c9a99f9d2dad6acdc3075e2a1417eac2"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY",
+          "alt_357",
+          357,
+          "g3:081e5801",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 674,
+      "source": "f11459eaa0c464f744a7d8ee99a010a4054e9a13191f6a76491dbf83f46ca0f3",
+      "layers": {
+        "under": "f11459eaa0c464f744a7d8ee99a010a4054e9a13191f6a76491dbf83f46ca0f3",
+        "mid": "4d1021bf14fc14a7aa765636803c883ad488fc298b3c5469eeab9f0a42acf4b5",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 21,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY",
+          "alt_357",
+          357,
+          "g3:081e5801",
+          0
+        ]
+      ],
+      "placement_count": 6
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 676,
+      "source": "8e1d05d7f13b1e78ed3b57c62d6ad8087531080289cac43b3ef9e56994bce1f7",
+      "layers": {
+        "under": "8e1d05d7f13b1e78ed3b57c62d6ad8087531080289cac43b3ef9e56994bce1f7",
+        "mid": "6ee216790ca3165db24abfcf331c4ec2ead7c07b4d1b6f27d72006fa09db7b01",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 21,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY",
+          "alt_357",
+          357,
+          "g3:081e5801",
+          0
+        ]
+      ],
+      "placement_count": 6
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 677,
+      "source": "fafee662e91977bec49ed022d477ed76e9674e0b1bc2cf26d19579877a613fa9",
+      "layers": {
+        "under": "fafee662e91977bec49ed022d477ed76e9674e0b1bc2cf26d19579877a613fa9",
+        "mid": "fafee662e91977bec49ed022d477ed76e9674e0b1bc2cf26d19579877a613fa9",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 21,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY",
+          "alt_357",
+          357,
+          "g3:081e5801",
+          0
+        ]
+      ],
+      "placement_count": 4
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 678,
+      "source": "77d51d86040dde5e82b999f27f61fca7321a6b69e802e9a5ea5994794e7ed85d",
+      "layers": {
+        "under": "77d51d86040dde5e82b999f27f61fca7321a6b69e802e9a5ea5994794e7ed85d",
+        "mid": "77d51d86040dde5e82b999f27f61fca7321a6b69e802e9a5ea5994794e7ed85d",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 21,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY",
+          "alt_357",
+          357,
+          "g3:081e5801",
+          0
+        ]
+      ],
+      "placement_count": 5
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 679,
+      "source": "d708a705643385622fc2dd9efd52f8347cfd2b781a56be5ee2c95c2adbc443bf",
+      "layers": {
+        "under": "d708a705643385622fc2dd9efd52f8347cfd2b781a56be5ee2c95c2adbc443bf",
+        "mid": "d708a705643385622fc2dd9efd52f8347cfd2b781a56be5ee2c95c2adbc443bf",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 21,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY",
+          "alt_357",
+          357,
+          "g3:081e5801",
+          0
+        ]
+      ],
+      "placement_count": 4
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 680,
+      "source": "df3acf6e5f29725eb7abe4663be90b5a467df0f28ef6ad095804d2bffe9d5ae8",
+      "layers": {
+        "under": "77fe3cd7d5a8b66edbfbb9fffde3c1f04144ad4bc4783b7ab3481c430236e8ae",
+        "mid": "77fe3cd7d5a8b66edbfbb9fffde3c1f04144ad4bc4783b7ab3481c430236e8ae",
+        "over": "5bbdf1c72551c20737a7675f58ca172b17c30a31ea28041a089b87ddedcf23af"
+      },
+      "behavior": 21,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY",
+          "alt_357",
+          357,
+          "g3:081e5801",
+          0
+        ]
+      ],
+      "placement_count": 14
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 681,
+      "source": "12cf1ea0ff6aa4d3b04fc939ff073351c1ac6c8bf3126ab6036f9600af0f0c6d",
+      "layers": {
+        "under": "4a6b333d59d9675963de4a79969d294239275f5e1b0264de591e5caa9d396eba",
+        "mid": "4a6b333d59d9675963de4a79969d294239275f5e1b0264de591e5caa9d396eba",
+        "over": "5bbdf1c72551c20737a7675f58ca172b17c30a31ea28041a089b87ddedcf23af"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY",
+          "alt_357",
+          357,
+          "g3:081e5801",
+          0
+        ]
+      ],
+      "placement_count": 7
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 682,
+      "source": "4bce0b2c0fb5a326e08efc1be3109bc92fb6e654767fb2fadfc1c966c06f58b8",
+      "layers": {
+        "under": "ebeeaac30dd48928112842cef338cd2ba6377c34aa50d9c6e2abbf4064667891",
+        "mid": "ebeeaac30dd48928112842cef338cd2ba6377c34aa50d9c6e2abbf4064667891",
+        "over": "5bbdf1c72551c20737a7675f58ca172b17c30a31ea28041a089b87ddedcf23af"
+      },
+      "behavior": 21,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY",
+          "alt_357",
+          357,
+          "g3:081e5801",
+          0
+        ]
+      ],
+      "placement_count": 13
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 685,
+      "source": "ad9a35d09a661a946a043443098aaa7466cec8587146882aa94f2eb41f4b3bf7",
+      "layers": {
+        "under": "ad9a35d09a661a946a043443098aaa7466cec8587146882aa94f2eb41f4b3bf7",
+        "mid": "ad9a35d09a661a946a043443098aaa7466cec8587146882aa94f2eb41f4b3bf7",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 21,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY",
+          "alt_357",
+          357,
+          "g3:081e5801",
+          0
+        ]
+      ],
+      "placement_count": 3
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 687,
+      "source": "d70ab7e9553ca3ac5710c8c4d759fe0869b20fdcdeb0e107489a4768efc4fd5c",
+      "layers": {
+        "under": "d70ab7e9553ca3ac5710c8c4d759fe0869b20fdcdeb0e107489a4768efc4fd5c",
+        "mid": "d70ab7e9553ca3ac5710c8c4d759fe0869b20fdcdeb0e107489a4768efc4fd5c",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 21,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY",
+          "alt_357",
+          357,
+          "g3:081e5801",
+          0
+        ]
+      ],
+      "placement_count": 3
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 688,
+      "source": "a049d402a5a6c01e70ad555042856a6ea642327481e85905942f8058cef1d85a",
+      "layers": {
+        "under": "a049d402a5a6c01e70ad555042856a6ea642327481e85905942f8058cef1d85a",
+        "mid": "7c101b7b938e82b54e4c78d015db1727a9e48e119992147be11cea5c2fa99d36",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY",
+          "alt_357",
+          357,
+          "g3:081e5801",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 689,
+      "source": "9b7e7a0ba5b309a69e339104762bae08db51c082fdaa52ff8087d462d0bfd2a3",
+      "layers": {
+        "under": "9b7e7a0ba5b309a69e339104762bae08db51c082fdaa52ff8087d462d0bfd2a3",
+        "mid": "92a7b7c98a6e7fd497f1662ce381b7df6175e540a35fdcf7fb17e475af84d5b7",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY",
+          "alt_357",
+          357,
+          "g3:081e5801",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 690,
+      "source": "9b7e7a0ba5b309a69e339104762bae08db51c082fdaa52ff8087d462d0bfd2a3",
+      "layers": {
+        "under": "9b7e7a0ba5b309a69e339104762bae08db51c082fdaa52ff8087d462d0bfd2a3",
+        "mid": "92a7b7c98a6e7fd497f1662ce381b7df6175e540a35fdcf7fb17e475af84d5b7",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY",
+          "alt_357",
+          357,
+          "g3:081e5801",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 691,
+      "source": "cda3822f1d2ea37f620bee041175fbd9117f426599bef724c29e921364273ca4",
+      "layers": {
+        "under": "cda3822f1d2ea37f620bee041175fbd9117f426599bef724c29e921364273ca4",
+        "mid": "a746ee68aadd750bab4c5cab04b550c842b6089e6fafa92d2db6e3de74b7e535",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY",
+          "alt_357",
+          357,
+          "g3:081e5801",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 692,
+      "source": "9b3a1079e119ff8572f57a78931b0c57188fb4ab5cd3101cbc1434492514266a",
+      "layers": {
+        "under": "9b3a1079e119ff8572f57a78931b0c57188fb4ab5cd3101cbc1434492514266a",
+        "mid": "2f8e5b85929ff6d6440a0b5f12eabc76ef04d4bda51b710ce5ed3a9dfc2b5717",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY",
+          "alt_357",
+          357,
+          "g3:081e5801",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 693,
+      "source": "9176b0d62089b16669a424ee70cb99bedce78c1a28f69c9b9c09d3f9fdf824d3",
+      "layers": {
+        "under": "9176b0d62089b16669a424ee70cb99bedce78c1a28f69c9b9c09d3f9fdf824d3",
+        "mid": "30670bd914443af52408b50710dac5f83e6fc33a6a46d157ff700311969151d6",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY",
+          "alt_357",
+          357,
+          "g3:081e5801",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 694,
+      "source": "0aff748c1f0c4ccfae86ca7e7f781dbb1ea14f2d66f0ab593d1744e13d3c6129",
+      "layers": {
+        "under": "0aff748c1f0c4ccfae86ca7e7f781dbb1ea14f2d66f0ab593d1744e13d3c6129",
+        "mid": "deacad34d1bb2c5bd051129b4d29088ccfb928115d578476f2685599bf9e6e48",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY",
+          "alt_357",
+          357,
+          "g3:081e5801",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 695,
+      "source": "88c76878c9a7226453403ad8e2326b2443cb579e2e36389ec4d3623c296f716f",
+      "layers": {
+        "under": "88c76878c9a7226453403ad8e2326b2443cb579e2e36389ec4d3623c296f716f",
+        "mid": "52ae7d793a2ccd9608b863f37c0a845e3d6e890abad7758d941a0de435222ae9",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY",
+          "alt_357",
+          357,
+          "g3:081e5801",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 696,
+      "source": "132f59cf4b3dc9f99627e2bb542ec6aa186b787a854263e34d6dca69fabe4cb9",
+      "layers": {
+        "under": "132f59cf4b3dc9f99627e2bb542ec6aa186b787a854263e34d6dca69fabe4cb9",
+        "mid": "7774bca99a2784eb85949a292733ea6041d0fd0cf344a9e5893c7dcd13a74294",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY",
+          "alt_357",
+          357,
+          "g3:081e5801",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 697,
+      "source": "0c5dbb044610eacb82c0658c6814c6d9674812be286a33d26000aa2076d4e645",
+      "layers": {
+        "under": "0c5dbb044610eacb82c0658c6814c6d9674812be286a33d26000aa2076d4e645",
+        "mid": "0c5dbb044610eacb82c0658c6814c6d9674812be286a33d26000aa2076d4e645",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY",
+          "alt_357",
+          357,
+          "g3:081e5801",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 698,
+      "source": "0c5dbb044610eacb82c0658c6814c6d9674812be286a33d26000aa2076d4e645",
+      "layers": {
+        "under": "0c5dbb044610eacb82c0658c6814c6d9674812be286a33d26000aa2076d4e645",
+        "mid": "0c5dbb044610eacb82c0658c6814c6d9674812be286a33d26000aa2076d4e645",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY",
+          "alt_357",
+          357,
+          "g3:081e5801",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 699,
+      "source": "4c284f1e625732471c2047a569bb338ba618bb640c1b80243a6fdf7cd569fd26",
+      "layers": {
+        "under": "4c284f1e625732471c2047a569bb338ba618bb640c1b80243a6fdf7cd569fd26",
+        "mid": "1981f7da4a48321da74d48eb6fd486fe4935b6a2d44640cd72686a440748b2da",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY",
+          "alt_357",
+          357,
+          "g3:081e5801",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 700,
+      "source": "a55d7323553bf2bacf044a9acd2d1ce7c4a47bec652f8f6cd7a5b33a5eb769c3",
+      "layers": {
+        "under": "a55d7323553bf2bacf044a9acd2d1ce7c4a47bec652f8f6cd7a5b33a5eb769c3",
+        "mid": "303b4e770f38f77593c4eb718c3de73ecc3df5ece1140dd789fbf9b3bcd6358f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY",
+          "alt_357",
+          357,
+          "g3:081e5801",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 701,
+      "source": "bc4b2b6011b8cfc9f2d487353184a5a5b0f6821aaf948bce2aab97f861646c68",
+      "layers": {
+        "under": "bc4b2b6011b8cfc9f2d487353184a5a5b0f6821aaf948bce2aab97f861646c68",
+        "mid": "bc4b2b6011b8cfc9f2d487353184a5a5b0f6821aaf948bce2aab97f861646c68",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY",
+          "alt_357",
+          357,
+          "g3:081e5801",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 702,
+      "source": "14fa3c37d80a7db4c6212f283bd11634fb7836db23bd26f79e69cfc0d13fa8a9",
+      "layers": {
+        "under": "14fa3c37d80a7db4c6212f283bd11634fb7836db23bd26f79e69cfc0d13fa8a9",
+        "mid": "14fa3c37d80a7db4c6212f283bd11634fb7836db23bd26f79e69cfc0d13fa8a9",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY",
+          "alt_357",
+          357,
+          "g3:081e5801",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 703,
+      "source": "70ca730bef37150bac3fd9c14a3158e6bf60644052db989e2dcde6ebee679fef",
+      "layers": {
+        "under": "70ca730bef37150bac3fd9c14a3158e6bf60644052db989e2dcde6ebee679fef",
+        "mid": "0fa7dbbb72dce01bcfdf0f7b46a2c4913dd7990497b97dea79faa31b75594424",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY",
+          "alt_357",
+          357,
+          "g3:081e5801",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 704,
+      "source": "7d70ff8ce9799014f41c9b7321ba80668e4a8e4ce954627d97365a50f63dc44c",
+      "layers": {
+        "under": "7d70ff8ce9799014f41c9b7321ba80668e4a8e4ce954627d97365a50f63dc44c",
+        "mid": "9945ede0e93a544ab5ef651c8330aaf3027230fcb5cc25245f69ae09ca46b9b3",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY",
+          "alt_357",
+          357,
+          "g3:081e5801",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 705,
+      "source": "6f1b57b4eeb026879096f0f1db84810bf9134af785fa2839fea06ae11373a003",
+      "layers": {
+        "under": "6f1b57b4eeb026879096f0f1db84810bf9134af785fa2839fea06ae11373a003",
+        "mid": "8b506b47aa394520b155fb418ca2acf5f4c4863670ab5a6efd70d40178a137f4",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY",
+          "alt_357",
+          357,
+          "g3:081e5801",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 706,
+      "source": "6f1b57b4eeb026879096f0f1db84810bf9134af785fa2839fea06ae11373a003",
+      "layers": {
+        "under": "6f1b57b4eeb026879096f0f1db84810bf9134af785fa2839fea06ae11373a003",
+        "mid": "8b506b47aa394520b155fb418ca2acf5f4c4863670ab5a6efd70d40178a137f4",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY",
+          "alt_357",
+          357,
+          "g3:081e5801",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 707,
+      "source": "52c7d54c6508f43f3d3dae78ac0e63e5a1cf09a9f4b4d39867f28d2c8a8b19ea",
+      "layers": {
+        "under": "52c7d54c6508f43f3d3dae78ac0e63e5a1cf09a9f4b4d39867f28d2c8a8b19ea",
+        "mid": "8eb181da502c9d87673d4d64e9e6f32a7d1e1c2bb5b021e3927a218fa96a2ba9",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY",
+          "alt_357",
+          357,
+          "g3:081e5801",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 708,
+      "source": "6eb6115de79549d4ae5b2a64513b1691dab53e6606a6edec8a09b561072bbcb4",
+      "layers": {
+        "under": "6eb6115de79549d4ae5b2a64513b1691dab53e6606a6edec8a09b561072bbcb4",
+        "mid": "17c66677012173ae7e6ef5e98d6c8fb17cb32d3d09e48eb9194125ce9b492fdc",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY",
+          "alt_357",
+          357,
+          "g3:081e5801",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 709,
+      "source": "9f061bfe8b5ba1e25b3f13ee25c051c9fd0c9b074399c88cb994b612c0028a13",
+      "layers": {
+        "under": "9f061bfe8b5ba1e25b3f13ee25c051c9fd0c9b074399c88cb994b612c0028a13",
+        "mid": "0c30b219a9ef1c38bcf27e2560facbab7a9370353a2499b2448df224c1ee640d",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY",
+          "alt_357",
+          357,
+          "g3:081e5801",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 710,
+      "source": "b2b159999ddfc69c61f45c0812d4443ab747dc2827886b666490a482e680cbe7",
+      "layers": {
+        "under": "b2b159999ddfc69c61f45c0812d4443ab747dc2827886b666490a482e680cbe7",
+        "mid": "b65a857415fb93c186e932e276fe1e648b7c6b9303543b7f3e43b363f348be59",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY",
+          "alt_357",
+          357,
+          "g3:081e5801",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 711,
+      "source": "ccac27cf5d9165d3712d092f027a7f252132cde9ef98f42f20740e807c91b28a",
+      "layers": {
+        "under": "ccac27cf5d9165d3712d092f027a7f252132cde9ef98f42f20740e807c91b28a",
+        "mid": "2ac438fceef1513f10df1e63b4cc710d32ca1a838ae2ed560b27bb3483520dff",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY",
+          "alt_357",
+          357,
+          "g3:081e5801",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 750,
+      "source": "2e8716c1b901f76cf17f9c6e3c7c648274009d5f1230fe967517d58432b8e6f0",
+      "layers": {
+        "under": "77fe3cd7d5a8b66edbfbb9fffde3c1f04144ad4bc4783b7ab3481c430236e8ae",
+        "mid": "77fe3cd7d5a8b66edbfbb9fffde3c1f04144ad4bc4783b7ab3481c430236e8ae",
+        "over": "a39c37d63d0c9eae5a3f4375aaece59a64acd757954788720bcbd8ba36c9a8c5"
+      },
+      "behavior": 21,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY",
+          "alt_357",
+          357,
+          "g3:081e5801",
+          0
+        ]
+      ],
+      "placement_count": 4
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 751,
+      "source": "3f94af548b27998e2ba185b1457169b9087685f5ee166d992888347419550c85",
+      "layers": {
+        "under": "77fe3cd7d5a8b66edbfbb9fffde3c1f04144ad4bc4783b7ab3481c430236e8ae",
+        "mid": "77fe3cd7d5a8b66edbfbb9fffde3c1f04144ad4bc4783b7ab3481c430236e8ae",
+        "over": "24644b426fcc1c1e080bec907aaaba1be6e2966123c361e4c81516d43f51f177"
+      },
+      "behavior": 21,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY",
+          "alt_357",
+          357,
+          "g3:081e5801",
+          0
+        ]
+      ],
+      "placement_count": 1
+    }
+  ],
+  "proof": {
+    "layouts": {
+      "emerald/EM_SOOTOPOLIS_CITY/alt_357": {
+        "base": "f7224a23ad04bfabaea558f65e07b9e82168d7f98f70b5f5664d5413373d99a6",
+        "alternate": "3d9384445745b366ae10cef06b5ef0c27fa807701ac6426d6acbdea1f165e2bc",
+        "size": [
+          60,
+          60
+        ]
+      }
+    },
+    "anchors": {
+      "emerald/general__sootopolis/654": "a4e6842637e5d856a317649ab40fee7a58e1c36a1398a4e20457bb1f1a7ec946",
+      "emerald/general__sootopolis/642": "2502758847997bba12a4194ecb906399def1dad435198e9f2739d90f28ee7742",
+      "emerald/general__sootopolis/643": "3d44b0b3a220ee79783d734dacd5c4d4af8089aff92ccb08f31c7b8a172f9b62",
+      "emerald/general__sootopolis/644": "4ddc0b225980766671ee5b650bb21da5e645500a6f8c331a93ae770b9d783582"
+    },
+    "rows": [
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 656,
+        "output": [
+          "e54bdbfb399f6dc4e0f8145d1bd8a3fc936608089dd94a2f75d6209f4f792eeb",
+          "599ff27297e734be3c991b21e24258751040f46880dd167175ed9b857e751a9b",
+          "23274732d38a42e4fb068f0187eefc578e02b9468efc5c36efb27d5291f8a6d6",
+          "4645c4775db98a47c7f663f63224ac377cebac34db014752cb275b49c40fc460",
+          "23274732d38a42e4fb068f0187eefc578e02b9468efc5c36efb27d5291f8a6d6",
+          "599ff27297e734be3c991b21e24258751040f46880dd167175ed9b857e751a9b",
+          "e54bdbfb399f6dc4e0f8145d1bd8a3fc936608089dd94a2f75d6209f4f792eeb",
+          "d8fa354cce411610044dffa7945ee5826050e3c1f2770be5c4d191516901aea2"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 657,
+        "output": [
+          "1344572ab26f0b9cd8423dc1996d858f97dcc5f725216733afb2b1c7fa78362b",
+          "4467bc3928b44eeadc499ebb51c398e8ea74fdfd6b2e452612826d0591164c3b",
+          "d956f8411c98052ed159176b92a09871400038a4dc8e5384160cd9a9af2c7b43",
+          "0d382c0721c64fab2832e6685c9943d3bf5835ad52b5f03c8d3e390aa4f9117d",
+          "d956f8411c98052ed159176b92a09871400038a4dc8e5384160cd9a9af2c7b43",
+          "4467bc3928b44eeadc499ebb51c398e8ea74fdfd6b2e452612826d0591164c3b",
+          "1344572ab26f0b9cd8423dc1996d858f97dcc5f725216733afb2b1c7fa78362b",
+          "5fde089a8d6802e99020f9967dc814f94f44fe19b8aae7b4b3f62af88333f0eb"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 658,
+        "output": [
+          "eb33747bc075bad98f2cc9ab01cd800cc7d0b15eea34d48eec0a2217c8c4badc",
+          "05c3a88510cf97b20010e79cfa187b329263da0c216e784d0d3b8cc8cd0e3c81",
+          "449b581484ff8f88b25faa0d0c15bbf7384ac77e4696631511d33fe15cac3c00",
+          "bff8f74059c000a54923a61c56f45ae5b3d3bd49b58f3353d53feab4c2885a77",
+          "449b581484ff8f88b25faa0d0c15bbf7384ac77e4696631511d33fe15cac3c00",
+          "05c3a88510cf97b20010e79cfa187b329263da0c216e784d0d3b8cc8cd0e3c81",
+          "eb33747bc075bad98f2cc9ab01cd800cc7d0b15eea34d48eec0a2217c8c4badc",
+          "cd0c884a25028b732f4bd003a55d04f0a4dc74284d5bd14a359933c77d03773b"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 659,
+        "output": [
+          "c6f1e0ee99240d75bfdf69592ab1c237b55ad21624545699c0f4b87cec48710a",
+          "d95af6b7dafdbb3516cc96cebd567f26b4080d61e2598729afc11a9878d62b0e",
+          "3309077c2c49407473e3319027bb5d9a06b95772418aec49ecffee950538a2d0",
+          "b741cfcc9562ee19d462d5c17a2eacc5c78cb4680da624e372f1040deb1a329c",
+          "3309077c2c49407473e3319027bb5d9a06b95772418aec49ecffee950538a2d0",
+          "d95af6b7dafdbb3516cc96cebd567f26b4080d61e2598729afc11a9878d62b0e",
+          "c6f1e0ee99240d75bfdf69592ab1c237b55ad21624545699c0f4b87cec48710a",
+          "4090f47bdb8560459c2a78df2d4f35e3486afb9ba2bbd50ef8e092d6a0e936d5"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 660,
+        "output": [
+          "222cab377a28d2b8152342201826eaf454cd5b58165890cc5da6049a71b7ba65",
+          "0e9f167a38866a7a53c963333c130f5a0ece90afd5d78a4349f1446d9e1d3647",
+          "081401e13700fa8d77d73f074346ce95197cbf08695d3a5b5b36b57a67f7f25e",
+          "3ae9ed012fc3839e5af441f3752092a4290b2e17e4e98b0cd1b62c5d56de500f",
+          "081401e13700fa8d77d73f074346ce95197cbf08695d3a5b5b36b57a67f7f25e",
+          "0e9f167a38866a7a53c963333c130f5a0ece90afd5d78a4349f1446d9e1d3647",
+          "222cab377a28d2b8152342201826eaf454cd5b58165890cc5da6049a71b7ba65",
+          "1e8abc60985e7badc71cea8247ab1090496fc509d6bb6dfef3961dde12bf0365"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 664,
+        "output": [
+          "5ca46ef4d8fb0c05394affb4ef046cf524582a927a5fb46b4e89fd5133bddcb3"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 665,
+        "output": [
+          "6ac7d8e9747843020651aea8429d9ce37f3409c091f4df5a8a0f23ae83acc24f"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 666,
+        "output": [
+          "ecc40e517be609bf911db278208f2c8c10b0e8d7dcf8eb3828a666ecac4650ea",
+          "a28a031aaaa7978bab19b5f2f334fc38929c3c336ecc4b1557d4729bfa8cadd5",
+          "6ab8ef82b23eff34d552c25c6700a85a684a5f70963d2d023f2e43d6393b9fc4",
+          "0961eb6796bc136a84d6c06526fd92d61802d0007022052ce155bc471c52b11b",
+          "6ab8ef82b23eff34d552c25c6700a85a684a5f70963d2d023f2e43d6393b9fc4",
+          "a28a031aaaa7978bab19b5f2f334fc38929c3c336ecc4b1557d4729bfa8cadd5",
+          "ecc40e517be609bf911db278208f2c8c10b0e8d7dcf8eb3828a666ecac4650ea",
+          "2321a261a29e6828bcd8091ae921ec5a1af681033a894865bba33e1360330f9a"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 668,
+        "output": [
+          "9e2ca35bf25eca04518132f89c5c2aa71f368ad58bd50864dd4049bafbff6bf7",
+          "176245cca80ec0263fed27a2226cd6e61ebe1542450ab174b331803fa8a65280",
+          "1952eaa9b8260e197e5fb097a82aa6ecfbec7a35c0c2047d8bf4f9b441335b40",
+          "b84ef69c00a7b7b190f695a2001b21da76f43c7bf348ae7f51b4ff636793b511",
+          "1952eaa9b8260e197e5fb097a82aa6ecfbec7a35c0c2047d8bf4f9b441335b40",
+          "176245cca80ec0263fed27a2226cd6e61ebe1542450ab174b331803fa8a65280",
+          "9e2ca35bf25eca04518132f89c5c2aa71f368ad58bd50864dd4049bafbff6bf7",
+          "ad701e0b9b088c417152e0ad93866cd5adcbaa37f022b03637e6376fca4e2370"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 669,
+        "output": [
+          "f629648e37146980934d3e13025a577feb6699c47a441179ffce29dc1567d65a",
+          "f8d6489629816d8a977c7267ee63009abf32efb9e35ac3ba9d84424e32f3d727",
+          "7af47fddbd0a871f330d2e2fcb6605bf8ce7e2e9bd24292355221dda4b9072c9",
+          "e209d80f1ed6a95abd81e636ddf4e50cca2480058e7dd765d410b1f374288cb0",
+          "7af47fddbd0a871f330d2e2fcb6605bf8ce7e2e9bd24292355221dda4b9072c9",
+          "f8d6489629816d8a977c7267ee63009abf32efb9e35ac3ba9d84424e32f3d727",
+          "f629648e37146980934d3e13025a577feb6699c47a441179ffce29dc1567d65a",
+          "5ac39ae2f08affc2013d5b52eed7bf2072047fc27e236f1a4940b979453acd6e"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 672,
+        "output": [
+          "17313f12756df0343d8a2723f3807ad03305bfee62acbd9e8d4431318249e8f5"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 674,
+        "output": [
+          "06fa4c4b381da7d7ea93ce31f1a4cc77c480cd91d614b4ef2822157e4d93e9c3",
+          "2fbc4f97263c76bfe6394bc56639030cc390a8ec5a08f92a093f1d54f844368b",
+          "3fd6522090d7a095dc3dc319042192ea60cf841619bae6640472a07d1a97433c",
+          "b252220d84e54e1d10a3871f9ccde19e0c790f7e2837544c435b5837ab24e145",
+          "3fd6522090d7a095dc3dc319042192ea60cf841619bae6640472a07d1a97433c",
+          "2fbc4f97263c76bfe6394bc56639030cc390a8ec5a08f92a093f1d54f844368b",
+          "06fa4c4b381da7d7ea93ce31f1a4cc77c480cd91d614b4ef2822157e4d93e9c3",
+          "24d7cacdf04130f57116c263358ca12f0ab8a7365ce2e3afba20d89dbd5b401c"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 676,
+        "output": [
+          "d5b59454aec684205e420bab0c26e0c5cb18b12eec8b4d0b35d4f65beda8ca6d",
+          "d299e633bc1c6e15918d5cffcef6e8dcb25713d33dc0356b46c087ff074cd07d",
+          "2437605b2b2924356001b930074f81e2f061dc5d503ec8bf4cff874b075372fe",
+          "189f69ad69056b6f1d3a837eef0a9832a288148aba13eb170cb901027ce8070b",
+          "2437605b2b2924356001b930074f81e2f061dc5d503ec8bf4cff874b075372fe",
+          "d299e633bc1c6e15918d5cffcef6e8dcb25713d33dc0356b46c087ff074cd07d",
+          "d5b59454aec684205e420bab0c26e0c5cb18b12eec8b4d0b35d4f65beda8ca6d",
+          "b48aedb57b18ad96aa5d50d637ffe0be5946e8568d6769f067623c7392558e3f"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 677,
+        "output": [
+          "1be9c1d0cd814d259d320e3762ba6c51d82ed525e290b2413a86c75117d7f8f8",
+          "a19a1c17b2c3ed5401f8e9033cb7fa1b25cdb9149211bebba0c3e25e7e6aba92",
+          "b0f0777aac71f1e037f486f8d8537c71acf408e38670c3f1530c16767e1c22b9",
+          "57eafc9b3437e8649337d6d3cbf85be704424730229905bc1b4326f71ea3b7b4",
+          "b0f0777aac71f1e037f486f8d8537c71acf408e38670c3f1530c16767e1c22b9",
+          "a19a1c17b2c3ed5401f8e9033cb7fa1b25cdb9149211bebba0c3e25e7e6aba92",
+          "1be9c1d0cd814d259d320e3762ba6c51d82ed525e290b2413a86c75117d7f8f8",
+          "fac9c3b9d0cd3bf9b02c7e33ab265397c2846e746ea059cbe7b9a0e19a8212cb"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 678,
+        "output": [
+          "ee4417a9144d2fbf7e5cb2220854b67c6ea62549d66119b0f9bfae137acff48e",
+          "4a4d033416f7ea53f28c8893d94c6388f5a3de7375e3afe686139cb8963fb731",
+          "0afcd18f7ad126576f0059aac50baa455e060ed6eb8f09ac176e3966d468f018",
+          "1a6397b51c47e3c245af7ec7e34ed13e87fbf5fa5c651be56f28335dcbbe7963",
+          "0afcd18f7ad126576f0059aac50baa455e060ed6eb8f09ac176e3966d468f018",
+          "4a4d033416f7ea53f28c8893d94c6388f5a3de7375e3afe686139cb8963fb731",
+          "ee4417a9144d2fbf7e5cb2220854b67c6ea62549d66119b0f9bfae137acff48e",
+          "2de035a8d552086fd097b9d25418b2454cc7a21c7ef94db35be48f2f5190a6ab"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 679,
+        "output": [
+          "7ef9d37a8f14b7125a848856ec9896e5bc5627ead29b3fa6dc983792003629be",
+          "a302a441f231ac5ed3c847e667689bbe9835547d971f0d47f58547561305bd76",
+          "4ab4686f286de43dd1e7358deb5a1796cec9769d751058aa21b57ac68951897e",
+          "1f3ed8c4df1a84795e16b350f1bb868880cc1298a237559800e42c723765a2ab",
+          "4ab4686f286de43dd1e7358deb5a1796cec9769d751058aa21b57ac68951897e",
+          "a302a441f231ac5ed3c847e667689bbe9835547d971f0d47f58547561305bd76",
+          "7ef9d37a8f14b7125a848856ec9896e5bc5627ead29b3fa6dc983792003629be",
+          "d8fcc7f870072302c01ace73b2701eaeffb569b94f9d1f81bbe164b8f28ed09c"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 680,
+        "output": [
+          "a4af265ad3694bc3bbf9d2d0eee481622094ac913fd9c19eb754aff241a40887",
+          "aa9c4da12a11428294bc37c3ed73a2467758478733eb7381ce1a30fbb63aa60b",
+          "2218ec16426869d1d12514fbd3108c03cd46c8ba6583d7a3acbbaffe82a07f20",
+          "f448b9cb1ecc2071d1e6ec5fc0accfb0d5511a4da04bd647f12084a859d3e152",
+          "2218ec16426869d1d12514fbd3108c03cd46c8ba6583d7a3acbbaffe82a07f20",
+          "aa9c4da12a11428294bc37c3ed73a2467758478733eb7381ce1a30fbb63aa60b",
+          "a4af265ad3694bc3bbf9d2d0eee481622094ac913fd9c19eb754aff241a40887",
+          "5aeed983134862bf67ec2581e0ebab81eb6ce1dee4f149fcc0cb3087c728c0a9"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 681,
+        "output": [
+          "968aae75787760ef1dc8d3358813b3c1d36d54b00059c5c0f67b8bea9705e78e"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 682,
+        "output": [
+          "02e47cd9a96d4270f4514cf49f1b4f95749b03d68a58f28dccf9beb1e85d9f8c",
+          "c8d61616b97914c5202323ed2fe9357332cb52692bf292f0bea2888efb24dff6",
+          "7acb64083fe9a6333730f4df0cadf8f5ae34f43eefcf06934f062be969ccc1a6",
+          "bfb42a5d4fe165cd34994215cc224be26e9415318bec22415a57be9cbc83e65c",
+          "7acb64083fe9a6333730f4df0cadf8f5ae34f43eefcf06934f062be969ccc1a6",
+          "c8d61616b97914c5202323ed2fe9357332cb52692bf292f0bea2888efb24dff6",
+          "02e47cd9a96d4270f4514cf49f1b4f95749b03d68a58f28dccf9beb1e85d9f8c",
+          "795bc488599a03b350ba813f2596717130007c668692225d895386682caeb80c"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 685,
+        "output": [
+          "84220571fe3dc8747c28d8bea2105ea1f5be0d6ad412ae16f7a8c28f401efff5",
+          "56732e86502a7ffafb3f1f96afca5bf3985edd64ce75a389255d23971be6735c",
+          "42c85448f470e57a90840a2270f6cb92ff7cac98bda3e12c876b6aa13e2c6e10",
+          "179d5b88690672e8a3d3a7b87613307a0231a0af0841a9d7a7939034f19fce65",
+          "42c85448f470e57a90840a2270f6cb92ff7cac98bda3e12c876b6aa13e2c6e10",
+          "56732e86502a7ffafb3f1f96afca5bf3985edd64ce75a389255d23971be6735c",
+          "84220571fe3dc8747c28d8bea2105ea1f5be0d6ad412ae16f7a8c28f401efff5",
+          "46d527c378b09688443433fa8c0eeb0ea6bbd4ebae8a245a36f26ce8d9386cac"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 687,
+        "output": [
+          "0cddc5a5e3c3d82c74ee8d3b9e73de4144c863e7afb2e4fac88be453f1eaa311",
+          "5bb79424742837812c66aa84000bd944f75a89bdfccf3d386638b3cdcb79af45",
+          "5008f9712cbd501a03968ba7745ab10de9f320ffe3fef3ce402705f3d9f99199",
+          "15811d68fb983888c282252626890f94beedecc8ee10fab27646ce32f658e490",
+          "5008f9712cbd501a03968ba7745ab10de9f320ffe3fef3ce402705f3d9f99199",
+          "5bb79424742837812c66aa84000bd944f75a89bdfccf3d386638b3cdcb79af45",
+          "0cddc5a5e3c3d82c74ee8d3b9e73de4144c863e7afb2e4fac88be453f1eaa311",
+          "c77767f7c9fb86b45d1707adc47176ead4ec5363e1ad48a2ab581234c6b8221e"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 688,
+        "output": [
+          "383a52354e2122eae7a938e9ed66074d9ed901bb1f26d4099b1de5f471657af1",
+          "70970a6be5c889ee188ec14aa9017ed41a2eac3727bd323f9199700dad304eef",
+          "e00d74a7da315f56c8d546aac3bc27d542b6b8f31fe90a312dac9f90a0855f2d",
+          "fe40fe826e8451ac6f8aebb96c6a407fe6ec4d540d5648c1e537688cbfa21889",
+          "e00d74a7da315f56c8d546aac3bc27d542b6b8f31fe90a312dac9f90a0855f2d",
+          "70970a6be5c889ee188ec14aa9017ed41a2eac3727bd323f9199700dad304eef",
+          "383a52354e2122eae7a938e9ed66074d9ed901bb1f26d4099b1de5f471657af1",
+          "9ef2d2faa964dfe1aa0015f5f75221c3ed6136f38633795a3f5dee67e46fe548"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 689,
+        "output": [
+          "59604e1cc4e305288704d2f56914686c5dec7c8569ed021141119cde48a8da52",
+          "27825b7a74d6525845ed824173802f35d26b71d401d2e793b7bc67d15c0f99a5",
+          "f4d0921b82d6b882bafc1bd7e1708fb2a6911334b1f7e4536059b9a6f9ff5831",
+          "3146e5718c63626bff3c21a674beb54eaad430c233563818cadef171e08aca85",
+          "f4d0921b82d6b882bafc1bd7e1708fb2a6911334b1f7e4536059b9a6f9ff5831",
+          "27825b7a74d6525845ed824173802f35d26b71d401d2e793b7bc67d15c0f99a5",
+          "59604e1cc4e305288704d2f56914686c5dec7c8569ed021141119cde48a8da52",
+          "ea82381a54e2b8c2e5cd64c2f6c9b1344a264e10c242ceec7f04487f7a72d16f"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 690,
+        "output": [
+          "59604e1cc4e305288704d2f56914686c5dec7c8569ed021141119cde48a8da52",
+          "27825b7a74d6525845ed824173802f35d26b71d401d2e793b7bc67d15c0f99a5",
+          "f4d0921b82d6b882bafc1bd7e1708fb2a6911334b1f7e4536059b9a6f9ff5831",
+          "3146e5718c63626bff3c21a674beb54eaad430c233563818cadef171e08aca85",
+          "f4d0921b82d6b882bafc1bd7e1708fb2a6911334b1f7e4536059b9a6f9ff5831",
+          "27825b7a74d6525845ed824173802f35d26b71d401d2e793b7bc67d15c0f99a5",
+          "59604e1cc4e305288704d2f56914686c5dec7c8569ed021141119cde48a8da52",
+          "ea82381a54e2b8c2e5cd64c2f6c9b1344a264e10c242ceec7f04487f7a72d16f"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 691,
+        "output": [
+          "aeff485e179109b5e655add9234bc969686032c212d2c8bd6a4d4df55b930abb",
+          "cf68354df38208172a870bd69e71956deed3b4f7005fd6d1fd541a2be7dcc2f8",
+          "64b45a18cf2c779d4a63edc9ee00d6b1886b08d7c8cf274e7739ca3eb3aece92",
+          "08345e2dc6d6f93e68ba3b4c8ec5c0435b6fc84a695e45afee6f444544aba248",
+          "64b45a18cf2c779d4a63edc9ee00d6b1886b08d7c8cf274e7739ca3eb3aece92",
+          "cf68354df38208172a870bd69e71956deed3b4f7005fd6d1fd541a2be7dcc2f8",
+          "aeff485e179109b5e655add9234bc969686032c212d2c8bd6a4d4df55b930abb",
+          "b55ca4a0b6757b68ac9096b37147f42ce5a351bb84be3bc0672392869357a306"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 692,
+        "output": [
+          "2338f5567910bfb34bd2f6fbb96f251d61ce5a5d03f62eb8514ddc29b4cd3f84",
+          "771cf29a5e969f45961ec08aeaa172da4cecbcaa0bc641fcb137d45e08323d3a",
+          "65fe46e4ca485857ade1f098933310d138cb1b4633b8d6cdc8cfa50f156d181e",
+          "08a64dfa96c8806d5e6d14db585951daa693fa4a05a0fbdfbb8e666c2d3dead6",
+          "f62088f76d6230da7a2ab17eac099152dff0f5f9d2ea18215cea57f1ccfe1eee",
+          "177c55e78c2f6a6f11bd08e9c379ea5ea8e52c3251efe2ab274c537fb233be2a",
+          "b23a430d47262983f995b68bf0aa4c3c16676864e3121e870369f8b85c2929a5",
+          "08a64dfa96c8806d5e6d14db585951daa693fa4a05a0fbdfbb8e666c2d3dead6"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 693,
+        "output": [
+          "d1fa287677072f6afb7499b12e8cc5d8b1c8dfc4eaa3939ef54328386f958836",
+          "1b78c96da17ae5e3fb7d1422bc57328c7c8fc7500d1af170ba918678cf008f42",
+          "f26c48e46582b869e8f558594aa008ac04bf2ce28b9567f06876466fe0f1ce0e",
+          "843bf0ec045a7a2e3ed2ad8fca1c9f5dbd44356b6f27942af56fd0e96bdaea46",
+          "d1fa287677072f6afb7499b12e8cc5d8b1c8dfc4eaa3939ef54328386f958836",
+          "8d98c761185eb6dcce884bda5fa1bf010a16de9aa58bbc557349b079e06ca465",
+          "eeb3f3e0052b3d61c5ff805d3f5ab041ff5636e1063aabc919206163fbb965f4",
+          "843bf0ec045a7a2e3ed2ad8fca1c9f5dbd44356b6f27942af56fd0e96bdaea46"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 694,
+        "output": [
+          "8278ef9f586c820303e85018ebb3c796a4a815148683883c5b725069883cc459",
+          "76e2208b2f4ab39e4c0c2691bfa643ada1e2743e1a415f1839fbfe84f0e9eb6a",
+          "83fada6b68e95d2b329cb21384bada8662d18e05ee083703dc5f50ffc012ca4c",
+          "80c76a77f3cb550118dcfb4c99a19e1812fd5c01d023a742dc80d839efaa2443",
+          "3d077d361e2a60c8e57e388ad6b0e1604772d6258580efa5f5b73e65bbb21f04",
+          "76e2208b2f4ab39e4c0c2691bfa643ada1e2743e1a415f1839fbfe84f0e9eb6a",
+          "7ac2eff02547005c2af18fc856683e6fd61ca674fb611317c4c24bee539da6de",
+          "80c76a77f3cb550118dcfb4c99a19e1812fd5c01d023a742dc80d839efaa2443"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 695,
+        "output": [
+          "ce7257dd92bc1ebd3bb1216d5bd898a67a2b433a0e23d16792a9c373ac8898e8",
+          "b3f9ff257f981e98b3b6d2b049d2d2d24dcc7321d7fa39d758e3a2891e60abf8",
+          "a64e252366ef35c9a5ab624326913db56284b8134551879477a9bbffb01f9bb1",
+          "880d56ce72a04248314b17090c0ee6525751e59bdb3fc609c032ae87ac2502dc",
+          "e765ab18fe5f0c8c6d8f13c920a15e2ae97968e4e2ad268399a1335b88955158",
+          "2e44628796cd77feab2dc3c90f8d16d69a54a063d008a1b2786a83bda5f89aa6",
+          "6b43867e6ed70bcb71e422bc5a6cdacc4cae8158e3f7e2360fc5cc5a5ca56828",
+          "880d56ce72a04248314b17090c0ee6525751e59bdb3fc609c032ae87ac2502dc"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 696,
+        "output": [
+          "4411990b30ea84a435bd00337c86b1141e1f8b664e7fa9740d73b1aeb4f2a992",
+          "0bf7213d689b8afdb671cec62165b02058f023e8723ab8879f5d0e7914d12135",
+          "379c134dc7d74a3e1b17338cb7ff4c3aa4d6895fd6381f485ce800b08a53a1ed",
+          "476a1ebd21266cebd3dc7437be45f039e4d9f4e00dc2ceed79951a6c7ec1205f",
+          "379c134dc7d74a3e1b17338cb7ff4c3aa4d6895fd6381f485ce800b08a53a1ed",
+          "0bf7213d689b8afdb671cec62165b02058f023e8723ab8879f5d0e7914d12135",
+          "4411990b30ea84a435bd00337c86b1141e1f8b664e7fa9740d73b1aeb4f2a992",
+          "2ae4e1e2b96a6549a4f824d29f68d8b99b597f9fb5b77f8b7078e357ec50c78c"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 697,
+        "output": [
+          "4c150259d4074e9561d555dac787a019d272c37ceb659b5e425fd29b86e3fd56",
+          "5f01333a44d75f55746d512f5cc7380af864c7f80afb59883e5867f1c7a78bfe",
+          "413193bf8394d544c95ee76114c6dd7eb1911307a36fbd72b31a94669c366a7a",
+          "31e1a93e20e902b533fab17f67a5400782caeef7c7dbcdf57d798746be3d544c",
+          "413193bf8394d544c95ee76114c6dd7eb1911307a36fbd72b31a94669c366a7a",
+          "5f01333a44d75f55746d512f5cc7380af864c7f80afb59883e5867f1c7a78bfe",
+          "4c150259d4074e9561d555dac787a019d272c37ceb659b5e425fd29b86e3fd56",
+          "58f1b8ac01ff0a6bdd18db70e2708fbad307d65afbf04c7269c4139eced9fd43"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 698,
+        "output": [
+          "4c150259d4074e9561d555dac787a019d272c37ceb659b5e425fd29b86e3fd56",
+          "5f01333a44d75f55746d512f5cc7380af864c7f80afb59883e5867f1c7a78bfe",
+          "413193bf8394d544c95ee76114c6dd7eb1911307a36fbd72b31a94669c366a7a",
+          "31e1a93e20e902b533fab17f67a5400782caeef7c7dbcdf57d798746be3d544c",
+          "413193bf8394d544c95ee76114c6dd7eb1911307a36fbd72b31a94669c366a7a",
+          "5f01333a44d75f55746d512f5cc7380af864c7f80afb59883e5867f1c7a78bfe",
+          "4c150259d4074e9561d555dac787a019d272c37ceb659b5e425fd29b86e3fd56",
+          "58f1b8ac01ff0a6bdd18db70e2708fbad307d65afbf04c7269c4139eced9fd43"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 699,
+        "output": [
+          "4bd0e1b10d5d2dd9e35530d7a19498dbac6d76be0b14bd33bf15a5a5a0a0b006",
+          "b6d35108f405ce06fcf808de01cc7e7c382decb598d893827045d3189d83db6b",
+          "7a5f1ad69a5a3dd9ce3c5ef10f0fcbcc8700fd28016cbf6f3f21162dbbbc5429",
+          "eda3a00508be62f7998faa21ac6ee1996edb8f26eef02714b9c7f2278283d133",
+          "7a5f1ad69a5a3dd9ce3c5ef10f0fcbcc8700fd28016cbf6f3f21162dbbbc5429",
+          "b6d35108f405ce06fcf808de01cc7e7c382decb598d893827045d3189d83db6b",
+          "4bd0e1b10d5d2dd9e35530d7a19498dbac6d76be0b14bd33bf15a5a5a0a0b006",
+          "9df8cd8e02d7c9f2910fbb1ae6e35e8ca48f0bcd0faaaeeb071c52559c05b599"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 700,
+        "output": [
+          "897aeafafa4a18eca0883ac5e913b1ac8948f53c0d6a26d3bd3f4de6f96ad608",
+          "4275fcbb77a7d0454b43513b1307e301fa6b02b7faf2b6edb9d5a7513929fa96",
+          "9d7b6b91c94ae08fb0a91a4add2b4786b92ebbf9167e152b08fe8942c74fc220",
+          "2ccef19ee517ceb4353a566d6f09482b817f1e4ff66c42e6d76cabc05e468f83",
+          "bc5ef39aa3e125bc0c70fb9915ba6e930c6436e66e63218d44d2b443e1665ec4",
+          "4275fcbb77a7d0454b43513b1307e301fa6b02b7faf2b6edb9d5a7513929fa96",
+          "9d7b6b91c94ae08fb0a91a4add2b4786b92ebbf9167e152b08fe8942c74fc220",
+          "2ccef19ee517ceb4353a566d6f09482b817f1e4ff66c42e6d76cabc05e468f83"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 701,
+        "output": [
+          "f6c9e526827b40962f05c901c9aa1511a17418d12115bea1b4b7e60c0965f202",
+          "3f3a6fdbc82cfe7550e413e9ff45f9b5fe31a28f0e73a568a0a774f75f42c2e1",
+          "3f3a6fdbc82cfe7550e413e9ff45f9b5fe31a28f0e73a568a0a774f75f42c2e1",
+          "3f3a6fdbc82cfe7550e413e9ff45f9b5fe31a28f0e73a568a0a774f75f42c2e1",
+          "3f3a6fdbc82cfe7550e413e9ff45f9b5fe31a28f0e73a568a0a774f75f42c2e1",
+          "3f3a6fdbc82cfe7550e413e9ff45f9b5fe31a28f0e73a568a0a774f75f42c2e1",
+          "3f3a6fdbc82cfe7550e413e9ff45f9b5fe31a28f0e73a568a0a774f75f42c2e1",
+          "3f3a6fdbc82cfe7550e413e9ff45f9b5fe31a28f0e73a568a0a774f75f42c2e1"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 702,
+        "output": [
+          "f2bfb977075d0e4e1db67a2961c1bfb3dbf52645f89e39364687c5121b3acdfe",
+          "d83655896a5bbf3f47e6735ed70594646ce5045991d39bdc5c946ab34b6a020b",
+          "d83655896a5bbf3f47e6735ed70594646ce5045991d39bdc5c946ab34b6a020b",
+          "d83655896a5bbf3f47e6735ed70594646ce5045991d39bdc5c946ab34b6a020b",
+          "d83655896a5bbf3f47e6735ed70594646ce5045991d39bdc5c946ab34b6a020b",
+          "d83655896a5bbf3f47e6735ed70594646ce5045991d39bdc5c946ab34b6a020b",
+          "d83655896a5bbf3f47e6735ed70594646ce5045991d39bdc5c946ab34b6a020b",
+          "d83655896a5bbf3f47e6735ed70594646ce5045991d39bdc5c946ab34b6a020b"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 703,
+        "output": [
+          "27ccac7dfe1b749c1999a53b4e8e0ade124b151f6ddfd80f261eaf8d628b9e56",
+          "2d658208e22b072cc8bf38d618e5a90529d5e64462b07023bbacc82290410ddf",
+          "27ccac7dfe1b749c1999a53b4e8e0ade124b151f6ddfd80f261eaf8d628b9e56",
+          "27ccac7dfe1b749c1999a53b4e8e0ade124b151f6ddfd80f261eaf8d628b9e56",
+          "27ccac7dfe1b749c1999a53b4e8e0ade124b151f6ddfd80f261eaf8d628b9e56",
+          "2d658208e22b072cc8bf38d618e5a90529d5e64462b07023bbacc82290410ddf",
+          "27ccac7dfe1b749c1999a53b4e8e0ade124b151f6ddfd80f261eaf8d628b9e56",
+          "27ccac7dfe1b749c1999a53b4e8e0ade124b151f6ddfd80f261eaf8d628b9e56"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 704,
+        "output": [
+          "53e49cceeb00ae67cd225f955fce78d30621b79da00e75819edb107af1abe6d9",
+          "f6c5b5dab95713b95a4c59aa41073cd9dda6f940b5d80887d72d054055c58b77",
+          "9621f837b0da26752878b864275eab23d4232a9d072f81bf05e6729853767fe6",
+          "2abc260a8c0f53c1f53163b7dc500d0d491e8fc062e0e4e65ed2743b97e11c7a",
+          "9621f837b0da26752878b864275eab23d4232a9d072f81bf05e6729853767fe6",
+          "f6c5b5dab95713b95a4c59aa41073cd9dda6f940b5d80887d72d054055c58b77",
+          "53e49cceeb00ae67cd225f955fce78d30621b79da00e75819edb107af1abe6d9",
+          "70b5d458569b3c300849ce85c5e7eda696c1b8ad350601463fb8935cd4419fe9"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 705,
+        "output": [
+          "21ac1c088c69ee97eeaab2a06ce7a924b643f171119306cef6019d3345261e6a",
+          "bf2c679d72efed610b7ebdc891881b86b2da2ce9b44dd0f3c900718d9ec523a4",
+          "a07020190a33e49a1963442cefa82446839a51ab40b876d86297d5ffd7753edb",
+          "537212f5f4b3dc9c5e873131da5043ae1f3187527310909af5774e871c232e47",
+          "a07020190a33e49a1963442cefa82446839a51ab40b876d86297d5ffd7753edb",
+          "bf2c679d72efed610b7ebdc891881b86b2da2ce9b44dd0f3c900718d9ec523a4",
+          "21ac1c088c69ee97eeaab2a06ce7a924b643f171119306cef6019d3345261e6a",
+          "25fe91a5e4f8795d07f58fbd48ece05bffe567285db762fe98342fc1d563dbf3"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 706,
+        "output": [
+          "21ac1c088c69ee97eeaab2a06ce7a924b643f171119306cef6019d3345261e6a",
+          "bf2c679d72efed610b7ebdc891881b86b2da2ce9b44dd0f3c900718d9ec523a4",
+          "a07020190a33e49a1963442cefa82446839a51ab40b876d86297d5ffd7753edb",
+          "537212f5f4b3dc9c5e873131da5043ae1f3187527310909af5774e871c232e47",
+          "a07020190a33e49a1963442cefa82446839a51ab40b876d86297d5ffd7753edb",
+          "bf2c679d72efed610b7ebdc891881b86b2da2ce9b44dd0f3c900718d9ec523a4",
+          "21ac1c088c69ee97eeaab2a06ce7a924b643f171119306cef6019d3345261e6a",
+          "25fe91a5e4f8795d07f58fbd48ece05bffe567285db762fe98342fc1d563dbf3"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 707,
+        "output": [
+          "f88deaca9e4fa8b4ec1ae12d7288e40b2d4d7965b308abcccf7b0610a7d3fa74",
+          "a5e906f42c628a412e422b702edc91f81d24920dab961c4453409843db4dd8e9",
+          "2e6b6ac657e8b572ad98c60a3fcfdf32fe6f821b7980501d2ac96da6ef28d18f",
+          "053e24897fb80ceb887d926880c183e5d01255014df31399c4a097ace5ad19b5",
+          "2e6b6ac657e8b572ad98c60a3fcfdf32fe6f821b7980501d2ac96da6ef28d18f",
+          "a5e906f42c628a412e422b702edc91f81d24920dab961c4453409843db4dd8e9",
+          "f88deaca9e4fa8b4ec1ae12d7288e40b2d4d7965b308abcccf7b0610a7d3fa74",
+          "fdf7fe0eea8a9d0cba340c4c80dfd6050a6f806e18325017f5abb15203887966"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 708,
+        "output": [
+          "6c5add6402f3f78eacd3e67ff5169fead0dbbdc5807488b5910a09d67f831969",
+          "742cd2e3d3c48cffc65fb3e5b57d8ed1b6e95e4b4831ba09c7318bc837299e8e",
+          "fe035aa449855962da39977b6ab0cc4f27f031d9c2f5ef3f094a070f4553791d",
+          "135a67afbd80d888b435bb8229b08ce34320b44aa3e4bd76b507f1699d5c1ec7",
+          "6c5add6402f3f78eacd3e67ff5169fead0dbbdc5807488b5910a09d67f831969",
+          "5688375a85f6299c7ee39203dcea17a31c9b1c672df8cffd893f817abe54aa8e",
+          "caef0d0c8da01af7832d14549423f3d5bf473cb83dee1787c8b387e72389005e",
+          "135a67afbd80d888b435bb8229b08ce34320b44aa3e4bd76b507f1699d5c1ec7"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 709,
+        "output": [
+          "32ef3ccc72022badc312cd577155e2411312ed4cf953ef4647407aa7b87dd7c5",
+          "aa2a964b9877780303aab4eb9c1698e8928299515fd15a7b67d2431af9c69161",
+          "a9c08ffe2dbdefcac1f1246cbec5064b6862d7debc7e5438d55d54ed6c83961f",
+          "3f79b6e1c6ea0cbbf392f01869e8fce408cba7244de6f37d69f698ef16690841",
+          "32ef3ccc72022badc312cd577155e2411312ed4cf953ef4647407aa7b87dd7c5",
+          "30c7d1db6d62ed355378adab172a6677a04f63b994cbb9673a87e0d0051bbcb0",
+          "c9f3913a8c468d999e8fe952cb2615d6b5d69b79a81104bed84dc4ff0a1804c8",
+          "3f79b6e1c6ea0cbbf392f01869e8fce408cba7244de6f37d69f698ef16690841"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 710,
+        "output": [
+          "3557eeb4a5cfe26fd26f1c08e2f989c94d4786290e851e4b78b2b90d526cd6f4",
+          "5d30f0a17ea6271cbf300f2f6b68ae1f42cb991b65f1e99be2f3dfc3a12df92d",
+          "46a1d3f37b77c9c0afa5507471b63af9bc871b135bd1a9dc0e4a619619e89a5f",
+          "278b7a4ae17a4357a1dec9426bc1d64b85ddf7ea2e0661502d2db2b39c0ec458",
+          "cc11e393379529ccf0e68aaf789bfd930d3ed7fb01ec7f40d96968a7496f576b",
+          "a58441ddc68392c00680a3ded93312f25af80615be9128af99190e81b7eb302d",
+          "c200c189c704c84a28d6c9647113a49b19594afb93bb8c8ebc2db9a8fa7b1b5a",
+          "278b7a4ae17a4357a1dec9426bc1d64b85ddf7ea2e0661502d2db2b39c0ec458"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 711,
+        "output": [
+          "d20e3ac20674b1cf241a8d6d4aedb5daa7c107a88a0ff362f586c404fdb1fa2d",
+          "d181dc448c3d9b525f845ae0299663d01216caf19b59bbd3b1d12bc8b412076a",
+          "a4e456816b9f0479c70ec2bceda3b7eae1814cdfa6d18fad3b1a3bbafae2f578",
+          "8fff16c1ca45d07dfdf55c6897e5c007dfe403cf05b53ed5d2129d6dba7f15e9",
+          "d20e3ac20674b1cf241a8d6d4aedb5daa7c107a88a0ff362f586c404fdb1fa2d",
+          "0ad2334e71f91c4b885baede4eb2452f795192110ce12b205259fe91875e550f",
+          "36ec2d5f6ad412658af1120f4d99adfea193817506e671de897a036217daaa2d",
+          "8fff16c1ca45d07dfdf55c6897e5c007dfe403cf05b53ed5d2129d6dba7f15e9"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 750,
+        "output": [
+          "77bb841bc078751aa453e0d34b967c6ac1fa40961e45f53e39c9133251fe03dd",
+          "c95343df27c0e836b36791f39affc29d6c0900c4036bc35689fbf3b2705f8213",
+          "381fc80ffce6465c328e1172f492a84e748eaec24b6fea37b72ca99a3abd2fb5",
+          "2af9295ab4fcfa2a79a123a334c3cbcd555000f61770225bd7edbaeb4384358f",
+          "381fc80ffce6465c328e1172f492a84e748eaec24b6fea37b72ca99a3abd2fb5",
+          "c95343df27c0e836b36791f39affc29d6c0900c4036bc35689fbf3b2705f8213",
+          "77bb841bc078751aa453e0d34b967c6ac1fa40961e45f53e39c9133251fe03dd",
+          "50ac45a9c1e41977da6dc3c9da87c86922b53595605ebe04338fc36d615e945b"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 751,
+        "output": [
+          "c3bf45709f7497e2702c1a71c9b60c9ac53775035a47a8bc31c39757e45a52e8",
+          "f20251a085daec514e3a38f195332f63795c5898463ada0f4e6f0a4ac04c7cf0",
+          "98c0faae1ec457ca5ccb4ec905b01eb2f7139da3919f26eadcd257609cc5fe81",
+          "ec403aa4d35eac4e424a82d151c825443b0e7163765512a6c18ffa28fe9e2ec5",
+          "98c0faae1ec457ca5ccb4ec905b01eb2f7139da3919f26eadcd257609cc5fe81",
+          "f20251a085daec514e3a38f195332f63795c5898463ada0f4e6f0a4ac04c7cf0",
+          "c3bf45709f7497e2702c1a71c9b60c9ac53775035a47a8bc31c39757e45a52e8",
+          "c97d42435ffb19c266f81871803d696127b347fcb67668a8f5b394a8f47532f3"
+        ]
+      }
+    ],
+    "witnesses": [
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 656,
+        "map": "EM_SOOTOPOLIS_CITY",
+        "x": 17,
+        "y": 47,
+        "before_mid": 633,
+        "impassable": true,
+        "layout_file": "alt_357",
+        "source_collision": 41,
+        "target_collision": 41,
+        "target_elevation": 1
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 657,
+        "map": "EM_SOOTOPOLIS_CITY",
+        "x": 24,
+        "y": 55,
+        "before_mid": 654,
+        "impassable": true,
+        "layout_file": "alt_357",
+        "source_collision": 41,
+        "target_collision": 41,
+        "target_elevation": 1
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 658,
+        "map": "EM_SOOTOPOLIS_CITY",
+        "x": 16,
+        "y": 46,
+        "before_mid": 176,
+        "impassable": true,
+        "layout_file": "alt_357",
+        "source_collision": 41,
+        "target_collision": 41,
+        "target_elevation": 1
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 659,
+        "map": "EM_SOOTOPOLIS_CITY",
+        "x": 17,
+        "y": 46,
+        "before_mid": 177,
+        "impassable": true,
+        "layout_file": "alt_357",
+        "source_collision": 41,
+        "target_collision": 41,
+        "target_elevation": 1
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 660,
+        "map": "EM_SOOTOPOLIS_CITY",
+        "x": 36,
+        "y": 24,
+        "before_mid": 196,
+        "impassable": true,
+        "layout_file": "alt_357",
+        "source_collision": 41,
+        "target_collision": 41,
+        "target_elevation": 1
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 664,
+        "map": "EM_SOOTOPOLIS_CITY",
+        "x": 28,
+        "y": 28,
+        "before_mid": 642,
+        "impassable": false,
+        "layout_file": "alt_357",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 1
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 665,
+        "map": "EM_SOOTOPOLIS_CITY",
+        "x": 29,
+        "y": 28,
+        "before_mid": 643,
+        "impassable": false,
+        "layout_file": "alt_357",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 1
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 666,
+        "map": "EM_SOOTOPOLIS_CITY",
+        "x": 16,
+        "y": 47,
+        "before_mid": 184,
+        "impassable": true,
+        "layout_file": "alt_357",
+        "source_collision": 41,
+        "target_collision": 41,
+        "target_elevation": 1
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 668,
+        "map": "EM_SOOTOPOLIS_CITY",
+        "x": 26,
+        "y": 32,
+        "before_mid": 203,
+        "impassable": true,
+        "layout_file": "alt_357",
+        "source_collision": 41,
+        "target_collision": 41,
+        "target_elevation": 1
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 669,
+        "map": "EM_SOOTOPOLIS_CITY",
+        "x": 37,
+        "y": 53,
+        "before_mid": 160,
+        "impassable": true,
+        "layout_file": "alt_357",
+        "source_collision": 7,
+        "target_collision": 7,
+        "target_elevation": 1
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 672,
+        "map": "EM_SOOTOPOLIS_CITY",
+        "x": 33,
+        "y": 28,
+        "before_mid": 644,
+        "impassable": false,
+        "layout_file": "alt_357",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 1
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 674,
+        "map": "EM_SOOTOPOLIS_CITY",
+        "x": 18,
+        "y": 46,
+        "before_mid": 192,
+        "impassable": true,
+        "layout_file": "alt_357",
+        "source_collision": 41,
+        "target_collision": 41,
+        "target_elevation": 1
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 676,
+        "map": "EM_SOOTOPOLIS_CITY",
+        "x": 26,
+        "y": 37,
+        "before_mid": 194,
+        "impassable": true,
+        "layout_file": "alt_357",
+        "source_collision": 41,
+        "target_collision": 41,
+        "target_elevation": 1
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 677,
+        "map": "EM_SOOTOPOLIS_CITY",
+        "x": 22,
+        "y": 55,
+        "before_mid": 645,
+        "impassable": true,
+        "layout_file": "alt_357",
+        "source_collision": 41,
+        "target_collision": 41,
+        "target_elevation": 1
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 678,
+        "map": "EM_SOOTOPOLIS_CITY",
+        "x": 25,
+        "y": 53,
+        "before_mid": 646,
+        "impassable": true,
+        "layout_file": "alt_357",
+        "source_collision": 41,
+        "target_collision": 41,
+        "target_elevation": 1
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 679,
+        "map": "EM_SOOTOPOLIS_CITY",
+        "x": 30,
+        "y": 52,
+        "before_mid": 647,
+        "impassable": true,
+        "layout_file": "alt_357",
+        "source_collision": 41,
+        "target_collision": 41,
+        "target_elevation": 1
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 680,
+        "map": "EM_SOOTOPOLIS_CITY",
+        "x": 16,
+        "y": 55,
+        "before_mid": 617,
+        "impassable": true,
+        "layout_file": "alt_357",
+        "source_collision": 7,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 681,
+        "map": "EM_SOOTOPOLIS_CITY",
+        "x": 15,
+        "y": 55,
+        "before_mid": 617,
+        "impassable": true,
+        "layout_file": "alt_357",
+        "source_collision": 7,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 682,
+        "map": "EM_SOOTOPOLIS_CITY",
+        "x": 22,
+        "y": 56,
+        "before_mid": 617,
+        "impassable": true,
+        "layout_file": "alt_357",
+        "source_collision": 7,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 685,
+        "map": "EM_SOOTOPOLIS_CITY",
+        "x": 23,
+        "y": 55,
+        "before_mid": 653,
+        "impassable": true,
+        "layout_file": "alt_357",
+        "source_collision": 41,
+        "target_collision": 41,
+        "target_elevation": 1
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 687,
+        "map": "EM_SOOTOPOLIS_CITY",
+        "x": 30,
+        "y": 53,
+        "before_mid": 655,
+        "impassable": true,
+        "layout_file": "alt_357",
+        "source_collision": 41,
+        "target_collision": 41,
+        "target_elevation": 1
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 688,
+        "map": "EM_SOOTOPOLIS_CITY",
+        "x": 32,
+        "y": 43,
+        "before_mid": 633,
+        "impassable": true,
+        "layout_file": "alt_357",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 1
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 689,
+        "map": "EM_SOOTOPOLIS_CITY",
+        "x": 33,
+        "y": 43,
+        "before_mid": 633,
+        "impassable": true,
+        "layout_file": "alt_357",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 1
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 690,
+        "map": "EM_SOOTOPOLIS_CITY",
+        "x": 34,
+        "y": 43,
+        "before_mid": 633,
+        "impassable": true,
+        "layout_file": "alt_357",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 1
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 691,
+        "map": "EM_SOOTOPOLIS_CITY",
+        "x": 35,
+        "y": 43,
+        "before_mid": 633,
+        "impassable": true,
+        "layout_file": "alt_357",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 1
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 692,
+        "map": "EM_SOOTOPOLIS_CITY",
+        "x": 27,
+        "y": 43,
+        "before_mid": 633,
+        "impassable": true,
+        "layout_file": "alt_357",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 1
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 693,
+        "map": "EM_SOOTOPOLIS_CITY",
+        "x": 28,
+        "y": 43,
+        "before_mid": 633,
+        "impassable": true,
+        "layout_file": "alt_357",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 1
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 694,
+        "map": "EM_SOOTOPOLIS_CITY",
+        "x": 29,
+        "y": 43,
+        "before_mid": 633,
+        "impassable": true,
+        "layout_file": "alt_357",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 1
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 695,
+        "map": "EM_SOOTOPOLIS_CITY",
+        "x": 30,
+        "y": 43,
+        "before_mid": 633,
+        "impassable": true,
+        "layout_file": "alt_357",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 1
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 696,
+        "map": "EM_SOOTOPOLIS_CITY",
+        "x": 32,
+        "y": 44,
+        "before_mid": 633,
+        "impassable": true,
+        "layout_file": "alt_357",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 1
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 697,
+        "map": "EM_SOOTOPOLIS_CITY",
+        "x": 33,
+        "y": 44,
+        "before_mid": 633,
+        "impassable": true,
+        "layout_file": "alt_357",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 1
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 698,
+        "map": "EM_SOOTOPOLIS_CITY",
+        "x": 34,
+        "y": 44,
+        "before_mid": 633,
+        "impassable": true,
+        "layout_file": "alt_357",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 1
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 699,
+        "map": "EM_SOOTOPOLIS_CITY",
+        "x": 35,
+        "y": 44,
+        "before_mid": 633,
+        "impassable": true,
+        "layout_file": "alt_357",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 1
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 700,
+        "map": "EM_SOOTOPOLIS_CITY",
+        "x": 27,
+        "y": 44,
+        "before_mid": 633,
+        "impassable": true,
+        "layout_file": "alt_357",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 1
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 701,
+        "map": "EM_SOOTOPOLIS_CITY",
+        "x": 28,
+        "y": 44,
+        "before_mid": 633,
+        "impassable": true,
+        "layout_file": "alt_357",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 1
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 702,
+        "map": "EM_SOOTOPOLIS_CITY",
+        "x": 29,
+        "y": 44,
+        "before_mid": 633,
+        "impassable": true,
+        "layout_file": "alt_357",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 1
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 703,
+        "map": "EM_SOOTOPOLIS_CITY",
+        "x": 30,
+        "y": 44,
+        "before_mid": 633,
+        "impassable": true,
+        "layout_file": "alt_357",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 1
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 704,
+        "map": "EM_SOOTOPOLIS_CITY",
+        "x": 32,
+        "y": 45,
+        "before_mid": 633,
+        "impassable": true,
+        "layout_file": "alt_357",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 1
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 705,
+        "map": "EM_SOOTOPOLIS_CITY",
+        "x": 33,
+        "y": 45,
+        "before_mid": 633,
+        "impassable": true,
+        "layout_file": "alt_357",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 1
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 706,
+        "map": "EM_SOOTOPOLIS_CITY",
+        "x": 34,
+        "y": 45,
+        "before_mid": 633,
+        "impassable": true,
+        "layout_file": "alt_357",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 1
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 707,
+        "map": "EM_SOOTOPOLIS_CITY",
+        "x": 35,
+        "y": 45,
+        "before_mid": 633,
+        "impassable": true,
+        "layout_file": "alt_357",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 1
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 708,
+        "map": "EM_SOOTOPOLIS_CITY",
+        "x": 27,
+        "y": 45,
+        "before_mid": 633,
+        "impassable": true,
+        "layout_file": "alt_357",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 1
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 709,
+        "map": "EM_SOOTOPOLIS_CITY",
+        "x": 28,
+        "y": 45,
+        "before_mid": 633,
+        "impassable": true,
+        "layout_file": "alt_357",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 1
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 710,
+        "map": "EM_SOOTOPOLIS_CITY",
+        "x": 29,
+        "y": 45,
+        "before_mid": 633,
+        "impassable": true,
+        "layout_file": "alt_357",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 1
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 711,
+        "map": "EM_SOOTOPOLIS_CITY",
+        "x": 30,
+        "y": 45,
+        "before_mid": 633,
+        "impassable": true,
+        "layout_file": "alt_357",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 1
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 750,
+        "map": "EM_SOOTOPOLIS_CITY",
+        "x": 35,
+        "y": 55,
+        "before_mid": 152,
+        "impassable": true,
+        "layout_file": "alt_357",
+        "source_collision": 7,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "emerald",
+        "pair": "general__sootopolis",
+        "mid": 751,
+        "map": "EM_SOOTOPOLIS_CITY",
+        "x": 19,
+        "y": 55,
+        "before_mid": 154,
+        "impassable": true,
+        "layout_file": "alt_357",
+        "source_collision": 7,
+        "target_collision": 7,
+        "target_elevation": 0
+      }
+    ]
+  }
+}

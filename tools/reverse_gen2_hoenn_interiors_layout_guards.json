@@ -1,0 +1,424 @@
+{
+  "items": [
+    {
+      "game": "emerald",
+      "pair": "building__lab",
+      "mid": 659,
+      "source": "ca584918b09fdaecc62fa66ed487c5cdfb0f3d43dfa42c27f62c274f507ac1be",
+      "layers": {
+        "under": "ca584918b09fdaecc62fa66ed487c5cdfb0f3d43dfa42c27f62c274f507ac1be",
+        "mid": "686013e1e21e9cbcdc8c94c687aea243149dddc070513fbfd93aeeb978c37c83",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
+          "alt_432",
+          432,
+          "g3:081f9ce9",
+          2
+        ],
+        [
+          "EM_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
+          "alt_432",
+          432,
+          "g3:081f9cf3",
+          0
+        ],
+        [
+          "EM_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
+          "alt_432",
+          432,
+          "g3:081f9cf7",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "building__lab",
+      "mid": 660,
+      "source": "cd5953d4c68fe00e7a8dacbc6212d9cd319b30928eb57bd3427444f1d4631219",
+      "layers": {
+        "under": "cd5953d4c68fe00e7a8dacbc6212d9cd319b30928eb57bd3427444f1d4631219",
+        "mid": "cd5953d4c68fe00e7a8dacbc6212d9cd319b30928eb57bd3427444f1d4631219",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
+          "alt_432",
+          432,
+          "g3:081f9ce9",
+          2
+        ],
+        [
+          "EM_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
+          "alt_432",
+          432,
+          "g3:081f9cf3",
+          0
+        ],
+        [
+          "EM_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
+          "alt_432",
+          432,
+          "g3:081f9cf7",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "building__lab",
+      "mid": 661,
+      "source": "d8f7782bcca4120997d6fa11b5bb3ce2bc280c5e705620dd12dee979142c9a7d",
+      "layers": {
+        "under": "d8f7782bcca4120997d6fa11b5bb3ce2bc280c5e705620dd12dee979142c9a7d",
+        "mid": "adfc647ae0590e4573af3902d4c3e416c617f3b927a525e86ddf6a3ea0b779bb",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
+          "alt_432",
+          432,
+          "g3:081f9ce9",
+          2
+        ],
+        [
+          "EM_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
+          "alt_432",
+          432,
+          "g3:081f9cf3",
+          0
+        ],
+        [
+          "EM_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
+          "alt_432",
+          432,
+          "g3:081f9cf7",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "building__lab",
+      "mid": 667,
+      "source": "e5c6ccc21b68162127b39f9f92941323afc07fdb5bb0dc88ad8deb42edb023bb",
+      "layers": {
+        "under": "e5c6ccc21b68162127b39f9f92941323afc07fdb5bb0dc88ad8deb42edb023bb",
+        "mid": "d5c30ccff7034b002d42fb2b873568d90140406630453aba77e7a526c1f8267f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
+          "alt_432",
+          432,
+          "g3:081f9ce9",
+          2
+        ],
+        [
+          "EM_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
+          "alt_432",
+          432,
+          "g3:081f9cf3",
+          0
+        ],
+        [
+          "EM_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
+          "alt_432",
+          432,
+          "g3:081f9cf7",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "building__lab",
+      "mid": 668,
+      "source": "80bfaa1d51de072bba2f346312db36af7e725e8c1ff808dc4ec8b9988dfe050b",
+      "layers": {
+        "under": "80bfaa1d51de072bba2f346312db36af7e725e8c1ff808dc4ec8b9988dfe050b",
+        "mid": "0fb7d3c44c1d4bb3a7bcdb929a6bf2504387070e285120884d916176c45ca1ec",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
+          "alt_432",
+          432,
+          "g3:081f9ce9",
+          2
+        ],
+        [
+          "EM_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
+          "alt_432",
+          432,
+          "g3:081f9cf3",
+          0
+        ],
+        [
+          "EM_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
+          "alt_432",
+          432,
+          "g3:081f9cf7",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "building__lab",
+      "mid": 669,
+      "source": "6dacc7d298ec09bd98234f12a86658fac8558526b384396d554993d910dec6c9",
+      "layers": {
+        "under": "6dacc7d298ec09bd98234f12a86658fac8558526b384396d554993d910dec6c9",
+        "mid": "31f6b6f9c218a5a78652602ca9f0b1b7865c45bcece3d506aa17070960d9ec9e",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
+          "alt_432",
+          432,
+          "g3:081f9ce9",
+          2
+        ],
+        [
+          "EM_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
+          "alt_432",
+          432,
+          "g3:081f9cf3",
+          0
+        ],
+        [
+          "EM_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
+          "alt_432",
+          432,
+          "g3:081f9cf7",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "building__mystery_events_house",
+      "mid": 555,
+      "source": "ad1ecc5ea134887acb62e5bb796477eed4bc4fac4ea0b1bd40f43aefbadfab34",
+      "layers": {
+        "under": "ad1ecc5ea134887acb62e5bb796477eed4bc4fac4ea0b1bd40f43aefbadfab34",
+        "mid": "0876d051dbee9e9dcd9ce6264a71d0031d1ee1b4b62b899ef9101c3e2b252192",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_SOOTOPOLIS_CITY_MYSTERY_EVENTS_HOUSE_1F",
+          "alt_441",
+          441,
+          "g3:0822797d",
+          3
+        ]
+      ],
+      "placement_count": 1
+    }
+  ],
+  "proof": {
+    "layouts": {
+      "emerald/EM_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB/alt_432": {
+        "base": "a1a87035eb25f23bf17607bd8ee6ad448aaff81f61fbc8f67441177bfbd64a37",
+        "alternate": "08fbd59e8488941898fd561b850efaf54603e47c12ef45e92c4b210e6b89d4c0",
+        "size": [
+          13,
+          13
+        ]
+      },
+      "emerald/EM_SOOTOPOLIS_CITY_MYSTERY_EVENTS_HOUSE_1F/alt_441": {
+        "base": "1b3c6602c717b8f3ebb1f4d10b580760dc51ffcaf9217c107b48376838275e77",
+        "alternate": "bc833f71ef151f4d67dc1fe560c2420602f8253fef32e2d1ea1b895cc1715673",
+        "size": [
+          11,
+          8
+        ]
+      }
+    },
+    "anchors": {
+      "emerald/building__lab/514": "56699ed8f4a47fc8ac52542d7aa72d9ca34375cbd995038d8c41756d1b78a95e",
+      "emerald/building__mystery_events_house/531": "4be630020594def679d7fb2f36152ec11ed7db9e52736fd02541470a3e038f99"
+    },
+    "rows": [
+      {
+        "game": "emerald",
+        "pair": "building__lab",
+        "mid": 659,
+        "output": [
+          "14036c8c4c1381fed24cb409670113618e74ad1f0f55a0e0c0dfcd083fc0fefb"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "building__lab",
+        "mid": 660,
+        "output": [
+          "d8d9649d6170a3706d108bb4904e93927dda1fedd0a7e65f615a92f1c2c0a664"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "building__lab",
+        "mid": 661,
+        "output": [
+          "5118e2befaa8e70f5e634768c17e270c8fd2c14e549277377585ef6d3140b64a"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "building__lab",
+        "mid": 667,
+        "output": [
+          "82b5b240d556e797414d47564441298d2fd8cf6ba7574766aea585b3e606ee07"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "building__lab",
+        "mid": 668,
+        "output": [
+          "257f4aa8daae2c4ee795bde1d11c7284c09d464f11e138cf0332e110477970d4"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "building__lab",
+        "mid": 669,
+        "output": [
+          "c85abd34a928cbf65054466fc51b298f25f483d0d9836fce504625a22b44de19"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "building__mystery_events_house",
+        "mid": 555,
+        "output": [
+          "c546c929b344bff54f02094407975d806005dc0e3878a2c673ad8a04efc9ef2c"
+        ]
+      }
+    ],
+    "witnesses": [
+      {
+        "game": "emerald",
+        "pair": "building__lab",
+        "mid": 659,
+        "map": "EM_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
+        "x": 8,
+        "y": 4,
+        "before_mid": 514,
+        "impassable": true,
+        "layout_file": "alt_432",
+        "source_collision": 0,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "emerald",
+        "pair": "building__lab",
+        "mid": 660,
+        "map": "EM_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
+        "x": 9,
+        "y": 4,
+        "before_mid": 561,
+        "impassable": true,
+        "layout_file": "alt_432",
+        "source_collision": 7,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "emerald",
+        "pair": "building__lab",
+        "mid": 661,
+        "map": "EM_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
+        "x": 10,
+        "y": 4,
+        "before_mid": 578,
+        "impassable": true,
+        "layout_file": "alt_432",
+        "source_collision": 7,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "emerald",
+        "pair": "building__lab",
+        "mid": 667,
+        "map": "EM_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
+        "x": 8,
+        "y": 5,
+        "before_mid": 514,
+        "impassable": false,
+        "layout_file": "alt_432",
+        "source_collision": 0,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "emerald",
+        "pair": "building__lab",
+        "mid": 668,
+        "map": "EM_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
+        "x": 9,
+        "y": 5,
+        "before_mid": 575,
+        "impassable": false,
+        "layout_file": "alt_432",
+        "source_collision": 0,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "emerald",
+        "pair": "building__lab",
+        "mid": 669,
+        "map": "EM_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
+        "x": 10,
+        "y": 5,
+        "before_mid": 575,
+        "impassable": false,
+        "layout_file": "alt_432",
+        "source_collision": 0,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "emerald",
+        "pair": "building__mystery_events_house",
+        "mid": 555,
+        "map": "EM_SOOTOPOLIS_CITY_MYSTERY_EVENTS_HOUSE_1F",
+        "x": 6,
+        "y": 1,
+        "before_mid": 526,
+        "impassable": true,
+        "layout_file": "alt_441",
+        "source_collision": 7,
+        "target_collision": 7,
+        "target_elevation": 0
+      }
+    ]
+  }
+}

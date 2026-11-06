@@ -1,0 +1,4428 @@
+{
+  "version": 1,
+  "nativeFiles": [
+    {
+      "game": "emerald",
+      "file": "data/generated/gba/native/layouts/EM_LILYCOVE_CITY.mid",
+      "sha256": "61ca94b683386f553387c0b4d8c431755e58430c4003bb07ef33918f203af60d"
+    },
+    {
+      "game": "emerald",
+      "file": "data/generated/gba/native/layouts/EM_ROUTE103.mid",
+      "sha256": "8f8b40769ae64369d8196f52485f1c774d4faf13060f73c251c97af9e958a162"
+    },
+    {
+      "game": "emerald",
+      "file": "data/generated/gba/native/layouts/EM_ROUTE105.mid",
+      "sha256": "d8854ab890dafe93b0ecfecd9519cff2ca516bfae1ca10b7fff101c25a705f50"
+    },
+    {
+      "game": "emerald",
+      "file": "data/generated/gba/native/layouts/EM_ROUTE111.mid",
+      "sha256": "03dc447e0658d103caa530bca78c046a895546190838477f95cc2cefcde3e5c7"
+    },
+    {
+      "game": "emerald",
+      "file": "data/generated/gba/native/layouts/EM_ROUTE114.mid",
+      "sha256": "92fe892d45034e718e63f90711f531c83661b603fb241c1f0ae22b9199eeed14"
+    },
+    {
+      "game": "emerald",
+      "file": "data/generated/gba/native/layouts/EM_ROUTE115.mid",
+      "sha256": "a31ea0f3bf448b5a3a5d26e36e9dc984b7fb00128a2ae4d6201d4ddca0f2db76"
+    },
+    {
+      "game": "emerald",
+      "file": "data/generated/gba/native/layouts/EM_ROUTE116.mid",
+      "sha256": "415fec4c0c8b5f40665c2875b5b2f4c8d7f7a89a0b11d86726fc6426831bcfdc"
+    },
+    {
+      "game": "emerald",
+      "file": "data/generated/gba/native/layouts/EM_ROUTE119.mid",
+      "sha256": "68592127ae7ef64a0a4736c560d067602c8ef9854d8d24e6bef31c44783b915f"
+    },
+    {
+      "game": "emerald",
+      "file": "data/generated/gba/native/layouts/EM_ROUTE120.mid",
+      "sha256": "9556586bc681f41f531face11abd3a3dfc7b2a1df8448b03afcf1d3af4097d69"
+    },
+    {
+      "game": "emerald",
+      "file": "data/generated/gba/native/layouts/EM_ROUTE121.mid",
+      "sha256": "02a3337b175762772f8d6f9eab03ed1f944787cfc64b4a03049f4145555787a8"
+    },
+    {
+      "game": "emerald",
+      "file": "data/generated/gba/native/layouts/EM_ROUTE123.mid",
+      "sha256": "0bb095f743f44ebc83050453c734b661c1a6f2212a73bdeb48e6d9516a5e4c35"
+    },
+    {
+      "game": "emerald",
+      "file": "data/generated/gba/native/layouts/EM_ROUTE125.mid",
+      "sha256": "4a5c9fd2dfcf9d34d7260bab1203bf6c6c28190d87f8f40bd42ecf776f38823f"
+    },
+    {
+      "game": "emerald",
+      "file": "data/generated/gba/native/layouts/EM_ROUTE127.mid",
+      "sha256": "d29509bd625f42e52c329600fcda9bfd335997fa5b2b818f389746631423bcec"
+    },
+    {
+      "game": "emerald",
+      "file": "data/generated/gba/native/layouts/EM_SHOAL_CAVE_LOW_TIDE_INNER_ROOM.mid",
+      "sha256": "4e698fb06a05e063fd00317b7f31c1bbf79228e2b572a4b1f66f73c95d343055"
+    },
+    {
+      "game": "emerald",
+      "file": "data/generated/gba/native/layouts/EM_SKY_PILLAR_OUTSIDE.mid",
+      "sha256": "abce5d981488b9022fb8e74b172c5af6229a2aeacca820d2e40f4e7c1e8ccb75"
+    },
+    {
+      "game": "emerald",
+      "file": "data/generated/gba/native/layouts/EM_SOOTOPOLIS_CITY.mid",
+      "sha256": "f7224a23ad04bfabaea558f65e07b9e82168d7f98f70b5f5664d5413373d99a6"
+    },
+    {
+      "game": "emerald",
+      "file": "data/generated/gba/native/manifest.lua",
+      "sha256": "857ca4a444bec9981bb199e8a8919574913c2815fb0bab520b2a9658f3c705fa"
+    },
+    {
+      "game": "emerald",
+      "file": "data/generated/gba/scripts/events.lua",
+      "sha256": "4ae6dc661bae0bdc707c57dfd0ec1722e196dd194e4d94b3bc470f4549bd0d85"
+    },
+    {
+      "game": "emerald",
+      "file": "data/generated/gba/scripts/scripts.lua",
+      "sha256": "6da1f4589173f79677d9efbc6d2ca366b6255031da8fc27f439e2165eb2e812e"
+    },
+    {
+      "game": "emerald",
+      "file": "data/generated/gba/secret_base/manifest.lua",
+      "sha256": "038102429e3ffa1f5b87a1286de5e8b1857be5976e5b5d11c48d84210d9a32a5"
+    },
+    {
+      "game": "ruby",
+      "file": "data/generated/gba/native/layouts/RU_LILYCOVE_CITY.mid",
+      "sha256": "5baabd72c2b795cdce8085b59201873e92f70a0f7fd53f605192ca490790bd5b"
+    },
+    {
+      "game": "ruby",
+      "file": "data/generated/gba/native/layouts/RU_ROUTE111.mid",
+      "sha256": "821964dd0600c6fbc01728cc033da52cb6bd2fe19883c8a18d3cac403da2fe95"
+    },
+    {
+      "game": "ruby",
+      "file": "data/generated/gba/native/layouts/RU_ROUTE113.mid",
+      "sha256": "e57545a2414c2d9b09cffe033c7821750a620f5ff5d53a31e1b7da48ae325b80"
+    },
+    {
+      "game": "ruby",
+      "file": "data/generated/gba/native/layouts/RU_ROUTE115.mid",
+      "sha256": "249c7274673e1c04110bbdc0f578b55538489f8deace6923fea5887fd8bd0c64"
+    },
+    {
+      "game": "ruby",
+      "file": "data/generated/gba/native/layouts/RU_ROUTE116.mid",
+      "sha256": "46ab145a68dff015d95db0eacfae8759f0c8f7f28ba1498056614562777063db"
+    },
+    {
+      "game": "ruby",
+      "file": "data/generated/gba/native/layouts/RU_ROUTE119.mid",
+      "sha256": "2e6df00444a961721e98a81799e593a12ab3eafe38ee8e30e9e93664ef744b6b"
+    },
+    {
+      "game": "ruby",
+      "file": "data/generated/gba/native/layouts/RU_ROUTE120.mid",
+      "sha256": "3cb812132d93ba3d676f0ae108690f28ea16981743d62097007c53fb8fb8af0e"
+    },
+    {
+      "game": "ruby",
+      "file": "data/generated/gba/native/layouts/RU_ROUTE121.mid",
+      "sha256": "5654c3a28995017c5dfc773305169816aa533c2671354f479affbde896c24fbe"
+    },
+    {
+      "game": "ruby",
+      "file": "data/generated/gba/native/layouts/RU_ROUTE123.mid",
+      "sha256": "cb143b74a76aecea5898122412322d7c8f8a1872a7376c10a5692073ce45bf6c"
+    },
+    {
+      "game": "ruby",
+      "file": "data/generated/gba/native/layouts/RU_ROUTE125.mid",
+      "sha256": "fda97ee3dfa043729e91ea213d2ad7257f7e4792725662ce6b78694686b4acf2"
+    },
+    {
+      "game": "ruby",
+      "file": "data/generated/gba/native/layouts/RU_ROUTE127.mid",
+      "sha256": "79cafd1ace6ad8ba9389993f9a9bbaf86be58afc5894c76227523abefb882799"
+    },
+    {
+      "game": "ruby",
+      "file": "data/generated/gba/native/layouts/RU_SHOAL_CAVE_LOW_TIDE_INNER_ROOM.mid",
+      "sha256": "4e698fb06a05e063fd00317b7f31c1bbf79228e2b572a4b1f66f73c95d343055"
+    },
+    {
+      "game": "ruby",
+      "file": "data/generated/gba/native/layouts/RU_SOOTOPOLIS_CITY.mid",
+      "sha256": "79917f73adc27a27447f2132231eecbcf104d80483dbea889742d61fa6b0ec72"
+    },
+    {
+      "game": "ruby",
+      "file": "data/generated/gba/native/manifest.lua",
+      "sha256": "c7d1c790ff92f364fa45c0d40d93d7bf8585ed837495bedd92228fa3890cd48a"
+    },
+    {
+      "game": "ruby",
+      "file": "data/generated/gba/scripts/events.lua",
+      "sha256": "27a8a00f536acfa00fe8fe2b09708e4bf5c05f7b88c3579de5e1dd3a72e5f434"
+    },
+    {
+      "game": "ruby",
+      "file": "data/generated/gba/scripts/scripts.lua",
+      "sha256": "2aecd0ff5d4eb4db3c4ef2aaf1dfdd17f28edb0c378178d243a5c03d04fce83a"
+    },
+    {
+      "game": "ruby",
+      "file": "data/generated/gba/secret_base/manifest.lua",
+      "sha256": "216b3605e85b235159c7423374b38787f4002d692788eb5e3bcedb76001fbf89"
+    },
+    {
+      "game": "sapphire",
+      "file": "data/generated/gba/native/layouts/SA_LILYCOVE_CITY.mid",
+      "sha256": "5baabd72c2b795cdce8085b59201873e92f70a0f7fd53f605192ca490790bd5b"
+    },
+    {
+      "game": "sapphire",
+      "file": "data/generated/gba/native/layouts/SA_ROUTE111.mid",
+      "sha256": "821964dd0600c6fbc01728cc033da52cb6bd2fe19883c8a18d3cac403da2fe95"
+    },
+    {
+      "game": "sapphire",
+      "file": "data/generated/gba/native/layouts/SA_ROUTE113.mid",
+      "sha256": "e57545a2414c2d9b09cffe033c7821750a620f5ff5d53a31e1b7da48ae325b80"
+    },
+    {
+      "game": "sapphire",
+      "file": "data/generated/gba/native/layouts/SA_ROUTE114.mid",
+      "sha256": "b48c26991e0191b6c17844d26ecbd646d67518cd92b5c23b6f00c763c48cee25"
+    },
+    {
+      "game": "sapphire",
+      "file": "data/generated/gba/native/layouts/SA_ROUTE115.mid",
+      "sha256": "249c7274673e1c04110bbdc0f578b55538489f8deace6923fea5887fd8bd0c64"
+    },
+    {
+      "game": "sapphire",
+      "file": "data/generated/gba/native/layouts/SA_ROUTE116.mid",
+      "sha256": "46ab145a68dff015d95db0eacfae8759f0c8f7f28ba1498056614562777063db"
+    },
+    {
+      "game": "sapphire",
+      "file": "data/generated/gba/native/layouts/SA_ROUTE119.mid",
+      "sha256": "2e6df00444a961721e98a81799e593a12ab3eafe38ee8e30e9e93664ef744b6b"
+    },
+    {
+      "game": "sapphire",
+      "file": "data/generated/gba/native/layouts/SA_ROUTE121.mid",
+      "sha256": "5654c3a28995017c5dfc773305169816aa533c2671354f479affbde896c24fbe"
+    },
+    {
+      "game": "sapphire",
+      "file": "data/generated/gba/native/layouts/SA_ROUTE125.mid",
+      "sha256": "fda97ee3dfa043729e91ea213d2ad7257f7e4792725662ce6b78694686b4acf2"
+    },
+    {
+      "game": "sapphire",
+      "file": "data/generated/gba/native/layouts/SA_ROUTE127.mid",
+      "sha256": "79cafd1ace6ad8ba9389993f9a9bbaf86be58afc5894c76227523abefb882799"
+    },
+    {
+      "game": "sapphire",
+      "file": "data/generated/gba/native/layouts/SA_SHOAL_CAVE_LOW_TIDE_INNER_ROOM.mid",
+      "sha256": "4e698fb06a05e063fd00317b7f31c1bbf79228e2b572a4b1f66f73c95d343055"
+    },
+    {
+      "game": "sapphire",
+      "file": "data/generated/gba/native/layouts/SA_SOOTOPOLIS_CITY.mid",
+      "sha256": "79917f73adc27a27447f2132231eecbcf104d80483dbea889742d61fa6b0ec72"
+    },
+    {
+      "game": "sapphire",
+      "file": "data/generated/gba/native/manifest.lua",
+      "sha256": "c314eda0a5979153b1e5c361dd33ad7bee87363cc112fb279bac0d5c371c459d"
+    },
+    {
+      "game": "sapphire",
+      "file": "data/generated/gba/scripts/events.lua",
+      "sha256": "e55ece6823a0f9780b7099dd66c21ae73e2dbe7e0be8f45dd862ab2395d6cb6c"
+    },
+    {
+      "game": "sapphire",
+      "file": "data/generated/gba/scripts/scripts.lua",
+      "sha256": "f5b3d3468c665d88cb91f344fc804ae558fe8b33492a1f98eea83df29d0322a1"
+    },
+    {
+      "game": "sapphire",
+      "file": "data/generated/gba/secret_base/manifest.lua",
+      "sha256": "a0290f403945b13cd6ef1a192fb56e85653b3c70c244ca3b3ef8d1bb7c7d8bb1"
+    }
+  ],
+  "rows": [
+    {
+      "game": "emerald",
+      "pair": "general__cave",
+      "mid": 856,
+      "feature": "shoal_salt",
+      "sourceHash": "4ed9beec92346a915ba4ee896eade7e2fc5ef87d8cd2096ec02c414508da1ced",
+      "sourceLayers": {
+        "under": "4ed9beec92346a915ba4ee896eade7e2fc5ef87d8cd2096ec02c414508da1ced",
+        "mid": "21403bffd48a6c234a5f1f43fc0bf03a66567c88cf2111ec020e058ad6bd5a75",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 8,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_cave_completion.lua",
+        "mid": 858,
+        "sha256": "2cfbd1665436c48ed5baa10fc7f22dc1089a3a9abe1eb3d1f68c710768415d9e"
+      },
+      "contexts": [
+        {
+          "map": "EM_SHOAL_CAVE_LOW_TIDE_INNER_ROOM",
+          "x": 31,
+          "y": 8,
+          "before_mid": 858,
+          "source_collision": 43,
+          "elevation": 5,
+          "family": "literal_map_script",
+          "priority": 0,
+          "origin": {
+            "kind": "script",
+            "script": "g3:08236f1c",
+            "index": 4,
+            "caller_chain": [
+              "g3:08236f16"
+            ],
+            "operands": [
+              31,
+              8,
+              856,
+              1
+            ]
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "general__cave",
+      "mid": 857,
+      "feature": "shoal_shell",
+      "sourceHash": "88b1b1a923bc4ab9e49eb69895fe1691d9c3ccecf1694b002da0b68b15006936",
+      "sourceLayers": {
+        "under": "88b1b1a923bc4ab9e49eb69895fe1691d9c3ccecf1694b002da0b68b15006936",
+        "mid": "bac045a024ccd58e90ab189dfb5c9e464b3be50f890a4385a894688fde7d3229",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 8,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_cave_completion.lua",
+        "mid": 859,
+        "sha256": "72744ed5c21b44128fa8e207c445ab40783b80a7492e531a38904fc32640f067"
+      },
+      "contexts": [
+        {
+          "map": "EM_SHOAL_CAVE_LOW_TIDE_INNER_ROOM",
+          "x": 41,
+          "y": 20,
+          "before_mid": 859,
+          "source_collision": 43,
+          "elevation": 5,
+          "family": "literal_map_script",
+          "priority": 0,
+          "origin": {
+            "kind": "script",
+            "script": "g3:08236f5e",
+            "index": 2,
+            "caller_chain": [
+              "g3:08236f16",
+              "g3:08236f1c",
+              "g3:08236f3d"
+            ],
+            "operands": [
+              41,
+              20,
+              857,
+              1
+            ]
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "general__dewford",
+      "mid": 334,
+      "feature": "marine_dive",
+      "sourceHash": "9373c1c2eedd5168ab48e2edcbf274dfa7086ce949d1c5da13a0b453f7d3b02e",
+      "sourceLayers": {
+        "under": "9373c1c2eedd5168ab48e2edcbf274dfa7086ce949d1c5da13a0b453f7d3b02e",
+        "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 18,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_finish.lua",
+        "mid": 368,
+        "sha256": "f1318099682bcaa484094f2a28ccdb502e1f9c1687b1e23724a542b91b940e76"
+      },
+      "contexts": [
+        {
+          "map": "EM_ROUTE105",
+          "x": 10,
+          "y": 28,
+          "before_mid": 368,
+          "source_collision": 41,
+          "elevation": 1,
+          "family": "literal_map_script",
+          "priority": 0,
+          "origin": {
+            "kind": "script",
+            "script": "g3:082739ab",
+            "index": 0,
+            "caller_chain": [
+              "g3:081ee1eb"
+            ],
+            "operands": [
+              10,
+              28,
+              334,
+              0
+            ]
+          },
+          "impassable": false
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "general__dewford",
+      "mid": 335,
+      "feature": "marine_dive",
+      "sourceHash": "e212e472a62a9604fffbf704637d9f95521b6192a5887733cc4f8565672d6252",
+      "sourceLayers": {
+        "under": "e212e472a62a9604fffbf704637d9f95521b6192a5887733cc4f8565672d6252",
+        "mid": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 18,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_finish.lua",
+        "mid": 368,
+        "sha256": "f1318099682bcaa484094f2a28ccdb502e1f9c1687b1e23724a542b91b940e76"
+      },
+      "contexts": [
+        {
+          "map": "EM_ROUTE105",
+          "x": 10,
+          "y": 29,
+          "before_mid": 368,
+          "source_collision": 41,
+          "elevation": 1,
+          "family": "literal_map_script",
+          "priority": 0,
+          "origin": {
+            "kind": "script",
+            "script": "g3:082739ab",
+            "index": 3,
+            "caller_chain": [
+              "g3:081ee1eb"
+            ],
+            "operands": [
+              10,
+              29,
+              335,
+              0
+            ]
+          },
+          "impassable": false
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "general__lilycove",
+      "mid": 656,
+      "feature": "harbor_rocks",
+      "sourceHash": "13d3ff68e86eae9e541300bbfa7949154a526e44d6b151c845de3bebca90533a",
+      "sourceLayers": {
+        "under": "13d3ff68e86eae9e541300bbfa7949154a526e44d6b151c845de3bebca90533a",
+        "mid": "29d8f314a9cb830eab993e98f4d8e638128ba68bdae0b689e00ef4af3fbe11fb",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 0,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_remaining.lua",
+        "mid": 446,
+        "sha256": "950fae50efe47118e7ca3be8ceb7776d0000b2bdecb3d02e6d9a677319f1ff06"
+      },
+      "contexts": [
+        {
+          "map": "EM_LILYCOVE_CITY",
+          "x": 76,
+          "y": 12,
+          "before_mid": 446,
+          "source_collision": 41,
+          "elevation": 1,
+          "family": "literal_map_script",
+          "priority": 0,
+          "origin": {
+            "kind": "script",
+            "script": "g3:081e2b6b",
+            "index": 0,
+            "caller_chain": [
+              "g3:081e2b61"
+            ],
+            "operands": [
+              76,
+              12,
+              656,
+              1
+            ]
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "general__lilycove",
+      "mid": 657,
+      "feature": "harbor_rocks",
+      "sourceHash": "37e7cc63417a2e0b1ba2cdf67be46a09844ad505cd51059bb91e65dfcd09d3dc",
+      "sourceLayers": {
+        "under": "37e7cc63417a2e0b1ba2cdf67be46a09844ad505cd51059bb91e65dfcd09d3dc",
+        "mid": "7dbf2a625401d186fcbdec6a53676657618327c6ea7895e2210c8c7f66838321",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 0,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_remaining.lua",
+        "mid": 446,
+        "sha256": "950fae50efe47118e7ca3be8ceb7776d0000b2bdecb3d02e6d9a677319f1ff06"
+      },
+      "contexts": [
+        {
+          "map": "EM_LILYCOVE_CITY",
+          "x": 77,
+          "y": 12,
+          "before_mid": 446,
+          "source_collision": 41,
+          "elevation": 1,
+          "family": "literal_map_script",
+          "priority": 0,
+          "origin": {
+            "kind": "script",
+            "script": "g3:081e2b6b",
+            "index": 1,
+            "caller_chain": [
+              "g3:081e2b61"
+            ],
+            "operands": [
+              77,
+              12,
+              657,
+              1
+            ]
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "general__lilycove",
+      "mid": 664,
+      "feature": "harbor_rocks",
+      "sourceHash": "a2e59d30ba98e344a9f9a563a440ff341c60ffef8fcce2673d808240f518e5f2",
+      "sourceLayers": {
+        "under": "a2e59d30ba98e344a9f9a563a440ff341c60ffef8fcce2673d808240f518e5f2",
+        "mid": "29d8f314a9cb830eab993e98f4d8e638128ba68bdae0b689e00ef4af3fbe11fb",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 0,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_finish.lua",
+        "mid": 368,
+        "sha256": "73db4646b4ae11d87082b1268c7296a106229265f44e90a66006dc69ff4b0886"
+      },
+      "contexts": [
+        {
+          "map": "EM_LILYCOVE_CITY",
+          "x": 76,
+          "y": 14,
+          "before_mid": 368,
+          "source_collision": 41,
+          "elevation": 1,
+          "family": "literal_map_script",
+          "priority": 0,
+          "origin": {
+            "kind": "script",
+            "script": "g3:081e2b6b",
+            "index": 4,
+            "caller_chain": [
+              "g3:081e2b61"
+            ],
+            "operands": [
+              76,
+              14,
+              664,
+              1
+            ]
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "general__lilycove",
+      "mid": 665,
+      "feature": "harbor_rocks",
+      "sourceHash": "cadc298a15c1aac84e186c05fcc3cdcc5f3d69598adff518b95cbf62ed0922b4",
+      "sourceLayers": {
+        "under": "cadc298a15c1aac84e186c05fcc3cdcc5f3d69598adff518b95cbf62ed0922b4",
+        "mid": "7dbf2a625401d186fcbdec6a53676657618327c6ea7895e2210c8c7f66838321",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 0,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_finish.lua",
+        "mid": 368,
+        "sha256": "73db4646b4ae11d87082b1268c7296a106229265f44e90a66006dc69ff4b0886"
+      },
+      "contexts": [
+        {
+          "map": "EM_LILYCOVE_CITY",
+          "x": 77,
+          "y": 14,
+          "before_mid": 368,
+          "source_collision": 41,
+          "elevation": 1,
+          "family": "literal_map_script",
+          "priority": 0,
+          "origin": {
+            "kind": "script",
+            "script": "g3:081e2b6b",
+            "index": 5,
+            "caller_chain": [
+              "g3:081e2b61"
+            ],
+            "operands": [
+              77,
+              14,
+              665,
+              1
+            ]
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "general__lilycove",
+      "mid": 672,
+      "feature": "harbor_rocks",
+      "sourceHash": "02f9d3feb1130892769ee16918694221fb0c79fcf3a612140eafabe0f5ea47d2",
+      "sourceLayers": {
+        "under": "02f9d3feb1130892769ee16918694221fb0c79fcf3a612140eafabe0f5ea47d2",
+        "mid": "9c77dcd88ded43c3c45ec7d075d2daf92105d30489bc0dc1812222e276a92953",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 0,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_finish.lua",
+        "mid": 368,
+        "sha256": "73db4646b4ae11d87082b1268c7296a106229265f44e90a66006dc69ff4b0886"
+      },
+      "contexts": [
+        {
+          "map": "EM_LILYCOVE_CITY",
+          "x": 76,
+          "y": 13,
+          "before_mid": 368,
+          "source_collision": 41,
+          "elevation": 1,
+          "family": "literal_map_script",
+          "priority": 0,
+          "origin": {
+            "kind": "script",
+            "script": "g3:081e2b6b",
+            "index": 2,
+            "caller_chain": [
+              "g3:081e2b61"
+            ],
+            "operands": [
+              76,
+              13,
+              672,
+              1
+            ]
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "general__lilycove",
+      "mid": 673,
+      "feature": "harbor_rocks",
+      "sourceHash": "e5df9bbf7bae7fce972e55c3121705ca1282823d14dbeb308d116990019d3e2a",
+      "sourceLayers": {
+        "under": "e5df9bbf7bae7fce972e55c3121705ca1282823d14dbeb308d116990019d3e2a",
+        "mid": "35e0559a98df2cacaf11a6133f6b6f64cd1bf26aff1fff06b590d8b423092ed0",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 0,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_finish.lua",
+        "mid": 368,
+        "sha256": "73db4646b4ae11d87082b1268c7296a106229265f44e90a66006dc69ff4b0886"
+      },
+      "contexts": [
+        {
+          "map": "EM_LILYCOVE_CITY",
+          "x": 77,
+          "y": 13,
+          "before_mid": 368,
+          "source_collision": 41,
+          "elevation": 1,
+          "family": "literal_map_script",
+          "priority": 0,
+          "origin": {
+            "kind": "script",
+            "script": "g3:081e2b6b",
+            "index": 3,
+            "caller_chain": [
+              "g3:081e2b61"
+            ],
+            "operands": [
+              77,
+              13,
+              673,
+              1
+            ]
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "general__pacifidlog",
+      "mid": 682,
+      "feature": "sky_pillar_door",
+      "sourceHash": "5cabb4c79e6f498dc237b7964637c19b145922e00159572739ede25f21e70b93",
+      "sourceLayers": {
+        "under": "5cabb4c79e6f498dc237b7964637c19b145922e00159572739ede25f21e70b93",
+        "mid": "5cabb4c79e6f498dc237b7964637c19b145922e00159572739ede25f21e70b93",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 0,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_remaining.lua",
+        "mid": 706,
+        "sha256": "46a299958b3a0e350e048f8d346844fbf041449ee3ece7954a77f894415d4d75"
+      },
+      "contexts": [
+        {
+          "map": "EM_SKY_PILLAR_OUTSIDE",
+          "x": 14,
+          "y": 4,
+          "before_mid": 706,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "literal_map_script",
+          "priority": 0,
+          "origin": {
+            "kind": "script",
+            "script": "g3:082392e7",
+            "index": 0,
+            "caller_chain": [
+              "g3:082392dd"
+            ],
+            "operands": [
+              14,
+              4,
+              682,
+              0
+            ]
+          },
+          "impassable": false
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "general__pacifidlog",
+      "mid": 690,
+      "feature": "sky_pillar_door",
+      "sourceHash": "23452f9f776fee6f175d331c9fe773c158beff12913da1838b80cb6aeb0f55f5",
+      "sourceLayers": {
+        "under": "23452f9f776fee6f175d331c9fe773c158beff12913da1838b80cb6aeb0f55f5",
+        "mid": "23452f9f776fee6f175d331c9fe773c158beff12913da1838b80cb6aeb0f55f5",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 96,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_remaining.lua",
+        "mid": 714,
+        "sha256": "1d6d78071b137cb2d2e486cf58d7b87a9ae7d55bdfc7457c33fc7dd865d3db6c"
+      },
+      "contexts": [
+        {
+          "map": "EM_SKY_PILLAR_OUTSIDE",
+          "x": 14,
+          "y": 5,
+          "before_mid": 714,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "literal_map_script",
+          "priority": 0,
+          "origin": {
+            "kind": "script",
+            "script": "g3:082392e7",
+            "index": 1,
+            "caller_chain": [
+              "g3:082392dd"
+            ],
+            "operands": [
+              14,
+              5,
+              690,
+              0
+            ]
+          },
+          "impassable": false
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "general__petalburg",
+      "mid": 159,
+      "feature": "route_103_cave",
+      "sourceHash": "9b4926198f62e392e3e2de080956b1dc1d3b5101d2b4e7a0cee15adb594871ef",
+      "sourceLayers": {
+        "under": "9b4926198f62e392e3e2de080956b1dc1d3b5101d2b4e7a0cee15adb594871ef",
+        "mid": "9b4926198f62e392e3e2de080956b1dc1d3b5101d2b4e7a0cee15adb594871ef",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 0,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_finish.lua",
+        "mid": 124,
+        "sha256": "0acc6201b6a0f86a049e188e82143a00a1ec7ee9a33ab407facbace0645545f1"
+      },
+      "contexts": [
+        {
+          "map": "EM_ROUTE103",
+          "x": 45,
+          "y": 5,
+          "before_mid": 124,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "literal_map_script",
+          "priority": 0,
+          "origin": {
+            "kind": "script",
+            "script": "g3:081ec3ae",
+            "index": 0,
+            "caller_chain": [
+              "g3:081ec3a4"
+            ],
+            "operands": [
+              45,
+              5,
+              159,
+              1
+            ]
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "general__petalburg",
+      "mid": 167,
+      "feature": "route_103_cave",
+      "sourceHash": "780c4ae9a35e84e3d234ac0677f16cba9352651134507e38d7ae2ef5b5098e4e",
+      "sourceLayers": {
+        "under": "780c4ae9a35e84e3d234ac0677f16cba9352651134507e38d7ae2ef5b5098e4e",
+        "mid": "780c4ae9a35e84e3d234ac0677f16cba9352651134507e38d7ae2ef5b5098e4e",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 96,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_finish.lua",
+        "mid": 145,
+        "sha256": "af65982cd4aeb2e74d514fb2a3db100b53d6dfaf490342869c15ebe4bb2cb564"
+      },
+      "contexts": [
+        {
+          "map": "EM_ROUTE103",
+          "x": 45,
+          "y": 6,
+          "before_mid": 145,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "literal_map_script",
+          "priority": 0,
+          "origin": {
+            "kind": "script",
+            "script": "g3:081ec3ae",
+            "index": 1,
+            "caller_chain": [
+              "g3:081ec3a4"
+            ],
+            "operands": [
+              45,
+              6,
+              167,
+              0
+            ]
+          },
+          "impassable": false
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 584,
+      "feature": "sootopolis_door",
+      "sourceHash": "0001639fb18028aa094ddb53e7141a14ace6109c807ec45a570e5fd6810d4624",
+      "sourceLayers": {
+        "under": "0001639fb18028aa094ddb53e7141a14ace6109c807ec45a570e5fd6810d4624",
+        "mid": "0001639fb18028aa094ddb53e7141a14ace6109c807ec45a570e5fd6810d4624",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 395,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_city_complete.lua",
+        "mid": 542,
+        "sha256": "7a5c3e69031313285400b2b20faf464aba1be96c1022428f26e56f86d1e6e517"
+      },
+      "contexts": [
+        {
+          "map": "EM_SOOTOPOLIS_CITY",
+          "x": 9,
+          "y": 6,
+          "before_mid": 540,
+          "source_collision": 113,
+          "elevation": 0,
+          "family": "literal_map_script",
+          "priority": 0,
+          "origin": {
+            "kind": "script",
+            "script": "g3:081e5693",
+            "index": 0,
+            "caller_chain": [
+              "g3:081e5676"
+            ],
+            "operands": [
+              9,
+              6,
+              584,
+              1
+            ]
+          },
+          "impassable": true
+        },
+        {
+          "map": "EM_SOOTOPOLIS_CITY",
+          "x": 9,
+          "y": 26,
+          "before_mid": 542,
+          "source_collision": 113,
+          "elevation": 0,
+          "family": "literal_map_script",
+          "priority": 0,
+          "origin": {
+            "kind": "script",
+            "script": "g3:081e5693",
+            "index": 2,
+            "caller_chain": [
+              "g3:081e5676"
+            ],
+            "operands": [
+              9,
+              26,
+              584,
+              1
+            ]
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "general__sootopolis",
+      "mid": 592,
+      "feature": "sootopolis_door",
+      "sourceHash": "6ab34c5a30c7c4f2b27e026f52782bde2ce124f2bce5dc84958270691099d4da",
+      "sourceLayers": {
+        "under": "6ab34c5a30c7c4f2b27e026f52782bde2ce124f2bce5dc84958270691099d4da",
+        "mid": "5de7883fce27ef84cf8f3b7ed465dfc84caa07a96314fa7c7d67714eaa42b4d7",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 395,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_finish.lua",
+        "mid": 461,
+        "sha256": "6ea64972e87ed4caaafdf0610959bc3fc6285c712bfd3febe38808aae9ddaa8c"
+      },
+      "contexts": [
+        {
+          "map": "EM_SOOTOPOLIS_CITY",
+          "x": 31,
+          "y": 32,
+          "before_mid": 461,
+          "source_collision": 113,
+          "elevation": 0,
+          "family": "literal_map_script",
+          "priority": 0,
+          "origin": {
+            "kind": "script",
+            "script": "g3:081e56e5",
+            "index": 0,
+            "caller_chain": [
+              "g3:081e5676"
+            ],
+            "operands": [
+              31,
+              32,
+              592,
+              1
+            ]
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 856,
+      "feature": "shoal_salt",
+      "sourceHash": "8817cc66f1d5522cff0af9369e4204b9054edaaaf0924812e42ef9af5e718eac",
+      "sourceLayers": {
+        "under": "8817cc66f1d5522cff0af9369e4204b9054edaaaf0924812e42ef9af5e718eac",
+        "mid": "21403bffd48a6c234a5f1f43fc0bf03a66567c88cf2111ec020e058ad6bd5a75",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 8,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_cave_completion.lua",
+        "mid": 858,
+        "sha256": "134cd23a2d07a8fc692c2659ed197ee938a46f313703d300390733886a9d52c9"
+      },
+      "contexts": [
+        {
+          "map": "RU_SHOAL_CAVE_LOW_TIDE_INNER_ROOM",
+          "x": 31,
+          "y": 8,
+          "before_mid": 858,
+          "source_collision": 43,
+          "elevation": 5,
+          "family": "literal_map_script",
+          "priority": 0,
+          "origin": {
+            "kind": "script",
+            "script": "g3:0815e1b9",
+            "index": 4,
+            "caller_chain": [
+              "g3:0815e1b3"
+            ],
+            "operands": [
+              31,
+              8,
+              856,
+              1
+            ]
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 857,
+      "feature": "shoal_shell",
+      "sourceHash": "f7493ec686574c9d9a1e8c3b2343c167ffd55da2440d56c24db5412f0dd8b9cd",
+      "sourceLayers": {
+        "under": "f7493ec686574c9d9a1e8c3b2343c167ffd55da2440d56c24db5412f0dd8b9cd",
+        "mid": "5a19b8dcd9c5cd9046b445554421afa317083dfa6fd3c202d595f332db23a06b",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 8,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_cave_completion.lua",
+        "mid": 859,
+        "sha256": "753bf4292d1533304371b794406cdc209afd491ad38f79ebc8ceefa88b0a27ae"
+      },
+      "contexts": [
+        {
+          "map": "RU_SHOAL_CAVE_LOW_TIDE_INNER_ROOM",
+          "x": 41,
+          "y": 20,
+          "before_mid": 859,
+          "source_collision": 43,
+          "elevation": 5,
+          "family": "literal_map_script",
+          "priority": 0,
+          "origin": {
+            "kind": "script",
+            "script": "g3:0815e1fb",
+            "index": 2,
+            "caller_chain": [
+              "g3:0815e1b3",
+              "g3:0815e1b9",
+              "g3:0815e1da"
+            ],
+            "operands": [
+              41,
+              20,
+              857,
+              1
+            ]
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "general__lilycove",
+      "mid": 656,
+      "feature": "harbor_rocks",
+      "sourceHash": "13d3ff68e86eae9e541300bbfa7949154a526e44d6b151c845de3bebca90533a",
+      "sourceLayers": {
+        "under": "13d3ff68e86eae9e541300bbfa7949154a526e44d6b151c845de3bebca90533a",
+        "mid": "29d8f314a9cb830eab993e98f4d8e638128ba68bdae0b689e00ef4af3fbe11fb",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 0,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_remaining.lua",
+        "mid": 446,
+        "sha256": "be8cc52b8423c03e76930db2e6c01bb1bd9348b00617fa8840e0a139c7c52827"
+      },
+      "contexts": [
+        {
+          "map": "RU_LILYCOVE_CITY",
+          "x": 76,
+          "y": 12,
+          "before_mid": 446,
+          "source_collision": 41,
+          "elevation": 1,
+          "family": "literal_map_script",
+          "priority": 0,
+          "origin": {
+            "kind": "script",
+            "script": "g3:0814cabe",
+            "index": 0,
+            "caller_chain": [
+              "g3:0814ca3f"
+            ],
+            "operands": [
+              76,
+              12,
+              656,
+              1
+            ]
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "general__lilycove",
+      "mid": 657,
+      "feature": "harbor_rocks",
+      "sourceHash": "37e7cc63417a2e0b1ba2cdf67be46a09844ad505cd51059bb91e65dfcd09d3dc",
+      "sourceLayers": {
+        "under": "37e7cc63417a2e0b1ba2cdf67be46a09844ad505cd51059bb91e65dfcd09d3dc",
+        "mid": "7dbf2a625401d186fcbdec6a53676657618327c6ea7895e2210c8c7f66838321",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 0,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_remaining.lua",
+        "mid": 446,
+        "sha256": "be8cc52b8423c03e76930db2e6c01bb1bd9348b00617fa8840e0a139c7c52827"
+      },
+      "contexts": [
+        {
+          "map": "RU_LILYCOVE_CITY",
+          "x": 77,
+          "y": 12,
+          "before_mid": 446,
+          "source_collision": 41,
+          "elevation": 1,
+          "family": "literal_map_script",
+          "priority": 0,
+          "origin": {
+            "kind": "script",
+            "script": "g3:0814cabe",
+            "index": 1,
+            "caller_chain": [
+              "g3:0814ca3f"
+            ],
+            "operands": [
+              77,
+              12,
+              657,
+              1
+            ]
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "general__lilycove",
+      "mid": 664,
+      "feature": "harbor_rocks",
+      "sourceHash": "a2e59d30ba98e344a9f9a563a440ff341c60ffef8fcce2673d808240f518e5f2",
+      "sourceLayers": {
+        "under": "a2e59d30ba98e344a9f9a563a440ff341c60ffef8fcce2673d808240f518e5f2",
+        "mid": "29d8f314a9cb830eab993e98f4d8e638128ba68bdae0b689e00ef4af3fbe11fb",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 0,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_finish.lua",
+        "mid": 368,
+        "sha256": "079932bd8df4ae0bf9e96ee6f34a00213a142d50278d7e1537436a3a2df9edd3"
+      },
+      "contexts": [
+        {
+          "map": "RU_LILYCOVE_CITY",
+          "x": 76,
+          "y": 14,
+          "before_mid": 368,
+          "source_collision": 41,
+          "elevation": 1,
+          "family": "literal_map_script",
+          "priority": 0,
+          "origin": {
+            "kind": "script",
+            "script": "g3:0814cabe",
+            "index": 4,
+            "caller_chain": [
+              "g3:0814ca3f"
+            ],
+            "operands": [
+              76,
+              14,
+              664,
+              1
+            ]
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "general__lilycove",
+      "mid": 665,
+      "feature": "harbor_rocks",
+      "sourceHash": "cadc298a15c1aac84e186c05fcc3cdcc5f3d69598adff518b95cbf62ed0922b4",
+      "sourceLayers": {
+        "under": "cadc298a15c1aac84e186c05fcc3cdcc5f3d69598adff518b95cbf62ed0922b4",
+        "mid": "7dbf2a625401d186fcbdec6a53676657618327c6ea7895e2210c8c7f66838321",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 0,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_finish.lua",
+        "mid": 368,
+        "sha256": "079932bd8df4ae0bf9e96ee6f34a00213a142d50278d7e1537436a3a2df9edd3"
+      },
+      "contexts": [
+        {
+          "map": "RU_LILYCOVE_CITY",
+          "x": 77,
+          "y": 14,
+          "before_mid": 368,
+          "source_collision": 41,
+          "elevation": 1,
+          "family": "literal_map_script",
+          "priority": 0,
+          "origin": {
+            "kind": "script",
+            "script": "g3:0814cabe",
+            "index": 5,
+            "caller_chain": [
+              "g3:0814ca3f"
+            ],
+            "operands": [
+              77,
+              14,
+              665,
+              1
+            ]
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "general__lilycove",
+      "mid": 672,
+      "feature": "harbor_rocks",
+      "sourceHash": "02f9d3feb1130892769ee16918694221fb0c79fcf3a612140eafabe0f5ea47d2",
+      "sourceLayers": {
+        "under": "02f9d3feb1130892769ee16918694221fb0c79fcf3a612140eafabe0f5ea47d2",
+        "mid": "9c77dcd88ded43c3c45ec7d075d2daf92105d30489bc0dc1812222e276a92953",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 0,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_finish.lua",
+        "mid": 368,
+        "sha256": "079932bd8df4ae0bf9e96ee6f34a00213a142d50278d7e1537436a3a2df9edd3"
+      },
+      "contexts": [
+        {
+          "map": "RU_LILYCOVE_CITY",
+          "x": 76,
+          "y": 13,
+          "before_mid": 368,
+          "source_collision": 41,
+          "elevation": 1,
+          "family": "literal_map_script",
+          "priority": 0,
+          "origin": {
+            "kind": "script",
+            "script": "g3:0814cabe",
+            "index": 2,
+            "caller_chain": [
+              "g3:0814ca3f"
+            ],
+            "operands": [
+              76,
+              13,
+              672,
+              1
+            ]
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "general__lilycove",
+      "mid": 673,
+      "feature": "harbor_rocks",
+      "sourceHash": "e5df9bbf7bae7fce972e55c3121705ca1282823d14dbeb308d116990019d3e2a",
+      "sourceLayers": {
+        "under": "e5df9bbf7bae7fce972e55c3121705ca1282823d14dbeb308d116990019d3e2a",
+        "mid": "35e0559a98df2cacaf11a6133f6b6f64cd1bf26aff1fff06b590d8b423092ed0",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 0,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_finish.lua",
+        "mid": 368,
+        "sha256": "079932bd8df4ae0bf9e96ee6f34a00213a142d50278d7e1537436a3a2df9edd3"
+      },
+      "contexts": [
+        {
+          "map": "RU_LILYCOVE_CITY",
+          "x": 77,
+          "y": 13,
+          "before_mid": 368,
+          "source_collision": 41,
+          "elevation": 1,
+          "family": "literal_map_script",
+          "priority": 0,
+          "origin": {
+            "kind": "script",
+            "script": "g3:0814cabe",
+            "index": 3,
+            "caller_chain": [
+              "g3:0814ca3f"
+            ],
+            "operands": [
+              77,
+              13,
+              673,
+              1
+            ]
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "general__sootopolis",
+      "mid": 584,
+      "feature": "sootopolis_door",
+      "sourceHash": "0001639fb18028aa094ddb53e7141a14ace6109c807ec45a570e5fd6810d4624",
+      "sourceLayers": {
+        "under": "0001639fb18028aa094ddb53e7141a14ace6109c807ec45a570e5fd6810d4624",
+        "mid": "0001639fb18028aa094ddb53e7141a14ace6109c807ec45a570e5fd6810d4624",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 395,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_city_complete.lua",
+        "mid": 542,
+        "sha256": "59147143c97794657ab73554fc1a2b1907149441d4dcd4182a59651a32a40884"
+      },
+      "contexts": [
+        {
+          "map": "RU_SOOTOPOLIS_CITY",
+          "x": 9,
+          "y": 6,
+          "before_mid": 540,
+          "source_collision": 113,
+          "elevation": 0,
+          "family": "literal_map_script",
+          "priority": 0,
+          "origin": {
+            "kind": "script",
+            "script": "g3:0814d0bb",
+            "index": 0,
+            "caller_chain": [
+              "g3:0814d08d",
+              "g3:0814d0b1"
+            ],
+            "operands": [
+              9,
+              6,
+              584,
+              1
+            ]
+          },
+          "impassable": true
+        },
+        {
+          "map": "RU_SOOTOPOLIS_CITY",
+          "x": 9,
+          "y": 26,
+          "before_mid": 542,
+          "source_collision": 113,
+          "elevation": 0,
+          "family": "literal_map_script",
+          "priority": 0,
+          "origin": {
+            "kind": "script",
+            "script": "g3:0814d0bb",
+            "index": 2,
+            "caller_chain": [
+              "g3:0814d08d",
+              "g3:0814d0b1"
+            ],
+            "operands": [
+              9,
+              26,
+              584,
+              1
+            ]
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "general__sootopolis",
+      "mid": 592,
+      "feature": "sootopolis_door",
+      "sourceHash": "6ab34c5a30c7c4f2b27e026f52782bde2ce124f2bce5dc84958270691099d4da",
+      "sourceLayers": {
+        "under": "6ab34c5a30c7c4f2b27e026f52782bde2ce124f2bce5dc84958270691099d4da",
+        "mid": "5de7883fce27ef84cf8f3b7ed465dfc84caa07a96314fa7c7d67714eaa42b4d7",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 395,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_finish.lua",
+        "mid": 461,
+        "sha256": "1b64d8456969a2694a71a0647865d06b53330186fd7e8458f4933a21fd2ce83e"
+      },
+      "contexts": [
+        {
+          "map": "RU_SOOTOPOLIS_CITY",
+          "x": 31,
+          "y": 32,
+          "before_mid": 461,
+          "source_collision": 113,
+          "elevation": 0,
+          "family": "literal_map_script",
+          "priority": 0,
+          "origin": {
+            "kind": "script",
+            "script": "g3:0814d0a0",
+            "index": 1,
+            "caller_chain": [
+              "g3:0814d08d"
+            ],
+            "operands": [
+              31,
+              32,
+              592,
+              1
+            ]
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__cave",
+      "mid": 856,
+      "feature": "shoal_salt",
+      "sourceHash": "8817cc66f1d5522cff0af9369e4204b9054edaaaf0924812e42ef9af5e718eac",
+      "sourceLayers": {
+        "under": "8817cc66f1d5522cff0af9369e4204b9054edaaaf0924812e42ef9af5e718eac",
+        "mid": "21403bffd48a6c234a5f1f43fc0bf03a66567c88cf2111ec020e058ad6bd5a75",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 8,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_cave_completion.lua",
+        "mid": 858,
+        "sha256": "6996f70b0cfa092cda17058b61fba5927b64aa2ca6271e4ab6ad43c1f065ad75"
+      },
+      "contexts": [
+        {
+          "map": "SA_SHOAL_CAVE_LOW_TIDE_INNER_ROOM",
+          "x": 31,
+          "y": 8,
+          "before_mid": 858,
+          "source_collision": 43,
+          "elevation": 5,
+          "family": "literal_map_script",
+          "priority": 0,
+          "origin": {
+            "kind": "script",
+            "script": "g3:0815e169",
+            "index": 4,
+            "caller_chain": [
+              "g3:0815e163"
+            ],
+            "operands": [
+              31,
+              8,
+              856,
+              1
+            ]
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__cave",
+      "mid": 857,
+      "feature": "shoal_shell",
+      "sourceHash": "f7493ec686574c9d9a1e8c3b2343c167ffd55da2440d56c24db5412f0dd8b9cd",
+      "sourceLayers": {
+        "under": "f7493ec686574c9d9a1e8c3b2343c167ffd55da2440d56c24db5412f0dd8b9cd",
+        "mid": "5a19b8dcd9c5cd9046b445554421afa317083dfa6fd3c202d595f332db23a06b",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 8,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_cave_completion.lua",
+        "mid": 859,
+        "sha256": "b783376c4e52caa89364bc20a3c4f269f675c265c67d3c908b915d67b6b2e244"
+      },
+      "contexts": [
+        {
+          "map": "SA_SHOAL_CAVE_LOW_TIDE_INNER_ROOM",
+          "x": 41,
+          "y": 20,
+          "before_mid": 859,
+          "source_collision": 43,
+          "elevation": 5,
+          "family": "literal_map_script",
+          "priority": 0,
+          "origin": {
+            "kind": "script",
+            "script": "g3:0815e1ab",
+            "index": 2,
+            "caller_chain": [
+              "g3:0815e163",
+              "g3:0815e169",
+              "g3:0815e18a"
+            ],
+            "operands": [
+              41,
+              20,
+              857,
+              1
+            ]
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__lilycove",
+      "mid": 656,
+      "feature": "harbor_rocks",
+      "sourceHash": "13d3ff68e86eae9e541300bbfa7949154a526e44d6b151c845de3bebca90533a",
+      "sourceLayers": {
+        "under": "13d3ff68e86eae9e541300bbfa7949154a526e44d6b151c845de3bebca90533a",
+        "mid": "29d8f314a9cb830eab993e98f4d8e638128ba68bdae0b689e00ef4af3fbe11fb",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 0,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_remaining.lua",
+        "mid": 446,
+        "sha256": "fab31b29082e5de93d6e2694e2289175ddf3cb954801449722b2ce47affd2049"
+      },
+      "contexts": [
+        {
+          "map": "SA_LILYCOVE_CITY",
+          "x": 76,
+          "y": 12,
+          "before_mid": 446,
+          "source_collision": 41,
+          "elevation": 1,
+          "family": "literal_map_script",
+          "priority": 0,
+          "origin": {
+            "kind": "script",
+            "script": "g3:0814ca72",
+            "index": 0,
+            "caller_chain": [
+              "g3:0814ca5f"
+            ],
+            "operands": [
+              76,
+              12,
+              656,
+              1
+            ]
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__lilycove",
+      "mid": 657,
+      "feature": "harbor_rocks",
+      "sourceHash": "37e7cc63417a2e0b1ba2cdf67be46a09844ad505cd51059bb91e65dfcd09d3dc",
+      "sourceLayers": {
+        "under": "37e7cc63417a2e0b1ba2cdf67be46a09844ad505cd51059bb91e65dfcd09d3dc",
+        "mid": "7dbf2a625401d186fcbdec6a53676657618327c6ea7895e2210c8c7f66838321",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 0,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_remaining.lua",
+        "mid": 446,
+        "sha256": "fab31b29082e5de93d6e2694e2289175ddf3cb954801449722b2ce47affd2049"
+      },
+      "contexts": [
+        {
+          "map": "SA_LILYCOVE_CITY",
+          "x": 77,
+          "y": 12,
+          "before_mid": 446,
+          "source_collision": 41,
+          "elevation": 1,
+          "family": "literal_map_script",
+          "priority": 0,
+          "origin": {
+            "kind": "script",
+            "script": "g3:0814ca72",
+            "index": 1,
+            "caller_chain": [
+              "g3:0814ca5f"
+            ],
+            "operands": [
+              77,
+              12,
+              657,
+              1
+            ]
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__lilycove",
+      "mid": 664,
+      "feature": "harbor_rocks",
+      "sourceHash": "a2e59d30ba98e344a9f9a563a440ff341c60ffef8fcce2673d808240f518e5f2",
+      "sourceLayers": {
+        "under": "a2e59d30ba98e344a9f9a563a440ff341c60ffef8fcce2673d808240f518e5f2",
+        "mid": "29d8f314a9cb830eab993e98f4d8e638128ba68bdae0b689e00ef4af3fbe11fb",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 0,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_finish.lua",
+        "mid": 368,
+        "sha256": "83c7d1e731c7b479aa87acb41be4aaf805100639085702a57977be780c10f0bd"
+      },
+      "contexts": [
+        {
+          "map": "SA_LILYCOVE_CITY",
+          "x": 76,
+          "y": 14,
+          "before_mid": 368,
+          "source_collision": 41,
+          "elevation": 1,
+          "family": "literal_map_script",
+          "priority": 0,
+          "origin": {
+            "kind": "script",
+            "script": "g3:0814ca72",
+            "index": 4,
+            "caller_chain": [
+              "g3:0814ca5f"
+            ],
+            "operands": [
+              76,
+              14,
+              664,
+              1
+            ]
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__lilycove",
+      "mid": 665,
+      "feature": "harbor_rocks",
+      "sourceHash": "cadc298a15c1aac84e186c05fcc3cdcc5f3d69598adff518b95cbf62ed0922b4",
+      "sourceLayers": {
+        "under": "cadc298a15c1aac84e186c05fcc3cdcc5f3d69598adff518b95cbf62ed0922b4",
+        "mid": "7dbf2a625401d186fcbdec6a53676657618327c6ea7895e2210c8c7f66838321",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 0,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_finish.lua",
+        "mid": 368,
+        "sha256": "83c7d1e731c7b479aa87acb41be4aaf805100639085702a57977be780c10f0bd"
+      },
+      "contexts": [
+        {
+          "map": "SA_LILYCOVE_CITY",
+          "x": 77,
+          "y": 14,
+          "before_mid": 368,
+          "source_collision": 41,
+          "elevation": 1,
+          "family": "literal_map_script",
+          "priority": 0,
+          "origin": {
+            "kind": "script",
+            "script": "g3:0814ca72",
+            "index": 5,
+            "caller_chain": [
+              "g3:0814ca5f"
+            ],
+            "operands": [
+              77,
+              14,
+              665,
+              1
+            ]
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__lilycove",
+      "mid": 672,
+      "feature": "harbor_rocks",
+      "sourceHash": "02f9d3feb1130892769ee16918694221fb0c79fcf3a612140eafabe0f5ea47d2",
+      "sourceLayers": {
+        "under": "02f9d3feb1130892769ee16918694221fb0c79fcf3a612140eafabe0f5ea47d2",
+        "mid": "9c77dcd88ded43c3c45ec7d075d2daf92105d30489bc0dc1812222e276a92953",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 0,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_finish.lua",
+        "mid": 368,
+        "sha256": "83c7d1e731c7b479aa87acb41be4aaf805100639085702a57977be780c10f0bd"
+      },
+      "contexts": [
+        {
+          "map": "SA_LILYCOVE_CITY",
+          "x": 76,
+          "y": 13,
+          "before_mid": 368,
+          "source_collision": 41,
+          "elevation": 1,
+          "family": "literal_map_script",
+          "priority": 0,
+          "origin": {
+            "kind": "script",
+            "script": "g3:0814ca72",
+            "index": 2,
+            "caller_chain": [
+              "g3:0814ca5f"
+            ],
+            "operands": [
+              76,
+              13,
+              672,
+              1
+            ]
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__lilycove",
+      "mid": 673,
+      "feature": "harbor_rocks",
+      "sourceHash": "e5df9bbf7bae7fce972e55c3121705ca1282823d14dbeb308d116990019d3e2a",
+      "sourceLayers": {
+        "under": "e5df9bbf7bae7fce972e55c3121705ca1282823d14dbeb308d116990019d3e2a",
+        "mid": "35e0559a98df2cacaf11a6133f6b6f64cd1bf26aff1fff06b590d8b423092ed0",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 0,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_finish.lua",
+        "mid": 368,
+        "sha256": "83c7d1e731c7b479aa87acb41be4aaf805100639085702a57977be780c10f0bd"
+      },
+      "contexts": [
+        {
+          "map": "SA_LILYCOVE_CITY",
+          "x": 77,
+          "y": 13,
+          "before_mid": 368,
+          "source_collision": 41,
+          "elevation": 1,
+          "family": "literal_map_script",
+          "priority": 0,
+          "origin": {
+            "kind": "script",
+            "script": "g3:0814ca72",
+            "index": 3,
+            "caller_chain": [
+              "g3:0814ca5f"
+            ],
+            "operands": [
+              77,
+              13,
+              673,
+              1
+            ]
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__sootopolis",
+      "mid": 584,
+      "feature": "sootopolis_door",
+      "sourceHash": "0001639fb18028aa094ddb53e7141a14ace6109c807ec45a570e5fd6810d4624",
+      "sourceLayers": {
+        "under": "0001639fb18028aa094ddb53e7141a14ace6109c807ec45a570e5fd6810d4624",
+        "mid": "0001639fb18028aa094ddb53e7141a14ace6109c807ec45a570e5fd6810d4624",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 395,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_city_complete.lua",
+        "mid": 542,
+        "sha256": "eab280599244416a3dfc0a40d1b818fc77f872051d58320448519583bce50673"
+      },
+      "contexts": [
+        {
+          "map": "SA_SOOTOPOLIS_CITY",
+          "x": 9,
+          "y": 6,
+          "before_mid": 540,
+          "source_collision": 113,
+          "elevation": 0,
+          "family": "literal_map_script",
+          "priority": 0,
+          "origin": {
+            "kind": "script",
+            "script": "g3:0814d06f",
+            "index": 0,
+            "caller_chain": [
+              "g3:0814d041",
+              "g3:0814d065"
+            ],
+            "operands": [
+              9,
+              6,
+              584,
+              1
+            ]
+          },
+          "impassable": true
+        },
+        {
+          "map": "SA_SOOTOPOLIS_CITY",
+          "x": 9,
+          "y": 26,
+          "before_mid": 542,
+          "source_collision": 113,
+          "elevation": 0,
+          "family": "literal_map_script",
+          "priority": 0,
+          "origin": {
+            "kind": "script",
+            "script": "g3:0814d06f",
+            "index": 2,
+            "caller_chain": [
+              "g3:0814d041",
+              "g3:0814d065"
+            ],
+            "operands": [
+              9,
+              26,
+              584,
+              1
+            ]
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__sootopolis",
+      "mid": 592,
+      "feature": "sootopolis_door",
+      "sourceHash": "6ab34c5a30c7c4f2b27e026f52782bde2ce124f2bce5dc84958270691099d4da",
+      "sourceLayers": {
+        "under": "6ab34c5a30c7c4f2b27e026f52782bde2ce124f2bce5dc84958270691099d4da",
+        "mid": "5de7883fce27ef84cf8f3b7ed465dfc84caa07a96314fa7c7d67714eaa42b4d7",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 395,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_finish.lua",
+        "mid": 461,
+        "sha256": "7dad4e79ff67217ae7a57d621e7e173a329744220302f5f79cf2aa16258798ba"
+      },
+      "contexts": [
+        {
+          "map": "SA_SOOTOPOLIS_CITY",
+          "x": 31,
+          "y": 32,
+          "before_mid": 461,
+          "source_collision": 113,
+          "elevation": 0,
+          "family": "literal_map_script",
+          "priority": 0,
+          "origin": {
+            "kind": "script",
+            "script": "g3:0814d054",
+            "index": 1,
+            "caller_chain": [
+              "g3:0814d041"
+            ],
+            "operands": [
+              31,
+              32,
+              592,
+              1
+            ]
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "general__fallarbor",
+      "mid": 54,
+      "feature": "tree_vine",
+      "sourceHash": "ec52b620562a3f8453b99b3fe267fe017a66bae01d4e36edff9d5ce8215249d8",
+      "sourceLayers": {
+        "under": "ec52b620562a3f8453b99b3fe267fe017a66bae01d4e36edff9d5ce8215249d8",
+        "mid": "bcf4ab06e3f9d15dea317fa6b4990c66c3b4e4aa0f16d314b25a6b472de41ea2",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 407,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_finish.lua",
+        "mid": 38,
+        "sha256": "ffb09d713918c1f2818f1b2f9935a2cf644865cb73625e35f6031a71834d4fde"
+      },
+      "contexts": [
+        {
+          "map": "EM_ROUTE114",
+          "x": 11,
+          "y": 27,
+          "before_mid": 38,
+          "source_collision": 7,
+          "elevation": 3,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 182,
+              "x": 11,
+              "y": 27,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "general__fallarbor",
+      "mid": 55,
+      "feature": "tree_vine",
+      "sourceHash": "f74fef6d117fb1afbde80f02ad1ed15cddfcfae94b8afa31e73686eeebbc03c7",
+      "sourceLayers": {
+        "under": "f74fef6d117fb1afbde80f02ad1ed15cddfcfae94b8afa31e73686eeebbc03c7",
+        "mid": "5b7f9d9237a40d75562041a71b5a8a2547a88d4955d109648baa670122a11336",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 413,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_finish.lua",
+        "mid": 39,
+        "sha256": "8edfe65446877d1dc1178dddcedadb5c59ba3f0ec04ad6cd07aaec093c94b4f8"
+      },
+      "contexts": [
+        {
+          "map": "EM_ROUTE114",
+          "x": 12,
+          "y": 27,
+          "before_mid": 39,
+          "source_collision": 7,
+          "elevation": 3,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 192,
+              "x": 12,
+              "y": 27,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "general__fallarbor",
+      "mid": 417,
+      "feature": "rock_opening",
+      "sourceHash": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+      "sourceLayers": {
+        "under": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "mid": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 401,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_remaining.lua",
+        "mid": 416,
+        "sha256": "d9ba0f3b58d95bde61b587aad19b7454d3bd785df4cc6bd679bbf18ec5a211e1"
+      },
+      "contexts": [
+        {
+          "map": "EM_ROUTE115",
+          "x": 20,
+          "y": 53,
+          "before_mid": 416,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 21,
+              "x": 20,
+              "y": 53,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "general__fallarbor",
+      "mid": 425,
+      "feature": "rock_opening",
+      "sourceHash": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+      "sourceLayers": {
+        "under": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "mid": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 405,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_remaining.lua",
+        "mid": 424,
+        "sha256": "3dab3b44245c337b51f175fefd96070bcdb0f5263b825e55efdd1c89044bf5dd"
+      },
+      "contexts": [
+        {
+          "map": "EM_ROUTE115",
+          "x": 8,
+          "y": 30,
+          "before_mid": 424,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 133,
+              "x": 8,
+              "y": 30,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "general__fallarbor",
+      "mid": 528,
+      "feature": "rock_opening",
+      "sourceHash": "1ba63b6c985fc064e041df8d5079114c419b586b08799c7e4e86c9ec963f8b7b",
+      "sourceLayers": {
+        "under": "1ba63b6c985fc064e041df8d5079114c419b586b08799c7e4e86c9ec963f8b7b",
+        "mid": "1ba63b6c985fc064e041df8d5079114c419b586b08799c7e4e86c9ec963f8b7b",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 403,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_remaining.lua",
+        "mid": 520,
+        "sha256": "f99c145a485a932bea0fc2a59d36eb8c2ef106e91b6e1dbb53e0deb214cdf77d"
+      },
+      "contexts": [
+        {
+          "map": "EM_ROUTE114",
+          "x": 9,
+          "y": 47,
+          "before_mid": 520,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 41,
+              "x": 9,
+              "y": 47,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "general__fortree",
+      "mid": 54,
+      "feature": "tree_vine",
+      "sourceHash": "ec52b620562a3f8453b99b3fe267fe017a66bae01d4e36edff9d5ce8215249d8",
+      "sourceLayers": {
+        "under": "ec52b620562a3f8453b99b3fe267fe017a66bae01d4e36edff9d5ce8215249d8",
+        "mid": "bcf4ab06e3f9d15dea317fa6b4990c66c3b4e4aa0f16d314b25a6b472de41ea2",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 407,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_finish.lua",
+        "mid": 38,
+        "sha256": "867d025f2e372c2b5d8c99dceafc881303a87d4087f6c196ff0ea94c9f108f32"
+      },
+      "contexts": [
+        {
+          "map": "EM_ROUTE119",
+          "x": 18,
+          "y": 76,
+          "before_mid": 38,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 193,
+              "x": 18,
+              "y": 76,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "general__fortree",
+      "mid": 55,
+      "feature": "tree_vine",
+      "sourceHash": "f74fef6d117fb1afbde80f02ad1ed15cddfcfae94b8afa31e73686eeebbc03c7",
+      "sourceLayers": {
+        "under": "f74fef6d117fb1afbde80f02ad1ed15cddfcfae94b8afa31e73686eeebbc03c7",
+        "mid": "5b7f9d9237a40d75562041a71b5a8a2547a88d4955d109648baa670122a11336",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 413,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_finish.lua",
+        "mid": 39,
+        "sha256": "84d15b7c7e0ccbd65a7bb12c1b883812a5b7a3e49f5d9f599176f6d0f67e72d0"
+      },
+      "contexts": [
+        {
+          "map": "EM_ROUTE119",
+          "x": 19,
+          "y": 76,
+          "before_mid": 39,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 173,
+              "x": 19,
+              "y": 76,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "general__fortree",
+      "mid": 433,
+      "feature": "rock_opening",
+      "sourceHash": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+      "sourceLayers": {
+        "under": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "mid": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 411,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_remaining.lua",
+        "mid": 432,
+        "sha256": "c20b1511653b6530eadf1c164b4146e451c93db114077d118b3d6a10966fe3d6"
+      },
+      "contexts": [
+        {
+          "map": "EM_ROUTE120",
+          "x": 28,
+          "y": 62,
+          "before_mid": 432,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 101,
+              "x": 28,
+              "y": 62,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "general__fortree",
+      "mid": 632,
+      "feature": "shrub_opening",
+      "sourceHash": "c566276e454a23a48927349f3369fd100240154f7180e194f5aac973194e5af4",
+      "sourceLayers": {
+        "under": "c566276e454a23a48927349f3369fd100240154f7180e194f5aac973194e5af4",
+        "mid": "c566276e454a23a48927349f3369fd100240154f7180e194f5aac973194e5af4",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 409,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_remaining.lua",
+        "mid": 625,
+        "sha256": "90f672f80349a48d7ce1da170b16ffba7eecfda933de9b2b3787f4b59ccc1968"
+      },
+      "contexts": [
+        {
+          "map": "EM_ROUTE120",
+          "x": 26,
+          "y": 10,
+          "before_mid": 625,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 222,
+              "x": 26,
+              "y": 10,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "general__lilycove",
+      "mid": 54,
+      "feature": "tree_vine",
+      "sourceHash": "ec52b620562a3f8453b99b3fe267fe017a66bae01d4e36edff9d5ce8215249d8",
+      "sourceLayers": {
+        "under": "ec52b620562a3f8453b99b3fe267fe017a66bae01d4e36edff9d5ce8215249d8",
+        "mid": "bcf4ab06e3f9d15dea317fa6b4990c66c3b4e4aa0f16d314b25a6b472de41ea2",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 407,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_finish.lua",
+        "mid": 38,
+        "sha256": "795502fafa782f60da7a01d460decf265cacc5b16ba6f8e9150f831f7b949790"
+      },
+      "contexts": [
+        {
+          "map": "EM_ROUTE121",
+          "x": 42,
+          "y": 7,
+          "before_mid": 38,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 172,
+              "x": 42,
+              "y": 7,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "general__lilycove",
+      "mid": 55,
+      "feature": "tree_vine",
+      "sourceHash": "f74fef6d117fb1afbde80f02ad1ed15cddfcfae94b8afa31e73686eeebbc03c7",
+      "sourceLayers": {
+        "under": "f74fef6d117fb1afbde80f02ad1ed15cddfcfae94b8afa31e73686eeebbc03c7",
+        "mid": "5b7f9d9237a40d75562041a71b5a8a2547a88d4955d109648baa670122a11336",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 413,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_finish.lua",
+        "mid": 39,
+        "sha256": "709359da4a47d96d813afa710a3976cdaf43b28718cf5870a166a2bbf1d7fa6c"
+      },
+      "contexts": [
+        {
+          "map": "EM_ROUTE121",
+          "x": 43,
+          "y": 7,
+          "before_mid": 39,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 162,
+              "x": 43,
+              "y": 7,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "general__lilycove",
+      "mid": 417,
+      "feature": "rock_opening",
+      "sourceHash": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+      "sourceLayers": {
+        "under": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "mid": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 401,
+      "base": {
+        "module": "mappings/reverse_gen2_lilycove_remaining.lua",
+        "mid": 416,
+        "sha256": "d04abd93b31c42aab7c9e205076aeedffe226665450df70b76aac71901361458"
+      },
+      "contexts": [
+        {
+          "map": "EM_ROUTE123",
+          "x": 47,
+          "y": 3,
+          "before_mid": 416,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 82,
+              "x": 47,
+              "y": 3,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "general__mauville",
+      "mid": 54,
+      "feature": "tree_vine",
+      "sourceHash": "ec52b620562a3f8453b99b3fe267fe017a66bae01d4e36edff9d5ce8215249d8",
+      "sourceLayers": {
+        "under": "ec52b620562a3f8453b99b3fe267fe017a66bae01d4e36edff9d5ce8215249d8",
+        "mid": "bcf4ab06e3f9d15dea317fa6b4990c66c3b4e4aa0f16d314b25a6b472de41ea2",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 407,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_finish.lua",
+        "mid": 38,
+        "sha256": "64119cdb79388240c1067fc617ed7ed380f8ba0146ff0c461f859779955cee81"
+      },
+      "contexts": [
+        {
+          "map": "EM_ROUTE111",
+          "x": 13,
+          "y": 19,
+          "before_mid": 38,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 161,
+              "x": 13,
+              "y": 19,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "general__mauville",
+      "mid": 55,
+      "feature": "tree_vine",
+      "sourceHash": "f74fef6d117fb1afbde80f02ad1ed15cddfcfae94b8afa31e73686eeebbc03c7",
+      "sourceLayers": {
+        "under": "f74fef6d117fb1afbde80f02ad1ed15cddfcfae94b8afa31e73686eeebbc03c7",
+        "mid": "5b7f9d9237a40d75562041a71b5a8a2547a88d4955d109648baa670122a11336",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 413,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_finish.lua",
+        "mid": 39,
+        "sha256": "360337e9147472f80bfa7d139d673611f510fe7d1f5d85bd743f064c7c87faf7"
+      },
+      "contexts": [
+        {
+          "map": "EM_ROUTE111",
+          "x": 14,
+          "y": 19,
+          "before_mid": 39,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 164,
+              "x": 14,
+              "y": 19,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "general__mauville",
+      "mid": 417,
+      "feature": "rock_opening",
+      "sourceHash": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+      "sourceLayers": {
+        "under": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "mid": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 401,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_remaining.lua",
+        "mid": 416,
+        "sha256": "a7d5a5041900cba5c41d332dae5609c223493f54062deb8b016d263b91fba9e3"
+      },
+      "contexts": [
+        {
+          "map": "EM_ROUTE111",
+          "x": 35,
+          "y": 1,
+          "before_mid": 416,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 13,
+              "x": 35,
+              "y": 1,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "general__mauville",
+      "mid": 425,
+      "feature": "rock_opening",
+      "sourceHash": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+      "sourceLayers": {
+        "under": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "mid": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 405,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_remaining.lua",
+        "mid": 424,
+        "sha256": "7e58a5a15f006d523ae340ffb487e07e367df3bc946ddde1dfb86752f816b01d"
+      },
+      "contexts": [
+        {
+          "map": "EM_ROUTE111",
+          "x": 24,
+          "y": 36,
+          "before_mid": 424,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 131,
+              "x": 24,
+              "y": 36,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "general__mossdeep",
+      "mid": 417,
+      "feature": "rock_opening",
+      "sourceHash": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+      "sourceLayers": {
+        "under": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "mid": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 401,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_remaining.lua",
+        "mid": 416,
+        "sha256": "bc467e4986f84898d97718cefc68c298eb00c73933fb49155c77ca3ebb65d68d"
+      },
+      "contexts": [
+        {
+          "map": "EM_ROUTE125",
+          "x": 53,
+          "y": 10,
+          "before_mid": 416,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 2,
+              "x": 53,
+              "y": 10,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "general__mossdeep",
+      "mid": 425,
+      "feature": "rock_opening",
+      "sourceHash": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+      "sourceLayers": {
+        "under": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "mid": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 405,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_remaining.lua",
+        "mid": 424,
+        "sha256": "bc106a738c572f6fa15d57b44e4aa0e5de3ee7544edb8275ad3cfc355d04fbe0"
+      },
+      "contexts": [
+        {
+          "map": "EM_ROUTE127",
+          "x": 59,
+          "y": 67,
+          "before_mid": 424,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 31,
+              "x": 59,
+              "y": 67,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "general__rustboro",
+      "mid": 433,
+      "feature": "rock_opening",
+      "sourceHash": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+      "sourceLayers": {
+        "under": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "mid": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 411,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_remaining.lua",
+        "mid": 432,
+        "sha256": "ab343c03b8e6184fb038ac64cc9ba2cb7fb6ff46a1b56381a010db20a2923071"
+      },
+      "contexts": [
+        {
+          "map": "EM_ROUTE116",
+          "x": 71,
+          "y": 4,
+          "before_mid": 432,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 81,
+              "x": 71,
+              "y": 4,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "general__fallarbor",
+      "mid": 54,
+      "feature": "tree_vine",
+      "sourceHash": "ec52b620562a3f8453b99b3fe267fe017a66bae01d4e36edff9d5ce8215249d8",
+      "sourceLayers": {
+        "under": "ec52b620562a3f8453b99b3fe267fe017a66bae01d4e36edff9d5ce8215249d8",
+        "mid": "bcf4ab06e3f9d15dea317fa6b4990c66c3b4e4aa0f16d314b25a6b472de41ea2",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 407,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_finish.lua",
+        "mid": 38,
+        "sha256": "69430dc68fa024f72e88907f93a604770ffe79179d1184966377415c9c03f379"
+      },
+      "contexts": [
+        {
+          "map": "RU_ROUTE115",
+          "x": 7,
+          "y": 20,
+          "before_mid": 38,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 174,
+              "x": 7,
+              "y": 20,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "general__fallarbor",
+      "mid": 55,
+      "feature": "tree_vine",
+      "sourceHash": "f74fef6d117fb1afbde80f02ad1ed15cddfcfae94b8afa31e73686eeebbc03c7",
+      "sourceLayers": {
+        "under": "f74fef6d117fb1afbde80f02ad1ed15cddfcfae94b8afa31e73686eeebbc03c7",
+        "mid": "5b7f9d9237a40d75562041a71b5a8a2547a88d4955d109648baa670122a11336",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 413,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_finish.lua",
+        "mid": 39,
+        "sha256": "b81003fe0ad7055cc48e1ec7479083407245c2cac83af8b58042e33d389956b1"
+      },
+      "contexts": [
+        {
+          "map": "RU_ROUTE115",
+          "x": 8,
+          "y": 20,
+          "before_mid": 39,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 183,
+              "x": 8,
+              "y": 20,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "general__fallarbor",
+      "mid": 417,
+      "feature": "rock_opening",
+      "sourceHash": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+      "sourceLayers": {
+        "under": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "mid": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 401,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_remaining.lua",
+        "mid": 416,
+        "sha256": "6efe3bf0550693ebd4c85e0496917a257aafd0311d78a9e82297d04c5306e03e"
+      },
+      "contexts": [
+        {
+          "map": "RU_ROUTE113",
+          "x": 49,
+          "y": 8,
+          "before_mid": 416,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 3,
+              "x": 49,
+              "y": 8,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "general__fallarbor",
+      "mid": 425,
+      "feature": "rock_opening",
+      "sourceHash": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+      "sourceLayers": {
+        "under": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "mid": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 405,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_remaining.lua",
+        "mid": 424,
+        "sha256": "1ea5600ec7ed1ac489d3f7dd2d3ddaf6e3ac227187ba8c21f2afcb211e13d131"
+      },
+      "contexts": [
+        {
+          "map": "RU_ROUTE115",
+          "x": 8,
+          "y": 30,
+          "before_mid": 424,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 133,
+              "x": 8,
+              "y": 30,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "general__fallarbor",
+      "mid": 528,
+      "feature": "rock_opening",
+      "sourceHash": "1ba63b6c985fc064e041df8d5079114c419b586b08799c7e4e86c9ec963f8b7b",
+      "sourceLayers": {
+        "under": "1ba63b6c985fc064e041df8d5079114c419b586b08799c7e4e86c9ec963f8b7b",
+        "mid": "1ba63b6c985fc064e041df8d5079114c419b586b08799c7e4e86c9ec963f8b7b",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 403,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_remaining.lua",
+        "mid": 520,
+        "sha256": "cdb511b57155cb7ce261d6728308dc49e211dddbdf8bd080e5aaa9f35578d9a1"
+      },
+      "contexts": [
+        {
+          "map": "RU_ROUTE115",
+          "x": 32,
+          "y": 6,
+          "before_mid": 520,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 72,
+              "x": 32,
+              "y": 6,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "general__fortree",
+      "mid": 54,
+      "feature": "tree_vine",
+      "sourceHash": "ec52b620562a3f8453b99b3fe267fe017a66bae01d4e36edff9d5ce8215249d8",
+      "sourceLayers": {
+        "under": "ec52b620562a3f8453b99b3fe267fe017a66bae01d4e36edff9d5ce8215249d8",
+        "mid": "bcf4ab06e3f9d15dea317fa6b4990c66c3b4e4aa0f16d314b25a6b472de41ea2",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 407,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_finish.lua",
+        "mid": 38,
+        "sha256": "6b0d9c419965831ba39d5ff9aa70d5bed04aaba3f8239c98c35f18726db5b2a1"
+      },
+      "contexts": [
+        {
+          "map": "RU_ROUTE119",
+          "x": 18,
+          "y": 76,
+          "before_mid": 38,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 193,
+              "x": 18,
+              "y": 76,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "general__fortree",
+      "mid": 55,
+      "feature": "tree_vine",
+      "sourceHash": "f74fef6d117fb1afbde80f02ad1ed15cddfcfae94b8afa31e73686eeebbc03c7",
+      "sourceLayers": {
+        "under": "f74fef6d117fb1afbde80f02ad1ed15cddfcfae94b8afa31e73686eeebbc03c7",
+        "mid": "5b7f9d9237a40d75562041a71b5a8a2547a88d4955d109648baa670122a11336",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 413,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_finish.lua",
+        "mid": 39,
+        "sha256": "80b595937b0e21d6e40c47a23ec63dc63e26b192ce75a4cc20cd163b4c613081"
+      },
+      "contexts": [
+        {
+          "map": "RU_ROUTE119",
+          "x": 19,
+          "y": 76,
+          "before_mid": 39,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 173,
+              "x": 19,
+              "y": 76,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "general__fortree",
+      "mid": 433,
+      "feature": "rock_opening",
+      "sourceHash": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+      "sourceLayers": {
+        "under": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "mid": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 411,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_remaining.lua",
+        "mid": 432,
+        "sha256": "c69513a515a8dcad8d6b6cd3b58fe17a2f05fea00de250af3248a96c295e6ce3"
+      },
+      "contexts": [
+        {
+          "map": "RU_ROUTE120",
+          "x": 28,
+          "y": 62,
+          "before_mid": 432,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 101,
+              "x": 28,
+              "y": 62,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "general__fortree",
+      "mid": 632,
+      "feature": "shrub_opening",
+      "sourceHash": "c566276e454a23a48927349f3369fd100240154f7180e194f5aac973194e5af4",
+      "sourceLayers": {
+        "under": "c566276e454a23a48927349f3369fd100240154f7180e194f5aac973194e5af4",
+        "mid": "c566276e454a23a48927349f3369fd100240154f7180e194f5aac973194e5af4",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 409,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_remaining.lua",
+        "mid": 625,
+        "sha256": "ece49c17b37f7140f1cf31a6f936bf09516025689eb2be686a35bb9fad8a9ba8"
+      },
+      "contexts": [
+        {
+          "map": "RU_ROUTE120",
+          "x": 26,
+          "y": 10,
+          "before_mid": 625,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 222,
+              "x": 26,
+              "y": 10,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "general__lilycove",
+      "mid": 54,
+      "feature": "tree_vine",
+      "sourceHash": "ec52b620562a3f8453b99b3fe267fe017a66bae01d4e36edff9d5ce8215249d8",
+      "sourceLayers": {
+        "under": "ec52b620562a3f8453b99b3fe267fe017a66bae01d4e36edff9d5ce8215249d8",
+        "mid": "bcf4ab06e3f9d15dea317fa6b4990c66c3b4e4aa0f16d314b25a6b472de41ea2",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 407,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_finish.lua",
+        "mid": 38,
+        "sha256": "a06ae4e6aae0016ae114336b969ae3a25295c6446986e970fcd08d8fd75ceca7"
+      },
+      "contexts": [
+        {
+          "map": "RU_ROUTE121",
+          "x": 42,
+          "y": 7,
+          "before_mid": 38,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 172,
+              "x": 42,
+              "y": 7,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "general__lilycove",
+      "mid": 55,
+      "feature": "tree_vine",
+      "sourceHash": "f74fef6d117fb1afbde80f02ad1ed15cddfcfae94b8afa31e73686eeebbc03c7",
+      "sourceLayers": {
+        "under": "f74fef6d117fb1afbde80f02ad1ed15cddfcfae94b8afa31e73686eeebbc03c7",
+        "mid": "5b7f9d9237a40d75562041a71b5a8a2547a88d4955d109648baa670122a11336",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 413,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_finish.lua",
+        "mid": 39,
+        "sha256": "972b7f8ee593b17d3788733f1cbaf3f728d5ed59ce05be2b2870fa0cc25fb6ff"
+      },
+      "contexts": [
+        {
+          "map": "RU_ROUTE121",
+          "x": 43,
+          "y": 7,
+          "before_mid": 39,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 162,
+              "x": 43,
+              "y": 7,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "general__lilycove",
+      "mid": 417,
+      "feature": "rock_opening",
+      "sourceHash": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+      "sourceLayers": {
+        "under": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "mid": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 401,
+      "base": {
+        "module": "mappings/reverse_gen2_lilycove_remaining.lua",
+        "mid": 416,
+        "sha256": "11fb5ea101d60059c50ed8c5c83452f4e8b13c4980abbee914ba1ddf65232b28"
+      },
+      "contexts": [
+        {
+          "map": "RU_ROUTE123",
+          "x": 47,
+          "y": 3,
+          "before_mid": 416,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 82,
+              "x": 47,
+              "y": 3,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "general__mauville",
+      "mid": 54,
+      "feature": "tree_vine",
+      "sourceHash": "ec52b620562a3f8453b99b3fe267fe017a66bae01d4e36edff9d5ce8215249d8",
+      "sourceLayers": {
+        "under": "ec52b620562a3f8453b99b3fe267fe017a66bae01d4e36edff9d5ce8215249d8",
+        "mid": "bcf4ab06e3f9d15dea317fa6b4990c66c3b4e4aa0f16d314b25a6b472de41ea2",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 407,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_finish.lua",
+        "mid": 38,
+        "sha256": "84885724b1904a55f0fc8e83864afafff39204aa6afac12e7a6f35544246c1ba"
+      },
+      "contexts": [
+        {
+          "map": "RU_ROUTE111",
+          "x": 13,
+          "y": 19,
+          "before_mid": 38,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 161,
+              "x": 13,
+              "y": 19,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "general__mauville",
+      "mid": 55,
+      "feature": "tree_vine",
+      "sourceHash": "f74fef6d117fb1afbde80f02ad1ed15cddfcfae94b8afa31e73686eeebbc03c7",
+      "sourceLayers": {
+        "under": "f74fef6d117fb1afbde80f02ad1ed15cddfcfae94b8afa31e73686eeebbc03c7",
+        "mid": "5b7f9d9237a40d75562041a71b5a8a2547a88d4955d109648baa670122a11336",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 413,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_finish.lua",
+        "mid": 39,
+        "sha256": "94cd89cff40c0b5cbe5e9b9c46464fcee444abf55dcfa28f8239b7291aa503cb"
+      },
+      "contexts": [
+        {
+          "map": "RU_ROUTE111",
+          "x": 14,
+          "y": 19,
+          "before_mid": 39,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 164,
+              "x": 14,
+              "y": 19,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "general__mauville",
+      "mid": 417,
+      "feature": "rock_opening",
+      "sourceHash": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+      "sourceLayers": {
+        "under": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "mid": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 401,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_remaining.lua",
+        "mid": 416,
+        "sha256": "ff7fc47046be68ebf85544e40537af69fb9229912c526ee175dd685364de6a43"
+      },
+      "contexts": [
+        {
+          "map": "RU_ROUTE111",
+          "x": 35,
+          "y": 1,
+          "before_mid": 416,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 13,
+              "x": 35,
+              "y": 1,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "general__mauville",
+      "mid": 425,
+      "feature": "rock_opening",
+      "sourceHash": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+      "sourceLayers": {
+        "under": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "mid": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 405,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_remaining.lua",
+        "mid": 424,
+        "sha256": "81db0e550c1a808671a68c23ff96ab9309930faf001fe6651226c57bc3a1c6db"
+      },
+      "contexts": [
+        {
+          "map": "RU_ROUTE111",
+          "x": 24,
+          "y": 36,
+          "before_mid": 424,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 131,
+              "x": 24,
+              "y": 36,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "general__mossdeep",
+      "mid": 417,
+      "feature": "rock_opening",
+      "sourceHash": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+      "sourceLayers": {
+        "under": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "mid": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 401,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_remaining.lua",
+        "mid": 416,
+        "sha256": "cf9d5c41b610039b8b94cbd01dd90ebb4e75f24e727b69ac14d80baf870b95d7"
+      },
+      "contexts": [
+        {
+          "map": "RU_ROUTE125",
+          "x": 53,
+          "y": 10,
+          "before_mid": 416,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 2,
+              "x": 53,
+              "y": 10,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "general__mossdeep",
+      "mid": 425,
+      "feature": "rock_opening",
+      "sourceHash": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+      "sourceLayers": {
+        "under": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "mid": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 405,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_remaining.lua",
+        "mid": 424,
+        "sha256": "802f6999327b71db37e24eb79faeacfdd219e832bf35dcf5258e62d6c4d02e8c"
+      },
+      "contexts": [
+        {
+          "map": "RU_ROUTE127",
+          "x": 59,
+          "y": 67,
+          "before_mid": 424,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 31,
+              "x": 59,
+              "y": 67,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "general__rustboro",
+      "mid": 433,
+      "feature": "rock_opening",
+      "sourceHash": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+      "sourceLayers": {
+        "under": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "mid": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 411,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_remaining.lua",
+        "mid": 432,
+        "sha256": "41fd0d9adc8b48bd3b66a70d19a38b5f0561bacfe8cf5a18c3e67999b39cf882"
+      },
+      "contexts": [
+        {
+          "map": "RU_ROUTE116",
+          "x": 71,
+          "y": 4,
+          "before_mid": 432,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 81,
+              "x": 71,
+              "y": 4,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__fallarbor",
+      "mid": 54,
+      "feature": "tree_vine",
+      "sourceHash": "ec52b620562a3f8453b99b3fe267fe017a66bae01d4e36edff9d5ce8215249d8",
+      "sourceLayers": {
+        "under": "ec52b620562a3f8453b99b3fe267fe017a66bae01d4e36edff9d5ce8215249d8",
+        "mid": "bcf4ab06e3f9d15dea317fa6b4990c66c3b4e4aa0f16d314b25a6b472de41ea2",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 407,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_finish.lua",
+        "mid": 38,
+        "sha256": "45e5163d9cbf4795e4cc792784a5d0b29d8a9684904039f7cd8b87b82ad68db6"
+      },
+      "contexts": [
+        {
+          "map": "SA_ROUTE114",
+          "x": 11,
+          "y": 27,
+          "before_mid": 38,
+          "source_collision": 7,
+          "elevation": 3,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 182,
+              "x": 11,
+              "y": 27,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__fallarbor",
+      "mid": 55,
+      "feature": "tree_vine",
+      "sourceHash": "f74fef6d117fb1afbde80f02ad1ed15cddfcfae94b8afa31e73686eeebbc03c7",
+      "sourceLayers": {
+        "under": "f74fef6d117fb1afbde80f02ad1ed15cddfcfae94b8afa31e73686eeebbc03c7",
+        "mid": "5b7f9d9237a40d75562041a71b5a8a2547a88d4955d109648baa670122a11336",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 413,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_finish.lua",
+        "mid": 39,
+        "sha256": "4499bc116d99a883674f32adb28029577e1b1063d39d74930bebeeeafad69c51"
+      },
+      "contexts": [
+        {
+          "map": "SA_ROUTE114",
+          "x": 12,
+          "y": 27,
+          "before_mid": 39,
+          "source_collision": 7,
+          "elevation": 3,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 192,
+              "x": 12,
+              "y": 27,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__fallarbor",
+      "mid": 417,
+      "feature": "rock_opening",
+      "sourceHash": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+      "sourceLayers": {
+        "under": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "mid": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 401,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_remaining.lua",
+        "mid": 416,
+        "sha256": "1bdbe1fdc902473c4daba63b0a20eedccda21b203823f53fa9c131ee72f9938f"
+      },
+      "contexts": [
+        {
+          "map": "SA_ROUTE113",
+          "x": 49,
+          "y": 8,
+          "before_mid": 416,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 3,
+              "x": 49,
+              "y": 8,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__fallarbor",
+      "mid": 425,
+      "feature": "rock_opening",
+      "sourceHash": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+      "sourceLayers": {
+        "under": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "mid": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 405,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_remaining.lua",
+        "mid": 424,
+        "sha256": "76b9b8ba43574af772bb7476924b1ac1a5f3d3a2606fa83dcdb7869d322396f7"
+      },
+      "contexts": [
+        {
+          "map": "SA_ROUTE115",
+          "x": 8,
+          "y": 30,
+          "before_mid": 424,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 133,
+              "x": 8,
+              "y": 30,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__fallarbor",
+      "mid": 528,
+      "feature": "rock_opening",
+      "sourceHash": "1ba63b6c985fc064e041df8d5079114c419b586b08799c7e4e86c9ec963f8b7b",
+      "sourceLayers": {
+        "under": "1ba63b6c985fc064e041df8d5079114c419b586b08799c7e4e86c9ec963f8b7b",
+        "mid": "1ba63b6c985fc064e041df8d5079114c419b586b08799c7e4e86c9ec963f8b7b",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 403,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_remaining.lua",
+        "mid": 520,
+        "sha256": "4d1ac3bcb3052cbe7a1adfcc5be15cddf30690f5c8602dfbfbf90482ea05c364"
+      },
+      "contexts": [
+        {
+          "map": "SA_ROUTE114",
+          "x": 9,
+          "y": 47,
+          "before_mid": 520,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 41,
+              "x": 9,
+              "y": 47,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__fortree",
+      "mid": 54,
+      "feature": "tree_vine",
+      "sourceHash": "ec52b620562a3f8453b99b3fe267fe017a66bae01d4e36edff9d5ce8215249d8",
+      "sourceLayers": {
+        "under": "ec52b620562a3f8453b99b3fe267fe017a66bae01d4e36edff9d5ce8215249d8",
+        "mid": "bcf4ab06e3f9d15dea317fa6b4990c66c3b4e4aa0f16d314b25a6b472de41ea2",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 407,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_finish.lua",
+        "mid": 38,
+        "sha256": "23acf614248ca6b3b4d9593cdde8d8962e21de0294642394a0f7fb83e1c05bc1"
+      },
+      "contexts": [
+        {
+          "map": "SA_ROUTE119",
+          "x": 18,
+          "y": 76,
+          "before_mid": 38,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 193,
+              "x": 18,
+              "y": 76,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__fortree",
+      "mid": 55,
+      "feature": "tree_vine",
+      "sourceHash": "f74fef6d117fb1afbde80f02ad1ed15cddfcfae94b8afa31e73686eeebbc03c7",
+      "sourceLayers": {
+        "under": "f74fef6d117fb1afbde80f02ad1ed15cddfcfae94b8afa31e73686eeebbc03c7",
+        "mid": "5b7f9d9237a40d75562041a71b5a8a2547a88d4955d109648baa670122a11336",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 413,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_finish.lua",
+        "mid": 39,
+        "sha256": "a48b72cacb42d18be8f672e9fdad8eccf8ab3e8c21c63e382a3f05c2317dcac1"
+      },
+      "contexts": [
+        {
+          "map": "SA_ROUTE119",
+          "x": 19,
+          "y": 76,
+          "before_mid": 39,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 173,
+              "x": 19,
+              "y": 76,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__fortree",
+      "mid": 433,
+      "feature": "rock_opening",
+      "sourceHash": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+      "sourceLayers": {
+        "under": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "mid": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 411,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_remaining.lua",
+        "mid": 432,
+        "sha256": "3ea53a85507f87243a77da460b2281d45b0b6191eab3bb17ac4554cf1580bfd4"
+      },
+      "contexts": [
+        {
+          "map": "SA_ROUTE119",
+          "x": 16,
+          "y": 81,
+          "before_mid": 432,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 103,
+              "x": 16,
+              "y": 81,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__fortree",
+      "mid": 632,
+      "feature": "shrub_opening",
+      "sourceHash": "c566276e454a23a48927349f3369fd100240154f7180e194f5aac973194e5af4",
+      "sourceLayers": {
+        "under": "c566276e454a23a48927349f3369fd100240154f7180e194f5aac973194e5af4",
+        "mid": "c566276e454a23a48927349f3369fd100240154f7180e194f5aac973194e5af4",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 409,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_remaining.lua",
+        "mid": 625,
+        "sha256": "b91202fcd34066030ab393e050e28ed74a9ddc12fd09597caa7be77aa1f4d532"
+      },
+      "contexts": [
+        {
+          "map": "SA_ROUTE119",
+          "x": 5,
+          "y": 2,
+          "before_mid": 625,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 201,
+              "x": 5,
+              "y": 2,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__lilycove",
+      "mid": 54,
+      "feature": "tree_vine",
+      "sourceHash": "ec52b620562a3f8453b99b3fe267fe017a66bae01d4e36edff9d5ce8215249d8",
+      "sourceLayers": {
+        "under": "ec52b620562a3f8453b99b3fe267fe017a66bae01d4e36edff9d5ce8215249d8",
+        "mid": "bcf4ab06e3f9d15dea317fa6b4990c66c3b4e4aa0f16d314b25a6b472de41ea2",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 407,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_finish.lua",
+        "mid": 38,
+        "sha256": "068f8edeba29492b1d56957fc2a93960087973b5e31ff0d3a101bebb180e0868"
+      },
+      "contexts": [
+        {
+          "map": "SA_ROUTE121",
+          "x": 42,
+          "y": 7,
+          "before_mid": 38,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 172,
+              "x": 42,
+              "y": 7,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__lilycove",
+      "mid": 55,
+      "feature": "tree_vine",
+      "sourceHash": "f74fef6d117fb1afbde80f02ad1ed15cddfcfae94b8afa31e73686eeebbc03c7",
+      "sourceLayers": {
+        "under": "f74fef6d117fb1afbde80f02ad1ed15cddfcfae94b8afa31e73686eeebbc03c7",
+        "mid": "5b7f9d9237a40d75562041a71b5a8a2547a88d4955d109648baa670122a11336",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 413,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_finish.lua",
+        "mid": 39,
+        "sha256": "1931fff28149217f5b39991e3d17e3da99b320efe1448d7bfb11008c93183079"
+      },
+      "contexts": [
+        {
+          "map": "SA_ROUTE121",
+          "x": 43,
+          "y": 7,
+          "before_mid": 39,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 162,
+              "x": 43,
+              "y": 7,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__lilycove",
+      "mid": 417,
+      "feature": "rock_opening",
+      "sourceHash": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+      "sourceLayers": {
+        "under": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "mid": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 401,
+      "base": {
+        "module": "mappings/reverse_gen2_lilycove_remaining.lua",
+        "mid": 416,
+        "sha256": "51960a8ae584d791b7a769c8ee0d38de03668936f9a9167f1c29370f674b60fb"
+      },
+      "contexts": [
+        {
+          "map": "SA_ROUTE121",
+          "x": 40,
+          "y": 11,
+          "before_mid": 416,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 12,
+              "x": 40,
+              "y": 11,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__mauville",
+      "mid": 54,
+      "feature": "tree_vine",
+      "sourceHash": "ec52b620562a3f8453b99b3fe267fe017a66bae01d4e36edff9d5ce8215249d8",
+      "sourceLayers": {
+        "under": "ec52b620562a3f8453b99b3fe267fe017a66bae01d4e36edff9d5ce8215249d8",
+        "mid": "bcf4ab06e3f9d15dea317fa6b4990c66c3b4e4aa0f16d314b25a6b472de41ea2",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 407,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_finish.lua",
+        "mid": 38,
+        "sha256": "47a461449cbfbf7b3937a7236bbf09d08546eb2c4eea18aa11135bae177b3b37"
+      },
+      "contexts": [
+        {
+          "map": "SA_ROUTE111",
+          "x": 13,
+          "y": 19,
+          "before_mid": 38,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 161,
+              "x": 13,
+              "y": 19,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__mauville",
+      "mid": 55,
+      "feature": "tree_vine",
+      "sourceHash": "f74fef6d117fb1afbde80f02ad1ed15cddfcfae94b8afa31e73686eeebbc03c7",
+      "sourceLayers": {
+        "under": "f74fef6d117fb1afbde80f02ad1ed15cddfcfae94b8afa31e73686eeebbc03c7",
+        "mid": "5b7f9d9237a40d75562041a71b5a8a2547a88d4955d109648baa670122a11336",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 413,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_finish.lua",
+        "mid": 39,
+        "sha256": "110228756db55eaca6936629e862294e677978eacf58d895a61265863f05cbf7"
+      },
+      "contexts": [
+        {
+          "map": "SA_ROUTE111",
+          "x": 14,
+          "y": 19,
+          "before_mid": 39,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 164,
+              "x": 14,
+              "y": 19,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__mauville",
+      "mid": 417,
+      "feature": "rock_opening",
+      "sourceHash": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+      "sourceLayers": {
+        "under": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "mid": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 401,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_remaining.lua",
+        "mid": 416,
+        "sha256": "0ae88da31f9df729235eec3a3ca7bc035923fa132f42566512f9c4da7a1f14b8"
+      },
+      "contexts": [
+        {
+          "map": "SA_ROUTE111",
+          "x": 35,
+          "y": 1,
+          "before_mid": 416,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 13,
+              "x": 35,
+              "y": 1,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__mauville",
+      "mid": 425,
+      "feature": "rock_opening",
+      "sourceHash": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+      "sourceLayers": {
+        "under": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "mid": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 405,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_remaining.lua",
+        "mid": 424,
+        "sha256": "ea086aa5d1825320e7dac5f0fc7093c94b24afdc5be19370ab69608c2511056b"
+      },
+      "contexts": [
+        {
+          "map": "SA_ROUTE111",
+          "x": 24,
+          "y": 36,
+          "before_mid": 424,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 131,
+              "x": 24,
+              "y": 36,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__mossdeep",
+      "mid": 417,
+      "feature": "rock_opening",
+      "sourceHash": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+      "sourceLayers": {
+        "under": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "mid": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 401,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_remaining.lua",
+        "mid": 416,
+        "sha256": "7c434503885f34061a30cc328ba51f65164b71474208f3c90635a89e1a5a1240"
+      },
+      "contexts": [
+        {
+          "map": "SA_ROUTE125",
+          "x": 53,
+          "y": 10,
+          "before_mid": 416,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 2,
+              "x": 53,
+              "y": 10,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__mossdeep",
+      "mid": 425,
+      "feature": "rock_opening",
+      "sourceHash": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+      "sourceLayers": {
+        "under": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "mid": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 405,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_remaining.lua",
+        "mid": 424,
+        "sha256": "e733a54254126e75f865c4fca1517f0775972704a63f87800e3280d01c742905"
+      },
+      "contexts": [
+        {
+          "map": "SA_ROUTE127",
+          "x": 59,
+          "y": 67,
+          "before_mid": 424,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 31,
+              "x": 59,
+              "y": 67,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__rustboro",
+      "mid": 433,
+      "feature": "rock_opening",
+      "sourceHash": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+      "sourceLayers": {
+        "under": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "mid": "a177573c09d117c60644e20750965c841cb83a2ab52901366badc9e029d15b3f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 411,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_outdoor_remaining.lua",
+        "mid": 432,
+        "sha256": "4db6aa07870ca571f6b29cfcb47cf47794a64d13aa12fff1a692da42772ee5a9"
+      },
+      "contexts": [
+        {
+          "map": "SA_ROUTE116",
+          "x": 71,
+          "y": 4,
+          "before_mid": 432,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "secret_power_entrance",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/secret_base.lua:setOccupiedEntrances",
+            "event": {
+              "secretBaseId": 81,
+              "x": 71,
+              "y": 4,
+              "type": "secret_base",
+              "kind": 8,
+              "elevation": 0
+            }
+          },
+          "impassable": true
+        }
+      ]
+    }
+  ]
+}

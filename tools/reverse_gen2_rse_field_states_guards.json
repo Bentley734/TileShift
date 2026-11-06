@@ -1,0 +1,2308 @@
+{
+  "version": 1,
+  "nativeFiles": [
+    {
+      "game": "emerald",
+      "file": "data/generated/gba/native/layouts/EM_BATTLE_FRONTIER_BATTLE_ARENA_LOBBY.mid",
+      "sha256": "1524375403758398c9b7debbba00084e196ccb8a769ca7742a2589db92eff7b6"
+    },
+    {
+      "game": "emerald",
+      "file": "data/generated/gba/native/layouts/EM_BATTLE_FRONTIER_BATTLE_PALACE_CORRIDOR.mid",
+      "sha256": "cdf7d0a5aaf0db9efc86b1fae844f7105016576388293b8b4895bb1027daa728"
+    },
+    {
+      "game": "emerald",
+      "file": "data/generated/gba/native/layouts/EM_BATTLE_FRONTIER_BATTLE_TOWER_LOBBY.mid",
+      "sha256": "af3a9b9c018f74785160655bc05fc147da032150dded9b0bdd23236edafd002e"
+    },
+    {
+      "game": "emerald",
+      "file": "data/generated/gba/native/layouts/EM_BATTLE_FRONTIER_LOUNGE2.mid",
+      "sha256": "aa06830b8b922d50b9f86b4c9087d14e82393a46a74171a57a591fd24f6cfcd7"
+    },
+    {
+      "game": "emerald",
+      "file": "data/generated/gba/native/layouts/EM_INSIDE_OF_TRUCK.mid",
+      "sha256": "38ae8fd6bc3f1084fbbcefe46e68530eb906789e8f628430b787725cacd0dff2"
+    },
+    {
+      "game": "emerald",
+      "file": "data/generated/gba/native/layouts/EM_LILYCOVE_CITY_CONTEST_LOBBY.mid",
+      "sha256": "22b9c6baac626c61088d9352cd436bebb2459c0172ceed22ee3339f5fbf44fff"
+    },
+    {
+      "game": "emerald",
+      "file": "data/generated/gba/native/layouts/EM_LILYCOVE_CITY_COVE_LILY_MOTEL_1F.mid",
+      "sha256": "4863a1432c21c424a886f570322fe13a34466e48cd5a638c1cf352380b89837e"
+    },
+    {
+      "game": "emerald",
+      "file": "data/generated/gba/native/layouts/EM_LILYCOVE_CITY_DEPARTMENT_STORE_1F.mid",
+      "sha256": "5c1fab788df0b21c5a58e0cd0afb34f82e4d50deb9aad2e56bac27043ae67cb8"
+    },
+    {
+      "game": "emerald",
+      "file": "data/generated/gba/native/layouts/EM_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F.mid",
+      "sha256": "813eda90b66d0886ac6b4746eff89e12009395e31584e7cd666c56deff1f6982"
+    },
+    {
+      "game": "emerald",
+      "file": "data/generated/gba/native/layouts/EM_MOSSDEEP_CITY_GAME_CORNER_1F.mid",
+      "sha256": "920cfc721dec6d83789fd0aad86b52c9ceb6722b624c07df4710ebeacc81f147"
+    },
+    {
+      "game": "emerald",
+      "file": "data/generated/gba/native/layouts/EM_ROUTE117_POKEMON_DAY_CARE.mid",
+      "sha256": "5610aee9e6f14bff822891258805237076e0a602062b1dc6a753a82b6d2ba9b0"
+    },
+    {
+      "game": "emerald",
+      "file": "data/generated/gba/native/layouts/EM_ROUTE119_WEATHER_INSTITUTE_1F.mid",
+      "sha256": "42d10290f762e1e61c93f54f581bab77c8b713711ab4635f994a287771f39049"
+    },
+    {
+      "game": "emerald",
+      "file": "data/generated/gba/native/layouts/EM_ROUTE121_SAFARI_ZONE_ENTRANCE.mid",
+      "sha256": "d90dc470d9d464e2473e1ce95d73773c80849c18e0a6e23592467f7dd1409d9c"
+    },
+    {
+      "game": "emerald",
+      "file": "data/generated/gba/native/layouts/EM_RUSTBORO_CITY_POKEMON_CENTER_1F.mid",
+      "sha256": "92862337c5047159a48d76ce841e7a5eb60d94b084cdf73fcb192c29730ac7a9"
+    },
+    {
+      "game": "emerald",
+      "file": "data/generated/gba/native/layouts/EM_SOOTOPOLIS_CITY_GYM_1F.mid",
+      "sha256": "0863cce3e9c1c0436cefe39d9be2e72056b3251dcf812516f04d276d09b9c89c"
+    },
+    {
+      "game": "emerald",
+      "file": "data/generated/gba/native/layouts/EM_SOOTOPOLIS_CITY_HOUSE7.mid",
+      "sha256": "1d4fdd80117994aa5faa25d64691352dfa03873e8129d30d1a9867866b4cc5d3"
+    },
+    {
+      "game": "emerald",
+      "file": "data/generated/gba/native/layouts/EM_SOOTOPOLIS_CITY_MYSTERY_EVENTS_HOUSE_1F.mid",
+      "sha256": "1b3c6602c717b8f3ebb1f4d10b580760dc51ffcaf9217c107b48376838275e77"
+    },
+    {
+      "game": "emerald",
+      "file": "data/generated/gba/native/layouts/EM_TRAINER_HILL_ENTRANCE.mid",
+      "sha256": "d6d3c77e43faa3815ccbb4778d4dbc6864f301e27390ab4d42504261b1442b5d"
+    },
+    {
+      "game": "emerald",
+      "file": "data/generated/gba/native/manifest.lua",
+      "sha256": "857ca4a444bec9981bb199e8a8919574913c2815fb0bab520b2a9658f3c705fa"
+    },
+    {
+      "game": "emerald",
+      "file": "data/generated/gba/scripts/events.lua",
+      "sha256": "4ae6dc661bae0bdc707c57dfd0ec1722e196dd194e4d94b3bc470f4549bd0d85"
+    },
+    {
+      "game": "emerald",
+      "file": "data/generated/gba/scripts/scripts.lua",
+      "sha256": "6da1f4589173f79677d9efbc6d2ca366b6255031da8fc27f439e2165eb2e812e"
+    },
+    {
+      "game": "ruby",
+      "file": "data/generated/gba/native/layouts/RU_BATTLE_TOWER_LOBBY.mid",
+      "sha256": "6121d314843f6d7ec1c73617364416bffbe0cb19c24e9da6236d6516bf0d2820"
+    },
+    {
+      "game": "ruby",
+      "file": "data/generated/gba/native/layouts/RU_DEWFORD_TOWN_POKEMON_CENTER_1F.mid",
+      "sha256": "92862337c5047159a48d76ce841e7a5eb60d94b084cdf73fcb192c29730ac7a9"
+    },
+    {
+      "game": "ruby",
+      "file": "data/generated/gba/native/layouts/RU_INSIDE_OF_TRUCK.mid",
+      "sha256": "38ae8fd6bc3f1084fbbcefe46e68530eb906789e8f628430b787725cacd0dff2"
+    },
+    {
+      "game": "ruby",
+      "file": "data/generated/gba/native/layouts/RU_LILYCOVE_CITY_DEPARTMENT_STORE_1F.mid",
+      "sha256": "5c1fab788df0b21c5a58e0cd0afb34f82e4d50deb9aad2e56bac27043ae67cb8"
+    },
+    {
+      "game": "ruby",
+      "file": "data/generated/gba/native/layouts/RU_LITTLEROOT_TOWN_MAYS_HOUSE_1F.mid",
+      "sha256": "5194c1b8e1c3f1c23bb4fa8f0799a534db869469839c1866d42ce9eb365a4d45"
+    },
+    {
+      "game": "ruby",
+      "file": "data/generated/gba/native/layouts/RU_MOSSDEEP_CITY_GAME_CORNER_1F.mid",
+      "sha256": "1667c711ff2e98b1df5e8722ffa226bf61dc29ce87ebbf03b59809a29b94f0d7"
+    },
+    {
+      "game": "ruby",
+      "file": "data/generated/gba/native/layouts/RU_ROUTE117_POKEMON_DAY_CARE.mid",
+      "sha256": "5610aee9e6f14bff822891258805237076e0a602062b1dc6a753a82b6d2ba9b0"
+    },
+    {
+      "game": "ruby",
+      "file": "data/generated/gba/native/layouts/RU_ROUTE119_WEATHER_INSTITUTE_1F.mid",
+      "sha256": "42d10290f762e1e61c93f54f581bab77c8b713711ab4635f994a287771f39049"
+    },
+    {
+      "game": "ruby",
+      "file": "data/generated/gba/native/layouts/RU_ROUTE121_SAFARI_ZONE_ENTRANCE.mid",
+      "sha256": "d90dc470d9d464e2473e1ce95d73773c80849c18e0a6e23592467f7dd1409d9c"
+    },
+    {
+      "game": "ruby",
+      "file": "data/generated/gba/native/layouts/RU_SOOTOPOLIS_CITY_GYM_1F.mid",
+      "sha256": "4aec1b7cfc7502cbacff732a4f75cebfd4c216276ee7bd39ee3f8fc722369097"
+    },
+    {
+      "game": "ruby",
+      "file": "data/generated/gba/native/layouts/RU_SOOTOPOLIS_CITY_HOUSE1.mid",
+      "sha256": "1d4fdd80117994aa5faa25d64691352dfa03873e8129d30d1a9867866b4cc5d3"
+    },
+    {
+      "game": "ruby",
+      "file": "data/generated/gba/native/layouts/RU_VERDANTURF_TOWN_CONTEST_LOBBY.mid",
+      "sha256": "0ee19d4babf3d5be7a1571c62b100c0cc752ce6fbe75d031adb0afae109e41cd"
+    },
+    {
+      "game": "ruby",
+      "file": "data/generated/gba/native/manifest.lua",
+      "sha256": "c7d1c790ff92f364fa45c0d40d93d7bf8585ed837495bedd92228fa3890cd48a"
+    },
+    {
+      "game": "ruby",
+      "file": "data/generated/gba/scripts/events.lua",
+      "sha256": "27a8a00f536acfa00fe8fe2b09708e4bf5c05f7b88c3579de5e1dd3a72e5f434"
+    },
+    {
+      "game": "ruby",
+      "file": "data/generated/gba/scripts/scripts.lua",
+      "sha256": "2aecd0ff5d4eb4db3c4ef2aaf1dfdd17f28edb0c378178d243a5c03d04fce83a"
+    },
+    {
+      "game": "sapphire",
+      "file": "data/generated/gba/native/layouts/SA_BATTLE_TOWER_LOBBY.mid",
+      "sha256": "6121d314843f6d7ec1c73617364416bffbe0cb19c24e9da6236d6516bf0d2820"
+    },
+    {
+      "game": "sapphire",
+      "file": "data/generated/gba/native/layouts/SA_FALLARBOR_TOWN_CONTEST_LOBBY.mid",
+      "sha256": "0ee19d4babf3d5be7a1571c62b100c0cc752ce6fbe75d031adb0afae109e41cd"
+    },
+    {
+      "game": "sapphire",
+      "file": "data/generated/gba/native/layouts/SA_INSIDE_OF_TRUCK.mid",
+      "sha256": "38ae8fd6bc3f1084fbbcefe46e68530eb906789e8f628430b787725cacd0dff2"
+    },
+    {
+      "game": "sapphire",
+      "file": "data/generated/gba/native/layouts/SA_LILYCOVE_CITY_DEPARTMENT_STORE_1F.mid",
+      "sha256": "5c1fab788df0b21c5a58e0cd0afb34f82e4d50deb9aad2e56bac27043ae67cb8"
+    },
+    {
+      "game": "sapphire",
+      "file": "data/generated/gba/native/layouts/SA_LILYCOVE_CITY_POKEMON_CENTER_1F.mid",
+      "sha256": "92862337c5047159a48d76ce841e7a5eb60d94b084cdf73fcb192c29730ac7a9"
+    },
+    {
+      "game": "sapphire",
+      "file": "data/generated/gba/native/layouts/SA_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F.mid",
+      "sha256": "813eda90b66d0886ac6b4746eff89e12009395e31584e7cd666c56deff1f6982"
+    },
+    {
+      "game": "sapphire",
+      "file": "data/generated/gba/native/layouts/SA_MOSSDEEP_CITY_GAME_CORNER_1F.mid",
+      "sha256": "1667c711ff2e98b1df5e8722ffa226bf61dc29ce87ebbf03b59809a29b94f0d7"
+    },
+    {
+      "game": "sapphire",
+      "file": "data/generated/gba/native/layouts/SA_ROUTE117_POKEMON_DAY_CARE.mid",
+      "sha256": "5610aee9e6f14bff822891258805237076e0a602062b1dc6a753a82b6d2ba9b0"
+    },
+    {
+      "game": "sapphire",
+      "file": "data/generated/gba/native/layouts/SA_ROUTE119_WEATHER_INSTITUTE_1F.mid",
+      "sha256": "42d10290f762e1e61c93f54f581bab77c8b713711ab4635f994a287771f39049"
+    },
+    {
+      "game": "sapphire",
+      "file": "data/generated/gba/native/layouts/SA_ROUTE121_SAFARI_ZONE_ENTRANCE.mid",
+      "sha256": "d90dc470d9d464e2473e1ce95d73773c80849c18e0a6e23592467f7dd1409d9c"
+    },
+    {
+      "game": "sapphire",
+      "file": "data/generated/gba/native/layouts/SA_SOOTOPOLIS_CITY_GYM_1F.mid",
+      "sha256": "4aec1b7cfc7502cbacff732a4f75cebfd4c216276ee7bd39ee3f8fc722369097"
+    },
+    {
+      "game": "sapphire",
+      "file": "data/generated/gba/native/layouts/SA_SOOTOPOLIS_CITY_HOUSE4.mid",
+      "sha256": "1d4fdd80117994aa5faa25d64691352dfa03873e8129d30d1a9867866b4cc5d3"
+    },
+    {
+      "game": "sapphire",
+      "file": "data/generated/gba/native/manifest.lua",
+      "sha256": "c314eda0a5979153b1e5c361dd33ad7bee87363cc112fb279bac0d5c371c459d"
+    },
+    {
+      "game": "sapphire",
+      "file": "data/generated/gba/scripts/events.lua",
+      "sha256": "e55ece6823a0f9780b7099dd66c21ae73e2dbe7e0be8f45dd862ab2395d6cb6c"
+    },
+    {
+      "game": "sapphire",
+      "file": "data/generated/gba/scripts/scripts.lua",
+      "sha256": "f5b3d3468c665d88cb91f344fc804ae558fe8b33492a1f98eea83df29d0322a1"
+    }
+  ],
+  "rows": [
+    {
+      "game": "emerald",
+      "pair": "building__battle_arena",
+      "mid": 5,
+      "feature": "pc_power",
+      "sourceHash": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+      "sourceLayers": {
+        "under": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+        "mid": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 131,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interior_finish.lua",
+        "pair": "building__battle_arena",
+        "mid": 4,
+        "sha256": "4413e8c9384891835216b48b52f06da008d36e6204275b9fdc7ef6f99678acaa"
+      },
+      "contexts": [
+        {
+          "map": "EM_BATTLE_FRONTIER_BATTLE_ARENA_LOBBY",
+          "x": 13,
+          "y": 6,
+          "before_mid": 4,
+          "source_collision": 147,
+          "elevation": 3,
+          "family": "pc_power",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "scripting/natives_pc_rse.lua:PC_TILES",
+            "from_mid": 4
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__battle_frontier",
+      "mid": 3,
+      "feature": "television_power",
+      "sourceHash": "f22427562edcc4e03e6849f5d8c757573618d8137e08ff5ed1f56e4de316573f",
+      "sourceLayers": {
+        "under": "f22427562edcc4e03e6849f5d8c757573618d8137e08ff5ed1f56e4de316573f",
+        "mid": "f22427562edcc4e03e6849f5d8c757573618d8137e08ff5ed1f56e4de316573f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 134,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interior_finish.lua",
+        "pair": "building__battle_frontier",
+        "mid": 2,
+        "sha256": "508ced4fa001ec774ea99228b1c64ccee5bf060d8c8d3f7af6bfed792de1e6dc"
+      },
+      "contexts": [
+        {
+          "map": "EM_BATTLE_FRONTIER_LOUNGE2",
+          "x": 6,
+          "y": 1,
+          "before_mid": 2,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "television_power",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "scripting/natives_tv.lua:updateScreensOnMap",
+            "from_mid": 2
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__battle_frontier",
+      "mid": 5,
+      "feature": "pc_power",
+      "sourceHash": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+      "sourceLayers": {
+        "under": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+        "mid": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 131,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interior_finish.lua",
+        "pair": "building__battle_frontier",
+        "mid": 4,
+        "sha256": "947a6347e0b16cd19c3b47c543f38025e720060f164d239778857dcfe3bae540"
+      },
+      "contexts": [
+        {
+          "map": "EM_BATTLE_FRONTIER_BATTLE_TOWER_LOBBY",
+          "x": 22,
+          "y": 1,
+          "before_mid": 4,
+          "source_collision": 147,
+          "elevation": 0,
+          "family": "pc_power",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "scripting/natives_pc_rse.lua:PC_TILES",
+            "from_mid": 4
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__brendans_mays_house",
+      "mid": 3,
+      "feature": "television_power",
+      "sourceHash": "f22427562edcc4e03e6849f5d8c757573618d8137e08ff5ed1f56e4de316573f",
+      "sourceLayers": {
+        "under": "f22427562edcc4e03e6849f5d8c757573618d8137e08ff5ed1f56e4de316573f",
+        "mid": "f22427562edcc4e03e6849f5d8c757573618d8137e08ff5ed1f56e4de316573f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 134,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interior_finish.lua",
+        "pair": "building__brendans_mays_house",
+        "mid": 2,
+        "sha256": "6965accb03d524f602d7268f418bdef97c0aae1d576fc366230d47b44511afb7"
+      },
+      "contexts": [
+        {
+          "map": "EM_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F",
+          "x": 4,
+          "y": 4,
+          "before_mid": 2,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "television_power",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "scripting/natives_tv.lua:updateScreensOnMap",
+            "from_mid": 2
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__contest",
+      "mid": 5,
+      "feature": "pc_power",
+      "sourceHash": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+      "sourceLayers": {
+        "under": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+        "mid": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 131,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interior_finish.lua",
+        "pair": "building__contest",
+        "mid": 4,
+        "sha256": "45ada40967a5bd95f5671ae44080ad954bc825ca5962fb5608f2d38d9ea5491e"
+      },
+      "contexts": [
+        {
+          "map": "EM_LILYCOVE_CITY_CONTEST_LOBBY",
+          "x": 19,
+          "y": 1,
+          "before_mid": 4,
+          "source_collision": 147,
+          "elevation": 0,
+          "family": "pc_power",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "scripting/natives_pc_rse.lua:PC_TILES",
+            "from_mid": 4
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__generic_building",
+      "mid": 3,
+      "feature": "television_power",
+      "sourceHash": "f22427562edcc4e03e6849f5d8c757573618d8137e08ff5ed1f56e4de316573f",
+      "sourceLayers": {
+        "under": "f22427562edcc4e03e6849f5d8c757573618d8137e08ff5ed1f56e4de316573f",
+        "mid": "f22427562edcc4e03e6849f5d8c757573618d8137e08ff5ed1f56e4de316573f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 134,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interiors_completion.lua",
+        "pair": "building__generic_building",
+        "mid": 542,
+        "sha256": "cd3afd411c8ff6abb6e6994a3ffd356f292bc2d2074d278d7eb638773ba0b1fa"
+      },
+      "contexts": [
+        {
+          "map": "EM_SOOTOPOLIS_CITY_HOUSE7",
+          "x": 7,
+          "y": 1,
+          "before_mid": 2,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "television_power",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "scripting/natives_tv.lua:updateScreensOnMap",
+            "from_mid": 2
+          },
+          "impassable": true
+        },
+        {
+          "map": "EM_LILYCOVE_CITY_COVE_LILY_MOTEL_1F",
+          "x": 10,
+          "y": 1,
+          "before_mid": 542,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "television_power",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "scripting/natives_tv.lua:updateScreensOnMap",
+            "from_mid": 542
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__lab",
+      "mid": 5,
+      "feature": "pc_power",
+      "sourceHash": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+      "sourceLayers": {
+        "under": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+        "mid": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 131,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interior_finish.lua",
+        "pair": "building__lab",
+        "mid": 4,
+        "sha256": "27e28fb972817f7b078f653ea4a11016a1a414cf2a61a749e713627edde40772"
+      },
+      "contexts": [
+        {
+          "map": "EM_ROUTE119_WEATHER_INSTITUTE_1F",
+          "x": 2,
+          "y": 1,
+          "before_mid": 4,
+          "source_collision": 147,
+          "elevation": 0,
+          "family": "pc_power",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "scripting/natives_pc_rse.lua:PC_TILES",
+            "from_mid": 4
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__mossdeep_game_corner",
+      "mid": 5,
+      "feature": "pc_power",
+      "sourceHash": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+      "sourceLayers": {
+        "under": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+        "mid": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 131,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interior_finish.lua",
+        "pair": "building__mossdeep_game_corner",
+        "mid": 4,
+        "sha256": "29da1f74a739e063f144675fba310da966fa92965418489589f1c8394351f0e2"
+      },
+      "contexts": [
+        {
+          "map": "EM_MOSSDEEP_CITY_GAME_CORNER_1F",
+          "x": 10,
+          "y": 1,
+          "before_mid": 4,
+          "source_collision": 147,
+          "elevation": 0,
+          "family": "pc_power",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "scripting/natives_pc_rse.lua:PC_TILES",
+            "from_mid": 4
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__mystery_events_house",
+      "mid": 3,
+      "feature": "television_power",
+      "sourceHash": "f22427562edcc4e03e6849f5d8c757573618d8137e08ff5ed1f56e4de316573f",
+      "sourceLayers": {
+        "under": "f22427562edcc4e03e6849f5d8c757573618d8137e08ff5ed1f56e4de316573f",
+        "mid": "f22427562edcc4e03e6849f5d8c757573618d8137e08ff5ed1f56e4de316573f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 134,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interior_finish.lua",
+        "pair": "building__mystery_events_house",
+        "mid": 2,
+        "sha256": "647f10a4ee223a1e6a49521cfd8e734410e5f3aaacef77aa5967bade9a0299f7"
+      },
+      "contexts": [
+        {
+          "map": "EM_SOOTOPOLIS_CITY_MYSTERY_EVENTS_HOUSE_1F",
+          "x": 7,
+          "y": 1,
+          "before_mid": 2,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "television_power",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "scripting/natives_tv.lua:updateScreensOnMap",
+            "from_mid": 2
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__pokemon_center",
+      "mid": 5,
+      "feature": "pc_power",
+      "sourceHash": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+      "sourceLayers": {
+        "under": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+        "mid": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 131,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interior_finish.lua",
+        "pair": "building__pokemon_center",
+        "mid": 4,
+        "sha256": "054099025ea2950b43555945e6f4eb4265d08f0cb434e5375d43af546c8cd6a5"
+      },
+      "contexts": [
+        {
+          "map": "EM_RUSTBORO_CITY_POKEMON_CENTER_1F",
+          "x": 10,
+          "y": 1,
+          "before_mid": 4,
+          "source_collision": 147,
+          "elevation": 0,
+          "family": "pc_power",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "scripting/natives_pc_rse.lua:PC_TILES",
+            "from_mid": 4
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__pokemon_day_care",
+      "mid": 5,
+      "feature": "pc_power",
+      "sourceHash": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+      "sourceLayers": {
+        "under": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+        "mid": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 131,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interior_finish.lua",
+        "pair": "building__pokemon_day_care",
+        "mid": 4,
+        "sha256": "dda5af6dda9ff9e095076ce8882aa4da54acc32ae69258e89be07a109113e9e3"
+      },
+      "contexts": [
+        {
+          "map": "EM_ROUTE117_POKEMON_DAY_CARE",
+          "x": 10,
+          "y": 1,
+          "before_mid": 4,
+          "source_collision": 147,
+          "elevation": 0,
+          "family": "pc_power",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "scripting/natives_pc_rse.lua:PC_TILES",
+            "from_mid": 4
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__shop",
+      "mid": 5,
+      "feature": "pc_power",
+      "sourceHash": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+      "sourceLayers": {
+        "under": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+        "mid": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 131,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interior_finish.lua",
+        "pair": "building__shop",
+        "mid": 4,
+        "sha256": "fe7309f08f07bb76a665e2d8c7e527981ada18e31b1ee6297f37e4eaf58ae14a"
+      },
+      "contexts": [
+        {
+          "map": "EM_ROUTE121_SAFARI_ZONE_ENTRANCE",
+          "x": 12,
+          "y": 1,
+          "before_mid": 4,
+          "source_collision": 147,
+          "elevation": 0,
+          "family": "pc_power",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "scripting/natives_pc_rse.lua:PC_TILES",
+            "from_mid": 4
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__shop",
+      "mid": 600,
+      "feature": "lottery_laptop",
+      "sourceHash": "5df2fd7c2900b5cad1eb5aeb0554b74e3fbb4fab0083f96f59c2387a54d16b1c",
+      "sourceLayers": {
+        "under": "5df2fd7c2900b5cad1eb5aeb0554b74e3fbb4fab0083f96f59c2387a54d16b1c",
+        "mid": "ef5a6098a50750f53a792e271c56497a10c30e8e388adbb788c4ad35b9c1fa44",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 0,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interiors_completion.lua",
+        "pair": "building__shop",
+        "mid": 669,
+        "sha256": "a24c9c59394b33d8613531ceb1364445f3bd387cf61ae59409a19fd64ef01eb3"
+      },
+      "contexts": [
+        {
+          "map": "EM_LILYCOVE_CITY_DEPARTMENT_STORE_1F",
+          "x": 11,
+          "y": 1,
+          "before_mid": 669,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "lottery_laptop",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/lottery.lua:setLaptop",
+            "special": "DoLotteryCornerComputerEffect",
+            "script_calls": [
+              [
+                "g3:0821f69c",
+                22
+              ]
+            ]
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__shop",
+      "mid": 608,
+      "feature": "lottery_laptop",
+      "sourceHash": "10f94a3ca482403a7336f23b860d5feeaa443079df43b9fc5962495f04233581",
+      "sourceLayers": {
+        "under": "10f94a3ca482403a7336f23b860d5feeaa443079df43b9fc5962495f04233581",
+        "mid": "6692da1fa94e488a07e8df2f496ec7fe07a4d7d38c5f5b43663e6e29b8827043",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 128,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interiors_completion.lua",
+        "pair": "building__shop",
+        "mid": 677,
+        "sha256": "7d53415cef008e4a2a28a62b6bcafe000d307b5ad9572c65c88d5acdc53507b2"
+      },
+      "contexts": [
+        {
+          "map": "EM_LILYCOVE_CITY_DEPARTMENT_STORE_1F",
+          "x": 11,
+          "y": 2,
+          "before_mid": 677,
+          "source_collision": 144,
+          "elevation": 0,
+          "family": "lottery_laptop",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "rse/lottery.lua:setLaptop",
+            "special": "DoLotteryCornerComputerEffect",
+            "script_calls": [
+              [
+                "g3:0821f69c",
+                22
+              ]
+            ]
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__sootopolis_gym",
+      "mid": 518,
+      "feature": "sootopolis_ice",
+      "sourceHash": "28d3fea998fe8cfd4176342be740c50ca97018a35717635d9203efb0e76209b6",
+      "sourceLayers": {
+        "under": "28d3fea998fe8cfd4176342be740c50ca97018a35717635d9203efb0e76209b6",
+        "mid": "28d3fea998fe8cfd4176342be740c50ca97018a35717635d9203efb0e76209b6",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 358,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interiors_completion.lua",
+        "pair": "building__sootopolis_gym",
+        "mid": 525,
+        "sha256": "e3c72ac3a52ba09f23240a267aa1eb01c727cd091493b8fd990a0017f86089dc"
+      },
+      "contexts": [
+        {
+          "map": "EM_SOOTOPOLIS_CITY_GYM_1F",
+          "x": 8,
+          "y": 6,
+          "before_mid": 525,
+          "source_collision": 0,
+          "elevation": 3,
+          "family": "sootopolis_ice",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "step_callbacks_rse.lua:sootopolisIce"
+          },
+          "impassable": false
+        },
+        {
+          "map": "EM_SOOTOPOLIS_CITY_GYM_1F",
+          "x": 3,
+          "y": 6,
+          "before_mid": 533,
+          "source_collision": 0,
+          "elevation": 0,
+          "family": "sootopolis_ice",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "step_callbacks_rse.lua:sootopolisIce"
+          },
+          "impassable": false
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__sootopolis_gym",
+      "mid": 526,
+      "feature": "sootopolis_ice",
+      "sourceHash": "c5c94529ac992f284092fa13264f512156a05f7f29dc8c8f5283677237aeb108",
+      "sourceLayers": {
+        "under": "c5c94529ac992f284092fa13264f512156a05f7f29dc8c8f5283677237aeb108",
+        "mid": "c5c94529ac992f284092fa13264f512156a05f7f29dc8c8f5283677237aeb108",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 39,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interiors_completion.lua",
+        "pair": "building__sootopolis_gym",
+        "mid": 525,
+        "sha256": "e3c72ac3a52ba09f23240a267aa1eb01c727cd091493b8fd990a0017f86089dc"
+      },
+      "contexts": [
+        {
+          "map": "EM_SOOTOPOLIS_CITY_GYM_1F",
+          "x": 8,
+          "y": 6,
+          "before_mid": 525,
+          "source_collision": 0,
+          "elevation": 3,
+          "family": "sootopolis_ice",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "step_callbacks_rse.lua:sootopolisIce"
+          },
+          "impassable": false
+        },
+        {
+          "map": "EM_SOOTOPOLIS_CITY_GYM_1F",
+          "x": 3,
+          "y": 6,
+          "before_mid": 533,
+          "source_collision": 0,
+          "elevation": 0,
+          "family": "sootopolis_ice",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "step_callbacks_rse.lua:sootopolisIce"
+          },
+          "impassable": false
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "building__trainer_hill",
+      "mid": 5,
+      "feature": "pc_power",
+      "sourceHash": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+      "sourceLayers": {
+        "under": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+        "mid": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 131,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interior_finish.lua",
+        "pair": "building__trainer_hill",
+        "mid": 4,
+        "sha256": "f565b3db1d8ff70666f76ca5c309754c627206f65822e4facb739523abff0df1"
+      },
+      "contexts": [
+        {
+          "map": "EM_TRAINER_HILL_ENTRANCE",
+          "x": 0,
+          "y": 10,
+          "before_mid": 4,
+          "source_collision": 147,
+          "elevation": 0,
+          "family": "pc_power",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "scripting/natives_pc_rse.lua:PC_TILES",
+            "from_mid": 4
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "general__inside_of_truck",
+      "mid": 525,
+      "feature": "moving_truck_exit",
+      "sourceHash": "4c0b090fe5b63d7819c958b6207a3817541a72f001d82c1656babd67e70c8d5f",
+      "sourceLayers": {
+        "under": "4c0b090fe5b63d7819c958b6207a3817541a72f001d82c1656babd67e70c8d5f",
+        "mid": "4c0b090fe5b63d7819c958b6207a3817541a72f001d82c1656babd67e70c8d5f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 0,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interiors_completion.lua",
+        "pair": "general__inside_of_truck",
+        "mid": 520,
+        "sha256": "3346ffd9a04e9256710735c090681f215e27dd40c68a71139f15468c84fa2af5"
+      },
+      "contexts": [
+        {
+          "map": "EM_INSIDE_OF_TRUCK",
+          "x": 4,
+          "y": 1,
+          "before_mid": 520,
+          "source_collision": 114,
+          "elevation": 0,
+          "family": "moving_truck_exit",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "truck_sequence.lua"
+          },
+          "impassable": false
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "general__inside_of_truck",
+      "mid": 533,
+      "feature": "moving_truck_exit",
+      "sourceHash": "443b3cf3c5827b2b027343f6d549463c78fb660743f9199bf551fb15e3d0d9e9",
+      "sourceLayers": {
+        "under": "443b3cf3c5827b2b027343f6d549463c78fb660743f9199bf551fb15e3d0d9e9",
+        "mid": "443b3cf3c5827b2b027343f6d549463c78fb660743f9199bf551fb15e3d0d9e9",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 0,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interiors_completion.lua",
+        "pair": "general__inside_of_truck",
+        "mid": 528,
+        "sha256": "b28d4630f7afe4b1aa63d405a6f5eb9e598975143bf5152dae14af3eeb5e36e0"
+      },
+      "contexts": [
+        {
+          "map": "EM_INSIDE_OF_TRUCK",
+          "x": 4,
+          "y": 2,
+          "before_mid": 528,
+          "source_collision": 114,
+          "elevation": 0,
+          "family": "moving_truck_exit",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "truck_sequence.lua"
+          },
+          "impassable": false
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "general__inside_of_truck",
+      "mid": 541,
+      "feature": "moving_truck_exit",
+      "sourceHash": "443b3cf3c5827b2b027343f6d549463c78fb660743f9199bf551fb15e3d0d9e9",
+      "sourceLayers": {
+        "under": "443b3cf3c5827b2b027343f6d549463c78fb660743f9199bf551fb15e3d0d9e9",
+        "mid": "443b3cf3c5827b2b027343f6d549463c78fb660743f9199bf551fb15e3d0d9e9",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 0,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interiors_completion.lua",
+        "pair": "general__inside_of_truck",
+        "mid": 536,
+        "sha256": "51aa219b782b3d00752ffd8125818d3676e7eaeaeb5b52f304cd30956729bcb7"
+      },
+      "contexts": [
+        {
+          "map": "EM_INSIDE_OF_TRUCK",
+          "x": 4,
+          "y": 3,
+          "before_mid": 536,
+          "source_collision": 114,
+          "elevation": 0,
+          "family": "moving_truck_exit",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "truck_sequence.lua"
+          },
+          "impassable": false
+        }
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__battle_tower",
+      "mid": 5,
+      "feature": "pc_power",
+      "sourceHash": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+      "sourceLayers": {
+        "under": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+        "mid": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 131,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interior_finish.lua",
+        "pair": "building__battle_tower",
+        "mid": 4,
+        "sha256": "0290c8932167ae520d523d9ded81e7312465fbf15da81310b617606fb01d77b6"
+      },
+      "contexts": [
+        {
+          "map": "RU_BATTLE_TOWER_LOBBY",
+          "x": 11,
+          "y": 1,
+          "before_mid": 4,
+          "source_collision": 147,
+          "elevation": 0,
+          "family": "pc_power",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "scripting/natives_pc_rse.lua:PC_TILES",
+            "from_mid": 4
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__brendans_mays_house",
+      "mid": 3,
+      "feature": "television_power",
+      "sourceHash": "f22427562edcc4e03e6849f5d8c757573618d8137e08ff5ed1f56e4de316573f",
+      "sourceLayers": {
+        "under": "f22427562edcc4e03e6849f5d8c757573618d8137e08ff5ed1f56e4de316573f",
+        "mid": "f22427562edcc4e03e6849f5d8c757573618d8137e08ff5ed1f56e4de316573f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 134,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interior_finish.lua",
+        "pair": "building__brendans_mays_house",
+        "mid": 2,
+        "sha256": "96a008ad7e488452afba300464b42a2495b2ab66f9443ce8735f894c4433e709"
+      },
+      "contexts": [
+        {
+          "map": "RU_LITTLEROOT_TOWN_MAYS_HOUSE_1F",
+          "x": 6,
+          "y": 4,
+          "before_mid": 2,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "television_power",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "scripting/natives_tv.lua:updateScreensOnMap",
+            "from_mid": 2
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__contest",
+      "mid": 5,
+      "feature": "pc_power",
+      "sourceHash": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+      "sourceLayers": {
+        "under": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+        "mid": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 131,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interior_finish.lua",
+        "pair": "building__contest",
+        "mid": 4,
+        "sha256": "7a8557ad9c06546eac8ff74d773295914014eb22d0f512f9e66b105a6090cd09"
+      },
+      "contexts": [
+        {
+          "map": "RU_VERDANTURF_TOWN_CONTEST_LOBBY",
+          "x": 8,
+          "y": 1,
+          "before_mid": 4,
+          "source_collision": 147,
+          "elevation": 0,
+          "family": "pc_power",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "scripting/natives_pc_rse.lua:PC_TILES",
+            "from_mid": 4
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__generic_building",
+      "mid": 3,
+      "feature": "television_power",
+      "sourceHash": "f22427562edcc4e03e6849f5d8c757573618d8137e08ff5ed1f56e4de316573f",
+      "sourceLayers": {
+        "under": "f22427562edcc4e03e6849f5d8c757573618d8137e08ff5ed1f56e4de316573f",
+        "mid": "f22427562edcc4e03e6849f5d8c757573618d8137e08ff5ed1f56e4de316573f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 134,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interiors_completion.lua",
+        "pair": "building__generic_building",
+        "mid": 542,
+        "sha256": "be3ccfa23c2d04368299631df328ce3038719fd7af35e85c26a9358540f4107c"
+      },
+      "contexts": [
+        {
+          "map": "RU_SOOTOPOLIS_CITY_HOUSE1",
+          "x": 7,
+          "y": 1,
+          "before_mid": 2,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "television_power",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "scripting/natives_tv.lua:updateScreensOnMap",
+            "from_mid": 2
+          },
+          "impassable": true
+        },
+        {
+          "map": "RU_MOSSDEEP_CITY_GAME_CORNER_1F",
+          "x": 7,
+          "y": 1,
+          "before_mid": 542,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "television_power",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "scripting/natives_tv.lua:updateScreensOnMap",
+            "from_mid": 542
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__lab",
+      "mid": 5,
+      "feature": "pc_power",
+      "sourceHash": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+      "sourceLayers": {
+        "under": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+        "mid": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 131,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interior_finish.lua",
+        "pair": "building__lab",
+        "mid": 4,
+        "sha256": "22bbf9ef811e3208b6a98b7d16979d21e02dcb7f5d82bb47425be40eee4b6c17"
+      },
+      "contexts": [
+        {
+          "map": "RU_ROUTE119_WEATHER_INSTITUTE_1F",
+          "x": 2,
+          "y": 1,
+          "before_mid": 4,
+          "source_collision": 147,
+          "elevation": 0,
+          "family": "pc_power",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "scripting/natives_pc_rse.lua:PC_TILES",
+            "from_mid": 4
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__pokemon_center",
+      "mid": 5,
+      "feature": "pc_power",
+      "sourceHash": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+      "sourceLayers": {
+        "under": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+        "mid": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 131,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interior_finish.lua",
+        "pair": "building__pokemon_center",
+        "mid": 4,
+        "sha256": "34af3d73fb0dc0ac4a284c300ec2e982da5cc9781af07043985d18e4b5228247"
+      },
+      "contexts": [
+        {
+          "map": "RU_DEWFORD_TOWN_POKEMON_CENTER_1F",
+          "x": 10,
+          "y": 1,
+          "before_mid": 4,
+          "source_collision": 147,
+          "elevation": 0,
+          "family": "pc_power",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "scripting/natives_pc_rse.lua:PC_TILES",
+            "from_mid": 4
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__pokemon_day_care",
+      "mid": 5,
+      "feature": "pc_power",
+      "sourceHash": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+      "sourceLayers": {
+        "under": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+        "mid": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 131,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interior_finish.lua",
+        "pair": "building__pokemon_day_care",
+        "mid": 4,
+        "sha256": "e9d2f06c19c6a37719392026a0024d93f5f6c42f31b6147c61e7c6be6d4623f3"
+      },
+      "contexts": [
+        {
+          "map": "RU_ROUTE117_POKEMON_DAY_CARE",
+          "x": 10,
+          "y": 1,
+          "before_mid": 4,
+          "source_collision": 147,
+          "elevation": 0,
+          "family": "pc_power",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "scripting/natives_pc_rse.lua:PC_TILES",
+            "from_mid": 4
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__shop",
+      "mid": 5,
+      "feature": "pc_power",
+      "sourceHash": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+      "sourceLayers": {
+        "under": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+        "mid": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 131,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interior_finish.lua",
+        "pair": "building__shop",
+        "mid": 4,
+        "sha256": "c5e8dc9570c26717f7a32bf3f2a5ea68e02bd098e1bfec523ac5c299020ec656"
+      },
+      "contexts": [
+        {
+          "map": "RU_ROUTE121_SAFARI_ZONE_ENTRANCE",
+          "x": 12,
+          "y": 1,
+          "before_mid": 4,
+          "source_collision": 147,
+          "elevation": 0,
+          "family": "pc_power",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "scripting/natives_pc_rse.lua:PC_TILES",
+            "from_mid": 4
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__shop",
+      "mid": 600,
+      "feature": "lottery_laptop",
+      "sourceHash": "5df2fd7c2900b5cad1eb5aeb0554b74e3fbb4fab0083f96f59c2387a54d16b1c",
+      "sourceLayers": {
+        "under": "5df2fd7c2900b5cad1eb5aeb0554b74e3fbb4fab0083f96f59c2387a54d16b1c",
+        "mid": "ef5a6098a50750f53a792e271c56497a10c30e8e388adbb788c4ad35b9c1fa44",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 0,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interiors_completion.lua",
+        "pair": "building__shop",
+        "mid": 669,
+        "sha256": "b0adc633f828e279bdef6a057476abad6c357c23d5aa2c2238643fe10419c263"
+      },
+      "contexts": [
+        {
+          "map": "RU_LILYCOVE_CITY_DEPARTMENT_STORE_1F",
+          "x": 11,
+          "y": 1,
+          "before_mid": 669,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "lottery_laptop",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "scripting/natives_rs.lua:lotteryLaptop",
+            "special": "DoLotteryCornerComputerEffect",
+            "script_calls": [
+              [
+                "g3:08159d5e",
+                22
+              ]
+            ]
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__shop",
+      "mid": 608,
+      "feature": "lottery_laptop",
+      "sourceHash": "10f94a3ca482403a7336f23b860d5feeaa443079df43b9fc5962495f04233581",
+      "sourceLayers": {
+        "under": "10f94a3ca482403a7336f23b860d5feeaa443079df43b9fc5962495f04233581",
+        "mid": "6692da1fa94e488a07e8df2f496ec7fe07a4d7d38c5f5b43663e6e29b8827043",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 128,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interiors_completion.lua",
+        "pair": "building__shop",
+        "mid": 677,
+        "sha256": "b34386737f35cc9a630e414354a3cf1617e89a6eabed8a3741361e4ea7401ce4"
+      },
+      "contexts": [
+        {
+          "map": "RU_LILYCOVE_CITY_DEPARTMENT_STORE_1F",
+          "x": 11,
+          "y": 2,
+          "before_mid": 677,
+          "source_collision": 144,
+          "elevation": 0,
+          "family": "lottery_laptop",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "scripting/natives_rs.lua:lotteryLaptop",
+            "special": "DoLotteryCornerComputerEffect",
+            "script_calls": [
+              [
+                "g3:08159d5e",
+                22
+              ]
+            ]
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__sootopolis_gym",
+      "mid": 518,
+      "feature": "sootopolis_ice",
+      "sourceHash": "e1524bde91f3e5c79293bdbd07a7ad029bd4040dee8863324663ce99bcb800d0",
+      "sourceLayers": {
+        "under": "e1524bde91f3e5c79293bdbd07a7ad029bd4040dee8863324663ce99bcb800d0",
+        "mid": "e1524bde91f3e5c79293bdbd07a7ad029bd4040dee8863324663ce99bcb800d0",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 358,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interiors_completion.lua",
+        "pair": "building__sootopolis_gym",
+        "mid": 525,
+        "sha256": "8577a98c7aa66fc171f813ce667f4d433ab191263c684eaf855a888a20262714"
+      },
+      "contexts": [
+        {
+          "map": "RU_SOOTOPOLIS_CITY_GYM_1F",
+          "x": 8,
+          "y": 6,
+          "before_mid": 525,
+          "source_collision": 0,
+          "elevation": 3,
+          "family": "sootopolis_ice",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "step_callbacks_rse.lua:sootopolisIce"
+          },
+          "impassable": false
+        },
+        {
+          "map": "RU_SOOTOPOLIS_CITY_GYM_1F",
+          "x": 3,
+          "y": 6,
+          "before_mid": 533,
+          "source_collision": 0,
+          "elevation": 3,
+          "family": "sootopolis_ice",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "step_callbacks_rse.lua:sootopolisIce"
+          },
+          "impassable": false
+        }
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "building__sootopolis_gym",
+      "mid": 526,
+      "feature": "sootopolis_ice",
+      "sourceHash": "81c9bd08a81a92287b4229139af04c31f6644a1d2081aa80ba3753fee2fd314c",
+      "sourceLayers": {
+        "under": "81c9bd08a81a92287b4229139af04c31f6644a1d2081aa80ba3753fee2fd314c",
+        "mid": "81c9bd08a81a92287b4229139af04c31f6644a1d2081aa80ba3753fee2fd314c",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 39,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interiors_completion.lua",
+        "pair": "building__sootopolis_gym",
+        "mid": 525,
+        "sha256": "8577a98c7aa66fc171f813ce667f4d433ab191263c684eaf855a888a20262714"
+      },
+      "contexts": [
+        {
+          "map": "RU_SOOTOPOLIS_CITY_GYM_1F",
+          "x": 8,
+          "y": 6,
+          "before_mid": 525,
+          "source_collision": 0,
+          "elevation": 3,
+          "family": "sootopolis_ice",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "step_callbacks_rse.lua:sootopolisIce"
+          },
+          "impassable": false
+        },
+        {
+          "map": "RU_SOOTOPOLIS_CITY_GYM_1F",
+          "x": 3,
+          "y": 6,
+          "before_mid": 533,
+          "source_collision": 0,
+          "elevation": 3,
+          "family": "sootopolis_ice",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "step_callbacks_rse.lua:sootopolisIce"
+          },
+          "impassable": false
+        }
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "general__inside_of_truck",
+      "mid": 525,
+      "feature": "moving_truck_exit",
+      "sourceHash": "4c0b090fe5b63d7819c958b6207a3817541a72f001d82c1656babd67e70c8d5f",
+      "sourceLayers": {
+        "under": "4c0b090fe5b63d7819c958b6207a3817541a72f001d82c1656babd67e70c8d5f",
+        "mid": "4c0b090fe5b63d7819c958b6207a3817541a72f001d82c1656babd67e70c8d5f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 0,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interiors_completion.lua",
+        "pair": "general__inside_of_truck",
+        "mid": 520,
+        "sha256": "a4d778064c0551b930877d52e8fb65c57defbc2d7c165cf25d29013095962366"
+      },
+      "contexts": [
+        {
+          "map": "RU_INSIDE_OF_TRUCK",
+          "x": 4,
+          "y": 1,
+          "before_mid": 520,
+          "source_collision": 114,
+          "elevation": 0,
+          "family": "moving_truck_exit",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "truck_sequence.lua"
+          },
+          "impassable": false
+        }
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "general__inside_of_truck",
+      "mid": 533,
+      "feature": "moving_truck_exit",
+      "sourceHash": "443b3cf3c5827b2b027343f6d549463c78fb660743f9199bf551fb15e3d0d9e9",
+      "sourceLayers": {
+        "under": "443b3cf3c5827b2b027343f6d549463c78fb660743f9199bf551fb15e3d0d9e9",
+        "mid": "443b3cf3c5827b2b027343f6d549463c78fb660743f9199bf551fb15e3d0d9e9",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 0,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interiors_completion.lua",
+        "pair": "general__inside_of_truck",
+        "mid": 528,
+        "sha256": "129a667bb3c13d56ccb5e2d4d1da9f15e13c6cc5a2d8a30753ee3aef024eda57"
+      },
+      "contexts": [
+        {
+          "map": "RU_INSIDE_OF_TRUCK",
+          "x": 4,
+          "y": 2,
+          "before_mid": 528,
+          "source_collision": 114,
+          "elevation": 0,
+          "family": "moving_truck_exit",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "truck_sequence.lua"
+          },
+          "impassable": false
+        }
+      ]
+    },
+    {
+      "game": "ruby",
+      "pair": "general__inside_of_truck",
+      "mid": 541,
+      "feature": "moving_truck_exit",
+      "sourceHash": "443b3cf3c5827b2b027343f6d549463c78fb660743f9199bf551fb15e3d0d9e9",
+      "sourceLayers": {
+        "under": "443b3cf3c5827b2b027343f6d549463c78fb660743f9199bf551fb15e3d0d9e9",
+        "mid": "443b3cf3c5827b2b027343f6d549463c78fb660743f9199bf551fb15e3d0d9e9",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 0,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interiors_completion.lua",
+        "pair": "general__inside_of_truck",
+        "mid": 536,
+        "sha256": "6ba67f202991ae5c6725bdf3944b98071b1e3a8821a535a38357eac1ca86bbbd"
+      },
+      "contexts": [
+        {
+          "map": "RU_INSIDE_OF_TRUCK",
+          "x": 4,
+          "y": 3,
+          "before_mid": 536,
+          "source_collision": 114,
+          "elevation": 0,
+          "family": "moving_truck_exit",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "truck_sequence.lua"
+          },
+          "impassable": false
+        }
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__battle_tower",
+      "mid": 5,
+      "feature": "pc_power",
+      "sourceHash": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+      "sourceLayers": {
+        "under": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+        "mid": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 131,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interior_finish.lua",
+        "pair": "building__battle_tower",
+        "mid": 4,
+        "sha256": "f83a1c84d238236bb4ea8f274fc8a0e83871b6176997c3509a5e85ac06759424"
+      },
+      "contexts": [
+        {
+          "map": "SA_BATTLE_TOWER_LOBBY",
+          "x": 11,
+          "y": 1,
+          "before_mid": 4,
+          "source_collision": 147,
+          "elevation": 0,
+          "family": "pc_power",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "scripting/natives_pc_rse.lua:PC_TILES",
+            "from_mid": 4
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__brendans_mays_house",
+      "mid": 3,
+      "feature": "television_power",
+      "sourceHash": "f22427562edcc4e03e6849f5d8c757573618d8137e08ff5ed1f56e4de316573f",
+      "sourceLayers": {
+        "under": "f22427562edcc4e03e6849f5d8c757573618d8137e08ff5ed1f56e4de316573f",
+        "mid": "f22427562edcc4e03e6849f5d8c757573618d8137e08ff5ed1f56e4de316573f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 134,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interior_finish.lua",
+        "pair": "building__brendans_mays_house",
+        "mid": 2,
+        "sha256": "70ea6bd4d495adfd1b9a53856ea420b6d71fe9fd0d09b32068be5a94d4aa8d3e"
+      },
+      "contexts": [
+        {
+          "map": "SA_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F",
+          "x": 4,
+          "y": 4,
+          "before_mid": 2,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "television_power",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "scripting/natives_tv.lua:updateScreensOnMap",
+            "from_mid": 2
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__contest",
+      "mid": 5,
+      "feature": "pc_power",
+      "sourceHash": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+      "sourceLayers": {
+        "under": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+        "mid": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 131,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interior_finish.lua",
+        "pair": "building__contest",
+        "mid": 4,
+        "sha256": "e98bdffb013c75823602793cafcffcaf9ff6333e99b7d195ed73f1329665d12c"
+      },
+      "contexts": [
+        {
+          "map": "SA_FALLARBOR_TOWN_CONTEST_LOBBY",
+          "x": 8,
+          "y": 1,
+          "before_mid": 4,
+          "source_collision": 147,
+          "elevation": 0,
+          "family": "pc_power",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "scripting/natives_pc_rse.lua:PC_TILES",
+            "from_mid": 4
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__generic_building",
+      "mid": 3,
+      "feature": "television_power",
+      "sourceHash": "f22427562edcc4e03e6849f5d8c757573618d8137e08ff5ed1f56e4de316573f",
+      "sourceLayers": {
+        "under": "f22427562edcc4e03e6849f5d8c757573618d8137e08ff5ed1f56e4de316573f",
+        "mid": "f22427562edcc4e03e6849f5d8c757573618d8137e08ff5ed1f56e4de316573f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 134,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interiors_completion.lua",
+        "pair": "building__generic_building",
+        "mid": 542,
+        "sha256": "ec68b9979735a71498557fd05a166274096466dcc8d846c63c9425dd2d3b3aba"
+      },
+      "contexts": [
+        {
+          "map": "SA_SOOTOPOLIS_CITY_HOUSE4",
+          "x": 7,
+          "y": 1,
+          "before_mid": 2,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "television_power",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "scripting/natives_tv.lua:updateScreensOnMap",
+            "from_mid": 2
+          },
+          "impassable": true
+        },
+        {
+          "map": "SA_MOSSDEEP_CITY_GAME_CORNER_1F",
+          "x": 7,
+          "y": 1,
+          "before_mid": 542,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "television_power",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "scripting/natives_tv.lua:updateScreensOnMap",
+            "from_mid": 542
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__lab",
+      "mid": 5,
+      "feature": "pc_power",
+      "sourceHash": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+      "sourceLayers": {
+        "under": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+        "mid": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 131,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interior_finish.lua",
+        "pair": "building__lab",
+        "mid": 4,
+        "sha256": "0ab1d8cf44e6337ee952ee40024987a3a39def55894fe780c12e0de400d3a70c"
+      },
+      "contexts": [
+        {
+          "map": "SA_ROUTE119_WEATHER_INSTITUTE_1F",
+          "x": 2,
+          "y": 1,
+          "before_mid": 4,
+          "source_collision": 147,
+          "elevation": 0,
+          "family": "pc_power",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "scripting/natives_pc_rse.lua:PC_TILES",
+            "from_mid": 4
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__pokemon_center",
+      "mid": 5,
+      "feature": "pc_power",
+      "sourceHash": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+      "sourceLayers": {
+        "under": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+        "mid": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 131,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interior_finish.lua",
+        "pair": "building__pokemon_center",
+        "mid": 4,
+        "sha256": "5a259f5b1788292aa6366c35bed8afc379ab3ae11438ccbc7573cc4295cb97c1"
+      },
+      "contexts": [
+        {
+          "map": "SA_LILYCOVE_CITY_POKEMON_CENTER_1F",
+          "x": 10,
+          "y": 1,
+          "before_mid": 4,
+          "source_collision": 147,
+          "elevation": 0,
+          "family": "pc_power",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "scripting/natives_pc_rse.lua:PC_TILES",
+            "from_mid": 4
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__pokemon_day_care",
+      "mid": 5,
+      "feature": "pc_power",
+      "sourceHash": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+      "sourceLayers": {
+        "under": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+        "mid": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 131,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interior_finish.lua",
+        "pair": "building__pokemon_day_care",
+        "mid": 4,
+        "sha256": "30361fa17917fddfaa774ef0aa2e7d5bdcf338c04824abbcebc3f686cc2ff322"
+      },
+      "contexts": [
+        {
+          "map": "SA_ROUTE117_POKEMON_DAY_CARE",
+          "x": 10,
+          "y": 1,
+          "before_mid": 4,
+          "source_collision": 147,
+          "elevation": 0,
+          "family": "pc_power",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "scripting/natives_pc_rse.lua:PC_TILES",
+            "from_mid": 4
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__shop",
+      "mid": 5,
+      "feature": "pc_power",
+      "sourceHash": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+      "sourceLayers": {
+        "under": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+        "mid": "942125987351e68ef08755a1d3d4ed2f5d929ce057ecb79d0ffd4778b76a722e",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 131,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interior_finish.lua",
+        "pair": "building__shop",
+        "mid": 4,
+        "sha256": "dbe33bb6cf3ce33333c7869dab15e6c76544d892c41018e346d9df5f599286a2"
+      },
+      "contexts": [
+        {
+          "map": "SA_ROUTE121_SAFARI_ZONE_ENTRANCE",
+          "x": 12,
+          "y": 1,
+          "before_mid": 4,
+          "source_collision": 147,
+          "elevation": 0,
+          "family": "pc_power",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "scripting/natives_pc_rse.lua:PC_TILES",
+            "from_mid": 4
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__shop",
+      "mid": 600,
+      "feature": "lottery_laptop",
+      "sourceHash": "5df2fd7c2900b5cad1eb5aeb0554b74e3fbb4fab0083f96f59c2387a54d16b1c",
+      "sourceLayers": {
+        "under": "5df2fd7c2900b5cad1eb5aeb0554b74e3fbb4fab0083f96f59c2387a54d16b1c",
+        "mid": "ef5a6098a50750f53a792e271c56497a10c30e8e388adbb788c4ad35b9c1fa44",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 0,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interiors_completion.lua",
+        "pair": "building__shop",
+        "mid": 669,
+        "sha256": "9b0f6a5705ad958bfd727e04cefe6022b8be3572d31615e5c0afe5b17326466e"
+      },
+      "contexts": [
+        {
+          "map": "SA_LILYCOVE_CITY_DEPARTMENT_STORE_1F",
+          "x": 11,
+          "y": 1,
+          "before_mid": 669,
+          "source_collision": 7,
+          "elevation": 0,
+          "family": "lottery_laptop",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "scripting/natives_rs.lua:lotteryLaptop",
+            "special": "DoLotteryCornerComputerEffect",
+            "script_calls": [
+              [
+                "g3:08159d0e",
+                22
+              ]
+            ]
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__shop",
+      "mid": 608,
+      "feature": "lottery_laptop",
+      "sourceHash": "10f94a3ca482403a7336f23b860d5feeaa443079df43b9fc5962495f04233581",
+      "sourceLayers": {
+        "under": "10f94a3ca482403a7336f23b860d5feeaa443079df43b9fc5962495f04233581",
+        "mid": "6692da1fa94e488a07e8df2f496ec7fe07a4d7d38c5f5b43663e6e29b8827043",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 128,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interiors_completion.lua",
+        "pair": "building__shop",
+        "mid": 677,
+        "sha256": "3a5102e96a1f4055b7c297e7f4a390b70bbb5af555d2c9bcf1bef482adf8bf3f"
+      },
+      "contexts": [
+        {
+          "map": "SA_LILYCOVE_CITY_DEPARTMENT_STORE_1F",
+          "x": 11,
+          "y": 2,
+          "before_mid": 677,
+          "source_collision": 144,
+          "elevation": 0,
+          "family": "lottery_laptop",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "scripting/natives_rs.lua:lotteryLaptop",
+            "special": "DoLotteryCornerComputerEffect",
+            "script_calls": [
+              [
+                "g3:08159d0e",
+                22
+              ]
+            ]
+          },
+          "impassable": true
+        }
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__sootopolis_gym",
+      "mid": 518,
+      "feature": "sootopolis_ice",
+      "sourceHash": "e1524bde91f3e5c79293bdbd07a7ad029bd4040dee8863324663ce99bcb800d0",
+      "sourceLayers": {
+        "under": "e1524bde91f3e5c79293bdbd07a7ad029bd4040dee8863324663ce99bcb800d0",
+        "mid": "e1524bde91f3e5c79293bdbd07a7ad029bd4040dee8863324663ce99bcb800d0",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 358,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interiors_completion.lua",
+        "pair": "building__sootopolis_gym",
+        "mid": 525,
+        "sha256": "e3cd88e17d95af2363a79518833baa899a1a05ca63c03119a9dc0b0e97a5f8ed"
+      },
+      "contexts": [
+        {
+          "map": "SA_SOOTOPOLIS_CITY_GYM_1F",
+          "x": 8,
+          "y": 6,
+          "before_mid": 525,
+          "source_collision": 0,
+          "elevation": 3,
+          "family": "sootopolis_ice",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "step_callbacks_rse.lua:sootopolisIce"
+          },
+          "impassable": false
+        },
+        {
+          "map": "SA_SOOTOPOLIS_CITY_GYM_1F",
+          "x": 3,
+          "y": 6,
+          "before_mid": 533,
+          "source_collision": 0,
+          "elevation": 3,
+          "family": "sootopolis_ice",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "step_callbacks_rse.lua:sootopolisIce"
+          },
+          "impassable": false
+        }
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "building__sootopolis_gym",
+      "mid": 526,
+      "feature": "sootopolis_ice",
+      "sourceHash": "81c9bd08a81a92287b4229139af04c31f6644a1d2081aa80ba3753fee2fd314c",
+      "sourceLayers": {
+        "under": "81c9bd08a81a92287b4229139af04c31f6644a1d2081aa80ba3753fee2fd314c",
+        "mid": "81c9bd08a81a92287b4229139af04c31f6644a1d2081aa80ba3753fee2fd314c",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 39,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interiors_completion.lua",
+        "pair": "building__sootopolis_gym",
+        "mid": 525,
+        "sha256": "e3cd88e17d95af2363a79518833baa899a1a05ca63c03119a9dc0b0e97a5f8ed"
+      },
+      "contexts": [
+        {
+          "map": "SA_SOOTOPOLIS_CITY_GYM_1F",
+          "x": 8,
+          "y": 6,
+          "before_mid": 525,
+          "source_collision": 0,
+          "elevation": 3,
+          "family": "sootopolis_ice",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "step_callbacks_rse.lua:sootopolisIce"
+          },
+          "impassable": false
+        },
+        {
+          "map": "SA_SOOTOPOLIS_CITY_GYM_1F",
+          "x": 3,
+          "y": 6,
+          "before_mid": 533,
+          "source_collision": 0,
+          "elevation": 3,
+          "family": "sootopolis_ice",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "step_callbacks_rse.lua:sootopolisIce"
+          },
+          "impassable": false
+        }
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__inside_of_truck",
+      "mid": 525,
+      "feature": "moving_truck_exit",
+      "sourceHash": "4c0b090fe5b63d7819c958b6207a3817541a72f001d82c1656babd67e70c8d5f",
+      "sourceLayers": {
+        "under": "4c0b090fe5b63d7819c958b6207a3817541a72f001d82c1656babd67e70c8d5f",
+        "mid": "4c0b090fe5b63d7819c958b6207a3817541a72f001d82c1656babd67e70c8d5f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 0,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interiors_completion.lua",
+        "pair": "general__inside_of_truck",
+        "mid": 520,
+        "sha256": "da8c89d16551b5dab504a88115b993b16f0644bdf8ec486d8750f058ea22a7c6"
+      },
+      "contexts": [
+        {
+          "map": "SA_INSIDE_OF_TRUCK",
+          "x": 4,
+          "y": 1,
+          "before_mid": 520,
+          "source_collision": 114,
+          "elevation": 0,
+          "family": "moving_truck_exit",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "truck_sequence.lua"
+          },
+          "impassable": false
+        }
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__inside_of_truck",
+      "mid": 533,
+      "feature": "moving_truck_exit",
+      "sourceHash": "443b3cf3c5827b2b027343f6d549463c78fb660743f9199bf551fb15e3d0d9e9",
+      "sourceLayers": {
+        "under": "443b3cf3c5827b2b027343f6d549463c78fb660743f9199bf551fb15e3d0d9e9",
+        "mid": "443b3cf3c5827b2b027343f6d549463c78fb660743f9199bf551fb15e3d0d9e9",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 0,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interiors_completion.lua",
+        "pair": "general__inside_of_truck",
+        "mid": 528,
+        "sha256": "5c7f765fba4fc23bec8caaca58a099c8dfa7fb6b70c15ffb695b3878efdf7816"
+      },
+      "contexts": [
+        {
+          "map": "SA_INSIDE_OF_TRUCK",
+          "x": 4,
+          "y": 2,
+          "before_mid": 528,
+          "source_collision": 114,
+          "elevation": 0,
+          "family": "moving_truck_exit",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "truck_sequence.lua"
+          },
+          "impassable": false
+        }
+      ]
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__inside_of_truck",
+      "mid": 541,
+      "feature": "moving_truck_exit",
+      "sourceHash": "443b3cf3c5827b2b027343f6d549463c78fb660743f9199bf551fb15e3d0d9e9",
+      "sourceLayers": {
+        "under": "443b3cf3c5827b2b027343f6d549463c78fb660743f9199bf551fb15e3d0d9e9",
+        "mid": "443b3cf3c5827b2b027343f6d549463c78fb660743f9199bf551fb15e3d0d9e9",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 0,
+      "base": {
+        "module": "mappings/reverse_gen2_hoenn_interiors_completion.lua",
+        "pair": "general__inside_of_truck",
+        "mid": 536,
+        "sha256": "a8f5b6d0716774541f111a5ae3e166fd3e96687638b7523d5f91923d52c258ab"
+      },
+      "contexts": [
+        {
+          "map": "SA_INSIDE_OF_TRUCK",
+          "x": 4,
+          "y": 3,
+          "before_mid": 536,
+          "source_collision": 114,
+          "elevation": 0,
+          "family": "moving_truck_exit",
+          "priority": 1,
+          "origin": {
+            "kind": "native",
+            "path": "truck_sequence.lua"
+          },
+          "impassable": false
+        }
+      ]
+    },
+    {
+      "game": "emerald",
+      "pair": "general__battle_palace",
+      "mid": 1,
+      "feature": "cut_grass",
+      "sourceHash": "1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1",
+      "sourceLayers": {
+        "under": "1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1",
+        "mid": "1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "sourceBehavior": 0,
+      "base": {
+        "module": "mappings/reverse_hoenn.lua",
+        "pair": "general__battle_frontier_outside_east",
+        "mid": 1,
+        "sha256": "34b34d6c0b1a9f6f6c507278b7109e8ad871c2bb6353e7ab2bbe40af52c30fc1"
+      },
+      "contexts": [
+        {
+          "map": "EM_BATTLE_FRONTIER_BATTLE_PALACE_CORRIDOR",
+          "x": 1,
+          "y": 5,
+          "before_mid": 13,
+          "source_collision": 24,
+          "elevation": 0,
+          "family": "cut_grass",
+          "priority": 2,
+          "origin": {
+            "kind": "native",
+            "path": "field_moves.lua:RSE_CUT_GRASS",
+            "from_mid": 13
+          },
+          "impassable": false
+        }
+      ]
+    }
+  ]
+}

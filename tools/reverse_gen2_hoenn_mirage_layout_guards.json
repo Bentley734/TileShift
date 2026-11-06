@@ -1,0 +1,5618 @@
+{
+  "items": [
+    {
+      "game": "emerald",
+      "pair": "general__cave",
+      "mid": 1,
+      "source": "1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1",
+      "layers": {
+        "under": "1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1",
+        "mid": "1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081f73b1",
+          0
+        ]
+      ],
+      "placement_count": 192
+    },
+    {
+      "game": "emerald",
+      "pair": "general__cave",
+      "mid": 2,
+      "source": "f098bcc19e29bccc7862e40bb36a724dafb99b0524773713a6b3dab0413a7a12",
+      "layers": {
+        "under": "f098bcc19e29bccc7862e40bb36a724dafb99b0524773713a6b3dab0413a7a12",
+        "mid": "f098bcc19e29bccc7862e40bb36a724dafb99b0524773713a6b3dab0413a7a12",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081f73b1",
+          0
+        ]
+      ],
+      "placement_count": 20
+    },
+    {
+      "game": "emerald",
+      "pair": "general__cave",
+      "mid": 4,
+      "source": "754ed103da057a5f1c0bb0c7ed8ecb6b603a1958f000a76670229160869e6c6a",
+      "layers": {
+        "under": "754ed103da057a5f1c0bb0c7ed8ecb6b603a1958f000a76670229160869e6c6a",
+        "mid": "754ed103da057a5f1c0bb0c7ed8ecb6b603a1958f000a76670229160869e6c6a",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081f73b1",
+          0
+        ]
+      ],
+      "placement_count": 7
+    },
+    {
+      "game": "emerald",
+      "pair": "general__cave",
+      "mid": 13,
+      "source": "292c51594070c8df892301b97636c4f0dde6cdef89158084356ed9feaed86920",
+      "layers": {
+        "under": "292c51594070c8df892301b97636c4f0dde6cdef89158084356ed9feaed86920",
+        "mid": "292c51594070c8df892301b97636c4f0dde6cdef89158084356ed9feaed86920",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 2,
+      "scripts": [
+        [
+          "EM_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081f73b1",
+          0
+        ]
+      ],
+      "placement_count": 71
+    },
+    {
+      "game": "emerald",
+      "pair": "general__cave",
+      "mid": 14,
+      "source": "2c9ec003b011306dcc651d75c20658e115a57d621b359ada5635c7dde332bea6",
+      "layers": {
+        "under": "1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1",
+        "mid": "1c7acc0ebc7c5878e77e1dfbbc2828e1a2745c0ded470f1f0152f67193222ed1",
+        "over": "ba4005d5c2a6dc937b94abeb34ded7bb6107735b4760a1ef06a0f6a9d9d27ecf"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081f73b1",
+          0
+        ]
+      ],
+      "placement_count": 14
+    },
+    {
+      "game": "emerald",
+      "pair": "general__cave",
+      "mid": 22,
+      "source": "c30bbf65a789a158df93d106697d0a9487b1e7c4ebdac76837d89f36c6eb8456",
+      "layers": {
+        "under": "c30bbf65a789a158df93d106697d0a9487b1e7c4ebdac76837d89f36c6eb8456",
+        "mid": "c30bbf65a789a158df93d106697d0a9487b1e7c4ebdac76837d89f36c6eb8456",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081f73b1",
+          0
+        ]
+      ],
+      "placement_count": 14
+    },
+    {
+      "game": "emerald",
+      "pair": "general__cave",
+      "mid": 114,
+      "source": "2d6da875c99497549feca95396a5be7c3bcc7701acea760c3918aecfa27f5c35",
+      "layers": {
+        "under": "2d6da875c99497549feca95396a5be7c3bcc7701acea760c3918aecfa27f5c35",
+        "mid": "b388874f2d02e20df070cbb848a37d72f90268b78ec7e4ed2bfa651a34cc44b0",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081f73b1",
+          0
+        ]
+      ],
+      "placement_count": 3
+    },
+    {
+      "game": "emerald",
+      "pair": "general__cave",
+      "mid": 120,
+      "source": "f1e99d01951997904c27e6f9f36fc9af445e061a67f5e3f16b93dcc9d22bdd72",
+      "layers": {
+        "under": "f1e99d01951997904c27e6f9f36fc9af445e061a67f5e3f16b93dcc9d22bdd72",
+        "mid": "36fff5735cd6bff5869374e4deb9e1cdf67fc83c62f4e4e8ad06bff92ce07930",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081f73b1",
+          0
+        ]
+      ],
+      "placement_count": 2
+    },
+    {
+      "game": "emerald",
+      "pair": "general__cave",
+      "mid": 122,
+      "source": "804a52ba2fdc7f1587e2a03b233a4742c3583662065b9c9a1eef3f2da58cafb8",
+      "layers": {
+        "under": "804a52ba2fdc7f1587e2a03b233a4742c3583662065b9c9a1eef3f2da58cafb8",
+        "mid": "c7cb8bb9bd54e5bde063ceb6ffce6d3acdef5eb1e0a3ba514eea4d943fc61c99",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081f73b1",
+          0
+        ]
+      ],
+      "placement_count": 2
+    },
+    {
+      "game": "emerald",
+      "pair": "general__cave",
+      "mid": 136,
+      "source": "1cde65777da437b7439d1fd3cb00589a8e73cac6374adb1f99701f1aa32bedf3",
+      "layers": {
+        "under": "1cde65777da437b7439d1fd3cb00589a8e73cac6374adb1f99701f1aa32bedf3",
+        "mid": "10ad1ceaa83a2c5566b4e163b4d234cee3369fe41fe1164444779866050e88a5",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081f73b1",
+          0
+        ]
+      ],
+      "placement_count": 2
+    },
+    {
+      "game": "emerald",
+      "pair": "general__cave",
+      "mid": 144,
+      "source": "09ceeca8ee600f5aa05308704001bff0239c4506b1459b2aba0e4d1d6f110aa4",
+      "layers": {
+        "under": "09ceeca8ee600f5aa05308704001bff0239c4506b1459b2aba0e4d1d6f110aa4",
+        "mid": "36fff5735cd6bff5869374e4deb9e1cdf67fc83c62f4e4e8ad06bff92ce07930",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081f73b1",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "general__cave",
+      "mid": 146,
+      "source": "6b6ed8df6bebc799c8889bfb3588b9f9030f711a0c02ebee05777ccf16982f9b",
+      "layers": {
+        "under": "6b6ed8df6bebc799c8889bfb3588b9f9030f711a0c02ebee05777ccf16982f9b",
+        "mid": "c7cb8bb9bd54e5bde063ceb6ffce6d3acdef5eb1e0a3ba514eea4d943fc61c99",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081f73b1",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "general__cave",
+      "mid": 169,
+      "source": "f9f81661846215c4bcd1faf4fce3a840e3371ab3d138bfd5c936fd4632acb6d5",
+      "layers": {
+        "under": "f9f81661846215c4bcd1faf4fce3a840e3371ab3d138bfd5c936fd4632acb6d5",
+        "mid": "f9f81661846215c4bcd1faf4fce3a840e3371ab3d138bfd5c936fd4632acb6d5",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081f73b1",
+          0
+        ]
+      ],
+      "placement_count": 42
+    },
+    {
+      "game": "emerald",
+      "pair": "general__cave",
+      "mid": 198,
+      "source": "7d4c9ec15bac833b47cce1361d9c76800f586731019fa194fed12f7baca838c1",
+      "layers": {
+        "under": "a6ca0862ff5b9007c5f4e0628c969977e69e7aa85770910ccdb244b4633b718d",
+        "mid": "a6ca0862ff5b9007c5f4e0628c969977e69e7aa85770910ccdb244b4633b718d",
+        "over": "7d4c9ec15bac833b47cce1361d9c76800f586731019fa194fed12f7baca838c1"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081f73b1",
+          0
+        ]
+      ],
+      "placement_count": 48
+    },
+    {
+      "game": "emerald",
+      "pair": "general__cave",
+      "mid": 211,
+      "source": "f7c06cac2d80b65f3d00a8acaec458fba53ef88cf2033144aecab723be029768",
+      "layers": {
+        "under": "f7c06cac2d80b65f3d00a8acaec458fba53ef88cf2033144aecab723be029768",
+        "mid": "f7c06cac2d80b65f3d00a8acaec458fba53ef88cf2033144aecab723be029768",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081f73b1",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "general__cave",
+      "mid": 212,
+      "source": "5e678da089cd186c8fc9ee9b25e91b79510528576a932e2b1c58addc6449b4c8",
+      "layers": {
+        "under": "5e678da089cd186c8fc9ee9b25e91b79510528576a932e2b1c58addc6449b4c8",
+        "mid": "5e678da089cd186c8fc9ee9b25e91b79510528576a932e2b1c58addc6449b4c8",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081f73b1",
+          0
+        ]
+      ],
+      "placement_count": 5
+    },
+    {
+      "game": "emerald",
+      "pair": "general__cave",
+      "mid": 259,
+      "source": "a364f51e5aa07d8dd6bab7c04aaf2b6df0480de89df9960fa289b158bd0a763f",
+      "layers": {
+        "under": "a364f51e5aa07d8dd6bab7c04aaf2b6df0480de89df9960fa289b158bd0a763f",
+        "mid": "a364f51e5aa07d8dd6bab7c04aaf2b6df0480de89df9960fa289b158bd0a763f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081f73b1",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "general__cave",
+      "mid": 260,
+      "source": "402f451a65d99371ca7dc7b37d3a5a9f08e70da16c73b5fb1ab30392db8e81fb",
+      "layers": {
+        "under": "402f451a65d99371ca7dc7b37d3a5a9f08e70da16c73b5fb1ab30392db8e81fb",
+        "mid": "402f451a65d99371ca7dc7b37d3a5a9f08e70da16c73b5fb1ab30392db8e81fb",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081f73b1",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "general__cave",
+      "mid": 261,
+      "source": "74d81781154e5ce11889ec58d0df9656babd0d2c73d64907a689b0d68fb4a720",
+      "layers": {
+        "under": "74d81781154e5ce11889ec58d0df9656babd0d2c73d64907a689b0d68fb4a720",
+        "mid": "74d81781154e5ce11889ec58d0df9656babd0d2c73d64907a689b0d68fb4a720",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081f73b1",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "general__cave",
+      "mid": 267,
+      "source": "3f9ceceaff5ff8b6a8d34960e4264694a8cdda86772085ecef7f24bc70884107",
+      "layers": {
+        "under": "3f9ceceaff5ff8b6a8d34960e4264694a8cdda86772085ecef7f24bc70884107",
+        "mid": "3f9ceceaff5ff8b6a8d34960e4264694a8cdda86772085ecef7f24bc70884107",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081f73b1",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "general__cave",
+      "mid": 268,
+      "source": "fd7b7cccbd4c10d577128a25240772b8fc427aa15f16156c8c24e10a5da3a8c2",
+      "layers": {
+        "under": "fd7b7cccbd4c10d577128a25240772b8fc427aa15f16156c8c24e10a5da3a8c2",
+        "mid": "fd7b7cccbd4c10d577128a25240772b8fc427aa15f16156c8c24e10a5da3a8c2",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 416,
+      "scripts": [
+        [
+          "EM_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081f73b1",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "general__cave",
+      "mid": 269,
+      "source": "1f760f2f77bb2391c315e1bb37258e8fcc58a8b5fc407329829dc3a83f69c451",
+      "layers": {
+        "under": "1f760f2f77bb2391c315e1bb37258e8fcc58a8b5fc407329829dc3a83f69c451",
+        "mid": "1f760f2f77bb2391c315e1bb37258e8fcc58a8b5fc407329829dc3a83f69c451",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081f73b1",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "general__cave",
+      "mid": 275,
+      "source": "fd56205419d00f88a493ac2101f55915e1d133206fe4498f92ea22ccbcff13cf",
+      "layers": {
+        "under": "fd56205419d00f88a493ac2101f55915e1d133206fe4498f92ea22ccbcff13cf",
+        "mid": "fd56205419d00f88a493ac2101f55915e1d133206fe4498f92ea22ccbcff13cf",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081f73b1",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "general__cave",
+      "mid": 276,
+      "source": "eb1a6ba982083302d124184ef2e3126af2f266fd2da53aae4edf6ec0fed0d79f",
+      "layers": {
+        "under": "eb1a6ba982083302d124184ef2e3126af2f266fd2da53aae4edf6ec0fed0d79f",
+        "mid": "eb1a6ba982083302d124184ef2e3126af2f266fd2da53aae4edf6ec0fed0d79f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081f73b1",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "general__cave",
+      "mid": 277,
+      "source": "94c7f668eba1dd2675487eb284adfd7bc7dd8e43e892e6a6fbc984dd139d125c",
+      "layers": {
+        "under": "94c7f668eba1dd2675487eb284adfd7bc7dd8e43e892e6a6fbc984dd139d125c",
+        "mid": "94c7f668eba1dd2675487eb284adfd7bc7dd8e43e892e6a6fbc984dd139d125c",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081f73b1",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "general__cave",
+      "mid": 280,
+      "source": "0cf66a26bc41bf77b546b8b1baaa8aa9d7495d64ccf6c1999f42e5b99d02a09b",
+      "layers": {
+        "under": "0cf66a26bc41bf77b546b8b1baaa8aa9d7495d64ccf6c1999f42e5b99d02a09b",
+        "mid": "0cf66a26bc41bf77b546b8b1baaa8aa9d7495d64ccf6c1999f42e5b99d02a09b",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081f73b1",
+          0
+        ]
+      ],
+      "placement_count": 4
+    },
+    {
+      "game": "emerald",
+      "pair": "general__cave",
+      "mid": 281,
+      "source": "9ba1ce1ec5541a27a972fe3713e686d1bcea6e9a636c254c1cc014e0abce91e7",
+      "layers": {
+        "under": "9ba1ce1ec5541a27a972fe3713e686d1bcea6e9a636c254c1cc014e0abce91e7",
+        "mid": "9ba1ce1ec5541a27a972fe3713e686d1bcea6e9a636c254c1cc014e0abce91e7",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081f73b1",
+          0
+        ]
+      ],
+      "placement_count": 14
+    },
+    {
+      "game": "emerald",
+      "pair": "general__cave",
+      "mid": 282,
+      "source": "f1d909c4c9b574a50e3e77c171d45e9a24b565f4d920dbe7615927df79c8ca81",
+      "layers": {
+        "under": "f1d909c4c9b574a50e3e77c171d45e9a24b565f4d920dbe7615927df79c8ca81",
+        "mid": "f1d909c4c9b574a50e3e77c171d45e9a24b565f4d920dbe7615927df79c8ca81",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081f73b1",
+          0
+        ]
+      ],
+      "placement_count": 3
+    },
+    {
+      "game": "emerald",
+      "pair": "general__cave",
+      "mid": 288,
+      "source": "68a0e0e5a37d83bcacf697872be2b55cdec418fe745dbfc68921b638a5ee3508",
+      "layers": {
+        "under": "68a0e0e5a37d83bcacf697872be2b55cdec418fe745dbfc68921b638a5ee3508",
+        "mid": "68a0e0e5a37d83bcacf697872be2b55cdec418fe745dbfc68921b638a5ee3508",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081f73b1",
+          0
+        ]
+      ],
+      "placement_count": 2
+    },
+    {
+      "game": "emerald",
+      "pair": "general__cave",
+      "mid": 289,
+      "source": "73f04b3622917229e6bf8aabf56f67416a1b34bf7c476c954699aadb03bc550c",
+      "layers": {
+        "under": "73f04b3622917229e6bf8aabf56f67416a1b34bf7c476c954699aadb03bc550c",
+        "mid": "73f04b3622917229e6bf8aabf56f67416a1b34bf7c476c954699aadb03bc550c",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081f73b1",
+          0
+        ]
+      ],
+      "placement_count": 2
+    },
+    {
+      "game": "emerald",
+      "pair": "general__cave",
+      "mid": 290,
+      "source": "d6d0c456a0e6a9bddb398bd231b235b255df5d2821fcc4e27e5b2ab99d73bfc8",
+      "layers": {
+        "under": "d6d0c456a0e6a9bddb398bd231b235b255df5d2821fcc4e27e5b2ab99d73bfc8",
+        "mid": "d6d0c456a0e6a9bddb398bd231b235b255df5d2821fcc4e27e5b2ab99d73bfc8",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "EM_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081f73b1",
+          0
+        ]
+      ],
+      "placement_count": 3
+    },
+    {
+      "game": "emerald",
+      "pair": "general__cave",
+      "mid": 358,
+      "source": "67bbfcee609b36e54c45c4860dfce38bddfd1e5ac230908ca6145104db2487a4",
+      "layers": {
+        "under": "67bbfcee609b36e54c45c4860dfce38bddfd1e5ac230908ca6145104db2487a4",
+        "mid": "10ad1ceaa83a2c5566b4e163b4d234cee3369fe41fe1164444779866050e88a5",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 23,
+      "scripts": [
+        [
+          "EM_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081f73b1",
+          0
+        ]
+      ],
+      "placement_count": 5
+    },
+    {
+      "game": "emerald",
+      "pair": "general__cave",
+      "mid": 359,
+      "source": "bf5a33e2067bed42139736f0254714423f227c901ee9f16cc49f9fd7a1e261bf",
+      "layers": {
+        "under": "bf5a33e2067bed42139736f0254714423f227c901ee9f16cc49f9fd7a1e261bf",
+        "mid": "b388874f2d02e20df070cbb848a37d72f90268b78ec7e4ed2bfa651a34cc44b0",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 23,
+      "scripts": [
+        [
+          "EM_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081f73b1",
+          0
+        ]
+      ],
+      "placement_count": 5
+    },
+    {
+      "game": "emerald",
+      "pair": "general__cave",
+      "mid": 366,
+      "source": "0cddd65925020d009c3a88763e7394d0c0255a39da64051378e6f986a9177740",
+      "layers": {
+        "under": "0cddd65925020d009c3a88763e7394d0c0255a39da64051378e6f986a9177740",
+        "mid": "36fff5735cd6bff5869374e4deb9e1cdf67fc83c62f4e4e8ad06bff92ce07930",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 23,
+      "scripts": [
+        [
+          "EM_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081f73b1",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "general__cave",
+      "mid": 367,
+      "source": "bf53cc009298b192741732c923dc06a2c96e3dc920384490058877ccc137306a",
+      "layers": {
+        "under": "bf53cc009298b192741732c923dc06a2c96e3dc920384490058877ccc137306a",
+        "mid": "c7cb8bb9bd54e5bde063ceb6ffce6d3acdef5eb1e0a3ba514eea4d943fc61c99",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 23,
+      "scripts": [
+        [
+          "EM_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081f73b1",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "general__cave",
+      "mid": 372,
+      "source": "9defa9840802b375dc64fc635c5494c9ada94dd58503bce689efdf0ba87ed17a",
+      "layers": {
+        "under": "ec68d3123df4f5e023eed01ae132475c32a66718585d629d7c63ce95ff647b07",
+        "mid": "ec68d3123df4f5e023eed01ae132475c32a66718585d629d7c63ce95ff647b07",
+        "over": "24644b426fcc1c1e080bec907aaaba1be6e2966123c361e4c81516d43f51f177"
+      },
+      "behavior": 21,
+      "scripts": [
+        [
+          "EM_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081f73b1",
+          0
+        ]
+      ],
+      "placement_count": 2
+    },
+    {
+      "game": "emerald",
+      "pair": "general__cave",
+      "mid": 637,
+      "source": "50b77dcd38db73522b078d79f0a76510c16a79d686a6976990baa2bbc008710b",
+      "layers": {
+        "under": "50b77dcd38db73522b078d79f0a76510c16a79d686a6976990baa2bbc008710b",
+        "mid": "a39c37d63d0c9eae5a3f4375aaece59a64acd757954788720bcbd8ba36c9a8c5",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 23,
+      "scripts": [
+        [
+          "EM_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081f73b1",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "general__cave",
+      "mid": 638,
+      "source": "1c81b9af3703f61e3984c02818fb09984dae6c07e72d714d3bbdbd69e7754908",
+      "layers": {
+        "under": "1c81b9af3703f61e3984c02818fb09984dae6c07e72d714d3bbdbd69e7754908",
+        "mid": "24644b426fcc1c1e080bec907aaaba1be6e2966123c361e4c81516d43f51f177",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 23,
+      "scripts": [
+        [
+          "EM_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081f73b1",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "emerald",
+      "pair": "general__cave",
+      "mid": 645,
+      "source": "48254ceebee758b07ff27953b0a191f11a0df2cfe556e5649167473f8e014e41",
+      "layers": {
+        "under": "48254ceebee758b07ff27953b0a191f11a0df2cfe556e5649167473f8e014e41",
+        "mid": "a39c37d63d0c9eae5a3f4375aaece59a64acd757954788720bcbd8ba36c9a8c5",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 23,
+      "scripts": [
+        [
+          "EM_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081f73b1",
+          0
+        ]
+      ],
+      "placement_count": 6
+    },
+    {
+      "game": "emerald",
+      "pair": "general__cave",
+      "mid": 646,
+      "source": "9defa9840802b375dc64fc635c5494c9ada94dd58503bce689efdf0ba87ed17a",
+      "layers": {
+        "under": "9defa9840802b375dc64fc635c5494c9ada94dd58503bce689efdf0ba87ed17a",
+        "mid": "24644b426fcc1c1e080bec907aaaba1be6e2966123c361e4c81516d43f51f177",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 23,
+      "scripts": [
+        [
+          "EM_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081f73b1",
+          0
+        ]
+      ],
+      "placement_count": 6
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 1,
+      "source": "4318c0978ee6a26bd1bfc524069141a69f71c068d199d964e43419f0191ae22f",
+      "layers": {
+        "under": "4318c0978ee6a26bd1bfc524069141a69f71c068d199d964e43419f0191ae22f",
+        "mid": "4318c0978ee6a26bd1bfc524069141a69f71c068d199d964e43419f0191ae22f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "RU_ROUTE130",
+          "alt_46",
+          46,
+          "g3:0815240c",
+          0
+        ]
+      ],
+      "placement_count": 192
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 2,
+      "source": "5c9d0fecbbf4e4e32364ea5ffeaeaa8fe2b2cebdd290afa105f68d5b25673335",
+      "layers": {
+        "under": "5c9d0fecbbf4e4e32364ea5ffeaeaa8fe2b2cebdd290afa105f68d5b25673335",
+        "mid": "5c9d0fecbbf4e4e32364ea5ffeaeaa8fe2b2cebdd290afa105f68d5b25673335",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "RU_ROUTE130",
+          "alt_46",
+          46,
+          "g3:0815240c",
+          0
+        ]
+      ],
+      "placement_count": 20
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 4,
+      "source": "250847cac8fb583ba42ad1aebe2db091309e3be4291dab68a8ed22acb637d34b",
+      "layers": {
+        "under": "250847cac8fb583ba42ad1aebe2db091309e3be4291dab68a8ed22acb637d34b",
+        "mid": "250847cac8fb583ba42ad1aebe2db091309e3be4291dab68a8ed22acb637d34b",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "RU_ROUTE130",
+          "alt_46",
+          46,
+          "g3:0815240c",
+          0
+        ]
+      ],
+      "placement_count": 7
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 13,
+      "source": "292c51594070c8df892301b97636c4f0dde6cdef89158084356ed9feaed86920",
+      "layers": {
+        "under": "292c51594070c8df892301b97636c4f0dde6cdef89158084356ed9feaed86920",
+        "mid": "292c51594070c8df892301b97636c4f0dde6cdef89158084356ed9feaed86920",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 2,
+      "scripts": [
+        [
+          "RU_ROUTE130",
+          "alt_46",
+          46,
+          "g3:0815240c",
+          0
+        ]
+      ],
+      "placement_count": 71
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 14,
+      "source": "c3568213845d57d72394004bb0cb87daf36b834aff6544a71cb098283306a60c",
+      "layers": {
+        "under": "4318c0978ee6a26bd1bfc524069141a69f71c068d199d964e43419f0191ae22f",
+        "mid": "4318c0978ee6a26bd1bfc524069141a69f71c068d199d964e43419f0191ae22f",
+        "over": "175e1137c20602a2d9feaa9e637da990c860cd762da3cb1ead87046741b9a769"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "RU_ROUTE130",
+          "alt_46",
+          46,
+          "g3:0815240c",
+          0
+        ]
+      ],
+      "placement_count": 14
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 22,
+      "source": "5a81b4d284f80d956969f96e2546cb2e6d4713892cc648a06377cc42788a8735",
+      "layers": {
+        "under": "5a81b4d284f80d956969f96e2546cb2e6d4713892cc648a06377cc42788a8735",
+        "mid": "5a81b4d284f80d956969f96e2546cb2e6d4713892cc648a06377cc42788a8735",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "RU_ROUTE130",
+          "alt_46",
+          46,
+          "g3:0815240c",
+          0
+        ]
+      ],
+      "placement_count": 14
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 114,
+      "source": "2d6da875c99497549feca95396a5be7c3bcc7701acea760c3918aecfa27f5c35",
+      "layers": {
+        "under": "2d6da875c99497549feca95396a5be7c3bcc7701acea760c3918aecfa27f5c35",
+        "mid": "b388874f2d02e20df070cbb848a37d72f90268b78ec7e4ed2bfa651a34cc44b0",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "RU_ROUTE130",
+          "alt_46",
+          46,
+          "g3:0815240c",
+          0
+        ]
+      ],
+      "placement_count": 3
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 120,
+      "source": "58920ec1d2d9ddf41a8f0aa1c302373286548d47cb5cfef4d343a4181f007f3f",
+      "layers": {
+        "under": "58920ec1d2d9ddf41a8f0aa1c302373286548d47cb5cfef4d343a4181f007f3f",
+        "mid": "36fff5735cd6bff5869374e4deb9e1cdf67fc83c62f4e4e8ad06bff92ce07930",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "RU_ROUTE130",
+          "alt_46",
+          46,
+          "g3:0815240c",
+          0
+        ]
+      ],
+      "placement_count": 2
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 122,
+      "source": "0f7fec6b8106bc583db080219813c53269b353a53c00b4f5a4d85776206c9677",
+      "layers": {
+        "under": "0f7fec6b8106bc583db080219813c53269b353a53c00b4f5a4d85776206c9677",
+        "mid": "c7cb8bb9bd54e5bde063ceb6ffce6d3acdef5eb1e0a3ba514eea4d943fc61c99",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "RU_ROUTE130",
+          "alt_46",
+          46,
+          "g3:0815240c",
+          0
+        ]
+      ],
+      "placement_count": 2
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 136,
+      "source": "cd4516e12b9aa3a63ea9a3dd41e969414506c15819c8895f74b370eb36f80475",
+      "layers": {
+        "under": "cd4516e12b9aa3a63ea9a3dd41e969414506c15819c8895f74b370eb36f80475",
+        "mid": "10ad1ceaa83a2c5566b4e163b4d234cee3369fe41fe1164444779866050e88a5",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "RU_ROUTE130",
+          "alt_46",
+          46,
+          "g3:0815240c",
+          0
+        ]
+      ],
+      "placement_count": 2
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 144,
+      "source": "c980c931af6fca8f0ef476501da8b39422222226277d5fa4020fd9b24bc5fb9c",
+      "layers": {
+        "under": "c980c931af6fca8f0ef476501da8b39422222226277d5fa4020fd9b24bc5fb9c",
+        "mid": "36fff5735cd6bff5869374e4deb9e1cdf67fc83c62f4e4e8ad06bff92ce07930",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "RU_ROUTE130",
+          "alt_46",
+          46,
+          "g3:0815240c",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 146,
+      "source": "6b6ed8df6bebc799c8889bfb3588b9f9030f711a0c02ebee05777ccf16982f9b",
+      "layers": {
+        "under": "6b6ed8df6bebc799c8889bfb3588b9f9030f711a0c02ebee05777ccf16982f9b",
+        "mid": "c7cb8bb9bd54e5bde063ceb6ffce6d3acdef5eb1e0a3ba514eea4d943fc61c99",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "RU_ROUTE130",
+          "alt_46",
+          46,
+          "g3:0815240c",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 169,
+      "source": "f9f81661846215c4bcd1faf4fce3a840e3371ab3d138bfd5c936fd4632acb6d5",
+      "layers": {
+        "under": "f9f81661846215c4bcd1faf4fce3a840e3371ab3d138bfd5c936fd4632acb6d5",
+        "mid": "f9f81661846215c4bcd1faf4fce3a840e3371ab3d138bfd5c936fd4632acb6d5",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "RU_ROUTE130",
+          "alt_46",
+          46,
+          "g3:0815240c",
+          0
+        ]
+      ],
+      "placement_count": 42
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 198,
+      "source": "6789f787164fbba0fabd17e6ae8558fcfd4f34d6a3cb70913f0887a84c5f38d3",
+      "layers": {
+        "under": "8782b7d92955efb44b89b86b7ed17d410190440d67ab548399522561f22da7bf",
+        "mid": "8782b7d92955efb44b89b86b7ed17d410190440d67ab548399522561f22da7bf",
+        "over": "15b7838bc9f808e4bfa54f9dd0e7753b15044ca929d5aac3d3058f4e8781b3a0"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "RU_ROUTE130",
+          "alt_46",
+          46,
+          "g3:0815240c",
+          0
+        ]
+      ],
+      "placement_count": 48
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 211,
+      "source": "29ca4ac0350131121edfd451229e42c1c2e01854bf8eca399d01a1c545741698",
+      "layers": {
+        "under": "29ca4ac0350131121edfd451229e42c1c2e01854bf8eca399d01a1c545741698",
+        "mid": "29ca4ac0350131121edfd451229e42c1c2e01854bf8eca399d01a1c545741698",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "RU_ROUTE130",
+          "alt_46",
+          46,
+          "g3:0815240c",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 212,
+      "source": "d2800f44ff6f5600cc0f220cf55789d416175991d056a2262717078ee41bdb9c",
+      "layers": {
+        "under": "d2800f44ff6f5600cc0f220cf55789d416175991d056a2262717078ee41bdb9c",
+        "mid": "d2800f44ff6f5600cc0f220cf55789d416175991d056a2262717078ee41bdb9c",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "RU_ROUTE130",
+          "alt_46",
+          46,
+          "g3:0815240c",
+          0
+        ]
+      ],
+      "placement_count": 5
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 259,
+      "source": "622a65cd1836875ed3d25754d4b8b2e354dab48f458d25e4c618eb2ef8006754",
+      "layers": {
+        "under": "622a65cd1836875ed3d25754d4b8b2e354dab48f458d25e4c618eb2ef8006754",
+        "mid": "622a65cd1836875ed3d25754d4b8b2e354dab48f458d25e4c618eb2ef8006754",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "RU_ROUTE130",
+          "alt_46",
+          46,
+          "g3:0815240c",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 260,
+      "source": "c2543c3f9e3b2e0f261bc73b284b8a732b05c13d14acc35638128bd47667590a",
+      "layers": {
+        "under": "c2543c3f9e3b2e0f261bc73b284b8a732b05c13d14acc35638128bd47667590a",
+        "mid": "c2543c3f9e3b2e0f261bc73b284b8a732b05c13d14acc35638128bd47667590a",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "RU_ROUTE130",
+          "alt_46",
+          46,
+          "g3:0815240c",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 261,
+      "source": "eb71a74b9998940fb3d8fca7c6c12670595347d3139e1a022d4b641584e22039",
+      "layers": {
+        "under": "eb71a74b9998940fb3d8fca7c6c12670595347d3139e1a022d4b641584e22039",
+        "mid": "eb71a74b9998940fb3d8fca7c6c12670595347d3139e1a022d4b641584e22039",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "RU_ROUTE130",
+          "alt_46",
+          46,
+          "g3:0815240c",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 267,
+      "source": "b9de2170be5e87f566be9865e0e44c6e46ef1fddc7004a09fe4a8327d9dbea2a",
+      "layers": {
+        "under": "b9de2170be5e87f566be9865e0e44c6e46ef1fddc7004a09fe4a8327d9dbea2a",
+        "mid": "b9de2170be5e87f566be9865e0e44c6e46ef1fddc7004a09fe4a8327d9dbea2a",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "RU_ROUTE130",
+          "alt_46",
+          46,
+          "g3:0815240c",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 268,
+      "source": "fd7b7cccbd4c10d577128a25240772b8fc427aa15f16156c8c24e10a5da3a8c2",
+      "layers": {
+        "under": "fd7b7cccbd4c10d577128a25240772b8fc427aa15f16156c8c24e10a5da3a8c2",
+        "mid": "fd7b7cccbd4c10d577128a25240772b8fc427aa15f16156c8c24e10a5da3a8c2",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 416,
+      "scripts": [
+        [
+          "RU_ROUTE130",
+          "alt_46",
+          46,
+          "g3:0815240c",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 269,
+      "source": "30d9efb20be13f2486aeb98e22b0049d0bbacead2ab23e946d7adbb37cde7a31",
+      "layers": {
+        "under": "30d9efb20be13f2486aeb98e22b0049d0bbacead2ab23e946d7adbb37cde7a31",
+        "mid": "30d9efb20be13f2486aeb98e22b0049d0bbacead2ab23e946d7adbb37cde7a31",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "RU_ROUTE130",
+          "alt_46",
+          46,
+          "g3:0815240c",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 275,
+      "source": "bc34a8f46b0da0c8f00f3a625302784e346cf47a17184423242883485865d237",
+      "layers": {
+        "under": "bc34a8f46b0da0c8f00f3a625302784e346cf47a17184423242883485865d237",
+        "mid": "bc34a8f46b0da0c8f00f3a625302784e346cf47a17184423242883485865d237",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "RU_ROUTE130",
+          "alt_46",
+          46,
+          "g3:0815240c",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 276,
+      "source": "f24d302e690fb98226984914dbc215eae47e2ee948b7e136ce1e1991191ff191",
+      "layers": {
+        "under": "f24d302e690fb98226984914dbc215eae47e2ee948b7e136ce1e1991191ff191",
+        "mid": "f24d302e690fb98226984914dbc215eae47e2ee948b7e136ce1e1991191ff191",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "RU_ROUTE130",
+          "alt_46",
+          46,
+          "g3:0815240c",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 277,
+      "source": "480b307d605f78ac2f144efb881c505e111a6ab44a7bd9c5efb53be81166c6cc",
+      "layers": {
+        "under": "480b307d605f78ac2f144efb881c505e111a6ab44a7bd9c5efb53be81166c6cc",
+        "mid": "480b307d605f78ac2f144efb881c505e111a6ab44a7bd9c5efb53be81166c6cc",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "RU_ROUTE130",
+          "alt_46",
+          46,
+          "g3:0815240c",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 280,
+      "source": "ec728d04bd8b07c4233cee7adc8941df6fd3a854209e3e8b44ddcab3900104ef",
+      "layers": {
+        "under": "ec728d04bd8b07c4233cee7adc8941df6fd3a854209e3e8b44ddcab3900104ef",
+        "mid": "ec728d04bd8b07c4233cee7adc8941df6fd3a854209e3e8b44ddcab3900104ef",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "RU_ROUTE130",
+          "alt_46",
+          46,
+          "g3:0815240c",
+          0
+        ]
+      ],
+      "placement_count": 4
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 281,
+      "source": "47180372bdef53020fcb30e8edde998b59cb3cb619f0cbd8ba5ebcc27169adf6",
+      "layers": {
+        "under": "47180372bdef53020fcb30e8edde998b59cb3cb619f0cbd8ba5ebcc27169adf6",
+        "mid": "47180372bdef53020fcb30e8edde998b59cb3cb619f0cbd8ba5ebcc27169adf6",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "RU_ROUTE130",
+          "alt_46",
+          46,
+          "g3:0815240c",
+          0
+        ]
+      ],
+      "placement_count": 14
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 282,
+      "source": "5ca2186760b1e0adebc6f7d846c06bb90ddedb5caa98cc3731082c0c196a6960",
+      "layers": {
+        "under": "5ca2186760b1e0adebc6f7d846c06bb90ddedb5caa98cc3731082c0c196a6960",
+        "mid": "5ca2186760b1e0adebc6f7d846c06bb90ddedb5caa98cc3731082c0c196a6960",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "RU_ROUTE130",
+          "alt_46",
+          46,
+          "g3:0815240c",
+          0
+        ]
+      ],
+      "placement_count": 3
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 288,
+      "source": "170d33622adc715376b42d6544ba2e42521aadbba6b266248e558e7b66d25114",
+      "layers": {
+        "under": "170d33622adc715376b42d6544ba2e42521aadbba6b266248e558e7b66d25114",
+        "mid": "170d33622adc715376b42d6544ba2e42521aadbba6b266248e558e7b66d25114",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "RU_ROUTE130",
+          "alt_46",
+          46,
+          "g3:0815240c",
+          0
+        ]
+      ],
+      "placement_count": 2
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 289,
+      "source": "3df58cfee51b87b15870ad4589ebc72e48e831cf2dde8c8a4db8c398cf109414",
+      "layers": {
+        "under": "3df58cfee51b87b15870ad4589ebc72e48e831cf2dde8c8a4db8c398cf109414",
+        "mid": "3df58cfee51b87b15870ad4589ebc72e48e831cf2dde8c8a4db8c398cf109414",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "RU_ROUTE130",
+          "alt_46",
+          46,
+          "g3:0815240c",
+          0
+        ]
+      ],
+      "placement_count": 2
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 290,
+      "source": "d2e92563943b5ace8eac9b4118986609bc6aadff8e99a6964e488f39fb48b07e",
+      "layers": {
+        "under": "d2e92563943b5ace8eac9b4118986609bc6aadff8e99a6964e488f39fb48b07e",
+        "mid": "d2e92563943b5ace8eac9b4118986609bc6aadff8e99a6964e488f39fb48b07e",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "RU_ROUTE130",
+          "alt_46",
+          46,
+          "g3:0815240c",
+          0
+        ]
+      ],
+      "placement_count": 3
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 358,
+      "source": "67bbfcee609b36e54c45c4860dfce38bddfd1e5ac230908ca6145104db2487a4",
+      "layers": {
+        "under": "67bbfcee609b36e54c45c4860dfce38bddfd1e5ac230908ca6145104db2487a4",
+        "mid": "10ad1ceaa83a2c5566b4e163b4d234cee3369fe41fe1164444779866050e88a5",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 23,
+      "scripts": [
+        [
+          "RU_ROUTE130",
+          "alt_46",
+          46,
+          "g3:0815240c",
+          0
+        ]
+      ],
+      "placement_count": 5
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 359,
+      "source": "bf5a33e2067bed42139736f0254714423f227c901ee9f16cc49f9fd7a1e261bf",
+      "layers": {
+        "under": "bf5a33e2067bed42139736f0254714423f227c901ee9f16cc49f9fd7a1e261bf",
+        "mid": "b388874f2d02e20df070cbb848a37d72f90268b78ec7e4ed2bfa651a34cc44b0",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 23,
+      "scripts": [
+        [
+          "RU_ROUTE130",
+          "alt_46",
+          46,
+          "g3:0815240c",
+          0
+        ]
+      ],
+      "placement_count": 5
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 366,
+      "source": "0cddd65925020d009c3a88763e7394d0c0255a39da64051378e6f986a9177740",
+      "layers": {
+        "under": "0cddd65925020d009c3a88763e7394d0c0255a39da64051378e6f986a9177740",
+        "mid": "36fff5735cd6bff5869374e4deb9e1cdf67fc83c62f4e4e8ad06bff92ce07930",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 23,
+      "scripts": [
+        [
+          "RU_ROUTE130",
+          "alt_46",
+          46,
+          "g3:0815240c",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 367,
+      "source": "bf53cc009298b192741732c923dc06a2c96e3dc920384490058877ccc137306a",
+      "layers": {
+        "under": "bf53cc009298b192741732c923dc06a2c96e3dc920384490058877ccc137306a",
+        "mid": "c7cb8bb9bd54e5bde063ceb6ffce6d3acdef5eb1e0a3ba514eea4d943fc61c99",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 23,
+      "scripts": [
+        [
+          "RU_ROUTE130",
+          "alt_46",
+          46,
+          "g3:0815240c",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 372,
+      "source": "9defa9840802b375dc64fc635c5494c9ada94dd58503bce689efdf0ba87ed17a",
+      "layers": {
+        "under": "ec68d3123df4f5e023eed01ae132475c32a66718585d629d7c63ce95ff647b07",
+        "mid": "ec68d3123df4f5e023eed01ae132475c32a66718585d629d7c63ce95ff647b07",
+        "over": "24644b426fcc1c1e080bec907aaaba1be6e2966123c361e4c81516d43f51f177"
+      },
+      "behavior": 21,
+      "scripts": [
+        [
+          "RU_ROUTE130",
+          "alt_46",
+          46,
+          "g3:0815240c",
+          0
+        ]
+      ],
+      "placement_count": 2
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 637,
+      "source": "50b77dcd38db73522b078d79f0a76510c16a79d686a6976990baa2bbc008710b",
+      "layers": {
+        "under": "50b77dcd38db73522b078d79f0a76510c16a79d686a6976990baa2bbc008710b",
+        "mid": "a39c37d63d0c9eae5a3f4375aaece59a64acd757954788720bcbd8ba36c9a8c5",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 23,
+      "scripts": [
+        [
+          "RU_ROUTE130",
+          "alt_46",
+          46,
+          "g3:0815240c",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 638,
+      "source": "1c81b9af3703f61e3984c02818fb09984dae6c07e72d714d3bbdbd69e7754908",
+      "layers": {
+        "under": "1c81b9af3703f61e3984c02818fb09984dae6c07e72d714d3bbdbd69e7754908",
+        "mid": "24644b426fcc1c1e080bec907aaaba1be6e2966123c361e4c81516d43f51f177",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 23,
+      "scripts": [
+        [
+          "RU_ROUTE130",
+          "alt_46",
+          46,
+          "g3:0815240c",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 645,
+      "source": "48254ceebee758b07ff27953b0a191f11a0df2cfe556e5649167473f8e014e41",
+      "layers": {
+        "under": "48254ceebee758b07ff27953b0a191f11a0df2cfe556e5649167473f8e014e41",
+        "mid": "a39c37d63d0c9eae5a3f4375aaece59a64acd757954788720bcbd8ba36c9a8c5",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 23,
+      "scripts": [
+        [
+          "RU_ROUTE130",
+          "alt_46",
+          46,
+          "g3:0815240c",
+          0
+        ]
+      ],
+      "placement_count": 6
+    },
+    {
+      "game": "ruby",
+      "pair": "general__cave",
+      "mid": 646,
+      "source": "9defa9840802b375dc64fc635c5494c9ada94dd58503bce689efdf0ba87ed17a",
+      "layers": {
+        "under": "9defa9840802b375dc64fc635c5494c9ada94dd58503bce689efdf0ba87ed17a",
+        "mid": "24644b426fcc1c1e080bec907aaaba1be6e2966123c361e4c81516d43f51f177",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 23,
+      "scripts": [
+        [
+          "RU_ROUTE130",
+          "alt_46",
+          46,
+          "g3:0815240c",
+          0
+        ]
+      ],
+      "placement_count": 6
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__cave",
+      "mid": 1,
+      "source": "4318c0978ee6a26bd1bfc524069141a69f71c068d199d964e43419f0191ae22f",
+      "layers": {
+        "under": "4318c0978ee6a26bd1bfc524069141a69f71c068d199d964e43419f0191ae22f",
+        "mid": "4318c0978ee6a26bd1bfc524069141a69f71c068d199d964e43419f0191ae22f",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "SA_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081523bc",
+          0
+        ]
+      ],
+      "placement_count": 192
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__cave",
+      "mid": 2,
+      "source": "5c9d0fecbbf4e4e32364ea5ffeaeaa8fe2b2cebdd290afa105f68d5b25673335",
+      "layers": {
+        "under": "5c9d0fecbbf4e4e32364ea5ffeaeaa8fe2b2cebdd290afa105f68d5b25673335",
+        "mid": "5c9d0fecbbf4e4e32364ea5ffeaeaa8fe2b2cebdd290afa105f68d5b25673335",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "SA_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081523bc",
+          0
+        ]
+      ],
+      "placement_count": 20
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__cave",
+      "mid": 4,
+      "source": "250847cac8fb583ba42ad1aebe2db091309e3be4291dab68a8ed22acb637d34b",
+      "layers": {
+        "under": "250847cac8fb583ba42ad1aebe2db091309e3be4291dab68a8ed22acb637d34b",
+        "mid": "250847cac8fb583ba42ad1aebe2db091309e3be4291dab68a8ed22acb637d34b",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "SA_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081523bc",
+          0
+        ]
+      ],
+      "placement_count": 7
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__cave",
+      "mid": 13,
+      "source": "292c51594070c8df892301b97636c4f0dde6cdef89158084356ed9feaed86920",
+      "layers": {
+        "under": "292c51594070c8df892301b97636c4f0dde6cdef89158084356ed9feaed86920",
+        "mid": "292c51594070c8df892301b97636c4f0dde6cdef89158084356ed9feaed86920",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 2,
+      "scripts": [
+        [
+          "SA_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081523bc",
+          0
+        ]
+      ],
+      "placement_count": 71
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__cave",
+      "mid": 14,
+      "source": "c3568213845d57d72394004bb0cb87daf36b834aff6544a71cb098283306a60c",
+      "layers": {
+        "under": "4318c0978ee6a26bd1bfc524069141a69f71c068d199d964e43419f0191ae22f",
+        "mid": "4318c0978ee6a26bd1bfc524069141a69f71c068d199d964e43419f0191ae22f",
+        "over": "175e1137c20602a2d9feaa9e637da990c860cd762da3cb1ead87046741b9a769"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "SA_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081523bc",
+          0
+        ]
+      ],
+      "placement_count": 14
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__cave",
+      "mid": 22,
+      "source": "5a81b4d284f80d956969f96e2546cb2e6d4713892cc648a06377cc42788a8735",
+      "layers": {
+        "under": "5a81b4d284f80d956969f96e2546cb2e6d4713892cc648a06377cc42788a8735",
+        "mid": "5a81b4d284f80d956969f96e2546cb2e6d4713892cc648a06377cc42788a8735",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "SA_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081523bc",
+          0
+        ]
+      ],
+      "placement_count": 14
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__cave",
+      "mid": 114,
+      "source": "2d6da875c99497549feca95396a5be7c3bcc7701acea760c3918aecfa27f5c35",
+      "layers": {
+        "under": "2d6da875c99497549feca95396a5be7c3bcc7701acea760c3918aecfa27f5c35",
+        "mid": "b388874f2d02e20df070cbb848a37d72f90268b78ec7e4ed2bfa651a34cc44b0",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "SA_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081523bc",
+          0
+        ]
+      ],
+      "placement_count": 3
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__cave",
+      "mid": 120,
+      "source": "58920ec1d2d9ddf41a8f0aa1c302373286548d47cb5cfef4d343a4181f007f3f",
+      "layers": {
+        "under": "58920ec1d2d9ddf41a8f0aa1c302373286548d47cb5cfef4d343a4181f007f3f",
+        "mid": "36fff5735cd6bff5869374e4deb9e1cdf67fc83c62f4e4e8ad06bff92ce07930",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "SA_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081523bc",
+          0
+        ]
+      ],
+      "placement_count": 2
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__cave",
+      "mid": 122,
+      "source": "0f7fec6b8106bc583db080219813c53269b353a53c00b4f5a4d85776206c9677",
+      "layers": {
+        "under": "0f7fec6b8106bc583db080219813c53269b353a53c00b4f5a4d85776206c9677",
+        "mid": "c7cb8bb9bd54e5bde063ceb6ffce6d3acdef5eb1e0a3ba514eea4d943fc61c99",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "SA_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081523bc",
+          0
+        ]
+      ],
+      "placement_count": 2
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__cave",
+      "mid": 136,
+      "source": "cd4516e12b9aa3a63ea9a3dd41e969414506c15819c8895f74b370eb36f80475",
+      "layers": {
+        "under": "cd4516e12b9aa3a63ea9a3dd41e969414506c15819c8895f74b370eb36f80475",
+        "mid": "10ad1ceaa83a2c5566b4e163b4d234cee3369fe41fe1164444779866050e88a5",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "SA_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081523bc",
+          0
+        ]
+      ],
+      "placement_count": 2
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__cave",
+      "mid": 144,
+      "source": "c980c931af6fca8f0ef476501da8b39422222226277d5fa4020fd9b24bc5fb9c",
+      "layers": {
+        "under": "c980c931af6fca8f0ef476501da8b39422222226277d5fa4020fd9b24bc5fb9c",
+        "mid": "36fff5735cd6bff5869374e4deb9e1cdf67fc83c62f4e4e8ad06bff92ce07930",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "SA_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081523bc",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__cave",
+      "mid": 146,
+      "source": "6b6ed8df6bebc799c8889bfb3588b9f9030f711a0c02ebee05777ccf16982f9b",
+      "layers": {
+        "under": "6b6ed8df6bebc799c8889bfb3588b9f9030f711a0c02ebee05777ccf16982f9b",
+        "mid": "c7cb8bb9bd54e5bde063ceb6ffce6d3acdef5eb1e0a3ba514eea4d943fc61c99",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "SA_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081523bc",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__cave",
+      "mid": 169,
+      "source": "f9f81661846215c4bcd1faf4fce3a840e3371ab3d138bfd5c936fd4632acb6d5",
+      "layers": {
+        "under": "f9f81661846215c4bcd1faf4fce3a840e3371ab3d138bfd5c936fd4632acb6d5",
+        "mid": "f9f81661846215c4bcd1faf4fce3a840e3371ab3d138bfd5c936fd4632acb6d5",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "SA_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081523bc",
+          0
+        ]
+      ],
+      "placement_count": 42
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__cave",
+      "mid": 198,
+      "source": "6789f787164fbba0fabd17e6ae8558fcfd4f34d6a3cb70913f0887a84c5f38d3",
+      "layers": {
+        "under": "8782b7d92955efb44b89b86b7ed17d410190440d67ab548399522561f22da7bf",
+        "mid": "8782b7d92955efb44b89b86b7ed17d410190440d67ab548399522561f22da7bf",
+        "over": "15b7838bc9f808e4bfa54f9dd0e7753b15044ca929d5aac3d3058f4e8781b3a0"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "SA_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081523bc",
+          0
+        ]
+      ],
+      "placement_count": 48
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__cave",
+      "mid": 211,
+      "source": "29ca4ac0350131121edfd451229e42c1c2e01854bf8eca399d01a1c545741698",
+      "layers": {
+        "under": "29ca4ac0350131121edfd451229e42c1c2e01854bf8eca399d01a1c545741698",
+        "mid": "29ca4ac0350131121edfd451229e42c1c2e01854bf8eca399d01a1c545741698",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "SA_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081523bc",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__cave",
+      "mid": 212,
+      "source": "d2800f44ff6f5600cc0f220cf55789d416175991d056a2262717078ee41bdb9c",
+      "layers": {
+        "under": "d2800f44ff6f5600cc0f220cf55789d416175991d056a2262717078ee41bdb9c",
+        "mid": "d2800f44ff6f5600cc0f220cf55789d416175991d056a2262717078ee41bdb9c",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "SA_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081523bc",
+          0
+        ]
+      ],
+      "placement_count": 5
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__cave",
+      "mid": 259,
+      "source": "622a65cd1836875ed3d25754d4b8b2e354dab48f458d25e4c618eb2ef8006754",
+      "layers": {
+        "under": "622a65cd1836875ed3d25754d4b8b2e354dab48f458d25e4c618eb2ef8006754",
+        "mid": "622a65cd1836875ed3d25754d4b8b2e354dab48f458d25e4c618eb2ef8006754",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "SA_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081523bc",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__cave",
+      "mid": 260,
+      "source": "c2543c3f9e3b2e0f261bc73b284b8a732b05c13d14acc35638128bd47667590a",
+      "layers": {
+        "under": "c2543c3f9e3b2e0f261bc73b284b8a732b05c13d14acc35638128bd47667590a",
+        "mid": "c2543c3f9e3b2e0f261bc73b284b8a732b05c13d14acc35638128bd47667590a",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "SA_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081523bc",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__cave",
+      "mid": 261,
+      "source": "eb71a74b9998940fb3d8fca7c6c12670595347d3139e1a022d4b641584e22039",
+      "layers": {
+        "under": "eb71a74b9998940fb3d8fca7c6c12670595347d3139e1a022d4b641584e22039",
+        "mid": "eb71a74b9998940fb3d8fca7c6c12670595347d3139e1a022d4b641584e22039",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "SA_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081523bc",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__cave",
+      "mid": 267,
+      "source": "b9de2170be5e87f566be9865e0e44c6e46ef1fddc7004a09fe4a8327d9dbea2a",
+      "layers": {
+        "under": "b9de2170be5e87f566be9865e0e44c6e46ef1fddc7004a09fe4a8327d9dbea2a",
+        "mid": "b9de2170be5e87f566be9865e0e44c6e46ef1fddc7004a09fe4a8327d9dbea2a",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "SA_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081523bc",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__cave",
+      "mid": 268,
+      "source": "fd7b7cccbd4c10d577128a25240772b8fc427aa15f16156c8c24e10a5da3a8c2",
+      "layers": {
+        "under": "fd7b7cccbd4c10d577128a25240772b8fc427aa15f16156c8c24e10a5da3a8c2",
+        "mid": "fd7b7cccbd4c10d577128a25240772b8fc427aa15f16156c8c24e10a5da3a8c2",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 416,
+      "scripts": [
+        [
+          "SA_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081523bc",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__cave",
+      "mid": 269,
+      "source": "30d9efb20be13f2486aeb98e22b0049d0bbacead2ab23e946d7adbb37cde7a31",
+      "layers": {
+        "under": "30d9efb20be13f2486aeb98e22b0049d0bbacead2ab23e946d7adbb37cde7a31",
+        "mid": "30d9efb20be13f2486aeb98e22b0049d0bbacead2ab23e946d7adbb37cde7a31",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "SA_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081523bc",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__cave",
+      "mid": 275,
+      "source": "bc34a8f46b0da0c8f00f3a625302784e346cf47a17184423242883485865d237",
+      "layers": {
+        "under": "bc34a8f46b0da0c8f00f3a625302784e346cf47a17184423242883485865d237",
+        "mid": "bc34a8f46b0da0c8f00f3a625302784e346cf47a17184423242883485865d237",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "SA_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081523bc",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__cave",
+      "mid": 276,
+      "source": "f24d302e690fb98226984914dbc215eae47e2ee948b7e136ce1e1991191ff191",
+      "layers": {
+        "under": "f24d302e690fb98226984914dbc215eae47e2ee948b7e136ce1e1991191ff191",
+        "mid": "f24d302e690fb98226984914dbc215eae47e2ee948b7e136ce1e1991191ff191",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "SA_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081523bc",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__cave",
+      "mid": 277,
+      "source": "480b307d605f78ac2f144efb881c505e111a6ab44a7bd9c5efb53be81166c6cc",
+      "layers": {
+        "under": "480b307d605f78ac2f144efb881c505e111a6ab44a7bd9c5efb53be81166c6cc",
+        "mid": "480b307d605f78ac2f144efb881c505e111a6ab44a7bd9c5efb53be81166c6cc",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "SA_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081523bc",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__cave",
+      "mid": 280,
+      "source": "ec728d04bd8b07c4233cee7adc8941df6fd3a854209e3e8b44ddcab3900104ef",
+      "layers": {
+        "under": "ec728d04bd8b07c4233cee7adc8941df6fd3a854209e3e8b44ddcab3900104ef",
+        "mid": "ec728d04bd8b07c4233cee7adc8941df6fd3a854209e3e8b44ddcab3900104ef",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "SA_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081523bc",
+          0
+        ]
+      ],
+      "placement_count": 4
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__cave",
+      "mid": 281,
+      "source": "47180372bdef53020fcb30e8edde998b59cb3cb619f0cbd8ba5ebcc27169adf6",
+      "layers": {
+        "under": "47180372bdef53020fcb30e8edde998b59cb3cb619f0cbd8ba5ebcc27169adf6",
+        "mid": "47180372bdef53020fcb30e8edde998b59cb3cb619f0cbd8ba5ebcc27169adf6",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "SA_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081523bc",
+          0
+        ]
+      ],
+      "placement_count": 14
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__cave",
+      "mid": 282,
+      "source": "5ca2186760b1e0adebc6f7d846c06bb90ddedb5caa98cc3731082c0c196a6960",
+      "layers": {
+        "under": "5ca2186760b1e0adebc6f7d846c06bb90ddedb5caa98cc3731082c0c196a6960",
+        "mid": "5ca2186760b1e0adebc6f7d846c06bb90ddedb5caa98cc3731082c0c196a6960",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "SA_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081523bc",
+          0
+        ]
+      ],
+      "placement_count": 3
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__cave",
+      "mid": 288,
+      "source": "170d33622adc715376b42d6544ba2e42521aadbba6b266248e558e7b66d25114",
+      "layers": {
+        "under": "170d33622adc715376b42d6544ba2e42521aadbba6b266248e558e7b66d25114",
+        "mid": "170d33622adc715376b42d6544ba2e42521aadbba6b266248e558e7b66d25114",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "SA_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081523bc",
+          0
+        ]
+      ],
+      "placement_count": 2
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__cave",
+      "mid": 289,
+      "source": "3df58cfee51b87b15870ad4589ebc72e48e831cf2dde8c8a4db8c398cf109414",
+      "layers": {
+        "under": "3df58cfee51b87b15870ad4589ebc72e48e831cf2dde8c8a4db8c398cf109414",
+        "mid": "3df58cfee51b87b15870ad4589ebc72e48e831cf2dde8c8a4db8c398cf109414",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "SA_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081523bc",
+          0
+        ]
+      ],
+      "placement_count": 2
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__cave",
+      "mid": 290,
+      "source": "d2e92563943b5ace8eac9b4118986609bc6aadff8e99a6964e488f39fb48b07e",
+      "layers": {
+        "under": "d2e92563943b5ace8eac9b4118986609bc6aadff8e99a6964e488f39fb48b07e",
+        "mid": "d2e92563943b5ace8eac9b4118986609bc6aadff8e99a6964e488f39fb48b07e",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 0,
+      "scripts": [
+        [
+          "SA_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081523bc",
+          0
+        ]
+      ],
+      "placement_count": 3
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__cave",
+      "mid": 358,
+      "source": "67bbfcee609b36e54c45c4860dfce38bddfd1e5ac230908ca6145104db2487a4",
+      "layers": {
+        "under": "67bbfcee609b36e54c45c4860dfce38bddfd1e5ac230908ca6145104db2487a4",
+        "mid": "10ad1ceaa83a2c5566b4e163b4d234cee3369fe41fe1164444779866050e88a5",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 23,
+      "scripts": [
+        [
+          "SA_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081523bc",
+          0
+        ]
+      ],
+      "placement_count": 5
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__cave",
+      "mid": 359,
+      "source": "bf5a33e2067bed42139736f0254714423f227c901ee9f16cc49f9fd7a1e261bf",
+      "layers": {
+        "under": "bf5a33e2067bed42139736f0254714423f227c901ee9f16cc49f9fd7a1e261bf",
+        "mid": "b388874f2d02e20df070cbb848a37d72f90268b78ec7e4ed2bfa651a34cc44b0",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 23,
+      "scripts": [
+        [
+          "SA_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081523bc",
+          0
+        ]
+      ],
+      "placement_count": 5
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__cave",
+      "mid": 366,
+      "source": "0cddd65925020d009c3a88763e7394d0c0255a39da64051378e6f986a9177740",
+      "layers": {
+        "under": "0cddd65925020d009c3a88763e7394d0c0255a39da64051378e6f986a9177740",
+        "mid": "36fff5735cd6bff5869374e4deb9e1cdf67fc83c62f4e4e8ad06bff92ce07930",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 23,
+      "scripts": [
+        [
+          "SA_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081523bc",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__cave",
+      "mid": 367,
+      "source": "bf53cc009298b192741732c923dc06a2c96e3dc920384490058877ccc137306a",
+      "layers": {
+        "under": "bf53cc009298b192741732c923dc06a2c96e3dc920384490058877ccc137306a",
+        "mid": "c7cb8bb9bd54e5bde063ceb6ffce6d3acdef5eb1e0a3ba514eea4d943fc61c99",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 23,
+      "scripts": [
+        [
+          "SA_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081523bc",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__cave",
+      "mid": 372,
+      "source": "9defa9840802b375dc64fc635c5494c9ada94dd58503bce689efdf0ba87ed17a",
+      "layers": {
+        "under": "ec68d3123df4f5e023eed01ae132475c32a66718585d629d7c63ce95ff647b07",
+        "mid": "ec68d3123df4f5e023eed01ae132475c32a66718585d629d7c63ce95ff647b07",
+        "over": "24644b426fcc1c1e080bec907aaaba1be6e2966123c361e4c81516d43f51f177"
+      },
+      "behavior": 21,
+      "scripts": [
+        [
+          "SA_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081523bc",
+          0
+        ]
+      ],
+      "placement_count": 2
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__cave",
+      "mid": 637,
+      "source": "50b77dcd38db73522b078d79f0a76510c16a79d686a6976990baa2bbc008710b",
+      "layers": {
+        "under": "50b77dcd38db73522b078d79f0a76510c16a79d686a6976990baa2bbc008710b",
+        "mid": "a39c37d63d0c9eae5a3f4375aaece59a64acd757954788720bcbd8ba36c9a8c5",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 23,
+      "scripts": [
+        [
+          "SA_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081523bc",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__cave",
+      "mid": 638,
+      "source": "1c81b9af3703f61e3984c02818fb09984dae6c07e72d714d3bbdbd69e7754908",
+      "layers": {
+        "under": "1c81b9af3703f61e3984c02818fb09984dae6c07e72d714d3bbdbd69e7754908",
+        "mid": "24644b426fcc1c1e080bec907aaaba1be6e2966123c361e4c81516d43f51f177",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 23,
+      "scripts": [
+        [
+          "SA_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081523bc",
+          0
+        ]
+      ],
+      "placement_count": 1
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__cave",
+      "mid": 645,
+      "source": "48254ceebee758b07ff27953b0a191f11a0df2cfe556e5649167473f8e014e41",
+      "layers": {
+        "under": "48254ceebee758b07ff27953b0a191f11a0df2cfe556e5649167473f8e014e41",
+        "mid": "a39c37d63d0c9eae5a3f4375aaece59a64acd757954788720bcbd8ba36c9a8c5",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 23,
+      "scripts": [
+        [
+          "SA_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081523bc",
+          0
+        ]
+      ],
+      "placement_count": 6
+    },
+    {
+      "game": "sapphire",
+      "pair": "general__cave",
+      "mid": 646,
+      "source": "9defa9840802b375dc64fc635c5494c9ada94dd58503bce689efdf0ba87ed17a",
+      "layers": {
+        "under": "9defa9840802b375dc64fc635c5494c9ada94dd58503bce689efdf0ba87ed17a",
+        "mid": "24644b426fcc1c1e080bec907aaaba1be6e2966123c361e4c81516d43f51f177",
+        "over": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "behavior": 23,
+      "scripts": [
+        [
+          "SA_ROUTE130",
+          "alt_46",
+          46,
+          "g3:081523bc",
+          0
+        ]
+      ],
+      "placement_count": 6
+    }
+  ],
+  "proof": {
+    "layouts": {
+      "emerald/EM_ROUTE130/alt_46": {
+        "base": "494aedecff86cf95e5bab8757e3324ecf2eb530fc1e63c6a97c863b34ae24197",
+        "alternate": "e891f8d912daa6e96700311711df003ad44c94e22f8b19d56b85e209580fe9c0",
+        "size": [
+          80,
+          40
+        ]
+      },
+      "ruby/RU_ROUTE130/alt_46": {
+        "base": "494aedecff86cf95e5bab8757e3324ecf2eb530fc1e63c6a97c863b34ae24197",
+        "alternate": "e891f8d912daa6e96700311711df003ad44c94e22f8b19d56b85e209580fe9c0",
+        "size": [
+          80,
+          40
+        ]
+      },
+      "sapphire/SA_ROUTE130/alt_46": {
+        "base": "494aedecff86cf95e5bab8757e3324ecf2eb530fc1e63c6a97c863b34ae24197",
+        "alternate": "e891f8d912daa6e96700311711df003ad44c94e22f8b19d56b85e209580fe9c0",
+        "size": [
+          80,
+          40
+        ]
+      }
+    },
+    "anchors": {
+      "emerald/general__battle_frontier_outside_east/1": "5c642ae229dc69c88ee685ec4341bc4df71a3779e8c0c401a324554223316950",
+      "emerald/general__battle_frontier_outside_east/2": "f76544efe890c4a5ea55464f17eae35948f76ff91e5f01b4017b906a343c5ac7",
+      "emerald/general__battle_frontier_outside_east/4": "cddb1ee4e6e7dc1c1b847823647ef556fa41d76e4c5e0d13695882d5bda5a088",
+      "emerald/general__battle_palace/13": "ab7f86ab596cdf9117fcc15d8ba142ba023b4f21cb8b148d819f4d0ae910cd46",
+      "emerald/general__battle_frontier_outside_east/14": "e135453b8e85c7556e134ccb7bbe4fd4d1f3880a1efbf1443d82b26569103545",
+      "emerald/general__battle_frontier_outside_east/22": "5ce6e7a2d99762744a6fb25de59a741ba99ec0241bd2a5cdb640580734a57a55",
+      "emerald/general__battle_frontier_outside_east/114": "3b192a82f64a3504c51fe93832aaccd8495d9d2ade44da7fa4338e362e581b14",
+      "emerald/general__battle_frontier_outside_east/120": "abba50d917ae822a0497f5ccc5e4b578281fc0c75be1a3d2746ae54f08019ef0",
+      "emerald/general__battle_frontier_outside_east/122": "fa8903aae542a21aff61dd913cb94684dc16c330e5bf2f8795e6398fbbb74ec6",
+      "emerald/general__dewford/136": "c8ff9be1eadfb58bd8913693dd88cf1d5d9c7d3bb63fec2430890e7160c3d8e3",
+      "emerald/general__dewford/144": "39234b440c765ab85414369f2c6eadf8be0683582c0159dd4e6ecbd4d406a600",
+      "emerald/general__dewford/146": "696f188f6801e62086b9057640bca5f1c30e706e46cb404e819a9a77b7827c0b",
+      "emerald/general__battle_frontier_outside_east/169": "cb1bebc0ea846be9efd6ddf9a9763b3b91782eeecfef55a14f620448ce317038",
+      "emerald/general__battle_frontier_outside_east/198": "d3f26c9026fadabe191bc303f6f3e0e291f581b129d3e46699b0f6df5c39f5ea",
+      "emerald/general__facility/211": "904e94495cde49b86ad07115a7b3c521604d9a9af77a661711b8c77d44c29722",
+      "emerald/general__facility/212": "a3a7f3fb9b1010961c69fb1a7c6ec63058b92bdb33c0c298050077d2dce4d0b0",
+      "emerald/general__fallarbor/259": "832c58ca8c86a4332cc7419318b25248898673b5d938c33fe60e5085fc84be0e",
+      "emerald/general__fallarbor/260": "11e685320b2698997b6f2252bcd51489d385b02b3adadfeb64cd264d1037feec",
+      "emerald/general__fallarbor/261": "3bdcf0bfa696948609aa8d8205227392a6f6e47cf8ccf632d3dae247a30db01e",
+      "emerald/general__fallarbor/267": "a3ef0de0551afeabc4cb4743e957cfca0c4f6c6a855624e2f543da11d386fb79",
+      "emerald/general__fallarbor/268": "6cfcc3156caa42e51f041608a04772fda5f99b86232d492dc6ab21179f8f45dc",
+      "emerald/general__fallarbor/269": "649d22cf7db33abc4efcb8a2ca61da4aef4106e77897d5aef6e9badb49f45aea",
+      "emerald/general__fallarbor/275": "12d89b7fd7ce36cbd9bb28e02a412e9e9bf99f692e5b10aa26596653363bb180",
+      "emerald/general__fallarbor/276": "4f531b0374c54106226f6425bbf2e5a55a9cbfcc071b1aed67e539905113e558",
+      "emerald/general__fallarbor/277": "56ac17a348adbbd49bcf4cf0ebf56368162e67c068e953e1940c1e8bd597b3b3",
+      "emerald/general__battle_frontier_outside_east/280": "e3d17311dbec94c4d8904e928e142dc54d216dcc34ae260e6cce7e373e45829f",
+      "emerald/general__battle_frontier_outside_east/281": "a51736d54d000da0a573a14fbf64057949de2f087a4f2fc14b5e7ad74e2af270",
+      "emerald/general__battle_frontier_outside_east/282": "70b6fd6e8532847dc2a7c7854ebfb3495713469902b5ce9088ca354ffdf89662",
+      "emerald/general__battle_frontier_outside_east/288": "37359bfa279e614344d267a2a6463eefe41096e34a8fd1984d3c2ea11bb64177",
+      "emerald/general__battle_frontier_outside_east/289": "87fdd4ae719f7df60cdaf7828e925e9167a3d79d19d2fe3a7dfef4ae435d39c5",
+      "emerald/general__battle_frontier_outside_east/290": "fd316e8ec13d01ba18f404ea60b8aa5df4742c7518e3619fb17296f1b244cf37",
+      "emerald/general__lilycove/358": "6bcee5b094c1e5ab20ad371980898a50f3388256f39e02a915092ad3c1b637e1",
+      "emerald/general__lilycove/359": "5122e7e78cc31c7ca1cd36d996ec736372b5e03b0c83755992517960a61c3b1b",
+      "emerald/general__lilycove/366": "f051deb60cb91bd19e04f415e99b50b21d6b112e26190166c3c5c1b2a5800059",
+      "emerald/general__lilycove/367": "63ca8723ae60af4f7554b4cccc0003a93ff282ef746f29c90dd5ffad032a08a0",
+      "emerald/general__mossdeep/829": "06bd8aec01a9e4ec6a956a58aac909d2274212ec631310b71ca4930bf092b6c4",
+      "ruby/general__dewford/1": "b557ec04c2b25102e7315311f2db06bd3f77a9e0af501b89cf3d353c2f4c59f1",
+      "ruby/general__ever_grande/2": "aa3409107c231d77b8c9ddf9875042bef4ed80009bbbb23518a73d1805931faf",
+      "ruby/general__facility/4": "8abf51b9a659be9732feba3bd6c1b74eebc0a91b416cd98883771eb8d8c47f65",
+      "ruby/general__facility/13": "e1df2c4b8d8acdc94d48da19967800db8ff2e427dbd744967b7a2c724b3731f1",
+      "ruby/general__ever_grande/14": "4a3874c088e2e8e7539fed65a16865051cf7df1166e823791a0c7985f00ff698",
+      "ruby/general__ever_grande/22": "c3b819b0646bd80642b106b8bc0afcf6ff5700735885f4853a014c61ada136ef",
+      "ruby/general__dewford/114": "fe611ec1b26fa9601424e2bf0d6fde8721c8cc8f0aaf05afbc898bdd1cec6685",
+      "ruby/general__ever_grande/120": "79936a865298935d0b7b8b42a9df7e633761b54d5242c11e23ace18b03691ead",
+      "ruby/general__ever_grande/122": "63a3e013d0eb00ed1348b8c140597e9af9025ed481881857c5fbd33c14bbccca",
+      "ruby/general__dewford/136": "61d4b5c7dcc8fd730f8ec5c7f2789d1aa9f1f33c261d938497417b5d528c32ff",
+      "ruby/general__dewford/144": "ade054de19d52d4e6399e5412ea7235c86bf51674184bb041fcb83c40e12cbf2",
+      "ruby/general__dewford/146": "373177f85f09908dcb7dded40b3c0ced7809a9577ab549c73dc17930a88acade",
+      "ruby/general__dewford/169": "587a49d63198e9ce7768cd3e68ed4d19dc5f79ca0a02e20325fee1ea509de1b7",
+      "ruby/general__ever_grande/198": "50b6d3f31f615eaacdf1013025a444ecc43ff0dc98b61874178cbc982ea39201",
+      "ruby/general__dewford/211": "c23d719e631aa15486220997e395b4d89b56a4f40154ed3ee71e4d0c62acb0fd",
+      "ruby/general__dewford/212": "28ee3b183323bc6b6832f3abb4c2f1edb2a810255966a4a535afb11616b37099",
+      "ruby/general__fallarbor/259": "b63c9b9a993ce178fe5690cf082c2f1e35022df9a4f7258ff2cd14880c090f64",
+      "ruby/general__fallarbor/260": "4b6babf9f3105dee71f464a38d54d645429eb2339c44b35c983f272e4f8f60d3",
+      "ruby/general__fallarbor/261": "26f632776ed1fb17cba8fd902d3480513cf3a14f1209a62362951121dcf6217f",
+      "ruby/general__fallarbor/267": "b038d760e942b0246c1ea9207da00001e8b692430990a3699d2402c9177e281f",
+      "ruby/general__fallarbor/268": "28caf04f58a8f911da8b83350b3e43deeede924520acd5b11a03e887b4bd4104",
+      "ruby/general__fallarbor/269": "a4896b931f9f13f6fcc93edcbb3b27fbd837e81bd77fb42364723f4f12dcd094",
+      "ruby/general__fallarbor/275": "71bf1fbc19bbe03a26ccf0bae219f01ca2e289bf6c4652c31581fab129d82882",
+      "ruby/general__fallarbor/276": "74191df44e082591e0cc08d4e75a6e2eb92093c52c7afd47d14c3f6d3a93f8d4",
+      "ruby/general__fallarbor/277": "ec4f5ef5d2f7d5beca2a802bf85c2f235976f97444cb1e6a160c0fd87acd4e46",
+      "ruby/general__fallarbor/280": "be80f4de847def14beebcf99dc4b05f675f3c0454d86ea1a41a610235d9b86e1",
+      "ruby/general__fallarbor/281": "b54d145e52ca5ada7b60cff378416b4ac574eac7f8ceb0eac53aebac357beb57",
+      "ruby/general__fallarbor/282": "adb8a642ad9201f276ce11136b9d1748a42db8ec9a3991b6ca81ba5afc368eb9",
+      "ruby/general__fallarbor/288": "a36acea867d1f596d355e9495b5396e62ce4d8afc4bd8f203a2ced6af67b4503",
+      "ruby/general__fortree/289": "a6c351085e8dcfaa4ae22cc9637a4f478925e5bce2f83b846a4c7bc8a3c5efd2",
+      "ruby/general__fallarbor/290": "6dd4248c2520a1fab89947a97cce50f32b65ffe21c071f05bb4411c5a365a4d0",
+      "ruby/general__lilycove/358": "b5a949fd2465b74bf9a723d886309db8d3cc86538205fc41d24de434e70afddf",
+      "ruby/general__lilycove/359": "f77480198fd3c3f4e4b97894465d8013834f7455db132fc8cfd46b5e16669a7c",
+      "ruby/general__lilycove/366": "86fa2addccf94b1e667228183ce1779993e95cfe139e164410f9ec0e05f9c00e",
+      "ruby/general__lilycove/367": "4bb052760545547858a09aa46cfa27b787941d2b7467b4a05465ce29fc4cff97",
+      "ruby/general__mossdeep/829": "483b539f5c03e9e22ddb39b854e4d4af3fb2e5bd8c304a6ec8c5f305a8a6c933",
+      "sapphire/general__dewford/1": "2693fcdbf42d0d699e7d2212eb77c33dabbd128fedd37102ffeb1a73c1b100b1",
+      "sapphire/general__ever_grande/2": "75802f7d4a32ff25cf575d66af51ae36c8e12d554705292deb9291171adca17c",
+      "sapphire/general__facility/4": "67fa829d3009de0fec37b6ead83fd38f16d571680f6c7fad7de9771197146024",
+      "sapphire/general__facility/13": "78e1b9e83016922d1bd5d1db8d171a4434b637a7d2d4f71c4b5642cc508504b6",
+      "sapphire/general__ever_grande/14": "2734e61ac2fcb74bc96fbd02508b635cd624eb0486647945b14b7ff9cbb378c2",
+      "sapphire/general__ever_grande/22": "4edd60ee40f852f84ef3be5590a4c03374aa23e1c8e2bdf165d36224d3237cda",
+      "sapphire/general__dewford/114": "6325e00c54ab271285eccfb91131b6cb91b442b75969902c739d97a4efce502f",
+      "sapphire/general__ever_grande/120": "620317374372a4fa98420a1bad0242434c8e8e1a0de73c70563958872dff3b21",
+      "sapphire/general__ever_grande/122": "07f8bdb35537e601d02fd6ce2a58eb315c6b2af82032cb100c8f10c28058ecdc",
+      "sapphire/general__dewford/136": "633438ab36af6cc34a6f8f7b1628e1a9838e092e1bb53ea7efd4ca1b73f80203",
+      "sapphire/general__dewford/144": "083795e8bc42d907ca1a19e7a6cef250e384aedd1edcd7d70e55f8fac65543ef",
+      "sapphire/general__dewford/146": "c74f1a8b6c4ee25725fb3d3b3550e7929779003e2b8b5cde96f4f25c58b6be57",
+      "sapphire/general__dewford/169": "427bf645e8fb0e0801ed4249f25821f56e265786c5d95f9e1d7baf99d53995fd",
+      "sapphire/general__ever_grande/198": "2b6eae6bb705c5da081cc6eaa6ab1ef3742a9cde5dc05c59dce46871cb8f0159",
+      "sapphire/general__dewford/211": "00e0453ccf5efdcc91a8ff14d39c0e474727448cf025a5ae6e7860ed7dc3f2b3",
+      "sapphire/general__dewford/212": "ac8635db63dbe80d42497bd436a2360723720053ca4d50065a98efb2c5f64864",
+      "sapphire/general__fallarbor/259": "16dfbf534b5e47ecaa6cef3080dd927168947e2c666a88602e5bb80799e94f4a",
+      "sapphire/general__fallarbor/260": "80c08a89df6e463128f36631eea0c9b7574ff953a749e7263a749b6aa0ea8c9e",
+      "sapphire/general__fallarbor/261": "d0f9d45c83635f5a0c20d6538c5a1c4a73cc128a67e35c814b47272e7b8cf89c",
+      "sapphire/general__fallarbor/267": "d53849c713d616e8d59da8026e7ae7c720a710e917e98757026ce4f8ab1709b5",
+      "sapphire/general__fallarbor/268": "bb4ce9f4e67b15f86107cd78d85fe84746af252d922fcca44ba82737f6b14b36",
+      "sapphire/general__fallarbor/269": "8b4c4afbcbf00c3db2cc33e06ed25fd3125953834dfa8b58d6ee3ac5c56bcdf5",
+      "sapphire/general__fallarbor/275": "365a2c2ca6032c4839c7ddebf14badc05f1b2eb59990afe38e770b613bb3e59f",
+      "sapphire/general__fallarbor/276": "ff46c66ab2d73c3a972ec318e08a0024e1b563ae9c49d08e38cba0e28503318b",
+      "sapphire/general__fallarbor/277": "6abade0bfcd130fc0481290b33eca78625ab0c85e8b83023a68050b3f90a7dab",
+      "sapphire/general__fallarbor/280": "1821552f480b705b09826ef1095ff5be89a590ad095369fa430db82cb513edbe",
+      "sapphire/general__fallarbor/281": "d05d27cd11581f3212903a7fc99ae120e0885e975a814f81b7c3735c7a0859da",
+      "sapphire/general__fallarbor/282": "69a4d4a3793e9ad01a3431e4e2c25b1501b5645f95bf8ed8be5a7234553f0aac",
+      "sapphire/general__fallarbor/288": "408adf502f1bf8e79a9db2450fb1a7fd5fcc92914a1dc57f049b7400d3bc1eae",
+      "sapphire/general__fortree/289": "799d76c3fc6b287dfb309c1302cd06f57d95296e92cafe8b50be35ef86aa1a00",
+      "sapphire/general__fallarbor/290": "ecd18643d7743aba9e986caef54f6ecb136b3ca3bbe3ba53632689defc92df4b",
+      "sapphire/general__lilycove/358": "c52b0b14f55ad4c85dc672533c207cca16609565533a619e278cdec3962a64b5",
+      "sapphire/general__lilycove/359": "354b8da535d2cd1d209cc102afaf8c09da106f7f4eb1394e1a57d246ee115a94",
+      "sapphire/general__lilycove/366": "7b94144720702445e4362021f627537580b7fe396c4395087da0fbc1388c1d39",
+      "sapphire/general__lilycove/367": "8989e2074e0be52e874b3fdb81cd89f1eb766f1f2b10a4064bfd341091846118",
+      "sapphire/general__mossdeep/829": "33b48d016070a78e9a09165e37e46ee7db77bc9a6782b547b22791fc65d7b838"
+    },
+    "rows": [
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 1,
+        "output": [
+          "a4c5027f79d7a1922eebd4d9838334a910573e785eda55b9fd6cea582740e426"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 2,
+        "output": [
+          "a4c5027f79d7a1922eebd4d9838334a910573e785eda55b9fd6cea582740e426"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 4,
+        "output": [
+          "5a35a91d5c16925c03262c02a7152a43df02d12e25559a145fe3dae4b6dace6b",
+          "dd1b09b6427314e8949717d39c96a713021be0838cceeb546a155f8af8bd606e"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 13,
+        "output": [
+          "2a78a4f26ba71f3dbb60ae6654b36bdd31cd7ab3c9972bcfd5fc001ee61e78e0"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 14,
+        "output": [
+          "95745c20165bc49c0f4f644a6ddee30cb9953fbca41717db91dc6271bed0e081"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 22,
+        "output": [
+          "3446d9d14f029bca8d210a92a10c25cd3ec45705910fc482fe10ca1f322a936e"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 114,
+        "output": [
+          "65dfba502a8aaaaf75ae59d73a1b025f99e3886b9aad2f3a6e96cd1a99a89a18"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 120,
+        "output": [
+          "9af9ee334c4e51a0c896592b28c60b1342d57f90a72664ce57045557717c1bb3"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 122,
+        "output": [
+          "f880252c6628df2b693e8697a1c0a29197f8990dc870346333d0475df53668e3"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 136,
+        "output": [
+          "d1cf668c16c1ecbbbc382a4a6dc7519361c7e85ad0cc664536f525589f0e32fb"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 144,
+        "output": [
+          "dfa23646c7f87dc1c441e668e6ad8ab28ecc7b55c0de198371663839e522402f"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 146,
+        "output": [
+          "524f7ca679f604c98ba13c24ab2ba7beb8ac58ffdbd84839729146dcfec7fc00"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 169,
+        "output": [
+          "fbdc4c52c29d587e2482e1bf506d71f71697f1234ea19da68ff53b3d6180ba98"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 198,
+        "output": [
+          "925d995eb11d6a8d04ff8900aef8f38b3e18e4cff154f0443826525a90750265"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 211,
+        "output": [
+          "ecf4c5331b4cc6b09cfbbd5b37cb3585f2574542ec6030286f98bcf6079a10e1"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 212,
+        "output": [
+          "ecf4c5331b4cc6b09cfbbd5b37cb3585f2574542ec6030286f98bcf6079a10e1"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 259,
+        "output": [
+          "afd9f98d1ac4b6bb7f28c81210f4c3c95f4efff6a5d10e548067653072a65a35"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 260,
+        "output": [
+          "3bd16dfdd58fac565919ac96d2701d566cba85701aceb87b03e4a7b526462495"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 261,
+        "output": [
+          "1e12d7abf1415faceaa43814701bdcf9cd056e43b4d5e793e9444f8a11c6b87a"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 267,
+        "output": [
+          "b09baf4d1841bec81948ff671c6041ae5198c1666d1a00661f7fb97a16407aed"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 268,
+        "output": [
+          "e967a11d40408e653554d5f784ee1a5e3ffb3e38447088eaba88f2bd338adfb5"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 269,
+        "output": [
+          "5871a6ceb1bf602ef6597e54edf9aaf7a183d59fce172ac2d4db2ac61bb91247"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 275,
+        "output": [
+          "eb090515de0fafdbdc0db402da4254d4366892d627bdb541555170220fb30010"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 276,
+        "output": [
+          "2a172f31a33b42b1b08650ff559abf9d93d03ae079cc2d7f82dab8e5f4f94b38"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 277,
+        "output": [
+          "ed19f0e627f46c333e40dedf96065a951c0b13b516948904ea12902d56c1ca57"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 280,
+        "output": [
+          "fbb81430a1bb4dbdb4ac546a934382a236f504274172ebe62defcac166c4e876"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 281,
+        "output": [
+          "cbcd9b2770ccf9a6250201974004bd7498afd061f6741c1fadec7739627c33be"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 282,
+        "output": [
+          "e943fd70da22027e4e93af622cdf41751ef4a90dd6dd3d61eadff5cccbf69c4f"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 288,
+        "output": [
+          "43710d9f1b9306a74d7aad0b682cedf83820bd6531f39ff9bbb954137b53ce90"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 289,
+        "output": [
+          "00ee3dc9365a44b3e5df63f6d39ca71a6d6a50f7df3e47dc87ed6a9f300f8542"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 290,
+        "output": [
+          "1dbb8f6906f952356ab143e0011862d0ece9d64e8377ac77fd968ccacea69712"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 358,
+        "output": [
+          "411e919fbc2fb7e6f77f64409f158c5bbe92973f6bbf9d737ecf4baadafe5db7",
+          "099d26fe32771906923013dac86fa43d5d6a55498bb96ba9600ac122401c7037",
+          "466d6e4e0a85c8e0f1655d0bb978c7c2d8666b99a5f83a608dabf3156195083c",
+          "5b41b21291ae72516cf898e79ab7247c0c8a32d5cd3246ffdd61b71dd7c7ba16",
+          "466d6e4e0a85c8e0f1655d0bb978c7c2d8666b99a5f83a608dabf3156195083c",
+          "099d26fe32771906923013dac86fa43d5d6a55498bb96ba9600ac122401c7037",
+          "411e919fbc2fb7e6f77f64409f158c5bbe92973f6bbf9d737ecf4baadafe5db7",
+          "efca55f847c39af18d5015593551ff7764f542545427022b47abf65caf08411f"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 359,
+        "output": [
+          "cb97555f6b99f41c6d0d24cbb94cd85518c4d455dc76dc4a8bfac80813af4cb0",
+          "cb97555f6b99f41c6d0d24cbb94cd85518c4d455dc76dc4a8bfac80813af4cb0",
+          "cb97555f6b99f41c6d0d24cbb94cd85518c4d455dc76dc4a8bfac80813af4cb0",
+          "cb97555f6b99f41c6d0d24cbb94cd85518c4d455dc76dc4a8bfac80813af4cb0",
+          "cb97555f6b99f41c6d0d24cbb94cd85518c4d455dc76dc4a8bfac80813af4cb0",
+          "cb97555f6b99f41c6d0d24cbb94cd85518c4d455dc76dc4a8bfac80813af4cb0",
+          "cb97555f6b99f41c6d0d24cbb94cd85518c4d455dc76dc4a8bfac80813af4cb0",
+          "5a607ac2ab0d2c227bf6dafa546e9dae565319bed3b4a41136db1d5bb63fc5d7"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 366,
+        "output": [
+          "09ba6a8f3df17b5a65929f22b2fdd482a6b237aa9172d0948fa0bd96f0836bde",
+          "2d7b1655af52c3325a954e5a9e00491bf24fbeb104809e2c8cecf12463bc3765",
+          "895cbb465518de11aaecb406bf12516a8e21b211e8db618af89f26465af05b7b",
+          "f3590a9922d9e6a4d98eafcff0da9d3d718b13f84b0c474bf759685813ba573e",
+          "895cbb465518de11aaecb406bf12516a8e21b211e8db618af89f26465af05b7b",
+          "2d7b1655af52c3325a954e5a9e00491bf24fbeb104809e2c8cecf12463bc3765",
+          "09ba6a8f3df17b5a65929f22b2fdd482a6b237aa9172d0948fa0bd96f0836bde",
+          "3728933e3b93df9dc703a0e9dd87510542e66985d293207540b981bccd66e2b2"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 367,
+        "output": [
+          "a13105714f1781a670c4e091c31a1d58d9ae1c474c884f203b288c77282d59f0",
+          "83dfc7d6b9767890f4b4554ef14a23c97b461482d0c093fc27571d29917b8f25",
+          "6dac4d59c818eca8913d8825384932bc24be204143ef58ac63321cfe7d00d084",
+          "40266ed2751c822178e0c2b9676caf2d7f068c5c475bdf6b9e42835576e2bc07",
+          "6dac4d59c818eca8913d8825384932bc24be204143ef58ac63321cfe7d00d084",
+          "83dfc7d6b9767890f4b4554ef14a23c97b461482d0c093fc27571d29917b8f25",
+          "a13105714f1781a670c4e091c31a1d58d9ae1c474c884f203b288c77282d59f0",
+          "2529b0e704b0055b214fa5295d1e65e0c42e50bc765e9a3a06a87f0bbf855773"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 372,
+        "output": [
+          "239a5566224de34dfa444f4f02e529236034f012034c4ea2530c28b57484b452",
+          "617d38058425d1f263916f28b8082d67e39605a2a73ca130069ef2d9c727bba7",
+          "5828f63a1101c396e505986df615272e7df5836e919183ed334063fb0a6bf358",
+          "b9ff100c38ea4197c9c07cec14b437bdf330b181885ccace184d6c7a197fcb90",
+          "5828f63a1101c396e505986df615272e7df5836e919183ed334063fb0a6bf358",
+          "617d38058425d1f263916f28b8082d67e39605a2a73ca130069ef2d9c727bba7",
+          "239a5566224de34dfa444f4f02e529236034f012034c4ea2530c28b57484b452",
+          "afd8c83fac57656c52cd70d77762f091003bf2968749b6fccaf5338949134885"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 637,
+        "output": [
+          "e43ee02a9ce7df1649e62e5d77aa25c44354b1bade0ba3cb7dcabb1decf43bd1",
+          "9f9909b4c20309b6ba68dc2da8a9e575362d729f0efc7e902b30d89833971e47",
+          "d5a15658b844280764b98f6f51ad4f642e555c6760a3d450ad2d0a794de112e4",
+          "79f02e605b10b1b7492b8845a65b10eec2d8cd0c4d93600cee6b3607cc8aab4a",
+          "d5a15658b844280764b98f6f51ad4f642e555c6760a3d450ad2d0a794de112e4",
+          "9f9909b4c20309b6ba68dc2da8a9e575362d729f0efc7e902b30d89833971e47",
+          "e43ee02a9ce7df1649e62e5d77aa25c44354b1bade0ba3cb7dcabb1decf43bd1",
+          "f86ae37f27f6414805339e96b205cf5ca55e61db0b0957df630de716adbbaaea"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 638,
+        "output": [
+          "ce07e2f7272d1ea2a3e1dc6a2afa492414f726dbef761fd6797aea215d7f3ad5",
+          "dbef8164711c3f26deba9490f5d70a5853c5b3325d6613fc14a94860ccfa084e",
+          "31b2ae08709ef3a79bed77f00cbc3e9042edb74afc8042a6a0f70c66a69679f0",
+          "ff49115978cd89d436a03c0581f41e7ab84558419f6976e518cf8dc0e06646db",
+          "31b2ae08709ef3a79bed77f00cbc3e9042edb74afc8042a6a0f70c66a69679f0",
+          "dbef8164711c3f26deba9490f5d70a5853c5b3325d6613fc14a94860ccfa084e",
+          "ce07e2f7272d1ea2a3e1dc6a2afa492414f726dbef761fd6797aea215d7f3ad5",
+          "359ac757e5c18be5f777896866b29c783b6ffbf199bb8b6e7a6b5f3ad10ec4fc"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 645,
+        "output": [
+          "e43ee02a9ce7df1649e62e5d77aa25c44354b1bade0ba3cb7dcabb1decf43bd1",
+          "9f9909b4c20309b6ba68dc2da8a9e575362d729f0efc7e902b30d89833971e47",
+          "d5a15658b844280764b98f6f51ad4f642e555c6760a3d450ad2d0a794de112e4",
+          "79f02e605b10b1b7492b8845a65b10eec2d8cd0c4d93600cee6b3607cc8aab4a",
+          "d5a15658b844280764b98f6f51ad4f642e555c6760a3d450ad2d0a794de112e4",
+          "9f9909b4c20309b6ba68dc2da8a9e575362d729f0efc7e902b30d89833971e47",
+          "e43ee02a9ce7df1649e62e5d77aa25c44354b1bade0ba3cb7dcabb1decf43bd1",
+          "f86ae37f27f6414805339e96b205cf5ca55e61db0b0957df630de716adbbaaea"
+        ]
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 646,
+        "output": [
+          "ce07e2f7272d1ea2a3e1dc6a2afa492414f726dbef761fd6797aea215d7f3ad5",
+          "dbef8164711c3f26deba9490f5d70a5853c5b3325d6613fc14a94860ccfa084e",
+          "31b2ae08709ef3a79bed77f00cbc3e9042edb74afc8042a6a0f70c66a69679f0",
+          "ff49115978cd89d436a03c0581f41e7ab84558419f6976e518cf8dc0e06646db",
+          "31b2ae08709ef3a79bed77f00cbc3e9042edb74afc8042a6a0f70c66a69679f0",
+          "dbef8164711c3f26deba9490f5d70a5853c5b3325d6613fc14a94860ccfa084e",
+          "ce07e2f7272d1ea2a3e1dc6a2afa492414f726dbef761fd6797aea215d7f3ad5",
+          "359ac757e5c18be5f777896866b29c783b6ffbf199bb8b6e7a6b5f3ad10ec4fc"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 1,
+        "output": [
+          "a4c5027f79d7a1922eebd4d9838334a910573e785eda55b9fd6cea582740e426"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 2,
+        "output": [
+          "a4c5027f79d7a1922eebd4d9838334a910573e785eda55b9fd6cea582740e426"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 4,
+        "output": [
+          "5a35a91d5c16925c03262c02a7152a43df02d12e25559a145fe3dae4b6dace6b",
+          "dd1b09b6427314e8949717d39c96a713021be0838cceeb546a155f8af8bd606e"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 13,
+        "output": [
+          "2a78a4f26ba71f3dbb60ae6654b36bdd31cd7ab3c9972bcfd5fc001ee61e78e0"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 14,
+        "output": [
+          "95745c20165bc49c0f4f644a6ddee30cb9953fbca41717db91dc6271bed0e081"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 22,
+        "output": [
+          "3446d9d14f029bca8d210a92a10c25cd3ec45705910fc482fe10ca1f322a936e"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 114,
+        "output": [
+          "65dfba502a8aaaaf75ae59d73a1b025f99e3886b9aad2f3a6e96cd1a99a89a18"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 120,
+        "output": [
+          "9af9ee334c4e51a0c896592b28c60b1342d57f90a72664ce57045557717c1bb3"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 122,
+        "output": [
+          "f880252c6628df2b693e8697a1c0a29197f8990dc870346333d0475df53668e3"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 136,
+        "output": [
+          "d1cf668c16c1ecbbbc382a4a6dc7519361c7e85ad0cc664536f525589f0e32fb"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 144,
+        "output": [
+          "dfa23646c7f87dc1c441e668e6ad8ab28ecc7b55c0de198371663839e522402f"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 146,
+        "output": [
+          "524f7ca679f604c98ba13c24ab2ba7beb8ac58ffdbd84839729146dcfec7fc00"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 169,
+        "output": [
+          "fbdc4c52c29d587e2482e1bf506d71f71697f1234ea19da68ff53b3d6180ba98"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 198,
+        "output": [
+          "925d995eb11d6a8d04ff8900aef8f38b3e18e4cff154f0443826525a90750265"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 211,
+        "output": [
+          "ecf4c5331b4cc6b09cfbbd5b37cb3585f2574542ec6030286f98bcf6079a10e1"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 212,
+        "output": [
+          "ecf4c5331b4cc6b09cfbbd5b37cb3585f2574542ec6030286f98bcf6079a10e1"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 259,
+        "output": [
+          "afd9f98d1ac4b6bb7f28c81210f4c3c95f4efff6a5d10e548067653072a65a35"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 260,
+        "output": [
+          "3bd16dfdd58fac565919ac96d2701d566cba85701aceb87b03e4a7b526462495"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 261,
+        "output": [
+          "1e12d7abf1415faceaa43814701bdcf9cd056e43b4d5e793e9444f8a11c6b87a"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 267,
+        "output": [
+          "b09baf4d1841bec81948ff671c6041ae5198c1666d1a00661f7fb97a16407aed"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 268,
+        "output": [
+          "e967a11d40408e653554d5f784ee1a5e3ffb3e38447088eaba88f2bd338adfb5"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 269,
+        "output": [
+          "5871a6ceb1bf602ef6597e54edf9aaf7a183d59fce172ac2d4db2ac61bb91247"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 275,
+        "output": [
+          "eb090515de0fafdbdc0db402da4254d4366892d627bdb541555170220fb30010"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 276,
+        "output": [
+          "2a172f31a33b42b1b08650ff559abf9d93d03ae079cc2d7f82dab8e5f4f94b38"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 277,
+        "output": [
+          "ed19f0e627f46c333e40dedf96065a951c0b13b516948904ea12902d56c1ca57"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 280,
+        "output": [
+          "4123ef96b52d12cc59a299e232779b53b9cd20f51a691f82c27d63a5b9bb86b1"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 281,
+        "output": [
+          "6c868d30b3d7bc091f0c13107c470a15a5a8e780e54ae666e67bee7a207eae0f"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 282,
+        "output": [
+          "e943fd70da22027e4e93af622cdf41751ef4a90dd6dd3d61eadff5cccbf69c4f"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 288,
+        "output": [
+          "43710d9f1b9306a74d7aad0b682cedf83820bd6531f39ff9bbb954137b53ce90"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 289,
+        "output": [
+          "00ee3dc9365a44b3e5df63f6d39ca71a6d6a50f7df3e47dc87ed6a9f300f8542"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 290,
+        "output": [
+          "1dbb8f6906f952356ab143e0011862d0ece9d64e8377ac77fd968ccacea69712"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 358,
+        "output": [
+          "411e919fbc2fb7e6f77f64409f158c5bbe92973f6bbf9d737ecf4baadafe5db7",
+          "099d26fe32771906923013dac86fa43d5d6a55498bb96ba9600ac122401c7037",
+          "466d6e4e0a85c8e0f1655d0bb978c7c2d8666b99a5f83a608dabf3156195083c",
+          "5b41b21291ae72516cf898e79ab7247c0c8a32d5cd3246ffdd61b71dd7c7ba16",
+          "466d6e4e0a85c8e0f1655d0bb978c7c2d8666b99a5f83a608dabf3156195083c",
+          "099d26fe32771906923013dac86fa43d5d6a55498bb96ba9600ac122401c7037",
+          "411e919fbc2fb7e6f77f64409f158c5bbe92973f6bbf9d737ecf4baadafe5db7",
+          "efca55f847c39af18d5015593551ff7764f542545427022b47abf65caf08411f"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 359,
+        "output": [
+          "cb97555f6b99f41c6d0d24cbb94cd85518c4d455dc76dc4a8bfac80813af4cb0",
+          "cb97555f6b99f41c6d0d24cbb94cd85518c4d455dc76dc4a8bfac80813af4cb0",
+          "cb97555f6b99f41c6d0d24cbb94cd85518c4d455dc76dc4a8bfac80813af4cb0",
+          "cb97555f6b99f41c6d0d24cbb94cd85518c4d455dc76dc4a8bfac80813af4cb0",
+          "cb97555f6b99f41c6d0d24cbb94cd85518c4d455dc76dc4a8bfac80813af4cb0",
+          "cb97555f6b99f41c6d0d24cbb94cd85518c4d455dc76dc4a8bfac80813af4cb0",
+          "cb97555f6b99f41c6d0d24cbb94cd85518c4d455dc76dc4a8bfac80813af4cb0",
+          "5a607ac2ab0d2c227bf6dafa546e9dae565319bed3b4a41136db1d5bb63fc5d7"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 366,
+        "output": [
+          "09ba6a8f3df17b5a65929f22b2fdd482a6b237aa9172d0948fa0bd96f0836bde",
+          "2d7b1655af52c3325a954e5a9e00491bf24fbeb104809e2c8cecf12463bc3765",
+          "895cbb465518de11aaecb406bf12516a8e21b211e8db618af89f26465af05b7b",
+          "f3590a9922d9e6a4d98eafcff0da9d3d718b13f84b0c474bf759685813ba573e",
+          "895cbb465518de11aaecb406bf12516a8e21b211e8db618af89f26465af05b7b",
+          "2d7b1655af52c3325a954e5a9e00491bf24fbeb104809e2c8cecf12463bc3765",
+          "09ba6a8f3df17b5a65929f22b2fdd482a6b237aa9172d0948fa0bd96f0836bde",
+          "3728933e3b93df9dc703a0e9dd87510542e66985d293207540b981bccd66e2b2"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 367,
+        "output": [
+          "a13105714f1781a670c4e091c31a1d58d9ae1c474c884f203b288c77282d59f0",
+          "83dfc7d6b9767890f4b4554ef14a23c97b461482d0c093fc27571d29917b8f25",
+          "6dac4d59c818eca8913d8825384932bc24be204143ef58ac63321cfe7d00d084",
+          "40266ed2751c822178e0c2b9676caf2d7f068c5c475bdf6b9e42835576e2bc07",
+          "6dac4d59c818eca8913d8825384932bc24be204143ef58ac63321cfe7d00d084",
+          "83dfc7d6b9767890f4b4554ef14a23c97b461482d0c093fc27571d29917b8f25",
+          "a13105714f1781a670c4e091c31a1d58d9ae1c474c884f203b288c77282d59f0",
+          "2529b0e704b0055b214fa5295d1e65e0c42e50bc765e9a3a06a87f0bbf855773"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 372,
+        "output": [
+          "239a5566224de34dfa444f4f02e529236034f012034c4ea2530c28b57484b452",
+          "617d38058425d1f263916f28b8082d67e39605a2a73ca130069ef2d9c727bba7",
+          "5828f63a1101c396e505986df615272e7df5836e919183ed334063fb0a6bf358",
+          "b9ff100c38ea4197c9c07cec14b437bdf330b181885ccace184d6c7a197fcb90",
+          "5828f63a1101c396e505986df615272e7df5836e919183ed334063fb0a6bf358",
+          "617d38058425d1f263916f28b8082d67e39605a2a73ca130069ef2d9c727bba7",
+          "239a5566224de34dfa444f4f02e529236034f012034c4ea2530c28b57484b452",
+          "afd8c83fac57656c52cd70d77762f091003bf2968749b6fccaf5338949134885"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 637,
+        "output": [
+          "e43ee02a9ce7df1649e62e5d77aa25c44354b1bade0ba3cb7dcabb1decf43bd1",
+          "9f9909b4c20309b6ba68dc2da8a9e575362d729f0efc7e902b30d89833971e47",
+          "d5a15658b844280764b98f6f51ad4f642e555c6760a3d450ad2d0a794de112e4",
+          "79f02e605b10b1b7492b8845a65b10eec2d8cd0c4d93600cee6b3607cc8aab4a",
+          "d5a15658b844280764b98f6f51ad4f642e555c6760a3d450ad2d0a794de112e4",
+          "9f9909b4c20309b6ba68dc2da8a9e575362d729f0efc7e902b30d89833971e47",
+          "e43ee02a9ce7df1649e62e5d77aa25c44354b1bade0ba3cb7dcabb1decf43bd1",
+          "f86ae37f27f6414805339e96b205cf5ca55e61db0b0957df630de716adbbaaea"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 638,
+        "output": [
+          "ce07e2f7272d1ea2a3e1dc6a2afa492414f726dbef761fd6797aea215d7f3ad5",
+          "dbef8164711c3f26deba9490f5d70a5853c5b3325d6613fc14a94860ccfa084e",
+          "31b2ae08709ef3a79bed77f00cbc3e9042edb74afc8042a6a0f70c66a69679f0",
+          "ff49115978cd89d436a03c0581f41e7ab84558419f6976e518cf8dc0e06646db",
+          "31b2ae08709ef3a79bed77f00cbc3e9042edb74afc8042a6a0f70c66a69679f0",
+          "dbef8164711c3f26deba9490f5d70a5853c5b3325d6613fc14a94860ccfa084e",
+          "ce07e2f7272d1ea2a3e1dc6a2afa492414f726dbef761fd6797aea215d7f3ad5",
+          "359ac757e5c18be5f777896866b29c783b6ffbf199bb8b6e7a6b5f3ad10ec4fc"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 645,
+        "output": [
+          "e43ee02a9ce7df1649e62e5d77aa25c44354b1bade0ba3cb7dcabb1decf43bd1",
+          "9f9909b4c20309b6ba68dc2da8a9e575362d729f0efc7e902b30d89833971e47",
+          "d5a15658b844280764b98f6f51ad4f642e555c6760a3d450ad2d0a794de112e4",
+          "79f02e605b10b1b7492b8845a65b10eec2d8cd0c4d93600cee6b3607cc8aab4a",
+          "d5a15658b844280764b98f6f51ad4f642e555c6760a3d450ad2d0a794de112e4",
+          "9f9909b4c20309b6ba68dc2da8a9e575362d729f0efc7e902b30d89833971e47",
+          "e43ee02a9ce7df1649e62e5d77aa25c44354b1bade0ba3cb7dcabb1decf43bd1",
+          "f86ae37f27f6414805339e96b205cf5ca55e61db0b0957df630de716adbbaaea"
+        ]
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 646,
+        "output": [
+          "ce07e2f7272d1ea2a3e1dc6a2afa492414f726dbef761fd6797aea215d7f3ad5",
+          "dbef8164711c3f26deba9490f5d70a5853c5b3325d6613fc14a94860ccfa084e",
+          "31b2ae08709ef3a79bed77f00cbc3e9042edb74afc8042a6a0f70c66a69679f0",
+          "ff49115978cd89d436a03c0581f41e7ab84558419f6976e518cf8dc0e06646db",
+          "31b2ae08709ef3a79bed77f00cbc3e9042edb74afc8042a6a0f70c66a69679f0",
+          "dbef8164711c3f26deba9490f5d70a5853c5b3325d6613fc14a94860ccfa084e",
+          "ce07e2f7272d1ea2a3e1dc6a2afa492414f726dbef761fd6797aea215d7f3ad5",
+          "359ac757e5c18be5f777896866b29c783b6ffbf199bb8b6e7a6b5f3ad10ec4fc"
+        ]
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 1,
+        "output": [
+          "a4c5027f79d7a1922eebd4d9838334a910573e785eda55b9fd6cea582740e426"
+        ]
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 2,
+        "output": [
+          "a4c5027f79d7a1922eebd4d9838334a910573e785eda55b9fd6cea582740e426"
+        ]
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 4,
+        "output": [
+          "5a35a91d5c16925c03262c02a7152a43df02d12e25559a145fe3dae4b6dace6b",
+          "dd1b09b6427314e8949717d39c96a713021be0838cceeb546a155f8af8bd606e"
+        ]
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 13,
+        "output": [
+          "2a78a4f26ba71f3dbb60ae6654b36bdd31cd7ab3c9972bcfd5fc001ee61e78e0"
+        ]
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 14,
+        "output": [
+          "95745c20165bc49c0f4f644a6ddee30cb9953fbca41717db91dc6271bed0e081"
+        ]
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 22,
+        "output": [
+          "3446d9d14f029bca8d210a92a10c25cd3ec45705910fc482fe10ca1f322a936e"
+        ]
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 114,
+        "output": [
+          "65dfba502a8aaaaf75ae59d73a1b025f99e3886b9aad2f3a6e96cd1a99a89a18"
+        ]
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 120,
+        "output": [
+          "9af9ee334c4e51a0c896592b28c60b1342d57f90a72664ce57045557717c1bb3"
+        ]
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 122,
+        "output": [
+          "f880252c6628df2b693e8697a1c0a29197f8990dc870346333d0475df53668e3"
+        ]
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 136,
+        "output": [
+          "d1cf668c16c1ecbbbc382a4a6dc7519361c7e85ad0cc664536f525589f0e32fb"
+        ]
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 144,
+        "output": [
+          "dfa23646c7f87dc1c441e668e6ad8ab28ecc7b55c0de198371663839e522402f"
+        ]
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 146,
+        "output": [
+          "524f7ca679f604c98ba13c24ab2ba7beb8ac58ffdbd84839729146dcfec7fc00"
+        ]
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 169,
+        "output": [
+          "fbdc4c52c29d587e2482e1bf506d71f71697f1234ea19da68ff53b3d6180ba98"
+        ]
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 198,
+        "output": [
+          "925d995eb11d6a8d04ff8900aef8f38b3e18e4cff154f0443826525a90750265"
+        ]
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 211,
+        "output": [
+          "ecf4c5331b4cc6b09cfbbd5b37cb3585f2574542ec6030286f98bcf6079a10e1"
+        ]
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 212,
+        "output": [
+          "ecf4c5331b4cc6b09cfbbd5b37cb3585f2574542ec6030286f98bcf6079a10e1"
+        ]
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 259,
+        "output": [
+          "afd9f98d1ac4b6bb7f28c81210f4c3c95f4efff6a5d10e548067653072a65a35"
+        ]
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 260,
+        "output": [
+          "3bd16dfdd58fac565919ac96d2701d566cba85701aceb87b03e4a7b526462495"
+        ]
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 261,
+        "output": [
+          "1e12d7abf1415faceaa43814701bdcf9cd056e43b4d5e793e9444f8a11c6b87a"
+        ]
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 267,
+        "output": [
+          "b09baf4d1841bec81948ff671c6041ae5198c1666d1a00661f7fb97a16407aed"
+        ]
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 268,
+        "output": [
+          "e967a11d40408e653554d5f784ee1a5e3ffb3e38447088eaba88f2bd338adfb5"
+        ]
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 269,
+        "output": [
+          "5871a6ceb1bf602ef6597e54edf9aaf7a183d59fce172ac2d4db2ac61bb91247"
+        ]
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 275,
+        "output": [
+          "eb090515de0fafdbdc0db402da4254d4366892d627bdb541555170220fb30010"
+        ]
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 276,
+        "output": [
+          "2a172f31a33b42b1b08650ff559abf9d93d03ae079cc2d7f82dab8e5f4f94b38"
+        ]
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 277,
+        "output": [
+          "ed19f0e627f46c333e40dedf96065a951c0b13b516948904ea12902d56c1ca57"
+        ]
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 280,
+        "output": [
+          "4123ef96b52d12cc59a299e232779b53b9cd20f51a691f82c27d63a5b9bb86b1"
+        ]
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 281,
+        "output": [
+          "6c868d30b3d7bc091f0c13107c470a15a5a8e780e54ae666e67bee7a207eae0f"
+        ]
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 282,
+        "output": [
+          "e943fd70da22027e4e93af622cdf41751ef4a90dd6dd3d61eadff5cccbf69c4f"
+        ]
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 288,
+        "output": [
+          "43710d9f1b9306a74d7aad0b682cedf83820bd6531f39ff9bbb954137b53ce90"
+        ]
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 289,
+        "output": [
+          "00ee3dc9365a44b3e5df63f6d39ca71a6d6a50f7df3e47dc87ed6a9f300f8542"
+        ]
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 290,
+        "output": [
+          "1dbb8f6906f952356ab143e0011862d0ece9d64e8377ac77fd968ccacea69712"
+        ]
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 358,
+        "output": [
+          "411e919fbc2fb7e6f77f64409f158c5bbe92973f6bbf9d737ecf4baadafe5db7",
+          "099d26fe32771906923013dac86fa43d5d6a55498bb96ba9600ac122401c7037",
+          "466d6e4e0a85c8e0f1655d0bb978c7c2d8666b99a5f83a608dabf3156195083c",
+          "5b41b21291ae72516cf898e79ab7247c0c8a32d5cd3246ffdd61b71dd7c7ba16",
+          "466d6e4e0a85c8e0f1655d0bb978c7c2d8666b99a5f83a608dabf3156195083c",
+          "099d26fe32771906923013dac86fa43d5d6a55498bb96ba9600ac122401c7037",
+          "411e919fbc2fb7e6f77f64409f158c5bbe92973f6bbf9d737ecf4baadafe5db7",
+          "efca55f847c39af18d5015593551ff7764f542545427022b47abf65caf08411f"
+        ]
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 359,
+        "output": [
+          "cb97555f6b99f41c6d0d24cbb94cd85518c4d455dc76dc4a8bfac80813af4cb0",
+          "cb97555f6b99f41c6d0d24cbb94cd85518c4d455dc76dc4a8bfac80813af4cb0",
+          "cb97555f6b99f41c6d0d24cbb94cd85518c4d455dc76dc4a8bfac80813af4cb0",
+          "cb97555f6b99f41c6d0d24cbb94cd85518c4d455dc76dc4a8bfac80813af4cb0",
+          "cb97555f6b99f41c6d0d24cbb94cd85518c4d455dc76dc4a8bfac80813af4cb0",
+          "cb97555f6b99f41c6d0d24cbb94cd85518c4d455dc76dc4a8bfac80813af4cb0",
+          "cb97555f6b99f41c6d0d24cbb94cd85518c4d455dc76dc4a8bfac80813af4cb0",
+          "5a607ac2ab0d2c227bf6dafa546e9dae565319bed3b4a41136db1d5bb63fc5d7"
+        ]
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 366,
+        "output": [
+          "09ba6a8f3df17b5a65929f22b2fdd482a6b237aa9172d0948fa0bd96f0836bde",
+          "2d7b1655af52c3325a954e5a9e00491bf24fbeb104809e2c8cecf12463bc3765",
+          "895cbb465518de11aaecb406bf12516a8e21b211e8db618af89f26465af05b7b",
+          "f3590a9922d9e6a4d98eafcff0da9d3d718b13f84b0c474bf759685813ba573e",
+          "895cbb465518de11aaecb406bf12516a8e21b211e8db618af89f26465af05b7b",
+          "2d7b1655af52c3325a954e5a9e00491bf24fbeb104809e2c8cecf12463bc3765",
+          "09ba6a8f3df17b5a65929f22b2fdd482a6b237aa9172d0948fa0bd96f0836bde",
+          "3728933e3b93df9dc703a0e9dd87510542e66985d293207540b981bccd66e2b2"
+        ]
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 367,
+        "output": [
+          "a13105714f1781a670c4e091c31a1d58d9ae1c474c884f203b288c77282d59f0",
+          "83dfc7d6b9767890f4b4554ef14a23c97b461482d0c093fc27571d29917b8f25",
+          "6dac4d59c818eca8913d8825384932bc24be204143ef58ac63321cfe7d00d084",
+          "40266ed2751c822178e0c2b9676caf2d7f068c5c475bdf6b9e42835576e2bc07",
+          "6dac4d59c818eca8913d8825384932bc24be204143ef58ac63321cfe7d00d084",
+          "83dfc7d6b9767890f4b4554ef14a23c97b461482d0c093fc27571d29917b8f25",
+          "a13105714f1781a670c4e091c31a1d58d9ae1c474c884f203b288c77282d59f0",
+          "2529b0e704b0055b214fa5295d1e65e0c42e50bc765e9a3a06a87f0bbf855773"
+        ]
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 372,
+        "output": [
+          "239a5566224de34dfa444f4f02e529236034f012034c4ea2530c28b57484b452",
+          "617d38058425d1f263916f28b8082d67e39605a2a73ca130069ef2d9c727bba7",
+          "5828f63a1101c396e505986df615272e7df5836e919183ed334063fb0a6bf358",
+          "b9ff100c38ea4197c9c07cec14b437bdf330b181885ccace184d6c7a197fcb90",
+          "5828f63a1101c396e505986df615272e7df5836e919183ed334063fb0a6bf358",
+          "617d38058425d1f263916f28b8082d67e39605a2a73ca130069ef2d9c727bba7",
+          "239a5566224de34dfa444f4f02e529236034f012034c4ea2530c28b57484b452",
+          "afd8c83fac57656c52cd70d77762f091003bf2968749b6fccaf5338949134885"
+        ]
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 637,
+        "output": [
+          "e43ee02a9ce7df1649e62e5d77aa25c44354b1bade0ba3cb7dcabb1decf43bd1",
+          "9f9909b4c20309b6ba68dc2da8a9e575362d729f0efc7e902b30d89833971e47",
+          "d5a15658b844280764b98f6f51ad4f642e555c6760a3d450ad2d0a794de112e4",
+          "79f02e605b10b1b7492b8845a65b10eec2d8cd0c4d93600cee6b3607cc8aab4a",
+          "d5a15658b844280764b98f6f51ad4f642e555c6760a3d450ad2d0a794de112e4",
+          "9f9909b4c20309b6ba68dc2da8a9e575362d729f0efc7e902b30d89833971e47",
+          "e43ee02a9ce7df1649e62e5d77aa25c44354b1bade0ba3cb7dcabb1decf43bd1",
+          "f86ae37f27f6414805339e96b205cf5ca55e61db0b0957df630de716adbbaaea"
+        ]
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 638,
+        "output": [
+          "ce07e2f7272d1ea2a3e1dc6a2afa492414f726dbef761fd6797aea215d7f3ad5",
+          "dbef8164711c3f26deba9490f5d70a5853c5b3325d6613fc14a94860ccfa084e",
+          "31b2ae08709ef3a79bed77f00cbc3e9042edb74afc8042a6a0f70c66a69679f0",
+          "ff49115978cd89d436a03c0581f41e7ab84558419f6976e518cf8dc0e06646db",
+          "31b2ae08709ef3a79bed77f00cbc3e9042edb74afc8042a6a0f70c66a69679f0",
+          "dbef8164711c3f26deba9490f5d70a5853c5b3325d6613fc14a94860ccfa084e",
+          "ce07e2f7272d1ea2a3e1dc6a2afa492414f726dbef761fd6797aea215d7f3ad5",
+          "359ac757e5c18be5f777896866b29c783b6ffbf199bb8b6e7a6b5f3ad10ec4fc"
+        ]
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 645,
+        "output": [
+          "e43ee02a9ce7df1649e62e5d77aa25c44354b1bade0ba3cb7dcabb1decf43bd1",
+          "9f9909b4c20309b6ba68dc2da8a9e575362d729f0efc7e902b30d89833971e47",
+          "d5a15658b844280764b98f6f51ad4f642e555c6760a3d450ad2d0a794de112e4",
+          "79f02e605b10b1b7492b8845a65b10eec2d8cd0c4d93600cee6b3607cc8aab4a",
+          "d5a15658b844280764b98f6f51ad4f642e555c6760a3d450ad2d0a794de112e4",
+          "9f9909b4c20309b6ba68dc2da8a9e575362d729f0efc7e902b30d89833971e47",
+          "e43ee02a9ce7df1649e62e5d77aa25c44354b1bade0ba3cb7dcabb1decf43bd1",
+          "f86ae37f27f6414805339e96b205cf5ca55e61db0b0957df630de716adbbaaea"
+        ]
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 646,
+        "output": [
+          "ce07e2f7272d1ea2a3e1dc6a2afa492414f726dbef761fd6797aea215d7f3ad5",
+          "dbef8164711c3f26deba9490f5d70a5853c5b3325d6613fc14a94860ccfa084e",
+          "31b2ae08709ef3a79bed77f00cbc3e9042edb74afc8042a6a0f70c66a69679f0",
+          "ff49115978cd89d436a03c0581f41e7ab84558419f6976e518cf8dc0e06646db",
+          "31b2ae08709ef3a79bed77f00cbc3e9042edb74afc8042a6a0f70c66a69679f0",
+          "dbef8164711c3f26deba9490f5d70a5853c5b3325d6613fc14a94860ccfa084e",
+          "ce07e2f7272d1ea2a3e1dc6a2afa492414f726dbef761fd6797aea215d7f3ad5",
+          "359ac757e5c18be5f777896866b29c783b6ffbf199bb8b6e7a6b5f3ad10ec4fc"
+        ]
+      }
+    ],
+    "witnesses": [
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 1,
+        "map": "EM_ROUTE130",
+        "x": 29,
+        "y": 8,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 2,
+        "map": "EM_ROUTE130",
+        "x": 29,
+        "y": 7,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 4,
+        "map": "EM_ROUTE130",
+        "x": 33,
+        "y": 14,
+        "before_mid": 370,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 7,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 13,
+        "map": "EM_ROUTE130",
+        "x": 39,
+        "y": 5,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 24,
+        "target_elevation": 3
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 14,
+        "map": "EM_ROUTE130",
+        "x": 32,
+        "y": 7,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 22,
+        "map": "EM_ROUTE130",
+        "x": 32,
+        "y": 9,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 114,
+        "map": "EM_ROUTE130",
+        "x": 51,
+        "y": 5,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 120,
+        "map": "EM_ROUTE130",
+        "x": 33,
+        "y": 20,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 122,
+        "map": "EM_ROUTE130",
+        "x": 47,
+        "y": 21,
+        "before_mid": 386,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 7,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 136,
+        "map": "EM_ROUTE130",
+        "x": 29,
+        "y": 17,
+        "before_mid": 381,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 7,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 144,
+        "map": "EM_ROUTE130",
+        "x": 29,
+        "y": 19,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 146,
+        "map": "EM_ROUTE130",
+        "x": 54,
+        "y": 19,
+        "before_mid": 374,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 7,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 169,
+        "map": "EM_ROUTE130",
+        "x": 27,
+        "y": 15,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 198,
+        "map": "EM_ROUTE130",
+        "x": 32,
+        "y": 8,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 211,
+        "map": "EM_ROUTE130",
+        "x": 35,
+        "y": 2,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 212,
+        "map": "EM_ROUTE130",
+        "x": 48,
+        "y": 2,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 259,
+        "map": "EM_ROUTE130",
+        "x": 51,
+        "y": 8,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 260,
+        "map": "EM_ROUTE130",
+        "x": 52,
+        "y": 8,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 261,
+        "map": "EM_ROUTE130",
+        "x": 53,
+        "y": 8,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 267,
+        "map": "EM_ROUTE130",
+        "x": 51,
+        "y": 9,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 268,
+        "map": "EM_ROUTE130",
+        "x": 52,
+        "y": 9,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 3
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 269,
+        "map": "EM_ROUTE130",
+        "x": 53,
+        "y": 9,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 275,
+        "map": "EM_ROUTE130",
+        "x": 51,
+        "y": 10,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 276,
+        "map": "EM_ROUTE130",
+        "x": 52,
+        "y": 10,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 277,
+        "map": "EM_ROUTE130",
+        "x": 53,
+        "y": 10,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 280,
+        "map": "EM_ROUTE130",
+        "x": 45,
+        "y": 25,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 281,
+        "map": "EM_ROUTE130",
+        "x": 34,
+        "y": 24,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 282,
+        "map": "EM_ROUTE130",
+        "x": 32,
+        "y": 22,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 288,
+        "map": "EM_ROUTE130",
+        "x": 53,
+        "y": 20,
+        "before_mid": 381,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 7,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 289,
+        "map": "EM_ROUTE130",
+        "x": 32,
+        "y": 23,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 290,
+        "map": "EM_ROUTE130",
+        "x": 31,
+        "y": 20,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 358,
+        "map": "EM_ROUTE130",
+        "x": 25,
+        "y": 11,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 359,
+        "map": "EM_ROUTE130",
+        "x": 58,
+        "y": 11,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 366,
+        "map": "EM_ROUTE130",
+        "x": 25,
+        "y": 16,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 367,
+        "map": "EM_ROUTE130",
+        "x": 58,
+        "y": 16,
+        "before_mid": 113,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 0,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 372,
+        "map": "EM_ROUTE130",
+        "x": 56,
+        "y": 8,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 637,
+        "map": "EM_ROUTE130",
+        "x": 25,
+        "y": 10,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 638,
+        "map": "EM_ROUTE130",
+        "x": 58,
+        "y": 10,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 645,
+        "map": "EM_ROUTE130",
+        "x": 28,
+        "y": 7,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "emerald",
+        "pair": "general__cave",
+        "mid": 646,
+        "map": "EM_ROUTE130",
+        "x": 49,
+        "y": 2,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 1,
+        "map": "RU_ROUTE130",
+        "x": 29,
+        "y": 8,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 2,
+        "map": "RU_ROUTE130",
+        "x": 29,
+        "y": 7,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 4,
+        "map": "RU_ROUTE130",
+        "x": 33,
+        "y": 14,
+        "before_mid": 370,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 7,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 13,
+        "map": "RU_ROUTE130",
+        "x": 39,
+        "y": 5,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 24,
+        "target_elevation": 3
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 14,
+        "map": "RU_ROUTE130",
+        "x": 32,
+        "y": 7,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 22,
+        "map": "RU_ROUTE130",
+        "x": 32,
+        "y": 9,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 114,
+        "map": "RU_ROUTE130",
+        "x": 51,
+        "y": 5,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 120,
+        "map": "RU_ROUTE130",
+        "x": 33,
+        "y": 20,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 122,
+        "map": "RU_ROUTE130",
+        "x": 47,
+        "y": 21,
+        "before_mid": 386,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 7,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 136,
+        "map": "RU_ROUTE130",
+        "x": 29,
+        "y": 17,
+        "before_mid": 381,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 7,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 144,
+        "map": "RU_ROUTE130",
+        "x": 29,
+        "y": 19,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 146,
+        "map": "RU_ROUTE130",
+        "x": 54,
+        "y": 19,
+        "before_mid": 374,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 7,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 169,
+        "map": "RU_ROUTE130",
+        "x": 27,
+        "y": 15,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 198,
+        "map": "RU_ROUTE130",
+        "x": 32,
+        "y": 8,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 211,
+        "map": "RU_ROUTE130",
+        "x": 35,
+        "y": 2,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 212,
+        "map": "RU_ROUTE130",
+        "x": 48,
+        "y": 2,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 259,
+        "map": "RU_ROUTE130",
+        "x": 51,
+        "y": 8,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 260,
+        "map": "RU_ROUTE130",
+        "x": 52,
+        "y": 8,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 261,
+        "map": "RU_ROUTE130",
+        "x": 53,
+        "y": 8,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 267,
+        "map": "RU_ROUTE130",
+        "x": 51,
+        "y": 9,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 268,
+        "map": "RU_ROUTE130",
+        "x": 52,
+        "y": 9,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 3
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 269,
+        "map": "RU_ROUTE130",
+        "x": 53,
+        "y": 9,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 275,
+        "map": "RU_ROUTE130",
+        "x": 51,
+        "y": 10,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 276,
+        "map": "RU_ROUTE130",
+        "x": 52,
+        "y": 10,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 277,
+        "map": "RU_ROUTE130",
+        "x": 53,
+        "y": 10,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 280,
+        "map": "RU_ROUTE130",
+        "x": 45,
+        "y": 25,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 281,
+        "map": "RU_ROUTE130",
+        "x": 34,
+        "y": 24,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 282,
+        "map": "RU_ROUTE130",
+        "x": 32,
+        "y": 22,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 288,
+        "map": "RU_ROUTE130",
+        "x": 53,
+        "y": 20,
+        "before_mid": 381,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 7,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 289,
+        "map": "RU_ROUTE130",
+        "x": 32,
+        "y": 23,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 290,
+        "map": "RU_ROUTE130",
+        "x": 31,
+        "y": 20,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 358,
+        "map": "RU_ROUTE130",
+        "x": 25,
+        "y": 11,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 359,
+        "map": "RU_ROUTE130",
+        "x": 58,
+        "y": 11,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 366,
+        "map": "RU_ROUTE130",
+        "x": 25,
+        "y": 16,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 367,
+        "map": "RU_ROUTE130",
+        "x": 58,
+        "y": 16,
+        "before_mid": 113,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 0,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 372,
+        "map": "RU_ROUTE130",
+        "x": 56,
+        "y": 8,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 637,
+        "map": "RU_ROUTE130",
+        "x": 25,
+        "y": 10,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 638,
+        "map": "RU_ROUTE130",
+        "x": 58,
+        "y": 10,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 645,
+        "map": "RU_ROUTE130",
+        "x": 28,
+        "y": 7,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "ruby",
+        "pair": "general__cave",
+        "mid": 646,
+        "map": "RU_ROUTE130",
+        "x": 49,
+        "y": 2,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 1,
+        "map": "SA_ROUTE130",
+        "x": 29,
+        "y": 8,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 2,
+        "map": "SA_ROUTE130",
+        "x": 29,
+        "y": 7,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 4,
+        "map": "SA_ROUTE130",
+        "x": 33,
+        "y": 14,
+        "before_mid": 370,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 7,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 13,
+        "map": "SA_ROUTE130",
+        "x": 39,
+        "y": 5,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 24,
+        "target_elevation": 3
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 14,
+        "map": "SA_ROUTE130",
+        "x": 32,
+        "y": 7,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 22,
+        "map": "SA_ROUTE130",
+        "x": 32,
+        "y": 9,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 114,
+        "map": "SA_ROUTE130",
+        "x": 51,
+        "y": 5,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 120,
+        "map": "SA_ROUTE130",
+        "x": 33,
+        "y": 20,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 122,
+        "map": "SA_ROUTE130",
+        "x": 47,
+        "y": 21,
+        "before_mid": 386,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 7,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 136,
+        "map": "SA_ROUTE130",
+        "x": 29,
+        "y": 17,
+        "before_mid": 381,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 7,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 144,
+        "map": "SA_ROUTE130",
+        "x": 29,
+        "y": 19,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 146,
+        "map": "SA_ROUTE130",
+        "x": 54,
+        "y": 19,
+        "before_mid": 374,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 7,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 169,
+        "map": "SA_ROUTE130",
+        "x": 27,
+        "y": 15,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 198,
+        "map": "SA_ROUTE130",
+        "x": 32,
+        "y": 8,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 211,
+        "map": "SA_ROUTE130",
+        "x": 35,
+        "y": 2,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 212,
+        "map": "SA_ROUTE130",
+        "x": 48,
+        "y": 2,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 259,
+        "map": "SA_ROUTE130",
+        "x": 51,
+        "y": 8,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 260,
+        "map": "SA_ROUTE130",
+        "x": 52,
+        "y": 8,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 261,
+        "map": "SA_ROUTE130",
+        "x": 53,
+        "y": 8,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 267,
+        "map": "SA_ROUTE130",
+        "x": 51,
+        "y": 9,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 268,
+        "map": "SA_ROUTE130",
+        "x": 52,
+        "y": 9,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 3
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 269,
+        "map": "SA_ROUTE130",
+        "x": 53,
+        "y": 9,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 275,
+        "map": "SA_ROUTE130",
+        "x": 51,
+        "y": 10,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 276,
+        "map": "SA_ROUTE130",
+        "x": 52,
+        "y": 10,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 277,
+        "map": "SA_ROUTE130",
+        "x": 53,
+        "y": 10,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 280,
+        "map": "SA_ROUTE130",
+        "x": 45,
+        "y": 25,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 281,
+        "map": "SA_ROUTE130",
+        "x": 34,
+        "y": 24,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 282,
+        "map": "SA_ROUTE130",
+        "x": 32,
+        "y": 22,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 288,
+        "map": "SA_ROUTE130",
+        "x": 53,
+        "y": 20,
+        "before_mid": 381,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 7,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 289,
+        "map": "SA_ROUTE130",
+        "x": 32,
+        "y": 23,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 290,
+        "map": "SA_ROUTE130",
+        "x": 31,
+        "y": 20,
+        "before_mid": 368,
+        "impassable": false,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 0,
+        "target_elevation": 3
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 358,
+        "map": "SA_ROUTE130",
+        "x": 25,
+        "y": 11,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 359,
+        "map": "SA_ROUTE130",
+        "x": 58,
+        "y": 11,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 366,
+        "map": "SA_ROUTE130",
+        "x": 25,
+        "y": 16,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 367,
+        "map": "SA_ROUTE130",
+        "x": 58,
+        "y": 16,
+        "before_mid": 113,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 0,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 372,
+        "map": "SA_ROUTE130",
+        "x": 56,
+        "y": 8,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 637,
+        "map": "SA_ROUTE130",
+        "x": 25,
+        "y": 10,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 638,
+        "map": "SA_ROUTE130",
+        "x": 58,
+        "y": 10,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 645,
+        "map": "SA_ROUTE130",
+        "x": 28,
+        "y": 7,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 0
+      },
+      {
+        "game": "sapphire",
+        "pair": "general__cave",
+        "mid": 646,
+        "map": "SA_ROUTE130",
+        "x": 49,
+        "y": 2,
+        "before_mid": 368,
+        "impassable": true,
+        "layout_file": "alt_46",
+        "source_collision": 41,
+        "target_collision": 7,
+        "target_elevation": 0
+      }
+    ]
+  }
+}
