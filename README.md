@@ -3,6 +3,8 @@
 
 TileShift swaps world artwork through individually reviewed tile matches.
 
+Version 0.44.1 updates the Options menu to show **Map Tiles · Complete**. This reflects the playable map backgrounds covered by each supported theme. Both classic themes also cover three rare Emerald tiles that can appear when a weather event closes after a field blackout.
+
 Version 0.44.0 adds 660 guarded gameplay tile states in Ruby, Sapphire and Emerald. Both classic themes cover these scripted doors, lights, barriers, cave entrances, changing maps and field states. Mirage Island and the shared cave shores use distinct animated shallow and offshore water.
 
 Version 0.43.0 completes the Gen 1 theme across all 2,156 Gen 3 map variants. The theme uses original Red art where there is a matching feature. It gives other reviewed classic artwork the same four shades, while retaining the original source layout, foreground priority and animation timing.
@@ -173,7 +175,7 @@ unchanged. The single **Gen 3** style combines Emerald, FireRed/LeafGreen and se
    TileShift reads native donor
    art from your own imports; neither ROMs nor extracted native artwork are
    bundled.
-2. Download `TileShift-v0.44.0.zip` from [the latest release](https://github.com/Bentley734/TileShift/releases/latest).
+2. Download `TileShift-v0.44.1.zip` from [the latest release](https://github.com/Bentley734/TileShift/releases/latest).
 3. Extract the `tileshift` folder into Gen1Recomp's `mods` directory, enable
    **TileShift**, and restart the game.
 4. Open Options and select **Tileset**. Gen 1/2 hosts offer **Gen 3**; Gen 3 hosts

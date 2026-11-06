@@ -81,6 +81,7 @@ return function(mod)
     'mappings/reverse_gen2_rse_doors_elevators.lua',
     'mappings/reverse_gen2_hoenn_script_aliases.lua',
     'mappings/reverse_gen2_rse_outdoor_states.lua',
+    'mappings/reverse_gen2_emerald_weather_closure.lua',
     'mappings/reverse_gen2_lilycove_remaining.lua',
     'mappings/reverse_gen2_frontier_outside.lua',
     'mappings/reverse_gen2_hoenn_cave_completion.lua',
@@ -457,7 +458,7 @@ return function(mod)
           return false
         end}
     end
-    out[#out+1]={id='tileshift:coverage',label='COVERAGE',value=function()return 'IN PROGRESS' end,
+    out[#out+1]={id='tileshift:coverage',label='MAP TILES',value=function()return 'COMPLETE' end,
       step=function()return false end}
     return out
   end

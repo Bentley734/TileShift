@@ -1,7 +1,7 @@
 {
   "id": "tileshift",
   "name": "TileShift",
-  "version": "0.44.0",
+  "version": "0.44.1",
   "api": 2,
   "entry": "main.lua",
   "games": [
@@ -28,5 +28,5 @@
   "conflicts": [],
   "affects_link": false,
   "github": "Bentley734/TileShift",
-  "description": "Gen 3 world art for Gen 1/2 and selectable classic backgrounds in the five GBA games. Adds reviewed Crystal-style terrain, buildings, interiors and regional features. Includes matching berry soil and 43 selectable Crystal berry varieties in R/S/E. Crystal coverage continues to expand across the GBA maps."
+  "description": "Gen 3 world art for Gen 1/2 and complete Gen 1 and Crystal map backgrounds in all five GBA games. Includes matching berry soil and 43 selectable Crystal berry varieties in R/S/E."
 }

@@ -150,7 +150,8 @@ for _,gameId in ipairs(games)do
       or path=='mappings/reverse_gen2_hoenn_alternate_layouts.lua'
       or path=='mappings/reverse_gen2_rse_doors_elevators.lua'
       or path=='mappings/reverse_gen2_hoenn_script_aliases.lua'
-      or path=='mappings/reverse_gen2_rse_outdoor_states.lua' then return nil end
+      or path=='mappings/reverse_gen2_rse_outdoor_states.lua'
+      or path=='mappings/reverse_gen2_emerald_weather_closure.lua' then return nil end
     if path=='mappings/reverse_classic_gyms_finish.lua'or path=='mappings/reverse_classic_berry_soil.lua'then return nil end
     if path=='lib/gb_animation.lua'then return 'return {}'end
     if path=='lib/roofs.lua' or path=='lib/vegetation.lua' or path=='lib/flora.lua' or path=='lib/flora_catalog.lua' or path=='lib/johto_hack_flora.lua' or path=='lib/water_styles.lua' or path=='lib/monochrome.lua' then
@@ -220,6 +221,9 @@ for _,gameId in ipairs(games)do
     eq(schemas[2].key,'speed_flowers');eq(schemas[3].key,'speed_water')
     local rows=hooks['ui.options.rows'](function(_,out)out[#out+1]={id='native'};return out end,game,{})
     eq(#rows,berryHost and 6 or 5);eq(rows[2].value(),'ORIGINAL');eq(rows[3].label,'FLOWERS SPEED');eq(rows[4].label,'WATER SPEED')
+    local coverageRow=rows[#rows]
+    eq(coverageRow.id,'tileshift:coverage');eq(coverageRow.label,'MAP TILES')
+    eq(coverageRow.value(),'COMPLETE');eq(coverageRow.step(),false)
     if berryHost then
       eq(schemas[4].key,'berry_style');eq(schemas[4].default,2)
       eq(schemas[4].choices[1][1],'NATIVE');eq(schemas[4].choices[1][2],1)
@@ -298,7 +302,7 @@ for _,gameId in ipairs(games)do
   local expandedRows=fixture.sessionCtx.customizeRows({compactRow},gameId,{})
   eq(expandedRows[1],compactRow)
   centerRow.step({game=game},-1);eq(stored.center_style,1);game.writes=0
-  eq(rows[14].label,'COVERAGE');eq(rows[14].value(),'IN PROGRESS');eq(rows[14].step(),false)
+  eq(rows[14].label,'MAP TILES');eq(rows[14].value(),'COMPLETE');eq(rows[14].step(),false)
   eq(rows[3].label,'TREES');eq(rows[4].label,'BIG TREES');eq(rows[5].label,'CUT TREES')
   eq(rows[6].label,'FLOWERS');eq(rows[7].label,'TALL GRASS');eq(rows[8].label,'WATER')
   eq(rows[9].label,'TREES SPEED');eq(rows[10].label,'FLOWERS SPEED')
