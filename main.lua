@@ -68,6 +68,12 @@ return function(mod)
     'mappings/reverse_gen2_frlg_field_states.lua',
     'mappings/reverse_gen2_kanto_runtime_fixtures.lua',
     'mappings/reverse_gen2_kanto_script_cells.lua',
+    'mappings/reverse_gen1_kanto_gyms.lua',
+    'mappings/reverse_gen1_kanto_services.lua',
+    'mappings/reverse_gen1_kanto_landmarks.lua',
+    'mappings/reverse_gen1_native_terrain.lua',
+    'mappings/reverse_gen1_native_service_rooms.lua',
+    'mappings/reverse_gen1_native_service_backings.lua',
     'mappings/reverse_gen2_lilycove_remaining.lua',
     'mappings/reverse_gen2_frontier_outside.lua',
     'mappings/reverse_gen2_hoenn_cave_completion.lua',
@@ -87,6 +93,11 @@ return function(mod)
   local decoder=Donor.new({identityToken=function()return identityToken end,gbAnimation=readModule('lib/gb_animation.lua')})
   local nativeFS=require('src.import.CacheFs')
   local function newData(w,h) return love.image.newImageData(w,h) end
+  local monochrome
+  if mod.generation==3 then
+    local project=readModule('lib/monochrome.lua')
+    monochrome=function(image,target)return project(image,target or newData(image:getDimensions()))end
+  end
   local composer
   local function getComposer()
     if not composer then composer=readModule('lib/composition.lua').new({donor=decoder,newImageData=newData,validateRow=Mapping.validate}) end
@@ -172,6 +183,7 @@ return function(mod)
   local berryStyle=tonumber((mod.options:get('berry_style')))or tonumber((mod.save:get('berry_style')))or 2
   berryStyle=berryStyle==1 and 1 or 2
   state=readModule('lib/session.lua').new({mappings=indexed,donor=decoder,
+    monochrome=monochrome,
     newImageData=newData,generations=Mapping.generations,themes=Mapping.themes,
     normalizeStyle=Mapping.normalizeStyle,validate=Mapping.validate,
     original=original,foreground=foreground,compose=compose,composeFrames=composeFrames,
@@ -297,6 +309,7 @@ return function(mod)
       pollElapsed=pollElapsed%1
       if state.style~='original' and (mod.generation<3 or state.style~='gen3') and state.checkSource then
         identityToken=identityToken+1;state:checkSource(GV.get())
+        if monochrome and state.style=='gen1' then state:checkSource('crystal',true)end
       end
       if berryTheme then berryTheme:checkSource(GV.get()) end
     end
@@ -331,7 +344,7 @@ return function(mod)
     enabled=function(row)return row.role~='larger_center'or centerStyle~=1 end,
     warn=function(s)mod.log:warn('%s',s)end})
   local adapter=readModule('lib/gen'..mod.generation..'.lua')
-  adapterContext={time=function()return love.timer and love.timer.getTime()or 0 end,
+  adapterContext={monochrome=monochrome,time=function()return love.timer and love.timer.getTime()or 0 end,
     animationSpeed=function(group)return animationRates[group]or 1 end,roofs=roofs,version=GV.get,revision=function()return state.revision end,active=owned,
     grassTime=function(map,x,y,now)return vegetation:time(map,x,y,now)end,
     disturb=function(map,x,y,now,duration)return vegetation:touch(map,x,y,now,duration)end,

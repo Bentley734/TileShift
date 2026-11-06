@@ -3,6 +3,8 @@
 
 TileShift swaps world artwork through individually reviewed tile matches.
 
+Version 0.43.0 completes the Gen 1 theme across all 2,156 Gen 3 map variants. The theme uses original Red art where there is a matching feature. It gives other reviewed classic artwork the same four shades, while retaining the original source layout, foreground priority and animation timing.
+
 Version 0.42.0 adds Crystal artwork for 190 FireRed and LeafGreen tiles used only during in-game changes. This includes the Pokémon Center escalators and PC screens, Bill’s transporter, the Vermilion Gym barriers, League and Silph doors, and Icefall Cave’s cracked ice.
 
 Version 0.41.0 adds the final 9,246 Crystal-style map background swaps. The update finishes the Viridian and Pewter areas, Pallet, Cinnabar, the Hall of Fame, the Union Room, the labs, Pewter Museum, the cable rooms, and the last shops and houses.
@@ -65,15 +67,15 @@ as requested. Gen 1 foliage options stay unchanged.
 
 Classic themes completely retile **Oldale Town** in both styles. Selectable
 **Gen 1** and **Gen 2** background themes are available in
-**Ruby, Sapphire, Emerald, FireRed and LeafGreen**. Gen 1 uses Red's original
-four-shade monochrome artwork; Gen 2 uses one shared Crystal style with its
+**Ruby, Sapphire, Emerald, FireRed and LeafGreen**. Gen 1 uses original Red artwork and four-shade adaptations of reviewed classic shapes.
+Gen 2 uses one shared Crystal style with its
 native daytime colors. Both themes completely retile Pallet Town in FR/LG and
 Littleroot Town, Oldale Town and Route 101 in R/S/E, with additional reviewed
 terrain and interior matches.
 The Crystal theme replaces all **1,288,886 logical background cells** across
 **2,156 imported Gen 3 map variants**. The totals use each map's actual
-dimensions and exclude storage padding and border cells. The separate Gen 1
-theme has partial coverage. Characters, Pokémon sprites and other field
+dimensions and exclude storage padding and border cells. The Gen 1 theme now covers the same logical
+background cells. Characters, Pokémon sprites and other field
 effects retain their native art. Crystal-themed R/S/E berry plants use
 the variety-specific artwork.
 
@@ -164,12 +166,12 @@ unchanged. The single **Gen 3** style combines Emerald, FireRed/LeafGreen and se
 ## Install
 
 1. Import the donor games into Gen1Recomp: **Emerald and FireRed** for the Gen 3
-   theme, **Red** for the Gen 1 theme, and **Crystal** for the Gen 2 theme.
+   theme, **Red and Crystal** for full Gen 1 theme coverage, and **Crystal** for the Gen 2 theme.
    The Crystal theme also reads the original Cerulean bicycles used in Mauville and Cerulean from **Red**.
    TileShift reads native donor
    art from your own imports; neither ROMs nor extracted native artwork are
    bundled.
-2. Download `TileShift-v0.42.0.zip` from [the latest release](https://github.com/Bentley734/TileShift/releases/latest).
+2. Download `TileShift-v0.43.0.zip` from [the latest release](https://github.com/Bentley734/TileShift/releases/latest).
 3. Extract the `tileshift` folder into Gen1Recomp's `mods` directory, enable
    **TileShift**, and restart the game.
 4. Open Options and select **Tileset**. Gen 1/2 hosts offer **Gen 3**; Gen 3 hosts
@@ -325,7 +327,7 @@ and cells. The complete map audit loads the
 actual mod and checks replacement availability, source fingerprints and
 position scope; it does not render every map or constitute a full playthrough.
 
-The separate Gen 1 theme still has room for additional reviewed counterparts.
+The four-shade Gen 1 theme uses the original Red imports alongside the reviewed classic shapes.
 
 ## Performance
 

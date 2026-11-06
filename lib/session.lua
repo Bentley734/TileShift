@@ -138,9 +138,9 @@ function S.new(ctx)
     cache={};self.accepted=0;self.rejected=0;self.revision=self.revision+1
   end
   -- Polled by the update hook, never by a warm rendering lookup.
-  function state:checkSource(game)
+  function state:checkSource(game,optional)
     if type(donor.sourceIdentity)=='function'then
-      local identity,why=tryCall(donor.sourceIdentity,donor,game)
+      local identity,why=tryCall(donor.sourceIdentity,donor,game,optional)
       local previous=sourceIdentities[game]
       local current=identity or false
       if previous~=nil and previous~=current then
@@ -149,7 +149,10 @@ function S.new(ctx)
         if ctx.invalidateCustomization then ctx.invalidateCustomization() end
       end
       sourceIdentities[game]=current
-      if not identity then warn('TileShift source import identity is unavailable: '..tostring(why));return false end
+      if not identity then
+        if not optional then warn('TileShift source import identity is unavailable: '..tostring(why))end
+        return false
+      end
     end
     return true
   end
@@ -167,13 +170,26 @@ function S.new(ctx)
     if not maps then maps={};games[tileset]=maps end
     local rows={};maps[mapKey]=rows
     local applicable={}
-    local bucket=byContext[game] and byContext[game][self.style] and byContext[game][self.style][tileset]
+    local styles=byContext[game] or empty
+    local bucket=styles[self.style] and styles[self.style][tileset]
     if bucket then
       for _,row in ipairs(bucket.generic)do applicable[#applicable+1]=row end
       for _,row in ipairs(bucket.maps[def and def.id] or empty)do applicable[#applicable+1]=row end
     end
+    local crystal=ctx.monochrome and self.style=='gen1' and ctx.generations[game]==3 and styles.gen2
+    if crystal and crystal[tileset] then
+      if sourceIdentities.crystal==nil then self:checkSource('crystal',true)end
+      if sourceIdentities.crystal then
+        local explicit={}
+        for _,row in ipairs(applicable)do explicit[row.id]=true end
+        for _,row in ipairs(crystal[tileset].generic)do
+          if not explicit[row.id] then applicable[#applicable+1]=row end
+        end
+      end
+    end
     if ctx.customizeRows then applicable=ctx.customizeRows(applicable,game,def) end
     for _,row in ipairs(applicable) do
+        local project=self.style=='gen1' and row.style=='gen2' and ctx.monochrome
         local ok,why=ctx.validate(row)
         local position=ok and row.x~=nil and (math.floor(row.x/2)..':'..math.floor(row.y/2)) or nil
         if ok and position then
@@ -338,11 +354,14 @@ function S.new(ctx)
                   if a==1 then under:setPixel(x,y,r,g,b,a)end
                 end end
               end
+              if project then under=project(under,under~=frame.under and under or nil)end
               local over
               if not row.classicGeometry.nativeOver then over=frame.over or clearPlane()end
+              if project and frame.over and over then over=project(over)end
               return{under=under,mid=clearPlane(),over=over}
             end
             local replacement=planes(piece)
+            if self.style=='gen1' and row.classicGeometry.nativeOver then replacement.monochromeNativeOver=true end
             if sequence and sequence.sourceUnderBytes then
               replacement.nativeUnder={}
               for index,frame in ipairs(sequence.frames)do
@@ -367,6 +386,7 @@ function S.new(ctx)
             end end
             local function planes(frame)
               local image=copyLayers(frame)
+              if project then project(image,image)end
               local over=clearPlane()
               if #overPixels>0 then
                 over=factory(16,16)

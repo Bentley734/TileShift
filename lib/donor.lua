@@ -874,9 +874,10 @@ function Donor.new(ctx)
     if not ok then return nil,tostring(result) end
     return result
   end
-  function self:sourceIdentity(game)
+  function self:sourceIdentity(game,requireImport)
     local ok,result=pcall(function()
       assert(generations[game],'Source import identity requires a supported cartridge')
+      if requireImport then assert(readFile(game,'rom-cache.complete',true),'Cartridge is not imported')end
       return importIdentity(game)
     end)
     if not ok then return nil,tostring(result)end

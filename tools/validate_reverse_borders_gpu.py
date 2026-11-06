@@ -1,4 +1,4 @@
-"""Check isolated native Gen3 MAP-header borders under the Crystal theme.
+"""Check isolated native Gen3 MAP-header borders under a classic theme.
 
 The fixture deliberately samples the header pattern rather than connected-map
 seams. Native definitions/connections are untouched; only the private Map graph
@@ -12,7 +12,8 @@ import sys
 import validate_gpu
 
 BODY=r"""
- report.type='native Gen3 Crystal-theme border viewport validation';report.theme='reverse'
+ local theme=@THEME@
+ report.type='native Gen3 '..theme..' border viewport validation';report.theme='reverse'
  report.limits='Actual Dataset/Map/FieldView MAP-mode borders from imported native layout headers. Unreviewed border art must remain exactly native. No source layout, actor, event or save writes.'
  local scenes=Json.decode(@SCENES@)
  local expectedKeys=Json.decode(@KEYS@);local sampledKeys={}
@@ -90,7 +91,7 @@ BODY=r"""
    write('progress.json',Json.encode({phase='original',game=game,map=id,captured=#contexts,scenes=#report.fixtures}))
   end
   local mod=startMod(game,3);mod.save.set=function()end;mod.game=contexts[1].host
-  assert(mod.exports.select('gen2'));report.totals.mod_indices=report.totals.mod_indices+1
+  assert(mod.exports.select(theme));report.totals.mod_indices=report.totals.mod_indices+1
   report.mod_instances[#report.mod_instances+1]={game=game,count=1,scenes=#contexts}
   for _,c in ipairs(contexts)do
   local id,def,layout,pair=c.id,c.def,c.layout,c.pair
@@ -107,12 +108,13 @@ BODY=r"""
     local actualMid,actualPair,isVoid=Map.worldMidAt(wx,wy,def)
     check(actualMid==mid and actualPair==pair and isVoid==true,'Header oracle sampled a connected-map cell')
     sampledKeys[game..':'..pair..':'..mid]=true
-    if row then equalPixel(after,x,y,row.under,(x+cx)%16,(y+cy)%16,'Crystal MAP border differs');replaced=replaced+1
+    if row then equalPixel(after,x,y,row.under,(x+cx)%16,(y+cy)%16,'Classic MAP border differs');replaced=replaced+1
     else equalPixel(after,x,y,before,x,y,'Unreviewed native MAP border changed');native=native+1 end
     checked=checked+1
    end
   end end
   for _,mid in ipairs(layout.borderMids)do check(used[mid],'Native border pattern was not completely sampled')end
+  if @REQUIRE_COMPLETE@ then check(native==0,'Themed MAP border still contains native pixels')end
   local reads,accepted=importReads,mod.exports.state.accepted
   local warmStep=1/60
   for _,row in pairs(art)do if row.frames then warmStep=math.max(warmStep,row.period*1.125)end end
@@ -128,7 +130,7 @@ BODY=r"""
    trace.isolated_world_entries=#Map.world;trace.themed_first_rgba={r,g,b,a}
    trace.native_header_only=true;report.fixture_graph_traces[#report.fixture_graph_traces+1]=trace
    trace.before=encodePng(before,game..'-'..id..'-header-native.png')
-   trace.after=encodePng(after,game..'-'..id..'-header-gen2.png')
+   trace.after=encodePng(after,game..'-'..id..'-header-'..theme..'.png')
   end
   c.fixture={game=game,map=id,pair=pair,checked_pixels=checked,replaced_border_pixels=replaced,
    native_border_pixels=native,source_headers_unchanged=true,source_connections_unchanged=true,
@@ -137,7 +139,7 @@ BODY=r"""
   report.totals.scenes=report.totals.scenes+1;report.totals.checked_pixels=report.totals.checked_pixels+checked
   report.totals.replaced_border_pixels=report.totals.replaced_border_pixels+replaced
   report.totals.native_border_pixels=report.totals.native_border_pixels+native;report.totals.warm_frames=report.totals.warm_frames+12
-  write('progress.json',Json.encode({phase='gen2',scenes=#report.fixtures,game=game,map=id}))
+  write('progress.json',Json.encode({phase=theme,scenes=#report.fixtures,game=game,map=id}))
   end
   mod.exports.dispose();clock=0
   for _,c in ipairs(contexts)do
@@ -159,6 +161,8 @@ end
 
 def main():
     parser=argparse.ArgumentParser(add_help=False)
+    parser.add_argument('--style',choices=('gen1','gen2'),default='gen2')
+    parser.add_argument('--require-complete',action='store_true')
     parser.add_argument('--inventory',type=Path,required=True)
     parser.add_argument('--games',nargs='+',choices=('ruby','sapphire','emerald','firered','leafgreen'))
     parser.add_argument('--scenes-json',type=Path,help='Explicit {game,map} list for bounded native pilots')
@@ -180,7 +184,9 @@ def main():
     keys=sorted(':'.join(map(str,key))for key in set().union(*(candidates[row['game'],row['map']]for row in scenes)))
     source=validate_gpu.LUA
     prefix=source[:source.index(' -- Native Gen1 TileRenderer on real Red Pallet Town.')]
-    validate_gpu.LUA=prefix+BODY.replace('@SCENES@',json.dumps(json.dumps(scenes))).replace('@KEYS@',json.dumps(json.dumps(keys)))+source[source.index('\nfunction love.load()'):]
+    body=BODY.replace('@SCENES@',json.dumps(json.dumps(scenes))).replace('@KEYS@',json.dumps(json.dumps(keys)))
+    body=body.replace('@THEME@',json.dumps(args.style)).replace('@REQUIRE_COMPLETE@',str(args.require_complete).lower())
+    validate_gpu.LUA=prefix+body+source[source.index('\nfunction love.load()'):]
     return validate_gpu.main()
 
 

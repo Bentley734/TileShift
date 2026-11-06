@@ -62,9 +62,23 @@ function M.install(context)
       end
     end
   end
-  local function selectNativeUnder(row)
-    if row.nativeUnder then
+  local function selectNativeFrame(row,layer)
+    if layer=='under' and row.nativeUnder then
       row.under=row.nativeUnder[row.underSource:getString()] or row.underFallback
+    elseif layer=='over' and row.monochromeOver then
+      local bytes=row.overSource:getString()
+      local frame=row.monochromeOver[bytes]
+      if not frame then
+        if row.monochromeOverCount<32 then
+          frame=context.monochrome(row.overSource)
+          row.monochromeOver[bytes]=frame
+          row.monochromeOverCount=row.monochromeOverCount+1
+        else
+          row.monochromeOverScratch=context.monochrome(row.overSource,row.monochromeOverScratch)
+          frame=row.monochromeOverScratch
+        end
+      end
+      row.over=frame
     end
   end
   local function capture(state)
@@ -72,9 +86,11 @@ function M.install(context)
       local row=state.list[i]
       for j=1,3 do
         local layer=LAYERS[j]
-        if row[layer]then row[layer..'Source']:paste(state.ts[DATA[layer]],0,0,row.x,row.y,16,16)end
+        if row[layer]then
+          row[layer..'Source']:paste(state.ts[DATA[layer]],0,0,row.x,row.y,16,16)
+          selectNativeFrame(row,layer)
+        end
       end
-      selectNativeUnder(row)
     end
   end
   local function paint(state,dirty)
@@ -121,7 +137,7 @@ function M.install(context)
         if row[layer..'Pending']then
           if live then
             row[layer..'Source']:paste(state.ts[DATA[layer]],0,0,row.x,row.y,16,16)
-            if layer=='under'then selectNativeUnder(row)end
+            selectNativeFrame(row,layer)
             -- Native markDirty already recorded the slot; GPU still contains
             -- this same donor frame until native's scheduled flush.
             state.ts[DATA[layer]]:paste(row[layer],row.x,row.y)
@@ -204,9 +220,14 @@ function M.install(context)
           if row.under or row.over or row.mid then
             if row.under and type(replacement.nativeUnder)=='table'then
               row.nativeUnder,row.underFallback=replacement.nativeUnder,row.under
-              selectNativeUnder(row)
+              selectNativeFrame(row,'under')
             else
               addFrames(state,row,replacement)
+            end
+            if replacement.monochromeNativeOver and ts.overImageData and context.monochrome then
+              row.overSource=copyPiece(ts.overImageData,row.x,row.y,factory)
+              row.monochromeOver,row.monochromeOverCount={},0
+              selectNativeFrame(row,'over')
             end
             state.list[#state.list+1]=row;state.bySlot[slot]=row
           end
@@ -240,8 +261,9 @@ function M.install(context)
               row.frame=index;local piece=row.frames[index]
               for k=1,3 do
                 local layer=LAYERS[k]
-                if row[layer]and row[layer]~=piece[layer]then
-                  row[layer]=piece[layer];state.ts[DATA[layer]]:paste(row[layer],row.x,row.y);mark(state,layer,row)
+                local image=piece[layer]
+                if row[layer] and image and row[layer]~=image then
+                  row[layer]=image;state.ts[DATA[layer]]:paste(image,row.x,row.y);mark(state,layer,row)
                 end
               end
             end

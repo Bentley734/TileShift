@@ -434,7 +434,7 @@ def source_palette_image(cache, row, packed):
 def classic_geometry_layers(cache, row, packed, ground_frame=None, source_frame=None,
                             middle_overlap=()):
     """Keep every source plane/alpha and apply an explicit reviewed RGB map."""
-    assert row['kind']=='classic_native_geometry'and row['style']=='gen2'
+    assert row['kind']=='classic_native_geometry'and row['style'] in ('gen1','gen2')
     assert row['game']in('ruby','sapphire','emerald','firered','leafgreen')
     spec=row['classicGeometry'];assert spec['version']==1 and spec['static']is True
     ref=dict(game=row['game'],tileset=row['tileset'],id=row['id'],hash=row['sourceHash'])
@@ -455,7 +455,7 @@ def classic_geometry_layers(cache, row, packed, ground_frame=None, source_frame=
     assert present==set(spec['sourceLayers']),'Classic geometry source plane presence changed'
     result={}
     ground=None
-    # A Crystal ground donor is its complete colored cell, including pixels
+    # The ground donor is its complete cell, including pixels
     # whose ordinary background priority is below its native foreground.
     if spec.get('ground'):
         if ground_frame is not None:ground=ground_frame

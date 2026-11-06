@@ -404,5 +404,28 @@ eq(lightTs.gpuUnder:sample(0,0),81,'unknown source image selects the reviewed st
 stopLights()
 eq(lightTs.gpuUnder:sample(0,0),7,'cleanup restores the most recent native source pixels')
 
+local steamTs=atlas();native._pairs={fixture=steamTs}
+local projections,steamTime=0,0
+local steam={[0]={under=data(16,16,85),monochromeNativeOver=true,period=1,
+  frames={{under=data(16,16,85)},{under=data(16,16,170)}}}}
+local stopSteam=Adapter.install({native=native,animation=animation,view=view,version='emerald',
+  time=function()return steamTime end,newImageData=data,replacements=function()return steam end,monochrome=function(source,target)
+    projections=projections+1
+    local w,h=source:getDimensions();target=target or data(w,h)
+    for i,pixel in ipairs(source.pixels)do target.pixels[i]=pixel+85 end
+    return target
+  end})
+eq(steamTs.gpuOver:sample(0,0),87,'native animated foreground starts in the selected palette')
+for _,phase in ipairs({7,8,7})do
+  native.markDirty(steamTs,true,0);fillSlot(steamTs.overImageData,0,phase);native.flush(steamTs,false,true)
+  eq(steamTs.gpuOver:sample(0,0),phase+85,'native animation updates its monochrome foreground in place')
+end
+eq(projections,3,'repeated native foreground phases reuse the converted image')
+steamTime=1.1;view.draw()
+eq(steamTs.gpuUnder:sample(0,0),170,'the chosen water animation advances under native foreground')
+eq(steamTs.gpuOver:sample(0,0),92,'a chosen water phase does not change the native foreground phase')
+stopSteam()
+eq(steamTs.gpuOver:sample(0,0),7,'disabling Gen1 restores the current original foreground phase')
+
 print('Gen 3 adapter: '..checks..' checks passed')
 return checks

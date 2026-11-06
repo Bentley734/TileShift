@@ -570,4 +570,44 @@ end)()
  eq(originalRows[91].under:getPixel(14,2),.2,'legacy overlay still uses the explicit base')
  eq(originalRows[91].under:getPixel(1,1),.9,'legacy protected rectangle still retains composed source')
 end)()
+;(function()
+ local paint=assert(loadfile(root..'/lib/monochrome.lua'))()
+ local crystalImported=false
+ local decoder={invalidate=function()end}
+ function decoder:sourceIdentity(game,optional)
+  if optional and not crystalImported then return nil end
+  return game
+ end
+ local native=fill(1/3,1/3,1/3,1)
+ local crystal=fill(.4,.8,.2,1)
+ function decoder:cell(ref)
+  if ref.hashOnly then return {under=crystal,over=newData(16,16)} end
+  return {under=ref.game=='red' and native or crystal}
+ end
+ local function recipe(id,style,game)
+  return {game='emerald',style=style,tileset='PAIR',id=id,role='known floor',status='reviewed',
+   evidence='exact fixture',sourceHash=hashA,kind='native',overMask='0'..'1'..string.rep('0',254),
+   donor={game=game,tileset='FLOOR',id=id,quadrant=0,hash=hashB,monochrome=style=='gen1'}}
+ end
+ local explicit=recipe(1,'gen1','red')
+ local projected=recipe(2,'gen2','crystal')
+ local state,notices=make({recipe(1,'gen2','crystal'),projected,explicit},{donor=decoder,
+  monochrome=function(image,target)return paint(image,target or newData(image:getDimensions()))end})
+ state:select('gen1')
+ local limited=state:replacements('emerald','PAIR')
+ eq(limited[2],nil,'Red-only imports preserve explicit Gen1 coverage')
+ eq(limited[1].under:getPixel(0,0),1/3)
+ eq(#notices,0,'an optional donor import does not warn per cell')
+ crystalImported=true
+ state:checkSource('crystal',true)
+ local complete=state:replacements('emerald','PAIR')
+ eq(complete[1].under:getPixel(0,0),1/3,'an explicit Red recipe wins for its exact key')
+ local r,g,b,a=complete[2].under:getPixel(0,0)
+ eq(r,2/3);eq(g,r);eq(b,r);eq(a,1)
+ eq(select(4,complete[2].over:getPixel(0,0)),0,'projection preserves a transparent foreground pixel')
+ eq(complete[2].over:getPixel(1,0),2/3,'projection retains the original foreground mask')
+ eq(state:replacements('emerald','PAIR'),complete,'a warm Gen1 lookup retains its cached art')
+ state:select('gen2')
+ eq(state:replacements('emerald','PAIR')[2].under:getPixel(0,0),.4,'Crystal artwork retains its original colors')
+end)()
 print('PASS reviewed mapping session: '..count..' assertions')

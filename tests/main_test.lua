@@ -137,10 +137,16 @@ for _,gameId in ipairs(games)do
       or path=='mappings/reverse_gen2_frlg_runtime_alternates.lua'
       or path=='mappings/reverse_gen2_frlg_field_states.lua'
       or path=='mappings/reverse_gen2_kanto_runtime_fixtures.lua'
-      or path=='mappings/reverse_gen2_kanto_script_cells.lua' then return nil end
+      or path=='mappings/reverse_gen2_kanto_script_cells.lua'
+      or path=='mappings/reverse_gen1_kanto_gyms.lua'
+      or path=='mappings/reverse_gen1_kanto_services.lua'
+      or path=='mappings/reverse_gen1_kanto_landmarks.lua'
+      or path=='mappings/reverse_gen1_native_terrain.lua'
+      or path=='mappings/reverse_gen1_native_service_rooms.lua'
+      or path=='mappings/reverse_gen1_native_service_backings.lua' then return nil end
     if path=='mappings/reverse_classic_gyms_finish.lua'or path=='mappings/reverse_classic_berry_soil.lua'then return nil end
     if path=='lib/gb_animation.lua'then return 'return {}'end
-    if path=='lib/roofs.lua' or path=='lib/vegetation.lua' or path=='lib/flora.lua' or path=='lib/flora_catalog.lua' or path=='lib/johto_hack_flora.lua' or path=='lib/water_styles.lua' then
+    if path=='lib/roofs.lua' or path=='lib/vegetation.lua' or path=='lib/flora.lua' or path=='lib/flora_catalog.lua' or path=='lib/johto_hack_flora.lua' or path=='lib/water_styles.lua' or path=='lib/monochrome.lua' then
       local file=assert(io.open(root..'/'..path,'rb'));local source=file:read('*a');file:close();return source
     end
     if path=='mappings/trees.lua' then

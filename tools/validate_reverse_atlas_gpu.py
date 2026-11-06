@@ -28,7 +28,7 @@ GAMES = ('firered', 'leafgreen', 'ruby', 'sapphire', 'emerald')
 
 def selection(root: Path, cache: Path, planner: Path, games: list[str], pilot: bool,
               only_modules: list[str] | None = None, only_keys: Path | None = None,
-              script_witnesses: Path | None = None) -> dict:
+              script_witnesses: Path | None = None, style: str = 'gen2') -> dict:
     inputs = validate_gpu.runtime_fingerprint(root)
     paths = list(dict.fromkeys(re.findall(r"['\"](mappings/[^'\"]+\.lua)['\"]", (root / 'main.lua').read_text())))
     requested = []
@@ -49,6 +49,7 @@ def selection(root: Path, cache: Path, planner: Path, games: list[str], pilot: b
         assert len(selected_keys) == len(inventory), 'Exact key inventory repeats a source key'
         assert all(g in GAMES and isinstance(p, str) and type(m) is int for g,p,m in selected_keys), 'Invalid exact source key'
     scoped = bool(requested) or selected_keys is not None
+    assert style == 'gen2' or scoped, 'Gen1 atlas checks require exact explicitly reviewed keys'
     script_rows, pending_scripts = defaultdict(list), set()
     if script_witnesses:
         assert selected_keys is not None and not pilot, 'Script witnesses require an exact key inventory'
@@ -66,7 +67,7 @@ def selection(root: Path, cache: Path, planner: Path, games: list[str], pilot: b
     for name in paths:
         count = 0
         for row in preview.read_reviewed(root / name):
-            if row['style'] != 'gen2' or row['game'] not in GAMES:
+            if row['style'] != style or row['game'] not in GAMES:
                 continue
             assert row.get('map') is None, 'Native GBA atlas themes must be pair-global'
             key = row['game'], row['tileset'], row['id']
@@ -193,7 +194,7 @@ def selection(root: Path, cache: Path, planner: Path, games: list[str], pilot: b
             pairs = preferred or pairs[:1]
             assert pairs
         fixtures.append(dict(game=game, pairs=pairs))
-    result = dict(fixtures=fixtures, expected_keys=sum(len(p['items']) for f in fixtures for p in f['pairs']),
+    result = dict(theme=style, fixtures=fixtures, expected_keys=sum(len(p['items']) for f in fixtures for p in f['pairs']),
                   full_planner_used_keys=len(witnesses), pilot=pilot, source_file_sha256=source_files,
                   runtime_sha256=inputs['sha256'])
     if scoped:
@@ -201,7 +202,7 @@ def selection(root: Path, cache: Path, planner: Path, games: list[str], pilot: b
         header = [dict(game=g, pair=p, mid=m, module=owners[g,p,m],
                        body_used=(g,p,m) in body_keys, witnesses=items)
                   for (g,p,m), items in sorted(header_witnesses.items())]
-        result['delta'] = dict(modules=requested, module_gen2_gba_row_counts=module_counts,
+        result['delta'] = dict(modules=requested,
                                total_module_keys=sum(module_counts.values()), selected_inventory_keys=len(delta_keys),
                                requested_game_keys=len(requested_game_keys),
                                actual_body_used_keys=sum(k[0] in games and k in body_keys for k in witnesses),
@@ -233,6 +234,7 @@ def selection(root: Path, cache: Path, planner: Path, games: list[str], pilot: b
             dict(game=g, pair=p, id=mid, touched_by_delta=(g,p,mid) in header_witnesses,
                  maps=[name for game,name in selected_scenes if game == g and (g,p,mid) in all_headers[game,name]])
             for g,p,mid in sorted(sampled_keys)])
+        result['delta'][f'module_{style}_gba_row_counts'] = module_counts
     assert inputs == validate_gpu.runtime_fingerprint(root), 'Runtime changed while constructing the native key plan; retry after integration is frozen'
     return result
 
@@ -247,8 +249,9 @@ BODY = r"""
  local LayoutNative=require('src.core.game3.layout_native')
  local View=require('src.core.game3.field_view')
  local selected=Json.decode(@SELECTION@)
+ local theme=selected.theme
  local Field=selected.delta and selected.delta.scripted_key_count>0 and require('src.core.game3.field')
- report.theme='native_gen2_used_atlas_fixtures';report.selection=selected
+ report.theme='native_'..theme..'_used_atlas_fixtures';report.selection=selected
  report.limits='Actual native FieldView on private atlas grids with native cell witnesses and optional field-write witnesses. Original imported maps and events remain unchanged.'
  local function clone(value,seen)
   if type(value)~='table'then return value end
@@ -398,7 +401,7 @@ BODY = r"""
   end
   assert(mod.exports.select('original'))
   for _,room in ipairs(rooms)do bind(room);writeScriptedCells(room);room.before=draw(room)end
-  assert(mod.exports.select('gen2'));clock=0
+  assert(mod.exports.select(theme));clock=0
   for _,room in ipairs(rooms)do
    bind(room)
    if Field then
@@ -457,7 +460,7 @@ BODY = r"""
    report.fixtures[#report.fixtures+1]={game=game,pair=room.bank.pair,source_map=room.bank.source_map,used_keys=#room.bank.items,
     private_atlas_dimensions={width=8,height=room.rows,padding_repeats=room.rows*8-#room.bank.items},
     independent_composition_hashes=rowHashes,animation_schedules=schedules,checked_phase_times=#ordered,
-    original=encodePng(room.before,game..'-'..room.bank.pair..'-native-atlas.png'),gen2=encodePng(after,game..'-'..room.bank.pair..'-gen2-atlas.png'),
+    original=encodePng(room.before,game..'-'..room.bank.pair..'-native-atlas.png'),[theme]=encodePng(after,game..'-'..room.bank.pair..'-'..theme..'-atlas.png'),
     all_used_keys_verified=true,all_native_animation_phases_verified=true,foreground_marker_verified=true,
     source_maps_and_events_unchanged=true,warm_import_reads=0,warm_asset_reads=0,warm_mapping_rebuilds=0}
    write('progress.json',Json.encode({fixtures=#report.fixtures,verified_keys=verifiedKeys,game=game,pair=room.bank.pair}))
@@ -521,7 +524,7 @@ BODY = r"""
    end
   end
   if #preserved>0 then
-   assert(mod.exports.select('gen2'))
+   assert(mod.exports.select(theme))
    for _,proof in ipairs(preserved)do
     local room=proof.room
     bind(room);draw(room)
@@ -606,7 +609,7 @@ BODY = r"""
       check(count>=2,'Overlapping native animations did not vary across their native ticks')
      end
     end
-    assert(mod.exports.select('gen2'));bind(room);draw(room)
+    assert(mod.exports.select(theme));bind(room);draw(room)
     for tick=1,lastTick do
      Anim.stepRse()
      if baseline[tick]then
@@ -644,6 +647,7 @@ end
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__, add_help=False)
+    parser.add_argument('--style', choices=('gen1','gen2'), default='gen2')
     parser.add_argument('--games', nargs='+', choices=GAMES, default=list(GAMES))
     parser.add_argument('--planner', type=Path, default=Path(__file__).resolve().parents[2] / '.work/tileshift-v0320-final-reverse-matrix/report.json')
     parser.add_argument('--pilot', action='store_true')
@@ -657,7 +661,7 @@ def main() -> int:
     args, remaining = parser.parse_known_args()
     root = Path(remaining[remaining.index('--mod-root') + 1]).resolve() if '--mod-root' in remaining else Path(__file__).resolve().parents[1]
     cache = Path(remaining[remaining.index('--cache') + 1]).resolve() if '--cache' in remaining else Path(os.environ['APPDATA']) / 'pokemon-love2d'
-    chosen = selection(root, cache, args.planner, args.games, args.pilot, args.only_module, args.keys_json, args.script_witnesses)
+    chosen = selection(root, cache, args.planner, args.games, args.pilot, args.only_module, args.keys_json, args.script_witnesses, args.style)
     if '--output' not in remaining:
         remaining.extend(['--output', str(root.parent / '.work/tileshift-reverse-atlas-gpu')])
     output = Path(remaining[remaining.index('--output') + 1]).resolve();output.mkdir(parents=True, exist_ok=True)

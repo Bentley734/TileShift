@@ -280,7 +280,9 @@ def art(review, game, pair, mid, feature, palette, colors, role=None, ground=Non
     if source_animation:result['classicGeometry']['sourceAnimation']=dict(source_animation)
     if ground is not None:
         import copy
-        assert ground['donor']['game']=='crystal' and {'donor','masks'}<=set(ground)<={'donor','masks','animation','repeatWidth'}
+        donor=ground['donor']
+        assert donor['game']=='crystal' or (donor['game']=='red' and donor.get('monochrome') is True)
+        assert {'donor','masks'}<=set(ground)<={'donor','masks','animation','repeatWidth'}
         if 'repeatWidth'in ground:assert ground['repeatWidth']==8 and ground.get('animation',{}).get('bank')=='program'
         assert ground['masks'] and set(ground['masks'])<=set(source)
         assert all(len(mask)==256 and set(mask)<={'0','1'} for mask in ground['masks'].values())

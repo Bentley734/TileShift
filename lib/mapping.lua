@@ -51,7 +51,7 @@ local function sourceColors(colors)
 end
 function M.validateClassicGeometry(row)
   local spec=row.classicGeometry
-  if generations[row.game]~=3 or row.style~='gen2' or row.kind~='classic_native_geometry'
+  if generations[row.game]~=3 or (row.style~='gen1' and row.style~='gen2') or row.kind~='classic_native_geometry'
     or row.donor or row.base or row.parts or row.asset or row.artOverlay or row.foreground
     or row.overMask or row.occludes or row.animated or row.animation or row.frames or row.assetFrames
     or type(spec)~='table' or spec.version~=1 or spec.static~=true
@@ -65,6 +65,9 @@ function M.validateClassicGeometry(row)
   for _,rgb in ipairs(spec.palette)do
     if not dense(rgb,3)then return nil,'invalid classic geometry palette' end
     for _,c in ipairs(rgb)do if not integer(c,255)then return nil,'invalid classic geometry palette channel' end end
+    if row.style=='gen1' and (rgb[1]~=rgb[2] or rgb[1]~=rgb[3] or rgb[1]%85~=0) then
+      return nil,'Gen1 geometry requires the four neutral shades'
+    end
     local key=rgb[1]*65536+rgb[2]*256+rgb[3]
     if palette[key]then return nil,'duplicate classic geometry palette color' end
     palette[key]=true
@@ -231,8 +234,9 @@ function M.validate(row)
     end
     local ground=row.classicGeometry.ground
     if ground~=nil then
-      if type(ground)~='table'or not validRef('gen2',ground.donor)or ground.donor.game~='crystal'
-        or type(ground.masks)~='table'then return nil,'classic geometry ground needs one reviewed Crystal donor and explicit native-plane masks'end
+      local groundGame=row.style=='gen1' and 'red' or 'crystal'
+      if type(ground)~='table'or not validRef(row.style,ground.donor)or ground.donor.game~=groundGame
+        or type(ground.masks)~='table'then return nil,'classic geometry ground needs a reviewed donor and explicit native-plane masks'end
       for key in pairs(ground)do
         if key~='donor'and key~='masks'and key~='animation'and key~='repeatWidth'then return nil,'unknown classic geometry ground field'end
       end
