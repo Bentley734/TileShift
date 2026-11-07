@@ -2,7 +2,7 @@
 local R={}
 function R.new(ctx)
   local G=ctx.graphics or love.graphics
-  local groups,trees,cache,textures={},{},{},{}
+  local groups,trees,furniture,cache,textures={},{},{},{},{}
   local closed,revision,quad=false,nil,nil
   local staticBorders=false
   for _,row in ipairs(ctx.rows or{})do
@@ -60,21 +60,72 @@ function R.new(ctx)
     assert(block[row.quadrant]==nil,'Duplicate tree canopy source alias')
     block[row.quadrant]=row
   end
+  for _,row in ipairs(ctx.furnitureRows or{})do
+    -- Furniture has its own explicit, small source envelopes. It is neither a
+    -- conifer canopy nor a positioned mapping: callbacks can activate its
+    -- checked block after the bare room has already warmed its map cache.
+    local coords=type(row.x)=='number'and row.x%1==0 and type(row.y)=='number'and row.y%1==0
+    local bedroom=(row.game=='gold'or row.game=='silver'or row.game=='crystal')
+      and row.map=='PLAYERS_HOUSE_2F'and row.tileset=='TILESET_PLAYERS_ROOM'
+    local bed=coords and row.furniture=='bed'and bedroom
+      and type(row.id)=='number'and row.id>=27 and row.id<=30 and row.id%1==0
+      and row.anchorX==0 and row.anchorY==4 and row.x>=0 and row.x<=1 and row.y>=3 and row.y<=5
+      and row.quadrant==0 and row.frontY==96
+    local pc=coords and row.furniture=='elm_pc'and row.game=='crystal'and row.map=='ELMS_LAB'and row.tileset=='TILESET_LAB'
+      and row.id==33 and row.anchorX==2 and row.anchorY==4 and row.x>=2 and row.x<=3 and row.y>=4 and row.y<=5
+      and row.quadrant==0 and row.frontY==96
+    local carpet=coords and row.furniture=='carpet'and bedroom
+      and(row.id==9 or row.id==12 or row.id==15 or row.id==18)
+      and(row.anchorX==0 or row.anchorX==5)and row.anchorY==2 and row.x==row.anchorX
+      and(row.y==2 or row.y==3)and row.quadrant==row.anchorX%2 and row.frontY==nil
+    local checked={};for k,v in pairs(row)do checked[k]=v end
+    checked.x,checked.y=row.anchorX,row.anchorY
+    assert((bed or pc or carpet)and row.style=='gen3'and row.kind=='third_party'
+      and row.sourceFiles and type(row.assetFileHash)=='string'and #row.assetFileHash==64
+      and not(row.base or row.donor or row.parts or row.canopy or row.animated or row.foreground or row.occludes)
+      and not(row.side or row.sourceX or row.sourceY or row.animation or row.frames or row.assetFrames or row.artOverlay or row.overMask)
+      and ctx.validate(checked),'Invalid reviewed furniture foreground')
+    local games=furniture[row.game]or{};furniture[row.game]=games
+    local maps=games[row.map]or{rows={},anchors={},seen={}};games[row.map]=maps
+    local key=row.furniture..':'..row.id..':'..row.x..':'..row.y
+    assert(not maps.seen[key],'Duplicate furniture foreground cell');maps.seen[key]=true
+    maps.rows[#maps.rows+1]=row
+    local anchorKey=row.anchorY..':'..row.anchorX
+    if not maps.seen[anchorKey]then
+      maps.seen[anchorKey]=true;maps.anchors[#maps.anchors+1]={x=row.anchorX,y=row.anchorY}
+      assert(#maps.anchors<=3,'More than three furniture source anchors in one room')
+    end
+  end
   local self={}
   function self:cells(game,def)
     if closed or not def then return nil end
     local list=groups[game]and groups[game][def.id]
     local treeList=trees[game]and trees[game][def.id]
-    if(not list and not treeList)or not ctx.active()then return nil end
+    local furnitureList=furniture[game]and furniture[game][def.id]
+    if(not list and not treeList and not furnitureList)or not ctx.active()then return nil end
     local rev=ctx.revision()
     if rev~=revision then cache={};revision=rev end
     local games=cache[game]or{};cache[game]=games
-    if games[def]then return games[def]end
-    local result={rows={},grid={},minY=0};games[def]=result
-    local function append(row,x,y,sourceY,canopy)
+    local cached=games[def]
+    if cached then
+      local changed=false
+      if furnitureList then
+        changed=cached.width~=def.width or cached.height~=def.height or cached.tileset~=def.tileset
+        for i,anchor in ipairs(furnitureList.anchors)do
+          local bid=def.blocks[math.floor(anchor.y/2)*def.width+math.floor(anchor.x/2)+1]
+          if cached.furnitureBlocks[i]~=bid then changed=true;break end
+        end
+      end
+      if not changed then return cached end
+    end
+    local result={rows={},grid={},minY=0,width=def.width,height=def.height,tileset=def.tileset,furnitureBlocks={}};games[def]=result
+    if furnitureList then for i,anchor in ipairs(furnitureList.anchors)do
+      result.furnitureBlocks[i]=def.blocks[math.floor(anchor.y/2)*def.width+math.floor(anchor.x/2)+1]
+    end end
+    local function append(row,x,y,sourceY,canopy,isFurniture)
       if not ctx.enabled or ctx.enabled(row)then
       local ok,data=pcall(function()
-        local sx,sy=row.sourceX or x,sourceY or row.sourceY or y
+        local sx,sy=isFurniture and row.anchorX or(row.sourceX or x),isFurniture and row.anchorY or(sourceY or row.sourceY or y)
         if row.side then
           assert(row.buildingX+row.buildingW<=def.width*2 and row.buildingY+row.buildingH<=def.height*2,
             'Decorative building footprint lies outside source map')
@@ -102,7 +153,22 @@ function R.new(ctx)
           assert(piece,why or'Decorative native composition unavailable')
           return piece.under
         end
-        return ctx.original(canopy and row.canopy.asset or row.asset,canopy and row.canopy.hash or row.assetFileHash)
+        local image=ctx.original(canopy and row.canopy.asset or row.asset,canopy and row.canopy.hash or row.assetFileHash)
+        if isFurniture then
+          assert(image and image.getDimensions,'Furniture foreground image is unavailable')
+          local w,h=image:getDimensions()
+          assert(w==16 and h==16,'Furniture foreground must be exactly16x16')
+          if row.furniture=='bed'then
+            -- The intact24x34 bed starts two pixels above its original32px
+            -- source block. Keep every pixel beyond that envelope transparent.
+            for py=0,15 do for px=0,15 do
+              local _,_,_,alpha=image:getPixel(px,py)
+              assert(alpha==0 or(x*16+px<24 and y*16+py>=62 and y*16+py<96),
+                'Furniture foreground escapes its native bed silhouette envelope')
+            end end
+          end
+        end
+        return image
       end)
       if ok and data then
         -- Native compositions can produce fresh ImageData after an option
@@ -113,19 +179,21 @@ function R.new(ctx)
         if not texture then texture=G.newImage(data);texture:setFilter('nearest','nearest');textures[textureKey]=texture end
         local entry={x=x,y=y,data=data,texture=texture,role=canopy and'dense_conifer_canopy'or row.role,
           treeCanopy=canopy or nil,sourceY=canopy and sourceY or nil,
+          groundOnly=isFurniture and row.furniture=='carpet'or nil,
           outside=x<0 or y<0 or x>=def.width*2 or y>=def.height*2,
-          frontY=canopy and(sourceY+2)*16 or(row.side and(row.buildingY+row.buildingH)*16 or nil)}
+          frontY=isFurniture and row.frontY or(canopy and(sourceY+2)*16 or(row.side and(row.buildingY+row.buildingH)*16 or nil))}
         result.minY=math.min(result.minY,y)
         -- Adjacent native buildings may share a decorative cell. Retain their
         -- draw order and separate physical front/behind boundaries. This
         -- linked stack is constructed once, never rebuilt in map/actor draws.
         local key=y*65536+x
         local previous=result.grid[key]
-        if canopy and previous then
-          -- Keep existing building order. A nearer canopy covers a farther
-          -- side; buildings win equal-depth ties and overhead roofs stay above.
+        if(canopy or isFurniture)and previous then
+          -- Ground-only rug borders stay below finite-front furniture/canopies.
+          -- Existing building sides win ties and overhead roofs stay above.
           local before,current=nil,previous
-          while current and current.frontY and current.frontY<entry.frontY do before=current;current=current.next end
+          while current and not entry.groundOnly
+            and(current.groundOnly or(current.frontY and current.frontY<entry.frontY))do before=current;current=current.next end
           entry.next=current
           if before then before.next=entry else result.grid[key]=entry end
           local depth=0;current=result.grid[key]
@@ -137,7 +205,7 @@ function R.new(ctx)
           assert(depth<4,'More than four overlapping decorative entries')
           previous.next=entry
         else result.grid[key]=entry end
-      elseif ctx.warn then ctx.warn('TileShift skipped roof overhang: '..tostring(data))end
+      elseif ctx.warn then ctx.warn('TileShift skipped '..(isFurniture and'furniture foreground'or'roof overhang')..': '..tostring(data))end
       end
     end
     for i=1,list and #list or 0 do
@@ -157,6 +225,10 @@ function R.new(ctx)
           end
         end end
       end
+    end
+    for _,row in ipairs(furnitureList and furnitureList.rows or{})do
+      local bid=def.blocks[math.floor(row.anchorY/2)*def.width+math.floor(row.anchorX/2)+1]
+      if bid==row.id then append(row,row.x,row.y,nil,nil,true)end
     end
     local roots={}
     for _,entry in pairs(result.grid)do
@@ -228,7 +300,7 @@ function R.new(ctx)
           if not quad then quad=G.newQuad(0,0,16,16,16,16)end
           quad:setViewport(xx-tx*16,yy-ty*16,w,h,16,16)
           while entry do
-            if(not borderOnly or entry.outside)
+            if not entry.groundOnly and(not borderOnly or entry.outside)
               and(not entry.frontY or entity.py+actorOriginY+12<entry.frontY+originY)then
               G.push('all');G.setShader();G.setColor(1,1,1,1)
               G.draw(entry.texture,quad,math.floor(ox+(xx+originX)*s),math.floor(oy+(yy+originY)*s),0,s,s);G.pop()

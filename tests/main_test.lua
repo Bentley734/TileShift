@@ -86,6 +86,7 @@ for _,gameId in ipairs(games)do
     end},log={warn=function()end}}
   function mod:read(path)
     fixture.reads[#fixture.reads+1]=path
+    if path=='lib/johto_furniture.lua'then return 'return{}'end
     if path=='lib/gen1_building_audit_roofs.lua'then return 'return{}'end
     if path=='mappings/gen1_outdoor_audit.lua'or path=='mappings/gen1_facility_audit.lua'
       or path=='mappings/gen1_seating_domestic_audit.lua'then return nil end
@@ -160,7 +161,7 @@ for _,gameId in ipairs(games)do
     if path=='mappings/trees.lua' then
       return fixture.trees and 'return __tileMainFixture.trees' or nil
     end
-    if path=='mappings/newbark_crystaldust_domestic.lua' or path=='mappings/gen2_newbark_crystaldust_lab.lua' or path=='mappings/newbark_crystaldust_divider.lua' then return nil end
+    if path=='mappings/newbark_crystaldust_domestic.lua' or path=='mappings/gen2_newbark_crystaldust_lab.lua' or path=='mappings/newbark_crystaldust_divider.lua' or path=='mappings/johto_bedroom_decorations.lua' then return nil end
     if path=='mappings/gen2_domestic_floor_audit.lua' or path=='mappings/gen2_facility_floor_audit.lua'
       or path=='mappings/gen2_interior_chair_audit.lua' then return nil end
     if path=='mappings/posts.lua' or path=='mappings/cut_trees.lua' or path=='mappings/water.lua' or path=='mappings/coasts.lua'
@@ -182,6 +183,9 @@ for _,gameId in ipairs(games)do
   local hackCatalogRead=false
   for _,path in ipairs(fixture.reads)do if path=='lib/johto_hack_flora.lua'then hackCatalogRead=true end end
   eq(hackCatalogRead,generation==2,'native Johto foliage routes only to Gen2; other game preferences stay unchanged')
+  local furnitureRead=false
+  for _,path in ipairs(fixture.reads)do if path=='lib/johto_furniture.lua'then furnitureRead=true end end
+  eq(furnitureRead,generation==2,'bounded Johto furniture catalog only loads for Gen2 hosts')
   local treeChoices=mod.exports.flora:choices('trees')
   eq(treeChoices[2][2],'random');eq(treeChoices[3][2],'mixed','native Johto choices retain connected-area customization modes')
   if generation==2 then

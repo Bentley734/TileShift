@@ -19,6 +19,7 @@ return function(mod)
     'mappings/newbark_crystaldust_domestic.lua',
     'mappings/gen2_newbark_crystaldust_lab.lua',
     'mappings/newbark_crystaldust_divider.lua',
+    'mappings/johto_bedroom_decorations.lua',
     'mappings/gen1_seating_domestic_audit.lua','mappings/gen1_facility_audit.lua','mappings/gen1_outdoor_audit.lua',
     'mappings/reverse_gen2_kanto_finish.lua','mappings/reverse_gen2_hoenn_outdoor_finish.lua','mappings/reverse_gen2_hoenn_interior_finish.lua','mappings/reverse_gen2_hoenn_city_buildings_finish.lua',
     'mappings/reverse_gen2_kanto_complete.lua','mappings/reverse_gen2_hoenn_outdoor_complete.lua','mappings/reverse_gen2_hoenn_interior_complete.lua','mappings/reverse_gen2_hoenn_city_complete.lua',
@@ -340,10 +341,12 @@ return function(mod)
   for _,row in ipairs(readModule('lib/gen2_kanto_landmark_decorations.lua'))do decorationRows[#decorationRows+1]=row end
   for _,row in ipairs(readModule('lib/gen1_building_audit_roofs.lua'))do decorationRows[#decorationRows+1]=row end
   local treeRows={}
+  local furnitureRows={}
   if mod.generation==2 then
     for _,row in ipairs(reviewed)do if row.canopy then treeRows[#treeRows+1]=row end end
+    furnitureRows=readModule('lib/johto_furniture.lua')
   end
-  roofs=readModule('lib/roofs.lua').new({rows=decorationRows,treeRows=treeRows,validate=Mapping.validate,
+  roofs=readModule('lib/roofs.lua').new({rows=decorationRows,treeRows=treeRows,furnitureRows=furnitureRows,validate=Mapping.validate,
     donor=decoder,original=original,compose=compose,version=GV.get,revision=function()return state.revision end,
     markTrueColor=function(x,y,w,h)
       if mod.generation==1 then
