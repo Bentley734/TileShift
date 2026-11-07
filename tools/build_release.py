@@ -168,6 +168,7 @@ def main() -> None:
                 'third_party/gamefreak/gsc-apartments/', 'third_party/kanto-landmarks/',
                 'third_party/native-kanto-chairs/', 'third_party/saffron-paving/')
     allowed += ('third_party/gen2-domestic-floor-audit/', 'third_party/native-interior-seats/')
+    allowed += ('third_party/gen2-interior-callback-states/',)
     allowed += ('third_party/gen1-outdoor-audit/', 'third_party/gen1-seating-domestic/',
                 'third_party/gamefreak/rby-facility-floor/')
     interior_folders = ('original/azalea-lawn', 'original/interior-beacon', 'original/interior-computer', 'original/interior-flowerpot', 'original/interior-lattice', 'original/interior-painting', 'original/interior-pillar', 'original/interior-planter', 'original/interior-radio', 'original/interior-railpost', 'original/interior-stairs', 'original/interior-tower-modules')
@@ -191,7 +192,7 @@ def main() -> None:
         for name, digest in provenance['files'].items():
             assert hashlib.sha256((record.parent / name).read_bytes()).hexdigest() == digest, 'Hack artwork provenance changed'
     for folder in ('kanto-landmarks', 'native-kanto-chairs', 'saffron-paving',
-                   'gen2-domestic-floor-audit', 'native-interior-seats',
+                   'gen2-domestic-floor-audit', 'native-interior-seats', 'gen2-interior-callback-states',
                    'gen1-outdoor-audit', 'gen1-seating-domestic', 'gamefreak/rby-facility-floor'):
         directory = root / 'assets/third_party' / folder
         provenance = json.loads((directory / 'provenance.json').read_text(encoding='utf-8'))

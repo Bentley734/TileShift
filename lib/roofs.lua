@@ -60,6 +60,9 @@ function R.new(ctx)
     assert(block[row.quadrant]==nil,'Duplicate tree canopy source alias')
     block[row.quadrant]=row
   end
+  local upperPCMaps={["CELADON_POKECENTER_2F_BETA"]=true,["CERULEAN_POKECENTER_2F_BETA"]=true,["CINNABAR_POKECENTER_2F_BETA"]=true,["FUCHSIA_POKECENTER_2F_BETA"]=true,["LAVENDER_POKECENTER_2F_BETA"]=true,["PEWTER_POKECENTER_2F_BETA"]=true,["POKECENTER_2F"]=true,["ROUTE_10_POKECENTER_2F_BETA"]=true,["SAFFRON_POKECENTER_2F_BETA"]=true,["VERMILION_POKECENTER_2F_BETA"]=true,["VIRIDIAN_POKECENTER_2F_BETA"]=true}
+  local shipBedAnchors={["gold"]={["FAST_SHIP_B1F"]={["21:10"]={["id"]=54,["quadrant"]=1,["sourceHash"]="c385a5bdb9b237570bbb108de4df72c0f96be91ba1caa7d921940ab1e53fe150",["frontY"]=192,["footX"]=21,["footY"]=11,["footId"]=54,["footQuadrant"]=3,["footHash"]="732afc72dbbd4e1f9c7fc4da596f51159063015c9b3f2c283a6c1eabfa2b10ea"},["23:10"]={["id"]=54,["quadrant"]=1,["sourceHash"]="c385a5bdb9b237570bbb108de4df72c0f96be91ba1caa7d921940ab1e53fe150",["frontY"]=192,["footX"]=23,["footY"]=11,["footId"]=54,["footQuadrant"]=3,["footHash"]="732afc72dbbd4e1f9c7fc4da596f51159063015c9b3f2c283a6c1eabfa2b10ea"},["25:10"]={["id"]=54,["quadrant"]=1,["sourceHash"]="c385a5bdb9b237570bbb108de4df72c0f96be91ba1caa7d921940ab1e53fe150",["frontY"]=192,["footX"]=25,["footY"]=11,["footId"]=54,["footQuadrant"]=3,["footHash"]="732afc72dbbd4e1f9c7fc4da596f51159063015c9b3f2c283a6c1eabfa2b10ea"},["27:10"]={["id"]=54,["quadrant"]=1,["sourceHash"]="c385a5bdb9b237570bbb108de4df72c0f96be91ba1caa7d921940ab1e53fe150",["frontY"]=192,["footX"]=27,["footY"]=11,["footId"]=54,["footQuadrant"]=3,["footHash"]="732afc72dbbd4e1f9c7fc4da596f51159063015c9b3f2c283a6c1eabfa2b10ea"},["21:12"]={["id"]=54,["quadrant"]=1,["sourceHash"]="c385a5bdb9b237570bbb108de4df72c0f96be91ba1caa7d921940ab1e53fe150",["frontY"]=224,["footX"]=21,["footY"]=13,["footId"]=54,["footQuadrant"]=3,["footHash"]="732afc72dbbd4e1f9c7fc4da596f51159063015c9b3f2c283a6c1eabfa2b10ea"},["23:12"]={["id"]=54,["quadrant"]=1,["sourceHash"]="c385a5bdb9b237570bbb108de4df72c0f96be91ba1caa7d921940ab1e53fe150",["frontY"]=224,["footX"]=23,["footY"]=13,["footId"]=54,["footQuadrant"]=3,["footHash"]="732afc72dbbd4e1f9c7fc4da596f51159063015c9b3f2c283a6c1eabfa2b10ea"},["25:12"]={["id"]=54,["quadrant"]=1,["sourceHash"]="c385a5bdb9b237570bbb108de4df72c0f96be91ba1caa7d921940ab1e53fe150",["frontY"]=224,["footX"]=25,["footY"]=13,["footId"]=54,["footQuadrant"]=3,["footHash"]="732afc72dbbd4e1f9c7fc4da596f51159063015c9b3f2c283a6c1eabfa2b10ea"},["27:12"]={["id"]=54,["quadrant"]=1,["sourceHash"]="c385a5bdb9b237570bbb108de4df72c0f96be91ba1caa7d921940ab1e53fe150",["frontY"]=224,["footX"]=27,["footY"]=13,["footId"]=54,["footQuadrant"]=3,["footHash"]="732afc72dbbd4e1f9c7fc4da596f51159063015c9b3f2c283a6c1eabfa2b10ea"}},["FAST_SHIP_CABINS_NNW_NNE_NE"]={["7:1"]={["id"]=56,["quadrant"]=3,["sourceHash"]="c385a5bdb9b237570bbb108de4df72c0f96be91ba1caa7d921940ab1e53fe150",["frontY"]=48,["footX"]=7,["footY"]=2,["footId"]=57,["footQuadrant"]=1,["footHash"]="732afc72dbbd4e1f9c7fc4da596f51159063015c9b3f2c283a6c1eabfa2b10ea"},["1:30"]={["id"]=54,["quadrant"]=1,["sourceHash"]="c385a5bdb9b237570bbb108de4df72c0f96be91ba1caa7d921940ab1e53fe150",["frontY"]=512,["footX"]=1,["footY"]=31,["footId"]=54,["footQuadrant"]=3,["footHash"]="732afc72dbbd4e1f9c7fc4da596f51159063015c9b3f2c283a6c1eabfa2b10ea"},["3:30"]={["id"]=54,["quadrant"]=1,["sourceHash"]="c385a5bdb9b237570bbb108de4df72c0f96be91ba1caa7d921940ab1e53fe150",["frontY"]=512,["footX"]=3,["footY"]=31,["footId"]=54,["footQuadrant"]=3,["footHash"]="732afc72dbbd4e1f9c7fc4da596f51159063015c9b3f2c283a6c1eabfa2b10ea"}},["FAST_SHIP_CABINS_SE_SSE_CAPTAINS_CABIN"]={["1:2"]={["id"]=54,["quadrant"]=1,["sourceHash"]="c385a5bdb9b237570bbb108de4df72c0f96be91ba1caa7d921940ab1e53fe150",["frontY"]=64,["footX"]=1,["footY"]=3,["footId"]=54,["footQuadrant"]=3,["footHash"]="732afc72dbbd4e1f9c7fc4da596f51159063015c9b3f2c283a6c1eabfa2b10ea"},["3:2"]={["id"]=54,["quadrant"]=1,["sourceHash"]="c385a5bdb9b237570bbb108de4df72c0f96be91ba1caa7d921940ab1e53fe150",["frontY"]=64,["footX"]=3,["footY"]=3,["footId"]=54,["footQuadrant"]=3,["footHash"]="732afc72dbbd4e1f9c7fc4da596f51159063015c9b3f2c283a6c1eabfa2b10ea"},["7:13"]={["id"]=56,["quadrant"]=3,["sourceHash"]="c385a5bdb9b237570bbb108de4df72c0f96be91ba1caa7d921940ab1e53fe150",["frontY"]=240,["footX"]=7,["footY"]=14,["footId"]=57,["footQuadrant"]=1,["footHash"]="732afc72dbbd4e1f9c7fc4da596f51159063015c9b3f2c283a6c1eabfa2b10ea"},["9:25"]={["id"]=56,["quadrant"]=3,["sourceHash"]="c385a5bdb9b237570bbb108de4df72c0f96be91ba1caa7d921940ab1e53fe150",["frontY"]=432,["footX"]=9,["footY"]=26,["footId"]=57,["footQuadrant"]=1,["footHash"]="732afc72dbbd4e1f9c7fc4da596f51159063015c9b3f2c283a6c1eabfa2b10ea"}},["FAST_SHIP_CABINS_SW_SSW_NW"]={["7:1"]={["id"]=56,["quadrant"]=3,["sourceHash"]="c385a5bdb9b237570bbb108de4df72c0f96be91ba1caa7d921940ab1e53fe150",["frontY"]=48,["footX"]=7,["footY"]=2,["footId"]=57,["footQuadrant"]=1,["footHash"]="732afc72dbbd4e1f9c7fc4da596f51159063015c9b3f2c283a6c1eabfa2b10ea"},["7:18"]={["id"]=54,["quadrant"]=1,["sourceHash"]="c385a5bdb9b237570bbb108de4df72c0f96be91ba1caa7d921940ab1e53fe150",["frontY"]=320,["footX"]=7,["footY"]=19,["footId"]=54,["footQuadrant"]=3,["footHash"]="732afc72dbbd4e1f9c7fc4da596f51159063015c9b3f2c283a6c1eabfa2b10ea"},["7:28"]={["id"]=54,["quadrant"]=1,["sourceHash"]="c385a5bdb9b237570bbb108de4df72c0f96be91ba1caa7d921940ab1e53fe150",["frontY"]=480,["footX"]=7,["footY"]=29,["footId"]=54,["footQuadrant"]=3,["footHash"]="732afc72dbbd4e1f9c7fc4da596f51159063015c9b3f2c283a6c1eabfa2b10ea"},["7:30"]={["id"]=54,["quadrant"]=1,["sourceHash"]="c385a5bdb9b237570bbb108de4df72c0f96be91ba1caa7d921940ab1e53fe150",["frontY"]=512,["footX"]=7,["footY"]=31,["footId"]=54,["footQuadrant"]=3,["footHash"]="732afc72dbbd4e1f9c7fc4da596f51159063015c9b3f2c283a6c1eabfa2b10ea"}}},["silver"]={["FAST_SHIP_B1F"]={["21:10"]={["id"]=54,["quadrant"]=1,["sourceHash"]="c385a5bdb9b237570bbb108de4df72c0f96be91ba1caa7d921940ab1e53fe150",["frontY"]=192,["footX"]=21,["footY"]=11,["footId"]=54,["footQuadrant"]=3,["footHash"]="732afc72dbbd4e1f9c7fc4da596f51159063015c9b3f2c283a6c1eabfa2b10ea"},["23:10"]={["id"]=54,["quadrant"]=1,["sourceHash"]="c385a5bdb9b237570bbb108de4df72c0f96be91ba1caa7d921940ab1e53fe150",["frontY"]=192,["footX"]=23,["footY"]=11,["footId"]=54,["footQuadrant"]=3,["footHash"]="732afc72dbbd4e1f9c7fc4da596f51159063015c9b3f2c283a6c1eabfa2b10ea"},["25:10"]={["id"]=54,["quadrant"]=1,["sourceHash"]="c385a5bdb9b237570bbb108de4df72c0f96be91ba1caa7d921940ab1e53fe150",["frontY"]=192,["footX"]=25,["footY"]=11,["footId"]=54,["footQuadrant"]=3,["footHash"]="732afc72dbbd4e1f9c7fc4da596f51159063015c9b3f2c283a6c1eabfa2b10ea"},["27:10"]={["id"]=54,["quadrant"]=1,["sourceHash"]="c385a5bdb9b237570bbb108de4df72c0f96be91ba1caa7d921940ab1e53fe150",["frontY"]=192,["footX"]=27,["footY"]=11,["footId"]=54,["footQuadrant"]=3,["footHash"]="732afc72dbbd4e1f9c7fc4da596f51159063015c9b3f2c283a6c1eabfa2b10ea"},["21:12"]={["id"]=54,["quadrant"]=1,["sourceHash"]="c385a5bdb9b237570bbb108de4df72c0f96be91ba1caa7d921940ab1e53fe150",["frontY"]=224,["footX"]=21,["footY"]=13,["footId"]=54,["footQuadrant"]=3,["footHash"]="732afc72dbbd4e1f9c7fc4da596f51159063015c9b3f2c283a6c1eabfa2b10ea"},["23:12"]={["id"]=54,["quadrant"]=1,["sourceHash"]="c385a5bdb9b237570bbb108de4df72c0f96be91ba1caa7d921940ab1e53fe150",["frontY"]=224,["footX"]=23,["footY"]=13,["footId"]=54,["footQuadrant"]=3,["footHash"]="732afc72dbbd4e1f9c7fc4da596f51159063015c9b3f2c283a6c1eabfa2b10ea"},["25:12"]={["id"]=54,["quadrant"]=1,["sourceHash"]="c385a5bdb9b237570bbb108de4df72c0f96be91ba1caa7d921940ab1e53fe150",["frontY"]=224,["footX"]=25,["footY"]=13,["footId"]=54,["footQuadrant"]=3,["footHash"]="732afc72dbbd4e1f9c7fc4da596f51159063015c9b3f2c283a6c1eabfa2b10ea"},["27:12"]={["id"]=54,["quadrant"]=1,["sourceHash"]="c385a5bdb9b237570bbb108de4df72c0f96be91ba1caa7d921940ab1e53fe150",["frontY"]=224,["footX"]=27,["footY"]=13,["footId"]=54,["footQuadrant"]=3,["footHash"]="732afc72dbbd4e1f9c7fc4da596f51159063015c9b3f2c283a6c1eabfa2b10ea"}},["FAST_SHIP_CABINS_NNW_NNE_NE"]={["7:1"]={["id"]=56,["quadrant"]=3,["sourceHash"]="c385a5bdb9b237570bbb108de4df72c0f96be91ba1caa7d921940ab1e53fe150",["frontY"]=48,["footX"]=7,["footY"]=2,["footId"]=57,["footQuadrant"]=1,["footHash"]="732afc72dbbd4e1f9c7fc4da596f51159063015c9b3f2c283a6c1eabfa2b10ea"},["1:30"]={["id"]=54,["quadrant"]=1,["sourceHash"]="c385a5bdb9b237570bbb108de4df72c0f96be91ba1caa7d921940ab1e53fe150",["frontY"]=512,["footX"]=1,["footY"]=31,["footId"]=54,["footQuadrant"]=3,["footHash"]="732afc72dbbd4e1f9c7fc4da596f51159063015c9b3f2c283a6c1eabfa2b10ea"},["3:30"]={["id"]=54,["quadrant"]=1,["sourceHash"]="c385a5bdb9b237570bbb108de4df72c0f96be91ba1caa7d921940ab1e53fe150",["frontY"]=512,["footX"]=3,["footY"]=31,["footId"]=54,["footQuadrant"]=3,["footHash"]="732afc72dbbd4e1f9c7fc4da596f51159063015c9b3f2c283a6c1eabfa2b10ea"}},["FAST_SHIP_CABINS_SE_SSE_CAPTAINS_CABIN"]={["1:2"]={["id"]=54,["quadrant"]=1,["sourceHash"]="c385a5bdb9b237570bbb108de4df72c0f96be91ba1caa7d921940ab1e53fe150",["frontY"]=64,["footX"]=1,["footY"]=3,["footId"]=54,["footQuadrant"]=3,["footHash"]="732afc72dbbd4e1f9c7fc4da596f51159063015c9b3f2c283a6c1eabfa2b10ea"},["3:2"]={["id"]=54,["quadrant"]=1,["sourceHash"]="c385a5bdb9b237570bbb108de4df72c0f96be91ba1caa7d921940ab1e53fe150",["frontY"]=64,["footX"]=3,["footY"]=3,["footId"]=54,["footQuadrant"]=3,["footHash"]="732afc72dbbd4e1f9c7fc4da596f51159063015c9b3f2c283a6c1eabfa2b10ea"},["7:13"]={["id"]=56,["quadrant"]=3,["sourceHash"]="c385a5bdb9b237570bbb108de4df72c0f96be91ba1caa7d921940ab1e53fe150",["frontY"]=240,["footX"]=7,["footY"]=14,["footId"]=57,["footQuadrant"]=1,["footHash"]="732afc72dbbd4e1f9c7fc4da596f51159063015c9b3f2c283a6c1eabfa2b10ea"},["9:25"]={["id"]=56,["quadrant"]=3,["sourceHash"]="c385a5bdb9b237570bbb108de4df72c0f96be91ba1caa7d921940ab1e53fe150",["frontY"]=432,["footX"]=9,["footY"]=26,["footId"]=57,["footQuadrant"]=1,["footHash"]="732afc72dbbd4e1f9c7fc4da596f51159063015c9b3f2c283a6c1eabfa2b10ea"}},["FAST_SHIP_CABINS_SW_SSW_NW"]={["7:1"]={["id"]=56,["quadrant"]=3,["sourceHash"]="c385a5bdb9b237570bbb108de4df72c0f96be91ba1caa7d921940ab1e53fe150",["frontY"]=48,["footX"]=7,["footY"]=2,["footId"]=57,["footQuadrant"]=1,["footHash"]="732afc72dbbd4e1f9c7fc4da596f51159063015c9b3f2c283a6c1eabfa2b10ea"},["7:18"]={["id"]=54,["quadrant"]=1,["sourceHash"]="c385a5bdb9b237570bbb108de4df72c0f96be91ba1caa7d921940ab1e53fe150",["frontY"]=320,["footX"]=7,["footY"]=19,["footId"]=54,["footQuadrant"]=3,["footHash"]="732afc72dbbd4e1f9c7fc4da596f51159063015c9b3f2c283a6c1eabfa2b10ea"},["7:28"]={["id"]=54,["quadrant"]=1,["sourceHash"]="c385a5bdb9b237570bbb108de4df72c0f96be91ba1caa7d921940ab1e53fe150",["frontY"]=480,["footX"]=7,["footY"]=29,["footId"]=54,["footQuadrant"]=3,["footHash"]="732afc72dbbd4e1f9c7fc4da596f51159063015c9b3f2c283a6c1eabfa2b10ea"},["7:30"]={["id"]=54,["quadrant"]=1,["sourceHash"]="c385a5bdb9b237570bbb108de4df72c0f96be91ba1caa7d921940ab1e53fe150",["frontY"]=512,["footX"]=7,["footY"]=31,["footId"]=54,["footQuadrant"]=3,["footHash"]="732afc72dbbd4e1f9c7fc4da596f51159063015c9b3f2c283a6c1eabfa2b10ea"}}},["crystal"]={["FAST_SHIP_B1F"]={["21:10"]={["id"]=54,["quadrant"]=1,["sourceHash"]="174172f8f6fb3eac98ca33e52ae4b8b4e8912eddb47077444b3435fb520c16e3",["frontY"]=192,["footX"]=21,["footY"]=11,["footId"]=54,["footQuadrant"]=3,["footHash"]="eea9db525cfd0aaa83c8838a71ae157ac81905a898e7910aa3e8a64a3c9fbf1d"},["23:10"]={["id"]=54,["quadrant"]=1,["sourceHash"]="174172f8f6fb3eac98ca33e52ae4b8b4e8912eddb47077444b3435fb520c16e3",["frontY"]=192,["footX"]=23,["footY"]=11,["footId"]=54,["footQuadrant"]=3,["footHash"]="eea9db525cfd0aaa83c8838a71ae157ac81905a898e7910aa3e8a64a3c9fbf1d"},["25:10"]={["id"]=54,["quadrant"]=1,["sourceHash"]="174172f8f6fb3eac98ca33e52ae4b8b4e8912eddb47077444b3435fb520c16e3",["frontY"]=192,["footX"]=25,["footY"]=11,["footId"]=54,["footQuadrant"]=3,["footHash"]="eea9db525cfd0aaa83c8838a71ae157ac81905a898e7910aa3e8a64a3c9fbf1d"},["27:10"]={["id"]=54,["quadrant"]=1,["sourceHash"]="174172f8f6fb3eac98ca33e52ae4b8b4e8912eddb47077444b3435fb520c16e3",["frontY"]=192,["footX"]=27,["footY"]=11,["footId"]=54,["footQuadrant"]=3,["footHash"]="eea9db525cfd0aaa83c8838a71ae157ac81905a898e7910aa3e8a64a3c9fbf1d"},["21:12"]={["id"]=54,["quadrant"]=1,["sourceHash"]="174172f8f6fb3eac98ca33e52ae4b8b4e8912eddb47077444b3435fb520c16e3",["frontY"]=224,["footX"]=21,["footY"]=13,["footId"]=54,["footQuadrant"]=3,["footHash"]="eea9db525cfd0aaa83c8838a71ae157ac81905a898e7910aa3e8a64a3c9fbf1d"},["23:12"]={["id"]=54,["quadrant"]=1,["sourceHash"]="174172f8f6fb3eac98ca33e52ae4b8b4e8912eddb47077444b3435fb520c16e3",["frontY"]=224,["footX"]=23,["footY"]=13,["footId"]=54,["footQuadrant"]=3,["footHash"]="eea9db525cfd0aaa83c8838a71ae157ac81905a898e7910aa3e8a64a3c9fbf1d"},["25:12"]={["id"]=54,["quadrant"]=1,["sourceHash"]="174172f8f6fb3eac98ca33e52ae4b8b4e8912eddb47077444b3435fb520c16e3",["frontY"]=224,["footX"]=25,["footY"]=13,["footId"]=54,["footQuadrant"]=3,["footHash"]="eea9db525cfd0aaa83c8838a71ae157ac81905a898e7910aa3e8a64a3c9fbf1d"},["27:12"]={["id"]=54,["quadrant"]=1,["sourceHash"]="174172f8f6fb3eac98ca33e52ae4b8b4e8912eddb47077444b3435fb520c16e3",["frontY"]=224,["footX"]=27,["footY"]=13,["footId"]=54,["footQuadrant"]=3,["footHash"]="eea9db525cfd0aaa83c8838a71ae157ac81905a898e7910aa3e8a64a3c9fbf1d"}},["FAST_SHIP_CABINS_NNW_NNE_NE"]={["7:1"]={["id"]=56,["quadrant"]=3,["sourceHash"]="174172f8f6fb3eac98ca33e52ae4b8b4e8912eddb47077444b3435fb520c16e3",["frontY"]=48,["footX"]=7,["footY"]=2,["footId"]=57,["footQuadrant"]=1,["footHash"]="eea9db525cfd0aaa83c8838a71ae157ac81905a898e7910aa3e8a64a3c9fbf1d"},["1:30"]={["id"]=54,["quadrant"]=1,["sourceHash"]="174172f8f6fb3eac98ca33e52ae4b8b4e8912eddb47077444b3435fb520c16e3",["frontY"]=512,["footX"]=1,["footY"]=31,["footId"]=54,["footQuadrant"]=3,["footHash"]="eea9db525cfd0aaa83c8838a71ae157ac81905a898e7910aa3e8a64a3c9fbf1d"},["3:30"]={["id"]=54,["quadrant"]=1,["sourceHash"]="174172f8f6fb3eac98ca33e52ae4b8b4e8912eddb47077444b3435fb520c16e3",["frontY"]=512,["footX"]=3,["footY"]=31,["footId"]=54,["footQuadrant"]=3,["footHash"]="eea9db525cfd0aaa83c8838a71ae157ac81905a898e7910aa3e8a64a3c9fbf1d"}},["FAST_SHIP_CABINS_SE_SSE_CAPTAINS_CABIN"]={["1:2"]={["id"]=54,["quadrant"]=1,["sourceHash"]="174172f8f6fb3eac98ca33e52ae4b8b4e8912eddb47077444b3435fb520c16e3",["frontY"]=64,["footX"]=1,["footY"]=3,["footId"]=54,["footQuadrant"]=3,["footHash"]="eea9db525cfd0aaa83c8838a71ae157ac81905a898e7910aa3e8a64a3c9fbf1d"},["3:2"]={["id"]=54,["quadrant"]=1,["sourceHash"]="174172f8f6fb3eac98ca33e52ae4b8b4e8912eddb47077444b3435fb520c16e3",["frontY"]=64,["footX"]=3,["footY"]=3,["footId"]=54,["footQuadrant"]=3,["footHash"]="eea9db525cfd0aaa83c8838a71ae157ac81905a898e7910aa3e8a64a3c9fbf1d"},["7:13"]={["id"]=56,["quadrant"]=3,["sourceHash"]="174172f8f6fb3eac98ca33e52ae4b8b4e8912eddb47077444b3435fb520c16e3",["frontY"]=240,["footX"]=7,["footY"]=14,["footId"]=57,["footQuadrant"]=1,["footHash"]="eea9db525cfd0aaa83c8838a71ae157ac81905a898e7910aa3e8a64a3c9fbf1d"},["9:25"]={["id"]=56,["quadrant"]=3,["sourceHash"]="174172f8f6fb3eac98ca33e52ae4b8b4e8912eddb47077444b3435fb520c16e3",["frontY"]=432,["footX"]=9,["footY"]=26,["footId"]=57,["footQuadrant"]=1,["footHash"]="eea9db525cfd0aaa83c8838a71ae157ac81905a898e7910aa3e8a64a3c9fbf1d"}},["FAST_SHIP_CABINS_SW_SSW_NW"]={["7:1"]={["id"]=56,["quadrant"]=3,["sourceHash"]="174172f8f6fb3eac98ca33e52ae4b8b4e8912eddb47077444b3435fb520c16e3",["frontY"]=48,["footX"]=7,["footY"]=2,["footId"]=57,["footQuadrant"]=1,["footHash"]="eea9db525cfd0aaa83c8838a71ae157ac81905a898e7910aa3e8a64a3c9fbf1d"},["7:18"]={["id"]=54,["quadrant"]=1,["sourceHash"]="174172f8f6fb3eac98ca33e52ae4b8b4e8912eddb47077444b3435fb520c16e3",["frontY"]=320,["footX"]=7,["footY"]=19,["footId"]=54,["footQuadrant"]=3,["footHash"]="eea9db525cfd0aaa83c8838a71ae157ac81905a898e7910aa3e8a64a3c9fbf1d"},["7:28"]={["id"]=54,["quadrant"]=1,["sourceHash"]="174172f8f6fb3eac98ca33e52ae4b8b4e8912eddb47077444b3435fb520c16e3",["frontY"]=480,["footX"]=7,["footY"]=29,["footId"]=54,["footQuadrant"]=3,["footHash"]="eea9db525cfd0aaa83c8838a71ae157ac81905a898e7910aa3e8a64a3c9fbf1d"},["7:30"]={["id"]=54,["quadrant"]=1,["sourceHash"]="174172f8f6fb3eac98ca33e52ae4b8b4e8912eddb47077444b3435fb520c16e3",["frontY"]=512,["footX"]=7,["footY"]=31,["footId"]=54,["footQuadrant"]=3,["footHash"]="eea9db525cfd0aaa83c8838a71ae157ac81905a898e7910aa3e8a64a3c9fbf1d"}}}}
+  local shipAnchorLimits={["FAST_SHIP_B1F"]=8,["FAST_SHIP_CABINS_NNW_NNE_NE"]=8,["FAST_SHIP_CABINS_SE_SSE_CAPTAINS_CABIN"]=8,["FAST_SHIP_CABINS_SW_SSW_NW"]=8}
   for _,row in ipairs(ctx.furnitureRows or{})do
     -- Furniture has its own explicit, small source envelopes. It is neither a
     -- conifer canopy nor a positioned mapping: callbacks can activate its
@@ -78,9 +81,72 @@ function R.new(ctx)
       and(row.id==9 or row.id==12 or row.id==15 or row.id==18)
       and(row.anchorX==0 or row.anchorX==5)and row.anchorY==2 and row.x==row.anchorX
       and(row.y==2 or row.y==3)and row.quadrant==row.anchorX%2 and row.frontY==nil
+    local shrine=coords and row.furniture=='ilex_shrine'
+      and(row.game=='gold'or row.game=='silver'or row.game=='crystal')
+      and row.map=='ILEX_FOREST'and row.tileset=='TILESET_FOREST'
+      and row.id==32 and row.quadrant==0 and row.anchorX==8 and row.anchorY==22
+      and row.sourceHash=='7909c2afb5b8ad5d87ad24345244efdbd3798b6908ec2c32a9ddec904b498b42'
+      and row.sourceCollision==7 and row.role=='ilex_crystaldust_native_shrine'
+      and row.x>=7 and row.x<=9 and row.y>=21 and row.y<=23 and row.frontY==380
+    local lighthouse=(row.game=='gold'or row.game=='silver'or row.game=='crystal')
+      and row.map=='OLIVINE_LIGHTHOUSE_6F'and row.tileset=='TILESET_LIGHTHOUSE'
+    local bedHash={gold='c385a5bdb9b237570bbb108de4df72c0f96be91ba1caa7d921940ab1e53fe150',
+      silver='c385a5bdb9b237570bbb108de4df72c0f96be91ba1caa7d921940ab1e53fe150',
+      crystal='174172f8f6fb3eac98ca33e52ae4b8b4e8912eddb47077444b3435fb520c16e3'}
+    local tableHash={gold='f1f1a9a311726cb727513dc98898528e04138e2ae5c26afc42bf176cad9b4d4a',
+      silver='f1f1a9a311726cb727513dc98898528e04138e2ae5c26afc42bf176cad9b4d4a',
+      crystal='cd6d3daa76f4aa557f43655289dd483fee61c29a4341e9c9af1f1385c1c559ca'}
+    local lighthouseBed=coords and lighthouse and row.furniture=='lighthouse_bed'
+      and row.id==54 and row.quadrant==1 and row.anchorX==11 and row.anchorY==6
+      and row.sourceHash==bedHash[row.game]and row.sourceCollision==7
+      and row.role=='olivine_crystaldust_native_medical_bed'
+      and row.x>=10 and row.x<=11 and row.y>=6 and row.y<=7 and row.frontY==128
+    local lighthouseTable=coords and lighthouse and row.furniture=='lighthouse_table'
+      and row.id==6 and row.quadrant==2 and row.anchorX==6 and row.anchorY==9
+      and row.sourceHash==tableHash[row.game]and row.sourceCollision==7
+      and row.role=='olivine_crystaldust_native_table'
+      and row.x>=6 and row.x<=7 and row.y>=8 and row.y<=11 and row.frontY==192
+    local linkMachine=coords and row.furniture=='link_trade_apparatus'
+      and(row.game=='gold'or row.game=='silver'or row.game=='crystal')
+      and(row.map=='TRADE_CENTER'or row.map=='TIME_CAPSULE')and row.tileset=='TILESET_GATE'
+      and row.id==33 and row.quadrant==0 and row.anchorX==4 and row.anchorY==4
+      and row.sourceHash=='1e0be084305e405fe6e6e55e3043b19e7d100bfac0d4dc496d3661c07ef29ccb'
+      and row.sourceCollision==144 and row.role=='crystaldust_native_link_trade_apparatus'
+      and row.x>=3 and row.x<=6 and row.y>=2 and row.y<=4 and row.frontY==76
+    local battleMachine=coords and row.furniture=='link_battle_apparatus'
+      and(row.game=='gold'or row.game=='silver'or row.game=='crystal')
+      and row.map=='COLOSSEUM'and row.tileset=='TILESET_GATE'
+      and row.id==29 and row.quadrant==0 and row.anchorX==4 and row.anchorY==4
+      and row.sourceHash=='1a1c7d4b890f991a1290f715332ee869b8c2eb211929e52a0f5dc95284ddfe5d'
+      and row.sourceCollision==7 and row.role=='crystaldust_native_link_battle_apparatus'
+      and row.x>=3 and row.x<=6 and row.y>=2 and row.y<=4 and row.frontY==76
+    local upperPC=coords and row.furniture=='pokecenter_upper_pc'
+      and(row.game=='gold'or row.game=='silver'or row.game=='crystal')
+      and upperPCMaps[row.map]and row.tileset=='TILESET_POKECENTER'
+      and row.id==50 and row.quadrant==0 and row.anchorX==2 and row.anchorY==2
+      and row.sourceHash=='fee446d3a4961d29dd5190ffddf57d3c4d70c1e76b3e499cf19a983f78ebc681'
+      and row.sourceCollision==147 and row.role=='crystaldust_complete_upper_room_pc'
+      and row.x==2 and row.y>=1 and row.y<=2 and row.frontY==48
+    local redBed=coords and row.furniture=='red_house_bed'
+      and(row.game=='gold'or row.game=='silver'or row.game=='crystal')
+      and row.map=='REDS_HOUSE_2F'and row.tileset=='TILESET_PLAYERS_HOUSE'
+      and row.id==34 and row.quadrant==0 and row.anchorX==0 and row.anchorY==6
+      and row.sourceHash=='72121c5cd7c189b972a20a70e9d1510f288c87735317e7d61fe67ab6746bf4c0'
+      and row.sourceCollision==7 and row.role=='crystaldust_complete_red_house_bed'
+      and row.x>=0 and row.x<=1 and row.y>=5 and row.y<=7 and row.frontY==128
+    local shipGames=shipBedAnchors[row.game]
+    local shipMap=shipGames and shipGames[row.map]
+    local shipSource=shipMap and shipMap[tostring(row.anchorX)..':'..tostring(row.anchorY)]
+    local shipBed=coords and row.furniture=='ship_bed'and shipSource
+      and row.tileset=='TILESET_LIGHTHOUSE'and row.sourceCollision==7
+      and row.role=='crystaldust_complete_native_ship_bed'
+      and row.id==shipSource.id and row.quadrant==shipSource.quadrant and row.sourceHash==shipSource.sourceHash
+      and row.frontY==shipSource.frontY and row.footX==shipSource.footX and row.footY==shipSource.footY
+      and row.footId==shipSource.footId and row.footQuadrant==shipSource.footQuadrant and row.footHash==shipSource.footHash
+      and row.x>=row.anchorX-1 and row.x<=row.anchorX and row.y>=row.anchorY and row.y<=row.anchorY+1
     local checked={};for k,v in pairs(row)do checked[k]=v end
     checked.x,checked.y=row.anchorX,row.anchorY
-    assert((bed or pc or carpet)and row.style=='gen3'and row.kind=='third_party'
+    assert((bed or pc or carpet or shrine or lighthouseBed or lighthouseTable or linkMachine or battleMachine or upperPC or redBed or shipBed)and row.style=='gen3'and row.kind=='third_party'
       and row.sourceFiles and type(row.assetFileHash)=='string'and #row.assetFileHash==64
       and not(row.base or row.donor or row.parts or row.canopy or row.animated or row.foreground or row.occludes)
       and not(row.side or row.sourceX or row.sourceY or row.animation or row.frames or row.assetFrames or row.artOverlay or row.overMask)
@@ -90,11 +156,18 @@ function R.new(ctx)
     local key=row.furniture..':'..row.id..':'..row.x..':'..row.y
     assert(not maps.seen[key],'Duplicate furniture foreground cell');maps.seen[key]=true
     maps.rows[#maps.rows+1]=row
-    local anchorKey=row.anchorY..':'..row.anchorX
+    -- Cache only the distinct32px source blocks of registered finite furniture.
+    local anchorKey=math.floor(row.anchorY/2)..':'..math.floor(row.anchorX/2)
     if not maps.seen[anchorKey]then
       maps.seen[anchorKey]=true;maps.anchors[#maps.anchors+1]={x=row.anchorX,y=row.anchorY}
-      assert(#maps.anchors<=3,'More than three furniture source anchors in one room')
     end
+    if shipBed then
+      local footKey=math.floor(row.footY/2)..':'..math.floor(row.footX/2)
+      if not maps.seen[footKey]then
+        maps.seen[footKey]=true;maps.anchors[#maps.anchors+1]={x=row.footX,y=row.footY}
+      end
+    end
+    assert(#maps.anchors<=(shipAnchorLimits[row.map]or 3),'Too many bounded furniture source blocks')
   end
   local self={}
   function self:cells(game,def)
@@ -148,6 +221,16 @@ function R.new(ctx)
           quadrant=row.quadrant,hash=row.sourceHash,hashOnly=true,map=def,
           monochrome=true,sourceFiles=row.sourceFiles})
         assert(source,why or'Roof source fingerprint changed')
+        if isFurniture and row.furniture=='ship_bed'then
+          local footBid=def.blocks[math.floor(row.footY/2)*def.width+math.floor(row.footX/2)+1]
+          assert(footBid==row.footId and row.footQuadrant==row.footY%2*2+row.footX%2,
+            'Complete ship bed source foot changed')
+          local foot,footWhy=ctx.donor:cell({game=game,tileset=row.tileset,id=row.footId,
+            quadrant=row.footQuadrant,hash=row.footHash,hashOnly=true,map=def,
+            monochrome=true,sourceFiles=row.sourceFiles})
+          assert(foot,footWhy or'Complete ship bed foot fingerprint changed')
+        end
+
         if row.parts then
           local piece,why=ctx.compose(row)
           assert(piece,why or'Decorative native composition unavailable')
@@ -165,6 +248,47 @@ function R.new(ctx)
               local _,_,_,alpha=image:getPixel(px,py)
               assert(alpha==0 or(x*16+px<24 and y*16+py>=62 and y*16+py<96),
                 'Furniture foreground escapes its native bed silhouette envelope')
+            end end
+          end
+          if row.furniture=='link_trade_apparatus'or row.furniture=='link_battle_apparatus'then
+            -- Complete native62x37 apparatus/chairs; seatedfeet76 stay in front.
+            for py=0,15 do for px=0,15 do
+              local _,_,_,alpha=image:getPixel(px,py)
+              local wx,wy=x*16+px,y*16+py
+              assert(alpha==0 or(wx>=49 and wx<111 and wy>=43 and wy<80),
+                'Link apparatus foreground escapes its complete native62x37 envelope')
+            end end
+          end
+          if row.furniture=='pokecenter_upper_pc'or row.furniture=='red_house_bed'or row.furniture=='ship_bed'then
+            local pc,red=row.furniture=='pokecenter_upper_pc',row.furniture=='red_house_bed'
+            local left=pc and 32 or(red and 0 or row.anchorX*16-4)
+            local right=pc and 48 or(red and 24 or row.anchorX*16+16)
+            local top=pc and 16 or(red and 94 or row.anchorY*16+3)
+            local bottom=pc and 48 or(red and 128 or(row.anchorY+2)*16)
+            for py=0,15 do for px=0,15 do
+              local _,_,_,alpha=image:getPixel(px,py)
+              local wx,wy=x*16+px,y*16+py
+              assert(alpha==0 or(wx>=left and wx<right and wy>=top and wy<bottom),
+                'Complete native furniture escapes its source-specific envelope')
+            end end
+          end
+          if row.furniture=='lighthouse_bed'or row.furniture=='lighthouse_table'then
+            local bed=row.furniture=='lighthouse_bed'
+            local left,right,top,bottom=bed and 172 or 96,bed and 192 or 128,bed and 99 or 141,bed and 128 or 192
+            for py=0,15 do for px=0,15 do
+              local _,_,_,alpha=image:getPixel(px,py)
+              local wx,wy=x*16+px,y*16+py
+              assert(alpha==0 or(wx>=left and wx<right and wy>=top and wy<bottom),
+                'Lighthouse furniture escapes its complete native silhouette envelope')
+            end end
+          end
+          if row.furniture=='ilex_shrine'then
+            -- Complete native24x34 altar, centered at the original Ilex source.
+            for py=0,15 do for px=0,15 do
+              local _,_,_,alpha=image:getPixel(px,py)
+              local wx,wy=x*16+px,y*16+py
+              assert(alpha==0 or(wx>=124 and wx<148 and wy>=350 and wy<384),
+                'Shrine foreground escapes its native24x34 silhouette envelope')
             end end
           end
         end

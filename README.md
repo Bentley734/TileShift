@@ -3,6 +3,8 @@
 
 TileShift swaps world artwork through individually reviewed tile matches.
 
+Version 0.45.0 reviews the Gen 3 theme across Johto and Kanto in Gold, Silver and Crystal. Complete native CrystalDust counterparts improve beds, tables, bookcases, TVs, radios, computers, link-room equipment, ship cabins, buildings, landmarks, lighthouse interiors, ruins and League rooms. Reachable story and field-move tile changes keep their selected artwork, and the Ilex shrine retains its full native size and correct actor depth.
+
 Version 0.44.5 replaces the player bedroom’s runtime decoration tiles with Gen 3 artwork, including its beds, carpets, plants and posters. Complete furniture keeps its native pixel size and correct foreground depth. Elm stands behind his rear-facing workstation, and the lab window and wall map use matching wall backing.
 
 Version 0.44.4 uses the selected T1 CrystalDust round tree for the small Headbutt-tree type seen in New Bark Town throughout Gold, Silver and Crystal. It also keeps the selected artwork applied when Gen1Recomp 0.4.1 loads neighboring maps in the background.
@@ -74,8 +76,8 @@ Building entrances and source collision remain unchanged. Whole native doors,
 windows and roof edges keep their pixel size, with transparent decorative
 extensions where needed. The full FireGold 16x48 town pine keeps its middle and
 roots in the original two-cell footprint and its intact upper canopy above it.
-Only the generated roofed Slowpoke Well remains active in the Gen 3 theme on Gen 2 hosts,
-as requested. Gen 1 foliage options stay unchanged.
+The default Slowpoke Well now uses the complete native CrystalDust stone well.
+Gen 1 foliage options stay unchanged.
 
 Classic themes completely retile **Oldale Town** in both styles. Selectable
 **Gen 1** and **Gen 2** background themes are available in
@@ -183,7 +185,7 @@ unchanged. The single **Gen 3** style combines Emerald, FireRed/LeafGreen and se
    TileShift reads native donor
    art from your own imports; neither ROMs nor extracted native artwork are
    bundled.
-2. Download `TileShift-v0.44.5.zip` from [the latest release](https://github.com/Bentley734/TileShift/releases/latest).
+2. Download `TileShift-v0.45.0.zip` from [the latest release](https://github.com/Bentley734/TileShift/releases/latest).
 3. Extract the `tileshift` folder into Gen1Recomp's `mods` directory, enable
    **TileShift**, and restart the game.
 4. Open Options and select **Tileset**. Gen 1/2 hosts offer **Gen 3**; Gen 3 hosts

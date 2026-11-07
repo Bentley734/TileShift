@@ -162,6 +162,9 @@ for _,gameId in ipairs(games)do
       return fixture.trees and 'return __tileMainFixture.trees' or nil
     end
     if path=='mappings/newbark_crystaldust_domestic.lua' or path=='mappings/gen2_newbark_crystaldust_lab.lua' or path=='mappings/newbark_crystaldust_divider.lua' or path=='mappings/johto_bedroom_decorations.lua' then return nil end
+    if path=='mappings/crystaldust_slowpoke_sweep.lua' or path=='mappings/crystaldust_field_states.lua'
+      or path=='mappings/crystaldust_special_runtime.lua' or path=='mappings/crystaldust_route19_rockfall.lua'
+      or path=='mappings/gen2_crystaldust_bookcases.lua' or path=='mappings/gen2_crystaldust_interior_callback_states.lua' then return nil end
     if path=='mappings/gen2_domestic_floor_audit.lua' or path=='mappings/gen2_facility_floor_audit.lua'
       or path=='mappings/gen2_interior_chair_audit.lua' then return nil end
     if path=='mappings/posts.lua' or path=='mappings/cut_trees.lua' or path=='mappings/water.lua' or path=='mappings/coasts.lua'

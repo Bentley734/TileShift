@@ -1,0 +1,518 @@
+{
+  "catalog_sha256": "fd8fbaf6eb4ee3774e3fe046bf3b506e7f638ab4cd9297c9f62a8bb1189bc740",
+  "complete_native_foreground_group": {
+    "frontY": 76,
+    "native_group_rgba_sha256": "4874ff833c94db76bb1aad5cb7656952ed424dd190abc8f4d087e9cac9fb1799",
+    "opaque_pixels": 1486,
+    "world_bbox": [
+      49,
+      43,
+      111,
+      80
+    ]
+  },
+  "files": {
+    "apparatus-foreground-3-3.png": "23f3124e000f38ff32eb4f14941e6f21c17b8f36fd42407de6214e1ad82b4bab",
+    "apparatus-foreground-3-4.png": "b00efb50548a2c4289e9f6a647ec1b54d3cefb869c996e7b754a2ec14b6ae4b8",
+    "apparatus-foreground-4-2.png": "ab566ed5bac57a02cd12e572b6375bcd048fec37ad49c22f26b851ec4250c937",
+    "apparatus-foreground-4-3.png": "bf609e927c5d907b9e4d05cb2efd8fb849f50091cddaddff9230b811f4f580c5",
+    "apparatus-foreground-4-4.png": "a540f9a5412df38aa880d2e21af889d7c8ec46a8571530fd81522938b075431d",
+    "apparatus-foreground-5-2.png": "ac975c1e0e62bff7f151dfb7a3e159d9e55e1463fcb058e808db506b9a04d5df",
+    "apparatus-foreground-5-3.png": "915fa591fbd95795ef5c9b3147842051f661e1f92d233ef869c64ca1e79bdce0",
+    "apparatus-foreground-5-4.png": "9a8ee0108c3d8931a86cca52eb7beb26396009c19860066529bee425bbb56250",
+    "apparatus-foreground-6-3.png": "021a69da7b508b79294516119a3d7f2780939a225569b144be33396a9ba8f280",
+    "apparatus-foreground-6-4.png": "cb7b0a66556cea5769c5d1adeee1c8bf1ed8ec9d3cab11968173420484ca9f25",
+    "crystal-colosseum-3-3.png": "3da85680e6def2a85618af89fb2c748030ff9df8c6e996ce9c36f2df381d8b9b",
+    "crystal-colosseum-3-4.png": "c54dd91fc82be785482c71ce9c997167db8baa9a0c1c3760e5c3b9191f3e67f6",
+    "crystal-colosseum-4-2.png": "c4871f293212d9ddf3edf6b442d714fe89d165f1fd52040bec6c3b4803191bf8",
+    "crystal-colosseum-4-3.png": "3a382903b7082da7e2ad40d6835f0047a3990bc87e4f106768c826c898fa61da",
+    "crystal-colosseum-4-4.png": "fa721af9de1444d644afba5b6983af5dde08e46c3f2dda6cc2063ea176a981bc",
+    "crystal-colosseum-5-2.png": "401a722892b5d53772b72e482588fd009c5685492075d52d82f725fa1693014c",
+    "crystal-colosseum-5-3.png": "1b510814970e0ef9bda8c9717506c938547c4a8bdd522a1004cc38b443756c62",
+    "crystal-colosseum-5-4.png": "c2ffcf8a22906d44b01f77098fad743771eae60616fa76b6ff9cde8fab96bcce",
+    "crystal-colosseum-6-3.png": "05b4fe2125efea3f8bcd59c0f1bbb3708ce942426673978be176a97ba7bef10f",
+    "crystal-colosseum-6-4.png": "e0e32ac1c9949c1c7c6d3b017c8cafb08a102930661463398c9c45d37b6818ea",
+    "gold-colosseum-3-3.png": "3da85680e6def2a85618af89fb2c748030ff9df8c6e996ce9c36f2df381d8b9b",
+    "gold-colosseum-3-4.png": "c54dd91fc82be785482c71ce9c997167db8baa9a0c1c3760e5c3b9191f3e67f6",
+    "gold-colosseum-4-2.png": "c4871f293212d9ddf3edf6b442d714fe89d165f1fd52040bec6c3b4803191bf8",
+    "gold-colosseum-4-3.png": "3a382903b7082da7e2ad40d6835f0047a3990bc87e4f106768c826c898fa61da",
+    "gold-colosseum-4-4.png": "fa721af9de1444d644afba5b6983af5dde08e46c3f2dda6cc2063ea176a981bc",
+    "gold-colosseum-5-2.png": "401a722892b5d53772b72e482588fd009c5685492075d52d82f725fa1693014c",
+    "gold-colosseum-5-3.png": "1b510814970e0ef9bda8c9717506c938547c4a8bdd522a1004cc38b443756c62",
+    "gold-colosseum-5-4.png": "c2ffcf8a22906d44b01f77098fad743771eae60616fa76b6ff9cde8fab96bcce",
+    "gold-colosseum-6-3.png": "05b4fe2125efea3f8bcd59c0f1bbb3708ce942426673978be176a97ba7bef10f",
+    "gold-colosseum-6-4.png": "e0e32ac1c9949c1c7c6d3b017c8cafb08a102930661463398c9c45d37b6818ea",
+    "native-machine-and-chairs62x37.png": "f5bc7c3d6ae46edb2a2188319ca6ac0d21ddede305a5f9b477021fc343b96243",
+    "native-machine38x37.png": "b864dbfbb6e8e9973521f30fc4b7be52f89cebbd3b608649639eabf86750b399",
+    "silver-colosseum-3-3.png": "3da85680e6def2a85618af89fb2c748030ff9df8c6e996ce9c36f2df381d8b9b",
+    "silver-colosseum-3-4.png": "c54dd91fc82be785482c71ce9c997167db8baa9a0c1c3760e5c3b9191f3e67f6",
+    "silver-colosseum-4-2.png": "c4871f293212d9ddf3edf6b442d714fe89d165f1fd52040bec6c3b4803191bf8",
+    "silver-colosseum-4-3.png": "3a382903b7082da7e2ad40d6835f0047a3990bc87e4f106768c826c898fa61da",
+    "silver-colosseum-4-4.png": "fa721af9de1444d644afba5b6983af5dde08e46c3f2dda6cc2063ea176a981bc",
+    "silver-colosseum-5-2.png": "401a722892b5d53772b72e482588fd009c5685492075d52d82f725fa1693014c",
+    "silver-colosseum-5-3.png": "1b510814970e0ef9bda8c9717506c938547c4a8bdd522a1004cc38b443756c62",
+    "silver-colosseum-5-4.png": "c2ffcf8a22906d44b01f77098fad743771eae60616fa76b6ff9cde8fab96bcce",
+    "silver-colosseum-6-3.png": "05b4fe2125efea3f8bcd59c0f1bbb3708ce942426673978be176a97ba7bef10f",
+    "silver-colosseum-6-4.png": "e0e32ac1c9949c1c7c6d3b017c8cafb08a102930661463398c9c45d37b6818ea"
+  },
+  "format": 1,
+  "hack": "CrystalDust",
+  "native_atlas": {
+    "path": "C:\\Users\\LSDMTHC\\Desktop\\Hoennto\\.work\\tileshift-firegold\\crystaldust\\pairs\\083df884_083df95c\\top.png",
+    "sha256": "1f5dca5652c87d588baad515c957f7f88cbd6a023e617854cf101eed0faa18d9"
+  },
+  "native_chair_layer_proof": {
+    "left": {
+      "atlas_plane_sha256": {
+        "mid": "0329c13acc0b9fb2b316181bc71d2c050c99fdb0ef034c2e5cf62f7cbc62ebe2",
+        "over": "f44526c6031ec08ff75e22935fad41f813afb25ac463bec7076a131a3f6bc86b",
+        "top": "1f5dca5652c87d588baad515c957f7f88cbd6a023e617854cf101eed0faa18d9"
+      },
+      "destination_bbox_xyxy": [
+        49,
+        59,
+        61,
+        77
+      ],
+      "native_bbox_xyxy": [
+        65,
+        83,
+        77,
+        101
+      ],
+      "native_mid_plus_over_equals_top": true,
+      "native_mids": [
+        {
+          "cell": [
+            4,
+            5
+          ],
+          "id": 531
+        },
+        {
+          "cell": [
+            4,
+            6
+          ],
+          "id": 539
+        }
+      ],
+      "native_plane_opaque_pixels": {
+        "mid": 175,
+        "over": 0,
+        "top": 175
+      },
+      "native_plane_rgba_sha256": {
+        "mid": "9fe6dce4249f4828cc659a142e5fa532ca6f5b0ca580fa81e156cecdc14e3431",
+        "over": "0ed9e26c3f1435e498beb2369bdf5a04a7fe4f0e302068ef2c308e1ff872b5f7",
+        "top": "9fe6dce4249f4828cc659a142e5fa532ca6f5b0ca580fa81e156cecdc14e3431"
+      },
+      "native_rgba_sha256": "9fe6dce4249f4828cc659a142e5fa532ca6f5b0ca580fa81e156cecdc14e3431",
+      "native_size": [
+        12,
+        18
+      ]
+    },
+    "right": {
+      "atlas_plane_sha256": {
+        "mid": "0329c13acc0b9fb2b316181bc71d2c050c99fdb0ef034c2e5cf62f7cbc62ebe2",
+        "over": "f44526c6031ec08ff75e22935fad41f813afb25ac463bec7076a131a3f6bc86b",
+        "top": "1f5dca5652c87d588baad515c957f7f88cbd6a023e617854cf101eed0faa18d9"
+      },
+      "destination_bbox_xyxy": [
+        99,
+        59,
+        111,
+        77
+      ],
+      "native_bbox_xyxy": [
+        115,
+        83,
+        127,
+        101
+      ],
+      "native_mid_plus_over_equals_top": true,
+      "native_mids": [
+        {
+          "cell": [
+            7,
+            5
+          ],
+          "id": 534
+        },
+        {
+          "cell": [
+            7,
+            6
+          ],
+          "id": 542
+        }
+      ],
+      "native_plane_opaque_pixels": {
+        "mid": 175,
+        "over": 0,
+        "top": 175
+      },
+      "native_plane_rgba_sha256": {
+        "mid": "80da361bfc9a3de5299d9b4ab45c28100ec495e2f7d27f7ee1ec98c67e924cda",
+        "over": "0ed9e26c3f1435e498beb2369bdf5a04a7fe4f0e302068ef2c308e1ff872b5f7",
+        "top": "80da361bfc9a3de5299d9b4ab45c28100ec495e2f7d27f7ee1ec98c67e924cda"
+      },
+      "native_rgba_sha256": "80da361bfc9a3de5299d9b4ab45c28100ec495e2f7d27f7ee1ec98c67e924cda",
+      "native_size": [
+        12,
+        18
+      ]
+    }
+  },
+  "native_group_opaque_pixels": 1486,
+  "native_group_rect_xywh": [
+    65,
+    67,
+    62,
+    37
+  ],
+  "native_group_rgba_sha256": "4874ff833c94db76bb1aad5cb7656952ed424dd190abc8f4d087e9cac9fb1799",
+  "native_machine_opaque_pixels": 1136,
+  "native_machine_rect_xywh": [
+    77,
+    67,
+    38,
+    37
+  ],
+  "native_machine_rgba_sha256": "b3ee87b004887b0f1f099a42579c2733712a73f49cf206014b0536a29135fef8",
+  "rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+  "scale": 1,
+  "source_clearing": "Only original hardware glyph8px modules 42,43,44,45,46,47,58,59,60,61,62,63,64,65 are cleared to the pinned current plain blue service floor. All other platform/floor pixels remain byte-identical.",
+  "source_map": {
+    "border_offset": 15296460,
+    "grid": [
+      1584,
+      1585,
+      1591,
+      1588,
+      1589,
+      1560,
+      1560,
+      1590,
+      1591,
+      1588,
+      1586,
+      1587,
+      1592,
+      1593,
+      1599,
+      1596,
+      1597,
+      1568,
+      1568,
+      1598,
+      1599,
+      1596,
+      1594,
+      1595,
+      1600,
+      1601,
+      1607,
+      1604,
+      1605,
+      1576,
+      1576,
+      1606,
+      1607,
+      1604,
+      1602,
+      1603,
+      1608,
+      12873,
+      12846,
+      12802,
+      12803,
+      12804,
+      12805,
+      12806,
+      12807,
+      12846,
+      12874,
+      1611,
+      1616,
+      12816,
+      12808,
+      12810,
+      12811,
+      12812,
+      12813,
+      12814,
+      12815,
+      12808,
+      12817,
+      1619,
+      1616,
+      12881,
+      12843,
+      12818,
+      12819,
+      1556,
+      1557,
+      12822,
+      12823,
+      12843,
+      12882,
+      1619,
+      1616,
+      12816,
+      12808,
+      12826,
+      12827,
+      12828,
+      12829,
+      12830,
+      12831,
+      12808,
+      12817,
+      1619,
+      1624,
+      12889,
+      12808,
+      12808,
+      12835,
+      12836,
+      12837,
+      12838,
+      12808,
+      12808,
+      12890,
+      1627,
+      1537,
+      1537,
+      1537,
+      1537,
+      1537,
+      12844,
+      12845,
+      1537,
+      1537,
+      1537,
+      1537,
+      1537
+    ],
+    "grid_offset": 15296468,
+    "group": 25,
+    "header_offset": 4738380,
+    "height": 9,
+    "id": "g25_m025",
+    "layout_id": 222,
+    "layout_offset": 15296684,
+    "map_type": 8,
+    "num": 25,
+    "pair": "083df884_083df95c",
+    "primary_tileset": 138279044,
+    "region": 87,
+    "secondary_tileset": 138279260,
+    "warps": [
+      {
+        "dest_group": 127,
+        "dest_num": 127,
+        "dest_warp": 127,
+        "elevation": 3,
+        "x": 5,
+        "y": 8
+      },
+      {
+        "dest_group": 127,
+        "dest_num": 127,
+        "dest_warp": 127,
+        "elevation": 3,
+        "x": 6,
+        "y": 8
+      }
+    ],
+    "width": 12
+  },
+  "source_native_parts": [
+    {
+      "atlas_rect_xywh": [
+        176,
+        512,
+        16,
+        16
+      ],
+      "mid": 523,
+      "native_grid_value": 12811,
+      "rgba_sha256": "4837ee4767dd143662b37d71922cc73fa0d6c043fb9e8fc8b7a943f1173f61ec",
+      "source_map_cell": [
+        4,
+        4
+      ]
+    },
+    {
+      "atlas_rect_xywh": [
+        192,
+        512,
+        16,
+        16
+      ],
+      "mid": 524,
+      "native_grid_value": 12812,
+      "rgba_sha256": "d593e76ada8a59119d1b1ec55016f97f2d34f4da6866d2407b8c4da6680dbe25",
+      "source_map_cell": [
+        5,
+        4
+      ]
+    },
+    {
+      "atlas_rect_xywh": [
+        208,
+        512,
+        16,
+        16
+      ],
+      "mid": 525,
+      "native_grid_value": 12813,
+      "rgba_sha256": "0e9614447647e9506e66182437b4ea07811b01d21f4d26b6315f1bcd155003e5",
+      "source_map_cell": [
+        6,
+        4
+      ]
+    },
+    {
+      "atlas_rect_xywh": [
+        224,
+        512,
+        16,
+        16
+      ],
+      "mid": 526,
+      "native_grid_value": 12814,
+      "rgba_sha256": "d59c8deef172977e9c7120625ebfbe75f90580ce0ce10d9743a72d51de377cec",
+      "source_map_cell": [
+        7,
+        4
+      ]
+    },
+    {
+      "atlas_rect_xywh": [
+        48,
+        528,
+        16,
+        16
+      ],
+      "mid": 531,
+      "native_grid_value": 12819,
+      "rgba_sha256": "75f911a184d0a6847b915a01732a34723640bf8423f4b0502d92b94fad833a6d",
+      "source_map_cell": [
+        4,
+        5
+      ]
+    },
+    {
+      "atlas_rect_xywh": [
+        64,
+        528,
+        16,
+        16
+      ],
+      "mid": 532,
+      "native_grid_value": 1556,
+      "rgba_sha256": "cdf21104b6f72f702a9d107b4b02e58f6d9c1b58e137268f34f58cbe99d800b9",
+      "source_map_cell": [
+        5,
+        5
+      ]
+    },
+    {
+      "atlas_rect_xywh": [
+        80,
+        528,
+        16,
+        16
+      ],
+      "mid": 533,
+      "native_grid_value": 1557,
+      "rgba_sha256": "9682d8d16a56d30b4b4cdef8b5f63607d214a28ff4dad2be30cb8625f2ad6c2f",
+      "source_map_cell": [
+        6,
+        5
+      ]
+    },
+    {
+      "atlas_rect_xywh": [
+        96,
+        528,
+        16,
+        16
+      ],
+      "mid": 534,
+      "native_grid_value": 12822,
+      "rgba_sha256": "bbf5c366024c3db62c0dfa7dece6c82d9f8a4a4e417276948ec3206ce84fcb52",
+      "source_map_cell": [
+        7,
+        5
+      ]
+    },
+    {
+      "atlas_rect_xywh": [
+        176,
+        528,
+        16,
+        16
+      ],
+      "mid": 539,
+      "native_grid_value": 12827,
+      "rgba_sha256": "18726d5324ff755546a251594c38fcbbb9de3893c8ea0cf92f8891f3476484d9",
+      "source_map_cell": [
+        4,
+        6
+      ]
+    },
+    {
+      "atlas_rect_xywh": [
+        192,
+        528,
+        16,
+        16
+      ],
+      "mid": 540,
+      "native_grid_value": 12828,
+      "rgba_sha256": "332781b6a6c38fb4358c3a393457b783d0f4e3b8ed49c909155e83dbf2d47306",
+      "source_map_cell": [
+        5,
+        6
+      ]
+    },
+    {
+      "atlas_rect_xywh": [
+        208,
+        528,
+        16,
+        16
+      ],
+      "mid": 541,
+      "native_grid_value": 12829,
+      "rgba_sha256": "d5f417393de64be957944f4ffc706433fac69e5e1f371a1ac9cbe3613200daf3",
+      "source_map_cell": [
+        6,
+        6
+      ]
+    },
+    {
+      "atlas_rect_xywh": [
+        224,
+        528,
+        16,
+        16
+      ],
+      "mid": 542,
+      "native_grid_value": 12830,
+      "rgba_sha256": "575276ecccc77bf0296c5a921b9e7a7e238ac149b3c9e87ec840e55a179b0c61",
+      "source_map_cell": [
+        7,
+        6
+      ]
+    }
+  ],
+  "translation": [
+    -16,
+    -24
+  ]
+}

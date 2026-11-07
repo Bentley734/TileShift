@@ -1,0 +1,74 @@
+{
+  "files": {
+    "background-0-6.png": "c6cee72dd3189dc8175dee8ce2001cc9c8f4f1a2052a9ad092a5e6f32d051e8d",
+    "background-0-7.png": "db437cd0141858c0b992086a8b865c31054d6b97ad248b23fda459eb1ab7da2b",
+    "background-1-6.png": "3519f2c81d2dc35d2a08807de8a093fb271a5c20fbfe2f83320f888ded8c24b0",
+    "background-1-7.png": "98941fb2736d06ce1d6da742325dc797530cedc7759bc269f36bdd2823b9b944",
+    "foreground-0-5.png": "ae1592645fdf98cad75fb0ebbc0e3adec099a8b672304eedfe287cdc86b2580f",
+    "foreground-0-6.png": "f26cc5102c6edc26613d9bd7db410cafbc33610c164c7744f8b351ee285dc670",
+    "foreground-0-7.png": "a6ec9f66ce6aa20709a40b8d00119fa0ba9dfac0ef42770c0299a148d619524b",
+    "foreground-1-5.png": "91df8182bae6ae81072923c046915a2baab9d6405c6e16aa65b37d8409fb43de",
+    "foreground-1-6.png": "feaa59aa8fac3be9bfbac11c6b5dae76d1e906a09185fd186b1a0684d9ac3343",
+    "foreground-1-7.png": "f6f199f3e0aa17a10c93513da4933663b2c386c69adad02f4062af4140b166f3",
+    "whole-native-domestic-bed24x34.png": "f9ee8a78e5e69d58049d05b1361d50acdd9a5334f590d2d41a27e41a4a73f4ba"
+  },
+  "format": 1,
+  "native_source": {
+    "file": "bed-feathery-whole24x34.png",
+    "native_size": [
+      24,
+      34
+    ],
+    "opaque_pixels": 761,
+    "pixel_scale": 1,
+    "png_sha256": "f9ee8a78e5e69d58049d05b1361d50acdd9a5334f590d2d41a27e41a4a73f4ba",
+    "rgba_sha256": "e01664776ef1c28383848398326688bf16e8bce08dfa1c22ed8e7ce82fbde244",
+    "source": {
+      "assembled_variant": "FEATHERY",
+      "explicit_surface_pixels": [],
+      "material": null,
+      "no_claim_preexisting_hack_variant": true,
+      "portrait_position": null,
+      "whole_frame": {
+        "catalog": "C:\\Users\\LSDMTHC\\Desktop\\Hoennto\\.work\\tileshift-firegold\\crystaldust\\catalog.json",
+        "catalog_sha256": "fd8fbaf6eb4ee3774e3fe046bf3b506e7f638ab4cd9297c9f62a8bb1189bc740",
+        "file": "crystaldust-whole-native-bed.png",
+        "hack": "crystaldust",
+        "id": "crystaldust-whole-native-bed",
+        "label": "Whole mint bed",
+        "native_size": [
+          24,
+          34
+        ],
+        "notes": "Complete24x34nativeframe,pillow,blanketandfeet. CD and FG pixel-identical; LC native blue alternative. All opaque outputRGB equals source at same position.",
+        "opaque_pixels": 761,
+        "pixel_scale": 1,
+        "png_sha256": "f9ee8a78e5e69d58049d05b1361d50acdd9a5334f590d2d41a27e41a4a73f4ba",
+        "rgba_sha256": "e01664776ef1c28383848398326688bf16e8bce08dfa1c22ed8e7ce82fbde244",
+        "source": {
+          "map": "g01_m001",
+          "map_png": "C:\\Users\\LSDMTHC\\Desktop\\Hoennto\\.work\\tileshift-firegold\\crystaldust\\maps\\g01_m001-flat.png",
+          "map_png_sha256": "b621730b7e515521894478bf8e51a76d112e5c1530130e119eb386c449f3e214",
+          "map_rect_xyxy": [
+            12,
+            78,
+            36,
+            112
+          ],
+          "mask": "000111111111111111111000001111111111111111111100011111111111111111111110011100000000000000001110011100011111111111001110011100111111111111101110011111111111111111111110011111111111111111111110011111111111111111111110011111111111111111111110011111111111111111111111011111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111011111111111111111111111011111111111111111111111011111111111111111111111",
+          "mask_purpose": "Only source exterior room-floor material transparent; same exact complete native silhouette shared by all three beds.",
+          "pair": "083df884_083dfaf4"
+        },
+        "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf"
+      }
+    }
+  },
+  "original_png_sha256": "f9ee8a78e5e69d58049d05b1361d50acdd9a5334f590d2d41a27e41a4a73f4ba",
+  "source": "Complete unchanged native CrystalDust bed; source assembly variant FEATHERY applies zero changed surface pixels.",
+  "world_bbox": [
+    0,
+    94,
+    24,
+    128
+  ]
+}

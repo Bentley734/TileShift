@@ -1,0 +1,1156 @@
+{
+  "atlases": {
+    "flat": "583d29897633a5da38e6bbc420c593d5ba4d9f936a8c8ac5f8f2b94837ba4252",
+    "top": "4ba55041c8625438dfb0cdd9c4ce134de0e2f9d6ed33edcb93624ad222c65508"
+  },
+  "catalog_sha256": "fd8fbaf6eb4ee3774e3fe046bf3b506e7f638ab4cd9297c9f62a8bb1189bc740",
+  "credit": "CrystalDust by Sierraffinity and contributors",
+  "features": {
+    "bed-background-10-6": {
+      "feature": "bed",
+      "foreground_asset": "bed-foreground-10-6",
+      "native_rgba_sha256": "ad079af3fe531a10ab9c1bba43591ab9e32bcf416d3a7d251d3e1d0bfc3741c1",
+      "opaque_pixels": 256,
+      "size": [
+        16,
+        16
+      ],
+      "under_native_mid": 579,
+      "world_cell": [
+        10,
+        6
+      ]
+    },
+    "bed-background-10-7": {
+      "feature": "bed",
+      "foreground_asset": "bed-foreground-10-7",
+      "native_rgba_sha256": "58e8285ce7405372fb8bca70d2d9a150d1c62280dd0a1c984478b3934a80cdc3",
+      "opaque_pixels": 256,
+      "size": [
+        16,
+        16
+      ],
+      "under_native_mid": 579,
+      "world_cell": [
+        10,
+        7
+      ]
+    },
+    "bed-background-11-6": {
+      "feature": "bed",
+      "foreground_asset": "bed-foreground-11-6",
+      "native_rgba_sha256": "55651fdeabd6522a86e176c8936df5b46e6686af6b771c3a7d6689b892aa0f83",
+      "opaque_pixels": 256,
+      "size": [
+        16,
+        16
+      ],
+      "under_native_mid": 579,
+      "world_cell": [
+        11,
+        6
+      ]
+    },
+    "bed-background-11-7": {
+      "feature": "bed",
+      "foreground_asset": "bed-foreground-11-7",
+      "native_rgba_sha256": "2f0b7a1a7d968bce7f895a2b746a57f9d4a19bfb5eaefbf10d36dd6e9af00670",
+      "opaque_pixels": 256,
+      "size": [
+        16,
+        16
+      ],
+      "under_native_mid": 579,
+      "world_cell": [
+        11,
+        7
+      ]
+    },
+    "bed-foreground-10-6": {
+      "feature": "bed",
+      "native_rgba_sha256": "a5cf1a4ae87c8517e1d1e890d919ebbe6559f12ae6c4816d1bed5b45aa6082f4",
+      "opaque_pixels": 38,
+      "original_alpha": true,
+      "size": [
+        16,
+        16
+      ],
+      "world_cell": [
+        10,
+        6
+      ]
+    },
+    "bed-foreground-10-7": {
+      "feature": "bed",
+      "native_rgba_sha256": "7e2db22eccccf4e903f067dbebbcf4a60a89d3a1820b0bf1d680028fe5baeef9",
+      "opaque_pixels": 61,
+      "original_alpha": true,
+      "size": [
+        16,
+        16
+      ],
+      "world_cell": [
+        10,
+        7
+      ]
+    },
+    "bed-foreground-11-6": {
+      "feature": "bed",
+      "native_rgba_sha256": "72322dd2b282faf49b2e6d9365cbb39fdf7e2bb037ce72137c85f7fa966e7c9b",
+      "opaque_pixels": 192,
+      "original_alpha": true,
+      "size": [
+        16,
+        16
+      ],
+      "world_cell": [
+        11,
+        6
+      ]
+    },
+    "bed-foreground-11-7": {
+      "feature": "bed",
+      "native_rgba_sha256": "623ece7b44c376f93eadefa4509ac9aa47be89b8c0b2d105e63b4619a27c2d94",
+      "opaque_pixels": 231,
+      "original_alpha": true,
+      "size": [
+        16,
+        16
+      ],
+      "world_cell": [
+        11,
+        7
+      ]
+    },
+    "complete-medical-bed20x29": {
+      "extraction": "Trim fully transparent padding only. Every native object pixel/alpha unchanged; no omitted mattress columns.",
+      "layer": "top",
+      "native_rgba_sha256": "aec6d2d04969f910fe6540188d8b06efaac4dcd81b3407a0e86f072fe07e5654",
+      "opaque_pixels": 522,
+      "parts": [
+        {
+          "destination": [
+            0,
+            0
+          ],
+          "map_cell": [
+            10,
+            6
+          ],
+          "mid": 582,
+          "native_grid_value": 1606,
+          "rgba_sha256": "76e105545c1a3b2db759868e0f23f3325d8a9ee50240b1c31f1d75bfc0fab29b"
+        },
+        {
+          "destination": [
+            16,
+            0
+          ],
+          "map_cell": [
+            11,
+            6
+          ],
+          "mid": 583,
+          "native_grid_value": 1607,
+          "rgba_sha256": "34631c9096efd5e7ed58da10ea8a7cb0db41e78efad2f906365dc9fd1786fc58"
+        },
+        {
+          "destination": [
+            0,
+            16
+          ],
+          "map_cell": [
+            10,
+            7
+          ],
+          "mid": 590,
+          "native_grid_value": 1614,
+          "rgba_sha256": "bb5419bc1a33b8757b17e1b12a5863cb61d9f6f152cf5ee9ce43fbc2366b1fac"
+        },
+        {
+          "destination": [
+            16,
+            16
+          ],
+          "map_cell": [
+            11,
+            7
+          ],
+          "mid": 591,
+          "native_grid_value": 1615,
+          "rgba_sha256": "246aa59adca21d141d42efaeda6a760346fe5773f969e7a88f883ad944264e18"
+        }
+      ],
+      "size": [
+        20,
+        29
+      ],
+      "source_canvas": [
+        32,
+        32
+      ],
+      "trim": [
+        6,
+        3,
+        26,
+        32
+      ],
+      "world_bbox": [
+        172,
+        99,
+        192,
+        128
+      ]
+    },
+    "complete-native-table-stool16": {
+      "extraction": "Whole native stool/cushion original16px canvas and alpha.",
+      "layer": "top",
+      "mid": 527,
+      "native_rgba_sha256": "3ae6156cb56c19c7be1ca7cc950e8a4231b1c97b790e8516568ccf43d6fcf00f",
+      "opaque_pixels": 149,
+      "size": [
+        16,
+        16
+      ],
+      "source_cell": [
+        8,
+        9
+      ]
+    },
+    "complete-native-table32x51": {
+      "bands": [
+        {
+          "destination": [
+            0,
+            0
+          ],
+          "layer": "top",
+          "source_rect": [
+            0,
+            13,
+            32,
+            3
+          ]
+        },
+        {
+          "destination": [
+            0,
+            3
+          ],
+          "layer": "flat",
+          "source_rect": [
+            0,
+            16,
+            32,
+            40
+          ]
+        },
+        {
+          "destination": [
+            0,
+            43
+          ],
+          "layer": "top",
+          "source_rect": [
+            0,
+            56,
+            32,
+            8
+          ]
+        }
+      ],
+      "extraction": "Complete native cap, opaque native tabletop and native feet. Only true exterior floor is omitted using explicit geometric layer bands; every retained pixel equals the actual source flat map.",
+      "native_rgba_sha256": "223cd91da20a5feb3e9093ae7ea1781ac5e63c023b33951576694bfdc0b36aea",
+      "opaque_pixels": 1580,
+      "parts": [
+        {
+          "destination": [
+            0,
+            0
+          ],
+          "map_cell": [
+            6,
+            8
+          ],
+          "mid": 587,
+          "native_grid_value": 12875,
+          "rgba_sha256": "6a6044fc6b1c9ca134d9208308f9434202e030120b2068544f5b2298723f02fa"
+        },
+        {
+          "destination": [
+            16,
+            0
+          ],
+          "map_cell": [
+            7,
+            8
+          ],
+          "mid": 588,
+          "native_grid_value": 12876,
+          "rgba_sha256": "72e6027409f6613a55daa6d8e95d49cd540b5f1602e41be835920a0124f2e8e9"
+        },
+        {
+          "destination": [
+            0,
+            16
+          ],
+          "map_cell": [
+            6,
+            9
+          ],
+          "mid": 595,
+          "native_grid_value": 1619,
+          "rgba_sha256": "0598e56224bd09b10863e152c689691fe23ae835ea308fcf517b7ac0818623aa"
+        },
+        {
+          "destination": [
+            16,
+            16
+          ],
+          "map_cell": [
+            7,
+            9
+          ],
+          "mid": 581,
+          "native_grid_value": 1605,
+          "rgba_sha256": "b21c4fa89932dcd3fc0f8d876b50e33ad612792c09e78a4d26813e363e6a75e6"
+        },
+        {
+          "destination": [
+            0,
+            32
+          ],
+          "map_cell": [
+            6,
+            10
+          ],
+          "mid": 595,
+          "native_grid_value": 1619,
+          "rgba_sha256": "0598e56224bd09b10863e152c689691fe23ae835ea308fcf517b7ac0818623aa"
+        },
+        {
+          "destination": [
+            16,
+            32
+          ],
+          "map_cell": [
+            7,
+            10
+          ],
+          "mid": 596,
+          "native_grid_value": 1620,
+          "rgba_sha256": "a2057f22dbe7c8552d9fb690cbe5a22204a4f71f3952d978b77bfcf6f079688b"
+        },
+        {
+          "destination": [
+            0,
+            48
+          ],
+          "map_cell": [
+            6,
+            11
+          ],
+          "mid": 603,
+          "native_grid_value": 1627,
+          "rgba_sha256": "c302fac2edfd12b9b5f766a8ae592e3d607adf7155a1e87fac5cee9dd6550cfd"
+        },
+        {
+          "destination": [
+            16,
+            48
+          ],
+          "map_cell": [
+            7,
+            11
+          ],
+          "mid": 604,
+          "native_grid_value": 1628,
+          "rgba_sha256": "33aa3f8907febcf968421031bb3a662162b51a199a2cb9c3bd862786be5fad66"
+        }
+      ],
+      "size": [
+        32,
+        51
+      ],
+      "source_canvas": [
+        32,
+        64
+      ],
+      "world_bbox": [
+        96,
+        141,
+        128,
+        192
+      ]
+    },
+    "complete-window-and-hedge": {
+      "layer": "flat",
+      "mid": 526,
+      "native_rgba_sha256": "8bac9cbbc70e709fb5d6ee4508560f356b69742dc9d26565c6bdd7450ddb749f",
+      "opaque_pixels": 256,
+      "size": [
+        16,
+        16
+      ],
+      "source": "Complete native16px material module, unchanged pixels/alpha."
+    },
+    "low-hedge": {
+      "layer": "flat",
+      "mid": 516,
+      "native_rgba_sha256": "6101d32c0893165831c768310ab6cc52576f58afcbb1fb9f60d0ff32d95817b2",
+      "opaque_pixels": 256,
+      "size": [
+        16,
+        16
+      ],
+      "source": "Complete native16px material module, unchanged pixels/alpha."
+    },
+    "medical-floor": {
+      "layer": "flat",
+      "mid": 579,
+      "native_rgba_sha256": "413b007750d25b46fe4c85efcab610e4657273c1886e4900485109ed0f15dbaf",
+      "opaque_pixels": 256,
+      "size": [
+        16,
+        16
+      ],
+      "source": "Complete native16px material module, unchanged pixels/alpha."
+    },
+    "stone-floor": {
+      "layer": "flat",
+      "mid": 513,
+      "native_rgba_sha256": "b144a8e974c4580e60c546fab97f6a468a97065938592f6aaa3d097cc6e672f0",
+      "opaque_pixels": 256,
+      "size": [
+        16,
+        16
+      ],
+      "source": "Complete native16px material module, unchanged pixels/alpha."
+    },
+    "stone-wall": {
+      "layer": "flat",
+      "mid": 515,
+      "native_rgba_sha256": "33ac7dc1b4aaa76cd8a0f29ccf4009fca0a3506531ee3045a2df6b602533d8d4",
+      "opaque_pixels": 256,
+      "size": [
+        16,
+        16
+      ],
+      "source": "Complete native16px material module, unchanged pixels/alpha."
+    },
+    "table-background-6-10": {
+      "feature": "table",
+      "foreground_asset": "table-foreground-6-10",
+      "native_rgba_sha256": "0598e56224bd09b10863e152c689691fe23ae835ea308fcf517b7ac0818623aa",
+      "opaque_pixels": 256,
+      "size": [
+        16,
+        16
+      ],
+      "under_native_mid": 579,
+      "world_cell": [
+        6,
+        10
+      ]
+    },
+    "table-background-6-11": {
+      "feature": "table",
+      "foreground_asset": "table-foreground-6-11",
+      "native_rgba_sha256": "6d6f27e2d953a10236a34f1714690aff31670e58d965757ea26dfa80b54020bf",
+      "opaque_pixels": 256,
+      "size": [
+        16,
+        16
+      ],
+      "under_native_mid": 579,
+      "world_cell": [
+        6,
+        11
+      ]
+    },
+    "table-background-6-9": {
+      "feature": "table",
+      "foreground_asset": "table-foreground-6-9",
+      "native_rgba_sha256": "0598e56224bd09b10863e152c689691fe23ae835ea308fcf517b7ac0818623aa",
+      "opaque_pixels": 256,
+      "size": [
+        16,
+        16
+      ],
+      "under_native_mid": 579,
+      "world_cell": [
+        6,
+        9
+      ]
+    },
+    "table-background-7-10": {
+      "feature": "table",
+      "foreground_asset": "table-foreground-7-10",
+      "native_rgba_sha256": "a2057f22dbe7c8552d9fb690cbe5a22204a4f71f3952d978b77bfcf6f079688b",
+      "opaque_pixels": 256,
+      "size": [
+        16,
+        16
+      ],
+      "under_native_mid": 579,
+      "world_cell": [
+        7,
+        10
+      ]
+    },
+    "table-background-7-11": {
+      "feature": "table",
+      "foreground_asset": "table-foreground-7-11",
+      "native_rgba_sha256": "a5799c7add628ddc6866ac235dc126e275a170de7032737a82c5f33fd7a92c3c",
+      "opaque_pixels": 256,
+      "size": [
+        16,
+        16
+      ],
+      "under_native_mid": 579,
+      "world_cell": [
+        7,
+        11
+      ]
+    },
+    "table-background-7-9": {
+      "feature": "table",
+      "foreground_asset": "table-foreground-7-9",
+      "native_rgba_sha256": "b21c4fa89932dcd3fc0f8d876b50e33ad612792c09e78a4d26813e363e6a75e6",
+      "opaque_pixels": 256,
+      "size": [
+        16,
+        16
+      ],
+      "under_native_mid": 579,
+      "world_cell": [
+        7,
+        9
+      ]
+    },
+    "table-foreground-6-10": {
+      "feature": "table",
+      "native_rgba_sha256": "0598e56224bd09b10863e152c689691fe23ae835ea308fcf517b7ac0818623aa",
+      "opaque_pixels": 256,
+      "original_alpha": true,
+      "size": [
+        16,
+        16
+      ],
+      "world_cell": [
+        6,
+        10
+      ]
+    },
+    "table-foreground-6-11": {
+      "feature": "table",
+      "native_rgba_sha256": "3c6b0e43c3e738674c0dccf172d998cd88c2385cb0531c3ed1a330a4b0609032",
+      "opaque_pixels": 229,
+      "original_alpha": true,
+      "size": [
+        16,
+        16
+      ],
+      "world_cell": [
+        6,
+        11
+      ]
+    },
+    "table-foreground-6-8": {
+      "feature": "table",
+      "native_rgba_sha256": "36a0fc658b298bc811396276e41ef342a7305d0c3763c43c51e9f878d53a00ba",
+      "opaque_pixels": 47,
+      "original_alpha": true,
+      "size": [
+        16,
+        16
+      ],
+      "world_cell": [
+        6,
+        8
+      ]
+    },
+    "table-foreground-6-9": {
+      "feature": "table",
+      "native_rgba_sha256": "0598e56224bd09b10863e152c689691fe23ae835ea308fcf517b7ac0818623aa",
+      "opaque_pixels": 256,
+      "original_alpha": true,
+      "size": [
+        16,
+        16
+      ],
+      "world_cell": [
+        6,
+        9
+      ]
+    },
+    "table-foreground-7-10": {
+      "feature": "table",
+      "native_rgba_sha256": "a2057f22dbe7c8552d9fb690cbe5a22204a4f71f3952d978b77bfcf6f079688b",
+      "opaque_pixels": 256,
+      "original_alpha": true,
+      "size": [
+        16,
+        16
+      ],
+      "world_cell": [
+        7,
+        10
+      ]
+    },
+    "table-foreground-7-11": {
+      "feature": "table",
+      "native_rgba_sha256": "ca21257c0824b6761261117bdd28ce2091435dd36ef639f72463da7a3df702a3",
+      "opaque_pixels": 233,
+      "original_alpha": true,
+      "size": [
+        16,
+        16
+      ],
+      "world_cell": [
+        7,
+        11
+      ]
+    },
+    "table-foreground-7-8": {
+      "feature": "table",
+      "native_rgba_sha256": "f2f34837eda78bb16b5630e2bf9d5795d240cb4c9bd875761c80da191205f2a8",
+      "opaque_pixels": 47,
+      "original_alpha": true,
+      "size": [
+        16,
+        16
+      ],
+      "world_cell": [
+        7,
+        8
+      ]
+    },
+    "table-foreground-7-9": {
+      "feature": "table",
+      "native_rgba_sha256": "b21c4fa89932dcd3fc0f8d876b50e33ad612792c09e78a4d26813e363e6a75e6",
+      "opaque_pixels": 256,
+      "original_alpha": true,
+      "size": [
+        16,
+        16
+      ],
+      "world_cell": [
+        7,
+        9
+      ]
+    },
+    "table-stool-background": {
+      "foreground_native_mid": 527,
+      "native_rgba_sha256": "94d120cbd22340d3eccdbbd78a955bc8637d77cf9d366366048e10c571ac0b1e",
+      "opaque_pixels": 256,
+      "size": [
+        16,
+        16
+      ],
+      "under_native_mid": 579
+    }
+  },
+  "files": {
+    "bed-background-10-6.png": "7481574a1d718b40b1b72de3800098d5e81bfb4626a24cfb70466f8c0ac006a7",
+    "bed-background-10-7.png": "5195e77adcec979ea9c593e9d3c5aacaef29a87a6123f914448e8f806a36d1ed",
+    "bed-background-11-6.png": "fdc3bbeff38f8014d59cd305125baf89e665fcb1ac24defdc77904150a71fb8b",
+    "bed-background-11-7.png": "c81e7563705ef5d15022194038aa0ff303a8687b694607282e9044812351dde9",
+    "bed-foreground-10-6.png": "f291347ffb3b90c06f241d875a2c8288c277536f0cae2d42bb5ac725f9a9ae82",
+    "bed-foreground-10-7.png": "3cd28951a150297c7f858fe020f6814ed05369408a23f68fcaf3c5d85fdeb03d",
+    "bed-foreground-11-6.png": "c295388a792f24983534f2e601d06ea6a47c2eb65d502322ffd4a28502054a8a",
+    "bed-foreground-11-7.png": "6557e1cc1983b968758e092157a66652235cac454e51b49fde20865fca4ff280",
+    "complete-medical-bed20x29.png": "1e5a35e2d7a916ad1cbaf236b6ace4d6ba91dd9a4e828ef2d0fd333e9d926bfd",
+    "complete-native-table-stool16.png": "96e6c2ebfcc82d02cd7111b0d998edd9435406db5a9cd8414a68a5a631e5bddb",
+    "complete-native-table32x51.png": "ce6c5fd76b8b5dbf604e8803d894bfbe7d6f80de7cb5c7c8fa0ba2c81cd70261",
+    "complete-window-and-hedge.png": "1b3271577674e59e1383301896d1894beccf549eeef91f40e0a42c77bb05ba75",
+    "low-hedge.png": "ac1f776898246d689792295207b9aba0cb84c2e3a1e8d0bf560e3c8f363714b5",
+    "medical-floor.png": "159567be7b62360eff72dc7df9da29cc281e7820c44862b86dc3dcc76f642b88",
+    "stone-floor.png": "6ab8ecc80cc0462708a7a6a9d87251a555233a86e873d35f7cb521b74118f998",
+    "stone-wall.png": "d10c8da0f55c26877e7fcf5355672ed2eb0622c1efa90792d48d920965171f88",
+    "table-background-6-10.png": "05d31dfabcb9b26dda3a44c41333ca115aa9d2a6f36fd1c4cd23fc512c6357d8",
+    "table-background-6-11.png": "9ee0f44164233679ac57dc22a82889c66bb13b574a7a478b558694c1cb3322f4",
+    "table-background-6-9.png": "05d31dfabcb9b26dda3a44c41333ca115aa9d2a6f36fd1c4cd23fc512c6357d8",
+    "table-background-7-10.png": "9c25882b94c23b67fffa82529190066a7202fc061d8ef1807ea22c1e801eb1b0",
+    "table-background-7-11.png": "b2b58f35e1ed0daef1b67a5e021b7dd52db909bdbcb0091c2da539ce52bb02ec",
+    "table-background-7-9.png": "6f3d17d41ee52d75ae045365c414b6e92af3cf0fa11bb6feb4eeedee0a9aa31a",
+    "table-foreground-6-10.png": "05d31dfabcb9b26dda3a44c41333ca115aa9d2a6f36fd1c4cd23fc512c6357d8",
+    "table-foreground-6-11.png": "f8d399b83d7daa4a81d80cb06d02b04d5fd1d4ddb8dd9e1e4e955cb23fa48cd4",
+    "table-foreground-6-8.png": "61213200c0068d83b02b943944f6697708005640a604461364a9500ecf9ec3dc",
+    "table-foreground-6-9.png": "05d31dfabcb9b26dda3a44c41333ca115aa9d2a6f36fd1c4cd23fc512c6357d8",
+    "table-foreground-7-10.png": "9c25882b94c23b67fffa82529190066a7202fc061d8ef1807ea22c1e801eb1b0",
+    "table-foreground-7-11.png": "d5bac5a519dcf8a47fd08ca2b70b5c25b6fa0a415d69b6c5f61e53986d089277",
+    "table-foreground-7-8.png": "9649c3a5297777c6a7116356d6e452f0bdb9b204b563fc07e64171704e7f718d",
+    "table-foreground-7-9.png": "6f3d17d41ee52d75ae045365c414b6e92af3cf0fa11bb6feb4eeedee0a9aa31a",
+    "table-stool-background.png": "17fb2b0fb2a7ec238e45f1bde45b22df446b9d64d12b4e26fb6386628d8a5476"
+  },
+  "format": 1,
+  "historical_author_alias": "The previous source-GSC recolor was historically named beacon; the native area/event evidence identifies the matching decorative table, not a standalone lamp.",
+  "lighthouse_table_semantics": "Complete decorative native table. The actual functional light is the separate Amphy actor at9,8, unchanged in the GSC map. No CD field object or BG event is located on this table.",
+  "native_pair": "083df884_083df92c",
+  "rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+  "source_map": {
+    "border_offset": 4446444,
+    "grid": [
+      1032,
+      1032,
+      1539,
+      1539,
+      1539,
+      1539,
+      1539,
+      1539,
+      1539,
+      1539,
+      1539,
+      1539,
+      1539,
+      1539,
+      1539,
+      1539,
+      1539,
+      1539,
+      1032,
+      1032,
+      1032,
+      1032,
+      1539,
+      1539,
+      1550,
+      1550,
+      1550,
+      1550,
+      1550,
+      1550,
+      1550,
+      1550,
+      1550,
+      1550,
+      1550,
+      1550,
+      1539,
+      1539,
+      1032,
+      1032,
+      1539,
+      1539,
+      1539,
+      1539,
+      12802,
+      12802,
+      12802,
+      12802,
+      12802,
+      12802,
+      12802,
+      12802,
+      12802,
+      12802,
+      12802,
+      12802,
+      1539,
+      1539,
+      1539,
+      1539,
+      1539,
+      1539,
+      1540,
+      1540,
+      12802,
+      12801,
+      12801,
+      12801,
+      12801,
+      12801,
+      12801,
+      12801,
+      12801,
+      12801,
+      12801,
+      12801,
+      1540,
+      1540,
+      1539,
+      1539,
+      1539,
+      1539,
+      12802,
+      12802,
+      1539,
+      1539,
+      1539,
+      1539,
+      12801,
+      12801,
+      1539,
+      1539,
+      1539,
+      1539,
+      12801,
+      12801,
+      12802,
+      12802,
+      1539,
+      1539,
+      1539,
+      1539,
+      12802,
+      12801,
+      1539,
+      1539,
+      1540,
+      1540,
+      12802,
+      12801,
+      1540,
+      1540,
+      1539,
+      1539,
+      12802,
+      12801,
+      12822,
+      12822,
+      1539,
+      1539,
+      1539,
+      1539,
+      12802,
+      12801,
+      1539,
+      1539,
+      12868,
+      12868,
+      12868,
+      12867,
+      1606,
+      1607,
+      1539,
+      1539,
+      12802,
+      12801,
+      12801,
+      12801,
+      1539,
+      1539,
+      1539,
+      1539,
+      12802,
+      12801,
+      1540,
+      1540,
+      12868,
+      12867,
+      12867,
+      12867,
+      1614,
+      1615,
+      1540,
+      1540,
+      12802,
+      12801,
+      12801,
+      12801,
+      1539,
+      1539,
+      1539,
+      1539,
+      12802,
+      12801,
+      12802,
+      12802,
+      12875,
+      12876,
+      12867,
+      12867,
+      12867,
+      12867,
+      12802,
+      12802,
+      12802,
+      12801,
+      12801,
+      12801,
+      1539,
+      1539,
+      1539,
+      1539,
+      12802,
+      12801,
+      12801,
+      12801,
+      1619,
+      1605,
+      12815,
+      12867,
+      12867,
+      12867,
+      12801,
+      12801,
+      12801,
+      12801,
+      12801,
+      12801,
+      1539,
+      1539,
+      1539,
+      1539,
+      12802,
+      12801,
+      1539,
+      1539,
+      1619,
+      1620,
+      12877,
+      12867,
+      12867,
+      12867,
+      1539,
+      1539,
+      12801,
+      12801,
+      12801,
+      12801,
+      1539,
+      1539,
+      1539,
+      1539,
+      12802,
+      12801,
+      1539,
+      1539,
+      1627,
+      1628,
+      12877,
+      12867,
+      12867,
+      12867,
+      1539,
+      1539,
+      12802,
+      12801,
+      12801,
+      12801,
+      1539,
+      1539,
+      1539,
+      1539,
+      12802,
+      12801,
+      1539,
+      1539,
+      1539,
+      1539,
+      12830,
+      12801,
+      1539,
+      1539,
+      1539,
+      1539,
+      12802,
+      12801,
+      12801,
+      12801,
+      1539,
+      1539,
+      1539,
+      1539,
+      12802,
+      12801,
+      1540,
+      1540,
+      1540,
+      1540,
+      12802,
+      12852,
+      1617,
+      1618,
+      1540,
+      1540,
+      12802,
+      12801,
+      12801,
+      12801,
+      1539,
+      1539,
+      1539,
+      1539,
+      1539,
+      1539,
+      12802,
+      12802,
+      12802,
+      12802,
+      12802,
+      12838,
+      1625,
+      1626,
+      12802,
+      12802,
+      12802,
+      12801,
+      1539,
+      1539,
+      1539,
+      1539,
+      1540,
+      1540,
+      1539,
+      1539,
+      12802,
+      12801,
+      12801,
+      12801,
+      12801,
+      12896,
+      1633,
+      1634,
+      12801,
+      12801,
+      12801,
+      12801,
+      1539,
+      1539,
+      1540,
+      1540,
+      1032,
+      1032,
+      1539,
+      1539,
+      1539,
+      1539,
+      1539,
+      1539,
+      1539,
+      1539,
+      1539,
+      1539,
+      1539,
+      1539,
+      1539,
+      1539,
+      1539,
+      1539,
+      1032,
+      1032,
+      1032,
+      1032,
+      1540,
+      1540,
+      1550,
+      1550,
+      1550,
+      1550,
+      1550,
+      1550,
+      1550,
+      1550,
+      1550,
+      1550,
+      1550,
+      1550,
+      1540,
+      1540,
+      1032,
+      1032
+    ],
+    "grid_offset": 4446452,
+    "group": 24,
+    "header_offset": 4736084,
+    "height": 18,
+    "id": "g24_m051",
+    "layout_id": 169,
+    "layout_offset": 4449948,
+    "map_type": 8,
+    "num": 51,
+    "pair": "083df884_083df92c",
+    "primary_tileset": 138279044,
+    "region": 67,
+    "secondary_tileset": 138279212,
+    "warps": [
+      {
+        "dest_group": 24,
+        "dest_num": 50,
+        "dest_warp": 1,
+        "elevation": 3,
+        "x": 9,
+        "y": 14
+      },
+      {
+        "dest_group": 24,
+        "dest_num": 50,
+        "dest_warp": 5,
+        "elevation": 3,
+        "x": 16,
+        "y": 5
+      },
+      {
+        "dest_group": 24,
+        "dest_num": 50,
+        "dest_warp": 6,
+        "elevation": 3,
+        "x": 17,
+        "y": 5
+      }
+    ],
+    "width": 20
+  },
+  "source_object_proof": {
+    "event_counts": [
+      3,
+      3,
+      0,
+      0
+    ],
+    "events_offset": 15850552,
+    "header": 4736084,
+    "objects": [
+      {
+        "elevation": 3,
+        "flagId": 4201,
+        "graphicsId": 130,
+        "index": 0,
+        "localId": 1,
+        "movementRange": 17,
+        "movementType": 8,
+        "offset": 15850456,
+        "raw": "01820000080008000308110000000000773d9c0869100000",
+        "script": "0x89c3d77",
+        "trainerType": 0,
+        "x": 8,
+        "y": 8
+      },
+      {
+        "elevation": 3,
+        "flagId": 0,
+        "graphicsId": 81,
+        "index": 1,
+        "localId": 2,
+        "movementRange": 17,
+        "movementType": 8,
+        "offset": 15850480,
+        "raw": "02510000090008000308110000000000c4269d0800000000",
+        "script": "0x89d26c4",
+        "trainerType": 0,
+        "x": 9,
+        "y": 8
+      },
+      {
+        "elevation": 3,
+        "flagId": 1085,
+        "graphicsId": 59,
+        "index": 2,
+        "localId": 3,
+        "movementRange": 17,
+        "movementType": 8,
+        "offset": 15850504,
+        "raw": "033b000003000400030811000000000018cf9c083d040000",
+        "script": "0x89ccf18",
+        "trainerType": 0,
+        "x": 3,
+        "y": 4
+      }
+    ],
+    "rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+    "rom_zip": "C:\\Users\\LSDMTHC\\Downloads\\Pokemon CrystalDust.zip"
+  }
+}

@@ -1,0 +1,389 @@
+{
+  "source": "CrystalDust native Goldenrod closed apartment families",
+  "rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+  "catalog_sha256": "fd8fbaf6eb4ee3774e3fe046bf3b506e7f638ab4cd9297c9f62a8bb1189bc740",
+  "objects": {
+    "closed32": {
+      "map": "g00_m003",
+      "source_rect": [
+        512,
+        16,
+        32,
+        48
+      ],
+      "mids": [
+        [
+          513,
+          515
+        ],
+        [
+          528,
+          532
+        ],
+        [
+          544,
+          548
+        ]
+      ],
+      "pair": "083df704_083df734",
+      "planes": {
+        "mid": {
+          "png": "C:\\Users\\LSDMTHC\\Desktop\\Hoennto\\.work\\tileshift-firegold\\crystaldust\\maps\\g00_m003-mid.png",
+          "sha256": "d082d9dd14112ac6f284f1b0709c0a337e4a09dcc7607695b30c49a9261830d5",
+          "crop": [
+            512,
+            16,
+            32,
+            48
+          ]
+        },
+        "over": {
+          "png": "C:\\Users\\LSDMTHC\\Desktop\\Hoennto\\.work\\tileshift-firegold\\crystaldust\\maps\\g00_m003-over.png",
+          "sha256": "a5872fdf775ef5f4f98cd8a6df7f0accc6bbbeb32e1dbfd687ae1ec9499a60a7",
+          "crop": [
+            512,
+            16,
+            32,
+            48
+          ]
+        }
+      },
+      "native_size": [
+        32,
+        48
+      ],
+      "rgba_sha256": "7b253091f91f0fc7f0fc560590cc596f145d1412c4fd2da523c7971c8c852e2e",
+      "entrance": "none; same complete native closed-apartment function",
+      "all_opaque_source_pixels_unchanged": true
+    },
+    "closed64": {
+      "map": "g00_m003",
+      "source_rect": [
+        448,
+        16,
+        64,
+        48
+      ],
+      "mids": [
+        [
+          513,
+          514,
+          514,
+          515
+        ],
+        [
+          528,
+          529,
+          531,
+          532
+        ],
+        [
+          544,
+          545,
+          547,
+          548
+        ]
+      ],
+      "pair": "083df704_083df734",
+      "planes": {
+        "mid": {
+          "png": "C:\\Users\\LSDMTHC\\Desktop\\Hoennto\\.work\\tileshift-firegold\\crystaldust\\maps\\g00_m003-mid.png",
+          "sha256": "d082d9dd14112ac6f284f1b0709c0a337e4a09dcc7607695b30c49a9261830d5",
+          "crop": [
+            448,
+            16,
+            64,
+            48
+          ]
+        },
+        "over": {
+          "png": "C:\\Users\\LSDMTHC\\Desktop\\Hoennto\\.work\\tileshift-firegold\\crystaldust\\maps\\g00_m003-over.png",
+          "sha256": "a5872fdf775ef5f4f98cd8a6df7f0accc6bbbeb32e1dbfd687ae1ec9499a60a7",
+          "crop": [
+            448,
+            16,
+            64,
+            48
+          ]
+        }
+      },
+      "native_size": [
+        64,
+        48
+      ],
+      "rgba_sha256": "c07e4924fe21518e644a850700bb1f6c67bb2d36f8780d29f882405605a47469",
+      "entrance": "none; same complete native closed-apartment function",
+      "all_opaque_source_pixels_unchanged": true
+    },
+    "closed48": {
+      "native_source": {
+        "map": "g00_m003",
+        "source_rect": [
+          448,
+          16,
+          64,
+          48
+        ],
+        "mids": [
+          [
+            513,
+            514,
+            514,
+            515
+          ],
+          [
+            528,
+            529,
+            531,
+            532
+          ],
+          [
+            544,
+            545,
+            547,
+            548
+          ]
+        ],
+        "pair": "083df704_083df734",
+        "planes": {
+          "mid": {
+            "png": "C:\\Users\\LSDMTHC\\Desktop\\Hoennto\\.work\\tileshift-firegold\\crystaldust\\maps\\g00_m003-mid.png",
+            "sha256": "d082d9dd14112ac6f284f1b0709c0a337e4a09dcc7607695b30c49a9261830d5",
+            "crop": [
+              448,
+              16,
+              64,
+              48
+            ]
+          },
+          "over": {
+            "png": "C:\\Users\\LSDMTHC\\Desktop\\Hoennto\\.work\\tileshift-firegold\\crystaldust\\maps\\g00_m003-over.png",
+            "sha256": "a5872fdf775ef5f4f98cd8a6df7f0accc6bbbeb32e1dbfd687ae1ec9499a60a7",
+            "crop": [
+              448,
+              16,
+              64,
+              48
+            ]
+          }
+        },
+        "native_size": [
+          64,
+          48
+        ],
+        "rgba_sha256": "c07e4924fe21518e644a850700bb1f6c67bb2d36f8780d29f882405605a47469",
+        "entrance": "none; same complete native closed-apartment function",
+        "all_opaque_source_pixels_unchanged": true
+      },
+      "native_size": [
+        48,
+        48
+      ],
+      "complete_modules": [
+        {
+          "source_rect": [
+            0,
+            0,
+            24,
+            48
+          ],
+          "destination": [
+            0,
+            0
+          ]
+        },
+        {
+          "source_rect": [
+            40,
+            0,
+            24,
+            48
+          ],
+          "destination": [
+            24,
+            0
+          ]
+        }
+      ],
+      "rgba_sha256": "64dd1fcf1e2108b8be3ea092b866f9d64efae63affab65f70e8a1ba000f9765c",
+      "assembly": "Complete native window bays andcornercaps retained; optionalcentral shutter bay omitted for48px facade. Whole facade story repeated below one full roof for tall apartment.",
+      "pixel_scale": 1,
+      "no_unique_window_cropped": true
+    },
+    "closed_tall": {
+      "native_source": {
+        "map": "g00_m003",
+        "source_rect": [
+          448,
+          16,
+          64,
+          48
+        ],
+        "mids": [
+          [
+            513,
+            514,
+            514,
+            515
+          ],
+          [
+            528,
+            529,
+            531,
+            532
+          ],
+          [
+            544,
+            545,
+            547,
+            548
+          ]
+        ],
+        "pair": "083df704_083df734",
+        "planes": {
+          "mid": {
+            "png": "C:\\Users\\LSDMTHC\\Desktop\\Hoennto\\.work\\tileshift-firegold\\crystaldust\\maps\\g00_m003-mid.png",
+            "sha256": "d082d9dd14112ac6f284f1b0709c0a337e4a09dcc7607695b30c49a9261830d5",
+            "crop": [
+              448,
+              16,
+              64,
+              48
+            ]
+          },
+          "over": {
+            "png": "C:\\Users\\LSDMTHC\\Desktop\\Hoennto\\.work\\tileshift-firegold\\crystaldust\\maps\\g00_m003-over.png",
+            "sha256": "a5872fdf775ef5f4f98cd8a6df7f0accc6bbbeb32e1dbfd687ae1ec9499a60a7",
+            "crop": [
+              448,
+              16,
+              64,
+              48
+            ]
+          }
+        },
+        "native_size": [
+          64,
+          48
+        ],
+        "rgba_sha256": "c07e4924fe21518e644a850700bb1f6c67bb2d36f8780d29f882405605a47469",
+        "entrance": "none; same complete native closed-apartment function",
+        "all_opaque_source_pixels_unchanged": true
+      },
+      "native_size": [
+        64,
+        80
+      ],
+      "complete_modules": [
+        {
+          "source_rect": [
+            0,
+            0,
+            64,
+            32
+          ],
+          "destination": [
+            0,
+            0
+          ]
+        },
+        {
+          "source_rect": [
+            0,
+            32,
+            64,
+            16
+          ],
+          "destination": [
+            0,
+            32
+          ]
+        },
+        {
+          "source_rect": [
+            0,
+            32,
+            64,
+            16
+          ],
+          "destination": [
+            0,
+            48
+          ]
+        },
+        {
+          "source_rect": [
+            0,
+            32,
+            64,
+            16
+          ],
+          "destination": [
+            0,
+            64
+          ]
+        }
+      ],
+      "rgba_sha256": "48ebb1906f3455d8f32b3a58742018bb89202de99539263037214e40596401ee",
+      "assembly": "Complete native window bays andcornercaps retained; optionalcentral shutter bay omitted for48px facade. Whole facade story repeated below one full roof for tall apartment.",
+      "pixel_scale": 1,
+      "no_unique_window_cropped": true
+    }
+  },
+  "files": {
+    "closed32-whole.png": "e0d38eba0c99a3d929c84a9a8ecdb6610e31d105755ce2dd86449eca0924fa86",
+    "closed32-0-0.png": "139c944b1437bc7c13c8b8cf061aeaddda92e6f161022d166ab5eab6408dedc7",
+    "closed32-1-0.png": "760fee922d19de06fa9dd7f11967a1247d603ab52afa85c0e1c2b0e09a42ed2d",
+    "closed32-0-1.png": "46beeef9a5579aa9054b8673f91d2ff378fd5025eecfac463d1ad658ae67cd81",
+    "closed32-1-1.png": "58fccc421025cac018df156e9e75a3e018511a81c70999930ff67a5b2fcf8f88",
+    "closed32-0-2.png": "e4127eb7df68fa7bf5f5a9a2732696f847019db7705d58a889463689ef349008",
+    "closed32-1-2.png": "d57b13adfaf8072d948927d850ad30ae46610e876f57ec780dce0a7d7c712689",
+    "closed64-whole.png": "6f2ec10889068ca7c90d6764cb90507e8adff8e31a99b4fc8df1522b4308f7f6",
+    "closed64-0-0.png": "139c944b1437bc7c13c8b8cf061aeaddda92e6f161022d166ab5eab6408dedc7",
+    "closed64-1-0.png": "4224bc367e7296ae37ce33fcb78c0b40082d9f014bf75fae7a4dc62c5427b1f7",
+    "closed64-2-0.png": "4224bc367e7296ae37ce33fcb78c0b40082d9f014bf75fae7a4dc62c5427b1f7",
+    "closed64-3-0.png": "760fee922d19de06fa9dd7f11967a1247d603ab52afa85c0e1c2b0e09a42ed2d",
+    "closed64-0-1.png": "46beeef9a5579aa9054b8673f91d2ff378fd5025eecfac463d1ad658ae67cd81",
+    "closed64-1-1.png": "87c66d3ef079143a4135b07f004c0d7861c8903521c4fa8a217ff1a157fff4d2",
+    "closed64-2-1.png": "e534c5662c47b99d36a4232620eeee60243ba27c6ab19523997773c374615113",
+    "closed64-3-1.png": "58fccc421025cac018df156e9e75a3e018511a81c70999930ff67a5b2fcf8f88",
+    "closed64-0-2.png": "e4127eb7df68fa7bf5f5a9a2732696f847019db7705d58a889463689ef349008",
+    "closed64-1-2.png": "b6167caf39234275d92b6b2c2b448a801d96edee18015ee0582941ac1548d732",
+    "closed64-2-2.png": "897a122e6d10c298b869ff29c51185af239b2c803d76ea968b1d9e3a23d66c4a",
+    "closed64-3-2.png": "d57b13adfaf8072d948927d850ad30ae46610e876f57ec780dce0a7d7c712689",
+    "closed48-whole.png": "724f557ca6efe14d7174c860a90d0bc0b0c68a8845a60b608f7e315dac850359",
+    "closed48-0-0.png": "139c944b1437bc7c13c8b8cf061aeaddda92e6f161022d166ab5eab6408dedc7",
+    "closed48-1-0.png": "4224bc367e7296ae37ce33fcb78c0b40082d9f014bf75fae7a4dc62c5427b1f7",
+    "closed48-2-0.png": "760fee922d19de06fa9dd7f11967a1247d603ab52afa85c0e1c2b0e09a42ed2d",
+    "closed48-0-1.png": "46beeef9a5579aa9054b8673f91d2ff378fd5025eecfac463d1ad658ae67cd81",
+    "closed48-1-1.png": "097b532e16221fc0917d77fb477ee53d942397e1789f5859fa1a302d5f19ba0e",
+    "closed48-2-1.png": "58fccc421025cac018df156e9e75a3e018511a81c70999930ff67a5b2fcf8f88",
+    "closed48-0-2.png": "e4127eb7df68fa7bf5f5a9a2732696f847019db7705d58a889463689ef349008",
+    "closed48-1-2.png": "afc0da1f4cb11fdca1f17186d674a25a5ea9111d5d22c951f40427720a08a274",
+    "closed48-2-2.png": "d57b13adfaf8072d948927d850ad30ae46610e876f57ec780dce0a7d7c712689",
+    "closed_tall-whole.png": "c4d1b5ed432a4139e74b6c68a629a30cce2023f712df1c7cc3165284199ef2a2",
+    "closed_tall-0-0.png": "139c944b1437bc7c13c8b8cf061aeaddda92e6f161022d166ab5eab6408dedc7",
+    "closed_tall-1-0.png": "4224bc367e7296ae37ce33fcb78c0b40082d9f014bf75fae7a4dc62c5427b1f7",
+    "closed_tall-2-0.png": "4224bc367e7296ae37ce33fcb78c0b40082d9f014bf75fae7a4dc62c5427b1f7",
+    "closed_tall-3-0.png": "760fee922d19de06fa9dd7f11967a1247d603ab52afa85c0e1c2b0e09a42ed2d",
+    "closed_tall-0-1.png": "46beeef9a5579aa9054b8673f91d2ff378fd5025eecfac463d1ad658ae67cd81",
+    "closed_tall-1-1.png": "87c66d3ef079143a4135b07f004c0d7861c8903521c4fa8a217ff1a157fff4d2",
+    "closed_tall-2-1.png": "e534c5662c47b99d36a4232620eeee60243ba27c6ab19523997773c374615113",
+    "closed_tall-3-1.png": "58fccc421025cac018df156e9e75a3e018511a81c70999930ff67a5b2fcf8f88",
+    "closed_tall-0-2.png": "e4127eb7df68fa7bf5f5a9a2732696f847019db7705d58a889463689ef349008",
+    "closed_tall-1-2.png": "b6167caf39234275d92b6b2c2b448a801d96edee18015ee0582941ac1548d732",
+    "closed_tall-2-2.png": "897a122e6d10c298b869ff29c51185af239b2c803d76ea968b1d9e3a23d66c4a",
+    "closed_tall-3-2.png": "d57b13adfaf8072d948927d850ad30ae46610e876f57ec780dce0a7d7c712689",
+    "closed_tall-0-3.png": "e4127eb7df68fa7bf5f5a9a2732696f847019db7705d58a889463689ef349008",
+    "closed_tall-1-3.png": "b6167caf39234275d92b6b2c2b448a801d96edee18015ee0582941ac1548d732",
+    "closed_tall-2-3.png": "897a122e6d10c298b869ff29c51185af239b2c803d76ea968b1d9e3a23d66c4a",
+    "closed_tall-3-3.png": "d57b13adfaf8072d948927d850ad30ae46610e876f57ec780dce0a7d7c712689",
+    "closed_tall-0-4.png": "e4127eb7df68fa7bf5f5a9a2732696f847019db7705d58a889463689ef349008",
+    "closed_tall-1-4.png": "b6167caf39234275d92b6b2c2b448a801d96edee18015ee0582941ac1548d732",
+    "closed_tall-2-4.png": "897a122e6d10c298b869ff29c51185af239b2c803d76ea968b1d9e3a23d66c4a",
+    "closed_tall-3-4.png": "d57b13adfaf8072d948927d850ad30ae46610e876f57ec780dce0a7d7c712689"
+  },
+  "pixel_scale": 1,
+  "no_scaling_masking_or_redraw": true,
+  "complete_native_module_adaptations": true
+}

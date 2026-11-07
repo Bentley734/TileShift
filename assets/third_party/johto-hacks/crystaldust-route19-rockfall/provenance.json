@@ -1,0 +1,23 @@
+{
+  "origin": "Four whole native CrystalDust16px boulders form a bounded32px rockfall barrier; all opaque artwork pixels remain native1:1. Transparent exterior shows the existing selected Route19 ground.",
+  "rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+  "source_pair": "083df704_083df794",
+  "source_mid": 514,
+  "source_plane": "mid",
+  "source_atlas_sha256": "99056af494fa31ec1e2ff5fb5f02e9b84e5b76b1f95ee8ac1ad0c85d346f1c4c",
+  "source_crop": [
+    32,
+    512,
+    16,
+    16
+  ],
+  "source_rgba_sha256": "e3baee7ad5d6d1f729d164959bdad917435c89e3af15195271a1b71971d72160",
+  "source_contexts": [
+    "g24_m004 (Slowpoke Well):4,6;2,7;4,7;8,7",
+    "g24_m009 (Slowpoke Well B2F)"
+  ],
+  "files": {
+    "rock16.png": "2053e21d5bc450c4dfbe40e60b41cb4979b5d694b3ecd425657ede219a0372f4",
+    "rubble32.png": "4648f94cb114e7ea5c346aab3fae26a1767d158fcb711b9a68ca1a4e446fac8d"
+  }
+}

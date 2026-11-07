@@ -1,0 +1,50 @@
+{
+  "body_rgba_sha256": "c29d0cba8e309cd7feb00644fe191a10e6d136bdbf1e9732ce4a720fc79bb3c6",
+  "cap_rgba_sha256": "0d73ac5fd68ecf72fee9750f779260a85014bc9de8080dc69c53ad8d1c3fc1e1",
+  "catalog_sha256": "fd8fbaf6eb4ee3774e3fe046bf3b506e7f638ab4cd9297c9f62a8bb1189bc740",
+  "credit": "CrystalDust by Sierraffinity and contributors",
+  "files": {
+    "complete-native-closed-wall-counter32x20.png": "e160a883dc868a4de844cb0f6184616781dae89b0d02ce9bb128e8fce8e27845",
+    "crystal-counter-0.png": "04b62a13c6cd884030caf4cce0b95b8e8e944204b985662bd3714ab8e2d9c080",
+    "crystal-counter-1.png": "8ef2e7e7f97bd6250d2eade38ebf2ab80113a18e2a68905d025b4188280914ce",
+    "crystal-counter-2.png": "25f7a69c2abb4ca8bd81a641e0171c3a2061ee6d5b727d0462ba045abe11d214",
+    "crystal-counter-3.png": "25f7a69c2abb4ca8bd81a641e0171c3a2061ee6d5b727d0462ba045abe11d214",
+    "gold-counter-0.png": "04b62a13c6cd884030caf4cce0b95b8e8e944204b985662bd3714ab8e2d9c080",
+    "gold-counter-1.png": "8ef2e7e7f97bd6250d2eade38ebf2ab80113a18e2a68905d025b4188280914ce",
+    "gold-counter-2.png": "25f7a69c2abb4ca8bd81a641e0171c3a2061ee6d5b727d0462ba045abe11d214",
+    "gold-counter-3.png": "25f7a69c2abb4ca8bd81a641e0171c3a2061ee6d5b727d0462ba045abe11d214",
+    "silver-counter-0.png": "04b62a13c6cd884030caf4cce0b95b8e8e944204b985662bd3714ab8e2d9c080",
+    "silver-counter-1.png": "8ef2e7e7f97bd6250d2eade38ebf2ab80113a18e2a68905d025b4188280914ce",
+    "silver-counter-2.png": "25f7a69c2abb4ca8bd81a641e0171c3a2061ee6d5b727d0462ba045abe11d214",
+    "silver-counter-3.png": "25f7a69c2abb4ca8bd81a641e0171c3a2061ee6d5b727d0462ba045abe11d214"
+  },
+  "format": 1,
+  "native_body_all256_opaque_pixels_preserved": true,
+  "native_cap_all64_opaque_pixels_preserved": true,
+  "native_counter_rgba_sha256": "6fb76a2002b3cf51f08a453dda547d5b4241fa390d427280bc6196066e606031",
+  "native_scale": 1,
+  "plain_horizontal_modules_repeated": true,
+  "rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+  "source_map": "g22_m000",
+  "source_map_cells": [
+    [
+      2,
+      5,
+      664
+    ],
+    [
+      2,
+      6,
+      672
+    ]
+  ],
+  "source_mechanics_unchanged": true,
+  "source_mid_sha256": "0ffd3da6001415a76bb001edf411a1829fffda1dd79be250051e67e014d2a480",
+  "source_pair": "083df884_083df9a4",
+  "source_top_sha256": "63b3e67a58ed34dc4714b9b1a7c0c7bf07e5dea67a9d14df983b3af36a2c39af",
+  "unique_endcaps_cropped": false,
+  "whole_counter_size": [
+    32,
+    20
+  ]
+}

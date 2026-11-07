@@ -1,0 +1,2435 @@
+{
+  "source": "Native CrystalDust Ruins of Alph, Elite Four and Champion room modular counterparts",
+  "rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+  "catalog_sha256": "fd8fbaf6eb4ee3774e3fe046bf3b506e7f638ab4cd9297c9f62a8bb1189bc740",
+  "pixel_scale": 1,
+  "no_resampling_or_color_conversion": true,
+  "recipes": [
+    {
+      "file": "e4-closed-door-0.png",
+      "rgba_sha256": "55ff141d12b98e3009101d6f3a3c935036cfc1033b80835c0ee82c8cb2d4b423",
+      "map": "g16_m000",
+      "source_rect": [
+        88,
+        16,
+        32,
+        32
+      ],
+      "source_plane": "flat",
+      "source_png_sha256": "daba7ca192fda4871d48cc923659874a2184fa8082fa106acdf3b27a5d4e662a",
+      "pixel_scale": 1,
+      "feature_name": "e4-closed-door",
+      "feature_rgba_sha256": "91610694a5b6877589aa2904c157a7c3a749df6183c08129ec1521bb55996c60",
+      "feature_size": [
+        32,
+        32
+      ],
+      "feature_quadrant": 0
+    },
+    {
+      "file": "e4-closed-door-1.png",
+      "rgba_sha256": "8f647dac332c3473d2a71cf146bd1c466d3b2182f82338f97fcf339033a659ff",
+      "map": "g16_m000",
+      "source_rect": [
+        88,
+        16,
+        32,
+        32
+      ],
+      "source_plane": "flat",
+      "source_png_sha256": "daba7ca192fda4871d48cc923659874a2184fa8082fa106acdf3b27a5d4e662a",
+      "pixel_scale": 1,
+      "feature_name": "e4-closed-door",
+      "feature_rgba_sha256": "91610694a5b6877589aa2904c157a7c3a749df6183c08129ec1521bb55996c60",
+      "feature_size": [
+        32,
+        32
+      ],
+      "feature_quadrant": 1
+    },
+    {
+      "file": "e4-closed-door-2.png",
+      "rgba_sha256": "120a8c340899c20ccbbc211d3606e33dc44d490f9daa3b2719714c0657aa914f",
+      "map": "g16_m000",
+      "source_rect": [
+        88,
+        16,
+        32,
+        32
+      ],
+      "source_plane": "flat",
+      "source_png_sha256": "daba7ca192fda4871d48cc923659874a2184fa8082fa106acdf3b27a5d4e662a",
+      "pixel_scale": 1,
+      "feature_name": "e4-closed-door",
+      "feature_rgba_sha256": "91610694a5b6877589aa2904c157a7c3a749df6183c08129ec1521bb55996c60",
+      "feature_size": [
+        32,
+        32
+      ],
+      "feature_quadrant": 2
+    },
+    {
+      "file": "e4-closed-door-3.png",
+      "rgba_sha256": "54a3796abe91ac1eeef2371300787105d544df166b7ccaeaa7983a47dc1e737e",
+      "map": "g16_m000",
+      "source_rect": [
+        88,
+        16,
+        32,
+        32
+      ],
+      "source_plane": "flat",
+      "source_png_sha256": "daba7ca192fda4871d48cc923659874a2184fa8082fa106acdf3b27a5d4e662a",
+      "pixel_scale": 1,
+      "feature_name": "e4-closed-door",
+      "feature_rgba_sha256": "91610694a5b6877589aa2904c157a7c3a749df6183c08129ec1521bb55996c60",
+      "feature_size": [
+        32,
+        32
+      ],
+      "feature_quadrant": 3
+    },
+    {
+      "file": "e4-complete-stair-0.png",
+      "rgba_sha256": "ce44f1601869819408e3bed7c9ab2cd3bbb5e963c8a5d538b4655b04da440b27",
+      "map": "g16_m000",
+      "source_rect": [
+        88,
+        64,
+        32,
+        32
+      ],
+      "source_plane": "flat",
+      "source_png_sha256": "daba7ca192fda4871d48cc923659874a2184fa8082fa106acdf3b27a5d4e662a",
+      "pixel_scale": 1,
+      "feature_name": "e4-complete-stair",
+      "feature_rgba_sha256": "341ca8eea64770dcea654c6e959d22c406397ae61c4d88ecd476b7bc376b0b28",
+      "feature_size": [
+        32,
+        32
+      ],
+      "feature_quadrant": 0
+    },
+    {
+      "file": "e4-complete-stair-1.png",
+      "rgba_sha256": "cc33febb525bb5b1b64f17d51d067af2e6cff1637b0cd2eb593351e2886f5602",
+      "map": "g16_m000",
+      "source_rect": [
+        88,
+        64,
+        32,
+        32
+      ],
+      "source_plane": "flat",
+      "source_png_sha256": "daba7ca192fda4871d48cc923659874a2184fa8082fa106acdf3b27a5d4e662a",
+      "pixel_scale": 1,
+      "feature_name": "e4-complete-stair",
+      "feature_rgba_sha256": "341ca8eea64770dcea654c6e959d22c406397ae61c4d88ecd476b7bc376b0b28",
+      "feature_size": [
+        32,
+        32
+      ],
+      "feature_quadrant": 1
+    },
+    {
+      "file": "e4-complete-stair-2.png",
+      "rgba_sha256": "4dca1eb2925ebc278d98839873662d1f1b3a632f0641db571345dd4821050c46",
+      "map": "g16_m000",
+      "source_rect": [
+        88,
+        64,
+        32,
+        32
+      ],
+      "source_plane": "flat",
+      "source_png_sha256": "daba7ca192fda4871d48cc923659874a2184fa8082fa106acdf3b27a5d4e662a",
+      "pixel_scale": 1,
+      "feature_name": "e4-complete-stair",
+      "feature_rgba_sha256": "341ca8eea64770dcea654c6e959d22c406397ae61c4d88ecd476b7bc376b0b28",
+      "feature_size": [
+        32,
+        32
+      ],
+      "feature_quadrant": 2
+    },
+    {
+      "file": "e4-complete-stair-3.png",
+      "rgba_sha256": "e65f527e241f8717e0c5a14954cb46c503e0b8dd0ded016325fc508c8e78bb1a",
+      "map": "g16_m000",
+      "source_rect": [
+        88,
+        64,
+        32,
+        32
+      ],
+      "source_plane": "flat",
+      "source_png_sha256": "daba7ca192fda4871d48cc923659874a2184fa8082fa106acdf3b27a5d4e662a",
+      "pixel_scale": 1,
+      "feature_name": "e4-complete-stair",
+      "feature_rgba_sha256": "341ca8eea64770dcea654c6e959d22c406397ae61c4d88ecd476b7bc376b0b28",
+      "feature_size": [
+        32,
+        32
+      ],
+      "feature_quadrant": 3
+    },
+    {
+      "file": "champion-closed-door-0.png",
+      "rgba_sha256": "940ac24793c260487b72b7f67c2b728c3a9f615c97df8c4b9973ffdf0f7686d5",
+      "map": "g16_m004",
+      "source_rect": [
+        88,
+        16,
+        32,
+        32
+      ],
+      "source_plane": "flat",
+      "source_png_sha256": "4ff34418aa992134ab77c977f37318f109cef9e4d6b3c6b518d3759142007f8e",
+      "pixel_scale": 1,
+      "feature_name": "champion-closed-door",
+      "feature_rgba_sha256": "973bba7089b438ad4e2865b2a74681a096d7067011712f2e88c9a8ae7c9dc2af",
+      "feature_size": [
+        32,
+        32
+      ],
+      "feature_quadrant": 0
+    },
+    {
+      "file": "champion-closed-door-1.png",
+      "rgba_sha256": "41759c28e525dc36799406b11f54fa51eeefcdd42651d86b3a23717e466ba35a",
+      "map": "g16_m004",
+      "source_rect": [
+        88,
+        16,
+        32,
+        32
+      ],
+      "source_plane": "flat",
+      "source_png_sha256": "4ff34418aa992134ab77c977f37318f109cef9e4d6b3c6b518d3759142007f8e",
+      "pixel_scale": 1,
+      "feature_name": "champion-closed-door",
+      "feature_rgba_sha256": "973bba7089b438ad4e2865b2a74681a096d7067011712f2e88c9a8ae7c9dc2af",
+      "feature_size": [
+        32,
+        32
+      ],
+      "feature_quadrant": 1
+    },
+    {
+      "file": "champion-closed-door-2.png",
+      "rgba_sha256": "9f04253607b8c4f811ad342b869f7522789b1662443368ee0dc8cc4dce51e07d",
+      "map": "g16_m004",
+      "source_rect": [
+        88,
+        16,
+        32,
+        32
+      ],
+      "source_plane": "flat",
+      "source_png_sha256": "4ff34418aa992134ab77c977f37318f109cef9e4d6b3c6b518d3759142007f8e",
+      "pixel_scale": 1,
+      "feature_name": "champion-closed-door",
+      "feature_rgba_sha256": "973bba7089b438ad4e2865b2a74681a096d7067011712f2e88c9a8ae7c9dc2af",
+      "feature_size": [
+        32,
+        32
+      ],
+      "feature_quadrant": 2
+    },
+    {
+      "file": "champion-closed-door-3.png",
+      "rgba_sha256": "ffdd33b4d975525b1aca1e1e4e4717860f350de7eb57b8167281a259e3f53c0a",
+      "map": "g16_m004",
+      "source_rect": [
+        88,
+        16,
+        32,
+        32
+      ],
+      "source_plane": "flat",
+      "source_png_sha256": "4ff34418aa992134ab77c977f37318f109cef9e4d6b3c6b518d3759142007f8e",
+      "pixel_scale": 1,
+      "feature_name": "champion-closed-door",
+      "feature_rgba_sha256": "973bba7089b438ad4e2865b2a74681a096d7067011712f2e88c9a8ae7c9dc2af",
+      "feature_size": [
+        32,
+        32
+      ],
+      "feature_quadrant": 3
+    },
+    {
+      "file": "champion-open-door-0.png",
+      "rgba_sha256": "940ac24793c260487b72b7f67c2b728c3a9f615c97df8c4b9973ffdf0f7686d5",
+      "map": "g16_m004",
+      "source_rect": [
+        88,
+        16,
+        32,
+        32
+      ],
+      "source_plane": "under+mid+over",
+      "source_png_sha256": "4ff34418aa992134ab77c977f37318f109cef9e4d6b3c6b518d3759142007f8e",
+      "pixel_scale": 1,
+      "removed_closed_leaf_rect": [
+        96,
+        32,
+        16,
+        16
+      ],
+      "replacement_native_black_mid": 8,
+      "plane_hashes": {
+        "under": "c422076fa11662445bf30099a3c68d45a639ee7f839847c1acd14198d7a47fe7",
+        "mid": "0808359ba32d45db1d0470ed2d586aed92a43867165231e14721fa59277ea29d",
+        "over": "5c0120844bf7ca8f8dc6ca0b2c28d5bb2bfc948ab2d8e9592b9634e04d4d4944"
+      },
+      "feature_name": "champion-open-door",
+      "feature_rgba_sha256": "4412fdee1a153586d04c86fdad9578fcd62023015bcc2840063e0e8ed4af5c89",
+      "feature_size": [
+        32,
+        32
+      ],
+      "feature_quadrant": 0
+    },
+    {
+      "file": "champion-open-door-1.png",
+      "rgba_sha256": "41759c28e525dc36799406b11f54fa51eeefcdd42651d86b3a23717e466ba35a",
+      "map": "g16_m004",
+      "source_rect": [
+        88,
+        16,
+        32,
+        32
+      ],
+      "source_plane": "under+mid+over",
+      "source_png_sha256": "4ff34418aa992134ab77c977f37318f109cef9e4d6b3c6b518d3759142007f8e",
+      "pixel_scale": 1,
+      "removed_closed_leaf_rect": [
+        96,
+        32,
+        16,
+        16
+      ],
+      "replacement_native_black_mid": 8,
+      "plane_hashes": {
+        "under": "c422076fa11662445bf30099a3c68d45a639ee7f839847c1acd14198d7a47fe7",
+        "mid": "0808359ba32d45db1d0470ed2d586aed92a43867165231e14721fa59277ea29d",
+        "over": "5c0120844bf7ca8f8dc6ca0b2c28d5bb2bfc948ab2d8e9592b9634e04d4d4944"
+      },
+      "feature_name": "champion-open-door",
+      "feature_rgba_sha256": "4412fdee1a153586d04c86fdad9578fcd62023015bcc2840063e0e8ed4af5c89",
+      "feature_size": [
+        32,
+        32
+      ],
+      "feature_quadrant": 1
+    },
+    {
+      "file": "champion-open-door-2.png",
+      "rgba_sha256": "f4fc1b1b59561096b7390d20a8cf3827f37d0327df9be387db21362caf76e15f",
+      "map": "g16_m004",
+      "source_rect": [
+        88,
+        16,
+        32,
+        32
+      ],
+      "source_plane": "under+mid+over",
+      "source_png_sha256": "4ff34418aa992134ab77c977f37318f109cef9e4d6b3c6b518d3759142007f8e",
+      "pixel_scale": 1,
+      "removed_closed_leaf_rect": [
+        96,
+        32,
+        16,
+        16
+      ],
+      "replacement_native_black_mid": 8,
+      "plane_hashes": {
+        "under": "c422076fa11662445bf30099a3c68d45a639ee7f839847c1acd14198d7a47fe7",
+        "mid": "0808359ba32d45db1d0470ed2d586aed92a43867165231e14721fa59277ea29d",
+        "over": "5c0120844bf7ca8f8dc6ca0b2c28d5bb2bfc948ab2d8e9592b9634e04d4d4944"
+      },
+      "feature_name": "champion-open-door",
+      "feature_rgba_sha256": "4412fdee1a153586d04c86fdad9578fcd62023015bcc2840063e0e8ed4af5c89",
+      "feature_size": [
+        32,
+        32
+      ],
+      "feature_quadrant": 2
+    },
+    {
+      "file": "champion-open-door-3.png",
+      "rgba_sha256": "93a0c15b86329c4a662831f6054602c20f42741cd19e285fa78bc190df5259c8",
+      "map": "g16_m004",
+      "source_rect": [
+        88,
+        16,
+        32,
+        32
+      ],
+      "source_plane": "under+mid+over",
+      "source_png_sha256": "4ff34418aa992134ab77c977f37318f109cef9e4d6b3c6b518d3759142007f8e",
+      "pixel_scale": 1,
+      "removed_closed_leaf_rect": [
+        96,
+        32,
+        16,
+        16
+      ],
+      "replacement_native_black_mid": 8,
+      "plane_hashes": {
+        "under": "c422076fa11662445bf30099a3c68d45a639ee7f839847c1acd14198d7a47fe7",
+        "mid": "0808359ba32d45db1d0470ed2d586aed92a43867165231e14721fa59277ea29d",
+        "over": "5c0120844bf7ca8f8dc6ca0b2c28d5bb2bfc948ab2d8e9592b9634e04d4d4944"
+      },
+      "feature_name": "champion-open-door",
+      "feature_rgba_sha256": "4412fdee1a153586d04c86fdad9578fcd62023015bcc2840063e0e8ed4af5c89",
+      "feature_size": [
+        32,
+        32
+      ],
+      "feature_quadrant": 3
+    },
+    {
+      "file": "ruin-statue-0.png",
+      "rgba_sha256": "9b25e173ad9cd939def16c36d7f4074b478bee70a1ca0389a36b75f6b307e940",
+      "map": "g24_m084",
+      "pair": "083df884_083df9ec",
+      "mid": 606,
+      "source_plane": "flat",
+      "source_rect": [
+        32,
+        48,
+        16,
+        16
+      ],
+      "source_png_sha256": "3676ff9c7cbea8d3b5f0868b9713c2c9aaf572c0211d6d2d6c94aa2219821c8b",
+      "pixel_scale": 1
+    },
+    {
+      "file": "ruin-statue-1.png",
+      "rgba_sha256": "ab8babc3413fb077603f569dd4eb70c21f844388f238ac897a7646de45337a7e",
+      "map": "g24_m084",
+      "pair": "083df884_083df9ec",
+      "mid": 607,
+      "source_plane": "flat",
+      "source_rect": [
+        32,
+        64,
+        16,
+        16
+      ],
+      "source_png_sha256": "3676ff9c7cbea8d3b5f0868b9713c2c9aaf572c0211d6d2d6c94aa2219821c8b",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g24_m084-2-0.png",
+      "rgba_sha256": "b04965d50111eab2d383391af6be2b7bcd3838b55e069b01fc25f67dab107a4c",
+      "map": "g24_m084",
+      "pair": "083df884_083df9ec",
+      "mid": 517,
+      "source_plane": "flat",
+      "source_rect": [
+        32,
+        0,
+        16,
+        16
+      ],
+      "source_png_sha256": "3676ff9c7cbea8d3b5f0868b9713c2c9aaf572c0211d6d2d6c94aa2219821c8b",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g24_m084-1-1.png",
+      "rgba_sha256": "90c187298b4f0aeadb13635cc14fbb955e67479bbf467191116c55acc5e02b6f",
+      "map": "g24_m084",
+      "pair": "083df884_083df9ec",
+      "mid": 534,
+      "source_plane": "flat",
+      "source_rect": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "source_png_sha256": "3676ff9c7cbea8d3b5f0868b9713c2c9aaf572c0211d6d2d6c94aa2219821c8b",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g24_m084-4-6.png",
+      "rgba_sha256": "069d1525a58bb15aa1f4bf85a056ca912c5a37c8079176e9d8876fcc4b182046",
+      "map": "g24_m084",
+      "pair": "083df884_083df9ec",
+      "mid": 520,
+      "source_plane": "flat",
+      "source_rect": [
+        64,
+        96,
+        16,
+        16
+      ],
+      "source_png_sha256": "3676ff9c7cbea8d3b5f0868b9713c2c9aaf572c0211d6d2d6c94aa2219821c8b",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m002-0-0.png",
+      "rgba_sha256": "55439547a5166eb305f391f9bf42a94c69edc4cb1477ed638668652f00584615",
+      "map": "g16_m002",
+      "pair": "083df884_083dfc7c",
+      "mid": 515,
+      "source_plane": "flat",
+      "source_rect": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "source_png_sha256": "a72c6183e2512a58ad593130d49b8129f7fdebdce0f2e34ee18ace0796c06685",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m002-1-0.png",
+      "rgba_sha256": "55439547a5166eb305f391f9bf42a94c69edc4cb1477ed638668652f00584615",
+      "map": "g16_m002",
+      "pair": "083df884_083dfc7c",
+      "mid": 515,
+      "source_plane": "flat",
+      "source_rect": [
+        16,
+        0,
+        16,
+        16
+      ],
+      "source_png_sha256": "a72c6183e2512a58ad593130d49b8129f7fdebdce0f2e34ee18ace0796c06685",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m002-0-1.png",
+      "rgba_sha256": "890219d47011a90cdf1cda02e5b82737636cbdb68ca7b16f7a8e4deb84f8444f",
+      "map": "g16_m002",
+      "pair": "083df884_083dfc7c",
+      "mid": 516,
+      "source_plane": "flat",
+      "source_rect": [
+        0,
+        16,
+        16,
+        16
+      ],
+      "source_png_sha256": "a72c6183e2512a58ad593130d49b8129f7fdebdce0f2e34ee18ace0796c06685",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m002-1-1.png",
+      "rgba_sha256": "27f7aa1a3f282dc01a33b9ab9a1525efd37b0a3eebb37ee5f00ce6a7759a3dec",
+      "map": "g16_m002",
+      "pair": "083df884_083dfc7c",
+      "mid": 518,
+      "source_plane": "flat",
+      "source_rect": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "source_png_sha256": "a72c6183e2512a58ad593130d49b8129f7fdebdce0f2e34ee18ace0796c06685",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m002-0-2.png",
+      "rgba_sha256": "bba24486c89c00fcfb7e856ef571a31ab4e76ce798fd2fb1cbcd1805340ee045",
+      "map": "g16_m002",
+      "pair": "083df884_083dfc7c",
+      "mid": 551,
+      "source_plane": "flat",
+      "source_rect": [
+        0,
+        32,
+        16,
+        16
+      ],
+      "source_png_sha256": "a72c6183e2512a58ad593130d49b8129f7fdebdce0f2e34ee18ace0796c06685",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m002-1-2.png",
+      "rgba_sha256": "58e1af5462ad61f01b205afdf20f9e377e6a0133990e61ce554f07a9ae85f00a",
+      "map": "g16_m002",
+      "pair": "083df884_083dfc7c",
+      "mid": 549,
+      "source_plane": "flat",
+      "source_rect": [
+        16,
+        32,
+        16,
+        16
+      ],
+      "source_png_sha256": "a72c6183e2512a58ad593130d49b8129f7fdebdce0f2e34ee18ace0796c06685",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m002-0-3.png",
+      "rgba_sha256": "f520cde998f50fbcec708244144f21a777778d3360186e727871a2d745a381d5",
+      "map": "g16_m002",
+      "pair": "083df884_083dfc7c",
+      "mid": 721,
+      "source_plane": "flat",
+      "source_rect": [
+        0,
+        48,
+        16,
+        16
+      ],
+      "source_png_sha256": "a72c6183e2512a58ad593130d49b8129f7fdebdce0f2e34ee18ace0796c06685",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m002-1-3.png",
+      "rgba_sha256": "f520cde998f50fbcec708244144f21a777778d3360186e727871a2d745a381d5",
+      "map": "g16_m002",
+      "pair": "083df884_083dfc7c",
+      "mid": 721,
+      "source_plane": "flat",
+      "source_rect": [
+        16,
+        48,
+        16,
+        16
+      ],
+      "source_png_sha256": "a72c6183e2512a58ad593130d49b8129f7fdebdce0f2e34ee18ace0796c06685",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m002-0-4.png",
+      "rgba_sha256": "8d2de556d3b069b8ee86e2a6d7a6e47c45f59fbb47b08a34fe275a489718a6be",
+      "map": "g16_m002",
+      "pair": "083df884_083dfc7c",
+      "mid": 706,
+      "source_plane": "flat",
+      "source_rect": [
+        0,
+        64,
+        16,
+        16
+      ],
+      "source_png_sha256": "a72c6183e2512a58ad593130d49b8129f7fdebdce0f2e34ee18ace0796c06685",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m002-1-4.png",
+      "rgba_sha256": "b380887b84b7d17d445681dd2e9ae07e1f584cce5e4bf39b962483676871655b",
+      "map": "g16_m002",
+      "pair": "083df884_083dfc7c",
+      "mid": 707,
+      "source_plane": "flat",
+      "source_rect": [
+        16,
+        64,
+        16,
+        16
+      ],
+      "source_png_sha256": "a72c6183e2512a58ad593130d49b8129f7fdebdce0f2e34ee18ace0796c06685",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m002-0-17.png",
+      "rgba_sha256": "890219d47011a90cdf1cda02e5b82737636cbdb68ca7b16f7a8e4deb84f8444f",
+      "map": "g16_m002",
+      "pair": "083df884_083dfc7c",
+      "mid": 516,
+      "source_plane": "flat",
+      "source_rect": [
+        0,
+        272,
+        16,
+        16
+      ],
+      "source_png_sha256": "a72c6183e2512a58ad593130d49b8129f7fdebdce0f2e34ee18ace0796c06685",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m002-1-17.png",
+      "rgba_sha256": "27f7aa1a3f282dc01a33b9ab9a1525efd37b0a3eebb37ee5f00ce6a7759a3dec",
+      "map": "g16_m002",
+      "pair": "083df884_083dfc7c",
+      "mid": 518,
+      "source_plane": "flat",
+      "source_rect": [
+        16,
+        272,
+        16,
+        16
+      ],
+      "source_png_sha256": "a72c6183e2512a58ad593130d49b8129f7fdebdce0f2e34ee18ace0796c06685",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m002-0-18.png",
+      "rgba_sha256": "bba24486c89c00fcfb7e856ef571a31ab4e76ce798fd2fb1cbcd1805340ee045",
+      "map": "g16_m002",
+      "pair": "083df884_083dfc7c",
+      "mid": 551,
+      "source_plane": "flat",
+      "source_rect": [
+        0,
+        288,
+        16,
+        16
+      ],
+      "source_png_sha256": "a72c6183e2512a58ad593130d49b8129f7fdebdce0f2e34ee18ace0796c06685",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m002-1-18.png",
+      "rgba_sha256": "58e1af5462ad61f01b205afdf20f9e377e6a0133990e61ce554f07a9ae85f00a",
+      "map": "g16_m002",
+      "pair": "083df884_083dfc7c",
+      "mid": 549,
+      "source_plane": "flat",
+      "source_rect": [
+        16,
+        288,
+        16,
+        16
+      ],
+      "source_png_sha256": "a72c6183e2512a58ad593130d49b8129f7fdebdce0f2e34ee18ace0796c06685",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m003-0-0.png",
+      "rgba_sha256": "55439547a5166eb305f391f9bf42a94c69edc4cb1477ed638668652f00584615",
+      "map": "g16_m003",
+      "pair": "083df884_083dfc7c",
+      "mid": 515,
+      "source_plane": "flat",
+      "source_rect": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "source_png_sha256": "0ee2f375b2a1b833d9ad6a5afe21628ef22cc3d3c9cc1f6998be5ebcf86b903f",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m003-1-0.png",
+      "rgba_sha256": "55439547a5166eb305f391f9bf42a94c69edc4cb1477ed638668652f00584615",
+      "map": "g16_m003",
+      "pair": "083df884_083dfc7c",
+      "mid": 515,
+      "source_plane": "flat",
+      "source_rect": [
+        16,
+        0,
+        16,
+        16
+      ],
+      "source_png_sha256": "0ee2f375b2a1b833d9ad6a5afe21628ef22cc3d3c9cc1f6998be5ebcf86b903f",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m003-0-1.png",
+      "rgba_sha256": "890219d47011a90cdf1cda02e5b82737636cbdb68ca7b16f7a8e4deb84f8444f",
+      "map": "g16_m003",
+      "pair": "083df884_083dfc7c",
+      "mid": 516,
+      "source_plane": "flat",
+      "source_rect": [
+        0,
+        16,
+        16,
+        16
+      ],
+      "source_png_sha256": "0ee2f375b2a1b833d9ad6a5afe21628ef22cc3d3c9cc1f6998be5ebcf86b903f",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m003-1-1.png",
+      "rgba_sha256": "27f7aa1a3f282dc01a33b9ab9a1525efd37b0a3eebb37ee5f00ce6a7759a3dec",
+      "map": "g16_m003",
+      "pair": "083df884_083dfc7c",
+      "mid": 518,
+      "source_plane": "flat",
+      "source_rect": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "source_png_sha256": "0ee2f375b2a1b833d9ad6a5afe21628ef22cc3d3c9cc1f6998be5ebcf86b903f",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m003-0-2.png",
+      "rgba_sha256": "bba24486c89c00fcfb7e856ef571a31ab4e76ce798fd2fb1cbcd1805340ee045",
+      "map": "g16_m003",
+      "pair": "083df884_083dfc7c",
+      "mid": 551,
+      "source_plane": "flat",
+      "source_rect": [
+        0,
+        32,
+        16,
+        16
+      ],
+      "source_png_sha256": "0ee2f375b2a1b833d9ad6a5afe21628ef22cc3d3c9cc1f6998be5ebcf86b903f",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m003-1-2.png",
+      "rgba_sha256": "58e1af5462ad61f01b205afdf20f9e377e6a0133990e61ce554f07a9ae85f00a",
+      "map": "g16_m003",
+      "pair": "083df884_083dfc7c",
+      "mid": 549,
+      "source_plane": "flat",
+      "source_rect": [
+        16,
+        32,
+        16,
+        16
+      ],
+      "source_png_sha256": "0ee2f375b2a1b833d9ad6a5afe21628ef22cc3d3c9cc1f6998be5ebcf86b903f",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m003-0-3.png",
+      "rgba_sha256": "f520cde998f50fbcec708244144f21a777778d3360186e727871a2d745a381d5",
+      "map": "g16_m003",
+      "pair": "083df884_083dfc7c",
+      "mid": 721,
+      "source_plane": "flat",
+      "source_rect": [
+        0,
+        48,
+        16,
+        16
+      ],
+      "source_png_sha256": "0ee2f375b2a1b833d9ad6a5afe21628ef22cc3d3c9cc1f6998be5ebcf86b903f",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m003-1-3.png",
+      "rgba_sha256": "f520cde998f50fbcec708244144f21a777778d3360186e727871a2d745a381d5",
+      "map": "g16_m003",
+      "pair": "083df884_083dfc7c",
+      "mid": 721,
+      "source_plane": "flat",
+      "source_rect": [
+        16,
+        48,
+        16,
+        16
+      ],
+      "source_png_sha256": "0ee2f375b2a1b833d9ad6a5afe21628ef22cc3d3c9cc1f6998be5ebcf86b903f",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m003-6-15.png",
+      "rgba_sha256": "e0b2ce4f0870e432e4e9b1a1fc2fa3c9fa6a0c007704b6151cf9ed762028d00b",
+      "map": "g16_m003",
+      "pair": "083df884_083dfc7c",
+      "mid": 624,
+      "source_plane": "flat",
+      "source_rect": [
+        96,
+        240,
+        16,
+        16
+      ],
+      "source_png_sha256": "0ee2f375b2a1b833d9ad6a5afe21628ef22cc3d3c9cc1f6998be5ebcf86b903f",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m003-0-17.png",
+      "rgba_sha256": "890219d47011a90cdf1cda02e5b82737636cbdb68ca7b16f7a8e4deb84f8444f",
+      "map": "g16_m003",
+      "pair": "083df884_083dfc7c",
+      "mid": 516,
+      "source_plane": "flat",
+      "source_rect": [
+        0,
+        272,
+        16,
+        16
+      ],
+      "source_png_sha256": "0ee2f375b2a1b833d9ad6a5afe21628ef22cc3d3c9cc1f6998be5ebcf86b903f",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m003-1-17.png",
+      "rgba_sha256": "27f7aa1a3f282dc01a33b9ab9a1525efd37b0a3eebb37ee5f00ce6a7759a3dec",
+      "map": "g16_m003",
+      "pair": "083df884_083dfc7c",
+      "mid": 518,
+      "source_plane": "flat",
+      "source_rect": [
+        16,
+        272,
+        16,
+        16
+      ],
+      "source_png_sha256": "0ee2f375b2a1b833d9ad6a5afe21628ef22cc3d3c9cc1f6998be5ebcf86b903f",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m003-0-18.png",
+      "rgba_sha256": "bba24486c89c00fcfb7e856ef571a31ab4e76ce798fd2fb1cbcd1805340ee045",
+      "map": "g16_m003",
+      "pair": "083df884_083dfc7c",
+      "mid": 551,
+      "source_plane": "flat",
+      "source_rect": [
+        0,
+        288,
+        16,
+        16
+      ],
+      "source_png_sha256": "0ee2f375b2a1b833d9ad6a5afe21628ef22cc3d3c9cc1f6998be5ebcf86b903f",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m003-1-18.png",
+      "rgba_sha256": "58e1af5462ad61f01b205afdf20f9e377e6a0133990e61ce554f07a9ae85f00a",
+      "map": "g16_m003",
+      "pair": "083df884_083dfc7c",
+      "mid": 549,
+      "source_plane": "flat",
+      "source_rect": [
+        16,
+        288,
+        16,
+        16
+      ],
+      "source_png_sha256": "0ee2f375b2a1b833d9ad6a5afe21628ef22cc3d3c9cc1f6998be5ebcf86b903f",
+      "pixel_scale": 1
+    },
+    {
+      "file": "elite_four_crystaldust_floor_native_rug_karens_room_2.png",
+      "rgba_sha256": "195087ff22516935f33ed06e3b88a77d60b870cde0bdfb831af918b1105e651b",
+      "map": "g16_m003",
+      "source_plane": "flat",
+      "source_rect": [
+        96,
+        240,
+        16,
+        16
+      ],
+      "source_png_sha256": "0ee2f375b2a1b833d9ad6a5afe21628ef22cc3d3c9cc1f6998be5ebcf86b903f",
+      "complete_native_firered_rug_parts": [
+        {
+          "donor": {
+            "hash": "a0470d3d4d0e7a1e3aba3e75be5c2051f6a3504d3d7ca773e6870e6a382a9a24",
+            "game": "firered",
+            "id": 18,
+            "tileset": "player_house"
+          },
+          "h": 12,
+          "srcX": 11,
+          "srcY": 4,
+          "w": 5,
+          "x": 3,
+          "y": 0
+        },
+        {
+          "donor": {
+            "hash": "238ed2532359e508f6522d2a6685f49a5f11f71ee7747fcdc237e116e4844a25",
+            "game": "firered",
+            "id": 19,
+            "tileset": "player_house"
+          },
+          "h": 12,
+          "srcX": 0,
+          "srcY": 4,
+          "w": 8,
+          "x": 8,
+          "y": 0
+        },
+        {
+          "donor": {
+            "hash": "9b4fe26a1c9df8ee5930ac991af2d8a07d78aaeda04e994cff51fa6e73246afb",
+            "game": "firered",
+            "id": 26,
+            "tileset": "player_house"
+          },
+          "h": 4,
+          "srcX": 11,
+          "srcY": 0,
+          "w": 5,
+          "x": 3,
+          "y": 12
+        },
+        {
+          "donor": {
+            "hash": "ec7924c4464b5611505316a16f937970c041f4c441c83ba1325ed7e7a5bf656b",
+            "game": "firered",
+            "id": 27,
+            "tileset": "player_house"
+          },
+          "h": 4,
+          "srcX": 0,
+          "srcY": 0,
+          "w": 8,
+          "x": 8,
+          "y": 12
+        }
+      ],
+      "pixel_scale": 1
+    },
+    {
+      "file": "elite_four_crystaldust_floor_native_rug_karens_room_3.png",
+      "rgba_sha256": "17bd2009d224cedfae58ad18434f1a7beb167740f91dd0305cd0f9a9f57e9ca0",
+      "map": "g16_m003",
+      "source_plane": "flat",
+      "source_rect": [
+        96,
+        240,
+        16,
+        16
+      ],
+      "source_png_sha256": "0ee2f375b2a1b833d9ad6a5afe21628ef22cc3d3c9cc1f6998be5ebcf86b903f",
+      "complete_native_firered_rug_parts": [
+        {
+          "donor": {
+            "hash": "238ed2532359e508f6522d2a6685f49a5f11f71ee7747fcdc237e116e4844a25",
+            "game": "firered",
+            "id": 19,
+            "tileset": "player_house"
+          },
+          "h": 12,
+          "srcX": 8,
+          "srcY": 4,
+          "w": 8,
+          "x": 0,
+          "y": 0
+        },
+        {
+          "donor": {
+            "hash": "0e2e0dc0206ad73765a36130d5053e6bae2286de0e4d2957077a89c91e5919d5",
+            "game": "firered",
+            "id": 20,
+            "tileset": "player_house"
+          },
+          "h": 12,
+          "srcX": 0,
+          "srcY": 4,
+          "w": 5,
+          "x": 8,
+          "y": 0
+        },
+        {
+          "donor": {
+            "hash": "ec7924c4464b5611505316a16f937970c041f4c441c83ba1325ed7e7a5bf656b",
+            "game": "firered",
+            "id": 27,
+            "tileset": "player_house"
+          },
+          "h": 4,
+          "srcX": 8,
+          "srcY": 0,
+          "w": 8,
+          "x": 0,
+          "y": 12
+        },
+        {
+          "donor": {
+            "hash": "fe464fe96023623f009eeaa73bc39173c91e17f495f34f4da0ea3a9e38c031e2",
+            "game": "firered",
+            "id": 28,
+            "tileset": "player_house"
+          },
+          "h": 4,
+          "srcX": 0,
+          "srcY": 0,
+          "w": 5,
+          "x": 8,
+          "y": 12
+        }
+      ],
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m001-0-0.png",
+      "rgba_sha256": "55439547a5166eb305f391f9bf42a94c69edc4cb1477ed638668652f00584615",
+      "map": "g16_m001",
+      "pair": "083df884_083dfc7c",
+      "mid": 515,
+      "source_plane": "flat",
+      "source_rect": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "source_png_sha256": "63f314c897ecc726785e5733390a1348c39e96a0792fa999762b20028324a806",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m001-1-0.png",
+      "rgba_sha256": "55439547a5166eb305f391f9bf42a94c69edc4cb1477ed638668652f00584615",
+      "map": "g16_m001",
+      "pair": "083df884_083dfc7c",
+      "mid": 515,
+      "source_plane": "flat",
+      "source_rect": [
+        16,
+        0,
+        16,
+        16
+      ],
+      "source_png_sha256": "63f314c897ecc726785e5733390a1348c39e96a0792fa999762b20028324a806",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m001-0-1.png",
+      "rgba_sha256": "890219d47011a90cdf1cda02e5b82737636cbdb68ca7b16f7a8e4deb84f8444f",
+      "map": "g16_m001",
+      "pair": "083df884_083dfc7c",
+      "mid": 516,
+      "source_plane": "flat",
+      "source_rect": [
+        0,
+        16,
+        16,
+        16
+      ],
+      "source_png_sha256": "63f314c897ecc726785e5733390a1348c39e96a0792fa999762b20028324a806",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m001-1-1.png",
+      "rgba_sha256": "27f7aa1a3f282dc01a33b9ab9a1525efd37b0a3eebb37ee5f00ce6a7759a3dec",
+      "map": "g16_m001",
+      "pair": "083df884_083dfc7c",
+      "mid": 518,
+      "source_plane": "flat",
+      "source_rect": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "source_png_sha256": "63f314c897ecc726785e5733390a1348c39e96a0792fa999762b20028324a806",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m001-0-2.png",
+      "rgba_sha256": "bba24486c89c00fcfb7e856ef571a31ab4e76ce798fd2fb1cbcd1805340ee045",
+      "map": "g16_m001",
+      "pair": "083df884_083dfc7c",
+      "mid": 551,
+      "source_plane": "flat",
+      "source_rect": [
+        0,
+        32,
+        16,
+        16
+      ],
+      "source_png_sha256": "63f314c897ecc726785e5733390a1348c39e96a0792fa999762b20028324a806",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m001-1-2.png",
+      "rgba_sha256": "58e1af5462ad61f01b205afdf20f9e377e6a0133990e61ce554f07a9ae85f00a",
+      "map": "g16_m001",
+      "pair": "083df884_083dfc7c",
+      "mid": 549,
+      "source_plane": "flat",
+      "source_rect": [
+        16,
+        32,
+        16,
+        16
+      ],
+      "source_png_sha256": "63f314c897ecc726785e5733390a1348c39e96a0792fa999762b20028324a806",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m001-0-3.png",
+      "rgba_sha256": "f520cde998f50fbcec708244144f21a777778d3360186e727871a2d745a381d5",
+      "map": "g16_m001",
+      "pair": "083df884_083dfc7c",
+      "mid": 721,
+      "source_plane": "flat",
+      "source_rect": [
+        0,
+        48,
+        16,
+        16
+      ],
+      "source_png_sha256": "63f314c897ecc726785e5733390a1348c39e96a0792fa999762b20028324a806",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m001-1-3.png",
+      "rgba_sha256": "f520cde998f50fbcec708244144f21a777778d3360186e727871a2d745a381d5",
+      "map": "g16_m001",
+      "pair": "083df884_083dfc7c",
+      "mid": 721,
+      "source_plane": "flat",
+      "source_rect": [
+        16,
+        48,
+        16,
+        16
+      ],
+      "source_png_sha256": "63f314c897ecc726785e5733390a1348c39e96a0792fa999762b20028324a806",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m001-0-4.png",
+      "rgba_sha256": "8d2de556d3b069b8ee86e2a6d7a6e47c45f59fbb47b08a34fe275a489718a6be",
+      "map": "g16_m001",
+      "pair": "083df884_083dfc7c",
+      "mid": 706,
+      "source_plane": "flat",
+      "source_rect": [
+        0,
+        64,
+        16,
+        16
+      ],
+      "source_png_sha256": "63f314c897ecc726785e5733390a1348c39e96a0792fa999762b20028324a806",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m001-1-4.png",
+      "rgba_sha256": "b380887b84b7d17d445681dd2e9ae07e1f584cce5e4bf39b962483676871655b",
+      "map": "g16_m001",
+      "pair": "083df884_083dfc7c",
+      "mid": 707,
+      "source_plane": "flat",
+      "source_rect": [
+        16,
+        64,
+        16,
+        16
+      ],
+      "source_png_sha256": "63f314c897ecc726785e5733390a1348c39e96a0792fa999762b20028324a806",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m001-6-15.png",
+      "rgba_sha256": "366194e9991b1eef16a72623f5e9f010539369be87a9dc7c855d95630e6dec91",
+      "map": "g16_m001",
+      "pair": "083df884_083dfc7c",
+      "mid": 656,
+      "source_plane": "flat",
+      "source_rect": [
+        96,
+        240,
+        16,
+        16
+      ],
+      "source_png_sha256": "63f314c897ecc726785e5733390a1348c39e96a0792fa999762b20028324a806",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m001-0-17.png",
+      "rgba_sha256": "890219d47011a90cdf1cda02e5b82737636cbdb68ca7b16f7a8e4deb84f8444f",
+      "map": "g16_m001",
+      "pair": "083df884_083dfc7c",
+      "mid": 516,
+      "source_plane": "flat",
+      "source_rect": [
+        0,
+        272,
+        16,
+        16
+      ],
+      "source_png_sha256": "63f314c897ecc726785e5733390a1348c39e96a0792fa999762b20028324a806",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m001-1-17.png",
+      "rgba_sha256": "27f7aa1a3f282dc01a33b9ab9a1525efd37b0a3eebb37ee5f00ce6a7759a3dec",
+      "map": "g16_m001",
+      "pair": "083df884_083dfc7c",
+      "mid": 518,
+      "source_plane": "flat",
+      "source_rect": [
+        16,
+        272,
+        16,
+        16
+      ],
+      "source_png_sha256": "63f314c897ecc726785e5733390a1348c39e96a0792fa999762b20028324a806",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m001-0-18.png",
+      "rgba_sha256": "bba24486c89c00fcfb7e856ef571a31ab4e76ce798fd2fb1cbcd1805340ee045",
+      "map": "g16_m001",
+      "pair": "083df884_083dfc7c",
+      "mid": 551,
+      "source_plane": "flat",
+      "source_rect": [
+        0,
+        288,
+        16,
+        16
+      ],
+      "source_png_sha256": "63f314c897ecc726785e5733390a1348c39e96a0792fa999762b20028324a806",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m001-1-18.png",
+      "rgba_sha256": "58e1af5462ad61f01b205afdf20f9e377e6a0133990e61ce554f07a9ae85f00a",
+      "map": "g16_m001",
+      "pair": "083df884_083dfc7c",
+      "mid": 549,
+      "source_plane": "flat",
+      "source_rect": [
+        16,
+        288,
+        16,
+        16
+      ],
+      "source_png_sha256": "63f314c897ecc726785e5733390a1348c39e96a0792fa999762b20028324a806",
+      "pixel_scale": 1
+    },
+    {
+      "file": "elite_four_crystaldust_floor_native_rug_kogas_room_2.png",
+      "rgba_sha256": "32759b3981bfa6d908f55c234e9949a7d4c76a1799620d5ce32e3a9d083ae95e",
+      "map": "g16_m001",
+      "source_plane": "flat",
+      "source_rect": [
+        96,
+        240,
+        16,
+        16
+      ],
+      "source_png_sha256": "63f314c897ecc726785e5733390a1348c39e96a0792fa999762b20028324a806",
+      "complete_native_firered_rug_parts": [
+        {
+          "donor": {
+            "hash": "a0470d3d4d0e7a1e3aba3e75be5c2051f6a3504d3d7ca773e6870e6a382a9a24",
+            "game": "firered",
+            "id": 18,
+            "tileset": "player_house"
+          },
+          "h": 12,
+          "srcX": 11,
+          "srcY": 4,
+          "w": 5,
+          "x": 3,
+          "y": 0
+        },
+        {
+          "donor": {
+            "hash": "238ed2532359e508f6522d2a6685f49a5f11f71ee7747fcdc237e116e4844a25",
+            "game": "firered",
+            "id": 19,
+            "tileset": "player_house"
+          },
+          "h": 12,
+          "srcX": 0,
+          "srcY": 4,
+          "w": 8,
+          "x": 8,
+          "y": 0
+        },
+        {
+          "donor": {
+            "hash": "9b4fe26a1c9df8ee5930ac991af2d8a07d78aaeda04e994cff51fa6e73246afb",
+            "game": "firered",
+            "id": 26,
+            "tileset": "player_house"
+          },
+          "h": 4,
+          "srcX": 11,
+          "srcY": 0,
+          "w": 5,
+          "x": 3,
+          "y": 12
+        },
+        {
+          "donor": {
+            "hash": "ec7924c4464b5611505316a16f937970c041f4c441c83ba1325ed7e7a5bf656b",
+            "game": "firered",
+            "id": 27,
+            "tileset": "player_house"
+          },
+          "h": 4,
+          "srcX": 0,
+          "srcY": 0,
+          "w": 8,
+          "x": 8,
+          "y": 12
+        }
+      ],
+      "pixel_scale": 1
+    },
+    {
+      "file": "elite_four_crystaldust_floor_native_rug_kogas_room_3.png",
+      "rgba_sha256": "7e8dc7ac3d99e1879d9d3dbc65b7a34fe3a8527e22369fc0a76f6b9a47aecdda",
+      "map": "g16_m001",
+      "source_plane": "flat",
+      "source_rect": [
+        96,
+        240,
+        16,
+        16
+      ],
+      "source_png_sha256": "63f314c897ecc726785e5733390a1348c39e96a0792fa999762b20028324a806",
+      "complete_native_firered_rug_parts": [
+        {
+          "donor": {
+            "hash": "238ed2532359e508f6522d2a6685f49a5f11f71ee7747fcdc237e116e4844a25",
+            "game": "firered",
+            "id": 19,
+            "tileset": "player_house"
+          },
+          "h": 12,
+          "srcX": 8,
+          "srcY": 4,
+          "w": 8,
+          "x": 0,
+          "y": 0
+        },
+        {
+          "donor": {
+            "hash": "0e2e0dc0206ad73765a36130d5053e6bae2286de0e4d2957077a89c91e5919d5",
+            "game": "firered",
+            "id": 20,
+            "tileset": "player_house"
+          },
+          "h": 12,
+          "srcX": 0,
+          "srcY": 4,
+          "w": 5,
+          "x": 8,
+          "y": 0
+        },
+        {
+          "donor": {
+            "hash": "ec7924c4464b5611505316a16f937970c041f4c441c83ba1325ed7e7a5bf656b",
+            "game": "firered",
+            "id": 27,
+            "tileset": "player_house"
+          },
+          "h": 4,
+          "srcX": 8,
+          "srcY": 0,
+          "w": 8,
+          "x": 0,
+          "y": 12
+        },
+        {
+          "donor": {
+            "hash": "fe464fe96023623f009eeaa73bc39173c91e17f495f34f4da0ea3a9e38c031e2",
+            "game": "firered",
+            "id": 28,
+            "tileset": "player_house"
+          },
+          "h": 4,
+          "srcX": 0,
+          "srcY": 0,
+          "w": 5,
+          "x": 8,
+          "y": 12
+        }
+      ],
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m004-5-12.png",
+      "rgba_sha256": "f9d3e27b8d5103dd1bfbcddb1cc2a0564d65c3d0757efb95b63cc216f983081a",
+      "map": "g16_m004",
+      "pair": "083df884_083dfc7c",
+      "mid": 915,
+      "source_plane": "flat",
+      "source_rect": [
+        80,
+        192,
+        16,
+        16
+      ],
+      "source_png_sha256": "4ff34418aa992134ab77c977f37318f109cef9e4d6b3c6b518d3759142007f8e",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m004-7-12.png",
+      "rgba_sha256": "2076b5a9a8c4097c87f0823db2f8c9f0b5771607c17708a0bf294fc62cefa476",
+      "map": "g16_m004",
+      "pair": "083df884_083dfc7c",
+      "mid": 917,
+      "source_plane": "flat",
+      "source_rect": [
+        112,
+        192,
+        16,
+        16
+      ],
+      "source_png_sha256": "4ff34418aa992134ab77c977f37318f109cef9e4d6b3c6b518d3759142007f8e",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m000-0-0.png",
+      "rgba_sha256": "55439547a5166eb305f391f9bf42a94c69edc4cb1477ed638668652f00584615",
+      "map": "g16_m000",
+      "pair": "083df884_083dfc7c",
+      "mid": 515,
+      "source_plane": "flat",
+      "source_rect": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "source_png_sha256": "daba7ca192fda4871d48cc923659874a2184fa8082fa106acdf3b27a5d4e662a",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m000-1-0.png",
+      "rgba_sha256": "55439547a5166eb305f391f9bf42a94c69edc4cb1477ed638668652f00584615",
+      "map": "g16_m000",
+      "pair": "083df884_083dfc7c",
+      "mid": 515,
+      "source_plane": "flat",
+      "source_rect": [
+        16,
+        0,
+        16,
+        16
+      ],
+      "source_png_sha256": "daba7ca192fda4871d48cc923659874a2184fa8082fa106acdf3b27a5d4e662a",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m000-0-1.png",
+      "rgba_sha256": "890219d47011a90cdf1cda02e5b82737636cbdb68ca7b16f7a8e4deb84f8444f",
+      "map": "g16_m000",
+      "pair": "083df884_083dfc7c",
+      "mid": 516,
+      "source_plane": "flat",
+      "source_rect": [
+        0,
+        16,
+        16,
+        16
+      ],
+      "source_png_sha256": "daba7ca192fda4871d48cc923659874a2184fa8082fa106acdf3b27a5d4e662a",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m000-1-1.png",
+      "rgba_sha256": "27f7aa1a3f282dc01a33b9ab9a1525efd37b0a3eebb37ee5f00ce6a7759a3dec",
+      "map": "g16_m000",
+      "pair": "083df884_083dfc7c",
+      "mid": 518,
+      "source_plane": "flat",
+      "source_rect": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "source_png_sha256": "daba7ca192fda4871d48cc923659874a2184fa8082fa106acdf3b27a5d4e662a",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m000-0-2.png",
+      "rgba_sha256": "bba24486c89c00fcfb7e856ef571a31ab4e76ce798fd2fb1cbcd1805340ee045",
+      "map": "g16_m000",
+      "pair": "083df884_083dfc7c",
+      "mid": 551,
+      "source_plane": "flat",
+      "source_rect": [
+        0,
+        32,
+        16,
+        16
+      ],
+      "source_png_sha256": "daba7ca192fda4871d48cc923659874a2184fa8082fa106acdf3b27a5d4e662a",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m000-1-2.png",
+      "rgba_sha256": "58e1af5462ad61f01b205afdf20f9e377e6a0133990e61ce554f07a9ae85f00a",
+      "map": "g16_m000",
+      "pair": "083df884_083dfc7c",
+      "mid": 549,
+      "source_plane": "flat",
+      "source_rect": [
+        16,
+        32,
+        16,
+        16
+      ],
+      "source_png_sha256": "daba7ca192fda4871d48cc923659874a2184fa8082fa106acdf3b27a5d4e662a",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m000-0-3.png",
+      "rgba_sha256": "f520cde998f50fbcec708244144f21a777778d3360186e727871a2d745a381d5",
+      "map": "g16_m000",
+      "pair": "083df884_083dfc7c",
+      "mid": 721,
+      "source_plane": "flat",
+      "source_rect": [
+        0,
+        48,
+        16,
+        16
+      ],
+      "source_png_sha256": "daba7ca192fda4871d48cc923659874a2184fa8082fa106acdf3b27a5d4e662a",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m000-1-3.png",
+      "rgba_sha256": "f520cde998f50fbcec708244144f21a777778d3360186e727871a2d745a381d5",
+      "map": "g16_m000",
+      "pair": "083df884_083dfc7c",
+      "mid": 721,
+      "source_plane": "flat",
+      "source_rect": [
+        16,
+        48,
+        16,
+        16
+      ],
+      "source_png_sha256": "daba7ca192fda4871d48cc923659874a2184fa8082fa106acdf3b27a5d4e662a",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m000-0-4.png",
+      "rgba_sha256": "8d2de556d3b069b8ee86e2a6d7a6e47c45f59fbb47b08a34fe275a489718a6be",
+      "map": "g16_m000",
+      "pair": "083df884_083dfc7c",
+      "mid": 706,
+      "source_plane": "flat",
+      "source_rect": [
+        0,
+        64,
+        16,
+        16
+      ],
+      "source_png_sha256": "daba7ca192fda4871d48cc923659874a2184fa8082fa106acdf3b27a5d4e662a",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m000-1-4.png",
+      "rgba_sha256": "b380887b84b7d17d445681dd2e9ae07e1f584cce5e4bf39b962483676871655b",
+      "map": "g16_m000",
+      "pair": "083df884_083dfc7c",
+      "mid": 707,
+      "source_plane": "flat",
+      "source_rect": [
+        16,
+        64,
+        16,
+        16
+      ],
+      "source_png_sha256": "daba7ca192fda4871d48cc923659874a2184fa8082fa106acdf3b27a5d4e662a",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m000-4-12.png",
+      "rgba_sha256": "8d2de556d3b069b8ee86e2a6d7a6e47c45f59fbb47b08a34fe275a489718a6be",
+      "map": "g16_m000",
+      "pair": "083df884_083dfc7c",
+      "mid": 706,
+      "source_plane": "flat",
+      "source_rect": [
+        64,
+        192,
+        16,
+        16
+      ],
+      "source_png_sha256": "daba7ca192fda4871d48cc923659874a2184fa8082fa106acdf3b27a5d4e662a",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m000-6-15.png",
+      "rgba_sha256": "b8fe84562c496b12b05fad28f5177314d6ad255b80c6a327e75fd5be98abcb89",
+      "map": "g16_m000",
+      "pair": "083df884_083dfc7c",
+      "mid": 552,
+      "source_plane": "flat",
+      "source_rect": [
+        96,
+        240,
+        16,
+        16
+      ],
+      "source_png_sha256": "daba7ca192fda4871d48cc923659874a2184fa8082fa106acdf3b27a5d4e662a",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m000-0-15.png",
+      "rgba_sha256": "000659317fbec83a7c41619a097f260ebc3934354c4de927143e6e119ef515b7",
+      "map": "g16_m000",
+      "pair": "083df884_083dfc7c",
+      "mid": 713,
+      "source_plane": "flat",
+      "source_rect": [
+        0,
+        240,
+        16,
+        16
+      ],
+      "source_png_sha256": "daba7ca192fda4871d48cc923659874a2184fa8082fa106acdf3b27a5d4e662a",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m000-0-17.png",
+      "rgba_sha256": "890219d47011a90cdf1cda02e5b82737636cbdb68ca7b16f7a8e4deb84f8444f",
+      "map": "g16_m000",
+      "pair": "083df884_083dfc7c",
+      "mid": 516,
+      "source_plane": "flat",
+      "source_rect": [
+        0,
+        272,
+        16,
+        16
+      ],
+      "source_png_sha256": "daba7ca192fda4871d48cc923659874a2184fa8082fa106acdf3b27a5d4e662a",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m000-1-17.png",
+      "rgba_sha256": "27f7aa1a3f282dc01a33b9ab9a1525efd37b0a3eebb37ee5f00ce6a7759a3dec",
+      "map": "g16_m000",
+      "pair": "083df884_083dfc7c",
+      "mid": 518,
+      "source_plane": "flat",
+      "source_rect": [
+        16,
+        272,
+        16,
+        16
+      ],
+      "source_png_sha256": "daba7ca192fda4871d48cc923659874a2184fa8082fa106acdf3b27a5d4e662a",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m000-0-18.png",
+      "rgba_sha256": "bba24486c89c00fcfb7e856ef571a31ab4e76ce798fd2fb1cbcd1805340ee045",
+      "map": "g16_m000",
+      "pair": "083df884_083dfc7c",
+      "mid": 551,
+      "source_plane": "flat",
+      "source_rect": [
+        0,
+        288,
+        16,
+        16
+      ],
+      "source_png_sha256": "daba7ca192fda4871d48cc923659874a2184fa8082fa106acdf3b27a5d4e662a",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m000-1-18.png",
+      "rgba_sha256": "58e1af5462ad61f01b205afdf20f9e377e6a0133990e61ce554f07a9ae85f00a",
+      "map": "g16_m000",
+      "pair": "083df884_083dfc7c",
+      "mid": 549,
+      "source_plane": "flat",
+      "source_rect": [
+        16,
+        288,
+        16,
+        16
+      ],
+      "source_png_sha256": "daba7ca192fda4871d48cc923659874a2184fa8082fa106acdf3b27a5d4e662a",
+      "pixel_scale": 1
+    },
+    {
+      "file": "elite_four_crystaldust_floor_native_rug_karens_room_2.png",
+      "rgba_sha256": "195087ff22516935f33ed06e3b88a77d60b870cde0bdfb831af918b1105e651b",
+      "map": "g16_m003",
+      "source_plane": "flat",
+      "source_rect": [
+        96,
+        240,
+        16,
+        16
+      ],
+      "source_png_sha256": "0ee2f375b2a1b833d9ad6a5afe21628ef22cc3d3c9cc1f6998be5ebcf86b903f",
+      "complete_native_firered_rug_parts": [
+        {
+          "donor": {
+            "hash": "a0470d3d4d0e7a1e3aba3e75be5c2051f6a3504d3d7ca773e6870e6a382a9a24",
+            "game": "firered",
+            "id": 18,
+            "tileset": "player_house"
+          },
+          "h": 12,
+          "srcX": 11,
+          "srcY": 4,
+          "w": 5,
+          "x": 3,
+          "y": 0
+        },
+        {
+          "donor": {
+            "hash": "238ed2532359e508f6522d2a6685f49a5f11f71ee7747fcdc237e116e4844a25",
+            "game": "firered",
+            "id": 19,
+            "tileset": "player_house"
+          },
+          "h": 12,
+          "srcX": 0,
+          "srcY": 4,
+          "w": 8,
+          "x": 8,
+          "y": 0
+        },
+        {
+          "donor": {
+            "hash": "9b4fe26a1c9df8ee5930ac991af2d8a07d78aaeda04e994cff51fa6e73246afb",
+            "game": "firered",
+            "id": 26,
+            "tileset": "player_house"
+          },
+          "h": 4,
+          "srcX": 11,
+          "srcY": 0,
+          "w": 5,
+          "x": 3,
+          "y": 12
+        },
+        {
+          "donor": {
+            "hash": "ec7924c4464b5611505316a16f937970c041f4c441c83ba1325ed7e7a5bf656b",
+            "game": "firered",
+            "id": 27,
+            "tileset": "player_house"
+          },
+          "h": 4,
+          "srcX": 0,
+          "srcY": 0,
+          "w": 8,
+          "x": 8,
+          "y": 12
+        }
+      ],
+      "pixel_scale": 1
+    },
+    {
+      "file": "elite_four_crystaldust_floor_native_rug_karens_room_3.png",
+      "rgba_sha256": "17bd2009d224cedfae58ad18434f1a7beb167740f91dd0305cd0f9a9f57e9ca0",
+      "map": "g16_m003",
+      "source_plane": "flat",
+      "source_rect": [
+        96,
+        240,
+        16,
+        16
+      ],
+      "source_png_sha256": "0ee2f375b2a1b833d9ad6a5afe21628ef22cc3d3c9cc1f6998be5ebcf86b903f",
+      "complete_native_firered_rug_parts": [
+        {
+          "donor": {
+            "hash": "238ed2532359e508f6522d2a6685f49a5f11f71ee7747fcdc237e116e4844a25",
+            "game": "firered",
+            "id": 19,
+            "tileset": "player_house"
+          },
+          "h": 12,
+          "srcX": 8,
+          "srcY": 4,
+          "w": 8,
+          "x": 0,
+          "y": 0
+        },
+        {
+          "donor": {
+            "hash": "0e2e0dc0206ad73765a36130d5053e6bae2286de0e4d2957077a89c91e5919d5",
+            "game": "firered",
+            "id": 20,
+            "tileset": "player_house"
+          },
+          "h": 12,
+          "srcX": 0,
+          "srcY": 4,
+          "w": 5,
+          "x": 8,
+          "y": 0
+        },
+        {
+          "donor": {
+            "hash": "ec7924c4464b5611505316a16f937970c041f4c441c83ba1325ed7e7a5bf656b",
+            "game": "firered",
+            "id": 27,
+            "tileset": "player_house"
+          },
+          "h": 4,
+          "srcX": 8,
+          "srcY": 0,
+          "w": 8,
+          "x": 0,
+          "y": 12
+        },
+        {
+          "donor": {
+            "hash": "fe464fe96023623f009eeaa73bc39173c91e17f495f34f4da0ea3a9e38c031e2",
+            "game": "firered",
+            "id": 28,
+            "tileset": "player_house"
+          },
+          "h": 4,
+          "srcX": 0,
+          "srcY": 0,
+          "w": 5,
+          "x": 8,
+          "y": 12
+        }
+      ],
+      "pixel_scale": 1
+    },
+    {
+      "file": "elite_four_crystaldust_floor_native_rug_kogas_room_2.png",
+      "rgba_sha256": "32759b3981bfa6d908f55c234e9949a7d4c76a1799620d5ce32e3a9d083ae95e",
+      "map": "g16_m001",
+      "source_plane": "flat",
+      "source_rect": [
+        96,
+        240,
+        16,
+        16
+      ],
+      "source_png_sha256": "63f314c897ecc726785e5733390a1348c39e96a0792fa999762b20028324a806",
+      "complete_native_firered_rug_parts": [
+        {
+          "donor": {
+            "hash": "a0470d3d4d0e7a1e3aba3e75be5c2051f6a3504d3d7ca773e6870e6a382a9a24",
+            "game": "firered",
+            "id": 18,
+            "tileset": "player_house"
+          },
+          "h": 12,
+          "srcX": 11,
+          "srcY": 4,
+          "w": 5,
+          "x": 3,
+          "y": 0
+        },
+        {
+          "donor": {
+            "hash": "238ed2532359e508f6522d2a6685f49a5f11f71ee7747fcdc237e116e4844a25",
+            "game": "firered",
+            "id": 19,
+            "tileset": "player_house"
+          },
+          "h": 12,
+          "srcX": 0,
+          "srcY": 4,
+          "w": 8,
+          "x": 8,
+          "y": 0
+        },
+        {
+          "donor": {
+            "hash": "9b4fe26a1c9df8ee5930ac991af2d8a07d78aaeda04e994cff51fa6e73246afb",
+            "game": "firered",
+            "id": 26,
+            "tileset": "player_house"
+          },
+          "h": 4,
+          "srcX": 11,
+          "srcY": 0,
+          "w": 5,
+          "x": 3,
+          "y": 12
+        },
+        {
+          "donor": {
+            "hash": "ec7924c4464b5611505316a16f937970c041f4c441c83ba1325ed7e7a5bf656b",
+            "game": "firered",
+            "id": 27,
+            "tileset": "player_house"
+          },
+          "h": 4,
+          "srcX": 0,
+          "srcY": 0,
+          "w": 8,
+          "x": 8,
+          "y": 12
+        }
+      ],
+      "pixel_scale": 1
+    },
+    {
+      "file": "elite_four_crystaldust_floor_native_rug_kogas_room_3.png",
+      "rgba_sha256": "7e8dc7ac3d99e1879d9d3dbc65b7a34fe3a8527e22369fc0a76f6b9a47aecdda",
+      "map": "g16_m001",
+      "source_plane": "flat",
+      "source_rect": [
+        96,
+        240,
+        16,
+        16
+      ],
+      "source_png_sha256": "63f314c897ecc726785e5733390a1348c39e96a0792fa999762b20028324a806",
+      "complete_native_firered_rug_parts": [
+        {
+          "donor": {
+            "hash": "238ed2532359e508f6522d2a6685f49a5f11f71ee7747fcdc237e116e4844a25",
+            "game": "firered",
+            "id": 19,
+            "tileset": "player_house"
+          },
+          "h": 12,
+          "srcX": 8,
+          "srcY": 4,
+          "w": 8,
+          "x": 0,
+          "y": 0
+        },
+        {
+          "donor": {
+            "hash": "0e2e0dc0206ad73765a36130d5053e6bae2286de0e4d2957077a89c91e5919d5",
+            "game": "firered",
+            "id": 20,
+            "tileset": "player_house"
+          },
+          "h": 12,
+          "srcX": 0,
+          "srcY": 4,
+          "w": 5,
+          "x": 8,
+          "y": 0
+        },
+        {
+          "donor": {
+            "hash": "ec7924c4464b5611505316a16f937970c041f4c441c83ba1325ed7e7a5bf656b",
+            "game": "firered",
+            "id": 27,
+            "tileset": "player_house"
+          },
+          "h": 4,
+          "srcX": 8,
+          "srcY": 0,
+          "w": 8,
+          "x": 0,
+          "y": 12
+        },
+        {
+          "donor": {
+            "hash": "fe464fe96023623f009eeaa73bc39173c91e17f495f34f4da0ea3a9e38c031e2",
+            "game": "firered",
+            "id": 28,
+            "tileset": "player_house"
+          },
+          "h": 4,
+          "srcX": 0,
+          "srcY": 0,
+          "w": 5,
+          "x": 8,
+          "y": 12
+        }
+      ],
+      "pixel_scale": 1
+    },
+    {
+      "file": "elite_four_crystaldust_floor_native_rug_karens_room_2.png",
+      "rgba_sha256": "195087ff22516935f33ed06e3b88a77d60b870cde0bdfb831af918b1105e651b",
+      "map": "g16_m003",
+      "source_plane": "flat",
+      "source_rect": [
+        96,
+        240,
+        16,
+        16
+      ],
+      "source_png_sha256": "0ee2f375b2a1b833d9ad6a5afe21628ef22cc3d3c9cc1f6998be5ebcf86b903f",
+      "complete_native_firered_rug_parts": [
+        {
+          "donor": {
+            "hash": "a0470d3d4d0e7a1e3aba3e75be5c2051f6a3504d3d7ca773e6870e6a382a9a24",
+            "game": "firered",
+            "id": 18,
+            "tileset": "player_house"
+          },
+          "h": 12,
+          "srcX": 11,
+          "srcY": 4,
+          "w": 5,
+          "x": 3,
+          "y": 0
+        },
+        {
+          "donor": {
+            "hash": "238ed2532359e508f6522d2a6685f49a5f11f71ee7747fcdc237e116e4844a25",
+            "game": "firered",
+            "id": 19,
+            "tileset": "player_house"
+          },
+          "h": 12,
+          "srcX": 0,
+          "srcY": 4,
+          "w": 8,
+          "x": 8,
+          "y": 0
+        },
+        {
+          "donor": {
+            "hash": "9b4fe26a1c9df8ee5930ac991af2d8a07d78aaeda04e994cff51fa6e73246afb",
+            "game": "firered",
+            "id": 26,
+            "tileset": "player_house"
+          },
+          "h": 4,
+          "srcX": 11,
+          "srcY": 0,
+          "w": 5,
+          "x": 3,
+          "y": 12
+        },
+        {
+          "donor": {
+            "hash": "ec7924c4464b5611505316a16f937970c041f4c441c83ba1325ed7e7a5bf656b",
+            "game": "firered",
+            "id": 27,
+            "tileset": "player_house"
+          },
+          "h": 4,
+          "srcX": 0,
+          "srcY": 0,
+          "w": 8,
+          "x": 8,
+          "y": 12
+        }
+      ],
+      "pixel_scale": 1
+    },
+    {
+      "file": "elite_four_crystaldust_floor_native_rug_karens_room_3.png",
+      "rgba_sha256": "17bd2009d224cedfae58ad18434f1a7beb167740f91dd0305cd0f9a9f57e9ca0",
+      "map": "g16_m003",
+      "source_plane": "flat",
+      "source_rect": [
+        96,
+        240,
+        16,
+        16
+      ],
+      "source_png_sha256": "0ee2f375b2a1b833d9ad6a5afe21628ef22cc3d3c9cc1f6998be5ebcf86b903f",
+      "complete_native_firered_rug_parts": [
+        {
+          "donor": {
+            "hash": "238ed2532359e508f6522d2a6685f49a5f11f71ee7747fcdc237e116e4844a25",
+            "game": "firered",
+            "id": 19,
+            "tileset": "player_house"
+          },
+          "h": 12,
+          "srcX": 8,
+          "srcY": 4,
+          "w": 8,
+          "x": 0,
+          "y": 0
+        },
+        {
+          "donor": {
+            "hash": "0e2e0dc0206ad73765a36130d5053e6bae2286de0e4d2957077a89c91e5919d5",
+            "game": "firered",
+            "id": 20,
+            "tileset": "player_house"
+          },
+          "h": 12,
+          "srcX": 0,
+          "srcY": 4,
+          "w": 5,
+          "x": 8,
+          "y": 0
+        },
+        {
+          "donor": {
+            "hash": "ec7924c4464b5611505316a16f937970c041f4c441c83ba1325ed7e7a5bf656b",
+            "game": "firered",
+            "id": 27,
+            "tileset": "player_house"
+          },
+          "h": 4,
+          "srcX": 8,
+          "srcY": 0,
+          "w": 8,
+          "x": 0,
+          "y": 12
+        },
+        {
+          "donor": {
+            "hash": "fe464fe96023623f009eeaa73bc39173c91e17f495f34f4da0ea3a9e38c031e2",
+            "game": "firered",
+            "id": 28,
+            "tileset": "player_house"
+          },
+          "h": 4,
+          "srcX": 0,
+          "srcY": 0,
+          "w": 5,
+          "x": 8,
+          "y": 12
+        }
+      ],
+      "pixel_scale": 1
+    },
+    {
+      "file": "elite_four_crystaldust_floor_native_rug_kogas_room_2.png",
+      "rgba_sha256": "32759b3981bfa6d908f55c234e9949a7d4c76a1799620d5ce32e3a9d083ae95e",
+      "map": "g16_m001",
+      "source_plane": "flat",
+      "source_rect": [
+        96,
+        240,
+        16,
+        16
+      ],
+      "source_png_sha256": "63f314c897ecc726785e5733390a1348c39e96a0792fa999762b20028324a806",
+      "complete_native_firered_rug_parts": [
+        {
+          "donor": {
+            "hash": "a0470d3d4d0e7a1e3aba3e75be5c2051f6a3504d3d7ca773e6870e6a382a9a24",
+            "game": "firered",
+            "id": 18,
+            "tileset": "player_house"
+          },
+          "h": 12,
+          "srcX": 11,
+          "srcY": 4,
+          "w": 5,
+          "x": 3,
+          "y": 0
+        },
+        {
+          "donor": {
+            "hash": "238ed2532359e508f6522d2a6685f49a5f11f71ee7747fcdc237e116e4844a25",
+            "game": "firered",
+            "id": 19,
+            "tileset": "player_house"
+          },
+          "h": 12,
+          "srcX": 0,
+          "srcY": 4,
+          "w": 8,
+          "x": 8,
+          "y": 0
+        },
+        {
+          "donor": {
+            "hash": "9b4fe26a1c9df8ee5930ac991af2d8a07d78aaeda04e994cff51fa6e73246afb",
+            "game": "firered",
+            "id": 26,
+            "tileset": "player_house"
+          },
+          "h": 4,
+          "srcX": 11,
+          "srcY": 0,
+          "w": 5,
+          "x": 3,
+          "y": 12
+        },
+        {
+          "donor": {
+            "hash": "ec7924c4464b5611505316a16f937970c041f4c441c83ba1325ed7e7a5bf656b",
+            "game": "firered",
+            "id": 27,
+            "tileset": "player_house"
+          },
+          "h": 4,
+          "srcX": 0,
+          "srcY": 0,
+          "w": 8,
+          "x": 8,
+          "y": 12
+        }
+      ],
+      "pixel_scale": 1
+    },
+    {
+      "file": "elite_four_crystaldust_floor_native_rug_kogas_room_3.png",
+      "rgba_sha256": "7e8dc7ac3d99e1879d9d3dbc65b7a34fe3a8527e22369fc0a76f6b9a47aecdda",
+      "map": "g16_m001",
+      "source_plane": "flat",
+      "source_rect": [
+        96,
+        240,
+        16,
+        16
+      ],
+      "source_png_sha256": "63f314c897ecc726785e5733390a1348c39e96a0792fa999762b20028324a806",
+      "complete_native_firered_rug_parts": [
+        {
+          "donor": {
+            "hash": "238ed2532359e508f6522d2a6685f49a5f11f71ee7747fcdc237e116e4844a25",
+            "game": "firered",
+            "id": 19,
+            "tileset": "player_house"
+          },
+          "h": 12,
+          "srcX": 8,
+          "srcY": 4,
+          "w": 8,
+          "x": 0,
+          "y": 0
+        },
+        {
+          "donor": {
+            "hash": "0e2e0dc0206ad73765a36130d5053e6bae2286de0e4d2957077a89c91e5919d5",
+            "game": "firered",
+            "id": 20,
+            "tileset": "player_house"
+          },
+          "h": 12,
+          "srcX": 0,
+          "srcY": 4,
+          "w": 5,
+          "x": 8,
+          "y": 0
+        },
+        {
+          "donor": {
+            "hash": "ec7924c4464b5611505316a16f937970c041f4c441c83ba1325ed7e7a5bf656b",
+            "game": "firered",
+            "id": 27,
+            "tileset": "player_house"
+          },
+          "h": 4,
+          "srcX": 8,
+          "srcY": 0,
+          "w": 8,
+          "x": 0,
+          "y": 12
+        },
+        {
+          "donor": {
+            "hash": "fe464fe96023623f009eeaa73bc39173c91e17f495f34f4da0ea3a9e38c031e2",
+            "game": "firered",
+            "id": 28,
+            "tileset": "player_house"
+          },
+          "h": 4,
+          "srcX": 0,
+          "srcY": 0,
+          "w": 5,
+          "x": 8,
+          "y": 12
+        }
+      ],
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m004-4-5.png",
+      "rgba_sha256": "5f4ecdb7b71c3e403983fe405cddcdc2f2576b655fdb3e80d94a6f7c32e58bc2",
+      "map": "g16_m004",
+      "pair": "083df884_083dfc7c",
+      "mid": 884,
+      "source_plane": "flat",
+      "source_rect": [
+        64,
+        80,
+        16,
+        16
+      ],
+      "source_png_sha256": "4ff34418aa992134ab77c977f37318f109cef9e4d6b3c6b518d3759142007f8e",
+      "pixel_scale": 1
+    },
+    {
+      "file": "g16_m004-5-5.png",
+      "rgba_sha256": "b5507a1216929675bb67e80da3ce0df9bfb3ef2854ce4940b15bfefa71e4b756",
+      "map": "g16_m004",
+      "pair": "083df884_083dfc7c",
+      "mid": 886,
+      "source_plane": "flat",
+      "source_rect": [
+        80,
+        80,
+        16,
+        16
+      ],
+      "source_png_sha256": "4ff34418aa992134ab77c977f37318f109cef9e4d6b3c6b518d3759142007f8e",
+      "pixel_scale": 1
+    }
+  ],
+  "files": {
+    "champion-closed-door-0.png": "5c2f999508badbc0251f296d8ce885c116163d14bbc0b1ed5d9a7458d4d0ddef",
+    "champion-closed-door-1.png": "f74a9d8fedbb1ff5c44c52fbe3f0d86fa91a8ac723406d0ea60d6e924d445a90",
+    "champion-closed-door-2.png": "a8544a4c98d373e3154136693847d0b03ac1eab82793c7d9efcbb8c93c4552ad",
+    "champion-closed-door-3.png": "85fde347766b4e028721fd978064254a38f1f93a51b9e42800a33111b3dd09f2",
+    "champion-open-door-0.png": "5c2f999508badbc0251f296d8ce885c116163d14bbc0b1ed5d9a7458d4d0ddef",
+    "champion-open-door-1.png": "f74a9d8fedbb1ff5c44c52fbe3f0d86fa91a8ac723406d0ea60d6e924d445a90",
+    "champion-open-door-2.png": "05c92faa93a3585839332633233ab7ea96016f644815cb2eb31eb7832e08cf4d",
+    "champion-open-door-3.png": "183efda21052c30fd542d188612b9cc1865ba9ede2d207646b5c7c543d310853",
+    "e4-closed-door-0.png": "a22b0a3c8e514ae6677e7c7d4d722933de84515007af68ac113ab5b1f6e79011",
+    "e4-closed-door-1.png": "51592d5876723596526d662bc17a69584769c376e8bc279d5b2bfedceee4a01f",
+    "e4-closed-door-2.png": "0c1c9b8cd807173b94bc4ab98e80fb1af823cc225ee0203f1c43c2ee446c8b9f",
+    "e4-closed-door-3.png": "160fb41a8e838e81d76cae50d804eb377a4a489e61a7cd5b0f4ee6e892baea75",
+    "e4-complete-stair-0.png": "20dda0f1b53b9e4fcdc5e2cb4c0710c701f5fe2bdad906d66270ba79342e0165",
+    "e4-complete-stair-1.png": "9d88948507915a799e4442438c3b6f4cd58f63d1a324991c894289d17a07e4b1",
+    "e4-complete-stair-2.png": "b1cf55057ab9333641eb8a93c8e7354c59eaf36120725d0bc6f033a180cdf669",
+    "e4-complete-stair-3.png": "a5c9422393d97e52b6e6f3e52eb2fec3c4fb29af98048a4305c0793c6c303687",
+    "elite_four_crystaldust_floor_native_rug_karens_room_2.png": "a6549aed5d766d9c7e2217a9cb0cf7b1f818b35e6cd620b6f0f14415e61e9f6d",
+    "elite_four_crystaldust_floor_native_rug_karens_room_3.png": "eea81cad620575fb9709057f5253511aeb19cdaadbb2f36e1ec13b4b362e4829",
+    "elite_four_crystaldust_floor_native_rug_kogas_room_2.png": "2e5977ac29c92600453d6d24003f8bd0701dd8cfee9158cae612e86427fac173",
+    "elite_four_crystaldust_floor_native_rug_kogas_room_3.png": "f6f81ed9355e3ddb37289d97055b2653c1642b75b9e323b65e1299763ed56c8e",
+    "g16_m000-0-0.png": "50a17d0102ed1067f7ccd7dc3584037fa7d1e46d56562f36c8bbc2c094ee63b4",
+    "g16_m000-0-1.png": "41071834564b45606750f372ceaffd92fd93306367579513e8eca71ac8fd2a3f",
+    "g16_m000-0-15.png": "ca7f73a5f61e8bd5aee1c219bd6565924ca1d3254171fcbec8823fafb1926037",
+    "g16_m000-0-17.png": "41071834564b45606750f372ceaffd92fd93306367579513e8eca71ac8fd2a3f",
+    "g16_m000-0-18.png": "4a79057bc1beafce99ab3c2bcf7fbe519cd1abc625dad0521ea5bb82a81884fe",
+    "g16_m000-0-2.png": "4a79057bc1beafce99ab3c2bcf7fbe519cd1abc625dad0521ea5bb82a81884fe",
+    "g16_m000-0-3.png": "776e702b8768c672431b9a6b36bfaa362b89e13c2fc3b13b2a06e29017e8bdf7",
+    "g16_m000-0-4.png": "a74d85dfc2c0087cb43fb4f859accc607965d95e35fbabd47a7f9b594470b207",
+    "g16_m000-1-0.png": "50a17d0102ed1067f7ccd7dc3584037fa7d1e46d56562f36c8bbc2c094ee63b4",
+    "g16_m000-1-1.png": "a7b5e9300779465e1bbdeb2af44e571d52c1bacc91333f69d6e19b440e6cdfc1",
+    "g16_m000-1-17.png": "a7b5e9300779465e1bbdeb2af44e571d52c1bacc91333f69d6e19b440e6cdfc1",
+    "g16_m000-1-18.png": "4eae4200f4df2f664ab3bf3545d7075e94de1f941f9524f558923004ea45e0cd",
+    "g16_m000-1-2.png": "4eae4200f4df2f664ab3bf3545d7075e94de1f941f9524f558923004ea45e0cd",
+    "g16_m000-1-3.png": "776e702b8768c672431b9a6b36bfaa362b89e13c2fc3b13b2a06e29017e8bdf7",
+    "g16_m000-1-4.png": "5d568f1458da69850cefba9a57374c6708d838f20db87b72bfc513a6ad84bcaf",
+    "g16_m000-4-12.png": "a74d85dfc2c0087cb43fb4f859accc607965d95e35fbabd47a7f9b594470b207",
+    "g16_m000-6-15.png": "b4f6af08e0f21f6ab1fe4744afabc7f2de7bbb349c1bde69e8ebd679619fd2b1",
+    "g16_m001-0-0.png": "50a17d0102ed1067f7ccd7dc3584037fa7d1e46d56562f36c8bbc2c094ee63b4",
+    "g16_m001-0-1.png": "41071834564b45606750f372ceaffd92fd93306367579513e8eca71ac8fd2a3f",
+    "g16_m001-0-17.png": "41071834564b45606750f372ceaffd92fd93306367579513e8eca71ac8fd2a3f",
+    "g16_m001-0-18.png": "4a79057bc1beafce99ab3c2bcf7fbe519cd1abc625dad0521ea5bb82a81884fe",
+    "g16_m001-0-2.png": "4a79057bc1beafce99ab3c2bcf7fbe519cd1abc625dad0521ea5bb82a81884fe",
+    "g16_m001-0-3.png": "776e702b8768c672431b9a6b36bfaa362b89e13c2fc3b13b2a06e29017e8bdf7",
+    "g16_m001-0-4.png": "a74d85dfc2c0087cb43fb4f859accc607965d95e35fbabd47a7f9b594470b207",
+    "g16_m001-1-0.png": "50a17d0102ed1067f7ccd7dc3584037fa7d1e46d56562f36c8bbc2c094ee63b4",
+    "g16_m001-1-1.png": "a7b5e9300779465e1bbdeb2af44e571d52c1bacc91333f69d6e19b440e6cdfc1",
+    "g16_m001-1-17.png": "a7b5e9300779465e1bbdeb2af44e571d52c1bacc91333f69d6e19b440e6cdfc1",
+    "g16_m001-1-18.png": "4eae4200f4df2f664ab3bf3545d7075e94de1f941f9524f558923004ea45e0cd",
+    "g16_m001-1-2.png": "4eae4200f4df2f664ab3bf3545d7075e94de1f941f9524f558923004ea45e0cd",
+    "g16_m001-1-3.png": "776e702b8768c672431b9a6b36bfaa362b89e13c2fc3b13b2a06e29017e8bdf7",
+    "g16_m001-1-4.png": "5d568f1458da69850cefba9a57374c6708d838f20db87b72bfc513a6ad84bcaf",
+    "g16_m001-6-15.png": "a6fdd7d717b22c91fe9099c85804ceb771488b77dc909e7460e1a7eda408dc24",
+    "g16_m002-0-0.png": "50a17d0102ed1067f7ccd7dc3584037fa7d1e46d56562f36c8bbc2c094ee63b4",
+    "g16_m002-0-1.png": "41071834564b45606750f372ceaffd92fd93306367579513e8eca71ac8fd2a3f",
+    "g16_m002-0-17.png": "41071834564b45606750f372ceaffd92fd93306367579513e8eca71ac8fd2a3f",
+    "g16_m002-0-18.png": "4a79057bc1beafce99ab3c2bcf7fbe519cd1abc625dad0521ea5bb82a81884fe",
+    "g16_m002-0-2.png": "4a79057bc1beafce99ab3c2bcf7fbe519cd1abc625dad0521ea5bb82a81884fe",
+    "g16_m002-0-3.png": "776e702b8768c672431b9a6b36bfaa362b89e13c2fc3b13b2a06e29017e8bdf7",
+    "g16_m002-0-4.png": "a74d85dfc2c0087cb43fb4f859accc607965d95e35fbabd47a7f9b594470b207",
+    "g16_m002-1-0.png": "50a17d0102ed1067f7ccd7dc3584037fa7d1e46d56562f36c8bbc2c094ee63b4",
+    "g16_m002-1-1.png": "a7b5e9300779465e1bbdeb2af44e571d52c1bacc91333f69d6e19b440e6cdfc1",
+    "g16_m002-1-17.png": "a7b5e9300779465e1bbdeb2af44e571d52c1bacc91333f69d6e19b440e6cdfc1",
+    "g16_m002-1-18.png": "4eae4200f4df2f664ab3bf3545d7075e94de1f941f9524f558923004ea45e0cd",
+    "g16_m002-1-2.png": "4eae4200f4df2f664ab3bf3545d7075e94de1f941f9524f558923004ea45e0cd",
+    "g16_m002-1-3.png": "776e702b8768c672431b9a6b36bfaa362b89e13c2fc3b13b2a06e29017e8bdf7",
+    "g16_m002-1-4.png": "5d568f1458da69850cefba9a57374c6708d838f20db87b72bfc513a6ad84bcaf",
+    "g16_m003-0-0.png": "50a17d0102ed1067f7ccd7dc3584037fa7d1e46d56562f36c8bbc2c094ee63b4",
+    "g16_m003-0-1.png": "41071834564b45606750f372ceaffd92fd93306367579513e8eca71ac8fd2a3f",
+    "g16_m003-0-17.png": "41071834564b45606750f372ceaffd92fd93306367579513e8eca71ac8fd2a3f",
+    "g16_m003-0-18.png": "4a79057bc1beafce99ab3c2bcf7fbe519cd1abc625dad0521ea5bb82a81884fe",
+    "g16_m003-0-2.png": "4a79057bc1beafce99ab3c2bcf7fbe519cd1abc625dad0521ea5bb82a81884fe",
+    "g16_m003-0-3.png": "776e702b8768c672431b9a6b36bfaa362b89e13c2fc3b13b2a06e29017e8bdf7",
+    "g16_m003-1-0.png": "50a17d0102ed1067f7ccd7dc3584037fa7d1e46d56562f36c8bbc2c094ee63b4",
+    "g16_m003-1-1.png": "a7b5e9300779465e1bbdeb2af44e571d52c1bacc91333f69d6e19b440e6cdfc1",
+    "g16_m003-1-17.png": "a7b5e9300779465e1bbdeb2af44e571d52c1bacc91333f69d6e19b440e6cdfc1",
+    "g16_m003-1-18.png": "4eae4200f4df2f664ab3bf3545d7075e94de1f941f9524f558923004ea45e0cd",
+    "g16_m003-1-2.png": "4eae4200f4df2f664ab3bf3545d7075e94de1f941f9524f558923004ea45e0cd",
+    "g16_m003-1-3.png": "776e702b8768c672431b9a6b36bfaa362b89e13c2fc3b13b2a06e29017e8bdf7",
+    "g16_m003-6-15.png": "3ad72bd8196b3ee3d5fb8a928016eaf5fa3d902f0ead4e5b3b429820fbd9888c",
+    "g16_m004-4-5.png": "b1053f89bb82a79f8d33fe961fb79364943688d6fa733b1de98be88f04359cbb",
+    "g16_m004-5-12.png": "84dd6ee7353037182a76e4101f1b9ff8dfbadb8999ed09bd0134876f2b1fee6b",
+    "g16_m004-5-5.png": "8d8797898e8482f671c603327467f78ec6bff5e10bee6632ca2d90194e159900",
+    "g16_m004-7-12.png": "93d7d503ea33c06ea8fc81122c2011ac9a7875eaf897c53687ae0224cbc1f80b",
+    "g24_m084-1-1.png": "5747dc9c57c5b5e35a4f424a24ea7394c697128de4bcc9f119c6856d0aa5954f",
+    "g24_m084-2-0.png": "cbd5bc0807cda48bed3d041a72d5992484a636334318492d697944c94b978be6",
+    "g24_m084-4-6.png": "3a29906c243bd66f817713f650aee9663bc237ff8e94b8659acc9c4a344c4abc",
+    "ruin-statue-0.png": "cfb0e2821f6a9ca93fa7caa1703f1e8ce525e5df18fd390a3948f81983df229a",
+    "ruin-statue-1.png": "8351d7be0be8cd435e57894566d668526ddb098928162f6d83b6bf92069034f0"
+  }
+}

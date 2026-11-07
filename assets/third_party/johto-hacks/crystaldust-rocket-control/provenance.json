@@ -1,0 +1,519 @@
+{
+  "credit": "CrystalDust by Sierraffinity and contributors",
+  "files": {
+    "pc-0-0.png": "77d467cde91a86fed49c380dba965aa141eb0c0d4a91938268ce66bcedf882a6",
+    "pc-0-1.png": "faa88f5e4ff5dad1043f44c23016975a3fc09120505b2a3498ac22129b760240",
+    "pc-1-0.png": "bb61662b43dbd41595305a3625330943ae69b008af261e11951687d2aa9e5fe9",
+    "pc-1-1.png": "069fefa2dc1d7d32863eab03e92b7ac38b4f5394ffb01da63c145d39d83f716f"
+  },
+  "format": 1,
+  "native_source_feature": "front-pc",
+  "placement": "Whole32x26 native object padded6px above into original32x32 source blocked envelope; no scaling, pixel omission or source interaction change.",
+  "sourceUrl": "https://github.com/Sierraffinity/CrystalDust",
+  "source_provenance": {
+    "atlas": "C:\\Users\\LSDMTHC\\Desktop\\Hoennto\\.work\\tileshift-firegold\\crystaldust\\pairs\\083df884_083dfb0c\\top.png",
+    "atlas_sha256": "3dfd05c0f5e0eab874ff4da0374899825a8625b28fd848d3dfea56e69682ffca",
+    "catalog_sha256": "fd8fbaf6eb4ee3774e3fe046bf3b506e7f638ab4cd9297c9f62a8bb1189bc740",
+    "features": {
+      "front-pc": {
+        "destination_canvas": [
+          32,
+          32
+        ],
+        "extraction": "Native top-plane alpha retained. PC trims fully transparent padding only; table and stool retain their complete original canvases. No scaling, drawing, recolor or object pixel erasure.",
+        "native_opaque_pixels": 687,
+        "pair": "083df884_083dfb0c",
+        "source_bbox": [
+          0,
+          14,
+          32,
+          40
+        ],
+        "source_map": "g01_m004",
+        "source_native_canvas": [
+          32,
+          48
+        ],
+        "source_parts": [
+          {
+            "destination": [
+              0,
+              0
+            ],
+            "mid": 109,
+            "native_grid_value": 1133,
+            "native_rgba_sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+            "source_atlas_rect_xywh": [
+              208,
+              96,
+              16,
+              16
+            ],
+            "source_cell": [
+              2,
+              0
+            ]
+          },
+          {
+            "destination": [
+              16,
+              0
+            ],
+            "mid": 110,
+            "native_grid_value": 1134,
+            "native_rgba_sha256": "08d8aa97224e7f7d24ada3fc0c634054700c943968ad34f5ae02e659f8e29b05",
+            "source_atlas_rect_xywh": [
+              224,
+              96,
+              16,
+              16
+            ],
+            "source_cell": [
+              3,
+              0
+            ]
+          },
+          {
+            "destination": [
+              0,
+              16
+            ],
+            "mid": 117,
+            "native_grid_value": 1141,
+            "native_rgba_sha256": "f1f8391ca59492ed69b8e17a30696f7589d2c38e50e3bbf69c9755076b8ce578",
+            "source_atlas_rect_xywh": [
+              80,
+              112,
+              16,
+              16
+            ],
+            "source_cell": [
+              2,
+              1
+            ]
+          },
+          {
+            "destination": [
+              16,
+              16
+            ],
+            "mid": 118,
+            "native_grid_value": 1142,
+            "native_rgba_sha256": "55bcf8bdf1cc5e46538577437d6eb4ba3205ce3eb3ea08cdd002e15383212b18",
+            "source_atlas_rect_xywh": [
+              96,
+              112,
+              16,
+              16
+            ],
+            "source_cell": [
+              3,
+              1
+            ]
+          },
+          {
+            "destination": [
+              0,
+              32
+            ],
+            "mid": 517,
+            "native_grid_value": 12805,
+            "native_rgba_sha256": "b5e590964be10c42b014ce8a4afeb927de100eced86519dd9ce78679e6885647",
+            "source_atlas_rect_xywh": [
+              80,
+              512,
+              16,
+              16
+            ],
+            "source_cell": [
+              2,
+              2
+            ]
+          },
+          {
+            "destination": [
+              16,
+              32
+            ],
+            "mid": 518,
+            "native_grid_value": 12806,
+            "native_rgba_sha256": "504d62f1c1a3fb63f75145a0778421b39bc478db06985bce222f92f3dcceffe0",
+            "source_atlas_rect_xywh": [
+              96,
+              512,
+              16,
+              16
+            ],
+            "source_cell": [
+              3,
+              2
+            ]
+          }
+        ],
+        "source_rect_cells": [
+          2,
+          0,
+          2,
+          3
+        ],
+        "source_rgba_sha256": "f889a0f4edbb5902b4ef7ebfcee3b066a9bd5164839309156d6469bf71b8f0bd",
+        "whole_rgba_sha256": "9f2007262daf810d3f7a71b776d42531f8fa73c1415d4f7e79a37f7f8a907fae"
+      },
+      "lab-table": {
+        "destination_canvas": [
+          48,
+          32
+        ],
+        "extraction": "Native top-plane alpha retained. PC trims fully transparent padding only; table and stool retain their complete original canvases. No scaling, drawing, recolor or object pixel erasure.",
+        "native_opaque_pixels": 1122,
+        "pair": "083df884_083dfb0c",
+        "source_bbox": [
+          0,
+          3,
+          48,
+          28
+        ],
+        "source_map": "g01_m004",
+        "source_native_canvas": [
+          48,
+          32
+        ],
+        "source_parts": [
+          {
+            "destination": [
+              0,
+              0
+            ],
+            "mid": 552,
+            "native_grid_value": 1576,
+            "native_rgba_sha256": "aa320d6b78f2cea462d8dfe42647ff75ab35342e49128ad31ba99a106e952483",
+            "source_atlas_rect_xywh": [
+              128,
+              544,
+              16,
+              16
+            ],
+            "source_cell": [
+              7,
+              3
+            ]
+          },
+          {
+            "destination": [
+              16,
+              0
+            ],
+            "mid": 553,
+            "native_grid_value": 1577,
+            "native_rgba_sha256": "b4b5af97c3ee4a1a594cb9e07e7e10624c225ef88aa0f3198b3faa847ac51fae",
+            "source_atlas_rect_xywh": [
+              144,
+              544,
+              16,
+              16
+            ],
+            "source_cell": [
+              8,
+              3
+            ]
+          },
+          {
+            "destination": [
+              32,
+              0
+            ],
+            "mid": 554,
+            "native_grid_value": 1578,
+            "native_rgba_sha256": "523644f3e8d583ea22fcaf30366a58bae36aa0cd0ae24ca9de862a0b80ad0ede",
+            "source_atlas_rect_xywh": [
+              160,
+              544,
+              16,
+              16
+            ],
+            "source_cell": [
+              9,
+              3
+            ]
+          },
+          {
+            "destination": [
+              0,
+              16
+            ],
+            "mid": 560,
+            "native_grid_value": 12848,
+            "native_rgba_sha256": "ee7c492d69b06c22cf0a16c4c7440eb3f93bb18b58f214ac3793e5cdd71e7ec7",
+            "source_atlas_rect_xywh": [
+              0,
+              560,
+              16,
+              16
+            ],
+            "source_cell": [
+              7,
+              4
+            ]
+          },
+          {
+            "destination": [
+              16,
+              16
+            ],
+            "mid": 561,
+            "native_grid_value": 12849,
+            "native_rgba_sha256": "283bc5388a98ba82e24e10568327c42e1c262de6e5d56ea0a1991834f4f2ec70",
+            "source_atlas_rect_xywh": [
+              16,
+              560,
+              16,
+              16
+            ],
+            "source_cell": [
+              8,
+              4
+            ]
+          },
+          {
+            "destination": [
+              32,
+              16
+            ],
+            "mid": 562,
+            "native_grid_value": 12850,
+            "native_rgba_sha256": "5072586c424459c58992365dda0b81d6537f76ab5034dd5b13dad31101a8ca7f",
+            "source_atlas_rect_xywh": [
+              32,
+              560,
+              16,
+              16
+            ],
+            "source_cell": [
+              9,
+              4
+            ]
+          }
+        ],
+        "source_rect_cells": [
+          7,
+          3,
+          3,
+          2
+        ],
+        "source_rgba_sha256": "1de12dfcf0cdd6f9655266eb7dd70aac9f1b8ca9064aebe39f5590a82b2d3221",
+        "whole_rgba_sha256": "1de12dfcf0cdd6f9655266eb7dd70aac9f1b8ca9064aebe39f5590a82b2d3221"
+      },
+      "round-stool": {
+        "destination_canvas": [
+          16,
+          16
+        ],
+        "extraction": "Native top-plane alpha retained. PC trims fully transparent padding only; table and stool retain their complete original canvases. No scaling, drawing, recolor or object pixel erasure.",
+        "native_opaque_pixels": 182,
+        "pair": "083df884_083dfb0c",
+        "source_bbox": [
+          1,
+          1,
+          15,
+          16
+        ],
+        "source_map": "g01_m004",
+        "source_native_canvas": [
+          16,
+          16
+        ],
+        "source_parts": [
+          {
+            "destination": [
+              0,
+              0
+            ],
+            "mid": 683,
+            "native_grid_value": 1707,
+            "native_rgba_sha256": "edc3357af934df1bae3f8bf9b9495495dbaed9e0a5a169cdef83305ef188befe",
+            "source_atlas_rect_xywh": [
+              176,
+              672,
+              16,
+              16
+            ],
+            "source_cell": [
+              10,
+              3
+            ]
+          }
+        ],
+        "source_rect_cells": [
+          10,
+          3,
+          1,
+          1
+        ],
+        "source_rgba_sha256": "edc3357af934df1bae3f8bf9b9495495dbaed9e0a5a169cdef83305ef188befe",
+        "whole_rgba_sha256": "edc3357af934df1bae3f8bf9b9495495dbaed9e0a5a169cdef83305ef188befe"
+      }
+    },
+    "map": {
+      "border_offset": 4352812,
+      "grid": [
+        1592,
+        1593,
+        1133,
+        1134,
+        1176,
+        1129,
+        1684,
+        1131,
+        1132,
+        1131,
+        1132,
+        1600,
+        1601,
+        1141,
+        1142,
+        1184,
+        1137,
+        1692,
+        1139,
+        1140,
+        1139,
+        1140,
+        1587,
+        1588,
+        12805,
+        12806,
+        12801,
+        12801,
+        12801,
+        12803,
+        12804,
+        12803,
+        12804,
+        12808,
+        12809,
+        12935,
+        12973,
+        12809,
+        12809,
+        12809,
+        1576,
+        1577,
+        1578,
+        1707,
+        12808,
+        12809,
+        1669,
+        1670,
+        12809,
+        12809,
+        12809,
+        12848,
+        12849,
+        12850,
+        12809,
+        12858,
+        12812,
+        1677,
+        1678,
+        12809,
+        12809,
+        12809,
+        12811,
+        12812,
+        12811,
+        12812,
+        1139,
+        1140,
+        1139,
+        1140,
+        12809,
+        12809,
+        12809,
+        1139,
+        1140,
+        1139,
+        1140,
+        12807,
+        12804,
+        12803,
+        12804,
+        12809,
+        12809,
+        12809,
+        12803,
+        12804,
+        12803,
+        12804,
+        12808,
+        12809,
+        12809,
+        12809,
+        12809,
+        12809,
+        12809,
+        12809,
+        12809,
+        12809,
+        12809,
+        12819,
+        12809,
+        12809,
+        12809,
+        12809,
+        12809,
+        12809,
+        12809,
+        12809,
+        12809,
+        12820,
+        1563,
+        12809,
+        12809,
+        12809,
+        12816,
+        12817,
+        12818,
+        12809,
+        12809,
+        12809,
+        1564,
+        1032,
+        1032,
+        1032,
+        1032,
+        1050,
+        1051,
+        1052,
+        1032,
+        1032,
+        1032,
+        1032
+      ],
+      "grid_offset": 4352820,
+      "group": 1,
+      "header_offset": 4729700,
+      "height": 12,
+      "id": "g01_m004",
+      "layout_id": 58,
+      "layout_offset": 4353160,
+      "map_type": 8,
+      "num": 4,
+      "pair": "083df884_083dfb0c",
+      "primary_tileset": 138279044,
+      "region": 0,
+      "secondary_tileset": 138279692,
+      "warps": [
+        {
+          "dest_group": 0,
+          "dest_num": 9,
+          "dest_warp": 2,
+          "elevation": 0,
+          "x": 5,
+          "y": 10
+        }
+      ],
+      "width": 11
+    },
+    "rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf"
+  }
+}

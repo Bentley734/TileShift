@@ -1,0 +1,670 @@
+{
+  "baseline_runtime_sha256": "9968e3e5edd35829087259144f0d1e9605ffd44c5bf2f673f9de771c3cb2f729",
+  "files": {
+    "crystaldust-boulder514.png": "2053e21d5bc450c4dfbe40e60b41cb4979b5d694b3ecd425657ede219a0372f4",
+    "crystaldust-complete-down-hatch16.png": "bbdf2238d743c94fe78cf8c6e08d3192d458cfd3d897d8a53f400a00e536e99d",
+    "original-crystal-roof-sale-15-0.png": "232c2eac760eae604f9dd43352c0b272396b7cfaf220081b54583b6d0cbc2320",
+    "original-crystal-roof-sale-15-1.png": "232c2eac760eae604f9dd43352c0b272396b7cfaf220081b54583b6d0cbc2320",
+    "original-crystal-roof-sale-15-2.png": "597028af51fb4aa9c451f8b3a26da304e22938dab8879dcaf6afbf63d063f3d2",
+    "original-crystal-roof-sale-15-3.png": "bf32a05619c6155ebc010e5a3f57795ae68efec3bb22cc80d5c532a5fbae0256",
+    "original-crystal-roof-sale-63-0.png": "e1c3c3918eb3924b787dac2e2dc2120f07a0dd9d34cebc7ac34cecb661d1d649",
+    "original-crystal-roof-sale-63-1.png": "2cb140816bc64d6a1c7714caf494c063218ca505db360aa8ccf7ae7a2ef2e677",
+    "original-crystal-roof-sale-63-2.png": "efb856ea647bf646cd77efeeaadf93e1a1e3f5769671cbb8ac421e8b4f2864b2",
+    "original-crystal-roof-sale-63-3.png": "00c5b8774d7a2da6caeee6fc89b6376043db93b897c7c2c5a72f1da329457e3c"
+  },
+  "format": 1,
+  "native_cd_boulder_source": {
+    "crop": [
+      32,
+      512,
+      16,
+      16
+    ],
+    "file": "C:\\Users\\LSDMTHC\\Desktop\\Hoennto\\.work\\tileshift-crystaldust-sweep\\outdoors\\cd-rock514-native16.png",
+    "mask": "original MID alpha; no masking or modifications",
+    "mid": 514,
+    "native_size": [
+      16,
+      16
+    ],
+    "plane": "mid",
+    "png_sha256": "2053e21d5bc450c4dfbe40e60b41cb4979b5d694b3ecd425657ede219a0372f4",
+    "rgba_sha256": "e3baee7ad5d6d1f729d164959bdad917435c89e3af15195271a1b71971d72160",
+    "source_pair": "083df704_083df794",
+    "source_png": "C:\\Users\\LSDMTHC\\Desktop\\Hoennto\\.work\\tileshift-firegold\\crystaldust\\pairs\\083df704_083df794\\mid.png",
+    "source_png_sha256": "99056af494fa31ec1e2ff5fb5f02e9b84e5b76b1f95ee8ac1ad0c85d346f1c4c",
+    "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+    "witnesses": [
+      {
+        "cells": [
+          [
+            4,
+            6
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            8,
+            7
+          ],
+          [
+            9,
+            7
+          ],
+          [
+            11,
+            7
+          ]
+        ],
+        "map": "g24_m004"
+      },
+      {
+        "cells": [
+          [
+            7,
+            8
+          ],
+          [
+            9,
+            8
+          ],
+          [
+            6,
+            9
+          ],
+          [
+            17,
+            13
+          ]
+        ],
+        "map": "g24_m009"
+      }
+    ]
+  },
+  "native_cd_down_hatch": {
+    "actual_size": [
+      16,
+      16
+    ],
+    "integer_reduction": 1,
+    "layer": "top",
+    "mid": 519,
+    "native_atlas_sha256": "2d00abc21db5fc9bfe659312c20516bba1532a6fc7b341043947a4fc793f02db",
+    "pair": "083df884_083dfa94",
+    "source_rect": [
+      112,
+      512,
+      16,
+      16
+    ]
+  },
+  "retained_functional_geometry": [
+    {
+      "feature": "compact_closed_security_door",
+      "game": "gold",
+      "map": "GOLDENROD_UNDERGROUND",
+      "rationale": "Reviewed closed state of the original compact16px locked Underground passage. Native CrystalDust domestic/security door frames are32px tall; clipping them would remove their unique complete frame and overlap unrelated directory/floor cells. Retain every original source door/frame pixel and alpha at1:1 in an explicit steel Gen3 palette. Source locked-wall collision7, unlocked46 state, event73 branch, actors and interaction remain unchanged.",
+      "reviewed_cd": "Native CD house/lab door modules have a complete32px tall frame; no whole16px closed counterpart was found.",
+      "source_key": [
+        61,
+        0
+      ]
+    },
+    {
+      "feature": "compact_closed_security_door",
+      "game": "silver",
+      "map": "GOLDENROD_UNDERGROUND",
+      "rationale": "Reviewed closed state of the original compact16px locked Underground passage. Native CrystalDust domestic/security door frames are32px tall; clipping them would remove their unique complete frame and overlap unrelated directory/floor cells. Retain every original source door/frame pixel and alpha at1:1 in an explicit steel Gen3 palette. Source locked-wall collision7, unlocked46 state, event73 branch, actors and interaction remain unchanged.",
+      "reviewed_cd": "Native CD house/lab door modules have a complete32px tall frame; no whole16px closed counterpart was found.",
+      "source_key": [
+        61,
+        0
+      ]
+    },
+    {
+      "artwork_rgba_sha256": "4628e84134e60491108288810e3376d561b49c19c5b2893e5cd00da7453e1d8c",
+      "feature": "native_crystal_compact_sale_booth",
+      "floor_exclusion": "Only entire explicitly identified rawfloor144/145 8px modules are transparent; every other original source pixel retained at exact coordinate.",
+      "game": "crystal",
+      "map": "GOLDENROD_DEPT_STORE_ROOF",
+      "mask": "0000000011111111000000001111111100000000111111110000000011111111000000001111111100000000111111110000000011111111000000001111111100000000111111110000000011111111000000001111111100000000111111110000000011111111000000001111111100000000111111110000000011111111",
+      "palettes": {
+        "canopy": [
+          [
+            255,
+            247,
+            214
+          ],
+          [
+            255,
+            148,
+            165
+          ],
+          [
+            214,
+            66,
+            66
+          ],
+          [
+            74,
+            66,
+            66
+          ]
+        ],
+        "wood": [
+          [
+            247,
+            239,
+            181
+          ],
+          [
+            206,
+            181,
+            99
+          ],
+          [
+            140,
+            123,
+            66
+          ],
+          [
+            74,
+            66,
+            66
+          ]
+        ]
+      },
+      "rationale": "Actual clearance-sale callback booth states63/15 are complete native Crystal functional geometry at1:1. CrystalDust roof g13_m022 has only an elevator room and its actual Olivine bazaar bank contains houses, with no intact matching sale booth. Preserve the whole original canopy stripes, wood counter, support and endcaps; only plain rawfloor144/145 is transparent to the exact selected surrounding roof floor. All source flags, sale objects, layout, collisions and coordinates remain unchanged.",
+      "sourceHash": "d2b2cbaac942ca41708dfaebe4920621bf7a9aac35a0c8502968d15f18d8948d",
+      "source_key": [
+        63,
+        0
+      ],
+      "source_rawtiles": [
+        144,
+        176,
+        144,
+        185
+      ]
+    },
+    {
+      "artwork_rgba_sha256": "ad7b67701d7b5a7f3afc12e23a2269bb686b9d10d43c507a73d5b557e7a09be1",
+      "feature": "native_crystal_compact_sale_booth",
+      "floor_exclusion": "Only entire explicitly identified rawfloor144/145 8px modules are transparent; every other original source pixel retained at exact coordinate.",
+      "game": "crystal",
+      "map": "GOLDENROD_DEPT_STORE_ROOF",
+      "mask": "1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111",
+      "palettes": {
+        "canopy": [
+          [
+            255,
+            247,
+            214
+          ],
+          [
+            255,
+            148,
+            165
+          ],
+          [
+            214,
+            66,
+            66
+          ],
+          [
+            74,
+            66,
+            66
+          ]
+        ],
+        "wood": [
+          [
+            247,
+            239,
+            181
+          ],
+          [
+            206,
+            181,
+            99
+          ],
+          [
+            140,
+            123,
+            66
+          ],
+          [
+            74,
+            66,
+            66
+          ]
+        ]
+      },
+      "rationale": "Actual clearance-sale callback booth states63/15 are complete native Crystal functional geometry at1:1. CrystalDust roof g13_m022 has only an elevator room and its actual Olivine bazaar bank contains houses, with no intact matching sale booth. Preserve the whole original canopy stripes, wood counter, support and endcaps; only plain rawfloor144/145 is transparent to the exact selected surrounding roof floor. All source flags, sale objects, layout, collisions and coordinates remain unchanged.",
+      "sourceHash": "e193d09172db52967bcdd377e5356975447b9cf3078f91ce63dd4a8972f73dea",
+      "source_key": [
+        63,
+        1
+      ],
+      "source_rawtiles": [
+        177,
+        178,
+        186,
+        179
+      ]
+    },
+    {
+      "artwork_rgba_sha256": "5c90ad7ae130bb4174ee8a32373105095803f1e639e1d146d581d62b90703f21",
+      "feature": "native_crystal_compact_sale_booth",
+      "floor_exclusion": "Only entire explicitly identified rawfloor144/145 8px modules are transparent; every other original source pixel retained at exact coordinate.",
+      "game": "crystal",
+      "map": "GOLDENROD_DEPT_STORE_ROOF",
+      "mask": "0000000011111111000000001111111100000000111111110000000011111111000000001111111100000000111111110000000011111111000000001111111100000000111111110000000011111111000000001111111100000000111111110000000011111111000000001111111100000000111111110000000011111111",
+      "palettes": {
+        "canopy": [
+          [
+            255,
+            247,
+            214
+          ],
+          [
+            255,
+            148,
+            165
+          ],
+          [
+            214,
+            66,
+            66
+          ],
+          [
+            74,
+            66,
+            66
+          ]
+        ],
+        "wood": [
+          [
+            247,
+            239,
+            181
+          ],
+          [
+            206,
+            181,
+            99
+          ],
+          [
+            140,
+            123,
+            66
+          ],
+          [
+            74,
+            66,
+            66
+          ]
+        ]
+      },
+      "rationale": "Actual clearance-sale callback booth states63/15 are complete native Crystal functional geometry at1:1. CrystalDust roof g13_m022 has only an elevator room and its actual Olivine bazaar bank contains houses, with no intact matching sale booth. Preserve the whole original canopy stripes, wood counter, support and endcaps; only plain rawfloor144/145 is transparent to the exact selected surrounding roof floor. All source flags, sale objects, layout, collisions and coordinates remain unchanged.",
+      "sourceHash": "7bd02f627c9efbfa98b6bca7dd9891864bf903d7017f5a71eb35144e12375e09",
+      "source_key": [
+        63,
+        2
+      ],
+      "source_rawtiles": [
+        144,
+        187,
+        144,
+        189
+      ]
+    },
+    {
+      "artwork_rgba_sha256": "79f05db788ff04ea07d002046b8eb068b8b497ff4b08e3e0d7b54e5af31a2da5",
+      "feature": "native_crystal_compact_sale_booth",
+      "floor_exclusion": "Only entire explicitly identified rawfloor144/145 8px modules are transparent; every other original source pixel retained at exact coordinate.",
+      "game": "crystal",
+      "map": "GOLDENROD_DEPT_STORE_ROOF",
+      "mask": "1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111",
+      "palettes": {
+        "canopy": [
+          [
+            255,
+            247,
+            214
+          ],
+          [
+            255,
+            148,
+            165
+          ],
+          [
+            214,
+            66,
+            66
+          ],
+          [
+            74,
+            66,
+            66
+          ]
+        ],
+        "wood": [
+          [
+            247,
+            239,
+            181
+          ],
+          [
+            206,
+            181,
+            99
+          ],
+          [
+            140,
+            123,
+            66
+          ],
+          [
+            74,
+            66,
+            66
+          ]
+        ]
+      },
+      "rationale": "Actual clearance-sale callback booth states63/15 are complete native Crystal functional geometry at1:1. CrystalDust roof g13_m022 has only an elevator room and its actual Olivine bazaar bank contains houses, with no intact matching sale booth. Preserve the whole original canopy stripes, wood counter, support and endcaps; only plain rawfloor144/145 is transparent to the exact selected surrounding roof floor. All source flags, sale objects, layout, collisions and coordinates remain unchanged.",
+      "sourceHash": "b3fb98389f5632d7f609994a098c9691cc17496b03c5f6d465dce0a93b4ebe7e",
+      "source_key": [
+        63,
+        3
+      ],
+      "source_rawtiles": [
+        188,
+        181,
+        190,
+        184
+      ]
+    },
+    {
+      "artwork_rgba_sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "feature": "native_crystal_compact_sale_booth",
+      "floor_exclusion": "Only entire explicitly identified rawfloor144/145 8px modules are transparent; every other original source pixel retained at exact coordinate.",
+      "game": "crystal",
+      "map": "GOLDENROD_DEPT_STORE_ROOF",
+      "mask": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "palettes": {
+        "canopy": [
+          [
+            255,
+            247,
+            214
+          ],
+          [
+            255,
+            148,
+            165
+          ],
+          [
+            214,
+            66,
+            66
+          ],
+          [
+            74,
+            66,
+            66
+          ]
+        ],
+        "wood": [
+          [
+            247,
+            239,
+            181
+          ],
+          [
+            206,
+            181,
+            99
+          ],
+          [
+            140,
+            123,
+            66
+          ],
+          [
+            74,
+            66,
+            66
+          ]
+        ]
+      },
+      "rationale": "Actual clearance-sale callback booth states63/15 are complete native Crystal functional geometry at1:1. CrystalDust roof g13_m022 has only an elevator room and its actual Olivine bazaar bank contains houses, with no intact matching sale booth. Preserve the whole original canopy stripes, wood counter, support and endcaps; only plain rawfloor144/145 is transparent to the exact selected surrounding roof floor. All source flags, sale objects, layout, collisions and coordinates remain unchanged.",
+      "sourceHash": "5982155d0be6a34d4a1431ea2709709b1f3beefe641cbf8e2dce6319b3e5d764",
+      "source_key": [
+        15,
+        0
+      ],
+      "source_rawtiles": [
+        144,
+        145,
+        144,
+        145
+      ]
+    },
+    {
+      "artwork_rgba_sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "feature": "native_crystal_compact_sale_booth",
+      "floor_exclusion": "Only entire explicitly identified rawfloor144/145 8px modules are transparent; every other original source pixel retained at exact coordinate.",
+      "game": "crystal",
+      "map": "GOLDENROD_DEPT_STORE_ROOF",
+      "mask": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "palettes": {
+        "canopy": [
+          [
+            255,
+            247,
+            214
+          ],
+          [
+            255,
+            148,
+            165
+          ],
+          [
+            214,
+            66,
+            66
+          ],
+          [
+            74,
+            66,
+            66
+          ]
+        ],
+        "wood": [
+          [
+            247,
+            239,
+            181
+          ],
+          [
+            206,
+            181,
+            99
+          ],
+          [
+            140,
+            123,
+            66
+          ],
+          [
+            74,
+            66,
+            66
+          ]
+        ]
+      },
+      "rationale": "Actual clearance-sale callback booth states63/15 are complete native Crystal functional geometry at1:1. CrystalDust roof g13_m022 has only an elevator room and its actual Olivine bazaar bank contains houses, with no intact matching sale booth. Preserve the whole original canopy stripes, wood counter, support and endcaps; only plain rawfloor144/145 is transparent to the exact selected surrounding roof floor. All source flags, sale objects, layout, collisions and coordinates remain unchanged.",
+      "sourceHash": "296bd2cfaffe3526412b8d2899149d1b9ec7d9eb953a56f34f835adeaa087bce",
+      "source_key": [
+        15,
+        1
+      ],
+      "source_rawtiles": [
+        145,
+        145,
+        145,
+        145
+      ]
+    },
+    {
+      "artwork_rgba_sha256": "59fb5a073f7b69ac0919e82630d221c57801ae622af898b17a2abd10e44c4b4f",
+      "feature": "native_crystal_compact_sale_booth",
+      "floor_exclusion": "Only entire explicitly identified rawfloor144/145 8px modules are transparent; every other original source pixel retained at exact coordinate.",
+      "game": "crystal",
+      "map": "GOLDENROD_DEPT_STORE_ROOF",
+      "mask": "0000000011111111000000001111111100000000111111110000000011111111000000001111111100000000111111110000000011111111000000001111111100000000111111110000000011111111000000001111111100000000111111110000000011111111000000001111111100000000111111110000000011111111",
+      "palettes": {
+        "canopy": [
+          [
+            255,
+            247,
+            214
+          ],
+          [
+            255,
+            148,
+            165
+          ],
+          [
+            214,
+            66,
+            66
+          ],
+          [
+            74,
+            66,
+            66
+          ]
+        ],
+        "wood": [
+          [
+            247,
+            239,
+            181
+          ],
+          [
+            206,
+            181,
+            99
+          ],
+          [
+            140,
+            123,
+            66
+          ],
+          [
+            74,
+            66,
+            66
+          ]
+        ]
+      },
+      "rationale": "Actual clearance-sale callback booth states63/15 are complete native Crystal functional geometry at1:1. CrystalDust roof g13_m022 has only an elevator room and its actual Olivine bazaar bank contains houses, with no intact matching sale booth. Preserve the whole original canopy stripes, wood counter, support and endcaps; only plain rawfloor144/145 is transparent to the exact selected surrounding roof floor. All source flags, sale objects, layout, collisions and coordinates remain unchanged.",
+      "sourceHash": "6046cd72ced3d6db89f92b48101665b31383d4bd1db4493e07e399314bdc6a22",
+      "source_key": [
+        15,
+        2
+      ],
+      "source_rawtiles": [
+        144,
+        176,
+        144,
+        182
+      ]
+    },
+    {
+      "artwork_rgba_sha256": "808385100c786744be3f05df89b8596bca2d32759e33a2f9c081fb3e6dbb115e",
+      "feature": "native_crystal_compact_sale_booth",
+      "floor_exclusion": "Only entire explicitly identified rawfloor144/145 8px modules are transparent; every other original source pixel retained at exact coordinate.",
+      "game": "crystal",
+      "map": "GOLDENROD_DEPT_STORE_ROOF",
+      "mask": "1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111",
+      "palettes": {
+        "canopy": [
+          [
+            255,
+            247,
+            214
+          ],
+          [
+            255,
+            148,
+            165
+          ],
+          [
+            214,
+            66,
+            66
+          ],
+          [
+            74,
+            66,
+            66
+          ]
+        ],
+        "wood": [
+          [
+            247,
+            239,
+            181
+          ],
+          [
+            206,
+            181,
+            99
+          ],
+          [
+            140,
+            123,
+            66
+          ],
+          [
+            74,
+            66,
+            66
+          ]
+        ]
+      },
+      "rationale": "Actual clearance-sale callback booth states63/15 are complete native Crystal functional geometry at1:1. CrystalDust roof g13_m022 has only an elevator room and its actual Olivine bazaar bank contains houses, with no intact matching sale booth. Preserve the whole original canopy stripes, wood counter, support and endcaps; only plain rawfloor144/145 is transparent to the exact selected surrounding roof floor. All source flags, sale objects, layout, collisions and coordinates remain unchanged.",
+      "sourceHash": "a4d383f2d86d79fe6a72fbe9fa83e34f42d8d7a2b4ee4d2400c332b3a2c202f2",
+      "source_key": [
+        15,
+        3
+      ],
+      "source_rawtiles": [
+        177,
+        178,
+        183,
+        184
+      ]
+    },
+    {
+      "feature": "compact_closed_security_door",
+      "game": "crystal",
+      "map": "GOLDENROD_UNDERGROUND",
+      "rationale": "Reviewed closed state of the original compact16px locked Underground passage. Native CrystalDust domestic/security door frames are32px tall; clipping them would remove their unique complete frame and overlap unrelated directory/floor cells. Retain every original source door/frame pixel and alpha at1:1 in an explicit steel Gen3 palette. Source locked-wall collision7, unlocked46 state, event73 branch, actors and interaction remain unchanged.",
+      "reviewed_cd": "Native CD house/lab door modules have a complete32px tall frame; no whole16px closed counterpart was found.",
+      "source_key": [
+        61,
+        0
+      ]
+    }
+  ]
+}

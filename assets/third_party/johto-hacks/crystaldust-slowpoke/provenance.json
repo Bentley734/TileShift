@@ -1,0 +1,292 @@
+{
+  "source": "Native CrystalDust Slowpoke Well functional entrance",
+  "rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+  "catalog_sha256": "fd8fbaf6eb4ee3774e3fe046bf3b506e7f638ab4cd9297c9f62a8bb1189bc740",
+  "source_map": "g00_m011",
+  "source_pair": "083df704_083df74c",
+  "source_mids": [
+    [
+      555,
+      556,
+      557
+    ],
+    [
+      563,
+      564,
+      565
+    ],
+    [
+      571,
+      572,
+      573
+    ]
+  ],
+  "source_plane": "mid",
+  "source_png": "C:\\Users\\LSDMTHC\\Desktop\\Hoennto\\.work\\tileshift-firegold\\crystaldust\\maps\\g00_m011-mid.png",
+  "source_png_sha256": "67dfa55399c65f6c787cd88e9654a8331bdf82a8358456c3e1d107d158a90590",
+  "source_rect": [
+    576,
+    128,
+    48,
+    48
+  ],
+  "native_size": [
+    48,
+    48
+  ],
+  "source_entrance": [
+    37,
+    10
+  ],
+  "source_destination": {
+    "map": "g24_m004",
+    "region_name": "SLOWPOKE WELL",
+    "return_warp": {
+      "x": 17,
+      "y": 15,
+      "elevation": 3,
+      "dest_warp": 6,
+      "dest_num": 11,
+      "dest_group": 0
+    }
+  },
+  "target_origin": [
+    30,
+    5
+  ],
+  "target_entrance": [
+    31,
+    7
+  ],
+  "restored_ground_row": 8,
+  "source_target_maps": [
+    {
+      "game": "gold",
+      "map": "AZALEA_TOWN",
+      "map_sha256": "060f734522cce90fe5fba8350927bfbe781f907abf64b8c37cdda2f2746c14dd",
+      "warps": [
+        {
+          "y": 9,
+          "destMap": "AZALEA_POKECENTER_1F",
+          "destMapNum": 1,
+          "x": 15,
+          "destGroup": 8,
+          "destWarp": 1
+        },
+        {
+          "y": 13,
+          "destMap": "CHARCOAL_KILN",
+          "destMapNum": 2,
+          "x": 21,
+          "destGroup": 8,
+          "destWarp": 1
+        },
+        {
+          "y": 5,
+          "destMap": "AZALEA_MART",
+          "destMapNum": 3,
+          "x": 21,
+          "destGroup": 8,
+          "destWarp": 2
+        },
+        {
+          "y": 5,
+          "destMap": "KURTS_HOUSE",
+          "destMapNum": 4,
+          "x": 9,
+          "destGroup": 8,
+          "destWarp": 1
+        },
+        {
+          "y": 15,
+          "destMap": "AZALEA_GYM",
+          "destMapNum": 5,
+          "x": 10,
+          "destGroup": 8,
+          "destWarp": 1
+        },
+        {
+          "y": 7,
+          "destMap": "SLOWPOKE_WELL_B1F",
+          "destMapNum": 32,
+          "x": 31,
+          "destGroup": 3,
+          "destWarp": 1
+        },
+        {
+          "y": 10,
+          "destMap": "ILEX_FOREST_AZALEA_GATE",
+          "destMapNum": 20,
+          "x": 2,
+          "destGroup": 11,
+          "destWarp": 3
+        },
+        {
+          "y": 11,
+          "destMap": "ILEX_FOREST_AZALEA_GATE",
+          "destMapNum": 20,
+          "x": 2,
+          "destGroup": 11,
+          "destWarp": 4
+        }
+      ]
+    },
+    {
+      "game": "silver",
+      "map": "AZALEA_TOWN",
+      "map_sha256": "060f734522cce90fe5fba8350927bfbe781f907abf64b8c37cdda2f2746c14dd",
+      "warps": [
+        {
+          "y": 9,
+          "destMap": "AZALEA_POKECENTER_1F",
+          "destMapNum": 1,
+          "x": 15,
+          "destGroup": 8,
+          "destWarp": 1
+        },
+        {
+          "y": 13,
+          "destMap": "CHARCOAL_KILN",
+          "destMapNum": 2,
+          "x": 21,
+          "destGroup": 8,
+          "destWarp": 1
+        },
+        {
+          "y": 5,
+          "destMap": "AZALEA_MART",
+          "destMapNum": 3,
+          "x": 21,
+          "destGroup": 8,
+          "destWarp": 2
+        },
+        {
+          "y": 5,
+          "destMap": "KURTS_HOUSE",
+          "destMapNum": 4,
+          "x": 9,
+          "destGroup": 8,
+          "destWarp": 1
+        },
+        {
+          "y": 15,
+          "destMap": "AZALEA_GYM",
+          "destMapNum": 5,
+          "x": 10,
+          "destGroup": 8,
+          "destWarp": 1
+        },
+        {
+          "y": 7,
+          "destMap": "SLOWPOKE_WELL_B1F",
+          "destMapNum": 32,
+          "x": 31,
+          "destGroup": 3,
+          "destWarp": 1
+        },
+        {
+          "y": 10,
+          "destMap": "ILEX_FOREST_AZALEA_GATE",
+          "destMapNum": 20,
+          "x": 2,
+          "destGroup": 11,
+          "destWarp": 3
+        },
+        {
+          "y": 11,
+          "destMap": "ILEX_FOREST_AZALEA_GATE",
+          "destMapNum": 20,
+          "x": 2,
+          "destGroup": 11,
+          "destWarp": 4
+        }
+      ]
+    },
+    {
+      "game": "crystal",
+      "map": "AZALEA_TOWN",
+      "map_sha256": "1ebca8ce171b47712ee812f48bbe9347bdb104b45ca84c322af4bbbd62686dcf",
+      "warps": [
+        {
+          "y": 9,
+          "destMap": "AZALEA_POKECENTER_1F",
+          "destMapNum": 1,
+          "x": 15,
+          "destGroup": 8,
+          "destWarp": 1
+        },
+        {
+          "y": 13,
+          "destMap": "CHARCOAL_KILN",
+          "destMapNum": 2,
+          "x": 21,
+          "destGroup": 8,
+          "destWarp": 1
+        },
+        {
+          "y": 5,
+          "destMap": "AZALEA_MART",
+          "destMapNum": 3,
+          "x": 21,
+          "destGroup": 8,
+          "destWarp": 2
+        },
+        {
+          "y": 5,
+          "destMap": "KURTS_HOUSE",
+          "destMapNum": 4,
+          "x": 9,
+          "destGroup": 8,
+          "destWarp": 1
+        },
+        {
+          "y": 15,
+          "destMap": "AZALEA_GYM",
+          "destMapNum": 5,
+          "x": 10,
+          "destGroup": 8,
+          "destWarp": 1
+        },
+        {
+          "y": 7,
+          "destMap": "SLOWPOKE_WELL_B1F",
+          "destMapNum": 40,
+          "x": 31,
+          "destGroup": 3,
+          "destWarp": 1
+        },
+        {
+          "y": 10,
+          "destMap": "ILEX_FOREST_AZALEA_GATE",
+          "destMapNum": 22,
+          "x": 2,
+          "destGroup": 11,
+          "destWarp": 3
+        },
+        {
+          "y": 11,
+          "destMap": "ILEX_FOREST_AZALEA_GATE",
+          "destMapNum": 22,
+          "x": 2,
+          "destGroup": 11,
+          "destWarp": 4
+        }
+      ]
+    }
+  ],
+  "pixel_scale": 1,
+  "no_mask_or_color_conversion": true,
+  "rgba_sha256": "eb02580b63337e7a3ec77317c3fc5bcefe54a915b8a6f744ea1d04258c95887e",
+  "files": {
+    "whole48.png": "0eac60f220695c2e02e72d2d086f8745298c09646a10b3de13d4130ebdd07ac7",
+    "cell-0-0.png": "0601182bff41ad5c8a6585471b4fdf892730e4d575eaca2a652dad6c7bd1d81d",
+    "cell-1-0.png": "91e08103a43dfe35c04c5c81a1fe1646f3315661dc92fb332642e2db95ccf349",
+    "cell-2-0.png": "95dc97169e28b5e069d2e9fc0d2612f9363ab3f81aede7c6e703c6f3eeac2e4a",
+    "cell-0-1.png": "d4ced6cb62023a7d400b92707cfd35ee46f1211b417fa31fbd9bf57a765d9430",
+    "cell-1-1.png": "020ec020bf505bcb13367bdd2f2c6c4b3adfc6ba0204e12c32853c49dcd7d1a4",
+    "cell-2-1.png": "5047b8c2fac6588e9ebd84a91cc488c0983b81a8672896b93bc97320b037a318",
+    "cell-0-2.png": "1521ae2a58bdcaa8dc40f061ae84b611edfa8cb7ae225c0ead841f120c7aefaf",
+    "cell-1-2.png": "bd36f0625121c32bbcf6fd6608c23d797a8c223d91459a2afa13e5df008bcbf8",
+    "cell-2-2.png": "6d839964f875ddd8fce72bb397deff978c163e2d3d49c6033651b50d010c435b"
+  }
+}

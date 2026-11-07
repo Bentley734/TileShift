@@ -1,0 +1,207 @@
+{
+  "catalog_sha256": "fd8fbaf6eb4ee3774e3fe046bf3b506e7f638ab4cd9297c9f62a8bb1189bc740",
+  "credit": "CrystalDust by Sierraffinity and contributors",
+  "files": {
+    "complete-native-specimen-desk32.png": "370a5fa2fd0c6ece02fe50e846971d4c6ab39edf459c0f9dc29f52a45be036c5",
+    "specimen-desk-0-0.png": "52a57999509dc60933f25984e82c878939bedb2162edc18170acd979ccedcdd9",
+    "specimen-desk-0-1.png": "d16b12b9045390915269ad615f29dd166669eaef99afc8708444e8a60a3d151b",
+    "specimen-desk-1-0.png": "c5656f67f76dad1e715ee35b3696f9c705556acd42658b5a753d30257f0de9c5",
+    "specimen-desk-1-1.png": "a3f5002241c519109ce160455283c476d6ce5ed8858158f024750b87b88d1159"
+  },
+  "format": 1,
+  "native_object_pixels": 490,
+  "native_specimen_desk_parts": [
+    {
+      "atlas_rect_xywh": [
+        128,
+        688,
+        16,
+        16
+      ],
+      "destination": [
+        0,
+        0
+      ],
+      "mid": 696,
+      "native_grid_value": 1720,
+      "rgba_sha256": "55fed4b7c4d81848d351d6ba7cc36ade0ec963c7a2fd7d4003626cb90c0277f8",
+      "source_map_cell": [
+        4,
+        5
+      ]
+    },
+    {
+      "atlas_rect_xywh": [
+        224,
+        128,
+        16,
+        16
+      ],
+      "destination": [
+        16,
+        0
+      ],
+      "mid": 142,
+      "native_grid_value": 1166,
+      "rgba_sha256": "312800caa064a0657722c0bbf1361458e559b7dafbafba01e4c38a97f35ff8ea",
+      "source_map_cell": [
+        5,
+        5
+      ]
+    },
+    {
+      "atlas_rect_xywh": [
+        208,
+        112,
+        16,
+        16
+      ],
+      "destination": [
+        0,
+        16
+      ],
+      "mid": 125,
+      "native_grid_value": 12413,
+      "rgba_sha256": "b5e590964be10c42b014ce8a4afeb927de100eced86519dd9ce78679e6885647",
+      "source_map_cell": [
+        4,
+        6
+      ]
+    },
+    {
+      "atlas_rect_xywh": [
+        224,
+        112,
+        16,
+        16
+      ],
+      "destination": [
+        16,
+        16
+      ],
+      "mid": 126,
+      "native_grid_value": 12414,
+      "rgba_sha256": "504d62f1c1a3fb63f75145a0778421b39bc478db06985bce222f92f3dcceffe0",
+      "source_map_cell": [
+        5,
+        6
+      ]
+    }
+  ],
+  "reused_bookcase_provenance": "C:\\Users\\LSDMTHC\\Desktop\\Hoennto\\.work\\tileshift-crystaldust-sweep\\interiors\\bookcases\\assets\\third_party\\johto-hacks\\crystaldust-bookcases\\provenance.json",
+  "reused_tv_provenance": "C:\\Users\\LSDMTHC\\Desktop\\Hoennto\\.work\\tileshift-v0445-checkpoint\\source-final\\assets\\third_party\\johto-hacks\\newbark-crystaldust\\provenance.json",
+  "rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+  "scale": 1,
+  "source_alpha_unchanged": true,
+  "source_atlas_sha256": "3dfd05c0f5e0eab874ff4da0374899825a8625b28fd848d3dfea56e69682ffca",
+  "source_map": {
+    "border_offset": 15053580,
+    "grid": [
+      1592,
+      1593,
+      1592,
+      1593,
+      1129,
+      1176,
+      1129,
+      1565,
+      1600,
+      1601,
+      1600,
+      1601,
+      1137,
+      1184,
+      1137,
+      1581,
+      1560,
+      1561,
+      1560,
+      1561,
+      12409,
+      12409,
+      12409,
+      12963,
+      12416,
+      12417,
+      12417,
+      12417,
+      12417,
+      12417,
+      12417,
+      12417,
+      12416,
+      12417,
+      12417,
+      12983,
+      12417,
+      12417,
+      12417,
+      12417,
+      12416,
+      12417,
+      1726,
+      1727,
+      1720,
+      1166,
+      1659,
+      1660,
+      12416,
+      12417,
+      12413,
+      12414,
+      12413,
+      12414,
+      1139,
+      1140,
+      12427,
+      12417,
+      12417,
+      12417,
+      12417,
+      12417,
+      12411,
+      12982,
+      1171,
+      12424,
+      12425,
+      12426,
+      12417,
+      12417,
+      12417,
+      1172,
+      1032,
+      1050,
+      1051,
+      1052,
+      1032,
+      1032,
+      1032,
+      1032
+    ],
+    "grid_offset": 15053588,
+    "group": 24,
+    "header_offset": 4736756,
+    "height": 10,
+    "id": "g24_m075",
+    "layout_id": 317,
+    "layout_offset": 15053748,
+    "map_type": 8,
+    "num": 75,
+    "pair": "083df884_083dfb0c",
+    "primary_tileset": 138279044,
+    "region": 75,
+    "secondary_tileset": 138279692,
+    "warps": [
+      {
+        "dest_group": 24,
+        "dest_num": 86,
+        "dest_warp": 2,
+        "elevation": 0,
+        "x": 2,
+        "y": 8
+      }
+    ],
+    "width": 8
+  },
+  "source_object_rgba_sha256": "bf8f157a0aac6b8ef4eb647d37f4d3c0f7a27afe023d52e281aea23fd03bbddf"
+}

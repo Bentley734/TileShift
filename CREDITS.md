@@ -1,5 +1,22 @@
 # Artwork credits
 
+## CrystalDust area review (0.45.0)
+
+The additional native counterparts come from **CrystalDust by Sierraffinity and
+contributors**, extracted from the user's supplied ROM. They include complete
+Slowpoke Well and Ilex shrine artwork, Goldenrod architectural modules,
+room furniture, lighthouse masonry, Ruins statues and League architecture.
+Selected pieces retain their native pixel size. Only complete repeating modules
+are arranged to fit existing source geometry; exterior ground is transparent
+where the surrounding selected floor must show through.
+
+The special-room entrance rugs retain complete native FireRed rug pixels over
+CrystalDust floors. Exact native parts, masks, source rectangles, source ROM
+fingerprints and packaged image hashes accompany each new asset folder under
+`assets/third_party/johto-hacks/`. No ROM binaries or full source map images are
+packaged. Literal Unown, puzzle controls and compact unmatched features retain
+credited source geometry and their gameplay meaning.
+
 ## Crystal berry plants and dirt
 
 The 43 berry plant sheets and the berry-soil material in
@@ -17,7 +34,7 @@ material is clipped only to the original rounded dirt shapes. The consolidated
 rules, source bounds and frame checks. Native planting and growth code is
 unchanged; only the selected theme's ground and berry actor pixels change.
 
-The Gen3 theme on Gen2 hosts (v0.29.0 onward) uses the user-supplied Johto ROM hacks credited below. This file also preserves historical provenance for retained files and Gen1 options; the generated Gen2 replacements described in those historical sections are superseded, except the roofed Slowpoke Well kept at the user's request. Radios and the beacon preserve original Gen2 geometry in matching Gen3 colors where the hacks have no corresponding background object.
+The Gen 3 theme on Gen 2 hosts uses the user-supplied Johto ROM hacks credited below. Version 0.45.0 replaces the previously retained generated Slowpoke Well with the complete native CrystalDust entrance and extends the selected CrystalDust furniture to other rooms. This includes native beds, bookcases, tables, TV and radio cabinets, complete computer hardware, link-room consoles and ship-cabin fittings. Source rectangles, masks and file fingerprints accompany each installed batch. The older generated-art sections below preserve historical provenance and optional Gen 1 artwork; they do not describe the effective Gen 2 defaults. Unique compact source features remain intact where no suitable complete native counterpart fits.
 
 ## Selectable foliage and Sprout Tower
 
@@ -192,8 +209,8 @@ Native Gen3 room, cave, casino, shop, laboratory, school, gym, tower and port
 artwork remains fingerprinted references to the player's own imports. Complete
 objects retain their native pixels; only repeating plain sections are rearranged.
 Historical generated interior artwork remains credited in the original provenance
-files. Those designs are inactive in the Gen 2 theme; the generated roofed
-Slowpoke Well is retained at the user's request. Current potted flowers and
+files. Those designs are inactive in the current Gen 3 theme on Gen 2 hosts.
+The formerly retained generated well is superseded by native CrystalDust artwork. Current potted flowers and
 ascending ladders keep complete native pixels at1:1. Compact original GSC
 stairs, service equipment, paintings and ornaments use the authorized original
 geometry recolor when a complete native counterpart does not fit.

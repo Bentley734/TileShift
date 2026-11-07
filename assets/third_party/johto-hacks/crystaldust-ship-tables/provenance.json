@@ -1,0 +1,609 @@
+{
+  "assembly_rule": "Complete3px uppercap + one or more full native16px checker/frame middle rows + complete8px foot, with5 transparent upper pixels. Only the plain intended middle repeats. Native72/74,80/82,88/90 are actual32px table; full primarycenter modules73/81/89 provide native wider-table center sections.",
+  "catalog_sha256": "fd8fbaf6eb4ee3774e3fe046bf3b506e7f638ab4cd9297c9f62a8bb1189bc740",
+  "complete_native_modules": {
+    "72": {
+      "metadata": {
+        "attribute": 0,
+        "entries": [
+          4099,
+          4100,
+          4117,
+          4118,
+          0,
+          0,
+          150,
+          151
+        ],
+        "id": 72,
+        "layer_type": 0,
+        "pixel_sha256": "ff2e49a336daef9af2143ef503e57af5eb5b3e34f22d9661c4f05587f6c4b7dc"
+      },
+      "rgba_sha256": "36a0fc658b298bc811396276e41ef342a7305d0c3763c43c51e9f878d53a00ba"
+    },
+    "73": {
+      "metadata": {
+        "attribute": 0,
+        "entries": [
+          4099,
+          4100,
+          4117,
+          4118,
+          0,
+          0,
+          151,
+          151
+        ],
+        "id": 73,
+        "layer_type": 0,
+        "pixel_sha256": "7bd2600cc754bfbe446e0f8cfc900ddafbd3e2c3de9468a4cccf7336914c9889"
+      },
+      "rgba_sha256": "7ded37971b2ea15804470fd31c813c07ca58d1dfd1dbe9642b9cd71440b2ebdf"
+    },
+    "74": {
+      "metadata": {
+        "attribute": 0,
+        "entries": [
+          4099,
+          4100,
+          4117,
+          4118,
+          0,
+          0,
+          151,
+          152
+        ],
+        "id": 74,
+        "layer_type": 0,
+        "pixel_sha256": "a320bf39b92c534012ee76eeb2464df768e9acdb826631baa8b70c0e70cb363b"
+      },
+      "rgba_sha256": "f2f34837eda78bb16b5630e2bf9d5795d240cb4c9bd875761c80da191205f2a8"
+    },
+    "80": {
+      "metadata": {
+        "attribute": 4096,
+        "entries": [
+          4101,
+          4102,
+          4117,
+          4118,
+          135,
+          134,
+          135,
+          134
+        ],
+        "id": 80,
+        "layer_type": 1,
+        "pixel_sha256": "0598e56224bd09b10863e152c689691fe23ae835ea308fcf517b7ac0818623aa"
+      },
+      "rgba_sha256": "0598e56224bd09b10863e152c689691fe23ae835ea308fcf517b7ac0818623aa"
+    },
+    "81": {
+      "metadata": {
+        "attribute": 4096,
+        "entries": [
+          4101,
+          4102,
+          4117,
+          4118,
+          134,
+          134,
+          134,
+          134
+        ],
+        "id": 81,
+        "layer_type": 1,
+        "pixel_sha256": "41e41353d4d90c0f90ad67ef8ab210175c65d85e30336d1501fb4c161e503ba6"
+      },
+      "rgba_sha256": "41e41353d4d90c0f90ad67ef8ab210175c65d85e30336d1501fb4c161e503ba6"
+    },
+    "82": {
+      "metadata": {
+        "attribute": 4096,
+        "entries": [
+          4101,
+          4102,
+          4117,
+          4118,
+          134,
+          136,
+          134,
+          136
+        ],
+        "id": 82,
+        "layer_type": 1,
+        "pixel_sha256": "b21c4fa89932dcd3fc0f8d876b50e33ad612792c09e78a4d26813e363e6a75e6"
+      },
+      "rgba_sha256": "b21c4fa89932dcd3fc0f8d876b50e33ad612792c09e78a4d26813e363e6a75e6"
+    },
+    "88": {
+      "metadata": {
+        "attribute": 4096,
+        "entries": [
+          4101,
+          4102,
+          4117,
+          4118,
+          166,
+          167,
+          0,
+          0
+        ],
+        "id": 88,
+        "layer_type": 1,
+        "pixel_sha256": "92127f555a180c17ba24b6d0a52af978d6fc1f6eca59dd5d0e5bf80cf5c8a070"
+      },
+      "rgba_sha256": "b5e590964be10c42b014ce8a4afeb927de100eced86519dd9ce78679e6885647"
+    },
+    "89": {
+      "metadata": {
+        "attribute": 4096,
+        "entries": [
+          4101,
+          4102,
+          4117,
+          4118,
+          167,
+          167,
+          0,
+          0
+        ],
+        "id": 89,
+        "layer_type": 1,
+        "pixel_sha256": "416c06820faecc7f4a7e4d051514331a8042691d0b71e454cee7dda70e0f6d0d"
+      },
+      "rgba_sha256": "56e87c195699e29824ecb76423528fcc9b81c3dc4a2adeac24d02ddf583ffa11"
+    },
+    "90": {
+      "metadata": {
+        "attribute": 4096,
+        "entries": [
+          4101,
+          4102,
+          4117,
+          4118,
+          167,
+          168,
+          0,
+          0
+        ],
+        "id": 90,
+        "layer_type": 1,
+        "pixel_sha256": "82002459e1d3f8f7155beeb101d9ac038f0a6567b447b548f5ad33c175b16f5c"
+      },
+      "rgba_sha256": "aa25e877a8de1e269268e28691ff7bb134505e127bc3bd607e4d306a1861be9b"
+    }
+  },
+  "credit": "CrystalDust by Sierraffinity and contributors; original native modular dining tables.",
+  "files": {
+    "complete-native-table32x27.png": "9cab5e4aeb90e861975873e4fdf3cfe03896ecc3fbcf71231904ad3c46274a7d",
+    "preserved-original-open-book-crystal.png": "00da9a599f215bbb80043bef7f7b376c56cb6ef8a43f5761ce9efeeca731dae4",
+    "preserved-original-open-book-gold.png": "00da9a599f215bbb80043bef7f7b376c56cb6ef8a43f5761ce9efeeca731dae4",
+    "preserved-original-open-book-silver.png": "00da9a599f215bbb80043bef7f7b376c56cb6ef8a43f5761ce9efeeca731dae4",
+    "table-cell-0598e56224bd09b10863e152.png": "05d31dfabcb9b26dda3a44c41333ca115aa9d2a6f36fd1c4cd23fc512c6357d8",
+    "table-cell-42ff63db14bb2c73807990d6.png": "ef1eec1c909057a43e31db470ec65f778929da6c0dadfdfc08e6acc94a3a0c51",
+    "table-cell-7f1f35cbc3486fb7792741f6.png": "f7e110842d61f1bd9d52487ffa580c673aa6bbc1d0ffee02a2fc8b09be1afeeb",
+    "table-cell-941911955b8d85756471da74.png": "2c6251440931f02d97bbcfa6189ad54238d9b8fc5c49c010ae8caf5950a1d586",
+    "table-cell-b21c4fa89932dcd3fc0f8d87.png": "6f3d17d41ee52d75ae045365c414b6e92af3cf0fa11bb6feb4eeedee0a9aa31a",
+    "table-cell-d01bc27abc9f6b04f36c3601.png": "5de1737992ab0b3ee7e999bce07cf9c1825c474663db4db4f8b609ca6d8a715e",
+    "table-cell-e510986880c54e4777370f0b.png": "7cdb7ed3a552f238da63b79c89c041ce4334a741695225d8005faf2a676afab8",
+    "table-cell-ff1fc79aa36209eca107701b.png": "4a86cbc93e172a083400bbdc2218b513cfd0a600903d9f1493b9409739e51d30"
+  },
+  "format": 1,
+  "full_native32_table": {
+    "complete_object_bbox": [
+      0,
+      13,
+      32,
+      40
+    ],
+    "map_cells": [
+      4,
+      4,
+      2,
+      3
+    ],
+    "native_canvas": [
+      32,
+      48
+    ],
+    "native_opaque_pixels": 812,
+    "native_size": [
+      32,
+      27
+    ]
+  },
+  "metatiles_sha256": "bc5b7f61056a7e360c6adb16c24a2755c095ae9ffac456c8c3ba10d17b885e7e",
+  "retained_original_book_cues": [
+    {
+      "explicit_connected_exterior": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          7,
+          0
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          8,
+          0
+        ],
+        [
+          13,
+          0
+        ],
+        [
+          14,
+          0
+        ],
+        [
+          14,
+          1
+        ],
+        [
+          15,
+          0
+        ],
+        [
+          15,
+          1
+        ],
+        [
+          15,
+          2
+        ],
+        [
+          15,
+          3
+        ],
+        [
+          15,
+          4
+        ],
+        [
+          15,
+          5
+        ],
+        [
+          15,
+          6
+        ],
+        [
+          15,
+          7
+        ]
+      ],
+      "game": "gold",
+      "map": "FAST_SHIP_CABINS_SE_SSE_CAPTAINS_CABIN",
+      "note": "Only connected exterior background is transparent. Complete original source open-book glyph and selected Gen3 colors are preserved; no small native CD open-book counterpart was verified.",
+      "opaque_pixels": 110,
+      "rawtiles": [
+        10,
+        10,
+        68,
+        69
+      ],
+      "rgba_sha256": "a2a5dc0f85894d686480c070c5853943f3d1e093ee3af10f97515bccb792aff5",
+      "sourceHash": "bae5add5dfd3146a0baca212a489969f6b8ee86075736e2157b073ec28572343",
+      "source_cell": [
+        3,
+        26
+      ],
+      "whole_original_cue_size": [
+        16,
+        8
+      ]
+    },
+    {
+      "explicit_connected_exterior": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          7,
+          0
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          8,
+          0
+        ],
+        [
+          13,
+          0
+        ],
+        [
+          14,
+          0
+        ],
+        [
+          14,
+          1
+        ],
+        [
+          15,
+          0
+        ],
+        [
+          15,
+          1
+        ],
+        [
+          15,
+          2
+        ],
+        [
+          15,
+          3
+        ],
+        [
+          15,
+          4
+        ],
+        [
+          15,
+          5
+        ],
+        [
+          15,
+          6
+        ],
+        [
+          15,
+          7
+        ]
+      ],
+      "game": "silver",
+      "map": "FAST_SHIP_CABINS_SE_SSE_CAPTAINS_CABIN",
+      "note": "Only connected exterior background is transparent. Complete original source open-book glyph and selected Gen3 colors are preserved; no small native CD open-book counterpart was verified.",
+      "opaque_pixels": 110,
+      "rawtiles": [
+        10,
+        10,
+        68,
+        69
+      ],
+      "rgba_sha256": "a2a5dc0f85894d686480c070c5853943f3d1e093ee3af10f97515bccb792aff5",
+      "sourceHash": "bae5add5dfd3146a0baca212a489969f6b8ee86075736e2157b073ec28572343",
+      "source_cell": [
+        3,
+        26
+      ],
+      "whole_original_cue_size": [
+        16,
+        8
+      ]
+    },
+    {
+      "explicit_connected_exterior": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          7,
+          0
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          8,
+          0
+        ],
+        [
+          13,
+          0
+        ],
+        [
+          14,
+          0
+        ],
+        [
+          14,
+          1
+        ],
+        [
+          15,
+          0
+        ],
+        [
+          15,
+          1
+        ],
+        [
+          15,
+          2
+        ],
+        [
+          15,
+          3
+        ],
+        [
+          15,
+          4
+        ],
+        [
+          15,
+          5
+        ],
+        [
+          15,
+          6
+        ],
+        [
+          15,
+          7
+        ]
+      ],
+      "game": "crystal",
+      "map": "FAST_SHIP_CABINS_SE_SSE_CAPTAINS_CABIN",
+      "note": "Only connected exterior background is transparent. Complete original source open-book glyph and selected Gen3 colors are preserved; no small native CD open-book counterpart was verified.",
+      "opaque_pixels": 110,
+      "rawtiles": [
+        10,
+        10,
+        68,
+        69
+      ],
+      "rgba_sha256": "a2a5dc0f85894d686480c070c5853943f3d1e093ee3af10f97515bccb792aff5",
+      "sourceHash": "238279cbd4f891f8b17c494f08d6f191b2c75b24469aee35805ec9958ed12267",
+      "source_cell": [
+        3,
+        26
+      ],
+      "whole_original_cue_size": [
+        16,
+        8
+      ]
+    }
+  ],
+  "rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+  "source_map": {
+    "border_offset": 14974792,
+    "grid": [
+      1057,
+      1058,
+      1618,
+      1056,
+      1069,
+      1414,
+      1180,
+      1181,
+      1056,
+      1056,
+      1065,
+      1066,
+      1626,
+      1627,
+      1026,
+      1206,
+      1188,
+      1416,
+      1064,
+      1064,
+      12297,
+      12297,
+      12898,
+      12378,
+      12349,
+      12679,
+      12297,
+      1123,
+      1030,
+      12295,
+      12297,
+      12289,
+      12289,
+      12289,
+      12289,
+      12289,
+      12289,
+      1037,
+      1038,
+      12303,
+      12923,
+      12924,
+      12925,
+      12289,
+      12360,
+      12362,
+      12289,
+      12289,
+      12289,
+      12289,
+      643,
+      12932,
+      645,
+      12289,
+      1104,
+      1106,
+      12289,
+      12289,
+      12289,
+      12289,
+      17035,
+      1676,
+      17037,
+      1,
+      12376,
+      12378,
+      12289,
+      12289,
+      12289,
+      12289
+    ],
+    "grid_offset": 14974800,
+    "group": 1,
+    "header_offset": 4729616,
+    "height": 7,
+    "id": "g01_m001",
+    "layout_id": 55,
+    "layout_offset": 14975056,
+    "map_type": 8,
+    "num": 1,
+    "pair": "083df884_083dfaf4",
+    "primary_tileset": 138279044,
+    "region": 0,
+    "secondary_tileset": 138279668,
+    "warps": [
+      {
+        "dest_group": 1,
+        "dest_num": 0,
+        "dest_warp": 1,
+        "elevation": 0,
+        "x": 9,
+        "y": 2
+      }
+    ],
+    "width": 10
+  },
+  "source_pair": "083df884_083dfaf4",
+  "top_atlas_sha256": "340724a40468a77b7786b221cd6da70913f1caa71d2cfa0e6b5d0b9253c7baa2"
+}

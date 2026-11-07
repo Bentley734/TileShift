@@ -1,0 +1,1054 @@
+{
+  "credit": "CrystalDust by Sierraffinity and contributors",
+  "engine_pc_binding": {
+    "collision": 147,
+    "file": "C:\\Users\\LSDMTHC\\Desktop\\Hoennto\\.work\\tileshift-engine-0410\\src\\world\\gen2\\World.lua",
+    "script": "PCScript",
+    "sha256": "9d2bc9c567129ac8661d7ba23ebf8e74298ebe19e3d7e01e34b6698ab9cb67e7"
+  },
+  "files": {
+    "complete-native-storage-PC16x32.png": "a967d8679aa1de345136dd71f831e9042a9081d8391b5c204e7eb133fe9bb07e",
+    "crystal-pc-0.png": "c7199b1afeb7806de72ab242797dc13ac15affd69eaaaffc0099272714682ead",
+    "crystal-pc-1.png": "415b4ae182dd9ef35aeab8453c780c559e646942d366ecf76effdd82a989a2a1",
+    "gold-pc-0.png": "c7199b1afeb7806de72ab242797dc13ac15affd69eaaaffc0099272714682ead",
+    "gold-pc-1.png": "415b4ae182dd9ef35aeab8453c780c559e646942d366ecf76effdd82a989a2a1",
+    "silver-pc-0.png": "c7199b1afeb7806de72ab242797dc13ac15affd69eaaaffc0099272714682ead",
+    "silver-pc-1.png": "415b4ae182dd9ef35aeab8453c780c559e646942d366ecf76effdd82a989a2a1"
+  },
+  "format": 1,
+  "native_alpha_unchanged": true,
+  "native_opaque_pixels": 486,
+  "native_size": [
+    16,
+    32
+  ],
+  "source_interactions": [
+    {
+      "game": "gold",
+      "map": "FAST_SHIP_CABINS_SW_SSW_NW",
+      "native_behavior_binding": "world/gen2/World.lua TileCollisionStdScripts[0x93] = PCScript; native A interaction dispatches that std script before map BG fallback.",
+      "pc_body": [
+        0,
+        1,
+        52,
+        2,
+        147
+      ],
+      "pc_head": [
+        0,
+        0,
+        52,
+        0,
+        7
+      ],
+      "source_bg_events": [
+        {
+          "kind": 0,
+          "script": 21019,
+          "scriptKey": "5b:521b",
+          "x": 7,
+          "y": 1
+        },
+        {
+          "kind": 0,
+          "script": 21019,
+          "scriptKey": "5b:521b",
+          "x": 7,
+          "y": 2
+        },
+        {
+          "kind": 0,
+          "script": 21101,
+          "scriptKey": "5b:526d",
+          "x": 7,
+          "y": 7
+        }
+      ],
+      "source_definition_sha256": "5796262a5457d3130c38e8401a02f56ec0460f9a173ddab8e3f45d0ee13d7251",
+      "source_legal_front": {
+        "cell": [
+          0,
+          2
+        ],
+        "collision": 0,
+        "facing": "up",
+        "quadrant": 0,
+        "sourceHash": "05788b34d88bd83442670172e18f849221df4a8e1c4b585afb680743699af586",
+        "source_block": 7
+      },
+      "source_objects": [
+        {
+          "eventFlag": 1849,
+          "hours": [
+            -1,
+            -1
+          ],
+          "index": 1,
+          "movement": 30,
+          "palette": 8,
+          "radius": {
+            "x": 0,
+            "y": 0
+          },
+          "script": 20939,
+          "scriptKey": "5b:51d7",
+          "sight": 2,
+          "sprite": "SPRITE_FISHER",
+          "spriteId": 58,
+          "trainer": {
+            "class": 48,
+            "event": 1101,
+            "member": 8,
+            "scriptKey": "5b:51d7",
+            "seenText": "5b:5270",
+            "winText": "5b:52a4"
+          },
+          "type": 2,
+          "x": 1,
+          "y": 15
+        },
+        {
+          "eventFlag": 1851,
+          "hours": [
+            -1,
+            -1
+          ],
+          "index": 2,
+          "movement": 10,
+          "palette": 11,
+          "radius": {
+            "x": 0,
+            "y": 0
+          },
+          "script": 20959,
+          "scriptKey": "5b:51eb",
+          "sight": 2,
+          "sprite": "SPRITE_BUG_CATCHER",
+          "spriteId": 37,
+          "trainer": {
+            "class": 36,
+            "event": 1344,
+            "member": 9,
+            "scriptKey": "5b:51eb",
+            "seenText": "5b:52fa",
+            "winText": "5b:5329"
+          },
+          "type": 2,
+          "x": 6,
+          "y": 15
+        },
+        {
+          "eventFlag": 1850,
+          "hours": [
+            -1,
+            -1
+          ],
+          "index": 3,
+          "movement": 10,
+          "palette": 9,
+          "radius": {
+            "x": 0,
+            "y": 0
+          },
+          "script": 20979,
+          "scriptKey": "5b:51ff",
+          "sight": 3,
+          "sprite": "SPRITE_BEAUTY",
+          "spriteId": 42,
+          "trainer": {
+            "class": 29,
+            "event": 1202,
+            "member": 6,
+            "scriptKey": "5b:51ff",
+            "seenText": "5b:5379",
+            "winText": "5b:53a4"
+          },
+          "type": 2,
+          "x": 1,
+          "y": 26
+        },
+        {
+          "eventFlag": 1851,
+          "hours": [
+            -1,
+            -1
+          ],
+          "index": 4,
+          "movement": 30,
+          "palette": 8,
+          "radius": {
+            "x": 0,
+            "y": 0
+          },
+          "script": 20999,
+          "scriptKey": "5b:5213",
+          "sight": 2,
+          "sprite": "SPRITE_ROCKER",
+          "spriteId": 44,
+          "trainer": {
+            "class": 43,
+            "event": 1171,
+            "member": 1,
+            "scriptKey": "5b:5213",
+            "seenText": "5b:5418",
+            "winText": "5b:5456"
+          },
+          "type": 2,
+          "x": 3,
+          "y": 28
+        }
+      ],
+      "source_warps": [
+        {
+          "destGroup": 15,
+          "destMap": "FAST_SHIP_1F",
+          "destMapNum": 3,
+          "destWarp": 5,
+          "x": 2,
+          "y": 0
+        },
+        {
+          "destGroup": 15,
+          "destMap": "FAST_SHIP_1F",
+          "destMapNum": 3,
+          "destWarp": 6,
+          "x": 2,
+          "y": 19
+        },
+        {
+          "destGroup": 15,
+          "destMap": "FAST_SHIP_1F",
+          "destMapNum": 3,
+          "destWarp": 6,
+          "x": 3,
+          "y": 19
+        },
+        {
+          "destGroup": 15,
+          "destMap": "FAST_SHIP_1F",
+          "destMapNum": 3,
+          "destWarp": 7,
+          "x": 2,
+          "y": 31
+        },
+        {
+          "destGroup": 15,
+          "destMap": "FAST_SHIP_1F",
+          "destMapNum": 3,
+          "destWarp": 7,
+          "x": 3,
+          "y": 31
+        }
+      ],
+      "upper_wall": {
+        "key": [
+          "gold",
+          "gen3",
+          "TILESET_LIGHTHOUSE",
+          52,
+          1,
+          "FAST_SHIP_CABINS_SW_SSW_NW",
+          null,
+          null
+        ],
+        "module": "mappings/gen2_kanto_facilities_finish.lua",
+        "rgba_sha256": "febf9be3e596a108fe758c4ada097dfeb22ecf873a4f88634ad2540ed220b34a",
+        "row_sha256": "133b6d1089b4947e6d374bd64b608c7522f5531c7f847525780dbc748e725aa9"
+      }
+    },
+    {
+      "game": "silver",
+      "map": "FAST_SHIP_CABINS_SW_SSW_NW",
+      "native_behavior_binding": "world/gen2/World.lua TileCollisionStdScripts[0x93] = PCScript; native A interaction dispatches that std script before map BG fallback.",
+      "pc_body": [
+        0,
+        1,
+        52,
+        2,
+        147
+      ],
+      "pc_head": [
+        0,
+        0,
+        52,
+        0,
+        7
+      ],
+      "source_bg_events": [
+        {
+          "kind": 0,
+          "script": 21019,
+          "scriptKey": "5b:521b",
+          "x": 7,
+          "y": 1
+        },
+        {
+          "kind": 0,
+          "script": 21019,
+          "scriptKey": "5b:521b",
+          "x": 7,
+          "y": 2
+        },
+        {
+          "kind": 0,
+          "script": 21101,
+          "scriptKey": "5b:526d",
+          "x": 7,
+          "y": 7
+        }
+      ],
+      "source_definition_sha256": "5796262a5457d3130c38e8401a02f56ec0460f9a173ddab8e3f45d0ee13d7251",
+      "source_legal_front": {
+        "cell": [
+          0,
+          2
+        ],
+        "collision": 0,
+        "facing": "up",
+        "quadrant": 0,
+        "sourceHash": "05788b34d88bd83442670172e18f849221df4a8e1c4b585afb680743699af586",
+        "source_block": 7
+      },
+      "source_objects": [
+        {
+          "eventFlag": 1849,
+          "hours": [
+            -1,
+            -1
+          ],
+          "index": 1,
+          "movement": 30,
+          "palette": 8,
+          "radius": {
+            "x": 0,
+            "y": 0
+          },
+          "script": 20939,
+          "scriptKey": "5b:51d7",
+          "sight": 2,
+          "sprite": "SPRITE_FISHER",
+          "spriteId": 58,
+          "trainer": {
+            "class": 48,
+            "event": 1101,
+            "member": 8,
+            "scriptKey": "5b:51d7",
+            "seenText": "5b:5270",
+            "winText": "5b:52a4"
+          },
+          "type": 2,
+          "x": 1,
+          "y": 15
+        },
+        {
+          "eventFlag": 1851,
+          "hours": [
+            -1,
+            -1
+          ],
+          "index": 2,
+          "movement": 10,
+          "palette": 11,
+          "radius": {
+            "x": 0,
+            "y": 0
+          },
+          "script": 20959,
+          "scriptKey": "5b:51eb",
+          "sight": 2,
+          "sprite": "SPRITE_BUG_CATCHER",
+          "spriteId": 37,
+          "trainer": {
+            "class": 36,
+            "event": 1344,
+            "member": 9,
+            "scriptKey": "5b:51eb",
+            "seenText": "5b:52fa",
+            "winText": "5b:5329"
+          },
+          "type": 2,
+          "x": 6,
+          "y": 15
+        },
+        {
+          "eventFlag": 1850,
+          "hours": [
+            -1,
+            -1
+          ],
+          "index": 3,
+          "movement": 10,
+          "palette": 9,
+          "radius": {
+            "x": 0,
+            "y": 0
+          },
+          "script": 20979,
+          "scriptKey": "5b:51ff",
+          "sight": 3,
+          "sprite": "SPRITE_BEAUTY",
+          "spriteId": 42,
+          "trainer": {
+            "class": 29,
+            "event": 1202,
+            "member": 6,
+            "scriptKey": "5b:51ff",
+            "seenText": "5b:5379",
+            "winText": "5b:53a4"
+          },
+          "type": 2,
+          "x": 1,
+          "y": 26
+        },
+        {
+          "eventFlag": 1851,
+          "hours": [
+            -1,
+            -1
+          ],
+          "index": 4,
+          "movement": 30,
+          "palette": 8,
+          "radius": {
+            "x": 0,
+            "y": 0
+          },
+          "script": 20999,
+          "scriptKey": "5b:5213",
+          "sight": 2,
+          "sprite": "SPRITE_ROCKER",
+          "spriteId": 44,
+          "trainer": {
+            "class": 43,
+            "event": 1171,
+            "member": 1,
+            "scriptKey": "5b:5213",
+            "seenText": "5b:5418",
+            "winText": "5b:5456"
+          },
+          "type": 2,
+          "x": 3,
+          "y": 28
+        }
+      ],
+      "source_warps": [
+        {
+          "destGroup": 15,
+          "destMap": "FAST_SHIP_1F",
+          "destMapNum": 3,
+          "destWarp": 5,
+          "x": 2,
+          "y": 0
+        },
+        {
+          "destGroup": 15,
+          "destMap": "FAST_SHIP_1F",
+          "destMapNum": 3,
+          "destWarp": 6,
+          "x": 2,
+          "y": 19
+        },
+        {
+          "destGroup": 15,
+          "destMap": "FAST_SHIP_1F",
+          "destMapNum": 3,
+          "destWarp": 6,
+          "x": 3,
+          "y": 19
+        },
+        {
+          "destGroup": 15,
+          "destMap": "FAST_SHIP_1F",
+          "destMapNum": 3,
+          "destWarp": 7,
+          "x": 2,
+          "y": 31
+        },
+        {
+          "destGroup": 15,
+          "destMap": "FAST_SHIP_1F",
+          "destMapNum": 3,
+          "destWarp": 7,
+          "x": 3,
+          "y": 31
+        }
+      ],
+      "upper_wall": {
+        "key": [
+          "silver",
+          "gen3",
+          "TILESET_LIGHTHOUSE",
+          52,
+          1,
+          "FAST_SHIP_CABINS_SW_SSW_NW",
+          null,
+          null
+        ],
+        "module": "mappings/gen2_kanto_facilities_finish.lua",
+        "rgba_sha256": "febf9be3e596a108fe758c4ada097dfeb22ecf873a4f88634ad2540ed220b34a",
+        "row_sha256": "c697e827cb7f11c7500c70225321aab9a161885702aac98d1a0be8b46dea4a81"
+      }
+    },
+    {
+      "game": "crystal",
+      "map": "FAST_SHIP_CABINS_SW_SSW_NW",
+      "native_behavior_binding": "world/gen2/World.lua TileCollisionStdScripts[0x93] = PCScript; native A interaction dispatches that std script before map BG fallback.",
+      "pc_body": [
+        0,
+        1,
+        52,
+        2,
+        147
+      ],
+      "pc_head": [
+        0,
+        0,
+        52,
+        0,
+        7
+      ],
+      "source_bg_events": [
+        {
+          "kind": 0,
+          "script": 23212,
+          "scriptKey": "1d:5aac",
+          "x": 7,
+          "y": 1
+        },
+        {
+          "kind": 0,
+          "script": 23212,
+          "scriptKey": "1d:5aac",
+          "x": 7,
+          "y": 2
+        },
+        {
+          "kind": 0,
+          "script": 23297,
+          "scriptKey": "1d:5b01",
+          "x": 7,
+          "y": 7
+        }
+      ],
+      "source_definition_sha256": "357e1a5397491a16ece3e584c7ae741a0fce5fc594bd0ce33e8c4f0b7a7a0e10",
+      "source_legal_front": {
+        "cell": [
+          0,
+          2
+        ],
+        "collision": 0,
+        "facing": "up",
+        "quadrant": 0,
+        "sourceHash": "05788b34d88bd83442670172e18f849221df4a8e1c4b585afb680743699af586",
+        "source_block": 7
+      },
+      "source_objects": [
+        {
+          "eventFlag": 1849,
+          "hours": [
+            -1,
+            -1
+          ],
+          "index": 1,
+          "movement": 30,
+          "palette": 8,
+          "radius": {
+            "x": 0,
+            "y": 0
+          },
+          "script": 23119,
+          "scriptKey": "1d:5a5b",
+          "sight": 2,
+          "sprite": "SPRITE_FISHER",
+          "spriteId": 58,
+          "trainer": {
+            "class": 48,
+            "event": 1101,
+            "member": 8,
+            "scriptKey": "1d:5a5b",
+            "seenText": "1d:5b04",
+            "winText": "1d:5b38"
+          },
+          "type": 2,
+          "x": 1,
+          "y": 15
+        },
+        {
+          "eventFlag": 1851,
+          "hours": [
+            -1,
+            -1
+          ],
+          "index": 2,
+          "movement": 10,
+          "palette": 11,
+          "radius": {
+            "x": 0,
+            "y": 0
+          },
+          "script": 23139,
+          "scriptKey": "1d:5a6f",
+          "sight": 2,
+          "sprite": "SPRITE_BUG_CATCHER",
+          "spriteId": 37,
+          "trainer": {
+            "class": 36,
+            "event": 1344,
+            "member": 9,
+            "scriptKey": "1d:5a6f",
+            "seenText": "1d:5b8e",
+            "winText": "1d:5bbd"
+          },
+          "type": 2,
+          "x": 6,
+          "y": 15
+        },
+        {
+          "eventFlag": 1850,
+          "hours": [
+            -1,
+            -1
+          ],
+          "index": 3,
+          "movement": 10,
+          "palette": 9,
+          "radius": {
+            "x": 0,
+            "y": 0
+          },
+          "script": 23159,
+          "scriptKey": "1d:5a83",
+          "sight": 3,
+          "sprite": "SPRITE_BEAUTY",
+          "spriteId": 42,
+          "trainer": {
+            "class": 29,
+            "event": 1202,
+            "member": 6,
+            "scriptKey": "1d:5a83",
+            "seenText": "1d:5c07",
+            "winText": "1d:5c32"
+          },
+          "type": 2,
+          "x": 1,
+          "y": 26
+        },
+        {
+          "eventFlag": 1851,
+          "hours": [
+            -1,
+            -1
+          ],
+          "index": 4,
+          "movement": 30,
+          "palette": 8,
+          "radius": {
+            "x": 0,
+            "y": 0
+          },
+          "script": 23179,
+          "scriptKey": "1d:5a97",
+          "sight": 2,
+          "sprite": "SPRITE_ROCKER",
+          "spriteId": 44,
+          "trainer": {
+            "class": 43,
+            "event": 1171,
+            "member": 1,
+            "scriptKey": "1d:5a97",
+            "seenText": "1d:5ca6",
+            "winText": "1d:5ce4"
+          },
+          "type": 2,
+          "x": 3,
+          "y": 28
+        }
+      ],
+      "source_warps": [
+        {
+          "destGroup": 15,
+          "destMap": "FAST_SHIP_1F",
+          "destMapNum": 3,
+          "destWarp": 5,
+          "x": 2,
+          "y": 0
+        },
+        {
+          "destGroup": 15,
+          "destMap": "FAST_SHIP_1F",
+          "destMapNum": 3,
+          "destWarp": 6,
+          "x": 2,
+          "y": 19
+        },
+        {
+          "destGroup": 15,
+          "destMap": "FAST_SHIP_1F",
+          "destMapNum": 3,
+          "destWarp": 6,
+          "x": 3,
+          "y": 19
+        },
+        {
+          "destGroup": 15,
+          "destMap": "FAST_SHIP_1F",
+          "destMapNum": 3,
+          "destWarp": 7,
+          "x": 2,
+          "y": 31
+        },
+        {
+          "destGroup": 15,
+          "destMap": "FAST_SHIP_1F",
+          "destMapNum": 3,
+          "destWarp": 7,
+          "x": 3,
+          "y": 31
+        }
+      ],
+      "upper_wall": {
+        "key": [
+          "crystal",
+          "gen3",
+          "TILESET_LIGHTHOUSE",
+          52,
+          1,
+          "FAST_SHIP_CABINS_SW_SSW_NW",
+          null,
+          null
+        ],
+        "module": "mappings/gen2_kanto_facilities_finish.lua",
+        "rgba_sha256": "febf9be3e596a108fe758c4ada097dfeb22ecf873a4f88634ad2540ed220b34a",
+        "row_sha256": "6bac07ac64874186b6c28e817ca21e87f35738f57fc10d193f90e150d304a51d"
+      }
+    }
+  ],
+  "source_native_pc_png_sha256": "a967d8679aa1de345136dd71f831e9042a9081d8391b5c204e7eb133fe9bb07e",
+  "source_native_pc_provenance": {
+    "catalog_sha256": "fd8fbaf6eb4ee3774e3fe046bf3b506e7f638ab4cd9297c9f62a8bb1189bc740",
+    "credit": "CrystalDust by Sierraffinity and contributors",
+    "extraction": "Complete native PC including its real under-plane screen/console. Only true exterior above/around the cap and feet is transparent; no monitor/base rows or columns are omitted.",
+    "extraction_bands": [
+      {
+        "destination": [
+          0,
+          0
+        ],
+        "layer": "top",
+        "source_rect": [
+          0,
+          8,
+          16,
+          8
+        ]
+      },
+      {
+        "destination": [
+          0,
+          8
+        ],
+        "layer": "flat",
+        "source_rect": [
+          0,
+          16,
+          16,
+          16
+        ]
+      },
+      {
+        "destination": [
+          0,
+          24
+        ],
+        "layer": "top",
+        "source_rect": [
+          0,
+          32,
+          16,
+          8
+        ]
+      }
+    ],
+    "files": {
+      "complete-native-PC-0.png": "f82a547fceaf5a1ce20089186ba186e8215847019f981c4561a9c2f34f08760c",
+      "complete-native-PC-1.png": "ccc261c0263c5e594eb75d05f718d9ac3454d2b7494ca3d4632a117db373237a",
+      "complete-native-storage-PC16x32.png": "a967d8679aa1de345136dd71f831e9042a9081d8391b5c204e7eb133fe9bb07e"
+    },
+    "format": 1,
+    "native_metatile_records": [
+      {
+        "attribute": 4096,
+        "entries": [
+          33409,
+          33440,
+          33425,
+          33456,
+          0,
+          0,
+          4413,
+          4414
+        ],
+        "id": 517,
+        "layer_type": 1,
+        "pixel_sha256": "b61b04a3f3d3cad02edf9e12b5109c5b68704da51f841408615c8a88be72a1a8"
+      },
+      {
+        "attribute": 131,
+        "entries": [
+          4429,
+          4430,
+          4445,
+          4446,
+          0,
+          0,
+          0,
+          0
+        ],
+        "id": 4,
+        "layer_type": 0,
+        "pixel_sha256": "2af36fd2703bac844d5b07ac1af99ecf3ccc4fd0620ff4a3c6c15b803a0e42e9"
+      },
+      {
+        "attribute": 4096,
+        "entries": [
+          49827,
+          49827,
+          49827,
+          49827,
+          4461,
+          4462,
+          0,
+          0
+        ],
+        "id": 533,
+        "layer_type": 1,
+        "pixel_sha256": "10bb481fe9383229ce309df33cac7e9795cbcaffe4169b3757483dfc4d9c6817"
+      }
+    ],
+    "native_mids": [
+      517,
+      4,
+      533
+    ],
+    "native_object_pixels": 486,
+    "native_source_cells": [
+      [
+        11,
+        0
+      ],
+      [
+        11,
+        1
+      ],
+      [
+        11,
+        2
+      ]
+    ],
+    "rgba_sha256": "b466c4c645d050e522eef4dc58b9818d8fc86178dedafba8ba3c2710e1afeb8e",
+    "rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+    "scale": 1,
+    "source_atlas_sha256": {
+      "flat": "08ba89c411f577c32ca3ce34a13bc1b1af05ac0092d5d9e37744a3b2f33d471b",
+      "top": "7879177b0b3e88682f0a1ab747322326dd43f3556ff41b5c1e980e391e62d8d7"
+    },
+    "source_behavior_pc": 131,
+    "source_map": {
+      "border_offset": 15157616,
+      "grid": [
+        1568,
+        1619,
+        1609,
+        1610,
+        1540,
+        1540,
+        1540,
+        1542,
+        1543,
+        1540,
+        1540,
+        1541,
+        1558,
+        1559,
+        1574,
+        1576,
+        1549,
+        1611,
+        1612,
+        1577,
+        1578,
+        1579,
+        1550,
+        1551,
+        1580,
+        1581,
+        1028,
+        1566,
+        1567,
+        1582,
+        12848,
+        12820,
+        12877,
+        12878,
+        1585,
+        1586,
+        1587,
+        12816,
+        13027,
+        1588,
+        1589,
+        12821,
+        12870,
+        12855,
+        12854,
+        12802,
+        12801,
+        12801,
+        12801,
+        1593,
+        1596,
+        1596,
+        1560,
+        1596,
+        1596,
+        1597,
+        12869,
+        12801,
+        12801,
+        12862,
+        12802,
+        12801,
+        12801,
+        12801,
+        12835,
+        12855,
+        12855,
+        12855,
+        12855,
+        12855,
+        12855,
+        12863,
+        12801,
+        12801,
+        12801,
+        12928,
+        12929,
+        513,
+        12801,
+        12801,
+        12801,
+        12809,
+        12810,
+        12811,
+        12801,
+        12801,
+        12917,
+        12925,
+        12801,
+        12801,
+        1672,
+        17033,
+        16897,
+        513,
+        12801,
+        12801,
+        12817,
+        12818,
+        12819,
+        12801,
+        12801,
+        1564,
+        1565,
+        12879,
+        12917,
+        12944,
+        12945,
+        513,
+        12801,
+        12801,
+        12801,
+        12825,
+        12826,
+        12827,
+        12801,
+        12801,
+        1572,
+        1573,
+        12869,
+        12925,
+        12833,
+        12801,
+        12801,
+        12801,
+        12801,
+        12801,
+        12866,
+        12867,
+        12868,
+        12801,
+        12801,
+        12835,
+        12855,
+        12863,
+        12834,
+        1032,
+        1032,
+        1032,
+        1032,
+        1032,
+        1032,
+        1050,
+        1051,
+        1052,
+        1032,
+        1032,
+        1032,
+        1032,
+        1032,
+        1032
+      ],
+      "grid_offset": 15157624,
+      "group": 2,
+      "header_offset": 4729784,
+      "height": 10,
+      "id": "g02_m002",
+      "layout_id": 61,
+      "layout_offset": 15157924,
+      "map_type": 8,
+      "num": 2,
+      "pair": "083df884_083df8b4",
+      "primary_tileset": 138279044,
+      "region": 1,
+      "secondary_tileset": 138279092,
+      "warps": [
+        {
+          "dest_group": 0,
+          "dest_num": 10,
+          "dest_warp": 2,
+          "elevation": 3,
+          "x": 7,
+          "y": 8
+        },
+        {
+          "dest_group": 0,
+          "dest_num": 10,
+          "dest_warp": 2,
+          "elevation": 3,
+          "x": 6,
+          "y": 8
+        },
+        {
+          "dest_group": 2,
+          "dest_num": 3,
+          "dest_warp": 0,
+          "elevation": 4,
+          "x": 1,
+          "y": 6
+        }
+      ],
+      "width": 15
+    },
+    "source_pair": "083df884_083df8b4"
+  },
+  "source_native_pc_rgba_sha256": "b466c4c645d050e522eef4dc58b9818d8fc86178dedafba8ba3c2710e1afeb8e"
+}

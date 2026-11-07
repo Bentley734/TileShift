@@ -1,0 +1,111 @@
+{
+  "destination_canvas": [
+    16,
+    32
+  ],
+  "exterior_only_mask": [
+    [
+      0,
+      0
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      14,
+      0
+    ],
+    [
+      15,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      15,
+      1
+    ]
+  ],
+  "files": {
+    "blue-bookcase-cell-0.png": "e7c927d02afb98bfea0683aad9bba01c4b438926d11ad30ed775e958f081da69",
+    "blue-bookcase-cell-1.png": "0482469426598f20a5c3b9b24ba5996ae8ba6826e72c6b9646cce47b5ee5afc5",
+    "blue-bookcase-whole16x26.png": "dd004ebc145914530b70a58175d72a895a49e0c3ad16fd78fe4e985ae2f0c31d"
+  },
+  "full_native_source_rgba_sha256": "6ebcb2628d3b9446446def568ecab6e63c9232b2887d0876a3393b9fcfc96ec0",
+  "native_source_canvas": [
+    16,
+    26
+  ],
+  "opaque_native_pixels": 410,
+  "origin": "Complete native CrystalDust one-bay bookcase at1:1 gameplay pixel scale.",
+  "retained_brown_book_pixels": [
+    [
+      7,
+      13
+    ],
+    [
+      8,
+      13
+    ],
+    [
+      7,
+      14
+    ],
+    [
+      8,
+      14
+    ],
+    [
+      10,
+      19
+    ],
+    [
+      11,
+      19
+    ],
+    [
+      10,
+      20
+    ],
+    [
+      11,
+      20
+    ]
+  ],
+  "source_atlas": "crystaldust/pairs/083df884_083dfb6c/flat.png",
+  "source_atlas_sha256": "d6c92bda16340cd972811565f89b91e2c246560d0896c9dcfe0a957172fcbb24",
+  "source_catalog_sha256": "fd8fbaf6eb4ee3774e3fe046bf3b506e7f638ab4cd9297c9f62a8bb1189bc740",
+  "source_map": "g02_m000",
+  "source_map_png_sha256": "d2adc350bf7437dd744c49417ac5aa9a2a3aadae15b45b09990e87a23a12f21f",
+  "source_parts": [
+    {
+      "dstY": 0,
+      "height": 2,
+      "mid": 390,
+      "srcY": 14
+    },
+    {
+      "dstY": 2,
+      "height": 16,
+      "mid": 182,
+      "srcY": 0
+    },
+    {
+      "dstY": 18,
+      "height": 8,
+      "mid": 391,
+      "srcY": 0
+    }
+  ],
+  "source_rect": [
+    32,
+    14,
+    16,
+    26
+  ],
+  "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+  "transparent_padding_top": 6
+}
