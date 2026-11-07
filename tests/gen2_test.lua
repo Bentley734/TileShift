@@ -410,4 +410,153 @@ for _,cartridge in ipairs({'gold','silver','crystal'})do
   eq(kitchenWorld:bgEventAt(0,1),borrowedEvent,'an earlier returned record remains untouched')
   earlierClose();eq(Kitchen.bgEventAt,earlierLookup,'cleanup restores the earlier wrapper')
 end
+-- Official0.4.1's neighbor/in-flight path accumulates native animation cells
+-- in chunks and publishes directly, without bakeMapImage or animCellsFor.
+local Async={}
+local asyncRevision,requests,publishes,drops,chunks=0,0,0,0,0
+local enabled=true
+local asyncArt={[1]={image=main,coverage={[0]=true}}}
+local sourceAnim={[4]={tile=4,slot=2,layer={kind='water'},cells={0,0,16,0,32,0,64,0}}}
+local function asyncCanvas()
+ return {renders=0,releases=0,renderTo=function(self,fn)self.renders=self.renders+1;fn()end,
+  release=function(self)self.releases=self.releases+1 end}
+end
+function Async:mapCacheKey(id)
+ return id..'|'..self.daytime..'|'..tostring(self.mode)..'|'..tostring(self.ramp)..'|'..tostring(self.flicker)
+end
+function Async:beginMapBake(actualMap)
+ return {map=actualMap,canvas=asyncCanvas(),anim=sourceAnim,bgSet='job-palettes',nextBlock=0}
+end
+function Async:beginBakeJob(id)
+ local job=self:beginMapBake(map)
+ job.id=id;job.key=self:mapCacheKey(id);return job
+end
+function Async:bakeMapChunk(job,budget)
+ chunks=chunks+1;job.nextBlock=job.nextBlock+budget
+ return job.nextBlock>=map.width*map.height,budget*16
+end
+function Async:publishBake(job)
+ publishes=publishes+1
+ local cached=self.mapImages[job.key]
+ if cached then job.canvas:release();return cached end
+ self.mapImages[job.key]=job.canvas;self.animCells[job.key]=job.anim or false
+ self.bgSets[job.key]=job.bgSet or false
+ if job.key==self:mapCacheKey(job.id)then self.neighbors[1].image=job.canvas end
+ return job.canvas
+end
+function Async:dropBakeJob()
+ drops=drops+1
+ if self.bakeJob then self.bakeJob.canvas:release();self.bakeJob=nil end
+end
+function Async:imageFor(id)
+ local key=self:mapCacheKey(id)
+ if self.mapImages[key]then return self.mapImages[key]end
+ local job=self.bakeJob
+ if job and job.id==id and job.key==key then
+  self.bakeJob=nil
+  while not self:bakeMapChunk(job,1)do end
+  return self:publishBake(job)
+ end
+ return 'native-'..id
+end
+local nativePublish,nativeChunk=Async.publishBake,Async.bakeMapChunk
+local nativeBegin=Async.beginMapBake
+local pending=setmetatable({map=map,maps={MAP=def},tilesets={TEST=ts},daytime='DAY',
+ mapImages={},animCells={},bgSets={},neighbors={{id='MAP'}},mode='color',flicker=1}, {__index=Async})
+local asyncClose=Adapter.install({worldClass=Async,borderFill=Border,palette=Palette,graphics=G,
+ version=function()return'crystal'end,revision=function()return asyncRevision end,
+ replacements=function()requests=requests+1;return enabled and asyncArt or nil end})
+eq(Async.bakeMapChunk,nativeChunk,'chunk implementation and its native budget stay untouched')
+eq(Async.beginMapBake,nativeBegin,'native canvas creation stays untouched')
+local job=pending:beginBakeJob('MAP')
+eq(pending:bakeMapChunk(job,1),false);eq(pending:bakeMapChunk(job,1),false)
+eq(requests,0,'chunk work does not scan reviewed art')
+eq(job.canvas.renders,0,'incomplete canvas receives no themed paint')
+eq(pending:bakeMapChunk(job,1),true)
+calls={};eq(pending:publishBake(job),job.canvas)
+eq(job.canvas.renders,1,'completed native job is composed once before publish')
+eq(#calls,1,'only the reviewed quadrant is repainted')
+eq(calls[1].args[1].quad[3],16,'asynchronous partial coverage keeps full native uncovered quadrants')
+eq(pending.mapImages[job.key],job.canvas);eq(pending.neighbors[1].image,job.canvas)
+eq(pending.bgSets[job.key],'job-palettes')
+eq(#sourceAnim[4].cells,8,'the original incremental animation list stays immutable')
+eq(#pending.animCells[job.key][4].cells,6,'covered source animation is removed before native publish')
+eq(pending.animCells[job.key][4].cells[1],16,'uncovered same-block source animation survives')
+eq(pending.animCells[job.key][4].slot,2,'native palette slot metadata survives')
+local warmRequests,oldPublishes=requests,publishes
+calls={};eq(pending:publishBake(job),job.canvas)
+eq(#calls,0);eq(requests,warmRequests);eq(publishes,oldPublishes)
+eq(job.canvas.releases,0,'repeating the same publication cannot release its cached canvas')
+local duplicate=pending:beginBakeJob('MAP')
+eq(pending:publishBake(duplicate),job.canvas)
+eq(duplicate.canvas.renders,0);eq(duplicate.canvas.releases,1,'native duplicate path releases only its extra canvas')
+eq(requests,warmRequests,'cached duplicate does not inspect replacement art')
+asyncRevision=1
+local inFlight=pending:beginBakeJob('MAP');pending.bakeJob=inFlight
+eq(pending:imageFor('MAP'),inFlight.canvas,'in-flight imageFor publishes themed native job')
+eq(inFlight.canvas.renders,1);eq(pending.bakeJob,nil)
+local stale=pending:beginBakeJob('MAP');pending.bakeJob=stale
+local staleRequests=requests;asyncRevision=2
+eq(pending:publishBake(stale),nil,'obsolete option-revision job cannot publish an old owner cache')
+eq(stale.canvas.renders,0);eq(stale.canvas.releases,1);eq(pending.bakeJob,nil)
+eq(requests,staleRequests);eq(pending.mapImages[stale.key],inFlight.canvas,'stale completion cannot overwrite an existing older cache')
+eq(pending:publishBake(stale),nil);eq(stale.canvas.releases,1,'discarded jobs cannot be released or painted twice')
+pending.daytime='DARK'
+local darkJob=pending:beginBakeJob('MAP');calls={}
+eq(pending:publishBake(darkJob),darkJob.canvas)
+eq(darkJob.canvas.renders,0);eq(#calls,0,'native DARK canvas and cave flicker stay untouched')
+eq(pending.animCells[darkJob.key],sourceAnim,'native DARK incremental animation remains exact')
+pending.daytime='NITE'
+local flashJob=pending:beginBakeJob('MAP')
+eq(pending:publishBake(flashJob),flashJob.canvas);eq(flashJob.canvas.renders,1,'Flash/lit key returns themed artwork')
+enabled=false;asyncRevision=3
+local originalJob=pending:beginBakeJob('MAP');calls={}
+pending:publishBake(originalJob)
+eq(#calls,0,'Original mode writes no donor pixels in asynchronous jobs')
+eq(#pending.animCells[originalJob.key][4].cells,8,'Original preserves every native animation cell')
+enabled=true
+local owned=pending:beginBakeJob('MAP');pending.bakeJob=owned
+pending.bakeQueue={'NEXT','LATER'};local queue=pending.bakeQueue
+local retainedPublish=Async.publishBake
+Async.publishBake=function(self,item)return retainedPublish(self,item)end
+local laterPublish=Async.publishBake
+asyncClose();asyncClose()
+eq(owned.canvas.releases,1);eq(pending.bakeJob,nil,'cleanup cancels the owned queued canvas')
+eq(pending.bakeQueue,queue);eq(#queue,2,'native queued map IDs are retained')
+eq(Async.publishBake,laterPublish,'cleanup preserves a later publish wrapper')
+eq(Async.bakeMapChunk,nativeChunk);eq(Async.beginMapBake,nativeBegin)
+eq(retainedPublish(pending,owned),nil,'retained publish cannot revive a canceled owner job')
+eq(owned.canvas.releases,1)
+Async.publishBake=nativePublish
+local foreignClose=Adapter.install({worldClass=Async,borderFill=Border,palette=Palette,graphics=G,
+ version=function()return'crystal'end,replacements=function()return asyncArt end})
+local foreign={id='OTHER',key='another-owner-key',map=map,canvas=asyncCanvas()}
+pending.bakeJob=foreign
+local previousDrops=drops
+foreignClose()
+eq(pending.bakeJob,foreign,'cleanup preserves a native or other-owner pending job')
+eq(foreign.canvas.releases,0);eq(drops,previousDrops)
+--0.4.1 prewarms native border-animation rows explicitly. Partial replacements
+-- must compose over that requested row rather than silently using the live row.
+local RowBorder={}
+local borderSources,lastRow,lastExtra={},nil,nil
+function RowBorder:borderImageFor(id,row,extra)
+ lastRow,lastExtra=row,extra
+ local key=tostring(row)
+ if not borderSources[key]then borderSources[key]=newCanvas(32,32);borderSources[key].row=row end
+ return borderSources[key]
+end
+local rowWorld=setmetatable({maps={MAP=def},tilesets={TEST=ts},daytime='DAY'},{__index=RowBorder})
+local rowClose=Adapter.install({worldClass=RowBorder,borderFill=Border,palette=Palette,graphics=G,
+ version=function()return'gold'end,newCanvas=newCanvas,replacements=function()return asyncArt end})
+calls={};local borderRow2=rowWorld:borderImageFor('MAP',2,'extra')
+eq(lastRow,2);eq(lastExtra,'extra');eq(calls[1].image,borderSources['2'],'partial border uses requested native row')
+calls={};local borderRow3=rowWorld:borderImageFor('MAP',3)
+eq(lastRow,3);eq(calls[1].image,borderSources['3']);eq(borderRow2~=borderRow3,true)
+calls={};eq(rowWorld:borderImageFor('MAP',2),borderRow2);eq(#calls,0,'row-specific partial border cache stays warm')
+rowWorld.daytime='DARK'
+eq(rowWorld:borderImageFor('MAP',4,'dark'),borderSources['4']);eq(lastRow,4);eq(lastExtra,'dark')
+rowWorld.daytime='DAY'
+eq(rowWorld:borderImageFor('MISSING',5),borderSources['5']);eq(lastRow,5)
+rowClose()
 print('PASS Gen 2 graphics adapter: '..count..' assertions')

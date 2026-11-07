@@ -3,6 +3,8 @@
 
 TileShift swaps world artwork through individually reviewed tile matches.
 
+Version 0.44.4 uses the selected T1 CrystalDust round tree for the small Headbutt-tree type seen in New Bark Town throughout Gold, Silver and Crystal. It also keeps the selected artwork applied when Gen1Recomp 0.4.1 loads neighboring maps in the background.
+
 Version 0.44.3 updates New Bark's home interiors with complete CrystalDust kitchen units, a matching cafe counter divider, TV cabinets and radio stands. Elm's Lab uses the complete CrystalDust healing machine and an adjacent workstation set one row farther back. Crystal's central computer uses the matching rear-facing workstation. Each selected object keeps its native pixel size. Kitchen inspection text follows the selected sink-left, stove-right arrangement.
 
 Version 0.44.2 removes the decorative stool below Elm's home computer in Gold, Silver and Crystal. The cell uses the matching room floor.
@@ -179,7 +181,7 @@ unchanged. The single **Gen 3** style combines Emerald, FireRed/LeafGreen and se
    TileShift reads native donor
    art from your own imports; neither ROMs nor extracted native artwork are
    bundled.
-2. Download `TileShift-v0.44.3.zip` from [the latest release](https://github.com/Bentley734/TileShift/releases/latest).
+2. Download `TileShift-v0.44.4.zip` from [the latest release](https://github.com/Bentley734/TileShift/releases/latest).
 3. Extract the `tileshift` folder into Gen1Recomp's `mods` directory, enable
    **TileShift**, and restart the game.
 4. Open Options and select **Tileset**. Gen 1/2 hosts offer **Gen 3**; Gen 3 hosts

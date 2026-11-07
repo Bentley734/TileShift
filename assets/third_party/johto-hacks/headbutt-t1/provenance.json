@@ -1,0 +1,60 @@
+{
+  "chooser_changed": false,
+  "credit": "CrystalDust / Sierraffinity and contributors.",
+  "exact_native_art_pixels": true,
+  "existing_bases_preserved": true,
+  "exterior_field_color": [
+    66,
+    181,
+    140,
+    255
+  ],
+  "exterior_field_pixels_made_transparent": [
+    [
+      5,
+      15
+    ],
+    [
+      10,
+      15
+    ]
+  ],
+  "files": {
+    "t1-mint-round-shrub.png": "05d70dc0e7d9c9f49350e466d37d972f14f8ed0adffd6a2e4aef7f3c3788e263"
+  },
+  "native_dimensions": [
+    16,
+    16
+  ],
+  "native_rgba_sha256": "a8e8d7ca53f4c23b11e6081b1aae0993045e2301c607d50df638bb94cf67dc0a",
+  "opaque_pixels": 170,
+  "origin": "User-selected T1 native CrystalDust mint round shrub for existing GSC Headbutt trees only.",
+  "original_foreground_rgba_sha256": "ae39dbbb9ee4d83a957fa30308b6056b742876e151962f004b2f078ac7ba11c9",
+  "pixel_scale": 1,
+  "redrawing": false,
+  "removed_foliage_pixels": 0,
+  "resampling": false,
+  "runtime_changed": false,
+  "sourceUrl": "https://github.com/Sierraffinity/CrystalDust",
+  "source_atlas_rect_xywh": [
+    96,
+    192,
+    16,
+    16
+  ],
+  "source_atlas_sha256": "26d4393db2f622a768ea511c4b501f3dc57cc0486f4fe0bad373b074c24a0372",
+  "source_behavior": "Existing Headbutt collision0x15 and all native mechanics unchanged.",
+  "source_choice": "T1",
+  "source_layer": "top",
+  "source_map": "g00_m004",
+  "source_map_png_sha256": "ae803be7d0f2481e5e2d4a7f3337b4f26f49fb96c96c0b2e04d7fe4cc6f6331f",
+  "source_metatile": 198,
+  "source_metatiles_json_sha256": "47745b5a9319aa9b92712e0054da2b6ac82614d800c07abd74baa2346ff95e76",
+  "source_origin_cells": [
+    4,
+    0
+  ],
+  "source_pair": "083df704_083df7c4",
+  "source_rom_name": "Pok\u00e9mon CrystalDust.gba",
+  "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf"
+}

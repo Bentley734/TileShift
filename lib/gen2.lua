@@ -27,6 +27,7 @@ function Adapter.install(ctx)
   local images, quads = setmetatable({}, {__mode='k'}), setmetatable({}, {__mode='k'})
   local borderComposites, ownedCanvases = setmetatable({}, {__mode='k'}), {}
   local warned, serial = {}, tostring({})
+  local publishedJobs,discardedJobs=setmetatable({}, {__mode='k'}),setmetatable({}, {__mode='k'})
   local lastRevision,revisionSuffix
   local function revision()
     local current=ctx.revision and ctx.revision() or 0
@@ -162,6 +163,47 @@ function Adapter.install(ctx)
       end
     end
   end
+  local function composeCanvas(self,map,canvas,daytime)
+    if not canvas or daytime=='DARK' then return end
+    canvas:renderTo(function()
+      drawTrue(function()
+        G.origin();G.setScissor()
+        for by=0,map.height-1 do for bx=0,map.width-1 do
+          local block=Border.blockFor(map.blocks[by*map.width+bx+1],map.borderBlock)
+          local art=recordFor(self,map.def,block,bx,by)
+          if art then drawBlock(art,artImage(art.image),bx*32,by*32) end
+        end end
+      end)
+    end)
+  end
+  local function filterAnim(self,map,native)
+    if unlit(self) or not native then return native end
+    local result={}
+    for tile,list in pairs(native) do
+      local copy={};for k,v in pairs(list) do copy[k]=v end
+      copy.cells={}
+      for i=1,#list.cells,2 do
+        local x,y=list.cells[i],list.cells[i+1]
+        local block=blockAt(map,x,y)
+        if block==nil or not covered(recordFor(self,map.def,block,math.floor(x/32),math.floor(y/32)),x,y) then
+          copy.cells[#copy.cells+1]=x;copy.cells[#copy.cells+1]=y
+        end
+      end
+      if #copy.cells>0 then result[tile]=copy end
+    end
+    return next(result) and result or nil
+  end
+  local function ownedKey(key)
+    return type(key)=='string' and key:find('|tileshift|'..serial,1,true)~=nil
+  end
+  local function discardJob(self,job)
+    discardedJobs[job]=true
+    if self.bakeJob==job and self.dropBakeJob then self:dropBakeJob()
+    else
+      if self.bakeJob==job then self.bakeJob=nil end
+      if job.canvas and job.canvas.release then job.canvas:release() end
+    end
+  end
   ctx.drawVegetation=function(map,entity,ox,oy,s,moved,now,world)
     if closed or not world or unlit(world) or entity.jumping then return end
     local def=map.def;local py=entity.py+(entity.spriteYOffset or 0)
@@ -201,7 +243,10 @@ function Adapter.install(ctx)
     local fn=function(...)
       -- A later mod may retain this wrapper inside its own chain. Its
       -- continued existence must not access released art after unloading.
-      if closed then return native(...) end
+      if closed then
+        if name=='publishBake' and discardedJobs[select(2,...)] then return nil end
+        return native(...)
+      end
       return active(...)
     end
     wrappers[name]=fn;World[name]=fn
@@ -254,39 +299,41 @@ function Adapter.install(ctx)
     return function(self,map,daytime,flicker)
       worlds[self]=true
       local canvas,bg=old(self,map,daytime,flicker)
-      if not canvas or daytime == 'DARK' then return canvas,bg end
-      canvas:renderTo(function()
-        drawTrue(function()
-          G.origin();G.setScissor()
-          for by=0,map.height-1 do for bx=0,map.width-1 do
-            local block=Border.blockFor(map.blocks[by*map.width+bx+1],map.borderBlock)
-            local art=recordFor(self,map.def,block,bx,by)
-            if art then drawBlock(art,artImage(art.image),bx*32,by*32) end
-          end end
-        end)
-      end)
+      composeCanvas(self,map,canvas,daytime)
       return canvas,bg
     end
   end)
   wrap('animCellsFor',function(old)
     return function(self,map,tileset)
-      local native=old(self,map,tileset)
-      if unlit(self) then return native end
-      if not native then return nil end
-      local result={}
-      for tile,list in pairs(native) do
-        local copy={};for k,v in pairs(list) do copy[k]=v end
-        copy.cells={}
-        for i=1,#list.cells,2 do
-          local x,y=list.cells[i],list.cells[i+1]
-          local block=blockAt(map,x,y)
-          if block == nil or not covered(recordFor(self,map.def,block,math.floor(x/32),math.floor(y/32)),x,y) then
-            copy.cells[#copy.cells+1]=x;copy.cells[#copy.cells+1]=y
-          end
-        end
-        if #copy.cells>0 then result[tile]=copy end
+      return filterAnim(self,map,old(self,map,tileset))
+    end
+  end)
+  -- Gen1Recomp0.4.1 neighbor jobs and in-flight imageFor finish through this
+  -- method, bypassing bakeMapImage/animCellsFor. The exact current native key
+  -- includes daytime, COLOR/ramp, flicker and our option revision. Compose only
+  -- a finished, current owned job before native publication attaches its canvas.
+  wrap('publishBake',function(old)
+    return function(self,job)
+      worlds[self]=true
+      if discardedJobs[job] then return nil end
+      if not(job and job.map and job.map.def and job.canvas and job.id==job.map.id and ownedKey(job.key)) then
+        return old(self,job)
       end
-      return next(result) and result or nil
+      local key=self:mapCacheKey(job.id)
+      if job.key~=key then
+        discardJob(self,job)
+        return self.mapImages and self.mapImages[key]
+      end
+      local cached=self.mapImages and self.mapImages[key]
+      if cached then
+        if cached==job.canvas then return cached end
+        return old(self,job)
+      end
+      if publishedJobs[job] then return nil end
+      composeCanvas(self,job.map,job.canvas,self.daytime)
+      job.anim=filterAnim(self,job.map,job.anim)
+      publishedJobs[job]=true
+      return old(self,job)
     end
   end)
   wrap('drawAnimCells',function(old)
@@ -329,20 +376,20 @@ function Adapter.install(ctx)
     end
   end)
   wrap('borderImageFor',function(old)
-    return function(self,mapId)
-      if unlit(self) then return old(self,mapId) end
+    return function(self,mapId,...)
+      if unlit(self) then return old(self,mapId,...) end
       local def=self.maps and self.maps[mapId]
-      if not def then return old(self,mapId) end
+      if not def then return old(self,mapId,...) end
       local fill=Border.fillBlock(def)
-      if fill==false then return old(self,mapId) end
+      if fill==false then return old(self,mapId,...) end
       local block=Border.blockFor(0,fill)
       local art=recordFor(self,def,block)
-      if not art then return old(self,mapId) end
+      if not art then return old(self,mapId,...) end
       local image=frameFor(self,art,false)
       if art.coverage then
         -- The source border may be an animated or palette-baked image. Preserve
         -- it in uncovered quadrants; transparent donor art alone would erase it.
-        local native=old(self,mapId)
+        local native=old(self,mapId,...)
         if not native then return native end
         local bySource=borderComposites[image]
         if not bySource then bySource={};borderComposites[image]=bySource end
@@ -493,6 +540,10 @@ function Adapter.install(ctx)
       if World[name]==fn then World[name]=previous[name] end
     end
     for world in pairs(worlds) do
+      -- A retained0.4.1 queue job must not republish this owner's old key after
+      -- unload. Preserve native/other-owner jobs and the engine's queued IDs.
+      local job=world.bakeJob
+      if job and ownedKey(job.key) then discardJob(world,job) end
       for _,name in ipairs({'mapImages','animCells','bgSets'}) do
         for key in pairs(world[name] or {}) do
           if type(key)=='string' and key:find('|tileshift|'..serial,1,true) then
