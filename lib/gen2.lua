@@ -206,6 +206,44 @@ function Adapter.install(ctx)
     end
     wrappers[name]=fn;World[name]=fn
   end
+  if type(ctx.kitchenInteractions)=='function' then
+    local kitchenScripts={
+      gold={{script=22278,key='60:5706'},{script=22281,key='60:5709'}},
+      silver={{script=22278,key='60:5706'},{script=22281,key='60:5709'}},
+      crystal={{script=26099,key='1e:65f3'},{script=26102,key='1e:65f6'}},
+    }
+    wrap('bgEventAt',function(old)
+      return function(self,cx,cy)
+        local event=old(self,cx,cy)
+        if not ctx.kitchenInteractions() or(ctx.active and not ctx.active())
+          or cy~=1 or(cx~=0 and cx~=1)then return event end
+        local expected=kitchenScripts[version()]
+        local map=self.map
+        local def=map and map.def
+        if not expected or not def or map.id~='PLAYERS_HOUSE_1F'
+          or def.id~='PLAYERS_HOUSE_1F'then return event end
+        local source={}
+        for _,entry in ipairs(def.bgEvents or{})do
+          if entry.y==1 and(entry.x==0 or entry.x==1)then
+            local index=entry.x+1
+            local guard=expected[index]
+            if source[index] or entry.kind~=0 or entry.script~=guard.script
+              or entry.scriptKey~=guard.key then return event end
+            source[index]=entry
+          end
+        end
+        if not source[1]or not source[2]or event~=source[cx+1]then return event end
+        local other=old(self,1-cx,cy)
+        if other~=source[2-cx]then return event end
+        -- Keep the queried event's coordinates and metadata. Only its script
+        -- selection follows the approved sink-left/stove-right native artwork.
+        local selected={}
+        for key,value in pairs(event)do selected[key]=value end
+        selected.script,selected.scriptKey=other.script,other.scriptKey
+        return selected
+      end
+    end)
+  end
   wrap('mapCacheKey',function(old)
     return function(self,mapId)
       worlds[self]=true

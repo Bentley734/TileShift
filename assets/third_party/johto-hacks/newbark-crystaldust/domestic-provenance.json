@@ -1,0 +1,922 @@
+{
+  "all_complete_objects_native_scale": true,
+  "assets": [
+    {
+      "asset": "assets/third_party/johto-hacks/newbark-crystaldust/domestic-kitchen-0-0.png",
+      "png_sha256": "2be38408abad938f588b123e5571eb0fc9779222344419828057c1041f995e63"
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/newbark-crystaldust/domestic-kitchen-0-1.png",
+      "png_sha256": "39688bdc8c32ff94396f9bdb428ff8b84edfda7470d8665590a305b59687ee7f"
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/newbark-crystaldust/domestic-kitchen-1-0.png",
+      "png_sha256": "d29dfca56131b8838aa6722a6fdb5c6767f11e354fa4fb3966e7a7818ed05d8a"
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/newbark-crystaldust/domestic-kitchen-1-1.png",
+      "png_sha256": "6e9f0b3fbdb4dc155e80e787a07e8d72a402a5e6baa8feaf0410832534821a11"
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/newbark-crystaldust/domestic-kitchen-2-0.png",
+      "png_sha256": "348db103f23273a59bd38be10e2ae4f46d8e1def735fd00f9ca897494d7e8612"
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/newbark-crystaldust/domestic-kitchen-2-1.png",
+      "png_sha256": "48889ee26cbe17268a27714d5782e1ccfd7c54e499f6121905667efaf8b01b87"
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/newbark-crystaldust/domestic-radio-0-0.png",
+      "png_sha256": "a392c0bd58c044309c760820e578167c84fbdd982d9b550e1ee68e4b52a3d470"
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/newbark-crystaldust/domestic-radio-0-1.png",
+      "png_sha256": "e669b16b468487f12de5c1abf9a8e02f6e39cc701083ea7fe18f0d8f109ce1d4"
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/newbark-crystaldust/domestic-television-0-0.png",
+      "png_sha256": "7ba0891c830e7e8b39a3379ba8522dd4c06534d89c687d7e3c19be8fa88f05f2"
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/newbark-crystaldust/domestic-television-0-1.png",
+      "png_sha256": "44c706c320daa6766fa07dd63c360467d74480380aebfd31e5f70d7483a167f3"
+    }
+  ],
+  "binding": "f99747d9a50fbaf37dd31a773fe40b647a66011fd93672ac530cd9256bd1d146",
+  "kitchen_column_order": [
+    "CD-03 sink",
+    "CD-04 hob",
+    "CD-05 fridge"
+  ],
+  "kitchen_source_interactions": {
+    "fridge": [
+      2,
+      1
+    ],
+    "sink": [
+      1,
+      1
+    ],
+    "stove": [
+      0,
+      1
+    ]
+  },
+  "kitchen_visible_appliances": {
+    "fridge": [
+      2,
+      1
+    ],
+    "sink": [
+      0,
+      1
+    ],
+    "stove": [
+      1,
+      1
+    ]
+  },
+  "placements": [
+    {
+      "height": 32,
+      "interaction_cells": {
+        "fridge": [
+          2,
+          1
+        ],
+        "sink": [
+          1,
+          1
+        ],
+        "stove": [
+          0,
+          1
+        ]
+      },
+      "kind": "kitchen",
+      "map": "PLAYERS_HOUSE_1F",
+      "width": 48,
+      "x": 0,
+      "y": 0
+    },
+    {
+      "height": 32,
+      "kind": "television",
+      "map": "PLAYERS_HOUSE_1F",
+      "native_object_offset": [
+        0,
+        6
+      ],
+      "source_tv_cell": [
+        4,
+        1
+      ],
+      "width": 16,
+      "x": 4,
+      "y": 0
+    },
+    {
+      "height": 32,
+      "kind": "television",
+      "map": "PLAYERS_HOUSE_2F",
+      "native_object_offset": [
+        0,
+        6
+      ],
+      "source_tv_cell": [
+        4,
+        1
+      ],
+      "width": 16,
+      "x": 4,
+      "y": 0
+    },
+    {
+      "height": 32,
+      "kind": "television",
+      "map": "PLAYERS_NEIGHBORS_HOUSE",
+      "native_object_offset": [
+        0,
+        6
+      ],
+      "source_tv_cell": [
+        2,
+        1
+      ],
+      "width": 16,
+      "x": 2,
+      "y": 0
+    },
+    {
+      "height": 32,
+      "kind": "television",
+      "map": "ELMS_HOUSE",
+      "native_object_offset": [
+        0,
+        6
+      ],
+      "source_tv_cell": [
+        4,
+        1
+      ],
+      "width": 16,
+      "x": 4,
+      "y": 0
+    },
+    {
+      "height": 32,
+      "interaction_cells": {
+        "radio": [
+          3,
+          1
+        ]
+      },
+      "kind": "radio",
+      "map": "PLAYERS_HOUSE_2F",
+      "native_object_offset": [
+        0,
+        8
+      ],
+      "width": 16,
+      "x": 3,
+      "y": 0
+    },
+    {
+      "height": 32,
+      "interaction_cells": {
+        "radio": [
+          7,
+          1
+        ]
+      },
+      "kind": "radio",
+      "map": "PLAYERS_NEIGHBORS_HOUSE",
+      "native_object_offset": [
+        0,
+        8
+      ],
+      "width": 16,
+      "x": 7,
+      "y": 0
+    }
+  ],
+  "radio_pad_top": 8,
+  "source_alpha_preserved": true,
+  "source_catalog_sha256": "fd8fbaf6eb4ee3774e3fe046bf3b506e7f638ab4cd9297c9f62a8bb1189bc740",
+  "source_cells_unchanged": true,
+  "source_options": {
+    "CD-03": {
+      "description": "Complete native worktop and lower cabinet",
+      "every_source_pixel_at_native_scale": true,
+      "id": "CD-03",
+      "interpolation": false,
+      "label": "Sink with cupboard base",
+      "native_canvas": [
+        16,
+        32
+      ],
+      "native_parts": [
+        {
+          "destination_xy": [
+            0,
+            0
+          ],
+          "mid": 320,
+          "native_layer": "top",
+          "source_atlas": "crystaldust/pairs/083df884_083dfaf4/top.png",
+          "source_atlas_rect_xywh": [
+            0,
+            320,
+            16,
+            16
+          ],
+          "source_atlas_sha256": "340724a40468a77b7786b221cd6da70913f1caa71d2cfa0e6b5d0b9253c7baa2",
+          "source_cell_rect_xywh": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "source_rgba_sha256": "f82cb3b8deb2e11689b350756c84746eb6de628cdaf7a65a941e8dbe1dfa3b5f"
+        },
+        {
+          "destination_xy": [
+            0,
+            16
+          ],
+          "mid": 328,
+          "native_layer": "top",
+          "source_atlas": "crystaldust/pairs/083df884_083dfaf4/top.png",
+          "source_atlas_rect_xywh": [
+            128,
+            320,
+            16,
+            16
+          ],
+          "source_atlas_sha256": "340724a40468a77b7786b221cd6da70913f1caa71d2cfa0e6b5d0b9253c7baa2",
+          "source_cell_rect_xywh": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "source_rgba_sha256": "add0de4a417003d6815937a1693f4df4733597baad68a72ac5891f8b46ee7bc4"
+        }
+      ],
+      "native_pixel_scale": 1,
+      "native_size": [
+        16,
+        32
+      ],
+      "notes": "Native top-layer transparency retained around the whole counter and base. No furniture pixels are omitted.",
+      "output": "CD-03.png",
+      "output_png_sha256": "9148985bebf8e6d3fc4c1f2ee1ac3c989ccbe0f9a7c596e8cd539c8929a49d79",
+      "output_rgba_sha256": "377e8fbbba83bd0894e5dab2e32acbe3b45e54013d3a2b946dcd9800a0f44b00",
+      "padding_trim_only": false,
+      "source": {
+        "atlas": "crystaldust/pairs/083df884_083dfaf4/flat.png",
+        "atlas_sha256": "eec0d866c4a2991e62c1de84d8ed3b1d3525d524ac4e676999c2b795c9b315c3",
+        "cells": [
+          {
+            "cell_rgba_sha256": "03f8f2647b65449f578bb35d5b4c4bc18f03e357944bb1cd8092c7da0eaa437a",
+            "mid": 320,
+            "native_entries": [
+              21081,
+              21081,
+              21097,
+              21097,
+              128,
+              129,
+              144,
+              145
+            ],
+            "native_grid_value": 1344,
+            "x": 0,
+            "y": 1
+          },
+          {
+            "cell_rgba_sha256": "2919490d0242a32d34121080f1d47eb83d3453e2ba3bbbc9f4cd563de842b242",
+            "mid": 328,
+            "native_entries": [
+              21075,
+              21075,
+              21075,
+              21075,
+              160,
+              161,
+              0,
+              0
+            ],
+            "native_grid_value": 12616,
+            "x": 0,
+            "y": 2
+          }
+        ],
+        "map": "g01_m000",
+        "map_dimensions": [
+          176,
+          144
+        ],
+        "map_png": "crystaldust/maps/g01_m000-flat.png",
+        "map_png_sha256": "c7d31788c5f6017e3316ca643038ddd53e44806056a5c70f004c1d8f7668db2f",
+        "map_rect_xywh": [
+          0,
+          16,
+          16,
+          32
+        ],
+        "map_rgba_sha256": "01cba41eab761b169e2cc452c7167f838bee04008271705fc48120f4e5d8ae5a",
+        "metatile_metadata_sha256": "bc5b7f61056a7e360c6adb16c24a2755c095ae9ffac456c8c3ba10d17b885e7e",
+        "pair": "083df884_083dfaf4",
+        "source_grid_offset": 4352004,
+        "source_header_offset": 4729588,
+        "source_layout_offset": 4352204
+      },
+      "transparent_padding_bbox": [
+        0,
+        0,
+        16,
+        32
+      ]
+    },
+    "CD-04": {
+      "description": "Complete native worktop and lower cabinet",
+      "every_source_pixel_at_native_scale": true,
+      "id": "CD-04",
+      "interpolation": false,
+      "label": "Hob with cupboard base",
+      "native_canvas": [
+        16,
+        32
+      ],
+      "native_parts": [
+        {
+          "destination_xy": [
+            0,
+            0
+          ],
+          "mid": 321,
+          "native_layer": "top",
+          "source_atlas": "crystaldust/pairs/083df884_083dfaf4/top.png",
+          "source_atlas_rect_xywh": [
+            16,
+            320,
+            16,
+            16
+          ],
+          "source_atlas_sha256": "340724a40468a77b7786b221cd6da70913f1caa71d2cfa0e6b5d0b9253c7baa2",
+          "source_cell_rect_xywh": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "source_rgba_sha256": "01aba3fd702ac00ef7c77149b25775b3819ab9881750180fadf4b005c972bf37"
+        },
+        {
+          "destination_xy": [
+            0,
+            16
+          ],
+          "mid": 329,
+          "native_layer": "top",
+          "source_atlas": "crystaldust/pairs/083df884_083dfaf4/top.png",
+          "source_atlas_rect_xywh": [
+            144,
+            320,
+            16,
+            16
+          ],
+          "source_atlas_sha256": "340724a40468a77b7786b221cd6da70913f1caa71d2cfa0e6b5d0b9253c7baa2",
+          "source_cell_rect_xywh": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "source_rgba_sha256": "4b34a55d9eb42311dcc1d2967c87e79846e7d57142089c0148dbd593e2f591dd"
+        }
+      ],
+      "native_pixel_scale": 1,
+      "native_size": [
+        16,
+        32
+      ],
+      "notes": "Native top-layer transparency retained around the whole counter and base. No furniture pixels are omitted.",
+      "output": "CD-04.png",
+      "output_png_sha256": "0d0346d0325e7363af2d2a7e319692bdc3d1215e9c04347e33ab3d3fcbf1eb87",
+      "output_rgba_sha256": "7aeadcce481dbb06ee5e27bc4271e0d4a2cd16dd0c085b36c6da665b0cadde16",
+      "padding_trim_only": false,
+      "source": {
+        "atlas": "crystaldust/pairs/083df884_083dfaf4/flat.png",
+        "atlas_sha256": "eec0d866c4a2991e62c1de84d8ed3b1d3525d524ac4e676999c2b795c9b315c3",
+        "cells": [
+          {
+            "cell_rgba_sha256": "c37077ba6e44adb5d49310c882463a9665ed87782de7a5780cbfc1a12d574b6a",
+            "mid": 321,
+            "native_entries": [
+              21081,
+              21081,
+              21097,
+              21097,
+              130,
+              131,
+              146,
+              147
+            ],
+            "native_grid_value": 1345,
+            "x": 1,
+            "y": 1
+          },
+          {
+            "cell_rgba_sha256": "7673df00aea7d988e5ab6d8d35f1c6423c107347019124c40501a6b4fe33eb58",
+            "mid": 329,
+            "native_entries": [
+              21075,
+              21075,
+              21075,
+              21075,
+              162,
+              163,
+              0,
+              0
+            ],
+            "native_grid_value": 12617,
+            "x": 1,
+            "y": 2
+          }
+        ],
+        "map": "g01_m000",
+        "map_dimensions": [
+          176,
+          144
+        ],
+        "map_png": "crystaldust/maps/g01_m000-flat.png",
+        "map_png_sha256": "c7d31788c5f6017e3316ca643038ddd53e44806056a5c70f004c1d8f7668db2f",
+        "map_rect_xywh": [
+          16,
+          16,
+          16,
+          32
+        ],
+        "map_rgba_sha256": "01cba41eab761b169e2cc452c7167f838bee04008271705fc48120f4e5d8ae5a",
+        "metatile_metadata_sha256": "bc5b7f61056a7e360c6adb16c24a2755c095ae9ffac456c8c3ba10d17b885e7e",
+        "pair": "083df884_083dfaf4",
+        "source_grid_offset": 4352004,
+        "source_header_offset": 4729588,
+        "source_layout_offset": 4352204
+      },
+      "transparent_padding_bbox": [
+        0,
+        0,
+        16,
+        32
+      ]
+    },
+    "CD-05": {
+      "description": "Complete two-door native appliance",
+      "every_source_pixel_at_native_scale": true,
+      "id": "CD-05",
+      "interpolation": false,
+      "label": "Orange refrigerator",
+      "native_canvas": [
+        16,
+        32
+      ],
+      "native_parts": [
+        {
+          "destination_xy": [
+            0,
+            0
+          ],
+          "mid": 279,
+          "native_layer": "top",
+          "source_atlas": "crystaldust/pairs/083df884_083dfaf4/top.png",
+          "source_atlas_rect_xywh": [
+            112,
+            272,
+            16,
+            16
+          ],
+          "source_atlas_sha256": "340724a40468a77b7786b221cd6da70913f1caa71d2cfa0e6b5d0b9253c7baa2",
+          "source_cell_rect_xywh": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "source_rgba_sha256": "78eb68a900dadca8a727892fda37af7b595785c995a16be391b7122fc39efff7"
+        },
+        {
+          "destination_xy": [
+            0,
+            16
+          ],
+          "mid": 287,
+          "native_layer": "top",
+          "source_atlas": "crystaldust/pairs/083df884_083dfaf4/top.png",
+          "source_atlas_rect_xywh": [
+            240,
+            272,
+            16,
+            16
+          ],
+          "source_atlas_sha256": "340724a40468a77b7786b221cd6da70913f1caa71d2cfa0e6b5d0b9253c7baa2",
+          "source_cell_rect_xywh": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "source_rgba_sha256": "953fd3a137663e0818c486a2a0a50f6ac60f4d7a6799d9a953e744308b56d87b"
+        }
+      ],
+      "native_pixel_scale": 1,
+      "native_size": [
+        16,
+        32
+      ],
+      "notes": "Both doors, handles, lower edge and original outline remain intact.",
+      "output": "CD-05.png",
+      "output_png_sha256": "9f780e5a2dad4aa3784340e7c580894149ccb7f45da4c191718e661e2f0aacb8",
+      "output_rgba_sha256": "9b1f32a5198dc0e6460777bea448225356470cc67438655447ca95d49982d383",
+      "padding_trim_only": false,
+      "source": {
+        "atlas": "crystaldust/pairs/083df884_083dfaf4/flat.png",
+        "atlas_sha256": "eec0d866c4a2991e62c1de84d8ed3b1d3525d524ac4e676999c2b795c9b315c3",
+        "cells": [
+          {
+            "cell_rgba_sha256": "24958506cb89118efd3771af58c596d94d57f6fc75e99cf315d259d8d767fcdd",
+            "mid": 279,
+            "native_entries": [
+              21081,
+              21081,
+              21097,
+              21097,
+              8634,
+              8635,
+              8620,
+              8621
+            ],
+            "native_grid_value": 1303,
+            "x": 2,
+            "y": 1
+          },
+          {
+            "cell_rgba_sha256": "0ad45deceaa318de9e7ce041572f38b5e458de811678baa49310b52baf87f970",
+            "mid": 287,
+            "native_entries": [
+              21075,
+              21075,
+              21075,
+              21075,
+              8636,
+              8637,
+              0,
+              0
+            ],
+            "native_grid_value": 12575,
+            "x": 2,
+            "y": 2
+          }
+        ],
+        "map": "g01_m000",
+        "map_dimensions": [
+          176,
+          144
+        ],
+        "map_png": "crystaldust/maps/g01_m000-flat.png",
+        "map_png_sha256": "c7d31788c5f6017e3316ca643038ddd53e44806056a5c70f004c1d8f7668db2f",
+        "map_rect_xywh": [
+          32,
+          16,
+          16,
+          32
+        ],
+        "map_rgba_sha256": "01cba41eab761b169e2cc452c7167f838bee04008271705fc48120f4e5d8ae5a",
+        "metatile_metadata_sha256": "bc5b7f61056a7e360c6adb16c24a2755c095ae9ffac456c8c3ba10d17b885e7e",
+        "pair": "083df884_083dfaf4",
+        "source_grid_offset": 4352004,
+        "source_header_offset": 4729588,
+        "source_layout_offset": 4352204
+      },
+      "transparent_padding_bbox": [
+        0,
+        0,
+        16,
+        32
+      ]
+    },
+    "CD-06": {
+      "description": "Whole CRT, top cap and complete support",
+      "every_source_pixel_at_native_scale": true,
+      "id": "CD-06",
+      "interpolation": false,
+      "label": "TV with lower cabinet",
+      "native_canvas": [
+        16,
+        26
+      ],
+      "native_parts": [
+        {
+          "destination_xy": [
+            0,
+            0
+          ],
+          "mid": 45,
+          "native_layer": "top",
+          "source_atlas": "crystaldust/pairs/083df884_083dfaf4/top.png",
+          "source_atlas_rect_xywh": [
+            208,
+            46,
+            16,
+            2
+          ],
+          "source_atlas_sha256": "340724a40468a77b7786b221cd6da70913f1caa71d2cfa0e6b5d0b9253c7baa2",
+          "source_cell_rect_xywh": [
+            0,
+            14,
+            16,
+            2
+          ],
+          "source_rgba_sha256": "8d14f61c80e8d34095d32bed76ccb42ec15d0cb576edd69a80bd4277b51fbcd1"
+        },
+        {
+          "destination_xy": [
+            0,
+            2
+          ],
+          "mid": 2,
+          "native_layer": "bottom",
+          "source_atlas": "crystaldust/pairs/083df884_083dfaf4/bottom.png",
+          "source_atlas_rect_xywh": [
+            32,
+            0,
+            16,
+            16
+          ],
+          "source_atlas_sha256": "5336c39761cae2deb49fcb6a1ef255f500886a027cc203cc29cc72c7a2a5b99d",
+          "source_cell_rect_xywh": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "source_rgba_sha256": "72c05e41e8057565c5ca591503272f83413fcce9e8494a8a7283aeb8935ef395"
+        },
+        {
+          "destination_xy": [
+            0,
+            18
+          ],
+          "mid": 61,
+          "native_layer": "top",
+          "source_atlas": "crystaldust/pairs/083df884_083dfaf4/top.png",
+          "source_atlas_rect_xywh": [
+            208,
+            48,
+            16,
+            8
+          ],
+          "source_atlas_sha256": "340724a40468a77b7786b221cd6da70913f1caa71d2cfa0e6b5d0b9253c7baa2",
+          "source_cell_rect_xywh": [
+            0,
+            0,
+            16,
+            8
+          ],
+          "source_rgba_sha256": "24e3d40d60fe1ec10bde430c48406cba710a2c9c1bd2948d157d97ea40f021fc"
+        }
+      ],
+      "native_pixel_scale": 1,
+      "native_size": [
+        16,
+        26
+      ],
+      "notes": "Native screen pixels are in the bottom layer. The exact top cap and lower cabinet come from their native top layer.",
+      "output": "CD-06.png",
+      "output_png_sha256": "7a0e91e1e12521be887312273a38558dad40d45a2b00f03a3522c3205a3a4179",
+      "output_rgba_sha256": "708033719b14762ac338a6181bfc20678dfabb2c9fdeb11403d12939f64749d8",
+      "padding_trim_only": false,
+      "source": {
+        "atlas": "crystaldust/pairs/083df884_083dfaf4/flat.png",
+        "atlas_sha256": "eec0d866c4a2991e62c1de84d8ed3b1d3525d524ac4e676999c2b795c9b315c3",
+        "cells": [
+          {
+            "cell_rgba_sha256": "310d6f6c73035d836d7ee8068760fb8bf08b77a6f48bb301ae30568a774fad26",
+            "mid": 45,
+            "native_entries": [
+              4097,
+              4097,
+              4113,
+              4113,
+              0,
+              0,
+              71,
+              72
+            ],
+            "native_grid_value": 1069,
+            "x": 3,
+            "y": 0
+          },
+          {
+            "cell_rgba_sha256": "72c05e41e8057565c5ca591503272f83413fcce9e8494a8a7283aeb8935ef395",
+            "mid": 2,
+            "native_entries": [
+              87,
+              88,
+              103,
+              104,
+              0,
+              0,
+              0,
+              0
+            ],
+            "native_grid_value": 1026,
+            "x": 3,
+            "y": 1
+          },
+          {
+            "cell_rgba_sha256": "bc5578a4f4072de7ff2d6d171e484a86bac565371fba3634474e292866a4b8ae",
+            "mid": 61,
+            "native_entries": [
+              4101,
+              4102,
+              4117,
+              4118,
+              119,
+              120,
+              0,
+              0
+            ],
+            "native_grid_value": 12349,
+            "x": 3,
+            "y": 2
+          }
+        ],
+        "map": "g01_m003",
+        "map_dimensions": [
+          160,
+          144
+        ],
+        "map_png": "crystaldust/maps/g01_m003-flat.png",
+        "map_png_sha256": "d2adc350bf7437dd744c49417ac5aa9a2a3aadae15b45b09990e87a23a12f21f",
+        "map_rect_xywh": [
+          48,
+          14,
+          16,
+          26
+        ],
+        "map_rgba_sha256": "db6acbca6696209c9568050e08e4b26218ca14b8df8c502ae7d9dad0757f0c85",
+        "metatile_metadata_sha256": "bc5b7f61056a7e360c6adb16c24a2755c095ae9ffac456c8c3ba10d17b885e7e",
+        "pair": "083df884_083dfaf4",
+        "source_grid_offset": 14975728,
+        "source_header_offset": 4729672,
+        "source_layout_offset": 14975908
+      },
+      "transparent_padding_bbox": [
+        0,
+        0,
+        16,
+        26
+      ]
+    },
+    "CD-07": {
+      "description": "Native antenna radio and full table legs",
+      "every_source_pixel_at_native_scale": true,
+      "id": "CD-07",
+      "interpolation": false,
+      "label": "Radio on wooden stand",
+      "native_canvas": [
+        16,
+        24
+      ],
+      "native_parts": [
+        {
+          "destination_xy": [
+            0,
+            0
+          ],
+          "mid": 393,
+          "native_layer": "top",
+          "source_atlas": "crystaldust/pairs/083df884_083dfaf4/top.png",
+          "source_atlas_rect_xywh": [
+            144,
+            384,
+            16,
+            16
+          ],
+          "source_atlas_sha256": "340724a40468a77b7786b221cd6da70913f1caa71d2cfa0e6b5d0b9253c7baa2",
+          "source_cell_rect_xywh": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "source_rgba_sha256": "39c963805ffc8d38658deab2419aad4ddff648cbf23e155725fd0c433f57e497"
+        },
+        {
+          "destination_xy": [
+            0,
+            16
+          ],
+          "mid": 394,
+          "native_layer": "top",
+          "source_atlas": "crystaldust/pairs/083df884_083dfaf4/top.png",
+          "source_atlas_rect_xywh": [
+            160,
+            384,
+            16,
+            8
+          ],
+          "source_atlas_sha256": "340724a40468a77b7786b221cd6da70913f1caa71d2cfa0e6b5d0b9253c7baa2",
+          "source_cell_rect_xywh": [
+            0,
+            0,
+            16,
+            8
+          ],
+          "source_rgba_sha256": "3a178e87c747a2a95fafa32e10f155a9e4b3788270d680919666ecb7d53ac0f9"
+        }
+      ],
+      "native_pixel_scale": 1,
+      "native_size": [
+        16,
+        24
+      ],
+      "notes": "Radio identity is visually clear from the antenna, controls and speaker. The native support is preserved.",
+      "output": "CD-07.png",
+      "output_png_sha256": "cd17b6f59eefca169c6d60c98c72cbbd01bec69be0760910b55276848310288c",
+      "output_rgba_sha256": "0634b485275c14a394d4024ab243b101d9433590c4a09d85b57d4fe548791bdf",
+      "padding_trim_only": false,
+      "source": {
+        "atlas": "crystaldust/pairs/083df884_083dfaf4/flat.png",
+        "atlas_sha256": "eec0d866c4a2991e62c1de84d8ed3b1d3525d524ac4e676999c2b795c9b315c3",
+        "cells": [
+          {
+            "cell_rgba_sha256": "27de3ed6578ed17978b9ecc368ad834fe1e746a447ab52877409d439666f3486",
+            "mid": 393,
+            "native_entries": [
+              4098,
+              4098,
+              135,
+              136,
+              610,
+              611,
+              111,
+              639
+            ],
+            "native_grid_value": 1417,
+            "x": 9,
+            "y": 1
+          },
+          {
+            "cell_rgba_sha256": "c1c4999eb8b9a0f0f731f8377e7eac0333554061b1b24cdb40beaba1d38282fa",
+            "mid": 394,
+            "native_entries": [
+              4101,
+              4102,
+              4117,
+              4118,
+              166,
+              168,
+              0,
+              0
+            ],
+            "native_grid_value": 12682,
+            "x": 9,
+            "y": 2
+          }
+        ],
+        "map": "g01_m003",
+        "map_dimensions": [
+          160,
+          144
+        ],
+        "map_png": "crystaldust/maps/g01_m003-flat.png",
+        "map_png_sha256": "d2adc350bf7437dd744c49417ac5aa9a2a3aadae15b45b09990e87a23a12f21f",
+        "map_rect_xywh": [
+          144,
+          16,
+          16,
+          24
+        ],
+        "map_rgba_sha256": "db6acbca6696209c9568050e08e4b26218ca14b8df8c502ae7d9dad0757f0c85",
+        "metatile_metadata_sha256": "bc5b7f61056a7e360c6adb16c24a2755c095ae9ffac456c8c3ba10d17b885e7e",
+        "pair": "083df884_083dfaf4",
+        "source_grid_offset": 14975728,
+        "source_header_offset": 4729672,
+        "source_layout_offset": 14975908
+      },
+      "transparent_padding_bbox": [
+        0,
+        0,
+        16,
+        24
+      ]
+    }
+  },
+  "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+  "status": "passed",
+  "television_pad_top": 6
+}

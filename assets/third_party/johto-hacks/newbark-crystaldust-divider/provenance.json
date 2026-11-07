@@ -1,0 +1,136 @@
+{
+  "source": "CrystalDust native Olivine Cafe counter",
+  "map": "g22_m000",
+  "pair": "083df884_083df9a4",
+  "rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+  "catalog_sha256": "fd8fbaf6eb4ee3774e3fe046bf3b506e7f638ab4cd9297c9f62a8bb1189bc740",
+  "native_map_png_sha256": "149d001ee2132b50c28c06743b626a2f3e37a026f0d1d234b6a87f6a2e234496",
+  "atlas_sha256": "05700b4aed1c3e20fe55735b9e56311485c838269052d7b007e8332ca35a4156",
+  "metatiles_sha256": "9e9cfa2f83929317eb545b83b756180db18ec0f475f8b161113e8bcae04ef7c5",
+  "modules": [
+    {
+      "mid": 673,
+      "map_cell": [
+        6,
+        6
+      ],
+      "source_cell_rect_xywh": [
+        0,
+        8,
+        16,
+        8
+      ],
+      "source_atlas_rect_xywh": [
+        16,
+        680,
+        16,
+        8
+      ],
+      "rgba_sha256": "e374d4c4753ca74f5adb28e49ccd91f69f499f886c1f3fae6e31ab068a95dafa",
+      "role": "uniform native vertical middle",
+      "destinations": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          0,
+          16
+        ],
+        [
+          0,
+          24
+        ],
+        [
+          0,
+          32
+        ],
+        [
+          0,
+          40
+        ]
+      ]
+    },
+    {
+      "mid": 666,
+      "map_cell": [
+        6,
+        7
+      ],
+      "source_cell_rect_xywh": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "source_atlas_rect_xywh": [
+        160,
+        656,
+        16,
+        16
+      ],
+      "rgba_sha256": "7cafbed12826eb75ccdc53b2c668a5e0b285a5dc334f64e7fdc6341748c29615",
+      "role": "complete native lower cabinet/endcap",
+      "destinations": [
+        [
+          0,
+          48
+        ]
+      ]
+    }
+  ],
+  "native_scale": 1,
+  "rotation": false,
+  "redrawing": false,
+  "unique_endcap_repeated": false,
+  "output_size": [
+    16,
+    64
+  ],
+  "output_rgba_sha256": "1c7012de05a728dc1f13a76ccb291084e7af575131c0e7850cb0d3911b9b2df9",
+  "north_end": "Counter continues naturally through the existing north map boundary. No internal top/end border is repeated.",
+  "alpha": "All 1024 selected pixels belong to the native counter. No donor floor occurs within the native 16px width; surrounding cells remain untouched.",
+  "target": {
+    "map": "PLAYERS_HOUSE_1F",
+    "games": [
+      "gold",
+      "silver",
+      "crystal"
+    ],
+    "cells": [
+      [
+        3,
+        0
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    "pixel_rect_xywh": [
+      48,
+      0,
+      16,
+      64
+    ]
+  },
+  "files": {
+    "counter-cell-0-0.png": "506655db9cd6bf5f42c1c9886a247fe691e9d5f2c693a3bc3d5017577e5b37e1",
+    "counter-cell-0-1.png": "506655db9cd6bf5f42c1c9886a247fe691e9d5f2c693a3bc3d5017577e5b37e1",
+    "counter-cell-0-2.png": "506655db9cd6bf5f42c1c9886a247fe691e9d5f2c693a3bc3d5017577e5b37e1",
+    "counter-cell-0-3.png": "1cb7f81163f4b47e845e09c50ded5a0b17591cf974b37afcaba1188270e03bb7",
+    "whole-counter16x64.png": "a2bb11b7039fbc6e463a36adf8ad4c3cd08fabf2dfa17be8c57f17ca0d6b63a4"
+  }
+}

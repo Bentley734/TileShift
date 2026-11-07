@@ -304,4 +304,110 @@ eq(cached.neighbors[1].image==nativeNext,false,'a new connected-map list receive
 cachedClose()
 eq(cached.mapImage,nativeCurrent,'unload restores original current art after live refresh')
 eq(cached.neighbors[1].image,'image:OTHER','unload restores the current neighbor list')
+-- The selected native kitchen puts the sink at the left source cell and the
+-- stove next to it. Resolve the other original script through the native lookup
+-- while preserving every imported event and all queried-cell metadata.
+local kitchenGuards={
+  gold={{22278,'60:5706'},{22281,'60:5709'}},
+  silver={{22278,'60:5706'},{22281,'60:5709'}},
+  crystal={{26099,'1e:65f3'},{26102,'1e:65f6'}},
+}
+for _,cartridge in ipairs({'gold','silver','crystal'})do
+  local guards=kitchenGuards[cartridge]
+  local stove={x=0,y=1,kind=0,script=guards[1][1],scriptKey=guards[1][2],extra={source=true}}
+  local sink={x=1,y=1,kind=0,script=guards[2][1],scriptKey=guards[2][2],extra={source=true}}
+  local fridge={x=2,y=1,kind=0,script=9,scriptKey='fridge'}
+  local upstairs={x=0,y=0,kind=0,script=10,scriptKey='untouched'}
+  local definition={id='PLAYERS_HOUSE_1F',bgEvents={stove,sink,fridge,upstairs}}
+  local Kitchen={}
+  function Kitchen:bgEventAt(x,y)
+    for _,event in ipairs(self.map.def.bgEvents)do
+      if event.x==x and event.y==y then return event end
+    end
+  end
+  local nativeLookup=Kitchen.bgEventAt
+  local kitchenWorld=setmetatable({map={id=definition.id,def=definition}},{__index=Kitchen})
+  local selectedStyle,owns,currentVersion='gen3',true,cartridge
+  local kitchenClose=Adapter.install({worldClass=Kitchen,borderFill=Border,palette=Palette,graphics=G,
+    replacements=function()return nil end,version=function()return currentVersion end,
+    active=function()return owns end,
+    kitchenInteractions=function()return selectedStyle=='gen3' end})
+  local left=kitchenWorld:bgEventAt(0,1)
+  local right=kitchenWorld:bgEventAt(1,1)
+  eq(left~=stove,true,cartridge..' uses an inspection copy for the left sink')
+  eq(right~=sink,true,cartridge..' uses an inspection copy for the middle stove')
+  eq(left.script,sink.script);eq(left.scriptKey,sink.scriptKey)
+  eq(right.script,stove.script);eq(right.scriptKey,stove.scriptKey)
+  eq(left.x,0);eq(left.y,1);eq(left.kind,0);eq(left.extra,stove.extra)
+  eq(right.x,1);eq(right.y,1);eq(right.kind,0);eq(right.extra,sink.extra)
+  eq(stove.script,guards[1][1],'original stove script remains immutable')
+  eq(stove.scriptKey,guards[1][2]);eq(sink.script,guards[2][1]);eq(sink.scriptKey,guards[2][2])
+  eq(definition.bgEvents[1],stove);eq(definition.bgEvents[2],sink)
+  left.script=-1;left.x=99
+  eq(stove.script,guards[1][1],'mutating the returned copy cannot edit the source event')
+  eq(stove.x,0);eq(kitchenWorld:bgEventAt(0,1).script,sink.script)
+  eq(kitchenWorld:bgEventAt(2,1),fridge,'fridge keeps its exact native identity')
+  eq(kitchenWorld:bgEventAt(0,0),upstairs,'other source rows keep native identity')
+  eq(kitchenWorld:bgEventAt(99,99),nil,'missing native events remain missing')
+  selectedStyle='original';eq(kitchenWorld:bgEventAt(0,1),stove,'Original returns the native stove event')
+  eq(kitchenWorld:bgEventAt(1,1),sink,'Original returns the native sink event')
+  selectedStyle='gen3';eq(kitchenWorld:bgEventAt(0,1).script,sink.script,'theme toggle restores sink inspection')
+  owns=false;eq(kitchenWorld:bgEventAt(0,1),stove,'ownership loss immediately retains native identity')
+  owns=true;eq(kitchenWorld:bgEventAt(1,1).script,stove.script,'ownership restoration uses matching stove inspection')
+  kitchenWorld.map.id='ELMS_HOUSE'
+  eq(kitchenWorld:bgEventAt(0,1),stove,'other maps keep native inspection')
+  kitchenWorld.map.id=definition.id;definition.id='OTHER'
+  eq(kitchenWorld:bgEventAt(0,1),stove,'mismatched source map identity is rejected')
+  definition.id='PLAYERS_HOUSE_1F'
+  currentVersion='red';eq(kitchenWorld:bgEventAt(0,1),stove,'Gen1 hosts keep native identity')
+  currentVersion='emerald';eq(kitchenWorld:bgEventAt(0,1),stove,'GBA hosts keep native identity')
+  currentVersion=cartridge
+  for _,field in ipairs({'kind','script','scriptKey'})do
+    local previous=stove[field]
+    stove[field]=field=='scriptKey'and'wrong-source'or-1
+    eq(kitchenWorld:bgEventAt(0,1),stove,'changed queried '..field..' is rejected')
+    stove[field]=previous
+    previous=sink[field]
+    sink[field]=field=='scriptKey'and'wrong-source'or-1
+    eq(kitchenWorld:bgEventAt(0,1),stove,'changed counterpart '..field..' is rejected')
+    sink[field]=previous
+  end
+  definition.bgEvents[2]=nil
+  eq(kitchenWorld:bgEventAt(0,1),stove,'missing counterpart remains native')
+  definition.bgEvents[2]=sink
+  definition.bgEvents[5]=stove
+  eq(kitchenWorld:bgEventAt(0,1),stove,'ambiguous duplicate source records remain native')
+  definition.bgEvents[5]=nil
+  eq(kitchenWorld:bgEventAt(0,1).script,sink.script,'valid source recovers after a rejected change')
+  local retainedKitchen=Kitchen.bgEventAt
+  local function laterKitchen(self,x,y)return retainedKitchen(self,x,y)end
+  Kitchen.bgEventAt=laterKitchen
+  kitchenClose();kitchenClose()
+  eq(Kitchen.bgEventAt,laterKitchen,'cleanup retains a later wrapper in the chain')
+  eq(kitchenWorld:bgEventAt(0,1),stove,'retained wrapper delegates natively after unload')
+  eq(retainedKitchen(kitchenWorld,1,1),sink,'direct retained calls cannot swap after unload')
+  Kitchen.bgEventAt=nativeLookup
+  local withoutOption=Adapter.install({worldClass=Kitchen,borderFill=Border,palette=Palette,graphics=G,
+    replacements=function()return nil end,version=function()return cartridge end})
+  eq(Kitchen.bgEventAt,nativeLookup,'callers without the explicit kitchen option keep the native method')
+  withoutOption()
+  local directClose=Adapter.install({worldClass=Kitchen,borderFill=Border,palette=Palette,graphics=G,
+    replacements=function()return nil end,version=function()return cartridge end,
+    kitchenInteractions=function()return true end})
+  directClose()
+  eq(Kitchen.bgEventAt,nativeLookup,'direct unload restores the native function identity')
+  -- An earlier mod may return its own event record. Preserve that exact return
+  -- even when its script addresses happen to resemble the original source.
+  local borrowedEvent={x=0,y=1,kind=0,script=stove.script,scriptKey=stove.scriptKey}
+  Kitchen.bgEventAt=function(self,x,y)
+    if x==0 and y==1 then return borrowedEvent end
+    return nativeLookup(self,x,y)
+  end
+  local earlierLookup=Kitchen.bgEventAt
+  local earlierClose=Adapter.install({worldClass=Kitchen,borderFill=Border,palette=Palette,graphics=G,
+    replacements=function()return nil end,version=function()return cartridge end,
+    kitchenInteractions=function()return true end})
+  eq(kitchenWorld:bgEventAt(0,1),borrowedEvent,'an earlier returned record remains untouched')
+  earlierClose();eq(Kitchen.bgEventAt,earlierLookup,'cleanup restores the earlier wrapper')
+end
 print('PASS Gen 2 graphics adapter: '..count..' assertions')

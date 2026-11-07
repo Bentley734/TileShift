@@ -160,6 +160,7 @@ for _,gameId in ipairs(games)do
     if path=='mappings/trees.lua' then
       return fixture.trees and 'return __tileMainFixture.trees' or nil
     end
+    if path=='mappings/newbark_crystaldust_domestic.lua' or path=='mappings/gen2_newbark_crystaldust_lab.lua' or path=='mappings/newbark_crystaldust_divider.lua' then return nil end
     if path=='mappings/gen2_domestic_floor_audit.lua' or path=='mappings/gen2_facility_floor_audit.lua'
       or path=='mappings/gen2_interior_chair_audit.lua' then return nil end
     if path=='mappings/posts.lua' or path=='mappings/cut_trees.lua' or path=='mappings/water.lua' or path=='mappings/coasts.lua'
