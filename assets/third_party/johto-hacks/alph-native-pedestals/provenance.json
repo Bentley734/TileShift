@@ -1,0 +1,465 @@
+{
+  "complete_object_proof": {
+    "body_top_plane_opaque_bounds": [
+      0,
+      4,
+      16,
+      16
+    ],
+    "complete_flat_pairs_equal_native_map_rectangles": true,
+    "feature_crop_or_scale": false,
+    "flat_equals_native_bottom_plus_top": true,
+    "lower_native_base_is_in_bottom_plane": true,
+    "original_pixel_scale": 1,
+    "source_floor520_equals_existing_Tanoby648": "069d1525a58bb15aa1f4bf85a056ca912c5a37c8079176e9d8876fcc4b182046",
+    "source_map": "g24_m089",
+    "source_pair": "083df884_083df9ec",
+    "whole_cell_pairs": [
+      [
+        2,
+        5
+      ],
+      [
+        6,
+        5
+      ],
+      [
+        17,
+        5
+      ],
+      [
+        21,
+        5
+      ],
+      [
+        2,
+        7
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        17,
+        7
+      ],
+      [
+        21,
+        7
+      ],
+      [
+        2,
+        20
+      ],
+      [
+        6,
+        20
+      ],
+      [
+        17,
+        20
+      ],
+      [
+        21,
+        20
+      ],
+      [
+        2,
+        22
+      ],
+      [
+        6,
+        22
+      ],
+      [
+        17,
+        22
+      ],
+      [
+        21,
+        22
+      ]
+    ],
+    "whole_rectangle": [
+      16,
+      32
+    ],
+    "whole_rgba_sha256": "c8d816f7ee370ca5cba64c71ac2384f0b1a8c1ebe2e45089570ebb9b9ff833e0"
+  },
+  "counterpart_proof": {
+    "item_room_return_warps": [
+      {
+        "dest_group": 24,
+        "dest_num": 88,
+        "dest_warp": 1,
+        "elevation": 3,
+        "x": 4,
+        "y": 9
+      },
+      {
+        "dest_group": 24,
+        "dest_num": 93,
+        "dest_warp": 1,
+        "elevation": 3,
+        "x": 19,
+        "y": 9
+      },
+      {
+        "dest_group": 0,
+        "dest_num": 0,
+        "dest_warp": 1,
+        "elevation": 3,
+        "x": 4,
+        "y": 24
+      },
+      {
+        "dest_group": 0,
+        "dest_num": 0,
+        "dest_warp": 1,
+        "elevation": 3,
+        "x": 19,
+        "y": 24
+      },
+      {
+        "dest_group": 24,
+        "dest_num": 90,
+        "dest_warp": 0,
+        "elevation": 3,
+        "x": 3,
+        "y": 2
+      },
+      {
+        "dest_group": 24,
+        "dest_num": 90,
+        "dest_warp": 1,
+        "elevation": 3,
+        "x": 4,
+        "y": 2
+      },
+      {
+        "dest_group": 24,
+        "dest_num": 90,
+        "dest_warp": 2,
+        "elevation": 3,
+        "x": 5,
+        "y": 2
+      },
+      {
+        "dest_group": 24,
+        "dest_num": 91,
+        "dest_warp": 0,
+        "elevation": 3,
+        "x": 18,
+        "y": 2
+      },
+      {
+        "dest_group": 24,
+        "dest_num": 91,
+        "dest_warp": 1,
+        "elevation": 3,
+        "x": 19,
+        "y": 2
+      },
+      {
+        "dest_group": 24,
+        "dest_num": 91,
+        "dest_warp": 2,
+        "elevation": 3,
+        "x": 20,
+        "y": 2
+      },
+      {
+        "dest_group": 0,
+        "dest_num": 0,
+        "dest_warp": 0,
+        "elevation": 3,
+        "x": 3,
+        "y": 17
+      },
+      {
+        "dest_group": 0,
+        "dest_num": 0,
+        "dest_warp": 0,
+        "elevation": 3,
+        "x": 4,
+        "y": 17
+      },
+      {
+        "dest_group": 0,
+        "dest_num": 0,
+        "dest_warp": 0,
+        "elevation": 3,
+        "x": 5,
+        "y": 17
+      },
+      {
+        "dest_group": 0,
+        "dest_num": 0,
+        "dest_warp": 0,
+        "elevation": 3,
+        "x": 18,
+        "y": 17
+      },
+      {
+        "dest_group": 0,
+        "dest_num": 0,
+        "dest_warp": 0,
+        "elevation": 3,
+        "x": 19,
+        "y": 17
+      },
+      {
+        "dest_group": 0,
+        "dest_num": 0,
+        "dest_warp": 0,
+        "elevation": 3,
+        "x": 20,
+        "y": 17
+      }
+    ],
+    "native_merged_four_chamber_room": true,
+    "reciprocal_chambers": [
+      {
+        "map": "g24_m088",
+        "return_warp": {
+          "dest_group": 24,
+          "dest_num": 89,
+          "dest_warp": 0,
+          "elevation": 3,
+          "x": 4,
+          "y": 1
+        },
+        "room_warp": {
+          "dest_group": 24,
+          "dest_num": 88,
+          "dest_warp": 1,
+          "elevation": 3,
+          "x": 4,
+          "y": 9
+        }
+      },
+      {
+        "map": "g24_m093",
+        "return_warp": {
+          "dest_group": 24,
+          "dest_num": 89,
+          "dest_warp": 1,
+          "elevation": 3,
+          "x": 4,
+          "y": 1
+        },
+        "room_warp": {
+          "dest_group": 24,
+          "dest_num": 93,
+          "dest_warp": 1,
+          "elevation": 3,
+          "x": 19,
+          "y": 9
+        }
+      }
+    ],
+    "region": 75
+  },
+  "credit": "Pokemon CrystalDust / Sierraffinity and DoMoreAwesome Games; native Johto ruins artwork.",
+  "files": {
+    "pedestal-0.png": "aca6aab05be0802cb7ad31d656db7144e8d59b85a30a24d2bad0ba4771c528f3",
+    "pedestal-1.png": "19719e84994682d494d205cb2c8d3ea32150a7f0e5a3f78ab5551c12d6c97636"
+  },
+  "input_files_sha256": {
+    "catalog.json": "fd8fbaf6eb4ee3774e3fe046bf3b506e7f638ab4cd9297c9f62a8bb1189bc740",
+    "maps/g24_m089-flat.png": "a6a10c4669a7da724a074f205bce58df07acf2f43d0b53b399e90b26852df714",
+    "pairs/083df884_083df9ec/bottom.png": "74436a85b04f33af60d986228d0fdf668fdca5b0b2937dc4b15be8417b78ca0c",
+    "pairs/083df884_083df9ec/flat.png": "54efead706b3ba169e7668e8b0b1a42bdc06aa6570a5da54e086998b2424ebe6",
+    "pairs/083df884_083df9ec/metatiles.json": "63a238e0b47bc044f1317319f3da7a784c8f8b6cf63c3087eeb0fdafe4844b74",
+    "pairs/083df884_083df9ec/top.png": "e90dae20ac3b7446e6fc199b0ce3833c1dd534a7df30cb0ee6b01edb07c147d1"
+  },
+  "limits": [
+    "Static native extraction; actor/animation/script callbacks were not executed.",
+    "Two native item-room chamber return entries are present; the two other native return entries are unused g00_m000 defaults, not claimed to be semantic room identities.",
+    "Runtime substitutions retain original Crystal source item anchors and all mechanics. Gold/Silver do not contain these four item-room maps."
+  ],
+  "origin": "Complete native CrystalDust Alph item pedestal with its original base and matching floor; two intact FLAT modules632+640.",
+  "rom_name": "Pok\u00e9mon CrystalDust.gba",
+  "rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+  "sourceUrl": "https://github.com/Sierraffinity/CrystalDust",
+  "source_modules": {
+    "pedestal-0.png": {
+      "asset": "assets/third_party/johto-hacks/alph-native-pedestals/pedestal-0.png",
+      "assetFileHash": "aca6aab05be0802cb7ad31d656db7144e8d59b85a30a24d2bad0ba4771c528f3",
+      "assetPixelHash": "e12765c77ae1eb3e7bfe1fba313d391e879cd084e24c389a616f74e3ff8da405",
+      "donor_mid": 632,
+      "donor_pair": "083df884_083df9ec",
+      "donor_plane": "flat",
+      "donor_xyxy": [
+        128,
+        624,
+        144,
+        640
+      ],
+      "logical_size": [
+        16,
+        16
+      ],
+      "native_alpha_unchanged": true,
+      "native_map_coords": [
+        [
+          2,
+          5
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          17,
+          5
+        ],
+        [
+          21,
+          5
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          17,
+          7
+        ],
+        [
+          21,
+          7
+        ],
+        [
+          2,
+          20
+        ],
+        [
+          6,
+          20
+        ],
+        [
+          17,
+          20
+        ],
+        [
+          21,
+          20
+        ],
+        [
+          2,
+          22
+        ],
+        [
+          6,
+          22
+        ],
+        [
+          17,
+          22
+        ],
+        [
+          21,
+          22
+        ]
+      ],
+      "pixel_scale": 1,
+      "source_atlas_sha256": "54efead706b3ba169e7668e8b0b1a42bdc06aa6570a5da54e086998b2424ebe6",
+      "source_map": "g24_m089",
+      "whole_native_metatile_layer": true
+    },
+    "pedestal-1.png": {
+      "asset": "assets/third_party/johto-hacks/alph-native-pedestals/pedestal-1.png",
+      "assetFileHash": "19719e84994682d494d205cb2c8d3ea32150a7f0e5a3f78ab5551c12d6c97636",
+      "assetPixelHash": "2fe24d0e0b52c3ee0098647fbabad4abb808169a7e7981d68bb97bd95c209932",
+      "donor_mid": 640,
+      "donor_pair": "083df884_083df9ec",
+      "donor_plane": "flat",
+      "donor_xyxy": [
+        0,
+        640,
+        16,
+        656
+      ],
+      "logical_size": [
+        16,
+        16
+      ],
+      "native_alpha_unchanged": true,
+      "native_map_coords": [
+        [
+          2,
+          6
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          17,
+          6
+        ],
+        [
+          21,
+          6
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          17,
+          8
+        ],
+        [
+          21,
+          8
+        ],
+        [
+          2,
+          21
+        ],
+        [
+          6,
+          21
+        ],
+        [
+          17,
+          21
+        ],
+        [
+          21,
+          21
+        ],
+        [
+          2,
+          23
+        ],
+        [
+          6,
+          23
+        ],
+        [
+          17,
+          23
+        ],
+        [
+          21,
+          23
+        ]
+      ],
+      "pixel_scale": 1,
+      "source_atlas_sha256": "54efead706b3ba169e7668e8b0b1a42bdc06aa6570a5da54e086998b2424ebe6",
+      "source_map": "g24_m089",
+      "whole_native_metatile_layer": true
+    }
+  }
+}

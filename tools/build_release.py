@@ -137,6 +137,40 @@ def validate_berry_assets(root: Path) -> dict:
             'files': checked}
 
 
+def validate_celadon_bed_assets(root: Path) -> dict:
+    """Verify the complete native bed and its four bounded transparent pieces."""
+    from PIL import Image
+
+    directory = root / 'assets/third_party/johto-hacks/celadon-mansion-bed'
+    record = json.loads((directory / 'provenance.json').read_text(encoding='utf-8'))
+    source = root / 'assets/third_party/johto-hacks/crystaldust-ship-beds/complete-native-bed20x29.png'
+    assert record['status'] == 'passed' and record['complete_native_RGBA_preserved'] is True
+    assert record['source_asset'] == source.relative_to(root).as_posix()
+    assert record['source_png_sha256'] == hashlib.sha256(source.read_bytes()).hexdigest() == '1e5a35e2d7a916ad1cbaf236b6ace4d6ba91dd9a4e828ef2d0fd333e9d926bfd'
+    native = Image.open(source).convert('RGBA')
+    assert native.size == (20, 29)
+    assert record['source_rgba_sha256'] == hashlib.sha256(native.tobytes()).hexdigest() == 'aec6d2d04969f910fe6540188d8b06efaac4dcd81b3407a0e86f072fe07e5654'
+    expected = Image.new('RGBA', (32, 32)); expected.paste(native, (0, 3))
+    actual = Image.new('RGBA', (32, 32)); checked = {}; cells = set()
+    assert len(record['assets']) == 4
+    for item in record['assets']:
+        x, y = item['cell']
+        assert x in (0, 1) and y in (0, 1) and (x, y) not in cells
+        cells.add((x, y))
+        name = f'bed-foreground-{x}-{y}.png'
+        path = directory / name
+        assert item['asset'] == path.relative_to(root).as_posix()
+        assert hashlib.sha256(path.read_bytes()).hexdigest() == item['assetFileHash']
+        piece = Image.open(path).convert('RGBA'); assert piece.size == (16, 16)
+        assert hashlib.sha256(piece.tobytes()).hexdigest() == item['assetPixelHash']
+        actual.paste(piece, (x * 16, y * 16)); checked[name] = item['assetFileHash']
+    assert cells == {(0, 0), (0, 1), (1, 0), (1, 1)}
+    assert actual.tobytes() == expected.tobytes(), 'Native Celadon bed was cropped, shifted or altered'
+    assert sum(bool(px[3]) for px in actual.get_flattened_data()) == record['whole_native_opaque_pixels'] == 522
+    assert set(checked) == {p.name for p in directory.glob('*.png')}
+    return checked
+
+
 def main() -> None:
     root = Path(__file__).resolve().parents[1]
     parser = argparse.ArgumentParser(description=__doc__)
@@ -190,6 +224,8 @@ def main() -> None:
     for record in (root / 'assets/third_party/johto-hacks').rglob('provenance.json'):
         provenance = json.loads(record.read_text(encoding='utf-8'))
         checked_files = provenance.get('files')
+        if checked_files is None and record.parent == root / 'assets/third_party/johto-hacks/celadon-mansion-bed':
+            checked_files = validate_celadon_bed_assets(root)
         if checked_files is None:
             # Native module records already carry exact PNG fingerprints.
             checked_files = {}

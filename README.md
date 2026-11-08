@@ -3,6 +3,9 @@
 
 TileShift swaps world artwork through individually reviewed tile matches.
 
+Version 0.46.7 replaces carpet-shaped counter stand-ins across 39 Gen 2 public rooms with complete native counters, correct corner pieces and proper monitor or register details. Nine gates also get correctly mirrored side-door mats. Five remaining radios use complete CrystalDust stands. Native radio and bookcase headers use matching room walls behind their transparent pixels, and freestanding shop shelves use matching floors. Celadon Mansion’s upstairs bed uses the full native CrystalDust bed with its original size and correct foreground depth. Crystal’s hidden Alph item rooms regain complete native stone pedestals. Offshore borders use complete native rocks over animated water, affected coastal water uses a coherent native family, and the unused Safari layouts receive guarded replacements for available source artwork. Gold, Silver and Crystal keep their source layouts, walking rules, NPC positions, interactions and entrances.
+
+
 Version 0.46.6 polishes Violet City's house radios, compact Gym fixtures and Sprout Tower's Bellsprout painting with complete native CrystalDust artwork. Both house radios retain their full stands and matching room backing. The Gym panels and the entire framed painting keep their original pixel size. NPC positions, radio and painting interactions, source collision and other map artwork are unchanged in Gold, Silver and Crystal.
 
 Version 0.46.5 corrects the inside-left join of the upper counter in the Route 31 Violet gate. A matching native counter post keeps the gray and white inside edge continuous into the front bank. The terminal, mirrored entrance rugs, NPCs, counter interactions and walking rules are retained in Gold, Silver and Crystal.

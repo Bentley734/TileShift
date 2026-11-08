@@ -1,0 +1,292 @@
+{
+  "alpha_unchanged": true,
+  "assets": [
+    {
+      "asset": "assets/third_party/johto-hacks/celadon-mansion-bed/bed-foreground-0-0.png",
+      "assetFileHash": "5f84204f63335f4f70e397cedb6eac2303c511ece569118f0963e1ad9ff80d1f",
+      "assetPixelHash": "e51f1c494fd7f5ec091e5f74d920bb9242eb7220d5175b2f3ad5a54209f69748",
+      "cell": [
+        0,
+        0
+      ]
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/celadon-mansion-bed/bed-foreground-1-0.png",
+      "assetFileHash": "e0f80a271b9ed2cdf1ffc2089599a4e077cc544aa4de10af288bd141f7b07c49",
+      "assetPixelHash": "30bb6586e91149ab14faa37a7dccf0aeefebe1d60ba7fd227964df72a3c281c1",
+      "cell": [
+        1,
+        0
+      ]
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/celadon-mansion-bed/bed-foreground-0-1.png",
+      "assetFileHash": "424e74f9c6bcea3c115cf4c2528b65f268f3cfbeee7fd209aec7e054864d79d4",
+      "assetPixelHash": "2ce870df931043aa153d528dee44231e77bef94a0903bd8ea3b732d563738530",
+      "cell": [
+        0,
+        1
+      ]
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/celadon-mansion-bed/bed-foreground-1-1.png",
+      "assetFileHash": "d61ff55c22548be357f521961da7d0d05af3fee6da06b94faa12875ee4e8d6fd",
+      "assetPixelHash": "511ef93c9870b9060065cfdc7f213716c9f8419844b238c807155d3294b6e442",
+      "cell": [
+        1,
+        1
+      ]
+    }
+  ],
+  "bounds_xyxy": [
+    0,
+    99,
+    20,
+    128
+  ],
+  "complete_native_RGBA_preserved": true,
+  "complete_native_pixel_scale": 1,
+  "decorative_right_extension_pixels": 4,
+  "foreground_rows_added": 12,
+  "no_NPC_or_warp_overlap": true,
+  "placement_xy": [
+    0,
+    99
+  ],
+  "source_asset": "assets/third_party/johto-hacks/crystaldust-ship-beds/complete-native-bed20x29.png",
+  "source_blocked_core": [
+    [
+      0,
+      6
+    ],
+    [
+      0,
+      7
+    ]
+  ],
+  "source_clear_right_cells": [
+    [
+      1,
+      6
+    ],
+    [
+      1,
+      7
+    ]
+  ],
+  "source_core_rows_changed": 6,
+  "source_guards_unchanged": [
+    "game",
+    "style",
+    "map",
+    "tileset",
+    "id",
+    "quadrant",
+    "sourceHash",
+    "sourceFiles",
+    "sourceCells",
+    "sourceCollision",
+    "sourcePriority",
+    "sourcePalettes",
+    "sourceWarps"
+  ],
+  "source_map_receipts": [
+    {
+      "bgEvents": [
+        {
+          "kind": 0,
+          "script": 19276,
+          "scriptKey": "5e:4b4c",
+          "x": 0,
+          "y": 3
+        },
+        {
+          "kind": 1,
+          "script": 19279,
+          "scriptKey": "5e:4b4f",
+          "x": 5,
+          "y": 8
+        },
+        {
+          "kind": 0,
+          "script": 19282,
+          "scriptKey": "5e:4b52",
+          "x": 2,
+          "y": 3
+        }
+      ],
+      "game": "gold",
+      "map_definition_sha256": "e625dceed05ededb309b847dbd37df27a02ffc68c4f214a360bd9956bb132e28",
+      "objects": {},
+      "warps": [
+        {
+          "destGroup": 21,
+          "destMap": "CELADON_MANSION_1F",
+          "destMapNum": 12,
+          "destWarp": 4,
+          "x": 0,
+          "y": 0
+        },
+        {
+          "destGroup": 21,
+          "destMap": "CELADON_MANSION_3F",
+          "destMapNum": 14,
+          "destWarp": 2,
+          "x": 1,
+          "y": 0
+        },
+        {
+          "destGroup": 21,
+          "destMap": "CELADON_MANSION_3F",
+          "destMapNum": 14,
+          "destWarp": 3,
+          "x": 6,
+          "y": 0
+        },
+        {
+          "destGroup": 21,
+          "destMap": "CELADON_MANSION_1F",
+          "destMapNum": 12,
+          "destWarp": 5,
+          "x": 7,
+          "y": 0
+        }
+      ]
+    },
+    {
+      "bgEvents": [
+        {
+          "kind": 0,
+          "script": 19276,
+          "scriptKey": "5e:4b4c",
+          "x": 0,
+          "y": 3
+        },
+        {
+          "kind": 1,
+          "script": 19279,
+          "scriptKey": "5e:4b4f",
+          "x": 5,
+          "y": 8
+        },
+        {
+          "kind": 0,
+          "script": 19282,
+          "scriptKey": "5e:4b52",
+          "x": 2,
+          "y": 3
+        }
+      ],
+      "game": "silver",
+      "map_definition_sha256": "e625dceed05ededb309b847dbd37df27a02ffc68c4f214a360bd9956bb132e28",
+      "objects": {},
+      "warps": [
+        {
+          "destGroup": 21,
+          "destMap": "CELADON_MANSION_1F",
+          "destMapNum": 12,
+          "destWarp": 4,
+          "x": 0,
+          "y": 0
+        },
+        {
+          "destGroup": 21,
+          "destMap": "CELADON_MANSION_3F",
+          "destMapNum": 14,
+          "destWarp": 2,
+          "x": 1,
+          "y": 0
+        },
+        {
+          "destGroup": 21,
+          "destMap": "CELADON_MANSION_3F",
+          "destMapNum": 14,
+          "destWarp": 3,
+          "x": 6,
+          "y": 0
+        },
+        {
+          "destGroup": 21,
+          "destMap": "CELADON_MANSION_1F",
+          "destMapNum": 12,
+          "destWarp": 5,
+          "x": 7,
+          "y": 0
+        }
+      ]
+    },
+    {
+      "bgEvents": [
+        {
+          "kind": 0,
+          "script": 21808,
+          "scriptKey": "1c:5530",
+          "x": 0,
+          "y": 3
+        },
+        {
+          "kind": 1,
+          "script": 21811,
+          "scriptKey": "1c:5533",
+          "x": 5,
+          "y": 8
+        },
+        {
+          "kind": 0,
+          "script": 21814,
+          "scriptKey": "1c:5536",
+          "x": 2,
+          "y": 3
+        }
+      ],
+      "game": "crystal",
+      "map_definition_sha256": "13b3b70124587939ca3bd06640bdddb3d0e0495fe728b20439d3d398f2cf26b9",
+      "objects": {},
+      "warps": [
+        {
+          "destGroup": 21,
+          "destMap": "CELADON_MANSION_1F",
+          "destMapNum": 12,
+          "destWarp": 4,
+          "x": 0,
+          "y": 0
+        },
+        {
+          "destGroup": 21,
+          "destMap": "CELADON_MANSION_3F",
+          "destMapNum": 14,
+          "destWarp": 2,
+          "x": 1,
+          "y": 0
+        },
+        {
+          "destGroup": 21,
+          "destMap": "CELADON_MANSION_3F",
+          "destMapNum": 14,
+          "destWarp": 3,
+          "x": 6,
+          "y": 0
+        },
+        {
+          "destGroup": 21,
+          "destMap": "CELADON_MANSION_1F",
+          "destMapNum": 12,
+          "destWarp": 5,
+          "x": 7,
+          "y": 0
+        }
+      ]
+    }
+  ],
+  "source_png_sha256": "1e5a35e2d7a916ad1cbaf236b6ace4d6ba91dd9a4e828ef2d0fd333e9d926bfd",
+  "source_provenance": "assets/third_party/johto-hacks/crystaldust-ship-beds/provenance.json",
+  "source_provenance_sha256": "9514eefdfa6433716c3bd078a82edb143538fa456392f064016cfa556b6d8878",
+  "source_rgba_sha256": "aec6d2d04969f910fe6540188d8b06efaac4dcd81b3407a0e86f072fe07e5654",
+  "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+  "source_size": [
+    20,
+    29
+  ],
+  "status": "passed",
+  "whole_native_opaque_pixels": 522
+}

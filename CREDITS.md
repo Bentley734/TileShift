@@ -424,3 +424,20 @@ provenance.json. No original layout, entrance or NPC coordinates are moved.
 The Hoenn submarine replacement uses one original vessel created with the built-in image generator. Its whole 64×48 canvas was normalized with uniform integer nearest-neighbor reduction and split at native 16-pixel boundaries. Generation and piece fingerprints are in `assets/original/classic-submarine/provenance.json`. Other named regional four-color derivatives are drawn at runtime from the player’s own imported native geometry.
 
 Clinic Chansey borrows the player-selected prepared overworld artwork from WildFollowers when that mod is active; TileShift does not copy or redistribute those sprite packs. Without the optional provider, the directional native Gen 2 Fairy overworld sprite and Chansey color palette come from the player import. The clinic-specific Companion-to-EE selection uses the WildFollowers public provider; it does not change that mod's global sprite preferences. The native FireRed wall/floor backing replaces only the former decorative control PC.
+
+Native public-room counters and remaining radios (0.46.7): the counter fronts,
+corners and returns use complete native FireRed house modules also used
+pixel-for-pixel by CrystalDust. Native FireGold monitor/keyboard details
+and complete CrystalDust radio stands reuse their existing credited assets.
+Celadon Mansion2F uses the complete native20x29 CrystalDust medical bed;
+four transparent foreground cells preserve its522 opaque pixels and depth.
+All pieces retain original pixel size. Counter footprints, room layouts,
+source interactions, actors, collision and warps remain unchanged.
+Transparent radio and bookcase backdrops use the actual selected native room
+wall and floor modules, with all opaque furniture artwork unchanged.
+Alph item stands use complete native CrystalDust632/640 modules, including
+their matching floor and base. Offshore stones reuse the existing complete
+CrystalDust16px rock; coastal water uses the native Emerald368 eight-frame
+family. Unused Safari layouts reuse verified native counterparts and retain
+whole original ornament geometry where required; missing source placeholders
+are preserved. No source ROMs are included.

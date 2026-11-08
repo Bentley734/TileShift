@@ -141,6 +141,15 @@ function R.new(ctx)
       and row.sourceHash=='72121c5cd7c189b972a20a70e9d1510f288c87735317e7d61fe67ab6746bf4c0'
       and row.sourceCollision==7 and row.role=='crystaldust_complete_red_house_bed'
       and row.x>=0 and row.x<=1 and row.y>=5 and row.y<=7 and row.frontY==128
+    local celadonBed=coords and row.furniture=='celadon_mansion_bed'
+      and(row.game=='gold'or row.game=='silver'or row.game=='crystal')
+      and row.map=='CELADON_MANSION_2F'and row.tileset=='TILESET_MANSION'
+      and row.id==20 and row.quadrant==0 and row.anchorX==0 and row.anchorY==6
+      and row.sourceHash=='3de9891e182a5340ff15d420f5383fdde549c73df43b59d672ca52da02da00fc'
+      and row.sourceCollision==7 and row.role=='crystaldust_complete_celadon_mansion_bed'
+      and row.footX==0 and row.footY==7 and row.footId==20 and row.footQuadrant==2
+      and row.footHash=='76fb1ccc1b4a6b279f94bfdbf3d736034a1c500a9ceb8449f08eed6f79a3903f'
+      and row.x>=0 and row.x<=1 and row.y>=6 and row.y<=7 and row.frontY==128
     local shipGames=shipBedAnchors[row.game]
     local shipMap=shipGames and shipGames[row.map]
     local shipSource=shipMap and shipMap[tostring(row.anchorX)..':'..tostring(row.anchorY)]
@@ -153,7 +162,7 @@ function R.new(ctx)
       and row.x>=row.anchorX-1 and row.x<=row.anchorX and row.y>=row.anchorY and row.y<=row.anchorY+1
     local checked={};for k,v in pairs(row)do checked[k]=v end
     checked.x,checked.y=row.anchorX,row.anchorY
-    assert((bed or pc or carpet or shrine or lighthouseBed or lighthouseTable or linkMachine or battleMachine or upperPC or redBed or shipBed or mrPokemonPC)and row.style=='gen3'and row.kind=='third_party'
+    assert((bed or pc or carpet or shrine or lighthouseBed or lighthouseTable or linkMachine or battleMachine or upperPC or redBed or shipBed or celadonBed or mrPokemonPC)and row.style=='gen3'and row.kind=='third_party'
       and row.sourceFiles and type(row.assetFileHash)=='string'and #row.assetFileHash==64
       and not(row.base or row.donor or row.parts or row.canopy or row.animated or row.foreground or row.occludes)
       and not(row.side or row.sourceX or row.sourceY or row.animation or row.frames or row.assetFrames or row.artOverlay or row.overMask)
@@ -168,7 +177,7 @@ function R.new(ctx)
     if not maps.seen[anchorKey]then
       maps.seen[anchorKey]=true;maps.anchors[#maps.anchors+1]={x=row.anchorX,y=row.anchorY}
     end
-    if shipBed then
+    if shipBed or celadonBed then
       local footKey=math.floor(row.footY/2)..':'..math.floor(row.footX/2)
       if not maps.seen[footKey]then
         maps.seen[footKey]=true;maps.anchors[#maps.anchors+1]={x=row.footX,y=row.footY}
@@ -228,14 +237,14 @@ function R.new(ctx)
           quadrant=row.quadrant,hash=row.sourceHash,hashOnly=true,map=def,
           monochrome=true,sourceFiles=row.sourceFiles})
         assert(source,why or'Roof source fingerprint changed')
-        if isFurniture and row.furniture=='ship_bed'then
+        if isFurniture and(row.furniture=='ship_bed'or row.furniture=='celadon_mansion_bed')then
           local footBid=def.blocks[math.floor(row.footY/2)*def.width+math.floor(row.footX/2)+1]
           assert(footBid==row.footId and row.footQuadrant==row.footY%2*2+row.footX%2,
-            'Complete ship bed source foot changed')
+            'Complete native bed source foot changed')
           local foot,footWhy=ctx.donor:cell({game=game,tileset=row.tileset,id=row.footId,
             quadrant=row.footQuadrant,hash=row.footHash,hashOnly=true,map=def,
             monochrome=true,sourceFiles=row.sourceFiles})
-          assert(foot,footWhy or'Complete ship bed foot fingerprint changed')
+          assert(foot,footWhy or'Complete native bed foot fingerprint changed')
         end
 
         if row.parts then
@@ -264,6 +273,15 @@ function R.new(ctx)
               local wx,wy=x*16+px,y*16+py
               assert(alpha==0 or(wx>=49 and wx<111 and wy>=43 and wy<80),
                 'Link apparatus foreground escapes its complete native62x37 envelope')
+            end end
+          end
+          if row.furniture=='celadon_mansion_bed'then
+            assert(def.width==4 and def.height==5,'Celadon bedroom source bounds changed')
+            for py=0,15 do for px=0,15 do
+              local _,_,_,alpha=image:getPixel(px,py)
+              local wx,wy=x*16+px,y*16+py
+              assert(alpha==0 or(wx>=0 and wx<20 and wy>=99 and wy<128),
+                'Celadon bed foreground escapes its complete native20x29 envelope')
             end end
           end
           if row.furniture=='pokecenter_upper_pc'or row.furniture=='red_house_bed'or row.furniture=='ship_bed'then
