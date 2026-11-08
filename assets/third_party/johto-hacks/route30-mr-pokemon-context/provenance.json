@@ -1,0 +1,76 @@
+{
+  "format": 1,
+  "origin": "CrystalDust / Sierraffinity and contributors",
+  "sourceUrl": "https://github.com/Sierraffinity/CrystalDust",
+  "recipe": "Exact native complete bookcase/computer foreground over exact native wall module; no scaling or color keying.",
+  "compositions": [
+    {
+      "output": "bookcase-wall-b95b41c61a1c67f6.png",
+      "output_rgba_sha256": "b95b41c61a1c67f68da64a6db560eaee83aa0ba8b5d3370cfc6f6dd43c08c9b6",
+      "native_wall": {
+        "asset": "assets/third_party/johto-hacks/route30-mr-pokemon/wall-upper.png",
+        "sha256": "cc7577b1472c719ddfe42f57694a924efb6aa85dbab7bd8afb5d67dca9ff9539"
+      },
+      "native_foreground": {
+        "asset": "assets/third_party/johto-hacks/crystaldust-bookcases/blue-bookcase-cell-0.png",
+        "sha256": "e7c927d02afb98bfea0683aad9bba01c4b438926d11ad30ed775e958f081da69",
+        "rgba_sha256": "6a0c4c410658cad5d47c3df89febdc1ee680bbaf07661f75c3dde649c08d5f34"
+      },
+      "canvas": [
+        16,
+        16
+      ],
+      "offset": [
+        0,
+        0
+      ]
+    },
+    {
+      "output": "computer-wall-0.png",
+      "output_rgba_sha256": "e381b1a785c8360619120c6f71fd5db0a1111236507a83ab9ea91c8b8cdcf764",
+      "native_wall": {
+        "asset": "assets/third_party/johto-hacks/route30-mr-pokemon/wall-upper.png",
+        "sha256": "cc7577b1472c719ddfe42f57694a924efb6aa85dbab7bd8afb5d67dca9ff9539"
+      },
+      "native_foreground": {
+        "asset": "assets/third_party/johto-hacks/newbark-cd-lab/wall-pc-cell-0-0.png",
+        "sha256": "77d467cde91a86fed49c380dba965aa141eb0c0d4a91938268ce66bcedf882a6",
+        "rgba_sha256": "1fc86e0ec346c44075f4a3b1a2ae53deb40ed293d9f2089d8b8943e20ee0d16e"
+      },
+      "canvas": [
+        16,
+        16
+      ],
+      "offset": [
+        0,
+        0
+      ]
+    },
+    {
+      "output": "computer-wall-1.png",
+      "output_rgba_sha256": "9bae4b16041f4382e5364bc81f7a7a4448f6700d494f81e57c1af9d17dbee69c",
+      "native_wall": {
+        "asset": "assets/third_party/johto-hacks/route30-mr-pokemon/wall-upper.png",
+        "sha256": "cc7577b1472c719ddfe42f57694a924efb6aa85dbab7bd8afb5d67dca9ff9539"
+      },
+      "native_foreground": {
+        "asset": "assets/third_party/johto-hacks/newbark-cd-lab/wall-pc-cell-1-0.png",
+        "sha256": "bb61662b43dbd41595305a3625330943ae69b008af261e11951687d2aa9e5fe9",
+        "rgba_sha256": "963219054401512bbf7a4cf068c4ccaf463a56b3a6e7f704e5ba9030d0201d30"
+      },
+      "canvas": [
+        16,
+        16
+      ],
+      "offset": [
+        0,
+        0
+      ]
+    }
+  ],
+  "files": {
+    "bookcase-wall-b95b41c61a1c67f6.png": "31bd438622060144fe65525451da86bbeb013056b5f9ab91ec93a962d4b45bd9",
+    "computer-wall-0.png": "ed2b5e02d16b570f681d6ee9f50621c4859956fb5f28430461e333fb9fc0b8b3",
+    "computer-wall-1.png": "f597fb765f32e2ab80ab739607e75954b8fe672db004556c383aa5b119e52937"
+  }
+}

@@ -1,5 +1,19 @@
 # Artwork credits
 
+## Route 30 and Mr. Pokemon's House (0.46.1)
+
+The complete front-facing computer and blue sofa use native CrystalDust artwork by
+Sierraffinity and contributors, extracted from the user's supplied ROM.
+Complete native modules retain their original pixel scale and alpha. Sofa
+pieces over the wall combine only their original native layers with the
+matching CrystalDust wall. The matching floor and wall-floor transition are
+pixel-identical to FireRed's native Oak Lab modules 129 and 121.
+Source ROM, map, plane, rectangle, composition and file/pixel fingerprints
+accompany the artwork in
+`assets/third_party/johto-hacks/route30-mr-pokemon/provenance.json`. The computer
+reuses the complete native monitor, tower, desk and feet already credited in
+`assets/third_party/johto-hacks/newbark-cd-lab/`, with no stool.
+
 ## Complete Mart displays and Cherrygrove side banks (0.46.0)
 
 Mart front cabinets use six complete native 16x16 CrystalDust modules by

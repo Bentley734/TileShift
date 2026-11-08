@@ -366,4 +366,14 @@ for _,group in ipairs(groups)do
     rows[#rows+1]=row
   end
 end
+-- BEGIN ROUTE30 MR POKEMON MIGRATION
+-- This room now uses complete source-guarded CrystalDust artwork in
+-- route30_mr_pokemon.lua. The authoring builder also excludes this room.
+-- Filter only its superseded records; retain every other facility unchanged.
+local retained={}
+for _,row in ipairs(rows)do
+  if row.map~='MR_POKEMONS_HOUSE' then retained[#retained+1]=row end
+end
+rows=retained
+-- END ROUTE30 MR POKEMON MIGRATION
 return rows

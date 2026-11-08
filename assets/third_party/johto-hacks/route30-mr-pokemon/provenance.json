@@ -1,0 +1,621 @@
+{
+  "format": 1,
+  "origin": "CrystalDust by Sierraffinity and contributors",
+  "sourceUrl": "https://github.com/Sierraffinity/CrystalDust",
+  "purpose": "Route 30 Mr. Pokemon house: complete native sofa and matching intact wall/floor modules.",
+  "recipe": "Copy complete native 16x16 modules at 1:1. Optional sofa-upper pieces retain original TOP-plane alpha. Sofa FLAT pieces and matching wall/floor retain exact native FLAT composition. Two sofa-upper-wall pieces alpha-composite intact native sofa TOP over matching native wall-upper FLAT. No color keying, recoloring, partial equipment crops or fractional scaling.",
+  "rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+  "catalog_sha256": "fd8fbaf6eb4ee3774e3fe046bf3b506e7f638ab4cd9297c9f62a8bb1189bc740",
+  "source_metatiles_sha256": "661dbf9b82f55261733ebddb4b111c88dbea7b87bc07f75af8272365293902af",
+  "source_map": {
+    "id": "g02_m006",
+    "group": 2,
+    "num": 6,
+    "header_offset": 15049992,
+    "layout_offset": 15050208,
+    "width": 8,
+    "height": 9,
+    "region": 17,
+    "map_type": 8,
+    "layout_id": 445,
+    "primary_tileset": 138279044,
+    "secondary_tileset": 138279692,
+    "grid_offset": 15050028,
+    "border_offset": 15050020,
+    "warps": [
+      {
+        "x": 2,
+        "y": 7,
+        "elevation": 0,
+        "dest_warp": 1,
+        "dest_num": 17,
+        "dest_group": 0
+      }
+    ],
+    "pair": "083df884_083dfb0c",
+    "grid": [
+      1131,
+      1132,
+      1129,
+      1129,
+      1129,
+      1129,
+      1592,
+      1593,
+      1139,
+      1140,
+      1569,
+      1570,
+      1137,
+      1137,
+      1600,
+      1601,
+      12981,
+      12412,
+      12975,
+      12976,
+      12409,
+      12409,
+      1560,
+      1561,
+      12416,
+      12417,
+      12908,
+      12909,
+      12896,
+      12898,
+      12909,
+      12859,
+      12416,
+      12417,
+      12919,
+      12977,
+      1640,
+      1708,
+      1602,
+      1603,
+      12416,
+      12417,
+      12919,
+      12978,
+      1648,
+      1650,
+      12979,
+      12980,
+      12427,
+      12417,
+      12916,
+      12917,
+      12917,
+      12917,
+      12832,
+      12918,
+      1171,
+      12424,
+      12425,
+      12426,
+      12417,
+      12417,
+      12417,
+      12417,
+      1032,
+      1050,
+      1051,
+      1052,
+      1032,
+      1032,
+      1032,
+      1032
+    ]
+  },
+  "source_map_origin": [
+    0,
+    0
+  ],
+  "source_map_padding": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "source_map_pixel_size": [
+    128,
+    144
+  ],
+  "source_map_rgba_sha256": "aa30d8c13c270903732de187c321193e5c1f60d56155cee14f4206a846fd8cc4",
+  "source_planes": {
+    "bottom": {
+      "path": "C:\\Users\\LSDMTHC\\Desktop\\Hoennto\\.work\\tileshift-firegold\\crystaldust\\pairs\\083df884_083dfb0c\\bottom.png",
+      "sha256": "a617d894b440b7cdfe083ae3f7cfa4b8a1d2b0b1b86900c236c9cc3b94abe3e4"
+    },
+    "top": {
+      "path": "C:\\Users\\LSDMTHC\\Desktop\\Hoennto\\.work\\tileshift-firegold\\crystaldust\\pairs\\083df884_083dfb0c\\top.png",
+      "sha256": "3dfd05c0f5e0eab874ff4da0374899825a8625b28fd848d3dfea56e69682ffca"
+    },
+    "flat": {
+      "path": "C:\\Users\\LSDMTHC\\Desktop\\Hoennto\\.work\\tileshift-firegold\\crystaldust\\pairs\\083df884_083dfb0c\\flat.png",
+      "sha256": "f17a831d87b43cbd538e7f7b738f9f5d00e135c34aeb10e5670d79712188fda2"
+    }
+  },
+  "source_alpha_unchanged": true,
+  "scale": 1,
+  "files": {
+    "sofa-0-0.png": "33d6c1599764775c29dd8e99c03a5b98c9189a7d687c8b56756adaa45a4ec24f",
+    "sofa-1-0.png": "68c706e40d9684357e974998abacd093e60e41b2090a1b06dd2ccc797af6b9bd",
+    "sofa-0-1.png": "f01fca73985ffd96357eb5af56fe753871fce5f7f7d14e6d306ea6ae5cab2f39",
+    "sofa-1-1.png": "3ab0dceea0d0279e95c5252874915a62f9b7f7a63c8e9a5ba394bec208458cf3",
+    "complete-native-sofa.png": "f7e13b425279d977bca71f7aa5c9a278038fbf6e50446a73fe1ebc4a83df5cf4",
+    "wall-upper.png": "cc7577b1472c719ddfe42f57694a924efb6aa85dbab7bd8afb5d67dca9ff9539",
+    "wall-lower.png": "9247986a78a716c552db292f0592228471feb2f8c86bd20b5aaf52d779107030",
+    "wall-floor-base.png": "c63e274633550a4ecf8de6c1e0e8b466248abf04c6c3990e5a020abb1363b75e",
+    "floor-plain.png": "22423755cd1b60642565a598ebe3fdb78c87c0ee8adf77b9fbf6ac266848c029",
+    "sofa-upper-top-0.png": "d44fa9173d2563801917d063389f27b37ca8da5046a5097f6f626cb10081c224",
+    "sofa-upper-top-1.png": "ecaa1558d030b9ed636da4a76bde6fb38227bd23cf96e0029004fa3757f5ec37",
+    "sofa-upper-wall-0.png": "01e7820ca2d699f4dfda6c306cf40528633d247f12aa24789c2657ab6586ece9",
+    "sofa-upper-wall-1.png": "841fe3a2411383c9ee48f03575031f814f740f6639152ab5471b8778ef7a1e06"
+  },
+  "source_modules": {
+    "sofa-0-0": {
+      "asset": "assets/third_party/johto-hacks/route30-mr-pokemon/sofa-0-0.png",
+      "assetFileHash": "33d6c1599764775c29dd8e99c03a5b98c9189a7d687c8b56756adaa45a4ec24f",
+      "assetPixelHash": "e9f5d407b67653edbdc5bb6cb95e998880cc742e64148439f61bcf981e7afb56",
+      "credit": "CrystalDust by Sierraffinity and contributors",
+      "sourceUrl": "https://github.com/Sierraffinity/CrystalDust",
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "source_map": "g02_m006",
+      "source_pair": "083df884_083dfb0c",
+      "source_map_cell": [
+        2,
+        1
+      ],
+      "native_grid_value": 1569,
+      "donor_mid": 545,
+      "donor_plane": "flat",
+      "source_rect": [
+        16,
+        544,
+        16,
+        16
+      ],
+      "source_map_rect": [
+        32,
+        16,
+        16,
+        16
+      ],
+      "source_metatile_flat_sha256": "e9f5d407b67653edbdc5bb6cb95e998880cc742e64148439f61bcf981e7afb56",
+      "native_alpha_unchanged": true,
+      "logical_size": [
+        16,
+        16
+      ],
+      "integer_scale": 1
+    },
+    "sofa-1-0": {
+      "asset": "assets/third_party/johto-hacks/route30-mr-pokemon/sofa-1-0.png",
+      "assetFileHash": "68c706e40d9684357e974998abacd093e60e41b2090a1b06dd2ccc797af6b9bd",
+      "assetPixelHash": "0ecaf75617f808fc443d3ae0058517b38785f6c1ff8b6e47e271ba8cc0f2d929",
+      "credit": "CrystalDust by Sierraffinity and contributors",
+      "sourceUrl": "https://github.com/Sierraffinity/CrystalDust",
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "source_map": "g02_m006",
+      "source_pair": "083df884_083dfb0c",
+      "source_map_cell": [
+        3,
+        1
+      ],
+      "native_grid_value": 1570,
+      "donor_mid": 546,
+      "donor_plane": "flat",
+      "source_rect": [
+        32,
+        544,
+        16,
+        16
+      ],
+      "source_map_rect": [
+        48,
+        16,
+        16,
+        16
+      ],
+      "source_metatile_flat_sha256": "0ecaf75617f808fc443d3ae0058517b38785f6c1ff8b6e47e271ba8cc0f2d929",
+      "native_alpha_unchanged": true,
+      "logical_size": [
+        16,
+        16
+      ],
+      "integer_scale": 1
+    },
+    "sofa-0-1": {
+      "asset": "assets/third_party/johto-hacks/route30-mr-pokemon/sofa-0-1.png",
+      "assetFileHash": "f01fca73985ffd96357eb5af56fe753871fce5f7f7d14e6d306ea6ae5cab2f39",
+      "assetPixelHash": "a1a5973f20844d2803a4148b2701a5a4b2682979f99d231a646ceb2c16428bc3",
+      "credit": "CrystalDust by Sierraffinity and contributors",
+      "sourceUrl": "https://github.com/Sierraffinity/CrystalDust",
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "source_map": "g02_m006",
+      "source_pair": "083df884_083dfb0c",
+      "source_map_cell": [
+        2,
+        2
+      ],
+      "native_grid_value": 12975,
+      "donor_mid": 687,
+      "donor_plane": "flat",
+      "source_rect": [
+        240,
+        672,
+        16,
+        16
+      ],
+      "source_map_rect": [
+        32,
+        32,
+        16,
+        16
+      ],
+      "source_metatile_flat_sha256": "a1a5973f20844d2803a4148b2701a5a4b2682979f99d231a646ceb2c16428bc3",
+      "native_alpha_unchanged": true,
+      "logical_size": [
+        16,
+        16
+      ],
+      "integer_scale": 1
+    },
+    "sofa-1-1": {
+      "asset": "assets/third_party/johto-hacks/route30-mr-pokemon/sofa-1-1.png",
+      "assetFileHash": "3ab0dceea0d0279e95c5252874915a62f9b7f7a63c8e9a5ba394bec208458cf3",
+      "assetPixelHash": "c9d5d158644a055150dafa05ba3eca9b6990fa7fe94c40fde20aede09b99de92",
+      "credit": "CrystalDust by Sierraffinity and contributors",
+      "sourceUrl": "https://github.com/Sierraffinity/CrystalDust",
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "source_map": "g02_m006",
+      "source_pair": "083df884_083dfb0c",
+      "source_map_cell": [
+        3,
+        2
+      ],
+      "native_grid_value": 12976,
+      "donor_mid": 688,
+      "donor_plane": "flat",
+      "source_rect": [
+        0,
+        688,
+        16,
+        16
+      ],
+      "source_map_rect": [
+        48,
+        32,
+        16,
+        16
+      ],
+      "source_metatile_flat_sha256": "c9d5d158644a055150dafa05ba3eca9b6990fa7fe94c40fde20aede09b99de92",
+      "native_alpha_unchanged": true,
+      "logical_size": [
+        16,
+        16
+      ],
+      "integer_scale": 1
+    },
+    "wall-upper": {
+      "asset": "assets/third_party/johto-hacks/route30-mr-pokemon/wall-upper.png",
+      "assetFileHash": "cc7577b1472c719ddfe42f57694a924efb6aa85dbab7bd8afb5d67dca9ff9539",
+      "assetPixelHash": "304638882a75e3363c203b50b363db73539ba3244faafd874ebc7a68cb3a9b3e",
+      "credit": "CrystalDust by Sierraffinity and contributors",
+      "sourceUrl": "https://github.com/Sierraffinity/CrystalDust",
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "source_map": "g02_m006",
+      "source_pair": "083df884_083dfb0c",
+      "source_map_cell": [
+        2,
+        0
+      ],
+      "native_grid_value": 1129,
+      "donor_mid": 105,
+      "donor_plane": "flat",
+      "source_rect": [
+        144,
+        96,
+        16,
+        16
+      ],
+      "source_map_rect": [
+        32,
+        0,
+        16,
+        16
+      ],
+      "source_metatile_flat_sha256": "304638882a75e3363c203b50b363db73539ba3244faafd874ebc7a68cb3a9b3e",
+      "native_alpha_unchanged": true,
+      "logical_size": [
+        16,
+        16
+      ],
+      "integer_scale": 1
+    },
+    "wall-lower": {
+      "asset": "assets/third_party/johto-hacks/route30-mr-pokemon/wall-lower.png",
+      "assetFileHash": "9247986a78a716c552db292f0592228471feb2f8c86bd20b5aaf52d779107030",
+      "assetPixelHash": "1b92d0d577525626948fd15382d9369413e21280486e9aae02b1a32baebdad5d",
+      "credit": "CrystalDust by Sierraffinity and contributors",
+      "sourceUrl": "https://github.com/Sierraffinity/CrystalDust",
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "source_map": "g02_m006",
+      "source_pair": "083df884_083dfb0c",
+      "source_map_cell": [
+        4,
+        1
+      ],
+      "native_grid_value": 1137,
+      "donor_mid": 113,
+      "donor_plane": "flat",
+      "source_rect": [
+        16,
+        112,
+        16,
+        16
+      ],
+      "source_map_rect": [
+        64,
+        16,
+        16,
+        16
+      ],
+      "source_metatile_flat_sha256": "1b92d0d577525626948fd15382d9369413e21280486e9aae02b1a32baebdad5d",
+      "native_alpha_unchanged": true,
+      "logical_size": [
+        16,
+        16
+      ],
+      "integer_scale": 1
+    },
+    "wall-floor-base": {
+      "asset": "assets/third_party/johto-hacks/route30-mr-pokemon/wall-floor-base.png",
+      "assetFileHash": "c63e274633550a4ecf8de6c1e0e8b466248abf04c6c3990e5a020abb1363b75e",
+      "assetPixelHash": "189101c21fca48dc49091797818a2eba8f363ba9ac9e22cfe5d162184b2062ec",
+      "credit": "CrystalDust by Sierraffinity and contributors",
+      "sourceUrl": "https://github.com/Sierraffinity/CrystalDust",
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "source_map": "g02_m006",
+      "source_pair": "083df884_083dfb0c",
+      "source_map_cell": [
+        4,
+        2
+      ],
+      "native_grid_value": 12409,
+      "donor_mid": 121,
+      "donor_plane": "flat",
+      "source_rect": [
+        144,
+        112,
+        16,
+        16
+      ],
+      "source_map_rect": [
+        64,
+        32,
+        16,
+        16
+      ],
+      "source_metatile_flat_sha256": "189101c21fca48dc49091797818a2eba8f363ba9ac9e22cfe5d162184b2062ec",
+      "native_alpha_unchanged": true,
+      "logical_size": [
+        16,
+        16
+      ],
+      "integer_scale": 1
+    },
+    "floor-plain": {
+      "asset": "assets/third_party/johto-hacks/route30-mr-pokemon/floor-plain.png",
+      "assetFileHash": "22423755cd1b60642565a598ebe3fdb78c87c0ee8adf77b9fbf6ac266848c029",
+      "assetPixelHash": "ec35a71354fcd15e2816b2c8c8dc295dbda227da4f978001311bfe0e5b643b12",
+      "credit": "CrystalDust by Sierraffinity and contributors",
+      "sourceUrl": "https://github.com/Sierraffinity/CrystalDust",
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "source_map": "g02_m006",
+      "source_pair": "083df884_083dfb0c",
+      "source_map_cell": [
+        1,
+        3
+      ],
+      "native_grid_value": 12417,
+      "donor_mid": 129,
+      "donor_plane": "flat",
+      "source_rect": [
+        16,
+        128,
+        16,
+        16
+      ],
+      "source_map_rect": [
+        16,
+        48,
+        16,
+        16
+      ],
+      "source_metatile_flat_sha256": "ec35a71354fcd15e2816b2c8c8dc295dbda227da4f978001311bfe0e5b643b12",
+      "native_alpha_unchanged": true,
+      "logical_size": [
+        16,
+        16
+      ],
+      "integer_scale": 1
+    },
+    "sofa-upper-top-0": {
+      "asset": "assets/third_party/johto-hacks/route30-mr-pokemon/sofa-upper-top-0.png",
+      "assetFileHash": "d44fa9173d2563801917d063389f27b37ca8da5046a5097f6f626cb10081c224",
+      "assetPixelHash": "93d1876d03639061257fe0bfbcd8e9fb4fd0220120dc95e8898cbee9b387127e",
+      "credit": "CrystalDust by Sierraffinity and contributors",
+      "sourceUrl": "https://github.com/Sierraffinity/CrystalDust",
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "source_map": "g02_m006",
+      "source_pair": "083df884_083dfb0c",
+      "source_map_cell": [
+        2,
+        1
+      ],
+      "native_grid_value": 1569,
+      "donor_mid": 545,
+      "donor_plane": "top",
+      "source_rect": [
+        16,
+        544,
+        16,
+        16
+      ],
+      "source_map_rect": [
+        32,
+        16,
+        16,
+        16
+      ],
+      "source_metatile_flat_sha256": "e9f5d407b67653edbdc5bb6cb95e998880cc742e64148439f61bcf981e7afb56",
+      "native_alpha_unchanged": true,
+      "logical_size": [
+        16,
+        16
+      ],
+      "integer_scale": 1
+    },
+    "sofa-upper-top-1": {
+      "asset": "assets/third_party/johto-hacks/route30-mr-pokemon/sofa-upper-top-1.png",
+      "assetFileHash": "ecaa1558d030b9ed636da4a76bde6fb38227bd23cf96e0029004fa3757f5ec37",
+      "assetPixelHash": "b9af2d2ce78768adb09da28942230a6731344863b68bb4eea541d135ebe1786d",
+      "credit": "CrystalDust by Sierraffinity and contributors",
+      "sourceUrl": "https://github.com/Sierraffinity/CrystalDust",
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "source_map": "g02_m006",
+      "source_pair": "083df884_083dfb0c",
+      "source_map_cell": [
+        3,
+        1
+      ],
+      "native_grid_value": 1570,
+      "donor_mid": 546,
+      "donor_plane": "top",
+      "source_rect": [
+        32,
+        544,
+        16,
+        16
+      ],
+      "source_map_rect": [
+        48,
+        16,
+        16,
+        16
+      ],
+      "source_metatile_flat_sha256": "0ecaf75617f808fc443d3ae0058517b38785f6c1ff8b6e47e271ba8cc0f2d929",
+      "native_alpha_unchanged": true,
+      "logical_size": [
+        16,
+        16
+      ],
+      "integer_scale": 1
+    }
+  },
+  "compositions": {
+    "sofa-upper-wall-0.png": {
+      "asset": "assets/third_party/johto-hacks/route30-mr-pokemon/sofa-upper-wall-0.png",
+      "assetFileHash": "01e7820ca2d699f4dfda6c306cf40528633d247f12aa24789c2657ab6586ece9",
+      "assetPixelHash": "d82ed44403dbdd62927592d440ed50d2837407eb463aaf9516e46bf2800ffa82",
+      "credit": "CrystalDust by Sierraffinity and contributors",
+      "sourceUrl": "https://github.com/Sierraffinity/CrystalDust",
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "source_map": "g02_m006",
+      "source_pair": "083df884_083dfb0c",
+      "composition": "Exact native wall-upper FLAT + complete native sofa upper TOP, both at (0,0).",
+      "base_module": "wall-upper",
+      "overlay_module": "sofa-upper-top-0",
+      "base_rgba_sha256": "304638882a75e3363c203b50b363db73539ba3244faafd874ebc7a68cb3a9b3e",
+      "overlay_rgba_sha256": "93d1876d03639061257fe0bfbcd8e9fb4fd0220120dc95e8898cbee9b387127e",
+      "native_overlay_alpha_unchanged": true,
+      "logical_size": [
+        16,
+        16
+      ],
+      "integer_scale": 1
+    },
+    "sofa-upper-wall-1.png": {
+      "asset": "assets/third_party/johto-hacks/route30-mr-pokemon/sofa-upper-wall-1.png",
+      "assetFileHash": "841fe3a2411383c9ee48f03575031f814f740f6639152ab5471b8778ef7a1e06",
+      "assetPixelHash": "204f9915d51fa48f29a0a674ad8a658487bfb9f0c3fc13c46fc43855ed6fdff0",
+      "credit": "CrystalDust by Sierraffinity and contributors",
+      "sourceUrl": "https://github.com/Sierraffinity/CrystalDust",
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "source_map": "g02_m006",
+      "source_pair": "083df884_083dfb0c",
+      "composition": "Exact native wall-upper FLAT + complete native sofa upper TOP, both at (0,0).",
+      "base_module": "wall-upper",
+      "overlay_module": "sofa-upper-top-1",
+      "base_rgba_sha256": "304638882a75e3363c203b50b363db73539ba3244faafd874ebc7a68cb3a9b3e",
+      "overlay_rgba_sha256": "b9af2d2ce78768adb09da28942230a6731344863b68bb4eea541d135ebe1786d",
+      "native_overlay_alpha_unchanged": true,
+      "logical_size": [
+        16,
+        16
+      ],
+      "integer_scale": 1
+    }
+  },
+  "assemblies": {
+    "sofa": {
+      "origin": [
+        2,
+        1
+      ],
+      "size": [
+        2,
+        2
+      ],
+      "plane": "flat",
+      "note": "Complete native sofa and its existing wall/floor background. Lower sofa metatiles use native bottom graphics.",
+      "parts": [
+        {
+          "module": "sofa-0-0",
+          "destination": [
+            0,
+            0
+          ]
+        },
+        {
+          "module": "sofa-1-0",
+          "destination": [
+            16,
+            0
+          ]
+        },
+        {
+          "module": "sofa-0-1",
+          "destination": [
+            0,
+            16
+          ]
+        },
+        {
+          "module": "sofa-1-1",
+          "destination": [
+            16,
+            16
+          ]
+        }
+      ],
+      "asset": "complete-native-sofa.png",
+      "rgba_sha256": "832dde89dd7dbdb67d1ef26e10ddc66dcba5872d14dcb8ef52605931fa31878b",
+      "source_map_rect": [
+        32,
+        16,
+        32,
+        32
+      ],
+      "native_object_bounds": [
+        0,
+        0,
+        32,
+        32
+      ]
+    }
+  }
+}

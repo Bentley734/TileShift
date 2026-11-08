@@ -22,6 +22,7 @@ return function(mod)
     'mappings/johto_bedroom_decorations.lua',
     'mappings/gen2_crystaldust_interior_callback_states.lua',
     'mappings/gen2_crystaldust_bookcases.lua',
+    'mappings/route30_mr_pokemon.lua',
     'mappings/crystaldust_route19_rockfall.lua',
     'mappings/crystaldust_special_runtime.lua',
     'mappings/crystaldust_field_states.lua',

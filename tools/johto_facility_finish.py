@@ -4,11 +4,17 @@ import gen2_extended_review as e
 from johto_family_review import FamilyReview,ROOT
 from native_room_parts import RoomParts
 f=FamilyReview('facility',{'TILESET_FACILITY'});rocket=RoomParts(f.imp,'firered','FR_ROCKET_HIDEOUT_B1F');lab=RoomParts(f.imp,'firered','FR_OAKS_LAB');power=RoomParts(f.imp,'firered','FR_POWER_PLANT');electric=RoomParts(f.imp,'emerald','EM_MAUVILLE_CITY_GYM');club=RoomParts(f.imp,'emerald','EM_SLATEPORT_CITY_POKEMON_FAN_CLUB')
+# `scenes` below is only a preview list. Bound actual authoring separately so
+# even rebuilding before the room-specific module exists cannot reclaim it.
+f.maps=set().union(*(set(f.imp.table(game,'maps'))for game in e.GAMES))-{'MR_POKEMONS_HOUSE'}
 floor=rocket.ref(641);wall=rocket.ref(649)
 club_native=f.imp.gba('emerald',club.map)[0]
 sofa_bg={v for v in club_native.crop((80,72,144,96)).get_flattened_data()if v[0]>v[1]and v[0]>v[2]}
 sofa_outside=club.exterior(80,72,64,24,sofa_bg)
-tables_by_map={'MR_POKEMONS_HOUSE':[(4,4,2)],'RUINS_OF_ALPH_RESEARCH_CENTER':[(4,4,2)],'TEAM_ROCKET_BASE_B3F':[(11,3,3),(9,13,3)]}
+# Mr. Pokemon's domestic/research room has a separate source-guarded native
+# CrystalDust mapping in route30_mr_pokemon.lua; do not regenerate industrial
+# server/electric-barrier matches or duplicate positioned table keys there.
+tables_by_map={'RUINS_OF_ALPH_RESEARCH_CENTER':[(4,4,2)],'TEAM_ROCKET_BASE_B3F':[(11,3,3),(9,13,3)]}
 f.overrides={(game,name,x,y)for game in('gold','silver','crystal')for name,rects in tables_by_map.items()for ox,oy,w in rects for x in range(ox,ox+w)for y in range(oy,oy+2)}
 for r in f.active:
  if r['game']=='red'and r['role'].startswith('household_'):f.templates.setdefault(r['role'],r)
@@ -78,4 +84,4 @@ def handle(c,x,y,name,m,data):
   sx,sy=table[raw];return whole(lab,sx,sy,'whole_research_table')
  if raw==(59,59,59,59):return f.native(power.ref(708),'johto_facility_steel_grille')
  return bank(raw)
-f.run(handle,('MR_POKEMONS_HOUSE','RUINS_OF_ALPH_RESEARCH_CENTER','TEAM_ROCKET_BASE_B2F','TEAM_ROCKET_BASE_B3F'),'Direct native Gen3 industrial counterparts: FireRed Rocket equipment and complete server cabinets, FireRed lab workstations/tables, Power Plant steel grilles and Emerald Mauville electric security barriers. Complete native caps, outside frames and repeated wall/table/sofa modules keep their pixel scale. Original password doors, electricity switches, Electrode rooms, hidden passages, plant/desk interactions, NPCs, stairs and source collision remain unchanged.')
+f.run(handle,('RUINS_OF_ALPH_RESEARCH_CENTER','TEAM_ROCKET_BASE_B2F','TEAM_ROCKET_BASE_B3F'),'Direct native Gen3 industrial counterparts: FireRed Rocket equipment and complete server cabinets, FireRed lab workstations/tables, Power Plant steel grilles and Emerald Mauville electric security barriers. Complete native caps, outside frames and repeated wall/table/sofa modules keep their pixel scale. Original password doors, electricity switches, Electrode rooms, hidden passages, plant/desk interactions, NPCs, stairs and source collision remain unchanged.')
