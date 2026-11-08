@@ -241,4 +241,18 @@ return rows
 end)()
 local waterRockIndex={}for i,row in ipairs(rows)do waterRockIndex[waterRockKey(row)]=i end
 for _,row in ipairs(waterRockUpdates)do local i=waterRockIndex[waterRockKey(row)];if i then rows[i]=row else rows[#rows+1]=row end end
+-- BEGIN ROUTE31 NATIVE STATIC POND CORNER
+local changed=0
+for _,row in ipairs(rows)do
+  if (row.game=='gold'or row.game=='silver'or row.game=='crystal')and row.style=='gen3'
+    and row.map=='ROUTE_31'and row.id==122 and row.quadrant==1 then
+    assert(row.donor and row.donor.game=='emerald'and row.donor.tileset=='general__petalburg'and row.donor.id==410)
+    row.donor=nil;row.animated=nil;row.animation=nil
+    local update={["base"]={["game"]="firered",["hash"]="037c2cb2c4abb18bbba3e60a79453cae96784fed6e76f85190ae331182488844",["id"]=430,["tileset"]="viridian_outdoor"},["compositionPixelHash"]="5a86a1c5924021573bcff83c46755973fb16a26d39fddcf91a827f79c5719f3d",["evidence"]="Route31 inward northeast shore corner at cell21,4 only. Preserve the complete existing native Emerald410 MID/OVER shore alpha and every opaque bank pixel at1:1. Its former animated Emerald surface mismatched the surrounding enclosed static FireRed pond. Use the exact adjacent Viridian430 static water beneath this intact shore, with no generated pixels or removed bank detail. The freshwater role and explicit native shore parts retain all selectable water styles. Source map, Surf/collision41, NPCs, encounters, warps and scripts stay native.",["kind"]="native_composite",["parts"]={{["donor"]={["game"]="emerald",["hash"]="ddb9eb3a8d13891e384ffabde65c5af4a693f7361fac94040e32f5c13b83aec9",["id"]=410,["tileset"]="general__petalburg"},["h"]=16,["layerHashes"]={["mid"]="6ee216790ca3165db24abfcf331c4ec2ead7c07b4d1b6f27d72006fa09db7b01",["over"]="5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"},["layers"]={"mid","over"},["srcX"]=0,["srcY"]=0,["w"]=16,["x"]=0,["y"]=0}},["role"]="freshwater_pond_inner_northeast_corner",["sourceBody"]="enclosed inland pond"}
+    for key,value in pairs(update)do row[key]=value end
+    changed=changed+1
+  end
+end
+assert(changed==3,'Route31 corner source set changed')
+-- END ROUTE31 NATIVE STATIC POND CORNER
 return rows

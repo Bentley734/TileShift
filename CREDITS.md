@@ -1,5 +1,12 @@
 # Artwork credits
 
+## Route 31 pond corner (0.46.3)
+
+The corrected pond corner uses the same complete native FireRed pond-water
+material as the neighboring bank modules. Native shore pixels retain their
+original shape and pixel size. This surface is intentionally still in
+FireRed's original animation banks. The water-style chooser remains active.
+
 ## Mr. Pokemon's House furniture and floor (0.46.2)
 
 The lower workstation reuses the complete native CrystalDust front-facing
