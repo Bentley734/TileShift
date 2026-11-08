@@ -3,6 +3,8 @@
 
 TileShift swaps world artwork through individually reviewed tile matches.
 
+Version 0.46.4 improves both service counters in the Route 31 Violet gate with complete native countertops, fronts and end pieces. The left entrance rug is an exact horizontal mirror of the right, including its border and shading. The original U-shaped layout stays visible, while the officer, visitor, entrances and walking space retain their original positions and behavior in Gold, Silver and Crystal.
+
 Version 0.46.3 corrects the inside corner of Route 31's pond in Gold, Silver and Crystal. The shoreline uses the same native still pond water as its neighboring tiles instead of a visibly different sea-water patch. Selected water styles continue to work, and original terrain, walking rules, NPC positions and interactions are unchanged.
 
 Version 0.46.2 moves the lower computer desk in Mr. Pokemon's House one tile farther back, using complete native CrystalDust artwork. Oak stands on matching floor in front of the desk, and characters walking behind the computer use its correct foreground depth. The back corner uses CrystalDust's complete research machine, with its original pixel size and transparent upper extension, and the research nook uses the matching native blue carpet over the checker floor. Gold, Silver and Crystal retain their original NPC positions, collisions, entrances and interactions.

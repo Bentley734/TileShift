@@ -1,5 +1,18 @@
 # Artwork credits
 
+## Route 31 Violet gate counters (0.46.4)
+
+The gate uses complete native FireRed house-counter modules at their original
+16x16 size. Front modules 676, 677 and 678 are pixel-identical to
+CrystalDust gate modules 548, 549 and 550 from the user's supplied ROM.
+Native vertical posts, inside returns and corner pieces preserve the
+original U-shaped counter footprint, with full gray front panels.
+The intact FireGold monitor and keyboard foreground remains above its
+matching counter piece. No artwork is scaled, recolored or generated.
+The left entrance mat is the exact horizontal mirror of the right-hand
+FireRed mat. All native pixels are retained at their original size, including
+the border and shading; no new colors or artwork are introduced.
+
 ## Route 31 pond corner (0.46.3)
 
 The corrected pond corner uses the same complete native FireRed pond-water
