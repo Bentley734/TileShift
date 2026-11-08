@@ -1,5 +1,19 @@
 # Artwork credits
 
+## Cherrygrove coast (0.45.2)
+
+The rocky island uses nine complete native 16x16 modules from
+**CrystalDust by Sierraffinity and contributors**, extracted from the user's
+supplied ROM. Native terrain pixels and exterior alpha are preserved.
+Complete repeating modules recreate the original Gold/Silver/Crystal island
+size; no source map, collision or actor position changes. Source ROM, map,
+metatile, plane and packaged-file fingerprints accompany the artwork in
+`assets/third_party/johto-hacks/cherrygrove-coast/provenance.json`.
+
+The connecting bank behind the northern coastal boulders uses the matching
+native Emerald bank beneath the existing complete FireRed rock artwork.
+
+
 ## CrystalDust area review (0.45.0)
 
 The additional native counterparts come from **CrystalDust by Sierraffinity and

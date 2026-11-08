@@ -1,0 +1,359 @@
+{
+  "origin": "Native CrystalDust Cherrygrove island and complete modular rocky shore. Original 16x16 pixels and original top-plane alpha copied without masking, recoloring or fractional scaling.",
+  "rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+  "source_map": "g00_m010",
+  "source_pair": "083df704_083df71c",
+  "source_map_png_sha256": "e20fcf59e34f7f9e1dac429076ba9eeeecebfede4840cfcce686fa10b26c4b5f",
+  "source_planes_sha256": {
+    "flat": "7d62ed439722eef49f851d2b70f9ec15938bc172b911b5993b9e83ee9fcb9d15",
+    "bottom": "2437f2669e7641baa1b6c7eb5f8e0f9d2855e252b6f266b9ba3f8579c358bd18",
+    "top": "d5464a0fba5b3e53eff2215f8ef1c938d9a6aadab361a88763f209db286053de"
+  },
+  "source_metatiles_sha256": "2c95c36260ae52a185ebb2b9b4a9b60cc3d43f4ecd5dd05ff77412d180f198ec",
+  "sourceUrl": "https://github.com/Sierraffinity/CrystalDust",
+  "target": "G/S/C Cherrygrove City; retain native 64x32 walkable floor at cells x4..7,y12..13. Add only decorative native-alpha rocky perimeter in adjacent water cells. Source collision, maps and actors remain unchanged.",
+  "source_modules": {
+    "island-floor-north": {
+      "asset": "assets/third_party/johto-hacks/cherrygrove-coast/island-floor-north.png",
+      "assetFileHash": "865e5f7ec7e5e9fb37ff7993f41973fa4f97a7ec8be0af0343fdcf488f30ab95",
+      "assetPixelHash": "f41cbf4039fe5ef94ac67d5913a95980201cdfeba1f7e63169b225077af51068",
+      "donor_mid": 401,
+      "donor_plane": "flat",
+      "donor_pair": "083df704_083df71c",
+      "donor_xyxy": [
+        16,
+        400,
+        32,
+        416
+      ],
+      "source_metatile_sha256": "f41cbf4039fe5ef94ac67d5913a95980201cdfeba1f7e63169b225077af51068",
+      "native_alpha_unchanged": true,
+      "logical_size": [
+        16,
+        16
+      ],
+      "opaque_bounds": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "target_cells": [
+        [
+          4,
+          12
+        ],
+        [
+          5,
+          12
+        ],
+        [
+          6,
+          12
+        ],
+        [
+          7,
+          12
+        ]
+      ],
+      "credit": "CrystalDust by Sierraffinity and contributors; native Cherrygrove rocky island modules.",
+      "sourceUrl": "https://github.com/Sierraffinity/CrystalDust"
+    },
+    "island-floor": {
+      "asset": "assets/third_party/johto-hacks/cherrygrove-coast/island-floor.png",
+      "assetFileHash": "c1481a99de336be69694ddf4fb252023292aef826296348bc651c99b3ba65fe7",
+      "assetPixelHash": "304d4a1570e43e66c658ea6058a2e1a4832b18951f49d235aa3f15e50490cf52",
+      "donor_mid": 113,
+      "donor_plane": "flat",
+      "donor_pair": "083df704_083df71c",
+      "donor_xyxy": [
+        16,
+        112,
+        32,
+        128
+      ],
+      "source_metatile_sha256": "304d4a1570e43e66c658ea6058a2e1a4832b18951f49d235aa3f15e50490cf52",
+      "native_alpha_unchanged": true,
+      "logical_size": [
+        16,
+        16
+      ],
+      "opaque_bounds": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "target_cells": [
+        [
+          4,
+          13
+        ],
+        [
+          5,
+          13
+        ],
+        [
+          6,
+          13
+        ],
+        [
+          7,
+          13
+        ]
+      ],
+      "credit": "CrystalDust by Sierraffinity and contributors; native Cherrygrove rocky island modules.",
+      "sourceUrl": "https://github.com/Sierraffinity/CrystalDust"
+    },
+    "island-bank-nw": {
+      "asset": "assets/third_party/johto-hacks/cherrygrove-coast/island-bank-nw.png",
+      "assetFileHash": "03da74aa3fdab984c7b78ca2a234f180a2b24880548aeef59e5fa56b99bcb55f",
+      "assetPixelHash": "0bb06d9e7ee18846000d15668e578f22e1cecf34e93ed9e16e3cfda653b046ec",
+      "donor_mid": 376,
+      "donor_plane": "top",
+      "donor_pair": "083df704_083df71c",
+      "donor_xyxy": [
+        128,
+        368,
+        144,
+        384
+      ],
+      "source_metatile_sha256": "661f3683040811753a6cbfcb6e8926eca7587dbf875a586763c92491ea09d405",
+      "native_alpha_unchanged": true,
+      "logical_size": [
+        16,
+        16
+      ],
+      "opaque_bounds": [
+        12,
+        0,
+        16,
+        16
+      ],
+      "target_cells": [
+        [
+          3,
+          12
+        ]
+      ],
+      "credit": "CrystalDust by Sierraffinity and contributors; native Cherrygrove rocky island modules.",
+      "sourceUrl": "https://github.com/Sierraffinity/CrystalDust"
+    },
+    "island-bank-ne": {
+      "asset": "assets/third_party/johto-hacks/cherrygrove-coast/island-bank-ne.png",
+      "assetFileHash": "0c94e6f56ea433f667426c6302a60c6d14739adae07859d4ef86a9f7232db8d1",
+      "assetPixelHash": "603bd3aee38f514cd5d45dc0c134e11acb9bac34d39a12efa391d832921bddc3",
+      "donor_mid": 377,
+      "donor_plane": "top",
+      "donor_pair": "083df704_083df71c",
+      "donor_xyxy": [
+        144,
+        368,
+        160,
+        384
+      ],
+      "source_metatile_sha256": "a82eed8cf9bcdd31d15d92e0e88ffa74de8ad863c7883bf92e3c375167145f68",
+      "native_alpha_unchanged": true,
+      "logical_size": [
+        16,
+        16
+      ],
+      "opaque_bounds": [
+        0,
+        0,
+        4,
+        16
+      ],
+      "target_cells": [
+        [
+          8,
+          12
+        ]
+      ],
+      "credit": "CrystalDust by Sierraffinity and contributors; native Cherrygrove rocky island modules.",
+      "sourceUrl": "https://github.com/Sierraffinity/CrystalDust"
+    },
+    "island-bank-w": {
+      "asset": "assets/third_party/johto-hacks/cherrygrove-coast/island-bank-w.png",
+      "assetFileHash": "3828f6b0affa9b5a98048f047fe4bc2763f2a0826ebef081ebd01a0f9f5c3f99",
+      "assetPixelHash": "bfe584abc51a27fef5e8c01fff8c25a42422551745eacebb08a79de9729eca1c",
+      "donor_mid": 402,
+      "donor_plane": "top",
+      "donor_pair": "083df704_083df71c",
+      "donor_xyxy": [
+        32,
+        400,
+        48,
+        416
+      ],
+      "source_metatile_sha256": "b26b1503ed7b4574d48627c8919b39c08215c4f12aa29c432e969259336474e5",
+      "native_alpha_unchanged": true,
+      "logical_size": [
+        16,
+        16
+      ],
+      "opaque_bounds": [
+        12,
+        0,
+        16,
+        16
+      ],
+      "target_cells": [
+        [
+          3,
+          13
+        ]
+      ],
+      "credit": "CrystalDust by Sierraffinity and contributors; native Cherrygrove rocky island modules.",
+      "sourceUrl": "https://github.com/Sierraffinity/CrystalDust"
+    },
+    "island-bank-e": {
+      "asset": "assets/third_party/johto-hacks/cherrygrove-coast/island-bank-e.png",
+      "assetFileHash": "9843866de961743d09a8e1b13662e8d032c683fe38c334b77152e7d1d47e767f",
+      "assetPixelHash": "9387c0265b5dbae48c1b035bccacd982d1a3ead9ac039f5594c53adfe3b81d73",
+      "donor_mid": 400,
+      "donor_plane": "top",
+      "donor_pair": "083df704_083df71c",
+      "donor_xyxy": [
+        0,
+        400,
+        16,
+        416
+      ],
+      "source_metatile_sha256": "cd3b2c806b764e6287f2bf98ddd66bf59191479edeae0af02c4e6b9a88aac6bb",
+      "native_alpha_unchanged": true,
+      "logical_size": [
+        16,
+        16
+      ],
+      "opaque_bounds": [
+        0,
+        0,
+        4,
+        16
+      ],
+      "target_cells": [
+        [
+          8,
+          13
+        ]
+      ],
+      "credit": "CrystalDust by Sierraffinity and contributors; native Cherrygrove rocky island modules.",
+      "sourceUrl": "https://github.com/Sierraffinity/CrystalDust"
+    },
+    "island-bank-sw": {
+      "asset": "assets/third_party/johto-hacks/cherrygrove-coast/island-bank-sw.png",
+      "assetFileHash": "41f6fd28a4aa4fee25d835e0d95a9e43e67d05f66dd803fef6bd024271c001e5",
+      "assetPixelHash": "091458476049f3cb8962301b776415418fcf5b92970255c387a10cfbe8e7ee72",
+      "donor_mid": 410,
+      "donor_plane": "top",
+      "donor_pair": "083df704_083df71c",
+      "donor_xyxy": [
+        160,
+        400,
+        176,
+        416
+      ],
+      "source_metatile_sha256": "72e1edda7ab3546f9f41163faaf6217414a24cdba53c9cbb895aa83eed651307",
+      "native_alpha_unchanged": true,
+      "logical_size": [
+        16,
+        16
+      ],
+      "opaque_bounds": [
+        12,
+        0,
+        16,
+        4
+      ],
+      "target_cells": [
+        [
+          3,
+          14
+        ]
+      ],
+      "credit": "CrystalDust by Sierraffinity and contributors; native Cherrygrove rocky island modules.",
+      "sourceUrl": "https://github.com/Sierraffinity/CrystalDust"
+    },
+    "island-bank-se": {
+      "asset": "assets/third_party/johto-hacks/cherrygrove-coast/island-bank-se.png",
+      "assetFileHash": "9ffd91fa2607cf8549f1a65a0efd81bf2e8eb587a378a080630a301490f79f05",
+      "assetPixelHash": "9904e16673bd34aed5a90b2be9bd76f97d73fde70b9d0648196aba0aff0a36aa",
+      "donor_mid": 408,
+      "donor_plane": "top",
+      "donor_pair": "083df704_083df71c",
+      "donor_xyxy": [
+        128,
+        400,
+        144,
+        416
+      ],
+      "source_metatile_sha256": "ac8fc625bc28aa140253073afc7a59391061851f51b375ad6032e3811c8a841a",
+      "native_alpha_unchanged": true,
+      "logical_size": [
+        16,
+        16
+      ],
+      "opaque_bounds": [
+        0,
+        0,
+        4,
+        4
+      ],
+      "target_cells": [
+        [
+          8,
+          14
+        ]
+      ],
+      "credit": "CrystalDust by Sierraffinity and contributors; native Cherrygrove rocky island modules.",
+      "sourceUrl": "https://github.com/Sierraffinity/CrystalDust"
+    },
+    "island-bank-s": {
+      "asset": "assets/third_party/johto-hacks/cherrygrove-coast/island-bank-s.png",
+      "assetFileHash": "802ddf60ab96e47b76e2ce7be2759f48b0ebf6459d34344f3a8afa310688a52c",
+      "assetPixelHash": "fc2ef2a5e6636becbe695e1a0b55c2027583aac1e58358518f8cf56349198ff0",
+      "donor_mid": 393,
+      "donor_plane": "top",
+      "donor_pair": "083df704_083df71c",
+      "donor_xyxy": [
+        144,
+        384,
+        160,
+        400
+      ],
+      "source_metatile_sha256": "2b62683f3b11c844d2041eb6872e2bb2f92cf81a518317fe50841c33dea405e6",
+      "native_alpha_unchanged": true,
+      "logical_size": [
+        16,
+        16
+      ],
+      "opaque_bounds": [
+        0,
+        0,
+        16,
+        4
+      ],
+      "target_cells": [
+        [
+          4,
+          14
+        ],
+        [
+          5,
+          14
+        ],
+        [
+          6,
+          14
+        ],
+        [
+          7,
+          14
+        ]
+      ],
+      "credit": "CrystalDust by Sierraffinity and contributors; native Cherrygrove rocky island modules.",
+      "sourceUrl": "https://github.com/Sierraffinity/CrystalDust"
+    }
+  }
+}

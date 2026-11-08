@@ -189,7 +189,19 @@ def main() -> None:
             assert hashlib.sha256((root / 'assets' / folder / name).read_bytes()).hexdigest() == digest, 'Interior artwork provenance fingerprint changed'
     for record in (root / 'assets/third_party/johto-hacks').rglob('provenance.json'):
         provenance = json.loads(record.read_text(encoding='utf-8'))
-        for name, digest in provenance['files'].items():
+        checked_files = provenance.get('files')
+        if checked_files is None:
+            # Native module records already carry exact PNG fingerprints.
+            checked_files = {}
+            modules = provenance['source_modules']
+            assert isinstance(modules, dict) and modules, 'Missing native module provenance'
+            for module in modules.values():
+                path = (root / module['asset']).resolve()
+                assert path.parent == record.parent.resolve(), 'Native module leaves its reviewed folder'
+                assert path.suffix == '.png' and path.name not in checked_files, 'Duplicate or invalid native module'
+                checked_files[path.name] = module['assetFileHash']
+            assert set(checked_files) == {path.name for path in record.parent.glob('*.png')}, 'Native PNG lacks provenance'
+        for name, digest in checked_files.items():
             assert hashlib.sha256((record.parent / name).read_bytes()).hexdigest() == digest, 'Hack artwork provenance changed'
     for folder in ('kanto-landmarks', 'native-kanto-chairs', 'saffron-paving',
                    'gen2-domestic-floor-audit', 'native-interior-seats', 'gen2-interior-callback-states',

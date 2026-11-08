@@ -3,6 +3,8 @@
 
 TileShift swaps world artwork through individually reviewed tile matches.
 
+Version 0.45.2 rebuilds Cherrygrove's small rocky island with intact CrystalDust tiles at the original Gold, Silver and Crystal size. The island keeps its 64x32 walkable landing and original Fisher position. Stray shore walls beside the boulder above the island are removed, and the northern shoreline continues behind the coastal boulders. Selected water styles and native water animation remain connected; source collision, map layout, events and interactions are unchanged.
+
 Version 0.45.1 replaces the decorative computer beside the Gen 2 healing machine with a resident Chansey. It follows Nurse Joy's actual facing throughout conversations, healing and her return to the counter. With WildFollowers 3.4.8 or newer, it uses the selected Wild sprites artwork. Companion selection uses the better-fitting EE Chansey in clinics while other Pokemon keep their chosen sprites. Without that provider, the closest directional native overworld Pokemon uses the imported Chansey pink colors. Storage PCs and healing interactions stay unchanged.
 
 Version 0.45.0 reviews the Gen 3 theme across Johto and Kanto in Gold, Silver and Crystal. Complete native CrystalDust counterparts improve beds, tables, bookcases, TVs, radios, computers, link-room equipment, ship cabins, buildings, landmarks, lighthouse interiors, ruins and League rooms. Reachable story and field-move tile changes keep their selected artwork, and the Ilex shrine retains its full native size and correct actor depth.
