@@ -1,0 +1,118 @@
+{
+  "compounds": [
+    {
+      "asset": "assets/third_party/johto-hacks/cherrygrove-boulder-sides/south-bank-left-rock.png",
+      "assetFileHash": "352884f2b1a38d46b4ad74e0cfa88ca6404531d57eb2ece5f063d62dc5e94ac7",
+      "assetPixelHash": "a64e826504cf59aec6979cd444c19c24b57015dcaeb794ab69cfb31491ad1b50",
+      "logical_size": [
+        16,
+        16
+      ],
+      "opaque_rock_pixels_retained_exactly": 226,
+      "rock_rgba_sha256": "ab3afcec8f76da8c1cd1926249bafa3a68eefdd5cec6fe90e6c274cd621f22ed",
+      "rock_source": {
+        "donor": {
+          "game": "firered",
+          "hash": "351b2269184ef6f39bd173bab527bd824fdca822c57b3fd802a32f846339b192",
+          "id": 120,
+          "tileset": "pewter_outdoor"
+        },
+        "h": 16,
+        "layerHashes": {
+          "mid": "ab3afcec8f76da8c1cd1926249bafa3a68eefdd5cec6fe90e6c274cd621f22ed"
+        },
+        "layers": [
+          "mid"
+        ],
+        "srcX": 0,
+        "srcY": 0,
+        "w": 16,
+        "x": 0,
+        "y": 0
+      },
+      "shore_source": {
+        "hack": "crystaldust",
+        "mid": 398,
+        "pair": "083df704_083df71c",
+        "plane": "top",
+        "rect": [
+          224,
+          384,
+          16,
+          16
+        ],
+        "rgba_sha256": "3d251433d86436c45f02ee277665222a3254e38d1518130746e9f49251a1a292"
+      },
+      "target": [
+        10,
+        5
+      ]
+    },
+    {
+      "asset": "assets/third_party/johto-hacks/cherrygrove-boulder-sides/south-east-bank-right-rock.png",
+      "assetFileHash": "6d347dbe37d418a3e8090ee27d433cdff4a2cd36669d0946d90fbde1bb22b0aa",
+      "assetPixelHash": "a57f0480a09eb4d2b77dd5eea082243357ab1123b36299115bb9fdf49ad8187e",
+      "logical_size": [
+        16,
+        16
+      ],
+      "opaque_rock_pixels_retained_exactly": 242,
+      "rock_rgba_sha256": "e76eb6976cc1b869396c8164320512de3ed3ef567f4033def447eb3ac5cb059f",
+      "rock_source": {
+        "donor": {
+          "game": "firered",
+          "hash": "2380896a29638a19668221a3d00dccefbd5cc48a7d2e0ff24b72191b811baa2e",
+          "id": 122,
+          "tileset": "pewter_outdoor"
+        },
+        "h": 16,
+        "layerHashes": {
+          "mid": "e76eb6976cc1b869396c8164320512de3ed3ef567f4033def447eb3ac5cb059f"
+        },
+        "layers": [
+          "mid"
+        ],
+        "srcX": 0,
+        "srcY": 0,
+        "w": 16,
+        "x": 0,
+        "y": 0
+      },
+      "shore_source": {
+        "hack": "crystaldust",
+        "mid": 399,
+        "pair": "083df704_083df71c",
+        "plane": "top",
+        "rect": [
+          240,
+          384,
+          16,
+          16
+        ],
+        "rgba_sha256": "6ffcf9b3b9bc375e73c871abafbeda6f2a7a1242b5624849b51240cd60cf203d"
+      },
+      "target": [
+        11,
+        5
+      ]
+    }
+  ],
+  "files": {
+    "south-bank-left-rock.png": "352884f2b1a38d46b4ad74e0cfa88ca6404531d57eb2ece5f063d62dc5e94ac7",
+    "south-east-bank-right-rock.png": "6d347dbe37d418a3e8090ee27d433cdff4a2cd36669d0946d90fbde1bb22b0aa"
+  },
+  "firered_import": {
+    "metadata_sha256": "e384037d39d0b87735813dab96bb37f50f116afc03fb8c5540937f257c487901",
+    "rom_md5": "41cb23d8dccc8ebd7c649cd8fbb58eeace6e2fdc",
+    "version": "firered_1_0"
+  },
+  "origin": "CrystalDust by Sierraffinity and contributors, native coastal bank; Game Freak FireRed, complete original rock middle plane.",
+  "recipe": "Alpha-compose the complete native CrystalDust south bank TOP plane, then the unchanged complete native FireRed rock MID plane. Preserve every opaque rock pixel and all native bank pixels outside the rock silhouette. Keep all remaining pixels transparent for the current selected animated water. No scaling, recoloring or generated pixels.",
+  "rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+  "sourceUrl": "https://github.com/Sierraffinity/CrystalDust",
+  "source_metatiles_sha256": "2c95c36260ae52a185ebb2b9b4a9b60cc3d43f4ecd5dd05ff77412d180f198ec",
+  "source_pair": "083df704_083df71c",
+  "source_reference_map": "g00_m010",
+  "source_reference_reason": "Cherrygrove uses this exact native pair; its unmodified metatile atlas also contains the south-facing bank modules.",
+  "source_top_plane_sha256": "d5464a0fba5b3e53eff2215f8ef1c938d9a6aadab361a88763f209db286053de"
+}

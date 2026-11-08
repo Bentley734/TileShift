@@ -482,13 +482,16 @@ return function(mod)
     end
     refresh(game);return false
   end
+  local optionsMenu=readModule('lib/options_menu.lua').new({generation=mod.generation,version=GV.get,active=owned,
+    warn=function(message)mod.log:warn('%s',message)end})
   local function addOptions(nextFn,game,out)
     out=nextFn(game,out)
     if type(out)~='table' then return out end
-    out[#out+1]={id='tileshift:style',label='TILESET',value=function()return styleNames[selection]end,step=persist}
+    local settings={}
+    settings[#settings+1]={id='tileshift:style',label='MAP STYLE',value=function()return styleNames[selection]end,step=persist}
     for _,item in ipairs(floraOptions)do
       local option=item
-      out[#out+1]={id='tileshift:'..option.key,label=floraLabels[option.category],
+      settings[#settings+1]={id='tileshift:'..option.key,label=floraLabels[option.category],
         value=function()return option.choices[option.selection][1]end,
         step=function(ctx,dir)
           local value=1+(option.selection-1+(dir and dir<0 and -1 or 1))%#option.choices
@@ -506,9 +509,9 @@ return function(mod)
           return false
         end}
     end
-    out[#out+1]={id='tileshift:coverage',label='MAP TILES',value=function()return 'COMPLETE' end,
+    settings[#settings+1]={id='tileshift:coverage',label='MAP TILES',value=function()return 'COMPLETE' end,
       step=function()return false end}
-    return out
+    return optionsMenu:append(out,settings)
   end
   mod.hooks:wrap('ui.options.rows',addOptions,125)
   mod.exports.state=state

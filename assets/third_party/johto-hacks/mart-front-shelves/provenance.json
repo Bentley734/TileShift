@@ -1,0 +1,196 @@
+{
+  "catalog_sha256": "fd8fbaf6eb4ee3774e3fe046bf3b506e7f638ab4cd9297c9f62a8bb1189bc740",
+  "files": {
+    "shelf-bottom-center.png": "2fd2b22fecf788f8e0a1ddb2aec3e2aa263e2514cf52439ebae971f2b7c22397",
+    "shelf-bottom-left.png": "699aef479153f3f586280516f63c8b71fafde571fc326ac451d8f0a10198099f",
+    "shelf-bottom-right.png": "a0bb91d0090231d23b3b52b79bceaae538c10d5ca3d33445e77822b688a6a045",
+    "shelf-top-center.png": "72d9e9a32d0586a69648c3fe097667e8057d13d39a7718c48227e5c2e7bd89e9",
+    "shelf-top-left.png": "c8c5cdbde88d8844e4dd91ed4701788f0e463946cc99ecff6bdfed4786fae006",
+    "shelf-top-right.png": "6c7309bd83793f23022893d3a7aac9ccc646fd50eab12846f05eb2a68010bd63"
+  },
+  "native_small_grid": [
+    [
+      567,
+      572
+    ],
+    [
+      577,
+      578
+    ]
+  ],
+  "native_wide_grid": [
+    [
+      567,
+      571,
+      571,
+      572
+    ],
+    [
+      577,
+      576,
+      576,
+      578
+    ]
+  ],
+  "origin": "CrystalDust by Sierraffinity and contributors; complete native Mart glass display modules.",
+  "purpose": "Complete native shelf ends and center modules for original G/S/C 32x32 and 64x32 front fixtures.",
+  "recipe": "Copy six complete 16x16 native TOP planes at 1:1 pixel scale. Preserve every native alpha and RGB byte. Keep left/right end modules at outer ends, repeat only complete center modules for wider fixtures. No floor RGB, cropping within a tile, recoloring, generated pixels or fractional scaling.",
+  "rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+  "sourceUrl": "https://github.com/Sierraffinity/CrystalDust",
+  "source_map": "g02_m004",
+  "source_metatiles_sha256": "bb8f53e9aaab815514a3cfb2bd1051fca84a03cef30791345b4565fca132d679",
+  "source_modules": {
+    "bottom-center": {
+      "asset": "assets/third_party/johto-hacks/mart-front-shelves/shelf-bottom-center.png",
+      "assetFileHash": "2fd2b22fecf788f8e0a1ddb2aec3e2aa263e2514cf52439ebae971f2b7c22397",
+      "assetPixelHash": "b591fea4b20268c9d15aee5ebffaf61f499d80a53eb0839115aa3c6404fed14f",
+      "credit": "CrystalDust by Sierraffinity and contributors; complete native Mart glass display modules.",
+      "donor_mid": 576,
+      "donor_plane": "top",
+      "integer_scale": 1,
+      "logical_size": [
+        16,
+        16
+      ],
+      "native_alpha_unchanged": true,
+      "sourceUrl": "https://github.com/Sierraffinity/CrystalDust",
+      "source_map": "g02_m004",
+      "source_metatile_flat_sha256": "b591fea4b20268c9d15aee5ebffaf61f499d80a53eb0839115aa3c6404fed14f",
+      "source_pair": "083df884_083df89c",
+      "source_rect": [
+        0,
+        576,
+        16,
+        16
+      ],
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf"
+    },
+    "bottom-left": {
+      "asset": "assets/third_party/johto-hacks/mart-front-shelves/shelf-bottom-left.png",
+      "assetFileHash": "699aef479153f3f586280516f63c8b71fafde571fc326ac451d8f0a10198099f",
+      "assetPixelHash": "3bf9ca0dac7cdd1a68bf1a5287dbd41561ce1ce68713cd480307529f169ad232",
+      "credit": "CrystalDust by Sierraffinity and contributors; complete native Mart glass display modules.",
+      "donor_mid": 577,
+      "donor_plane": "top",
+      "integer_scale": 1,
+      "logical_size": [
+        16,
+        16
+      ],
+      "native_alpha_unchanged": true,
+      "sourceUrl": "https://github.com/Sierraffinity/CrystalDust",
+      "source_map": "g02_m004",
+      "source_metatile_flat_sha256": "3bf9ca0dac7cdd1a68bf1a5287dbd41561ce1ce68713cd480307529f169ad232",
+      "source_pair": "083df884_083df89c",
+      "source_rect": [
+        16,
+        576,
+        16,
+        16
+      ],
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf"
+    },
+    "bottom-right": {
+      "asset": "assets/third_party/johto-hacks/mart-front-shelves/shelf-bottom-right.png",
+      "assetFileHash": "a0bb91d0090231d23b3b52b79bceaae538c10d5ca3d33445e77822b688a6a045",
+      "assetPixelHash": "d8e006c3561476b9e5226a2324620f861d074b8b71f44ec72b871a24fcbf2f9c",
+      "credit": "CrystalDust by Sierraffinity and contributors; complete native Mart glass display modules.",
+      "donor_mid": 578,
+      "donor_plane": "top",
+      "integer_scale": 1,
+      "logical_size": [
+        16,
+        16
+      ],
+      "native_alpha_unchanged": true,
+      "sourceUrl": "https://github.com/Sierraffinity/CrystalDust",
+      "source_map": "g02_m004",
+      "source_metatile_flat_sha256": "d8e006c3561476b9e5226a2324620f861d074b8b71f44ec72b871a24fcbf2f9c",
+      "source_pair": "083df884_083df89c",
+      "source_rect": [
+        32,
+        576,
+        16,
+        16
+      ],
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf"
+    },
+    "top-center": {
+      "asset": "assets/third_party/johto-hacks/mart-front-shelves/shelf-top-center.png",
+      "assetFileHash": "72d9e9a32d0586a69648c3fe097667e8057d13d39a7718c48227e5c2e7bd89e9",
+      "assetPixelHash": "171131e837662984ae2c323efadf47a3339261afa8d94a898e23013fe8279129",
+      "credit": "CrystalDust by Sierraffinity and contributors; complete native Mart glass display modules.",
+      "donor_mid": 571,
+      "donor_plane": "top",
+      "integer_scale": 1,
+      "logical_size": [
+        16,
+        16
+      ],
+      "native_alpha_unchanged": true,
+      "sourceUrl": "https://github.com/Sierraffinity/CrystalDust",
+      "source_map": "g02_m004",
+      "source_metatile_flat_sha256": "971089bbc22b3551b1a3bac7eedfd9a8cacf6376d100ebb5779d0a729d5a7473",
+      "source_pair": "083df884_083df89c",
+      "source_rect": [
+        176,
+        560,
+        16,
+        16
+      ],
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf"
+    },
+    "top-left": {
+      "asset": "assets/third_party/johto-hacks/mart-front-shelves/shelf-top-left.png",
+      "assetFileHash": "c8c5cdbde88d8844e4dd91ed4701788f0e463946cc99ecff6bdfed4786fae006",
+      "assetPixelHash": "5c269c88cffe836902eb72c1e09e9b6911ff5f51b4bff2e5e0d53f1893d3a17b",
+      "credit": "CrystalDust by Sierraffinity and contributors; complete native Mart glass display modules.",
+      "donor_mid": 567,
+      "donor_plane": "top",
+      "integer_scale": 1,
+      "logical_size": [
+        16,
+        16
+      ],
+      "native_alpha_unchanged": true,
+      "sourceUrl": "https://github.com/Sierraffinity/CrystalDust",
+      "source_map": "g02_m004",
+      "source_metatile_flat_sha256": "b369be832f1ae006f5361dcd35ed290b8af92cbaf518f3131bb36fa580da1479",
+      "source_pair": "083df884_083df89c",
+      "source_rect": [
+        112,
+        560,
+        16,
+        16
+      ],
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf"
+    },
+    "top-right": {
+      "asset": "assets/third_party/johto-hacks/mart-front-shelves/shelf-top-right.png",
+      "assetFileHash": "6c7309bd83793f23022893d3a7aac9ccc646fd50eab12846f05eb2a68010bd63",
+      "assetPixelHash": "17089fb97daf33c906b3c24c1e7f6dcec3ccba8dd5472772ba354b59aabcbd64",
+      "credit": "CrystalDust by Sierraffinity and contributors; complete native Mart glass display modules.",
+      "donor_mid": 572,
+      "donor_plane": "top",
+      "integer_scale": 1,
+      "logical_size": [
+        16,
+        16
+      ],
+      "native_alpha_unchanged": true,
+      "sourceUrl": "https://github.com/Sierraffinity/CrystalDust",
+      "source_map": "g02_m004",
+      "source_metatile_flat_sha256": "962ab57238165a2a5e28433dc4109f8ee812544e1ed98c1d752d4f9baa59a91c",
+      "source_pair": "083df884_083df89c",
+      "source_rect": [
+        192,
+        560,
+        16,
+        16
+      ],
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf"
+    }
+  },
+  "source_pair": "083df884_083df89c",
+  "source_top_plane_sha256": "8b4987b072ee6cf71012ce5de2afbed6b507ccfa1475f48d215a2ebc54de948b"
+}

@@ -1,7 +1,7 @@
 {
   "id": "tileshift",
   "name": "TileShift",
-  "version": "0.45.2",
+  "version": "0.46.0",
   "api": 2,
   "entry": "main.lua",
   "games": [

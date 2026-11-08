@@ -1,5 +1,21 @@
 # Artwork credits
 
+## Complete Mart displays and Cherrygrove side banks (0.46.0)
+
+Mart front cabinets use six complete native 16x16 CrystalDust modules by
+Sierraffinity and contributors. Original left and right panels frame complete
+middle modules in the wider department-store displays. Original alpha shows
+the existing shop floor outside each cabinet, with no scaling or added colors.
+Exact source ROM, map, metatile, plane and image fingerprints accompany the
+assets in `assets/third_party/johto-hacks/mart-front-shelves/`.
+
+Cherrygrove's shore underlays preserve the complete existing native boulders.
+The two lower bank combinations retain original CrystalDust bank and FireRed
+rock pixels with transparent exterior corners, over the selected animated sea.
+Restored service-building back rows reuse the same intact native modules and
+credits as the corresponding Violet City buildings.
+
+
 ## Cherrygrove coast (0.45.2)
 
 The rocky island uses nine complete native 16x16 modules from

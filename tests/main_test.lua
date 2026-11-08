@@ -7,6 +7,31 @@ local count=0
 local function eq(a,b,message)
   count=count+1;assert(a==b,(message or 'mismatch')..': '..tostring(a)..' ~= '..tostring(b))
 end
+-- Keep the original persistence/lifecycle assertions over setting descriptors,
+-- while checking that the actual hook exposes only TileShift's own menu row.
+local function flattenSettings(rows,generation)
+  eq(#rows,2);eq(rows[1].id,'native');eq(rows[2].id,'tileshift:menu')
+  eq(rows[2].label,'TILESHIFT');eq(rows[2].group,true)
+  local found={}
+  local function collect(members)
+    for _,row in ipairs(members)do
+      if row.rows then collect(row.rows)
+      else eq(found[row.id],nil,'settings appear exactly once');found[row.id]=row end
+    end
+  end
+  collect(rows[2].rows)
+  if generation<3 then
+    eq(#rows[2].rows,5);eq(rows[2].rows[3].id,'tileshift:scenery');eq(#rows[2].rows[3].rows,6)
+    eq(rows[2].rows[4].id,'tileshift:animations');eq(#rows[2].rows[4].rows,5)
+  end
+  local out={rows[1]}
+  for _,key in ipairs({'style','center_style','flora_trees','flora_big_trees','flora_cut_trees','flora_flowers',
+    'flora_grass','flora_water','speed_trees','speed_flowers','speed_grass','speed_water','grass_motion','berry_style','coverage'})do
+    local row=found['tileshift:'..key];if row then out[#out+1]=row end
+  end
+  eq(out[2].label,'MAP STYLE')
+  return out
+end
 local originalLoaded={}
 for _,name in ipairs({'src.core.GameVersion','src.mods.Runtime','src.import.CacheFs'})do
   originalLoaded[name]=package.loaded[name]
@@ -164,7 +189,7 @@ for _,gameId in ipairs(games)do
       or path=='mappings/reverse_gen2_emerald_weather_closure.lua' then return nil end
     if path=='mappings/reverse_classic_gyms_finish.lua'or path=='mappings/reverse_classic_berry_soil.lua'then return nil end
     if path=='lib/gb_animation.lua'then return 'return {}'end
-    if path=='lib/roofs.lua' or path=='lib/vegetation.lua' or path=='lib/flora.lua' or path=='lib/flora_catalog.lua' or path=='lib/johto_hack_flora.lua' or path=='lib/water_styles.lua' or path=='lib/monochrome.lua' then
+    if path=='lib/roofs.lua' or path=='lib/vegetation.lua' or path=='lib/flora.lua' or path=='lib/flora_catalog.lua' or path=='lib/johto_hack_flora.lua' or path=='lib/water_styles.lua' or path=='lib/monochrome.lua' or path=='lib/options_menu.lua' then
       local file=assert(io.open(root..'/'..path,'rb'));local source=file:read('*a');file:close();return source
     end
     if path=='mappings/trees.lua' then
@@ -244,7 +269,7 @@ for _,gameId in ipairs(games)do
     eq(#schemas,berryHost and 4 or 3);eq(#schemas[1].choices,4)
     eq(schemas[1].choices[3][1],'GEN 1');eq(schemas[1].choices[4][1],'GEN 2')
     eq(schemas[2].key,'speed_flowers');eq(schemas[3].key,'speed_water')
-    local rows=hooks['ui.options.rows'](function(_,out)out[#out+1]={id='native'};return out end,game,{})
+    local rows=flattenSettings(hooks['ui.options.rows'](function(_,out)out[#out+1]={id='native'};return out end,game,{}),generation)
     eq(#rows,berryHost and 6 or 5);eq(rows[2].value(),'ORIGINAL');eq(rows[3].label,'FLOWERS SPEED');eq(rows[4].label,'WATER SPEED')
     local coverageRow=rows[#rows]
     eq(coverageRow.id,'tileshift:coverage');eq(coverageRow.label,'MAP TILES')
@@ -313,9 +338,9 @@ for _,gameId in ipairs(games)do
   local actual=fixture.adapterCtx.replacements(gameId,'TEST',{id='DEF'})
   eq(actual.version,gameId);eq(actual.tileset,'TEST')
   local vanillaCalls=0
-  local rows=hooks['ui.options.rows'](function(g,out)
+  local rows=flattenSettings(hooks['ui.options.rows'](function(g,out)
     eq(g,game);vanillaCalls=vanillaCalls+1;out[#out+1]={id='native'};return out
-  end,game,{})
+  end,game,{}),generation)
   eq(vanillaCalls,1);eq(#rows,15);eq(rows[1].id,'native');eq(rows[2].value(),'ORIGINAL')
   local centerRow=table.remove(rows,3)
   eq(centerRow.label,'POKEMON CENTERS');eq(centerRow.value(),'COMPACT')
