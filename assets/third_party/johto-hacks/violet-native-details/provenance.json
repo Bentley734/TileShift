@@ -1,0 +1,218 @@
+{
+  "origin": "Exact native CrystalDust Violet gym compact carved panel and Sprout Tower Bellsprout picture; complete original native TOP modules.",
+  "credit": "Pokemon CrystalDust / Sierraffinity and DoMoreAwesome Games; native Johto room artwork.",
+  "sourceUrl": "https://github.com/Sierraffinity/CrystalDust",
+  "rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+  "rom_name": "Pok\u00e9mon CrystalDust.gba",
+  "input_files_sha256": {
+    "catalog.json": "fd8fbaf6eb4ee3774e3fe046bf3b506e7f638ab4cd9297c9f62a8bb1189bc740",
+    "pairs/083df884_083dfb3c/metatiles.json": "86a5ee36a739952c4484127e4ca137e6a8cb498ac2e8a7479ff07a24601ca48c",
+    "pairs/083df884_083dfb3c/flat.png": "54a68711c23cfc9d16cb21998629f2bb9198edfee035a7ee54632e2ad179dac5",
+    "pairs/083df884_083dfb3c/top.png": "68e3fdc5b0bced2b0afe89adc3230f4d5857883c50a749e0bf376667ea58a4f2",
+    "pairs/083df884_083dfa94/metatiles.json": "733bf842b36410457f01fdc46f2352883c176af985bb8fec7e7c979120a2750c",
+    "pairs/083df884_083dfa94/flat.png": "22e6b92617908ae1c5f1212ea5e0959f2b64cb5d4081413ba3188ba4255eeabc",
+    "pairs/083df884_083dfa94/top.png": "2d00abc21db5fc9bfe659312c20516bba1532a6fc7b341043947a4fc793f02db",
+    "maps/g08_m001-flat.png": "0c99978e517329ed0fd89d2100a834a3594d89050b5dcec3c423949298751a3a",
+    "maps/g24_m025-flat.png": "edff2b80155b74d4ed4f56dd289abc7d6787e114449cc425ba1ee164829a5e5c"
+  },
+  "source_modules": {
+    "gym-compact-statue": {
+      "asset": "assets/third_party/johto-hacks/violet-native-details/gym-compact-statue.png",
+      "assetFileHash": "766ca9b2e830491b38683cff956477da0a196beab002b54ec2f023380ab50aca",
+      "assetPixelHash": "60bdcc13a46e6c6b9dc32f0565f720f5bf833bf057d02477e0c9fe403ee2f12e",
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "source_rom_name": "Pok\u00e9mon CrystalDust.gba",
+      "source_map": "g08_m001",
+      "source_map_flat_png_sha256": "0c99978e517329ed0fd89d2100a834a3594d89050b5dcec3c423949298751a3a",
+      "native_map_coords": [
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          9,
+          2
+        ],
+        [
+          1,
+          12
+        ],
+        [
+          2,
+          12
+        ],
+        [
+          10,
+          12
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          1,
+          14
+        ],
+        [
+          2,
+          14
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          11,
+          14
+        ]
+      ],
+      "donor_pair": "083df884_083dfb3c",
+      "donor_mid": 766,
+      "donor_plane": "top",
+      "donor_xyxy": [
+        224,
+        752,
+        240,
+        768
+      ],
+      "source_atlas_sha256": "68e3fdc5b0bced2b0afe89adc3230f4d5857883c50a749e0bf376667ea58a4f2",
+      "source_metatile_flat_rgba_sha256": "b34cfce7356b8e9c2c8dd98e62f6135cd88358a882d7a4c1d644d6d7d6cd1097",
+      "logical_size": [
+        16,
+        16
+      ],
+      "opaque_bounds": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "pixel_scale": 1,
+      "native_alpha_unchanged": true,
+      "whole_native_metatile_layer": true
+    },
+    "sprout-painting-left": {
+      "asset": "assets/third_party/johto-hacks/violet-native-details/sprout-painting-left.png",
+      "assetFileHash": "f2bcbfffc73998ad6ddffde4fbbdbdbfeaa0c96881189a32f28583f58273020a",
+      "assetPixelHash": "f2eb1838f976da641672782c0804c35ed6816f98e6a196b2bddbb540e0341ef2",
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "source_rom_name": "Pok\u00e9mon CrystalDust.gba",
+      "source_map": "g24_m025",
+      "source_map_flat_png_sha256": "edff2b80155b74d4ed4f56dd289abc7d6787e114449cc425ba1ee164829a5e5c",
+      "native_map_coords": [
+        [
+          7,
+          1
+        ]
+      ],
+      "donor_pair": "083df884_083dfa94",
+      "donor_mid": 528,
+      "donor_plane": "top",
+      "donor_xyxy": [
+        0,
+        528,
+        16,
+        544
+      ],
+      "source_atlas_sha256": "2d00abc21db5fc9bfe659312c20516bba1532a6fc7b341043947a4fc793f02db",
+      "source_metatile_flat_rgba_sha256": "b7e930eebc334076c3f8e7b96c9d011ee6fa1c9b09fe27b538753fcbaf83a775",
+      "logical_size": [
+        16,
+        16
+      ],
+      "opaque_bounds": [
+        8,
+        0,
+        16,
+        16
+      ],
+      "pixel_scale": 1,
+      "native_alpha_unchanged": true,
+      "whole_native_metatile_layer": true
+    },
+    "sprout-painting-right": {
+      "asset": "assets/third_party/johto-hacks/violet-native-details/sprout-painting-right.png",
+      "assetFileHash": "e7ed105adc9c56a540684534145331bae625a972228a868de50fdf6d03268dd9",
+      "assetPixelHash": "730c32da9f5c764a9255b342ec3d78826b82e8f3014ac67ee7f853e963bce9a8",
+      "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+      "source_rom_name": "Pok\u00e9mon CrystalDust.gba",
+      "source_map": "g24_m025",
+      "source_map_flat_png_sha256": "edff2b80155b74d4ed4f56dd289abc7d6787e114449cc425ba1ee164829a5e5c",
+      "native_map_coords": [
+        [
+          8,
+          1
+        ]
+      ],
+      "donor_pair": "083df884_083dfa94",
+      "donor_mid": 520,
+      "donor_plane": "top",
+      "donor_xyxy": [
+        128,
+        512,
+        144,
+        528
+      ],
+      "source_atlas_sha256": "2d00abc21db5fc9bfe659312c20516bba1532a6fc7b341043947a4fc793f02db",
+      "source_metatile_flat_rgba_sha256": "51bfad6184ec16806e4494bdea019057a6f84f1e26702c58bd079acab4b52ea4",
+      "logical_size": [
+        16,
+        16
+      ],
+      "opaque_bounds": [
+        0,
+        0,
+        8,
+        16
+      ],
+      "pixel_scale": 1,
+      "native_alpha_unchanged": true,
+      "whole_native_metatile_layer": true
+    }
+  },
+  "whole_frame_bounds_proof": {
+    "source_map": "g24_m025",
+    "source_top_xyxy": [
+      120,
+      16,
+      136,
+      32
+    ],
+    "dimensions": [
+      16,
+      16
+    ],
+    "rgba_sha256": "d97f83f82cbb55218584a670e6507142a4cd1f2eeca0bb491f7170b4bd9f347e",
+    "left_asset_source_xyxy": [
+      8,
+      0,
+      16,
+      16
+    ],
+    "right_asset_source_xyxy": [
+      0,
+      0,
+      8,
+      16
+    ],
+    "assembled_equals_exact_native_map_top_crop": true,
+    "whole_runtime_cell_pair": [
+      528,
+      520
+    ],
+    "native_timber_outside_frame_retained": true,
+    "feature_crop_or_scale": false
+  },
+  "limits": [
+    "Static native background extraction; no actors or runtime animation callbacks executed.",
+    "Source collision, warps, actor placements, story and interaction scripts are not changed by this extractor."
+  ]
+}

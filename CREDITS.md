@@ -1,5 +1,18 @@
 # Artwork credits
 
+## Violet native details (0.46.6)
+
+The compact Gym panels and Sprout Tower's Bellsprout painting use complete
+CrystalDust artwork by Sierraffinity and contributors, extracted from the
+user's supplied ROM. Native TOP module 766 supplies the carved Gym panel.
+Complete TOP modules 528 and 520 preserve the entire framed painting across
+its original two cells, including the native timber beside it. All pixels
+retain their native size and alpha. Exact source ROM, map, atlas, rectangle,
+layer and image fingerprints accompany the three PNGs in
+`assets/third_party/johto-hacks/violet-native-details/provenance.json`.
+Both Violet house radios reuse the complete native radio and stand already
+credited in `assets/third_party/johto-hacks/newbark-crystaldust/`.
+
 ## Violet gate inside counter join (0.46.5)
 
 The inside-left join uses the complete native FireRed house-counter post

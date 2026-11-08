@@ -3,6 +3,8 @@
 
 TileShift swaps world artwork through individually reviewed tile matches.
 
+Version 0.46.6 polishes Violet City's house radios, compact Gym fixtures and Sprout Tower's Bellsprout painting with complete native CrystalDust artwork. Both house radios retain their full stands and matching room backing. The Gym panels and the entire framed painting keep their original pixel size. NPC positions, radio and painting interactions, source collision and other map artwork are unchanged in Gold, Silver and Crystal.
+
 Version 0.46.5 corrects the inside-left join of the upper counter in the Route 31 Violet gate. A matching native counter post keeps the gray and white inside edge continuous into the front bank. The terminal, mirrored entrance rugs, NPCs, counter interactions and walking rules are retained in Gold, Silver and Crystal.
 
 Version 0.46.4 improves both service counters in the Route 31 Violet gate with complete native countertops, fronts and end pieces. The left entrance rug is an exact horizontal mirror of the right, including its border and shading. The original U-shaped layout stays visible, while the officer, visitor, entrances and walking space retain their original positions and behavior in Gold, Silver and Crystal.
