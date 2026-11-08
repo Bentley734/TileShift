@@ -3,6 +3,8 @@
 
 TileShift swaps world artwork through individually reviewed tile matches.
 
+Version 0.46.5 corrects the inside-left join of the upper counter in the Route 31 Violet gate. A matching native counter post keeps the gray and white inside edge continuous into the front bank. The terminal, mirrored entrance rugs, NPCs, counter interactions and walking rules are retained in Gold, Silver and Crystal.
+
 Version 0.46.4 improves both service counters in the Route 31 Violet gate with complete native countertops, fronts and end pieces. The left entrance rug is an exact horizontal mirror of the right, including its border and shading. The original U-shaped layout stays visible, while the officer, visitor, entrances and walking space retain their original positions and behavior in Gold, Silver and Crystal.
 
 Version 0.46.3 corrects the inside corner of Route 31's pond in Gold, Silver and Crystal. The shoreline uses the same native still pond water as its neighboring tiles instead of a visibly different sea-water patch. Selected water styles continue to work, and original terrain, walking rules, NPC positions and interactions are unchanged.

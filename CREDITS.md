@@ -1,5 +1,12 @@
 # Artwork credits
 
+## Violet gate inside counter join (0.46.5)
+
+The inside-left join uses the complete native FireRed house-counter post
+653 at its original 16x16 size. This continues the same gray and white rim
+through the join, replacing the prematurely capped edge of module 668.
+No artwork is scaled, recolored or generated.
+
 ## Route 31 Violet gate counters (0.46.4)
 
 The gate uses complete native FireRed house-counter modules at their original

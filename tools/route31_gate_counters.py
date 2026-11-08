@@ -3,6 +3,8 @@
 The native FireRed house counter family includes the cream counter fronts used
 pixel-for-pixel by CrystalDust's gate. Full 16px corners and returns preserve
 the original two U-shaped collision footprints, with no decorative overhang.
+The upper-left inner join uses a continuous straight post, rather than a
+terminal return whose border stops before reaching the front counter.
 """
 from __future__ import annotations
 from pathlib import Path
@@ -27,7 +29,7 @@ HASHES={
 677:'f50b7a4487eb9d69d7a7c17581cdb24c0f202fb24482691a0f20910e8fe0907f',
 678:'0278f7aaf9605bc2a8173cade61206d980f97e8d2f365848349c12a55e235819',
 }
-LAYOUT={(2,1):653,(7,1):653,(2,2):668,(7,2):670,
+LAYOUT={(2,1):653,(7,1):653,(2,2):653,(7,2):670,
     (2,3):676,(3,3):677,(4,3):677,(5,3):677,(6,3):677,(7,3):678,
     (2,6):660,(3,6):677,(4,6):677,(5,6):677,(6,6):677,(7,6):662,(2,7):653,(7,7):653}
 sha=lambda b:hashlib.sha256(b).hexdigest()
