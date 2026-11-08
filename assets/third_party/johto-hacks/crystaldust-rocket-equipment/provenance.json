@@ -1,0 +1,457 @@
+{
+  "format": 1,
+  "credit": "CrystalDust by Sierraffinity and contributors",
+  "sourceUrl": "https://github.com/Sierraffinity/CrystalDust",
+  "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+  "native_map": "g24_m020",
+  "pair": "083df884_083dfc94",
+  "files": {
+    "generator-793.png": "d86cef47018cee56e1654a191ab57ec83937e6164e10dda49f84d0621a192534",
+    "generator-794.png": "ee7db83d6c7b660d9e548e167d9bfe8cf3b7d4f88fb50d0ec0bba7cc9d6702f0",
+    "generator-795.png": "8ba38c05df1c1fe99edf1e8f0c2b9ffe582f5a014e8752954588d75ac683d956",
+    "generator-801.png": "f386f42e5bffc5d4b9b4e77d12236ece5f55216fea0a41f6af737afd2d7d5fd9",
+    "generator-802.png": "1d2885bdb10c59e10e5848366316b8a9358c91be9a01d2af4279236086d38c6f",
+    "generator-803.png": "7a3b113c3ede39196c0661cc68be9cf51323ef7df11d99356b2593658d13c51e",
+    "generator-633.png": "0bb33d4b8e27e7a8dadc641244c7359e8d288b8bd4f7e3c3517c59e0422139e9",
+    "generator-634.png": "9337d0365dca9c0cee15e6c7e933efa42984d7648118b584a40a403e71a923b9",
+    "generator-796.png": "105ac44aeff3a80a2ca54fec8cd2404fe470c940a7db668e5a2147713984eace",
+    "generator-880.png": "6f16abde7967b6033731cd1f02e556744360f8582c7456f24c36711a096cda91",
+    "generator-881.png": "4d94e5c3ad3d5e8ef23870fc8c3951ffe2ec5a922e1c51f5ed3680383c757de8",
+    "generator-882.png": "54a5568b7f4c3b4ada16c7d5bc8a0c72c550a9a21257764c418f91a72df25fc3",
+    "generator-888.png": "e1e27d3d5abe5f25cca9fae81f611a9aa1e05e1c4f4bd4cb7be8d67993885375",
+    "generator-889.png": "3d0f4d5720c42a11207265bc906c5a380920cb4c5af39b808995edfdc346cc90",
+    "generator-883.png": "1966fda5a9c3a6668134e14dc6e0fc4414fc5934fadd55760765a643de1e2cf9",
+    "server-head.png": "2d3c5c9d6648787cb69d5a8910b75b2705ce6ec38aa5076586848f64ff81a23d",
+    "server-body.png": "b3ebebf0fbc1784cbadcce276af27bda764ec0bdf22dd10e0f6c9b786a9ed602",
+    "cable.png": "84cd2736df00946b2d61d90fb28a3a137a57591a1f3d837a499c8d34298e4ba1",
+    "electrode-terminal.png": "cafdeb53af9b8fb816b0fa6ff1e8dc8dea113ee4efd29cea3c6e7d05527a6c8d",
+    "desk-top-568.png": "a96577097bf5819a8ace28ed2cadc27b9ca269edc6a2a39744d3454cacf7d3c3",
+    "desk-top-570.png": "1e1c1ac00be2d8b6b6534149a760250b75f83b764c98ad334e99e55519d14377",
+    "desk-front-1006.png": "b62ff88b6658998e93906d1341755657d09849f9dcdf9c66d1299cb863085dad",
+    "desk-front-1007.png": "0f6525ef1ea399d34b955f79399e67fb46a9a7a24bb3bfd653752647a1f42dce"
+  },
+  "pieces": [
+    {
+      "file": "generator-793.png",
+      "native_map": "g24_m020",
+      "pair": "083df884_083dfc94",
+      "metatile": 793,
+      "plane": "top",
+      "atlas_rect": [
+        144,
+        784,
+        16,
+        16
+      ],
+      "native_flat_rgba_sha256": "7db2a33834a58df4cb94fbb39d5652779ffb9ef801c07ee0d9b4f0beadaec4d7",
+      "rgba_sha256": "598c8c9f65b6cad4267ff1357d748fac5df21bca2709f960d130f3a2c716ee9c",
+      "pixel_scale": 1
+    },
+    {
+      "file": "generator-794.png",
+      "native_map": "g24_m020",
+      "pair": "083df884_083dfc94",
+      "metatile": 794,
+      "plane": "top",
+      "atlas_rect": [
+        160,
+        784,
+        16,
+        16
+      ],
+      "native_flat_rgba_sha256": "45e53230b9d28cfa7fa43c92e6c4d996fc74928114f8b46eccd9b22e0c584872",
+      "rgba_sha256": "dbce2aa9017be659f0baad99bbb64beffdab9cc256076f56cfa629eec5569eaf",
+      "pixel_scale": 1
+    },
+    {
+      "file": "generator-795.png",
+      "native_map": "g24_m020",
+      "pair": "083df884_083dfc94",
+      "metatile": 795,
+      "plane": "top",
+      "atlas_rect": [
+        176,
+        784,
+        16,
+        16
+      ],
+      "native_flat_rgba_sha256": "932ab2b83bb8f7aff767b19b10198fab418e679ef2e4a732ffee397330c01cd6",
+      "rgba_sha256": "b3d2249394aab38ab7d8b9592bef7e2f63fe193b5e64c355bf3e136c7b50a324",
+      "pixel_scale": 1
+    },
+    {
+      "file": "generator-801.png",
+      "native_map": "g24_m020",
+      "pair": "083df884_083dfc94",
+      "metatile": 801,
+      "plane": "top",
+      "atlas_rect": [
+        16,
+        800,
+        16,
+        16
+      ],
+      "native_flat_rgba_sha256": "8c1e9e0129a84fe3b1730b328d1f95a086f157a81fb15cefae845515925a5d5d",
+      "rgba_sha256": "8c1e9e0129a84fe3b1730b328d1f95a086f157a81fb15cefae845515925a5d5d",
+      "pixel_scale": 1
+    },
+    {
+      "file": "generator-802.png",
+      "native_map": "g24_m020",
+      "pair": "083df884_083dfc94",
+      "metatile": 802,
+      "plane": "top",
+      "atlas_rect": [
+        32,
+        800,
+        16,
+        16
+      ],
+      "native_flat_rgba_sha256": "c432f23e276b4b2bb8f04d24b3720aed10cc1617249179b9c4e62f660de26925",
+      "rgba_sha256": "c432f23e276b4b2bb8f04d24b3720aed10cc1617249179b9c4e62f660de26925",
+      "pixel_scale": 1
+    },
+    {
+      "file": "generator-803.png",
+      "native_map": "g24_m020",
+      "pair": "083df884_083dfc94",
+      "metatile": 803,
+      "plane": "top",
+      "atlas_rect": [
+        48,
+        800,
+        16,
+        16
+      ],
+      "native_flat_rgba_sha256": "f6bb1b6147f092ad01495a39735ddb53022931cb49ce0a4ad25d9f1e7c85cf28",
+      "rgba_sha256": "f6bb1b6147f092ad01495a39735ddb53022931cb49ce0a4ad25d9f1e7c85cf28",
+      "pixel_scale": 1
+    },
+    {
+      "file": "generator-633.png",
+      "native_map": "g24_m020",
+      "pair": "083df884_083dfc94",
+      "metatile": 633,
+      "plane": "bottom+top",
+      "atlas_rect": [
+        144,
+        624,
+        16,
+        16
+      ],
+      "native_flat_rgba_sha256": "910fb0bf93cb04fd33faee5a102c9212afb0f34ed630760b036dcb8809a7e1e4",
+      "rgba_sha256": "910fb0bf93cb04fd33faee5a102c9212afb0f34ed630760b036dcb8809a7e1e4",
+      "pixel_scale": 1
+    },
+    {
+      "file": "generator-634.png",
+      "native_map": "g24_m020",
+      "pair": "083df884_083dfc94",
+      "metatile": 634,
+      "plane": "bottom+top",
+      "atlas_rect": [
+        160,
+        624,
+        16,
+        16
+      ],
+      "native_flat_rgba_sha256": "7ca17095a6dd4b18e404a33ede06895ad0c2c26b9dcec052ad2d10d69e806564",
+      "rgba_sha256": "7ca17095a6dd4b18e404a33ede06895ad0c2c26b9dcec052ad2d10d69e806564",
+      "pixel_scale": 1
+    },
+    {
+      "file": "generator-796.png",
+      "native_map": "g24_m020",
+      "pair": "083df884_083dfc94",
+      "metatile": 796,
+      "plane": "bottom+top",
+      "atlas_rect": [
+        192,
+        784,
+        16,
+        16
+      ],
+      "native_flat_rgba_sha256": "8224e0540083d1174cf61ac4e3f09a24ea60d368ffb49030c102694b98edd4c5",
+      "rgba_sha256": "8224e0540083d1174cf61ac4e3f09a24ea60d368ffb49030c102694b98edd4c5",
+      "pixel_scale": 1
+    },
+    {
+      "file": "generator-880.png",
+      "native_map": "g24_m020",
+      "pair": "083df884_083dfc94",
+      "metatile": 880,
+      "plane": "top",
+      "atlas_rect": [
+        0,
+        880,
+        16,
+        16
+      ],
+      "native_flat_rgba_sha256": "599fa7ebd2693d32c1ac4b5dc3cf715f6ff3770eed31bca57808f663f44bde67",
+      "rgba_sha256": "599fa7ebd2693d32c1ac4b5dc3cf715f6ff3770eed31bca57808f663f44bde67",
+      "pixel_scale": 1
+    },
+    {
+      "file": "generator-881.png",
+      "native_map": "g24_m020",
+      "pair": "083df884_083dfc94",
+      "metatile": 881,
+      "plane": "top",
+      "atlas_rect": [
+        16,
+        880,
+        16,
+        16
+      ],
+      "native_flat_rgba_sha256": "e7b2534d4b60adce1fe9c2328ace600255ae9588429302437e9b7440ac98d319",
+      "rgba_sha256": "e7b2534d4b60adce1fe9c2328ace600255ae9588429302437e9b7440ac98d319",
+      "pixel_scale": 1
+    },
+    {
+      "file": "generator-882.png",
+      "native_map": "g24_m020",
+      "pair": "083df884_083dfc94",
+      "metatile": 882,
+      "plane": "top",
+      "atlas_rect": [
+        32,
+        880,
+        16,
+        16
+      ],
+      "native_flat_rgba_sha256": "aa010fae3d942165239d9e3960ac1da45af2af6f0bf741472a8342bd450e0d7b",
+      "rgba_sha256": "aa010fae3d942165239d9e3960ac1da45af2af6f0bf741472a8342bd450e0d7b",
+      "pixel_scale": 1
+    },
+    {
+      "file": "generator-888.png",
+      "native_map": "g24_m020",
+      "pair": "083df884_083dfc94",
+      "metatile": 888,
+      "plane": "top",
+      "atlas_rect": [
+        128,
+        880,
+        16,
+        16
+      ],
+      "native_flat_rgba_sha256": "c81c3b2165f9fca18e43d1fb005d49972c0053084d20c7a62e0bbf776d7f9133",
+      "rgba_sha256": "48aa59b32eb02eb08cd11df3d7a3c93df028dac848b2115aba62976ae3e63bd9",
+      "pixel_scale": 1
+    },
+    {
+      "file": "generator-889.png",
+      "native_map": "g24_m020",
+      "pair": "083df884_083dfc94",
+      "metatile": 889,
+      "plane": "top",
+      "atlas_rect": [
+        144,
+        880,
+        16,
+        16
+      ],
+      "native_flat_rgba_sha256": "0937e49b6fc471eb1d26d18f13a95c2d07e52c585d975bc372e523577e641d25",
+      "rgba_sha256": "529d21bbae74fb74dcf2720e600d8cd20ee645bc5982a7e95cb5e021dec5f17e",
+      "pixel_scale": 1
+    },
+    {
+      "file": "generator-883.png",
+      "native_map": "g24_m020",
+      "pair": "083df884_083dfc94",
+      "metatile": 883,
+      "plane": "top",
+      "atlas_rect": [
+        48,
+        880,
+        16,
+        16
+      ],
+      "native_flat_rgba_sha256": "36e2c88ee7c1421d20adc219f33acda72f3a9a614d8e85b652708755d9d69359",
+      "rgba_sha256": "5351baa4e0f1873c2ef74973542167e4d80315e69cb593fcf30a3ae713bac5b4",
+      "pixel_scale": 1
+    },
+    {
+      "file": "server-head.png",
+      "native_map": "g24_m020",
+      "pair": "083df884_083dfc94",
+      "metatile": 995,
+      "plane": "top",
+      "atlas_rect": [
+        48,
+        992,
+        16,
+        16
+      ],
+      "rgba_sha256": "9c2feab825a58dc2c91759aae8eced323f33cc3b756996a4789101b03610419e",
+      "pixel_scale": 1
+    },
+    {
+      "file": "server-body.png",
+      "native_map": "g24_m020",
+      "pair": "083df884_083dfc94",
+      "metatile": 1003,
+      "plane": "bottom",
+      "atlas_rect": [
+        176,
+        992,
+        16,
+        16
+      ],
+      "rgba_sha256": "2467b2e8f417f93a91e1386b6fe76f1c1fa83227847a326dd5d62d1cc61b779f",
+      "pixel_scale": 1
+    },
+    {
+      "file": "cable.png",
+      "native_map": "g24_m020",
+      "pair": "083df884_083dfc94",
+      "metatile": 1015,
+      "plane": "bottom",
+      "atlas_rect": [
+        112,
+        1008,
+        16,
+        16
+      ],
+      "rgba_sha256": "dd29830fb3e32cefb7ec6f020ce7f43e146341e2809d9c253e2abbc9eea773c2",
+      "pixel_scale": 1
+    },
+    {
+      "file": "electrode-terminal.png",
+      "native_map": "g24_m020",
+      "pair": "083df884_083dfc94",
+      "metatile": 1016,
+      "plane": "bottom",
+      "atlas_rect": [
+        128,
+        1008,
+        16,
+        16
+      ],
+      "rgba_sha256": "79263b6638a6cfbcf0ef10db55bef2aa5d841ed33f4e1361be0d05d26133f9f1",
+      "pixel_scale": 1
+    },
+    {
+      "file": "desk-top-568.png",
+      "native_map": "g24_m021",
+      "pair": "083df884_083dfc94",
+      "metatile": 568,
+      "plane": "top",
+      "atlas_rect": [
+        128,
+        560,
+        16,
+        16
+      ],
+      "rgba_sha256": "2e6cab271105c8a1684e2c53dda9dfff7344990ea8dc5c9cba4b663d5fcd9f69",
+      "pixel_scale": 1
+    },
+    {
+      "file": "desk-top-570.png",
+      "native_map": "g24_m021",
+      "pair": "083df884_083dfc94",
+      "metatile": 570,
+      "plane": "top",
+      "atlas_rect": [
+        160,
+        560,
+        16,
+        16
+      ],
+      "rgba_sha256": "4876008ce2dd5b8e450103bf7397de248e2eb42e1934b9e4ec21b559f8a36ee6",
+      "pixel_scale": 1
+    },
+    {
+      "file": "desk-front-1006.png",
+      "native_map": "g24_m021",
+      "pair": "083df884_083dfc94",
+      "metatile": 1006,
+      "plane": "bottom",
+      "atlas_rect": [
+        224,
+        992,
+        16,
+        16
+      ],
+      "rgba_sha256": "3f4867b2cf4245b8f6368a2dc6b724e5bfde4371f877f7785504cf18b1c2040f",
+      "pixel_scale": 1
+    },
+    {
+      "file": "desk-front-1007.png",
+      "native_map": "g24_m021",
+      "pair": "083df884_083dfc94",
+      "metatile": 1007,
+      "plane": "bottom",
+      "atlas_rect": [
+        240,
+        992,
+        16,
+        16
+      ],
+      "rgba_sha256": "f369ac79c8cef48f4f28d819c802347cbf5eeaaf0d118630f01ab6316775bc4d",
+      "pixel_scale": 1
+    }
+  ],
+  "native_atlas_files": {
+    "flat.png": "b7b5abc155b6dc139bc149245bcf9f7a5dad20bcb207938847e839264002b6d4",
+    "bottom.png": "5d4864b01d665cee50f6cb2eba063e7b63364026754ad53b1c570fc44c0c2f6c",
+    "top.png": "1f2be60d12939e45e02482560448388423f615b80a6c6884cb24cb10129f0e49"
+  },
+  "assembly": {
+    "size": [
+      96,
+      96
+    ],
+    "native_rows": [
+      5,
+      6,
+      7,
+      8,
+      15,
+      16
+    ],
+    "native_columns": [
+      13,
+      19
+    ],
+    "rgba_sha256": "13bda55e925c3e18aaa0161f54922e48885d2dfe979b2a030e9774dd1cd1c861",
+    "alpha_bounds": [
+      0,
+      8,
+      96,
+      88
+    ],
+    "native_adjacencies_verified": 60,
+    "complete_unique_caps_castings_fronts_and_feet": true,
+    "removed_only_repeated_join_body_pairs": 3,
+    "pixel_scale": 1
+  },
+  "empty_desk": {
+    "native_map": "g24_m021",
+    "native_rect": [
+      400,
+      128,
+      32,
+      32
+    ],
+    "native_planes": [
+      [
+        "top:568",
+        "top:570"
+      ],
+      [
+        "bottom:1006",
+        "bottom:1007"
+      ]
+    ],
+    "size": [
+      32,
+      32
+    ],
+    "opaque_pixels": 1024,
+    "rgba_sha256": "f65f21962e98723bf59c3cd4652fe91487c868266fe25545f2554408a9f54708",
+    "separate_native_stool_top_planes_excluded": true,
+    "complete_native_desk_unchanged": true,
+    "pixel_scale": 1
+  }
+}

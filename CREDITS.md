@@ -1,5 +1,11 @@
 # Artwork credits
 
+## Rocket Base equipment and transparent fences (0.46.8)
+
+Rocket equipment uses exact native CrystalDust artwork by Sierraffinity and contributors from the user-supplied ROM. The genuine Rocket floors were identified through their reciprocal entrance and floor warps. Two complete 48px-wide generator columns use whole native cap, body, join, front and foot modules; only repeated tier pairs are omitted to fit the original 96x96 blocked bank. All 60 module seams occur in the native room. Complete 16x32 server cabinets use TOP995 and BOTTOM1003; complete power cables and terminal pads use BOTTOM1015 and BOTTOM1016. Native source ROM, map, atlas, plane, module and pixel fingerprints accompany the 23 PNGs in `assets/third_party/johto-hacks/crystaldust-rocket-equipment/provenance.json`. Computers reuse the already credited complete 32x26 CrystalDust front-facing workstation and retain all 687 opaque pixels, without adding a separate stool. Two complete 32x32 native empty desks per game use TOP568/570 and BOTTOM1006/1007 from actual CrystalDust B3F; their separate stool layers are excluded.
+
+Garden fences use the complete native FireRed Pallet module 644 middle plane. Its 174 post, rail and shadow pixels remain exact; its 82 transparent openings reveal each map’s checked adjacent Emerald or FireRed grass profile. No fence pixels are drawn, recolored or deleted.
+
 ## Violet native details (0.46.6)
 
 The compact Gym panels and Sprout Tower's Bellsprout painting use complete
