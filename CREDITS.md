@@ -321,3 +321,5 @@ gen1-outdoor-audit/, gen1-seating-domestic/ and gamefreak/rby-facility-floor/
 provenance.json. No original layout, entrance or NPC coordinates are moved.
 
 The Hoenn submarine replacement uses one original vessel created with the built-in image generator. Its whole 64×48 canvas was normalized with uniform integer nearest-neighbor reduction and split at native 16-pixel boundaries. Generation and piece fingerprints are in `assets/original/classic-submarine/provenance.json`. Other named regional four-color derivatives are drawn at runtime from the player’s own imported native geometry.
+
+Clinic Chansey borrows the player-selected prepared overworld artwork from WildFollowers when that mod is active; TileShift does not copy or redistribute those sprite packs. Without the optional provider, the directional native Gen 2 Fairy overworld sprite and Chansey color palette come from the player import. The clinic-specific Companion-to-EE selection uses the WildFollowers public provider; it does not change that mod's global sprite preferences. The native FireRed wall/floor backing replaces only the former decorative control PC.

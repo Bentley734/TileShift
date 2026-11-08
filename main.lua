@@ -1,5 +1,5 @@
 return function(mod)
-  local callback,dispose,disposed,stopOptions,ownerBus,ownerEpoch,owned,adapterContext,state,roofs,berryTheme
+  local callback,dispose,disposed,stopOptions,ownerBus,ownerEpoch,owned,adapterContext,state,roofs,berryTheme,clinicChansey,clinicStops
   local function readModule(path)
     return assert(load(assert(mod:read(path)), '@tileshift/'..path))()
   end
@@ -311,12 +311,14 @@ return function(mod)
   local function refresh(game)
     if berryTheme then berryTheme:prepare(GV.get()) end
     local world=game and game.world
+    if clinicChansey and world then clinicChansey:refresh(world) end
     if mod.generation==2 and world and world.map and world.imageFor then
       world.mapImage=world:imageFor(world.map.id)
       for _,neighbor in ipairs(world.neighbors or {}) do neighbor.image=world:imageFor(neighbor.id) end
     end
   end
   local function afterUpdate(game,...)
+    if clinicChansey and game and game.world then clinicChansey:poll(game.world)end
     if state.style~='original' and mod.generation<3 then vegetation:bind(mod.generation==1 and (game.overworld or game.world) or game.world)end
     return ...
   end
@@ -374,6 +376,36 @@ return function(mod)
       return state:replacements(game,tileset,def)
     end,warn=function(s)mod.log:warn('%s',s)end}
   local close=adapter.install(adapterContext)
+  if mod.generation==2 then
+    local fxAvailable,clinicFx=pcall(require,'src.render.PaletteFX')
+    clinicChansey=readModule('lib/clinic_chansey.lua').install({
+      catalog=readModule('lib/clinic_chansey_catalog.lua'),version=GV.get,
+      style=function()return state.style end,active=owned,
+      valid=function(world,record)
+        local art=state:replacements(GV.get(),record.tileset,world.map.def)
+        for _,cell in ipairs(record.cells)do
+          local block=art and art[cell.id]
+          if not(block and block.coverage and block.coverage[cell.quadrant])then return false end
+        end
+        return true
+      end,
+      resolveProvider=function()
+        if not mod.find then return nil end
+        local other=mod:find('wildfollowers')
+        return other and other.exports and other.exports.overworldSprites
+      end,
+      markTrueColor=function(x,y,w,h)
+        if fxAvailable and clinicFx.markTrueColor then clinicFx.markTrueColor(x,y,w,h)end
+      end})
+    clinicStops={}
+    clinicStops[1]=mod.events:on('mods.loaded',function()if mod.game and mod.game.world then clinicChansey:refresh(mod.game.world)end end)
+    clinicStops[2]=mod.events:on('mod.options_changed',function(payload)
+      if type(payload)=='table'and payload.mod=='wildfollowers'and mod.game and mod.game.world then
+        clinicChansey:refresh(mod.game.world)
+      end
+    end)
+    if mod.game and mod.game.world then clinicChansey:prepare(mod.game.world)end
+  end
   if berryHost then
     local catalogSource=mod:read('lib/berry_catalog.lua')
     if catalogSource then
@@ -393,6 +425,9 @@ return function(mod)
   dispose=function()
     if disposed then return end
     disposed=true;if berryTheme then berryTheme:dispose()end
+    if clinicChansey then clinicChansey:dispose()end
+    for _,stop in ipairs(clinicStops or {})do if stop then stop()end end
+    clinicStops=nil
     vegetation:dispose();close();roofs:dispose();decoder:invalidate()
     if stopOptions then stopOptions();stopOptions=nil end
     if Runtime._tileShiftDispose==dispose then Runtime._tileShiftDispose=nil end
@@ -481,6 +516,7 @@ return function(mod)
   mod.exports.roofs=roofs
   mod.exports.vegetation=vegetation
   mod.exports.berryTheme=berryTheme
+  mod.exports.clinicChansey=clinicChansey
   mod.exports.drawVegetation=function(...)if adapterContext.drawVegetation then return adapterContext.drawVegetation(...)end end
   mod.exports.dispose=dispose
   mod.exports.select=function(style)

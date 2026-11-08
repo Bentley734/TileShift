@@ -48,6 +48,14 @@ for _,gameId in ipairs(games)do
   end}
   fixture.session={new=function(ctx)fixture.sessionCtx=ctx;return state end}
   fixture.berryCatalog={fixture=true}
+  fixture.clinicCatalog={}
+  fixture.clinicModule={install=function(ctx)
+    fixture.clinicCtx=ctx
+    return {prepare=function()fixture.clinicPrepares=(fixture.clinicPrepares or 0)+1 end,
+      refresh=function()fixture.clinicRefreshes=(fixture.clinicRefreshes or 0)+1 end,
+      poll=function()fixture.clinicPolls=(fixture.clinicPolls or 0)+1 end,
+      dispose=function()fixture.clinicDisposes=(fixture.clinicDisposes or 0)+1 end}
+  end}
   fixture.berryModule={install=function(ctx)
     fixture.berryCtx=ctx
     return {prepare=function(_,version)
@@ -66,7 +74,8 @@ for _,gameId in ipairs(games)do
   _G.__tileMainFixture=fixture
   local modules={['lib/mapping.lua']='mapping',['mappings/reviewed.lua']='reviewed',
     ['lib/donor.lua']='donor',['lib/session.lua']='session',['lib/composition.lua']='composition',
-    ['lib/berry_catalog.lua']='berryCatalog',['lib/berry_theme.lua']='berryModule'}
+    ['lib/berry_catalog.lua']='berryCatalog',['lib/berry_theme.lua']='berryModule',
+    ['lib/clinic_chansey_catalog.lua']='clinicCatalog',['lib/clinic_chansey.lua']='clinicModule'}
   local stored,schemas,hooks,listeners={},nil,{},{}
   local function emit(name,payload)
     for _,fn in ipairs(listeners[name] or {})do fn(payload)end
@@ -205,6 +214,14 @@ for _,gameId in ipairs(games)do
   eq(fixture.composerCtx.donor,fixture.decoder);eq(type(fixture.composerCtx.newImageData),'function')
   eq(type(fixture.donorCtx.identityToken),'function');eq(fixture.donorCtx.identityToken(),0,'import digest cache begins in its first frame')
   eq(fixture.installed,generation,'only active generation adapter installed')
+  eq(mod.exports.clinicChansey~=nil,generation==2,'clinic residents only install on Gen2 hosts')
+  if generation==2 then
+    eq(fixture.clinicCtx.catalog,fixture.clinicCatalog)
+    eq(fixture.clinicCtx.version(),gameId)
+    eq(fixture.clinicCtx.style(),state.style)
+    eq(fixture.clinicCtx.active(),true)
+    eq(fixture.clinicCtx.resolveProvider(),nil,'WildFollowers remains optional')
+  end
   eq(next(fixture.sessionCtx.mappings),nil,'optional missing tree module leaves reviewed set usable')
   eq(fixture.adapterCtx.version(),gameId)
   eq(fixture.adapterCtx.active(),true,'active hook marks ownership')
