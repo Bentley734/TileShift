@@ -120,6 +120,13 @@ function R.new(ctx)
       and row.sourceHash=='1a1c7d4b890f991a1290f715332ee869b8c2eb211929e52a0f5dc95284ddfe5d'
       and row.sourceCollision==7 and row.role=='crystaldust_native_link_battle_apparatus'
       and row.x>=3 and row.x<=6 and row.y>=2 and row.y<=4 and row.frontY==76
+    local mrPokemonPC=coords and row.furniture=='mr_pokemon_pc'
+      and(row.game=='gold'or row.game=='silver'or row.game=='crystal')
+      and row.map=='MR_POKEMONS_HOUSE'and row.tileset=='TILESET_FACILITY'
+      and row.id==40 and row.quadrant==0 and row.anchorX==6 and row.anchorY==4
+      and row.sourceHash=='db23202aaa2045d6e5c03289eb4979eb90847fc827155f15fce037c75f710837'
+      and row.sourceCollision==7 and row.role=='route30_crystaldust_oak_workstation'
+      and row.x>=6 and row.x<=7 and row.y>=3 and row.y<=4 and row.frontY==80
     local upperPC=coords and row.furniture=='pokecenter_upper_pc'
       and(row.game=='gold'or row.game=='silver'or row.game=='crystal')
       and upperPCMaps[row.map]and row.tileset=='TILESET_POKECENTER'
@@ -146,7 +153,7 @@ function R.new(ctx)
       and row.x>=row.anchorX-1 and row.x<=row.anchorX and row.y>=row.anchorY and row.y<=row.anchorY+1
     local checked={};for k,v in pairs(row)do checked[k]=v end
     checked.x,checked.y=row.anchorX,row.anchorY
-    assert((bed or pc or carpet or shrine or lighthouseBed or lighthouseTable or linkMachine or battleMachine or upperPC or redBed or shipBed)and row.style=='gen3'and row.kind=='third_party'
+    assert((bed or pc or carpet or shrine or lighthouseBed or lighthouseTable or linkMachine or battleMachine or upperPC or redBed or shipBed or mrPokemonPC)and row.style=='gen3'and row.kind=='third_party'
       and row.sourceFiles and type(row.assetFileHash)=='string'and #row.assetFileHash==64
       and not(row.base or row.donor or row.parts or row.canopy or row.animated or row.foreground or row.occludes)
       and not(row.side or row.sourceX or row.sourceY or row.animation or row.frames or row.assetFrames or row.artOverlay or row.overMask)
@@ -280,6 +287,14 @@ function R.new(ctx)
               local wx,wy=x*16+px,y*16+py
               assert(alpha==0 or(wx>=left and wx<right and wy>=top and wy<bottom),
                 'Lighthouse furniture escapes its complete native silhouette envelope')
+            end end
+          end
+          if row.furniture=='mr_pokemon_pc'then
+            for py=0,15 do for px=0,15 do
+              local _,_,_,alpha=image:getPixel(px,py)
+              local wx,wy=x*16+px,y*16+py
+              assert(alpha==0 or(wx>=96 and wx<128 and wy>=54 and wy<80),
+                'Mr Pokemon workstation escapes its complete native32x26 envelope')
             end end
           end
           if row.furniture=='ilex_shrine'then

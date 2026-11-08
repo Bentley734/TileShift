@@ -1,0 +1,332 @@
+{
+  "files": {
+    "research-nook-3-4.png": "56c3407717ab81d05f952884ca93d6d0de9981dd90e77e508bfe638f67657f14",
+    "research-nook-3-5.png": "56c3407717ab81d05f952884ca93d6d0de9981dd90e77e508bfe638f67657f14",
+    "research-nook-4-4.png": "ec01ec36f89ce6447434e139b4874146fc0532d21271f553ce408149b63203e8",
+    "research-nook-4-5.png": "aa53d4882fe1ac49fd82a107dc4e5638c67c8f7cdfcc63c5a5fa00dc7e27082d",
+    "research-nook-5-4.png": "d0f85f1e4af01c68dd95709c58ec1b59313acd13a5cf382ea342bdbc28d466f4",
+    "research-nook-5-5.png": "b70dde907f086e539024d92688fce6081b15f7df56fa0af7a9184a18ec37ab79",
+    "research-nook-6-3.png": "9cc58a634877cba90b6d5e4ee75d226cb3caa6a5a71913601bbb8c51fd5bf22f",
+    "research-nook-6-4.png": "671753994fe6cda0e7a611655e9b3e5f7c9f7ab3705ac849561be57b756629bd",
+    "research-nook-7-3.png": "af5a5c9c7ffe4c5041c904af3f0b39d7ba0f4b3b7f5a08ec63fce31ebded264c",
+    "research-nook-7-4.png": "8dbcdd6a4be53b75a5808844109aba7a81ea0f52be0884b416e1560335af511b"
+  },
+  "format": 1,
+  "origin": "CrystalDust / Sierraffinity and contributors",
+  "recipe": "Complete native carpet modules beneath intact native furniture foregrounds, at1:1 pixel scale.",
+  "research_nook_compositions": {
+    "research-nook-3-4.png": {
+      "canvas": [
+        16,
+        16
+      ],
+      "foreground_recipe": {
+        "kind": "native_composite",
+        "parts": [
+          {
+            "donor": {
+              "game": "firered",
+              "hash": "529d5a420450fd6428ec9d58819fbf63681f48ee48b9e5e9f16d241ddc597ada",
+              "id": 75,
+              "tileset": "player_house"
+            },
+            "h": 16,
+            "layerHashes": {
+              "mid": "cfde3223ecb1b3ac9e63d7660eea3944f179a2cbb9daf0e274515b31f87acdae"
+            },
+            "layers": [
+              "mid"
+            ],
+            "w": 16,
+            "x": 0,
+            "y": 0
+          }
+        ]
+      },
+      "foreground_rgba_sha256": "cfde3223ecb1b3ac9e63d7660eea3944f179a2cbb9daf0e274515b31f87acdae",
+      "native_floor_asset": "assets/third_party/johto-hacks/mr-pokemon-research-machine/carpet-center.png",
+      "native_floor_png_sha256": "5bc11b99759ab30a3d5b6e0f59e9a0af508d974b7b5fe505dc1559063956d750",
+      "offset": [
+        0,
+        0
+      ],
+      "output_rgba_sha256": "911c7560ee8aff7c58f0f2706b9cf2e0cd266ca9a4921855d990c57d8000b87b",
+      "pixel_scale": 1
+    },
+    "research-nook-3-5.png": {
+      "canvas": [
+        16,
+        16
+      ],
+      "foreground_recipe": {
+        "kind": "native_composite",
+        "parts": [
+          {
+            "donor": {
+              "game": "firered",
+              "hash": "529d5a420450fd6428ec9d58819fbf63681f48ee48b9e5e9f16d241ddc597ada",
+              "id": 75,
+              "tileset": "player_house"
+            },
+            "h": 16,
+            "layerHashes": {
+              "mid": "cfde3223ecb1b3ac9e63d7660eea3944f179a2cbb9daf0e274515b31f87acdae"
+            },
+            "layers": [
+              "mid"
+            ],
+            "w": 16,
+            "x": 0,
+            "y": 0
+          }
+        ]
+      },
+      "foreground_rgba_sha256": "cfde3223ecb1b3ac9e63d7660eea3944f179a2cbb9daf0e274515b31f87acdae",
+      "native_floor_asset": "assets/third_party/johto-hacks/mr-pokemon-research-machine/carpet-center.png",
+      "native_floor_png_sha256": "5bc11b99759ab30a3d5b6e0f59e9a0af508d974b7b5fe505dc1559063956d750",
+      "offset": [
+        0,
+        0
+      ],
+      "output_rgba_sha256": "911c7560ee8aff7c58f0f2706b9cf2e0cd266ca9a4921855d990c57d8000b87b",
+      "pixel_scale": 1
+    },
+    "research-nook-4-4.png": {
+      "canvas": [
+        16,
+        16
+      ],
+      "foreground_recipe": {
+        "kind": "native_composite",
+        "parts": [
+          {
+            "donor": {
+              "game": "firered",
+              "hash": "581a5f4e038bb5443277160acd0e937c65e0e0bc583ccbc75ad729be5b53cebd",
+              "id": 680,
+              "tileset": "oak_lab"
+            },
+            "h": 16,
+            "layerHashes": {
+              "mid": "aa320d6b78f2cea462d8dfe42647ff75ab35342e49128ad31ba99a106e952483"
+            },
+            "layers": [
+              "mid"
+            ],
+            "srcX": 0,
+            "srcY": 0,
+            "w": 16,
+            "x": 0,
+            "y": 0
+          }
+        ]
+      },
+      "foreground_rgba_sha256": "aa320d6b78f2cea462d8dfe42647ff75ab35342e49128ad31ba99a106e952483",
+      "native_floor_asset": "assets/third_party/johto-hacks/mr-pokemon-research-machine/carpet-center.png",
+      "native_floor_png_sha256": "5bc11b99759ab30a3d5b6e0f59e9a0af508d974b7b5fe505dc1559063956d750",
+      "offset": [
+        0,
+        0
+      ],
+      "output_rgba_sha256": "02f23e7e6ffef6200a6c573be1f63ed6254f4908eb58081402879e47f0f93a88",
+      "pixel_scale": 1
+    },
+    "research-nook-4-5.png": {
+      "canvas": [
+        16,
+        16
+      ],
+      "foreground_recipe": {
+        "kind": "native_composite",
+        "parts": [
+          {
+            "donor": {
+              "game": "firered",
+              "hash": "a5c09600e3940e65cf4aaba8a7df71643ddbe31675c8ce6eba7086de0539c39b",
+              "id": 688,
+              "tileset": "oak_lab"
+            },
+            "h": 16,
+            "layerHashes": {
+              "mid": "ee7c492d69b06c22cf0a16c4c7440eb3f93bb18b58f214ac3793e5cdd71e7ec7"
+            },
+            "layers": [
+              "mid"
+            ],
+            "srcX": 0,
+            "srcY": 0,
+            "w": 16,
+            "x": 0,
+            "y": 0
+          }
+        ]
+      },
+      "foreground_rgba_sha256": "ee7c492d69b06c22cf0a16c4c7440eb3f93bb18b58f214ac3793e5cdd71e7ec7",
+      "native_floor_asset": "assets/third_party/johto-hacks/mr-pokemon-research-machine/carpet-center.png",
+      "native_floor_png_sha256": "5bc11b99759ab30a3d5b6e0f59e9a0af508d974b7b5fe505dc1559063956d750",
+      "offset": [
+        0,
+        0
+      ],
+      "output_rgba_sha256": "8e6734b2a731de7ecc5a59880d3ead895f57ab404c625c21ec17466c669c1a8c",
+      "pixel_scale": 1
+    },
+    "research-nook-5-4.png": {
+      "canvas": [
+        16,
+        16
+      ],
+      "foreground_recipe": {
+        "kind": "native_composite",
+        "parts": [
+          {
+            "donor": {
+              "game": "firered",
+              "hash": "77703a0257c7abe3ea06049cb15346bdfa9112acd42f49d72c6a58b91f775aa2",
+              "id": 682,
+              "tileset": "oak_lab"
+            },
+            "h": 16,
+            "layerHashes": {
+              "mid": "523644f3e8d583ea22fcaf30366a58bae36aa0cd0ae24ca9de862a0b80ad0ede"
+            },
+            "layers": [
+              "mid"
+            ],
+            "srcX": 0,
+            "srcY": 0,
+            "w": 16,
+            "x": 0,
+            "y": 0
+          }
+        ]
+      },
+      "foreground_rgba_sha256": "523644f3e8d583ea22fcaf30366a58bae36aa0cd0ae24ca9de862a0b80ad0ede",
+      "native_floor_asset": "assets/third_party/johto-hacks/mr-pokemon-research-machine/carpet-center.png",
+      "native_floor_png_sha256": "5bc11b99759ab30a3d5b6e0f59e9a0af508d974b7b5fe505dc1559063956d750",
+      "offset": [
+        0,
+        0
+      ],
+      "output_rgba_sha256": "444f6caeeffdbab00f3e0e4c7dac07d409decb9935ff6b923bea15b3f2a85e1b",
+      "pixel_scale": 1
+    },
+    "research-nook-5-5.png": {
+      "canvas": [
+        16,
+        16
+      ],
+      "foreground_recipe": {
+        "kind": "native_composite",
+        "parts": [
+          {
+            "donor": {
+              "game": "firered",
+              "hash": "c62970f622ae2ea91bbbea4114a0fc11e34ffc368fd544177c1c557db7ae0133",
+              "id": 690,
+              "tileset": "oak_lab"
+            },
+            "h": 16,
+            "layerHashes": {
+              "mid": "5072586c424459c58992365dda0b81d6537f76ab5034dd5b13dad31101a8ca7f"
+            },
+            "layers": [
+              "mid"
+            ],
+            "srcX": 0,
+            "srcY": 0,
+            "w": 16,
+            "x": 0,
+            "y": 0
+          }
+        ]
+      },
+      "foreground_rgba_sha256": "5072586c424459c58992365dda0b81d6537f76ab5034dd5b13dad31101a8ca7f",
+      "native_floor_asset": "assets/third_party/johto-hacks/mr-pokemon-research-machine/carpet-center.png",
+      "native_floor_png_sha256": "5bc11b99759ab30a3d5b6e0f59e9a0af508d974b7b5fe505dc1559063956d750",
+      "offset": [
+        0,
+        0
+      ],
+      "output_rgba_sha256": "77b14c9564afde8f5e77a0b092631cbfbc23d0294b6d000fbfdbf9924e539de9",
+      "pixel_scale": 1
+    },
+    "research-nook-6-3.png": {
+      "canvas": [
+        16,
+        16
+      ],
+      "foreground_recipe": {
+        "asset": "assets/third_party/johto-hacks/newbark-cd-lab/wall-pc-cell-0-0.png",
+        "assetFileHash": "77d467cde91a86fed49c380dba965aa141eb0c0d4a91938268ce66bcedf882a6"
+      },
+      "foreground_rgba_sha256": "1fc86e0ec346c44075f4a3b1a2ae53deb40ed293d9f2089d8b8943e20ee0d16e",
+      "native_floor_asset": "assets/third_party/johto-hacks/mr-pokemon-research-machine/carpet-top.png",
+      "native_floor_png_sha256": "6760e15a7eb9e80b0f1f424aa21e0b7b6a3264584cf559ef0ca0cc9d1084f86d",
+      "offset": [
+        0,
+        0
+      ],
+      "output_rgba_sha256": "470a44d688e4f7becd5692c9369634c3ff9379577affddab75f9e24304a014cc",
+      "pixel_scale": 1
+    },
+    "research-nook-6-4.png": {
+      "canvas": [
+        16,
+        16
+      ],
+      "foreground_recipe": {
+        "asset": "assets/third_party/johto-hacks/newbark-cd-lab/wall-pc-cell-0-1.png",
+        "assetFileHash": "faa88f5e4ff5dad1043f44c23016975a3fc09120505b2a3498ac22129b760240"
+      },
+      "foreground_rgba_sha256": "ba8901ae200b5f60de109a4975b7ae238878b247f000200bd99ab06cc2cf117b",
+      "native_floor_asset": "assets/third_party/johto-hacks/mr-pokemon-research-machine/carpet-center.png",
+      "native_floor_png_sha256": "5bc11b99759ab30a3d5b6e0f59e9a0af508d974b7b5fe505dc1559063956d750",
+      "offset": [
+        0,
+        0
+      ],
+      "output_rgba_sha256": "2525091bb9a0e8fba310874e2641aef19671c41de5c1454c6f39aeac35eab88d",
+      "pixel_scale": 1
+    },
+    "research-nook-7-3.png": {
+      "canvas": [
+        16,
+        16
+      ],
+      "foreground_recipe": {
+        "asset": "assets/third_party/johto-hacks/newbark-cd-lab/wall-pc-cell-1-0.png",
+        "assetFileHash": "bb61662b43dbd41595305a3625330943ae69b008af261e11951687d2aa9e5fe9"
+      },
+      "foreground_rgba_sha256": "963219054401512bbf7a4cf068c4ccaf463a56b3a6e7f704e5ba9030d0201d30",
+      "native_floor_asset": "assets/third_party/johto-hacks/mr-pokemon-research-machine/carpet-top-right.png",
+      "native_floor_png_sha256": "dc78d7d4526b0a5d6a4fff051503f53943b88bfb45117240ac482ba50944d7b8",
+      "offset": [
+        0,
+        0
+      ],
+      "output_rgba_sha256": "ed91cf8b71a4b402e7b0d513cfb136c8a7336c127a68f845c47f477780eece7e",
+      "pixel_scale": 1
+    },
+    "research-nook-7-4.png": {
+      "canvas": [
+        16,
+        16
+      ],
+      "foreground_recipe": {
+        "asset": "assets/third_party/johto-hacks/newbark-cd-lab/wall-pc-cell-1-1.png",
+        "assetFileHash": "069fefa2dc1d7d32863eab03e92b7ac38b4f5394ffb01da63c145d39d83f716f"
+      },
+      "foreground_rgba_sha256": "e76fa6a88a6f314577894a6e0460d8387bbfa5c58c32524c6e703392a3d6d2d9",
+      "native_floor_asset": "assets/third_party/johto-hacks/mr-pokemon-research-machine/carpet-right.png",
+      "native_floor_png_sha256": "cf098c68907ffe6a3fbc2aee8c26a4380c121426e1ec06e768ebba3111b8f062",
+      "offset": [
+        0,
+        0
+      ],
+      "output_rgba_sha256": "2878c83b37ea60e686d16810fa96651efdfbcd5283019f5e60656eef3a55fffe",
+      "pixel_scale": 1
+    }
+  },
+  "sourceUrl": "https://github.com/Sierraffinity/CrystalDust"
+}

@@ -1,0 +1,583 @@
+{
+  "format": 1,
+  "origin": "CrystalDust by Sierraffinity and contributors",
+  "sourceUrl": "https://github.com/Sierraffinity/CrystalDust",
+  "purpose": "Complete native Mr. Pokemon research machine, preserving its original size and alpha.",
+  "recipe": "Six intact 16x16 TOP-plane modules from CrystalDust Mr. Pokemon House cells6..7,0..2. Assemble at1:1 native pixel scale. No crop of opaque pixels, color keying, recoloring, generated pixels or scaling.",
+  "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+  "source_catalog_sha256": "fd8fbaf6eb4ee3774e3fe046bf3b506e7f638ab4cd9297c9f62a8bb1189bc740",
+  "source_map_id": "g02_m006",
+  "source_pair": "083df884_083dfb0c",
+  "source_map_metatiles_sha256": "661dbf9b82f55261733ebddb4b111c88dbea7b87bc07f75af8272365293902af",
+  "source_map_png_sha256": "9b545118516bc325e9475fc7017bd216c7b440bb16a0f37daae405ca790174be",
+  "source_map_rgba_sha256": "aa30d8c13c270903732de187c321193e5c1f60d56155cee14f4206a846fd8cc4",
+  "source_map_rect_xywh": [
+    96,
+    0,
+    32,
+    48
+  ],
+  "source_planes": {
+    "bottom": {
+      "path": "C:\\Users\\LSDMTHC\\Desktop\\Hoennto\\.work\\tileshift-firegold\\crystaldust\\pairs\\083df884_083dfb0c\\bottom.png",
+      "sha256": "a617d894b440b7cdfe083ae3f7cfa4b8a1d2b0b1b86900c236c9cc3b94abe3e4"
+    },
+    "top": {
+      "path": "C:\\Users\\LSDMTHC\\Desktop\\Hoennto\\.work\\tileshift-firegold\\crystaldust\\pairs\\083df884_083dfb0c\\top.png",
+      "sha256": "3dfd05c0f5e0eab874ff4da0374899825a8625b28fd848d3dfea56e69682ffca"
+    },
+    "flat": {
+      "path": "C:\\Users\\LSDMTHC\\Desktop\\Hoennto\\.work\\tileshift-firegold\\crystaldust\\pairs\\083df884_083dfb0c\\flat.png",
+      "sha256": "f17a831d87b43cbd538e7f7b738f9f5d00e135c34aeb10e5670d79712188fda2"
+    }
+  },
+  "files": {
+    "machine-0-0.png": "d6bb6060b3728cc6abe86bec2df1dcc885169b9ae12fd15378482cc6da39866f",
+    "machine-1-0.png": "2c014ddd33b4516151d01926c0e5ae6ecf6f5f73b7c55661a895ba886b96559f",
+    "machine-0-1.png": "44faa614a1111ce0303157446f5420c5edb658b7f06e651ca5f1fa4fb1be3831",
+    "machine-1-1.png": "241e2d36fbb735b8059ec9613b5a7fbf4203beca8c5f9a3f17b32049324211db",
+    "machine-0-2.png": "cf770295434fd9b315af721e52b519a50d8279da18733634a3cf5a20ce9031ea",
+    "machine-1-2.png": "e0200395dbb32c7ecf8f2398e107e5ef583bbbf69e965852c215725c8d27d7e9",
+    "complete-native-machine.png": "e374db3bb8c1a159580ab24b38ec7b3984141732d8ed120103cd4982bc4149d0",
+    "machine-wall-0.png": "de2e1757dfc234b7fda2f799f75d3a0592bc85269822593e1c32fc8764908d4d",
+    "machine-wall-1.png": "457fd82195324b04bf13068e4227f13c24f1e44038d52e01dcf98bb6b2a32503",
+    "carpet-top-left.png": "557506eb3e95b8c2f4555d6ac6e10642d53e52143ecd552c2c5442659f2dc472",
+    "carpet-top.png": "6760e15a7eb9e80b0f1f424aa21e0b7b6a3264584cf559ef0ca0cc9d1084f86d",
+    "carpet-top-right.png": "dc78d7d4526b0a5d6a4fff051503f53943b88bfb45117240ac482ba50944d7b8",
+    "carpet-left.png": "b18c46e2523f48323007199420e52a9a2824f5de52138f5318d4cc5441a1634f",
+    "carpet-center.png": "5bc11b99759ab30a3d5b6e0f59e9a0af508d974b7b5fe505dc1559063956d750",
+    "carpet-right.png": "cf098c68907ffe6a3fbc2aee8c26a4380c121426e1ec06e768ebba3111b8f062",
+    "carpet-bottom-left.png": "0fe9aa3cdfebd0445e6e76114eb1352fc3a48b2907b3a6350af4a02bd5976a07",
+    "carpet-bottom.png": "48dbc2514de6ed0307a820e0549e222852db76c531ddb281bd84a9f6e77d5e37",
+    "carpet-bottom-right.png": "655828c05d015c4df4301fadf51260b2ed070b0dbf8e33770e23b0cb99809a8c"
+  },
+  "source_modules": {
+    "machine-0-0.png": {
+      "asset": "assets/third_party/johto-hacks/mr-pokemon-research-machine/machine-0-0.png",
+      "assetFileHash": "d6bb6060b3728cc6abe86bec2df1dcc885169b9ae12fd15378482cc6da39866f",
+      "assetPixelHash": "45dde829132ceb06bc99c15f0c81ee97ae373cc1d584aca7a0ee7f379e201367",
+      "native_map_cell": [
+        6,
+        0
+      ],
+      "native_grid_value": 1592,
+      "native_metatile_id": 568,
+      "plane": "top",
+      "source_rect_xywh": [
+        128,
+        560,
+        16,
+        16
+      ],
+      "destination_xy": [
+        0,
+        0
+      ],
+      "complete_module": true,
+      "native_alpha_unchanged": true,
+      "scale": 1
+    },
+    "machine-1-0.png": {
+      "asset": "assets/third_party/johto-hacks/mr-pokemon-research-machine/machine-1-0.png",
+      "assetFileHash": "2c014ddd33b4516151d01926c0e5ae6ecf6f5f73b7c55661a895ba886b96559f",
+      "assetPixelHash": "85ef3cece6206046b9364a0bcc23b883f04de350754fdc1ce6fd02075e7afe67",
+      "native_map_cell": [
+        7,
+        0
+      ],
+      "native_grid_value": 1593,
+      "native_metatile_id": 569,
+      "plane": "top",
+      "source_rect_xywh": [
+        144,
+        560,
+        16,
+        16
+      ],
+      "destination_xy": [
+        16,
+        0
+      ],
+      "complete_module": true,
+      "native_alpha_unchanged": true,
+      "scale": 1
+    },
+    "machine-0-1.png": {
+      "asset": "assets/third_party/johto-hacks/mr-pokemon-research-machine/machine-0-1.png",
+      "assetFileHash": "44faa614a1111ce0303157446f5420c5edb658b7f06e651ca5f1fa4fb1be3831",
+      "assetPixelHash": "f085507370c5fd29859d0c34b5ce9e16e76bcb9c21184ecd864d2ef4c58f3af2",
+      "native_map_cell": [
+        6,
+        1
+      ],
+      "native_grid_value": 1600,
+      "native_metatile_id": 576,
+      "plane": "top",
+      "source_rect_xywh": [
+        0,
+        576,
+        16,
+        16
+      ],
+      "destination_xy": [
+        0,
+        16
+      ],
+      "complete_module": true,
+      "native_alpha_unchanged": true,
+      "scale": 1
+    },
+    "machine-1-1.png": {
+      "asset": "assets/third_party/johto-hacks/mr-pokemon-research-machine/machine-1-1.png",
+      "assetFileHash": "241e2d36fbb735b8059ec9613b5a7fbf4203beca8c5f9a3f17b32049324211db",
+      "assetPixelHash": "50eb11f794e6ea14713d7b5750dfc7dc60bd7a3029e04420ec651783dac8d509",
+      "native_map_cell": [
+        7,
+        1
+      ],
+      "native_grid_value": 1601,
+      "native_metatile_id": 577,
+      "plane": "top",
+      "source_rect_xywh": [
+        16,
+        576,
+        16,
+        16
+      ],
+      "destination_xy": [
+        16,
+        16
+      ],
+      "complete_module": true,
+      "native_alpha_unchanged": true,
+      "scale": 1
+    },
+    "machine-0-2.png": {
+      "asset": "assets/third_party/johto-hacks/mr-pokemon-research-machine/machine-0-2.png",
+      "assetFileHash": "cf770295434fd9b315af721e52b519a50d8279da18733634a3cf5a20ce9031ea",
+      "assetPixelHash": "34d787256a3f5c767dd3112e63057540cc5ac6db96ec3388e087284cfd30f508",
+      "native_map_cell": [
+        6,
+        2
+      ],
+      "native_grid_value": 1560,
+      "native_metatile_id": 536,
+      "plane": "top",
+      "source_rect_xywh": [
+        128,
+        528,
+        16,
+        16
+      ],
+      "destination_xy": [
+        0,
+        32
+      ],
+      "complete_module": true,
+      "native_alpha_unchanged": true,
+      "scale": 1
+    },
+    "machine-1-2.png": {
+      "asset": "assets/third_party/johto-hacks/mr-pokemon-research-machine/machine-1-2.png",
+      "assetFileHash": "e0200395dbb32c7ecf8f2398e107e5ef583bbbf69e965852c215725c8d27d7e9",
+      "assetPixelHash": "7ba3a69a7e0c08e1ac42f14fac68778d21fd7ef88eacf9a9fc08eb10442c2332",
+      "native_map_cell": [
+        7,
+        2
+      ],
+      "native_grid_value": 1561,
+      "native_metatile_id": 537,
+      "plane": "top",
+      "source_rect_xywh": [
+        144,
+        528,
+        16,
+        16
+      ],
+      "destination_xy": [
+        16,
+        32
+      ],
+      "complete_module": true,
+      "native_alpha_unchanged": true,
+      "scale": 1
+    }
+  },
+  "native_wall_compounds": {
+    "machine-wall-0.png": {
+      "asset": "assets/third_party/johto-hacks/mr-pokemon-research-machine/machine-wall-0.png",
+      "assetFileHash": "de2e1757dfc234b7fda2f799f75d3a0592bc85269822593e1c32fc8764908d4d",
+      "assetPixelHash": "d0f5ce0d1601a3fcfb1383e09e06535c26a98a4c766787352dfa9dd066a5d920",
+      "recipe": "Exact native FLAT wall105 + intact TOP machine middle module, both at0,0.",
+      "native_wall_metatile": 105,
+      "native_wall_plane": "flat",
+      "native_wall_rgba_sha256": "304638882a75e3363c203b50b363db73539ba3244faafd874ebc7a68cb3a9b3e",
+      "native_wall_source_rect_xywh": [
+        144,
+        96,
+        16,
+        16
+      ],
+      "native_foreground": "machine-0-1.png",
+      "native_foreground_rgba_sha256": "f085507370c5fd29859d0c34b5ce9e16e76bcb9c21184ecd864d2ef4c58f3af2",
+      "native_alpha_unchanged": true,
+      "scale": 1
+    },
+    "machine-wall-1.png": {
+      "asset": "assets/third_party/johto-hacks/mr-pokemon-research-machine/machine-wall-1.png",
+      "assetFileHash": "457fd82195324b04bf13068e4227f13c24f1e44038d52e01dcf98bb6b2a32503",
+      "assetPixelHash": "97afbc13238f25189d63eb73ed07220c72701579eed99472b5effa7f1771918c",
+      "recipe": "Exact native FLAT wall105 + intact TOP machine middle module, both at0,0.",
+      "native_wall_metatile": 105,
+      "native_wall_plane": "flat",
+      "native_wall_rgba_sha256": "304638882a75e3363c203b50b363db73539ba3244faafd874ebc7a68cb3a9b3e",
+      "native_wall_source_rect_xywh": [
+        144,
+        96,
+        16,
+        16
+      ],
+      "native_foreground": "machine-1-1.png",
+      "native_foreground_rgba_sha256": "50eb11f794e6ea14713d7b5750dfc7dc60bd7a3029e04420ec651783dac8d509",
+      "native_alpha_unchanged": true,
+      "scale": 1
+    }
+  },
+  "carpet": {
+    "width_cells": 6,
+    "height_cells": 4,
+    "layout": [
+      [
+        "carpet-top-left.png",
+        "carpet-top.png",
+        "carpet-top.png",
+        "carpet-top.png",
+        "carpet-top.png",
+        "carpet-top-right.png"
+      ],
+      [
+        "carpet-left.png",
+        "carpet-center.png",
+        "carpet-center.png",
+        "carpet-center.png",
+        "carpet-center.png",
+        "carpet-right.png"
+      ],
+      [
+        "carpet-left.png",
+        "carpet-center.png",
+        "carpet-center.png",
+        "carpet-center.png",
+        "carpet-center.png",
+        "carpet-right.png"
+      ],
+      [
+        "carpet-bottom-left.png",
+        "carpet-bottom.png",
+        "carpet-bottom.png",
+        "carpet-bottom.png",
+        "carpet-bottom.png",
+        "carpet-bottom-right.png"
+      ]
+    ],
+    "source_rect_xywh": [
+      32,
+      48,
+      96,
+      64
+    ],
+    "placement_cells_xy": [
+      2,
+      3
+    ],
+    "native_module_roles": {
+      "top-left": {
+        "asset": "assets/third_party/johto-hacks/mr-pokemon-research-machine/carpet-top-left.png",
+        "assetFileHash": "557506eb3e95b8c2f4555d6ac6e10642d53e52143ecd552c2c5442659f2dc472",
+        "assetPixelHash": "3a7feb67be565e618aa6fc5fbeb4931931970465b66a72a8c0f748d5a10239c2",
+        "native_metatile_id": 620,
+        "native_plane": "flat",
+        "source_rect_xywh": [
+          192,
+          608,
+          16,
+          16
+        ],
+        "native_top_sha256": "65872fb3ad2e3d6c47b3ad915b69347a721b5badda7ddc29b8bb3eaa7d27d222",
+        "native_bottom_sha256": "ec35a71354fcd15e2816b2c8c8dc295dbda227da4f978001311bfe0e5b643b12",
+        "source_map_cells": [
+          [
+            2,
+            3
+          ]
+        ],
+        "complete_native_floor_module": true,
+        "contains_furniture": false,
+        "scale": 1
+      },
+      "top": {
+        "asset": "assets/third_party/johto-hacks/mr-pokemon-research-machine/carpet-top.png",
+        "assetFileHash": "6760e15a7eb9e80b0f1f424aa21e0b7b6a3264584cf559ef0ca0cc9d1084f86d",
+        "assetPixelHash": "b5607908d3b914e5f76764ee39eb9042ceb4ee9fde28c0e302ed1b670e0afa90",
+        "native_metatile_id": 621,
+        "native_plane": "flat",
+        "source_rect_xywh": [
+          208,
+          608,
+          16,
+          16
+        ],
+        "native_top_sha256": "21ab2785c01add610fed54a904b14c067d82ccf04c5ebfbee48d888e79a6e5f2",
+        "native_bottom_sha256": "ec35a71354fcd15e2816b2c8c8dc295dbda227da4f978001311bfe0e5b643b12",
+        "source_map_cells": [
+          [
+            3,
+            3
+          ],
+          [
+            6,
+            3
+          ]
+        ],
+        "complete_native_floor_module": true,
+        "contains_furniture": false,
+        "scale": 1
+      },
+      "top-right": {
+        "asset": "assets/third_party/johto-hacks/mr-pokemon-research-machine/carpet-top-right.png",
+        "assetFileHash": "dc78d7d4526b0a5d6a4fff051503f53943b88bfb45117240ac482ba50944d7b8",
+        "assetPixelHash": "89544fa3c9186db902814e9750e37fb71271778508d8e321c2ff008bba2e1fa7",
+        "native_metatile_id": 622,
+        "native_plane": "flat",
+        "source_rect_xywh": [
+          224,
+          608,
+          16,
+          16
+        ],
+        "native_top_sha256": "dcd06998abc80c6a03fdf18e6a0b36858ad45d57ad412b90fd05aee3dadd0bad",
+        "native_bottom_sha256": "ec35a71354fcd15e2816b2c8c8dc295dbda227da4f978001311bfe0e5b643b12",
+        "source_map_cells": [],
+        "complete_native_floor_module": true,
+        "contains_furniture": false,
+        "scale": 1
+      },
+      "left": {
+        "asset": "assets/third_party/johto-hacks/mr-pokemon-research-machine/carpet-left.png",
+        "assetFileHash": "b18c46e2523f48323007199420e52a9a2824f5de52138f5318d4cc5441a1634f",
+        "assetPixelHash": "71d7db02015a45e2ff30377bf27ecafa8da14897d155e7331c771df0d04e7a9c",
+        "native_metatile_id": 631,
+        "native_plane": "flat",
+        "source_rect_xywh": [
+          112,
+          624,
+          16,
+          16
+        ],
+        "native_top_sha256": "8a6646864a701d2ac527d23a3f9363a497c4fa8edec14e45b4f41b6ab0442a65",
+        "native_bottom_sha256": "ec35a71354fcd15e2816b2c8c8dc295dbda227da4f978001311bfe0e5b643b12",
+        "source_map_cells": [
+          [
+            2,
+            4
+          ],
+          [
+            2,
+            5
+          ]
+        ],
+        "complete_native_floor_module": true,
+        "contains_furniture": false,
+        "scale": 1
+      },
+      "center": {
+        "asset": "assets/third_party/johto-hacks/mr-pokemon-research-machine/carpet-center.png",
+        "assetFileHash": "5bc11b99759ab30a3d5b6e0f59e9a0af508d974b7b5fe505dc1559063956d750",
+        "assetPixelHash": "2d949f7bd72dd94e881f211fce49a2c0ffc64d1a1e465797d88e24b4ef6a4d45",
+        "native_metatile_id": 627,
+        "native_plane": "flat",
+        "source_rect_xywh": [
+          48,
+          624,
+          16,
+          16
+        ],
+        "native_top_sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "native_bottom_sha256": "2d949f7bd72dd94e881f211fce49a2c0ffc64d1a1e465797d88e24b4ef6a4d45",
+        "source_map_cells": [],
+        "complete_native_floor_module": true,
+        "contains_furniture": false,
+        "scale": 1
+      },
+      "right": {
+        "asset": "assets/third_party/johto-hacks/mr-pokemon-research-machine/carpet-right.png",
+        "assetFileHash": "cf098c68907ffe6a3fbc2aee8c26a4380c121426e1ec06e768ebba3111b8f062",
+        "assetPixelHash": "3aeb3fbd9a5cf1f697ec97cfb105a9d3d08d13c22cf1979d888421e7ac118d16",
+        "native_metatile_id": 623,
+        "native_plane": "flat",
+        "source_rect_xywh": [
+          240,
+          608,
+          16,
+          16
+        ],
+        "native_top_sha256": "3b9953f821b802ac8d4eeb239f690604be1e016d475892f5f89d23986a60b156",
+        "native_bottom_sha256": "ec35a71354fcd15e2816b2c8c8dc295dbda227da4f978001311bfe0e5b643b12",
+        "source_map_cells": [],
+        "complete_native_floor_module": true,
+        "contains_furniture": false,
+        "scale": 1
+      },
+      "bottom-left": {
+        "asset": "assets/third_party/johto-hacks/mr-pokemon-research-machine/carpet-bottom-left.png",
+        "assetFileHash": "0fe9aa3cdfebd0445e6e76114eb1352fc3a48b2907b3a6350af4a02bd5976a07",
+        "assetPixelHash": "0e02180ec1a955f227fb9ce1ff6839a426a484b8b21650f5b28894568bc68c0b",
+        "native_metatile_id": 628,
+        "native_plane": "flat",
+        "source_rect_xywh": [
+          64,
+          624,
+          16,
+          16
+        ],
+        "native_top_sha256": "ba101f5693cd101b8d5c6f72435d4d9418cdb60bfc5022d489548ee22c92ad3b",
+        "native_bottom_sha256": "ec35a71354fcd15e2816b2c8c8dc295dbda227da4f978001311bfe0e5b643b12",
+        "source_map_cells": [
+          [
+            2,
+            6
+          ]
+        ],
+        "complete_native_floor_module": true,
+        "contains_furniture": false,
+        "scale": 1
+      },
+      "bottom": {
+        "asset": "assets/third_party/johto-hacks/mr-pokemon-research-machine/carpet-bottom.png",
+        "assetFileHash": "48dbc2514de6ed0307a820e0549e222852db76c531ddb281bd84a9f6e77d5e37",
+        "assetPixelHash": "6d7f2f39740eea2fda1f6f6fc80ec4f0e2404c504000a390c847d7ad4491420d",
+        "native_metatile_id": 629,
+        "native_plane": "flat",
+        "source_rect_xywh": [
+          80,
+          624,
+          16,
+          16
+        ],
+        "native_top_sha256": "c4e0ab39a4ff6a956c8766247971d2b318d4a0d173dc5b034b40bd88a9254be2",
+        "native_bottom_sha256": "ec35a71354fcd15e2816b2c8c8dc295dbda227da4f978001311bfe0e5b643b12",
+        "source_map_cells": [
+          [
+            3,
+            6
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            5,
+            6
+          ]
+        ],
+        "complete_native_floor_module": true,
+        "contains_furniture": false,
+        "scale": 1
+      },
+      "bottom-right": {
+        "asset": "assets/third_party/johto-hacks/mr-pokemon-research-machine/carpet-bottom-right.png",
+        "assetFileHash": "655828c05d015c4df4301fadf51260b2ed070b0dbf8e33770e23b0cb99809a8c",
+        "assetPixelHash": "8e976016e713b99b596c06d6c6f2545cf3c5470532df3a1ba0fb3aebf3d425c5",
+        "native_metatile_id": 630,
+        "native_plane": "flat",
+        "source_rect_xywh": [
+          96,
+          624,
+          16,
+          16
+        ],
+        "native_top_sha256": "690d104cc665fcdf70c35bc894bb5bae9cc8c36cb939c6aa2c85a6beffb0d233",
+        "native_bottom_sha256": "ec35a71354fcd15e2816b2c8c8dc295dbda227da4f978001311bfe0e5b643b12",
+        "source_map_cells": [
+          [
+            7,
+            6
+          ]
+        ],
+        "complete_native_floor_module": true,
+        "contains_furniture": false,
+        "scale": 1
+      }
+    },
+    "assembly_rgba_sha256": "bc49e3f2d713f4e32ec85c64a698c64ef1ffad0dbcb8e80f55a5d284d05f768a",
+    "assembly_size": [
+      96,
+      64
+    ],
+    "recipe": "Arrange complete native clean carpet floor modules in the same6x4 rectangle as CrystalDust. Native clean FLAT carpet modules retain their own exact gray-floor exterior corners. Carpet artwork occupies TOP over native gray BOTTOM; copying BOTTOM alone would omit carpet. Furniture is independently composed above these floor modules.",
+    "native_carpet_plane": "flat (bottom+top)",
+    "new_pixels_generated": false
+  },
+  "whole": {
+    "asset": "assets/third_party/johto-hacks/mr-pokemon-research-machine/complete-native-machine.png",
+    "assetFileHash": "e374db3bb8c1a159580ab24b38ec7b3984141732d8ed120103cd4982bc4149d0",
+    "assetPixelHash": "513cdf4728ef882e418ec3ce8a7bff6f99e1a28c4c5eb51d6b29f6ad66c719b8",
+    "canvas": [
+      32,
+      48
+    ],
+    "opaque_bounds_xyxy": [
+      0,
+      9,
+      32,
+      48
+    ],
+    "native_opaque_pixels": 1064,
+    "parts": [
+      {
+        "asset": "assets/third_party/johto-hacks/mr-pokemon-research-machine/machine-0-0.png",
+        "xy": [
+          0,
+          0
+        ]
+      },
+      {
+        "asset": "assets/third_party/johto-hacks/mr-pokemon-research-machine/machine-1-0.png",
+        "xy": [
+          16,
+          0
+        ]
+      },
+      {
+        "asset": "assets/third_party/johto-hacks/mr-pokemon-research-machine/machine-0-1.png",
+        "xy": [
+          0,
+          16
+        ]
+      },
+      {
+        "asset": "assets/third_party/johto-hacks/mr-pokemon-research-machine/machine-1-1.png",
+        "xy": [
+          16,
+          16
+        ]
+      },
+      {
+        "asset": "assets/third_party/johto-hacks/mr-pokemon-research-machine/machine-0-2.png",
+        "xy": [
+          0,
+          32
+        ]
+      },
+      {
+        "asset": "assets/third_party/johto-hacks/mr-pokemon-research-machine/machine-1-2.png",
+        "xy": [
+          16,
+          32
+        ]
+      }
+    ],
+    "native_alpha_unchanged": true,
+    "scale": 1
+  }
+}

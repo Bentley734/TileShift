@@ -1,5 +1,22 @@
 # Artwork credits
 
+## Mr. Pokemon's House furniture and floor (0.46.2)
+
+The lower workstation reuses the complete native CrystalDust front-facing
+monitor, tower, desk and feet by Sierraffinity and contributors, already
+credited in `assets/third_party/johto-hacks/newbark-cd-lab/`. Its native
+pixels are moved one tile north, with matching native floor beneath Oak.
+The transparent exterior and original pixel size are preserved.
+
+The complete research machine and blue carpet modules also come from
+CrystalDust's Mr. Pokemon room. They retain their native pixels and original
+alpha. Source ROM, map, native planes, source rectangles and packaged-file
+fingerprints accompany the assets in
+`assets/third_party/johto-hacks/mr-pokemon-research-machine/provenance.json`.
+Furniture over the carpet retains its complete native foreground; matching
+floor compositions and their exact recipes are recorded in
+`assets/third_party/johto-hacks/mr-pokemon-research-floor/provenance.json`.
+
 ## Route 30 and Mr. Pokemon's House (0.46.1)
 
 The complete front-facing computer and blue sofa use native CrystalDust artwork by

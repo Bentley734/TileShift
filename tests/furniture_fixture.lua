@@ -1,9 +1,9 @@
 -- ROM-free renderer fixture using independently frozen native asset alpha.
 local Fixture={}
-function Fixture.new(root,rows)
+function Fixture.new(root,rows,nativeFixture)
  local Roofs=assert(loadfile(root..'/lib/roofs.lua'))()
  local Mapping=assert(loadfile(root..'/lib/mapping.lua'))()
- local native=assert(loadfile(root..'/tests/furniture_native_alpha.lua'))()
+ local native=nativeFixture or assert(loadfile(root..'/tests/furniture_native_alpha.lua'))()
  local f={game='crystal',active=true,revision=1,valid=true,surface={},sourceReads=0,assetReads=0,images=0,releases=0,warnings={},pixels={}}
  local G={push=function()end,pop=function()end,setShader=function()end,setColor=function()end}
  function G.newImage(data)f.images=f.images+1;return{data=data,setFilter=function()end,release=function()f.releases=f.releases+1 end}end
