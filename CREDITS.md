@@ -1,5 +1,9 @@
 # Artwork credits
 
+## Kurt’s complete native workbench side edges (0.46.11)
+
+The workbench retains the complete native CrystalDust side rims and ends from its lower artwork plane, alongside the upper-plane tools, fascia and supports. The omitted dark edge pixels are restored exactly from the user-supplied CrystalDust ROM by Sierraffinity and contributors. The side outlines remain continuous along the countertop and left return. Exterior wall and floor stay transparent. Source and output fingerprints accompany the workbench provenance; no artwork is rescaled or recolored.
+
 ## Kurt’s complete table and workbench surfaces (0.46.10)
 
 The workbench uses the matching native CrystalDust lower and upper artwork planes by Sierraffinity and contributors from the user-supplied ROM. The native wooden surface remains beneath the tools and complete front trim, while exterior wall and floor space remain transparent. The middle table retains its complete native lower edge. Exact source and output fingerprints accompany the affected assets. No artwork is rescaled or recolored.
