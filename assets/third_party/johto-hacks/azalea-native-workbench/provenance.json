@@ -1,0 +1,502 @@
+{
+  "origin": "Complete authentic CrystalDust Kurt pegboard, tools, L countertop and lower return.",
+  "credit": "Pokemon CrystalDust / Sierraffinity and DoMoreAwesome Games",
+  "sourceUrl": "https://github.com/Sierraffinity/CrystalDust",
+  "rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+  "source_map": "g03_m004",
+  "pair": "083df884_083dfb6c",
+  "source_top_sha256": "db1bb621cc7b97d49dcfb046f070b6bf6defb1f82ff74d4e3b65426d71c76ec4",
+  "source_flat_sha256": "580ca69094d32773fd623fdbb126005c953c164ff8b8d89a572df9acf1ad8d1a",
+  "native_size": [
+    64,
+    96
+  ],
+  "native_alpha_bounds": [
+    0,
+    6,
+    64,
+    96
+  ],
+  "native_opaque_pixels": 2837,
+  "native_top_opaque_pixels": 1217,
+  "complete_pegboard_native_xyxy": [
+    222,
+    6,
+    266,
+    37
+  ],
+  "complete_pegboard_pixels": 1364,
+  "complete_shaft_mid": 567,
+  "complete_shaft_pixels": 256,
+  "excluded_whole_independent_chair_mid": 561,
+  "top_modules": [
+    {
+      "native_xy": [
+        13,
+        0
+      ],
+      "mid": 517,
+      "plane": "top",
+      "opaque_pixels": 0
+    },
+    {
+      "native_xy": [
+        14,
+        0
+      ],
+      "mid": 518,
+      "plane": "top",
+      "opaque_pixels": 0
+    },
+    {
+      "native_xy": [
+        15,
+        0
+      ],
+      "mid": 518,
+      "plane": "top",
+      "opaque_pixels": 0
+    },
+    {
+      "native_xy": [
+        16,
+        0
+      ],
+      "mid": 519,
+      "plane": "top",
+      "opaque_pixels": 0
+    },
+    {
+      "native_xy": [
+        13,
+        1
+      ],
+      "mid": 525,
+      "plane": "top",
+      "opaque_pixels": 0
+    },
+    {
+      "native_xy": [
+        14,
+        1
+      ],
+      "mid": 526,
+      "plane": "top",
+      "opaque_pixels": 0
+    },
+    {
+      "native_xy": [
+        15,
+        1
+      ],
+      "mid": 526,
+      "plane": "top",
+      "opaque_pixels": 0
+    },
+    {
+      "native_xy": [
+        16,
+        1
+      ],
+      "mid": 527,
+      "plane": "top",
+      "opaque_pixels": 0
+    },
+    {
+      "native_xy": [
+        13,
+        2
+      ],
+      "mid": 529,
+      "plane": "top",
+      "opaque_pixels": 99
+    },
+    {
+      "native_xy": [
+        14,
+        2
+      ],
+      "mid": 554,
+      "plane": "top",
+      "opaque_pixels": 80
+    },
+    {
+      "native_xy": [
+        15,
+        2
+      ],
+      "mid": 537,
+      "plane": "top",
+      "opaque_pixels": 66
+    },
+    {
+      "native_xy": [
+        16,
+        2
+      ],
+      "mid": 530,
+      "plane": "top",
+      "opaque_pixels": 52
+    },
+    {
+      "native_xy": [
+        13,
+        3
+      ],
+      "mid": 558,
+      "plane": "top",
+      "opaque_pixels": 174
+    },
+    {
+      "native_xy": [
+        14,
+        3
+      ],
+      "mid": 555,
+      "plane": "top",
+      "opaque_pixels": 224
+    },
+    {
+      "native_xy": [
+        15,
+        3
+      ],
+      "mid": 566,
+      "plane": "top",
+      "opaque_pixels": 156
+    },
+    {
+      "native_xy": [
+        16,
+        3
+      ],
+      "mid": 538,
+      "plane": "top",
+      "opaque_pixels": 128
+    },
+    {
+      "native_xy": [
+        13,
+        4
+      ],
+      "mid": 567,
+      "plane": "top",
+      "opaque_pixels": 0
+    },
+    {
+      "native_xy": [
+        14,
+        4
+      ],
+      "mid": 541,
+      "plane": "top",
+      "opaque_pixels": 0
+    },
+    {
+      "native_xy": [
+        16,
+        4
+      ],
+      "mid": 562,
+      "plane": "top",
+      "opaque_pixels": 0
+    },
+    {
+      "native_xy": [
+        13,
+        5
+      ],
+      "mid": 563,
+      "plane": "top",
+      "opaque_pixels": 238
+    },
+    {
+      "native_xy": [
+        14,
+        5
+      ],
+      "mid": 547,
+      "plane": "top",
+      "opaque_pixels": 0
+    },
+    {
+      "native_xy": [
+        15,
+        5
+      ],
+      "mid": 542,
+      "plane": "top",
+      "opaque_pixels": 0
+    },
+    {
+      "native_xy": [
+        16,
+        5
+      ],
+      "mid": 542,
+      "plane": "top",
+      "opaque_pixels": 0
+    }
+  ],
+  "translation_pixels": [
+    -16,
+    -16
+  ],
+  "native_scale": 1,
+  "processing": "Every native TOP hardware pixel except independent chair561 retained exactly. Entire44x31 distinct framed pegboard retained from flat plane; only generic exterior room wall and molding omitted. Solid native shaft567 retained whole. No recoloring, scaling, hardware clipping or source mechanics changes.",
+  "whole_RGBA_sha256": "d40287a6ea4f378ac396947a6703019966cdd27ed26f98831714f3860c3849f0",
+  "source_modules": {
+    "cell-0-0": {
+      "asset": "assets/third_party/johto-hacks/azalea-native-workbench/cell-0-0.png",
+      "assetFileHash": "7e119587a26a836e704d84cf92ecff3465fff3e52d8f9bc17c1d8a8b1f974f57",
+      "assetPixelHash": "d9d8d0fc45924fd478c5f82f046f0474d1c3f7cc83e15615529a73c16dd79546",
+      "native_xy": [
+        0,
+        0
+      ],
+      "target_xy": [
+        12,
+        -1
+      ],
+      "opaque_pixels": 20
+    },
+    "cell-1-0": {
+      "asset": "assets/third_party/johto-hacks/azalea-native-workbench/cell-1-0.png",
+      "assetFileHash": "d33616a407e639774173f61213ee61a8fdb4ad6667c6c612850dbd0cb5035afe",
+      "assetPixelHash": "294c19985839667e4a24ad04ccbc4819007236adee924e5d53da49fab69e5631",
+      "native_xy": [
+        1,
+        0
+      ],
+      "target_xy": [
+        13,
+        -1
+      ],
+      "opaque_pixels": 160
+    },
+    "cell-2-0": {
+      "asset": "assets/third_party/johto-hacks/azalea-native-workbench/cell-2-0.png",
+      "assetFileHash": "d33616a407e639774173f61213ee61a8fdb4ad6667c6c612850dbd0cb5035afe",
+      "assetPixelHash": "294c19985839667e4a24ad04ccbc4819007236adee924e5d53da49fab69e5631",
+      "native_xy": [
+        2,
+        0
+      ],
+      "target_xy": [
+        14,
+        -1
+      ],
+      "opaque_pixels": 160
+    },
+    "cell-3-0": {
+      "asset": "assets/third_party/johto-hacks/azalea-native-workbench/cell-3-0.png",
+      "assetFileHash": "eafc91af18aec95f2225ceaf130b9ae9b47c32d0e69ecbd4a74ba5c8a302a08d",
+      "assetPixelHash": "95e410dd735b541692b880a26d70ab67d424d62a03d30f89d90bba007c3ebd6b",
+      "native_xy": [
+        3,
+        0
+      ],
+      "target_xy": [
+        15,
+        -1
+      ],
+      "opaque_pixels": 100
+    },
+    "cell-0-1": {
+      "asset": "assets/third_party/johto-hacks/azalea-native-workbench/cell-0-1.png",
+      "assetFileHash": "378543e5d7abcc17b77cec3cd575136c0e4ac054d8b0d65b03a1c923be520bfb",
+      "assetPixelHash": "51b8f09e811a945ad435129d5af850b99d55c8d273ce0f2ecf65e770bd0a103f",
+      "native_xy": [
+        0,
+        1
+      ],
+      "target_xy": [
+        12,
+        0
+      ],
+      "opaque_pixels": 32
+    },
+    "cell-1-1": {
+      "asset": "assets/third_party/johto-hacks/azalea-native-workbench/cell-1-1.png",
+      "assetFileHash": "bdd72ea3f53090440138167cb2e6c4ae5f0d0dfe2de5ed2f3da3e2d95c0e95b8",
+      "assetPixelHash": "401b963d2be9f6c92952bfda79e94c3805c279764a4f1a2eebb0a50c29bc4526",
+      "native_xy": [
+        1,
+        1
+      ],
+      "target_xy": [
+        13,
+        0
+      ],
+      "opaque_pixels": 256
+    },
+    "cell-2-1": {
+      "asset": "assets/third_party/johto-hacks/azalea-native-workbench/cell-2-1.png",
+      "assetFileHash": "bdd72ea3f53090440138167cb2e6c4ae5f0d0dfe2de5ed2f3da3e2d95c0e95b8",
+      "assetPixelHash": "401b963d2be9f6c92952bfda79e94c3805c279764a4f1a2eebb0a50c29bc4526",
+      "native_xy": [
+        2,
+        1
+      ],
+      "target_xy": [
+        14,
+        0
+      ],
+      "opaque_pixels": 256
+    },
+    "cell-3-1": {
+      "asset": "assets/third_party/johto-hacks/azalea-native-workbench/cell-3-1.png",
+      "assetFileHash": "14974064b9dadf7deac626bd8926214cdb37493e6fc780f26f378657b8553b33",
+      "assetPixelHash": "fe1b54d85865a7cdf17dbec69b3ef6a0af0ca18fc739b71882dd4a3878584df5",
+      "native_xy": [
+        3,
+        1
+      ],
+      "target_xy": [
+        15,
+        0
+      ],
+      "opaque_pixels": 160
+    },
+    "cell-0-2": {
+      "asset": "assets/third_party/johto-hacks/azalea-native-workbench/cell-0-2.png",
+      "assetFileHash": "39d784bc050718f70fb7451d6e226dd93405ee532a380bcf07c512d909509fcc",
+      "assetPixelHash": "bd55a9e0db03dbecd77df84af73c5389bbd2b44f11d56c3911d662d66d584201",
+      "native_xy": [
+        0,
+        2
+      ],
+      "target_xy": [
+        12,
+        1
+      ],
+      "opaque_pixels": 109
+    },
+    "cell-1-2": {
+      "asset": "assets/third_party/johto-hacks/azalea-native-workbench/cell-1-2.png",
+      "assetFileHash": "0e00c17cb42831999ba44347b6322164fc815c0352962ba89c18fe2bb2bcc536",
+      "assetPixelHash": "01b4fa5c8564a97f9cba9913ca837b9b7c4d90762f73bf1bab416e9d1b973f09",
+      "native_xy": [
+        1,
+        2
+      ],
+      "target_xy": [
+        13,
+        1
+      ],
+      "opaque_pixels": 160
+    },
+    "cell-2-2": {
+      "asset": "assets/third_party/johto-hacks/azalea-native-workbench/cell-2-2.png",
+      "assetFileHash": "dad75da61d2a7ca561cedfae161e3699648a4bf74b8805345be677b7a71acacb",
+      "assetPixelHash": "7fa57d94a05235d4395e14301edcfc83460fc08ef1cd89d72e1e5920693dcb88",
+      "native_xy": [
+        2,
+        2
+      ],
+      "target_xy": [
+        14,
+        1
+      ],
+      "opaque_pixels": 146
+    },
+    "cell-3-2": {
+      "asset": "assets/third_party/johto-hacks/azalea-native-workbench/cell-3-2.png",
+      "assetFileHash": "e2a3b41e184bcb02e4cb5afc1a3f4301547529b6288282edf7e7f3a2d5807cd0",
+      "assetPixelHash": "467bfba920fc1b41c03b053e6245fc4e4d86f488a2302ec3bec73b5b0f53d664",
+      "native_xy": [
+        3,
+        2
+      ],
+      "target_xy": [
+        15,
+        1
+      ],
+      "opaque_pixels": 102
+    },
+    "cell-0-3": {
+      "asset": "assets/third_party/johto-hacks/azalea-native-workbench/cell-0-3.png",
+      "assetFileHash": "257dc4a9375f834f240d978d8f6058cb710a0727be5c30074f97df7dbfac2c90",
+      "assetPixelHash": "f90edb59317413bb9a9f6709435e0bf41606afc3d70be475d907a265c53710ca",
+      "native_xy": [
+        0,
+        3
+      ],
+      "target_xy": [
+        12,
+        2
+      ],
+      "opaque_pixels": 174
+    },
+    "cell-1-3": {
+      "asset": "assets/third_party/johto-hacks/azalea-native-workbench/cell-1-3.png",
+      "assetFileHash": "e35f25a3b3cf354e54777705f5c6603aa38f230e36be33f5a3052357415a54dd",
+      "assetPixelHash": "924e851c209ef6c5ae1383da5e5b02e69a44843d066d09fb77526a539cc1028a",
+      "native_xy": [
+        1,
+        3
+      ],
+      "target_xy": [
+        13,
+        2
+      ],
+      "opaque_pixels": 224
+    },
+    "cell-2-3": {
+      "asset": "assets/third_party/johto-hacks/azalea-native-workbench/cell-2-3.png",
+      "assetFileHash": "82f2472bc46f86a3475f07adc245c1c022a9bc6ab8a6de497c2772d6820ec9f4",
+      "assetPixelHash": "df07412c0c08ec79d025f72ba0d6e6540ea081289b0455843b8bff3365a8c345",
+      "native_xy": [
+        2,
+        3
+      ],
+      "target_xy": [
+        14,
+        2
+      ],
+      "opaque_pixels": 156
+    },
+    "cell-3-3": {
+      "asset": "assets/third_party/johto-hacks/azalea-native-workbench/cell-3-3.png",
+      "assetFileHash": "ec26ad518f5165ba978d0938f9fe1894cd93741e11ce7f940d88c74bc1851591",
+      "assetPixelHash": "38e4d0121e1a6144e444a682e533b423f166649f14b2f7cb60cf0fe3a5545ed8",
+      "native_xy": [
+        3,
+        3
+      ],
+      "target_xy": [
+        15,
+        2
+      ],
+      "opaque_pixels": 128
+    },
+    "cell-0-4": {
+      "asset": "assets/third_party/johto-hacks/azalea-native-workbench/cell-0-4.png",
+      "assetFileHash": "29e991d4fe5966b680f91453736a1490f9ac128a6b0d0183128abca8b145b71e",
+      "assetPixelHash": "f4fddaf6ef45f184c4dc5d6a53c588d55d1772316de83cef98704f7fcc1e2bed",
+      "native_xy": [
+        0,
+        4
+      ],
+      "target_xy": [
+        12,
+        3
+      ],
+      "opaque_pixels": 256
+    },
+    "cell-0-5": {
+      "asset": "assets/third_party/johto-hacks/azalea-native-workbench/cell-0-5.png",
+      "assetFileHash": "9baf47ce6834c4b5539fd743b6ada0e447fa3a6cfc5bbc09126b1a08f4836e78",
+      "assetPixelHash": "6c602eb24a5ff8baef41d2841b18bdbc535b9f44d3eae90f1b4801e412c03232",
+      "native_xy": [
+        0,
+        5
+      ],
+      "target_xy": [
+        12,
+        4
+      ],
+      "opaque_pixels": 238
+    }
+  }
+}

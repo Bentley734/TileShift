@@ -1,0 +1,300 @@
+{
+  "origin": "Exact complete native CrystalDust Kurt wooden bookcase and framed wall map foregrounds.",
+  "credit": "Pokemon CrystalDust / Sierraffinity and DoMoreAwesome Games",
+  "sourceUrl": "https://github.com/Sierraffinity/CrystalDust",
+  "rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+  "source_map": "g03_m004",
+  "donor_pair": "083df884_083dfb6c",
+  "source_top_sha256": "db1bb621cc7b97d49dcfb046f070b6bf6defb1f82ff74d4e3b65426d71c76ec4",
+  "processing": "Native1:1 TOP plane; translate whole object eight pixels upward using only transparent padding. No scale, recolor, redraw or hardware clipping.",
+  "source_modules": {
+    "cupboard-0-0": {
+      "asset": "assets/third_party/johto-hacks/azalea-native-domestic/cupboard-0-0.png",
+      "assetFileHash": "ece68be68f838284efc0e9720a1a7eeefe17a86142d750027d6c60312a8900f7",
+      "assetPixelHash": "648b25a25dfc92e0bf1091457260be383548c9c9c61cef7658ee59b99acb51dd",
+      "native_object": "cupboard",
+      "source_map": "g03_m004",
+      "donor_pair": "083df884_083dfb6c",
+      "donor_plane": "top",
+      "source_rect_xyxy": [
+        32,
+        8,
+        64,
+        40
+      ],
+      "piece_xy": [
+        0,
+        0
+      ],
+      "native_scale": 1,
+      "translation_y_pixels": -8
+    },
+    "cupboard-1-0": {
+      "asset": "assets/third_party/johto-hacks/azalea-native-domestic/cupboard-1-0.png",
+      "assetFileHash": "9f715b76a696812741a456515bdb1ba9df31e1241b6a6416d0070d3c9c9ea12b",
+      "assetPixelHash": "4cfae2cf38f0d29a841c3052036ad777e11ebc78ddf9af5200041712a9c855d3",
+      "native_object": "cupboard",
+      "source_map": "g03_m004",
+      "donor_pair": "083df884_083dfb6c",
+      "donor_plane": "top",
+      "source_rect_xyxy": [
+        32,
+        8,
+        64,
+        40
+      ],
+      "piece_xy": [
+        1,
+        0
+      ],
+      "native_scale": 1,
+      "translation_y_pixels": -8
+    },
+    "cupboard-0-1": {
+      "asset": "assets/third_party/johto-hacks/azalea-native-domestic/cupboard-0-1.png",
+      "assetFileHash": "eae0f06a58bcd8848afd8ecd03fbacd4af86339911ffd15863e984cff527837e",
+      "assetPixelHash": "63c6cea19f974371781a30ac423161f4fc4a771d705248f74a40d2779fa017e8",
+      "native_object": "cupboard",
+      "source_map": "g03_m004",
+      "donor_pair": "083df884_083dfb6c",
+      "donor_plane": "top",
+      "source_rect_xyxy": [
+        32,
+        8,
+        64,
+        40
+      ],
+      "piece_xy": [
+        0,
+        1
+      ],
+      "native_scale": 1,
+      "translation_y_pixels": -8
+    },
+    "cupboard-1-1": {
+      "asset": "assets/third_party/johto-hacks/azalea-native-domestic/cupboard-1-1.png",
+      "assetFileHash": "0bc223cbd1e187a2cb6d15a2daf728de7a96c63dcc3a7dd14c75d18ea43403eb",
+      "assetPixelHash": "6c318be2fc318baacefbfda4f934bcc4873b11bc05d344fd6d4ba43e25166d45",
+      "native_object": "cupboard",
+      "source_map": "g03_m004",
+      "donor_pair": "083df884_083dfb6c",
+      "donor_plane": "top",
+      "source_rect_xyxy": [
+        32,
+        8,
+        64,
+        40
+      ],
+      "piece_xy": [
+        1,
+        1
+      ],
+      "native_scale": 1,
+      "translation_y_pixels": -8
+    },
+    "map-0-0": {
+      "asset": "assets/third_party/johto-hacks/azalea-native-domestic/map-0-0.png",
+      "assetFileHash": "ff98de595992c4d2e21a880ceddb6c3b195262e22992ec2d9a0c9693aa3bdbb9",
+      "assetPixelHash": "adc91325129ed98a58d4799ff3eb19e8d972f2cf033156135f892dbe42168366",
+      "native_object": "map",
+      "source_map": "g03_m004",
+      "donor_pair": "083df884_083dfb6c",
+      "donor_plane": "top",
+      "source_rect_xyxy": [
+        128,
+        8,
+        160,
+        24
+      ],
+      "piece_xy": [
+        0,
+        0
+      ],
+      "native_scale": 1,
+      "translation_y_pixels": -8
+    },
+    "map-1-0": {
+      "asset": "assets/third_party/johto-hacks/azalea-native-domestic/map-1-0.png",
+      "assetFileHash": "903f63758c10300c3d78820a9d9cc8aa20da74a282cadf189d9211337c19a655",
+      "assetPixelHash": "9cc0987436366a05bd4612407f1ed58b91d6e08a8dd33245444217c6195e6bef",
+      "native_object": "map",
+      "source_map": "g03_m004",
+      "donor_pair": "083df884_083dfb6c",
+      "donor_plane": "top",
+      "source_rect_xyxy": [
+        128,
+        8,
+        160,
+        24
+      ],
+      "piece_xy": [
+        1,
+        0
+      ],
+      "native_scale": 1,
+      "translation_y_pixels": -8
+    }
+  },
+  "objects": {
+    "cupboard": {
+      "native_size": [
+        32,
+        32
+      ],
+      "alpha_bounds": [
+        1,
+        3,
+        32,
+        32
+      ],
+      "native_opaque_pixels": 875,
+      "pieces": [
+        {
+          "asset": "assets/third_party/johto-hacks/azalea-native-domestic/cupboard-0-0.png",
+          "assetFileHash": "ece68be68f838284efc0e9720a1a7eeefe17a86142d750027d6c60312a8900f7",
+          "assetPixelHash": "648b25a25dfc92e0bf1091457260be383548c9c9c61cef7658ee59b99acb51dd",
+          "native_object": "cupboard",
+          "source_map": "g03_m004",
+          "donor_pair": "083df884_083dfb6c",
+          "donor_plane": "top",
+          "source_rect_xyxy": [
+            32,
+            8,
+            64,
+            40
+          ],
+          "piece_xy": [
+            0,
+            0
+          ],
+          "native_scale": 1,
+          "translation_y_pixels": -8
+        },
+        {
+          "asset": "assets/third_party/johto-hacks/azalea-native-domestic/cupboard-1-0.png",
+          "assetFileHash": "9f715b76a696812741a456515bdb1ba9df31e1241b6a6416d0070d3c9c9ea12b",
+          "assetPixelHash": "4cfae2cf38f0d29a841c3052036ad777e11ebc78ddf9af5200041712a9c855d3",
+          "native_object": "cupboard",
+          "source_map": "g03_m004",
+          "donor_pair": "083df884_083dfb6c",
+          "donor_plane": "top",
+          "source_rect_xyxy": [
+            32,
+            8,
+            64,
+            40
+          ],
+          "piece_xy": [
+            1,
+            0
+          ],
+          "native_scale": 1,
+          "translation_y_pixels": -8
+        },
+        {
+          "asset": "assets/third_party/johto-hacks/azalea-native-domestic/cupboard-0-1.png",
+          "assetFileHash": "eae0f06a58bcd8848afd8ecd03fbacd4af86339911ffd15863e984cff527837e",
+          "assetPixelHash": "63c6cea19f974371781a30ac423161f4fc4a771d705248f74a40d2779fa017e8",
+          "native_object": "cupboard",
+          "source_map": "g03_m004",
+          "donor_pair": "083df884_083dfb6c",
+          "donor_plane": "top",
+          "source_rect_xyxy": [
+            32,
+            8,
+            64,
+            40
+          ],
+          "piece_xy": [
+            0,
+            1
+          ],
+          "native_scale": 1,
+          "translation_y_pixels": -8
+        },
+        {
+          "asset": "assets/third_party/johto-hacks/azalea-native-domestic/cupboard-1-1.png",
+          "assetFileHash": "0bc223cbd1e187a2cb6d15a2daf728de7a96c63dcc3a7dd14c75d18ea43403eb",
+          "assetPixelHash": "6c318be2fc318baacefbfda4f934bcc4873b11bc05d344fd6d4ba43e25166d45",
+          "native_object": "cupboard",
+          "source_map": "g03_m004",
+          "donor_pair": "083df884_083dfb6c",
+          "donor_plane": "top",
+          "source_rect_xyxy": [
+            32,
+            8,
+            64,
+            40
+          ],
+          "piece_xy": [
+            1,
+            1
+          ],
+          "native_scale": 1,
+          "translation_y_pixels": -8
+        }
+      ],
+      "full_source_foreground_pixels_preserved": true,
+      "new_RGBA_sha256": "ea6064f54e19268f1b8b1ff459df5fd7d81ba5cc66e1fdf06b9df0c2e8cb80d8"
+    },
+    "map": {
+      "native_size": [
+        32,
+        16
+      ],
+      "alpha_bounds": [
+        5,
+        1,
+        27,
+        15
+      ],
+      "native_opaque_pixels": 308,
+      "pieces": [
+        {
+          "asset": "assets/third_party/johto-hacks/azalea-native-domestic/map-0-0.png",
+          "assetFileHash": "ff98de595992c4d2e21a880ceddb6c3b195262e22992ec2d9a0c9693aa3bdbb9",
+          "assetPixelHash": "adc91325129ed98a58d4799ff3eb19e8d972f2cf033156135f892dbe42168366",
+          "native_object": "map",
+          "source_map": "g03_m004",
+          "donor_pair": "083df884_083dfb6c",
+          "donor_plane": "top",
+          "source_rect_xyxy": [
+            128,
+            8,
+            160,
+            24
+          ],
+          "piece_xy": [
+            0,
+            0
+          ],
+          "native_scale": 1,
+          "translation_y_pixels": -8
+        },
+        {
+          "asset": "assets/third_party/johto-hacks/azalea-native-domestic/map-1-0.png",
+          "assetFileHash": "903f63758c10300c3d78820a9d9cc8aa20da74a282cadf189d9211337c19a655",
+          "assetPixelHash": "9cc0987436366a05bd4612407f1ed58b91d6e08a8dd33245444217c6195e6bef",
+          "native_object": "map",
+          "source_map": "g03_m004",
+          "donor_pair": "083df884_083dfb6c",
+          "donor_plane": "top",
+          "source_rect_xyxy": [
+            128,
+            8,
+            160,
+            24
+          ],
+          "piece_xy": [
+            1,
+            0
+          ],
+          "native_scale": 1,
+          "translation_y_pixels": -8
+        }
+      ],
+      "full_source_foreground_pixels_preserved": true,
+      "new_RGBA_sha256": "a1cf78fd26f4ca12301ba70bf2d991c048905e9c954f9a120ca013ae4050c8ba"
+    }
+  }
+}

@@ -1,0 +1,472 @@
+{
+  "format": 1,
+  "credit": "CrystalDust / Sierraffinity and contributors",
+  "sourceUrl": "https://github.com/Sierraffinity/CrystalDust",
+  "source_rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+  "files": {
+    "pier-749.png": "251f046c2a8fb7bac2aed1b6c2446dde776b19780aeadbe29065a81eb3676236",
+    "pier-750.png": "4fa99835ad3043fed6379b96301456de3a118f14ddd8f864b2f4670791fbba11",
+    "pier-751.png": "7deda63c46c50a52b16b03f7924d4bfc64cfe8e521ece8292aeef8b624e717b6",
+    "pier-752.png": "b8e4014337734788c78df663cf095945784fa955a1ce796835153876e3176ecb",
+    "pier-754.png": "c43803f37f9a72ecc96f021bd85493843e71070a07a06bc4817b5b52c1a1490b",
+    "pier-755.png": "b8e4014337734788c78df663cf095945784fa955a1ce796835153876e3176ecb",
+    "pier-756.png": "c43803f37f9a72ecc96f021bd85493843e71070a07a06bc4817b5b52c1a1490b",
+    "pier-757.png": "203f3a712d5604a54fa37c79aa77c95915df0a5b80cc51702eec67ae01f034e8",
+    "pier-758.png": "b20b551afab9f8e2209635fa189aeede51e971b6b3e39e58ac6ddb683ceeba06",
+    "pier-759.png": "de2196a0be7bb1573624fc38b28ebe0d54ef8de1b9caad648534e4508f2e4234",
+    "pier-760.png": "8fb36cbbe402eebe32ae6b6bc5b51a1034622eb5be6badf8b4f2da08c009d65a",
+    "pier-761.png": "5e0bfd3033957e21eca7d14458eeeb725fa7e9303795c1302b42cbea3a92fd11",
+    "ladder-top.png": "174bd88c8044121f264c2eb07cd944af8badbeebb099a519b76e875194e7f4ce",
+    "ladder-bottom.png": "2992fa3f94426ce57f6340bc65c7b0af790b7aedc6e8a3a010a7feb7e407b6d9",
+    "well-ladder-top.png": "da8d969a5ebf903722ef48faf1d7afc07a8994f97e5a95d11f5069e0c5738684",
+    "well-ladder-bottom.png": "d5f867788443a3359db57a7c4db6a48298f5f03666f26518478c6d56b8a3d91e"
+  },
+  "pieces": [
+    {
+      "file": "pier-749.png",
+      "native_map": "g00_m019",
+      "native_cell": [
+        14,
+        48
+      ],
+      "pair": "083df704_083df74c",
+      "plane": "bottom",
+      "metatile": 749,
+      "atlas_rect_xywh": [
+        208,
+        736,
+        16,
+        16
+      ],
+      "rgba_sha256": "09c8f66044641db4c09c09133d201d46eb7313ad02ee3d1ec07ba4e5e1a58476",
+      "opaque_pixels": 256,
+      "pixel_scale": 1,
+      "whole_native_plane": true
+    },
+    {
+      "file": "pier-750.png",
+      "native_map": "g00_m019",
+      "native_cell": [
+        15,
+        48
+      ],
+      "pair": "083df704_083df74c",
+      "plane": "bottom",
+      "metatile": 750,
+      "atlas_rect_xywh": [
+        224,
+        736,
+        16,
+        16
+      ],
+      "rgba_sha256": "7d8f7a3a5dbbf2bc54d3cc59a1f3c1fbfb5492089649bff7498139ca0eb08299",
+      "opaque_pixels": 256,
+      "pixel_scale": 1,
+      "whole_native_plane": true
+    },
+    {
+      "file": "pier-751.png",
+      "native_map": "g00_m019",
+      "native_cell": [
+        10,
+        48
+      ],
+      "pair": "083df704_083df74c",
+      "plane": "top",
+      "metatile": 751,
+      "atlas_rect_xywh": [
+        240,
+        736,
+        16,
+        16
+      ],
+      "rgba_sha256": "f41786c8a180bea2b18b591e7c2ad68b70f2a9df80c6083ceeec7e11dde4923f",
+      "opaque_pixels": 232,
+      "pixel_scale": 1,
+      "whole_native_plane": true
+    },
+    {
+      "file": "pier-752.png",
+      "native_map": "g00_m019",
+      "native_cell": [
+        14,
+        43
+      ],
+      "pair": "083df704_083df74c",
+      "plane": "top",
+      "metatile": 752,
+      "atlas_rect_xywh": [
+        0,
+        752,
+        16,
+        16
+      ],
+      "rgba_sha256": "4c20c9cb77442d77532714bbf19d4703636ca82ed7c7c4954c097f36ea97079a",
+      "opaque_pixels": 232,
+      "pixel_scale": 1,
+      "whole_native_plane": true
+    },
+    {
+      "file": "pier-754.png",
+      "native_map": "g00_m019",
+      "native_cell": [
+        15,
+        43
+      ],
+      "pair": "083df704_083df74c",
+      "plane": "top",
+      "metatile": 754,
+      "atlas_rect_xywh": [
+        32,
+        752,
+        16,
+        16
+      ],
+      "rgba_sha256": "7aec27e8cd49d1a50d88cc43f3e4d99b7934f5f321ba30189a7ebb7dafb8fcb8",
+      "opaque_pixels": 232,
+      "pixel_scale": 1,
+      "whole_native_plane": true
+    },
+    {
+      "file": "pier-755.png",
+      "native_map": "g00_m019",
+      "native_cell": [
+        14,
+        42
+      ],
+      "pair": "083df704_083df74c",
+      "plane": "top",
+      "metatile": 755,
+      "atlas_rect_xywh": [
+        48,
+        752,
+        16,
+        16
+      ],
+      "rgba_sha256": "4c20c9cb77442d77532714bbf19d4703636ca82ed7c7c4954c097f36ea97079a",
+      "opaque_pixels": 232,
+      "pixel_scale": 1,
+      "whole_native_plane": true
+    },
+    {
+      "file": "pier-756.png",
+      "native_map": "g00_m019",
+      "native_cell": [
+        15,
+        42
+      ],
+      "pair": "083df704_083df74c",
+      "plane": "top",
+      "metatile": 756,
+      "atlas_rect_xywh": [
+        64,
+        752,
+        16,
+        16
+      ],
+      "rgba_sha256": "7aec27e8cd49d1a50d88cc43f3e4d99b7934f5f321ba30189a7ebb7dafb8fcb8",
+      "opaque_pixels": 232,
+      "pixel_scale": 1,
+      "whole_native_plane": true
+    },
+    {
+      "file": "pier-757.png",
+      "native_map": "g00_m019",
+      "native_cell": [
+        14,
+        49
+      ],
+      "pair": "083df704_083df74c",
+      "plane": "bottom",
+      "metatile": 757,
+      "atlas_rect_xywh": [
+        80,
+        752,
+        16,
+        16
+      ],
+      "rgba_sha256": "eb1e171095fa329fc8382ce7d6c1bc3ff0dd1e49bf3061be196ab565980198b4",
+      "opaque_pixels": 256,
+      "pixel_scale": 1,
+      "whole_native_plane": true
+    },
+    {
+      "file": "pier-758.png",
+      "native_map": "g00_m019",
+      "native_cell": [
+        15,
+        49
+      ],
+      "pair": "083df704_083df74c",
+      "plane": "bottom",
+      "metatile": 758,
+      "atlas_rect_xywh": [
+        96,
+        752,
+        16,
+        16
+      ],
+      "rgba_sha256": "b77ae3a3601d26e055fc9e5ab4e2253b1235ed369f973f01efaad6700ef1efea",
+      "opaque_pixels": 256,
+      "pixel_scale": 1,
+      "whole_native_plane": true
+    },
+    {
+      "file": "pier-759.png",
+      "native_map": "g00_m019",
+      "native_cell": [
+        10,
+        49
+      ],
+      "pair": "083df704_083df74c",
+      "plane": "top",
+      "metatile": 759,
+      "atlas_rect_xywh": [
+        112,
+        752,
+        16,
+        16
+      ],
+      "rgba_sha256": "8696e399c3a88fff48410168e6b5f694d05cd5da3b4f1db6723a3d1ed58d7f6e",
+      "opaque_pixels": 232,
+      "pixel_scale": 1,
+      "whole_native_plane": true
+    },
+    {
+      "file": "pier-760.png",
+      "native_map": "g00_m019",
+      "native_cell": [
+        10,
+        50
+      ],
+      "pair": "083df704_083df74c",
+      "plane": "top",
+      "metatile": 760,
+      "atlas_rect_xywh": [
+        128,
+        752,
+        16,
+        16
+      ],
+      "rgba_sha256": "4bcd1592302198db56770ef1801b6355fe7130655829f93a8b42d4756c9b4f2c",
+      "opaque_pixels": 62,
+      "pixel_scale": 1,
+      "whole_native_plane": true
+    },
+    {
+      "file": "pier-761.png",
+      "native_map": "g00_m019",
+      "native_cell": [
+        11,
+        50
+      ],
+      "pair": "083df704_083df74c",
+      "plane": "top",
+      "metatile": 761,
+      "atlas_rect_xywh": [
+        144,
+        752,
+        16,
+        16
+      ],
+      "rgba_sha256": "9758f12df9ce3cd5b45e8be3a8f11e9fca6023fa1189b61321c56c9a95b401d2",
+      "opaque_pixels": 48,
+      "pixel_scale": 1,
+      "whole_native_plane": true
+    },
+    {
+      "file": "ladder-top.png",
+      "native_map": "g24_m012",
+      "native_cell": [
+        2,
+        32
+      ],
+      "pair": "083df704_083df8cc",
+      "plane": "top",
+      "metatile": 526,
+      "atlas_rect_xywh": [
+        224,
+        512,
+        16,
+        16
+      ],
+      "rgba_sha256": "2d42a6b846d74699509999e03f9578514d2de18384ae017e49eb34fd85039764",
+      "opaque_pixels": 94,
+      "pixel_scale": 1,
+      "whole_native_plane": true
+    },
+    {
+      "file": "ladder-bottom.png",
+      "native_map": "g24_m012",
+      "native_cell": [
+        2,
+        33
+      ],
+      "pair": "083df704_083df8cc",
+      "plane": "top",
+      "metatile": 534,
+      "atlas_rect_xywh": [
+        96,
+        528,
+        16,
+        16
+      ],
+      "rgba_sha256": "254d0555086455b9e4556ea1b08ad7cef2dfc8e3fb1ebbba101236d7808aaabe",
+      "opaque_pixels": 139,
+      "pixel_scale": 1,
+      "whole_native_plane": true
+    },
+    {
+      "file": "well-ladder-top.png",
+      "native_map": "g24_m004",
+      "native_cell": [
+        17,
+        14
+      ],
+      "pair": "083df704_083df794",
+      "plane": "top",
+      "metatile": 526,
+      "atlas_rect_xywh": [
+        224,
+        512,
+        16,
+        16
+      ],
+      "rgba_sha256": "b510cf644671bba21019e186a23a8027512a717ae4e309e902bcb556c6239d80",
+      "opaque_pixels": 94,
+      "pixel_scale": 1,
+      "whole_native_plane": true
+    },
+    {
+      "file": "well-ladder-bottom.png",
+      "native_map": "g24_m004",
+      "native_cell": [
+        17,
+        15
+      ],
+      "pair": "083df704_083df794",
+      "plane": "top",
+      "metatile": 534,
+      "atlas_rect_xywh": [
+        96,
+        528,
+        16,
+        16
+      ],
+      "rgba_sha256": "22ae762efac4b5b92a6c7958eb8744c124053ec188c3e63aefd26ce1114b7b1c",
+      "opaque_pixels": 139,
+      "pixel_scale": 1,
+      "whole_native_plane": true
+    }
+  ],
+  "native_catalog_sha256": "fd8fbaf6eb4ee3774e3fe046bf3b506e7f638ab4cd9297c9f62a8bb1189bc740",
+  "native_atlas_files": {
+    "083df704_083df74c/bottom.png": "841d27558d501763f053b5b1c30b1a4f0b53a0993be72b27db2f9ddf5dce3ca4",
+    "083df704_083df74c/top.png": "52199d6fcbcfe56e59290bc16e06a74467ed457c8f24b5fa45272d7255d560d7",
+    "083df704_083df8cc/top.png": "3474b14937f33ca018fc5b43ffea6eae7b39949ba9f8f1ea5fb23b82b17a2f64",
+    "083df704_083df794/top.png": "b3356be754c148684a2b5690210efb5a41b46cb6f218f9f188a280d71d392859"
+  },
+  "ladder": {
+    "size": [
+      16,
+      32
+    ],
+    "rgba_sha256": "f2fa7e2013a3d6392c73b0d0b7e8dfb0a7fe5f0a4cc2e438c600485802ee66f3",
+    "opaque_pixels": 233,
+    "alpha_bounds": [
+      1,
+      2,
+      14,
+      32
+    ],
+    "complete_unique_art_preserved": true
+  },
+  "well_ladder": {
+    "size": [
+      16,
+      32
+    ],
+    "rgba_sha256": "7b8d3c4f66fceb687fc2908403ca1a7fd2ea4ef262f20b49e75f5f944cfcc6ff",
+    "opaque_pixels": 233,
+    "alpha_bounds": [
+      1,
+      2,
+      14,
+      32
+    ],
+    "native_pair": "083df704_083df794",
+    "palette_correct_native_planes": true
+  },
+  "native_ladder_contexts": [
+    {
+      "native_map": "g24_m012",
+      "native_anchor": [
+        7,
+        19
+      ],
+      "pair": "083df704_083df8cc",
+      "upper_mid": 565,
+      "lower_mid": 534,
+      "whole_rgba_sha256": "f2fa7e2013a3d6392c73b0d0b7e8dfb0a7fe5f0a4cc2e438c600485802ee66f3",
+      "whole_object_exact": true
+    },
+    {
+      "native_map": "g24_m012",
+      "native_anchor": [
+        2,
+        33
+      ],
+      "pair": "083df704_083df8cc",
+      "upper_mid": 526,
+      "lower_mid": 534,
+      "whole_rgba_sha256": "f2fa7e2013a3d6392c73b0d0b7e8dfb0a7fe5f0a4cc2e438c600485802ee66f3",
+      "whole_object_exact": true
+    },
+    {
+      "native_map": "g24_m095",
+      "native_anchor": [
+        5,
+        3
+      ],
+      "pair": "083df704_083df8cc",
+      "upper_mid": 526,
+      "lower_mid": 534,
+      "whole_rgba_sha256": "f2fa7e2013a3d6392c73b0d0b7e8dfb0a7fe5f0a4cc2e438c600485802ee66f3",
+      "whole_object_exact": true
+    },
+    {
+      "native_map": "g24_m004",
+      "native_anchor": [
+        17,
+        15
+      ],
+      "pair": "083df704_083df794",
+      "upper_mid": 526,
+      "lower_mid": 534,
+      "whole_rgba_sha256": "7b8d3c4f66fceb687fc2908403ca1a7fd2ea4ef262f20b49e75f5f944cfcc6ff",
+      "whole_object_exact": true
+    },
+    {
+      "native_map": "g24_m009",
+      "native_anchor": [
+        9,
+        11
+      ],
+      "pair": "083df704_083df794",
+      "upper_mid": 565,
+      "lower_mid": 534,
+      "whole_rgba_sha256": "7b8d3c4f66fceb687fc2908403ca1a7fd2ea4ef262f20b49e75f5f944cfcc6ff",
+      "whole_object_exact": true
+    }
+  ],
+  "pier": {
+    "native_map": "g00_m019",
+    "source_to_native_offset": [
+      4,
+      0
+    ],
+    "whole_native_modules": 12,
+    "source_cells_per_game": 54,
+    "water_background_not_imported": true
+  }
+}
