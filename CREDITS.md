@@ -1,5 +1,9 @@
 # Artwork credits
 
+## Magnet Train corners and Game Corner counters (0.46.16)
+
+The train retains the existing recolored Gold, Silver and Crystal artwork. An explicit exterior-only mask reveals the already credited MetalFlygon08 railway beneath the rounded ends, without removing the body, windows, outline or lower shadow. Selected native-size corner compositions and their source/output fingerprints are retained; the complete imported train sheet is not packaged. Counter artwork comes from the user-supplied CrystalDust ROM by Sierraffinity and contributors, using complete native surfaces, front panels and ends at their original pixel scale. Source layouts, collisions, actors and scripts remain intact.
+
 ## Goldenrod native fixtures (0.46.15)
 
 These fixtures use native CrystalDust artwork by Sierraffinity and contributors, extracted from the user-supplied ROM. The actual Gym, Flower Shop and Bike Shop were identified through reciprocal map warps. Complete native modules preserve the planters, display furniture, table and tools-wall details at their original pixel scale. Exact source and output fingerprints accompany the assets. Source layouts, collisions, actors and interactions remain intact.

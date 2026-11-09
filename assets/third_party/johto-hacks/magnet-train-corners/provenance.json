@@ -1,0 +1,293 @@
+{
+  "exterior_pixels": 258,
+  "exterior_width_by_row": [
+    23,
+    19,
+    17,
+    15,
+    12,
+    10,
+    8,
+    7,
+    4,
+    3,
+    2,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    2,
+    3,
+    0,
+    0,
+    0,
+    0
+  ],
+  "groups": [
+    {
+      "exterior_pixels": 258,
+      "game": "gold",
+      "lower_shadow_rows28to31_exact": true,
+      "map": "GOLDENROD_MAGNET_TRAIN_STATION",
+      "retained_pixels": 4862,
+      "whole_after_RGBA_sha256": "a146e903f32c3f8ac5f3da596a4226d23d61be3bcaf64bbda9a55f09594d5d08",
+      "whole_before_RGBA_sha256": "dfc8d9a6138e0ab072d9376eb9462eb3173e77f27bbb6b9f645d2c19532b12fa",
+      "whole_foreground_RGBA_sha256": "edaee4c2772e5b3a1d425f08376f5ac849309dd5719517c1513280c2ab18bbe7",
+      "whole_size": [
+        160,
+        32
+      ]
+    },
+    {
+      "exterior_pixels": 258,
+      "game": "silver",
+      "lower_shadow_rows28to31_exact": true,
+      "map": "GOLDENROD_MAGNET_TRAIN_STATION",
+      "retained_pixels": 4862,
+      "whole_after_RGBA_sha256": "a146e903f32c3f8ac5f3da596a4226d23d61be3bcaf64bbda9a55f09594d5d08",
+      "whole_before_RGBA_sha256": "dfc8d9a6138e0ab072d9376eb9462eb3173e77f27bbb6b9f645d2c19532b12fa",
+      "whole_foreground_RGBA_sha256": "edaee4c2772e5b3a1d425f08376f5ac849309dd5719517c1513280c2ab18bbe7",
+      "whole_size": [
+        160,
+        32
+      ]
+    },
+    {
+      "exterior_pixels": 258,
+      "game": "crystal",
+      "lower_shadow_rows28to31_exact": true,
+      "map": "GOLDENROD_MAGNET_TRAIN_STATION",
+      "retained_pixels": 4862,
+      "whole_after_RGBA_sha256": "a146e903f32c3f8ac5f3da596a4226d23d61be3bcaf64bbda9a55f09594d5d08",
+      "whole_before_RGBA_sha256": "dfc8d9a6138e0ab072d9376eb9462eb3173e77f27bbb6b9f645d2c19532b12fa",
+      "whole_foreground_RGBA_sha256": "edaee4c2772e5b3a1d425f08376f5ac849309dd5719517c1513280c2ab18bbe7",
+      "whole_size": [
+        160,
+        32
+      ]
+    },
+    {
+      "exterior_pixels": 258,
+      "game": "gold",
+      "lower_shadow_rows28to31_exact": true,
+      "map": "SAFFRON_MAGNET_TRAIN_STATION",
+      "retained_pixels": 4862,
+      "whole_after_RGBA_sha256": "a146e903f32c3f8ac5f3da596a4226d23d61be3bcaf64bbda9a55f09594d5d08",
+      "whole_before_RGBA_sha256": "dfc8d9a6138e0ab072d9376eb9462eb3173e77f27bbb6b9f645d2c19532b12fa",
+      "whole_foreground_RGBA_sha256": "edaee4c2772e5b3a1d425f08376f5ac849309dd5719517c1513280c2ab18bbe7",
+      "whole_size": [
+        160,
+        32
+      ]
+    },
+    {
+      "exterior_pixels": 258,
+      "game": "silver",
+      "lower_shadow_rows28to31_exact": true,
+      "map": "SAFFRON_MAGNET_TRAIN_STATION",
+      "retained_pixels": 4862,
+      "whole_after_RGBA_sha256": "a146e903f32c3f8ac5f3da596a4226d23d61be3bcaf64bbda9a55f09594d5d08",
+      "whole_before_RGBA_sha256": "dfc8d9a6138e0ab072d9376eb9462eb3173e77f27bbb6b9f645d2c19532b12fa",
+      "whole_foreground_RGBA_sha256": "edaee4c2772e5b3a1d425f08376f5ac849309dd5719517c1513280c2ab18bbe7",
+      "whole_size": [
+        160,
+        32
+      ]
+    },
+    {
+      "exterior_pixels": 258,
+      "game": "crystal",
+      "lower_shadow_rows28to31_exact": true,
+      "map": "SAFFRON_MAGNET_TRAIN_STATION",
+      "retained_pixels": 4862,
+      "whole_after_RGBA_sha256": "a146e903f32c3f8ac5f3da596a4226d23d61be3bcaf64bbda9a55f09594d5d08",
+      "whole_before_RGBA_sha256": "dfc8d9a6138e0ab072d9376eb9462eb3173e77f27bbb6b9f645d2c19532b12fa",
+      "whole_foreground_RGBA_sha256": "edaee4c2772e5b3a1d425f08376f5ac849309dd5719517c1513280c2ab18bbe7",
+      "whole_size": [
+        160,
+        32
+      ]
+    }
+  ],
+  "native_scale": 1,
+  "origin": "Six bounded native train-corner composites; full imported train images remain private authoring proofs only.",
+  "processing": "Explicit symmetric exterior profile, never a color flood or global palette key. Preserve every one of the4,862 unmasked pixels and all lower shadow rows28..31. Set alpha0 on exactly258 outside corner pixels; precompose the six affected cells onto the unchanged existing public rail PNG upper/lower phase. No resize, redraw, enclosed-hole clearing, background scan at runtime, main/library/API or ride cutscene changes.",
+  "rail_credit": "MetalFlygon08",
+  "rail_sourceUrl": "https://imgur.com/gallery/testing-out-gen-3-style-tiles-johto-6A43Cji",
+  "retained_pixels": 4862,
+  "sourceUrl": "https://github.com/pret/pokecrystal",
+  "source_modules": {
+    "corner-12-4.png": {
+      "asset": "assets/third_party/johto-hacks/magnet-train-corners/corner-12-4.png",
+      "assetFileHash": "518d1d1dca91032a05c54a937db0cfff821a0b39a62f7cc9792a213a98202539",
+      "assetPixelHash": "ea2a242c4ea95b918520195caff477d5db00e43e0f9b0689b941d14d29cff552",
+      "exterior_mask": "0000000001111111000000000000011100000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "exterior_pixels": 11,
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "rail_underlay": {
+        "asset": "assets/third_party/metalflygon08/rail-cell-0-0.png",
+        "assetFileHash": "a188817092e8dadf5dee022ab5822b2560ad13d82f21c46ee9a21e86bfe3743a",
+        "assetPixelHash": "01e448f623355eda065db245cf053789caae501c42ed13b856e5e310fd588b46"
+      },
+      "transparent_foreground_RGBA_sha256": "94923489c6449809d1dcc3e82f7fd90d6c562cd58082fa2a2c0bac3283e19692",
+      "whole_train_xy": [
+        128,
+        0
+      ],
+      "world_xy": [
+        12,
+        4
+      ]
+    },
+    "corner-13-4.png": {
+      "asset": "assets/third_party/johto-hacks/magnet-train-corners/corner-13-4.png",
+      "assetFileHash": "9321c608ef484390cc3ee5f7a3671ab459e1082636b14ca9c81b2d43829c7b4e",
+      "assetPixelHash": "2bc712c9e9fa60f15fa4cf95c14894ad348b576ed9aae54be7dd240a9b902c9c",
+      "exterior_mask": "1111111111111111111111111111111111111111111111110111111111111111000011111111111100000011111111110000000011111111000000000111111100000000000011110000000000000111000000000000001100000000000000010000000000000001000000000000000000000000000000000000000000000000",
+      "exterior_pixels": 111,
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "rail_underlay": {
+        "asset": "assets/third_party/metalflygon08/rail-cell-0-0.png",
+        "assetFileHash": "a188817092e8dadf5dee022ab5822b2560ad13d82f21c46ee9a21e86bfe3743a",
+        "assetPixelHash": "01e448f623355eda065db245cf053789caae501c42ed13b856e5e310fd588b46"
+      },
+      "transparent_foreground_RGBA_sha256": "705f406e235435ecaefbe686bded8a78c5da5d9b552bf7b52c8e44935b5b30ec",
+      "whole_train_xy": [
+        144,
+        0
+      ],
+      "world_xy": [
+        13,
+        4
+      ]
+    },
+    "corner-13-5.png": {
+      "asset": "assets/third_party/johto-hacks/magnet-train-corners/corner-13-5.png",
+      "assetFileHash": "fafada11751caf53859109bfd9d48c3f344ccaeae0a150e4297507e9e2707ebe",
+      "assetPixelHash": "e7b92152609ba1b2201dfe796288ee2affd51f4087653d11990d1913d8aefcd7",
+      "exterior_mask": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000001000000000000001100000000000001110000000000000000000000000000000000000000000000000000000000000000",
+      "exterior_pixels": 7,
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "rail_underlay": {
+        "asset": "assets/third_party/metalflygon08/rail-cell-0-1.png",
+        "assetFileHash": "ceb6cdbeffc9b6661a7199223b3f98ce00313bf233dae874d3937176d9b0697f",
+        "assetPixelHash": "df2c964f69a24590471a4f9e0b0fad0433ce24347d905edf107df25d704daaf8"
+      },
+      "transparent_foreground_RGBA_sha256": "e08ea90690b869431f8a8418fad8c0cf03f237bb654a77147c267ff38c97718d",
+      "whole_train_xy": [
+        144,
+        16
+      ],
+      "world_xy": [
+        13,
+        5
+      ]
+    },
+    "corner-4-4.png": {
+      "asset": "assets/third_party/johto-hacks/magnet-train-corners/corner-4-4.png",
+      "assetFileHash": "5d3574985021a80a08ca78a8313be6bce2079572b9930de2d2157af41db14b56",
+      "assetPixelHash": "b56dad613ab717fba6c067bdf596622e618efdc6e9ec1c8017f30294c136d4d0",
+      "exterior_mask": "1111111111111111111111111111111111111111111111111111111111111110111111111111000011111111110000001111111100000000111111100000000011110000000000001110000000000000110000000000000010000000000000001000000000000000000000000000000000000000000000000000000000000000",
+      "exterior_pixels": 111,
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "rail_underlay": {
+        "asset": "assets/third_party/metalflygon08/rail-cell-0-0.png",
+        "assetFileHash": "a188817092e8dadf5dee022ab5822b2560ad13d82f21c46ee9a21e86bfe3743a",
+        "assetPixelHash": "01e448f623355eda065db245cf053789caae501c42ed13b856e5e310fd588b46"
+      },
+      "transparent_foreground_RGBA_sha256": "ea3abf9c060cf322773dd84d76d36a12d8cea894ab9f43b053f706ee362813a3",
+      "whole_train_xy": [
+        0,
+        0
+      ],
+      "world_xy": [
+        4,
+        4
+      ]
+    },
+    "corner-4-5.png": {
+      "asset": "assets/third_party/johto-hacks/magnet-train-corners/corner-4-5.png",
+      "assetFileHash": "3bf6f042075e4d5a67a08eee6232455faa3d6d39e249f143fa383cbf3f4f6e0c",
+      "assetPixelHash": "7390745f2764455ef3c42d856c913e78a9597d738af1e35a87305e2d8b0d762d",
+      "exterior_mask": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000001000000000000000110000000000000011100000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "exterior_pixels": 7,
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "rail_underlay": {
+        "asset": "assets/third_party/metalflygon08/rail-cell-0-1.png",
+        "assetFileHash": "ceb6cdbeffc9b6661a7199223b3f98ce00313bf233dae874d3937176d9b0697f",
+        "assetPixelHash": "df2c964f69a24590471a4f9e0b0fad0433ce24347d905edf107df25d704daaf8"
+      },
+      "transparent_foreground_RGBA_sha256": "a8bfcb4c4f8c38ac3f0e1ceaf01396ce35cb89b05708755c74916aa140af7c16",
+      "whole_train_xy": [
+        0,
+        16
+      ],
+      "world_xy": [
+        4,
+        5
+      ]
+    },
+    "corner-5-4.png": {
+      "asset": "assets/third_party/johto-hacks/magnet-train-corners/corner-5-4.png",
+      "assetFileHash": "f73ef70179a0a37b161dd42fd2e42482d7d26926c7b3ff2eebefdde553aeab65",
+      "assetPixelHash": "06392d08d4bb12d1ced5c1b6582fbf1055ccc33ba55f150a4e58a34ac00c4b95",
+      "exterior_mask": "1111111000000000111000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "exterior_pixels": 11,
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "rail_underlay": {
+        "asset": "assets/third_party/metalflygon08/rail-cell-0-0.png",
+        "assetFileHash": "a188817092e8dadf5dee022ab5822b2560ad13d82f21c46ee9a21e86bfe3743a",
+        "assetPixelHash": "01e448f623355eda065db245cf053789caae501c42ed13b856e5e310fd588b46"
+      },
+      "transparent_foreground_RGBA_sha256": "f978bbe79f49d09f8b162c22cc6f94ae6a6f61420e2bdc11385130e222582606",
+      "whole_train_xy": [
+        16,
+        0
+      ],
+      "world_xy": [
+        5,
+        4
+      ]
+    }
+  },
+  "train_source": "User-provided native Pokemon Gold/Silver/Crystal imported TILESET_TRAIN_STATION, with the existing reviewed sourceColors recolor.",
+  "whole_native_size": [
+    160,
+    32
+  ]
+}

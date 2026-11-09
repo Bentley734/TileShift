@@ -3,6 +3,8 @@
 
 TileShift swaps world artwork through individually reviewed tile matches.
 
+Version 0.46.16 restores continuous Gen 3 track around the rounded ends of the Magnet Train in Goldenrod and Saffron. Only the exterior backing is masked away; the entire train body, windows, outline and lower shadow remain exact. Goldenrod's Game Corner counters use complete native CrystalDust fronts and end pieces. Original NPC positions, walking rules, service interactions, boarding, arrivals and travel behavior are preserved in Gold, Silver and Crystal.
+
 Version 0.46.15 polishes Goldenrod's Gym, Flower Shop and Bike Shop in Gold, Silver and Crystal with native CrystalDust fixtures. Whitney's maze uses its native green planters. The Flower Shop uses its dedicated displays, complete low table and matching room surfaces. The Bike Shop's pegboard and tools retain their complete native edges and backing. Original walking rules, NPC positions, entrances, scripts and interactions are preserved.
 
 Version 0.46.14 corrects the Day Care’s west entrance mat in Gold, Silver and Crystal. A complete native CrystalDust side mat replaces the two disconnected front-facing strips. Its full frame, connected red center and shadow retain their native 18-by-24 pixel size, centered within the original two exit tiles. Matching room floor remains visible around it. Both exit warps, walking rules, table, chairs, attendants and interactions are preserved.
