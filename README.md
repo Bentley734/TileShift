@@ -3,6 +3,8 @@
 
 TileShift swaps world artwork through individually reviewed tile matches.
 
+Version 0.46.14 corrects the Day Care’s west entrance mat in Gold, Silver and Crystal. A complete native CrystalDust side mat replaces the two disconnected front-facing strips. Its full frame, connected red center and shadow retain their native 18-by-24 pixel size, centered within the original two exit tiles. Matching room floor remains visible around it. Both exit warps, walking rules, table, chairs, attendants and interactions are preserved.
+
 Version 0.46.13 gives the Day Care in Gold, Silver and Crystal its complete native CrystalDust table, including the lower frame and feet. The cream table retains its original pixel size inside the existing four table cells, over the matching room floor. Chairs, attendants, both doors, deposited Pokémon behavior and all original interactions remain unchanged.
 
 Version 0.46.12 moves Azalea Gym’s complete center-tree artwork one tile north while retaining the original collisions, eastern walking passage and Bugsy’s position. Existing big-tree selections and wind animation are preserved. Affected Pokémon Center reception counters use complete native CrystalDust countertops, fronts, uprights and rounded ends, with service panels at their intended positions. Healing, PCs, Chansey’s facing, source NPCs, entrances and interactions remain unchanged.

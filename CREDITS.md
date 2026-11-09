@@ -1,5 +1,9 @@
 # Artwork credits
 
+## Complete native Day Care west-entry mat (0.46.14)
+
+The west mat uses the complete native CrystalDust object by Sierraffinity and contributors from the user-supplied ROM. Six TOP modules retain its entire 18-by-24 pixel frame, red center and shadow, including the border pieces outside the two central modules. All 432 object pixels match the native flat artwork exactly. The two-pixel native shadow extends into the adjacent floor column; source collisions and both original exit warps remain unchanged. All transparent padding uses the exact existing room floor. Source and output fingerprints accompany the assets; no artwork is rescaled, mirrored or cropped to fit.
+
 ## Complete native Day Care table (0.46.13)
 
 The table uses complete native CrystalDust TOP modules 541, 543, 549 and 551 by Sierraffinity and contributors from the user-supplied ROM. The unobstructed 32-by-32 table retains all 1,022 native object pixels, including its lower frame and feet. Its two transparent exterior corner pixels reveal the exact existing room floor. The separate counter-contact variant is excluded. Source and output fingerprints accompany the assets; no artwork is rescaled, recolored or cropped to fit.

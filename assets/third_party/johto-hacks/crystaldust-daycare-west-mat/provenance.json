@@ -1,0 +1,133 @@
+{
+  "origin": "Complete native CrystalDust Day Care west-entry mat, including its full connected frame and shadow.",
+  "credit": "Pokemon CrystalDust / Sierraffinity and DoMoreAwesome Games",
+  "sourceUrl": "https://github.com/Sierraffinity/CrystalDust",
+  "rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+  "source_map": "g22_m000",
+  "pair": "083df884_083df9a4",
+  "source_top_sha256": "63b3e67a58ed34dc4714b9b1a7c0c7bf07e5dea67a9d14df983b3af36a2c39af",
+  "source_flat_sha256": "05700b4aed1c3e20fe55735b9e56311485c838269052d7b007e8332ca35a4156",
+  "source_bottom_sha256": "c3baefcf9103f78549f011cbc3ffc34b72936312c6bd6e44c5b5186a4254d835",
+  "source_mids": [
+    682,
+    685,
+    683,
+    686,
+    684,
+    707
+  ],
+  "source_native_cells": [
+    [
+      0,
+      3
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      0,
+      4
+    ],
+    [
+      1,
+      4
+    ],
+    [
+      0,
+      5
+    ],
+    [
+      1,
+      5
+    ]
+  ],
+  "source_assembly_size": [
+    32,
+    48
+  ],
+  "whole_native_bounds": [
+    11,
+    12,
+    29,
+    36
+  ],
+  "native_size": [
+    18,
+    24
+  ],
+  "native_opaque_pixels": 432,
+  "whole_RGBA_sha256": "bda660a842d9b8f76f3ff4aaedc051a73c5d157bc3e7445a61c12df10d98b63a",
+  "native_scale": 1,
+  "world_xy": [
+    0,
+    84
+  ],
+  "processing": "Reassemble all six whole native TOP modules682/685/683/686/684/707. The entire18x24 opaque native mat is the assembly alpha bounds; every native pixel equals FLAT. Remove only empty exterior alpha, translate unscaled to(0,84), then partition a transparent32x32 canvas into four16x16 mapping cells. All432pixels, complete continuous frame, corners and shadow remain. Existing local floor backs all592transparent pixels. No mirroring, rotation, resizing, drawing, hardware clipping, source interaction or actor/collision/warp change.",
+  "source_modules": {
+    "cell-0-0": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-daycare-west-mat/cell-0-0.png",
+      "assetFileHash": "39d28d925d1d03c09c03f6edc3a639e85d9d3f5a8986ae18b3dfe1ed22856977",
+      "assetPixelHash": "915473fd2b7de4c5836507581c1af27f4d61cfdec2ada5c54428dfdf42a1a603",
+      "native_size": [
+        16,
+        16
+      ],
+      "native_scale": 1,
+      "whole_mat_slice": [
+        0,
+        0,
+        16,
+        16
+      ]
+    },
+    "cell-1-0": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-daycare-west-mat/cell-1-0.png",
+      "assetFileHash": "95115bb147fa4743805d3989f9738879afa74262113a9bfc474df1e42370d2f8",
+      "assetPixelHash": "eb8df9fdeeb952823fad3388d1d8973772cf7b0b7072bf632f7346f95e71b715",
+      "native_size": [
+        16,
+        16
+      ],
+      "native_scale": 1,
+      "whole_mat_slice": [
+        16,
+        0,
+        32,
+        16
+      ]
+    },
+    "cell-0-1": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-daycare-west-mat/cell-0-1.png",
+      "assetFileHash": "6b79c7573a2ae1bc2f2a92e7b5f25210c46c10ef12607547da400a1a93fcc0ce",
+      "assetPixelHash": "55183f18037c25e834a28e9bb92378de6b8f905c31792a7b6e266abad0e8f25e",
+      "native_size": [
+        16,
+        16
+      ],
+      "native_scale": 1,
+      "whole_mat_slice": [
+        0,
+        16,
+        16,
+        32
+      ]
+    },
+    "cell-1-1": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-daycare-west-mat/cell-1-1.png",
+      "assetFileHash": "ecea555449ce426d42d6d5e9800aa3f8d6aa953457138d0b198abd9ec7114b4c",
+      "assetPixelHash": "0fbad0f46c4c67cfc5980376e1b455765404a96e81115f621f0598ba41616222",
+      "native_size": [
+        16,
+        16
+      ],
+      "native_scale": 1,
+      "whole_mat_slice": [
+        16,
+        16,
+        32,
+        32
+      ]
+    }
+  }
+}
