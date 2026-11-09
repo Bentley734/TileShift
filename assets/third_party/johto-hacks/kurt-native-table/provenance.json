@@ -1,0 +1,71 @@
+{
+  "origin": "Complete native CrystalDust Kurt dining table, all four TOP modules including lower front and feet.",
+  "credit": "Pokemon CrystalDust / Sierraffinity and DoMoreAwesome Games",
+  "sourceUrl": "https://github.com/Sierraffinity/CrystalDust",
+  "rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+  "pair": "083df884_083dfb6c",
+  "source_top_sha256": "db1bb621cc7b97d49dcfb046f070b6bf6defb1f82ff74d4e3b65426d71c76ec4",
+  "native_size": [
+    32,
+    32
+  ],
+  "alpha_bounds": [
+    1,
+    1,
+    31,
+    32
+  ],
+  "native_opaque_pixels": 928,
+  "whole_RGBA_sha256": "3b085a73c9b22b42dfd0f6394fef063329a3a31e84074c7a849efe982e227a9b",
+  "native_scale": 1,
+  "source_modules": {
+    "cell-0-0": {
+      "asset": "assets/third_party/johto-hacks/kurt-native-table/cell-0-0.png",
+      "assetFileHash": "48c894c8bc505c0427f3eb5c0d154f561b386ac053d0ef021f7001e8c9929822",
+      "assetPixelHash": "5cbdc92fccac98af6f5ed8bb95e6ad832c958c38faf330adca9c0fb16a5a1b63",
+      "native_mid": 200,
+      "native_plane": "top",
+      "native_map": "g03_m004",
+      "native_xy": [
+        8,
+        4
+      ]
+    },
+    "cell-1-0": {
+      "asset": "assets/third_party/johto-hacks/kurt-native-table/cell-1-0.png",
+      "assetFileHash": "79eaa89e80c45ec61de0e79e3b25ed4ea9c208ca935d5d0d8232d738ef8633ba",
+      "assetPixelHash": "b287c0e48d0a1ecf3554ef7e6b8b9780ad369b59562f9abc7fbe144b6e42c1d4",
+      "native_mid": 201,
+      "native_plane": "top",
+      "native_map": "g03_m004",
+      "native_xy": [
+        9,
+        4
+      ]
+    },
+    "cell-0-1": {
+      "asset": "assets/third_party/johto-hacks/kurt-native-table/cell-0-1.png",
+      "assetFileHash": "c7d08a8d163af0069df47779b8681423e801e606b2f960995eacfc49bcf7eac3",
+      "assetPixelHash": "cb9a8873644d985a79433ef2609fdf84553e38b38afeb1968268d65db9bafed2",
+      "native_mid": 208,
+      "native_plane": "top",
+      "native_map": "g03_m004",
+      "native_xy": [
+        8,
+        5
+      ]
+    },
+    "cell-1-1": {
+      "asset": "assets/third_party/johto-hacks/kurt-native-table/cell-1-1.png",
+      "assetFileHash": "41c2a9fb47b553af6d91d727ef06b2ab55307852fd57062dfdb05492c3cb538c",
+      "assetPixelHash": "020ceebb8bff83ecdfab2b2975178c97b95c0febe926f1681bf59b2d861deda3",
+      "native_mid": 209,
+      "native_plane": "top",
+      "native_map": "g03_m004",
+      "native_xy": [
+        9,
+        5
+      ]
+    }
+  }
+}

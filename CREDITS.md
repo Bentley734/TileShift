@@ -1,5 +1,9 @@
 # Artwork credits
 
+## Kurt’s complete table and workbench surfaces (0.46.10)
+
+The workbench uses the matching native CrystalDust lower and upper artwork planes by Sierraffinity and contributors from the user-supplied ROM. The native wooden surface remains beneath the tools and complete front trim, while exterior wall and floor space remain transparent. The middle table retains its complete native lower edge. Exact source and output fingerprints accompany the affected assets. No artwork is rescaled or recolored.
+
 ## Route 32, cave ladders and Kurt’s workshop (0.46.9)
 
 These replacements use complete native CrystalDust artwork by Sierraffinity and contributors, extracted from the user-supplied ROM. Actual room identities were checked through reciprocal map connections and warps. Route 32’s native timber modules match the source pier network one for one. Native water backgrounds are excluded from bridge hardware so the existing selected water and animation remain visible. The complete upright ladders in Union Cave and Slowpoke Well retain their own native cave palettes and all 233 opaque pixels per object, without moving the original warp anchors.

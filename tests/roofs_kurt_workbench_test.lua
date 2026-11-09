@@ -17,9 +17,11 @@ end
 for _,game in ipairs({'gold','silver','crystal'})do
  select(game)
  local pixels=0;for _ in pairs(f.surface)do pixels=pixels+1 end
- eq(pixels,2837,'all native tools, pegboard and entire L hardware remain at1:1')
+ eq(pixels,3469,'all native tools, pegboard and entire L hardware remain at1:1')
  eq(f:ink(206,-10)~=nil,true,'complete top frame above source room survives')
  eq(f:ink(205,-10),nil,'generic exterior wall stays transparent')
+ eq(f:ink(216,23)~=nil,true,'native horizontal tabletop is solid under the tools')
+ eq(f:ink(198,67)~=nil,true,'native lower return surface stays continuous above its base')
  eq(f:ink(192,48)~=nil,true,'continuous bottom-plane shaft fills the L return')
  eq(f:ink(224,48),nil,'independent native chair is excluded as a complete object')
  -- The authentic working Kurt at tile14,3 must remain in front of his bench.
