@@ -1,0 +1,1224 @@
+{
+  "credit": "Pokemon CrystalDust / Sierraffinity and DoMoreAwesome Games",
+  "native_modules": {
+    "083df884_083df9a4:bottom:530": {
+      "RGBA_sha256": "9ba43eac96ef1e958998814147b1ec1b6e18d959c0610be24d44dd2d159f52fc",
+      "atlas_sha256": "c3baefcf9103f78549f011cbc3ffc34b72936312c6bd6e44c5b5186a4254d835",
+      "atlas_xyxy": [
+        32,
+        528,
+        48,
+        544
+      ],
+      "mid": 530,
+      "opaque_pixels": 256,
+      "pair": "083df884_083df9a4",
+      "plane": "bottom"
+    },
+    "083df884_083df9a4:bottom:696": {
+      "RGBA_sha256": "8779fbd23f204d43c99ab5eed1840d5a64ade110fecc778a60cfd648f3dd1346",
+      "atlas_sha256": "c3baefcf9103f78549f011cbc3ffc34b72936312c6bd6e44c5b5186a4254d835",
+      "atlas_xyxy": [
+        128,
+        688,
+        144,
+        704
+      ],
+      "mid": 696,
+      "opaque_pixels": 256,
+      "pair": "083df884_083df9a4",
+      "plane": "bottom"
+    },
+    "083df884_083df9a4:mid:694": {
+      "RGBA_sha256": "dbe311a3249b0808e7ecc059a95ed04c4a093820009fe7140e782cdef7de277e",
+      "atlas_sha256": "0ffd3da6001415a76bb001edf411a1829fffda1dd79be250051e67e014d2a480",
+      "atlas_xyxy": [
+        96,
+        688,
+        112,
+        704
+      ],
+      "mid": 694,
+      "opaque_pixels": 256,
+      "pair": "083df884_083df9a4",
+      "plane": "mid"
+    },
+    "083df884_083df9a4:mid:703": {
+      "RGBA_sha256": "f5336bd2fc6a75bddb93880b9edf951752ac48b3aaa8cc1748cb05efa3e97ad4",
+      "atlas_sha256": "0ffd3da6001415a76bb001edf411a1829fffda1dd79be250051e67e014d2a480",
+      "atlas_xyxy": [
+        240,
+        688,
+        256,
+        704
+      ],
+      "mid": 703,
+      "opaque_pixels": 256,
+      "pair": "083df884_083df9a4",
+      "plane": "mid"
+    },
+    "083df884_083df9a4:top:541": {
+      "RGBA_sha256": "1e2c8ad5bf7b0e60ff5518ad2b32526b06acae5c019c664de1c9d14694f45f6e",
+      "atlas_sha256": "63b3e67a58ed34dc4714b9b1a7c0c7bf07e5dea67a9d14df983b3af36a2c39af",
+      "atlas_xyxy": [
+        208,
+        528,
+        224,
+        544
+      ],
+      "mid": 541,
+      "opaque_pixels": 255,
+      "pair": "083df884_083df9a4",
+      "plane": "top"
+    },
+    "083df884_083df9a4:top:543": {
+      "RGBA_sha256": "4f1c839a9349c49157a27289071d7c8925e28b536b6e786898098f901f57d1d2",
+      "atlas_sha256": "63b3e67a58ed34dc4714b9b1a7c0c7bf07e5dea67a9d14df983b3af36a2c39af",
+      "atlas_xyxy": [
+        240,
+        528,
+        256,
+        544
+      ],
+      "mid": 543,
+      "opaque_pixels": 255,
+      "pair": "083df884_083df9a4",
+      "plane": "top"
+    },
+    "083df884_083df9a4:top:549": {
+      "RGBA_sha256": "108ec2addf882f66b228d8784942de1fcd00474353537ff711d91c7be3c4ad90",
+      "atlas_sha256": "63b3e67a58ed34dc4714b9b1a7c0c7bf07e5dea67a9d14df983b3af36a2c39af",
+      "atlas_xyxy": [
+        80,
+        544,
+        96,
+        560
+      ],
+      "mid": 549,
+      "opaque_pixels": 256,
+      "pair": "083df884_083df9a4",
+      "plane": "top"
+    },
+    "083df884_083df9a4:top:551": {
+      "RGBA_sha256": "c9592c0bdd98017a7dee12dad1214af214a80c86c7bac2943031878a54b35a7d",
+      "atlas_sha256": "63b3e67a58ed34dc4714b9b1a7c0c7bf07e5dea67a9d14df983b3af36a2c39af",
+      "atlas_xyxy": [
+        112,
+        544,
+        128,
+        560
+      ],
+      "mid": 551,
+      "opaque_pixels": 256,
+      "pair": "083df884_083df9a4",
+      "plane": "top"
+    },
+    "083df884_083df9a4:top:560": {
+      "RGBA_sha256": "607951ccc37687c75724c14fcc899d93f37930dcea7921ab915a927d0685ba25",
+      "atlas_sha256": "63b3e67a58ed34dc4714b9b1a7c0c7bf07e5dea67a9d14df983b3af36a2c39af",
+      "atlas_xyxy": [
+        0,
+        560,
+        16,
+        576
+      ],
+      "mid": 560,
+      "opaque_pixels": 138,
+      "pair": "083df884_083df9a4",
+      "plane": "top"
+    },
+    "083df884_083df9a4:top:568": {
+      "RGBA_sha256": "bdb91f258c41f01ad98e47267b38107107a631bda4d025c7600f2e6a981f091f",
+      "atlas_sha256": "63b3e67a58ed34dc4714b9b1a7c0c7bf07e5dea67a9d14df983b3af36a2c39af",
+      "atlas_xyxy": [
+        128,
+        560,
+        144,
+        576
+      ],
+      "mid": 568,
+      "opaque_pixels": 154,
+      "pair": "083df884_083df9a4",
+      "plane": "top"
+    },
+    "083df884_083df9a4:top:617": {
+      "RGBA_sha256": "ff88fbbc1998e51e959880211dacdbe4d3c769adfbba9bf9fd1fc9e2919d9620",
+      "atlas_sha256": "63b3e67a58ed34dc4714b9b1a7c0c7bf07e5dea67a9d14df983b3af36a2c39af",
+      "atlas_xyxy": [
+        144,
+        608,
+        160,
+        624
+      ],
+      "mid": 617,
+      "opaque_pixels": 256,
+      "pair": "083df884_083df9a4",
+      "plane": "top"
+    },
+    "083df884_083df9a4:top:656": {
+      "RGBA_sha256": "40d949892a65a27eb4fb98f5abf26e63366267be824f6d05bda8746ecde74fae",
+      "atlas_sha256": "63b3e67a58ed34dc4714b9b1a7c0c7bf07e5dea67a9d14df983b3af36a2c39af",
+      "atlas_xyxy": [
+        0,
+        656,
+        16,
+        672
+      ],
+      "mid": 656,
+      "opaque_pixels": 254,
+      "pair": "083df884_083df9a4",
+      "plane": "top"
+    },
+    "083df884_083df9a4:top:690": {
+      "RGBA_sha256": "09c16b5fb5c78e6c3a34dea04d74f0639c7e207f6289faf4eb0ad61c30e8eda8",
+      "atlas_sha256": "63b3e67a58ed34dc4714b9b1a7c0c7bf07e5dea67a9d14df983b3af36a2c39af",
+      "atlas_xyxy": [
+        32,
+        688,
+        48,
+        704
+      ],
+      "mid": 690,
+      "opaque_pixels": 254,
+      "pair": "083df884_083df9a4",
+      "plane": "top"
+    },
+    "083df884_083df9a4:top:700": {
+      "RGBA_sha256": "98a302525f0d057d432fafb978f9b1f42752f5206f8d84494a2458aa676bed15",
+      "atlas_sha256": "63b3e67a58ed34dc4714b9b1a7c0c7bf07e5dea67a9d14df983b3af36a2c39af",
+      "atlas_xyxy": [
+        192,
+        688,
+        208,
+        704
+      ],
+      "mid": 700,
+      "opaque_pixels": 182,
+      "pair": "083df884_083df9a4",
+      "plane": "top"
+    },
+    "083df884_083df9a4:top:701": {
+      "RGBA_sha256": "2d1e025e5c3eec305c4f8328e9eb3a836043511b5ce5a6886cf0e1dc0abb7fe4",
+      "atlas_sha256": "63b3e67a58ed34dc4714b9b1a7c0c7bf07e5dea67a9d14df983b3af36a2c39af",
+      "atlas_xyxy": [
+        208,
+        688,
+        224,
+        704
+      ],
+      "mid": 701,
+      "opaque_pixels": 254,
+      "pair": "083df884_083df9a4",
+      "plane": "top"
+    },
+    "083df884_083dfb6c:flat:521": {
+      "RGBA_sha256": "17544447fb330d35a7127203bda6efe4a1918946b9e226f6a16c9049f82817c7",
+      "atlas_sha256": "d6c92bda16340cd972811565f89b91e2c246560d0896c9dcfe0a957172fcbb24",
+      "atlas_xyxy": [
+        144,
+        512,
+        160,
+        528
+      ],
+      "mid": 521,
+      "opaque_pixels": 256,
+      "pair": "083df884_083dfb6c",
+      "plane": "flat"
+    },
+    "083df884_083dfb6c:flat:522": {
+      "RGBA_sha256": "1807b346519c6b0f735b9788b439b1fd5dda45ff0b48d8970e6c76f75e3bcb99",
+      "atlas_sha256": "d6c92bda16340cd972811565f89b91e2c246560d0896c9dcfe0a957172fcbb24",
+      "atlas_xyxy": [
+        160,
+        512,
+        176,
+        528
+      ],
+      "mid": 522,
+      "opaque_pixels": 256,
+      "pair": "083df884_083dfb6c",
+      "plane": "flat"
+    },
+    "083df884_083dfb6c:flat:524": {
+      "RGBA_sha256": "e6a3bf63856fbd63def35ba10880cdbfa0b1981be3e7c3bb6b0ae63d482a3559",
+      "atlas_sha256": "d6c92bda16340cd972811565f89b91e2c246560d0896c9dcfe0a957172fcbb24",
+      "atlas_xyxy": [
+        192,
+        512,
+        208,
+        528
+      ],
+      "mid": 524,
+      "opaque_pixels": 256,
+      "pair": "083df884_083dfb6c",
+      "plane": "flat"
+    },
+    "083df884_083dfb6c:flat:526": {
+      "RGBA_sha256": "401b963d2be9f6c92952bfda79e94c3805c279764a4f1a2eebb0a50c29bc4526",
+      "atlas_sha256": "d6c92bda16340cd972811565f89b91e2c246560d0896c9dcfe0a957172fcbb24",
+      "atlas_xyxy": [
+        224,
+        512,
+        240,
+        528
+      ],
+      "mid": 526,
+      "opaque_pixels": 256,
+      "pair": "083df884_083dfb6c",
+      "plane": "flat"
+    },
+    "083df884_083dfb6c:flat:534": {
+      "RGBA_sha256": "17dc3da6f736540191b783e92a9a3417ef0a46637d8ba123777fbb23fba7bce8",
+      "atlas_sha256": "d6c92bda16340cd972811565f89b91e2c246560d0896c9dcfe0a957172fcbb24",
+      "atlas_xyxy": [
+        96,
+        528,
+        112,
+        544
+      ],
+      "mid": 534,
+      "opaque_pixels": 256,
+      "pair": "083df884_083dfb6c",
+      "plane": "flat"
+    },
+    "083df884_083dfb6c:flat:539": {
+      "RGBA_sha256": "0ce17bbb2cc77ff176531e170805cc319b4cad187ebc43f43904b5be0a254982",
+      "atlas_sha256": "d6c92bda16340cd972811565f89b91e2c246560d0896c9dcfe0a957172fcbb24",
+      "atlas_xyxy": [
+        176,
+        528,
+        192,
+        544
+      ],
+      "mid": 539,
+      "opaque_pixels": 256,
+      "pair": "083df884_083dfb6c",
+      "plane": "flat"
+    },
+    "083df884_083dfb6c:flat:548": {
+      "RGBA_sha256": "2a519f22186dd646aa7109ccfeffa47e531bd6bf5571fca91051396e8a729c75",
+      "atlas_sha256": "d6c92bda16340cd972811565f89b91e2c246560d0896c9dcfe0a957172fcbb24",
+      "atlas_xyxy": [
+        64,
+        544,
+        80,
+        560
+      ],
+      "mid": 548,
+      "opaque_pixels": 256,
+      "pair": "083df884_083dfb6c",
+      "plane": "flat"
+    }
+  },
+  "native_scale": 1,
+  "origin": "Whole native CrystalDust Goldenrod fixtures and native room backing, with existing complete Gen3 entrance rug/chair foreground retained.",
+  "processing": "Whole16x16 native planes or full FLAT modules only; compose all opaque native foreground pixels over the selected whole native floor. No resizing, drawing, clipping or color-key masks. Complete32x32 table uses541/543/549/551, tall display uses656/617, potted plant560/568 and Gym pedestal700/701. Bike tool-wall uses full two-row native modules; existing shelf, bikes and public counter are untouched.",
+  "rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+  "sourceUrl": "https://github.com/Sierraffinity/CrystalDust",
+  "source_maps": {
+    "GOLDENROD_BIKE_SHOP": "g11_m004",
+    "GOLDENROD_FLOWER_SHOP": "g11_m008",
+    "GOLDENROD_GYM": "g11_m003"
+  },
+  "source_modules": {
+    "cell-0ce17bbb2cc77ff1.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-goldenrod-interiors/cell-0ce17bbb2cc77ff1.png",
+      "assetFileHash": "5930f1cf5868f0e88654966bcb9b5fb25a3780ec30f0e623252a9b6c3840934d",
+      "assetPixelHash": "0ce17bbb2cc77ff176531e170805cc319b4cad187ebc43f43904b5be0a254982",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "family": "bike_complete_tool_wall_0_0",
+          "source_native_xy": [
+            2,
+            1
+          ],
+          "whole_native_tile": [
+            "083df884_083dfb6c",
+            "flat",
+            539
+          ]
+        }
+      ]
+    },
+    "cell-108ec2addf882f66.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-goldenrod-interiors/cell-108ec2addf882f66.png",
+      "assetFileHash": "3902caca29c290384807141ac4f1b15ce147ad66df23e162738f6073a0222ad0",
+      "assetPixelHash": "108ec2addf882f66b228d8784942de1fcd00474353537ff711d91c7be3c4ad90",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "family": "flower_complete_table_2",
+          "floor": [
+            "083df884_083df9a4",
+            "bottom",
+            530
+          ],
+          "whole_native_foreground": [
+            "083df884_083df9a4",
+            "top",
+            549
+          ]
+        }
+      ]
+    },
+    "cell-17544447fb330d35.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-goldenrod-interiors/cell-17544447fb330d35.png",
+      "assetFileHash": "694c970c3cd7bb1dd161232b6acc177cf554081e9129c1ba1c3b2af1bd4d1436",
+      "assetPixelHash": "17544447fb330d35a7127203bda6efe4a1918946b9e226f6a16c9049f82817c7",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "family": "bike_complete_tool_wall_3_1",
+          "source_native_xy": [
+            5,
+            2
+          ],
+          "whole_native_tile": [
+            "083df884_083dfb6c",
+            "flat",
+            521
+          ]
+        }
+      ]
+    },
+    "cell-17dc3da6f7365401.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-goldenrod-interiors/cell-17dc3da6f7365401.png",
+      "assetFileHash": "16321732915c4e358011be5a66ac9e5027e6e48db7a8fcdb616701ff55654b4b",
+      "assetPixelHash": "17dc3da6f736540191b783e92a9a3417ef0a46637d8ba123777fbb23fba7bce8",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "family": "bike_complete_tool_wall_1_1",
+          "source_native_xy": [
+            3,
+            2
+          ],
+          "whole_native_tile": [
+            "083df884_083dfb6c",
+            "flat",
+            534
+          ]
+        }
+      ]
+    },
+    "cell-1807b346519c6b0f.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-goldenrod-interiors/cell-1807b346519c6b0f.png",
+      "assetFileHash": "494f5a2e14015452b93b51ffe110b31f57c577e3ce0e422bc2e336cb1d4c69c7",
+      "assetPixelHash": "1807b346519c6b0f735b9788b439b1fd5dda45ff0b48d8970e6c76f75e3bcb99",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "family": "bike_complete_tool_wall_0_1",
+          "source_native_xy": [
+            2,
+            2
+          ],
+          "whole_native_tile": [
+            "083df884_083dfb6c",
+            "flat",
+            522
+          ]
+        }
+      ]
+    },
+    "cell-260f142dca9dea42.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-goldenrod-interiors/cell-260f142dca9dea42.png",
+      "assetFileHash": "ef4a890230d28d41b64d2669b2d2fa7afa36095df4aa88ae5c0b3d63d93d0b69",
+      "assetPixelHash": "260f142dca9dea426c4a407f8a411e20e521522607201dcf873f1ec54df84d71",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "family": "flower_complete_plant_head",
+          "floor": [
+            "083df884_083df9a4",
+            "bottom",
+            530
+          ],
+          "whole_native_foreground": [
+            "083df884_083df9a4",
+            "top",
+            560
+          ]
+        }
+      ]
+    },
+    "cell-2a519f22186dd646.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-goldenrod-interiors/cell-2a519f22186dd646.png",
+      "assetFileHash": "8e98ea41ff3558a17d1df2782f2b6a5a029d800fa29de266c5e93cde1c2d3237",
+      "assetPixelHash": "2a519f22186dd646aa7109ccfeffa47e531bd6bf5571fca91051396e8a729c75",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "family": "bike_complete_tool_wall_2_0",
+          "source_native_xy": [
+            4,
+            1
+          ],
+          "whole_native_tile": [
+            "083df884_083dfb6c",
+            "flat",
+            548
+          ]
+        }
+      ]
+    },
+    "cell-31e06417088e8cf3.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-goldenrod-interiors/cell-31e06417088e8cf3.png",
+      "assetFileHash": "bd4e670c403163c879017676d385d8429890eec5b021cd32db5886166d473838",
+      "assetPixelHash": "31e06417088e8cf379ac8aefe022b5d906cd6d2a50c5823c8d460565849e06d2",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "family": "gym_statue_head",
+          "floor": [
+            "083df884_083df9a4",
+            "bottom",
+            696
+          ],
+          "whole_native_foreground": [
+            "083df884_083df9a4",
+            "top",
+            700
+          ]
+        }
+      ]
+    },
+    "cell-401b963d2be9f6c9.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-goldenrod-interiors/cell-401b963d2be9f6c9.png",
+      "assetFileHash": "bdd72ea3f53090440138167cb2e6c4ae5f0d0dfe2de5ed2f3da3e2d95c0e95b8",
+      "assetPixelHash": "401b963d2be9f6c92952bfda79e94c3805c279764a4f1a2eebb0a50c29bc4526",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "family": "bike_complete_tool_wall_1_0",
+          "source_native_xy": [
+            3,
+            1
+          ],
+          "whole_native_tile": [
+            "083df884_083dfb6c",
+            "flat",
+            526
+          ]
+        },
+        {
+          "family": "bike_complete_tool_wall_3_0",
+          "source_native_xy": [
+            5,
+            1
+          ],
+          "whole_native_tile": [
+            "083df884_083dfb6c",
+            "flat",
+            526
+          ]
+        }
+      ]
+    },
+    "cell-47ddc52889915eaf.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-goldenrod-interiors/cell-47ddc52889915eaf.png",
+      "assetFileHash": "08e64db6e00eac34ba485a3b4bf383721e0a6e0f72544fb3d201aa0b85cc118b",
+      "assetPixelHash": "47ddc52889915eaf71f3889ef644dbb2439cb3bebd6a3089a797b48c5872ef51",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "family": "flower_retained_johto_house_chair_left",
+          "floor": [
+            "083df884_083df9a4",
+            "bottom",
+            530
+          ],
+          "retained_native_parts": [
+            {
+              "donor": {
+                "game": "firered",
+                "hash": "529d5a420450fd6428ec9d58819fbf63681f48ee48b9e5e9f16d241ddc597ada",
+                "id": 75,
+                "tileset": "player_house"
+              },
+              "h": 16,
+              "layerHashes": {
+                "mid": "cfde3223ecb1b3ac9e63d7660eea3944f179a2cbb9daf0e274515b31f87acdae"
+              },
+              "layers": [
+                "mid"
+              ],
+              "srcX": 0,
+              "srcY": 0,
+              "w": 16,
+              "x": 0,
+              "y": 0
+            }
+          ]
+        }
+      ]
+    },
+    "cell-4a11d78b62dd3b25.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-goldenrod-interiors/cell-4a11d78b62dd3b25.png",
+      "assetFileHash": "750bda4af0082489b90a97dacbf1e6043be85d2e10d55c4f1b17a28e7867e414",
+      "assetPixelHash": "4a11d78b62dd3b254b5156285a85cd3bf3bdb9ca42e25541482a484142ebd8b2",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "family": "flower_single_display",
+          "floor": [
+            "083df884_083df9a4",
+            "bottom",
+            530
+          ],
+          "whole_native_foreground": [
+            "083df884_083df9a4",
+            "top",
+            690
+          ]
+        }
+      ]
+    },
+    "cell-55ec91ed2299cad8.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-goldenrod-interiors/cell-55ec91ed2299cad8.png",
+      "assetFileHash": "e4b65f4f5152b184e577d8f04f7578171cf79833d06400806384c05bd42c2077",
+      "assetPixelHash": "55ec91ed2299cad819f34ec690a31919e8c298ffaf56cb87883eb1f00d7176eb",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "family": "gym_retained_household_rug_left",
+          "floor": [
+            "083df884_083df9a4",
+            "bottom",
+            696
+          ],
+          "retained_native_parts": [
+            {
+              "donor": {
+                "game": "firered",
+                "hash": "a0470d3d4d0e7a1e3aba3e75be5c2051f6a3504d3d7ca773e6870e6a382a9a24",
+                "id": 18,
+                "tileset": "player_house"
+              },
+              "h": 12,
+              "srcX": 11,
+              "srcY": 4,
+              "w": 5,
+              "x": 3,
+              "y": 0
+            },
+            {
+              "donor": {
+                "game": "firered",
+                "hash": "238ed2532359e508f6522d2a6685f49a5f11f71ee7747fcdc237e116e4844a25",
+                "id": 19,
+                "tileset": "player_house"
+              },
+              "h": 12,
+              "srcX": 0,
+              "srcY": 4,
+              "w": 8,
+              "x": 8,
+              "y": 0
+            },
+            {
+              "donor": {
+                "game": "firered",
+                "hash": "9b4fe26a1c9df8ee5930ac991af2d8a07d78aaeda04e994cff51fa6e73246afb",
+                "id": 26,
+                "tileset": "player_house"
+              },
+              "h": 4,
+              "srcX": 11,
+              "srcY": 0,
+              "w": 5,
+              "x": 3,
+              "y": 12
+            },
+            {
+              "donor": {
+                "game": "firered",
+                "hash": "ec7924c4464b5611505316a16f937970c041f4c441c83ba1325ed7e7a5bf656b",
+                "id": 27,
+                "tileset": "player_house"
+              },
+              "h": 4,
+              "srcX": 0,
+              "srcY": 0,
+              "w": 8,
+              "x": 8,
+              "y": 12
+            }
+          ]
+        }
+      ]
+    },
+    "cell-6161e739596874d4.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-goldenrod-interiors/cell-6161e739596874d4.png",
+      "assetFileHash": "e2c4971fca7404330fcc86dc9720d0001a73dbb3ec4064bd85d7db78f98b6dfb",
+      "assetPixelHash": "6161e739596874d44563bb941d88eb077fa6cbf8ec9ee865b84408b36e36c5d3",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "family": "gym_retained_household_rug_right",
+          "floor": [
+            "083df884_083df9a4",
+            "bottom",
+            696
+          ],
+          "retained_native_parts": [
+            {
+              "donor": {
+                "game": "firered",
+                "hash": "238ed2532359e508f6522d2a6685f49a5f11f71ee7747fcdc237e116e4844a25",
+                "id": 19,
+                "tileset": "player_house"
+              },
+              "h": 12,
+              "srcX": 8,
+              "srcY": 4,
+              "w": 8,
+              "x": 0,
+              "y": 0
+            },
+            {
+              "donor": {
+                "game": "firered",
+                "hash": "0e2e0dc0206ad73765a36130d5053e6bae2286de0e4d2957077a89c91e5919d5",
+                "id": 20,
+                "tileset": "player_house"
+              },
+              "h": 12,
+              "srcX": 0,
+              "srcY": 4,
+              "w": 5,
+              "x": 8,
+              "y": 0
+            },
+            {
+              "donor": {
+                "game": "firered",
+                "hash": "ec7924c4464b5611505316a16f937970c041f4c441c83ba1325ed7e7a5bf656b",
+                "id": 27,
+                "tileset": "player_house"
+              },
+              "h": 4,
+              "srcX": 8,
+              "srcY": 0,
+              "w": 8,
+              "x": 0,
+              "y": 12
+            },
+            {
+              "donor": {
+                "game": "firered",
+                "hash": "fe464fe96023623f009eeaa73bc39173c91e17f495f34f4da0ea3a9e38c031e2",
+                "id": 28,
+                "tileset": "player_house"
+              },
+              "h": 4,
+              "srcX": 0,
+              "srcY": 0,
+              "w": 5,
+              "x": 8,
+              "y": 12
+            }
+          ]
+        }
+      ]
+    },
+    "cell-7c5f153adfa638f2.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-goldenrod-interiors/cell-7c5f153adfa638f2.png",
+      "assetFileHash": "2471320094a51e779c96db8a22bf6b31654fae136ee7a988bd280b01404fd877",
+      "assetPixelHash": "7c5f153adfa638f29053066ed8f6c68717ae61bd0fccb9710939332b8f4906f6",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "family": "flower_retained_johto_house_entry_rug",
+          "floor": [
+            "083df884_083df9a4",
+            "bottom",
+            530
+          ],
+          "retained_native_parts": [
+            {
+              "donor": {
+                "game": "firered",
+                "hash": "a0470d3d4d0e7a1e3aba3e75be5c2051f6a3504d3d7ca773e6870e6a382a9a24",
+                "id": 18,
+                "tileset": "player_house"
+              },
+              "h": 12,
+              "srcX": 11,
+              "srcY": 4,
+              "w": 5,
+              "x": 3,
+              "y": 0
+            },
+            {
+              "donor": {
+                "game": "firered",
+                "hash": "238ed2532359e508f6522d2a6685f49a5f11f71ee7747fcdc237e116e4844a25",
+                "id": 19,
+                "tileset": "player_house"
+              },
+              "h": 12,
+              "srcX": 0,
+              "srcY": 4,
+              "w": 8,
+              "x": 8,
+              "y": 0
+            },
+            {
+              "donor": {
+                "game": "firered",
+                "hash": "9b4fe26a1c9df8ee5930ac991af2d8a07d78aaeda04e994cff51fa6e73246afb",
+                "id": 26,
+                "tileset": "player_house"
+              },
+              "h": 4,
+              "srcX": 11,
+              "srcY": 0,
+              "w": 5,
+              "x": 3,
+              "y": 12
+            },
+            {
+              "donor": {
+                "game": "firered",
+                "hash": "ec7924c4464b5611505316a16f937970c041f4c441c83ba1325ed7e7a5bf656b",
+                "id": 27,
+                "tileset": "player_house"
+              },
+              "h": 4,
+              "srcX": 0,
+              "srcY": 0,
+              "w": 8,
+              "x": 8,
+              "y": 12
+            }
+          ]
+        }
+      ]
+    },
+    "cell-83948ee2b7c60ba5.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-goldenrod-interiors/cell-83948ee2b7c60ba5.png",
+      "assetFileHash": "3e438e2b23fe2700bf7a8938db6bc24db37dd7caf9e59b2833e42323880e1e28",
+      "assetPixelHash": "83948ee2b7c60ba5e76d78d61ce0aa8ca6e636d4fd07f521f00e4c58fbf7dde4",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "family": "flower_retained_johto_house_entry_rug",
+          "floor": [
+            "083df884_083df9a4",
+            "bottom",
+            530
+          ],
+          "retained_native_parts": [
+            {
+              "donor": {
+                "game": "firered",
+                "hash": "238ed2532359e508f6522d2a6685f49a5f11f71ee7747fcdc237e116e4844a25",
+                "id": 19,
+                "tileset": "player_house"
+              },
+              "h": 12,
+              "srcX": 8,
+              "srcY": 4,
+              "w": 8,
+              "x": 0,
+              "y": 0
+            },
+            {
+              "donor": {
+                "game": "firered",
+                "hash": "0e2e0dc0206ad73765a36130d5053e6bae2286de0e4d2957077a89c91e5919d5",
+                "id": 20,
+                "tileset": "player_house"
+              },
+              "h": 12,
+              "srcX": 0,
+              "srcY": 4,
+              "w": 5,
+              "x": 8,
+              "y": 0
+            },
+            {
+              "donor": {
+                "game": "firered",
+                "hash": "ec7924c4464b5611505316a16f937970c041f4c441c83ba1325ed7e7a5bf656b",
+                "id": 27,
+                "tileset": "player_house"
+              },
+              "h": 4,
+              "srcX": 8,
+              "srcY": 0,
+              "w": 8,
+              "x": 0,
+              "y": 12
+            },
+            {
+              "donor": {
+                "game": "firered",
+                "hash": "fe464fe96023623f009eeaa73bc39173c91e17f495f34f4da0ea3a9e38c031e2",
+                "id": 28,
+                "tileset": "player_house"
+              },
+              "h": 4,
+              "srcX": 0,
+              "srcY": 0,
+              "w": 5,
+              "x": 8,
+              "y": 12
+            }
+          ]
+        }
+      ]
+    },
+    "cell-8779fbd23f204d43.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-goldenrod-interiors/cell-8779fbd23f204d43.png",
+      "assetFileHash": "83dd2d9169d30bf48212d914233f84329f43475205b1b6acb6c8398c479db54a",
+      "assetPixelHash": "8779fbd23f204d43c99ab5eed1840d5a64ade110fecc778a60cfd648f3dd1346",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "family": "gym_pink_floor",
+          "whole_native_tile": [
+            "083df884_083df9a4",
+            "bottom",
+            696
+          ]
+        }
+      ]
+    },
+    "cell-9ba43eac96ef1e95.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-goldenrod-interiors/cell-9ba43eac96ef1e95.png",
+      "assetFileHash": "ced24c2a0fbfcf3c4bcaa7dd241b74bb9c5551eacc9b930f6c4d0b5dd39de890",
+      "assetPixelHash": "9ba43eac96ef1e958998814147b1ec1b6e18d959c0610be24d44dd2d159f52fc",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "family": "flower_gray_floor",
+          "whole_native_tile": [
+            "083df884_083df9a4",
+            "bottom",
+            530
+          ]
+        }
+      ]
+    },
+    "cell-c90088a8627f332c.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-goldenrod-interiors/cell-c90088a8627f332c.png",
+      "assetFileHash": "d02be7841b898bfc66c986c9b0b24549083d3f025079967e9b9e6c51510fb1a0",
+      "assetPixelHash": "c90088a8627f332cfb734b0423118fbc3ae2b637fa5e4a6b216f861b28369a4a",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "family": "flower_complete_table_1",
+          "floor": [
+            "083df884_083df9a4",
+            "bottom",
+            530
+          ],
+          "whole_native_foreground": [
+            "083df884_083df9a4",
+            "top",
+            543
+          ]
+        }
+      ]
+    },
+    "cell-c9592c0bdd98017a.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-goldenrod-interiors/cell-c9592c0bdd98017a.png",
+      "assetFileHash": "0b04d21e0994a8bdcd147de2dd9e13e45d8f0490bf1784e26a08b440d56e5368",
+      "assetPixelHash": "c9592c0bdd98017a7dee12dad1214af214a80c86c7bac2943031878a54b35a7d",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "family": "flower_complete_table_3",
+          "floor": [
+            "083df884_083df9a4",
+            "bottom",
+            530
+          ],
+          "whole_native_foreground": [
+            "083df884_083df9a4",
+            "top",
+            551
+          ]
+        }
+      ]
+    },
+    "cell-cfad07c16d2709a4.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-goldenrod-interiors/cell-cfad07c16d2709a4.png",
+      "assetFileHash": "fa7e1efafebd220162f350881127b9b66f87e19843c5d8db94bc8e8a5088c1da",
+      "assetPixelHash": "cfad07c16d2709a4808acdb1023b0defa5688bac06d857798ba9b550560c1f9d",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "family": "flower_tall_display_head",
+          "floor": [
+            "083df884_083df9a4",
+            "bottom",
+            530
+          ],
+          "whole_native_foreground": [
+            "083df884_083df9a4",
+            "top",
+            656
+          ]
+        }
+      ]
+    },
+    "cell-d4c9f652180ec9ed.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-goldenrod-interiors/cell-d4c9f652180ec9ed.png",
+      "assetFileHash": "3dfae29a464bfcddf004a4ced7900bcaceffc6c93dc9a0b54587af4ef50c4c2b",
+      "assetPixelHash": "d4c9f652180ec9ed8dbef850f5a3e64b8755668d221edbe4b9ca737af08bb56a",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "family": "flower_complete_plant_base",
+          "floor": [
+            "083df884_083df9a4",
+            "bottom",
+            530
+          ],
+          "whole_native_foreground": [
+            "083df884_083df9a4",
+            "top",
+            568
+          ]
+        }
+      ]
+    },
+    "cell-d97878692a7ef14d.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-goldenrod-interiors/cell-d97878692a7ef14d.png",
+      "assetFileHash": "f665e5448d5eed7718df8e111e3a318f07bd7a4bf9e53f4cc2299b3c04a9b0d2",
+      "assetPixelHash": "d97878692a7ef14d00a5d7a3ecfba39d33dd2f1cf7c7562b98d49004b69feff7",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "family": "flower_complete_table_0",
+          "floor": [
+            "083df884_083df9a4",
+            "bottom",
+            530
+          ],
+          "whole_native_foreground": [
+            "083df884_083df9a4",
+            "top",
+            541
+          ]
+        }
+      ]
+    },
+    "cell-dbe311a3249b0808.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-goldenrod-interiors/cell-dbe311a3249b0808.png",
+      "assetFileHash": "66c2a9ff19944abafe2345ad80e5262fdb0366fc0be86f3f41f7e23b23454e05",
+      "assetPixelHash": "dbe311a3249b0808e7ecc059a95ed04c4a093820009fe7140e782cdef7de277e",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "family": "gym_green_planter",
+          "floor": [
+            "083df884_083df9a4",
+            "bottom",
+            696
+          ],
+          "whole_native_foreground": [
+            "083df884_083df9a4",
+            "mid",
+            694
+          ]
+        }
+      ]
+    },
+    "cell-e6a3bf63856fbd63.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-goldenrod-interiors/cell-e6a3bf63856fbd63.png",
+      "assetFileHash": "160558ea2478c287f333b83007c91d823733e6ae4bd3c71e4dcd7c11770e52be",
+      "assetPixelHash": "e6a3bf63856fbd63def35ba10880cdbfa0b1981be3e7c3bb6b0ae63d482a3559",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "family": "bike_complete_tool_wall_2_1",
+          "source_native_xy": [
+            4,
+            2
+          ],
+          "whole_native_tile": [
+            "083df884_083dfb6c",
+            "flat",
+            524
+          ]
+        }
+      ]
+    },
+    "cell-f5336bd2fc6a75bd.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-goldenrod-interiors/cell-f5336bd2fc6a75bd.png",
+      "assetFileHash": "1bf79c817eeb259829aa137b665e808874e64c83ecdd0bb07f30138043862899",
+      "assetPixelHash": "f5336bd2fc6a75bddb93880b9edf951752ac48b3aaa8cc1748cb05efa3e97ad4",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "family": "gym_flower_planter",
+          "floor": [
+            "083df884_083df9a4",
+            "bottom",
+            696
+          ],
+          "whole_native_foreground": [
+            "083df884_083df9a4",
+            "mid",
+            703
+          ]
+        }
+      ]
+    },
+    "cell-f5440f2d1ff8b655.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-goldenrod-interiors/cell-f5440f2d1ff8b655.png",
+      "assetFileHash": "70eb640d249067468c14fa3f914ec7d0af0c7236aa3807f60a30b907da6fc5b5",
+      "assetPixelHash": "f5440f2d1ff8b655312a9c1f87700477954ac64c5420c0235219fb9849450309",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "family": "gym_statue_base",
+          "floor": [
+            "083df884_083df9a4",
+            "bottom",
+            696
+          ],
+          "whole_native_foreground": [
+            "083df884_083df9a4",
+            "top",
+            701
+          ]
+        }
+      ]
+    },
+    "cell-ff88fbbc1998e51e.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-goldenrod-interiors/cell-ff88fbbc1998e51e.png",
+      "assetFileHash": "69588ef22abf5ce25ddc4e39e6b816d475213ee7d52412467106d93da47ff445",
+      "assetPixelHash": "ff88fbbc1998e51e959880211dacdbe4d3c769adfbba9bf9fd1fc9e2919d9620",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "family": "flower_tall_display_base",
+          "floor": [
+            "083df884_083df9a4",
+            "bottom",
+            530
+          ],
+          "whole_native_foreground": [
+            "083df884_083df9a4",
+            "top",
+            617
+          ]
+        }
+      ]
+    }
+  }
+}

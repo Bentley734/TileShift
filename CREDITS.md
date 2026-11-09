@@ -1,5 +1,9 @@
 # Artwork credits
 
+## Goldenrod native fixtures (0.46.15)
+
+These fixtures use native CrystalDust artwork by Sierraffinity and contributors, extracted from the user-supplied ROM. The actual Gym, Flower Shop and Bike Shop were identified through reciprocal map warps. Complete native modules preserve the planters, display furniture, table and tools-wall details at their original pixel scale. Exact source and output fingerprints accompany the assets. Source layouts, collisions, actors and interactions remain intact.
+
 ## Complete native Day Care west-entry mat (0.46.14)
 
 The west mat uses the complete native CrystalDust object by Sierraffinity and contributors from the user-supplied ROM. Six TOP modules retain its entire 18-by-24 pixel frame, red center and shadow, including the border pieces outside the two central modules. All 432 object pixels match the native flat artwork exactly. The two-pixel native shadow extends into the adjacent floor column; source collisions and both original exit warps remain unchanged. All transparent padding uses the exact existing room floor. Source and output fingerprints accompany the assets; no artwork is rescaled, mirrored or cropped to fit.
