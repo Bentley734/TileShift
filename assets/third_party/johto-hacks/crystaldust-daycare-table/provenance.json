@@ -1,0 +1,96 @@
+{
+  "origin": "Whole native CrystalDust Day Care low table with complete front, feet and shadow.",
+  "credit": "Pokemon CrystalDust / Sierraffinity and DoMoreAwesome Games",
+  "sourceUrl": "https://github.com/Sierraffinity/CrystalDust",
+  "rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+  "source_map": "g22_m000",
+  "pair": "083df884_083df9a4",
+  "source_top_sha256": "63b3e67a58ed34dc4714b9b1a7c0c7bf07e5dea67a9d14df983b3af36a2c39af",
+  "source_flat_sha256": "05700b4aed1c3e20fe55735b9e56311485c838269052d7b007e8332ca35a4156",
+  "native_size": [
+    32,
+    32
+  ],
+  "native_opaque_pixels": 1022,
+  "whole_RGBA_sha256": "27890fa838b3e4043c666a28e3f54763c39c9a303beed72e3b34d783a0616b08",
+  "native_scale": 1,
+  "unobstructed_native_lower_left_variant": {
+    "mid": 549,
+    "replaces_counter_contact_mid": 665
+  },
+  "processing": "Four entire16x16 TOP modules541/543/549/551 at1:1. Native549 is the unobstructed lower-left table variant; native DayCare665 contains a touching counter and is intentionally not used. Complete lower front/feet/shadow retained. Only2genuine outside carpet corners are transparent. No drawing, resizing, clipping, copied carpet or furniture/collision/NPC relocation.",
+  "source_modules": {
+    "cell-0-0": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-daycare-table/cell-0-0.png",
+      "assetFileHash": "f99af87d6c06bf62f94c4bcc99b4585d4642e49e48eceda3e9d2467058fea3e3",
+      "assetPixelHash": "1e2c8ad5bf7b0e60ff5518ad2b32526b06acae5c019c664de1c9d14694f45f6e",
+      "native_mid": 541,
+      "native_plane": "top",
+      "native_atlas_xyxy": [
+        208,
+        528,
+        224,
+        544
+      ],
+      "native_size": [
+        16,
+        16
+      ],
+      "native_scale": 1
+    },
+    "cell-1-0": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-daycare-table/cell-1-0.png",
+      "assetFileHash": "950735d5a986d4e1e26ea6fd011bac4e9e03333c4aa31378cd0c9ed52bb5dde1",
+      "assetPixelHash": "4f1c839a9349c49157a27289071d7c8925e28b536b6e786898098f901f57d1d2",
+      "native_mid": 543,
+      "native_plane": "top",
+      "native_atlas_xyxy": [
+        240,
+        528,
+        256,
+        544
+      ],
+      "native_size": [
+        16,
+        16
+      ],
+      "native_scale": 1
+    },
+    "cell-0-1": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-daycare-table/cell-0-1.png",
+      "assetFileHash": "3902caca29c290384807141ac4f1b15ce147ad66df23e162738f6073a0222ad0",
+      "assetPixelHash": "108ec2addf882f66b228d8784942de1fcd00474353537ff711d91c7be3c4ad90",
+      "native_mid": 549,
+      "native_plane": "top",
+      "native_atlas_xyxy": [
+        80,
+        544,
+        96,
+        560
+      ],
+      "native_size": [
+        16,
+        16
+      ],
+      "native_scale": 1
+    },
+    "cell-1-1": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-daycare-table/cell-1-1.png",
+      "assetFileHash": "0b04d21e0994a8bdcd147de2dd9e13e45d8f0490bf1784e26a08b440d56e5368",
+      "assetPixelHash": "c9592c0bdd98017a7dee12dad1214af214a80c86c7bac2943031878a54b35a7d",
+      "native_mid": 551,
+      "native_plane": "top",
+      "native_atlas_xyxy": [
+        112,
+        544,
+        128,
+        560
+      ],
+      "native_size": [
+        16,
+        16
+      ],
+      "native_scale": 1
+    }
+  }
+}

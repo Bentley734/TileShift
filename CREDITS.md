@@ -1,5 +1,9 @@
 # Artwork credits
 
+## Complete native Day Care table (0.46.13)
+
+The table uses complete native CrystalDust TOP modules 541, 543, 549 and 551 by Sierraffinity and contributors from the user-supplied ROM. The unobstructed 32-by-32 table retains all 1,022 native object pixels, including its lower frame and feet. Its two transparent exterior corner pixels reveal the exact existing room floor. The separate counter-contact variant is excluded. Source and output fingerprints accompany the assets; no artwork is rescaled, recolored or cropped to fit.
+
 ## Azalea Gym tree placement and Pokémon Center counters (0.46.12)
 
 The Gym reuses its existing credited native tree artwork and selected big-tree variants, at their original pixel size. Its decorative draw position moves sixteen pixels north; source collision and event data remain intact. Center counters use complete native CrystalDust artwork by Sierraffinity and contributors, extracted from the user-supplied ROM. Both artwork planes are retained where needed for the full red upright and rounded ends beneath the native flowerpot. Plain countertop and front sections remain distinct from service-panel pieces. Source and output fingerprints accompany the affected assets; no artwork is rescaled or recolored.
