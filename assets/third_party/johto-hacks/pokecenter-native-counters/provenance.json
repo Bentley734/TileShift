@@ -1,0 +1,136 @@
+{
+  "origin": "Whole native CrystalDust Pokemon Center counter surfaces, service panel and complete empty rounded end/body modules.",
+  "credit": "Pokemon CrystalDust / Sierraffinity and DoMoreAwesome Games",
+  "sourceUrl": "https://github.com/Sierraffinity/CrystalDust",
+  "rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+  "source_map": "g03_m001",
+  "pair": "083df884_083df8b4",
+  "source_top_sha256": "7879177b0b3e88682f0a1ab747322326dd43f3556ff41b5c1e980e391e62d8d7",
+  "source_bottom_sha256": "153679641ee21dd1038b37d30c26a2575b5c19b63341d2d645f5faa732a3914b",
+  "source_modules": {
+    "left": {
+      "file": "left.png",
+      "asset": "assets/third_party/johto-hacks/pokecenter-native-counters/left.png",
+      "assetFileHash": "4c630e1dd898d4094e56279d8dc99ebc4e3f1e4974dc2bebd814320b6ff1d714",
+      "assetPixelHash": "1f31264394304ffc131d1d4550458015ced408443f338fd7e8d4065f11c704e0",
+      "native_map": "g03_m001",
+      "pair": "083df884_083df8b4",
+      "native_mid": 569,
+      "plane": "bottom",
+      "atlas_xyxy": [
+        144,
+        560,
+        160,
+        576
+      ],
+      "RGBA_sha256": "1f31264394304ffc131d1d4550458015ced408443f338fd7e8d4065f11c704e0",
+      "opaque_pixels": 256,
+      "pixel_scale": 1
+    },
+    "plain": {
+      "file": "plain.png",
+      "asset": "assets/third_party/johto-hacks/pokecenter-native-counters/plain.png",
+      "assetFileHash": "6265bc33fd17cefb204b7e7ccefe2c726b307ec68cd174ad26420a9ec528bf1a",
+      "assetPixelHash": "ec255f23b911ce7e17abd7516fccbbaa4b902a5cd39205a8e0c4db99ac296869",
+      "native_map": "g03_m001",
+      "pair": "083df884_083df8b4",
+      "native_mid": 572,
+      "plane": "top",
+      "atlas_xyxy": [
+        192,
+        560,
+        208,
+        576
+      ],
+      "RGBA_sha256": "ec255f23b911ce7e17abd7516fccbbaa4b902a5cd39205a8e0c4db99ac296869",
+      "opaque_pixels": 256,
+      "pixel_scale": 1
+    },
+    "right": {
+      "file": "right.png",
+      "asset": "assets/third_party/johto-hacks/pokecenter-native-counters/right.png",
+      "assetFileHash": "26a6202a1421d20e0d4034e880352fa538de7d8d9d0e17d051b439f6ce77585e",
+      "assetPixelHash": "a905521ceabdb7bc45904cfe22b69155b764f1f4965ae13bb48cd73bd8826cde",
+      "native_map": "g03_m001",
+      "pair": "083df884_083df8b4",
+      "native_mid": 573,
+      "plane": "bottom",
+      "atlas_xyxy": [
+        208,
+        560,
+        224,
+        576
+      ],
+      "RGBA_sha256": "a905521ceabdb7bc45904cfe22b69155b764f1f4965ae13bb48cd73bd8826cde",
+      "opaque_pixels": 256,
+      "pixel_scale": 1
+    },
+    "service": {
+      "file": "service.png",
+      "asset": "assets/third_party/johto-hacks/pokecenter-native-counters/service.png",
+      "assetFileHash": "da86171703586f0e1d6eafde4f0df59d18c3e135aeb76fcadad00caebf15f6ad",
+      "assetPixelHash": "b2c8d3fa9027a366fa0e52eb05f25e23cc823bba1b8ea05e133a47b59af8905b",
+      "native_map": "g03_m001",
+      "pair": "083df884_083df8b4",
+      "native_mid": 536,
+      "plane": "top",
+      "atlas_xyxy": [
+        128,
+        528,
+        144,
+        544
+      ],
+      "RGBA_sha256": "b2c8d3fa9027a366fa0e52eb05f25e23cc823bba1b8ea05e133a47b59af8905b",
+      "opaque_pixels": 256,
+      "pixel_scale": 1
+    }
+  },
+  "retained_byte_identical_native_components": {
+    "back-cap": {
+      "native_map": "g03_m001",
+      "pair": "083df884_083df8b4",
+      "native_mid": 557,
+      "plane": "top",
+      "atlas_xyxy": [
+        208,
+        544,
+        224,
+        560
+      ],
+      "RGBA_sha256": "082ccecfd00733c4851b5bce887543dd558acadce23d4b4d776bc5744b092e3e",
+      "opaque_pixels": 128,
+      "pixel_scale": 1
+    },
+    "right-flower": {
+      "native_map": "g03_m001",
+      "pair": "083df884_083df8b4",
+      "native_mid": 573,
+      "plane": "flat",
+      "atlas_xyxy": [
+        208,
+        560,
+        224,
+        576
+      ],
+      "RGBA_sha256": "7f5c4d7683bc10c3952e7226bd5463671237887c8cec4beb567bccf7dfcd1f35",
+      "opaque_pixels": 256,
+      "pixel_scale": 1
+    },
+    "upright-flower": {
+      "native_map": "g03_m001",
+      "pair": "083df884_083df8b4",
+      "native_mid": 565,
+      "plane": "flat",
+      "atlas_xyxy": [
+        80,
+        560,
+        96,
+        576
+      ],
+      "RGBA_sha256": "36642a17686b3cbf4d01dff946c52267786e8a614480ae64d4b928a344b3de13",
+      "opaque_pixels": 256,
+      "pixel_scale": 1
+    }
+  },
+  "processing": "Complete unscaled16x16 TOP plain/service modules and complete BOTTOM empty end modules. BOTTOM ends already include the entire red surface, gray front and rounded side body; the independent TOP flowerpot is omitted whole for empty counters. Existing equivalent flower/upright/wall-cap rows stay byte-identical. No generated pixel, recolor, resize, cut frame, side or native corner, CD floor patch or source mechanics change."
+}

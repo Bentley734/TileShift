@@ -17,6 +17,7 @@ return function(mod)
     'mappings/buildings_extended.lua','mappings/building_overhangs.lua','mappings/goldenrod.lua','mappings/pallet_overhangs.lua','mappings/johto_remaining.lua','mappings/park.lua','mappings/interiors.lua','mappings/gen2_caves.lua','mappings/johto_cave_finish.lua','mappings/johto_rooms_finish.lua','mappings/johto_gate_finish.lua','mappings/johto_shared_finish.lua','mappings/johto_lighthouse_finish.lua','mappings/johto_tower_finish.lua','mappings/johto_gamecorner_finish.lua','mappings/gen1_center_finish.lua','mappings/gen1_commercial_finish.lua','mappings/gen1_domestic_finish.lua','mappings/gen1_facilities_finish.lua','mappings/gen1_galleries_finish.lua','mappings/gen1_gates_finish.lua','mappings/gen1_lab_finish.lua','mappings/gen1_overworld_finish.lua','mappings/gen1_plateau_finish.lua','mappings/gen1_safari_finish.lua','mappings/gen1_ship_finish.lua','mappings/gen1_special_finish.lua','mappings/gen1_temples_finish.lua','mappings/johto_unique_objects_finish.lua','mappings/johto_shrine_finish.lua','mappings/johto_port_finish.lua','mappings/johto_pokecom_finish.lua','mappings/johto_facility_finish.lua','mappings/johto_battle_outside_finish.lua','mappings/johto_station_finish.lua','mappings/johto_ruins_finish.lua','mappings/johto_radio_finish.lua','mappings/johto_gyms_finish.lua','mappings/johto_labrooms_finish.lua','mappings/johto_domestic_finish.lua','mappings/johto_mart_finish.lua','mappings/johto_dragonden_finish.lua','mappings/johto_battle_inside_finish.lua','mappings/johto_underground_finish.lua','mappings/gen2_house_context_cleanup.lua','mappings/reverse_kanto.lua','mappings/reverse_hoenn.lua','mappings/reverse_oldale.lua','mappings/gen2_kanto_terrain_finish.lua','mappings/gen2_kanto_water_finish.lua','mappings/gen2_kanto_gs_route_details_finish.lua','mappings/gen2_kanto_shores_finish.lua','mappings/gen2_kanto_details_finish.lua','mappings/gen2_kanto_rooms_finish.lua','mappings/gen2_kanto_caves_finish.lua','mappings/gen2_compact_gyms_hall_finish.lua','mappings/gen2_kanto_facilities_finish.lua','mappings/gen2_kanto_special_rooms_finish.lua','mappings/gen2_kanto_buildings_finish.lua','mappings/gen2_kanto_landmarks_finish.lua','mappings/gen2_kanto_apartments_finish.lua',
     'mappings/gen2_native_public_counters.lua',
     'mappings/gen2_crystaldust_rocket.lua',
+    'mappings/gen2_crystaldust_center_counters.lua',
     'mappings/gen2_domestic_floor_audit.lua','mappings/gen2_facility_floor_audit.lua','mappings/gen2_interior_chair_audit.lua',
     'mappings/newbark_crystaldust_domestic.lua',
     'mappings/gen2_newbark_crystaldust_lab.lua',
@@ -359,6 +360,8 @@ return function(mod)
   end
   roofs=readModule('lib/roofs.lua').new({rows=decorationRows,treeRows=treeRows,furnitureRows=furnitureRows,validate=Mapping.validate,
     donor=decoder,original=original,compose=compose,version=GV.get,revision=function()return state.revision end,
+    treeFrames=function(row)return flora:offsetTreeFrames(row)end,
+    treePhase=function()return flora:offsetTreePhase(love.timer and love.timer.getTime()or 0)end,
     markTrueColor=function(x,y,w,h)
       if mod.generation==1 then
         local fx=require('src.render.PaletteFX')

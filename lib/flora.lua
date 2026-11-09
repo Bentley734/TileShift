@@ -35,6 +35,7 @@ function F.new(ctx)
   local self={selected={trees='default',big_trees='default',cut_trees='default',flowers='default',grass='default',water='default'},revision=0}
   local seed=math.floor(tonumber(ctx.seed) or 1)%2147483647
   local images,sheets,grounds={},{},{}
+  local offsetTreeFrames={}
   function self:invalidate()grounds={} end
   local speeds={trees=1,flowers=1,grass=1,water=1}
   function self:speed(group,value)
@@ -292,6 +293,36 @@ function F.new(ctx)
       else foreground=ctx.newImageData(16,16);foreground:paste(sprite,0,8,0,8,16,8) end
     end
     return {under=out,foreground=foreground}
+  end
+  -- One finite source tree in Azalea Gym sits above its walking corridor.
+  -- Reuse the selected complete32px tree and the existing whole-sprite sway,
+  -- then split it; no base grass is baked into the decorative foreground.
+  function self:offsetTreeFrames(row)
+    assert(row.furniture=='azalea_gym_tree'and row.map=='AZALEA_GYM'
+      and row.anchorX==4 and row.anchorY==6 and row.x>=4 and row.x<=5 and row.y>=5 and row.y<=6,
+      'Unknown finite tree placement')
+    local part=(row.y-5)*2+row.x-4
+    local entry=assert(self:entry('big_trees',row.game..':AZALEA_GYM:big_trees:4:6'))
+    local key=entry.id..':'..part
+    if offsetTreeFrames[key]then return offsetTreeFrames[key]end
+    local sprite=self:sprite(entry);local w,h=sprite:getDimensions()
+    assert(w==32 and h==32,'Finite tree must retain a complete native32x32 sprite')
+    local frames={}
+    for i,offset in ipairs({0,1,0,-1})do
+      local wind=ctx.newImageData(32,32)
+      for y=0,31 do
+        local lo,hi=32,-1
+        for x=0,31 do local _,_,_,a=sprite:getPixel(x,y);if a>0 then lo=math.min(lo,x);hi=math.max(hi,x)end end
+        local shift=y>=19 and 0 or offset
+        if lo+shift<0 or hi+shift>=32 then shift=0 end
+        for x=0,31 do local r,g,b,a=sprite:getPixel(x,y);if a>0 then wind:setPixel(x+shift,y,r,g,b,a)end end
+      end
+      local piece=ctx.newImageData(16,16);piece:paste(wind,0,0,part%2*16,math.floor(part/2)*16,16,16);frames[i]=piece
+    end
+    offsetTreeFrames[key]=frames;return frames
+  end
+  function self:offsetTreePhase(now)
+    return speeds.trees==0 and 1 or(math.floor(math.max(0,now or 0)*speeds.trees/.35)%4+1)
   end
   function self:category(row)return category(row)end
   function self:decorate(row,piece,sequence)

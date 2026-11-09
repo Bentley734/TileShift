@@ -78,6 +78,12 @@ function R.new(ctx)
     {x=12,y=4,id=54,quadrant=0,hash='fae51ed02f5f74eb17faafcd6a4cbaece10efd262b3a4e22a0bde27c00ef2ffe'},
     {x=12,y=5,id=54,quadrant=2,hash='fb006ef3e8a343bbf74801356e790b283332289945694d869117d277fcc8d779'},
   }
+  local azaleaTreeHashes={
+    'cbdb6c065210ca65781a327b7d776b53f80fb548173d5f71ade6f1cbb2ce6650',
+    'e27d249251e5d1b68a55631041b8062346fc36acc606978199802c301ea9398a',
+    'ff97f81649dcf1055be0ebeef7baf65bfdf5a231a0166e7f3d1d2a9f81fc3fb9',
+    'cc86810bf719f37ed02658f3b1c08947304c2ae5b9925a204c51b78196f73c5f',
+  }
   for _,row in ipairs(ctx.furnitureRows or{})do
     -- Furniture has its own explicit, small source envelopes. It is neither a
     -- conifer canopy nor a positioned mapping: callbacks can activate its
@@ -200,9 +206,17 @@ function R.new(ctx)
       and row.sourceHash=='b9295a913782f9438c63c5f146202a3b262bc43a49fe338c068b9767d3ee220b'
       and row.sourceCollision==7 and row.role=='crystaldust_complete_kurt_workbench'
       and row.x>=12 and row.x<=15 and row.y>=-1 and row.y<=4 and row.frontY==(row.y<=2 and 48 or 80)
+    local azaleaTree=coords and row.furniture=='azalea_gym_tree'
+      and(row.game=='gold'or row.game=='silver'or row.game=='crystal')
+      and row.map=='AZALEA_GYM'and row.tileset=='TILESET_ELITE_FOUR_ROOM'
+      and row.id==33 and row.quadrant==0 and row.anchorX==4 and row.anchorY==6
+      and row.sourceHash==azaleaTreeHashes[1]and row.sourceCollision==7
+      and row.role=='azalea_gym_center_tree_north16'
+      and row.x>=4 and row.x<=5 and row.y>=5 and row.y<=6 and row.frontY==108
+      and type(ctx.treeFrames)=='function'and type(ctx.treePhase)=='function'
     local checked={};for k,v in pairs(row)do checked[k]=v end
     checked.x,checked.y=row.anchorX,row.anchorY
-    assert((bed or pc or carpet or shrine or lighthouseBed or lighthouseTable or linkMachine or battleMachine or upperPC or redBed or shipBed or celadonBed or mrPokemonPC or unionLadder or kurtBench)and row.style=='gen3'and row.kind=='third_party'
+    assert((bed or pc or carpet or shrine or lighthouseBed or lighthouseTable or linkMachine or battleMachine or upperPC or redBed or shipBed or celadonBed or mrPokemonPC or unionLadder or kurtBench or azaleaTree)and row.style=='gen3'and row.kind=='third_party'
       and row.sourceFiles and type(row.assetFileHash)=='string'and #row.assetFileHash==64
       and not(row.base or row.donor or row.parts or row.canopy or row.animated or row.foreground or row.occludes)
       and not(row.side or row.sourceX or row.sourceY or row.animation or row.frames or row.assetFrames or row.artOverlay or row.overMask)
@@ -234,6 +248,11 @@ function R.new(ctx)
     assert(#maps.anchors<=(row.map=='KURTS_HOUSE'and 5 or shipAnchorLimits[row.map]or 3),'Too many bounded furniture source blocks')
   end
   local self={}
+  local function foregroundTexture(entry,phase)
+    if not entry.treeTextures then return entry.texture end
+    phase=phase or ctx.treePhase();assert(type(phase)=='number'and phase%1==0 and phase>=1 and phase<=4,'Invalid finite tree wind phase')
+    return entry.treeTextures[phase]
+  end
   function self:cells(game,def)
     if closed or not def then return nil end
     local list=groups[game]and groups[game][def.id]
@@ -261,7 +280,7 @@ function R.new(ctx)
     end end
     local function append(row,x,y,sourceY,canopy,isFurniture)
       if not ctx.enabled or ctx.enabled(row)then
-      local ok,data=pcall(function()
+      local ok,data,treeFrames=pcall(function()
         local sx,sy=isFurniture and row.anchorX or(row.sourceX or x),isFurniture and row.anchorY or(sourceY or row.sourceY or y)
         if row.side then
           assert(row.buildingX+row.buildingW<=def.width*2 and row.buildingY+row.buildingH<=def.height*2,
@@ -285,6 +304,19 @@ function R.new(ctx)
           quadrant=row.quadrant,hash=row.sourceHash,hashOnly=true,map=def,
           monochrome=true,sourceFiles=row.sourceFiles})
         assert(source,why or'Roof source fingerprint changed')
+        if isFurniture and row.furniture=='azalea_gym_tree'then
+          assert(def.width==5 and def.height==8,'Azalea Gym source bounds changed')
+          for q=0,3 do
+            local piece,pieceWhy=ctx.donor:cell({game=game,tileset=row.tileset,id=33,quadrant=q,
+              hash=azaleaTreeHashes[q+1],hashOnly=true,map=def,monochrome=true,sourceFiles=row.sourceFiles})
+            assert(piece,pieceWhy or'Azalea Gym source tree glyph changed')
+          end
+          local frames=ctx.treeFrames(row);assert(type(frames)=='table'and #frames==4,'Finite tree requires four complete wind frames')
+          for _,frame in ipairs(frames)do
+            local w,h=frame:getDimensions();assert(w==16 and h==16,'Finite tree piece must retain native16px quadrants')
+          end
+          return frames[1],frames
+        end
         if isFurniture and row.furniture=='union_cave_ladder'then
           local upperBid=def.blocks[math.floor(row.upperY/2)*def.width+math.floor(row.upperX/2)+1]
           assert(upperBid==row.upperId,'Complete Union ladder upper source position changed')
@@ -419,6 +451,15 @@ function R.new(ctx)
           groundOnly=isFurniture and row.furniture=='carpet'or nil,
           outside=x<0 or y<0 or x>=def.width*2 or y>=def.height*2,
           frontY=isFurniture and row.frontY or(canopy and(sourceY+2)*16 or(row.side and(row.buildingY+row.buildingH)*16 or nil))}
+        if treeFrames then
+          result.hasTreeFrames=true
+          entry.treeTextures={}
+          for i,frame in ipairs(treeFrames)do
+            local t=textures[frame]
+            if not t then t=G.newImage(frame);t:setFilter('nearest','nearest');textures[frame]=t end
+            entry.treeTextures[i]=t
+          end
+        end
         result.minY=math.min(result.minY,y)
         -- Adjacent native buildings may share a decorative cell. Retain their
         -- draw order and separate physical front/behind boundaries. This
@@ -484,6 +525,8 @@ function R.new(ctx)
     if not world or world.daytime=='DARK'then return end
     local cells=self:cells(ctx.version(),def);if not cells then return end
     local cam=world.camera;s=s or 1;ox,oy=ox or 0,oy or 0
+    -- Sample once for the whole32px sprite and reuse it for actor overlays.
+    if cells.hasTreeFrames then cells.treePhase=ctx.treePhase()end
     local cx,cy=cam and cam.x or 0,cam and cam.y or 0
     local first=math.max(cells.minY,math.floor((cy-oy)/16)-1)
     local last=math.min(def.height*2-1,math.floor((cy-oy+(world.viewH or 144))/16))
@@ -499,7 +542,7 @@ function R.new(ctx)
         local x=e.x*16+ox-cx
         if(edgeMode~='withoutBorder'or y>=0)and x+16>=0 and x<=(world.viewW or 160)then
           local dx,dy=math.floor(x*s),math.floor((y*16+oy-cy)*s)
-          G.draw(e.texture,dx,dy,0,s,s)
+          G.draw(foregroundTexture(e,cells.treePhase),dx,dy,0,s,s)
           if ctx.markTrueColor then ctx.markTrueColor(dx,dy,16*s,16*s)end
         end
       end
@@ -540,7 +583,7 @@ function R.new(ctx)
             if not entry.groundOnly and(not borderOnly or entry.outside)
               and(not entry.frontY or entity.py+actorOriginY+12<entry.frontY+originY)then
               G.push('all');G.setShader();G.setColor(1,1,1,1)
-              G.draw(entry.texture,quad,math.floor(ox+(xx+originX)*s),math.floor(oy+(yy+originY)*s),0,s,s);G.pop()
+              G.draw(foregroundTexture(entry,cells.treePhase),quad,math.floor(ox+(xx+originX)*s),math.floor(oy+(yy+originY)*s),0,s,s);G.pop()
               if ctx.markTrueColor then ctx.markTrueColor(math.floor(ox+(xx+originX)*s),math.floor(oy+(yy+originY)*s),w*s,h*s)end
             end
             entry=entry.next

@@ -1,6 +1,6 @@
 -- ROM-free renderer fixture using independently frozen native asset alpha.
 local Fixture={}
-function Fixture.new(root,rows,nativeFixture)
+function Fixture.new(root,rows,nativeFixture,contextOverrides)
  local Roofs=assert(loadfile(root..'/lib/roofs.lua'))()
  local Mapping=assert(loadfile(root..'/lib/mapping.lua'))()
  local native=nativeFixture or assert(loadfile(root..'/tests/furniture_native_alpha.lua'))()
@@ -35,6 +35,7 @@ function Fixture.new(root,rows,nativeFixture)
    end
    return data
   end,warn=function(message)f.warnings[#f.warnings+1]=message end}
+ for k,v in pairs(contextOverrides or{})do ctx[k]=v end
  f.ctx=ctx;f.rows=rows;f.roofs=Roofs.new(ctx)
  function f:select(game,map)
   self.game=game

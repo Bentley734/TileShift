@@ -1,5 +1,9 @@
 # Artwork credits
 
+## Azalea Gym tree placement and Pokémon Center counters (0.46.12)
+
+The Gym reuses its existing credited native tree artwork and selected big-tree variants, at their original pixel size. Its decorative draw position moves sixteen pixels north; source collision and event data remain intact. Center counters use complete native CrystalDust artwork by Sierraffinity and contributors, extracted from the user-supplied ROM. Both artwork planes are retained where needed for the full red upright and rounded ends beneath the native flowerpot. Plain countertop and front sections remain distinct from service-panel pieces. Source and output fingerprints accompany the affected assets; no artwork is rescaled or recolored.
+
 ## Kurt’s complete native workbench side edges (0.46.11)
 
 The workbench retains the complete native CrystalDust side rims and ends from its lower artwork plane, alongside the upper-plane tools, fascia and supports. The omitted dark edge pixels are restored exactly from the user-supplied CrystalDust ROM by Sierraffinity and contributors. The side outlines remain continuous along the countertop and left return. Exterior wall and floor stay transparent. Source and output fingerprints accompany the workbench provenance; no artwork is rescaled or recolored.
