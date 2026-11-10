@@ -1,5 +1,9 @@
 # Artwork credits
 
+## Magnet Train ride presentation (0.46.17)
+
+The ride reuses the existing credited MetalFlygon08 railway, native Emerald ground and FireRed modules already used for TileShift's station platforms and safety edges. Complete native 32-by-32 large-tree selections remain the existing LiquidCrystal, FireGold and CrystalDust options with their existing credits. No tree artwork is resized or generated for this update. The train is recolored from the actual ride-specific Gold, Silver and Crystal graphics using the established station palette, preserving its distinct window geometry and native player-priority mask. All assets and source recipes are fingerprinted; selected artwork is cached separately from the engine's original animation canvases.
+
 ## Magnet Train corners and Game Corner counters (0.46.16)
 
 The train retains the existing recolored Gold, Silver and Crystal artwork. An explicit exterior-only mask reveals the already credited MetalFlygon08 railway beneath the rounded ends, without removing the body, windows, outline or lower shadow. Selected native-size corner compositions and their source/output fingerprints are retained; the complete imported train sheet is not packaged. Counter artwork comes from the user-supplied CrystalDust ROM by Sierraffinity and contributors, using complete native surfaces, front panels and ends at their original pixel scale. Source layouts, collisions, actors and scripts remain intact.

@@ -3,6 +3,8 @@
 
 TileShift swaps world artwork through individually reviewed tile matches.
 
+Version 0.46.17 keeps the Gen 3 theme active throughout the Magnet Train ride in Gold, Silver and Crystal. The separate animation screen uses the current railway, matching train colors and selected complete large trees over native Gen 3 ground. Its original window opening preserves the player animation and masking. Native trip timing, scrolling, sound, boarding and arrival behavior are retained. Original style and disabling TileShift restore the native animation.
+
 Version 0.46.16 restores continuous Gen 3 track around the rounded ends of the Magnet Train in Goldenrod and Saffron. Only the exterior backing is masked away; the entire train body, windows, outline and lower shadow remain exact. Goldenrod's Game Corner counters use complete native CrystalDust fronts and end pieces. Original NPC positions, walking rules, service interactions, boarding, arrivals and travel behavior are preserved in Gold, Silver and Crystal.
 
 Version 0.46.15 polishes Goldenrod's Gym, Flower Shop and Bike Shop in Gold, Silver and Crystal with native CrystalDust fixtures. Whitney's maze uses its native green planters. The Flower Shop uses its dedicated displays, complete low table and matching room surfaces. The Bike Shop's pegboard and tools retain their complete native edges and backing. Original walking rules, NPC positions, entrances, scripts and interactions are preserved.

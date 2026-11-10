@@ -1,5 +1,5 @@
 return function(mod)
-  local callback,dispose,disposed,stopOptions,ownerBus,ownerEpoch,owned,adapterContext,state,roofs,berryTheme,clinicChansey,clinicStops
+  local callback,dispose,disposed,stopOptions,ownerBus,ownerEpoch,owned,adapterContext,state,roofs,berryTheme,clinicChansey,clinicStops,rideTheme
   local function readModule(path)
     return assert(load(assert(mod:read(path)), '@tileshift/'..path))()
   end
@@ -383,6 +383,18 @@ return function(mod)
     end,warn=function(s)mod.log:warn('%s',s)end}
   local close=adapter.install(adapterContext)
   if mod.generation==2 then
+    rideTheme=readModule('lib/magnet_train_ride.lua').install({
+      catalog=readModule('lib/magnet_train_ride_catalog.lua'),version=GV.get,game=function()return mod.game end,
+      style=function()return state.style end,active=owned,
+      revision=function()return tostring(state.revision)..':'..tostring(flora.revision)end,
+      phase=function()return flora:offsetTreePhase(love.timer and love.timer.getTime()or 0)end,
+      source=function(game,path)return nativeFS.readAt(GV.cachePrefix(game)..path)end,
+      sourceSheet=function(game,path)return love.image.newImageData(GV.cachePrefix(game)..path)end,
+      hash=function(bytes)return love.data.encode('string','hex',love.data.hash('sha256',bytes))end,
+      newData=newData,native=nativeSprite,asset=original,compose=compose,
+      tree=function(key)return flora:sprite(assert(flora:entry('big_trees',key)))end,
+      texture=function(data)local image=love.graphics.newImage(data);image:setFilter('nearest','nearest');return image end,
+      warn=function(s)mod.log:warn('%s',s)end})
     local fxAvailable,clinicFx=pcall(require,'src.render.PaletteFX')
     clinicChansey=readModule('lib/clinic_chansey.lua').install({
       catalog=readModule('lib/clinic_chansey_catalog.lua'),version=GV.get,
@@ -432,6 +444,7 @@ return function(mod)
     if disposed then return end
     disposed=true;if berryTheme then berryTheme:dispose()end
     if clinicChansey then clinicChansey:dispose()end
+    if rideTheme then rideTheme:dispose()end
     for _,stop in ipairs(clinicStops or {})do if stop then stop()end end
     clinicStops=nil
     vegetation:dispose();close();roofs:dispose();decoder:invalidate()
@@ -526,6 +539,7 @@ return function(mod)
   mod.exports.vegetation=vegetation
   mod.exports.berryTheme=berryTheme
   mod.exports.clinicChansey=clinicChansey
+  mod.exports.trainRide=rideTheme
   mod.exports.drawVegetation=function(...)if adapterContext.drawVegetation then return adapterContext.drawVegetation(...)end end
   mod.exports.dispose=dispose
   mod.exports.select=function(style)
