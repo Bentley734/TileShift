@@ -1,4 +1,4 @@
--- Theme only the native ride's cached artwork. Its routine, three scroll bands,
+-- Cache scenery separately from the native train. Its routine, three scroll bands,
 -- player OAM, music, timing and engine-owned resources remain native.
 local Theme={}
 local SHIFTS={0,1,0,-1}
@@ -19,18 +19,21 @@ function Theme.install(ctx)
     if not warned[key]then warned[key]=true;if ctx.warn then ctx.warn(message)end end
   end
   local ok,Class=pcall(ctx.require or require,'src.ui.gen2.MagnetTrainRide')
-  if not(ok and type(Class)=='table'and type(Class.backgrounds)=='function'
-    and type(Class.backdrop)=='function')then
+  if not(ok and type(Class)=='table'and type(Class.drawPanel)=='function'and type(Class.drawBands)=='function'
+    and type(Class.drawPlayer)=='function'and type(Class.backdrop)=='function')then
     warn('class','Magnet Train artwork unavailable on this engine; using its native ride')
     function self:dispose()closed=true end
     return self
   end
-  local native={backgrounds=Class.backgrounds,backdrop=Class.backdrop}
+  local native={drawPanel=Class.drawPanel,backdrop=Class.backdrop}
   local wrapped={}
   local scenes=setmetatable({},{__mode='k'})
   local function clear(scene)
     local memo=scenes[scene]
-    if memo then for _,frame in ipairs(memo.frames or {})do release(frame[1]);release(frame[2])end end
+    if memo then
+      for _,frame in ipairs(memo.frames or {})do release(frame.scenery)end
+      release(memo.body);release(memo.priority);release(memo.quad)
+    end
     scenes[scene]=nil
   end
   local function enabled()
@@ -41,7 +44,7 @@ function Theme.install(ctx)
     local gfx=data and data.gen2Field and data.gen2Field.magnetTrain
     local ts=data and data.gen2Tilesets and data.gen2Tilesets.TILESET_TRAIN_STATION
     return scene.game and(not ctx.game or ctx.game()==scene.game)and scene.game.data==data and scene.tileset==ts and ts and ts.image==host.sheet
-      and scene.ride and same(gfx and gfx.bgTiles,host.bgTiles)and same(gfx and gfx.tilemap,host.tilemap)
+      and scene.ride and type(scene.ride.scx)=='number'and scene.ride.scx>=0 and scene.ride.scx<256 and same(gfx and gfx.bgTiles,host.bgTiles)and same(gfx and gfx.tilemap,host.tilemap)
       and same(scene.ride.bgTiles,host.bgTiles)and same(scene.ride.fgTilemap,host.tilemap)
   end
   local function rawSource(scene,game,host)
@@ -85,39 +88,39 @@ function Theme.install(ctx)
       end
       trees[#trees+1]={x=x,y=y,image=sprite,rows=rows}
     end end
+    -- The body is independent of scenery/wind. Retain every native body pixel,
+    -- including the opaque shade0 window base, with only the258 exterior pixels cut.
+    local body,priority=ctx.newData(256,144),ctx.newData(256,144)
+    for y=0,31 do for x=0,159 do
+      local n=art.exterior[y+1]
+      if x>=n and x<160-n then
+        local r,g,b,a=raw:getPixel(x,y+48)
+        assert(r==g and g==b and a==1,'Train source must retain neutral native indices')
+        local shade=math.floor((1-r)*3+.5)+1
+        local colors=(y>=16 and y<24 and x>=56 and x<104)and art.gold or art.metal
+        local c=assert(colors[shade])
+        body:setPixel(x,y+48,c[1]/255,c[2]/255,c[3]/255,1)
+        priority:setPixel(x,y+48,c[1]/255,c[2]/255,c[3]/255,shade==1 and 0 or 1)
+      end
+    end end
+    memo.body=assert(ctx.texture(body));memo.priority=assert(ctx.texture(priority))
+    memo.quad=assert(ctx.quad(0,0,160,144,256,144))
+    release(body);release(priority)
     for phase,offset in ipairs(SHIFTS)do
-      local base=ctx.newData(256,144)
-      for y=0,128,16 do for x=0,240,16 do base:paste(ground,x,y,0,0,16,16)end end
+      local scenery=ctx.newData(256,144)
+      for y=0,128,16 do for x=0,240,16 do scenery:paste(ground,x,y,0,0,16,16)end end
       for _,tree in ipairs(trees)do for y=0,31 do
         local shift=y>=19 and 0 or offset
         if tree.rows[y][1]+shift<0 or tree.rows[y][2]+shift>=32 then shift=0 end
-        for x=0,31 do blend(base,tree.x+x+shift,tree.y+y,tree.image:getPixel(x,y))end
+        for x=0,31 do blend(scenery,tree.x+x+shift,tree.y+y,tree.image:getPixel(x,y))end
       end end
       for x=0,240,16 do
-        base:paste(edge,x,32,0,0,16,16);base:paste(rails[1],x,48,0,0,16,16)
-        base:paste(rails[2],x,64,0,0,16,16);base:paste(concrete,x,80,0,0,16,16)
-        base:paste(edge,x,96,0,0,16,16)
+        scenery:paste(edge,x,32,0,0,16,16);scenery:paste(rails[1],x,48,0,0,16,16)
+        scenery:paste(rails[2],x,64,0,0,16,16);scenery:paste(concrete,x,80,0,0,16,16)
+        scenery:paste(edge,x,96,0,0,16,16)
       end
-      for y=0,31 do for x=0,159 do
-        local n=art.exterior[y+1]
-        if x>=n and x<160-n then
-          local r,g,b,a=raw:getPixel(x,y+48)
-          assert(r==g and g==b and a==1,'Train source must retain neutral native indices')
-          local shade=math.floor((1-r)*3+.5)+1
-          local colors=(y>=16 and y<24 and x>=56 and x<104)and art.gold or art.metal
-          local c=assert(colors[shade]);base:setPixel(x,y+48,c[1]/255,c[2]/255,c[3]/255,1)
-        end
-      end end
-      local overlay=ctx.newData(256,144)
-      for y=0,143 do for x=0,255 do
-        local r,g,b=base:getPixel(x,y);local shade=raw:getPixel(x,y)
-        overlay:setPixel(x,y,r,g,b,shade==1 and 0 or 1)
-      end end
-      local textures={}
-      memo.frames[#memo.frames+1]=textures
-      textures[1]=assert(ctx.texture(base));textures[2]=assert(ctx.texture(overlay))
-      release(base);release(overlay)
-      self.builds=self.builds+1
+      memo.frames[#memo.frames+1]={scenery=assert(ctx.texture(scenery)),body=memo.body,priority=memo.priority,quad=memo.quad}
+      release(scenery);self.builds=self.builds+1
     end
     release(raw);release(ground);release(concrete)
     self.prepared=self.prepared+1
@@ -136,8 +139,9 @@ function Theme.install(ctx)
       scenes[scene]=memo
       local success,err=pcall(build,scene,game,host,memo)
       if not success then
-        for _,frame in ipairs(memo.frames)do release(frame[1]);release(frame[2])end
-        memo.frames={};memo.failed=true
+        for _,frame in ipairs(memo.frames)do release(frame.scenery)end
+        release(memo.body);release(memo.priority);release(memo.quad)
+        memo.frames={};memo.body=nil;memo.priority=nil;memo.quad=nil;memo.failed=true
         warn(game..':'..tostring(revision),'Magnet Train artwork unavailable; using native ride: '..tostring(err))
       end
     end
@@ -145,10 +149,34 @@ function Theme.install(ctx)
     local phase=math.max(1,math.min(4,math.floor(ctx.phase()or 1)))
     return memo.frames[phase]
   end
-  wrapped.backgrounds=function(scene,...)
+  wrapped.drawPanel=function(scene,...)
     local frame=current(scene)
-    if not frame then return native.backgrounds(scene,...)end
-    self.draws=self.draws+1;return frame[1],frame[2]
+    if not frame then return native.drawPanel(scene,...)end
+    local G=ctx.graphics
+    G.push('all')
+    G.setShader()
+    local backdrop=scene:backdrop()
+    G.setColor(backdrop[1]/255,backdrop[2]/255,backdrop[3]/255,1)
+    G.rectangle('fill',0,0,160,144)
+    G.setColor(1,1,1,1)
+    -- scx is the current latched world offset. offset*2 is already advanced
+    -- four pixels by updateLYOverrides; it must not be sampled here.
+    local scx=scene.ride.scx%256
+    local w1=math.min(160,256-scx)
+    frame.quad:setViewport(scx,0,w1,144,256,144)
+    G.draw(frame.scenery,frame.quad,0,0)
+    if w1<160 then
+      frame.quad:setViewport(0,0,160-w1,144,256,144)
+      G.draw(frame.scenery,frame.quad,w1,0)
+    end
+    -- Keep native train motion and the player's source OAM between the passes.
+    scene:drawBands(frame.body)
+    scene:drawPlayer()
+    G.setShader()
+    scene:drawBands(frame.priority)
+    G.setColor(1,1,1,1)
+    G.pop()
+    self.draws=self.draws+1
   end
   wrapped.backdrop=function(scene,...)
     if current(scene)then return ctx.catalog.metal[1]end

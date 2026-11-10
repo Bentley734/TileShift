@@ -391,7 +391,7 @@ return function(mod)
       source=function(game,path)return nativeFS.readAt(GV.cachePrefix(game)..path)end,
       sourceSheet=function(game,path)return love.image.newImageData(GV.cachePrefix(game)..path)end,
       hash=function(bytes)return love.data.encode('string','hex',love.data.hash('sha256',bytes))end,
-      newData=newData,native=nativeSprite,asset=original,compose=compose,
+      newData=newData,native=nativeSprite,asset=original,compose=compose,graphics=love.graphics,quad=function(...)return love.graphics.newQuad(...)end,
       tree=function(key)return flora:sprite(assert(flora:entry('big_trees',key)))end,
       texture=function(data)local image=love.graphics.newImage(data);image:setFilter('nearest','nearest');return image end,
       warn=function(s)mod.log:warn('%s',s)end})

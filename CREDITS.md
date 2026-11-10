@@ -1,5 +1,9 @@
 # Artwork credits
 
+## Independent Magnet Train scenery (0.46.18)
+
+This correction reuses all credited 0.46.17 artwork without changing its source pixels. The railway, safety edge and platform belong to the scenery layer. The ride-specific train and its native player-priority mask use separate transparent layers, retaining the complete body, rim, window and lower shadow. No new raster artwork is generated or imported.
+
 ## Magnet Train ride presentation (0.46.17)
 
 The ride reuses the existing credited MetalFlygon08 railway, native Emerald ground and FireRed modules already used for TileShift's station platforms and safety edges. Complete native 32-by-32 large-tree selections remain the existing LiquidCrystal, FireGold and CrystalDust options with their existing credits. No tree artwork is resized or generated for this update. The train is recolored from the actual ride-specific Gold, Silver and Crystal graphics using the established station palette, preserving its distinct window geometry and native player-priority mask. All assets and source recipes are fingerprinted; selected artwork is cached separately from the engine's original animation canvases.
