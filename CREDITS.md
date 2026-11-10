@@ -1,5 +1,13 @@
 # Artwork credits
 
+## Goldenrod Department Store and Underground review (0.46.19)
+
+The department-store counters use complete native CrystalDust artwork by Sierraffinity and contributors, extracted from the user-supplied ROM. Native rounded caps, service pads, rear rims, front panels and return ends retain their original pixel scale and shading. Matching local backing remains visible around the furniture, and foreground artwork retains the native rim depth around the source clerks. Source and output fingerprints accompany the authored pieces and recipes.
+
+Department-store stock-shelf faces retain the complete checked native FireRed MID and OVER artwork layers, including their gray feet and shading. The donor's exterior blue UNDER-floor rectangles are omitted so the existing orange room floor shows through. Product colors and every hardware pixel remain unchanged; source and layer fingerprints accompany the scoped correction.
+
+The Underground's vendor desks retain the complete native CrystalDust top and bottom artwork planes, including their posts and feet. The warehouse uses the matching native wall family with distinct corner and side-face modules. Existing shared native materials retain their source pixels. Individually verified source-map references accompany the review; combined entrance-room references are explicitly labeled collections of native scenes.
+
 ## Independent Magnet Train scenery (0.46.18)
 
 This correction reuses all credited 0.46.17 artwork without changing its source pixels. The railway, safety edge and platform belong to the scenery layer. The ride-specific train and its native player-priority mask use separate transparent layers, retaining the complete body, rim, window and lower shadow. No new raster artwork is generated or imported.

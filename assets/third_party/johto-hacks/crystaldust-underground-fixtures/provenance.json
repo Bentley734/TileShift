@@ -1,0 +1,198 @@
+{
+  "credit": "Sierraffinity / DoMoreAwesome Games",
+  "native_modules": {
+    "083df884_083df944:599": {
+      "RGBA_sha256": "ce58f86ddceb94678083d233adf0f1db7adddc358636380c5bcaae88cf09c499",
+      "atlas_xyxy": [
+        112,
+        592,
+        128,
+        608
+      ],
+      "bottom_atlas_sha256": "797ac74304b715c84880a8f07e964317dc6724d0ea5cfe14ac2ba4310aa2e897",
+      "mid": 599,
+      "opaque_pixels": 256,
+      "pair": "083df884_083df944",
+      "planes": [
+        "bottom",
+        "top"
+      ],
+      "top_atlas_sha256": "1de19ba24c429756e2aad71f5662b7ce1c9e670bedbb2d19e5f4d2edde2d9316"
+    },
+    "083df884_083df944:606": {
+      "RGBA_sha256": "bedc78d9ac9b41c282a1f1ce0febe6a586fc8e7f1a65f6f490de991c8e6802ef",
+      "atlas_xyxy": [
+        224,
+        592,
+        240,
+        608
+      ],
+      "bottom_atlas_sha256": "797ac74304b715c84880a8f07e964317dc6724d0ea5cfe14ac2ba4310aa2e897",
+      "mid": 606,
+      "opaque_pixels": 256,
+      "pair": "083df884_083df944",
+      "planes": [
+        "bottom",
+        "top"
+      ],
+      "top_atlas_sha256": "1de19ba24c429756e2aad71f5662b7ce1c9e670bedbb2d19e5f4d2edde2d9316"
+    },
+    "083df884_083df944:607": {
+      "RGBA_sha256": "72a5f6ebfcab407ca083884aabe246d7c5d287afb388d0e76cbefe2ef6e96663",
+      "atlas_xyxy": [
+        240,
+        592,
+        256,
+        608
+      ],
+      "bottom_atlas_sha256": "797ac74304b715c84880a8f07e964317dc6724d0ea5cfe14ac2ba4310aa2e897",
+      "mid": 607,
+      "opaque_pixels": 256,
+      "pair": "083df884_083df944",
+      "planes": [
+        "bottom",
+        "top"
+      ],
+      "top_atlas_sha256": "1de19ba24c429756e2aad71f5662b7ce1c9e670bedbb2d19e5f4d2edde2d9316"
+    },
+    "083df884_083dfc94:520": {
+      "RGBA_sha256": "69588dd1ccaea0b766df2501def5eea712241eed4868ef89fbb3d510984772bf",
+      "atlas_xyxy": [
+        128,
+        512,
+        144,
+        528
+      ],
+      "bottom_atlas_sha256": "5d4864b01d665cee50f6cb2eba063e7b63364026754ad53b1c570fc44c0c2f6c",
+      "mid": 520,
+      "opaque_pixels": 256,
+      "pair": "083df884_083dfc94",
+      "planes": [
+        "bottom",
+        "top"
+      ],
+      "top_atlas_sha256": "1f2be60d12939e45e02482560448388423f615b80a6c6884cb24cb10129f0e49"
+    },
+    "083df884_083dfc94:524": {
+      "RGBA_sha256": "a91f19f60e4226c9222f60c9a9e570f0e9104637114b197289b5f656a362effc",
+      "atlas_xyxy": [
+        192,
+        512,
+        208,
+        528
+      ],
+      "bottom_atlas_sha256": "5d4864b01d665cee50f6cb2eba063e7b63364026754ad53b1c570fc44c0c2f6c",
+      "mid": 524,
+      "opaque_pixels": 256,
+      "pair": "083df884_083dfc94",
+      "planes": [
+        "bottom",
+        "top"
+      ],
+      "top_atlas_sha256": "1f2be60d12939e45e02482560448388423f615b80a6c6884cb24cb10129f0e49"
+    },
+    "083df884_083dfc94:532": {
+      "RGBA_sha256": "35eb4b5f5c375ea2c6b2d55343bbd994c83c765f8b6bcc0593e3d8b691f9e154",
+      "atlas_xyxy": [
+        64,
+        528,
+        80,
+        544
+      ],
+      "bottom_atlas_sha256": "5d4864b01d665cee50f6cb2eba063e7b63364026754ad53b1c570fc44c0c2f6c",
+      "mid": 532,
+      "opaque_pixels": 256,
+      "pair": "083df884_083dfc94",
+      "planes": [
+        "bottom",
+        "top"
+      ],
+      "top_atlas_sha256": "1f2be60d12939e45e02482560448388423f615b80a6c6884cb24cb10129f0e49"
+    }
+  },
+  "native_scale": 1,
+  "origin": "Whole native CrystalDust Underground fixtures and warehouse walls",
+  "processing": "Use complete BOTTOM+TOP modules, with every native object pixel retained. No resizing/cropping/recoloring or invented pixels. Booth is the complete16x48 three-module assembly; warehouse tiles are exact full16px faces/corners.",
+  "rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+  "sourceUrl": "https://github.com/Sierraffinity/CrystalDust",
+  "source_modules": {
+    "cell-35eb4b5f5c375ea2c6b2.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-underground-fixtures/cell-35eb4b5f5c375ea2c6b2.png",
+      "assetFileHash": "acbbc950b1d867f482c83084616184da97230da778c80265bc92ef0ee1dab098",
+      "assetPixelHash": "35eb4b5f5c375ea2c6b2d55343bbd994c83c765f8b6bcc0593e3d8b691f9e154",
+      "native_modules": [
+        "083df884_083dfc94:532"
+      ],
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ]
+    },
+    "cell-69588dd1ccaea0b766df.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-underground-fixtures/cell-69588dd1ccaea0b766df.png",
+      "assetFileHash": "176c1424e50552a8ba6b806e0df6a480ca307cf17710160b3f664e79bfc77132",
+      "assetPixelHash": "69588dd1ccaea0b766df2501def5eea712241eed4868ef89fbb3d510984772bf",
+      "native_modules": [
+        "083df884_083dfc94:520"
+      ],
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ]
+    },
+    "cell-72a5f6ebfcab407ca083.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-underground-fixtures/cell-72a5f6ebfcab407ca083.png",
+      "assetFileHash": "ac50459a30e59730e25af32caffec81e04ad7233c916373cf3c2b8ae91b63bf4",
+      "assetPixelHash": "72a5f6ebfcab407ca083884aabe246d7c5d287afb388d0e76cbefe2ef6e96663",
+      "native_modules": [
+        "083df884_083df944:607"
+      ],
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ]
+    },
+    "cell-a91f19f60e4226c9222f.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-underground-fixtures/cell-a91f19f60e4226c9222f.png",
+      "assetFileHash": "31e226a7763121e0d624e7b8c98242ab99c56a95c83065495d213272e3982a45",
+      "assetPixelHash": "a91f19f60e4226c9222f60c9a9e570f0e9104637114b197289b5f656a362effc",
+      "native_modules": [
+        "083df884_083dfc94:524"
+      ],
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ]
+    },
+    "cell-bedc78d9ac9b41c282a1.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-underground-fixtures/cell-bedc78d9ac9b41c282a1.png",
+      "assetFileHash": "fb584855a014c59dbbb6435b5e26056975eb85486f65f7616ba210201b05db5d",
+      "assetPixelHash": "bedc78d9ac9b41c282a1f1ce0febe6a586fc8e7f1a65f6f490de991c8e6802ef",
+      "native_modules": [
+        "083df884_083df944:606"
+      ],
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ]
+    },
+    "cell-ce58f86ddceb94678083.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-underground-fixtures/cell-ce58f86ddceb94678083.png",
+      "assetFileHash": "59ae27f87d667e289991ae6d58f4c47966747a113f0fdfb75e9d9b15c82ddc86",
+      "assetPixelHash": "ce58f86ddceb94678083d233adf0f1db7adddc358636380c5bcaae88cf09c499",
+      "native_modules": [
+        "083df884_083df944:599"
+      ],
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ]
+    }
+  }
+}

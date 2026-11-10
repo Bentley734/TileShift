@@ -1,0 +1,356 @@
+{
+  "rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+  "cells": [
+    {
+      "map": "GOLDENROD_UNDERGROUND",
+      "xy": [
+        6,
+        10
+      ],
+      "native_pair": "083df884_083df944",
+      "native_mid": 599,
+      "native_layers": [
+        "BOTTOM",
+        "TOP"
+      ]
+    },
+    {
+      "map": "GOLDENROD_UNDERGROUND",
+      "xy": [
+        6,
+        11
+      ],
+      "native_pair": "083df884_083df944",
+      "native_mid": 607,
+      "native_layers": [
+        "BOTTOM",
+        "TOP"
+      ]
+    },
+    {
+      "map": "GOLDENROD_UNDERGROUND",
+      "xy": [
+        6,
+        12
+      ],
+      "native_pair": "083df884_083df944",
+      "native_mid": 606,
+      "native_layers": [
+        "BOTTOM",
+        "TOP"
+      ]
+    },
+    {
+      "map": "GOLDENROD_UNDERGROUND",
+      "xy": [
+        6,
+        14
+      ],
+      "native_pair": "083df884_083df944",
+      "native_mid": 599,
+      "native_layers": [
+        "BOTTOM",
+        "TOP"
+      ]
+    },
+    {
+      "map": "GOLDENROD_UNDERGROUND",
+      "xy": [
+        6,
+        15
+      ],
+      "native_pair": "083df884_083df944",
+      "native_mid": 607,
+      "native_layers": [
+        "BOTTOM",
+        "TOP"
+      ]
+    },
+    {
+      "map": "GOLDENROD_UNDERGROUND",
+      "xy": [
+        6,
+        16
+      ],
+      "native_pair": "083df884_083df944",
+      "native_mid": 606,
+      "native_layers": [
+        "BOTTOM",
+        "TOP"
+      ]
+    },
+    {
+      "map": "GOLDENROD_UNDERGROUND",
+      "xy": [
+        6,
+        20
+      ],
+      "native_pair": "083df884_083df944",
+      "native_mid": 599,
+      "native_layers": [
+        "BOTTOM",
+        "TOP"
+      ]
+    },
+    {
+      "map": "GOLDENROD_UNDERGROUND",
+      "xy": [
+        6,
+        21
+      ],
+      "native_pair": "083df884_083df944",
+      "native_mid": 607,
+      "native_layers": [
+        "BOTTOM",
+        "TOP"
+      ]
+    },
+    {
+      "map": "GOLDENROD_UNDERGROUND",
+      "xy": [
+        6,
+        22
+      ],
+      "native_pair": "083df884_083df944",
+      "native_mid": 606,
+      "native_layers": [
+        "BOTTOM",
+        "TOP"
+      ]
+    },
+    {
+      "map": "GOLDENROD_UNDERGROUND_WAREHOUSE",
+      "xy": [
+        19,
+        1
+      ],
+      "native_pair": "083df884_083dfc94",
+      "native_mid": 532,
+      "native_layers": [
+        "BOTTOM",
+        "TOP"
+      ]
+    },
+    {
+      "map": "GOLDENROD_UNDERGROUND_WAREHOUSE",
+      "xy": [
+        19,
+        2
+      ],
+      "native_pair": "083df884_083dfc94",
+      "native_mid": 532,
+      "native_layers": [
+        "BOTTOM",
+        "TOP"
+      ]
+    },
+    {
+      "map": "GOLDENROD_UNDERGROUND_WAREHOUSE",
+      "xy": [
+        19,
+        3
+      ],
+      "native_pair": "083df884_083dfc94",
+      "native_mid": 532,
+      "native_layers": [
+        "BOTTOM",
+        "TOP"
+      ]
+    },
+    {
+      "map": "GOLDENROD_UNDERGROUND_WAREHOUSE",
+      "xy": [
+        19,
+        4
+      ],
+      "native_pair": "083df884_083dfc94",
+      "native_mid": 532,
+      "native_layers": [
+        "BOTTOM",
+        "TOP"
+      ]
+    },
+    {
+      "map": "GOLDENROD_UNDERGROUND_WAREHOUSE",
+      "xy": [
+        19,
+        5
+      ],
+      "native_pair": "083df884_083dfc94",
+      "native_mid": 532,
+      "native_layers": [
+        "BOTTOM",
+        "TOP"
+      ]
+    },
+    {
+      "map": "GOLDENROD_UNDERGROUND_WAREHOUSE",
+      "xy": [
+        19,
+        6
+      ],
+      "native_pair": "083df884_083dfc94",
+      "native_mid": 532,
+      "native_layers": [
+        "BOTTOM",
+        "TOP"
+      ]
+    },
+    {
+      "map": "GOLDENROD_UNDERGROUND_WAREHOUSE",
+      "xy": [
+        19,
+        7
+      ],
+      "native_pair": "083df884_083dfc94",
+      "native_mid": 532,
+      "native_layers": [
+        "BOTTOM",
+        "TOP"
+      ]
+    },
+    {
+      "map": "GOLDENROD_UNDERGROUND_WAREHOUSE",
+      "xy": [
+        19,
+        8
+      ],
+      "native_pair": "083df884_083dfc94",
+      "native_mid": 532,
+      "native_layers": [
+        "BOTTOM",
+        "TOP"
+      ]
+    },
+    {
+      "map": "GOLDENROD_UNDERGROUND_WAREHOUSE",
+      "xy": [
+        19,
+        9
+      ],
+      "native_pair": "083df884_083dfc94",
+      "native_mid": 532,
+      "native_layers": [
+        "BOTTOM",
+        "TOP"
+      ]
+    },
+    {
+      "map": "GOLDENROD_UNDERGROUND_WAREHOUSE",
+      "xy": [
+        19,
+        10
+      ],
+      "native_pair": "083df884_083dfc94",
+      "native_mid": 532,
+      "native_layers": [
+        "BOTTOM",
+        "TOP"
+      ]
+    },
+    {
+      "map": "GOLDENROD_UNDERGROUND_WAREHOUSE",
+      "xy": [
+        19,
+        11
+      ],
+      "native_pair": "083df884_083dfc94",
+      "native_mid": 532,
+      "native_layers": [
+        "BOTTOM",
+        "TOP"
+      ]
+    },
+    {
+      "map": "GOLDENROD_UNDERGROUND_WAREHOUSE",
+      "xy": [
+        19,
+        12
+      ],
+      "native_pair": "083df884_083dfc94",
+      "native_mid": 532,
+      "native_layers": [
+        "BOTTOM",
+        "TOP"
+      ]
+    },
+    {
+      "map": "GOLDENROD_UNDERGROUND_WAREHOUSE",
+      "xy": [
+        19,
+        13
+      ],
+      "native_pair": "083df884_083dfc94",
+      "native_mid": 532,
+      "native_layers": [
+        "BOTTOM",
+        "TOP"
+      ]
+    },
+    {
+      "map": "GOLDENROD_UNDERGROUND_WAREHOUSE",
+      "xy": [
+        19,
+        14
+      ],
+      "native_pair": "083df884_083dfc94",
+      "native_mid": 532,
+      "native_layers": [
+        "BOTTOM",
+        "TOP"
+      ]
+    },
+    {
+      "map": "GOLDENROD_UNDERGROUND_WAREHOUSE",
+      "xy": [
+        19,
+        15
+      ],
+      "native_pair": "083df884_083dfc94",
+      "native_mid": 532,
+      "native_layers": [
+        "BOTTOM",
+        "TOP"
+      ]
+    },
+    {
+      "map": "GOLDENROD_UNDERGROUND_WAREHOUSE",
+      "xy": [
+        0,
+        0
+      ],
+      "native_pair": "083df884_083dfc94",
+      "native_mid": 520,
+      "native_layers": [
+        "BOTTOM",
+        "TOP"
+      ]
+    },
+    {
+      "map": "GOLDENROD_UNDERGROUND_WAREHOUSE",
+      "xy": [
+        8,
+        0
+      ],
+      "native_pair": "083df884_083dfc94",
+      "native_mid": 520,
+      "native_layers": [
+        "BOTTOM",
+        "TOP"
+      ]
+    },
+    {
+      "map": "GOLDENROD_UNDERGROUND_WAREHOUSE",
+      "xy": [
+        19,
+        0
+      ],
+      "native_pair": "083df884_083dfc94",
+      "native_mid": 524,
+      "native_layers": [
+        "BOTTOM",
+        "TOP"
+      ]
+    }
+  ]
+}

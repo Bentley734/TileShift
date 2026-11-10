@@ -1,0 +1,860 @@
+{
+  "credit": "Sierraffinity / DoMoreAwesome Games",
+  "native_modules": {
+    "595:top": {
+      "RGBA_sha256": "2b7a8e1b02e185d574f8a7aa9a3ec83ff4c17c0f72a6f999bf7458331f41efb1",
+      "atlas_xyxy": [
+        48,
+        592,
+        64,
+        608
+      ],
+      "mid": 595,
+      "opaque_pixels": 256,
+      "pair": "083df884_08ea002c",
+      "plane": "top"
+    },
+    "596:top": {
+      "RGBA_sha256": "e702d7949d690b345ca6cd2d2e2c2ea8c7f4485430e43497a3fce2ac21d9e568",
+      "atlas_xyxy": [
+        64,
+        592,
+        80,
+        608
+      ],
+      "mid": 596,
+      "opaque_pixels": 256,
+      "pair": "083df884_08ea002c",
+      "plane": "top"
+    },
+    "597:top": {
+      "RGBA_sha256": "70367231624334145bb140ed8998ad6507dcab7e6cbc5d22d139f5264f45fd4f",
+      "atlas_xyxy": [
+        80,
+        592,
+        96,
+        608
+      ],
+      "mid": 597,
+      "opaque_pixels": 256,
+      "pair": "083df884_08ea002c",
+      "plane": "top"
+    },
+    "598:top": {
+      "RGBA_sha256": "16c9354880a9a7774d187c441917a610889fa62de2d7f92642faa02f84c0b09f",
+      "atlas_xyxy": [
+        96,
+        592,
+        112,
+        608
+      ],
+      "mid": 598,
+      "opaque_pixels": 256,
+      "pair": "083df884_08ea002c",
+      "plane": "top"
+    },
+    "603:top": {
+      "RGBA_sha256": "6dcddc56b723432e193ffd7e7f46b0a5453f464e25870e60d6cda67c8b87a8ea",
+      "atlas_xyxy": [
+        176,
+        592,
+        192,
+        608
+      ],
+      "mid": 603,
+      "opaque_pixels": 256,
+      "pair": "083df884_08ea002c",
+      "plane": "top"
+    },
+    "605:top": {
+      "RGBA_sha256": "6dcddc56b723432e193ffd7e7f46b0a5453f464e25870e60d6cda67c8b87a8ea",
+      "atlas_xyxy": [
+        208,
+        592,
+        224,
+        608
+      ],
+      "mid": 605,
+      "opaque_pixels": 256,
+      "pair": "083df884_08ea002c",
+      "plane": "top"
+    },
+    "610:top": {
+      "RGBA_sha256": "8d66aa4d2e53543b6c59ba3b76cbf7eb6a8e48027267744c60fe8549314c5f95",
+      "atlas_xyxy": [
+        32,
+        608,
+        48,
+        624
+      ],
+      "mid": 610,
+      "opaque_pixels": 256,
+      "pair": "083df884_08ea002c",
+      "plane": "top"
+    },
+    "611:top": {
+      "RGBA_sha256": "848fce8ccdf1b117f3fd25fb6b494b554b147c56d4fd15cc06cff059febad072",
+      "atlas_xyxy": [
+        48,
+        608,
+        64,
+        624
+      ],
+      "mid": 611,
+      "opaque_pixels": 256,
+      "pair": "083df884_08ea002c",
+      "plane": "top"
+    },
+    "614:top": {
+      "RGBA_sha256": "3eed508e92c89dc7db9a2b2226ff9938c9b036961c81e7eece71a954e13772e9",
+      "atlas_xyxy": [
+        96,
+        608,
+        112,
+        624
+      ],
+      "mid": 614,
+      "opaque_pixels": 256,
+      "pair": "083df884_08ea002c",
+      "plane": "top"
+    },
+    "616:top": {
+      "RGBA_sha256": "603deded81c03bbe576b40753ae408aa29b8ecae456efe0d513585445f7bb3fb",
+      "atlas_xyxy": [
+        128,
+        608,
+        144,
+        624
+      ],
+      "mid": 616,
+      "opaque_pixels": 68,
+      "pair": "083df884_08ea002c",
+      "plane": "top"
+    },
+    "617:top": {
+      "RGBA_sha256": "4b3a7daa9f7ac9b6d581933088d47144906b7d4f5a5d0d66f8927a71ba2af45f",
+      "atlas_xyxy": [
+        144,
+        608,
+        160,
+        624
+      ],
+      "mid": 617,
+      "opaque_pixels": 80,
+      "pair": "083df884_08ea002c",
+      "plane": "top"
+    },
+    "618:top": {
+      "RGBA_sha256": "6be7e0e06e0d019529452d3e3a10f5b40f9e8261434bd77bd6afb4548383cb24",
+      "atlas_xyxy": [
+        160,
+        608,
+        176,
+        624
+      ],
+      "mid": 618,
+      "opaque_pixels": 68,
+      "pair": "083df884_08ea002c",
+      "plane": "top"
+    },
+    "619:top": {
+      "RGBA_sha256": "22b88c6bea27ef40dfd487297e4c02b6928e98ed1314bf7c8dc92e5f95a019da",
+      "atlas_xyxy": [
+        176,
+        608,
+        192,
+        624
+      ],
+      "mid": 619,
+      "opaque_pixels": 256,
+      "pair": "083df884_08ea002c",
+      "plane": "top"
+    },
+    "622:top": {
+      "RGBA_sha256": "288c7ff75e04aaed419b8b75d0ea471132f47cd23164fec823dd8807819fca0c",
+      "atlas_xyxy": [
+        224,
+        608,
+        240,
+        624
+      ],
+      "mid": 622,
+      "opaque_pixels": 256,
+      "pair": "083df884_08ea002c",
+      "plane": "top"
+    },
+    "625:top": {
+      "RGBA_sha256": "4b3a7daa9f7ac9b6d581933088d47144906b7d4f5a5d0d66f8927a71ba2af45f",
+      "atlas_xyxy": [
+        16,
+        624,
+        32,
+        640
+      ],
+      "mid": 625,
+      "opaque_pixels": 80,
+      "pair": "083df884_08ea002c",
+      "plane": "top"
+    },
+    "644:top": {
+      "RGBA_sha256": "6582c11004cc1799552a2e21f0158e7dca734ffd936907afef7b2ca08153268a",
+      "atlas_xyxy": [
+        64,
+        640,
+        80,
+        656
+      ],
+      "mid": 644,
+      "opaque_pixels": 80,
+      "pair": "083df884_08ea002c",
+      "plane": "top"
+    },
+    "671:flat": {
+      "RGBA_sha256": "02b755bc3ab8b4a3050d7e84e7ed2abbcdbc29168ca64864bca15769f5b5f205",
+      "atlas_xyxy": [
+        240,
+        656,
+        256,
+        672
+      ],
+      "mid": 671,
+      "opaque_pixels": 256,
+      "pair": "083df884_08ea002c",
+      "plane": "flat"
+    },
+    "734:top": {
+      "RGBA_sha256": "2d7f0aea809f62e8d2e175ac4e6674439fd00657d266d3e57dff2a9ab2c8d4e8",
+      "atlas_xyxy": [
+        224,
+        720,
+        240,
+        736
+      ],
+      "mid": 734,
+      "opaque_pixels": 56,
+      "pair": "083df884_08ea002c",
+      "plane": "top"
+    },
+    "735:top": {
+      "RGBA_sha256": "4b3a7daa9f7ac9b6d581933088d47144906b7d4f5a5d0d66f8927a71ba2af45f",
+      "atlas_xyxy": [
+        240,
+        720,
+        256,
+        736
+      ],
+      "mid": 735,
+      "opaque_pixels": 80,
+      "pair": "083df884_08ea002c",
+      "plane": "top"
+    },
+    "740:top": {
+      "RGBA_sha256": "6582c11004cc1799552a2e21f0158e7dca734ffd936907afef7b2ca08153268a",
+      "atlas_xyxy": [
+        64,
+        736,
+        80,
+        752
+      ],
+      "mid": 740,
+      "opaque_pixels": 80,
+      "pair": "083df884_08ea002c",
+      "plane": "top"
+    },
+    "751:flat": {
+      "RGBA_sha256": "3e5d82feede94747ae8abf349e7e607e31d655d2eea7c0a7bba78c68bead8ffb",
+      "atlas_xyxy": [
+        240,
+        736,
+        256,
+        752
+      ],
+      "mid": 751,
+      "opaque_pixels": 256,
+      "pair": "083df884_08ea002c",
+      "plane": "flat"
+    },
+    "758:flat": {
+      "RGBA_sha256": "e7a911beee94612d1804e39244bd2d68d59c7e127cb8ef4ce7d7e36513d9cdaa",
+      "atlas_xyxy": [
+        96,
+        752,
+        112,
+        768
+      ],
+      "mid": 758,
+      "opaque_pixels": 256,
+      "pair": "083df884_08ea002c",
+      "plane": "flat"
+    }
+  },
+  "native_scale": 1,
+  "origin": "Complete native CrystalDust department counter modular family",
+  "pair": "083df884_08ea002c",
+  "processing": "Whole native TOP or full BOTTOM+TOP glass modules only; no hardware pixel cropped, resized, recolored or drawn. Match existing local backgrounds. Complete hardware foreground uses per-row depth.",
+  "rom_sha256": "51196cba923c315d0088b747b5cdee704f2ac057cd493f9ddf226fb7227302cf",
+  "sourceUrl": "https://github.com/Sierraffinity/CrystalDust",
+  "source_modules": {
+    "cell-02b755bc3ab8b4a3050d.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-department-counters/cell-02b755bc3ab8b4a3050d.png",
+      "assetFileHash": "160ef88d1f79605aa12a74db4e7616ecf8c5419192221255fa0fedf67f642b0c",
+      "assetPixelHash": "02b755bc3ab8b4a3050d7e84e7ed2abbcdbc29168ca64864bca15769f5b5f205",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "background": "retained_original_cell",
+          "family": "department_counter",
+          "mid": 671,
+          "plane": "flat",
+          "source_module": "mappings/johto_mart_finish.lua"
+        },
+        {
+          "family": "department_counter_foreground",
+          "mid": 671,
+          "plane": "flat"
+        }
+      ]
+    },
+    "cell-06f550ae7e0d6e29a260.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-department-counters/cell-06f550ae7e0d6e29a260.png",
+      "assetFileHash": "aa2fb19c60e231e7eeef9562090e28d920f4a95a69c1ab822de0620688230e88",
+      "assetPixelHash": "06f550ae7e0d6e29a2606ab5268cf00fb76425e19fb00acafc4ac971b68a35ba",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "background": "retained_original_cell",
+          "family": "department_counter",
+          "mid": 616,
+          "plane": "top",
+          "source_module": "mappings/interiors.lua"
+        }
+      ]
+    },
+    "cell-16c9354880a9a7774d18.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-department-counters/cell-16c9354880a9a7774d18.png",
+      "assetFileHash": "41d6e8f459b7516cd5bdc9d2fcaaa9b6acb544b02364c02baa5abe30a79d8420",
+      "assetPixelHash": "16c9354880a9a7774d187c441917a610889fa62de2d7f92642faa02f84c0b09f",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "background": "retained_department_floor",
+          "family": "department_counter",
+          "mid": 598,
+          "plane": "top",
+          "source_module": "mappings/johto_mart_finish.lua"
+        },
+        {
+          "family": "department_counter_foreground",
+          "mid": 598,
+          "plane": "top"
+        }
+      ]
+    },
+    "cell-22b88c6bea27ef40dfd4.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-department-counters/cell-22b88c6bea27ef40dfd4.png",
+      "assetFileHash": "b5c0d85c63874f8cc3a82f2295c3a4549298a2059644ac8b83b77d7ebd5550ff",
+      "assetPixelHash": "22b88c6bea27ef40dfd487297e4c02b6928e98ed1314bf7c8dc92e5f95a019da",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "background": "retained_department_floor",
+          "family": "department_counter",
+          "mid": 619,
+          "plane": "top",
+          "source_module": "mappings/johto_mart_finish.lua"
+        },
+        {
+          "family": "department_counter_foreground",
+          "mid": 619,
+          "plane": "top"
+        }
+      ]
+    },
+    "cell-288c7ff75e04aaed419b.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-department-counters/cell-288c7ff75e04aaed419b.png",
+      "assetFileHash": "524f2003cf6598170ea6c311cf9fe45a6c8057667dc292f11874f70684d85108",
+      "assetPixelHash": "288c7ff75e04aaed419b8b75d0ea471132f47cd23164fec823dd8807819fca0c",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "background": "retained_department_floor",
+          "family": "department_counter",
+          "mid": 622,
+          "plane": "top",
+          "source_module": "mappings/johto_mart_finish.lua"
+        },
+        {
+          "family": "department_counter_foreground",
+          "mid": 622,
+          "plane": "top"
+        }
+      ]
+    },
+    "cell-2b7a8e1b02e185d574f8.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-department-counters/cell-2b7a8e1b02e185d574f8.png",
+      "assetFileHash": "24d7ac37ec09bff4469df576961c1fc3a4c54123ab41a79d1342c9c94452072d",
+      "assetPixelHash": "2b7a8e1b02e185d574f8a7aa9a3ec83ff4c17c0f72a6f999bf7458331f41efb1",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "background": "retained_department_floor",
+          "family": "department_counter",
+          "mid": 595,
+          "plane": "top",
+          "source_module": "mappings/johto_mart_finish.lua"
+        },
+        {
+          "family": "department_counter_foreground",
+          "mid": 595,
+          "plane": "top"
+        }
+      ]
+    },
+    "cell-2d7f0aea809f62e8d2e1.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-department-counters/cell-2d7f0aea809f62e8d2e1.png",
+      "assetFileHash": "b4ecc7515227e7111e41473c59d09879aae2627727e3ac7d123b48cdb0b14cca",
+      "assetPixelHash": "2d7f0aea809f62e8d2e175ac4e6674439fd00657d266d3e57dff2a9ab2c8d4e8",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "family": "department_counter_foreground",
+          "mid": 734,
+          "plane": "top"
+        }
+      ]
+    },
+    "cell-3e5d82feede94747ae8a.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-department-counters/cell-3e5d82feede94747ae8a.png",
+      "assetFileHash": "719d67d4035d3273b773d2dc1fc953499b99cadd67379917f4b6cd813145128f",
+      "assetPixelHash": "3e5d82feede94747ae8abf349e7e607e31d655d2eea7c0a7bba78c68bead8ffb",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "background": "retained_original_cell",
+          "family": "department_counter",
+          "mid": 751,
+          "plane": "flat",
+          "source_module": "mappings/johto_mart_finish.lua"
+        },
+        {
+          "family": "department_counter_foreground",
+          "mid": 751,
+          "plane": "flat"
+        }
+      ]
+    },
+    "cell-3eed508e92c89dc7db9a.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-department-counters/cell-3eed508e92c89dc7db9a.png",
+      "assetFileHash": "5cec47489c31f913b9f7396e348690893f6613230bd0c71cffaf2506418b91d5",
+      "assetPixelHash": "3eed508e92c89dc7db9a2b2226ff9938c9b036961c81e7eece71a954e13772e9",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "background": "retained_department_floor",
+          "family": "department_counter",
+          "mid": 614,
+          "plane": "top",
+          "source_module": "mappings/johto_mart_finish.lua"
+        },
+        {
+          "family": "department_counter_foreground",
+          "mid": 614,
+          "plane": "top"
+        }
+      ]
+    },
+    "cell-4b3a7daa9f7ac9b6d581.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-department-counters/cell-4b3a7daa9f7ac9b6d581.png",
+      "assetFileHash": "335c007a4d5aa34e32ba0c26fb7ba7e4dde8b9dc2ffb8a4f8ab60df2b1787cd8",
+      "assetPixelHash": "4b3a7daa9f7ac9b6d581933088d47144906b7d4f5a5d0d66f8927a71ba2af45f",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "family": "department_counter_foreground",
+          "mid": 735,
+          "plane": "top"
+        },
+        {
+          "family": "department_counter_foreground",
+          "mid": 617,
+          "plane": "top"
+        },
+        {
+          "family": "department_counter_foreground",
+          "mid": 625,
+          "plane": "top"
+        }
+      ]
+    },
+    "cell-603deded81c03bbe576b.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-department-counters/cell-603deded81c03bbe576b.png",
+      "assetFileHash": "2f84652bd2bb86cbbe389a81501334a0a457a81f1cf1287dfc23c04c3c309c0f",
+      "assetPixelHash": "603deded81c03bbe576b40753ae408aa29b8ecae456efe0d513585445f7bb3fb",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "family": "department_counter_foreground",
+          "mid": 616,
+          "plane": "top"
+        }
+      ]
+    },
+    "cell-6582c11004cc1799552a.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-department-counters/cell-6582c11004cc1799552a.png",
+      "assetFileHash": "f2f3bb70871560eb4dddcadc6318429009214d7f0f8e18fce0864b09cad31947",
+      "assetPixelHash": "6582c11004cc1799552a2e21f0158e7dca734ffd936907afef7b2ca08153268a",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "family": "department_counter_foreground",
+          "mid": 740,
+          "plane": "top"
+        },
+        {
+          "family": "department_counter_foreground",
+          "mid": 644,
+          "plane": "top"
+        }
+      ]
+    },
+    "cell-6be7e0e06e0d01952945.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-department-counters/cell-6be7e0e06e0d01952945.png",
+      "assetFileHash": "422074ba3e3a4a610fc81a70a5f78d441dff1eb0df9374de922659f2d51fcd8f",
+      "assetPixelHash": "6be7e0e06e0d019529452d3e3a10f5b40f9e8261434bd77bd6afb4548383cb24",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "family": "department_counter_foreground",
+          "mid": 618,
+          "plane": "top"
+        }
+      ]
+    },
+    "cell-6dcddc56b723432e193f.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-department-counters/cell-6dcddc56b723432e193f.png",
+      "assetFileHash": "edd70642024dbbbd44c64d7ccf99d578ef0b8a2f5cd54fb947f536fc10a644f7",
+      "assetPixelHash": "6dcddc56b723432e193ffd7e7f46b0a5453f464e25870e60d6cda67c8b87a8ea",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "background": "retained_department_floor",
+          "family": "department_counter",
+          "mid": 603,
+          "plane": "top",
+          "source_module": "mappings/johto_mart_finish.lua"
+        },
+        {
+          "family": "department_counter_foreground",
+          "mid": 603,
+          "plane": "top"
+        },
+        {
+          "background": "retained_department_floor",
+          "family": "department_counter",
+          "mid": 605,
+          "plane": "top",
+          "source_module": "mappings/johto_mart_finish.lua"
+        },
+        {
+          "family": "department_counter_foreground",
+          "mid": 605,
+          "plane": "top"
+        }
+      ]
+    },
+    "cell-70367231624334145bb1.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-department-counters/cell-70367231624334145bb1.png",
+      "assetFileHash": "e1c9590c41e4f535e2dc9ab44eaab260cf1f0071facb7382a27188c5a81e3042",
+      "assetPixelHash": "70367231624334145bb140ed8998ad6507dcab7e6cbc5d22d139f5264f45fd4f",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "background": "retained_department_floor",
+          "family": "department_counter",
+          "mid": 597,
+          "plane": "top",
+          "source_module": "mappings/johto_mart_finish.lua"
+        },
+        {
+          "family": "department_counter_foreground",
+          "mid": 597,
+          "plane": "top"
+        }
+      ]
+    },
+    "cell-8039324730921b1db09f.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-department-counters/cell-8039324730921b1db09f.png",
+      "assetFileHash": "dc800035357431c976fa07da55b1d733c52b8878a5948ca89b1829de81272cff",
+      "assetPixelHash": "8039324730921b1db09ff462a226117a1c96b93eafd054a5ae7dfbe323453654",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "background": "retained_original_cell",
+          "family": "department_counter",
+          "mid": 735,
+          "plane": "top",
+          "source_module": "mappings/interiors.lua"
+        },
+        {
+          "background": "retained_original_cell",
+          "family": "department_counter",
+          "mid": 617,
+          "plane": "top",
+          "source_module": "mappings/interiors.lua"
+        },
+        {
+          "background": "retained_original_cell",
+          "family": "department_counter",
+          "mid": 625,
+          "plane": "top",
+          "source_module": "mappings/interiors.lua"
+        },
+        {
+          "background": "retained_original_cell",
+          "family": "department_counter",
+          "mid": 617,
+          "plane": "top",
+          "source_module": "mappings/johto_mart_finish.lua"
+        },
+        {
+          "background": "retained_original_cell",
+          "family": "department_counter",
+          "mid": 625,
+          "plane": "top",
+          "source_module": "mappings/johto_mart_finish.lua"
+        }
+      ]
+    },
+    "cell-848fce8ccdf1b117f3fd.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-department-counters/cell-848fce8ccdf1b117f3fd.png",
+      "assetFileHash": "edcea0fc1501b9f8045dc466be3d31caeae16cac2d85a183f5fbe49b878d12df",
+      "assetPixelHash": "848fce8ccdf1b117f3fd25fb6b494b554b147c56d4fd15cc06cff059febad072",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "background": "retained_department_floor",
+          "family": "department_counter",
+          "mid": 611,
+          "plane": "top",
+          "source_module": "mappings/johto_mart_finish.lua"
+        },
+        {
+          "family": "department_counter_foreground",
+          "mid": 611,
+          "plane": "top"
+        }
+      ]
+    },
+    "cell-8d66aa4d2e53543b6c59.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-department-counters/cell-8d66aa4d2e53543b6c59.png",
+      "assetFileHash": "0d43dcaf467282c44db927b6e635f2aef832fb0d0ee00ccf93bb6dbdd2584f57",
+      "assetPixelHash": "8d66aa4d2e53543b6c59ba3b76cbf7eb6a8e48027267744c60fe8549314c5f95",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "background": "retained_department_floor",
+          "family": "department_counter",
+          "mid": 610,
+          "plane": "top",
+          "source_module": "mappings/johto_mart_finish.lua"
+        },
+        {
+          "family": "department_counter_foreground",
+          "mid": 610,
+          "plane": "top"
+        }
+      ]
+    },
+    "cell-90b7a8aef0785f80860b.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-department-counters/cell-90b7a8aef0785f80860b.png",
+      "assetFileHash": "e1882d73ab55208676dcca0df6e7daab87df366f26b53656102a0e319f53070c",
+      "assetPixelHash": "90b7a8aef0785f80860bcce25eaaa36693f5e5ad15ca57a6df007f86f90a00af",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "background": "retained_original_cell",
+          "family": "department_counter",
+          "mid": 740,
+          "plane": "top",
+          "source_module": "mappings/interiors.lua"
+        },
+        {
+          "background": "retained_original_cell",
+          "family": "department_counter",
+          "mid": 644,
+          "plane": "top",
+          "source_module": "mappings/interiors.lua"
+        },
+        {
+          "background": "retained_original_cell",
+          "family": "department_counter",
+          "mid": 644,
+          "plane": "top",
+          "source_module": "mappings/johto_mart_finish.lua"
+        }
+      ]
+    },
+    "cell-bed8dc4461780576b349.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-department-counters/cell-bed8dc4461780576b349.png",
+      "assetFileHash": "45bfd5c98d8b26ab48d31240d6ac18787e53708be456c7387ba7220e281de00a",
+      "assetPixelHash": "bed8dc4461780576b3493a7d79e02eb380effa94e1fb7991b124edfbce38eaa0",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "background": "retained_original_cell",
+          "family": "department_counter",
+          "mid": 618,
+          "plane": "top",
+          "source_module": "mappings/interiors.lua"
+        }
+      ]
+    },
+    "cell-db34dee4bdec39878e90.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-department-counters/cell-db34dee4bdec39878e90.png",
+      "assetFileHash": "4eeae9d922c67c119cf1d22705cef05517302acb8a592da920d9d6c120d22322",
+      "assetPixelHash": "db34dee4bdec39878e90e0731edeb653b728f6739671081c3cfc5a61c4432e8d",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "background": "retained_original_cell",
+          "family": "department_counter",
+          "mid": 734,
+          "plane": "top",
+          "source_module": "mappings/johto_mart_finish.lua"
+        }
+      ]
+    },
+    "cell-e702d7949d690b345ca6.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-department-counters/cell-e702d7949d690b345ca6.png",
+      "assetFileHash": "89fe0ade51fc81a008cfcd04d75ebdc32611f8d9d292ddd80c1d2630bb1017f7",
+      "assetPixelHash": "e702d7949d690b345ca6cd2d2e2c2ea8c7f4485430e43497a3fce2ac21d9e568",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "background": "retained_department_floor",
+          "family": "department_counter",
+          "mid": 596,
+          "plane": "top",
+          "source_module": "mappings/johto_mart_finish.lua"
+        },
+        {
+          "family": "department_counter_foreground",
+          "mid": 596,
+          "plane": "top"
+        }
+      ]
+    },
+    "cell-e7a911beee94612d1804.png": {
+      "asset": "assets/third_party/johto-hacks/crystaldust-department-counters/cell-e7a911beee94612d1804.png",
+      "assetFileHash": "97f2e92afc3010e76d0b435a3768a6a94091c650729eb409f731ca38ef65f0b7",
+      "assetPixelHash": "e7a911beee94612d1804e39244bd2d68d59c7e127cb8ef4ce7d7e36513d9cdaa",
+      "native_scale": 1,
+      "native_size": [
+        16,
+        16
+      ],
+      "recipes": [
+        {
+          "background": "retained_department_floor",
+          "family": "department_counter",
+          "mid": 758,
+          "plane": "flat",
+          "source_module": "mappings/johto_mart_finish.lua"
+        },
+        {
+          "family": "department_counter_foreground",
+          "mid": 758,
+          "plane": "flat"
+        }
+      ]
+    }
+  }
+}

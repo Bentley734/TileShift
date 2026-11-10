@@ -3,6 +3,8 @@
 
 TileShift swaps world artwork through individually reviewed tile matches.
 
+Version 0.46.19 gives Goldenrod Department Store complete native CrystalDust service counters, including rounded uprights, rear rims, front panels and closed return ends. The original counter shapes and cashier positions are retained, with correct foreground depth at the native rims. Stock shelves keep their complete native faces and gray feet over the matching orange floor, removing the stray blue floor triangles. The Underground's three vendor desks use complete native CrystalDust modules, and its warehouse side walls use continuous faces with corners at their proper ends. Crystal's rooftop clearance sale keeps its selected artwork when the source event changes the map tiles. Gold, Silver and Crystal retain their original walking rules, shop services, NPCs, doors, switches, stairs and elevator behavior.
+
 Version 0.46.18 separates the Magnet Train ride's track and platform from the train. Railway scenery follows the original world scrolling throughout departure, travel and arrival, while the transparent train body and its player-window mask follow the native train movement. The existing Gen 3 artwork, tree choices and Original style remain available in Gold, Silver and Crystal.
 
 Version 0.46.17 keeps the Gen 3 theme active throughout the Magnet Train ride in Gold, Silver and Crystal. The separate animation screen uses the current railway, matching train colors and selected complete large trees over native Gen 3 ground. Its original window opening preserves the player animation and masking. Native trip timing, scrolling, sound, boarding and arrival behavior are retained. Original style and disabling TileShift restore the native animation.
